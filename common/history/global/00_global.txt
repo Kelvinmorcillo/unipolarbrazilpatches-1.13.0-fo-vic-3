@@ -1,0 +1,159 @@
+﻿# This is executed last among all history
+GLOBAL = {
+	
+	#every_power_bloc = {	
+	#add_modifier = {
+	#	name = nato_modifier
+	#	days = -1
+	#	multiplier = 1
+	#	}
+	#}
+	
+	set_global_variable = un_current_motion_type
+	nuclear_recompute_top_5 = yes
+	
+	add_to_global_variable_list = {
+		name = custom_button_list_flag
+		target = flag:io_sidebar_button
+	}
+	
+	smd_apply_public_service_expenses_start = yes
+	start_kurdistan_war_journal_entry_system = yes
+	start_afghan_civil_war_journal_entry_system = yes
+	start_israel_palestine_peacetime_journal_entry_system = yes
+	
+	every_country = {
+		smd_apply_public_service_expenses = yes
+		if = { limit = { NOT = { country_rank >= rank_value:great_power } }
+			add_journal_entry = { type = je_foreign_investment }
+		}
+		if = { limit = { NOT = { any_scope_state = {
+				is_coastal = yes
+			} } }
+			add_journal_entry = { type = je_transit_rights }
+		}
+		if = { limit = { country_rank >= rank_value:major_power }
+		set_variable = { name = conventional_missiles value = 350 }
+		}
+		every_scope_state = {
+			force_resource_discovery = building_oil_rig
+			force_resource_discovery = building_rubber_plantation
+		}
+	}
+	
+	c:USA = {
+		set_next_election_date = 1993.01.20 #YYYY.MM.DD
+	}
+	c:CBD = {
+		every_scope_state = { limit = { state_has_sufficient_population = yes }
+			effect_starting_buildings_1 = yes
+			effect_prune_excess_buildings = yes
+		}
+		s:STATE_CAMBODIA = {
+			region_state:CBD = {
+				create_building = {
+					building = "building_angkor_wat"
+					level = 1
+					reserves = 1
+				}
+			}
+		}
+	}
+	c:BHT = {
+		every_scope_state = { limit = { state_has_sufficient_population = yes }
+			effect_starting_buildings_PRC_IDA_1 = yes
+			#effect_starting_buildings_2 = yes
+			effect_prune_excess_buildings = yes
+		}
+		s:STATE_RAJPUTANA = {
+			region_state:BHT = {
+				create_building = {
+					building = "building_taj_mahal"
+					level = 1
+					reserves = 1
+				}
+			}
+		}
+		s:STATE_BOMBAY = {
+			region_state:BHT = {
+				create_building = {
+					building = "building_victoria_terminus"
+					level = 1
+					reserves = 1
+				}
+			}
+		}
+	}
+	c:EGY = {
+		every_scope_state = { limit = { state_has_sufficient_population = yes }
+			effect_starting_buildings_2 = yes
+			effect_prune_excess_buildings = yes
+		}
+		s:STATE_LOWER_EGYPT = {
+			region_state:EGY = {
+				create_building = {
+					building = "building_giza_necropolis"
+				}
+			}
+		}
+	}
+	s:STATE_PANAMA = {
+		region_state:PNM = {
+			create_building = {
+				building = building_panama_canal
+				level = 1
+				reserves = 1
+				activate_production_methods = {
+					pm_canal
+				}
+			}
+		}
+	}
+	c:PEU = {
+		every_scope_state = { #limit = { state_has_sufficient_population = yes }
+			 effect_starting_buildings_3 = yes
+			effect_prune_excess_buildings = yes
+		}
+		s:STATE_ICA = {
+			region_state:PEU = {
+				create_building = {
+					building = "building_machu_picchu"
+				}
+			}
+		}
+	}
+		s:STATE_EASTERN_MALI = {
+			region_state:MLI = {
+				create_building = {
+					building = "building_mosque_of_djenne"
+					level = 1
+					reserves = 1
+				}
+			}
+		}
+		s:STATE_TAHITI = {
+			region_state:FRA = {
+				create_building = {
+					building = "building_easter_island_heads"
+				}
+			}
+		}
+		s:STATE_MAURITANIA = {
+			region_state:MAU = {
+				create_building = {
+					building = "building_eye_of_sahara"
+				}
+			}
+		}
+		s:STATE_HOME_COUNTIES = {
+			region_state:GBR = {
+				create_building = {
+					building = "building_big_ben"
+					level = 1
+					reserves = 1
+				}
+			}
+		}	
+	}
+	
+	

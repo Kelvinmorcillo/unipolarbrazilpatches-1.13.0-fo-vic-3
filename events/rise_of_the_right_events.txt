@@ -1,0 +1,185 @@
+namespace = rise_of_the_right
+
+rise_of_the_right.1 = {
+	type = country_event
+	placement = ROOT
+	title = rise_of_the_right.1.t
+	desc = rise_of_the_right.1.d
+	flavor = rise_of_the_right.1.f
+	event_image = { video = "votp_agitator_speaking" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+	duration = 3
+
+	trigger = {
+		rise_of_the_right_active_country = yes
+	}
+
+	option = {
+		name = rise_of_the_right.1.a
+		default_option = yes
+		custom_tooltip = rise_of_the_right_spawnrate_tt
+		ai_chance = { base = 100 }
+	}
+}
+
+rise_of_the_right.10 = {
+	type = country_event
+	placement = ROOT
+	title = rise_of_the_right.10.t
+	desc = rise_of_the_right.10.d
+	flavor = rise_of_the_right.10.f
+	event_image = { video = "unspecific_politicians_arguing" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	duration = 3
+	cooldown = { days = 540 }
+
+	trigger = {
+		rise_of_the_right_active_country = yes
+	}
+
+	option = {
+		name = rise_of_the_right.10.a
+		default_option = yes
+		add_modifier = {
+			name = rise_of_the_right_online_radicalization
+			days = 730
+			is_decaying = yes
+		}
+		custom_tooltip = rise_of_the_right_spawnrate_tt
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = rise_of_the_right.10.b
+		add_modifier = {
+			name = rise_of_the_right_establishment_response
+			days = 365
+			is_decaying = yes
+		}
+		ai_chance = { base = 0 }
+	}
+}
+
+rise_of_the_right.11 = {
+	type = country_event
+	placement = ROOT
+	title = rise_of_the_right.11.t
+	desc = rise_of_the_right.11.d
+	flavor = rise_of_the_right.11.f
+	event_image = { video = "europenorthamerica_political_extremism" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+	duration = 3
+	cooldown = { days = 730 }
+
+	trigger = {
+		rise_of_the_right_active_country = yes
+	}
+
+	option = {
+		name = rise_of_the_right.11.a
+		default_option = yes
+		add_modifier = {
+			name = rise_of_the_right_migration_backlash
+			days = 730
+			is_decaying = yes
+		}
+		custom_tooltip = rise_of_the_right_spawnrate_tt
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = rise_of_the_right.11.b
+		add_modifier = {
+			name = rise_of_the_right_establishment_response
+			days = 365
+			is_decaying = yes
+		}
+		ai_chance = { base = 0 }
+	}
+}
+
+rise_of_the_right.12 = {
+	type = country_event
+	placement = ROOT
+	title = rise_of_the_right.12.t
+	desc = rise_of_the_right.12.d
+	flavor = rise_of_the_right.12.f
+	event_image = { video = "votp_hostile_court" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+	duration = 3
+	cooldown = { days = 900 }
+
+	trigger = {
+		rise_of_the_right_active_country = yes
+	}
+
+	option = {
+		name = rise_of_the_right.12.a
+		default_option = yes
+		add_modifier = {
+			name = rise_of_the_right_populist_surge
+			days = 730
+			is_decaying = yes
+		}
+		custom_tooltip = rise_of_the_right_spawnrate_tt
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = rise_of_the_right.12.b
+		add_modifier = {
+			name = rise_of_the_right_establishment_response
+			days = 365
+			is_decaying = yes
+		}
+		ai_chance = { base = 0 }
+	}
+}
+
+rise_of_the_right.13 = {
+	type = country_event
+	placement = ROOT
+	title = rise_of_the_right.13.t
+	desc = rise_of_the_right.13.d
+	flavor = rise_of_the_right.13.f
+	event_image = { video = "votp_agitator_speaking" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	duration = 3
+	cooldown = { days = 720 }
+
+	trigger = {
+		rise_of_the_right_active_country = yes
+	}
+
+	option = {
+		name = rise_of_the_right.13.a
+		default_option = yes
+		add_modifier = {
+			name = rise_of_the_right_populist_surge
+			days = 365
+			is_decaying = yes
+		}
+		add_modifier = {
+			name = rise_of_the_right_online_radicalization
+			days = 365
+			is_decaying = yes
+		}
+		custom_tooltip = rise_of_the_right_spawnrate_tt
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = rise_of_the_right.13.b
+		add_modifier = {
+			name = rise_of_the_right_establishment_response
+			days = 365
+			is_decaying = yes
+		}
+		ai_chance = { base = 0 }
+	}
+}

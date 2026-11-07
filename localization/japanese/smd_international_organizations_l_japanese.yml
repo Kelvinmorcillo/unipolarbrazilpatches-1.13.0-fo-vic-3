@@ -1,0 +1,1067 @@
+﻿l_japanese:
+ # United Nations
+ je_united_nations: "国連"
+ je_united_nations_reason: "\n\n国連は、外交、平和、人道的努力のための国際機関として機能します。\n\n永続的セキュリティカウンシルメンバー:\n - [GetGlobalVariable('permanent_members_1').GetCountry.GetName]\n - [GetGlobalVariable('permanent_members_2').GetCountry.GetName]\n\n\n\n[GetGlobalVariable('permanent_members_1').GetCountry.GetName][GetGlobalVariable('permanent_members_1').GetCountry.GetName]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<x 国連は外交、平和、人道的な努力のための国際機関として機能します。 国連による決定 — 特にセキュリティ評議会 — あなたの国の将来のイベントに直接影響することができます。"
+
+ # ── PROPOSE BUTTON ────────────────────────
+ 
+ un_propose_motion_button: "決断を提案して下さい"
+ un_propose_motion_button_desc: "すべてのメンバーの状態が投票する国連の決議を行います。 解像度が通過すると、すべての国は5年間効果を受け取ります。 年に一度だけ提案できます。"
+ un_no_motion_active_tt: "現在、議論中です。"
+ 
+ # ── VOTE BUTTONS ─────────────────────────
+ 
+ un_vote_yay_button: "お気に入り"
+ un_vote_yay_button_desc: "[ROOT.GetCountry.GetName] の投票を現在の解像度のお気に入りにキャストします。 恒久的なセキュリティ協議会のメンバーは、ダブルウェイト投票をキャスト."
+ 
+ un_vote_nay_button: "投票する"
+ un_vote_nay_button_desc: "現在の解像度に対する[ROOT.GetCountry.GetName]の投票をキャストします。 恒久的なセキュリティ協議会のメンバーは、ダブルウェイト投票をキャスト."
+ 
+ # ── MOTION EVENTS ────────────────────────
+ 
+ un_events.100.t: "国連—決議を申し立てる"
+ un_events.100.d: "国連の会員として、[ROOT.GetCountry.GetName] は、総会の決議を決議する場合があります。 議論のために提出する解像度を選択します。 会員の全ての州は、国連ジャーナルのエントリのボタンを使用して通知され、投票することができます。"
+ un_events.100.a: "環境保護の決断"
+ un_events.100.b: "世界の平和に対する決議"
+ un_events.100.c: "経済発展の決議"
+ un_events.100.e: "ユネスコ技術に関する決議"
+ 
+ un_events.101.t: "国連 - 議論に基づく決議"
+ un_events.101.d: "国連総会で決議を申し立てました。 [ROOT.GetCountry.GetName] は、国連ジャーナルエントリの Yay または Nay ボタンを使って投票をすることができます。 恒久的なセキュリティ協議会のメンバーは、ダブルウェイト投票をキャスト. 結果は120日間で発表されます。"
+ un_events.101.a: "Understood — 意図しない"
+ 
+ # ── NOTIFICATIONS ─────────────────────────
+ 
+ un_motion_passed: "UNの決断 渡される"
+ un_motion_passed_desc: "国連の決議が経過しました。 [ROOT.GetCountry.GetName] は、次の 5 年間の効果を受け取ります。"
+ 
+ un_motion_failed: "UNの決断 失敗しました"
+ un_motion_failed_desc: "国連の決議に失敗しました。 提案は十分なサポートを受けませんでした。"
+ 
+ # ── PROGRESS BAR ─────────────────────────
+ 
+ un_je_no_motion_tt: "現在、議論中です。 #bold を使う 決議を申し立てる#! ボタンを押して、一般アセンブリにモーションを持たせます。"
+ 
+ un_je_voting_environment_tt: "#bold 環境保護の解決 — 進行中の投票。#! メンバーの状態は投票をキャストしています。 あなたの投票をキャストするために、以下のYayまたはNayボタンを使用します。 投票期間が終了したときに結果が発表されます。"
+ 
+ un_je_voting_peace_tt: "#bold 世界平和の決議 — 進行中の投票。#! メンバーの状態は投票をキャストしています。 あなたの投票をキャストするために、以下のYayまたはNayボタンを使用します。 投票期間が終了したときに結果が発表されます。"
+ 
+ un_je_voting_economy_tt: "#bold 経済発展に関する決議 — 進行中の投票。#! メンバーの状態は投票をキャストしています。 あなたの投票をキャストするために、以下のYayまたはNayボタンを使用します。 投票期間が終了したときに結果が発表されます。"
+ 
+ un_je_voting_technology_tt: "#bold ユネスコ技術に関する決議 — 進行中の投票。#! メンバーの状態は投票をキャストしています。 あなたの投票をキャストするために、以下のYayまたはNayボタンを使用します。 投票期間が終了したときに結果が発表されます。"
+ 
+ un_motion_progress_bar: "決断 サポート"
+ un_motion_progress_bar_desc: "投票の有利な共有: #v [JournalEntry.GetCurrentBarProgress(ScriptedProgressBar.Self)|%1]#! お気に入り: ([JournalEntry.GetCurrentBarValue(ScriptedProgressBar.Self)|0])"
+ un_motion_progress_bar_second_desc: ""
+ un_motion_progress_from_yes_votes: ""
+ 
+ # ── RESOLUTION MODIFIERS ─────────────────
+ 
+ un_resolution_environment: "国連の決断—環境保護"
+ un_resolution_environment_desc: "国連は、環境保護に関する決議を通過しました。 [ROOT.GetCountry.GetName] は、汚染の発生を削減し、次の5年間環境基準を改善することにコミットしています。"
+ 
+ un_resolution_peace: "国連の決議—世界平和"
+ un_resolution_peace_desc: "国連は、世界平和に関する決議を通過しました。 [ROOT.GetCountry.GetName] 不良発生を削減し、次の5年間ディプロマム性を向上するメリット"
+ 
+ un_resolution_economy: "国連の決議—経済発展"
+ un_resolution_economy_desc: "国連は経済発展に関する決議を通過しました。 [ROOT.GetCountry.GetName] は、次の5年間の国際経済協力を反映した建設および投資ボーナスを受け取ります。"
+ 
+ un_resolution_technology: "ユネスコ・テクノロジー"
+ un_resolution_technology_desc: "国連は、技術や教育に関する決議を通過しました。 [ROOT.GetCountry.GetName] 次の5年間、改善された教育アクセスとポップアップ資格の恩恵を受ける。"
+ 
+ sb_request_peacekeepers: "国連平和者への要請"
+ sb_request_peacekeepers_desc: "国連に電話して、紛争解決を支援するために平和の力を展開します。"
+
+ un_events.1.t: "国連平和者への要請"
+ un_events.1.d: "国連は、紛争を終わらせるために平和者を送るためにアピールすることができます。"
+ un_events.1.a: "リクエストを送信"
+ un_events.1.b: "国連に関与しないでください。"
+
+ un_events.2.t: "国連安全保障評議会投票"
+ un_events.2.d: "セキュリティ協議会は、[GetGlobalVariable('peacekeeper_requestor').GetCountry.GetName]に平和者を送信するために投票しなければなりません"
+ un_events.2.a: "ログイン"
+ un_events.2.b: "アッサン"
+ un_events.2.c: "ログイン"
+ un_events.2.e: "Veto [GetGlobalVariable('peacekeeper_requestor').GetCountry.GetName] の平和管理の要求"
+
+ un_events.3.t: "承認されたピースキーパー"
+ un_events.3.d: "国連安全保障委員会は、平和者を送ろうとしました。"
+ un_events.3.a: "お問い合わせ"
+
+ un_events.4.t: "Peacekeepers 拒否"
+ un_events.4.d: "国連安全保障委員会は、平和者を送ろうとしています。"
+ un_events.4.a: "お問い合わせ"
+
+ un_events.10.t: "回転セキュリティ協議会メンバー選出"
+ un_events.10.d: "国連総会は、セキュリティ評議会に新しい回転メンバーを選出しました:[un_rotating_member.GetName]."
+ un_events.10.a: "お問い合わせ"
+ 
+ unsc_member: "UNSC会員"
+ permanent_unsc_member: "UNSC会員"
+ un_peacekeepers_vetoed: "Peacekeepers 拒否"
+ un_peacekeepers_deployed: "国連平和管理"
+ un_already_voting_on_peacekeeping: "国連が現在の平和管理ミッションに投票を終えるまでお待ちください。"
+ 
+ un_events.5.t: "[GetGlobalVariable('peacekeeper_requestor').GetCountry.GetName] の平和管理ミッションに参加する?"
+ un_events.5.d: "ユナイテッド・ネイションのセキュリティ・カウンシルは、[GetGlobalVariable('peacekeeper_requestor').GetCountry.GetName] に平和の使命を送ることを支持しています。 一般アセンブリのメンバーは、世界の平和の利益に彼らの男性を送ることを喜んでいる国を議論するために一緒に来ています。"
+ un_events.5.a: "[SCOPE.sCharacter('peacekeeper_general_1').GetFullName] を"
+ un_events.5.b: "参加しない"
+ 
+ you_vote_yes: "お気に入りに投票する"
+ you_abstain: "あなたの投票をすることができます"
+ you_vote_no: "議事録を投稿する"
+ you_veto: "プロセスへ"
+ 
+ # ==========================================
+# LOCALIZATION
+# ==========================================
+ 
+ # ── TREATY ARTICLES ──────────────────────
+ 
+ defense_attache: "防衛アタッチ"
+ defense_attache_desc: "ターゲット国の武力を持つ軍事顧問およびアリソン役員を埋め込む。 ターゲットは、軍事コストを経験し、削減します。 ソースは、影響力と外交の立っています。 ソースの国は、ターゲットよりも大きい電力投影を維持しなければなりません。"
+ 
+ cultural_exchange: "文化交流"
+ cultural_exchange_desc: "文化交流の正式なプログラムを確立 — 展覧会、学術プログラム、そして人々から人々へコンタクト。 両方の国は、移住者に威信、影響力、そしてより魅力的なものを得ます。"
+ 
+ research_partnership: "リサーチ・パートナーシップ"
+ research_partnership_desc: "研究プログラムや学術機関の共有に関する正式な合意 両国は、改良された研究スピードと技術の普及から恩恵を受けています。 少なくとも認められた力であるために両者を要求します。"
+ 
+ human_development_collaboration: "人材育成のコラボレーション"
+ human_development_collaboration_desc: "医療、教育、福祉など、ターゲットの富裕層国資金開発プログラム。 ソースは、影響と威信の交換で継続的なコストを支払います。 本契約は、原発国の経済がターゲットの下落した場合に破棄します。"
+ 
+ research_partnership_rank_tt: "両国は、研究のパートナーシップを入力する少なくとも認められた力でなければなりません"
+ 
+ # ── DIPLOMATIC ACTIONS ───────────────────
+ 
+ financial_sanctions: "金融制裁"
+ financial_sanctions_desc: "[ROOT.GetCountry.GetName] のターゲットとの金融関係を遮断し、クレジット市場へのアクセスをブロックし、証券取引を制限します。 目標の銀行・金融部門が著しく苦しむ。"
+ 
+ condemn: "コンテンツ"
+ condemn_desc: "対象となる国の行動を正式に非難する。 ターゲットは、プレステージ、立法、および外交的な評判に永続的なヒットを苦しむ。 重要な親友を持っているターゲットが必要です。"
+ condemn_action_notification_name: "[INITIATOR_COUNTRY.GetName] は私たちを非難しました!"
+ condemn_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName] は [SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName] を非難しました!"
+ condemn_action_notification_desc: "[INITIATOR_COUNTRY.GetName] で非難しました!"
+ condemn_break_name:0 "引き込みの非難"
+ condemn_pact_desc:0 "この国の行動を非難する。"
+ 
+ propose_un_sanctions: "国連制裁"
+ propose_un_sanctions_desc: "永続保安評議会会員として、国連が正式に標的を制裁することを提案する。 投票が通過すると、ターゲットは5年間の厳しい経済罰に直面します。"
+ propose_un_sanctions_action_notification_name: "[INITIATOR_COUNTRY.GetName] は私たちに対して国連の制裁を提案しました!"
+ propose_un_sanctions_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName] は、[SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName] に対する国際的な制裁のために動きました!"
+ propose_un_sanctions_action_notification_desc:1 "[INITIATOR_COUNTRY.GetName] は、国連で行動し、私たちに対する国際制裁を提案しました!"
+ 
+ propose_un_condemnation: "国連非難の反対"
+ propose_un_condemnation_desc: "国連は、正式にターゲットを非難することを約束します。 投票が通過した場合、ターゲットは永続的な威信と正当な損害に苦しむ。 制裁よりも厳しい。"
+ propose_un_condemnation__action_notification_name:0 "[INITIATOR_COUNTRY.GetName] は、国連の非難の利益を私たちに提案しました!"
+ propose_un_condemnation_pact_desc:0 "[SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName] は [SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName] に対する国際的な非難のために動きました!"
+ propose_un_condemnation_action_notification_desc:0 "[INITIATOR_COUNTRY.GetName] は、国連で行動し、私たちに対する国際非難を提案しました!"
+ 
+ condemn_requires_infamy_tt: "ターゲットは注目すべきinfamy"
+ propose_un_sanctions_perm_member_tt: "恒久的なセキュリティ協議会のメンバーは、国連の制裁や非難を提案することができます"
+ 
+ # ── UN EVENTS ────────────────────────────
+ 
+ un_events.102.t: "国連 — サンクションズ 投票"
+ un_events.102.d: "セキュリティ評議会の恒久的なメンバーは、メンバーの状態に対する決議を提案しました。 [ROOT.GetCountry.GetName] は、国連ジャーナルエントリの Yay または Nay ボタンを使って投票をすることができます。 結果は120日間で発表されます。"
+ un_events.102.a: "慎重に検討します"
+ 
+ # ── NOTIFICATIONS ─────────────────────────
+ 
+ un_sanctions_passed: "国連制裁"
+ un_sanctions_passed_desc: "国連は、[ROOT.GetCountry.GetName]に対する制裁を課すことに投票しました。 重度の経済の罰則は5年間も力に残ります。"
+ 
+ un_condemnation_passed: "国連非難問題"
+ un_condemnation_passed_desc: "国連は正式に[ROOT.GetCountry.GetName]を非難しました。[ROOT.GetCountry.GetName]の国際的地位は著しく損なわれています。"
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ financial_sanctions_target: "金融行動に基づく"
+ financial_sanctions_target_desc: "外国の電力は、[ROOT.GetCountry.GetName]上の金融制裁を課し、国際クレジットへのアクセスをブロックし、金融セクターを制限しています。"
+ 
+ condemned_modifier: "国際的に非難"
+ condemned_modifier_desc: "外部電源は正式に [ROOT.GetCountry.GetName] を非難しました。 プレステージとレピティマシーは、非難の持続時間のために減少します。"
+ 
+ un_sanctions_target: "国連制裁"
+ un_sanctions_target_desc: "国連は、[ROOT.GetCountry.GetName] に対する制裁を課すと投票しました。 国際金融システムが効果的に閉鎖されます。 重度の経済の罰則は5年間、力に残ります。"
+ 
+ un_condemnation_target: "国連非難"
+ un_condemnation_target_desc: "国連は正式に[ROOT.GetCountry.GetName]を非難しました。 プレステージ、立法、および外交の評判は苦しんでいる。 5年間の記録に残っている非難。"
+ 
+ un_je_voting_sanctions_tt: "#bold 国連Sanctions Vote — 進行中の投票。#! 永続保安協議会会員は、[GetGlobalVariable('un_sanction_target').GetCountry.GetName]に対する制裁を提案しました。 あなたの投票をキャストするために、以下のYayまたはNayボタンを使用します。 運動が通過すると、ターゲットは5年間の厳しい経済罰に直面します。"
+ 
+ un_je_voting_condemnation_tt: "#bold UNの非難投票 — 進行中の投票。#! 恒久的なセキュリティ協議会のメンバーは、[GetGlobalVariable('un_sanction_target').GetCountry.GetName]の正式な非難を提案しました。 あなたの投票をキャストするために、以下のYayまたはNayボタンを使用します。 モーションが通過すると、ターゲットは、その威信と正当性に永続的な損傷を被ります。"
+ 
+ un_je_under_sanctions_tt: "@warning! #bold [ROOT.GetCountry.GetName] は、現在国連の制裁下にある。#! 国際的なコミュニティは、[ROOT.GetCountry.GetName] に経済の罰則を課すことに投票しました。 銀行のスループット、投資および構造は厳しく治ります。 制裁は、期限が切れるまで強制的に残ります。"
+ 
+ un_je_under_condemnation_tt: "@warning! #bold [ROOT.GetCountry.GetName] は、国連によって正式に非難されています。#! 国際的なコミュニティは、[ROOT.GetCountry.GetName]の行為を非難するために投票しました。 プレステージ、レギュティマシー、および外交的な評判は減ります。 失効するまでの補償は記録に残ります。"
+ 
+ condemn_action_propose_name:0 "コンテンツ"
+ condemn_action_break_name:0 "撤退の非難"
+ un_not_sanctioned:0 "国連の制裁の下には存在しません。"
+ un_not_condemned:0 "既に国連の非難の下にはありません。"
+ # Propose Motion
+ un_propose_motion_button: "国連決議案"
+ un_propose_motion_button_desc: "Resolutions have been disabled currently." # Propose a motion to the United Nations for a vote. Only one motion may be active at a time.
+
+ # Progress On Motion
+ un_motion_progress_bar: "UNの決断サポート"
+ un_motion_progress_bar_desc: "現在のUNモーションのサポートレベルを追跡"
+ un_motion_progress_bar_second_desc: "より高い値は、より強力なサポートを示します。"
+
+ un_motion_progress_from_yes_votes: "投票する"
+
+ un_events.100.t: "国連の行動を提唱する"
+ un_events.100.d: "セキュリティ・カウンシルの前に持ちたい解像度を選択します。"
+
+ un_events.100.a: "環境保護のプロポーズの決断"
+ un_events.100.b: "世界平和の決議"
+ un_events.100.c: "経済発展の課題解決"
+ un_events.100.e: "ユネスコ技術に関する研究"
+
+ un_events.101.t: "国連安全保障評議会投票"
+ un_events.101.d: "[GetGlobalVariable('un_current_motion_name')] は、国連安全保障評議会に投票されています。 各メンバーが投票をしました。 永続会員は、無投票で行動を呼び出すことができます。"
+
+ un_events.101.a: "投票 はい"
+ un_events.101.b: "投票する いいえ"
+
+ un_events.202_veto.t: "UNの決断 Vetoed"
+ un_events.202_veto.d: "'[GetGlobalVariable('un_current_motion_name')]' は [GetGlobalVariable('un_motion_veto').GetCountry.GetName] でvetoed。"
+
+ un_events.203_pass.t: "承認される国連の決断"
+ un_events.203_pass.d: "'[GetGlobalVariable('un_current_motion_name')]' の動作は、セキュリティ協議会の投票を通過しました。"
+
+ un_events.204_fail.t: "国連決議拒否"
+ un_events.204_fail.d: "'[GetGlobalVariable('un_current_motion_name')]' の動作は、セキュリティ協議会の投票で過半数を達成できなかった。"
+ 
+ # Resolution Notification
+ 
+ un_passed: "決断 渡される"
+ un_passed_desc: "「[GetGlobalVariable('un_current_motion_name')]」という動きは、国連安全保障委員会の投票を通過しました"
+ 
+ un_fail: "決断 失敗しました"
+ un_fail_desc: "'[GetGlobalVariable('un_current_motion_name')]' の動作は、セキュリティ協議会の投票で過半数を達成できなかった。"
+
+ un_vetoed: "決断 Vetoed"
+ un_vetoed_desc: "'[GetGlobalVariable('un_current_motion_name')]' は [GetGlobalVariable('un_motion_veto').GetCountry.GetName] でvetoed。"
+ 
+ # European Union
+ 
+ je_european_union: "欧州連合"
+ je_european_union_reason: "欧州連合は、現代の年齢の最も野心的な政治と経済プロジェクトの一つとして立っています。\n\n 経済統合、共有ガバナンス、および集団セキュリティの原則に基づいて構築されたEUは、そのメンバーに共通の市場、調整された取引方針、および大陸の未来を形づけるテーブルの席を提供します。 メンバーシップは、商品、サービス、資本金、および人々 の自由な動きの約束をもたらします。 繁栄のための非前例のない機会。\n\n しかし、連合は、その課題がないわけではありません。 会員は、複雑な交渉を行なう必要があります。, supranational 規制によって遵守, 国家の社会の要素に妥協. より深い統合が成長し、各メンバーの運命はコレクティブのそれに拘束されます。\n\n 国の繁栄やEU内の闘争は、共通の利益と国民の利益のバランスをとる能力に依存しているかどうか、その部分の合計よりもあることを目指している組合内のパスを鍛造します。"
+
+ eu_events.1.t: "欧州連合への招待状"
+ eu_events.1.d: "欧州連合は、フルメンバーとして参加するために、当社の国への招待状を拡張しました。"
+ eu_events.1.a: "オファーを受け入れる"
+ eu_events.1.b: "決行をしなければならない"
+
+ eu_events.2.t: "EU会員に対する議論"
+ eu_events.2.d: "政治上の事実は、EUにとどまるかどうかに関する決定を求めています。"
+ eu_events.2.a: "ユニオンを残す"
+ eu_events.2.b: "ユニオンに残ります"
+
+ modifier_eu_member_state: "EU加盟国"
+ eu_membership_accept_tt: "あなたは、経済と外交上の利益を得る、欧州連合のメンバーになります。"
+ eu_member_state: "EU加盟国"
+ is_eu_member_state: "EU加盟国"
+ 
+ eu_call_summit_button: "EUサミットへの参加"
+ eu_call_summit_button_desc: "Summonのメンバーは、取引、制裁、協力について議論するために述べています。"
+
+ eu_events.3.t: "欧州連合サミット"
+ eu_events.3.d: "すべてのEU加盟国からの代表者が共通の目標と課題について議論するために集まります。"
+ eu_events.3.a: "ディープエントトレードタイズ"
+ eu_events.3.b: "座標制裁"
+ eu_events.3.c: "文化交流の推進"
+
+ eu_sanctions_ready: "サンクションの準備"
+ 
+ leave_eu: "欧州連合の出口"
+ leave_eu_desc: "欧州連合(EU)から撤退し、経済上の利点と政治の統合を推進します。"
+ 
+ eu_member_state_is: "EU加盟国"
+ eu_member_state_is_no_longer: "EU加盟国がなくなった"
+ eu_deeper_trade_ties: "EUの深い貿易タイ"
+ eu_deeper_trade_ties_desc: "欧州連合内の経済統合を拡大し、加盟国間の取引量を高め、市場アクセスを改善しました。"
+
+ eu_cultural_exchange: "EU文化交流"
+ eu_cultural_exchange_desc: "欧州連合(EU)の会員は、文化的理解、移住、新たな発想と技術の普及を促進してきました。"
+ je_eu_membership_request: "EU会員の申請"
+ je_eu_membership_request_reason: "政府は欧州連合(EU)に正式な申請書を提出しました。\n\n このプロセスは、EUの法律と規格との長い交渉、政策改革、およびアライメントを含みます。 今後数年間にわたり、あなたの国は、経済の安定性、ガバナンス、人権、および民主主義の原則に従うことに評価されます。\n\n成功的なアクセスは、あなたに付与されます。\n- EUの単一市場へのアクセス\n- 他のメンバーの状態の物品、サービス、資本金、そして人々を自由に動かす\n - EUの意思決定機関への参加\n\n しかし、このプロセスは政治的に敏感であり、国内および既存のEUのメンバーから両方の抵抗に遭遇する可能性があります。"
+ eu_membership_process: "EU加盟プロセスを開始"
+ request_to_join_eu_decision: "EUへの参加申請"
+ request_to_join_eu_decision_desc: "欧州連合(EU)への参加申請"
+ 
+ eu_events.0.t: "欧州連合へのアセンション"
+ eu_events.0.d: "私達は欧州連合に正式に受け入れられます"
+ 
+ # NATO
+ 
+ allow_leave_nato: "今後数か月以内に納豆を残すことができます"
+ left_nato: "佐藤 節"
+ leave_nato: "NATOを離れる"
+ leave_nato_desc: "軍が独立力として行動することを可能にするNATOの私達のメンバーシップを再考し、アメリカ人の影響から自由に。"
+
+ # imf
+
+ je_imf_loan: "IMFローンプログラム"
+ je_imf_loan_reason: "[ROOT.GetCountry.GetName] に国際通貨基金融資を延長しました。 緊急資金の交換では、国は重要な条件を受け入れています:高い金利、必須の取引、および資金を上書きする大きな電力に対する義務。"
+
+ imf_je_obligations_active_tt: "優れた電力義務は依然として効果があります。 外国の債権者は、主要な経済政策決定にレバレッジを維持します。"
+ imf_je_obligations_met_tt: "力強い義務は排出されました。 国は完全な経済社会を維持しています。しかし、融資条件は強制的に残っています。"
+
+ decision_leave_imf: "IMFを離れる"
+ decision_leave_imf_desc: "国際通貨基金から撤退 途上国は、倒産に近づくと、もはやIMF融資サポートの対象になりませんが、債権義務と干渉の自由になります。 この決定は逆にできません。\n\n 注意: アクティブなIMFローンを保持している間は、退場できません。"
+ imf_cannot_leave_while_indebted_tt: "有効な融資が所定の場所にある間IMFを離れることができません"
+
+
+ imf_button_pay_obligations_name: "義務の支払い"
+ imf_button_pay_obligations_desc: "残った大きな力の義務を早めに払って下さい。 コスト500金を削減し、50%未満の債務を必要としますが、すぐに完全な経済社会を回復し、すべての偉大な力との関係を改善します。"
+ imf_pay_obligations_cost_tt: "50%以下および500金未満の規模の債務が必要"
+ imf_obligations_paid_tt: "早期に支払われる義務。 パワーリレーションが向上しました。"
+
+ # imf_events.1 — Loan offer
+ imf_events.1.t: "IMFの介入"
+ imf_events.1.d: "[ROOT.GetCountry.GetName]の反論は危機にあります。 Debtは、市場を緊張させ、信用を慎重にするレベルに達しました。 国際通貨基金は、通知をとり、緊急融資を提供する委任を派遣しました。\n\n 条件は寛大ではありません。 有利率は罰レベルで設定されます。 国は、既存の経済政策に関係なく、無料の取引を採用する必要があります。 そして、資金を上書きする大きな力は、一定の義務が満たされていると期待します。 しかし、代替 - 安全ネットなしで直立した破産に近づいている - 悪化する可能性があります。"
+ imf_events.1.f: "相続性と解体は、同時に利用できません。"
+ imf_events.1.a: "融資を受け入れる — 融資が必要"
+ imf_events.1.b: "個人情報の管理"
+
+ # imf_events.2 — Great power notification
+ imf_events.2.t: "IMF融資拡張"
+ imf_events.2.d: "[SCOPE.sCountry('imf_debtor_scope').GetName] は、IMF 融資パッケージを受け入れています。 資金を下書きする大きな力の一つとして、[ROOT.GetCountry.GetName] 債務者国の義務を負います。 アレンジは、戦略的かつ金融的インプリケーションが付属しています。"
+ imf_events.2.f: "Debtは外交の形態です。"
+ imf_events.2.a: "お役に立てる"
+ imf_events.2.b: "不幸 — 課される用語はあまりにも厳しい"
+
+ # imf_events.3 — Loan complete
+ imf_events.3.t: "IMFプログラム"
+ imf_events.3.d: "IMFローン受入後5年、[ROOT.GetCountry.GetName]はプログラムの義務を果たしました。 利息の支払いが行われました, 条件が保証され, 偉大な電力の債権者満足. この国は、その創意工夫を凝らした経験から生まれます。そして、それが始まった時よりも、その資金をより良い注文で願っています。"
+ imf_events.3.f: "レジャーはバランスが取れています。 レッスンは難しいです。"
+ imf_events.3.a: "お問い合わせ"
+
+ # imf_events.4 — Leaving
+ imf_events.4.t: "IMFからの撤退"
+ imf_events.4.d: "[ROOT.GetCountry.GetName] は国際通貨基金から撤退します。 決定は、会員の費用 - 条件、義務、危機中に経済社会の喪失 - 緊急融資へのアクセスの利点を上回る。\n\n 素晴らしい力は満足しません。 そして、[ROOT.GetCountry.GetName]は、再び破産に近づくべきで、安全網はありません。"
+ imf_events.4.f: "独立性は価格を持っています。 依存関係をします。"
+ imf_events.4.a: "私たちは一人で立っています。"
+
+ # imf_events.5 — Great power notification of leaving
+ imf_events.5.t: "IMFを離れる国"
+ imf_events.5.d: "[SCOPE.sCountry('imf_leaver_scope').GetName] は国際通貨基金から撤退しました。 決定は、国際金融秩序に反するものであり、[SCOPE.sCountry('imf_leaver_scope').GetName] というシグナル 自分の経済コースをグラフ化し、より良く、または悪化させる。"
+ imf_events.5.f: "債務者を1つ減らします。 1つのより少ないレバー。"
+ imf_events.5.a: "インフォメーション"
+
+ # imf_events.10 — War bonds
+ imf_events.10.t: "戦争ボンド"
+ imf_events.10.d: "強靭な緊張と戦争が進行して、財務省は、戦争債券の発行を緊急対策を提案しました。 市民や投資家は、将来の返済のための交換の州にお金を借りるために招待され、戦争の努力に資金を供給するための即時現金注射を提供します。\n\n 債券は機能しますが、債務であり、戦時化合物の債務は迅速に行われます。 供給の消費は軍機械にお金の流れとして上がります。"
+ imf_events.10.f: "国民は、現在を守るために、その未来に対して借りています。"
+ imf_events.10.a: "債券を発行 — 今のお金が必要"
+ imf_events.10.b: "Decline — 私たちは未来を解決しません"
+
+ imf_loan_modifier: "IMF融資条件"
+ imf_loan_modifier_desc: "IMFローンが設置されています。 有利率は罰せられる高く、自由な貿易は必須です。 外国投資が流れていますが、経済社会は禁忌であり、正当な被害を受けています。"
+
+ imf_great_power_obligations: "偉大な電力の義務"
+ imf_great_power_obligations_desc: "融資条件として、IMF がこの国の義務を負う偉大な力。 経済政策の活用は本物です。"
+
+ imf_refused_loan_modifier: "IMF融資拒否"
+ imf_refused_loan_modifier_desc: "国は、IMFの援助を拒否し、単独でその債務を管理します。 その結果、クレジット条件が悪化しています。"
+
+ imf_post_loan_stability: "後プログラムの回復"
+ imf_post_loan_stability_desc: "IMFプログラムが終了いたしました。 政府は、その義務を満たしたとおり、信頼性の尺度が高まっています。そして、国の金融はより良い注文です。"
+
+ imf_left_modifier: "IMFの外"
+ imf_left_modifier_desc: "この国はIMFから撤退しました。 信用義務の自由ですが、国際緊急融資から切断されます。 投資フローの低減"
+
+ war_bonds_modifier: "戦争債券発行"
+ war_bonds_modifier_desc: "緊急戦争の債券は、戦争の努力を金融するために発行されました。 収入は上昇していますが、借金は成長し、消費量は増加しました。"
+
+ war_bonds_refused_modifier: "戦争のボンドはDeclined"
+ war_bonds_refused_modifier_desc: "戦争債券を発行する政府は減少しました。 財政状態は維持されますが、軍隊はピンチを感じます。"
+
+ un_events.6.t: "国連ミッションから受け継がれてきた力"
+ un_events.6.d: "[ROOT.GetCountry.GetAdjective] 部隊は、国連の平和管理ミッションでサービスを完了し、帰国しています。 貢献は、軍事用語で控えめに行われていましたが、その問題が起きたときには、[ROOT.GetCountry.GetName]が提示されました。 一般が戻ってきます。"
+ un_events.6.a: "ウェルカムホーム"
+ 
+ un_peacekeeping_contribution: "国連平和保全の貢献"
+ un_peacekeeping_contribution_desc: "[ROOT.GetCountry.GetName] 国連平和管理の使命に寄与 国際的なコミュニティが注目しています。"
+ 
+  # ── EVENT 300: RESOLUTION PASSED ─────────────────────────────────
+ 
+ un_events.300.t: "UNの決断 渡される"
+ un_events.300.d: "ゼネラル・アセンブリは、世界各地の課題に対応し、特定のトピックに関するグローバルな連携を調整する決議に合意しました。"
+ un_events.300.f: "解像度は国際的なコンセンサスの重量を運ぶ - それは価値があるもののために。"
+ un_events.300.a: "インフォメーション"
+ 
+ UN_RES_DESC_ENVIRONMENT: "#bold 環境保護に関する決議#!\n会員状態は、環境基準と持続可能な資源管理の調整にコミットしています。\n\n#tooltip_separator!\n@green_checkmark! すべての国は、12か月の#bold UNの環境の決断#!修飾語を受け取ります。"
+ UN_RES_DESC_PEACE: "#bold 世界の平和に対する決議#!\n総会は、紛争の平和な解決と、州間紛争の減少に対するコミットメントを再確認する。\n\n#tooltip_separator!\n@green_checkmark! すべての国は、12か月の#bold国連平和決議#!修飾子を受け取ります。"
+ UN_RES_DESC_ECONOMY: "#bold 経済発展に関する決議#!\n会員状態は、経済発展と貿易障壁の低下に関する投資を支持した。\n\n#tooltip_separator!\n@green_checkmark! すべての国は、12か月の#bold国連経済開発の決議#!修飾子を受け取ります。"
+ UN_RES_DESC_TECHNOLOGY: "#bold ユネスコ・テクノロジー・リゾリューション#!\nThe General Assembly は、会員間の技術共有と共同研究のためのフレームワークを確立しています。\n\n#tooltip_separator!\n@green_checkmark! すべての国は、12か月の#bold UNの技術の決断#!修飾語を受け取ります。"
+ 
+ # ── EVENT 301: RESOLUTION FAILED ─────────────────────────────────
+ 
+ un_events.301.t: "UNの決断 渡る失敗"
+ un_events.301.d: "国連総会前の運動は、必要な過半数の確保に失敗しました。 分解能が破棄され、結果なしで指定したセッションが経過しました。\n\nは、対策は実施されません。 スポンサーの委任は、その失望を表明しました。 その他は使用していません。"
+ un_events.301.f: "国連は、国連が最善を尽くします。"
+ un_events.301.a: "保険会社"
+ 
+ # ── EVENT 302: SANCTIONS (TARGET) ────────────────────────────────
+ 
+ un_events.302.t: "[ROOT.GetCountry.GetName] 国連の制裁"
+ un_events.302.d: "国連安全保障評議会は、[ROOT.GetCountry.GetName]に経済の制裁を指摘する決議を通過しました。 解像度は、必要な過半数でサポートされ、すぐに効果をとります。\n\n 取引制限は、現在進行中です。 分裂分離が深まる。 会員状態が予想される — 未対応 — sanctions regime.\n\n に従う 制裁は、セキュリティ評議会がそれらを確認するために招く場合を除き、5年間有効に残ります。"
+ un_events.302.f: "全世界の意見から国を絶縁しない。"
+ un_events.302.a: "この解決を拒絶する"
+ 
+ # ── EVENT 303: CONDEMNATION (TARGET) ─────────────────────────────
+ 
+ un_events.303.t: "[ROOT.GetCountry.GetName] 国連によって非難"
+ un_events.303.d: "国連総会は正式な決議を通過しました [ROOT.GetCountry.GetName]. 非難は、床の議論の後に大多数の投票によって承認されました。\n\n 非難は結合の執行メカニズムを運びませんが、それは国際的なdisapprovalの正式な声明を表し、何年もの間外交のコミュニティで立っている[ROOT.GetCountry.GetAdjective]に影響を与えます。"
+ un_events.303.f: "ワードは武器ではありません。 しかし、彼らはマークを残します."
+ un_events.303.a: "講演は行いません"
+ 
+ # ── EVENT 304: SANCTIONS/CONDEMNATION (OBSERVERS) ────────────────
+ 
+ un_events.304.t: "国連Punitiveの決断は渡しました"
+ un_events.304.d: "国連安全保障評議会は、別の国に対する依存の制裁を通過しました。 彼らは、世界が経済の緊張を彼らに調整するにつれて、重度の罰に直面します。"
+ un_events.304.f: "国際的な検閲の機械類はゆっくり変わりますが、それは変わります。"
+ un_events.304.a: "インフォメーション"
+ 
+ UN_304_DESC_SANCTIONS: "国連安全保障評議会は、[global_var:un_sanction_target.GetName]で経済の制裁を課すことに投票しました。 必要なマージンで渡された解像度。\n\n[global_var:un_sanction_target.GetName] は、取引制限、外交分離、および制裁期間の長さの重要な経済罰に直面します。 会員状態は、制限事項を遵守しることが期待されます。"
+ UN_304_DESC_CONDEMNATION: "国連総会は、大多数の投票で正式に[global_var:un_sanction_target.GetName]を非難しました。 解像度は、国際disapproval.\n\nの公式ステートメントを表しています。 非難は結合の執行を運びませんが、[global_var:un_sanction_target.GetAdjective] は記録に従事し、国際的な地位に影響を及ぼします。"
+ 
+ ###### International Organizations — Full Localization
+ ####  IMPORTANT: This file must be saved with UTF-8 BOM encoding
+ ####  Place in: localization/english/
+
+ ### ═══════════════════════════════════════
+ ### PANEL & TABS
+ ### ═══════════════════════════════════════
+ io_panel_title: "国際機関"
+ io_tab_igos_label: "組織図"
+ io_tab_treaties_label: "条約"
+ io_tab_ngos_label: "NGO"
+
+ ### ═══════════════════════════════════════
+ ### ORGANIZATION TYPES
+ ### ═══════════════════════════════════════
+ io_type_free_trade: "[concept_free_trade_agreement]"
+ io_type_financial: "[concept_financial_agreement]"
+ io_type_military_defense: "[concept_military_defense_agreement]"
+ io_type_cultural_pact: "[concept_cultural_pact]"
+ io_type_cooperative: "[concept_cooperative_agreement]"
+ io_type_unknown: "[concept_international_organization]"
+
+ ### ═══════════════════════════════════════
+ ### ORGANIZATIONS — Names & Descriptions
+ ### ═══════════════════════════════════════
+
+ ### United Nations
+ io_un_name: "国連"
+ io_un_abbreviation: "ログイン"
+ io_un_desc: "[concept_united_nations] は、国際平和と安全保障を維持し、国家間の友好関係を発展させ、社会的進歩を促進するために設立された [concept_cooperative_agreement] です。 他の [concept_intergovernmental_organization]s とは異なり、UN は直接そのメンバーに修飾子を提供しません。 その影響は、外交的解像度、平和維持管理、およびグローバルな取り組みを通じて行われています。"
+ io_un_tooltip: "[concept_united_nations] は、世界の国の [concept_cooperative_agreement] です。\n クリックして詳細を表示します。"
+
+ ### NATO
+ io_nato_name: "北大西洋条約機関"
+ io_nato_abbreviation: "佐藤 仁"
+ io_nato_desc: "[concept_nato] は、1949 年に設立された [concept_military_defense_agreement] で、北米および欧州諸国の集団防衛に拘束されています。 1人のメンバーに対する武装攻撃は、すべての攻撃と見なされます。 NATOは、ジョイントの軍事演習を調整し、機器を標準化し、統合されたコマンド構造を維持します。"
+
+ ### G7
+ io_g7_name: "セブングループ"
+ io_g7_abbreviation: "G7の特長"
+ io_g7_desc: "[concept_g7] は、世界最大の先進の経済を網羅する [concept_financial_agreement] です。 会員は、会計方針、金融政策、経済統治の調整を行います。 会員は、著名な外交の影響と金融の信頼性を告白します。"
+
+ ### OPEC
+ io_opec_name: "石油輸出国の組織"
+ io_opec_abbreviation: "オペック"
+ io_opec_desc: "[concept_opec] は、加盟国間で石油政策を調整する主要な油産国における [concept_free_trade_agreement] です。 OPECは、石油市場の安定化と国民の産生のための公正なリターンを確保することを目指しています。"
+
+ ### EEC
+ io_eec_name: "欧州経済コミュニティ"
+ io_eec_abbreviation: "EECとは"
+ io_eec_desc: "[concept_eec] は、欧州の加盟国間で共通の市場を確立する [concept_free_trade_agreement] です。 貿易障壁を削減し、経済規則を調和させ、加盟国を横断する商品、サービス、資本、労働の自由な動きを促進します。"
+ 
+ ### Arab League
+ io_arab_league_name: "アラブリーグ"
+ io_arab_league_abbreviation: "ガラス"
+ io_arab_league_desc: "[concept_arab_league] は、アラブ圏の国家の [concept_cultural_pact] で、メンバー間の政治、経済、文化、そして社会的協力を促進する。 リーグは、アラブ州間の共通利息と仲介争議の問題に関する方針を調整します。"
+
+ ### IMF
+ io_imf_name: "国際通貨基金"
+ io_imf_abbreviation: "メニュー"
+ io_imf_desc: "[concept_imf] は、国際通貨の協力、為替レートの安定性、秩序な取引アレンジを促進する [concept_financial_agreement] です。 決済困難の残高に直面している加盟国への金融支援や政策アドバイスを提供します。"
+
+ ### ESA
+ io_esa_name: "欧州宇宙庁"
+ io_esa_abbreviation: "ESAについて"
+ io_esa_desc: "[concept_esa] は、外部空間の探索と利用に専念する [concept_cooperative_agreement] です。 会員は、ローンチ車、衛星、および単一のヨーロッパ諸国が単独で達成できない科学的使命を開発するためのプールリソースを述べています。"
+
+ ### ASEAN
+ io_asean_name: "東南アジア諸国連合会"
+ io_asean_abbreviation: "アセアン"
+ io_asean_desc: "[concept_asean] は、経済成長、社会の進歩、文化的発展を促進する東南アジア諸国の [concept_cooperative_agreement] です。 ASEANは、地域の安定性を促進し、アジア太平洋地域における多国間対話の枠組みを提供します。"
+
+ ### WHO
+ io_saarc_name: "南アジア地域協力協会"
+ io_saarc_desc: "[concept_saarc] は、地域協力、開発協調、多国間対話を目的とする南アジア諸国の [concept_cooperative_agreement] です。"
+
+ io_cis_name: "独立系米国連邦"
+ io_cis_desc: "[concept_cis] は、地域協議、経済協調、および実用的な断続的な連携に焦点を当てたポスト・ソビエト州間の [concept_cooperative_agreement] です。"
+
+ io_who_name: "世界保健機関"
+ io_who_abbreviation: "お問い合わせ"
+ io_who_desc: "[concept_who] は [concept_cooperative_agreement] で国際医療政策の指示と調整です。 グローバルな健康問題、規範、基準のリーダーシップを提供し、健康の傾向を監視し、国際的な健康緊急事態に対する応答を調整します。"
+
+ ### ═══════════════════════════════════════
+ ### TREATIES — Names & Descriptions
+ ### ═══════════════════════════════════════
+
+ io_treaty_geneva_name: "ジュネーブ条約"
+ io_treaty_geneva_desc: "ジュネーブ条約と呼ばれる一連の条約は、武装紛争中に人道的治療のための国際法の基準を確立する責任があります。 [concept_international_treaty] への署名者は、戦時における傷ついた兵士、戦争の囚人、そして市民を保護することに同意します。"
+
+ io_treaty_cwc_name: "ケミカルウェポン条約"
+ io_treaty_cwc_desc: "化学兵器条約は、化学兵器の開発、生産、買収、株式の取得、保持、移転、使用を禁止する[concept_international_treaty]です。 署名者は、国際認証の下で既存の株式を破壊することに同意します。"
+
+ io_treaty_npt_name: "非拡散条約"
+ io_treaty_npt_desc: "核兵器の非増殖に関する条約は、核兵器の普及を防止し、解体を促進し、国際保護の下で核エネルギーの平和的な使用を促進することを目的とした[concept_international_treaty]です。"
+
+ io_treaty_bwc_name: "生物的武器条約"
+ io_treaty_bwc_desc: "生物学的武器条約は、生物学的および毒素の武器の開発、生産、および貯蔵を禁止する[concept_international_treaty]です。 武器のカテゴリー全体を禁止する最初の多国間分泌条約でした。"
+
+ io_treaty_cat_name: "トーチャーに対する条約"
+ io_treaty_cat_desc: "トーチャーに対する条約は、すべての形態のトーチャと残酷、インフマン、または治療または罰を劣化させることを禁止する[concept_international_treaty]です。 署名者は、その管轄区域内の侵入を防ぐための効果的な対策を講じます。"
+
+ ### ═══════════════════════════════════════
+ ### NGOs — Names & Descriptions
+ ### ═══════════════════════════════════════
+
+ io_iaea_name: "国際原子エネルギー機関"
+ io_iaea_abbreviation: "イアヤ"
+ io_iaea_desc: "IAEAは、原子力エネルギーの平和な使用を促進し、軍事目的のためにの使用を防止するために働きます。 検査を実施し、技術支援を行い、原子力施設の国際安全基準を設定。"
+
+ io_redcross_name: "国際赤十字"
+ io_redcross_abbreviation: "インフォメーション"
+ io_redcross_desc: "国際赤十字は、武装した紛争と自然災害における人道支援を提供します。 ジュネーブ条約の遵守を監視し、戦争の囚人を訪問し、分離された家族間の通信を容易にします。"
+
+ io_amnesty_name: "アムネスティ・インターナショナル"
+ io_amnesty_abbreviation: "ツイート"
+ io_amnesty_desc: "アムネスティ・インターナショナルは、世界中の人権侵害を調査し、調査します。 政治囚人の解放のためのキャンペーン, 骨格の廃止と死刑, 難民や移住者の保護."
+
+ ### ═══════════════════════════════════════
+ ### BUTTONS
+ ### ═══════════════════════════════════════
+ io_request_join_button: "参加申し込み"
+ io_leave_button: "組織を離れる"
+ io_ban_button: "ログイン"
+ io_unban_button: "ウンバン"
+ io_subsidize_button: "サブシダライズ"
+ io_back_button: "一覧に戻る"
+ io_treaty_sign_button: "サインアップ"
+ io_treaty_withdraw_button: "ログイン"
+
+ ### ═══════════════════════════════════════
+ ### TOOLTIPS & STATUS
+ ### ═══════════════════════════════════════
+ io_ngo_opinion_label: "当社へのご意見"
+ io_ngo_status_active: "アクティブ"
+ io_ngo_status_banned: "禁止事項"
+ io_ngo_status_subsidized: "助成金"
+ io_member_indicator_tt: "あなたの国は、この組織のメンバーです。"
+ io_treaty_signed_tt: "あなたの国は、この条約への署名です。"
+
+ ### ═══════════════════════════════════════
+ ### NOTIFICATIONS
+ ### ═══════════════════════════════════════
+ notification_io_join_request_sent_notification_name: "アプリケーション 提出済み"
+ notification_io_join_request_sent_notification_desc: "組織への参加をお願いしております。"
+ notification_io_join_request_sent_notification_tooltip: "#header $notification_io_join_request_sent_notification_name$#!\n$TOOLTIP_DELIMITER$\n$notification_io_join_request_sent_notification_desc$"
+
+ notification_io_left_org_notification_name: "左組織"
+ notification_io_left_org_notification_desc: "組織から撤退しました。 旧会員との関連性は悪化しています。"
+ notification_io_left_org_notification_tooltip: "#header $notification_io_left_org_notification_name$#!\n$TOOLTIP_DELIMITER$\n$notification_io_left_org_notification_desc$"
+
+ notification_io_accepted_notification_name: "受け入れられる適用"
+ notification_io_accepted_notification_desc: "組織への参加を希望される方は、そのメンバーが承認されました。"
+ notification_io_accepted_notification_tooltip: "#header $notification_io_accepted_notification_name$#!\n$TOOLTIP_DELIMITER$\n$notification_io_accepted_notification_desc$"
+
+ notification_io_rejected_notification_name: "アプリケーション 拒否される"
+ notification_io_rejected_notification_desc: "組織への参加をお断りする。"
+ notification_io_rejected_notification_tooltip: "#header $notification_io_rejected_notification_name$#!\n$TOOLTIP_DELIMITER$\n$notification_io_rejected_notification_desc$"
+
+ ### ═══════════════════════════════════════
+ ### TAB DESCRIPTIONS
+ ### ═══════════════════════════════════════
+ io_igos_tab_desc: "国際機関は、加盟国間の政策を調整する多国間機関です。 組織をクリックすると、詳細、メンバー、利用可能なアクションが表示されます。"
+ io_treaties_tab_desc: "国際条約は、国家間の拘束力のある合意です。 あなたの国は、利点を得るための署名になるか、または外交の立っている費用で撤回することができます。"
+ io_ngos_tab_desc: "[concept_nongovernmental_organization]s は、国境を越えて独立して動作します。 すべての国はデフォルトで提携しています。 あなたはあなたの国の意見に影響を及ぼす、それらを禁止または補助することを選ぶことができます。"
+
+ ### ═══════════════════════════════════════
+ ### GAME CONCEPTS
+ ### ═══════════════════════════════════════
+
+ concept_international_organization: "国際機関"
+ concept_international_organization_desc: "国際機関は、国家の国境を越えて運営する機関で、政策の調整、取引の推進、集団的セキュリティの確保、または加盟国の文化的交流の推進を行っています。 [concept_free_trade_agreement]s、[concept_financial_agreement]s、[concept_military_defense_agreement]s、[concept_cultural_pact]s、[concept_cooperative_agreement]s など、いくつかの形式に渡します。"
+
+ concept_intergovernmental_organization: "組織体制"
+ concept_intergovernmental_organization_desc: "政府間機関は、そのメンバーが独立国家である [concept_international_organization] である。 [concept_nongovernmental_organization]s とは異なり、IGO は正式なメンバーシップを必要とし、著しい外交、経済、または軍事的利益を提供することができます。"
+
+ concept_nongovernmental_organization: "非政府機関"
+ concept_nongovernmental_organization_desc: "非政府機関は、政府によって管理されずに国際的に運営する独立した機関です。 すべての国は、デフォルトでNGOと提携しています。 政府は、NGOの意見やその恩恵に影響を及ぼす、それらを禁止、許容、または補助することを選ぶことができます。"
+
+ concept_international_treaty: "国際条約"
+ concept_international_treaty_desc: "国際条約は、社会国家間の正式な結合協定です。 [concept_intergovernmental_organization]s とは異なり、条約は継続的組織のメンバーシップを必要としません。国は署名者であるか、それとも署名ではありません。 署名者は、他の署名者との関係を撤退しながら、外交上の利益を受け取ります。"
+
+ international_treaty_type:0 "[concept_international_treaty]
+ concept_free_trade_agreement: "自由貿易協定"
+ concept_free_trade_agreement_desc: "無料の取引契約は、加盟国の貿易障壁を削減し、商品や経済成長の交換を促進する [concept_international_organization] です。"
+
+ concept_financial_agreement: "金融協定"
+ concept_financial_agreement_desc: "金融契約は、会員間での金銭的協力、開発資金、財政的安定性に焦点を当てた[concept_international_organization]です。 会員は、+5%のインフルエンサーおよび+1の外交的評判を受け取ります。"
+
+ concept_military_defense_agreement: "軍事防衛協定"
+ concept_military_defense_agreement_desc: "軍事防衛協定は、集団セキュリティの原則に基づいて構築された[concept_international_organization]です。 1人の会員に対する攻撃は、全ての攻撃と見なされます。"
+
+ concept_cultural_pact: "文化的事実"
+ concept_cultural_pact_desc: "文化的事実は、会員間で共有された伝統、言語、文化的交流を促進する[concept_international_organization]です。"
+
+ concept_cooperative_agreement: "協力協定"
+ concept_cooperative_agreement_desc: "協同協定は、幅広い多国間外交に重点を置いた [concept_international_organization] です。 他の組織タイプとは異なり、協同協定は直接修飾子を提供しません。 彼らの影響は、解像度とイニシアチブを通して運動されます。"
+
+ concept_united_nations: "国連"
+ concept_united_nations_desc: "国連は、国際平和、安全保障、協力を維持することに専念し、世界の国の[concept_cooperative_agreement]です。"
+
+ concept_nato: "佐藤 仁"
+ concept_nato_desc: "ノース・アトランティック・トリーティー・オーガナイゼーションは、[concept_military_defense_agreement] 結合の北米と欧州諸国の集団防衛機関です。"
+
+ concept_g7: "G7の特長"
+ concept_g7_desc: "「セブングループ」は、世界最大の先進経済の[concept_financial_agreement]で、会計・金融政策の調整を行っています。"
+
+ concept_opec: "オペック"
+ concept_opec_desc: "石油輸出国の組織は、石油生産国間で石油政策を調整する[concept_free_trade_agreement]です。"
+
+ concept_eec: "EECとは"
+ concept_eec_desc: "欧州経済コミュニティは、欧州の加盟国の間で共通の市場を確立する [concept_free_trade_agreement] です。"
+
+ concept_arab_league: "アラブリーグ"
+ concept_arab_league_desc: "アラブリーグは、アラブ圏の国家間の協力を促進する[concept_cultural_pact]です。"
+
+ concept_imf: "メニュー"
+ concept_imf_desc: "国際通貨基金は、国際通貨の協力と金融の安定性を促進する[concept_financial_agreement]です。"
+
+ concept_esa: "ESAについて"
+ concept_esa_desc: "欧州宇宙庁は、宇宙探査と活用に特化した[concept_cooperative_agreement]です。"
+
+ concept_asean: "アセアン"
+ concept_asean_desc: "東南アジア諸国連合会は、東南アジアにおける経済成長と地域的安定性を促進する[concept_cooperative_agreement]です。"
+
+ concept_saarc: "サアーキ"
+ concept_saarc_desc: "南アジア地域協力協会は、南アジア諸国の地域協力を促進する[concept_cooperative_agreement]です。"
+
+ concept_cis: "シース"
+ concept_cis_desc: "インディペンデント州の Commonwealth は、いくつかのポスト・ソビエト州間の調整のための [concept_cooperative_agreement] です。"
+
+ concept_who: "お問い合わせ"
+ concept_who_desc: "世界保健機関は、[concept_cooperative_agreement]国際医療政策の指示と調整です。"
+
+ concept_iaea: "イアヤ"
+ concept_iaea_desc: "国際原子エネルギー機関は、原子力エネルギーの平和な利用を促進し、原子力の増殖を防ぐ働きを促進する[concept_nongovernmental_organization]です。"
+
+ ### ═══════════════════════════════════════
+ ### MODIFIER LOCALIZATION
+ ### ═══════════════════════════════════════
+ io_financial_agreement_member: "金融契約会員"
+ io_financial_agreement_member_desc: "国際金融契約のメンバーシップは、増加された外交の影響と評判を提供します。"
+
+ io_free_trade_agreement_member: "無料取引契約会員"
+ io_free_trade_agreement_member_desc: "無料の取引契約のメンバーシップは、仲間と取引障壁を減らす。"
+
+ io_military_defense_agreement_member: "軍事防衛事実"
+ io_military_defense_agreement_member_desc: "軍事防衛協定のメンバーシップは、集団的なセキュリティ保証を提供します。"
+
+ io_cultural_pact_member: "文化パクトメンバー"
+ io_cultural_pact_member_desc: "文化的事実のメンバーシップは、共有された伝統と文化的交流を促進する。"
+
+ io_ngo_subsidized_bonus: "NGO 助成"
+ io_ngo_subsidized_bonus_desc: "政府は非政府組織への補助金が国際的地位を向上しました。"
+
+ io_ngo_banned_penalty: "NGO禁止"
+ io_ngo_banned_penalty_desc: "非政府組織の禁止は、国際的地位を損なう。"
+
+ io_treaty_geneva_signatory: "ジュネーブ条約署名"
+ io_treaty_geneva_signatory_desc: "ジュネーブ条約への署名として、人道的な法律へのコミットメントは、国際的敵意を低下させます。"
+
+ io_treaty_cwc_signatory: "CWC署名"
+ io_treaty_cwc_signatory_desc: "化学兵器条約への署名として、当社の外交的評価が強化されます。"
+
+ io_treaty_npt_signatory: "NPT署名"
+ io_treaty_npt_signatory_desc: "非拡散条約への署名として、核抑制へのコミットメントは国際的に認められています。"
+
+ io_treaty_bwc_signatory: "BWC署名"
+ io_treaty_bwc_signatory_desc: "生物学的武器条約への署名として、私たちの外交的評判が強化されます。"
+
+ io_treaty_cat_signatory: "CATの署名"
+ io_treaty_cat_signatory_desc: "条約への署名として、人権へのコミットメントは、私たちの威信を高める。"
+
+ ### ═══════════════════════════════════════
+ ### SIDEBAR BUTTON (Community Framework)
+ ### ═══════════════════════════════════════
+ io_sidebar_button: "io sidebar button ディレクティブ"
+ io_sidebar_button_desc: "Int'l 組織"
+ io_sidebar_button_tooltip: "世界中で動作する [concept_international_organization]s を表示します。"
+
+ ### Additional headers
+ io_modifiers_header: "修飾子"
+ io_signatory_effects_header: "署名効果"
+ io_members_header: "会員リスト"
+ 
+ io_eu_power_bloc_name: "欧州経済コミュニティ"
+ io_eec_join_dissolve_bloc_warning: "EECに参加すると、現在のパワーブロックから削除されます。"
+ io_dissolve_eu_no_members_tt: "EECに残らない国はない。"
+ io_dissolve_eu_effect_tt: "欧州連合は分解され、吸収される地域。"
+ io_cooldown_tt: "最近、この組織に所属または退会しました。 再び行動する前に待つ必要があります。"
+
+ identity_european_community: "ヨーロッパコミュニティ"
+ identity_european_community_desc: "欧州共同体は、加盟国における自由貿易、共通の農業政策、規制調和を推進する欧州諸国の慣習的な連合です。 会員は、標準化された製品規則で共通の市場を共有します。"
+
+ dissolve_european_union: "欧州連合を分解して下さい"
+ dissolve_european_union_desc: "欧州経済コミュニティの残りのメンバーがなければ、欧州連合は目的を失いました。 私たちは、施設を正式に溶解し、残りの領土を吸収することがあります。"
+ 
+  ### Financial Agreement (G7, IMF)
+ io_mod_influence_5pct: "@influence! #p +5%#! インフルエンサー"
+ io_mod_diplo_rep_1: "@diplomatic_reputation! #p +1#! 外交の評判"
+ 
+ ### Military Defense Agreement (NATO)
+ io_mod_military_defense_pact: "@alliance_icon! #v ミューチュアル防衛Pacts#! すべてのメンバーと"
+ io_mod_prestige_2pct: "@prestige! #p +2%#! プレステージ"
+ 
+ io_mod_generated_pollution_250: "発生汚染: #g -250%#!"
+ io_mod_state_infrastructure_5: "状態のインフラ: #r -3%#!"
+ # imf
+ io_mod_imf_aid: "@trade_routes! #v 緊急デビット支援"
+ 
+ ### OPEC
+ io_mod_opec_trade_advantage: "@trade_advantage! #p +25%#! 石油貿易利点"
+ io_mod_opec_throughput: "@building_bg_oil_extraction! #p +25%#! オイル抽出スループット"
+ io_mod_opec_customs: "@trade_routes! #v 石油カルテル調整#! 会員間"
+ 
+ ### EEC / Free Trade
+ io_mod_eec_customs: "@market_access! #v すべてのメンバー間で形成されるCustoms Union#!"
+ io_mod_free_trade_convoys: "市場価格の影響: #g +5%#!"
+ io_mod_free_trade_expedition: ""
+ 
+ ### Cultural Pact (Arab League)
+ io_mod_cultural_tech_spread: "@research! #p +0.10#! 技術スプレッド"
+ io_mod_cultural_revolution_suppress: "@turmoil! #g -5%#! 革命の進歩"
+ 
+ ### Treaties
+ io_mod_infamy_minus5: "@infamy! #g -5%#! Infamyの生成"
+ io_mod_infamy_minus3: "@infamy! #g -3%#! Infamyの生成"
+ io_mod_prestige_3pct: "@prestige! #p +3%#! プレステージ"
+ io_mod_mobe_options_chem: "化学薬品の武器の使用を禁止して下さい"
+ 
+ ### ══════════════════════════════════════════
+ ### MODIFIER DEFINITIONS (localization for modifier tooltips)
+ ### ══════════════════════════════════════════
+ 
+ io_financial_agreement_member: "金融契約会員"
+ io_financial_agreement_member_desc: "国際的な金融契約のメンバーシップは、世界の主要な経済の間で増加された外交の影響と地位を提供します。"
+ 
+ io_free_trade_agreement_member: "無料取引契約会員"
+ io_free_trade_agreement_member_desc: "この国は、仲間と税関組合にパーティーです, 貿易障壁を減らし、経済規制を調和."
+ 
+ io_opec_member: "OPECメンバー"
+ io_opec_member_desc: "石油輸出国の組織のメンバーシップは、調整された価格設定力と強化されたオイル生産能力を提供します。"
+ 
+ io_military_defense_agreement_member: "軍事防衛協定会員"
+ io_military_defense_agreement_member_desc: "この国は、集団的なセキュリティの約束に拘束されています。 任意のメンバーの攻撃は、すべての攻撃とみなされます。"
+ 
+ io_cultural_pact_member: "文化パクトメンバー"
+ io_cultural_pact_member_desc: "会員の国家間の共有された伝統と文化的協力により、新たな技術の普及を加速し、革命的な感情を弱める。"
+ 
+ ### ══════════════════════════════════════════
+ ### NATO DEFENSIVE PACT TREATY NAME
+ ### ══════════════════════════════════════════
+ 
+ io_nato_defensive_pact_name: "NATO相互防衛コミットメント"
+ 
+ ### ══════════════════════════════════════════
+ ### UPDATED ORG DESCRIPTIONS reflecting mechanics
+ ### ══════════════════════════════════════════
+ 
+ io_nato_desc: "[concept_nato] は、集合防衛の北米と欧州諸国を結合する [concept_military_defense_agreement] です。 1人のメンバーに対する武装攻撃は、すべての攻撃と見なされます。 NATO に加わると、既存のメンバーの状態ごとに、相互の防衛策を自動生成します。"
+ 
+ io_opec_desc: "[concept_opec] は、石油生産政策を調整する主要な石油輸出国の組織です。 加盟国は、カルテル価格設定の電力から恩恵を受け、石油輸出に著しい取引優位性を獲得し、調整された投資から抽出スループットを改善しました。"
+ 
+ io_eec_desc: "[concept_eec] は [concept_free_trade_agreement] で、欧州の加盟州間での習慣の連合を確立する。 会員は、標準化された製品規則と調整された取引方針で共通の市場を共有し、境界線を横断する取引の障壁を減らします。"
+ 
+ io_arab_league_desc: "[concept_arab_league] は、政治、経済、文化、社会的協力を促進するアラブ圏諸国の [concept_cultural_pact] です。 シェアド・ヘリテージは、技術やアイデアの交換を加速し、メンバーの状態の連鎖性は内部革命的な圧力を抑制するのに役立ちます。"
+ 
+  ### ══════════════════════════════════════════
+ ### MEMBERSHIP VOTING EVENTS
+ ### ══════════════════════════════════════════
+ 
+ io_events.1.t: "入会申込"
+ io_events.1.d: "[scope:io_applicant.GetName] は、組織への参加を正式に依頼しました。 現会員として、入学の投票をお願いしております。"
+ io_events.1.a: "会員の承認"
+ io_events.1.b: "アプリケーションを注入する"
+ 
+ io_events.2.t: "受け入れられる適用"
+ io_events.2.d: "組織への参加申し込みは、全てのメンバーが審査しています。 異議が起きず、正式に認めた。"
+ io_events.2.a: "ニュース"
+ 
+ io_events.3.t: "アプリケーション 拒否される"
+ io_events.3.d: "組織への参加申請は拒否されました。 少なくとも1人の会員は、入学に対して投票しました。"
+ io_events.3.a: "失望する"
+ 
+ ### ══════════════════════════════════════════
+ ### EU FORMATION EVENTS
+ ### ══════════════════════════════════════════
+ 
+ io_events.10.t: "マastrichtの条約"
+ io_events.10.d: "欧州経済コミュニティのメンバーは、欧州連合(EU)の条約を通じて、その統合を深めることに同意しました。 EECは、欧州連合(EU)に正式に変革され、外国の政策、正義、および金銭的業務における有能性が拡大しました。"
+ io_events.10.a: "ヨーロッパの新しい時代"
+ 
+ io_events.11.t: "欧州連合が生まれた"
+ io_events.11.d: "欧州経済コミュニティは欧州連合に正式に変化しています。 会員の国家として、我が国は、自国統治において前例のない実験の一部となりました。"
+ io_events.11.a: "新しい章が始まります"
+ 
+ ### ══════════════════════════════════════════
+ ### EU ORGANIZATION
+ ### ══════════════════════════════════════════
+ 
+ io_eu_name: "欧州連合"
+ io_eu_abbreviation: "ヨーロッパ"
+ io_eu_desc: "欧州連合(EU)は、[concept_eec] を継承した欧州諸国の政治・経済連合です。 それは、単一の市場を確立し、外国およびセキュリティポリシーを調整し、ブリュッセルの機関を通じて共有ガバナンスを促進する。 会員は、税関ユニオンおよび規制調和の恩恵を受ける。"
+ 
+ ### ══════════════════════════════════════════
+ ### NGO HIGH SUPPORT BONUSES
+ ### ══════════════════════════════════════════
+ 
+ io_ngo_iaea_high_support: "IAEAのパートナーシップ"
+ io_ngo_iaea_high_support_desc: "国際原子エネルギー庁の強力な支援により、先進技術の普及を加速し、技術的専門知識と原子力安全プログラムへのアクセス権を獲得しました。"
+ 
+ io_ngo_redcross_high_support: "レッド・クロス・パートナーシップ"
+ io_ngo_redcross_high_support_desc: "国際赤十字架が国際的に認められ、国家の威信と人道的地位を強化しています。"
+ 
+ io_ngo_amnesty_high_support: "アムネスティ国際パートナーシップ"
+ io_ngo_amnesty_high_support_desc: "Amnesty Internationalの強力なサポートは、私たちの人権の資格情報を強化し、政府の知覚的な正当性を強化しました。"
+ 
+ ### ══════════════════════════════════════════
+ ### GUI CHANGES — BUTTON RENAME
+ ### ══════════════════════════════════════════
+ 
+ io_support_button: "サポート"
+ io_ngo_status_supported: "サポート"
+ 
+ ### ══════════════════════════════════════════
+ ### EEC/EU TRANSITION
+ ### ══════════════════════════════════════════
+ 
+ io_eec_dissolved_notice: "欧州経済コミュニティは、欧州連合(EU)に溶解し置換されています。"
+ 
+ # G7
+ 
+ io_g7_name_4: "4つのグループ"
+ io_g7_name_5: "5つのグループ"
+ io_g7_name_6: "6グループ"
+ io_g7_name_7: "セブングループ"
+ io_g7_name_8: "8グループ"
+ io_g7_name_9: "ナイングループ"
+ io_g7_name_10: "10グループ"
+ 
+ io_treaty_paris_name: "パリ協定"
+ io_treaty_paris_desc: "パリ協定は、気候変動に関する国連枠組み条約における[concept_international_treaty]です。 署名者は、温室効果ガス排出量を削減し、グローバル温度上昇を制限するために、全国的に決定された貢献にコミットします。"
+
+ io_treaty_paris_signatory: "パリ協定署名"
+ io_treaty_paris_signatory_desc: "パリ協定への署名として、国際気候協力へのコミットメントは、私たちの外交的評判と威信を高める。"
+ 
+ ### OPEC
+
+ opec_je_voting_increase_tt: "OPEC は #bold 増加 #! オイル生産のクォータへの提案に投票しています。 投票をキャストするために、下のボタンを使用してください。"
+ opec_je_voting_decrease_tt: "OPEC は #bold 減少#! オイル生産のクォータへの提案に投票しています。 投票をキャストするために、下のボタンを使用してください。"
+ opec_je_voting_embargo_tt: "OPEC は #bold オイル embargo#! を課す提案に投票します。 投票をキャストするために、下のボタンを使用してください。"
+ opec_je_increased_production_tt: "OPEC は #bold の増加#! の生産のクォータに投票しました。 加盟国は、来年の油を生産しています。"
+ opec_je_decreased_production_tt: "OPEC は #bold 減少#! の生産のクォータに投票しました。 加盟国は、来年の油量を制限しています。"
+ opec_je_idle_tt: "アクティブなOPEC投票はありません。 雑誌のエントリーボタンで制作変更やオイルエマルゴの提案ができます。"
+
+ ### ══════════════════════════════════════════
+ ### SCRIPTED BUTTONS
+ ### ══════════════════════════════════════════
+
+ opec_propose_increase_button: "生産の増加を提起する"
+ opec_propose_increase_button_desc: "OPECメンバーがオイル生産量を増やすことを提案する。 合格すると、全員が1年間オイル抽出量を増強。"
+ opec_propose_decrease_button: "農産物の生産の減少"
+ opec_propose_decrease_button_desc: "OPECメンバーは、供給を制限し、価格を上げるためにオイル生産量を減らすことを提案する。 合格すると、全員がオイル抽出を1年間削減します。"
+ opec_vote_yay_button: "お気に入り"
+ opec_vote_yay_button_desc: "現在のOPEC提案のサポートで投票をしましょう。"
+ opec_vote_nay_button: "投票する"
+ opec_vote_nay_button_desc: "現在のOPEC提案に対して投票を行います。"
+
+ opec_no_vote_active_tt: "OPEC 投票は現在進行中です。"
+ opec_not_already_embargoed_tt: "現在、OPECオイルエンバーゴでは使用していません。"
+ opec_cannot_embargo_member_tt: "仲間のOPECメンバーにオイルエンバーゴを課すことはできません。"
+
+ je_opec:0 "オペック"
+ je_opec_reason:0 "石油輸出国の組織は、石油生産国間で石油政策を調整する[concept_international_organization]です。"
+ ### ══════════════════════════════════════════
+ ### EVENTS
+ ### ══════════════════════════════════════════
+
+ opec_events.1.t: "OPEC 投票開始"
+ opec_events.1.d: "加盟国は、石油輸出国の組織内で投票を求めています。 すべてのメンバーは、OPECジャーナルエントリを通じて投票をキャストするために招待されます。"
+ opec_events.1.a: "私たちは、私たちの立場を考慮しなければなりません"
+
+ opec_events.10.t: "OPEC ボーテ・コンクルード"
+ opec_events.10.d: "OPEC投票が終了し、結果が高まっています。"
+
+ opec_events.11.t: "OPECが生産を増加させる"
+ opec_events.11.d: "OPEC加盟国は、石油生産量を増やすために投票しました。 翌年、すべての加盟国は石油輸出のための高い抽出のスループットおよび改善された貿易の位置から寄与します。"
+ opec_events.11.a: "タップが開きます"
+
+ opec_events.12.t: "OPECカット生産"
+ opec_events.12.d: "OPECのメンバーはオイルの生産のクォータを切るために投票しました。 来年は、全ての加盟国は、グローバル供給とサポート価格の緊密化のために、油の出力を制限します。"
+ opec_events.12.a: "お問い合わせ"
+
+ opec_events.13.t: "OPEC オイル エマルゴ イムポーズ"
+ opec_events.13.d: "石油輸出国の組織は、石油エバーゴを課すために投票しました。 OPEC加盟国は、標的国の石油輸出を集約的に制限し、経済を厳しく破壊します。"
+ opec_events.13.a: "グローバルな取引を再構築する"
+
+ ### ══════════════════════════════════════════
+ ### DIPLOMATIC ACTION
+ ### ══════════════════════════════════════════
+
+ propose_opec_embargo: "プロポーズOPECオイルエンバーゴ"
+ propose_opec_embargo_desc: "OPECは、石油輸出を制限し、エネルギー供給をクリッピングし、この国に集合油エバーゴを課すことを約束します。 重要な親友を持っているターゲットが必要です。"
+ propose_opec_embargo_action_name: "プロポーズオイルエンバーゴ"
+ 
+ propose_opec_embargo_propose_name:0 "OPEC エンバーゴ"
+ propose_opec_embargo_pact_desc: "OPECは、油のエマルゴを私たちに対して課しました!"
+ propose_opec_embargo_notification_name: "OPEC は、私たちに対してエバーゴを偽装して投票しています!"
+ propose_opec_embargo_notification_desc: "OPEC は、油のエバーゴを私たちに対して浸透させるかどうかを現在投票しています。 彼らが好んで投票した場合, 彼らは大幅に私たちと取引油の量をカットします."
+ 
+ ### ══════════════════════════════════════════
+ ### MODIFIERS
+ ### ══════════════════════════════════════════
+
+ opec_increased_production: "OPECの生産の増加"
+ opec_increased_production_desc: "OPECは、生産量を増やすために投票しました。 加盟国は、より多くの油を抽出し、高められた貿易の位置を楽しんでいます。"
+
+ opec_decreased_production: "OPEC 生産の切口"
+ opec_decreased_production_desc: "OPEC は生産のクォータを切るために投票しました。 会員の国は、グローバルな価格をサポートするオイルの出力を制限しています。"
+
+ opec_oil_embargo_target: "OPECオイルエンバーゴ"
+ opec_oil_embargo_target_desc: "この国はOPECオイルのエンバーゴの下にあります。 石油の輸入は厳しく制限され、経済および国際的な地位を損なう。"
+
+ ### ══════════════════════════════════════════
+ ### NOTIFICATIONS
+ ### ══════════════════════════════════════════
+
+ notification_opec_embargo_imposed_name: "OPECオイルエンバーゴ"
+ notification_opec_embargo_imposed_desc: "OPECは、国の油エマルゴを課しました。"
+ notification_opec_embargo_imposed_tooltip: "#header $notification_opec_embargo_imposed_name$#!\n$TOOLTIP_DELIMITER$\n$notification_opec_embargo_imposed_desc$"
+
+ ### ══════════════════════════════════════════
+ ### AMNESTY INTERNATIONAL
+ ### ══════════════════════════════════════════
+
+ ngo_amnesty_opinion_minus_15_tt: "#negative Amnesty International 意見: -15#!"
+ ngo_amnesty_opinion_minus_10_tt: "#negative Amnesty International 意見:-10#!"
+ ngo_amnesty_opinion_minus_5_tt: "#negative Amnesty International 意見:-5#!"
+ ngo_amnesty_opinion_plus_5_tt: "#positive アムネスティ国際意見: +5#!"
+ ngo_amnesty_opinion_plus_10_tt: "#positive アムネスティ国際意見: +10#!"
+
+ ### ══════════════════════════════════════════
+ ### RED CROSS
+ ### ══════════════════════════════════════════
+
+ ngo_redcross_opinion_minus_20_tt: "#negative 赤い十字の意見:-20#!"
+ ngo_redcross_opinion_minus_15_tt: "#negative 赤い十字の意見: -15#!"
+ ngo_redcross_opinion_minus_5_tt: "#negative 赤い十字の意見:-5#!"
+ ngo_redcross_opinion_plus_5_tt: "#positive 赤い十字の意見: +5#!"
+ ngo_redcross_opinion_plus_10_tt: "#positive 赤い十字の意見: +10#!"
+
+ ### ══════════════════════════════════════════
+ ### IAEA
+ ### ══════════════════════════════════════════
+
+ ngo_iaea_opinion_minus_25_tt: "#negative IAEA 意見: -25#!"
+ ngo_iaea_opinion_minus_20_tt: "#negative IAEA 意見:-20#!"
+ ngo_iaea_opinion_plus_10_tt: "#positive IAEA 意見: +10#!"
+ 
+  ### ══════════════════════════════════════════
+ ### AMNESTY INTERNATIONAL
+ ### ══════════════════════════════════════════
+
+ ngo_events.1.t: "アムネスティ・インターナショナルがポリシーを非難"
+ ngo_events.1.d: "アムネスティ・インターナショナルは、国家の人権記録に関する有害な報告を公表し、現在の法律を根本的な自由の体系的な違反と引用しています。 各国のコミュニティが気づいて、政府は、これらの懸念に対処するための取り付け圧力に直面しています。"
+ ngo_events.1.a: "彼らの批判は何も変更しません"
+ ngo_events.1.b: "懸念事項を調べる"
+
+ ngo_events.2.t: "Amnesty International Praisesの改革"
+ ngo_events.2.d: "最近の立法改革は、人類の人権への大きな一歩としてアムネスティ国際によって認められています。 彼らの年次報告書は、私たちの進歩を強調し、私たちの国の国際的な評判を高める。"
+ ngo_events.2.a: "私たちは、私たちの進歩を誇りに思っています"
+
+ ngo_events.3.t: "市民の不快な報告"
+ ngo_events.3.d: "アムネスティ・インターナショナルは、我が国を追い越す広範囲にわたる市民の秘密を文書化した特別報告を発表しました。 政府は、抑圧ではなく、有意義な改革を通じて、不満の根本原因に対処するために呼びます。"
+ ngo_events.3.a: "改革を考える"
+ ngo_events.3.b: "当社の内部業務は、その心配ではありません"
+
+ ### ══════════════════════════════════════════
+ ### RED CROSS
+ ### ══════════════════════════════════════════
+
+ ngo_events.10.t: "赤十字は人道援助を提供します"
+ ngo_events.10.d: "国際赤十字社は、人道的な労働者を雇用し、進行中の紛争の影響を受ける市民を支援するために提供しました。 彼らの援助チームは、私たちの戦績地域で人口を分散させるために医療、避難所、食料を提供する準備ができています。"
+ ngo_events.10.a: "お問い合わせ"
+ ngo_events.10.b: "戦場での外国人労働者は許可できません"
+
+ ngo_events.11.t: "赤い十字架は、戦争の行動を批判"
+ ngo_events.11.d: "国際赤十字架は、武力に対する深い懸念を表明する公告を発しました。 紛争領域における広範な市民の不快さとインフラ破壊のレポートは、国際的に注目されています。 ジュネーブ条約を尊重するために、すべての関係者を対象としています。"
+ ngo_events.11.a: "弊社では、投資家の皆様のご協力を賜りますようお願い申し上げます。"
+ ngo_events.11.b: "これらの疑惑を否定する"
+
+ ngo_events.12.t: "赤十字は危機救済を約束します"
+ ngo_events.12.d: "国際赤十字は、開戦の欠如にもかかわらず、私たちの国境の中で成長する人道危機を識別しました。 広範囲にわたる市民の不快さと経済の混乱は、国際援助を必要とする条件を作成しました。 被災した人口に対する救済活動の調整を図っています。"
+ ngo_events.12.a: "お問い合わせ"
+ ngo_events.12.b: "これを自分で処理できる"
+
+ ### ══════════════════════════════════════════
+ ### IAEA
+ ### ══════════════════════════════════════════
+
+ ngo_events.20.t: "IAEA 原子力検査の依頼"
+ ngo_events.20.d: "国際原子エネルギー機関は、核施設へのアクセスを総合安全・コンプライアンス検査に正式に要請しました。 非増殖条約の非署名として、核プログラムは高度化した国際スカルチニを誘致しました。 IAEAは検査がルーチンであることを保証しますが、拒否は国際コミュニティに明確な信号を送ります。"
+ ngo_events.20.a: "工場見学・検査"
+ ngo_events.20.b: "私たちの核プログラムは、社会的な問題です"
+
+ ngo_events.21.t: "IAEAは、原子力安全記録を表彰"
+ ngo_events.21.d: "国際原子エネルギー機関は、原子力プログラムの見直しに続き、安全基準と非増殖コンプライアンスへのコミットメントを正式に約束しました。 NPTの遵守と国際検査官との協力により、世界核地域における地位を強化しています。"
+ ngo_events.21.a: "私たちは、平和な原子力エネルギーにコミットしています"
+
+ ngo_events.22.t: "IAEAは、拡散の懸念を上げます"
+ ngo_events.22.d: "国際原子エネルギー機関は、原子力プログラムの方向にアラームを上げました。 IAEAは、NPT会員なしで、引き続き審査官と連携し、可能な武器開発に懸念を表明した正式な声明を発表しました。 国際地域は密接に見守っています。"
+ ngo_events.22.a: "対話が開かれる"
+ ngo_events.22.b: "核技術にふさわしい行動を主張する"
+
+ ### ══════════════════════════════════════════
+ ### MODIFIERS
+ ### ══════════════════════════════════════════
+
+ ngo_amnesty_scrutiny: "アンダー アムネスティ Scrutiny"
+ ngo_amnesty_scrutiny_desc: "アムネスティ・インターナショナルは、最近の批判に従った人権記録を密接に監視しています。 政府の正当性は圧力下にあります。"
+
+ ngo_amnesty_reform_pressure: "圧力を変形させます"
+ ngo_amnesty_reform_pressure_desc: "市民の不規則に対するアンネスティ・インターナショナルの報告は、改革のための国内および国際的な圧力を作成しましたが、革命的な感情を弱めるのを助けました。"
+
+ ngo_redcross_aid: "赤十字人道援助"
+ ngo_redcross_aid_desc: "レッド・クロス・ワーカーは、国際的評判を高めることで死亡率を削減し、紛争地帯の市民に人道支援をしています。"
+
+ ngo_redcross_cooperation: "赤十字協力"
+ ngo_redcross_cooperation_desc: "戦時行動に関するレッド・クロスとの協力により、国際的地位を向上し、軍の行動によって発生する不断を削減しました。"
+
+ ngo_redcross_relief: "赤十字危機救済"
+ ngo_redcross_relief_desc: "レッドクロスは、市民危機のこの期間中に人道支援を提供し、影響を受けた人口の安定化を支援しています。"
+
+ ngo_iaea_inspectors: "IAEAインスペクタープレゼント"
+ ngo_iaea_inspectors_desc: "IAEAの検査官は、原子力施設内での運用、技術的専門知識と安全知識を共有しています。 彼らの存在は技術移転を加速し、私たちの外交的な評判を高めます。"

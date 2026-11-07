@@ -1,0 +1,61 @@
+﻿objective_the_west = {
+	enabled_background = "gfx/interface/icons/objectives/the_west_illu.dds"
+	icon = "gfx/interface/icons/objectives/the_west.dds"
+	
+	recommended_tags = { USA GBR FRA }
+	
+	objective_subgoals = {
+		sg_west_open_trade
+		sg_west_alliances
+		sg_west_human_rights
+		sg_west_education
+		sg_west_gdp
+		sg_west_endgame
+	}
+	
+	final_subgoal = sg_west_endgame
+	available_for_all_countries = no
+	on_start = {
+		# start_tutorial_lesson = { tutorial_lesson = economic_dominance }
+	}
+}
+objective_the_east = {
+	enabled_background = "gfx/interface/icons/objectives/the_east_illu.dds"
+	icon = "gfx/interface/icons/objectives/the_east.dds"
+	
+	recommended_tags = { RUS PRC IRQ }
+	available_for_all_countries = no
+	objective_subgoals = {
+		sg_east_state_industry
+		sg_east_great_power
+		sg_east_sphere
+		sg_east_currency
+		sg_east_endgame
+	}
+
+	final_subgoal = sg_east_endgame
+	
+	on_start = {
+		# start_tutorial_lesson = { tutorial_lesson = economic_dominance }
+	}
+}
+
+objective_rising_powers = {
+	enabled_background = "gfx/interface/icons/objectives/na_illu.dds"
+	icon = "gfx/interface/icons/objectives/na.dds"
+	
+	recommended_tags = { BHT BRZ VNM }
+	objective_subgoals = {
+		sg_rising_economy
+		sg_rising_sovereignty
+		sg_rising_military
+		sg_rising_prestige
+		sg_rising_endgame
+	}
+
+	final_subgoal = sg_rising_endgame
+	
+	on_start = {
+		# start_tutorial_lesson = { tutorial_lesson = economic_dominance }
+	}
+}

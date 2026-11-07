@@ -1,0 +1,288 @@
+﻿l_japanese:
+
+ je_national_development: "国立開発パス"
+ je_national_development_reason: "それぞれの国は、そのエネルギーに焦点を当てる場所を選択する必要があります。 国家開発計画は、資源、政策、政治的を10年間単一の戦略的ビジョンの背後にある。 賢く選択してください。プログラムが終了するまでは、選択は反転できません。"
+
+ je_foreign_investment: "外国投資"
+ je_foreign_investment_reason: "優れた電力から資本を引き出すことで、国内の資源が許すものを超えて開発を加速することができます。 外国の投資協定は、国を外部企業に開放します。"
+ has_foreign_investment_or_trade_agreement_with_west_tt:0 "米国、イギリス、フランスと外国投資と貿易協定を締結"
+ 
+ ndp_status_industrial_tt: "産業拡張が進んでいます。 製造・重工業の拠点を築き上げるための資源を直進しています。"
+ ndp_status_military_tt: "軍事的拡張は進行中です。 国は、その武力、教義、防衛産業に投資しています。"
+ ndp_status_resource_tt: "資源経済発展が進んでいます。 農業や原材料の抽出に力を入れています。"
+ ndp_status_service_tt: "サービス経済発展が進んでいます。 国は、金融セクター、教育、国家能力を築き上げています。"
+ ndp_status_none_tt: "現時点で開発パスはありません。 10年間の国家開発プログラムを開始するためのパスを選択します。"
+
+ fi_status_seeking_tt: "国は、大きな力で外国投資協定を求めています。 このジャーナルエントリを完了するために投資協定を署名."
+ fi_status_secured_tt: "外国投資協定が確保されています。 外国資本が流れています。"
+
+ ndp_button_industrial_name: "産業拡張"
+ ndp_button_industrial_desc: "製造業の基盤を造るのに国民の資源を集中して下さい。 重工業、軽工業、建設をブースト。 年2:重工業対光製造における副産物。"
+
+ ndp_button_military_name: "軍事拡張"
+ ndp_button_military_desc: "武力を優先します。 軍隊および海軍、軍の研究および兵器の生産を後押しして下さい。 年2:土地Doctrineと海軍のビルドアップで副合唱団。"
+
+ ndp_button_resource_name: "資源経済"
+ ndp_button_resource_desc: "土地の周りの経済を築く 農業および抽出産業を後押しします。 年間2:農業と原材料抽出物に副産物。"
+
+ ndp_button_service_name: "サービス経済"
+ ndp_button_service_desc: "国家能力、教育、および金融分野を開発する。 官僚主義、研究速度、投資をブーストします。 年2:金融セクター対教育と官僚主義における副調停。"
+
+ ndp_button_abandon_name: "アバンドン・パス"
+ ndp_button_abandon_desc: "現在の開発プログラムを放棄します。 すべてのアクティブなパス修飾子が削除され、プレステージと正当なペナルティは2年間適用されます。 新しいパスを選ぶことができます。"
+
+ fi_button_reject_name: "外国投資を拒絶する"
+ fi_button_reject_desc: "外国資本への扉を閉じます。 これは、ジャーナルエントリを終了し、長期投資罰を適用します, しかし、経済独立を維持し、権限を後押しします."
+
+ # Tooltip keys
+ ndp_no_path_active_tt: "開発経路が現在アクティブでない"
+ ndp_abandon_cost_tt: "パスを放棄すると、2年間、正当なペナルティが適用されます"
+
+ national_development_progress_bar: "開発進捗"
+ national_development_progress_bar_desc: "開発進捗"
+ ndp_bar_active_path_tt: "アクティブ開発パス"
+ ndp_bar_industrial_mines_tt: "重工業の基盤は確立しました"
+ ndp_bar_industrial_factories_tt: "製造部門の成長"
+ ndp_bar_military_army_tt: "大立軍"
+ ndp_bar_military_conscription_tt: "質量条件の制定"
+ ndp_bar_resource_farms_tt: "農業の出力強い"
+ ndp_bar_resource_extraction_tt: "抽出の企業は確立しました"
+ ndp_bar_service_literacy_tt: "高リテラシーがサービス開発を加速"
+ ndp_bar_service_university_tt: "大学インフラの現状"
+ ndp_bar_turmoil_tt: "高いターモイル遅い開発"
+ ndp_bar_at_war_tt: "戦争は開発プログラムを中断しています"
+
+ # ==========================================
+ # OPENING EVENT — ndp_events.0
+ # ==========================================
+
+ ndp_events.0.t: "国立開発計画開始"
+ ndp_events.0.d_industrial: "[ROOT.GetCountry.GetName] の政府は産業拡張の10年に託しました。 工場、鉱山、そしてそれらを接続するインフラに投資が流れます。 計画は野心的であり、かなりの障害です。しかし、ビジョンは明確です: [ROOT.GetCountry.GetName] を世界中に定義する生産性の能力を構築する。"
+ ndp_events.0.d_military: "[ROOT.GetCountry.GetName] の政府は軍の拡張の10年に託しました。 バラクは、訓練を受けた役員、および教義が改質される。 モチベーションが防御力、防御力、またはアンビションであるかどうか、世界へのメッセージは紛れもない:[ROOT.GetCountry.GetName]は真剣に受け止めようとする。"
+ ndp_events.0.d_resource: "[ROOT.GetCountry.GetName] の政府は、資源経済発展の10年を約束しました。 土地自体 — その土壌と鉱物 — 成長のエンジンになります。 [ROOT.GetCountry.GetName] が既に持っているもの、それ以上を作る予定のベットです。"
+ ndp_events.0.d_service: "[ROOT.GetCountry.GetName] の政府は、サービス経済発展の10年を約束しました。 教育機関、銀行、政府機関の省庁は、すべての投資が表示されます。 wager は、スマートで成長した国が最終的により強い国であることです。"
+ ndp_events.0.f: "10年。 1つの方向。"
+ ndp_events.0.a: "プログラムが始まります"
+
+ # ==========================================
+ # INDUSTRIAL PATH EVENTS
+ # ==========================================
+
+ ndp_events.1.t: "産業質問"
+ ndp_events.1.d: "開発プログラムに2年、産業投資の方向を明確にする必要があります。 国は一度にすべてを構築することはできません。 プランナーとインダストリアルリストが分けられます: 重工業のいくつかの提唱された集中リソース - 鉄、鋼、石炭 - 現代の電力のsinews。 軽い製造業がより速いリターンおよびより広い雇用を提供する他のargue。"
+ ndp_events.1.f: "鋼鉄か布 — 国は選ぶ必要があります。"
+ ndp_events.1.a: "重工業 — 近代的な力の基盤を築く"
+ ndp_events.1.b: "光製造 — 雇用と消費財を優先"
+
+ ndp_events.2.t: "投資ドライブ"
+ ndp_events.2.d: "産業用プログラムが勢いを増していますが、建設のペースは首都から来る場所によって異なります。 政府のプランナーは直接国家投資のために押し上げています。市場不確実性のない優先セクターへの資金を誘導します。 競争と利益のインセンティブが局所よりも優れた結果をもたらすことを民間産業家は反対します。"
+ ndp_events.2.f: "市場や計画 - 議論は、業界そのものとして古くなっています。"
+ ndp_events.2.a: "政府が構築する州間投資"
+ ndp_events.2.b: "プライベート企業 — 投資家と一歩を踏み出す"
+
+ ndp_events.3.t: "労働問題"
+ ndp_events.3.d: "工場が稼働し、鉱山が生産していますが、可能にする労働者はもっと要求されます。 開発プログラムは、ジョブを作成しましたが、期待も生まれました。 工場の所有者は、より長い時間と少ない制限を望んでいます。 ラボオーガナイザーは反対を望む。 政府は、それが立つこの引数のどの側面を決定しなければなりません。"
+ ndp_events.3.f: "エンジンは石炭で走る。そしてそれを掘る人々。"
+ ndp_events.3.a: "プッシュ生産性 — ワークフォースから最大出力を抽出"
+ ndp_events.3.b: "労働者に投資 — より良い条件は、安定的、持続的な成長を意味します"
+
+ ndp_events.4.t: "業界10年"
+ ndp_events.4.d: "工業開発10年が完成しました。 建設された工場、建設された鉄道、鉱山が拡大し、その結果は現実的で見えます。 [ROOT.GetCountry.GetName] は、プログラムが始まったときよりも強力な生産性ベースで次の10年に入る。 質問は、次に来るものです。"
+ ndp_events.4.f: "フォージは、その仕事をしました。"
+ ndp_events.4.a: "次のコースをチャートに"
+ ten_year_programme_concluded:0 "10年プログラム終了"
+ # ==========================================
+ # MILITARY PATH EVENTS
+ # ==========================================
+
+ ndp_events.11.t: "Doctrineの質問"
+ ndp_events.11.d: "軍事拡張の2年は、より兵士、より多くの武器、およびより多くのオプションを生成しましたが、Doctrineの基本的な質問は未解決のままです。 一般スタッフを分けます。 土地の電力に焦点を合わせるための1つのファクションプレス:質量兵器、防御深さ、および大陸の優位性。 海軍の拡張がより戦略的な柔軟性と、[ROOT.GetCountry.GetName] の境界を超えて電力をプロジェクトする能力を提供する別の議論。"
+ ndp_events.11.f: "剣や艦隊は、それぞれ異なる力のビジョンを意味します。"
+ ndp_events.11.a: "土地の教義 — 隣人なしで挑戦できる軍隊を造る"
+ ndp_events.11.b: "Naval doctrine — 地平線を越えてプロジェクト力"
+
+ ndp_events.12.t: "調達の議論"
+ ndp_events.12.d: "軍は近代的な装置を必要としますが、どこから来るべきですか? 国内の腕の生産は軍の強さと産業容量を造るが、成熟する時間および投資を取ります。 外資系調達は、財務コストで高速な結果が得られ、外資系サプライヤーの依存性を生み出します。"
+ ndp_events.12.f: "最高の武器は、実際にフィールドにできるものです。"
+ ndp_events.12.a: "国内の腕の企業を造る — 自己成功への投資"
+ ndp_events.12.b: "外国購入 — 即時機能のコストを受け入れます"
+
+ ndp_events.13.t: "軍の魂"
+ ndp_events.13.d: "軍事プログラムへの8年、ハードウェアは配置されていますが、ハードウェアは戦争を勝ち取ることはありません。 今の質問は、力の戦いの精神です。 国民主義の道徳的なキャンペーンのための一部の役員は、すべての兵士の戦いを困難にするパトリオチズムと全国の名誉へのアピール。 役員の専門性に投資する他の提唱 - リーダーシップ、戦術、および機関の知識。"
+ ndp_events.13.f: "軍隊は、その機器と戦う - その魂。"
+ ndp_events.13.a: "国民道徳キャンペーンを開始 — 格闘精神をかき混ぜる"
+ ndp_events.13.b: "役員を専門とする — リーダーシップへの投資"
+
+ ndp_events.14.t: "軍事拡張の10年"
+ ndp_events.14.d: "軍事開発の10年が完成しました。 [ROOT.GetCountry.GetName] の武力は、プログラムが始まったときよりも大きく、より良く装備され、より可能である。 彼らがその能力で何をするか - 投資がコストの価値だったかどうか - フォローする決定によって決定されます。"
+ ndp_events.14.f: "刀は造られた。 今、それはその目的を見つける必要があります。"
+ ndp_events.14.a: "次のコースをチャートに"
+
+ # ==========================================
+ # RESOURCE ECONOMY PATH EVENTS
+ # ==========================================
+
+ ndp_events.21.t: "土地の賞金"
+ ndp_events.21.d: "リソースプログラムに2年間、基本的選択をしなければなりません。リソースエコノミーの種類は、[ROOT.GetCountry.GetName]ビルド? 農業 — 成長している人口を養い、輸出作物を生成 — 安定性と広い雇用を提供します。 原材料抽出 — マイニング、ロギング、穴あけ — より迅速な収益を提供しますが、より揮発性であり、コモディティ価格のスイングにさらされた経済を残します。"
+ ndp_events.21.f: "地球はそれが与えるものを与えます。 質問は、あなたがそれを尋ねるものです。"
+ ndp_events.21.a: "農業 — パンバスケットの構築"
+ ndp_events.21.b: "抽出 — 下の富を掘り下げる"
+
+ ndp_events.22.t: "土地政策"
+ ndp_events.22.d: "資源プログラムが中心地の質問に直面している5年。 生産に持ち込まれる可能性のある未請求または未使用の領土がありますが、インフラ、定住者、および法的枠組みへの投資が必要です。 代替は、既存の土地で生産を強化し、既に働いているものからより多くの出力を絞ることです。"
+ ndp_events.22.f: "新しい土地や深い根 — 農家の永遠のジレンマ。"
+ ndp_events.22.a: "新しい土地に拡大 - フロンティアを開く"
+ ndp_events.22.b: "既存の生産を強化 — 私たちが持っているものからもっと入手"
+
+ ndp_events.23.t: "輸出質問"
+ ndp_events.23.d: "プログラムに8年、リソース部門が作成されます。しかし、その利点は、どこに行くかによって異なります。 外国市場との輸出協定を把握すると、売上高が拡大し、[ROOT.GetCountry.GetName]をグローバル取引ネットワークに統合するが、外部の需要に依存する。 国内供給の優先化は、価格の衝撃から国を絶縁し、食品のセキュリティを強化しますが、輸出の利益を占有します。"
+ ndp_events.23.f: "世界をフィードするか、国を最初に送ります。"
+ ndp_events.23.a: "輸出市場を見る — 海外の剰余金を売る"
+ ndp_events.23.b: "国内供給の優先順位付け — 利益を上回る食品安全"
+
+ ndp_events.24.t: "資源開発の10年"
+ ndp_events.24.d: "資源経済発展10年が経過しました。 [ROOT.GetCountry.GetName]の農場、鉱山および抽出の場所 プログラムが始まったとき、彼らがやった以上に生成します。 利益がかなり共有されているかどうか - 抽出が持続可能なかどうか - 次の10年が答える質問です。"
+ ndp_events.24.f: "土地の収量、土地は記憶します。"
+ ndp_events.24.a: "次のコースをチャートに"
+
+ # ==========================================
+ # SERVICE ECONOMY PATH EVENTS
+ # ==========================================
+
+ ndp_events.31.t: "サービスの質問"
+ ndp_events.31.d: "サービスプログラムに2年間、方向を明確にする必要があります。 サービス経済の2つのビジョンは優先的に競争します:金融セクター — 銀行、保険、取引 — 富を迅速に生成し、投資、または教育と官僚主義を惹きつける — 学校、大学、および州の機関 — 人財とガバナンス能力を構築し、他のすべてのものを上回っています。"
+ ndp_events.31.f: "レジャーやライブラリ — どちらも近代の土台です。"
+ ndp_events.31.a: "金融業界 — 銀行や取引家を造る"
+ ndp_events.31.b: "教育と官僚主義 — 人財を築く"
+
+ ndp_events.32.t: "才能の質問"
+ ndp_events.32.d: "5年で、サービス経済は成長していますが、その成長を支えるためには、熟練した人材が必要です。 1つの選択肢は、外国の才能を引き付けることです: エンジニア、フィンガーサイザー、および海外の専門家にドアを開け、利益の一部が外部者に流れてくることを受け入れます。 他は、国内教育に大きく投資することです - 遅く、しかし、滞在する能力を構築する。"
+ ndp_events.32.f: "価値ある場所に行く最高の心。"
+ ndp_events.32.a: "外国の才能を引き寄せる — ドアを開ける"
+ ndp_events.32.b: "国内教育への投資 — 内から構築"
+
+ ndp_events.33.t: "組織改革"
+ ndp_events.33.d: "8年で、サービス経済は成熟する機関を必要とします。 2つのパスは、規制を減らし、赤いテープを切断し、市場を自由に操作させるというリベラリゼーション(リベラライゼーション)を提示します。または、組織の強化(法、財産権、政府自体の信頼性)に投資します。 両方とも成長を生むことができますが、それらは異なった種類の国を作り出します。"
+ ndp_events.33.f: "プレイヤーと同じくらいゲームのルール。"
+ ndp_events.33.a: "市場を解放する — 規制とステップバック"
+ ndp_events.33.b: "機関を強化する — 法律に基づく投資"
+
+ ndp_events.34.t: "サービス開発の10年"
+ ndp_events.34.d: "10年間のサービス経済発展が完了しました。 銀行は、より洗練された、学校は、プログラムが始まったときよりも、政府がより有益です。 これは、投資を正当化する広範な繁栄の種に翻訳するかどうかは、長期間の質問です。次の10年が答えるようになります。"
+ ndp_events.34.f: "マインドのインフラは、他人を追い出します。"
+ ndp_events.34.a: "次のコースをチャートに"
+
+ # ==========================================
+ # MODIFIERS
+ # ==========================================
+
+ ndp_modifier_industrial: "産業開発の道"
+ ndp_modifier_industrial_desc: "国家資源は、産業の拡大に向けられています。 建設率がアップし、基板全体でスループットを製造しています。"
+
+ ndp_modifier_military: "軍の拡張の道"
+ ndp_modifier_military_desc: "国は軍事開発を優先しています。 研究は、軍事技術に焦点を合わせ、武装した力が構築されています。"
+
+ ndp_modifier_resource: "資源経済パス"
+ ndp_modifier_resource_desc: "農業・抽出産業に向け、全国の資源が向けられています。 土地は仕事に置かれています。"
+
+ ndp_modifier_service: "サービスエコノミーパス"
+ ndp_modifier_service_desc: "国家資源は、教育、官僚、金融開発に向けられています。 人財は成長のエンジンです。"
+
+ ndp_modifier_industrial_heavy: "重工業の焦点"
+ ndp_modifier_industrial_heavy_desc: "投資は、鉄、鋼、石炭に集中し、産業力の土台となる。"
+
+ ndp_modifier_industrial_light: "軽い製造業の焦点"
+ ndp_modifier_industrial_light_desc: "繊維・消費財製造業に投資を集中"
+
+ ndp_modifier_state_heavy_industry: "重工業地帯"
+ ndp_modifier_state_heavy_industry_desc: "この状態は、重工業優先ゾーンに指定されています。"
+
+ ndp_modifier_state_light_industry: "軽工業地帯"
+ ndp_modifier_state_light_industry_desc: "この状態はライト製造優先ゾーンに指定されています。"
+
+ ndp_modifier_industrial_state_investment: "州投資ドライブ"
+ ndp_modifier_industrial_state_investment_desc: "政府は直接産業構造に資金を供給しています。"
+
+ ndp_modifier_industrial_state_investment_cost: "産業投資コスト"
+ ndp_modifier_industrial_state_investment_desc: "業界への国家投資は予算を負担しています。"
+
+ ndp_modifier_industrial_private_investment: "プライベート投資インセンティブ"
+ ndp_modifier_industrial_private_investment_desc: "民間資本に対するインセンティブは、投資プールの効率性を高めています。"
+
+ ndp_modifier_industrial_labour_push: "集中的な労働政策"
+ ndp_modifier_industrial_labour_push_desc: "ワーカーはハードで押し込まれていますが、生産性はアップしています。"
+
+ ndp_modifier_industrial_labour_welfare: "労働者福祉投資"
+ ndp_modifier_industrial_labour_welfare_desc: "作業者の状態への投資は、安定性と安定した出力成長でオフにされます。"
+
+ ndp_modifier_military_army: "土地のDoctrine"
+ ndp_modifier_military_army_desc: "軍事プログラムは、土地の電力に焦点を当てています — 質量兵器と大陸の優位性."
+
+ ndp_modifier_military_navy: "海軍のDoctrine"
+ ndp_modifier_military_navy_desc: "軍事プログラムは、海軍力とパワー投影に焦点を当てています。"
+
+ ndp_modifier_military_domestic_arms: "国内アーム業界"
+ ndp_modifier_military_domestic_arms_desc: "国内の武器生産への投資は、スループットで配当を支払います。"
+
+ ndp_modifier_military_foreign_arms: "外国調達"
+ ndp_modifier_military_foreign_arms_desc: "外部機器は、軍事的能力を高めています。"
+
+ ndp_modifier_military_foreign_arms_cost: "外国調達コスト"
+ ndp_modifier_military_foreign_arms_cost_desc: "外国の腕の購入は高価です。"
+
+ ndp_modifier_military_nationalist_morale: "ナショナルリストモーレキャンペーン"
+ ndp_modifier_military_nationalist_morale_desc: "国民の名誉への賛辞は軍の戦いの精神を持ち上がることです。"
+
+ ndp_modifier_military_professional_officers: "専門役員(株)"
+ ndp_modifier_military_professional_officers_desc: "役員研修への投資は、戦術的な業績を改善しています。"
+
+ ndp_modifier_resource_agriculture: "農業の焦点"
+ ndp_modifier_resource_agriculture_desc: "農業開発に集中する資源。"
+
+ ndp_modifier_resource_extraction: "抽出の焦点"
+ ndp_modifier_resource_extraction_desc: "採掘および原料抽出に国民の資源は集中されます。"
+
+ ndp_modifier_state_agriculture: "農業優先ゾーン"
+ ndp_modifier_state_agriculture_desc: "この状態は農業優先区域に指定されています。"
+
+ ndp_modifier_state_extraction: "抽出優先ゾーン"
+ ndp_modifier_state_extraction_desc: "この状態は原料の抽出の優先順位の地帯に指定されました。"
+
+ ndp_modifier_resource_land_expansion: "土地拡張プログラム"
+ ndp_modifier_resource_land_expansion_desc: "新築地は、決済と生産のためにオープンしています。"
+
+ ndp_modifier_resource_intensification: "生産の増強"
+ ndp_modifier_resource_intensification_desc: "農業・採掘業務を行なうことは、より高い出力に押し込まれています。"
+
+ ndp_modifier_resource_export_markets: "輸出市場ドライブ"
+ ndp_modifier_resource_export_markets_desc: "貿易経路の効率性を向上し、海外市場を積極的に追求"
+
+ ndp_modifier_resource_domestic_supply: "国内供給優先順位"
+ ndp_modifier_resource_domestic_supply_desc: "輸出利益の上の国内食糧保証の優先順位付け。"
+
+ ndp_modifier_service_finance: "金融セクター開発"
+ ndp_modifier_service_finance_desc: "銀行・金融サービスへの投資は、投資プールを上回っています。"
+
+ ndp_modifier_service_education: "教育・局員投資"
+ ndp_modifier_service_education_desc: "教育機関、大学、政府機関は、すべて拡大しています。"
+
+ ndp_modifier_service_foreign_talent: "外国人人材政策"
+ ndp_modifier_service_foreign_talent_desc: "熟練した外国人労働者がサービス部門の成長を加速するドアを開けて下さい。"
+
+ ndp_modifier_service_domestic_talent: "国内教育投資"
+ ndp_modifier_service_domestic_talent_desc: "国内教育への投資は、長期の人財を建設しています。"
+
+ ndp_modifier_service_liberalize: "市場解放"
+ ndp_modifier_service_liberalize_desc: "規制を削減し、投資効率と法制定を改善します。"
+
+ ndp_modifier_service_institutions: "機関力強化"
+ ndp_modifier_service_institutions_desc: "法令および州の能力の規則への投資は、ガバナンスと正当性を改善しています。"
+
+ ndp_modifier_abandoned: "放棄された開発プログラム"
+ ndp_modifier_abandoned_desc: "国立開発プログラムは、完成前に放棄されました。 政府計画の自信が苦しんでいる。"
+
+ ndp_foreign_investment_secured: "外国投資の安心"
+ ndp_foreign_investment_secured_desc: "外国投資協定は、外国資本への国を開いた。 建設が加速され、投資プールが成長しています。"
+
+ ndp_foreign_investment_rejected: "外国投資拒否"
+ ndp_foreign_investment_rejected_desc: "国は、外国資本への扉を閉じました。 経済独立性は維持されますが、成長は遅くなります。"

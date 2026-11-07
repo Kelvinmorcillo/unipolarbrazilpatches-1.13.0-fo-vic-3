@@ -1,0 +1,16 @@
+﻿l_spanish:
+
+ GDP_TOOLTIP:1 "id=0 id=0/conferencia id=1/conferencia seglóx id=2/(a)=2/(a) = id=3/accesox id=4/asignx id=5/conferenciax id=6(a)(a)"
+ COUNTRY_GDP_OWNERSHIP_TOOLTIP: "id=0=0/conferencia id=1/conferencia en id=2/conceptorx id=3/ indicax id=4/(conceptor)x id=5/conferencia id=6/grado significax id=7/grado (recibidox id=1=9/conferencia) de propiedad nacional"
+
+ COUNTRY_ALL_GDP: "@money!#v [Country.GetGDPWithOwnershipsInForeignCountries|D]#!"
+ DOMESTIC_COUNTRY_GDP: "@money!#v [Country.GetGDP|D]#!"
+ FOREIGN_COUNTRY_GDP: "@money!#u [Country.GetGDPOwnedInForeignCountries|Db]#!"
+ COUNTRY_ALL_OWNERSHIP: "#u [Country.GetDomesticallyOwnedGDPFraction|%1b]#![ConcatIfNeitherEmpty(' + ', AddLocalizationIf(NotZero_CFixedPoint(Country.GetGDPOwnedInForeignCountries), 'FOREIGN_COUNTRY_GDP'))]"
+ 
+ ERROR_DEER_TOOLTIP:0 "id=0/Consejo Dangnabit! seleccionx id=1/ fieltrox id=2/(s)x id=3/ título Izquierda-Haga clic en "x id=4/(s) para abrir Error Log Derecha-Haga clic en el texto id=7/(Inglés) para hacer que se vaya (hasta que lo vuelva a alterar)"
+ ERROR_MANUL_TOOLTIP: "id=0/ Tonterías una vez, vergüenza en ti. Me engañas, ¡no puedes engañarte otra vez!Seguido id=1/ fieltrox id=2/ títulox id=3/ título Izquierda-Haga clic en "x" id=4/ título para abrir Error Log madex id=5/ Clavex id=6/ Derecha-Haga clic en el texto id=7/(Inglés) para hacer que se vaya (hasta que lo vuelva a alterar)"
+ 
+ OH_DEER:0 ""Seguido" ¿Te avergüenzas, vergüenza?"
+ ERROR_MANUL: "id=0/conferencia id=1/conferencia id=2/conceptor id=2/(conferencia)x id=4/conferencia id=5/conferencia Misiones cumplidas."
+ ERROR_DEER_SLOW_TICK_OPERATIONS:0 "id=0/conferencia de bajo nivel Operaciones realizadasx id=1"

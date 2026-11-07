@@ -1,0 +1,20 @@
+﻿CHARACTERS = {
+	c:IDS ?= {
+	create_character = {
+			first_name = "suharto"
+			last_name = "no_namespace"
+			historical = yes
+			ruler = yes
+			culture = cu:javan
+			birth_date = 1921.02.03
+			dna = dna_suharto
+			ig_leader = yes
+			interest_group = ig_armed_force
+			ideology = ideology_theocrat_leader
+			traits = {
+				experienced_political_operator
+				hedonist
+			}
+		}
+	}
+}

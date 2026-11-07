@@ -1,0 +1,293 @@
+﻿l_turkish:
+
+ MILITARY_PANEL_TITLE_NUCLEAR:0 "Stratejik Savaş"
+ NUCLEAR_WARHEADS_LABEL: "Nükleer Arsenal"
+ NUCLEAR_PROGRAMME_STATUS_LABEL: "Program Durumu"
+ NUCLEAR_PLANTS_HEADER: "Nükleer Altyapı"
+ URANIUM_ENRICHMENT_HEADER: "Uranium Enrichment"
+ NUCLEAR_PRODUCTION_HEADER: "Warhead Production"
+ NUCLEAR_ARSENAL_HEADER: "Arsenal Arsenal Arsenal"
+ MILITARY_PANEL_TAB_NUCLEAR_TOOLTIP: "Nükleer Silahlar Programı"
+ 
+ NUCLEAR_BEGIN_ENRICHMENT_TOOLTIP: "Bir uranyum zenginleştirme programı başlat. En az #bold 3 nükleer santraller#! bölgenizde ve büyük güç durumda. Program tamamlamak için birkaç yıl sürer ve uluslararası dikkat çekecektir. \n #r #b Proliferation Antlaşması #! zenginleştirilemez uranyum. #!"
+ NUCLEAR_BEGIN_PRODUCTION_TOOLTIP: "Nükleer bir savaş sonrası üretti. En az #bold 1 nükleer silo#! gerekir. Zenginlikten daha hızlı. Her tamamlanmalı üretim, cephanenize bir savaş ekledi."
+ NUCLEAR_ENRICHMENT_PROGRESS_TOOLTIP: "Uranium zenginleştirme ilerlemektedir. Zenginleştirme tamamlandığında 100'e ulaşır ve nükleer kapasite elde edilir."
+ NUCLEAR_PRODUCTION_PROGRESS_TOOLTIP: "Warhead üretim ilerlemesi. Savaş başlığı tamamlandığında 100'e ulaşır ve cephanenize eklenir."
+ NUCLEAR_PLANTS_INFO: "Ülkenizdeki nükleer bitkiler: [GetPlayer.MakeScope.ScriptValue('nuclear_plant_count_sv')|v0] \n zenginleşmeye başlamalı: #bold 3#!"
+ NUCLEAR_WEAPONS:0 "[concept_nuclear_weapon]"
+ NUCLEAR_WEAPONS_TOOLTIP:0 "Aktif Nükleer Savaş Başları: [Country.MakeScope.Var('nukes').GetValue]"
+ 
+ building_nuclear_silo:0 "Nükleer Silo"
+ 
+ # ── JOURNAL ENTRIES ───────────────────────
+ 
+ je_uranium_enrichment: "Uranium En Zenginleştirme Programı"
+ je_uranium_enrichment_reason: "[ROOT.GetCountry.GetName] bir uranyum zenginleştirme programı başlattı. Centrifuges koşuyor. Bilim adamları çalışıyor. Ve dünya, eğer bulursa cevap isteyecektir.\n\n Program her ay ilerledi. Ek nükleer bitkiler ilerlemeyi hızlandırır. Savaş onu bozar. Tamamlandığında, [ROOT.GetCountry.GetName] nükleer kapasiteye sahip olacak - silah sınıfı materyali üretme yeteneği."
+ 
+ je_enrichment_early_tt: "Program ilk aşamalarındadır. Centrifuge cascades test ediliyor. Zenginlik tamamlanmadan yıllar önce olacaktır."
+ je_enrichment_mid_tt: "#bold Enrichment ilerliyor.#! Kascades kapasitede çalışıyor. Bilimsel ekip yolda."
+ je_enrichment_late_tt: "@warning! #bold Zenginlik tamamlanmaya yaklaşmaktadır.#! Silahlar-grad uranium neredeyse hazır."
+ 
+ nuclear_enrichment_progress_bar: "Enrichment Progress"
+ nuclear_enrichment_progress_bar_desc: "Enrichment Progress"
+ nuclear_enrichment_progress_bar_tt: "Aylık zenginleştirme ilerlemesi"
+ 
+ je_nuclear_production: "Nükleer Savaş"
+ je_nuclear_production_reason: "[ROOT.GetCountry.GetName] ilk nükleer savaş kafasını üretiyor. fissile materyali hazır. Mühendislik ekibi cihazı monte ediyor. Üretim zenginleştirmeden daha hızlıdır - zor iş zaten yapılır."
+ 
+ je_production_early_tt: "Savaş başı erken toplantıdadır. Mühendislik ekibi programda."
+ je_production_late_tt: "#bold Üretim neredeyse tamamlandı.#! Son montaj ve kol kontrolleri devam ediyor."
+ 
+ nuclear_production_progress_bar: "Prodüksiyon"
+ nuclear_production_progress_bar_desc: "Prodüksiyon"
+ nuclear_production_progress_bar_tt: "Aylık üretim ilerlemesi"
+ 
+ # ── EVENTS ───────────────────────────────
+ 
+ nuclear_events.1.t: "Uranium Enrichment Complete"
+ nuclear_events.1.d: "[ROOT.GetCountry.GetName] başarıyla Uranium'u silahlara zenginleştirdi. Program, amaç için inşa edilen tesislerde birkaç yıl boyunca yapılan program, teknik hedefi elde etti.\n\n>\n Ülke şimdi nükleer silahlar üretmek için bilimsel ve endüstriyel kapasiteye sahiptir. Üretimle devam etmek ayrı bir karardır - ancak eşler geçti. [ROOT.GetCountry.GetName] Nükleer bir devlettir."
+ nuclear_events.1.f: "Sert kısım yapılır."
+ nuclear_events.1.a: "Savaş sonrası üretim için hazırlanın"
+ 
+ nuclear_events.2.t: "Zeka Hizmetleri: Program Exposed"
+ nuclear_events.2.d: "Yabancı istihbarat ajansları - uydu görüntüleri üzerinde çizim, hata raporları ve sinyalleri istihbarat - [ROOT.GetCountry.GetName] bir klan nükleer silah programı çalışıyor.\n\n\n Bulgular müttefik hükümetler arasında dolaşımdadır. Güvenlik Konseyi resmi olarak kısaltılmıştır. [ROOT.GetCountry.GetName] inkar edebilir, açıklayabilir veya sahibi olabilir. Her yol sonuçları vardır."
+ nuclear_events.2.f: "Hiçbir şey sonsuza dek gizli kalır."
+ nuclear_events.2.a: "Deny - tesisler tamamen sivil enerji altyapısıdır"
+ nuclear_events.2.b: "Tanık - [ROOT.GetCountry.GetName] bir deterrent hakkı vardır"
+ 
+ nuclear_events.3.t: "İlk Warhead Prodüksiyon"
+ nuclear_events.3.d: "[ROOT.GetCountry.GetName] ilk nükleer savaş kafasını üretti. Cihaz monte edilir, test edilir ve depolanır. Bunu dağıtmak için nerede karar - ve doktrin altında - daha sonra gelecektir.\n\n Şimdilik: [ROOT.GetCountry.GetName] Nükleer kulübe girdi. Dünya bu sabah olduğundan farklı bir yer."
+ nuclear_events.3.f: "Bir savaş başlığı bir tür tartışmadır. En belirgin türü."
+ nuclear_events.3.a: "Deterrent kuruldu"
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ nuclear_capable_modifier: "Nükleer Threshold State"
+ nuclear_capable_modifier_desc: "[ROOT.GetCountry.GetName] Nükleer kapasiteye ulaştı - silah sınıfı fissile materyali üretme yeteneği. Prestige ve diplomatik duruş geliştiriliyor. Savaşların üretimi şimdi başlayabilir."
+ 
+ nuclear_programme_denied: "Program Denied"
+ nuclear_programme_denied_desc: "[ROOT.GetCountry.GetName] resmi olarak bir nükleer program yürütmeyi reddetti. inkar evrensel olarak inanılmıyor. Infamy nesli arttı."
+ 
+ nuclear_programme_acknowledged: "Program Tanıdı"
+ nuclear_programme_acknowledged_desc: "[ROOT.GetCountry.GetName] Nükleer programını kabul etti, bir deterrent hakkı iddia etti. Büyük güçler ile ilişkiler önemli ölçüde acı çekti."
+ 
+ nuclear_warhead_produced_modifier: "Nükleer Güç"
+ nuclear_warhead_produced_modifier_desc: "[ROOT.GetCountry.GetName] ilk nükleer savaş kafasını üretti. Ülkenin stratejik deterrent şimdi gerçek."
+ 
+ NUCLEAR_TARGETING_HEADER: "Nükleer Hedefleme"
+ 
+ NUCLEAR_DEPLOY_10_TOOLTIP: "Nükleer cephanenizin% 10'unu çalıştırın. En küçük pratik grev - cerrahi ve kapsamı sınırlı."
+ NUCLEAR_DEPLOY_25_TOOLTIP: "cephanenizin %25'ini işletmek. Sınırlı bir nükleer değişim."
+ NUCLEAR_DEPLOY_50_TOOLTIP: "cephanenizin yarısını işe alın. Büyük bir nükleer grev."
+ NUCLEAR_DEPLOY_75_TOOLTIP: "cephanenizin %75'ini işe alın. yıkıcı bir ilk grev."
+ NUCLEAR_DEPLOY_100_TOOLTIP: "Tüm cephanenizi çalıştırın. Toplam nükleer savaş."
+ 
+ NUCLEAR_ADD_TARGET_TOOLTIP: "Bu durumu nükleer hedef listesine ekleyin."
+ NUCLEAR_REMOVE_TARGET_TOOLTIP: "Bu durumu nükleer hedef listesinden çıkarın."
+ NUCLEAR_CLEAR_TARGETLIST_TOOLTIP: "Tüm hedefli ülkeleri temizleyin."
+ NUCLEAR_CASUALTIES_TOOLTIP: "Hedeflenen tüm devletlerde tahmin edilen sivil ölümler, savaş başlıklarına ve devlet nüfusuna dayanan. Gerçek kayıplar değişecektir."
+ 
+ NUCLEAR_FIRE_BUTTON_TOOLTIP: "Tüm hedefli devletlere karşı bir nükleer grev başlat. En az bir hedef, en azından bir savaş başlığı ve aktif bir savaş gerektirir. Grevin yürütülmesinden önce doğrulamanız istenecektir."
+ 
+ NUCLEAR_STATE_TARGETED_TOOLTIP: "Bu devlet şu anda nükleer hedef listesinde."
+ 
+ # ── EVENTS ───────────────────────────────
+ 
+ nuclear_events.4.t: "Nükleer Grevi başlat mı?"
+ nuclear_events.4.d: "Hedef çözümü kilitlidir. [GetPlayer.MakeScope.ScriptValue('nuclear_warheads_to_use_sv')|v0] Savaş sonrası (s) [GetPlayer.MakeScope.ScriptValue('nuclear_target_count_sv')|v0] devlet(s) \n\nEstimed sivil kayıplar: #R[GetPlayer.MakeScope.ScriptValue('nuclear_estimated_total_casualties_sv')|vD]#!\n\n\n\n Bu eylem geri dönüşümlüdür. Savaş kafaları genişletilecek. Devletler yok edilecek. Dünya bunu kimin yaptığını bilecek.\n\n Devam etmek ister misiniz?"
+ nuclear_events.4.f: "Onu geri alma yok."
+ nuclear_events.4.a: "#R Onay - grevi başlatın#!"
+ nuclear_events.4.b: "Abort – ayağa kalkın"
+ 
+ nuclear_events.5.t: "Nükleer Saldırı"
+ nuclear_events.5.d: "[ROOT.GetCountry.GetName] Nükleer silahlar tarafından vuruldu.\n\n Birden çok savaş kafaları [ROOT.GetCountry.GetAdjective] bölge boyunca dağılmıştır. Şehirler yanıyor. İletişim etkilenen bölgelerde çöktü. Kayıpların ölçeği henüz bilinmemektedir - erken tahminler ölümlerin felaket olduğunu önerir.\n\n\n Saldırı uyarı olmadan yapıldı. Hiçbir bildirim yoktu. No ultimatum. Hiçbir şey yoktu."
+ nuclear_events.5.f: "Söylemek için hiçbir şey kalmadı."
+ nuclear_events.5.a: "Acil müdahaleye başlayın"
+ 
+ 
+ # ── EVENT 6: IAEA REQUEST ─────────────────
+ 
+ nuclear_events.6.t: "IAEA Requests Muayene Access"
+ nuclear_events.6.d: "Uluslararası Atom Enerji Ajansı resmi olarak [ROOT.GetCountry.GetAdjective] Nükleer tesislere erişim talep etti. İstek istihbarat raporlarını takip eder - şimdi üye devletler arasında yaygın olarak dolaşımda bulundu - bir silah sınıfı zenginleştirme programının varlığını önerir.\n\n>\n IAEA'nın pozisyonu belirsizdir: [ROOT.GetCountry.GetName], proliferasyon taahhütlerine işaretleyicidir. Güvenilir denetim erişimi malzeme ihlali oluşturur. Tesisleri uluslararası izlemeye açmanız gerekir - ve neredeyse kesinlikle silah programını bitir.\n\n\n denetçiler bir cevap bekliyor."
+ nuclear_events.6.f: "denetçiler kibardır. İstek değil."
+ nuclear_events.6.a: "Grant access - IAEA'nın tesislerimizi incelemesine izin verin"
+ nuclear_events.6.b: "Refuse – [ROOT.GetCountry.GetName] yabancı denetime teslim olmayacak"
+ 
+ # ── EVENT 7: UN ULTIMATUM (via IAEA refusal) ──
+ 
+ nuclear_events.7.t: "BM Güvenlik Konseyi: Hastalıklar Zenginleştirme"
+ nuclear_events.7.d: "Birleşmiş Milletler Güvenlik Konseyi, [ROOT.GetCountry.GetName]'nin Uranium zenginleştirme programını hemen durdurmasını ve IAEA doğrulamasını sunmasını talep etti.\n\n Oy yakın değildi. Karar, otuz gün içinde tam The talep eder ve [ROOT.GetCountry.GetName] uymayı reddeder.\n\n Bu bir istek değildir. Bu bir ultimatum."
+ nuclear_events.7.f: "Güvenlik Konseyi konuştu. [ROOT.GetCountry.GetName] şimdi dünyadaki yerini tanımlayacaktır."
+ nuclear_events.7.a: "Tamam - Zenginleştirmeyi durdurun ve izlemeyi gönderin"
+ nuclear_events.7.b: "Refuse – [ROOT.GetCountry.GetName] sonuçları ne olursa olsun devam edecek"
+ 
+ # ── EVENT 8: UN ULTIMATUM (via acknowledgement) ──
+ 
+ nuclear_events.8.t: "UN Security Council: Disarm veya Face Consequences"
+ nuclear_events.8.d: "Nükleer silah programını kabul ettikten sonra [ROOT.GetCountry.GetName] Güvenlik Konseyi'ni birlikte çalışmak için belirsizliğe bıraktı. Bir karar, zenginleştirme aktivitesinin acil cessationini ve silahla ilgili altyapının ortadan kaldırılmasını talep etti.\n\n Karar Bölüm VII'nin altında geçti - yani askeri uygulama yönetilmedi. [ROOT.GetCountry.GetName] uymak için otuz gün vardır."
+ nuclear_events.8.f: "Dürüst ödüllendirilmedi. ultimatum da aynı."
+ nuclear_events.8.a: "Tamam - programı durdur ve doğrulamayı gönderin"
+ nuclear_events.8.b: "Refuse – [ROOT.GetCountry.GetName] baskı altında silahsızlanmayacaktır"
+ 
+ # ── EVENT 9: GREAT POWER RESPONSE ─────────
+ 
+ nuclear_events.9.t: "[SCOPE.sCountry('nuclear_state').GetName] Nükleer Tanıma"
+ nuclear_events.9.d: "[SCOPE.sCountry('nuclear_state').GetName] UN Security Council'in ultimatum'u reddetti ve Uranium'u silahlara göre zenginleştirmeye devam etti. yaptırımlar rejim yerindedir.\n\n[ROOT.GetCountry.GetName] şu anda açıklanmalıdır. Stratejik alanımızda bir ülke, inşa etmemize yardımcı olduğumuz uluslararası düzene karşı nükleer silahlar geliştiriyor. Soru, nasıl tepki verdiğimizdir."
+ nuclear_events.9.f: "Kelimeler denendi. Bu bir sonraki ne olduğuna karar vermek için an."
+ nuclear_events.9.a: "Intervene - Silahsızlanmayı zorlamak için diplomatik bir oyun başlat"
+ nuclear_events.9.b: "Tehditler - kuvvet işlemeden sonuçları açıklayın"
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ nuclear_iaea_cooperation: "IAEA İşbirliği Anlaşması"
+ nuclear_iaea_cooperation_desc: "[ROOT.GetCountry.GetName] Nükleer tesislerini IAEA izlemesine açtı. Doğrulanabilir sivil kullanım karşılığında, nükleer enerji altyapısı için uluslararası destek genişletildi."
+ 
+ nuclear_iaea_defiance: "IAEA Access Refüzyon"
+ nuclear_iaea_defiance_desc: "[ROOT.GetCountry.GetName] Nükleer tesislerinin uluslararası incelemesini reddetti. Diplomatik duruş önemli ölçüde kötüleşti."
+ 
+ nuclear_un_compliance: "Birleşmiş Milletler Silahsızlanma"
+ nuclear_un_compliance_desc: "[ROOT.GetCountry.GetName] UN ultimatum'u kabul etti ve nükleer programını durdurdu. Karar evde siyasi olarak pahalıydı."
+ 
+ nuclear_un_sanctions: "UN Nuclear Sanctions"
+ nuclear_un_sanctions_desc: "Birleşmiş Milletler Güvenlik Konseyi, [ROOT.GetCountry.GetName] Nükleer programını durdurmanın reddedilmesine karar verdi. Ticaret bozuldu ve diplomatik izolasyon derinleşiyor."
+ 
+ nuclear_military_ultimatum: "Askeri Ultimatum Issued"
+ nuclear_military_ultimatum_desc: "Büyük bir güç, [ROOT.GetCountry.GetName] Nükleer programını talep eden resmi bir diplomatik oyun başlattı. Askeri eylem bir olasılık olarak kalır."
+ 
+ nuclear_great_power_pressure: "Büyük Güç Diplomatik Baskı"
+ nuclear_great_power_pressure_desc: "Bir veya daha büyük güçler [ROOT.GetCountry.GetName] Nükleer programı üzerinde resmi uyarılar yayınladı. Prestige ve meşruiyet acı çekiyor."
+ 
+ nuclear_non_proliferation_war: "Proliferation Intervention"
+ nuclear_non_proliferation_desc: "[ROOT.GetCountry.GetName] Nükleer çoğalmayı önlemek için bir diplomatik müdahale başlattı. Eylem uluslararası toplum tarafından geniş ölçüde karşılandı."
+ 
+ nuclear_non_intervention_caution: "Chose Caution Over Intervention"
+ nuclear_non_intervention_caution_desc: "[ROOT.GetCountry.GetName], nükleer silahsız bir devlete karşı askeri müdahale etmeyi reddetti, bunun yerine diplomatik baskıyı seçti. Bazı müttefikler çözümü sorguladı."
+ 
+ # ── DIPLOMATIC PLAY LOC ──────────────────
+ nuclear_non_proliferation_play: "Nükleer Silahsızlanma Ultimatum"
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ nuclear_strike_aftermath: "Nükleer Grev Sonrası"
+ nuclear_strike_aftermath_desc: "Bu devlet nükleer silahlarla vuruldu. Altyapı harap oldu, nüfus çöküyor ve radyasyon toprağı kirletiyor."
+ 
+ nuclear_strike_launched_modifier: "Nükleer Parya"
+ nuclear_strike_launched_modifier_desc: "[ROOT.GetCountry.GetName] öfkede nükleer silahlar kullandı. Uluslararası topluluk korku ile tepki gösterdi. Diplomatik ayakta ve prestij ciddi bir şekilde acı çekti."
+ 
+ nuclear_strike_victim_modifier: "Nükleer Kurban"
+ nuclear_strike_victim_modifier_desc: "[ROOT.GetCountry.GetName] bir nükleer saldırıya maruz kaldı. Ulusal travma derin ve uzun sürelidir. Kurtarma bir nesil alacak."
+ 
+ nuclear_disarmament: "WMDs"
+ nuclear_disarmament_desc: "Hedef ulusun nükleer silah programını tamamen ortadan kaldırdığını ve mevcut cephanelerini teslim etmesini talep edin. Eğer uygulanırsa, tüm zenginleştirme yeteneği, savaş sonrası stoklar ve program değişkenleri ortadan kalkacaktır - ülke sıfırdan başlamalıdır."
+ 
+ # ── EVENT ────────────────────────────────
+ 
+ nuclear_events.10.t: "Program Gitti"
+ nuclear_events.10.d: "Barışın şartları gerçekleştirilmiştir. Uluslararası denetçiler [ROOT.GetCountry.GetAdjective] tesislere girdiler, centrifuge cascades'i parçaladılar ve siloları mühürlediler.\n\n Bilimsel çalışmaların yıllar, siyasi risk ve ulusal yatırım haftalarca silindi. Program mevcut değildir. Bilgi kalır - ancak altyapı, malzeme ve onu takip etmek için duran yasal.\n\n[ROOT.GetCountry.GetName] tekrar başlayabilir, eğer seçerse. Bu, farklı koşullarda yapılan farklı bir karar olacaktır."
+ nuclear_events.10.f: "Yeniden inşa edilebilir. Unutulmayacak."
+ nuclear_events.10.a: "terimleri kabul edin"
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ nuclear_disarmament_enforced: "Forced Disarmament"
+ nuclear_disarmament_enforced_desc: "[ROOT.GetCountry.GetName] Nükleer programı askeri yenilgiden sonra tamamen ortadan kaldırılmıştır. Siyasi ve bilimsel sonuçlar ciddidir. Halk öfkesi yoğundur."
+ 
+ nuclear_disarmament_enforcer: "Non-Proliferation Victory"
+ nuclear_disarmament_enforcer_desc: "[ROOT.GetCountry.GetName] Prolifeating state üzerinde nükleer silahsızlanmayı başarıyla tamamladı. Uluslararası prestij ve diplomatik duruş önemli ölçüde gelişmiştir."
+ 
+  # ── TREATY ARTICLE ───────────────────────
+ 
+ host_military_bases: "Host Military Bases"
+ host_military_bases_desc: "[scope:source_country.GetName] [scope:target_country.GetAdjective] bölgede askeri kuvvetler ve ekipman. [scope:source_country.GetAdjective] geleneksel füze aralığı ev sahibi ülkeyi sınırlayan devletlere genişletin."
+ 
+ military_base_host_modifier: "Ev sahibi Yabancı Askeri Bases"
+ military_base_host_modifier_desc: "Yabancı askeri güçler, ülkedeki bölgede bir baslama sözleşmesi altında istasyonludur. Bazı yerli gerilimler yabancı askeri varlıktan doğar."
+ 
+ military_base_projector_modifier: "Yurtdışındaki Askeri Bazlar"
+ military_base_projector_modifier_desc: "Bu ülke, askeri kuvvetlere müttefik bölgede yoğunlaşmıştır ve stratejik erişimi genişletmiştir."
+ 
+ # ── ICBM ─────────────────────────────────
+ 
+ je_icbm_programme: "ICBM Development Programme"
+ je_icbm_programme_reason: "[ROOT.GetCountry.GetName] Nükleer kapasiteye ulaştı. Bir sonraki sınır teslimattır: Dünyadaki herhangi bir noktaya uyarı olmadan ulaşma yeteneğine sahip kıtalararası balistik füzeler. Program uzundur - roket araştırma, rehberlik sistemi geliştirme ve aralık testleri - ancak stratejik ödeme mutlak. Bir ICBM'nin kaçınılmaz durumu, coğrafya tarafından reddedilemez."
+ 
+ je_icbm_early_tt: "ICBM programı erken gelişimdedir. Rehberlik sistemleri test ediliyor. Uygun bir kıta teslimat aracının var olması yıllar önce olacaktır."
+ je_icbm_late_tt: "#bold ICBM gelişimi tamamlandı.#! Son aralık ve doğruluk testleri devam ediyor."
+ 
+ icbm_progress_bar: "ICBM Development Development"
+ icbm_progress_bar_desc: "Bir kıtalararası balistik füze teslimat kabiliyetine doğru ilerleme. Yüzde 100'te, nükleer silahlar küresel olarak yakınlığa bakılmaksızın hedeflenebilir."
+ icbm_progress_bar_tt: "Aylık ICBM gelişimi ilerleme ilerlemesi"
+ 
+ icbm_capable_modifier: "ICBM Capable"
+ icbm_capable_modifier_desc: "[ROOT.GetCountry.GetName] kıtasal balistik füzeler geliştirdi. Nükleer silahlar artık dünyadaki herhangi bir durumda hedeflenebilir, aralıksız."
+ 
+ nuclear_events.11.t: "ICBM Programı Tamamlandı"
+ nuclear_events.11.d: "[ROOT.GetCountry.GetName], kıtalararası bir balistik füze test etti. Cihaz tam aralıkını uçtu, kabul edilebilir parametreler içinde terminal rehberliği doğrulukunu gösterdi ve belirlenen bölgede sıçradı.\n\n Stratejik etkiler hemen. [ROOT.GetCountry.GetName] Nükleer deterrent artık coğrafya tarafından kısıtlanmamış değildir. Gezegendeki herhangi bir devlet şimdi, prensip olarak, potansiyel bir hedef.\n\n Uluslararası topluluk testi kaydetti. Her zaman yapar."
+ nuclear_events.11.f: "aralığın dışında olmak için hiçbir yer kalmadı."
+ nuclear_events.11.a: "Deterrent şimdi gerçekten küresel"
+ 
+ # ── CONVENTIONAL MISSILES ─────────────────
+ 
+ CONV_MISSILES_HEADER: "Konvansiyonel Füzeler"
+ CONV_TARGET_AIRPORT_TOOLTIP: "Seçilen eyaletlerdeki hedef havaalanları. Her füze havaalanı binasını yok etme şansına sahiptir."
+ CONV_TARGET_BARRACKS_TOOLTIP: "Hedef barracks. Her füzenin her hedefli durumda barracks yok etme şansı vardır."
+ CONV_TARGET_NAVAL_TOOLTIP: "Hedef deniz üsleri. Her füzenin deniz altyapısını yok etme şansı vardır."
+ CONV_TARGET_NUCLEAR_PLANT_TOOLTIP: "Hedef nükleer enerji santralleri. Her füzenin tesisi yok etme şansı 3'e sahiptir."
+ CONV_TARGET_SILO_TOOLTIP: "Hedef nükleer silolar. Her füzenin siloyı yok etme şansının % 3'ü var."
+ CONV_TARGET_GOVERNMENT_TOOLTIP: "Hedef hükümet yönetim binaları. Her füzenin onları yok etme şansı 3'e sahiptir."
+ CONV_TARGET_RAILWAY_TOOLTIP: "Hedef demiryolu altyapısı. Her füzenin demiryolunu yok etme şansı vardır."
+ CONV_ADD_TARGET_TOOLTIP: "Bu durumu geleneksel füze grev listesine ekleyin."
+ CONV_REMOVE_TARGET_TOOLTIP: "Bu durumu geleneksel füze grev listesinden çıkarın."
+ CONV_FIRE_TOOLTIP: "Tüm hedefli devletlere karşı geleneksel bir füze grevi başlatın. Hedeflenen devlet başına bir füze atar. 60 gün cooldown uygulanır."
+ 
+ # ── STRATEGIC BOMBING ─────────────────────
+ 
+ STRAT_BOMBING_HEADER: "Stratejik Bombalama"
+ BOMBING_ADD_TARGET_TOOLTIP: "Bu durumu bir sonraki iş için bombalama listesine ekleyin."
+ BOMBING_REMOVE_TARGET_TOOLTIP: "Bu durumu bombalama listesinden çıkarın."
+ BOMBING_EXECUTE_TOOLTIP: "Tüm hedefli devletlere karşı stratejik bir bombalama yürütür. Devastation, uygun hava formlarının sayısına göre eklenir. 30 gün cooldown uygulanır."
+ 
+ NUCLEAR_ICBM_PROGRESS_TOOLTIP: "ICBM gelişimi ilerlemektedir.% 100'te, nükleer silahlar dünya çapında herhangi bir devleti hedefleyebilir."
+ NUCLEAR_ICBM_TOOLTIP: "kıtalararası balistik füzelerin geliştirilmesine başlayın. Nükleer kapasite gerektirir. Birkaç yıl alır. Tamamlandığında, nükleer silahlar dünyadaki herhangi bir devleti hedefleyebilir - sadece komşu olanları değil."
+ 
+ CONV_PRODUCE_MISSILES_TOOLTIP: "5 geleneksel füzenin bir salvo üretti. Küçük devam eden üretim maliyeti. Füzeler ateş altında tüketiliyor - hedefli bir devlet için."
+ 
+ missile_production_cost:0 "Füze Üretimi"
+ state_buy_orders_missiles_add:0 "Füze Tüketimi"
+ 
+ CONV_DEPLOY_10_TOOLTIP: "Hedef devletlere karşı füze stoklarınızın% 10'u ateşleyin."
+ CONV_DEPLOY_25_TOOLTIP: "Hedef devletlere karşı füze stoklarınızın% 25'i."
+ CONV_DEPLOY_50_TOOLTIP: "Hedef devletlere karşı füze stoklarınızın% 50'si."
+ CONV_DEPLOY_75_TOOLTIP: "Hedef devletlere karşı füze stoklarınızın %75'i ateş."
+ CONV_DEPLOY_100_TOOLTIP: "Hedef devletlere karşı tüm füze stokunuzu ateşleyin."
+ 
+ CONV_BUILDING_CHANCE_TOOLTIP: "Her füze, hedefli durumda aşağıdaki binalardan birini yok etme şansına sahip olduysa:\n\n• Havaalanı\n• Deniz Base\n• Nükleer Güç Bitkisi\n• Nükleer Silo\n• Yönetim\n• Demiryolu\n\n Tüm bina türleri bağımsız olarak yapılır. Tek bir füze salvo, yeterince büyükse aynı eyalette birden fazla bina yok edebilir."
+ 
+ nuclear_events.12.t: "Füze Grevi [ROOT.GetName]"
+ nuclear_events.12.d: "[SCOPE.sCountry('missile_attacker').GetName] [ROOT.GetAdjective] bölgeye karşı geleneksel bir füze grevi başlattı. Raporlar [ROOT.GetAdjective] devletler üzerinde etkiler geliyor - altyapı hasarı değerlendiriliyor.\n\n Füzeler nükleer değildi, ancak mesaj açık. [SCOPE.sCountry('missile_attacker').GetName] bize karşı uzun menzilli silahları kullanmaya isteklidir."
+ nuclear_events.12.f: "kraterler zaten orada. Soru bir sonraki yaptığımız şeydir."
+ nuclear_events.12.a: "Hasarları değerlendirin ve buna göre yanıt verin"
+
+ missile_strike_victim_modifier: "Konvansiyonel Füze Grevi"
+ missile_strike_victim_modifier_desc: "Bölgemiz geleneksel bir füze grevi tarafından hedef alındı. Altyapı hasarı ve halk kaygısı yüksek."
+
+ # ── EVENT 13: RETALIATION CHOICE ───────────
+
+ nuclear_events.13.t: "Nükleer Retaliasyon - Karar Gerekli"
+ nuclear_events.13.d: "[SCOPE.sCountry('nuclear_attacker').GetName] [ROOT.GetName] karşı nükleer silahlar başlattı. Savaşlarımız silahlı. Tanıtım kodları hazır.\n\n [SCOPE.sCountry('nuclear_attacker').GetAdjective] bölge, tüm [SCOPE.sCountry('nuclear_attacker').GetAdjective] eyaletlerimizi vuracaktır. Grev hiçbir infamy taşıyacaktı - dünya anlayacak.\n\n Alternatif saldırıyı absorbe etmektir. Hayatta kalmakta bir yemek yoktur."
+ nuclear_events.13.f: "Sipariş sadece bir kez verilmesi gerekir."
+ nuclear_events.13.a: "Retaliate - [SCOPE.sCountry('nuclear_attacker').GetName] karşı cephanenin% 25'ini başlat"
+ nuclear_events.13.b: "Ayağa kalk - grevi absorbe et, cephaneyi korumak"
+
+ nuclear_first_strike_response: "Nükleer Retaliasyon (First Strike Response)"
+ nuclear_first_strike_response_desc: "[ROOT.GetName], kendi topraklarında sınırlı olmayan bir nükleer saldırıya yanıt olarak nükleer bir karşıt başlattı. Uluslararası topluluk yeniden birleşme hakkını tanır - infamy kazancı önemli ölçüde azaltılır."
+
+ nuclear_absorbed_first_strike: "Nükleer Grev Absorbed"
+ nuclear_absorbed_first_strike_desc: "[ROOT.GetName] retaliating olmadan bir nükleer greve dayandı. Sınırlama uluslararası olarak kaydedildi. Diplomatik ayakta ve prestij oldukça gelişmiştir."
+
+ # ── EVENT 14: RETALIATION NOTIFICATION ─────
+
+ nuclear_events.14.t: "Nükleer Retaliation Inbound"
+ nuclear_events.14.d: "Nükleer grevimiz cevaplandı. [ROOT.GetName] bir retaliatory grevi başlattı - savaş kafaları sınır dışı edildi.\n\n Değişimi başlattık. Sonuçlar bizimkidir."
+ nuclear_events.14.f: "Her grev bir sonrakisini davet eder."
+ nuclear_events.14.a: "Brace for effect"

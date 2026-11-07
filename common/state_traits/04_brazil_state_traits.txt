@@ -1,0 +1,90 @@
+state_trait_brazil_carajas_logistics = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	modifier = {
+		state_infrastructure_add = 5
+	}
+}
+
+state_trait_brazil_maranhao_crops = {
+	icon = "gfx/interface/icons/state_trait_icons/good_soils.dds"
+	modifier = {
+		building_group_bg_agriculture_throughput_add = 0.05
+	}
+}
+
+state_trait_brazil_amazon_rubber = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_lumber.dds"
+	modifier = {
+		building_rubber_plantation_throughput_add = 0.05
+	}
+}
+
+state_trait_brazil_acre_rubber = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_lumber.dds"
+	modifier = {
+		building_rubber_plantation_throughput_add = 0.05
+	}
+}
+
+state_trait_brazil_central_administration = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	modifier = {
+		building_group_bg_government_throughput_add = 0.05
+	}
+}
+
+state_trait_brazil_cerrado_ranching = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_grazing.dds"
+	modifier = {
+		building_group_bg_ranching_throughput_add = 0.05
+	}
+}
+
+state_trait_brazil_southern_ranching = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_grazing.dds"
+	modifier = {
+		building_group_bg_ranching_throughput_add = 0.05
+	}
+}
+
+state_trait_brazil_parana_forestry = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_lumber.dds"
+	modifier = {
+		building_group_bg_logging_throughput_add = 0.05
+	}
+}
+
+state_trait_brazil_santa_catarina_coast = {
+	icon = "gfx/interface/icons/state_trait_icons/natural_harbors.dds"
+	modifier = {
+		state_infrastructure_add = 5
+	}
+}
+
+state_trait_brazil_sao_paulo_industry = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_ore.dds"
+	modifier = {
+		building_group_bg_manufacturing_throughput_add = 0.05
+	}
+}
+
+state_trait_brazil_minas_gold = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_ore.dds"
+	modifier = {
+		building_gold_mine_throughput_add = 0.05
+	}
+}
+
+state_trait_brazil_rio_shipyards = {
+	icon = "gfx/interface/icons/state_trait_icons/natural_harbors.dds"
+	modifier = {
+		state_infrastructure_add = 5
+	}
+}
+
+state_trait_brazil_bahia_tobacco = {
+	icon = "gfx/interface/icons/state_trait_icons/good_soils.dds"
+	modifier = {
+		building_group_bg_tobacco_plantations_throughput_add = 0.05
+	}
+}

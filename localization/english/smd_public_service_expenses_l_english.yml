@@ -1,0 +1,19 @@
+﻿l_english:
+
+ smd_institution_healthcare_expense_mult: "[concept_smd_healthcare] Expense Contribution"
+ smd_institution_healthcare_expense_mult_desc: "Relative contribution to national [concept_smd_healthcare] expenses. The actual monthly cost is driven mainly by the number of Government Administrations ([concept_bureaucracy]) you run, plus [concept_institution] investment and population.\nRaised by more public health-system [concept_law|l]s: #tt Charitable Health System#! is cheapest, #tt Private Health Insurance#! is standard, and #tt Public Health Insurance#! costs the most. With no health-system law, no expense is charged."
+
+ smd_institution_education_expense_mult: "[concept_smd_education] Expense Contribution"
+ smd_institution_education_expense_mult_desc: "Relative contribution to national [concept_smd_education] expenses. The actual monthly cost is driven mainly by the number of Government Administrations ([concept_bureaucracy]) you run, plus [concept_institution] investment and population.\nRaised by public schooling [concept_law|l]s (#tt Public Schools#!, #tt Universal College#!) and by the childcare laws #tt Compulsory Primary School#!, #tt Privatized Preschool Education#! and #tt Universal Childcare#!. With none of these laws, no expense is charged."
+
+ smd_institution_police_expense_mult: "[concept_smd_police] Expense Contribution"
+ smd_institution_police_expense_mult_desc: "Relative contribution to national [concept_smd_police] expenses. The actual monthly cost is driven mainly by the number of Government Administrations ([concept_bureaucracy]) you run, plus [concept_institution] investment and population.\nRaised by more centralized policing [concept_law|l]s: #tt Local Police#! is cheapest, then #tt Dedicated Police#!, with #tt Militarized Police#! the most expensive. With no policing law, no expense is charged."
+
+ smd_healthcare_expense_modifier: "[concept_smd_healthcare] Expenses"
+ smd_healthcare_expense_modifier_desc: "The running cost of the national health system, driven primarily by the number of Government Administrations ([concept_bureaucracy]), plus [concept_institution] level, population and the active health-system [concept_law|l]."
+
+ smd_education_expense_modifier: "[concept_smd_education] Expenses"
+ smd_education_expense_modifier_desc: "The running cost of public education, driven primarily by the number of Government Administrations ([concept_bureaucracy]), plus [concept_institution] level, population and the active schooling and childcare [concept_law|l]s."
+
+ smd_police_expense_modifier: "[concept_smd_police] Expenses"
+ smd_police_expense_modifier_desc: "The running cost of law enforcement, driven primarily by the number of Government Administrations ([concept_bureaucracy]), plus [concept_institution] level, population and the active policing [concept_law|l]."

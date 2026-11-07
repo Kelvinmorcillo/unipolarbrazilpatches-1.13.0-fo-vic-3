@@ -1,0 +1,1067 @@
+﻿l_turkish:
+ # United Nations
+ je_united_nations: "Birleşmiş Milletler"
+ je_united_nations_reason: "\n\n Birleşmiş Milletler, diplomasi, barışgücü ve insani çabalar için uluslararası bir beden olarak hizmet eder.\n\n\n [GetGlobalVariable('permanent_members_1').GetCountry.GetName]\n\n\n\n[GetGlobalVariable('permanent_members_3').GetCountry.GetName]\n\n\n\n\n<x id=><x id=><x id= Birleşmiş Milletler, diplomasi, barışgücü ve insani çabalar için uluslararası bir beden olarak hizmet ediyor. UN tarafından kararlar - özellikle Güvenlik Konseyi - ülkenizde gelecekteki olayları doğrudan etkileyebilir."
+
+ # ── PROPOSE BUTTON ────────────────────────
+ 
+ un_propose_motion_button: "Bir Karar"
+ un_propose_motion_button_desc: "Tüm üye devletlerin oy kullanması için bir UN kararı. Karar geçerse, tüm ülkeler beş yıl boyunca etkilerini alacak. Sadece yılda bir kez önerilebilir."
+ un_no_motion_active_tt: "Hiçbir karar şu anda tartışma altında"
+ 
+ # ── VOTE BUTTONS ─────────────────────────
+ 
+ un_vote_yay_button: "Favour'da Oy"
+ un_vote_yay_button_desc: "Cast [ROOT.GetCountry.GetName] Mevcut kararın lehine oy. Kalıcı Güvenlik Konseyi üyeleri çifte ağırlık oy kullandılar."
+ 
+ un_vote_nay_button: "Oy Vermeye Karşı Oy"
+ un_vote_nay_button_desc: "Cast [ROOT.GetCountry.GetName] Mevcut karara karşı oy. Kalıcı Güvenlik Konseyi üyeleri çifte ağırlık oy kullandılar."
+ 
+ # ── MOTION EVENTS ────────────────────────
+ 
+ un_events.100.t: "Birleşmiş Milletler – Bir Karar Vermek"
+ un_events.100.d: "Birleşmiş Milletler üyesi olarak [ROOT.GetCountry.GetName] Genel Kurul'un oy kullanması için bir karar önerebilir. Tartışmayı sunmak için karar seçin. Tüm üye devletler, Birleşmiş Milletler dergisindeki düğmeleri kullanarak bilgilendirilecektir."
+ un_events.100.a: "Çevre Koruma Hakkında Karar"
+ un_events.100.b: "Dünya Barışı Hakkında Karar"
+ un_events.100.c: "Ekonomik Kalkınma Hakkında Karar"
+ un_events.100.e: "UNESCO Teknolojisi Hakkında Karar"
+ 
+ un_events.101.t: "Birleşmiş Milletler – Debate altında Karar"
+ un_events.101.d: "Birleşmiş Milletler Genel Kurulunda bir karar önerilmiştir. [ROOT.GetCountry.GetName] Birleşmiş Milletler dergisindeki Yay veya Yok düğmeleri kullanarak oylarını alabilir. Kalıcı Güvenlik Konseyi üyeleri çifte ağırlık oy kullandılar. Sonuç 120 gün içinde açıklanacaktır."
+ un_events.101.a: "Understood – biz kasıtlı olacağız"
+ 
+ # ── NOTIFICATIONS ─────────────────────────
+ 
+ un_motion_passed: "Birleşmiş Milletler Kararı Geçti"
+ un_motion_passed_desc: "Birleşmiş Milletler kararı geçti. [ROOT.GetCountry.GetName] önümüzdeki beş yıl boyunca etkilerini alacak."
+ 
+ un_motion_failed: "Birleşmiş Milletler Kararı Başarısız"
+ un_motion_failed_desc: "Birleşmiş Milletler kararı geçemedi. Öneri yeterli destek almadı."
+ 
+ # ── PROGRESS BAR ─────────────────────────
+ 
+ un_je_no_motion_tt: "Hiçbir karar şu anda tartışma altında değildir. #bold Bir Karar#! General Assembly'ye bir hareket getirmek için düğme."
+ 
+ un_je_voting_environment_tt: "#bold Çevre Koruma Hakkında Karar - ilerlemede oy.#! Üye devletler oylarını topluyor. Ya da oylarınızı koymak için aşağıdaki düğmeleri kullanın. Sonuç, oylama dönemi kapandığında açıklanacaktır."
+ 
+ un_je_voting_peace_tt: "#bold Dünya Barışı Üzerine Karar - ilerlemede oy.#! Üye devletler oylarını topluyor. Ya da oylarınızı koymak için aşağıdaki düğmeleri kullanın. Sonuç, oylama dönemi kapandığında açıklanacaktır."
+ 
+ un_je_voting_economy_tt: "#bold Ekonomik Kalkınma Üzerine Karar - ilerlemede oy.#! Üye devletler oylarını topluyor. Ya da oylarınızı koymak için aşağıdaki düğmeleri kullanın. Sonuç, oylama dönemi kapandığında açıklanacaktır."
+ 
+ un_je_voting_technology_tt: "#bold UNESCO Teknolojisinde Karar - ilerlemede oy.#! Üye devletler oylarını topluyor. Ya da oylarınızı koymak için aşağıdaki düğmeleri kullanın. Sonuç, oylama dönemi kapandığında açıklanacaktır."
+ 
+ un_motion_progress_bar: "Çözüm Destek Desteği"
+ un_motion_progress_bar_desc: "Oyların Uygun Payı: #v [JournalEntry.GetCurrentBarProgress(ScriptedProgressBar.Self)|%1]#! Favour'daki Oylar: ([JournalEntry.GetCurrentBarValue(ScriptedProgressBar.Self)|0])"
+ un_motion_progress_bar_second_desc: ""
+ un_motion_progress_from_yes_votes: ""
+ 
+ # ── RESOLUTION MODIFIERS ─────────────────
+ 
+ un_resolution_environment: "Birleşmiş Milletler Kararı – Çevre Koruma"
+ un_resolution_environment_desc: "Birleşmiş Milletler çevresel koruma konusunda bir karar aldı. [ROOT.GetCountry.GetName], önümüzdeki beş yıl boyunca kirliliğin üretimini azaltmaya ve çevresel standartları geliştirmeye karar verdi."
+ 
+ un_resolution_peace: "Birleşmiş Milletler Kararı – Dünya Barışı"
+ un_resolution_peace_desc: "Birleşmiş Milletler dünya barışı konusunda bir karar aldı. [ROOT.GetCountry.GetName] daha düşük infamy neslinden gelen avantajlar ve önümüzdeki beş yıl boyunca ayakta kalan diplomatik gelişme."
+ 
+ un_resolution_economy: "Birleşmiş Milletler Çözümü - Ekonomik Kalkınma"
+ un_resolution_economy_desc: "Birleşmiş Milletler ekonomik gelişme konusunda bir karar aldı. [ROOT.GetCountry.GetName] önümüzdeki beş yıl boyunca uluslararası ekonomik işbirliğini yansıtan inşaat ve yatırım bonuslarını alır."
+ 
+ un_resolution_technology: "UN Decision – UNESCO Teknolojisi"
+ un_resolution_technology_desc: "Birleşmiş Milletler teknoloji ve eğitim konusunda bir karar aldı. [ROOT.GetCountry.GetName] Gelecek beş yıl boyunca gelişmiş eğitim erişim ve pop niteliklerinden yararlanır."
+ 
+ sb_request_peacekeepers: "Birleşmiş Milletler Barışgücü İstemesi"
+ sb_request_peacekeepers_desc: "Birleşmiş Milletlerin çatışma çözümüne yardımcı olmak için barış koruma güçlerini dağıtmasını arayın."
+
+ un_events.1.t: "Birleşmiş Milletler Barışgücü İstemesi"
+ un_events.1.d: "Birleşmiş Milletlere, çatışmamızı sonlandırmamıza yardımcı olmak için barışçıları göndermeliyiz."
+ un_events.1.a: "İsteki gönderin."
+ un_events.1.b: "Birleşmiş Milletler'i içermez."
+
+ un_events.2.t: "Birleşmiş Milletler Güvenlik Konseyi"
+ un_events.2.d: "Güvenlik Konseyi, barış görevlilerini [GetGlobalVariable('peacekeeper_requestor').GetCountry.GetName] göndermeye oy vermelidir."
+ un_events.2.a: "Yay"
+ un_events.2.b: "Abstain"
+ un_events.2.c: "Hayır hayır hayır hayır"
+ un_events.2.e: "Veto [GetGlobalVariable('peacekeeper_requestor').GetCountry.GetName] Barış Koruma Talebi"
+
+ un_events.3.t: "Barışçılar Onaylandı"
+ un_events.3.d: "BM Güvenlik Konseyi, barışçıları göndermenin lehine oy kullandı."
+ un_events.3.a: "Hadi gel!"
+
+ un_events.4.t: "Barışçılar Rejected"
+ un_events.4.d: "BM Güvenlik Konseyi bize barışçıları göndermeye oy verdi."
+ un_events.4.a: "Kendimizdeyiz."
+
+ un_events.10.t: "Güvenlik Konseyi Üyeliği"
+ un_events.10.d: "Birleşmiş Milletler Genel Kurulu, Güvenlik Konseyi'ne yeni bir dönen üye seçti: [un_rotating_member.GetName]."
+ un_events.10.a: "Noted."
+ 
+ unsc_member: "Güvenlik Üyeliği"
+ permanent_unsc_member: "Sürekli Güvenlik Üyeliği"
+ un_peacekeepers_vetoed: "Barışçılar Rejected"
+ un_peacekeepers_deployed: "Birleşmiş Milletler Barışı"
+ un_already_voting_on_peacekeeping: "Lütfen BM'nin mevcut barışgücü görevinde oylamayı bitirinceye kadar bekleyin."
+ 
+ un_events.5.t: "[GetGlobalVariable('peacekeeper_requestor').GetCountry.GetName] Barış Koruma Misyonuna Katılın?"
+ un_events.5.d: "Birleşmiş Milletler Güvenlik Konseyi, [GetGlobalVariable('peacekeeper_requestor').GetCountry.GetName] barışgücü görevini göndermenin lehine oy verdi. Genel topluluğun üyeleri, erkeklerin küresel barışın çıkarlarına saldırmaya istekli olduklarını tartışmak için bir araya geldiler."
+ un_events.5.a: "[SCOPE.sCharacter('peacekeeper_general_1').GetFullName]"
+ un_events.5.b: "Katılmayın"
+ 
+ you_vote_yes: "FAVOUR'da oy veriyorsunuz"
+ you_abstain: "You ABSTAIN your vote"
+ you_vote_no: "AGAINST oy veriyorsunuz"
+ you_veto: "Siz VETO süreç."
+ 
+ # ==========================================
+# LOCALIZATION
+# ==========================================
+ 
+ # ── TREATY ARTICLES ──────────────────────
+ 
+ defense_attache: "Mesaj Gönder"
+ defense_attache_desc: "Hedef ülkenin silahlı güçleri ile askeri danışmanları ve irtibat görevlileri. Hedef deneyim kazanır ve askeri maliyetleri azaltır; kaynak kazanımlar etkisi ve diplomatik ayakta kalır. Kaynak ülkesi hedeften daha büyük bir güç projeksiyonunu sağlamalıdır."
+ 
+ cultural_exchange: "Kültürel Değişim"
+ cultural_exchange_desc: "Geleneksel bir kültürel değişim programı oluşturun - paylaşılan sergiler, akademik programlar ve insanlar-insanlar temas. Her iki ülke de prestij, etki kazanır ve göçmenler için daha çekici hale gelir."
+ 
+ research_partnership: "Araştırma Ortaklığı"
+ research_partnership_desc: "Araştırma programları ve akademik kurumları paylaşmak için resmi bir anlaşma. Her iki ülke de gelişmiş araştırma hızı ve teknoloji yayılmasından yararlanır. Her iki tarafın da en az tanınan güçler olması gerekir."
+ 
+ human_development_collaboration: "İnsan Gelişimi İşbirliği İşbirliği İşbirliği İşbirliği"
+ human_development_collaboration_desc: "Zengin ülke hedefteki gelişim programları finanse ediyor - sağlık, eğitim, refah. Kaynak, etki ve prestiji karşılığında devam eden maliyetler öder. Anlaşma, kaynak ülkenin ekonomisini hedefin altında düşerse kırılır."
+ 
+ research_partnership_rank_tt: "Her iki ülke de bir araştırma ortaklığına girmek için en az tanınan güçler olmalıdır"
+ 
+ # ── DIPLOMATIC ACTIONS ───────────────────
+ 
+ financial_sanctions: "Finansal Sanctions"
+ financial_sanctions_desc: "[ROOT.GetCountry.GetName]'nin hedefle olan finansal ilişkisini kes - kredi piyasalarına erişim ve menkul kıymet ticaretini kısıtlamak. Hedefin bankacılık ve finansal sektörleri önemli ölçüde acı çekecektir."
+ 
+ condemn: "Condemn"
+ condemn_desc: "Hedef ülkenin eylemlerinin resmi olarak kınanması. Hedef, prestij, meşruiyet ve diplomatik şöhrete kalıcı bir hitaben acı çekiyor. Hedefin önemli bir infamy olması gerekir."
+ condemn_action_notification_name: "[INITIATOR_COUNTRY.GetName] bizi kınadı!"
+ condemn_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName] [SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName] kınadı!"
+ condemn_action_notification_desc: "[INITIATOR_COUNTRY.GetName] tarafından mahkum edildik!"
+ condemn_break_name:0 "Retract Condemnation"
+ condemn_pact_desc:0 "Bu ülkenin eylemlerine karşı çıkmak."
+ 
+ propose_un_sanctions: "Birleşmiş Milletler Sanctions"
+ propose_un_sanctions_desc: "Kalıcı bir Güvenlik Konseyi üyesi olarak, Birleşmiş Milletler'in hedefi resmen cezalandırdığını önerebiliriz. Oy geçerse, hedef beş yıl boyunca ciddi ekonomik cezalarla karşı karşıyadır."
+ propose_un_sanctions_action_notification_name: "[INITIATOR_COUNTRY.GetName] bize karşı BM yaptırımlar önerdi!"
+ propose_un_sanctions_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName] [SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName]'ye karşı uluslararası yaptırımlar için harekete geçti!"
+ propose_un_sanctions_action_notification_desc:1 "[INITIATOR_COUNTRY.GetName] Birleşmiş Milletler'de bize karşı uluslararası yaptırımlar önermek için harekete geçti!"
+ 
+ propose_un_condemnation: "UN Condemnation"
+ propose_un_condemnation_desc: "Birleşmiş Milletlerin hedefi resmen kınadığını ortaya koydu. Oy geçerse, hedef kalıcı prestij ve meşru hasara sahiptir. yaptırımlardan daha az şiddetli."
+ propose_un_condemnation__action_notification_name:0 "[INITIATOR_COUNTRY.GetName] bize bir UN Condemnation kazanımlar önerdi!"
+ propose_un_condemnation_pact_desc:0 "[SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName] [SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName]'ye karşı uluslararası mahkumiyet için harekete geçti!"
+ propose_un_condemnation_action_notification_desc:0 "[INITIATOR_COUNTRY.GetName] Birleşmiş Milletler'de bize karşı uluslararası mahkumiyet önermek için harekete geçti!"
+ 
+ condemn_requires_infamy_tt: "Hedefin dikkat çekici olması gerekir"
+ propose_un_sanctions_perm_member_tt: "Sadece kalıcı Güvenlik Konseyi üyeleri BM yaptırımları veya mahkumları önerebilir"
+ 
+ # ── UN EVENTS ────────────────────────────
+ 
+ un_events.102.t: "Birleşmiş Milletler – Sanctions Oy"
+ un_events.102.d: "Güvenlik Konseyi'nin daimi bir üyesi, bir üye durumuna karşı bir karar önerdi. [ROOT.GetCountry.GetName] Birleşmiş Milletler dergisindeki Yay veya Yok düğmeleri kullanarak oylarını alabilir. Sonuç 120 gün içinde açıklanacaktır."
+ un_events.102.a: "Dikkatlice dikkatli olacağız"
+ 
+ # ── NOTIFICATIONS ─────────────────────────
+ 
+ un_sanctions_passed: "UN Sanctions Imposed"
+ un_sanctions_passed_desc: "Birleşmiş Milletler, [ROOT.GetCountry.GetName]'ye karşı yaptırımlara oy verdi. Şiddetli ekonomik cezalar beş yıl boyunca yürürlükte kalacaktır."
+ 
+ un_condemnation_passed: "UN Condemnation Issued"
+ un_condemnation_passed_desc: "Birleşmiş Milletler resmi olarak [ROOT.GetCountry.GetName] [ROOT.GetCountry.GetName]'nin uluslararası duruşu önemli ölçüde hasar gördü."
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ financial_sanctions_target: "Finansal Sanctions Altında"
+ financial_sanctions_target_desc: "Yabancı bir güç, [ROOT.GetCountry.GetName] Finansal yaptırımlara izin verdi, uluslararası krediye erişimin engellenmesi ve finansal sektörü kısıtlaması sağladı."
+ 
+ condemned_modifier: "Internationally Condemed"
+ condemned_modifier_desc: "Yabancı bir güç resmi olarak [ROOT.GetCountry.GetName]'i kınadı. Prestige ve meşruiyet, kınanma süresi için azaltılır."
+ 
+ un_sanctions_target: "UN Sanctions"
+ un_sanctions_target_desc: "Birleşmiş Milletler, [ROOT.GetCountry.GetName] konusunda yaptırımlara oy verdi. Uluslararası finansal sistem etkili bir şekilde kapanıyor. Şiddetli ekonomik cezalar beş yıl boyunca yürürlükte kalır."
+ 
+ un_condemnation_target: "UN Condemnation"
+ un_condemnation_target_desc: "Birleşmiş Milletler resmi olarak [ROOT.GetCountry.GetName]'i kınadı. Prestige, meşruiyet ve diplomatik itibarı acı çekti. Suçluluk beş yıl boyunca rekorta kalır."
+ 
+ un_je_voting_sanctions_tt: "#bold UN Sanctions Oy - ilerleme oy.#! Kalıcı bir Güvenlik Konseyi üyesi [GetGlobalVariable('un_sanction_target').GetCountry.GetName] aleyhine yaptırımlar önerdi. Ya da oylarınızı koymak için aşağıdaki düğmeleri kullanın. Eğer hareket geçerse, hedef beş yıl boyunca ciddi ekonomik cezalarla karşı karşıya kalacaktır."
+ 
+ un_je_voting_condemnation_tt: "#bold UN Condemnation Oy - ilerleme oy.#! Kalıcı bir Güvenlik Konseyi üyesi [GetGlobalVariable('un_sanction_target').GetCountry.GetName] resmi bir kınama önerdi. Ya da oylarınızı koymak için aşağıdaki düğmeleri kullanın. Eğer hareket geçerse, hedef prestijli ve meşruiyetine kalıcı zarar verecektir."
+ 
+ un_je_under_sanctions_tt: "@warning! #bold [ROOT.GetCountry.GetName] şu anda Birleşmiş Milletler yaptırımları altında.#! Uluslararası topluluk, [ROOT.GetCountry.GetName] ekonomik cezaları uygulamaya oy kullandı. Bankacılık, yatırım ve inşaat ciddi bir şekilde kısıtlanır. yaptırımlar sona erinceye kadar yürürlükte kalacaktır."
+ 
+ un_je_under_condemnation_tt: "@warning! #bold [ROOT.GetCountry.GetName] Birleşmiş Milletler tarafından resmen mahkum edilmiştir.#! Uluslararası topluluk [ROOT.GetCountry.GetName]'nin yürütülmesini kınadı. Prestige, meşruiyet ve diplomatik itibarı azaltılır. Suçluluk süresi sona erinceye kadar kayıtta kalır."
+ 
+ condemn_action_propose_name:0 "Condemn"
+ condemn_action_break_name:0 "Withdraw Condemnation"
+ un_not_sanctioned:0 "Zaten UN yaptırımlar altında değil."
+ un_not_condemned:0 "Zaten UN mahkumasyonu altında değil."
+ # Propose Motion
+ un_propose_motion_button: "Birleşmiş Milletler Kararı"
+ un_propose_motion_button_desc: "Resolutions have been disabled currently." # Propose a motion to the United Nations for a vote. Only one motion may be active at a time.
+
+ # Progress On Motion
+ un_motion_progress_bar: "Birleşmiş Milletler Karar Destek Desteği"
+ un_motion_progress_bar_desc: "Mevcut BM hareketi için destek seviyesini izler"
+ un_motion_progress_bar_second_desc: "Yüksek değerler daha güçlü desteği gösterir."
+
+ un_motion_progress_from_yes_votes: "Evet oy"
+
+ un_events.100.t: "Bir Birleşmiş Milletler Hareketi"
+ un_events.100.d: "Güvenlik Konseyi'nden önce getirmek istediğiniz hangi kararı seçin."
+
+ un_events.100.a: "Çevre Koruma Kararı"
+ un_events.100.b: "Dünya Barışı Üzerine Karar"
+ un_events.100.c: "Ekonomik Kalkınma Hakkında Önlem Kararı"
+ un_events.100.e: "UNESCO Teknolojisi Hakkında Önlem Kararı"
+
+ un_events.101.t: "Birleşmiş Milletler Güvenlik Konseyi"
+ un_events.101.d: "[GetGlobalVariable('un_current_motion_name')] Birleşmiş Milletler Güvenlik Konseyi tarafından oylanır. Her üye oylarını alacak. Kalıcı üyeler hiçbir oy ile hareket edebilir."
+
+ un_events.101.a: "Oy"
+ un_events.101.b: "Oy verme NO"
+
+ un_events.202_veto.t: "Birleşmiş Milletler Kararı Vetoed"
+ un_events.202_veto.d: "Hareket "[GetGlobalVariable('un_current_motion_name')]" [GetGlobalVariable('un_motion_veto').GetCountry.GetName] tarafından ele alındı."
+
+ un_events.203_pass.t: "BM Kararı Onaylandı"
+ un_events.203_pass.d: "Hareket "[GetGlobalVariable('un_current_motion_name')]" Güvenlik Konseyi oylarını geçti."
+
+ un_events.204_fail.t: "UN Decision Rejected"
+ un_events.204_fail.d: "Hareket “[GetGlobalVariable('un_current_motion_name')] Güvenlik Konseyi oylamasında çoğunluk elde edemedi."
+ 
+ # Resolution Notification
+ 
+ un_passed: "Karar Geçti"
+ un_passed_desc: "Hareket "[GetGlobalVariable('un_current_motion_name')]" Birleşmiş Milletler Güvenlik Konseyi oy kullandı"
+ 
+ un_fail: "Karar Başarısız"
+ un_fail_desc: "Hareket “[GetGlobalVariable('un_current_motion_name')] Güvenlik Konseyi oylamasında çoğunluk elde edemedi."
+
+ un_vetoed: "Karar Vetoed"
+ un_vetoed_desc: "Hareket "[GetGlobalVariable('un_current_motion_name')]" [GetGlobalVariable('un_motion_veto').GetCountry.GetName] tarafından ele alındı."
+ 
+ # European Union
+ 
+ je_european_union: "Avrupa Birliği"
+ je_european_union_reason: "Avrupa Birliği modern çağın en hırslı siyasi ve ekonomik projelerinden biri olarak duruyor.\n\n Ekonomik entegrasyon ilkeleri üzerine inşa edilen, paylaşılan yönetişim ve kolektif güvenlik, AB üyelerinin ortak bir piyasa, koordineli ticaret politikası ve kıtanın geleceğini şekillendirmede masada bir koltuk sağlar. Üyelik, malların, hizmetlerin, sermayenin ve insanların serbest hareket vaadini getiriyor - refah için eşsiz bir fırsat.\n\n Ancak, Birlik zorlukları olmadan değil. Üyeler karmaşık görüşmelere devam etmeli, uluslar arası düzenlemelere uymalı ve ulusal egemenliğin unsurlarına karşı uzlaşmalıdır. Daha derin entegrasyon büyür, her üyenin kaderi, kolektifinkine bağlıdır.\n\n Bir ülke AB içindeki mücadeleler veya mücadeleler ortak iyi ulusal çıkarları dengeleme yeteneğine bağlıdır, bu da parçaları toplamından daha fazla olmayı amaçlayan bir birlik içinde bir yol kurmaktır."
+
+ eu_events.1.t: "Avrupa Birliği'ne davet edin"
+ eu_events.1.d: "Avrupa Birliği ülkemiz için tam bir üye olarak katılmak için bir davet genişletmiştir."
+ eu_events.1.a: "Teklifi kabul ediyoruz"
+ eu_events.1.b: "Biz Decline olmalıyız"
+
+ eu_events.2.t: "AB üyeliği üzerine tartışma"
+ eu_events.2.d: "Siyasi gruplar AB içinde olup kalma konusunda bir karar arıyor."
+ eu_events.2.a: "Birliği terk et"
+ eu_events.2.b: "Birlik içinde kalalım"
+
+ modifier_eu_member_state: "AB Üye Devlet"
+ eu_membership_accept_tt: "Avrupa Birliği üyesi olacaksınız, ekonomik ve diplomatik faydalar elde edeceksiniz."
+ eu_member_state: "AB Üye Devlet"
+ is_eu_member_state: "AB Üye Devlet"
+ 
+ eu_call_summit_button: "Bir AB Zirvesi Çağrısı"
+ eu_call_summit_button_desc: "Summon üyesi ticaret, yaptırımlar ve işbirliği tartışmak için devletler."
+
+ eu_events.3.t: "Avrupa Birliği Zirvesi"
+ eu_events.3.d: "Tüm AB üye ülkelerinden temsilciler ortak hedefleri ve zorlukları tartışmak için toplanır."
+ eu_events.3.a: "Deepen Trade Ties"
+ eu_events.3.b: "Koordinasyon Sanctions"
+ eu_events.3.c: "Kültür Değişimi Destekleyin"
+
+ eu_sanctions_ready: "Sanctions için hazırlanın"
+ 
+ leave_eu: "Avrupa Birliği'nden Çıkış"
+ leave_eu_desc: "Avrupa Birliği'nden başlayarak, ekonomik faydalarını ve siyasi entegrasyonunu devam ettirin."
+ 
+ eu_member_state_is: "AB Üye Devlet"
+ eu_member_state_is_no_longer: "Artık bir AB üyesi devlet"
+ eu_deeper_trade_ties: "EU Deeper Trade Ties"
+ eu_deeper_trade_ties_desc: "Avrupa Birliği içindeki ekonomik entegrasyon, üye ülkeler arasında ticaret hacmini artırmış ve gelişmiş piyasa erişimini sağlamıştır."
+
+ eu_cultural_exchange: "AB Kültür Değişimi"
+ eu_cultural_exchange_desc: "Avrupa Birliği'ne üye kültürel anlayış, göç ve yeni fikirlerin ve teknolojilerin yayılmasını teşvik etti."
+ je_eu_membership_request: "AB üyeliği için başvuru"
+ je_eu_membership_request_reason: "Hükümetiniz Avrupa Birliği'ne katılmak için resmi bir uygulama sundu.\n\n Bu süreç uzun süren görüşmeler, politika reformları ve AB yasaları ve standartları ile uyum içerir. Önümüzdeki yıllarda, ülkeniz ekonomik istikrar, yönetim, insan hakları ve demokratik ilkelere bağlı olarak değerlendirilecektir.\n\nBaşarılı katılım size verir:\n AB tek pazarına erişim\n Ürünler, hizmetler, sermaye ve diğer üye ülkelerle olan insanlar \n AB karar verme organlarına katılım \n\n Bununla birlikte, süreç politik olarak hassastır ve hem iç hem de mevcut AB üyelerinden direnişle karşılaşabilir."
+ eu_membership_process: "AB Üyelik Sürecine Başlayın"
+ request_to_join_eu_decision: "AB'ye katılmak için istek"
+ request_to_join_eu_decision_desc: "Formal olarak Avrupa Birliği'ne katılmak için geçerlidir."
+ 
+ eu_events.0.t: "Avrupa Birliği'ne Yükselin"
+ eu_events.0.d: "Avrupa Birliğine resmen kabul edildik"
+ 
+ # NATO
+ 
+ allow_leave_nato: "Önümüzdeki aylarda nato'yu terk etmene izin verin"
+ left_nato: "NATO'yu terk etmek"
+ leave_nato: "NATO'yu bırak"
+ leave_nato_desc: "NATO üyeliğimizi işe yaradı, askerin bağımsız bir güç olarak hareket etmesine izin verdi, Amerikan etkisinden ücretsiz."
+
+ # imf
+
+ je_imf_loan: "IMF Kredi Programı Programı"
+ je_imf_loan_reason: "Uluslararası Para Fonu kredisi [ROOT.GetCountry.GetName] genişletilmiştir. Acil finansman karşılığında, ülke önemli koşullar kabul etti: yüksek faiz oranları, zorunlu ücretsiz ticaret ve fonu yazan büyük güçler için yükümlülükler."
+
+ imf_je_obligations_active_tt: "Büyük güç yükümlülükleri hala etkilidir. Yabancı kreditörler önemli ekonomik politika kararları üzerinde tasarruf sağlar."
+ imf_je_obligations_met_tt: "Büyük güç yükümlülükleri deşarj edildi. Ülke tam ekonomik egemenliği koruyor - kredi koşulları yürürlükte kalır."
+
+ decision_leave_imf: "IMF'yi bırak"
+ decision_leave_imf_desc: "Uluslararası Para Fonu'ndan alındı. Ülke, iflasa yaklaşırken IMF kredi desteği için artık uygun olmayacak, ancak kredi veya yükümlülüklerden ve müdahaleden özgür olacak. Bu karar terslanamaz.\n\n Not: Aktif bir IMF kredisi alırken ayrılamazsınız."
+ imf_cannot_leave_while_indebted_tt: "IMF'den ayrılamazken aktif bir kredi yerindedir."
+
+
+ imf_button_pay_obligations_name: "Pay Off O Borçlar"
+ imf_button_pay_obligations_desc: "Kalan büyük güç yükümlülüklerini erken ödeyin. 500 altın maliyeti ve% 50'nin altında borç gerektirir, ancak hemen tüm ekonomik egemenliği geri yükler ve tüm büyük güçlerle ilişkileri geliştirir."
+ imf_pay_obligations_cost_tt: "Yüzde 50 ve 500 altın altında ölçeklenmiş borç gerektirir"
+ imf_obligations_paid_tt: "Borçlar erkenden ödedi. Büyük güç ilişkileri gelişmiştir."
+
+ # imf_events.1 — Loan offer
+ imf_events.1.t: "IMF Intervention"
+ imf_events.1.d: "[ROOT.GetCountry.GetName] treasury krizdedir. Borç, piyasaları sinir ve kredi verenleri ihtiyat eden bir seviyeye ulaştı. Uluslararası Para Fonu fark etti - ve acil finansman sunmak için bir delegasyon gönderdi.\n\n Şartlar cömert değildir. İlgi oranları, seviyeleri cezalandırmak için belirlenecektir. Ülke, mevcut ekonomik politikasından bağımsız olarak serbest ticaret yapmak için gerekli olacaktır. Ve fonu yazan büyük güçler, belli yükümlülüklerin karşılanmasını bekler. Ancak alternatif - güvenlik ağı olmadan doğru bir iflasa yaklaş - daha kötü olabilir."
+ imf_events.1.f: "Egemenlik ve çözünürlük aynı anda nadiren mevcuttur."
+ imf_events.1.a: "Krediyi kabul et - finansmana ihtiyacımız var"
+ imf_events.1.b: "Reddet - kendi işlerimizi yöneteceğiz"
+
+ # imf_events.2 — Great power notification
+ imf_events.2.t: "IMF Kredisi Genişletilmiş"
+ imf_events.2.d: "[SCOPE.sCountry('imf_debtor_scope').GetName] bir IMF kredi paketi kabul etti. fonun altında büyük güçlerin biri olarak, [ROOT.GetCountry.GetName] şimdi borç veya ulustan gelen yükümlülükleri tutar. Düzenleme, finansal etkiler kadar stratejik geliyor."
+ imf_events.2.f: "Borç bir diplomasi biçimidir."
+ imf_events.2.a: "İyi - bu bize avantaj sağlıyor"
+ imf_events.2.b: "Ne yazık ki, uygulanan terimler çok sert"
+
+ # imf_events.3 — Loan complete
+ imf_events.3.t: "IMF Programı Concluded"
+ imf_events.3.d: "IMF kredisi kabul ettikten beş yıl sonra [ROOT.GetCountry.GetName] programı yükümlülüklerini yerine getirdi. İlgi ödemeleri yapıldı, koşullar katlandı ve büyük güç alacakları memnundu. Ülke, egemenliğinin yeniden inşa ettiği deneyimden ortaya çıkıyor - ve bir umut, başladığından daha iyi bir şekilde finanslarıyla."
+ imf_events.3.f: "Lider dengeleniyor. Dersler ölçmek daha zordur."
+ imf_events.3.a: "Biz onun üzerinden geldik"
+
+ # imf_events.4 — Leaving
+ imf_events.4.t: "IMF'den vazgeçmek"
+ imf_events.4.d: "[ROOT.GetCountry.GetName] Uluslararası Para Fonu'ndan çekilir. Karar, üyeliğin maliyetlerinin - bir kriz sırasında ekonomik egemenliğin kaybı - acil finansmana erişimin faydalarına bağlı olarak \n\n Büyük güçler memnun olmayacak. Ve [ROOT.GetCountry.GetName] bir daha iflasa yaklaşmalı, güvenlik ağı olmayacak."
+ imf_events.4.f: "Bağımsızlık bir fiyata sahiptir. Bu yüzden bağımlılık yapar."
+ imf_events.4.a: "Yalnız duruyoruz – gerektiği gibi"
+
+ # imf_events.5 — Great power notification of leaving
+ imf_events.5.t: "Bir Ülke IMF'den ayrıldı"
+ imf_events.5.d: "[SCOPE.sCountry('imf_leaver_scope').GetName] Uluslararası Para Fonu'ndan geri çekildi. Karar, uluslararası finansal düzenine geri dönüşmektedir - ve [SCOPE.sCountry('imf_leaver_scope').GetName] Kendi ekonomik dersini daha iyi veya daha kötüsü için yayınlamayı amaçlamaktadır."
+ imf_events.5.f: "Daha az borçlu. Daha az kaba."
+ imf_events.5.a: "Noted"
+
+ # imf_events.10 — War bonds
+ imf_events.10.t: "Savaş Bonds"
+ imf_events.10.d: "treasury ve devam eden savaşla, Maliye Bakanlığı acil bir önlem önerdi: savaş tahvillerinin ihraç edilmesi. Vatandaşlar ve yatırımcılar gelecekteki geri ödeme için ülkeye para vermeye davet edilecek, savaş çabasını finanse etmek için acil bir nakit enjeksiyonu sağlayacaktır.\n\n tahviller çalışacak - ama onlar borçtur ve savaş zamanında bileşiklerde borç hızla. Tedarik tüketimi, para askeri makineye kadar yükselecektir."
+ imf_events.10.f: "Bir ulus, bugünküni savunmak için geleceğine karşı ödünç alır."
+ imf_events.10.a: "tahviller - şimdi paraya ihtiyacımız var"
+ imf_events.10.b: "Decline – geleceğimizi ipoteklemeyeceğiz"
+
+ imf_loan_modifier: "IMF Kredi Koşulları"
+ imf_loan_modifier_desc: "Bir IMF kredisi yerindedir. İlgi oranları oldukça yüksek ve ücretsiz ticaret zorunludur. Yabancı yatırımlar akıyor, ancak ekonomik egemenlik kısıtlanıyor ve meşruiyet acı çekiyor."
+
+ imf_great_power_obligations: "Büyük Güç Borçları"
+ imf_great_power_obligations_desc: "IMF'yi yazan büyük güçler, kredi koşulu olarak bu ülkeden yükümlülükleri tutuyor. Ekonomik politika üzerindeki kaldıraçları gerçek."
+
+ imf_refused_loan_modifier: "IMF Kredisi Refüzyon"
+ imf_refused_loan_modifier_desc: "Ülke IMF yardımını reddetti ve borçlarını tek başına yönetecek. Kredi koşulları bir sonuç olarak kötüleşti."
+
+ imf_post_loan_stability: "Post-Programme Recovery"
+ imf_post_loan_stability_desc: "IMF programı sona erdi. Borçlarını karşıladıktan sonra, hükümet bir güvenilirlik ölçüsü kazandı - ve ülkenin finansları daha iyi bir düzende."
+
+ imf_left_modifier: "IMF dışında"
+ imf_left_modifier_desc: "Bu ülke IMF'den geri çekildi. Kredi veya yükümlülükler ücretsizdir, ancak uluslararası acil finans finansmanından kesintiye uğrar. Yatırım akışları azaltılır."
+
+ war_bonds_modifier: "War Bonds Issued"
+ war_bonds_modifier_desc: "Savaş çabasını finanse etmek için acil savaş bağları yayınlandı. Gelir yükseliyor, ancak borç büyüyor ve tedarik tüketimi arttı."
+
+ war_bonds_refused_modifier: "Savaş Bonds Declined"
+ war_bonds_refused_modifier_desc: "Hükümet savaş bağlarını sorunca reddetti. Fiscal disiplini korunuyor, ancak ordu pinch hissediyor."
+
+ un_events.6.t: "Güçlerimiz Birleşmiş Milletler Misyonundan Geri Döndü"
+ un_events.6.d: "[ROOT.GetCountry.GetAdjective] güçler BM Barışgücü görevinde hizmetlerini tamamladı ve eve dönüyorlar. Katkı askeri açıdan mütevazıydı, ancak anlamlı bir diplomatik olarak - [ROOT.GetCountry.GetName] önemli olduğunda mevcuttu. Genel geri döndü."
+ un_events.6.a: "Hoşgeldiniz eve hoş geldiniz"
+ 
+ un_peacekeeping_contribution: "Birleşmiş Milletler Barışgücü Contribution"
+ un_peacekeeping_contribution_desc: "[ROOT.GetCountry.GetName] Birleşmiş Milletler barışgücü misyonuna güç katkıda bulundu. Uluslararası topluluk not aldı."
+ 
+  # ── EVENT 300: RESOLUTION PASSED ─────────────────────────────────
+ 
+ un_events.300.t: "Birleşmiş Milletler Kararı Geçti"
+ un_events.300.d: "Genel Kurul, dünya sorunlarını ele almak ve belirli bir konuyla ilgili küresel işbirliğini koordine etmek için bir karar üzerinde anlaştı."
+ un_events.300.f: "Karar uluslararası konsensüsün ağırlığını taşır - buna değer olan şey için."
+ un_events.300.a: "Noted"
+ 
+ UN_RES_DESC_ENVIRONMENT: "#bold Çevre Koruma Üzerine Karar#!\nMember devletler çevre standartlarını ve sürdürülebilir kaynak yönetimini koordine etmek için taahhüt ederler.\n\n#tooltip_separator!\n@green_checkmark!@green_checkmark! Tüm ülkeler #bold BM Çevre Kararı#! 12 ay boyunca modifier alırlar."
+ UN_RES_DESC_PEACE: "#bold Dünya Barışı Üzerine Karar #!\n Genel Kurul, anlaşmazlıkların barışçıl çözümüne ve Interstate çatışmanın azaltılmasına ilişkin taahhütleri tekrar teyit eder.\n\n#tooltip_separator!\n@green_checkmark!@green_checkmark! Tüm ülkeler #bold BM Barış Kararı#! 12 ay boyunca modifier alırlar."
+ UN_RES_DESC_ECONOMY: "#bold Ekonomik Kalkınma Üzerine Karar#!\nMember devletler gelişmekte olan ekonomilerde ve ticaret engellerinin daha düşüklüğünü onaylar.\n#tooltip_separator!\n@green_checkmark! Tüm ülkeler #bold UN Economic Development Çözümü#! 12 ay boyunca modifier alırlar."
+ UN_RES_DESC_TECHNOLOGY: "#bold UNESCO Teknoloji Kararı#!\n Genel Kurul, üye ülkeler arasındaki teknoloji paylaşımı ve işbirliği bilimsel araştırma için çerçeveler oluşturur.\n#tooltip_separator!\n\n@green_checkmark! Tüm ülkeler #bold UN Technology Çözümü #! 12 ay boyunca modifier alırlar."
+ 
+ # ── EVENT 301: RESOLUTION FAILED ─────────────────────────────────
+ 
+ un_events.301.t: "Birleşmiş Milletler Kararı Geçmiyor"
+ un_events.301.d: "Birleşmiş Milletler Genel Kurulu'ndan önceki hareket, gerekli çoğunlukları güvence altına almamıştır. Karar yenilgiye uğratıldı ve sonuç olmadan oturum açtı.\n\nHiçbir önlemler uygulanacak. Sponsorluk delegasyonu hayal kırıklığını dile getirdi. Diğerleri yok."
+ un_events.301.f: "Birleşmiş Milletler, Birleşmiş Milletlerin en iyi yaptığı şeyi yapıyor."
+ un_events.301.a: "Şaşırtıcı olmayan"
+ 
+ # ── EVENT 302: SANCTIONS (TARGET) ────────────────────────────────
+ 
+ un_events.302.t: "[ROOT.GetCountry.GetName] Birleşmiş Milletler tarafından Sanctioned"
+ un_events.302.d: "Birleşmiş Milletler Güvenlik Konseyi, [ROOT.GetCountry.GetName] Ekonomik yaptırımlar konusunda bir karar çıkardı. Karar gerekli çoğunluk tarafından desteklendi ve hemen etki aldı.\n\n Ticaret kısıtlamaları artık yürürlükte. Diplomatik izolasyon derinleşiyor. Üye devletler bekleniyor - ancak buna rağmen - yaptırımlar rejimine uymak.\n\n yaptırımlar, Güvenlik Konseyi'nin onları gözden geçirmeleri için beş yıl boyunca etkilenecek."
+ un_events.302.f: "Egemenlik, dünyanın görüşünden bir ülkeyi yaratmaz."
+ un_events.302.a: "Bu kararı reddediyoruz"
+ 
+ # ── EVENT 303: CONDEMNATION (TARGET) ─────────────────────────────
+ 
+ un_events.303.t: "[ROOT.GetCountry.GetName] Birleşmiş Milletler tarafından kınandı"
+ un_events.303.d: "Birleşmiş Milletler Genel Kurulu, [ROOT.GetCountry.GetName] kınayan resmi bir kararla geçti. Kırklama, zemindeki tartışmaları takip eden çoğunluk oylaması tarafından onaylanmıştır.\n\n Bir mahkumiyet bağlayıcı bir uygulama mekanizması taşımaz, ancak uluslararası disapproval'ın resmi bir açıklamasını temsil eder ve önümüzdeki yıllarda diplomatik toplulukta duran [ROOT.GetCountry.GetAdjective]'yi etkileyecektir."
+ un_events.303.f: "Kelimeler silahlar değildir. Ama işaretler bırakıyorlar."
+ un_events.303.a: "Biz ders almayacağız"
+ 
+ # ── EVENT 304: SANCTIONS/CONDEMNATION (OBSERVERS) ────────────────
+ 
+ un_events.304.t: "UN Punggle Çözümü Geçti"
+ un_events.304.d: "Birleşmiş Milletler Güvenlik Konseyi, başka bir ülkeye karşı bir karar tasarısını geçti. Dünya onlara karşı ekonomik baskıyı koordine ettiği gibi şiddetli cezalarla karşılaşacaklar."
+ un_events.304.f: "Uluslararası censure makineleri yavaş yavaş döner, ama döner."
+ un_events.304.a: "Noted"
+ 
+ UN_304_DESC_SANCTIONS: "Birleşmiş Milletler Güvenlik Konseyi, [global_var:un_sanction_target.GetName] Ekonomik yaptırımlar koymaya oy verdi. Karar gerekli marj tarafından geçti.\n\n[global_var:un_sanction_target.GetName] Ticaret kısıtlamaları, diplomatik izolasyon ve yaptırımların süresi için önemli ekonomik cezalar. Üye devletlerin kısıtlamalara uyması bekleniyor."
+ UN_304_DESC_CONDEMNATION: "Birleşmiş Milletler Genel Kurulu, oy çoğunluğu tarafından [global_var:un_sanction_target.GetName]'i resmen kınadı. Karar, uluslararası disapprovalın resmi bir ifadesidir.\n\n Bir mahkumiyet bağlayıcı bir uygulama taşımazken, [global_var:un_sanction_target.GetAdjective] rekorta çalışır ve uluslararası duruşlarını etkiler."
+ 
+ ###### International Organizations — Full Localization
+ ####  IMPORTANT: This file must be saved with UTF-8 BOM encoding
+ ####  Place in: localization/english/
+
+ ### ═══════════════════════════════════════
+ ### PANEL & TABS
+ ### ═══════════════════════════════════════
+ io_panel_title: "Uluslararası Organizasyonlar"
+ io_tab_igos_label: "Organizasyonlar"
+ io_tab_treaties_label: "Tedaviler"
+ io_tab_ngos_label: "NGOs"
+
+ ### ═══════════════════════════════════════
+ ### ORGANIZATION TYPES
+ ### ═══════════════════════════════════════
+ io_type_free_trade: "[concept_free_trade_agreement]"
+ io_type_financial: "[concept_financial_agreement]"
+ io_type_military_defense: "[concept_military_defense_agreement]"
+ io_type_cultural_pact: "[concept_cultural_pact]"
+ io_type_cooperative: "[concept_cooperative_agreement]"
+ io_type_unknown: "[concept_international_organization]"
+
+ ### ═══════════════════════════════════════
+ ### ORGANIZATIONS — Names & Descriptions
+ ### ═══════════════════════════════════════
+
+ ### United Nations
+ io_un_name: "Birleşmiş Milletler"
+ io_un_abbreviation: "Birleşmiş Milletler"
+ io_un_desc: "[concept_united_nations], uluslararası barışı ve güvenliği korumak için kurulmuş bir [concept_cooperative_agreement], uluslar arasında dostça ilişkiler geliştirmek ve sosyal ilerlemeleri teşvik etmektir. Diğer [concept_intergovernmental_organization]s'in aksine, UN doğrudan üyelerine modifier sağlar. Onun etkisi diplomatik kararlar, barış koruma görevleri ve küresel girişimler yoluyla gerçekleştirilir."
+ io_un_tooltip: "[concept_united_nations] dünyanın uluslarının [concept_cooperative_agreement] Ayrıntıları görüntülemek için tıklayın."
+
+ ### NATO
+ io_nato_name: "Kuzey Atlantik Antlaşması Organizasyonu"
+ io_nato_abbreviation: "NATO NATO NATO"
+ io_nato_desc: "[concept_nato] 1949 yılında kurulan [concept_military_defense_agreement], kolektif savunmada Kuzey Amerika ve Avrupa uluslarını bağlayıcıdır. Bir üyeye karşı silahlı bir saldırı, her şeye karşı bir saldırı olarak kabul edilir. NATO ortak askeri egzersizleri koordine eder, ekipmanlarını standartlaştırır ve entegre komuta yapıları korur."
+
+ ### G7
+ io_g7_name: "Grup 7"
+ io_g7_abbreviation: "G7"
+ io_g7_desc: "[concept_g7] dünyanın en büyük gelişmiş ekonomilerini içeren bir [concept_financial_agreement]. Üyeler mali politikası, para politikası ve ekonomik yönetişimi koordine ederler. Üyelik önemli diplomatik etkiler ve finansal güvenilirlik sağlar."
+
+ ### OPEC
+ io_opec_name: "Petrol İhracat Ülkeleri Örgütü"
+ io_opec_abbreviation: "OPEC"
+ io_opec_desc: "[concept_opec], üye ülkeler arasında petrol politikalarını koordine eden önemli petrol üreten ulusların [concept_free_trade_agreement]'dir. OPEC, petrol piyasalarının stabilizasyonu ve ülkeleri üretmek için adil geri dönüşler sağlamayı amaçlamaktadır."
+
+ ### EEC
+ io_eec_name: "Avrupa Ekonomik Topluluğu"
+ io_eec_abbreviation: "EEC"
+ io_eec_desc: "[concept_eec], Avrupa üye ülkeleri arasında ortak bir pazar kurmak için [concept_free_trade_agreement] Ticaret bariyerlerini azaltır, ekonomik düzenlemeleri harmonize eder ve üye ülkeler arasında ücretsiz mal, hizmet, sermaye ve iş hareketini teşvik eder."
+ 
+ ### Arab League
+ io_arab_league_name: "Arap Ligi"
+ io_arab_league_abbreviation: "LAS"
+ io_arab_league_desc: "[concept_arab_league] Arap konuşan uluslarının üyeleri arasında siyasi, ekonomik, kültürel ve sosyal işbirliğini teşvik eden bir [concept_cultural_pact] Lig, Arap ülkeleri arasındaki ortak ilgi ve arabuluculuk anlaşmazlıkları konusunda politikaları koordine ediyor."
+
+ ### IMF
+ io_imf_name: "Uluslararası Para Fonu"
+ io_imf_abbreviation: "IMF"
+ io_imf_desc: "[concept_imf], uluslararası para işbirliğini teşvik eden bir [concept_financial_agreement], değişim oranı istikrarı ve düzenle değişim düzenlemeleridir. Ödeme zorluklarının dengesine karşı üye ülkelere finansal yardım ve politika tavsiyesi sağlar."
+
+ ### ESA
+ io_esa_name: "Avrupa Uzay Ajansı"
+ io_esa_abbreviation: "ESA"
+ io_esa_desc: "[concept_esa] [concept_cooperative_agreement] Dış alanın keşif ve kullanımına adanmıştır. Üye devletler, tek bir Avrupa ulusunun tek başına elde edemeyeceği fırlatma araçları, uydular ve bilimsel görevleri geliştirmek için havuz kaynakları sunmaktadır."
+
+ ### ASEAN
+ io_asean_name: "Güneydoğu Asya Birliği"
+ io_asean_abbreviation: "ASEAN"
+ io_asean_desc: "[concept_asean] Güneydoğu Asya ülkelerinin ekonomik büyümeyi, sosyal ilerlemeyi ve kültürel gelişimini teşvik eden bir [concept_cooperative_agreement]. ASEAN bölgesel istikrarı kolaylaştırır ve Asya-Pasifik bölgesinde çok taraflı diyalog için bir çerçeve sunar."
+
+ ### WHO
+ io_saarc_name: "Güney Asya Bölge İşbirliği Derneği"
+ io_saarc_desc: "[concept_saarc] Güney Asya ülkeleri arasında bölgesel işbirliği, geliştirme koordinasyonu ve multilateral diyalog amaçlanmıştır."
+
+ io_cis_name: "Bağımsız Devletler Topluluğu"
+ io_cis_desc: "[concept_cis] [concept_cooperative_agreement] Sovyet sonrası devletler arasında bölgesel danışmanlık, ekonomik koordinasyon ve sivil toplum işbirliğine odaklandı."
+
+ io_who_name: "Dünya Sağlık Örgütü"
+ io_who_abbreviation: "WHO"
+ io_who_desc: "[concept_who] [concept_cooperative_agreement] Uluslararası sağlık politikasını yönlendirmek ve koordine etmektir. Küresel sağlık konularında liderlik sağlar, normlar ve standartlar, sağlık trendlerini izler ve uluslararası sağlık acil durumlara cevap verir."
+
+ ### ═══════════════════════════════════════
+ ### TREATIES — Names & Descriptions
+ ### ═══════════════════════════════════════
+
+ io_treaty_geneva_name: "Cenevre Konvansiyonları"
+ io_treaty_geneva_desc: "Cenevre Konvansiyonları olarak bilinen bir dizi anlaşma, silahlı çatışma sırasında insani tedavi için uluslararası hukuk standartlarının oluşturulmasından sorumludur. [concept_international_treaty] yaralı askerler, savaş esirlerini ve savaş zamanında sivilleri korumak için oturumlar."
+
+ io_treaty_cwc_name: "Kimyasal Silahlar Konvansiyonu"
+ io_treaty_cwc_desc: "Kimyasal Silahlar Konvansiyonu, geliştirme, üretim, satın alma, stoklama, saklama, transfer ve kimyasal silah kullanımı yasaklayan bir [concept_international_treaty] Signatories, uluslararası doğrulama altında mevcut stokları yok etmeyi kabul ediyor."
+
+ io_treaty_npt_name: "Proliferation Antlaşması"
+ io_treaty_npt_desc: "Nükleer Silahların Ortamına Dair Anlaşma, nükleer silahların yayılmasını önlemek, silahsızlanmayı teşvik etmek ve uluslararası koruma altındaki nükleer enerjinin barışçıl kullanımını kolaylaştırmak amacıyla bir [concept_international_treaty]"
+
+ io_treaty_bwc_name: "Biyolojik Silahlar Konvansiyonu"
+ io_treaty_bwc_desc: "Biyolojik Silahlar Konvansiyonu [concept_international_treaty] Biyolojik ve tokuç silahlarını yasaklamak. Tüm silah kategorisini yasaklamak için ilk çok taraflı silahsızlanma anlaşmasıydı."
+
+ io_treaty_cat_name: "İşkenceye Karşı Sözleşme"
+ io_treaty_cat_desc: "İşkenceye Karşı Sözleşme [concept_international_treaty] Tüm işkence ve zulüm biçimlerini, insanlık dışı veya cezayı yasaklamaktır. Signatories, kendi yargılarında işkenceyi önlemek için etkili önlemlere sahiptir."
+
+ ### ═══════════════════════════════════════
+ ### NGOs — Names & Descriptions
+ ### ═══════════════════════════════════════
+
+ io_iaea_name: "Uluslararası Atom Enerji Ajansı"
+ io_iaea_abbreviation: "IAEA"
+ io_iaea_desc: "IAEA, nükleer enerjinin barışçıl kullanımını teşvik eder ve askeri amaçlar için kullanımını önlemek için çalışır. Denetimler yapar, teknik yardım sağlar ve nükleer tesisler için uluslararası güvenlik standartlarını düzenler."
+
+ io_redcross_name: "International Red Cross"
+ io_redcross_abbreviation: "ICRC"
+ io_redcross_desc: "Uluslararası Kızıl Haç, silahlı çatışmalar ve doğal afetler sırasında insani yardım sağlar. Cenevre Konvansiyonlarına uyum sağlar, savaş mahkumlarını ziyaret eder ve ayrı aile üyeleri arasındaki iletişimi kolaylaştırır."
+
+ io_amnesty_name: "Uluslararası Af Örgütü"
+ io_amnesty_abbreviation: "AI"
+ io_amnesty_desc: "Af International dünya çapında insan hakları ihlalleri araştırıyor ve ortaya çıkıyor. Siyasi mahkûmların serbest bırakılması için kampanyalar, işkencenin kaldırılması ve ölüm cezası ve mültecilerin ve göçmenlerin korunması."
+
+ ### ═══════════════════════════════════════
+ ### BUTTONS
+ ### ═══════════════════════════════════════
+ io_request_join_button: "Katılmak için İstek"
+ io_leave_button: "Organizasyon bırakın"
+ io_ban_button: "Ban"
+ io_unban_button: "Unban"
+ io_subsidize_button: "Subsidize"
+ io_back_button: "Back to List"
+ io_treaty_sign_button: "Üye Ol"
+ io_treaty_withdraw_button: "Withdraw"
+
+ ### ═══════════════════════════════════════
+ ### TOOLTIPS & STATUS
+ ### ═══════════════════════════════════════
+ io_ngo_opinion_label: "Görüşümüz"
+ io_ngo_status_active: "Aktif Aktif Aktif Aktif Aktif Aktif Aktif"
+ io_ngo_status_banned: "Baned"
+ io_ngo_status_subsidized: "Subsidized"
+ io_member_indicator_tt: "Ülkeniz bu organizasyonun bir üyesidir."
+ io_treaty_signed_tt: "Ülkeniz bu anlaşmaya imza atıyor."
+
+ ### ═══════════════════════════════════════
+ ### NOTIFICATIONS
+ ### ═══════════════════════════════════════
+ notification_io_join_request_sent_notification_name: "Başvuru"
+ notification_io_join_request_sent_notification_desc: "Organizasyona katılmak için bir istek gönderdik."
+ notification_io_join_request_sent_notification_tooltip: "#header $notification_io_join_request_sent_notification_name$#!\n$TOOLTIP_DELIMITER$\n$notification_io_join_request_sent_notification_desc$"
+
+ notification_io_left_org_notification_name: "Sol Organizasyon"
+ notification_io_left_org_notification_desc: "Organizasyondan geri çekildik. Eski dost üyeleri ile ilişkilerimiz bozuldu."
+ notification_io_left_org_notification_tooltip: "#header $notification_io_left_org_notification_name$#!\n$TOOLTIP_DELIMITER$\n$notification_io_left_org_notification_desc$"
+
+ notification_io_accepted_notification_name: "Başvuru Kabul edildi"
+ notification_io_accepted_notification_desc: "Organizasyona katılma isteğimiz üyeleri tarafından onaylanmıştır."
+ notification_io_accepted_notification_tooltip: "#header $notification_io_accepted_notification_name$#!\n$TOOLTIP_DELIMITER$\n$notification_io_accepted_notification_desc$"
+
+ notification_io_rejected_notification_name: "Uygulama Rejected"
+ notification_io_rejected_notification_desc: "Organizasyona katılma isteğimiz üyeleri tarafından reddedildi."
+ notification_io_rejected_notification_tooltip: "#header $notification_io_rejected_notification_name$#!\n$TOOLTIP_DELIMITER$\n$notification_io_rejected_notification_desc$"
+
+ ### ═══════════════════════════════════════
+ ### TAB DESCRIPTIONS
+ ### ═══════════════════════════════════════
+ io_igos_tab_desc: "Uluslararası Organizasyonlar üye ülkeler arasındaki politikayı koordine eden çok taraflı kurumlardır. Detaylar, üyeleri ve mevcut eylemleri görüntülemek için bir organizasyona tıklayın."
+ io_treaties_tab_desc: "Uluslararası anlaşmalar uluslar arasında bağlayıcı anlaşmalardır. Ülkeniz fayda kazanmak için bir işaretleyici olabilir veya diplomatik duruş pahasına geri çekebilir."
+ io_ngos_tab_desc: "[concept_nongovernmental_organization] sınırların içinde bağımsız olarak çalışır. Tüm uluslar varsayılan olarak bağlıdır. Onları yasaklamayı veya sübvans etmeyi seçebilirsiniz, ülkenizin görüşlerini etkiler."
+
+ ### ═══════════════════════════════════════
+ ### GAME CONCEPTS
+ ### ═══════════════════════════════════════
+
+ concept_international_organization: "Uluslararası Organizasyon"
+ concept_international_organization_desc: "Uluslararası Organizasyonlar, politikayı koordine etmek, ticareti teşvik etmek, kolektif güvenlik sağlamak veya üye ülkeler arasında kültürel değişimi teşvik etmek için ulusal sınırlar arasında faaliyet gösteren kurumlardır. Birkaç formda geliyorlar: [concept_free_trade_agreement]s, [concept_financial_agreement]s, [concept_military_defense_agreement]s, [concept_cultural_pact]s ve [concept_cooperative_agreement]s."
+
+ concept_intergovernmental_organization: "Hükümetlerarası Organizasyon"
+ concept_intergovernmental_organization_desc: "Hükümetlerarası bir organizasyon, üyelerin egemen uluslar olduğu [concept_international_organization]. [concept_nongovernmental_organization]s aksine, IGO'lar resmi üyelik gerektirir ve önemli diplomatik, ekonomik veya askeri faydalar sağlayabilir."
+
+ concept_nongovernmental_organization: "Olmayan Kuruluş"
+ concept_nongovernmental_organization_desc: "Hiçbir hükümet tarafından kontrol edilmeden uluslararası faaliyet gösteren bağımsız kurumlardır. Tüm uluslar NGO'lara varsayılan olarak bağlıdır. Hükümetler, NGO'nun görüşünü ve sağladığı faydaları etkileyen onları yasaklamayı, tolere etmeyi veya desteklemeyi seçebilirler."
+
+ concept_international_treaty: "Uluslararası Anlaşma"
+ concept_international_treaty_desc: "Bir Uluslararası Anlaşma, egemen ülkeler arasında resmi bir bağlayıcı anlaşmadır. [concept_intergovernmental_organization]s'in aksine, anlaşmalar devam eden organizasyon üyeliği gerektirmez - bir ulus ya bir işaretleyicidir veya değil. Signatories diplomatik faydalar alır, diğer işaretleyicilerle ilgili zararları geri alırken."
+
+ international_treaty_type:0 "[concept_international_treaty]
+ concept_free_trade_agreement: "Ücretsiz Ticaret Anlaşması"
+ concept_free_trade_agreement_desc: "Ücretsiz Ticaret Anlaşması, Üye Ülkeler arasındaki ticari engelleri azaltır ve malların ve ekonomik büyüme değişimini teşvik eder."
+
+ concept_financial_agreement: "Finansal Anlaşma"
+ concept_financial_agreement_desc: "Bir Finansal Anlaşma [concept_international_organization], üyeleri arasında para işbirliği, geliştirme finansmanı ve finansal istikrar üzerine odaklanmıştır. Üyeler +5% Influence and +1 Diplomatic Reputation alırlar."
+
+ concept_military_defense_agreement: "Askeri Savunma Anlaşması"
+ concept_military_defense_agreement_desc: "Askeri Savunma Anlaşması, kolektif güvenlik ilkesi üzerine inşa edilen [concept_international_organization]. Bir üyeye yapılan bir saldırı her şeye bir saldırı olarak kabul edilir."
+
+ concept_cultural_pact: "Kültür Pakt"
+ concept_cultural_pact_desc: "Kültürel Bir Pact, ortak mirası, dilini ve üyeleri arasında kültürel değişimi teşvik eden bir [concept_international_organization]."
+
+ concept_cooperative_agreement: "Kooperatif Anlaşma"
+ concept_cooperative_agreement_desc: "Bir Kooperatif Anlaşması [concept_international_organization] geniş multilateral diplomasiye odaklandı. Diğer organizasyon türlerinin aksine, Kooperatif Anlaşmalar doğrudan modifier sağlar. Onların etkisi kararlar ve girişimler yoluyla gerçekleştirilir."
+
+ concept_united_nations: "Birleşmiş Milletler"
+ concept_united_nations_desc: "Birleşmiş Milletler dünya ülkelerinin [concept_cooperative_agreement], uluslararası barışı, güvenliği ve işbirliğini sürdürmek için adanmıştır."
+
+ concept_nato: "NATO NATO NATO"
+ concept_nato_desc: "Kuzey Atlantik Antlaşması Organizasyonu [concept_military_defense_agreement] Kuzey Amerika ve Avrupa ülkeleri kolektif savunmada bağlayıcıdır."
+
+ concept_g7: "G7"
+ concept_g7_desc: "Yedi Grubu, dünyanın en büyük gelişmiş ekonomilerinin [concept_financial_agreement]'si, mali ve para politikası koordine ediyor."
+
+ concept_opec: "OPEC"
+ concept_opec_desc: "Petrol İhracat Ülkeleri Örgütü, büyük petrol üreten ülkeler arasında petrol politikalarını koordine eden [concept_free_trade_agreement]."
+
+ concept_eec: "EEC"
+ concept_eec_desc: "Avrupa Ekonomik Topluluğu, Avrupa üye ülkeleri arasında ortak bir pazar kurmak için [concept_free_trade_agreement]"
+
+ concept_arab_league: "Arap Ligi"
+ concept_arab_league_desc: "Arap Ligi, Arap konuşan ülkeler arasında işbirliğini teşvik eden [concept_cultural_pact]"
+
+ concept_imf: "IMF"
+ concept_imf_desc: "Uluslararası Para Fonu, uluslararası para işbirliğini ve finansal istikrarı teşvik eden [concept_financial_agreement]."
+
+ concept_esa: "ESA"
+ concept_esa_desc: "Avrupa Uzay Ajansı, uzay araştırmaları ve kullanımına adanmış [concept_cooperative_agreement]."
+
+ concept_asean: "ASEAN"
+ concept_asean_desc: "Güneydoğu Asya Birliği bir [concept_cooperative_agreement] Güneydoğu Asya'da ekonomik büyüme ve bölgesel istikrarı teşvik ediyor."
+
+ concept_saarc: "SAARC"
+ concept_saarc_desc: "Güney Asya Bölgesel İşbirliği Derneği, Güney Asya ülkeleri arasında bölgesel işbirliğini teşvik eden [concept_cooperative_agreement]"
+
+ concept_cis: "CIS"
+ concept_cis_desc: "Bağımsız Devletler Topluluğu, birkaç Sovyet sonrası devletler arasındaki koordinasyon için [concept_cooperative_agreement]."
+
+ concept_who: "WHO"
+ concept_who_desc: "Dünya Sağlık Örgütü bir [concept_cooperative_agreement] uluslararası sağlık politikasını yönlendirmek ve koordine etmektir."
+
+ concept_iaea: "IAEA"
+ concept_iaea_desc: "Uluslararası Atom Enerji Ajansı, Nükleer enerjinin barışçıl kullanımını teşvik eden ve nükleer çoğalmayı önlemek için çalışan bir [concept_nongovernmental_organization]."
+
+ ### ═══════════════════════════════════════
+ ### MODIFIER LOCALIZATION
+ ### ═══════════════════════════════════════
+ io_financial_agreement_member: "Finansal Anlaşma Üyeliği"
+ io_financial_agreement_member_desc: "Uluslararası bir finansal anlaşmaya üye olmak, diplomatik etki ve itibar sağlar."
+
+ io_free_trade_agreement_member: "Free Trade Agreement Member"
+ io_free_trade_agreement_member_desc: "Ücretsiz bir ticaret anlaşmasına üye olmak, diğer üyelerle ticari engelleri azaltır."
+
+ io_military_defense_agreement_member: "Askeri Savunma Paktı"
+ io_military_defense_agreement_member_desc: "Askeri savunma anlaşmasına üye olmak, kolektif güvenlik garantilerini sağlar."
+
+ io_cultural_pact_member: "Kültür Pact Member"
+ io_cultural_pact_member_desc: "Kültürel bir pact'a üye olmak paylaşılan mirası ve kültürel değişimi teşvik eder."
+
+ io_ngo_subsidized_bonus: "NGO Subsidized"
+ io_ngo_subsidized_bonus_desc: "Hükümet, sivil olmayan bir organizasyona destek veriyor uluslararası duruşumuzu geliştirdi."
+
+ io_ngo_banned_penalty: "NGO Baned"
+ io_ngo_banned_penalty_desc: "Sivil olmayan bir organizasyonunu yasaklamak, uluslararası duruşumuza zarar verdi."
+
+ io_treaty_geneva_signatory: "Cenevre Convention Signatory"
+ io_treaty_geneva_signatory_desc: "Cenevre Konvansiyonlarına bir işaretçi olarak, insani hukuka olan bağlılığımız uluslararası düşmanlığı azaltır."
+
+ io_treaty_cwc_signatory: "CWC Signatory"
+ io_treaty_cwc_signatory_desc: "Kimyasal Silahlar Konvansiyonu'na bir işaret olarak, diplomatik itibarımız gelişmiştir."
+
+ io_treaty_npt_signatory: "NPT Signatory"
+ io_treaty_npt_signatory_desc: "Proliferation Antlaşması'na imzacı olarak, nükleer kısıtlamaya olan bağlılığımız uluslararası olarak kabul edilmektedir."
+
+ io_treaty_bwc_signatory: "BWC Signatory"
+ io_treaty_bwc_signatory_desc: "Biyolojik Silahlar Konvansiyonu'na bir işaret olarak, diplomatik itibarımız gelişmiştir."
+
+ io_treaty_cat_signatory: "CAT Signatory"
+ io_treaty_cat_signatory_desc: "İşkenceye Karşı Sözleşmeye dair bir işaret olarak, insan haklarına olan bağlılığımız prestijimizi artırır."
+
+ ### ═══════════════════════════════════════
+ ### SIDEBAR BUTTON (Community Framework)
+ ### ═══════════════════════════════════════
+ io_sidebar_button: "io sidebar button"
+ io_sidebar_button_desc: "Örgütler"
+ io_sidebar_button_tooltip: "[concept_international_organization]s dünya çapında çalışır."
+
+ ### Additional headers
+ io_modifiers_header: "Modifiers"
+ io_signatory_effects_header: "Signatory Effects"
+ io_members_header: "Üye Listesi"
+ 
+ io_eu_power_bloc_name: "Avrupa Ekonomik Topluluğu"
+ io_eec_join_dissolve_bloc_warning: "EEC'e katılmak, mevcut güç bloklarından sizi kaldıracaktır."
+ io_dissolve_eu_no_members_tt: "Hiçbir ülke EEC'de kalmamaktadır."
+ io_dissolve_eu_effect_tt: "Avrupa Birliği çözülecek ve bölgeleri absorbe edilecek."
+ io_cooldown_tt: "Son zamanlarda bu organizasyonu katıldı veya bıraktı. Tekrar hareket etmeden önce beklemek gerekir."
+
+ identity_european_community: "Avrupa Topluluğu"
+ identity_european_community_desc: "Avrupa Topluluğu, üye devletlerinde ücretsiz ticaret, ortak tarım politikası ve düzenleyici harmonizasyon teşvik eden Avrupa ülkelerinin bir gümrük birliğidir. Üyeler standart ürün düzenlemeleri ile ortak bir pazarı paylaşıyorlar."
+
+ dissolve_european_union: "Avrupa Birliği'ni Çözmek"
+ dissolve_european_union_desc: "Avrupa Ekonomik Topluluğunda kalan üyelerle, Avrupa Birliği amacını kaybetti. Kurumu resmen çözebilir ve geri kalan bölgelerini absorbe edebiliriz."
+ 
+  ### Financial Agreement (G7, IMF)
+ io_mod_influence_5pct: "@influence! #p +5%#! Etki Etkisi"
+ io_mod_diplo_rep_1: "@diplomatic_reputation! #p +1#! Diplomatik Reputasyon"
+ 
+ ### Military Defense Agreement (NATO)
+ io_mod_military_defense_pact: "@alliance_icon! #v Karşılıklı Savunma Pacts#! tüm üyelerle"
+ io_mod_prestige_2pct: "@prestige! #p +2%#! Prestige Prestige Prestige"
+ 
+ io_mod_generated_pollution_250: "Genated Pollution: #g -250%#!"
+ io_mod_state_infrastructure_5: "Devlet Altyapısı: #r -3%#!"
+ # imf
+ io_mod_imf_aid: "@trade_routes! #v Acil Borç Yardımı Yardım"
+ 
+ ### OPEC
+ io_mod_opec_trade_advantage: "@trade_advantage! #p +25%#! Petrol Ticaret Avantajı"
+ io_mod_opec_throughput: "@building_bg_oil_extraction! #p +25%#! Petrol Ekstraksiyonu"
+ io_mod_opec_customs: "@trade_routes! #v Petrol Cartel Koordinasyon#! üyelerin üyeleri arasında"
+ 
+ ### EEC / Free Trade
+ io_mod_eec_customs: "@market_access! #v Gümrük Birliği#! tüm üyeler arasında kuruldu"
+ io_mod_free_trade_convoys: "Pazar Fiyat Etkisi: #g +5%#!"
+ io_mod_free_trade_expedition: ""
+ 
+ ### Cultural Pact (Arab League)
+ io_mod_cultural_tech_spread: "@research! #p +0.10#! Teknoloji yaymak"
+ io_mod_cultural_revolution_suppress: "@turmoil! #g -5%#! Devrim"
+ 
+ ### Treaties
+ io_mod_infamy_minus5: "@infamy! #g -5%#! Infamy Generation"
+ io_mod_infamy_minus3: "@infamy! #g -% 3#! Infamy Generation"
+ io_mod_prestige_3pct: "@prestige! #p +3%#! Prestige Prestige Prestige"
+ io_mod_mobe_options_chem: "Prohibits Kimyasal Silahların Kullanımı"
+ 
+ ### ══════════════════════════════════════════
+ ### MODIFIER DEFINITIONS (localization for modifier tooltips)
+ ### ══════════════════════════════════════════
+ 
+ io_financial_agreement_member: "Finansal Anlaşma Üyeliği"
+ io_financial_agreement_member_desc: "Uluslararası bir finans anlaşmasına üye olmak, dünyanın büyük ekonomileri arasında artan diplomatik etkiye ve ayakta durmak sağlar."
+ 
+ io_free_trade_agreement_member: "Free Trade Agreement Member"
+ io_free_trade_agreement_member_desc: "Bu ulus, diğer üyelerle bir gümrük birliğine taraftır, ticari engelleri azaltır ve ekonomik düzenlemeleri harmonik eder."
+ 
+ io_opec_member: "OPEC Üyesi"
+ io_opec_member_desc: "Petrol İhracat Ülkeleri Örgütü'ne üye, koordineli fiyat gücü sağlar ve petrol üretim kapasitesini artırır."
+ 
+ io_military_defense_agreement_member: "Askeri Savunma Sözleşmesi Üyeliği"
+ io_military_defense_agreement_member_desc: "Bu ulus kolektif güvenlik taahhütleri ile bağlıdır. Herhangi bir üyeye yapılan bir saldırı her şeye bir saldırı olarak kabul edilir."
+ 
+ io_cultural_pact_member: "Kültür Pact Member"
+ io_cultural_pact_member_desc: "Üye devletler arasındaki ortak miras ve kültürel işbirliği, yeni teknolojilerin ve dempens devrimci duyguların yayılmasını hızlandırıyor."
+ 
+ ### ══════════════════════════════════════════
+ ### NATO DEFENSIVE PACT TREATY NAME
+ ### ══════════════════════════════════════════
+ 
+ io_nato_defensive_pact_name: "NATO Karşılıklı Savunma Toplantısı"
+ 
+ ### ══════════════════════════════════════════
+ ### UPDATED ORG DESCRIPTIONS reflecting mechanics
+ ### ══════════════════════════════════════════
+ 
+ io_nato_desc: "[concept_nato] [concept_military_defense_agreement] Kuzey Amerika ve Avrupa ülkeleri kolektif savunmada bağlayıcıdır. Bir üyeye karşı silahlı bir saldırı, her şeye karşı bir saldırı olarak kabul edilir. NATO'ya katılmak, mevcut her üye devletle karşılıklı savunma anlaşması yaratır."
+ 
+ io_opec_desc: "[concept_opec], petrol üretim politikalarını koordine eden büyük petrol kaynaklı ulusların bir organizasyonudur. Üye devletler kartel fiyatlandırma gücünden yararlanır, petrol ihracatında önemli bir ticaret avantajı kazanır ve koordineli yatırımdan gelen ekstraksiyonu geliştirir."
+ 
+ io_eec_desc: "[concept_eec] Avrupa üye ülkeleri arasında bir gümrük birliği kurmak [concept_free_trade_agreement] Üyeler standart ürün düzenlemeleri ve koordineli ticaret politikaları ile ortak bir pazarı paylaşıyor, sınırların sınırları boyunca ticaret engelleri azaltır."
+ 
+ io_arab_league_desc: "[concept_arab_league] Arap konuşan ulusların siyasi, ekonomik, kültürel ve sosyal işbirliğini teşvik eden bir [concept_cultural_pact]. Ortak miras teknoloji ve fikirlerin değişimini hızlandırır, üye devletlerin dayanışması içsel devrimci baskıları bastırmaya yardımcı olur."
+ 
+  ### ══════════════════════════════════════════
+ ### MEMBERSHIP VOTING EVENTS
+ ### ══════════════════════════════════════════
+ 
+ io_events.1.t: "Üyelik Başvurusu"
+ io_events.1.d: "[scope:io_applicant.GetName] organizasyonumıza katılmak için resmi bir istek gönderdi. Mevcut bir üye olarak, kabullerine oy vermek istedik."
+ io_events.1.a: "Üyeliklerini Approve their membership"
+ io_events.1.b: "Uygulamalarını Redect"
+ 
+ io_events.2.t: "Başvuru Kabul edildi"
+ io_events.2.d: "Organizasyona katılmak için uygulamamız tüm üyeler tarafından incelenmiştir. Hiçbir itiraz ortaya çıktı ve resmi olarak kabul edildik."
+ io_events.2.a: "Mükemmel haber"
+ 
+ io_events.3.t: "Uygulama Rejected"
+ io_events.3.d: "Organizasyona katılmak için uygulamamız reddedildi. En azından bir üye devlet kabulimize karşı oy verdi."
+ io_events.3.a: "Disappointing"
+ 
+ ### ══════════════════════════════════════════
+ ### EU FORMATION EVENTS
+ ### ══════════════════════════════════════════
+ 
+ io_events.10.t: "Maastricht Antlaşması"
+ io_events.10.d: "Avrupa Ekonomik Topluluğunun üye ülkeleri Avrupa Birliği Antlaşması aracılığıyla entegrasyonlarını genişletmeyi kabul etti. EEC resmi olarak Avrupa Birliği'ne dönüştürülecek, dış politika, adalet ve para konularında genişleyen bir siyasi ve ekonomik birlik."
+ io_events.10.a: "Avrupa için yeni bir dönem"
+ 
+ io_events.11.t: "Avrupa Birliği doğdu"
+ io_events.11.d: "Avrupa Ekonomik Topluluğu resmi olarak Avrupa Birliği'ne dönüştürüldü. Üye bir devlet olarak, ulusumuz artık uluslar arası yönetimde eşi benzeri olmayan bir deneyin bir parçasıdır."
+ io_events.11.a: "Yeni bir bölüm başlar"
+ 
+ ### ══════════════════════════════════════════
+ ### EU ORGANIZATION
+ ### ══════════════════════════════════════════
+ 
+ io_eu_name: "Avrupa Birliği"
+ io_eu_abbreviation: "AB"
+ io_eu_desc: "Avrupa Birliği, [concept_eec] başarılı olan Avrupa devletlerinin siyasi ve ekonomik bir birliğidir. Tek bir pazar oluşturur, yabancı ve güvenlik politikasını koordine eder ve Brüksel'deki kurumlar aracılığıyla paylaşılan yönetimi teşvik eder. Üyeler bir gümrük birliği ve düzenleyici harmonizasyondan yararlanırlar."
+ 
+ ### ══════════════════════════════════════════
+ ### NGO HIGH SUPPORT BONUSES
+ ### ══════════════════════════════════════════
+ 
+ io_ngo_iaea_high_support: "IAEA Partnership"
+ io_ngo_iaea_high_support_desc: "Uluslararası Atom Enerji Ajansı için güçlü desteğimiz, teknik uzmanlık ve nükleer güvenlik programlarına erişmemizi sağladı, gelişmiş teknolojilerin yayılmasını hızlandırdı."
+ 
+ io_ngo_redcross_high_support: "Red Cross Partnership"
+ io_ngo_redcross_high_support_desc: "Uluslararası Kızıl Haç için cömert desteğimiz uluslararası olarak kabul edildi, ulusumuzun prestiji ve insani duruşumuzu sürdürüyor."
+ 
+ io_ngo_amnesty_high_support: "Af International Partnership"
+ io_ngo_amnesty_high_support_desc: "Uluslararası Af Örgütü için güçlü desteğimiz insan hakları kimliklerimizi güçlendirdi, hükümetimizin algılanan meşruiyetini güçlendirdi."
+ 
+ ### ══════════════════════════════════════════
+ ### GUI CHANGES — BUTTON RENAME
+ ### ══════════════════════════════════════════
+ 
+ io_support_button: "Destek Desteği Destek Desteği"
+ io_ngo_status_supported: "Desteklendi Desteklendi"
+ 
+ ### ══════════════════════════════════════════
+ ### EEC/EU TRANSITION
+ ### ══════════════════════════════════════════
+ 
+ io_eec_dissolved_notice: "Avrupa Ekonomik Topluluğu Avrupa Birliği tarafından çözüldü ve değiştirildi."
+ 
+ # G7
+ 
+ io_g7_name_4: "Grup Dört"
+ io_g7_name_5: "Beş Beş Beş Grup"
+ io_g7_name_6: "Altı Grubu"
+ io_g7_name_7: "Grup 7"
+ io_g7_name_8: "Sekiz Sekizinci Grup"
+ io_g7_name_9: "Dokuz Dokuz Dokuz Dokuz Grup"
+ io_g7_name_10: "On Ten Grubu"
+ 
+ io_treaty_paris_name: "Paris Anlaşması"
+ io_treaty_paris_desc: "Paris Anlaşması, Birleşmiş Milletler İklim Değişikliği Çerçeve Sözleşmesi içinde [concept_international_treaty] Signatories, sera gazı emisyonlarını azaltmak ve küresel sıcaklık artışını sınırlamak için ulusal olarak kararlı katkılara sahiptir."
+
+ io_treaty_paris_signatory: "Paris Anlaşması"
+ io_treaty_paris_signatory_desc: "Paris Anlaşması'na imzacı olarak, uluslararası iklim işbirliğine olan bağlılığımız diplomatik itibarımızı ve prestijimizi artırır."
+ 
+ ### OPEC
+
+ opec_je_voting_increase_tt: "OPEC #bold artış #! petrol üretim kotaları için bir teklif üzerine oy vermektedir. Oylarınızı koymak için aşağıdaki düğmeleri kullanın."
+ opec_je_voting_decrease_tt: "OPEC #bold%#! petrol üretim kotaları için bir öneride bulunuyor. Oylarınızı koymak için aşağıdaki düğmeleri kullanın."
+ opec_je_voting_embargo_tt: "OPEC bir #bold petrol ambargo#! empoze etmek için bir öneride bulunuyor. Oylarınızı koymak için aşağıdaki düğmeleri kullanın."
+ opec_je_increased_production_tt: "OPEC #bold artış#! üretim kotalarına oy verdi. Üye ülkeler gelecek yıl için daha fazla petrol üretiyor."
+ opec_je_decreased_production_tt: "OPEC #bold azalt#! üretim kotalarına oy verdi. Üye ülkeler gelecek yıl petrol üretimini kısıtlıyor."
+ opec_je_idle_tt: "Aktif OPEC oylaması yok. Üyeler, dergi giriş düğmeleri aracılığıyla üretim değişiklikleri veya bir petrol ambargo önerebilirler."
+
+ ### ══════════════════════════════════════════
+ ### SCRIPTED BUTTONS
+ ### ══════════════════════════════════════════
+
+ opec_propose_increase_button: "Propose Production Art Art"
+ opec_propose_increase_button_desc: "O OPEC üyelerinin petrol üretim kotalarını artırmasını sağlayın. Eğer geçtiyse, tüm üyeler bir yıl boyunca gelişmiş petrol ekstraksiyonu alırlar."
+ opec_propose_decrease_button: "Perose Production Decrease"
+ opec_propose_decrease_button_desc: "OPEC üyelerinin petrol üretim kotalarını tedarik ve fiyatları kısıtlamak için azalttığını ortaya koydu. Eğer geçtiyse, tüm üyeler bir yıl boyunca yağ ekstraksiyonunu azaltır."
+ opec_vote_yay_button: "Favor'da Oy"
+ opec_vote_yay_button_desc: "Mevcut OPEC teklifine destek vermek için oy verin."
+ opec_vote_nay_button: "Oy Vermeye Karşı Oy"
+ opec_vote_nay_button_desc: "Mevcut OPEC teklifine karşı oylarınızı ayırın."
+
+ opec_no_vote_active_tt: "No OPEC oylaması şu anda ilerliyor."
+ opec_not_already_embargoed_tt: "Bu ülke şu anda bir OPEC petrol ambargosu altında değil."
+ opec_cannot_embargo_member_tt: "Bir OPEC üyesi üzerinde bir petrol ambargosu oluşturamaz."
+
+ je_opec:0 "OPEC"
+ je_opec_reason:0 "Petrol İhracat Ülkeleri Örgütü, büyük petrol üreten ülkeler arasında petrol politikalarını koordine eden [concept_international_organization]."
+ ### ══════════════════════════════════════════
+ ### EVENTS
+ ### ══════════════════════════════════════════
+
+ opec_events.1.t: "OPEC Oy Teşvik Edildi"
+ opec_events.1.d: "Bir üye ulus, Petrol İhracat Ülkeleri Teşkilatı içinde bir oy çağrısında bulundu. Tüm üyeler, OPEC dergi girişi aracılığıyla oylarını almaya davet edilir."
+ opec_events.1.a: "Pozisyonumuzu değerlendireceğiz"
+
+ opec_events.10.t: "OPEC Oylama"
+ opec_events.10.d: "OPEC oylaması sona erdi ve sonuçlar müttefiktir."
+
+ opec_events.11.t: "OPEC Arttırıyor"
+ opec_events.11.d: "OPEC üyesi devletler petrol üretim kotalarını artırmak için oy kullandı. Gelecek yıl boyunca, tüm üye ülkeler petrol ihracatı için daha yüksek ekstraksiyondan yararlanacak ve gelişmiş ticaret konumlarından yararlanacak."
+ opec_events.11.a: "Taplar açık"
+
+ opec_events.12.t: "OPEC Cuts Production"
+ opec_events.12.d: "OPEC üyesi devletler petrol üretim kotalarını kesmeye oy verdiler. Gelecek yıl boyunca, tüm üye ülkeler petrol üretimini küresel tedarik ve destek fiyatlarının artırılması için kısıtlayacaktır."
+ opec_events.12.a: "Biz itaat edeceğiz"
+
+ opec_events.13.t: "OPEC Oil Embargo Imposed"
+ opec_events.13.d: "Petrol İhracat Ülkeleri Örgütü, bir petrol ambargosu oluşturmaya oy verdi. OPEC üyesi devletler, petrol ihracatını hedeflenen ülkeye toplu olarak kısıtlayacaklar, ekonomilerini ciddi bir şekilde bozacaktır."
+ opec_events.13.a: "Bu, küresel ticareti yeniden ele alacak"
+
+ ### ══════════════════════════════════════════
+ ### DIPLOMATIC ACTION
+ ### ══════════════════════════════════════════
+
+ propose_opec_embargo: "Propose OPEC Oil Embargo"
+ propose_opec_embargo_desc: "OPEC'in bu ülkede bir kolektif petrol ambargosu getirdiği, petrol ihracatını ve enerji tedariklerini kısıtlaması. Hedefin önemli bir infamy olması gerekir."
+ propose_opec_embargo_action_name: "Zeytinyağı"
+ 
+ propose_opec_embargo_propose_name:0 "OPEC Embargo"
+ propose_opec_embargo_pact_desc: "OPEC bize karşı bir petrol ambargosu uyguladı!"
+ propose_opec_embargo_notification_name: "OPEC bize karşı bir ambargo sokmak için oy veriyor!"
+ propose_opec_embargo_notification_desc: "OPEC şu anda bize karşı bir petrol ambargosu koymamak için oy veriyor. Eğer lehine oy verirlerse, bizimle petrol ticareti miktarını büyük ölçüde azaltacaklardır."
+ 
+ ### ══════════════════════════════════════════
+ ### MODIFIERS
+ ### ══════════════════════════════════════════
+
+ opec_increased_production: "OPEC Production Art Art Art Art Art Art Art Art"
+ opec_increased_production_desc: "OPEC, üretim kotalarını artırmak için oy kullandı. Üye ülkeler daha fazla petrol tüketiyor ve gelişmiş ticaret konumlarının tadını çıkarıyor."
+
+ opec_decreased_production: "OPEC Üretim Cut"
+ opec_decreased_production_desc: "OPEC, üretim kotalarını kesmeye oy verdi. Üye ülkeler petrol üretimini küresel fiyatları desteklemek için kısıtladılar."
+
+ opec_oil_embargo_target: "OPEC"
+ opec_oil_embargo_target_desc: "Bu ulus bir OPEC petrol ambargosu altındadır. Petrol ithalatı ciddi şekilde kısıtlanıyor, ekonomiye ve uluslararası yere zarar veriyor."
+
+ ### ══════════════════════════════════════════
+ ### NOTIFICATIONS
+ ### ══════════════════════════════════════════
+
+ notification_opec_embargo_imposed_name: "OPEC"
+ notification_opec_embargo_imposed_desc: "OPEC, bir ulus üzerinde bir petrol ambargosu uyguladı."
+ notification_opec_embargo_imposed_tooltip: "#header $notification_opec_embargo_imposed_name$#!\n$TOOLTIP_DELIMITER$\n$notification_opec_embargo_imposed_desc$"
+
+ ### ══════════════════════════════════════════
+ ### AMNESTY INTERNATIONAL
+ ### ══════════════════════════════════════════
+
+ ngo_amnesty_opinion_minus_15_tt: "#negative Af Uluslararası görüşü: -15#!"
+ ngo_amnesty_opinion_minus_10_tt: "#negative Af Uluslararası görüşü: -10#!"
+ ngo_amnesty_opinion_minus_5_tt: "#negative Af Uluslararası görüşü: -5#!"
+ ngo_amnesty_opinion_plus_5_tt: "#positive Af Uluslararası görüşü: +5#!"
+ ngo_amnesty_opinion_plus_10_tt: "#positive Af Uluslararası görüşü: +10#!"
+
+ ### ══════════════════════════════════════════
+ ### RED CROSS
+ ### ══════════════════════════════════════════
+
+ ngo_redcross_opinion_minus_20_tt: "#negative Red Cross görüşü: -20#!"
+ ngo_redcross_opinion_minus_15_tt: "#negative Red Cross görüşü: -15#!"
+ ngo_redcross_opinion_minus_5_tt: "#negative Red Cross görüşü: -5#!"
+ ngo_redcross_opinion_plus_5_tt: "#positive Red Cross görüşü: +5#!"
+ ngo_redcross_opinion_plus_10_tt: "#positive Red Cross görüşü: +10#!"
+
+ ### ══════════════════════════════════════════
+ ### IAEA
+ ### ══════════════════════════════════════════
+
+ ngo_iaea_opinion_minus_25_tt: "#negative IAEA görüşü: -25#!"
+ ngo_iaea_opinion_minus_20_tt: "#negative IAEA görüşü: -20#!"
+ ngo_iaea_opinion_plus_10_tt: "#positive IAEA görüşü: +10#!"
+ 
+  ### ══════════════════════════════════════════
+ ### AMNESTY INTERNATIONAL
+ ### ══════════════════════════════════════════
+
+ ngo_events.1.t: "Af International Condemns Our Policy"
+ ngo_events.1.d: "Af International, ulusumuzun insan hakları kaydı hakkında lanet bir rapor yayınladı, şu anki yasalarımızı temel özgürlüklerin sistematik bir ihlali olarak teşvik etti. Uluslararası topluluk fark etti ve hükümetimiz bu endişeleri ele almak için baskıya maruz kaldı."
+ ngo_events.1.a: "Onların eleştirileri hiçbir şey değişmez"
+ ngo_events.1.b: "Endişelerini inceleyeceğiz"
+
+ ngo_events.2.t: "Uluslararası Af Örgütü Reformları"
+ ngo_events.2.d: "Son yasama reformlarımız, İnsan Hakları için önemli bir adım olarak Af International tarafından kabul edilmiştir. Yıllık rapor ilerlememizi vurgulamaktadır, ulusumuzun uluslararası itibarını artırmak."
+ ngo_events.2.a: "İlerlememizden gurur duyuyoruz"
+
+ ngo_events.3.t: "Sivil Unrest'teki Af Raporları"
+ ngo_events.3.d: "Af International, ulusumuzu işgal eden yaygın sivil kargaşayı belgeleyen özel bir rapor yayınladı. Hükümetimizi baskı yerine anlamlı reform yoluyla hoşnutsuzluk nedenlerini ele almak için çağırıyorlar."
+ ngo_events.3.a: "Reformları dikkate alacağız"
+ ngo_events.3.b: "İç ilişkilerimiz onların endişeleri değil"
+
+ ### ══════════════════════════════════════════
+ ### RED CROSS
+ ### ══════════════════════════════════════════
+
+ ngo_events.10.t: "Red Cross, İnsani Yardım Ediyor"
+ ngo_events.10.d: "Uluslararası Kızıl Haç, devam eden çatışmalardan etkilenen sivillere yardım etmek için insani işçileri dağıtmayı teklif etti. Onların yardım ekipleri, savaş-torn bölgelerimizde yerlerinden edilmiş topluluklara tıbbi bakım, barınak ve yiyecek sunmaya hazırdır."
+ ngo_events.10.a: "Yardımlarını memnuniyetle karşıladık"
+ ngo_events.10.b: "Yabancı işçilere savaş bölgesinde izin veremeyiz"
+
+ ngo_events.11.t: "Red Cross Criticizes Wartime Making"
+ ngo_events.11.d: "Uluslararası Kızıl Haç, silahlı güçlerimizin yürütülmesi konusunda derin endişe ifade eden bir kamu ifadesi yayınladı. Çatışma bölgelerinde kapsamlı sivil kayıplar ve altyapı yıkımı raporları uluslararası dikkat çekti. Tüm tarafların Cenevre Konvansiyonlarına saygı duymasını istiyorlar."
+ ngo_events.11.a: "Araştırmacılarla işbirliği yapacağız"
+ ngo_events.11.b: "Bu iddiaları inkâr ediyoruz"
+
+ ngo_events.12.t: "Red Cross Kriz Yardımı Teklif Ediyor"
+ ngo_events.12.d: "Açık savaş yokluğuna rağmen, Uluslararası Kızıl Haç, sınırlarımız dahilinde büyüyen bir insani kriz belirledi. Sivil huzursuzluk ve ekonomik kesintiye rağmen uluslararası yardım gerektiren koşullar yarattı. Etkilenen toplumlar için rahatlama çabalarını koordine etmeyi teklif ediyorlar."
+ ngo_events.12.a: "Onların yardımlarını kabul ediyoruz"
+ ngo_events.12.b: "Bunu kendimiz halledebiliriz"
+
+ ### ══════════════════════════════════════════
+ ### IAEA
+ ### ══════════════════════════════════════════
+
+ ngo_events.20.t: "IAEA Requests Nükleer Muayene"
+ ngo_events.20.d: "Uluslararası Atom Enerji Ajansı, kapsamlı bir güvenlik ve uyumluluk denetimi için nükleer tesislerimize resmen erişim talep etti. Proliferation Antlaşması'nın imzalayıcısı olarak, nükleer programımız uluslararası incelemeyi artırmıştır. IAEA bizi incelemenin rutin olduğunu garanti ediyor, ancak reddedilme uluslararası topluma açık bir sinyal gönderirdi."
+ ngo_events.20.a: "Tesislerimiz denetime açık"
+ ngo_events.20.b: "Nükleer programımız egemen bir konudur"
+
+ ngo_events.21.t: "IAEA Commends Nükleer Güvenlik Kaydı"
+ ngo_events.21.d: "Nükleer programımızın gözden geçirilmesinden sonra, Uluslararası Atom Enerji Ajansı, güvenlik standartları ve yaygın olmayan uyum taahhüdümüzü resmen kabul etti. NPT'ye olan bağlılığımız ve uluslararası denetçilerle işbirliğimiz, küresel nükleer toplulukta ayakta durmamızı güçlendirdi."
+ ngo_events.21.a: "Biz barışçıl nükleer enerjiye kararlı kalırız"
+
+ ngo_events.22.t: "IAEA Proliferasyon Endişelerini Yükseltiyor"
+ ngo_events.22.d: "Uluslararası Atom Enerji Ajansı nükleer programımızın yönünde alarm yükseltti. NPT üyeliği olmadan ve denetçilerle işbirliğine devam ettikten sonra, IAEA olası silah geliştirme konusunda endişe ifade eden resmi bir açıklama yayınladı. Uluslararası topluluk yakından izliyor."
+ ngo_events.22.a: "Biz diyaloga açık"
+ ngo_events.22.b: "Egemenliğimizin nükleer teknolojiye doğru doğru olduğunu iddia ediyoruz"
+
+ ### ══════════════════════════════════════════
+ ### MODIFIERS
+ ### ══════════════════════════════════════════
+
+ ngo_amnesty_scrutiny: "A Af Scrutiny Altında"
+ ngo_amnesty_scrutiny_desc: "Af International, son eleştiriyi takip eden insan hakları kayıtlarımızı yakından takip ediyor. Hükümet meşruiyeti baskı altında."
+
+ ngo_amnesty_reform_pressure: "Reform Baskı"
+ ngo_amnesty_reform_pressure_desc: "Uluslararası sivil huzursuzluk raporu, reform için yerli ve uluslararası baskı yarattı, ancak devrimci duygulara yardımcı oldu."
+
+ ngo_redcross_aid: "Red Cross Humanitarian Aid Aid"
+ ngo_redcross_aid_desc: "Red Cross işçileri çatışma bölgelerinde sivillere insani yardım sağlıyor, ölümleri azaltıyor ve uluslararası itibarımızı artırıyor."
+
+ ngo_redcross_cooperation: "Red Cross İşbirliği"
+ ngo_redcross_cooperation_desc: "Red Cross ile savaş süresi davranışı ile olan işbirliğimiz, uluslararası duruşumuzu geliştirdi ve askeri eylemlerimiz tarafından üretilen infamy'yi azalttı."
+
+ ngo_redcross_relief: "Red Cross Crisis Relief"
+ ngo_redcross_relief_desc: "Red Cross bu sivil kriz döneminde insani yardım sağlıyor, etkilenen popülasyonları stabilize etmeye yardımcı oluyor."
+
+ ngo_iaea_inspectors: "IAEA Inspectors Present"
+ ngo_iaea_inspectors_desc: "IAEA denetçileri Nükleer tesislerimizde çalışıyor, teknik uzmanlığı ve güvenlik bilgilerini paylaşıyor. Onların varlığı teknoloji transferini hızlandırıyor ve diplomatik itibarımızı geliştiriyor."

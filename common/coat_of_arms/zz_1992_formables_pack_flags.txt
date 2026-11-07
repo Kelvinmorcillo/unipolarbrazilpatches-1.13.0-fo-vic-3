@@ -1,0 +1,660 @@
+
+USE-Flag-Republic = {
+	pattern = "pattern_solid.tga"
+	color1 = "dark_blue"
+		colored_emblem = { texture = "ce_stars_circle_13.dds" color1 = "yellow" instance = { scale = { 0.9 0.9 } position = { 0.417 0.340 } } }
+}
+
+USE-Flag-Monarchy = {
+	pattern = "pattern_solid.tga"
+	color1 = "dark_blue"
+		colored_emblem = { texture = "ce_stars_circle_13.dds" color1 = "yellow" instance = { scale = { 0.9 0.9 } position = { 0.417 0.340 } } }
+}
+
+USE-Flag-Council = {
+	pattern = "pattern_solid.tga"
+	color1 = "dark_blue"
+		colored_emblem = { texture = "ce_stars_circle_13.dds" color1 = "yellow" instance = { scale = { 0.9 0.9 } position = { 0.417 0.340 } } }
+}
+
+USE-Flag-Theocracy = {
+	pattern = "pattern_solid.tga"
+	color1 = "dark_blue"
+		colored_emblem = { texture = "ce_stars_circle_13.dds" color1 = "yellow" instance = { scale = { 0.9 0.9 } position = { 0.417 0.340 } } }
+}
+
+AFU-Flag-Republic = {
+	pattern = "pattern_solid.tga"
+	color1 = "green"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.55 0.55 } position = { 0.5 0.5 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "red" instance = { scale = { 0.22 0.22 } position = { 0.5 0.5 } } }
+}
+
+AFU-Flag-Monarchy = {
+	pattern = "pattern_solid.tga"
+	color1 = "green"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.55 0.55 } position = { 0.5 0.5 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "red" instance = { scale = { 0.22 0.22 } position = { 0.5 0.5 } } }
+}
+
+AFU-Flag-Council = {
+	pattern = "pattern_solid.tga"
+	color1 = "green"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.55 0.55 } position = { 0.5 0.5 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "red" instance = { scale = { 0.22 0.22 } position = { 0.5 0.5 } } }
+}
+
+AFU-Flag-Theocracy = {
+	pattern = "pattern_solid.tga"
+	color1 = "green"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.55 0.55 } position = { 0.5 0.5 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "red" instance = { scale = { 0.22 0.22 } position = { 0.5 0.5 } } }
+}
+
+ASN-Flag-Republic = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.62 0.62 } position = { 0.5 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.06 0.38 } position = { 0.44 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.06 0.38 } position = { 0.50 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.06 0.38 } position = { 0.56 0.5 } } }
+}
+
+ASN-Flag-Monarchy = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.62 0.62 } position = { 0.5 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.06 0.38 } position = { 0.44 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.06 0.38 } position = { 0.50 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.06 0.38 } position = { 0.56 0.5 } } }
+}
+
+ASN-Flag-Council = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.62 0.62 } position = { 0.5 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.06 0.38 } position = { 0.44 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.06 0.38 } position = { 0.50 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.06 0.38 } position = { 0.56 0.5 } } }
+}
+
+ASN-Flag-Theocracy = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.62 0.62 } position = { 0.5 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.06 0.38 } position = { 0.44 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.06 0.38 } position = { 0.50 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.06 0.38 } position = { 0.56 0.5 } } }
+}
+
+EAF-Flag-Republic = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+EAF-Flag-Monarchy = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+EAF-Flag-Council = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+EAF-Flag-Theocracy = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+WAF-Flag-Republic = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+WAF-Flag-Monarchy = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+WAF-Flag-Council = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+WAF-Flag-Theocracy = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+CAA-Flag-Republic = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+CAA-Flag-Monarchy = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+CAA-Flag-Council = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+CAA-Flag-Theocracy = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+SFA-Flag-Republic = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+SFA-Flag-Monarchy = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+SFA-Flag-Council = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+SFA-Flag-Theocracy = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+HAF-Flag-Republic = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+HAF-Flag-Monarchy = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+HAF-Flag-Council = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+HAF-Flag-Theocracy = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+LEV-Flag-Republic = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "black" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.30 1.0 } position = { 0.15 0.5 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.14 0.14 } position = { 0.65 0.5 } } }
+}
+
+LEV-Flag-Monarchy = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "black" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.30 1.0 } position = { 0.15 0.5 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.14 0.14 } position = { 0.65 0.5 } } }
+}
+
+LEV-Flag-Council = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "black" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.30 1.0 } position = { 0.15 0.5 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.14 0.14 } position = { 0.65 0.5 } } }
+}
+
+LEV-Flag-Theocracy = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "black" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.30 1.0 } position = { 0.15 0.5 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.14 0.14 } position = { 0.65 0.5 } } }
+}
+
+IBU-Flag-Republic = {
+	pattern = "pattern_solid.tga"
+	color1 = "yellow"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.08 0.45 } position = { 0.5 0.5 } } }
+}
+
+IBU-Flag-Monarchy = {
+	pattern = "pattern_solid.tga"
+	color1 = "yellow"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.08 0.45 } position = { 0.5 0.5 } } }
+}
+
+IBU-Flag-Council = {
+	pattern = "pattern_solid.tga"
+	color1 = "yellow"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.08 0.45 } position = { 0.5 0.5 } } }
+}
+
+IBU-Flag-Theocracy = {
+	pattern = "pattern_solid.tga"
+	color1 = "yellow"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.08 0.45 } position = { 0.5 0.5 } } }
+}
+
+BNL-Flag-Republic = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+}
+
+BNL-Flag-Monarchy = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+}
+
+BNL-Flag-Council = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+}
+
+BNL-Flag-Theocracy = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+}
+
+NBU-Flag-Republic = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.16 1.0 } position = { 0.35 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 1.0 0.16 } position = { 0.5 0.5 } } }
+}
+
+NBU-Flag-Monarchy = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.16 1.0 } position = { 0.35 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 1.0 0.16 } position = { 0.5 0.5 } } }
+}
+
+NBU-Flag-Council = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.16 1.0 } position = { 0.35 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 1.0 0.16 } position = { 0.5 0.5 } } }
+}
+
+NBU-Flag-Theocracy = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.16 1.0 } position = { 0.35 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 1.0 0.16 } position = { 0.5 0.5 } } }
+}
+
+BTU-Flag-Republic = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "white" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+}
+
+BTU-Flag-Monarchy = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "white" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+}
+
+BTU-Flag-Council = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "white" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+}
+
+BTU-Flag-Theocracy = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "white" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+}
+
+CAU-Flag-Republic = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.16 1.0 } position = { 0.5 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.16 } position = { 0.5 0.5 } } }
+}
+
+CAU-Flag-Monarchy = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.16 1.0 } position = { 0.5 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.16 } position = { 0.5 0.5 } } }
+}
+
+CAU-Flag-Council = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.16 1.0 } position = { 0.5 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.16 } position = { 0.5 0.5 } } }
+}
+
+CAU-Flag-Theocracy = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.16 1.0 } position = { 0.5 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.16 } position = { 0.5 0.5 } } }
+}
+
+CCA-Flag-Republic = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.55 0.55 } position = { 0.5 0.5 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.22 0.22 } position = { 0.5 0.5 } } }
+}
+
+CCA-Flag-Monarchy = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.55 0.55 } position = { 0.5 0.5 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.22 0.22 } position = { 0.5 0.5 } } }
+}
+
+CCA-Flag-Council = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.55 0.55 } position = { 0.5 0.5 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.22 0.22 } position = { 0.5 0.5 } } }
+}
+
+CCA-Flag-Theocracy = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.55 0.55 } position = { 0.5 0.5 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "yellow" instance = { scale = { 0.22 0.22 } position = { 0.5 0.5 } } }
+}
+
+ANU-Flag-Republic = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+}
+
+ANU-Flag-Monarchy = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+}
+
+ANU-Flag-Council = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+}
+
+ANU-Flag-Theocracy = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+}
+
+UNS-Flag-Republic = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+UNS-Flag-Monarchy = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+UNS-Flag-Council = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+UNS-Flag-Theocracy = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+GUF-Flag-Republic = {
+	pattern = "pattern_solid.tga"
+	color1 = "green"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.20 1.0 } position = { 0.5 0.5 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "red" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+GUF-Flag-Monarchy = {
+	pattern = "pattern_solid.tga"
+	color1 = "green"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.20 1.0 } position = { 0.5 0.5 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "red" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+GUF-Flag-Council = {
+	pattern = "pattern_solid.tga"
+	color1 = "green"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.20 1.0 } position = { 0.5 0.5 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "red" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+GUF-Flag-Theocracy = {
+	pattern = "pattern_solid.tga"
+	color1 = "green"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "yellow" instance = { scale = { 0.20 1.0 } position = { 0.5 0.5 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "red" instance = { scale = { 0.18 0.18 } position = { 0.5 0.5 } } }
+}
+
+MEC-Flag-Republic = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+}
+
+MEC-Flag-Monarchy = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+}
+
+MEC-Flag-Council = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+}
+
+MEC-Flag-Theocracy = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+}
+
+ARU-Flag-Republic = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "black" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.30 1.0 } position = { 0.15 0.5 } } }
+}
+
+ARU-Flag-Monarchy = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "black" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.30 1.0 } position = { 0.15 0.5 } } }
+}
+
+ARU-Flag-Council = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "black" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.30 1.0 } position = { 0.15 0.5 } } }
+}
+
+ARU-Flag-Theocracy = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "black" instance = { scale = { 1.0 0.333 } position = { 0.5 0.167 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "green" instance = { scale = { 1.0 0.333 } position = { 0.5 0.833 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.30 1.0 } position = { 0.15 0.5 } } }
+}
+
+TUC-Flag-Republic = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "white" instance = { scale = { 0.30 0.30 } position = { 0.42 0.5 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "white" instance = { scale = { 0.14 0.14 } position = { 0.58 0.5 } } }
+}
+
+TUC-Flag-Monarchy = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "white" instance = { scale = { 0.30 0.30 } position = { 0.42 0.5 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "white" instance = { scale = { 0.14 0.14 } position = { 0.58 0.5 } } }
+}
+
+TUC-Flag-Council = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "white" instance = { scale = { 0.30 0.30 } position = { 0.42 0.5 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "white" instance = { scale = { 0.14 0.14 } position = { 0.58 0.5 } } }
+}
+
+TUC-Flag-Theocracy = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "white" instance = { scale = { 0.30 0.30 } position = { 0.42 0.5 } } }
+	colored_emblem = { texture = "ce_star_5_point.dds" color1 = "white" instance = { scale = { 0.14 0.14 } position = { 0.58 0.5 } } }
+}
+
+NAU-Flag-Republic = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.333 1.0 } position = { 0.167 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 0.333 1.0 } position = { 0.833 0.5 } } }
+}
+
+NAU-Flag-Monarchy = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.333 1.0 } position = { 0.167 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 0.333 1.0 } position = { 0.833 0.5 } } }
+}
+
+NAU-Flag-Council = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.333 1.0 } position = { 0.167 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 0.333 1.0 } position = { 0.833 0.5 } } }
+}
+
+NAU-Flag-Theocracy = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	colored_emblem = { texture = "ce_solid.dds" color1 = "red" instance = { scale = { 0.333 1.0 } position = { 0.167 0.5 } } }
+	colored_emblem = { texture = "ce_solid.dds" color1 = "blue" instance = { scale = { 0.333 1.0 } position = { 0.833 0.5 } } }
+}

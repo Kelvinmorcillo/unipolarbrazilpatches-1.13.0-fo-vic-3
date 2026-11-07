@@ -1,0 +1,44 @@
+# Triggered by on_battle_won
+# Root = attacker or defender country
+# scope:enemy_country = enemy of root
+# scope:battle = battle
+# scope:attacker = attacking commander
+# scope:defender = defending commander
+# scope:state = location state
+
+afghan_civil_war_battle_score = {
+	trigger = {
+		is_involved_in_journal_entry = je_afghan_civil_war
+		has_global_variable = afghan_civil_war_skirmish_phase
+		scope:enemy_country ?= {
+			is_involved_in_journal_entry = je_afghan_civil_war
+		}
+	}
+
+	effect = {
+		if = {
+			limit = {
+				c:ANA ?= this
+			}
+			change_global_variable = {
+				name = ana_afghan_civil_war_score
+				add = 1
+			}
+			je:je_afghan_civil_war ?= {
+				add_progress = { value = -1 name = je_afghan_civil_war_score_bar }
+			}
+		}
+		else_if = {
+			limit = {
+				c:AFG ?= this
+			}
+			change_global_variable = {
+				name = afg_afghan_civil_war_score
+				add = 1
+			}
+			je:je_afghan_civil_war ?= {
+				add_progress = { value = 1 name = je_afghan_civil_war_score_bar }
+			}
+		}
+	}
+}

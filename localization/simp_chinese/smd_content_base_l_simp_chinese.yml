@@ -1,0 +1,426 @@
+﻿l_simp_chinese:
+
+ # modifiers
+ nato_modifier:0 "北约"
+ je_group_international:0 "国际"
+ # je groups
+ 
+ je_group_foreign_policy:0 "外交政策"
+ je_group_domestic_policy:0 "国内政策"
+ je_group_space_exploration:0 "空间探索"
+ je_group_dilemmas:0 "难题"
+ je_group_advancements:0 "进步"
+ je_group_objectives:0 "目标"
+ asian_economy_boost:0 "经济自由化"
+ 
+ # transit rights
+ 
+ je_transit_rights: "内陆!"
+ je_transit_rights_reason: "[ROOT.GetCountry.GetName]没有海岸线。 进入国际市场完全取决于邻国的善意。 确保与其中至少一方达成过境权利协定对于贸易和战略灵活性至关重要。"
+ secure_transit_rights_treaty:0 "与任何相邻的非内陆国签署过境权利条约。"
+ # ==========================================
+ # JOURNAL ENTRY
+ # ==========================================
+ 
+ je_covid_pandemic: "COVID-19 大流行病"
+ je_covid_pandemic_reason: "在[ROOT.GetCountry.GetName]中出现了一种新型的呼吸道冠状病毒,并正在迅速向全世界扩散。 COVID-19在活的记忆中传播的速度比任何病原体都要快,利用将现代世界联系在一起的密集贸易和旅行网络. 死亡率集中在老年人和免疫妥协者身上——但是,其影响范围很广,有可能使其所接触的每个国家的保健系统不堪重负。 封锁减缓了传播速度,但打击了经济。 面具和相距相去甚远,效果较低,但更可持续。 无所事事也是一种选择——选民和死者都会记得。"
+ 
+ # ==========================================
+ # covid.1 — PANDEMIC ARRIVES
+ # ==========================================
+ 
+ covid.1.t: "小说科罗纳病毒"
+ covid.1.d: "在[SCOPE.sState('plague_origin_state').GetName],[ROOT.GetCountry.GetName]中报告了一组异常肺炎病例。 由[ROOT.GetCountry.GetAdjective]卫生当局进行的初步分析表明,一种以前未知的冠状病毒——会传播人与人,孵化期足够长,使携带者在知道自己生病之前传染。\n\n世界卫生组织已经得到通知。 这是否仍然是一场局部爆发,还是成为更多取决于今后几周作出的决定。"
+ covid.1.f: "一种新的病原体。 再来"
+ covid.1.a: "通知世卫组织并开始联系追踪"
+ 
+ # ==========================================
+ # covid.2 — SPREAD
+ # ==========================================
+ 
+ covid.2.t: "COVID-19 到达 [ROOT.GetCountry.GetName]"
+ covid.2.d: "最初在[SCOPE.sCountry('plague_originator_country').GetName]中发现的新冠病毒病例在[ROOT.GetCountry.GetName]中得到证实。 该病毒已经到来——通过旅行者,贸易路线,或仅仅是连接世界的隐形电流. \n\n[ROOT.GetCountry.GetAdjective]卫生主管部门正在激活大流行病响应协议. 使用 #bold COVID-19反应#!决定设置政策."
+ covid.2.f: "这只是时间问题。"
+ covid.2.a: "激活大流行病协议"
+ 
+ # ==========================================
+ # covid.3 — SUBSEQUENT WAVES
+ # ==========================================
+ 
+ covid.3.t: "缩略语变体"
+ covid.3.d: "新变体已引起一股新浪COVID-19感染. 卫生当局正在重新评估控制协议。"
+ covid.3.f: "病毒还在我们身边"
+ 
+ # ==========================================
+ # covid.4 — NOTIFICATION TO OTHER PLAYERS
+ # ==========================================
+ 
+ covid.4.t: "来自中国武汉的新病毒"
+ covid.4.a: "密切监测局势"
+ 
+ # ==========================================
+ # covid.5 — RESPONSE CHOICE
+ # ==========================================
+ 
+ covid.5.t: "COVID-19 应对政策"
+ covid.5.d: "[ROOT.GetCountry.GetName] 应如何应对这一流行病? 选择将确定今后几年的经济和社会状况。"
+ covid.5.f: "没有好的选择。 唯取取取舍."
+ covid.5.a: "全面封锁——关闭企业,限制出行."
+ covid.5.b: "蒙面任务和社会分离准则"
+ covid.5.c: "保持经济开放——优先恢复."
+ 
+ # ==========================================
+ # covid.7 — WAR SUPPORT
+ # ==========================================
+ 
+ covid.7.t: "瘟疫会破坏战争的努力"
+ covid.7.d: "随着COVID-19破坏[ROOT.GetCountry.GetName]人口,由[SCOPE.sCharacter('pacifist_leader').GetFullName]领导的[SCOPE.gsInterestGroup('pacifist_ig').GetName]正在质疑一个国家能否同时维持一场战争。 人口已尽. 战地医院与一线后勤竞争资源."
+ covid.7.f: "对抗病毒或与敌人战斗. 两者都很难"
+ covid.7.a: "战争仍在继续——病毒并没有改变"
+ covid.7.b: "用公共卫生信息保持士气"
+ covid.7.c: "镇压败坏的叙事"
+ 
+ # ==========================================
+ # covid.8 — POVERTY AND EVICTIONS
+ # ==========================================
+ 
+ covid.8.t: "大流行的经济代价"
+ covid.8.d: "这种流行病使数千名工人付出了工作代价;在[SCOPE.sState('plague_poverty_state').GetName]中,失业率已超过20%。 家庭无法支付房租。 地主们正在推动驱逐权。 贫穷集中在已经受到这种病毒最严重影响的地区。"
+ covid.8.f: "该大流行病内部的流行病。"
+ covid.8.a: "暂停租房和驱逐"
+ covid.8.b: "扩大社会保障和失业福利"
+ covid.8.c: "市场会解决的"
+ 
+ # ==========================================
+ # covid.9 — ANTI-MASK RESISTANCE
+ # ==========================================
+ 
+ covid.9.t: "反摇篮抗议运动"
+ covid.9.d: "由[SCOPE.gsInterestGroup('anti_mask_ig').GetName]领导,组织群众抗议[ROOT.GetCountry.GetName]的大流行病限制. 他们的立场:封鎖和口罩任务为政府超限,经济损失大于健康风险,公民有权做出自己的选择. \n\n. 抗议活动不断增加. [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName]的答复将开创先例。"
+ covid.9.f: "口罩. 他们选择的山"
+ covid.9.a: "坚持不懈——限制措施"
+ covid.9.b: "退后——取消限制"
+ covid.9.c: "委员会的科学反驳和公共卫生运动"
+ 
+ # ==========================================
+ # DECISION
+ # ==========================================
+ 
+ covid_response: "COVID-19 反应"
+ covid_response_desc: "设置 [ROOT.GetCountry.GetName] 管理COVID-19大流行病的政策。 可根据情况的变化,每六个月作出一项决定来调整政策。"
+ 
+ ### second american civil war 
+ 
+ ALK:0 "阿拉斯加语Name"
+ ALK_ADJ:0 "阿拉斯加语Name"
+ REA:0 "美国红色"
+ REA_ADJ:0 "美国红色"
+ BAM:0 "蓝色美国"
+ BAM_ADJ:0 "美国蓝色"
+ je_the_great_polarization:0 "大极化"
+ je_the_great_polarization_reason:0 "美国政治进入了不断升级的两极分化时期. \n---------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------- - -- - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
+ great_polarization_status_right_president:0 "右翼主席正在激发自由、社会民主、社会主义、共产主义和少数人权利运动。"
+ great_polarization_status_left_president:0 "左翼总统正在激起保守派、自由派、传统主义、法西斯主义和宗教多数派运动。"
+ great_polarization_status_unstable_center:0 "脆弱的中心为遏制两极分化而斗争."
+ great_polarization_depolarized_tt:0 "将极化降低到 #v 15 #!或更低,并在2035年后提高机构信任到 #v 80 #!或更高. 目前的极化: #v [Country.MakeScope.Var('great_polarization_intensity').GetValue]#!. 目前的信任:#v [Country.MakeScope.Var('great_polarization_institutional_trust').GetValue]#!."
+ great_polarization_civil_war_tt:0 "第二次美国内战开始."
+ je_second_american_civil_war:0 "第二次美国内战"
+ je_second_american_civil_war_reason:0 "美国分裂为敌对政府. 红美和蓝美是主要的作战人员,而被分道扬镳的国家可以通过外交建议来受到礼遇."
+ second_american_civil_war_status:0 "工会破裂了"
+ second_american_civil_war_blue_status:0 "蓝色美国试图维护自由社会民主秩序,"
+ second_american_civil_war_red_status:0 "红美洲寻求巩固保守的美国,同时战胜被分裂的州."
+ second_american_civil_war_complete_header:0 "内战在红美或蓝美被摧毁,被吞并或从属后结束."
+ second_american_civil_war_blue_defeated_tt:0 "蓝色美国已不复存在."
+ second_american_civil_war_red_defeated_tt:0 "红美国不复存在."
+ second_american_civil_war_blue_annexed_tt:0 "蓝美一直被从属于红美."
+ second_american_civil_war_red_annexed_tt:0 "红美被从属于蓝美."
+ great_polarization.1.t:0 "大极化"
+ great_polarization.1.d:0 "美国正进入一个政治分化的新时代,其动力是媒体分化、文化战争政治和意识形态集团之间的相互恐惧。"
+ great_polarization.1.f:0 "每次选举都是存在的。 每出丑闻都会成为证据 每个悲剧都成为了武器。"
+ great_polarization.1.a:0 "中心开始裂开."
+ great_polarization.30.t:0 "杀害乔治·弗洛伊德"
+ great_polarization.30.d:0 "George Floyd被警察杀害引发了全国性的抗议浪潮,"
+ great_polarization.30.f:0 "影片不会停留在本地. 它成为国家起诉书。"
+ great_polarization.30.a:0 "街道爆发。"
+ great_polarization.30.b:0 "保证认真改革."
+ great_polarization.31.t:0 "CHOP / CHAZ 导弹"
+ great_polarization.31.d:0 "在西雅图形成了一个被占领的抗议区,成为反警察行动和害怕国家撤退的国家象征。"
+ great_polarization.31.f:0 "对其支持者来说,这是社区自治。 对它的对手来说,它是在小型的崩溃。"
+ great_polarization.31.a:0 "任由对峙相出."
+ great_polarization.31.b:0 "清除区域。"
+ great_polarization.32.t:0 "在巴特勒试图暗杀"
+ great_polarization.32.d:0 "在宾夕法尼亚州巴特勒的集会上企图暗杀唐纳德·特朗普,加剧了对政治暴力和报复的恐惧."
+ great_polarization.32.f:0 "画面的行走速度比事实要快."
+ great_polarization.32.a:0 "愤怒的正确集会。"
+ great_polarization.32.b:0 "呼吁全国平静。"
+ great_polarization.33.t:0 "没有国王"
+ great_polarization.33.d:0 "以"无国王"为口号的群众示威席卷了全国各地的街道,被支持者诬陷为捍卫民主,被反对者诬陷为破坏稳定的抵抗."
+ great_polarization.33.f:0 "民众呼喊反对君主制,"
+ great_polarization.33.a:0 "运动展开."
+ great_polarization.33.b:0 "解除对抗"
+ great_polarization.34.t:0 "明尼苏达州立法者"
+ great_polarization.34.d:0 "以明尼苏达州立法者为目标的枪击事件加深了全国对政治争端正在滑入有组织暴力的恐惧."
+ great_polarization.34.f:0 "门阶变成一线"
+ great_polarization.34.a:0 "安全成为政治。"
+ great_polarization.34.b:0 "谴责各种政治暴力。"
+ great_polarization.35.t:0 "查理·柯克被暗杀"
+ great_polarization.35.d:0 "查理·柯克在公共场合演讲时被刺杀,成为美国不断升级的政治危机的热点."
+ great_polarization.35.f:0 "麦克风沉寂;一动更响亮。"
+ great_polarization.35.a:0 "右胁激进."
+ great_polarization.35.b:0 "谴责杀戮并降低温度。"
+ great_polarization.36.t:0 "ICE 射击"
+ great_polarization.36.d:0 "涉及联邦移民特工的致命枪击事件引发了反ICE的抗议,民族愤慨和对联邦权力的激烈争论."
+ great_polarization.36.f:0 "徽为辩相."
+ great_polarization.36.a:0 "抗议活动蔓延."
+ great_polarization.36.b:0 "暂停行动调查"
+ great_polarization.37.t:0 "《选举权法》"
+ great_polarization.37.d:0 "最高法院的一项裁决大大削弱了《投票权法》,引发了关于2026年选举前少数民族投票权被取消的指控。"
+ great_polarization.37.f:0 "朝廷讲道. 国家闻能."
+ great_polarization.37.a:0 "信任崩溃。"
+ great_polarization.37.b:0 "推行紧急投票权立法。"
+ great_polarization.100.t:0 "第二次美国内战"
+ great_polarization.100.d:0 "一场革命性危机已经打破了美国. 联邦权力受到争议,武装派别开始将国家划入敌对政府."
+ great_polarization.100.f:0 "第一次国共内战时,询问该联盟是否能够活下来. 第二问如何是工会."
+ great_polarization.100.a:0 "工会骨折."
+ great_polarization.120.t:0 "蓝色美国的提议"
+ great_polarization.120.d:0 "蓝色美国提供承认、保护和战时合作,以换取在内战中加入其一方。"
+ great_polarization.120.f:0 "当地图被烧毁时,中立性很难保持."
+ great_polarization.120.a:0 "加入"蓝色美国"."
+ great_polarization.120.b:0 "留相别."
+ great_polarization.121.t:0 "红美国的提议"
+ great_polarization.121.d:0 "红美洲提供承认,保护和战时合作,以换取加入内战的一方."
+ great_polarization.121.f:0 "问题不再在于是否战斗,而在于谁的旗下."
+ great_polarization.121.a:0 "加入"红美洲"."
+ great_polarization.121.b:0 "留相别."
+ 2acw_offer_new_africa_blue_tt:0 "提供新非洲承认、公民权利保障和战时保护,以换取加入蓝美洲。"
+ 2acw_offer_new_africa_red_tt:0 "提供新非洲自治和战时保护,以换取加入"红美"."
+ 2acw_offer_navajo_blue_tt:0 "提供纳瓦霍承认和保护自治,以换取加入"蓝色美国"."
+ 2acw_offer_navajo_red_tt:0 "提供纳瓦霍的承认和保护自治,以换取加入"红美"."
+ 2acw_offer_california_blue_tt:0 "邀请加州正式加入蓝色联盟."
+ 2acw_offer_texas_red_tt:0 "邀请德克萨斯正式加入红色联盟."
+ 2acw_offer_hawaii_blue_tt:0 "提供夏威夷保护 以换取加入美国蓝地"
+ 2acw_offer_hawaii_red_tt:0 "提供夏威夷保护 作为交换加入红美洲。"
+ 2acw_offer_alaska_blue_tt:0 "提供阿拉斯加的保护,以换取加入"蓝色美国"."
+ 2acw_offer_alaska_red_tt:0 "提供阿拉斯加的保护,以换取加入"红美国"."
+ great_polarization_baseline:0 "大极化"
+ great_polarization_right_wing_president:0 "右翼主席"
+ great_polarization_left_wing_president:0 "左翼主席"
+ great_polarization_event_violence:0 "政治暴力"
+ great_polarization_reform_concessions:0 "改革特许权"
+ great_polarization_minorities_targeted:0 "少数群体"
+ great_polarization_online_radicalization:0 "在线激进化"
+ second_american_civil_war_outbreak:0 "第二次美国内战"
+ Blue_American_Federal_Forces:0 "美国蓝色联邦部队"
+ Red_American_State_Guards:0 "美国红卫兵"
+ California_State_Defense_Forces:0 "加利福尼亚州国防军"
+ Texas_State_Guard:0 "德克萨斯州卫队"
+ New_African_Liberation_Forces:0 "新非洲解放军"
+ Navajo_Defense_Forces:0 "纳瓦霍国防军"
+ Hawaii_Defense_Forces:0 "夏威夷国防军"
+ Alaska_Defense_Forces:0 "阿拉斯加国防军"
+ 2acw_blue_alignment_treaty:0 "蓝色美国对齐"
+ 2acw_red_alignment_treaty:0 "红美国对接"
+ second_american_civil_war:0 "第二次美国内战"
+ je_the_great_polarization:0 "大极化"
+ je_the_great_polarization_reason:0 "美国政治进入了不断升级的两极分化时期. \n 极化: #v [Country.MakeScope.Var('great_polarization_intensity').GetValue]#!. \n 机构信任: #v [Country.MakeScope.Var('great_polarization_institutional_trust').GetValue]#!. \n 左压: #v [Country.MakeScope.Var('great_polarization_left_pressure').GetValue]#!. \n 右压: #v [Country.MakeScope.Var('great_polarization_right_pressure').GetValue]#!."
+
+ great_polarization_status_right_president:0 "右翼主席正在激发自由、社会民主、社会主义、共产主义和少数人权利运动。"
+ great_polarization_status_left_president:0 "左翼总统正在激起保守派、自由派、传统主义、法西斯主义和宗教多数派运动。"
+ great_polarization_status_unstable_center:0 "脆弱的中心为遏制两极分化而斗争."
+
+ great_polarization_complete_header:0 "如果危机被化解,或者美国陷入内战,大极化就会结束."
+ great_polarization_depolarized_tt:0 "将两极分化降低到 #v 15 #! 或更低,并将机构信任提升到 #v 80 #! 或更高. 目前的两极分化: #v <x id=5××××××××××6> . 目前的信任: #v <x id=8×××××××××××××××××××9>."
+ great_polarization_civil_war_tt:0 "第二次美国内战开始."
+
+ je_second_american_civil_war:0 "第二次美国内战"
+ je_second_american_civil_war_reason:0 "美国进入了新的内战. 这个期刊条目是下个设计通关的脚手架,在那里将创造出区域性的美国分道扬镳的国家,并让它们互相打斗."
+ second_american_civil_war_status:0 "工会破裂了"
+ second_american_civil_war_placeholder_tt:0 "占地者:在下一个执行口号中创造出分裂的美国国家,军队和战争."
+
+ great_polarization.1.t:0 "大极化"
+ great_polarization.1.d:0 "美国正进入一个政治分化的新时代,其动力是媒体分化、文化战争政治和意识形态集团之间的相互恐惧。"
+ great_polarization.1.f:0 "每次选举都是存在的。 每出丑闻都会成为证据 每个悲剧都成为了武器。"
+ great_polarization.1.a:0 "中心开始裂开."
+
+ great_polarization.2.t:0 "具有政治动机的大规模射击"
+ great_polarization.2.d:0 "与极端主义政治言论相挂钩的大规模枪击事件使该国感到震惊。 争斗的派系立即争论指责、安全、公民自由和意识形态。"
+ great_polarization.2.f:0 "死者被哀伤. 叙事在葬礼开始前被争吵."
+ great_polarization.2.a:0 "愤怒滋长了鸿沟。"
+ great_polarization.2.b:0 "寻求严肃的两党反应."
+
+ great_polarization.3.t:0 "企图暗杀"
+ great_polarization.3.d:0 "企图暗杀一名政治人物的行为使人们担心政治暴力正在正常化。"
+ great_polarization.3.f:0 "子弹没有击中目标 但击中了共和国"
+ great_polarization.3.a:0 "乡村后坐."
+ great_polarization.3.b:0 "扩大防护保障范围."
+
+ great_polarization.4.t:0 "算术异常"
+ great_polarization.4.d:0 "社交媒体平台放大了政治愤慨,使上百万人暴露出激进内容,阴谋网络和身份驱动的反动员."
+ great_polarization.4.f:0 "供养不劝. 它会升级。"
+ great_polarization.4.a:0 "愤怒机器加速。"
+ great_polarization.4.b:0 "压力平台至中度."
+
+ great_polarization.5.t:0 "曝光之波"
+ great_polarization.5.d:0 "对有权势人物的一波公开指控引发了全国对虐待、性别和机构虚伪的清算。"
+ great_polarization.5.f:0 "现在可以搜索那些小声的"
+ great_polarization.5.a:0 "稽算相散."
+ great_polarization.5.b:0 "建立制度性问责渠道."
+
+ great_polarization.6.t:0 "少数群体"
+ great_polarization.6.d:0 "对少数群体的敌意激增,引发了抗议、反抗议和关于种族主义、身份认同和民族归属的重新辩论。"
+ great_polarization.6.f:0 "对一些人来说,这是反弹。 对其他人来说,这是生存。"
+ great_polarization.6.a:0 "街道又填满了。"
+ great_polarization.6.b:0 "谴责反弹并降低温度。"
+
+ great_polarization.20.t:0 "温地瀑布"
+ great_polarization.20.d:0 "极化并没有消失,但最危险的螺旋被中断. 政治机构已经恢复了一些合法性。"
+ great_polarization.20.f:0 "一个共和国之所以能活下来,不是因为它的公民同意,而是因为他们中有足够的人接受失败。"
+ great_polarization.20.a:0 "工会是忍耐的"
+
+ great_polarization.21.t:0 "鸿沟"
+ great_polarization.21.d:0 "即刻的危机并未被爆发为内战,但两极分化已植入了美国的政治生活."
+ great_polarization.21.f:0 "发烧没有破裂。 它变得慢性。"
+ great_polarization.21.a:0 "新寻常."
+
+ great_polarization.100.t:0 "第二次美国内战"
+ great_polarization.100.d:0 "一场革命性危机已经打破了美国. 联邦权力受到争议,武装派别开始将国家划入敌对政府."
+ great_polarization.100.f:0 "第一次国共内战时,询问该联盟是否能够活下来. 第二问如何是工会."
+ great_polarization.100.a:0 "工会骨折."
+
+ great_polarization_baseline:0 "大极化"
+ great_polarization_baseline_desc:0 "政治气氛日益激进和被动。"
+
+ great_polarization_right_wing_president:0 "右翼主席"
+ great_polarization_right_wing_president_desc:0 "右翼总统为自由主义,社会民主主义,社会主义,共产主义,少数派权利反对派运动注入了活力."
+
+ great_polarization_left_wing_president:0 "左翼主席"
+ great_polarization_left_wing_president_desc:0 "左翼总统为保守派,自由派,传统主义,法西斯主义,以及以宗教为主的反对派运动注入了活力."
+
+ great_polarization_divided_media:0 "浓缩极化"
+ great_polarization_divided_media_desc:0 "媒体环境使政治阵营相互隔离。"
+
+ great_polarization_attempted_assassination:0 "企图暗杀"
+ great_polarization_attempted_assassination_desc:0 "政治暴力动摇了公众的信任。"
+
+ great_polarization_mass_shooting_aftermath:0 "具有政治动机的大规模射击"
+ great_polarization_mass_shooting_aftermath_desc:0 "一场出于政治动机的大屠杀加深了社会冲突。"
+
+ great_polarization_reform_concessions:0 "改革特许权"
+ great_polarization_reform_concessions_desc:0 "认真的改革对策已使政治紧张局势得到缓和。"
+
+ great_polarization_security_crackdown:0 "安全崩溃"
+ great_polarization_security_crackdown_desc:0 "扩大的安全措施增加了国家压力,同时有反弹的危险。"
+
+ great_polarization_online_radicalization:0 "在线激进化"
+ great_polarization_online_radicalization_desc:0 "社会纲领正在加速政治动员和愤怒。"
+
+ great_polarization_minorities_targeted:0 "少数群体"
+ great_polarization_minorities_targeted_desc:0 "少数族裔社区正面临加剧的敌意并组织起来作出反应。"
+
+ great_polarization_metoo_mobilization:0 "公共对帐"
+ great_polarization_metoo_mobilization_desc:0 "一场公众曝光的浪潮已经动员了自由主义和激进运动."
+
+ second_american_civil_war_outbreak:0 "第二次美国内战"
+ second_american_civil_war_outbreak_desc:0 "美国陷入了革命冲突."
+ 
+ state_pop_support_movement_centrist_add:0 "中间派运动"
+ state_pop_support_movement_conservative_add:0 "保守运动"
+ state_pop_support_movement_cultural_majority_add:0 "大众吸引文化多数运动"
+ state_pop_support_movement_fascist_add:0 "法西斯主义运动"
+ state_pop_support_movement_liberal_add:0 "自由运动"
+ state_pop_support_movement_liberal_conservative_add:0 "自由保守运动"
+ state_pop_support_movement_libertarian_add:0 "大众吸引自由运动"
+ state_pop_support_movement_social_democratic_add:0 "社会民主运动"
+ state_pop_support_movement_traditionalist_add:0 "传统主义运动"
+ state_pop_support_movement_centrist_add_desc:0 "改变对中间派运动的吸引力"
+ state_pop_support_movement_conservative_add_desc:0 "改变对保守运动的吸引力"
+ state_pop_support_movement_cultural_majority_add_desc:0 "改变流行的吸引力 文化多数运动。"
+ state_pop_support_movement_fascist_add_desc:0 "改变流行对法西斯运动的吸引力。"
+ state_pop_support_movement_liberal_add_desc:0 "改变对自由运动的吸引力"
+ state_pop_support_movement_liberal_conservative_add_desc:0 "改变对自由保守运动的吸引力。"
+ state_pop_support_movement_libertarian_add_desc:0 "改变对自由运动的吸引力"
+ state_pop_support_movement_social_democratic_add_desc:0 "改变对社会民主运动的吸引力。"
+ state_pop_support_movement_traditionalist_add_desc:0 "改变对传统主义运动的吸引力"
+ 
+ great_polarization.130.t:0 "美国蓝领队?"
+ great_polarization.130.d:0 "随着美国的分崩离析,政府的自由主义或中左派的性格使它最接近于"蓝色美国". 你可以继续战争 作为蓝色美国 或者留在美国的残余。"
+ great_polarization.130.f:0 "政府可以声称是连续性的,但权力跟随仍然服从的机构."
+ great_polarization.130.a:0 "换成"蓝色美国"."
+ great_polarization.130.b:0 "仍为美国."
+
+ great_polarization.131.t:0 "红美领队?"
+ great_polarization.131.d:0 "随着美国的分崩离析,行政当局的右翼人物将它置于最接近红美洲的地方. 你可以继续作为红美战争 或留在美国的后方"
+ great_polarization.131.f:0 "旗相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相相去相去相去相去相去相去相去相去相去相去相相去相去相相去相去相去相相去相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相"
+ great_polarization.131.a:0 "换接"红美"."
+ great_polarization.131.b:0 "仍为美国."
+
+ great_polarization_switch_blue_tt:0 "您将切换国家到 #bold 蓝色美国 #! 。"
+ great_polarization_switch_red_tt:0 "您将把国家切换为#bold > 红美#!。"
+ great_polarization_stay_usa_tt:0 "你继续做美国"
+
+ great_polarization_complete_header:0 "如果危机被化解,或者美国陷入内战,大极化就会结束."
+ 
+ great_polarization.38.t:0 "美国首都被包围"
+ great_polarization.38.d:0 "民众在一场激烈的竞选后冲入美国首都,"
+ great_polarization.38.f:0 "罗通达成为了象征的战场."
+ great_polarization.38.a:0 "共和国颤抖。"
+ great_polarization.38.b:0 "谴责这次袭击并重建信任。"
+ 
+ ## other western countries
+ 
+ je_rise_of_the_right:0 "右翼的崛起"
+ je_rise_of_the_right_reason:0 "在西方各地,右翼民粹主义运动正通过媒体分化,移民反弹,文化战争政治和反建的怨恨而日益强大. 直到2035年,右翼运动更加强大,右翼民粹主义领袖更有可能出现."
+
+ rise_of_the_right_status_baseline:0 "右翼运动日益壮大."
+ rise_of_the_right_status_strong:0 "右翼民粹主义的激增正在重塑国家政治."
+ rise_of_the_right_completion_header:0 "2035年后,这波逐渐减弱."
+ rise_of_the_right_ends_2035_tt:0 "右起起起止于#bold 1月1日,2035#!."
+ rise_of_the_right_spawnrate_tt:0 "右翼民粹主义领袖产卵率提高. 准确的产卵重量在意识形态/特征产卵文件中由人工处理。"
+
+ rise_of_the_right.1.t:0 "右翼的崛起"
+ rise_of_the_right.1.d:0 "一个新的右翼民粹主义潮流已经进入了国家政治. 它从对机构的不信任、对精英的愤怒、文化反弹和媒体环境支离破碎中汲取力量。"
+ rise_of_the_right.1.f:0 "旧党还出任. 新政治正在学习如何控制群众."
+ rise_of_the_right.1.a:0 "政治中心不再安全."
+
+ rise_of_the_right.10.t:0 "算法愤怒"
+ rise_of_the_right.10.d:0 "网络政治网络放大了反建党的愤慨,为右翼民粹主义运动提供了在传统政党之外组织的新方式."
+ rise_of_the_right.10.f:0 "饲料变成集会 冤情变成了一个平台。"
+ rise_of_the_right.10.a:0 "愤而相传."
+ rise_of_the_right.10.b:0 "推回通过公民机构。"
+
+ rise_of_the_right.11.t:0 "移徙反弹"
+ rise_of_the_right.11.d:0 "对移民、融合和民族认同的愤怒情绪激增,加强了右翼运动。"
+ rise_of_the_right.11.f:0 "边界成为每一个恐惧的象征 旧秩序无法回答"
+ rise_of_the_right.11.a:0 "后起后起."
+ rise_of_the_right.11.b:0 "分解辩论."
+
+ rise_of_the_right.12.t:0 "民粹主义者突破"
+ rise_of_the_right.12.d:0 "一个右翼的民粹主义派别已经突破了旧的政党制度,迫使主流政党对其语言和议程作出回应."
+ rise_of_the_right.12.f:0 "他们曾经在房间外面 现在房间建在他们周围"
+ rise_of_the_right.12.a:0 "右胁而起."
+ rise_of_the_right.12.b:0 "重建中心."
+
+ rise_of_the_right.13.t:0 "街头政治"
+ rise_of_the_right.13.d:0 "示威、反示威和病毒对抗加深了政治走出议会并走上街头的感觉。"
+ rise_of_the_right.13.f:0 "圣歌是其幼虫形态的政策。"
+ rise_of_the_right.13.a:0 "街道变得激进。"
+ rise_of_the_right.13.b:0 "冷却温度。"
+
+ rise_of_the_right_baseline:0 "右翼的崛起"
+ rise_of_the_right_baseline_desc:0 "右翼运动在全国政治中日益壮大."
+
+ rise_of_the_right_populist_surge:0 "右翼流行主义激起"
+ rise_of_the_right_populist_surge_desc:0 "右翼民粹主义者在重塑政治风貌."
+
+ rise_of_the_right_migration_backlash:0 "移徙反弹"
+ rise_of_the_right_migration_backlash_desc:0 "移民和民族身份已成为政治动员的核心动力。"
+
+ rise_of_the_right_online_radicalization:0 "算法愤怒"
+ rise_of_the_right_online_radicalization_desc:0 "网络愤怒加速了右翼政治动员."
+
+ rise_of_the_right_establishment_response:0 "机构反应"
+ rise_of_the_right_establishment_response_desc:0 "主流机构正在试图吸收或化解民粹主义的激增。"
+
+ rise_of_the_right_populist_leader_spawn_tooltip_modifier:0 "右翼民粹主义开放"
+ rise_of_the_right_populist_leader_spawn_tooltip_modifier_desc:0 "右翼民粹主义领袖产卵率提高. 实际的意识形态产卵重量由人工处理."
+ 

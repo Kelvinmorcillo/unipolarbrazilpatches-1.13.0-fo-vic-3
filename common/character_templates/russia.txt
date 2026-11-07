@@ -1,0 +1,134 @@
+﻿RUS_pavel_grachev = {
+	first_name = Pavel
+	last_name = Grachev
+	historical = yes
+	culture = cu:russian
+	birth_date = 1948.1.1
+	dna = dna_pavel_grachev
+	ig_leader = yes
+	interest_group = ig_armed_forces
+	ideology = ideology_moderate_leader
+	traits = {
+		experienced_political_operator
+		cautious
+		arrogant
+	}
+}
+ 
+RUS_igor_klochkov = {
+	first_name = Igor
+	last_name = Klochkov
+	historical = yes
+	culture = cu:russian
+	birth_date = 1940.1.1 # Approximate — birth date not publicly documented
+	dna = dna_igor_klochkov
+	ig_leader = yes
+	interest_group = ig_trade_unions
+	ideology = ideology_democratic_socialist_leader
+	traits = {
+		experienced_political_operator
+		charismatic
+		basic_political_operator
+	}
+}
+ 
+RUS_mikhail_khodorkovsky = {
+	first_name = Mikhail
+	last_name = Khodorkovsky
+	historical = yes
+	culture = cu:russian
+	birth_date = 1963.6.26
+	dna = dna_mikhail_khodorkovsky
+	ig_leader = yes
+	interest_group = ig_industrialists
+	ideology = ideology_liberal_leader
+	traits = {
+		innovative
+		meticulous
+		experienced_political_operator
+	}
+}
+ 
+RUS_alexander_rutskoy = {
+	first_name = Alexander
+	last_name = Rutskoy
+	historical = yes
+	culture = cu:russian
+	birth_date = 1947.9.16
+	dna = dna_alexander_rutskoy
+	ig_leader = yes
+	interest_group = ig_landowners
+	ideology = ideology_nationalist_leader
+	traits = {
+		experienced_political_operator
+		demagogue
+		charismatic
+	}
+}
+ 
+RUS_alexander_solzhenitsyn = {
+	first_name = Alexander
+	last_name = Solzhenitsyn
+	historical = yes
+	culture = cu:russian
+	birth_date = 1918.12.11
+	dna = dna_alexander_solzhenitsyn
+	ig_leader = yes
+	interest_group = ig_intelligentsia
+	ideology = ideology_nationalist_leader
+	traits = {
+		erudite
+		charismatic
+		incorruptible
+	}
+}
+ 
+RUS_patriarch_alexy_ii = {
+	first_name = Alexy
+	last_name = Ridiger
+	historical = yes
+	culture = cu:russian
+	birth_date = 1929.2.23
+	dna = dna_patriarch_alexy_ii
+	ig_leader = yes
+	interest_group = ig_devout
+	ideology = ideology_conservative_leader
+	traits = {
+		experienced_political_operator
+		pious
+		charismatic
+	}
+}
+ 
+RUS_gennady_zyuganov = {
+	first_name = Gennady
+	last_name = Zyuganov
+	historical = yes
+	culture = cu:russian
+	birth_date = 1944.6.26
+	dna = dna_gennady_zyuganov
+	ig_leader = yes
+	interest_group = ig_rural_folk
+	ideology = ideology_communist_leader
+	traits = {
+		experienced_political_operator
+		demagogue
+		charismatic
+	}
+}
+
+RUS_mikhail_gorbachev = {
+	first_name = Mikhail
+	last_name = Gorbachev
+	historical = yes
+	culture = cu:russian
+	birth_date = 1931.3.2
+	is_agitator = yes
+	dna = dna_gorbachev
+	ig_leader = no
+	interest_group = ig_trade_unions
+	ideology = ideology_democratic_socialist_leader
+	traits = {
+		charismatic
+	}
+}

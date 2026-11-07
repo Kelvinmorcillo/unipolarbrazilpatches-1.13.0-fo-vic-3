@@ -1,0 +1,539 @@
+smd_effect_advance_enrichment = {
+	if = {
+		limit = {
+			has_variable = smd_enrichment_active
+			NOT = { has_variable = smd_enriched }
+		}
+		# Add base 4, then +1 per plant level, minus the 3-plant floor
+		# This mirrors smd_enrichment_monthly_gain without self-reference
+		change_variable = {
+			name = smd_enrichment_progress
+			add = 4
+		}
+		every_scope_state = {
+			limit = {
+				has_building = building_nuclear_plant
+			}
+			root = {
+				change_variable = {
+					name = smd_enrichment_progress
+					add = 0.1
+				}
+			}
+		}
+		change_variable = {
+			name = smd_enrichment_progress
+			add = -3
+		}
+		# Floor at 4 total gain minimum
+		if = {
+			limit = { var:smd_enrichment_progress < 4 }
+			set_variable = {
+				name = smd_enrichment_progress
+				value = 4
+			}
+		}
+		# Cap at 100
+		if = {
+			limit = { var:smd_enrichment_progress >= 100 }
+			set_variable = {
+				name = smd_enrichment_progress
+				value = 100
+			}
+		}
+	}
+}
+
+# Advance production by one month (2x enrichment rate)
+smd_effect_advance_production = {
+	if = {
+		limit = {
+			has_variable = smd_production_active
+			has_variable = smd_enriched
+		}
+		change_variable = {
+			name = smd_production_progress
+			add = 8
+		}
+		every_scope_state = {
+			limit = {
+				has_building = building_nuclear_plant
+			}
+			owner = {
+				change_variable = {
+					name = smd_production_progress
+					add = 0.1
+				}
+			}
+		}
+		change_variable = {
+			name = smd_production_progress
+			add = -3
+		}
+		if = {
+			limit = { var:smd_production_progress >= 100 }
+			set_variable = {
+				name = smd_production_progress
+				value = 100
+			}
+		}
+	}
+}
+
+# Begin enrichment
+smd_effect_begin_enrichment = {
+	set_variable = smd_enrichment_active
+	if = {
+		limit = { NOT = { has_variable = smd_enrichment_progress } }
+		set_variable = {
+			name = smd_enrichment_progress
+			value = 0
+		}
+	}
+}
+
+# Complete enrichment
+smd_effect_complete_enrichment = {
+	remove_variable = smd_enrichment_active
+	set_variable = smd_enriched
+	trigger_event = {
+		id = smd_nuclear_events.2
+		popup = yes
+	}
+}
+
+# Begin weapon production
+smd_effect_begin_production = {
+	set_variable = smd_production_active
+	if = {
+		limit = { NOT = { has_variable = smd_production_progress } }
+		set_variable = {
+			name = smd_production_progress
+			value = 0
+		}
+	}
+}
+
+# Complete production — +1 warhead, reset progress
+smd_effect_complete_production = {
+	remove_variable = smd_production_active
+	set_variable = {
+		name = smd_production_progress
+		value = 0
+	}
+	if = {
+		limit = { NOT = { has_variable = smd_nukes } }
+		set_variable = {
+			name = smd_nukes
+			value = 0
+		}
+	}
+	change_variable = {
+		name = smd_nukes
+		add = 1
+	}
+	trigger_event = {
+		id = smd_nuclear_events.3
+		popup = yes
+	}
+}
+
+nuclear_rebuild_enemy_list = {
+	# Clear all four lists each month
+	clear_variable_list = nuclear_enemy_list
+	clear_variable_list = nuclear_enemy_states_list
+	clear_variable_list = nuclear_ranged_states_list
+ 
+	if = {
+		limit = { is_at_war = yes }
+		every_country = {
+			limit = {
+				has_war_with = ROOT
+				is_subject = no
+				country_rank >= rank_value:unrecognized
+			}
+			ROOT = {
+				add_to_variable_list = {
+					name = nuclear_enemy_list
+					target = PREV
+				}
+			}
+			# All enemy states — used by missile/bombing browser (no range gate)
+			every_scope_state = {
+				limit = { owner = PREV 
+					OR = {
+						# State borders a state owned by ROOT
+						any_neighbouring_state = {
+							owner = ROOT
+						}
+						# State borders a country that hosts ROOT's military bases
+						any_neighbouring_state = {
+							owner = {
+								any_scope_treaty = {
+									any_scope_article = {
+										has_type = host_military_bases
+										source_country = ROOT
+									}
+								}
+							}
+						}
+						# State is blockaded by ROOT
+						is_blockaded_by = ROOT
+					}
+				}
+				ROOT = {
+					add_to_variable_list = {
+						name = nuclear_enemy_states_list
+						target = PREV
+					}
+				}
+			}
+			# Nuclear-ranged states — only those in ICBM range OR
+			# neighbouring a player-owned state
+			every_scope_state = {
+				limit = {
+					owner = PREV
+					OR = {
+						# State borders a state owned by ROOT
+						any_neighbouring_state = {
+							owner = ROOT
+						}
+						# State borders a country that hosts ROOT's military bases
+						any_neighbouring_state = {
+							owner = {
+								any_scope_treaty = {
+									any_scope_article = {
+										has_type = host_military_bases
+										source_country = ROOT
+									}
+								}
+							}
+						}
+						# State is blockaded by ROOT
+						is_blockaded_by = ROOT
+						# ROOT has ICBMs — global range
+						ROOT = { has_variable = icbm_programme_complete }
+					}
+				}
+				ROOT = {
+					add_to_variable_list = {
+						name = nuclear_ranged_states_list
+						target = PREV
+					}
+				}
+			}
+		}
+	}
+ 
+	# Stale nuclear target cleanup — peace or out of range
+	every_in_list = {
+		variable = wmd_target_list
+		limit = {
+			OR = {
+				owner = { NOT = { has_war_with = ROOT } }
+				AND = {
+					NOT = { ROOT = { has_variable = icbm_programme_complete } }
+					NOT = {
+						any_neighbouring_state = {
+							owner = ROOT
+						}
+					}
+				}
+			}
+		}
+		ROOT = {
+			remove_list_variable = {
+				name = wmd_target_list
+				target = PREV
+			}
+		}
+	}
+	every_in_list = {
+		variable = wmd_target_list_c
+		limit = {
+			NOT = {
+				any_in_list = {
+					variable = wmd_target_list
+					owner = THIS
+				}
+			}
+		}
+		ROOT = {
+			remove_list_variable = {
+				name = wmd_target_list_c
+				target = PREV
+			}
+		}
+	}
+ 
+	# Stale conventional missile target cleanup
+	every_in_list = {
+		variable = conventional_target_list
+		limit = {
+			owner = { NOT = { has_war_with = ROOT } }
+		}
+		ROOT = {
+			remove_list_variable = {
+				name = conventional_target_list
+				target = PREV
+			}
+		}
+	}
+	every_in_list = {
+		variable = conventional_target_list_c
+		limit = {
+			NOT = {
+				any_in_list = {
+					variable = conventional_target_list
+					owner = THIS
+				}
+			}
+		}
+		ROOT = {
+			remove_list_variable = {
+				name = conventional_target_list_c
+				target = PREV
+			}
+		}
+	}
+ 
+	# Stale bombing target cleanup
+	every_in_list = {
+		variable = bombing_target_list
+		limit = {
+			owner = { NOT = { has_war_with = ROOT } }
+		}
+		ROOT = {
+			remove_list_variable = {
+				name = bombing_target_list
+				target = PREV
+			}
+		}
+	}
+ 
+	nuclear_update_kill_rate_cache = yes
+}
+ 
+nuclear_update_kill_rate_cache = {
+	set_variable = {
+		name = nuclear_kill_rate_cache
+		value = nuclear_kill_rate_sv
+	}
+}
+
+conventional_missile_strike = {
+	# First update the consumption based on deployment %
+	change_variable = {
+		name = conventional_missiles
+		subtract = conventional_missiles_to_use_sv
+	}
+	if = {
+		limit = { var:conventional_missiles < 0 }
+		set_variable = { name = conventional_missiles value = 0 }
+	}
+
+	every_in_list = {
+		variable = conventional_target_list
+
+		# Each targeted state gets one random building hit attempt
+		# per missile fired. More missiles = more rolls.
+		# Base chance per roll scales with deployment %:
+		#   10% deploy = fewer missiles = fewer rolls
+		#   100% deploy = full salvo = maximum rolls
+		# Each roll: random building from the list, 15% destroy chance.
+
+		# Roll once per missile in the salvo against a random building
+		random = {
+			chance = 8
+			if = { limit = { has_building = building_airport } remove_building = building_airport }
+		}
+		random = {
+			chance = 8
+			if = { limit = { has_building = building_barracks } remove_building = building_barracks }
+		}
+		random = {
+			chance = 8
+			if = { limit = { has_building = building_naval_base } remove_building = building_naval_base }
+		}
+		random = {
+			chance = 8
+			if = { limit = { has_building = building_nuclear_plant } remove_building = building_nuclear_plant }
+		}
+		random = {
+			chance = 8
+			if = { limit = { has_building = building_nuclear_silo } remove_building = building_nuclear_silo }
+		}
+		random = {
+			chance = 8
+			if = { limit = { has_building = building_government_administration } remove_building = building_government_administration }
+		}
+		random = {
+			chance = 8
+			if = { limit = { has_building = building_railway } remove_building = building_railway }
+		}
+		# Additional industrial/infrastructure targets
+		random = {
+			chance = 6
+			if = { limit = { has_building = building_power_plant } remove_building = building_power_plant }
+		}
+		random = {
+			chance = 6
+			if = { limit = { has_building = building_port } remove_building = building_port }
+		}
+		random = {
+			chance = 6
+			if = { limit = { has_building = building_oil_rig } remove_building = building_oil_rig }
+		}
+
+		# Devastation scales with deployment percentage — buffed x3
+		add_devastation = conventional_missile_devastation_sv
+	}
+}
+ 
+# ==========================================
+# STRATEGIC BOMBING RUN — SCRIPTED EFFECT
+# Adds devastation to each targeted state.
+# Amount = bombing_devastation_per_run_sv.
+# Lower building destroy chance (1%).
+# ==========================================
+ 
+strategic_bombing_run = {
+	every_in_list = {
+		variable = bombing_target_list
+ 
+		add_devastation = bombing_devastation_per_run_sv
+ 
+		# Lower accuracy — 1% chance per building
+		if = {
+			limit = { has_variable = conventional_missiles }
+			random = {
+				chance = 1
+				if = {
+					limit = { has_building = building_airport }
+					remove_building = building_airport
+				}
+			}
+		}
+		if = {
+			limit = { has_variable = conventional_missiles }
+			random = {
+				chance = 1
+				if = {
+					limit = { has_building = building_barracks }
+					remove_building = building_barracks
+				}
+			}
+		}
+		if = {
+			limit = { has_variable = conventional_missiles }
+			random = {
+				chance = 1
+				if = {
+					limit = { has_building = building_naval_base }
+					remove_building = building_naval_base
+				}
+			}
+		}
+		if = {
+			limit = { has_variable = conventional_missiles }
+			random = {
+				chance = 1
+				if = {
+					limit = { has_building = building_nuclear_plant }
+					remove_building = building_nuclear_plant
+				}
+			}
+		}
+		if = {
+			limit = { has_variable = conventional_missiles }
+			random = {
+				chance = 1
+				if = {
+					limit = { has_building = building_nuclear_silo }
+					remove_building = building_nuclear_silo
+				}
+			}
+		}
+		if = {
+			limit = { has_variable = conventional_missiles }
+			random = {
+				chance = 1
+				if = {
+					limit = { has_building = building_government_administration }
+					remove_building = building_government_administration
+				}
+			}
+		}
+		if = {
+			limit = { has_variable = conventional_missiles }
+			random = {
+				chance = 1
+				if = {
+					limit = { has_building = building_railway }
+					remove_building = building_railway
+				}
+			}
+		}
+	}
+}
+
+# ==========================================
+# Recompute the top 5 nuclear powers.
+# Stores their tags in 5 separate global variables that the
+# customizable_localization reads. Uses ordered_country to
+# rank by the 'nukes' variable.
+# ==========================================
+nuclear_recompute_top_5 = {
+	# Wipe previous values
+	remove_global_variable = nuclear_top_1
+	remove_global_variable = nuclear_top_2
+	remove_global_variable = nuclear_top_3
+	remove_global_variable = nuclear_top_4
+	remove_global_variable = nuclear_top_5
+
+	ordered_country = {
+		limit = {
+			has_variable = nukes
+			var:nukes > 0
+		}
+		order_by = country_nukes_count_sv
+		position = 0
+		set_global_variable = { name = nuclear_top_1 value = this }
+	}
+	ordered_country = {
+		limit = {
+			has_variable = nukes
+			var:nukes > 0
+		}
+		order_by = country_nukes_count_sv
+		position = 1
+		set_global_variable = { name = nuclear_top_2 value = this }
+	}
+	ordered_country = {
+		limit = {
+			has_variable = nukes
+			var:nukes > 0
+		}
+		order_by = country_nukes_count_sv
+		position = 2
+		set_global_variable = { name = nuclear_top_3 value = this }
+	}
+	ordered_country = {
+		limit = {
+			has_variable = nukes
+			var:nukes > 0
+		}
+		order_by = country_nukes_count_sv
+		position = 3
+		set_global_variable = { name = nuclear_top_4 value = this }
+	}
+	ordered_country = {
+		limit = {
+			has_variable = nukes
+			var:nukes > 0
+		}
+		order_by = country_nukes_count_sv
+		position = 4
+		set_global_variable = { name = nuclear_top_5 value = this }
+	}
+}

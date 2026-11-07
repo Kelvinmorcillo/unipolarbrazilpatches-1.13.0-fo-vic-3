@@ -1,0 +1,271 @@
+# ==========================================
+# NATIONAL DEVELOPMENT PATH
+# SCRIPTED BUTTONS
+# ==========================================
+
+# ── PATH SELECTION BUTTONS ────────────────
+# Each button is only visible when no path
+# is currently active (i.e. player is
+# choosing or has just completed one).
+
+ndp_button_industrial = {
+	name = ndp_button_industrial_name
+	desc = ndp_button_industrial_desc
+
+	visible = {
+		NOT = { has_variable = ndp_industrial }
+		NOT = { has_variable = ndp_military }
+		NOT = { has_variable = ndp_resource }
+		NOT = { has_variable = ndp_service }
+	}
+
+	possible = {
+		NOT = { has_modifier = ndp_modifier_abandoned }
+		custom_tooltip = {
+			text = ndp_no_path_active_tt
+			NOT = { has_variable = ndp_industrial }
+			NOT = { has_variable = ndp_military }
+			NOT = { has_variable = ndp_resource }
+			NOT = { has_variable = ndp_service }
+		}
+	}
+
+	effect = {
+		set_variable = ndp_industrial
+		set_variable = { name = ndp_progress value = 0 }
+		add_modifier = {
+			name = ndp_modifier_industrial
+			months = 120
+		}
+	}
+
+	ai_chance = {
+		value = 25
+		# Prefer industrial if already industrializing
+		if = {
+			limit = {
+				any_scope_state = {
+					any_scope_building = {
+						is_building_type = building_iron_mine
+						level >= 3
+					}
+				}
+			}
+			add = 25
+		}
+	}
+}
+
+ndp_button_military = {
+	name = ndp_button_military_name
+	desc = ndp_button_military_desc
+
+	visible = {
+		NOT = { has_variable = ndp_industrial }
+		NOT = { has_variable = ndp_military }
+		NOT = { has_variable = ndp_resource }
+		NOT = { has_variable = ndp_service }
+	}
+
+	possible = {
+		NOT = { has_modifier = ndp_modifier_abandoned }
+		custom_tooltip = {
+			text = ndp_no_path_active_tt
+			NOT = { has_variable = ndp_industrial }
+			NOT = { has_variable = ndp_military }
+			NOT = { has_variable = ndp_resource }
+			NOT = { has_variable = ndp_service }
+		}
+	}
+
+	effect = {
+		set_variable = ndp_military
+		set_variable = { name = ndp_progress value = 0 }
+		add_modifier = {
+			name = ndp_modifier_military
+			months = 120
+		}
+	}
+
+	ai_chance = {
+		value = 25
+		# Prefer military if at war or has rivals
+		if = {
+			limit = {
+				OR = {
+					is_at_war = yes
+					any_rival_country = { always = yes }
+				}
+			}
+			add = 35
+		}
+	}
+}
+
+ndp_button_resource = {
+	name = ndp_button_resource_name
+	desc = ndp_button_resource_desc
+
+	visible = {
+		NOT = { has_variable = ndp_industrial }
+		NOT = { has_variable = ndp_military }
+		NOT = { has_variable = ndp_resource }
+		NOT = { has_variable = ndp_service }
+	}
+
+	possible = {
+		NOT = { has_modifier = ndp_modifier_abandoned }
+		custom_tooltip = {
+			text = ndp_no_path_active_tt
+			NOT = { has_variable = ndp_industrial }
+			NOT = { has_variable = ndp_military }
+			NOT = { has_variable = ndp_resource }
+			NOT = { has_variable = ndp_service }
+		}
+	}
+
+	effect = {
+		set_variable = ndp_resource
+		set_variable = { name = ndp_progress value = 0 }
+		add_modifier = {
+			name = ndp_modifier_resource
+			months = 120
+		}
+	}
+
+	ai_chance = {
+		value = 25
+		# Prefer resource if agrarian or has raw resources
+		if = {
+			limit = {
+				has_law = law_type:law_agrarianism
+			}
+			add = 30
+		}
+	}
+}
+
+ndp_button_service = {
+	name = ndp_button_service_name
+	desc = ndp_button_service_desc
+
+	visible = {
+		NOT = { has_variable = ndp_industrial }
+		NOT = { has_variable = ndp_military }
+		NOT = { has_variable = ndp_resource }
+		NOT = { has_variable = ndp_service }
+	}
+
+	possible = {
+		NOT = { has_modifier = ndp_modifier_abandoned }
+		custom_tooltip = {
+			text = ndp_no_path_active_tt
+			NOT = { has_variable = ndp_industrial }
+			NOT = { has_variable = ndp_military }
+			NOT = { has_variable = ndp_resource }
+			NOT = { has_variable = ndp_service }
+		}
+	}
+
+	effect = {
+		set_variable = ndp_service
+		set_variable = { name = ndp_progress value = 0 }
+		add_modifier = {
+			name = ndp_modifier_service
+			months = 120
+		}
+	}
+
+	ai_chance = {
+		value = 25
+		# Prefer service if already has bureaucracy/education
+		if = {
+			limit = {
+				has_law = law_type:law_elected_bureaucrats
+				literacy_rate >= 0.40
+			}
+			add = 30
+		}
+	}
+}
+
+# ── ABANDON BUTTON ────────────────────────
+# Available only when a path is active.
+# Clears the path and resets — but applies
+# a penalty modifier for breaking the plan.
+
+ndp_button_abandon = {
+	name = ndp_button_abandon_name
+	desc = ndp_button_abandon_desc
+
+	visible = {
+		OR = {
+			has_variable = ndp_industrial
+			has_variable = ndp_military
+			has_variable = ndp_resource
+			has_variable = ndp_service
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = ndp_abandon_cost_tt
+			always = yes
+		}
+	}
+
+	effect = {
+		ndp_clear_path_effect = yes
+		add_modifier = {
+			name = ndp_modifier_abandoned
+			months = 24
+		}
+	}
+
+	ai_chance = {
+		value = 0  # AI never abandons
+	}
+}
+
+# ── FOREIGN INVESTMENT REJECTION BUTTON ───
+
+fi_button_reject = {
+	name = fi_button_reject_name
+	desc = fi_button_reject_desc
+
+	visible = {
+		NOT = { has_variable = ndp_rejected_foreign_investment }
+		NOT = { is_great_power = yes }
+	}
+
+	possible = {
+		always = yes
+	}
+
+	effect = {
+		set_variable = ndp_rejected_foreign_investment
+		add_modifier = {
+			name = ndp_foreign_investment_rejected
+			months = 120
+		}
+	}
+
+	ai_chance = {
+		value = 10
+		# More likely to reject if strong nationalist IG in government
+		if = {
+			limit = {
+				any_interest_group = {
+					is_in_government = yes
+					leader = {
+						OR = {
+							has_ideology = ideology:ideology_nationalist_leader
+							has_ideology = ideology:ideology_traditionalist_leader
+						}
+					}
+				}
+			}
+			add = 40
+		}
+	}
+}

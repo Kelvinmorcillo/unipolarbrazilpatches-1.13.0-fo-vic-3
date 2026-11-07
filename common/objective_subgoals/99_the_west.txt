@@ -1,0 +1,133 @@
+﻿# ==========================================
+# THE WEST — SUBGOALS
+# ==========================================
+ 
+# ── SG 1: OPEN TRADE ─────────────────────
+ 
+sg_west_open_trade = {
+	category = sgcat_the_west
+	is_repeatable = no
+ 
+	trigger = {
+		exists = yes
+	}
+ 
+	on_start = {
+		add_journal_entry = {
+			type = je_west_open_trade
+			objective_subgoal = sg_west_open_trade
+		}
+	}
+}
+ 
+# ── SG 2: ALLIANCES ───────────────────────
+ 
+sg_west_alliances = {
+	category = sgcat_the_west
+	is_repeatable = no
+ 
+	trigger = {
+		exists = yes
+	}
+ 
+	on_start = {
+		add_journal_entry = {
+			type = je_west_alliances
+			objective_subgoal = sg_west_alliances
+		}
+	}
+}
+ 
+# ── SG 3: HUMAN RIGHTS FRAMEWORK ─────────
+ 
+sg_west_human_rights = {
+	category = sgcat_the_west
+	is_repeatable = no
+ 
+	unlocking_subgoals_all = {
+		sg_west_alliances
+	}
+ 
+	trigger = {
+		
+	}
+ 
+	on_start = {
+		add_journal_entry = {
+			type = je_west_human_rights
+			objective_subgoal = sg_west_human_rights
+		}
+	}
+}
+ 
+# ── SG 4: EDUCATED POPULATION ─────────────
+ 
+sg_west_education = {
+	category = sgcat_the_west
+	is_repeatable = no
+ 
+	unlocking_subgoals_all = {
+		sg_west_open_trade
+	}
+ 
+	trigger = {
+		
+	}
+ 
+	on_start = {
+		add_journal_entry = {
+			type = je_west_education
+			objective_subgoal = sg_west_education
+		}
+	}
+}
+ 
+# ── SG 5: ECONOMIC LEADERSHIP ─────────────
+ 
+sg_west_gdp = {
+	category = sgcat_the_west
+	is_repeatable = no
+ 
+	unlocking_subgoals_all = {
+		sg_west_open_trade
+		sg_west_education
+	}
+ 
+	trigger = {
+		
+	}
+ 
+	on_start = {
+		add_journal_entry = {
+			type = je_west_gdp
+			objective_subgoal = sg_west_gdp
+		}
+	}
+}
+ 
+# ── SG 6: THE UNIPOLAR MOMENT ─────────────
+ 
+sg_west_endgame = {
+	category = sgcat_the_west
+	is_repeatable = no
+ 
+	unlocking_subgoals_all = {
+		sg_west_gdp
+		sg_west_human_rights
+	}
+ 
+	unlocking_subgoals_any = {
+		sg_west_alliances
+	}
+ 
+	trigger = {
+		
+	}
+ 
+	on_start = {
+		add_journal_entry = {
+			type = je_west_endgame
+			objective_subgoal = sg_west_endgame
+		}
+	}
+}

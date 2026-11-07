@@ -1,0 +1,55 @@
+﻿COUNTRIES = {
+	c:UKR = {
+		
+		smd_medium_tech_effect = yes
+		
+		set_variable = nuclear_capable
+		set_variable = { name = nukes value = 17 }
+		add_modifier = nuclear_capable_modifier
+		
+		set_tax_level = high
+		
+		# Laws
+		activate_law = law_type:law_professional_army
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_compulsory_primary_school
+		activate_law = law_type:law_freedom_of_conscience
+		activate_law = law_type:law_national_supremacy
+		activate_law = law_type:law_resettlement_enticement
+		activate_law = law_type:law_universal_suffrage
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_parliamentary_republic
+		activate_law = law_type:law_public_health_insurance
+		activate_law = law_type:law_national_guard
+		activate_law = law_type:law_serfdom_banned
+		activate_law = law_type:law_migration_controls
+		activate_law = law_type:law_dedicated_police
+		activate_law = law_type:law_womens_suffrage
+		activate_law = law_type:law_slavery_banned
+		activate_law = law_type:law_graduated_taxation
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_poor_laws
+		activate_law = law_type:law_corporatized_unions
+		activate_law = law_type:law_decriminalized_gays
+		activate_law = law_type:law_unrestricted_abortions
+		activate_law = law_type:law_licensed_firearms
+		activate_law = law_type:law_game_law
+		activate_law = law_type:law_housing_projects
+		activate_law = law_type:law_inquisitive_judiciary
+		activate_law = law_type:law_fully_unregulated_media
+		activate_law = law_type:law_fractional_reserve_banking
+		activate_law = law_type:law_minimal_recognition
+		activate_law = law_type:law_alcohol_tobacco_legal
+			
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 1		}
+
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 2
+		}
+	}
+}

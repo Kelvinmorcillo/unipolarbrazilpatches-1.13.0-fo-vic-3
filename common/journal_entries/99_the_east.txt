@@ -1,0 +1,216 @@
+﻿# ==========================================
+# THE EAST — JOURNAL ENTRIES
+# common/journal_entries/
+# ==========================================
+
+# ── SG 1: STATE INDUSTRY ──────────────────
+# The Eastern model rests on directed
+# state investment in heavy industry.
+# Maintain an interventionist or command
+# economy and drive construction capacity.
+
+je_east_state_industry = {
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	icon = "gfx/interface/icons/objectives/the_east.dds"
+
+	group = je_group_objectives
+
+	complete = {
+		OR = {
+			has_law = law_type:law_interventionism
+			has_law = law_type:law_command_economy
+		}
+		any_scope_building = {
+			is_building_type = building_oil_rig
+			level >= 5
+			occupancy >= 0.75
+		}
+	}
+
+	is_progressing = {
+		OR = {
+			has_law = law_type:law_interventionism
+			has_law = law_type:law_command_economy
+		}
+	}
+
+	weight = 3000
+	transferable = yes
+}
+
+# ── SG 2: GREAT POWER STATUS ─────────────
+# The Eastern bloc must be led by a
+# genuine great power capable of
+# contesting Western hegemony.
+
+je_east_great_power = {
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	icon = "gfx/interface/icons/objectives/the_east.dds"
+
+	group = je_group_objectives
+
+	complete = {
+		country_rank >= rank_value:major_power
+	}
+
+	is_progressing = {
+		country_rank >= rank_value:major_power
+	}
+
+	weight = 3001
+	transferable = yes
+}
+
+# ── SG 3: EASTERN SPHERE ─────────────────
+# Build the network of allied states that
+# constitutes the Eastern bloc.
+
+je_east_sphere = {
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	icon = "gfx/interface/icons/objectives/the_east.dds"
+
+	group = je_group_objectives
+
+	complete = {
+		any_country = {
+			hidden_trigger = { NOT = { THIS = ROOT } }
+			country_rank >= rank_value:major_power
+			any_scope_treaty = {
+				binds = root
+				any_scope_article = {
+					has_type = alliance
+				}
+			}
+			count >= 2
+		}
+	}
+
+	is_progressing = {
+		any_country = {
+			hidden_trigger = { NOT = { THIS = ROOT } }
+			country_rank >= rank_value:major_power
+			any_scope_treaty = {
+				binds = root
+				any_scope_article = {
+					has_type = alliance
+				}
+			}
+			count >= 1
+		}
+	}
+
+	weight = 3002
+	transferable = yes
+}
+
+# ── SG 4: EASTERN CURRENCY ───────────────
+# Challenge dollar dominance. The Eastern
+# currency must become a reserve currency
+# in its own right — exporting credit
+# to international markets and offering
+# an alternative to Western finance.
+
+je_east_currency = {
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	icon = "gfx/interface/icons/objectives/the_east.dds"
+
+	group = je_group_objectives
+
+	complete = {
+		market_capital.market = {
+			market_exports = {
+				goods = credit
+				value > 600
+			}
+		}
+		# Securities must be priced competitively
+		# to attract foreign investors away from Western markets
+		market_capital.market = {
+			mg:securities = {
+				market_goods_pricier < 0.05
+			}
+		}
+	}
+
+	is_progressing = {
+		market_capital.market = {
+			market_exports = {
+				goods = credit
+				value > 300
+			}
+		}
+	}
+
+	weight = 3003
+	transferable = yes
+}
+
+# ── SG 5: THE MULTIPOLAR WORLD ───────────
+# The final goal. The United States,
+# United Kingdom, and France must each
+# either be reduced below major power rank
+# or be made to align with the East.
+
+je_east_endgame = {
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	icon = "gfx/interface/icons/objectives/the_east.dds"
+
+	group = je_group_objectives
+
+	complete = {
+		# USA condition
+		OR = {
+			AND = {
+				exists = c:USA
+				c:USA = {
+					country_rank < rank_value:great_power
+				}
+			}
+			AND = {
+				exists = c:USA
+					c:USA = {
+						"relations(root.owner)" >= relations_threshold:cordial
+					}
+			}
+			NOT = { exists = c:USA }
+		}
+		# United Kingdom condition
+		OR = {
+			AND = {
+				exists = c:GBR
+				c:GBR = {
+					country_rank < rank_value:great_power
+				}
+			}
+			AND = {
+				exists = c:GBR
+				c:GBR = {
+					"relations(root.owner)" >= relations_threshold:cordial
+				}
+			}
+			NOT = { exists = c:GBR }
+		}
+		# France condition
+		OR = {
+			AND = {
+				exists = c:FRA
+				c:FRA = {
+					country_rank < rank_value:great_power
+				}
+			}
+			AND = {
+				exists = c:FRA
+				c:FRA = {
+					"relations(root.owner)" >= relations_threshold:cordial
+				}
+			}
+			NOT = { exists = c:FRA }
+		}
+	}
+
+	is_progressing = {
+	}
+
+	weight = 3004
+	transferable = yes
+}

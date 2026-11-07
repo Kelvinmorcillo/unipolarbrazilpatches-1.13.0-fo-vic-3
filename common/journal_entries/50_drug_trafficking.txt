@@ -1,0 +1,152 @@
+﻿je_drug_trafficking = {
+	icon = "gfx/interface/icons/event_icons/cocaine.dds"
+
+	group = je_group_dilemmas
+
+	is_shown_when_inactive = {
+		OR = {
+			c:VNZ ?= this
+			c:MEX ?= this
+			c:CLM ?= this
+			c:GUA ?= this
+			c:HON ?= this
+			c:DCR ?= this
+			c:XEC ?= this
+		}
+	}
+	modifiers_while_active = {
+		narco_economy_plantation_bonus
+	}
+	possible = {
+		OR = {
+			c:VNZ ?= this
+			c:MEX ?= this
+			c:CLM ?= this
+			c:GUA ?= this
+			c:HON ?= this
+			c:DCR ?= this
+			c:XEC ?= this
+		}
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = cartel_je_working_with_tt
+				trigger = { has_variable = cartel_cooperation }
+			}
+			triggered_desc = {
+				desc = cartel_je_cracking_down_tt
+				trigger = { has_variable = cartel_crackdown }
+			}
+			triggered_desc = {
+				desc = cartel_je_no_policy_tt
+				trigger = {
+					NOT = { has_variable = cartel_cooperation }
+					NOT = { has_variable = cartel_crackdown }
+				}
+			}
+		}
+	}
+
+	# Work with the cartels
+	scripted_button = cartel_button_cooperate
+
+	# Crack down on trafficking
+	scripted_button = cartel_button_crackdown
+
+	# Stop the crackdown (save authority)
+	scripted_button = cartel_button_stop_crackdown
+
+	on_monthly_pulse = {
+		effect = {
+					random_list = {
+						100 = { }
+						8 = {
+							trigger = { has_journal_entry = je_drug_trafficking }
+							trigger_event = { id = cartel.5 }
+						}
+						8 = {
+							trigger = { has_journal_entry = je_drug_trafficking }
+							trigger_event = { id = cartel.6 }
+						}
+						6 = {
+							trigger = { has_journal_entry = je_drug_trafficking }
+							trigger_event = { id = cartel.7 }
+						}
+						6 = {
+							trigger = {
+								has_journal_entry = je_drug_trafficking
+								has_variable = cartel_crackdown
+							}
+							trigger_event = { id = cartel.8 }
+						}
+					}
+			}
+		}
+
+
+	complete = {
+		market_capital.market = {
+			mg:opium = {
+				market_goods_pricier > 0.50
+			}
+		}
+		market_capital.market = {
+			mg:small_arms = {
+				market_goods_pricier > 0.35
+			}
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = cartel.9 popup = yes }
+		if = {
+			limit = {
+				c:CLM ?= this
+				has_variable = cartel_crackdown
+				any_scope_state = {
+					is_incorporated = yes
+					turmoil >= 0.25
+				}
+			}
+			set_variable = colombian_conflict_trigger
+		}
+	}
+
+	# ── TIMEOUT ──────────────────────────────
+	# 4 years = 1460 days
+
+	on_timeout = {
+		# Mexico: cartel turf division event
+		if = {
+			limit = { c:MEX ?= this }
+			trigger_event = { id = cartel.4 popup = yes }
+		}
+		# Other countries: notification
+		else = {
+			trigger_event = { id = cartel.100 popup = yes }
+			set_variable = drug_war_begins
+		}
+	}
+
+	# ── CLEANUP ──────────────────────────────
+
+	invalid = {
+		NOR = {
+			c:VZL ?= this
+			c:MEX ?= this
+			c:CLM ?= this
+			c:GUA ?= this
+			c:HON ?= this
+			c:DCR ?= this
+			c:ECU ?= this
+		}
+	}
+
+	transferable = no
+	can_revolution_inherit = no
+	weight = 7000
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	timeout = 1460
+}

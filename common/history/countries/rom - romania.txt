@@ -1,0 +1,58 @@
+﻿COUNTRIES = {
+	c:ROM = {
+		
+		 
+
+		set_tax_level = medium
+		
+		
+		
+		# Laws
+		activate_law = law_type:law_mass_conscription
+		activate_law = law_type:law_appointed_bureaucrats
+		activate_law = law_type:law_compulsory_primary_school
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_cultural_exclusion
+		activate_law = law_type:law_universal_suffrage
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_protected_speech
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_public_health_insurance
+		activate_law = law_type:law_guaranteed_liberties
+		activate_law = law_type:law_worker_protections
+		activate_law = law_type:law_right_to_associate
+		activate_law = law_type:law_commercialized_agriculture
+		activate_law = law_type:law_migration_controls
+		activate_law = law_type:law_dedicated_police
+		activate_law = law_type:law_legal_protections
+		activate_law = law_type:law_slavery_banned
+		activate_law = law_type:law_graduated_taxation
+		activate_law = law_type:law_protectionism
+		activate_law = law_type:law_old_age_pension
+		activate_law = law_type:law_unrestricted_abortions
+		activate_law = law_type:law_fractional_reserve_banking
+		activate_law = law_type:law_workplace_accommodations
+		activate_law = law_type:law_alcohol_tobacco_legal
+		activate_law = law_type:law_no_environmental_regulations
+		activate_law = law_type:law_licensed_firearms
+		activate_law = law_type:law_active_oppression
+		activate_law = law_type:law_inquisitive_judiciary
+		activate_law = law_type:law_fairness_doctrine
+		activate_law = law_type:law_housing_projects
+
+			
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 1		}
+
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 1
+		}
+
+		ig:ig_trade_unions = {
+			set_ig_suppression = yes
+		}
+	}
+}

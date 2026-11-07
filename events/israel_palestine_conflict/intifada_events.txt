@@ -1,0 +1,209 @@
+namespace = intifada_events
+
+# Major Offensive / Mass Resistance Launched
+intifada_events.1 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+	title = intifada_events.1.t
+	desc = intifada_events.1.d
+	event_image = { video = "europenorthamerica_before_the_battle" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	trigger = {}
+
+	immediate = {
+		if = {
+			limit = { c:PAL ?= this }
+			show_as_tooltip = {
+				add_modifier = {
+					name = intifada_popular_resistance
+					multiplier = { value = global_var:pal_intifada_score min = 1 }
+					years = 1
+					is_decaying = yes
+				}
+			}
+		}
+		if = {
+			limit = { c:ISR ?= this }
+			show_as_tooltip = {
+				add_modifier = {
+					name = intifada_isr_morale
+					multiplier = { value = global_var:isr_intifada_score min = 1 }
+					years = 2
+					is_decaying = yes
+				}
+			}
+		}
+	}
+
+	option = {
+		name = { trigger = { c:ISR ?= this } text = intifada_events.1.a }
+		name = { trigger = { c:PAL ?= this } text = intifada_events.1.a.pal }
+		default_option = yes
+	}
+}
+
+# War Conclusion
+intifada_events.2 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+	title = {
+		first_valid = {
+			triggered_desc = { desc = intifada_events.2.t_isr trigger = { c:ISR ?= this } }
+			triggered_desc = { desc = intifada_events.2.t_pal trigger = { c:PAL ?= this } }
+		}
+	}
+	desc = {
+		first_valid = {
+			triggered_desc = { desc = intifada_events.2.d_isr trigger = { c:ISR ?= this } }
+			triggered_desc = { desc = intifada_events.2.d_pal trigger = { c:PAL ?= this } }
+		}
+	}
+	event_image = { video = "africa_diplomats_negotiating" }
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	trigger = {}
+
+	option = {
+		name = intifada_events.2.a
+		default_option = yes
+	}
+}
+
+# Stone Throwing / Street Clashes — Palestinian resistance event
+intifada_events.5 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+	cooldown = { months = 4 }
+	title = intifada_events.5.t
+	desc = intifada_events.5.d
+	event_image = { video = "unspecific_vandalized_storefront" }
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	trigger = { c:PAL ?= this is_at_war = yes }
+
+	option = {
+		name = intifada_events.5.a # Escalate the resistance
+		default_option = yes
+		add_modifier = { name = intifada_stone_throwing months = 6 }
+		c:ISR ?= {
+			random_scope_state = {
+				limit = { state_region = s:STATE_PALESTINE }
+				add_modifier = { name = intifada_devastation months = 12 }
+				add_devastation = 2
+			}
+		}
+		ai_chance = { base = 8 }
+	}
+
+	option = {
+		name = intifada_events.5.b # Show restraint
+		ai_chance = { base = 2 }
+	}
+}
+
+# Checkpoint Raids — disrupting Israeli logistics
+intifada_events.6 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+	cooldown = { months = 4 }
+	title = intifada_events.6.t
+	desc = intifada_events.6.d
+	event_image = { video = "europenorthamerica_before_the_battle" }
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	trigger = { c:PAL ?= this is_at_war = yes }
+
+	option = {
+		name = intifada_events.6.a # Strike the checkpoints
+		default_option = yes
+		add_modifier = {
+			name = intifada_raid_expenses
+			months = 6
+			multiplier = money_amount_multiplier_medium
+		}
+		c:ISR ?= {
+			random_scope_state = {
+				limit = { state_region = s:STATE_PALESTINE }
+				add_devastation = 3
+			}
+		}
+		ai_chance = { base = 6 }
+	}
+
+	option = {
+		name = intifada_events.6.b # Too dangerous
+		ai_chance = { base = 4 }
+	}
+}
+
+# International Condemnation — unique intifada event
+# Media coverage shifts world opinion, damages Israel's reputation
+intifada_events.8 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+	cooldown = { months = 12 }
+	title = intifada_events.8.t
+	desc = intifada_events.8.d
+	event_image = { video = "africa_diplomats_negotiating" }
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	trigger = {
+		c:PAL ?= this
+		is_at_war = yes
+	}
+
+	option = {
+		name = intifada_events.8.a # Appeal to the world
+		default_option = yes
+		# International sympathy shifts toward Palestine
+		c:ISR ?= {
+			change_infamy = 3
+			add_modifier = { name = intifada_international_pressure months = 12 }
+		}
+		# Arab League members improve relations with Palestine
+		every_country = {
+			limit = {
+				is_target_in_global_variable_list = { name = io_arab_league_members target = this }
+				NOT = { c:PAL ?= this }
+			}
+			change_relations = { country = c:PAL value = 10 }
+			change_relations = { country = c:ISR value = -5 }
+		}
+		ai_chance = { base = 10 }
+	}
+}
+
+# War Start Event
+intifada_events.7 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+	title = intifada_events.7.t
+	desc = intifada_events.7.d
+	event_image = { video = "unspecific_vandalized_storefront" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	trigger = {}
+
+	immediate = {
+		c:ISR ?= { ruler ?= { save_scope_as = isr_ruler } }
+		c:PAL ?= { ruler ?= { save_scope_as = pal_ruler } }
+	}
+
+	option = {
+		name = intifada_events.7.a
+		c:ISR = { add_contextless_journal_entry = je_second_intifada }
+		c:PAL = { add_contextless_journal_entry = je_second_intifada }
+		show_as_tooltip = {
+			custom_tooltip = intifada_startup_tt
+		}
+	}
+}

@@ -1,0 +1,481 @@
+﻿namespace = olympics
+
+# OLYMPIC GAMES SYSTEM
+
+olympics.1 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "olympics" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/olympics.dds"
+
+	title = olympics.1.t
+	desc = olympics.1.d
+	flavor = olympics.1.f
+
+	duration = 3
+
+	trigger = {
+		NOT = {
+			any_country = {
+				has_modifier = olympics_hosting
+			}
+		}
+		country_rank >= rank_value:major_power
+		is_at_war = no
+		NOT = { has_modifier = olympics_hosting }
+		NOT = { has_modifier = olympics_recently_hosted }
+		NOT = { has_variable = olympics_declined_host }
+	}
+
+	cooldown = { days = short_modifier_time }
+
+	immediate = {
+		set_variable = olympics_declined_host
+	}
+
+	# Option A: Accept — we will host the games
+	option = {
+		name = olympics.1.a
+		remove_variable = olympics_declined_host
+		add_modifier = {
+			name = olympics_hosting
+			months = 48
+		}
+		add_modifier = {
+			name = olympics_hosting_prestige
+			months = 48
+		}
+		# Notify all countries that games are coming
+		every_country = {
+			trigger_event = { id = olympics.3 days = 30 }
+		}
+		# Queue closing ceremony at end of hosting modifier
+		hidden_effect = {
+			trigger_event = { id = olympics.9 days = 1400 }
+		}
+		ai_chance = { base = 75 }
+	}
+
+	# Option B: Decline — pass to another country
+	option = {
+		name = olympics.1.b
+		# Variable stays set — blocks re-selection for a while
+		# Another country will be randomly selected next month
+		ai_chance = { base = 25 }
+	}
+}
+
+# ==========================================
+# olympics.3
+# "The Olympic Games Are Coming"
+#
+# Participation offer. Fires for every
+# country when a host is confirmed.
+# ==========================================
+
+olympics.3 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "football" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/olympics.dds"
+
+	title = olympics.3.t
+	desc = olympics.3.d
+	flavor = olympics.3.f
+
+	duration = 2
+
+	trigger = { }
+
+	immediate = {
+		# Find and save the host country for desc
+		random_country = {
+			limit = { has_modifier = olympics_hosting }
+			save_scope_as = olympics_host_scope
+		}
+	}
+
+	# Option A: Participate — send our athletes
+	option = {
+		name = olympics.3.a
+		default_option = yes
+		set_variable = olympics_participating
+		# Queue results event — fires when games actually happen (~18 months)
+		hidden_effect = {
+			trigger_event = { id = olympics.11 days = 1260 }
+		}
+		ai_chance = { base = 90 }
+	}
+
+	# Option B: Boycott — political statement
+	option = {
+		name = olympics.3.b
+		add_modifier = {
+			name = olympics_boycott_modifier
+			months = 12
+		}
+		ai_chance = { base = 10 }
+	}
+}
+
+# ==========================================
+# olympics.11
+# "Your Athletes Are Preparing"
+# Hidden bridge event — fires just before
+# the games. Gives player a doping choice.
+# ==========================================
+
+olympics.11 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "olympics" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/olympics.dds"
+
+	title = olympics.11.t
+	desc = olympics.11.d
+	flavor = olympics.11.f
+
+	duration = 2
+
+	trigger = {
+		has_variable = olympics_participating
+		any_country = { has_modifier = olympics_hosting }
+	}
+
+	# Option A: Train clean — honest effort
+	option = {
+		name = olympics.11.a
+		custom_tooltip = {
+			text = you_do_not_dope_athletes
+			}
+		default_option = yes
+		# Remove participation flag — results will fire shortly
+		remove_variable = olympics_participating
+		# Queue results based on country stats
+		hidden_effect = {
+			trigger_event = { id = olympics.12 days = 7 }
+		}
+		ai_chance = { base = 75 }
+	}
+
+	# Option B: Dope — risk it for the medal
+	option = {
+		name = olympics.11.b
+		custom_tooltip = {
+			text = you_dope_your_athletes
+			}
+		set_variable = olympics_doping
+		remove_variable = olympics_participating
+		hidden_effect = {
+			trigger_event = { id = olympics.12 days = 7 }
+		}
+		ai_chance = { base = 25 }
+	}
+}
+
+# ==========================================
+# olympics.12
+# Hidden results calculator
+# Determines outcome via weighted random
+# based on country stats + doping bonus.
+# ==========================================
+
+olympics.12 = {
+	type = country_event
+	placement = root
+	hidden = yes
+
+	trigger = { }
+
+	immediate = {
+		random_list = {
+			40 = {
+				trigger_event = { id = olympics.5 }
+			}
+			30 = {
+				trigger_event = { id = olympics.6 }
+			}
+			20 = {
+				trigger_event = { id = olympics.7 }
+			}
+			10 = {
+				trigger_event = { id = olympics.8 }
+			}
+		}
+	}
+}
+
+# ==========================================
+# olympics.4
+# "Doping Scandal"
+# Fires if caught doping. Replaces the
+# result event with shame and penalties.
+# ==========================================
+
+olympics.4 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "sports_defeat" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/olympics.dds"
+
+	title = olympics.4.t
+	desc = olympics.4.d
+	flavor = olympics.4.f
+
+	duration = 3
+
+	trigger = { }
+
+	option = {
+		name = olympics.4.a
+		default_option = yes
+		add_modifier = {
+			name = olympics_doping_caught
+			months = 36
+		}
+		remove_variable = olympics_doping
+	}
+}
+
+# ==========================================
+# RESULTS EVENTS
+# ==========================================
+
+# olympics.5 — Terrible
+olympics.5 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "sports_defeat" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/olympics.dds"
+
+	title = olympics.5.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = olympics.5.d_doping
+				trigger = { has_variable = olympics_doping }
+			}
+			triggered_desc = {
+				desc = olympics.5.d
+			}
+		}
+	}
+	flavor = olympics.5.f
+
+	duration = 3
+	trigger = { }
+
+	immediate = {
+		# Doping check — chance of getting caught
+		if = {
+			limit = { has_variable = olympics_doping }
+			random_list = {
+				60 = { trigger_event = { id = olympics.4 days = 3 } }
+				40 = { remove_variable = olympics_doping }
+			}
+		}
+	}
+
+	option = {
+		name = olympics.5.a
+		default_option = yes
+		add_modifier = {
+			name = olympics_result_terrible
+			months = 24
+		}
+	}
+}
+
+# olympics.6 — Modest
+olympics.6 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "olympics" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/olympics.dds"
+
+	title = olympics.6.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = olympics.6.d_doping
+				trigger = { has_variable = olympics_doping }
+			}
+			triggered_desc = {
+				desc = olympics.6.d
+			}
+		}
+	}
+	flavor = olympics.6.f
+
+	duration = 3
+	trigger = { }
+
+	immediate = {
+		if = {
+			limit = { has_variable = olympics_doping }
+			random_list = {
+				40 = { trigger_event = { id = olympics.4 days = 3 } }
+				60 = { remove_variable = olympics_doping }
+			}
+		}
+	}
+
+	option = {
+		name = olympics.6.a
+		default_option = yes
+		add_modifier = {
+			name = olympics_result_modest
+			months = 24
+		}
+	}
+}
+
+# olympics.7 — Well
+olympics.7 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "sports_victory" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/olympics.dds"
+
+	title = olympics.7.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = olympics.7.d_doping
+				trigger = { has_variable = olympics_doping }
+			}
+			triggered_desc = {
+				desc = olympics.7.d
+			}
+		}
+	}
+	flavor = olympics.7.f
+
+	duration = 3
+	trigger = { }
+
+	immediate = {
+		if = {
+			limit = { has_variable = olympics_doping }
+			random_list = {
+				30 = { trigger_event = { id = olympics.4 days = 3 } }
+				70 = { remove_variable = olympics_doping }
+			}
+		}
+	}
+
+	option = {
+		name = olympics.7.a
+		default_option = yes
+		add_modifier = {
+			name = olympics_result_well
+			months = 24
+		}
+	}
+}
+
+# olympics.8 — Gold
+olympics.8 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "sports_victory" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/olympics.dds"
+
+	title = olympics.8.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = olympics.8.d_doping
+				trigger = { has_variable = olympics_doping }
+			}
+			triggered_desc = {
+				desc = olympics.8.d
+			}
+		}
+	}
+	flavor = olympics.8.f
+
+	duration = 3
+	trigger = { }
+
+	immediate = {
+		if = {
+			limit = { has_variable = olympics_doping }
+			random_list = {
+				20 = { trigger_event = { id = olympics.4 days = 3 } }
+				80 = { remove_variable = olympics_doping }
+			}
+		}
+	}
+
+	option = {
+		name = olympics.8.a
+		default_option = yes
+		add_modifier = {
+			name = olympics_result_gold
+			months = 24
+		}
+	}
+}
+
+# ==========================================
+# olympics.9
+# "The Olympic Games Draw to a Close"
+#
+# Closing ceremony event for the host.
+# Fires when hosting modifier is about
+# to expire. Sets recently_hosted cooldown
+# and clears declined_host variables
+# so the next selection can happen.
+# ==========================================
+
+olympics.9 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "olympics" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/olympics.dds"
+
+	title = olympics.9.t
+	desc = olympics.9.d
+	flavor = olympics.9.f
+
+	duration = 3
+	trigger = { }
+
+	immediate = {
+		# Clear all declined_host variables so next selection is fresh
+		every_country = {
+			limit = { has_variable = olympics_declined_host }
+			remove_variable = olympics_declined_host
+		}
+	}
+
+	option = {
+		name = olympics.9.a
+		default_option = yes
+		# Apply post-hosting cooldown so same country isn't
+		# immediately selected again
+		add_modifier = {
+			name = olympics_recently_hosted
+			months = 96
+		}
+	}
+}

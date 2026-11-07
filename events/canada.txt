@@ -1,0 +1,103 @@
+﻿namespace = canada
+
+canada.1 = {
+	type = country_event
+
+	title = canada.1.t
+	desc = canada.1.d
+	flavor = canada.1.f
+
+	event_image = {
+		video = "helicopter"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		owns_entire_state_region = s:STATE_BRITISH_COLUMBIA
+		country_average_religious_acceptance = {  
+			target = rel:animist  
+			value <= 40  
+		}
+		ig:ig_armed_forces = {
+			is_marginal = no
+		}
+		any_scope_state = {
+			state_region = s:STATE_BRITISH_COLUMBIA
+			any_scope_building = {
+				OR = {
+					is_building_group = bg_agriculture
+					is_building_group = bg_ranching
+					is_building_group = bg_plantations
+				}
+				level >= 2
+			}
+		}
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				state_region = s:STATE_BRITISH_COLUMBIA
+			}
+			add_modifier = {
+				name = highway_of_tears_modifier
+				days = 365
+				multiplier = 1
+			}
+		}
+	}
+
+	option = {
+		name = canada.1.a
+        default_option = yes
+		scope:ig_intelligentsia = {
+			add_modifier = {
+				name = defended_legal_discrimination
+				days = 365
+				multiplier = 1
+			}
+		}
+		scope:ig_trade_unions = {
+			add_modifier = {
+				name = defended_legal_discrimination
+				days = 365
+			}
+		}
+		scope:ig_devout = {
+			add_modifier = {
+				name = residential_schools_ignored
+				days = 365
+				multiplier = 1
+			}
+		}
+	}
+	option = {
+		name = canada.1.b
+		scope:ig_intelligentsia = {
+			add_modifier = {
+				name = residential_schools_ignored
+				days = 365
+				multiplier = 1
+			}
+		}
+		scope:ig_trade_unions = {
+			add_modifier = {
+				name = residential_schools_ignored
+				days = 365
+				multiplier = 1
+			}
+		}
+		scope:ig_devout = {
+			add_modifier = {
+				name = denounced_highway_of_tears
+				days = 365
+				multiplier = 1
+			}
+		}
+	}
+}

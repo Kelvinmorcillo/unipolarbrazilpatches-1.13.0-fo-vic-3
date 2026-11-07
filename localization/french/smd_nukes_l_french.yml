@@ -1,0 +1,293 @@
+﻿l_french:
+
+ MILITARY_PANEL_TITLE_NUCLEAR:0 "Guerre stratégique"
+ NUCLEAR_WARHEADS_LABEL: "Arsenal nucléaire"
+ NUCLEAR_PROGRAMME_STATUS_LABEL: "État du programme"
+ NUCLEAR_PLANTS_HEADER: "Infrastructure nucléaire"
+ URANIUM_ENRICHMENT_HEADER: "Enrichissement en uranium"
+ NUCLEAR_PRODUCTION_HEADER: "Production de têtes de guerre"
+ NUCLEAR_ARSENAL_HEADER: "Arsenal"
+ MILITARY_PANEL_TAB_NUCLEAR_TOOLTIP: "Programme d ' armes nucléaires"
+ 
+ NUCLEAR_BEGIN_ENRICHMENT_TOOLTIP: "Lancer un programme d'enrichissement de l'uranium. Nécessite au moins #bold 3 centrales nucléaires#! sur votre territoire et un statut d'énergie majeur. Le programme prend plusieurs années et attirera l'attention de la communauté internationale. \n #r Signataires du document #b Le Traité sur la non-prolifération #! ne peut enrichir l'uranium. #!"
+ NUCLEAR_BEGIN_PRODUCTION_TOOLTIP: "Fabrication d'une ogive nucléaire. Nécessite au moins #bold 1 silo nucléaire#!. Plus rapide que l'enrichissement. Chaque réalisation complète ajoute une ogive à votre arsenal."
+ NUCLEAR_ENRICHMENT_PROGRESS_TOOLTIP: "Progrès de l'enrichissement en uranium. Atteindre 100 lorsque l'enrichissement est complet et que la capacité nucléaire est atteinte."
+ NUCLEAR_PRODUCTION_PROGRESS_TOOLTIP: "Progrès de la production d'ogives. Atteint 100 lorsque l'ogive est complète et ajoutée à votre arsenal."
+ NUCLEAR_PLANTS_INFO: "Centrales nucléaires de votre pays : [GetPlayer.MakeScope.ScriptValue('nuclear_plant_count_sv')|v0] \nRequis pour commencer l'enrichissement : #bold 3#!"
+ NUCLEAR_WEAPONS:0 "[concept_nuclear_weapon]"
+ NUCLEAR_WEAPONS_TOOLTIP:0 "Têtes nucléaires actives: [Country.MakeScope.Var('nukes').GetValue]"
+ 
+ building_nuclear_silo:0 "Silo nucléaire"
+ 
+ # ── JOURNAL ENTRIES ───────────────────────
+ 
+ je_uranium_enrichment: "Programme d ' enrichissement de l ' uranium"
+ je_uranium_enrichment_reason: "[ROOT.GetCountry.GetName] a lancé un programme d'enrichissement de l'uranium. Des centrifugeuses sont en marche. Les scientifiques travaillent. Et le monde, s'il le découvre, voudra des réponses.\n\n Le programme avance chaque mois. D'autres centrales nucléaires accélèrent les progrès. La guerre le perturbe. À l'achèvement, [ROOT.GetCountry.GetName] possédera la capacité nucléaire — la capacité de produire des matières de qualité militaire."
+ 
+ je_enrichment_early_tt: "Le programme en est à ses débuts. Des cascades de centrifugeuses sont testées. Il faudra des années avant que l'enrichissement soit complet."
+ je_enrichment_mid_tt: "L'enrichissement progresse. Les cascades fonctionnent à capacité. L'équipe scientifique est sur la bonne voie."
+ je_enrichment_late_tt: "@warning! #bold L'enrichissement approche.#! L'uranium de qualité militaire est presque prêt."
+ 
+ nuclear_enrichment_progress_bar: "Progrès réalisés en matière d'enrichissement"
+ nuclear_enrichment_progress_bar_desc: "Progrès réalisés en matière d'enrichissement"
+ nuclear_enrichment_progress_bar_tt: "Progrès de l'enrichissement mensuel"
+ 
+ je_nuclear_production: "Production de têtes nucléaires"
+ je_nuclear_production_reason: "[ROOT.GetCountry.GetName] fabrique sa première ogive nucléaire. Les matières fissiles sont prêtes. L'équipe d'ingénierie assemble l'appareil. La production est plus rapide que l'enrichissement — le dur labeur est déjà fait."
+ 
+ je_production_early_tt: "L'ogive est en première assemblée. L'équipe d'ingénierie est à l'heure."
+ je_production_late_tt: "La production est presque terminée. Des vérifications finales de montage et d'armement sont en cours."
+ 
+ nuclear_production_progress_bar: "Progrès de la production"
+ nuclear_production_progress_bar_desc: "Progrès de la production"
+ nuclear_production_progress_bar_tt: "Évolution de la production mensuelle"
+ 
+ # ── EVENTS ───────────────────────────────
+ 
+ nuclear_events.1.t: "Enrichissement en uranium terminé"
+ nuclear_events.1.d: "[ROOT.GetCountry.GetName] a enrichi avec succès l'uranium en pureté de qualité militaire. Le programme, mené sur plusieurs années dans des installations construites à cette fin, a atteint son objectif technique.\n\n Le pays possède désormais la capacité scientifique et industrielle de produire des armes nucléaires. La question de savoir s'il faut procéder à la production est une décision distincte, mais le seuil a été dépassé. [ROOT.GetCountry.GetName] est un état à seuil nucléaire."
+ nuclear_events.1.f: "La partie dure est faite."
+ nuclear_events.1.a: "Début de la préparation à la production d ' ogives"
+ 
+ nuclear_events.2.t: "Services de renseignement: Le programme a été exposé"
+ nuclear_events.2.d: "Les agences de renseignement étrangères — s'appuyant sur des images satellitaires, des rapports de défection et des renseignements sur les signaux — ont conclu avec une grande confiance que [ROOT.GetCountry.GetName] gérait un programme clandestin d'armes nucléaires.\n\n Les résultats circulent entre les gouvernements alliés. Le Conseil de sécurité a été informé officieusement. [ROOT.GetCountry.GetName] peut le nier, l'expliquer ou le posséder. Chaque voie a des conséquences."
+ nuclear_events.2.f: "Rien ne reste secret pour toujours."
+ nuclear_events.2.a: "Déni — les installations sont des infrastructures énergétiques purement civiles"
+ nuclear_events.2.b: "Reconnaître — [ROOT.GetCountry.GetName] a le droit à un effet dissuasif"
+ 
+ nuclear_events.3.t: "Première ogive produite"
+ nuclear_events.3.d: "[ROOT.GetCountry.GetName] a produit sa première ogive nucléaire. L'appareil est assemblé, testé et stocké. La décision de le déployer — et selon quelle doctrine — viendra plus tard.\n\n Pour l'instant : [ROOT.GetCountry.GetName] est entré dans le club nucléaire. Le monde est différent de ce qu'il était ce matin."
+ nuclear_events.3.f: "Une ogive est une sorte d'argument. Le plus conséquent."
+ nuclear_events.3.a: "La dissuasion est établie"
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ nuclear_capable_modifier: "État à seuil nucléaire"
+ nuclear_capable_modifier_desc: "[ROOT.GetCountry.GetName] a atteint la capacité nucléaire — la capacité de produire des matières fissiles de qualité militaire. Le prestige et la position diplomatique sont renforcés. La production d'ogives peut maintenant commencer."
+ 
+ nuclear_programme_denied: "Programme refusé"
+ nuclear_programme_denied_desc: "[ROOT.GetCountry.GetName] a officiellement refusé d'exploiter un programme nucléaire. Le déni n'est pas universellement cru. La génération de l'infamie augmente."
+ 
+ nuclear_programme_acknowledged: "Programme reconnu"
+ nuclear_programme_acknowledged_desc: "[ROOT.GetCountry.GetName] a reconnu son programme nucléaire, revendiquant le droit à la dissuasion. Les relations avec les grandes puissances ont beaucoup souffert."
+ 
+ nuclear_warhead_produced_modifier: "Énergie nucléaire"
+ nuclear_warhead_produced_modifier_desc: "[ROOT.GetCountry.GetName] a produit sa première ogive nucléaire. La dissuasion stratégique du pays est désormais réelle."
+ 
+ NUCLEAR_TARGETING_HEADER: "Ciblage nucléaire"
+ 
+ NUCLEAR_DEPLOY_10_TOOLTIP: "Déployez 10% de votre arsenal nucléaire. La plus petite grève pratique, chirurgicale et de portée limitée."
+ NUCLEAR_DEPLOY_25_TOOLTIP: "Déployez 25% de votre arsenal. Un échange nucléaire limité."
+ NUCLEAR_DEPLOY_50_TOOLTIP: "Déployez la moitié de votre arsenal. Une attaque nucléaire majeure."
+ NUCLEAR_DEPLOY_75_TOOLTIP: "Déployez 75% de votre arsenal. Une première frappe dévastatrice."
+ NUCLEAR_DEPLOY_100_TOOLTIP: "Déployez tout votre arsenal. Totale guerre nucléaire."
+ 
+ NUCLEAR_ADD_TARGET_TOOLTIP: "Ajouter cet état à la liste des cibles nucléaires."
+ NUCLEAR_REMOVE_TARGET_TOOLTIP: "Supprimer cet état de la liste des cibles nucléaires."
+ NUCLEAR_CLEAR_TARGETLIST_TOOLTIP: "Effacer tous les états ciblés."
+ NUCLEAR_CASUALTIES_TOOLTIP: "Estimation des décès de civils dans tous les États visés, en fonction des ogives déployées et de la population de l'État. Les pertes réelles varieront."
+ 
+ NUCLEAR_FIRE_BUTTON_TOOLTIP: "Lancer une frappe nucléaire contre tous les États visés. Nécessite au moins une cible, au moins une ogive et une guerre active. On vous demandera de confirmer avant l'exécution de la grève."
+ 
+ NUCLEAR_STATE_TARGETED_TOOLTIP: "Cet état est actuellement sur la liste des cibles nucléaires."
+ 
+ # ── EVENTS ───────────────────────────────
+ 
+ nuclear_events.4.t: "Lancer une frappe nucléaire ?"
+ nuclear_events.4.d: "La solution de ciblage est verrouillée. [GetPlayer.MakeScope.ScriptValue('nuclear_warheads_to_use_sv')|v0] ogives ont été affectées à [GetPlayer.MakeScope.ScriptValue('nuclear_target_count_sv')|v0] état(s).\n\n Cette action est irréversible. Les ogives seront dépensées. Les États seront détruits. Le monde saura qui a fait ça.\n\nVous souhaitez poursuivre?"
+ nuclear_events.4.f: "On ne peut pas le reprendre."
+ nuclear_events.4.a: "#R Confirmer — lancer la frappe#!"
+ nuclear_events.4.b: "Avortez!"
+ 
+ nuclear_events.5.t: "Attaque nucléaire"
+ nuclear_events.5.d: "[ROOT.GetCountry.GetName] a été frappé par des armes nucléaires.\n\n Plusieurs ogives ont explosé sur le territoire [ROOT.GetCountry.GetAdjective]. Les villes brûlent. Les communications se sont effondrées dans les régions touchées. L'ampleur des pertes en vies humaines n'est pas encore connue — les premières estimations indiquent que le nombre de décès est catastrophique.\n\n L'attaque a été menée sans avertissement. Il n'y avait pas de déclaration. Pas d'ultimatum. Il n'y avait rien."
+ nuclear_events.5.f: "Il n'y a rien à dire."
+ nuclear_events.5.a: "Début de l'intervention d'urgence"
+ 
+ 
+ # ── EVENT 6: IAEA REQUEST ─────────────────
+ 
+ nuclear_events.6.t: "L ' AIEA demande l ' accès aux inspections"
+ nuclear_events.6.d: "L'Agence internationale de l'énergie atomique a officiellement demandé l'accès aux installations nucléaires [ROOT.GetCountry.GetAdjective]. La demande fait suite à des rapports de renseignement — maintenant largement diffusés entre les États membres — suggérant l'existence d'un programme d'enrichissement de qualité militaire.\n\n La position de l'AIEA est sans ambiguïté : [ROOT.GetCountry.GetName] est signataire des engagements en matière de non-prolifération. Refuser l'accès à l'inspection constituerait une infraction matérielle. Pour y parvenir, il faudrait ouvrir les installations à la surveillance internationale — et presque certainement mettre fin au programme d'armements.\n\n Les inspecteurs attendent une réponse."
+ nuclear_events.6.f: "Les inspecteurs sont polis. La demande ne l'est pas."
+ nuclear_events.6.a: "Accorder l'accès — permettre à l'AIEA d'inspecter nos installations"
+ nuclear_events.6.b: "Le refus — [ROOT.GetCountry.GetName] ne sera pas soumis à une inspection étrangère"
+ 
+ # ── EVENT 7: UN ULTIMATUM (via IAEA refusal) ──
+ 
+ nuclear_events.7.t: "Conseil de Sécurité de l'ONU : Cease Enrichment"
+ nuclear_events.7.d: "Le Conseil de sécurité de l'ONU a adopté une résolution exigeant que [ROOT.GetCountry.GetName] stoppe immédiatement son programme d'enrichissement de l'uranium et soumette à la vérification de l'AIEA.\n\n Le vote n'était pas clos. La résolution exige une cessation complète dans les trente jours et menace des sanctions coordonnées si [ROOT.GetCountry.GetName] refuse de se conformer.\n\n Ce n'est pas une demande. C'est un ultimatum."
+ nuclear_events.7.f: "Le Conseil de sécurité a pris la parole. Ce que fait maintenant [ROOT.GetCountry.GetName] va définir sa place dans le monde."
+ nuclear_events.7.a: "Se conformer — arrêter l'enrichissement et se soumettre à la surveillance"
+ nuclear_events.7.b: "Le refus — [ROOT.GetCountry.GetName] se poursuivra indépendamment des conséquences"
+ 
+ # ── EVENT 8: UN ULTIMATUM (via acknowledgement) ──
+ 
+ nuclear_events.8.t: "Conseil de sécurité de l'ONU : Désarmer ou faire face aux conséquences"
+ nuclear_events.8.d: "Ayant reconnu son programme d'armes nucléaires, [ROOT.GetCountry.GetName] n'a laissé aucune ambiguïté au Conseil de sécurité. Une résolution a été adoptée exigeant la cessation immédiate de l'activité d'enrichissement et le démantèlement des infrastructures liées aux armes.\n\n La résolution a été adoptée en vertu du chapitre VII, c'est-à-dire que l'exécution militaire n'a pas été exclue. [ROOT.GetCountry.GetName] a trente jours pour se conformer."
+ nuclear_events.8.f: "L'honnêteté n'était pas récompensée. L'ultimatum est pareil dans les deux sens."
+ nuclear_events.8.a: "Respecter — arrêter le programme et se soumettre à la vérification"
+ nuclear_events.8.b: "Le refus — [ROOT.GetCountry.GetName] ne désarmera pas sous pression"
+ 
+ # ── EVENT 9: GREAT POWER RESPONSE ─────────
+ 
+ nuclear_events.9.t: "Réponse à la défiance nucléaire de [SCOPE.sCountry('nuclear_state').GetName]"
+ nuclear_events.9.d: "[SCOPE.sCountry('nuclear_state').GetName] a refusé l'ultimatum du Conseil de sécurité de l'ONU et continue d'enrichir l'uranium vers la pureté des armes. Le régime de sanctions est en place.\n\n La position de[ROOT.GetCountry.GetName] doit maintenant être clairement définie. Un pays dans notre sphère stratégique développe des armes nucléaires au mépris de l'ordre international que nous avons aidé à construire. La question est de savoir dans quelle mesure nous répondons avec force."
+ nuclear_events.9.f: "Des mots ont été essayés. C'est le moment de décider de la suite."
+ nuclear_events.9.a: "Intervene - lancer une pièce diplomatique pour forcer le désarmement"
+ nuclear_events.9.b: "Menaces — préciser les conséquences sans engager de forces"
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ nuclear_iaea_cooperation: "Accord de coopération de l'AIEA"
+ nuclear_iaea_cooperation_desc: "[ROOT.GetCountry.GetName] a ouvert ses installations nucléaires à la surveillance de l'AIEA. En échange d'une utilisation civile vérifiable, le soutien international à l'infrastructure nucléaire a été étendu."
+ 
+ nuclear_iaea_defiance: "Accès refusé par l ' AIEA"
+ nuclear_iaea_defiance_desc: "[ROOT.GetCountry.GetName] a refusé l'inspection internationale de ses installations nucléaires. La position diplomatique s'est considérablement détériorée."
+ 
+ nuclear_un_compliance: "Respect des règles de l ' ONU en matière de désarmement"
+ nuclear_un_compliance_desc: "[ROOT.GetCountry.GetName] a accepté l'ultimatum de l'ONU et a arrêté son programme nucléaire. La décision était politiquement coûteuse à la maison."
+ 
+ nuclear_un_sanctions: "Sanctions nucléaires de l'ONU"
+ nuclear_un_sanctions_desc: "Le Conseil de sécurité de l'ONU a imposé des sanctions en réponse au refus de [ROOT.GetCountry.GetName] de mettre fin à son programme nucléaire. Le commerce est perturbé et l'isolement diplomatique s'amplifie."
+ 
+ nuclear_military_ultimatum: "Ultimatum militaire délivré"
+ nuclear_military_ultimatum_desc: "Une grande puissance a lancé une pièce diplomatique officielle exigeant [ROOT.GetCountry.GetName] désarmer son programme nucléaire. L'action militaire reste une possibilité."
+ 
+ nuclear_great_power_pressure: "Grandes pressions diplomatiques"
+ nuclear_great_power_pressure_desc: "Une ou plusieurs grandes puissances ont émis des avertissements officiels sur le programme nucléaire de [ROOT.GetCountry.GetName]. Prestige et légitimité souffrent."
+ 
+ nuclear_non_proliferation_war: "Intervention en faveur de la non-prolifération"
+ nuclear_non_proliferation_desc: "[ROOT.GetCountry.GetName] a lancé une intervention diplomatique pour prévenir la prolifération nucléaire. Cette action a été largement saluée par la communauté internationale."
+ 
+ nuclear_non_intervention_caution: "Choisir la prudence lors de l'intervention"
+ nuclear_non_intervention_caution_desc: "[ROOT.GetCountry.GetName] a refusé d'intervenir militairement contre un État armé nucléaire, choisissant plutôt la pression diplomatique. Certains alliés ont remis en question la résolution."
+ 
+ # ── DIPLOMATIC PLAY LOC ──────────────────
+ nuclear_non_proliferation_play: "Désarmement nucléaire Ultimatum"
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ nuclear_strike_aftermath: "Après-midi de grève nucléaire"
+ nuclear_strike_aftermath_desc: "Cet État a été frappé par des armes nucléaires. Les infrastructures sont dévastées, la population s'effondre et les radiations contaminent les terres."
+ 
+ nuclear_strike_launched_modifier: "Paria nucléaire"
+ nuclear_strike_launched_modifier_desc: "[ROOT.GetCountry.GetName] a utilisé des armes nucléaires en colère. La communauté internationale a réagi avec horreur. La position diplomatique et le prestige ont gravement souffert."
+ 
+ nuclear_strike_victim_modifier: "Victime nucléaire"
+ nuclear_strike_victim_modifier_desc: "[ROOT.GetCountry.GetName] a subi une attaque nucléaire. Le traumatisme national est profond et durable. La récupération prendra une génération."
+ 
+ nuclear_disarmament: "Saisir les ADM"
+ nuclear_disarmament_desc: "Exiger que la nation cible démantele complètement son programme d'armes nucléaires et renonce à son arsenal existant. Si elles sont appliquées, toutes les capacités d'enrichissement, les stocks d'ogives et les variables de programme seront supprimés - le pays doit commencer à zéro."
+ 
+ # ── EVENT ────────────────────────────────
+ 
+ nuclear_events.10.t: "Le programme est terminé"
+ nuclear_events.10.d: "Les conditions de la paix ont été respectées. Les inspecteurs internationaux sont entrés dans les installations [ROOT.GetCountry.GetAdjective], ont démantelé les cascades de centrifugeuses, ont retiré le stock et ont scellé les silos.\n\n Des années de travail scientifique, de risque politique et d'investissement national ont été effacées en quelques semaines. Le programme n'existe pas. La connaissance demeure — mais l'infrastructure, le matériel et la position juridique pour la poursuivre sont partis.\n\n[ROOT.GetCountry.GetName] peut recommencer, s'il le souhaite. Ce sera une décision différente, prise dans des circonstances différentes."
+ nuclear_events.10.f: "Il peut être reconstruit. Elle ne sera pas oubliée."
+ nuclear_events.10.a: "Reconnaître les termes"
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ nuclear_disarmament_enforced: "Désarmement forcé"
+ nuclear_disarmament_enforced_desc: "Le programme nucléaire de [ROOT.GetCountry.GetName] a été démantelé de force à la suite d'une défaite militaire. Les conséquences politiques et scientifiques sont graves. La colère publique est intense."
+ 
+ nuclear_disarmament_enforcer: "Victoire de la non-prolifération"
+ nuclear_disarmament_enforcer_desc: "[ROOT.GetCountry.GetName] a réussi à faire respecter le désarmement nucléaire dans un État qui prolifère. Le prestige international et la position diplomatique sont considérablement renforcés."
+ 
+  # ── TREATY ARTICLE ───────────────────────
+ 
+ host_military_bases: "Bases militaires d ' accueil"
+ host_military_bases_desc: "Permet [scope:source_country.GetName] de stationner des forces et du matériel militaires sur le territoire [scope:target_country.GetAdjective]. Étendre la portée des missiles classiques [scope:source_country.GetAdjective] aux États riverains du pays hôte."
+ 
+ military_base_host_modifier: "Hébergement de bases militaires étrangères"
+ military_base_host_modifier_desc: "Les forces militaires étrangères sont stationnées sur le territoire du pays en vertu d'un accord de base. Certaines tensions internes découlent de la présence militaire étrangère."
+ 
+ military_base_projector_modifier: "Bases militaires à l ' étranger"
+ military_base_projector_modifier_desc: "Ce pays a des forces militaires stationnées en territoire allié, étendant sa portée stratégique."
+ 
+ # ── ICBM ─────────────────────────────────
+ 
+ je_icbm_programme: "Programme de développement ICBM"
+ je_icbm_programme_reason: "[ROOT.GetCountry.GetName] a atteint la capacité nucléaire. La prochaine frontière est la livraison: missiles balistiques intercontinentaux capables d'atteindre n'importe quel point du globe sans avertissement. Le programme est long — des années de recherche sur les fusées, de mise au point de systèmes d'orientation et d'essais à distance — mais la rentabilité stratégique est absolue. Un état capable d'ICBM ne peut être dissuadé par la géographie."
+ 
+ je_icbm_early_tt: "Le programme ICBM est en cours de développement. Des systèmes d'orientation sont en cours d'essai. Il faudra des années avant l'existence d'un véhicule de livraison intercontinental viable."
+ je_icbm_late_tt: "#bold Le développement d'ICBM approche de sa fin.#! Des essais de portée finale et de précision sont en cours."
+ 
+ icbm_progress_bar: "ICBM Développement"
+ icbm_progress_bar_desc: "Progrès vers une capacité de livraison de missiles balistiques intercontinentaux. À 100 %, les armes nucléaires peuvent être ciblées au niveau mondial, indépendamment de leur proximité."
+ icbm_progress_bar_tt: "Progrès mensuels de la mise au point de la GCI"
+ 
+ icbm_capable_modifier: "Capable"
+ icbm_capable_modifier_desc: "[ROOT.GetCountry.GetName] a développé des missiles balistiques intercontinentaux. Les armes nucléaires peuvent désormais être ciblées sur n'importe quel État du monde, indépendamment de leur portée."
+ 
+ nuclear_events.11.t: "Programme ICBM achevé"
+ nuclear_events.11.d: "[ROOT.GetCountry.GetName] a testé avec succès un missile balistique intercontinental. L'appareil volait toute sa portée, démontrait la précision du guidage terminal dans des paramètres acceptables et s'éclaboussait dans la zone désignée.\n\n Les implications stratégiques sont immédiates. La dissuasion nucléaire de [ROOT.GetCountry.GetName] n'est plus limitée par la géographie. Tout état sur la planète est maintenant, en principe, une cible potentielle.\n\n La communauté internationale aura pris note de cette épreuve. Comme toujours."
+ nuclear_events.11.f: "Il n'y a nulle part où être hors de portée."
+ nuclear_events.11.a: "La dissuasion est désormais véritablement mondiale"
+ 
+ # ── CONVENTIONAL MISSILES ─────────────────
+ 
+ CONV_MISSILES_HEADER: "Missiles classiques"
+ CONV_TARGET_AIRPORT_TOOLTIP: "Des aéroports cibles dans certains États. Chaque missile a 3 % de chances de détruire le bâtiment de l'aéroport."
+ CONV_TARGET_BARRACKS_TOOLTIP: "Ciblez les casernes. Chaque missile a 3 % de chances de détruire des casernes dans chaque État visé."
+ CONV_TARGET_NAVAL_TOOLTIP: "Ciblez les bases navales. Chaque missile a 3 % de chances de détruire l'infrastructure navale."
+ CONV_TARGET_NUCLEAR_PLANT_TOOLTIP: "Cibler les centrales nucléaires. Chaque missile a 3 % de chances de détruire l'installation."
+ CONV_TARGET_SILO_TOOLTIP: "Ciblez les silos nucléaires. Chaque missile a 3 % de chances de détruire le silo."
+ CONV_TARGET_GOVERNMENT_TOOLTIP: "Cibler les bâtiments de l'administration publique. Chaque missile a 3 % de chances de les détruire."
+ CONV_TARGET_RAILWAY_TOOLTIP: "Cibler les infrastructures ferroviaires. Chaque missile a 3 % de chances de détruire le chemin de fer."
+ CONV_ADD_TARGET_TOOLTIP: "Ajouter cet état à la liste des frappes de missiles classiques."
+ CONV_REMOVE_TARGET_TOOLTIP: "Enlevez cet état de la liste des missiles conventionnels."
+ CONV_FIRE_TOOLTIP: "Lancer une frappe conventionnelle contre tous les États visés. Consomme un missile par état ciblé. 60 jours de refroidissement s'applique."
+ 
+ # ── STRATEGIC BOMBING ─────────────────────
+ 
+ STRAT_BOMBING_HEADER: "Bombes stratégiques"
+ BOMBING_ADD_TARGET_TOOLTIP: "Ajoutez cet état à la liste des bombardements pour la prochaine course."
+ BOMBING_REMOVE_TARGET_TOOLTIP: "Enlevez cet état de la liste des bombardements."
+ BOMBING_EXECUTE_TOOLTIP: "Exécuter un bombardement stratégique contre tous les États ciblés. Devastation est ajoutée en fonction du nombre de formations aériennes admissibles. Refroidissement 30 jours s'applique."
+ 
+ NUCLEAR_ICBM_PROGRESS_TOOLTIP: "Progrès réalisés dans le domaine du développement. À 100 %, les armes nucléaires peuvent cibler n'importe quel État dans le monde."
+ NUCLEAR_ICBM_TOOLTIP: "Commencez le développement de missiles balistiques intercontinentaux. Nécessite une capacité nucléaire. Ça prend plusieurs années. Une fois achevées, les armes nucléaires peuvent viser n'importe quel État du monde, pas seulement les États voisins."
+ 
+ CONV_PRODUCE_MISSILES_TOOLTIP: "Fabrication d'une salve de 5 missiles conventionnels. Petit coût de production continu. Les missiles sont consommés au tir — un par État visé."
+ 
+ missile_production_cost:0 "Production de missiles"
+ state_buy_orders_missiles_add:0 "Consommation de missiles"
+ 
+ CONV_DEPLOY_10_TOOLTIP: "Tirez 10 % de votre stock de missiles contre des États ciblés."
+ CONV_DEPLOY_25_TOOLTIP: "Tirez 25% de votre stock de missiles contre les États ciblés."
+ CONV_DEPLOY_50_TOOLTIP: "Tirez 50 % de votre stock de missiles contre des États ciblés."
+ CONV_DEPLOY_75_TOOLTIP: "Tirez 75 % de votre stock de missiles contre des États ciblés."
+ CONV_DEPLOY_100_TOOLTIP: "Tirez tout votre stock de missiles contre les États ciblés."
+ 
+ CONV_BUILDING_CHANCE_TOOLTIP: "Chaque missile tiré a une chance de 3 % de détruire l'un des bâtiments suivants dans son état ciblé, s'il est présent :\n\n• Aéroport\n• casernes\n• base navale\n• centrale nucléaire\n• nucléaire Silo\n• administration gouvernementale\n• chemin de fer\n\n Tous les types de bâtiments sont roulés indépendamment. Une seule salve antimissile peut détruire plusieurs bâtiments dans le même état si elle est assez grande."
+ 
+ nuclear_events.12.t: "Coup de missile sur [ROOT.GetName]"
+ nuclear_events.12.d: "[SCOPE.sCountry('missile_attacker').GetName] a lancé une frappe conventionnelle contre le territoire [ROOT.GetAdjective]. Des rapports font état d'impacts dans les états [ROOT.GetAdjective] — les dommages causés à l'infrastructure sont évalués.\n\n Les missiles n'étaient pas nucléaires, mais le message est clair. [SCOPE.sCountry('missile_attacker').GetName] est prêt à utiliser des armes à longue portée contre nous."
+ nuclear_events.12.f: "Les cratères sont déjà là. La question est de savoir ce que nous faisons ensuite."
+ nuclear_events.12.a: "Évaluer les dommages et réagir en conséquence"
+
+ missile_strike_victim_modifier: "Grève classique des missiles"
+ missile_strike_victim_modifier_desc: "Notre territoire a été visé par une frappe de missiles conventionnelle. Les dommages causés aux infrastructures et l'anxiété du public sont élevés."
+
+ # ── EVENT 13: RETALIATION CHOICE ───────────
+
+ nuclear_events.13.t: "Rétorsion nucléaire — Décision requise"
+ nuclear_events.13.d: "[SCOPE.sCountry('nuclear_attacker').GetName] a lancé des armes nucléaires contre [ROOT.GetName]. Nos ogives sont armées. Les codes de lancement sont prêts.\n\nUne grève de représailles contre le territoire [SCOPE.sCountry('nuclear_attacker').GetAdjective] consommerait 25% de notre arsenal et frapperait tous les états [SCOPE.sCountry('nuclear_attacker').GetAdjective]. La grève ne porterait aucune infamie — le monde comprendra.\n\n L'alternative est d'absorber l'attaque. Il n'y a pas de déshonneur dans la survie."
+ nuclear_events.13.f: "L'ordre ne doit être donné qu'une seule fois."
+ nuclear_events.13.a: "Rétorsion — lancement de 25% de l'arsenal contre [SCOPE.sCountry('nuclear_attacker').GetName]"
+ nuclear_events.13.b: "Reculez — absorbez la grève, préservez l'arsenal"
+
+ nuclear_first_strike_response: "Rétorsion nucléaire (réponse à la première grève)"
+ nuclear_first_strike_response_desc: "[ROOT.GetName] a lancé une contre-attaque nucléaire en réponse à une attaque nucléaire non provoquée sur son territoire. La communauté internationale reconnaît le droit à des représailles - le gain d'infamie est considérablement réduit."
+
+ nuclear_absorbed_first_strike: "Grève nucléaire absorbée"
+ nuclear_absorbed_first_strike_desc: "[ROOT.GetName] a subi une attaque nucléaire sans représailles. Cette restriction a été observée au niveau international. La position et le prestige diplomatiques sont considérablement renforcés."
+
+ # ── EVENT 14: RETALIATION NOTIFICATION ─────
+
+ nuclear_events.14.t: "Rétorsion nucléaire entrant"
+ nuclear_events.14.d: "On a répondu à notre attaque nucléaire. [ROOT.GetName] a lancé une grève de représailles — les ogives sont confirmées à l'arrivée.\n\nNous avons lancé l'échange. Les conséquences sont les nôtres."
+ nuclear_events.14.f: "Chaque grève invite la prochaine."
+ nuclear_events.14.a: "Brace pour impact"

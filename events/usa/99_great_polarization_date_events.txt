@@ -1,0 +1,440 @@
+namespace = great_polarization
+
+great_polarization.30 = {
+	type = country_event
+	placement = ROOT
+	title = great_polarization.30.t
+	desc = great_polarization.30.d
+	flavor = great_polarization.30.f
+	event_image = { video = "southamerica_war_civilians" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+	duration = 3
+
+	trigger = {
+		c:USA ?= this
+		has_journal_entry = je_the_great_polarization
+		game_date >= 2020.5.25
+		NOT = { has_variable = george_floyd_event_happened }
+		NOT = { has_global_variable = second_american_civil_war_started }
+	}
+
+	immediate = {
+		set_variable = george_floyd_event_happened
+	}
+
+	option = {
+		name = great_polarization.30.a
+		default_option = yes
+		add_modifier = {
+			name = great_polarization_minorities_targeted
+			days = 730
+			is_decaying = yes
+		}
+		change_variable = { name = great_polarization_left_pressure add = 18 }
+		great_polarization_raise_tension_large = yes
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = great_polarization.30.b
+		add_modifier = {
+			name = great_polarization_reform_concessions
+			days = 730
+			is_decaying = yes
+		}
+		change_variable = { name = great_polarization_left_pressure add = 6 }
+		great_polarization_reduce_tension_medium = yes
+		ai_chance = { base = 0 }
+	}
+}
+
+great_polarization.31 = {
+	type = country_event
+	placement = ROOT
+	title = great_polarization.31.t
+	desc = great_polarization.31.d
+	flavor = great_polarization.31.f
+	event_image = { video = "votp_barricade" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+	duration = 3
+
+	trigger = {
+		c:USA ?= this
+		has_journal_entry = je_the_great_polarization
+		game_date >= 2020.6.8
+		NOT = { has_variable = chop_chaz_event_happened }
+		NOT = { has_global_variable = second_american_civil_war_started }
+	}
+
+	immediate = {
+		set_variable = chop_chaz_event_happened
+	}
+
+	option = {
+		name = great_polarization.31.a
+		default_option = yes
+		add_modifier = {
+			name = great_polarization_online_radicalization
+			days = 365
+			is_decaying = yes
+		}
+		change_variable = { name = great_polarization_left_pressure add = 10 }
+		change_variable = { name = great_polarization_right_pressure add = 8 }
+		great_polarization_raise_tension_medium = yes
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = great_polarization.31.b
+		add_modifier = {
+			name = great_polarization_security_crackdown
+			days = 365
+			is_decaying = yes
+		}
+		change_variable = { name = great_polarization_right_pressure add = 10 }
+		great_polarization_raise_tension_medium = yes
+		ai_chance = { base = 0 }
+	}
+}
+
+
+great_polarization.38 = {
+	type = country_event
+	placement = ROOT
+	title = great_polarization.38.t
+	desc = great_polarization.38.d
+	flavor = great_polarization.38.f
+	event_image = { video = "votp_barricade" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+	duration = 3
+
+	trigger = {
+		c:USA ?= this
+		has_journal_entry = je_the_great_polarization
+		game_date >= 2021.1.6
+		NOT = { has_variable = january_6_capitol_attack_happened }
+		NOT = { has_global_variable = second_american_civil_war_started }
+	}
+
+	immediate = {
+		set_variable = january_6_capitol_attack_happened
+	}
+
+	option = {
+		name = great_polarization.38.a
+		default_option = yes
+		add_modifier = {
+			name = great_polarization_event_violence
+			days = 730
+			is_decaying = yes
+		}
+		add_modifier = {
+			name = great_polarization_online_radicalization
+			days = 365
+			is_decaying = yes
+		}
+		change_variable = { name = great_polarization_right_pressure add = 16 }
+		change_variable = { name = great_polarization_left_pressure add = 8 }
+		change_variable = { name = great_polarization_institutional_trust add = -12 }
+		great_polarization_raise_tension_large = yes
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = great_polarization.38.b
+		add_modifier = {
+			name = great_polarization_reform_concessions
+			days = 730
+			is_decaying = yes
+		}
+		change_variable = { name = great_polarization_right_pressure add = 6 }
+		change_variable = { name = great_polarization_institutional_trust add = -4 }
+		great_polarization_raise_tension_medium = yes
+		ai_chance = { base = 0 }
+	}
+}
+
+
+great_polarization.32 = {
+	type = country_event
+	placement = ROOT
+	title = great_polarization.32.t
+	desc = great_polarization.32.d
+	flavor = great_polarization.32.f
+	event_image = { video = "unspecific_ruler_speaking_to_people" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	duration = 3
+
+	trigger = {
+		c:USA ?= this
+		has_journal_entry = je_the_great_polarization
+		game_date >= 2024.7.13
+		NOT = { has_variable = butler_assassination_attempt_happened }
+		NOT = { has_global_variable = second_american_civil_war_started }
+	}
+
+	immediate = {
+		set_variable = butler_assassination_attempt_happened
+	}
+
+	option = {
+		name = great_polarization.32.a
+		default_option = yes
+		add_modifier = {
+			name = great_polarization_event_violence
+			days = 730
+			is_decaying = yes
+		}
+		change_variable = { name = great_polarization_right_pressure add = 18 }
+		great_polarization_raise_tension_large = yes
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = great_polarization.32.b
+		add_modifier = {
+			name = great_polarization_reform_concessions
+			days = 365
+			is_decaying = yes
+		}
+		great_polarization_reduce_tension_small = yes
+		ai_chance = { base = 0 }
+	}
+}
+
+great_polarization.33 = {
+	type = country_event
+	placement = ROOT
+	title = great_polarization.33.t
+	desc = great_polarization.33.d
+	flavor = great_polarization.33.f
+	event_image = { video = "votp_agitator_speaking" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+	duration = 3
+
+	trigger = {
+		c:USA ?= this
+		has_journal_entry = je_the_great_polarization
+		game_date >= 2025.6.14
+		NOT = { has_variable = no_kings_protests_happened }
+		NOT = { has_global_variable = second_american_civil_war_started }
+	}
+
+	immediate = {
+		set_variable = no_kings_protests_happened
+	}
+
+	option = {
+		name = great_polarization.33.a
+		default_option = yes
+		add_modifier = {
+			name = great_polarization_online_radicalization
+			days = 365
+			is_decaying = yes
+		}
+		change_variable = { name = great_polarization_left_pressure add = 14 }
+		change_variable = { name = great_polarization_right_pressure add = 6 }
+		great_polarization_raise_tension_medium = yes
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = great_polarization.33.b
+		add_modifier = {
+			name = great_polarization_reform_concessions
+			days = 365
+			is_decaying = yes
+		}
+		great_polarization_reduce_tension_small = yes
+		ai_chance = { base = 0 }
+	}
+}
+
+great_polarization.34 = {
+	type = country_event
+	placement = ROOT
+	title = great_polarization.34.t
+	desc = great_polarization.34.d
+	flavor = great_polarization.34.f
+	event_image = { video = "europenorthamerica_political_extremism" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	duration = 3
+
+	trigger = {
+		c:USA ?= this
+		has_journal_entry = je_the_great_polarization
+		game_date >= 2025.6.14
+		NOT = { has_variable = minnesota_representatives_shooting_happened }
+		NOT = { has_global_variable = second_american_civil_war_started }
+	}
+
+	immediate = {
+		set_variable = minnesota_representatives_shooting_happened
+	}
+
+	option = {
+		name = great_polarization.34.a
+		default_option = yes
+		add_modifier = {
+			name = great_polarization_event_violence
+			days = 730
+			is_decaying = yes
+		}
+		great_polarization_raise_tension_large = yes
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = great_polarization.34.b
+		add_modifier = {
+			name = great_polarization_reform_concessions
+			days = 365
+			is_decaying = yes
+		}
+		great_polarization_reduce_tension_small = yes
+		ai_chance = { base = 0 }
+	}
+}
+
+great_polarization.35 = {
+	type = country_event
+	placement = ROOT
+	title = great_polarization.35.t
+	desc = great_polarization.35.d
+	flavor = great_polarization.35.f
+	event_image = { video = "votp_agitator_speaking" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	duration = 3
+
+	trigger = {
+		c:USA ?= this
+		has_journal_entry = je_the_great_polarization
+		game_date >= 2025.9.10
+		NOT = { has_variable = charlie_kirk_assassination_happened }
+		NOT = { has_global_variable = second_american_civil_war_started }
+	}
+
+	immediate = {
+		set_variable = charlie_kirk_assassination_happened
+	}
+
+	option = {
+		name = great_polarization.35.a
+		default_option = yes
+		add_modifier = {
+			name = great_polarization_event_violence
+			days = 730
+			is_decaying = yes
+		}
+		change_variable = { name = great_polarization_right_pressure add = 18 }
+		great_polarization_raise_tension_large = yes
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = great_polarization.35.b
+		add_modifier = {
+			name = great_polarization_reform_concessions
+			days = 365
+			is_decaying = yes
+		}
+		great_polarization_reduce_tension_small = yes
+		ai_chance = { base = 0 }
+	}
+}
+
+great_polarization.36 = {
+	type = country_event
+	placement = ROOT
+	title = great_polarization.36.t
+	desc = great_polarization.36.d
+	flavor = great_polarization.36.f
+	event_image = { video = "southamerica_war_civilians" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+	duration = 3
+
+	trigger = {
+		c:USA ?= this
+		has_journal_entry = je_the_great_polarization
+		game_date >= 2026.1.7
+		NOT = { has_variable = ice_shootings_event_happened }
+		NOT = { has_global_variable = second_american_civil_war_started }
+	}
+
+	immediate = {
+		set_variable = ice_shootings_event_happened
+	}
+
+	option = {
+		name = great_polarization.36.a
+		default_option = yes
+		add_modifier = {
+			name = great_polarization_minorities_targeted
+			days = 730
+			is_decaying = yes
+		}
+		change_variable = { name = great_polarization_left_pressure add = 18 }
+		great_polarization_raise_tension_large = yes
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = great_polarization.36.b
+		add_modifier = {
+			name = great_polarization_reform_concessions
+			days = 365
+			is_decaying = yes
+		}
+		great_polarization_reduce_tension_medium = yes
+		ai_chance = { base = 0 }
+	}
+}
+
+great_polarization.37 = {
+	type = country_event
+	placement = ROOT
+	title = great_polarization.37.t
+	desc = great_polarization.37.d
+	flavor = great_polarization.37.f
+	event_image = { video = "votp_hostile_court" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	duration = 3
+
+	trigger = {
+		c:USA ?= this
+		has_journal_entry = je_the_great_polarization
+		game_date >= 2026.4.29
+		NOT = { has_variable = voting_rights_act_gutted_happened }
+		NOT = { has_global_variable = second_american_civil_war_started }
+	}
+
+	immediate = {
+		set_variable = voting_rights_act_gutted_happened
+	}
+
+	option = {
+		name = great_polarization.37.a
+		default_option = yes
+		add_modifier = {
+			name = great_polarization_minorities_targeted
+			days = 1095
+			is_decaying = yes
+		}
+		change_variable = { name = great_polarization_left_pressure add = 20 }
+		change_variable = { name = great_polarization_institutional_trust add = -15 }
+		great_polarization_raise_tension_large = yes
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = great_polarization.37.b
+		add_modifier = {
+			name = great_polarization_reform_concessions
+			days = 730
+			is_decaying = yes
+		}
+		great_polarization_reduce_tension_medium = yes
+		ai_chance = { base = 0 }
+	}
+}

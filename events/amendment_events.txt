@@ -1,0 +1,288 @@
+﻿namespace = amendment_events
+
+# ==========================================
+# ==========================================
+# AFFORDABLE CARE ACT / OBAMACARE (USA)
+# Parent: law_private_health_insurance
+# Allowed: law_private_health_insurance,
+#          law_public_health_insurance
+# Fires March 2010.
+# Requires Medicaid already in place.
+# Sponsor: ig_intelligentsia
+# ==========================================
+
+amendment_events.2 = {
+	type = country_event
+	placement = ROOT
+	title = amendment_events.2.t
+	desc = amendment_events.2.d
+	flavor = amendment_events.2.f
+
+	event_image = { video = "obama" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = {
+		c:USA ?= this
+		game_date >= 2010.3.23
+		NOT = { has_variable = aca_event_fired }
+		OR = {
+			has_law = law_type:law_private_health_insurance
+			has_law = law_type:law_public_health_insurance
+		}
+	}
+
+	immediate = {
+		set_variable = aca_event_fired
+	}
+
+	option = {
+		name = amendment_events.2.a
+		default_option = yes
+		
+		active_law:lawgroup_health_system = {
+			add_amendment = {
+				type = amendment_affordable_care_act
+				sponsor = PREV.ig:ig_intelligentsia
+			}
+		}
+		ai_chance = { base = 60 }
+	}
+
+	option = {
+		name = amendment_events.2.b
+		interest_group_ig_intelligentsia_approval_add = -5
+		interest_group_ig_trade_unions_approval_add = -3
+		ai_chance = { base = 40 }
+	}
+}
+
+# ==========================================
+# FEDERAL ASSAULT WEAPONS BAN (USA)
+# Parent: law_restricted_firearms
+# Allowed: law_unrestricted_firearms,
+#          law_restricted_firearms
+# Fires September 1994.
+# Ten-year sunset — timeout = 120 months.
+# Sponsor: ig_intelligentsia
+# ==========================================
+
+amendment_events.4 = {
+	type = country_event
+	placement = ROOT
+	title = amendment_events.4.t
+	desc = amendment_events.4.d
+	flavor = amendment_events.4.f
+
+	event_image = { video = "congress" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 14
+
+	trigger = {
+		c:USA ?= this
+		game_date >= 1994.9.13
+		NOT = { has_variable = awb_event_fired }
+		has_law = law_type:law_unrestricted_firearms
+	}
+
+	immediate = {
+		set_variable = awb_event_fired
+	}
+
+	option = {
+		name = amendment_events.4.a
+		default_option = yes
+		active_law:lawgroup_firearms = {
+			add_amendment = {
+				type = amendment_federal_assault_weapons_ban
+				sponsor = PREV.ig:ig_intelligentsia
+				timeout = 120
+			}
+		}
+		ai_chance = { base = 55 }
+	}
+
+	option = {
+		name = amendment_events.4.b
+		interest_group_ig_petty_bourgeoisie_approval_add = 3
+		interest_group_ig_rural_folk_approval_add = 3
+		interest_group_ig_intelligentsia_approval_add = -4
+		ai_chance = { base = 45 }
+	}
+}
+
+# ==========================================
+# 1994 CRIME BILL (USA)
+# Parent: law_dedicated_police
+# Allowed: law_dedicated_police,
+#          law_militarized_police
+# Fires September 1994.
+# Sponsor: ig_landowners
+# ==========================================
+
+amendment_events.5 = {
+	type = country_event
+	placement = ROOT
+	title = amendment_events.5.t
+	desc = amendment_events.5.d
+	flavor = amendment_events.5.f
+
+	event_image = { video = "congress" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = {
+		c:USA ?= this
+		game_date >= 1994.9.13
+		NOT = { has_variable = crime_bill_event_fired }
+		OR = {
+			has_law = law_type:law_dedicated_police
+			has_law = law_type:law_militarized_police
+		}
+	}
+
+	immediate = {
+		set_variable = crime_bill_event_fired
+	}
+
+	option = {
+		name = amendment_events.5.a
+		default_option = yes
+		active_law:lawgroup_policing = {
+			add_amendment = {
+				type = amendment_crime_bill_1994
+				sponsor = PREV.ig:ig_landowners
+			}
+		}
+		ai_chance = { base = 65 }
+	}
+
+	option = {
+		name = amendment_events.5.b
+		interest_group_ig_trade_unions_approval_add = 3
+		interest_group_ig_intelligentsia_approval_add = 3
+		interest_group_ig_landowners_approval_add = -4
+		ai_chance = { base = 35 }
+	}
+}
+
+# ==========================================
+# 1994 TAX REFORM (CHINA)
+# Parent: law_proportional_taxation
+# Allowed: law_proportional_taxation,
+#          law_graduated_taxation,
+#          law_consumption_based_taxation
+# Fires January 1994.
+# Sponsor: ig_petty_bourgeoisie
+# ==========================================
+
+amendment_events.6 = {
+	type = country_event
+	placement = ROOT
+	title = amendment_events.6.t
+	desc = amendment_events.6.d
+	flavor = amendment_events.6.f
+
+	event_image = { video = "unspecific_ruler_speaking_to_people" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = {
+		OR = {
+			c:PRC ?= this
+		}
+		game_date >= 1994.1.1
+		NOT = { has_variable = china_tax_reform_event_fired }
+		OR = {
+			has_law = law_type:law_proportional_taxation
+			has_law = law_type:law_graduated_taxation
+			has_law = law_type:law_consumption_based_taxation
+		}
+	}
+
+	immediate = {
+		set_variable = china_tax_reform_event_fired
+	}
+
+	option = {
+		name = amendment_events.6.a
+		default_option = yes
+		active_law:lawgroup_taxation = {
+			add_amendment = {
+				type = amendment_china_tax_reform_1994
+				sponsor = PREV.ig:ig_petty_bourgeoisie
+			}
+		}
+		ai_chance = { base = 80 }
+	}
+
+	option = {
+		name = amendment_events.6.b
+		add_modifier = {
+			name = china_tax_reform_rejected_modifier
+			months = 36
+		}
+		ai_chance = { base = 20 }
+	}
+}
+
+# ==========================================
+# 35-HOUR WORK WEEK (FRANCE)
+# Parent: law_worker_protections
+# Allowed: law_worker_protections only
+# Fires June 1998 — first Aubry Law.
+# Sponsor: ig_trade_unions
+# ==========================================
+
+amendment_events.7 = {
+	type = country_event
+	placement = ROOT
+	title = amendment_events.7.t
+	desc = amendment_events.7.d
+	flavor = amendment_events.7.f
+
+	event_image = { video = "europenorthamerica_political_extremism" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = {
+		c:FRA ?= this
+		game_date >= 1998.6.13
+		NOT = { has_variable = work_week_event_fired }
+		has_law = law_type:law_worker_protections
+	}
+
+	immediate = {
+		set_variable = work_week_event_fired
+	}
+
+	option = {
+		name = amendment_events.7.a
+		default_option = yes
+		active_law:lawgroup_labor_rights = {
+			add_amendment = {
+				type = amendment_35_hour_work_week
+				sponsor = PREV.ig:ig_trade_unions
+			}
+		}
+		ai_chance = { base = 60 }
+	}
+
+	option = {
+		name = amendment_events.7.b
+		interest_group_ig_industrialists_approval_add = 4
+		interest_group_ig_petty_bourgeoisie_approval_add = 3
+		interest_group_ig_trade_unions_approval_add = -6
+		ai_chance = { base = 40 }
+	}
+}

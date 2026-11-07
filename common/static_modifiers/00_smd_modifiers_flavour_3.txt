@@ -1,0 +1,375 @@
+﻿russia_parliament_resisting = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+    country_legitimacy_add = -10
+    country_authority_mult = -0.05
+	country_bureaucracy_mult = -0.25
+}
+
+russia_military_loyalty = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = 4
+}
+
+russia_parliamentary_support = {
+   icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+   interest_group_approval_add = 2
+}
+
+russia_constitution_crisis_resolved_mod = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_authority_mult = 0.10
+}
+
+storm_of_the_century = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+    state_infrastructure_mult = -0.20
+    state_mortality_mult = 0.15
+    building_throughput_mult = -0.05
+}
+
+great_flood_of_1993 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+    state_infrastructure_mult = -0.25
+    state_mortality_mult = 0.08
+}
+
+nato_bombing_aftermath = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+    state_infrastructure_mult = -0.25
+	state_mortality_mult = 0.05
+    country_authority_mult = -0.05
+}
+
+complacent_on_quebec = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+    interest_group_approval = -4
+}
+
+southern_tour_market_push = { 
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+    interest_group_ig_industrialists_pop_attraction_mult = 0.10
+	interest_group_ig_intelligentsia_pop_attraction_mult = 0.10
+	country_bureaucracy_mult = 0.05
+    country_authority_mult = -0.05
+}
+
+southern_tour_reforms = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+    interest_group_ig_industrialists_pop_attraction_mult = 0.25
+	interest_group_ig_intelligentsia_pop_attraction_mult = 0.25
+	state_infrastructure_mult = 0.15
+}
+
+left_nato = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_leverage_resistance_mult = 5.0
+}
+
+heightened_security_measures = {
+    country_authority_mult = -0.05
+    country_radicals_from_standard_of_living_mult = -0.05
+}
+
+limited_response = {
+    country_bureaucracy_mult = 0.05
+    country_authority_mult = -0.05
+}
+
+bin_laden_extradition_accepted_country = {
+    country_mobilization_speed_mult = 0.1
+    country_offense_mult = 0.05
+}
+
+bin_laden_extradition_accepted_ig_armed_forces = {
+    interest_group_approval_add = 2
+}
+
+bin_laden_extradition_rejected_country = {
+    country_mobilization_speed_mult = -0.05
+    country_defense_mult = -0.05
+}
+
+bin_laden_extradition_rejected_ig_armed_forces = {
+    interest_group_approval_add = 2
+}
+
+bin_laden_extradition_rejected_ig_armed_forces_2 = {
+    interest_group_approval_add = -2
+}
+
+ground_zero = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+    state_infrastructure_mult = -0.25
+	state_mortality_mult = 0.25
+	state_standard_of_living_add = -4
+}
+
+intensified_intelligence_operations = {
+    country_authority_mult = 0.25
+	unit_army_offense_mult = 0.15
+}
+
+asian_economy_boost = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+   state_infrastructure_mult = 0.10
+   state_construction_mult = 0.35
+}
+
+booming_trade_economy = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+    state_market_access_price_impact = 0.25
+    state_export_advantage_mult = 0.25
+	country_minting_mult = 0.35
+}
+
+# PRC reunification bonus — permanent on JE completion
+one_china_reunification_bonus = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	# National triumph — the century-long wound is healed
+	country_authority_mult                      = 0.20
+	country_legitimacy_base_add                 = 25
+	country_prestige_mult                       = 0.15
+	# Reunification suppresses separatism and turmoil
+	state_turmoil_effects_mult                  = -0.15
+	country_revolution_progress_mult            = -0.15
+	country_secession_progress_mult             = -0.20
+	# Boost to construction and expansion
+	state_incorporation_speed_mult              = 0.20
+	state_contiguous_incorporation_speed_mult   = 0.30
+}
+ 
+# ROC integration bonus — permanent on JE completion
+# Focused on absorbing the vast mainland population
+one_china_roc_integration_bonus = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	# Accelerated incorporation of mainland states
+	state_incorporation_speed_mult              = 0.40
+	state_contiguous_incorporation_speed_mult   = 0.50
+	# Legitimacy from historic accomplishment
+	country_legitimacy_base_add                 = 20
+	country_prestige_mult                       = 0.15
+	country_authority_mult                      = 0.10
+	# Turmoil suppression as the mainland is integrated
+	state_turmoil_effects_mult                  = -0.10
+	country_secession_progress_mult             = -0.15
+}
+
+# The foundational corruption modifier —
+# applied from the start of je_tangentopoli
+tangentopoli_systemic_corruption = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	country_legitimacy_base_add                 = -10
+	country_infamy_generation_mult              = 0.05
+	country_law_enactment_success_add           = -0.05
+	country_expenses_add                        = 20
+}
+
+# Chiesa arrest — initial crack in the system
+tangentopoli_chiesa_arrest = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	country_legitimacy_base_add                 = -3
+	state_radicals_from_political_movements_mult = 0.05
+}
+
+# IGs under investigation
+tangentopoli_ig_under_scrutiny = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_pol_str_mult                 = -0.20
+	interest_group_approval_add                 = -3
+	interest_group_ig_industrialists_approval_add = -3
+}
+
+# Investigation widening
+tangentopoli_widening_investigation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_legitimacy_base_add                 = -5
+	country_law_enactment_success_add           = -0.08
+}
+
+# Suppression attempt — costs legitimacy
+tangentopoli_suppression_attempt = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	country_legitimacy_base_add                 = -8
+	country_prestige_mult                       = -0.03
+}
+
+# Party collapse — Socialists, Christian Democrats
+tangentopoli_party_collapse = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_pol_str_mult                 = -0.40
+	interest_group_approval_add                 = -8
+	interest_group_pop_attraction_mult          = -0.30
+}
+
+# Legitimacy crisis during the investigation
+tangentopoli_legitimacy_crisis = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	country_legitimacy_base_add                 = -15
+	country_authority_mult                      = -0.10
+	state_radicals_from_political_movements_mult = 0.15
+}
+
+# Southern networks exposed
+tangentopoli_south_exposure = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	state_turmoil_effects_mult                  = 0.10
+	country_legitimacy_base_add                 = -5
+}
+
+# Investigation begins (fires on mani_pulite.5)
+mani_pulite_investigation_begins = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_prestige_mult                       = 0.03
+	country_infamy_decay_mult                   = 0.05
+}
+
+# Public mandate from Biondi Decree withdrawal
+mani_pulite_public_mandate = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	country_legitimacy_base_add                 = 5
+	state_loyalists_from_political_movements_mult = 0.10
+}
+
+# Investigation wins — First Republic falls
+# Clean Hands Victory
+mani_pulite_clean_hands_victory = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_legitimacy_base_add                 = 20
+	country_law_enactment_success_add           = 0.10
+	country_prestige_mult                       = 0.05
+	country_infamy_decay_mult                   = 0.10
+	state_loyalists_from_political_movements_mult = 0.10
+}
+
+# Controlled transition
+mani_pulite_cautious_transition = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_legitimacy_base_add                 = 8
+	country_law_enactment_success_add           = 0.05
+}
+
+# Investigation buried — permanent shame
+mani_pulite_investigation_buried = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	country_legitimacy_base_add                 = -20
+	country_prestige_mult                       = -0.08
+	country_law_enactment_success_add           = -0.10
+	state_radicals_from_political_movements_mult = 0.20
+	country_infamy_generation_mult              = 0.10
+}
+
+czh_federal_strain = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	country_law_enactment_success_add           = -0.05
+	state_radicals_from_political_movements_mult = 0.10
+}
+ 
+czh_slovak_subsidy = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_legitimacy_base_add                 = 5
+}
+ 
+czh_federal_authority_asserted = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	country_authority_mult                      = 0.05
+	state_radicals_from_political_movements_mult = 0.08
+}
+ 
+czh_autonomy_negotiations = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_authority_mult                      = 0.05
+	state_loyalists_from_political_movements_mult = 0.10
+}
+ 
+czh_confederation_talks = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_law_enactment_success_add           = 0.08
+	country_legitimacy_base_add                 = 3
+	country_authority_mult                      = -0.03
+}
+ 
+czh_referendum_blocked = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	state_radicals_from_political_movements_mult = 0.15
+}
+ 
+czh_federal_union_preserved = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_legitimacy_base_add                 = 15
+	country_prestige_mult                       = 0.05
+	country_law_enactment_success_add           = 0.08
+	state_loyalists_from_political_movements_mult = 0.10
+}
+ 
+czc_new_republic_founding = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_legitimacy_base_add                 = 10
+	country_prestige_mult                       = 0.15
+}
+ 
+svk_new_republic_founding = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_legitimacy_base_add                 = 10
+	country_prestige_mult                       = 0.15
+	country_infamy_decay_mult                   = 0.05
+}
+ 
+### Active during guerrilla phase — same effect as Carlist War
+chechen_war_guerilla_warfare = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	character_advancement_speed_mult = -0.9
+	battle_total_combat_width_mult = -0.5
+	country_prestige_mult = -0.25
+}
+ 
+### Russian morale boost — scaled by war score like galvanized_forces
+chechen_war_rus_morale = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_army_power_projection_mult = 0.05
+	country_prestige_mult = 0.02
+}
+ 
+### Chechen mountain resistance — scaled by war score like the_last_stand
+chechen_mountain_resistance = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	battle_defense_owned_province_mult = 0.15
+	country_prestige_mult = 0.05
+}
+ 
+### Chechen ambush tactics — temporary from guerrilla events
+chechen_ambush_tactics = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	battle_defense_owned_province_mult = 0.10
+}
+ 
+### Storm Grozny aftermath
+chechen_storm_grozny = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	state_mortality_mult = 0.05
+}
+ 
+### War devastation applied to Caucasus states
+chechen_war_devastation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	state_mortality_mult = 0.03
+	state_infrastructure_mult = -0.10
+}
+ 
+### Raid expenses
+chechen_war_raid_expenses = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 25000
+}
+ 
+### Victory rewards
+chechen_war_rus_reward = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_mult = 0.10
+	country_army_power_projection_mult = 0.05
+}
+ 
+chechen_war_che_reward = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_mult = 0.15
+	country_legitimacy_base_add = 10
+}

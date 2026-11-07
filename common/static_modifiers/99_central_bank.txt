@@ -1,0 +1,70 @@
+# ── FRACTIONAL RESERVE BANKING POLICY ────
+# Step size per notch from neutral (3):
+#   banking throughput: ±5% per step
+#   financial district throughput: ∓5% per step
+
+# 1 — Most Contractionary (fractional)
+cb_policy_fractional_1 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	building_group_bg_banking_throughput_add        =  0.10
+	building_financial_district_throughput_add      = -0.10
+}
+
+# 2 — Contractionary (fractional)
+cb_policy_fractional_2 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	building_group_bg_banking_throughput_add        =  0.05
+	building_financial_district_throughput_add      = -0.05
+}
+
+# 3 — Neutral: no modifier needed
+
+# 4 — Expansionary (fractional)
+cb_policy_fractional_4 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	building_group_bg_banking_throughput_add        = -0.05
+	building_financial_district_throughput_add      =  0.05
+}
+
+# 5 — Most Expansionary (fractional)
+cb_policy_fractional_5 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	building_group_bg_banking_throughput_add        = -0.10
+	building_financial_district_throughput_add      =  0.10
+}
+
+# ── FULL RESERVE BANKING POLICY ──────────
+# Inherits the institutional logic of law_full_reserve_banking.
+# Each step away from neutral: ±0.25% loan interest, ∓6.25% cash reserves.
+# At most contractionary: -1% interest, +25% cash reserves.
+# At most expansionary: +1% interest, -25% cash reserves.
+
+# 1 — Most Contractionary (full reserve)
+cb_policy_full_1 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_loan_interest_rate_add                  = -0.02
+	building_cash_reserves_mult                     =  -0.25
+}
+
+# 2 — Contractionary (full reserve)
+cb_policy_full_2 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_loan_interest_rate_add                  = -0.01
+	building_cash_reserves_mult                     =  -0.125
+}
+
+# 3 — Neutral: no modifier needed
+
+# 4 — Expansionary (full reserve)
+cb_policy_full_4 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_loan_interest_rate_add                  =  0.01
+	building_cash_reserves_mult                     = 0.125
+}
+
+# 5 — Most Expansionary (full reserve)
+cb_policy_full_5 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_loan_interest_rate_add                  =  0.02
+	building_cash_reserves_mult                     =  0.25
+}

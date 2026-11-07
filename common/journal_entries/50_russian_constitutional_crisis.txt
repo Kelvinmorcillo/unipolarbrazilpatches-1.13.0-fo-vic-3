@@ -1,0 +1,34 @@
+je_russian_constitutional_crisis = {
+    icon = "gfx/interface/icons/event_icons/event_protest.dds"
+    group = je_group_dilemmas
+
+    is_shown_when_inactive = {
+        c:RUS ?= this
+    }
+
+    possible = {
+        OR = {
+            has_modifier = russia_parliament_resisting
+            has_variable = russia_constitution_crisis_active
+        }
+    }
+
+    complete = {
+		custom_tooltip = {
+			text = 1993_russian_crisis_tt
+			has_variable = russia_constitution_crisis_resolved
+		}
+    }
+
+    on_complete = {
+	c:RUS = {
+        add_modifier = {
+            name = russia_constitution_crisis_resolved_mod
+            months = 12
+        }
+	}
+    }
+
+    weight = 200
+    should_be_pinned_by_default_uninvolved_or_context = yes
+}

@@ -1,0 +1,494 @@
+﻿namespace = drug_laws
+
+
+# ==========================================
+# drug_laws.1
+# "The Cost of Prohibition"
+# Fires when enacting total prohibition.
+# Enforcement is expensive — the question
+# is how hard to push.
+# ==========================================
+
+drug_laws.1 = {
+	type = country_event
+	placement = ROOT
+
+	title = drug_laws.1.t
+	desc = drug_laws.1.d
+	flavor = drug_laws.1.f
+
+	category = enactment
+
+	event_image = {
+		video = "middleeast_police_breaking_door"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_total_prohibition
+		NOT = { has_modifier = drug_law_prohibition_enforcement }
+	}
+	
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = drug_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				ig_counts_as_marginal = no
+				is_interest_group_type = ig_armed_forces
+			}
+			save_scope_as = enforcement_ig
+		}
+	}
+
+	# Option A: Full enforcement — spare no expense
+	option = {
+		name = drug_laws.1.a
+		# Heavy spending boosts enactment success but costs
+		add_enactment_modifier = {
+			name = drug_law_prohibition_enforcement
+			# = 3
+		}
+		add_enactment_modifier = {
+			name = drug_law_enforcement_cost
+			# = money_amount_#_small
+		}
+		ai_chance = { base = 40 }
+	}
+
+	# Option B: Measured enforcement — let compliance build naturally
+	option = {
+		name = drug_laws.1.b
+		default_option = yes
+		add_enactment_modifier = {
+			name = drug_law_prohibition_enforcement
+		}
+		ai_chance = { base = 60 }
+	}
+}
+
+# ==========================================
+# drug_laws.2
+# "The Church Speaks"
+# Fires when enacting any restrictive law
+# (total prohibition or alcohol/tobacco).
+# The devout IG weighs in on moral grounds.
+# ==========================================
+
+drug_laws.2 = {
+	type = country_event
+	placement = ROOT
+
+	title = drug_laws.2.t
+	desc = drug_laws.2.d
+	flavor = drug_laws.2.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		OR = {
+			is_enacting_law = law_type:law_total_prohibition
+			is_enacting_law = law_type:law_alcohol_tobacco_legal
+		}
+		NOT = { has_modifier = drug_law_religious_backing }
+		any_interest_group = {
+			is_interest_group_type = ig_devout
+			ig_counts_as_marginal = no
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = drug_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				is_interest_group_type = ig_devout
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = devout_ig
+			leader = {
+				save_scope_as = devout_leader
+			}
+		}
+	}
+
+	# Option A: Welcome their support publicly
+	option = {
+		name = drug_laws.2.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = drug_law_religious_backing
+			# = 2
+		}
+		scope:devout_ig = {
+			add_modifier = {
+				name = drug_law_devout_empowered
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 60 }
+	}
+
+	# Option B: Keep it a secular matter — decline their framing
+	option = {
+		name = drug_laws.2.b
+		add_enactment_modifier = {
+			name = drug_law_religious_backing
+		}
+		ai_chance = { base = 40 }
+	}
+}
+
+# ==========================================
+# drug_laws.3
+# "The Intelligentsia Makes Its Case"
+# Fires when enacting decriminalization
+# laws. Academics and progressives push
+# for evidence-based policy.
+# ==========================================
+
+drug_laws.3 = {
+	type = country_event
+	placement = ROOT
+
+	title = drug_laws.3.t
+	desc = drug_laws.3.d
+	flavor = drug_laws.3.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		OR = {
+			is_enacting_law = law_type:law_marijuana_decriminalization
+			is_enacting_law = law_type:law_hard_drugs_decriminalized
+		}
+		NOT = { has_modifier = drug_law_academic_push }
+		any_interest_group = {
+			is_interest_group_type = ig_intelligentsia
+			ig_counts_as_marginal = no
+			law_stance = {
+				law = law_type:law_marijuana_decriminalization
+				value >= neutral
+			}
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = drug_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				is_interest_group_type = ig_intelligentsia
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = intelligentsia_ig
+			leader = {
+				save_scope_as = intelligentsia_leader
+			}
+		}
+	}
+
+	# Option A: Publish the research — let the evidence lead
+	option = {
+		name = drug_laws.3.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = drug_law_academic_push
+			# = 2
+		}
+		scope:intelligentsia_ig = {
+			add_modifier = {
+				name = drug_law_intelligentsia_engaged
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				trigger = { literacy_rate >= 0.50 }
+				add = 20
+			}
+		}
+	}
+
+	# Option B: Keep academics out of politics
+	option = {
+		name = drug_laws.3.b
+		add_enactment_modifier = {
+			name = drug_law_academic_push
+		}
+		scope:intelligentsia_ig = {
+			add_modifier = {
+				name = drug_law_intelligentsia_ignored
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 40 }
+	}
+}
+
+# ==========================================
+# drug_laws.4
+# "The Medical Establishment Intervenes"
+# Fires when enacting safe-injection sites.
+# Doctors and public health officials make
+# the case for harm reduction.
+# ==========================================
+
+drug_laws.4 = {
+	type = country_event
+	placement = ROOT
+
+	title = drug_laws.4.t
+	desc = drug_laws.4.d
+	flavor = drug_laws.4.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_sick_in_hospital"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_safe_injection_sites
+		NOT = { has_modifier = drug_law_medical_backing }
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = drug_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				ig_counts_as_marginal = no
+				OR = {
+					is_interest_group_type = ig_intelligentsia
+					is_interest_group_type = ig_petty_bourgeoisie
+				}
+			}
+			save_scope_as = medical_advocate_ig
+			leader = {
+				save_scope_as = medical_advocate
+			}
+		}
+	}
+
+	# Option A: Publicly back the medical consensus
+	option = {
+		name = drug_laws.4.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = drug_law_medical_backing
+			# = 3
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				trigger = {
+					institution_investment_level = {
+						institution = institution_health_system
+						value >= 3
+					}
+				}
+				add = 25
+			}
+		}
+	}
+
+	# Option B: Frame it as a moral failing, not a medical one
+	option = {
+		name = drug_laws.4.b
+		add_enactment_modifier = {
+			name = drug_law_medical_backing
+		}
+		add_enactment_modifier = {
+			name = drug_law_moral_framing
+			# = -1
+		}
+		ai_chance = { base = 40 }
+	}
+}
+
+# ==========================================
+# drug_laws.5
+# "International Condemnation"
+# Fires when enacting trafficking allowed.
+# The world takes notice.
+# ==========================================
+
+drug_laws.5 = {
+	type = country_event
+	placement = ROOT
+
+	title = drug_laws.5.t
+	desc = drug_laws.5.d
+	flavor = drug_laws.5.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_ruler_speaking_to_people"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_trafficking_allowed
+		NOT = { has_modifier = drug_law_international_pressure }
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = drug_law_scope
+		}
+	}
+
+	# Option A: Defy international opinion — this is our sovereign right
+	option = {
+		name = drug_laws.5.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = drug_law_international_pressure
+			# = -1
+		}
+		add_enactment_modifier = {
+			name = drug_law_sovereignty_declared
+			# = 2
+		}
+		# Infamy from international condemnation
+		add_infamy = 10
+		ai_chance = { base = 60 }
+	}
+
+	# Option B: Quietly proceed — avoid making statements
+	option = {
+		name = drug_laws.5.b
+		add_enactment_modifier = {
+			name = drug_law_international_pressure
+		}
+		ai_chance = { base = 40 }
+	}
+}
+
+# ==========================================
+# drug_laws.6
+# "Criminal Networks Resist the Crackdown"
+# Fires when enacting total prohibition or
+# moving toward more restrictive laws.
+# Organised crime fights back against
+# the legislative threat to their business.
+# ==========================================
+
+drug_laws.6 = {
+	type = country_event
+	placement = ROOT
+
+	title = drug_laws.6.t
+	desc = drug_laws.6.d
+	flavor = drug_laws.6.f
+
+	category = enactment
+
+	event_image = {
+		video = "middleeast_police_breaking_door"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		OR = {
+			is_enacting_law = law_type:law_total_prohibition
+			is_enacting_law = law_type:law_alcohol_tobacco_legal
+			is_enacting_law = law_type:law_marijuana_decriminalization
+		}
+		# Only fires if cartels are present
+		OR = {
+			has_journal_entry = je_drug_trafficking
+			has_variable = mexican_drug_war_active
+		}
+		NOT = { has_modifier = drug_law_criminal_pushback }
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = drug_law_scope
+		}
+	}
+
+	# Option A: Accept the setback — the networks are too entrenched for now
+	option = {
+		name = drug_laws.6.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = drug_law_criminal_pushback
+			# = -2
+		}
+		ai_chance = { base = 50 }
+	}
+
+	# Option B: Escalate enforcement — root them out
+	option = {
+		name = drug_laws.6.b
+		add_enactment_modifier = {
+			name = drug_law_criminal_pushback
+		}
+		add_enactment_modifier = {
+			name = drug_law_enforcement_cost
+			# = money_amount_#_small
+		}
+		# Turmoil rises as enforcement escalates
+		every_scope_state = {
+			limit = { is_incorporated = yes }
+			add_radicals_in_state = { value = small_radicals }
+		}
+		ai_chance = { base = 50 }
+	}
+}

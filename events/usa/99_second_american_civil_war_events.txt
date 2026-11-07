@@ -1,0 +1,162 @@
+namespace = great_polarization
+
+great_polarization.100 = {
+	type = country_event
+	placement = ROOT
+	title = great_polarization.100.t
+	desc = great_polarization.100.d
+	flavor = great_polarization.100.f
+	event_image = { video = "votp_barricade" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_war.dds"
+	duration = 3
+
+	trigger = {
+		c:USA ?= this
+		has_global_variable = second_american_civil_war_started
+		NOT = { has_variable = second_american_civil_war_event_seen }
+	}
+
+	immediate = {
+		set_variable = second_american_civil_war_event_seen
+	}
+
+	option = {
+		name = great_polarization.100.a
+		default_option = yes
+		great_polarization_begin_second_american_civil_war = yes
+		ai_chance = { base = 100 }
+	}
+}
+
+great_polarization.120 = {
+	type = country_event
+	placement = ROOT
+	title = great_polarization.120.t
+	desc = great_polarization.120.d
+	flavor = great_polarization.120.f
+	event_image = { video = "africa_diplomats_negotiating" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	duration = 3
+
+	trigger = {
+		has_global_variable = second_american_civil_war_started
+		NOT = { has_variable = 2acw_blue_aligned }
+	}
+
+	option = {
+		name = great_polarization.120.a
+		default_option = yes
+		great_polarization_breakaway_join_blue_side = yes
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = great_polarization.120.b
+		set_variable = 2acw_declined_blue_offer
+		ai_chance = { base = 0 }
+	}
+}
+
+great_polarization.121 = {
+	type = country_event
+	placement = ROOT
+	title = great_polarization.121.t
+	desc = great_polarization.121.d
+	flavor = great_polarization.121.f
+	event_image = { video = "africa_diplomats_negotiating" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_diplomacy.dds"
+	duration = 3
+
+	trigger = {
+		has_global_variable = second_american_civil_war_started
+		NOT = { has_variable = 2acw_red_aligned }
+	}
+
+	option = {
+		name = great_polarization.121.a
+		default_option = yes
+		great_polarization_breakaway_join_red_side = yes
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = great_polarization.121.b
+		set_variable = 2acw_declined_red_offer
+		ai_chance = { base = 0 }
+	}
+}
+
+great_polarization.130 = {
+	type = country_event
+	placement = ROOT
+	title = great_polarization.130.t
+	desc = great_polarization.130.d
+	flavor = great_polarization.130.f
+	event_image = { video = "votp_barricade" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_war.dds"
+	duration = 3
+
+	trigger = {
+		c:USA ?= this
+		is_player = yes
+		has_global_variable = second_american_civil_war_started
+		exists = c:BLA
+		NOT = { has_variable = 2acw_player_switch_prompt_seen }
+	}
+
+	immediate = {
+		set_variable = 2acw_player_switch_prompt_seen
+	}
+
+	option = {
+		name = great_polarization.130.a
+		default_option = yes
+		custom_tooltip = { text = great_polarization_switch_blue_tt }
+		great_polarization_switch_player_to_blue_america = yes
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = great_polarization.130.b
+		custom_tooltip = { text = great_polarization_stay_usa_tt }
+		ai_chance = { base = 0 }
+	}
+}
+
+great_polarization.131 = {
+	type = country_event
+	placement = ROOT
+	title = great_polarization.131.t
+	desc = great_polarization.131.d
+	flavor = great_polarization.131.f
+	event_image = { video = "votp_barricade" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_war.dds"
+	duration = 3
+
+	trigger = {
+		c:USA ?= this
+		is_player = yes
+		has_global_variable = second_american_civil_war_started
+		exists = c:REA
+		NOT = { has_variable = 2acw_player_switch_prompt_seen }
+	}
+
+	immediate = {
+		set_variable = 2acw_player_switch_prompt_seen
+	}
+
+	option = {
+		name = great_polarization.131.a
+		default_option = yes
+		custom_tooltip = { text = great_polarization_switch_red_tt }
+		great_polarization_switch_player_to_red_america = yes
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = great_polarization.131.b
+		custom_tooltip = { text = great_polarization_stay_usa_tt }
+		ai_chance = { base = 0 }
+	}
+}

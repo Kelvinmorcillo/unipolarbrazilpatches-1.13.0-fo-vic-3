@@ -1,0 +1,243 @@
+﻿je_internet = {
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	should_be_pinned_by_default = yes
+	group = je_group_advancements
+
+	is_shown_when_inactive = {
+		is_player = yes
+		has_technology_researched = empiricism
+		NOT = { has_variable = completed_internet_je }
+	}
+
+	possible = {
+		has_technology_researched = empiricism
+		any_scope_state = {
+			has_building = building_telecommunications
+		}
+	}
+
+	immediate = {
+	}
+
+	complete = {
+		any_scope_building = {
+			is_building_type = building_telecommunications
+			has_active_production_method = pm_2g
+			occupancy >= 0.9
+			level >= 2
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = smd_tech.1 }
+		set_variable = {
+			name = completed_internet_je
+		}
+	}
+
+	timeout = 2540
+}
+
+je_computer_science = {
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	should_be_pinned_by_default = yes
+	group = je_group_advancements
+
+	is_shown_when_inactive = {
+		is_player = yes
+		has_technology_researched = romanticism
+		NOT = { has_technology_researched = chemical_bleaching }
+		NOT = { has_variable = completed_cs_je }
+	}
+
+	possible = {
+		has_technology_researched = romanticism
+		NOT = { has_technology_researched = chemical_bleaching }
+		any_scope_state = {
+			has_building = building_university
+		}
+	}
+
+	immediate = {
+	}
+
+	complete = {
+		any_scope_building = {
+			is_building_type = building_university
+			has_active_production_method = pm_philosophy_department
+			occupancy >= 0.9
+			level >= 3
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = smd_tech.2 }
+		set_variable = {
+			name = completed_cs_je
+		}
+	}
+
+	timeout = 2540
+} 
+
+je_pesticides = {
+	should_be_pinned_by_default = yes
+	icon = "gfx/interface/icons/objectives/economic_dominance.dds"
+	should_be_pinned_by_default = yes
+	group = je_group_advancements
+
+	immediate = {
+	}
+
+
+	is_shown_when_inactive = {
+		is_player = yes
+		has_technology_researched = intensive_agriculture
+		NOT = { has_variable = completed_pesticides }
+	}
+
+	possible = {
+		has_technology_researched = intensive_agriculture
+		any_scope_state = {
+			OR = { 
+					has_building = building_rye_farm
+					has_building = building_wheat_farm
+					has_building = building_maize_farm
+					has_building = building_millet_farm
+			}
+		}
+	}
+	
+	complete = {
+		OR = {
+			any_scope_building = {
+				filter = {
+					OR = {
+						is_building_type = building_rye_farm
+						is_building_type = building_wheat_farm
+						is_building_type = building_maize_farm
+						is_building_type = building_millet_farm
+					}
+				}
+				percent >= 0.75
+				OR = {
+					has_active_production_method = pm_yes_pesticides
+				}
+				weekly_profit > 0
+				occupancy >= 0.5
+				is_subsidized = no
+			}
+		}
+	}
+
+	on_complete = {
+		set_variable = completed_pesticides
+		trigger_event = { id = smd_tech.3 }
+	}
+
+	invalid = {
+		has_variable = completed_pesticides
+	}
+
+	weight = 1002
+	timeout = 2540
+}
+
+je_globalization = {
+	should_be_pinned_by_default = yes
+	icon = "gfx/interface/icons/objectives/economic_dominance.dds"
+	group = je_group_advancements
+
+	immediate = {
+	}
+
+	is_shown_when_inactive = {
+		NOT = { has_variable = completed_globalization_je }
+	}
+	
+	complete = {
+		OR = {
+			any_scope_building = {
+				filter = {
+					OR = {
+						is_building_type = building_trade_center
+					}
+				}
+				percent >= 0.75
+				OR = {
+					has_active_production_method = pm_trade_center_trade_quantity_high
+					has_active_production_method = pm_trade_center_trade_quantity_very_high
+				}
+				weekly_profit > 0
+				occupancy >= 0.5
+				is_subsidized = no
+			}
+		}
+	}
+
+	on_complete = {
+		set_variable = completed_globalization_je
+	}
+
+	invalid = {
+		has_variable = completed_globalization_je
+	}
+
+	weight = 1002
+}
+
+je_starships = {
+	should_be_pinned_by_default = yes
+	icon = "gfx/interface/icons/objectives/economic_dominance.dds"
+
+	group = je_group_advancements
+
+	is_shown_when_inactive = {
+		is_player = yes
+		has_technology_researched = zeppelins
+		NOT = { has_variable = completed_starships_je }
+	}
+	
+	possible = {
+		has_technology_researched = zeppelins
+		any_scope_state = {
+			OR = { 
+					has_building = building_spaceport
+			}
+		}
+	}
+	
+	immediate = {
+	}
+	
+	complete = {
+		OR = {
+			any_scope_building = {
+				filter = {
+					OR = {
+						is_building_type = building_spaceport
+					}
+				}
+				percent >= 0.75
+				OR = {
+					has_active_production_method = pm_starship
+				}
+				weekly_profit > 0
+				occupancy >= 0.5
+				is_subsidized = no
+			}
+		}
+	}
+
+	on_complete = {
+		set_variable = completed_starships_je
+	}
+
+	invalid = {
+		has_variable = completed_starships_je
+	}
+
+	weight = 1002
+}

@@ -1,0 +1,67 @@
+﻿COUNTRIES = {
+	c:ROJ = {
+		
+		 
+
+		set_tax_level = high
+		
+		# Laws
+		activate_law = law_type:law_mass_conscription
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_compulsory_primary_school
+		activate_law = law_type:law_freedom_of_conscience
+		activate_law = law_type:law_multicultural
+		activate_law = law_type:law_resettlement_enticement
+		activate_law = law_type:law_universal_suffrage
+		activate_law = law_type:law_agrarianism
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_parliamentary_republic
+		activate_law = law_type:law_public_health_insurance
+		activate_law = law_type:law_national_guard
+		activate_law = law_type:law_serfdom_banned
+		activate_law = law_type:law_migration_controls
+		activate_law = law_type:law_local_police
+		activate_law = law_type:law_women_in_the_workplace
+		activate_law = law_type:law_slavery_banned
+		activate_law = law_type:law_graduated_taxation
+		activate_law = law_type:law_free_trade
+		activate_law = law_type:law_limited_protections
+		activate_law = law_type:law_limited_action
+		activate_law = law_type:law_limited_restrictions
+
+			
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 1		}
+
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 2
+		}
+
+		ig:ig_landowners = {
+			add_ruling_interest_group = yes
+		}
+		
+		ig:ig_petite_burgeoisie = {
+			add_ruling_interest_group = yes
+		}
+		
+		ig:ig_rural_folk = {
+			add_ruling_interest_group = yes
+		}
+		
+		ig:ig_landowners = { 
+			set_interest_group_name = ig_landed_gentry
+		}
+		
+		ig:ig_devout = { 
+			set_interest_group_name = ig_anglican_church
+		}
+
+		ig:ig_trade_unions = {
+			set_ig_suppression = yes
+		}
+	}
+}

@@ -1,0 +1,55 @@
+# ==========================================
+# NATIONAL DEVELOPMENT PATH
+# SCRIPTED EFFECTS
+# ==========================================
+
+# Clears the active development path and
+# resets all associated variables.
+# Called on completion and on abandon.
+
+ndp_clear_path_effect = {
+	remove_variable = ndp_industrial
+	remove_variable = ndp_military
+	remove_variable = ndp_resource
+	remove_variable = ndp_service
+	remove_variable = ndp_industrial_sub_choice
+	remove_variable = ndp_military_sub_choice
+	remove_variable = ndp_resource_sub_choice
+	remove_variable = ndp_service_sub_choice
+	set_variable = { name = ndp_progress value = 0 }
+	remove_modifier = ndp_modifier_industrial
+	remove_modifier = ndp_modifier_military
+	remove_modifier = ndp_modifier_resource
+	remove_modifier = ndp_modifier_service
+	remove_modifier = ndp_modifier_industrial_heavy
+	remove_modifier = ndp_modifier_industrial_light
+	remove_modifier = ndp_modifier_military_army
+	remove_modifier = ndp_modifier_military_navy
+	remove_modifier = ndp_modifier_resource_agriculture
+	remove_modifier = ndp_modifier_resource_extraction
+	remove_modifier = ndp_modifier_service_finance
+	remove_modifier = ndp_modifier_service_education
+	remove_variable = ndpe0
+	remove_variable = ndpe1
+	remove_variable = ndpe2
+	remove_variable = ndpe3
+	remove_variable = ndpe4
+	remove_variable = ndpe5
+	remove_variable = ndpe6
+	remove_variable = ndpe7
+	remove_variable = ndpe8
+	remove_variable = ndpe9
+	remove_variable = ndpe10
+	remove_variable = ndpe11
+	remove_variable = ndpe12
+	remove_variable = ndpe13
+	remove_variable = ndpe14
+	remove_variable = ndpe15
+	remove_variable = ndpe16
+	je:je_national_development = {
+			add_progress = {
+				value = -120
+				name = national_development_progress_bar
+			}
+		}
+}

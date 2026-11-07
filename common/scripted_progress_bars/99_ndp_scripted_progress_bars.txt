@@ -1,0 +1,179 @@
+# ==========================================
+# NATIONAL DEVELOPMENT PATH
+# SCRIPTED PROGRESS BAR
+# ==========================================
+
+national_development_progress_bar = {
+	name = "national_development_progress_bar"
+	desc = "national_development_progress_bar_desc"
+	default_green = yes
+	is_inverted = no
+
+	monthly_progress = {
+
+		# Only ticks when a path is active
+		if = {
+			limit = {
+				OR = {
+					has_variable = ndp_industrial
+					has_variable = ndp_military
+					has_variable = ndp_resource
+					has_variable = ndp_service
+				}
+			}
+			add = {
+				desc = "ndp_bar_active_path_tt"
+				value = 1
+			}
+		}
+
+		# ── INDUSTRIAL BONUSES ──────────────────────────
+		if = {
+			limit = {
+				has_variable = ndp_industrial
+				any_scope_state = {
+					any_scope_building = {
+						is_building_type = building_iron_mine
+						level >= 5
+					}
+				}
+			}
+			add = {
+				desc = "ndp_bar_industrial_mines_tt"
+				value = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_variable = ndp_industrial
+				any_scope_state = {
+					any_scope_building = {
+						is_building_type = building_textile_mills
+						level >= 3
+					}
+				}
+			}
+			add = {
+				desc = "ndp_bar_industrial_factories_tt"
+				value = 0.5
+			}
+		}
+
+		# ── MILITARY BONUSES ────────────────────────────
+		if = {
+			limit = {
+				has_variable = ndp_military
+				army_size >= 50
+			}
+			add = {
+				desc = "ndp_bar_military_army_tt"
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				has_variable = ndp_military
+				has_law = law_type:law_mass_conscription
+			}
+			add = {
+				desc = "ndp_bar_military_conscription_tt"
+				value = 0.5
+			}
+		}
+
+		# ── RESOURCE BONUSES ────────────────────────────
+		if = {
+			limit = {
+				has_variable = ndp_resource
+				any_scope_state = {
+					any_scope_building = {
+						is_building_type = building_wheat_farm
+						level >= 5
+					}
+				}
+			}
+			add = {
+				desc = "ndp_bar_resource_farms_tt"
+				value = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_variable = ndp_resource
+				any_scope_state = {
+					any_scope_building = {
+						is_building_type = building_coal_mine
+						level >= 3
+					}
+				}
+			}
+			add = {
+				desc = "ndp_bar_resource_extraction_tt"
+				value = 0.5
+			}
+		}
+
+		# ── SERVICE BONUSES ─────────────────────────────
+		if = {
+			limit = {
+				has_variable = ndp_service
+				literacy_rate >= 0.30
+			}
+			add = {
+				desc = "ndp_bar_service_literacy_tt"
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				has_variable = ndp_service
+				any_scope_state = {
+					any_scope_building = {
+						is_building_type = building_university
+						level >= 1
+					}
+				}
+			}
+			add = {
+				desc = "ndp_bar_service_university_tt"
+				value = 0.5
+			}
+		}
+
+		# ── UNIVERSAL PENALTIES ─────────────────────────
+		# High turmoil slows development
+		if = {
+			limit = {
+				country_turmoil >= 0.10
+			}
+			add = {
+				desc = "ndp_bar_turmoil_tt"
+				value = -1
+			}
+		}
+		if = {
+			limit = {
+				country_turmoil >= 0.25
+			}
+			add = {
+				desc = "ndp_bar_turmoil_tt"
+				value = -1
+			}
+		}
+
+		# At war slows development
+		if = {
+			limit = {
+				is_at_war = yes
+			}
+			add = {
+				desc = "ndp_bar_at_war_tt"
+				value = -1
+			}
+		}
+	}
+
+	start_value = 0
+	min_value = 0
+	max_value = 120
+}

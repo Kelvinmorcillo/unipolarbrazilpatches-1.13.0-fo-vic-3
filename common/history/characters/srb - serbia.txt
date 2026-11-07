@@ -1,0 +1,19 @@
+﻿CHARACTERS = {
+	c:YUG ?= {
+	create_character = {
+			first_name = "slobodan"
+			last_name = "milosevic"
+			historical = yes
+			ruler = yes
+			culture = cu:serb
+			birth_date = 1941.11.03
+			dna = dna_milosevic
+			ig_leader = yes
+			interest_group = ig_rural_folk
+			ideology = ideology_marxist_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+}

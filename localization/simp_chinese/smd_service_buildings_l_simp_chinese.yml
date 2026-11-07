@@ -1,0 +1,325 @@
+﻿l_simp_chinese:
+
+
+ # BUILDINGS
+ 
+ building_bank:0 "商业银行"
+ building_bank_desc:0 "一个接受存款,管理信贷,促进整个经济资本流动的金融机构. 从谦卑的放贷所到扩展数字网络,银行是现代商业的支柱."
+
+ building_food_service:0 "食品服务"
+ building_food_service_desc:0 "向普通民众提供准备和包装食品的零售和餐饮机构。 囊括从角落杂货到全球快餐连锁店的一切,使市民吃饱吃饱."
+
+ building_retail_services:0 "零售服务"
+ building_retail_services_desc:0 "直接向消费者出售家具、服装和工具的商业机构。 零售店是供应链中的最后环节,将工业产出转化为日常家用物品."
+
+ building_advertising_agency:0 "广告服务"
+ building_advertising_agency_desc:0 "专门从事宣传内容的创作和发行的事务所. 广告机构塑造了消费者行为并驱动需求,将所有内容从印刷宽单到算法上有针对性的数字运动都部署在其中."
+
+ building_warehouse:0 "仓库"
+ building_warehouse_desc:0 "大型货物仓储和配送设施. 仓库是经济的后勤枢纽,可以缓冲供求,使产品能够有效地在全国各地流通。"
+
+ building_pharmaceutical_services:0 "药品服务"
+ building_pharmaceutical_services_desc:0 "从事药用化合物的发配、研究和分销的机构。 从药剂柜台到尖端生物技术实验室,制药服务将原始化学投入转化为维持公共卫生的治疗."
+
+ ####################
+ # PRODUCTION METHOD GROUPS
+ ####################
+
+ ### BANKING
+
+ pmg_base_banking:0 "银行业务"
+ pmg_base_banking_desc:0 "银行接受存款、发放信贷和与客户和企业进行金融交易的核心方法。"
+
+ pmg_securities_trading:0 "证券交易"
+ pmg_securities_trading_desc:0 "确定银行是否从事金融证券交易和经纪业务,将投资资本转化为扩大信贷."
+
+ pmg_automation_banking:0 "银行自动化"
+ pmg_automation_banking_desc:0 "银行使用自动化系统——从机械出纳器到人工智能——处理交易并降低劳动成本的程度."
+
+ ### FOOD SERVICES
+
+ pmg_base_food_services:0 "杂货业务"
+ pmg_base_food_services_desc:0 "向消费者出售杂货的主要零售形式,从小街区商店到大规模在线平台不等。"
+
+ pmg_restaurant_type:0 "餐厅类型"
+ pmg_restaurant_type_desc:0 "确定该机构是否还经营餐饮设施,以及从当地临时餐饮到工业快餐特许经营等何种餐饮设施。"
+
+ pmg_food_service_logistics:0 "食品服务后勤"
+ pmg_food_service_logistics_desc:0 "食品服务机构使用的检查和满足方法,包括节省劳动力的自我检查系统和交付基础设施。"
+
+ ### RETAIL
+
+ pmg_base_retail:0 "零售格式"
+ pmg_base_retail_desc:0 "零售业务的规模和形式,从小型独立商店到庞大的大箱商店和出入口中心."
+
+ pmg_retail_specialization:0 "零售"
+ pmg_retail_specialization_desc:0 "确定零售店是否侧重于特定类别的商品,如家用家具、电子产品或奢侈品。"
+
+ pmg_retail_logistics:0 "零售后勤"
+ pmg_retail_logistics_desc:0 "零售企业使用的验收和完成方法,包括自动验收终端、电子商务平台和自动交付。"
+
+ ### ADVERTISING
+
+ pmg_base_advertising:0 "广告媒介"
+ pmg_base_advertising_desc:0 "广告机构通过主要渠道分发广告——印刷、广播、直接邮寄或户外标志。"
+
+ pmg_digital_advertising:0 "数字广告"
+ pmg_digital_advertising_desc:0 "确定该机构是否采用了数字广告方法,从简单的网络横幅到AI产生的超目标运动."
+
+ pmg_advertising_research:0 "市场研究"
+ pmg_advertising_research_desc:0 "了解和影响消费者行为所采用的研究方法,从传统的重点群体到机器学习驱动的分析."
+
+ ### WAREHOUSING
+
+ pmg_base_warehousing:0 "仓储业务"
+ pmg_base_warehousing_desc:0 "仓库的核心储存和分发方法,从基本的手工储存到完全自动化的实现中心。"
+
+ pmg_warehousing_logistics:0 "库存管理"
+ pmg_warehousing_logistics_desc:0 "用于跟踪和管理仓库内库存的系统,从手写分类账到AI驱动的实时资产管理."
+
+ ### PHARMACEUTICAL SERVICES
+
+ pmg_base_pharmaceutical_services:0 "发放业务"
+ pmg_base_pharmaceutical_services_desc:0 "药品化合物加工和向病人分发的主要方法,从传统的药剂工作到邮购分配。"
+
+ pmg_pharmaceutical_research:0 "药物研究"
+ pmg_pharmaceutical_research_desc:0 "确定事业单位是否投资进行药品研究,加快开发新疗法,提高药用产量."
+
+ pmg_pharmaceutical_automation:0 "药剂自动化"
+ pmg_pharmaceutical_automation_desc:0 "从手制配方到完全机器人药房系统,在配方和配方过程中采用的自动化程度。"
+
+ ####################
+ # PRODUCTION METHODS
+ ####################
+
+ ### BANKING - BASE
+
+ pm_basic_banking:0 "标准借贷"
+ pm_basic_banking_desc:0 "一个简单的财务业务,提供基本存款账户和个人贷款,工作人员主要是管理纸质分类账的办事员。"
+
+ pm_commercial_banking:0 "商业银行"
+ pm_commercial_banking_desc:0 "全面包办商业银行,为企业和消费者提供各类金融产品,信用创造能力得到扩大."
+
+ pm_electronic_transfers:0 "发薪日贷款"
+ pm_electronic_transfers_desc:0 "电子支付系统和电汇的采用极大地加快了资本流动,减少了对实际文件的依赖。"
+
+ pm_online_banking:0 "现在买,晚点还钱"
+ pm_online_banking_desc:0 "银行业务的全面数字化使客户能够远程管理账户并进行交易,减少分行的间接费用,同时大规模扩大覆盖面。"
+
+ ### BANKING - SECURITIES
+
+ pm_no_securities_trading:0 "无证券交易"
+ pm_no_securities_trading_desc:0 "银行只注重存款和信贷业务,不参与金融市场或证券。"
+
+ pm_securities_brokerage:0 "证券经纪"
+ pm_securities_brokerage_desc:0 "银行设立经纪处,允许客户买卖金融证券. 消费证券通过渠道扩大信用生成."
+
+ pm_derivatives_trading:0 "汇兑基金"
+ pm_derivatives_trading_desc:0 "银行交易复杂的金融工具来自基础资产。 高风险高回报业务,大幅扩大证券信用产出."
+
+ pm_algorithmic_trading:0 "量子贸易"
+ pm_algorithmic_trading_desc:0 "机器学习算法以超人的速度执行交易,以最小的人力干预来使证券组合的收益最大化."
+
+ ### BANKING - AUTOMATION
+
+ pm_manual_tellers:0 "手动计数器"
+ pm_manual_tellers_desc:0 "交易完全由柜台的出纳员处理,需要大量的文书工作人员。"
+
+ pm_atm_network:0 "自动取款机网络"
+ pm_atm_network_desc:0 "自动出纳机网络允许客户在没有工作人员的情况下进行基本交易,减少办事员人数,同时扩大服务范围."
+
+ pm_automated_banking_systems:0 "自动银行系统"
+ pm_automated_banking_systems_desc:0 "后台业务是计算机化的,大大减少了人工输入数据和处理事务办事员的需要。"
+
+ pm_ai_financial_advisors:0 "AI 财务顾问"
+ pm_ai_financial_advisors_desc:0 "机器人顾问和AI驱动的财务规划工具取代了大多数客户的人力顾问,降低了劳动力成本,同时增加了信贷产出."
+
+ ### FOOD SERVICES - BASE
+
+ pm_corner_grocery:0 "角落杂货店"
+ pm_corner_grocery_desc:0 "街区一级的小杂货店提供有限的主食。 劳动密集型,但间接费用低,社区关系密切。"
+
+ pm_supermarket:0 "超级市场"
+ pm_supermarket_desc:0 "大型自助杂货店在一个屋檐下提供多种商品,高效率的供应链可提高吞吐量。"
+
+ pm_hypermarket:0 "超级仓库"
+ pm_hypermarket_desc:0 "大量杂货和普通商品商店合并,吸引来自大集水地的客户,并大规模经营。"
+
+ pm_online_grocery:0 "在线杂货店"
+ pm_online_grocery_desc:0 "食品是用数字方式订购的,并从集中式分销中心完成,从而能够缩小实际足迹,扩大客户范围。"
+
+ ### FOOD SERVICES - RESTAURANT
+
+ pm_no_restaurants:0 "无餐厅服务"
+ pm_no_restaurants_desc:0 "该机构完全专注于杂货零售,没有准备好的食品或餐饮选择。"
+
+ pm_local_restaurants:0 "本地餐厅"
+ pm_local_restaurants_desc:0 "向当地顾客提供准备餐点的独立餐厅,除了杂货店外,还增加了少量的食品服务产出。"
+
+ pm_fast_food_chains:0 "快餐连锁店"
+ pm_fast_food_chains_desc:0 "标准化高通量快餐店多地开业,通过工业制备方法大幅提升食品服务产出."
+
+ pm_fine_dining:0 "细餐"
+ pm_fine_dining_desc:0 "扩大面向较富裕客户的餐厅业务,通过熟练劳动力和高品质成分产生高额食品服务产出。"
+
+ ### FOOD SERVICES - LOGISTICS
+
+ pm_manual_food_checkout:0 "手动取出"
+ pm_manual_food_checkout_desc:0 "所有客户交易均由出纳员在员工离职柜台办理,需要大量劳动力满足高峰需求."
+
+ pm_self_checkout_food:0 "自选终端"
+ pm_self_checkout_food_desc:0 "自动自助售票亭减少了出纳人员的需求,降低了劳动力成本,增加了繁忙时期的吞吐量."
+
+ pm_food_delivery_services:0 "食品运送服务"
+ pm_food_delivery_services_desc:0 "建立了一个供货网络,使顾客能够在家里接受杂货和准备的食物。 消耗存储能力,以高效地发布订单。"
+
+ pm_drone_food_delivery:0 "无人驾驶运送"
+ pm_drone_food_delivery_desc:0 "自主无人驾驶飞机机队取代了载人司机,大幅削减了劳动力成本,同时使服务区几乎可以即时交付。"
+
+ ### RETAIL - BASE
+
+ pm_small_shops:0 "小商店"
+ pm_small_shops_desc:0 "独立的零售店向当地顾客出售了数量不多的家具,服装和工具. 低间接费用的简单操作。"
+
+ pm_department_stores_retail:0 "部门存储"
+ pm_department_stores_retail_desc:0 "将大型多层零售企业组织成部门,提供一屋一屋的各类消费品."
+
+ pm_big_box_retail:0 "大盒零售"
+ pm_big_box_retail_desc:0 "仓库规模零售点以有竞争力的价格提供大量货物,依赖大宗购买力和高效物流。"
+
+ pm_outlet_retail:0 "输出中心"
+ pm_outlet_retail_desc:0 "专营零售综合企业,由品牌直接向消费者出售超额和折扣股票,将高额购物量集中到专营目的地."
+
+ ### RETAIL - SPECIALIZATION
+
+ pm_no_retail_specialization:0 "一般零售"
+ pm_no_retail_specialization_desc:0 "店内搭载了广泛的,不加区别的商品组合,没有特定的类别重点."
+
+ pm_home_goods_retail:0 "家用商品零售"
+ pm_home_goods_retail_desc:0 "该商店专门从事家具和家用家具,包括奢侈品,在家庭购买方面获得较高的利润。"
+
+ pm_electronics_retail:0 "电子零售"
+ pm_electronics_retail_desc:0 "该商店专门从事工具和消费电子产品,需要知识丰富的楼层工作人员并吸引一个技术先进的客户."
+
+ pm_luxury_retail:0 "奢侈零售"
+ pm_luxury_retail_desc:0 "一家经营奢侈服装和家具的快餐店,向富裕的消费者收取溢价,每个出售的单位产生强劲的零售收入。"
+
+ ### RETAIL - LOGISTICS
+
+ pm_manual_retail_checkout:0 "手动取出"
+ pm_manual_retail_checkout_desc:0 "所有销售交易均由工作人员登记册处理,需要全部出纳人员。"
+
+ pm_self_checkout_retail:0 "自选终端"
+ pm_self_checkout_retail_desc:0 "自助支付站使客户能够处理自己的交易,减少出纳人头数并改进商店吞吐量."
+
+ pm_ecommerce_retail:0 "电子商务"
+ pm_ecommerce_retail_desc:0 "一个在线商店将零售业务的覆盖范围扩大到实体脚下之外,需要存储基础设施来舞台和完成数字订单。"
+
+ pm_drone_retail_delivery:0 "无人驾驶运送"
+ pm_drone_retail_delivery_desc:0 "自动无人机交付取代了最后一英里的快递员,大幅削减了交付劳动力的成本,同时加快了在线订单的完成时间."
+
+ ### ADVERTISING - BASE
+
+ pm_print_advertising:0 "讨厌的广告牌"
+ pm_print_advertising_desc:0 "通过报纸、杂志和印刷品开展的运动。 纸质密集,但能有效地接触到识字的群众。"
+
+ pm_broadcast_advertising:0 "广播广告"
+ pm_broadcast_advertising_desc:0 "广播电视广告同时覆盖广大受众,需要投资知识产权和技术制作人才."
+
+ pm_direct_mail_advertising:0 "直接邮件"
+ pm_direct_mail_advertising_desc:0 "向消费者地址直接发送有针对性的宣传材料。 纸张消耗量高,但广播媒体无法针对人口。"
+
+ pm_outdoor_advertising:0 "电子告示牌"
+ pm_outdoor_advertising_desc:0 "在高流量地区张贴广告牌、海报和标志,以建立大规模的品牌意识。 需要在广大地区进行物理安装工作。"
+
+ ### ADVERTISING - DIGITAL
+
+ pm_no_digital_advertising:0 "无数字广告"
+ pm_no_digital_advertising_desc:0 "该机构完全通过传统媒体渠道运作,没有采用数字广告方法."
+
+ pm_banner_advertising:0 "网络封面广告"
+ pm_banner_advertising_desc:0 "贴入网站的静态和动画横幅广告,标志着该机构进入数字广告生态系统的第一步."
+
+ pm_social_media_advertising:0 "社会媒体广告"
+ pm_social_media_advertising_desc:0 "跨社交媒体平台开展的运动向广大受众宣传,他们高度投入,知识产权成为纸面上的首要成本驱动力。"
+
+ pm_algorithmic_targeted_ads:0 "数据采集"
+ pm_algorithmic_targeted_ads_desc:0 "机器学习算法分析消费者数据,为个别定制的广告服务,大规模地最大限度地提高换算率和运动效果."
+
+ ### ADVERTISING - RESEARCH
+
+ pm_focus_groups:0 "重点小组"
+ pm_focus_groups_desc:0 "召集了有代表性的消费者小组,以测试信息传递和衡量反应,提供定性见解来指导运动发展。"
+
+ pm_consumer_analytics:0 "消费者分析"
+ pm_consumer_analytics_desc:0 "消费者行为的系统数据收集和统计分析取代了猜想工作,使运动得以完善,以产生最大影响."
+
+ pm_ai_ad_generation:0 "AI-Gened 内容"
+ pm_ai_ad_generation_desc:0 "人工智能可以自主生成并优化广告复制品,图像,以及瞄准参数,在提升产出的同时大幅削减所需的创意劳动力."
+
+ ### WAREHOUSING - BASE
+
+ pm_basic_warehousing:0 "基本存储"
+ pm_basic_warehousing_desc:0 "配备了体力劳动者的简单储存设施,消耗了接收和运送货物的运输能力。"
+
+ pm_climate_controlled_storage:0 "气候控制储存"
+ pm_climate_controlled_storage_desc:0 "温度和湿度调节的储存可以保存敏感货物,扩大可储存的产品范围并增加吞吐量。"
+
+ pm_automated_warehouse:0 "自动化仓库"
+ pm_automated_warehouse_desc:0 "机器人取取系统和自动传送器取代了大部分存储和取取取操作的手动工作,大大地提高了每个工人的存储输出."
+
+ pm_fulfillment_center:0 "完成中心"
+ pm_fulfillment_center_desc:0 "高通量物流枢纽优化快速订单处理和调度,将仓储,分拣,包装,航运整合为单一无缝运营."
+
+ ### WAREHOUSING - LOGISTICS
+
+ pm_manual_inventory:0 "手工盘存"
+ pm_manual_inventory_desc:0 "库存使用纸面记录和实物清点跟踪,需要专职办事员保持准确性。"
+
+ pm_barcode_tracking:0 "条码跟踪"
+ pm_barcode_tracking_desc:0 "条码扫描系统能够快速、准确地记录库存流动情况,减少库存出错和保持记录所需的文书工作。"
+
+ pm_rfid_tracking:0 "RFID 跟踪"
+ pm_rfid_tracking_desc:0 "无线电频率识别标记可以对仓库中的每个物品进行实时自动跟踪,而无需人工扫描,大大提高了库存的准确性和吞吐量."
+
+ pm_ai_inventory_management:0 "AI 库存管理"
+ pm_ai_inventory_management_desc:0 "人工智能不断优化库存水平,预测需求,并实现再排自动化,减少浪费并消除大多数库存管理人员的需求."
+
+ ### PHARMACEUTICAL SERVICES - BASE
+
+ pm_apothecary:0 "药物"
+ pm_apothecary_desc:0 "一种传统的药剂手动制备并分发取自生植物和化学投入的药用化合物,包括鸦片衍生的制剂。"
+
+ pm_pharmacy_dispensing:0 "药房"
+ pm_pharmacy_dispensing_desc:0 "现代药店,按照医疗规定经营,凭处方向患者发放标准化药品."
+
+ pm_hospital_pharmacy:0 "医院药房"
+ pm_hospital_pharmacy_desc:0 "为医院或诊所网络服务的综合药房业务,处理大量复杂的处方和专用配方。"
+
+ pm_mail_order_pharmacy:0 "邮购药店"
+ pm_mail_order_pharmacy_desc:0 "处方由中央执行,通过邮局直接发送给病人,从而能够广泛覆盖地域和高订单量,并有精细的体能足迹。"
+
+ ### PHARMACEUTICAL SERVICES - RESEARCH
+
+ pm_no_drug_research:0 "无研究方案"
+ pm_no_drug_research_desc:0 "该机构只注重分发现有化合物,不投资于药物研究或开发。"
+
+ pm_clinical_trials:0 "图RNA"
+ pm_clinical_trials_desc:0 "该机构对新的药物化合物进行有控制的临床试验,促进药物开发并扩大其生产产出。"
+
+ pm_biotech_research:0 "mRNA 数据"
+ pm_biotech_research_desc:0 "先进的生物技术研究方法能加速药物的发现,使新疗法得到发展并大大增加了药物产量."
+
+ pm_gene_therapy:0 "基因编辑"
+ pm_gene_therapy_desc:0 "切入-尖端基因编辑研究能够开发出针对疾病根源基因的治疗方法,代表了药物科学的前沿."
+
+ ### PHARMACEUTICAL SERVICES - AUTOMATION
+
+ pm_manual_compounding:0 "人工复合"
+ pm_manual_compounding_desc:0 "药剂师手动编制和衡量每张处方,这是一个技术熟练但耗时的过程,需要大量人员。"
+
+ pm_automated_dispensing:0 "自动分发"
+ pm_automated_dispensing_desc:0 "自动分发机器处理例行处方,使药剂师能够集中精力处理复杂案件并降低劳动成本。"
+
+ pm_robotic_pharmacy:0 "机器人药店"
+ pm_robotic_pharmacy_desc:0 "完全的机器人分配系统处理绝大多数处方,人类干预极少,大幅度削减了人员需求,同时使产出最大化。"

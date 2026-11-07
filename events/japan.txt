@@ -1,0 +1,42 @@
+﻿namespace = japan
+
+# Fukushima Nuclear Accident
+japan.1 = {
+    type = country_event
+    title = japan.1.t
+    desc = japan.1.d
+    picture = "gfx/event_pictures/nuclear_plant.dds"
+
+    trigger = {
+        c:JPN ?= this
+        game_date >= 2011.2.28
+		NOT = { has_variable = fukushima_already_happened }
+		s:STATE_TOHOKU = {
+			has_building = building_nuclear_plant
+		}
+    }
+
+    immediate = {
+        add_modifier = {
+            name = fukushima_nuclear_disaster
+            months = 24
+        }
+		set_variable = fukushima_already_happened
+    }
+
+    option = {
+        name = japan.1.a
+        add_radicals = {
+            value = 0.05
+            pop_type = machinists
+        }
+        add_radicals = {
+            value = 0.05
+            pop_type = laborers
+        }
+        add_loyalists = {
+            value = 0.02
+            pop_type = intelligentsia
+        }
+    }
+}

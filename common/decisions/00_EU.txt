@@ -1,0 +1,129 @@
+﻿#leave_eu = {
+ #   icon = "gfx/interface/icons/decisions/decision_diplomacy.dds"
+ #   available = {
+  #      has_variable = eu_member_state
+   # }
+  #  visible = {
+   #     has_variable = eu_member_state
+ #   }
+ #   ai_chance = {
+  #      base = 5
+  #      modifier = {
+#            trigger = { legitimacy < 40 }
+  #          add = 10
+  #      }
+  #  }
+  #  possible = {
+ #       has_variable = eu_member_state
+  #      NOT = { is_at_war = yes }
+  #  }
+  #  when_taken = {
+ #       trigger_event = { id = eu_events.2 }
+  #  }
+ #   cooldown = { days = 3650 }
+#}
+
+#request_to_join_eu_decision = {
+#	is_shown = {
+#		NOT = { has_modifier = modifier_eu_member_state }
+#		country_is_in_europe = yes
+#		game_date >= 1995.1.1
+#	}
+#
+#	possible = {
+#		NOT = { has_variable = eu_membership_process_started }
+#		NOT = { has_modifier = modifier_eu_member_state }
+#		country_is_in_europe = yes
+#		is_subject = no
+#		OR = { 
+#			has_law = law_type:law_presidential_republic
+#			has_law = law_type:law_parliamentary_republic
+#			AND = {
+#				has_law = law_type:law_monarchy
+#				has_law = law_type:law_elected_bureaucrats
+#			}
+#		}
+#		OR = {
+#			has_law = law_type:law_free_trade
+#			has_law = law_type:law_right_of_assembly
+#		}
+#		has_law = law_type:law_elected_bureaucrats
+#	}
+#
+#	when_taken = {
+#		custom_tooltip = {
+#		set_variable = eu_membership_process_started
+#		text = eu_membership_process
+#		}
+#	}
+#
+#	ai_chance = {
+#		value = 1.5
+#		if = {
+#			limit = { legitimacy > 60 }
+#			add = 2
+#		}
+#	}
+#}
+
+dissolve_european_union = {
+
+	is_shown = {
+		NOT = { c:EUR ?= this }
+		any_scope_state = {
+			state_region = s:STATE_FLANDERS
+		}
+		c:EUR ?= { exists = yes }
+	}
+ 
+	possible = {
+		# No EEC members remain
+		custom_tooltip = {
+			text = io_dissolve_eu_no_members_tt
+			NOT = {
+				any_country = {
+					OR = {
+						is_target_in_global_variable_list = { name = io_eec_members target = this }
+						is_target_in_global_variable_list = { name = io_eu_members target = this }
+					}
+				}
+			}
+		}
+	}
+ 
+	when_taken = {
+		# Annex EUR if it still exists
+		if = {
+			limit = {
+				c:EUR ?= { exists = yes }
+			}
+			c:EUR = {
+				every_scope_state = {
+					set_state_owner = ROOT
+				}
+			}
+		}
+		# Clear any remaining stale entries from both lists
+		every_country = {
+			limit = { is_target_in_global_variable_list = { name = io_eec_members target = this } }
+			remove_list_global_variable = { name = io_eec_members target = this }
+			remove_modifier = io_free_trade_agreement_member
+		}
+		every_country = {
+			limit = { is_target_in_global_variable_list = { name = io_eu_members target = this } }
+			remove_list_global_variable = { name = io_eu_members target = this }
+			remove_modifier = io_free_trade_agreement_member
+			remove_modifier = modifier_eu_member_state
+			remove_variable = eu_member_state
+		}
+		set_global_variable = io_eu_dissolved
+		set_global_variable = io_eec_dissolved
+		custom_tooltip = {
+			text = io_dissolve_eu_effect_tt
+		}
+	}
+ 
+	ai_chance = {
+		base = 0
+	}
+}

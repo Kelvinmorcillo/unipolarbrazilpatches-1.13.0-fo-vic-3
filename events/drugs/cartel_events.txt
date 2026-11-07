@@ -1,0 +1,648 @@
+﻿namespace = cartel
+
+# ==========================================
+# cartel.1 — Escobar Captured
+# ==========================================
+
+cartel.1 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "middleeast_police_breaking_door" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	title = cartel.1.t
+	desc = cartel.1.d
+	flavor = cartel.1.f
+
+	duration = 3
+
+	trigger = {
+		c:CLM ?= this
+		has_journal_entry = je_drug_trafficking
+		has_variable = cartel_crackdown
+		NOT = { has_variable = escobar_captured }
+		market_capital.market = {
+			mg:opium = {
+				market_goods_pricier > 0.25
+			}
+		}
+	}
+
+	immediate = {
+		set_variable = escobar_captured
+		# Check if turmoil exists for future Colombian Conflict trigger
+		if = {
+			limit = {
+				any_scope_state = {
+					is_incorporated = yes
+					turmoil >= 0.25
+				}
+			}
+			set_variable = colombian_conflict_trigger
+		}
+	}
+
+	option = {
+		name = cartel.1.a
+		default_option = yes
+		add_modifier = {
+			name = cartel_escobar_captured
+			months = 60
+		}
+		add_modifier = {
+			name = cartel_crackdown_success
+			months = 36
+		}
+		# Notify all Americas countries
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_in_geographic_region = geographic_region_north_america
+					NOT = { this = root }
+				}
+				trigger_event = { id = cartel.10 days = 1 }
+			}
+			every_country = {
+				limit = {
+					is_in_geographic_region = geographic_region_south_america
+					NOT = { this = root }
+				}
+				trigger_event = { id = cartel.10 days = 1 }
+			}
+		}
+	}
+}
+
+# ==========================================
+# cartel.2 — El Chapo Captured (MEX only)
+# Fires when opium 25%+ above base and
+# Mexico is cracking down.
+# Hidden effect queues first escape.
+# ==========================================
+
+cartel.2 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "middleeast_police_breaking_door" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	title = cartel.2.t
+	desc = cartel.2.d
+	flavor = cartel.2.f
+
+	duration = 3
+
+	trigger = {
+		c:MEX ?= this
+		has_journal_entry = je_drug_trafficking
+		has_variable = cartel_crackdown
+		NOT = { has_variable = el_chapo_captured }
+		market_capital.market = {
+			mg:opium = {
+				market_goods_pricier > 0.25
+			}
+		}
+	}
+
+	immediate = {
+		set_variable = el_chapo_captured
+	}
+
+	option = {
+		name = cartel.2.a
+		default_option = yes
+		add_modifier = {
+			name = cartel_el_chapo_captured
+			months = 48
+		}
+		add_modifier = {
+			name = cartel_crackdown_success
+			months = 36
+		}
+		# Queue first escape — fires approximately 3-5 years later
+		hidden_effect = {
+			trigger_event = { id = cartel.3 days = 1460 }
+		}
+	}
+}
+
+# ==========================================
+# cartel.3 — El Chapo's First Escape (MEX)
+# Hidden queued event — fires ~4 years
+# after capture. Sets up further events.
+# ==========================================
+
+cartel.3 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "middleeast_police_breaking_door" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	title = cartel.3.t
+	desc = cartel.3.d
+	flavor = cartel.3.f
+
+	duration = 3
+
+	trigger = {
+		c:MEX ?= this
+		has_variable = el_chapo_captured
+		NOT = { has_variable = el_chapo_escaped }
+	}
+
+	immediate = {
+		set_variable = el_chapo_escaped
+	}
+
+	option = {
+		name = cartel.3.a
+		default_option = yes
+		remove_modifier = cartel_el_chapo_captured
+		add_modifier = {
+			name = cartel_el_chapo_escaped
+			months = 36
+		}
+		# Sinaloa cartel resurgence in Sinaloa state if it exists
+		if = {
+			limit = {
+				any_scope_state = {
+					state_region = s:STATE_SINALOA
+					owner = c:MEX
+				}
+			}
+			every_scope_state = {
+				limit = {
+					state_region = s:STATE_SINALOA
+					owner = c:MEX
+				}
+				add_modifier = {
+					name = cartel_sinaloa_controlled
+					months = 60
+				}
+			}
+		}
+	}
+}
+
+# ==========================================
+# cartel.4 — Cartel Turf Division (MEX timeout)
+# Fires when Mexico's JE times out without
+# completing. Mexican states get cartel
+# territory modifiers.
+# ==========================================
+
+cartel.4 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "middleeast_battlefield_trenches" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	title = cartel.4.t
+	desc = cartel.4.d
+	flavor = cartel.4.f
+
+	duration = 3
+
+	trigger = { c:MEX ?= this }
+
+	immediate = {
+		set_variable = mexican_drug_war_trigger
+		set_variable = mexican_drug_war_active
+	}
+
+	option = {
+		name = cartel.4.a
+		default_option = yes
+		add_modifier = {
+			name = cartel_narco_state
+			months = 60
+		}
+		# Assign cartel territory modifiers to Mexican states
+		# CJNG — central/western states
+		every_scope_state = {
+			limit = {
+				owner = c:MEX
+				OR = {
+					state_region = s:STATE_JALISCO
+					state_region = s:STATE_GUANAJUATO
+					state_region = s:STATE_MICHOACAN
+				}
+			}
+			add_modifier = {
+				name = cartel_cjng_controlled
+				months = 60
+			}
+		}
+		# Gulf Cartel — northeast/Gulf coast
+		every_scope_state = {
+			limit = {
+				owner = c:MEX
+				OR = {
+					state_region = s:STATE_TAMAULIPAS
+					state_region = s:STATE_VERACRUZ
+					state_region = s:STATE_NUEVO_LEON
+				}
+			}
+			add_modifier = {
+				name = cartel_gulf_controlled
+				months = 60
+			}
+		}
+		# Sinaloa Cartel — northwest
+		every_scope_state = {
+			limit = {
+				owner = c:MEX
+				OR = {
+					state_region = s:STATE_SINALOA
+					state_region = s:STATE_SONORA
+					state_region = s:STATE_CHIHUAHUA
+				}
+			}
+			add_modifier = {
+				name = cartel_sinaloa_controlled
+				months = 60
+			}
+		}
+		# Northeast Cartel
+		every_scope_state = {
+			limit = {
+				owner = c:MEX
+				OR = {
+					state_region = s:STATE_COAHUILA
+					state_region = s:STATE_ZACATECAS
+				}
+			}
+			add_modifier = {
+				name = cartel_northeast_controlled
+				months = 60
+			}
+		}
+		add_journal_entry = { type = je_mexican_drug_war }
+		hidden_effect = {
+			set_variable = mexican_drug_war_active
+		}
+	}
+}
+
+# ==========================================
+# RANDOM MONTHLY EVENTS (all cartel countries)
+# ==========================================
+
+# cartel.5 — Cartel Assassination
+cartel.5 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "room_clearing" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/cocaine.dds"
+
+	title = cartel.5.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = cartel.5.d_crackdown
+				trigger = { has_variable = cartel_crackdown }
+			}
+			triggered_desc = {
+				desc = cartel.5.d_cooperation
+				trigger = { has_variable = cartel_cooperation }
+			}
+			triggered_desc = {
+				desc = cartel.5.d_default
+			}
+		}
+	}
+	flavor = cartel.5.f
+
+	duration = 3
+
+	trigger = {
+		has_journal_entry = je_drug_trafficking
+		NOT = { has_variable = cartel_assassination_fired }
+	}
+
+	cooldown = { days = long_modifier_time }
+
+	immediate = {
+		set_variable = cartel_assassination_fired
+	}
+
+	cancellation_trigger = {
+		NOT = { has_journal_entry = je_drug_trafficking }
+	}
+
+	option = {
+		name = cartel.5.a
+		default_option = yes
+		add_modifier = {
+			name = cartel_assassination_aftermath
+			months = 18
+		}
+		add_radicals = { value = small_radicals strata = lower }
+	}
+}
+
+# cartel.6 — Cartel Money Laundering Exposed
+cartel.6 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "injured_agitator" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/cocaine.dds"
+
+	title = cartel.6.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = cartel.6.d_crackdown
+				trigger = { has_variable = cartel_crackdown }
+			}
+			triggered_desc = {
+				desc = cartel.6.d_cooperation
+				trigger = { has_variable = cartel_cooperation }
+			}
+			triggered_desc = {
+				desc = cartel.6.d_default
+			}
+		}
+	}
+	flavor = cartel.6.f
+
+	duration = 3
+
+	trigger = {
+		has_journal_entry = je_drug_trafficking
+		NOT = { has_variable = cartel_laundering_fired }
+	}
+
+	cooldown = { days = long_modifier_time }
+
+	immediate = {
+		set_variable = cartel_laundering_fired
+	}
+
+	# Option A: Pursue the investigation
+	option = {
+		name = cartel.6.a
+		trigger = { has_variable = cartel_crackdown }
+		add_modifier = {
+			name = cartel_laundering_investigation
+			months = 18
+		}
+		add_infamy = -5
+		ai_chance = { base = 70 }
+	}
+
+	# Option B: Let it go
+	option = {
+		name = cartel.6.b
+		default_option = yes
+		add_modifier = {
+			name = cartel_laundering_ignored
+			months = 12
+		}
+		add_infamy = 5
+		ai_chance = { base = 30 }
+	}
+}
+
+# cartel.7 — US Pressure on Drug Trafficking
+cartel.7 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "whitehouse" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/cocaine.dds"
+
+	title = cartel.7.t
+	desc = cartel.7.d
+	flavor = cartel.7.f
+
+	duration = 3
+
+	trigger = {
+		has_journal_entry = je_drug_trafficking
+		NOT = { has_variable = cartel_us_pressure_fired }
+		exists = c:USA
+	}
+
+	cooldown = { days = very_long_modifier_time }
+
+	immediate = {
+		set_variable = cartel_us_pressure_fired
+	}
+
+	# Option A: Cooperate with US anti-drug programs
+	option = {
+		name = cartel.7.a
+		if = {
+			limit = { exists = c:USA }
+			change_relations = {
+				country = c:USA
+				value = 15
+			}
+		}
+		add_modifier = {
+			name = cartel_us_cooperation_bonus
+			months = 36
+		}
+		ai_chance = { base = 60 }
+	}
+
+	# Option B: Reject US interference — sovereignty first
+	option = {
+		name = cartel.7.b
+		default_option = yes
+		if = {
+			limit = { exists = c:USA }
+			change_relations = {
+				country = c:USA
+				value = -20
+			}
+		}
+		add_modifier = {
+			name = cartel_us_rejection
+			months = 24
+		}
+		ai_chance = { base = 40 }
+	}
+}
+
+# cartel.8 — Cartel Retaliates Against Crackdown
+cartel.8 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "bombed_city" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	title = cartel.8.t
+	desc = cartel.8.d
+	flavor = cartel.8.f
+
+	duration = 3
+
+	trigger = {
+		has_journal_entry = je_drug_trafficking
+		has_variable = cartel_crackdown
+		NOT = { has_variable = cartel_retaliation_fired }
+	}
+
+	cooldown = { days = long_modifier_time }
+
+	immediate = {
+		set_variable = cartel_retaliation_fired
+		random_scope_state = {
+			limit = { is_incorporated = yes }
+			save_scope_as = cartel_retaliation_state
+		}
+	}
+
+	# Option A: Escalate — double down on the crackdown
+	option = {
+		name = cartel.8.a
+		add_authority = -50
+		add_modifier = {
+			name = cartel_retaliation_escalate
+			months = 18
+		}
+		scope:cartel_retaliation_state = {
+			add_radicals_in_state = { value = medium_radicals }
+		}
+		ai_chance = { base = 50 }
+	}
+
+	# Option B: Pull back — protect civilians over progress
+	option = {
+		name = cartel.8.b
+		default_option = yes
+		add_modifier = {
+			name = cartel_retaliation_pullback
+			months = 12
+		}
+		ai_chance = { base = 50 }
+	}
+}
+
+# ==========================================
+# cartel.9 — JE Complete Notification
+# ==========================================
+
+cartel.9 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "unspecific_military_parade" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	title = cartel.9.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = cartel.9.d_crackdown
+				trigger = { has_variable = cartel_crackdown }
+			}
+			triggered_desc = {
+				desc = cartel.9.d_cooperation
+				trigger = { has_variable = cartel_cooperation }
+			}
+			triggered_desc = {
+				desc = cartel.9.d_default
+			}
+		}
+	}
+	flavor = cartel.9.f
+
+	duration = 3
+	trigger = { }
+
+	option = {
+		name = cartel.9.a
+		default_option = yes
+		# Clean up variables and modifiers
+		remove_variable = cartel_cooperation
+		remove_variable = cartel_crackdown
+		remove_variable = cartel_assassination_fired
+		remove_variable = cartel_laundering_fired
+		remove_variable = cartel_us_pressure_fired
+		remove_variable = cartel_retaliation_fired
+		remove_modifier = cartel_cooperation_modifier
+		remove_modifier = cartel_crackdown_modifier
+		remove_banned_goods = g:opium
+	}
+}
+
+cartel.100 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "asia_sepoy_mutiny" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	title = cartel.100.t
+	desc = cartel.100.d
+	flavor = cartel.100.f
+
+	duration = 3
+	trigger = { }
+
+	option = {
+		name = cartel.100.a
+		default_option = yes
+		remove_variable = cartel_cooperation
+		remove_variable = cartel_crackdown
+		remove_modifier = cartel_cooperation_modifier
+		remove_modifier = cartel_crackdown_modifier
+		remove_banned_goods = g:opium
+		# Open cartel fighting JE for non-MEX, non-CLM countries
+		if = {
+			limit = {
+				NOR = {
+					c:MEX ?= this
+					c:CLM ?= this
+				}
+			}
+			add_journal_entry = { type = je_fighting_cartels }
+		}
+	}
+}
+
+# ==========================================
+# cartel.10 — Escobar Captured News
+# Fires for all Americas countries
+# ==========================================
+
+cartel.10 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "room_clearing" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+
+	title = cartel.10.t
+	desc = cartel.10.d
+	flavor = cartel.10.f
+
+	duration = 3
+	trigger = { }
+
+	option = {
+		name = cartel.10.a
+		default_option = yes
+	}
+}

@@ -1,0 +1,700 @@
+﻿post_rwandan_genocide_reconstruction = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+    state_infrastructure_mult = -0.15
+	state_mortality_mult = 0.25
+}
+
+rwandan_genocide = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+    state_infrastructure_mult = -0.25
+	state_mortality_mult = 0.25
+	state_lacustrine_bantu_standard_of_living_add = -4
+	state_luo_standard_of_living_add = -4
+	state_mortality_wealth_mult = 1.75
+}
+
+national_mourning_school_shooting = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	state_turmoil_effects_mult = 0.35
+}
+
+recent_mass_shooting = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = -3
+}
+
+school_security_measures = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_ig_armed_forces_pop_attraction_mult = 0.25
+	country_authority_mult = -0.15
+}
+
+thoughts_and_prayers = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = 3
+}
+
+better_school_security = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = 3
+}
+
+attacked_on_home_soil = {
+    icon = icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+    state_radicals_and_loyalists_from_sol_change_mult = 0.5
+    country_mobilization_mult = 0.10
+	state_turmoil_effects_mult = 0.5
+}
+
+war_on_terror_campaign = {
+    icon = icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_legitimacy_add = 50
+    country_authority_mult = 0.75
+    army_defense_mult = 0.05
+    # leave room for modder to add diplomatic/financial drains or IG effects
+}
+
+recent_ira_attack = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds.dds
+	state_protestant_standard_of_living_add = -3
+	state_catholic_standard_of_living_add = -3
+	state_infrastructure_from_population_mult = -0.05
+	state_mortality_turmoil_mult = 0.25
+	state_turmoil_effects_mult = 0.5
+	state_radicals_from_political_movements_mult = 0.25
+}
+
+reunification_pride = {
+    country_legitimacy_base_add = 10
+    country_authority_mult = 0.15
+}
+
+nato_supports_us_in_iraq = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_military.dds
+    army_morale_mult = 0.1
+    army_offense_mult = 0.05
+}
+
+iraq_isolated = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_diplomacy_negative.dds
+    country_infamy_decay_mult = -0.15
+	army_defense_mult = 0.20
+	army_offense_mult = 0.20
+}
+
+iraq_condemned = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_diplomacy_negative.dds
+    radicals_from_standard_of_living_delta_mult = 0.2
+    country_legitimacy_add = 10
+	army_defense_mult = 0.20
+	army_offense_mult = 0.20
+}
+
+iraq_invasion = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_military.dds
+    army_morale_mult = 0.1
+    army_offense_mult = 0.1
+    war_support = 0.1
+}
+
+# Applied to countries that invest in Y2K compliance
+y2k_compliance_investment = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_expenses_add                        = 20
+	state_infrastructure_mult                   = 0.03
+	country_legitimacy_base_add                 = 3
+}
+ 
+# Applied to all countries on New Year 2000
+millennium_celebration = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_legitimacy_base_add                 = 5
+	country_prestige_mult                       = 0.02
+	state_loyalists_from_political_movements_mult = 0.05
+}
+ 
+# Applied to countries that dismissed Y2K
+y2k_minor_disruption = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	state_infrastructure_mult                   = -0.05
+	country_construction_add                    = -1
+	country_legitimacy_base_add                 = -3
+}
+
+### The permanent crisis — applied at game start, removed on JE completion
+demographic_crisis_workforce_penalty = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	state_working_adult_ratio_add = -0.50
+	state_birth_rate_mult = -0.25
+}
+
+### Decaying buffer — starts at +50% workforce ratio, lasts 50 years then expires
+### While this is active, the penalty and buffer cancel out
+### As the buffer expires, the net effect becomes increasingly severe
+demographic_crisis_buffer = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_working_adult_ratio_add = 0.50
+	state_birth_rate_mult = 0.25
+}
+
+### Applied when the JE is completed — replaces the penalty
+### Permanent positive modifier representing demographic recovery
+demographic_crisis_resolved = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_birth_rate_mult = 0.05
+	state_working_adult_ratio_add = 0.05
+}
+
+kurdistan_war_guerilla_warfare = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	character_advancement_speed_mult = -0.9
+	battle_total_combat_width_mult = -0.5
+	country_prestige_mult = -0.25
+}
+
+kurdistan_war_trk_reward = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_prestige_mult = 0.10
+	state_radicals_from_sol_change_mult = -0.10
+}
+
+kurdistan_war_kur_reward = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_prestige_mult = 0.20
+	country_authority_add = 100
+}
+
+trk_security_operation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	battle_offense_mult = 0.15
+	battle_defense_mult = 0.10
+	country_prestige_mult = 0.05
+}
+
+kur_mountain_resistance = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	battle_defense_mult = 0.20
+	battle_morale_recovery_mult = 0.10
+	country_prestige_mult = 0.05
+}
+
+trk_counterinsurgency_expenses = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	country_prestige_mult = -0.05
+	government_wages_mult = 0.10
+}
+
+kur_guerrilla_networks = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	battle_defense_mult = 0.10
+	battle_total_combat_width_mult = -0.10
+}
+
+### chechen
+chechen_war_guerilla_warfare = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	character_advancement_speed_mult = -0.9
+	battle_total_combat_width_mult = -0.5
+	country_prestige_mult = -0.25
+}
+ 
+### Russian morale boost — scaled by war score like galvanized_forces
+chechen_war_rus_morale = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_army_power_projection_mult = 0.05
+	country_prestige_mult = 0.02
+}
+ 
+### Chechen mountain resistance — scaled by war score like the_last_stand
+chechen_mountain_resistance = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	battle_defense_owned_province_mult = 0.15
+	country_prestige_mult = 0.05
+}
+ 
+### Chechen ambush tactics — temporary from guerrilla events
+chechen_ambush_tactics = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	battle_defense_owned_province_mult = 0.10
+}
+ 
+### Storm Grozny aftermath
+chechen_storm_grozny = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	state_mortality_mult = 0.05
+}
+ 
+### War devastation applied to Caucasus states
+chechen_war_devastation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	state_mortality_mult = 0.03
+	state_infrastructure_mult = -0.10
+}
+ 
+### Raid expenses
+chechen_war_raid_expenses = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 25000
+}
+ 
+### Victory rewards
+chechen_war_rus_reward = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_mult = 0.10
+	country_army_power_projection_mult = 0.05
+}
+ 
+chechen_war_che_reward = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_mult = 0.15
+	country_legitimacy_base_add = 10
+}
+
+acw_guerrilla_warfare = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	character_advancement_speed_mult = -0.96
+	battle_total_combat_width_mult = -0.65
+	country_prestige_mult = -0.20
+}
+
+acw_taliban_security_push = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	character_advancement_speed_mult = -0.50
+	battle_total_combat_width_mult = 0.10
+	country_prestige_mult = 0.05
+}
+
+acw_northern_alliance_mountain_resistance = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	character_advancement_speed_mult = -0.35
+	battle_total_combat_width_mult = -0.15
+	country_prestige_mult = 0.05
+}
+
+acw_taliban_supply_strain = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	character_advancement_speed_mult = -0.25
+	country_prestige_mult = -0.05
+}
+
+acw_northern_alliance_supply_networks = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	character_advancement_speed_mult = -0.15
+	country_prestige_mult = 0.05
+}
+
+acw_afg_reward = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_prestige_mult = 0.10
+}
+
+acw_ana_reward = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_prestige_mult = 0.10
+}
+
+ip_uneasy_status_quo = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_prestige_mult = -0.02
+}
+
+ip_security_coordination = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_radicals_mult = -0.03
+	country_authority_add = -25
+}
+
+ip_closure_policy = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	country_authority_add = -50
+	country_diplomatic_reputation_add = -1
+}
+
+ip_economic_restrictions = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_goods_negative.dds
+	building_throughput_mult = -0.05
+	country_radicals_mult = 0.05
+}
+
+ip_settlement_freeze = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_diplomatic_reputation_add = 2
+	country_authority_add = -50
+}
+
+ip_international_mediation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_diplomatic_reputation_add = 1
+	country_bureaucracy_add = -25
+}
+
+ip_grassroots_outreach = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_radicals_mult = -0.05
+	country_legitimacy_base_add = -5
+}
+
+ip_mass_mobilization = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_prestige_mult = 0.03
+	country_radicals_mult = 0.05
+}
+
+ip_security_alert = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	country_army_power_projection_mult = 0.02
+	country_expenses_add = 5000
+}
+
+ip_international_scrutiny = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_diplomatic_reputation_add = -1
+	country_prestige_mult = -0.02
+}
+
+ip_political_backlash = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_legitimacy_base_add = -5
+	country_radicals_mult = 0.03
+}
+
+ip_stabilized_peace_process = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_diplomatic_reputation_add = 3
+	country_radicals_mult = -0.10
+	country_prestige_mult = 0.05
+}
+
+ip_breakdown_of_calm = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	country_radicals_mult = 0.10
+	country_prestige_mult = -0.05
+}
+
+### Active during uprising phase — -99% combat width for the tiny territory
+intifada_urban_uprising = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	character_advancement_speed_mult = -0.99
+	battle_total_combat_width_mult = -0.99
+	country_prestige_mult = -0.25
+}
+
+### Israeli military morale — scaled by war score
+intifada_isr_morale = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_army_power_projection_mult = 0.05
+	country_prestige_mult = 0.02
+}
+
+### Palestinian popular resistance — scaled by war score
+intifada_popular_resistance = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	battle_defense_owned_province_mult = 0.20
+	country_prestige_mult = 0.05
+}
+
+### Stone throwing / street clashes bonus
+intifada_stone_throwing = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	battle_defense_owned_province_mult = 0.10
+}
+
+### IDF crackdown
+intifada_idf_crackdown = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	state_mortality_mult = 0.05
+}
+
+### Devastation from fighting
+intifada_devastation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	state_mortality_mult = 0.05
+	state_infrastructure_mult = -0.15
+}
+
+### Raid expenses
+intifada_raid_expenses = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 15000
+}
+
+### International pressure on Israel from media coverage
+intifada_international_pressure = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_prestige_mult = -0.05
+	country_diplomatic_reputation_add = -2
+}
+
+### Victory rewards
+intifada_isr_reward = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_mult = 0.10
+}
+
+intifada_pal_reward = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_mult = 0.20
+	country_legitimacy_base_add = 15
+}
+
+ip_uneasy_status_quo = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_prestige_mult = -0.02
+}
+
+ip_security_coordination = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_radicals_mult = -0.03
+	country_authority_add = -25
+}
+
+ip_closure_policy = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	country_authority_add = -50
+	country_diplomatic_reputation_add = -1
+}
+
+ip_economic_restrictions = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_goods_negative.dds
+	building_throughput_mult = -0.05
+	country_radicals_mult = 0.05
+}
+
+ip_settlement_freeze = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_diplomatic_reputation_add = 2
+	country_authority_add = -50
+}
+
+ip_international_mediation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_diplomatic_reputation_add = 1
+	country_bureaucracy_add = -25
+}
+
+ip_grassroots_outreach = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_heart_positive.dds
+	country_radicals_mult = -0.05
+	country_legitimacy_base_add = -5
+}
+
+ip_mass_mobilization = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_prestige_mult = 0.03
+	country_radicals_mult = 0.05
+}
+
+ip_security_alert = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	country_army_power_projection_mult = 0.02
+	country_expenses_add = 5000
+}
+
+ip_international_scrutiny = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_diplomatic_reputation_add = -1
+	country_prestige_mult = -0.02
+}
+
+ip_political_backlash = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_legitimacy_base_add = -5
+	country_radicals_mult = 0.03
+}
+
+ip_stabilized_peace_process = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_diplomatic_reputation_add = 3
+	country_radicals_mult = -0.10
+	country_prestige_mult = 0.05
+}
+
+ip_breakdown_of_calm = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	country_radicals_mult = 0.10
+	country_prestige_mult = -0.05
+}
+
+wot_article_5_commitment = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_army_power_projection_mult = 0.05
+	country_diplomatic_reputation_add = 1
+	country_expenses_add = 5000
+}
+
+wot_pakistan_cooperation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_diplomatic_reputation_add = 2
+	country_prestige_mult = 0.03
+	country_authority_add = -50
+}
+
+wot_pakistan_complicit = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_diplomatic_reputation_add = -5
+	country_prestige_mult = -0.10
+}
+
+io_democratic_standards_warning = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_diplomatic_reputation_add = -1
+}
+
+io_expelled_from_democratic_org = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_diplomatic_reputation_add = -3
+	country_prestige_mult = -0.05
+}
+
+intifada_2005_ceasefire = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_mult = -0.02
+	country_radicals_mult = -0.05
+}
+
+oslo_i_peace_process = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_diplomatic_reputation_add = 2
+	country_prestige_mult = 0.03
+	country_radicals_mult = -0.03
+}
+
+oslo_i_palestinian_authority = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_legitimacy_base_add = 10
+	country_bureaucracy_add = 50
+	country_prestige_mult = 0.05
+}
+
+oslo_talks_delayed = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_diplomatic_reputation_add = -2
+	country_radicals_mult = 0.05
+}
+
+oslo_ii_interim_agreement = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_diplomatic_reputation_add = 2
+	country_radicals_mult = -0.04
+}
+
+oslo_ii_expanded_self_government = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_legitimacy_base_add = 15
+	country_bureaucracy_add = 75
+	country_prestige_mult = 0.05
+}
+
+oslo_ii_joint_security_framework = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_authority_add = -50
+	country_radicals_mult = -0.02
+}
+
+oslo_ii_administrative_fragmentation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_bureaucracy_add = -50
+	building_throughput_mult = -0.03
+}
+
+oslo_ii_delayed_redeployment = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_diplomatic_reputation_add = -2
+	country_radicals_mult = 0.06
+}
+
+
+oslo_us_broker = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_diplomatic_reputation_add = 2
+	country_prestige_mult = 0.03
+}
+
+oslo_us_failed_mediation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_diplomatic_reputation_add = -1
+	country_prestige_mult = -0.02
+}
+
+post_yugoslav_turmoil = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_radicals_mult = 0.10
+	country_prestige_mult = -0.05
+}
+
+yugoslav_restoration_success = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_mult = 0.10
+	country_radicals_mult = -0.10
+}
+
+anti_serbian_sentiment = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_radicals_mult = 0.05
+}
+
+international_condemnation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_diplomatic_reputation_add = -3
+	country_prestige_mult = -0.05
+}
+
+national_grief = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_radicals_mult = 0.05
+}
+
+nato_bombing_aftermath = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	country_prestige_mult = -0.05
+	building_throughput_mult = -0.03
+}
+
+dayton_peace_framework = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_radicals_mult = -0.05
+	country_diplomatic_reputation_add = 1
+}
+
+peaceful_independence_recognized = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_radicals_mult = -0.05
+	country_prestige_mult = 0.03
+}
+
+yugoslav_confederal_negotiations = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_diplomatic_reputation_add = 1
+	country_authority_add = -50
+}
+
+peacekeeping_force_present = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_diplomatic_reputation_add = 1
+	country_prestige_mult = -0.02
+}
+
+yugoslav_confederal_compromise = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_diplomatic_reputation_add = 2
+	country_radicals_mult = -0.08
+	country_prestige_mult = 0.05
+}
+
+kosovo_autonomy_compromise = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_radicals_mult = -0.04
+	country_authority_add = -50
+}
+
+war_crimes_investigation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_diplomatic_reputation_add = 1
+	country_radicals_mult = -0.02
+}
+
+threatened_nuclear_hostilities_diplomatic_reputation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+
+	country_diplomatic_reputation_add = 5
+}

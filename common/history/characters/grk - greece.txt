@@ -1,0 +1,20 @@
+﻿CHARACTERS = {
+	c:GRK ?= {
+	create_character = {
+			first_name = "konstantinos"
+			last_name = "mitsotakis"
+			historical = yes
+			ruler = yes
+			culture = cu:greek
+			birth_date = 1918.3.31
+			dna = dna_konstantinos_mitsotakis
+			ig_leader = yes
+			interest_group = ig_rural_folk
+			ideology = ideology_liberal_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+		
+	}
+}

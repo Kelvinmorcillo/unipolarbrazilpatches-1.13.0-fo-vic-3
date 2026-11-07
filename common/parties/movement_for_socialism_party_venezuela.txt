@@ -1,0 +1,159 @@
+# Social democrats extremely attracted to this ideology
+# Attracts weak leftists and liberals
+# Available for Trade Unions pre-Socialism
+
+REPLACE_OR_CREATE:movement_for_socialism_party_venezuela = {
+	color = { 230 80 40 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = party_movement_for_socialism_venezuela
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	
+	icon = {
+		default = "/gfx/interface/icons/political_parties/vnz_ms.dds"
+	}
+	
+	# THIS IS RUN ONLY ONCE AT GAME START
+	valid_for_country = {
+	THIS = c:VNZ
+	}
+
+		available_for_interest_group = {
+		is_marginal = no
+		OR = {
+			leader = { has_ideology = ideology:ideology_democratic_socialist_leader }
+			leader = { has_ideology = ideology:ideology_progressive_leader }
+			leader = { has_ideology = ideology:ideology_social_liberal_leader }
+			leader = { has_ideology = ideology:ideology_market_socialist_leader }
+			leader = { has_ideology = ideology:ideology_green_leader }
+			leader = { has_ideology = ideology:ideology_left_wing_populist_leader }
+			leader = { has_ideology = ideology:ideology_liberal_leader }
+			has_ideology = ideology:ideology_left_economy
+			has_ideology = ideology:ideology_progressive
+			has_ideology = ideology:ideology_communitarian
+			has_ideology = ideology:ideology_far_left_economy
+			has_ideology = ideology:ideology_centre_economy
+			has_ideology = ideology:ideology_republican
+			has_ideology = ideology:ideology_regionalist
+			is_interest_group_type = ig_trade_unions
+		}
+	}
+
+	# Root - IG considering joining
+	# scope:number - the number of IGs that would join this party before the root IG
+	join_weight = {
+		value = {
+			value = -5
+			desc = "base_value"
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_democratic_socialist_leader }
+				leader = { has_ideology = ideology:ideology_progressive_leader }
+				leader = { has_ideology = ideology:ideology_social_liberal_leader }
+			}
+			}
+			add = { value = 45 desc = "leader_ideological_compatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_market_socialist_leader }
+				leader = { has_ideology = ideology:ideology_green_leader }
+				leader = { has_ideology = ideology:ideology_left_wing_populist_leader }
+				leader = { has_ideology = ideology:ideology_liberal_leader }
+			}
+			}
+			add = { value = 20 desc = "leader_adjacent_ideology" }
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_fascist_leader }
+				leader = { has_ideology = ideology:ideology_jihadist_leader }
+				leader = { has_ideology = ideology:ideology_authoritarian_capitalist_leader }
+				leader = { has_ideology = ideology:ideology_monarchist_leader }
+			}
+			}
+			add = { value = -50 desc = "leader_ideological_incompatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_left_economy
+				has_ideology = ideology:ideology_progressive
+				has_ideology = ideology:ideology_communitarian
+			}
+			}
+			add = { value = 35 desc = "interest_group_ideological_compatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_far_left_economy
+				has_ideology = ideology:ideology_centre_economy
+				has_ideology = ideology:ideology_republican
+				has_ideology = ideology:ideology_regionalist
+			}
+			}
+			add = { value = 15 desc = "interest_group_adjacent_ideology" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_far_right_economy
+				has_ideology = ideology:ideology_totalitarian
+				has_ideology = ideology:ideology_theocrat
+				has_ideology = ideology:ideology_monarchist
+			}
+			}
+			add = { value = -35 desc = "interest_group_ideological_incompatibility" }
+		}
+		if = {
+			limit = {
+				is_interest_group_type = ig_trade_unions
+			}
+			add = { value = 20 desc = "from_archetype_party" }
+		}
+		if = {
+			limit = {
+				owner = { OR = { has_law = law_type:law_worker_protections has_law = law_type:law_public_health_insurance has_law = law_type:law_graduated_taxation } }
+			}
+			add = { value = 10 desc = "social_democratic_laws" }
+		}
+		if = {
+			limit = {
+				is_powerful = yes
+				OR = {
+					leader = { has_ideology = ideology:ideology_democratic_socialist_leader }
+					leader = { has_ideology = ideology:ideology_progressive_leader }
+					leader = { has_ideology = ideology:ideology_social_liberal_leader }
+					has_ideology = ideology:ideology_left_economy
+					has_ideology = ideology:ideology_progressive
+					has_ideology = ideology:ideology_communitarian
+				}
+			}
+			add = { value = 20 desc = "powerful_ig" }
+		}
+		if = {
+			limit = {
+				scope:number = 1
+				is_powerful = no
+				is_marginal = no
+			}
+			multiply = { value = 2 desc = "from_influential_supporting_member" }
+		}
+		else_if = {
+			limit = { scope:number = 2 }
+			multiply = { value = 0.75 desc = "from_two_prior_members" }
+		}
+	}
+
+}

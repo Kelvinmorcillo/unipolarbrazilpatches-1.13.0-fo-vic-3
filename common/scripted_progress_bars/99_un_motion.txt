@@ -1,0 +1,22 @@
+﻿un_motion_progress_bar = {
+    name = "un_motion_progress_bar"
+    desc = "un_motion_progress_bar_desc"
+    second_desc = "un_motion_progress_bar_second_desc"
+
+    start_value = 0
+    min_value = 0
+    max_value = 196
+
+	default = yes
+	
+    monthly_progress = {
+        # show yes votes as the progress value (clamped by your max)
+        #if = {
+       #     limit = { exists = global_var:un_motion_yes_votes }
+		#	add = {
+		#		desc = "un_motion_progress_from_yes_votes"
+		#		value = global_var:un_motion_yes_votes
+		#	}
+      #  }
+    }
+}

@@ -1,0 +1,288 @@
+﻿l_simp_chinese:
+
+ je_national_development: "国家发展道路"
+ je_national_development_reason: "每个国家都必须选择把精力集中在哪里。 国家发展计划集中资源、政策和政治意愿,支持十年的单一战略构想。 明智的选择——在方案结束前,选择是不能颠倒的."
+
+ je_foreign_investment: "外国投资"
+ je_foreign_investment_reason: "从大国吸引资本可以加快发展,超出国内资源允许的范围。 外国投资条约将使该国向外部企业开放,并带来各种机会和依赖性。"
+ has_foreign_investment_or_trade_agreement_with_west_tt:0 "与美国、联合王国或法国签署外国投资和贸易协定"
+ 
+ ndp_status_industrial_tt: "工业扩张正在进行。 我国正将资源用于建设制造业和重工业基地。"
+ ndp_status_military_tt: "军事扩张正在进行。 我国正在投资于武装部队、理论和国防工业。"
+ ndp_status_resource_tt: "资源经济发展正在进行。 国家注重农业和原材料开采."
+ ndp_status_service_tt: "正在发展服务经济。 该国正在建立金融部门、教育和国家能力。"
+ ndp_status_none_tt: "目前没有开发路径活动. 选择一条路径,开始一个为期十年的国家发展方案。"
+
+ fi_status_seeking_tt: "该国正在寻求与大国达成外国投资协议。 签署投资条约完成此日记项."
+ fi_status_secured_tt: "外国投资协议已经达成。 外道资本流入."
+
+ ndp_button_industrial_name: "工业扩张"
+ ndp_button_industrial_desc: "集中国家资源建设制造业基地. 推动重工业,轻制造业,建筑业的发展. 分选 第2年:重工业与轻制造业."
+
+ ndp_button_military_name: "军事扩展"
+ ndp_button_military_desc: "将武装部队列为优先事项。 推动陆军和海军,军事研究和武器生产. 分选 第2年:陆相学说与海军集结."
+
+ ndp_button_resource_name: "资源经济"
+ ndp_button_resource_desc: "围绕土地建设经济. 推动农业和采掘业的发展。 分选 第2年:农业与原料开采."
+
+ ndp_button_service_name: "服务经济"
+ ndp_button_service_desc: "发展国家能力、教育和金融部门。 推动官僚主义、研究速度和投资。 第二年的子选择:金融部门与教育和官僚主义。"
+
+ ndp_button_abandon_name: "放弃路径"
+ ndp_button_abandon_desc: "放弃目前的发展方案。 所有主动修饰者将被删除,威望和合法性处罚将适用两年. 然后可以选择新路径。"
+
+ fi_button_reject_name: "拒绝外国投资"
+ fi_button_reject_desc: "闭关入外资. 这将结束日记条目,适用长期投资处罚,但将维护经济独立并增强权威."
+
+ # Tooltip keys
+ ndp_no_path_active_tt: "目前没有开发路径活动"
+ ndp_abandon_cost_tt: "放弃这条道路将适用2年的合法性和威望"
+
+ national_development_progress_bar: "发展进展"
+ national_development_progress_bar_desc: "发展进展"
+ ndp_bar_active_path_tt: "积极发展道路."
+ ndp_bar_industrial_mines_tt: "建立重工业基地"
+ ndp_bar_industrial_factories_tt: "制造业部门的增长"
+ ndp_bar_military_army_tt: "大型常备部队"
+ ndp_bar_military_conscription_tt: "实行大规模征兵"
+ ndp_bar_resource_farms_tt: "农业产出强劲"
+ ndp_bar_resource_extraction_tt: "建立采掘业"
+ ndp_bar_service_literacy_tt: "高识字率加速服务发展"
+ ndp_bar_service_university_tt: "大学基础设施"
+ ndp_bar_turmoil_tt: "高度动荡使发展放缓"
+ ndp_bar_at_war_tt: "战争破坏了发展方案"
+
+ # ==========================================
+ # OPENING EVENT — ndp_events.0
+ # ==========================================
+
+ ndp_events.0.t: "国家发展方案"
+ ndp_events.0.d_industrial: ""x id=0"的政府致力于十年的工业扩张. 投资将流向工厂、矿山和连接它们的基础设施。 该计划雄心勃勃,障碍也很大,但愿景是明确的:建立生产能力,界定`x id=1'在世界中的地位。"
+ ndp_events.0.d_military: "[永久失效連結] "x id=0"政府承诺十年军事扩张. 将建造兵营、培训军官并改革理论。 无论动机是国防、威慑还是雄心壮志,向世界发出的信息都是不可否认的: " x id=1/ " 打算认真对待。"
+ ndp_events.0.d_resource: ""x id=0"的政府致力于资源经济发展十年. 土地本身——土壤和矿物——将成为增长的动力。 这是对“x id=1”已有的赌注,也是对更进一步赌注的计划。"
+ ndp_events.0.d_service: "" (x id=0)"政府致力于服务经济发展十年. 学校、银行和政府各部都将看到投资。 赌注是,一个更聪明、治理更好的国家最终是一个更强大的国家。"
+ ndp_events.0.f: "十年.. 一个方向"
+ ndp_events.0.a: "让方案开始"
+
+ # ==========================================
+ # INDUSTRIAL PATH EVENTS
+ # ==========================================
+
+ ndp_events.1.t: "工业问题"
+ ndp_events.1.d: "发展方案实施已两年,必须明确工业投资的方向。 国家不能一并建设一切. 计划家和实业家是分裂的:有些主张把资源集中在重工业上——铁,钢,煤——现代强权的温和. 另一些人则认为轻活制造能提供更快的回报和更广泛的就业."
+ ndp_events.1.f: "钢或布——国家必须选择."
+ ndp_events.1.a: "重工业——建设现代强国基础."
+ ndp_events.1.b: "轻制造业——优先就业和消费品"
+
+ ndp_events.2.t: "投资驱动力"
+ ndp_events.2.d: "工业方案的势头正在增强,但建设的速度取决于资本的来源。 政府规划者正在迫切要求国家直接投资——将资金用于没有市场不确定性的优先部门。 私营实业家反驳说,竞争和利润奖励将产生比官僚主义分配更好的结果。"
+ ndp_events.2.f: "市场或计划——争论与工业本身一样老."
+ ndp_events.2.a: "国家引导投资——政府将建设."
+ ndp_events.2.b: "私营企业——吸引投资者并退后"
+
+ ndp_events.3.t: "劳工问题"
+ ndp_events.3.d: "工厂在运行,矿井在生产——但使工厂能够运行的工人却要求更多. 发展方案创造了工作机会,但也创造了期望。 工厂业主需要更长的时间和更少的限制. 劳工组织者希望相反。 政府必须决定这一论点的哪一面。"
+ ndp_events.3.f: "发动机运行在煤上——以及挖煤的人身上."
+ ndp_events.3.a: "提高生产力——从劳动力中提取出最大产出"
+ ndp_events.3.b: "投资于工人——改善条件意味着稳定而持续增长"
+
+ ndp_events.4.t: "工业十年"
+ ndp_events.4.d: "十年产业发展完成. 所建的工厂,所铺设的铁路,所铺设的矿井被扩大——结果真实而明显. [ROOT.GetCountry.GetName] 进入下一个十年时,其生产基础比方案开始时更牢固。 现在的问题是接下来会发生什么。"
+ ndp_events.4.f: "铸造者完成了工作。"
+ ndp_events.4.a: "绘制下一条路线"
+ ten_year_programme_concluded:0 "十年方案已经结束。"
+ # ==========================================
+ # MILITARY PATH EVENTS
+ # ==========================================
+
+ ndp_events.11.t: "理论问题"
+ ndp_events.11.d: "两年来的军事扩张产生了更多的士兵,更多的武器,更多的选择——但理论的根本问题仍未解决. 总参谋部分出. 一个派别要求注重土地权力:大规模军队、防御深度和大陆主导。 另一个观点认为,海军的扩张提供了更大的战略灵活性并能够投放超出[ROOT.GetCountry.GetName]边界的动力。"
+ ndp_events.11.f: "剑或舰队——每一个都意味着对权力的不同看法."
+ ndp_events.11.a: "土地学说——建设任何邻国都无法挑战的军队."
+ ndp_events.11.b: "海军理论——地平线外的项目动力"
+
+ ndp_events.12.t: "采购辩论"
+ ndp_events.12.d: "军队需要现代装备——但装备应该来自何处? 国内武器生产将同军事力量一道建设工业能力,但需要时间和投资才能成熟。 外国采购以财政成本提供更快的结果,并造成对外部供应商的依赖,一些将军对此感到困扰。"
+ ndp_events.12.f: "最好的武器就是能实际出场的武器"
+ ndp_events.12.a: "建设国内军火工业——投资于自给自足"
+ ndp_events.12.b: "购买外国——接受即时能力的费用"
+
+ ndp_events.13.t: "军队的精神"
+ ndp_events.13.d: "进入军事方案八年,硬件已经就位——但仅硬件并不能赢得战争. 现在的问题是部队的战斗精神。 一些军官主张开展民族主义士气运动:呼吁爱国主义和民族荣誉,这将使每个士兵的战斗更加艰难. 其他人则主张投资于军官队伍的专业精神——领导能力、战术和机构知识。"
+ ndp_events.13.f: "一支军队以其装备——和灵魂——作战。"
+ ndp_events.13.a: "发动民族主义士气运动——激发战斗精神."
+ ndp_events.13.b: "使军官队伍专业化——投资于领导能力"
+
+ ndp_events.14.t: "军事扩张十年"
+ ndp_events.14.d: "十年军事发展完成. [ROOT.GetCountry.GetName] 的武装部队比方案开始时规模更大、装备更好、能力更强。 他们如何利用这种能力——以及投资是否值得付出代价——将由随后的决定决定。"
+ ndp_events.14.f: "剑被伪造了 现在它必须找到它的目的。"
+ ndp_events.14.a: "绘制下一条路线"
+
+ # ==========================================
+ # RESOURCE ECONOMY PATH EVENTS
+ # ==========================================
+
+ ndp_events.21.t: "大地的恩赐"
+ ndp_events.21.d: "在资源方案实施两年之后,必须作出基本选择: "x id=0 " 将建立何种资源经济? 农业——为不断增长的人口提供食物并产生出口作物——提供了稳定和广泛的就业。 原材料开采——采矿、伐木和钻井——能提供更快的收入,但波动性更大,使经济面临商品价格波动。"
+ ndp_events.21.f: "地所给所给. 问如何是道."
+ ndp_events.21.a: "农业——建造面包篮"
+ ndp_events.21.b: "采掘——挖掘地下财富."
+
+ ndp_events.22.t: "土地政策"
+ ndp_events.22.d: "五年后,资源方案面临其核心土地问题。 仍有无人拥有或使用不足的领土可以投入生产——但这样做需要投资于基础设施、定居者和法律框架。 替代办法是加强现有土地上的生产,从已经取得的成果中挤出更多的产出。"
+ ndp_events.22.f: "新地或更深根——农民的永恒困境."
+ ndp_events.22.a: "扩大为新地-开放边界"
+ ndp_events.22.b: "增加现有生产——从我们手中获得更多"
+
+ ndp_events.23.t: "导出问题"
+ ndp_events.23.d: "在该方案实施八年之后,资源部门正在产生——但谁受益取决于其走向。 寻求与外国市场签订出口协议将扩大收入,并将 " x id=0 " 纳入全球贸易网络,但会造成对外部需求的依赖。 优先安排国内供应将使该国免受价格冲击,加强粮食安全,但放弃出口利润。"
+ ndp_events.23.f: "供养出世或先供养出国."
+ ndp_events.23.a: "寻求出口市场——将剩余产品卖给国外"
+ ndp_events.23.b: "优先安排国内供应——粮食安全高于利润."
+
+ ndp_events.24.t: "资源开发十年"
+ ndp_events.24.d: "十年资源经济发展完成. [ROOT.GetCountry.GetName] 的农场、矿场和取出地 生产比方案开始时多。 收益是否得到公平分享,开采是否可持续,是下一个十年将回答的问题。"
+ ndp_events.24.f: "土地的收成,土地的记忆."
+ ndp_events.24.a: "绘制下一条路线"
+
+ # ==========================================
+ # SERVICE ECONOMY PATH EVENTS
+ # ==========================================
+
+ ndp_events.31.t: "服务问题"
+ ndp_events.31.d: "在服务方案实施两年之后,必须明确方向。 服务经济的两个愿景是争夺优先事项:金融部门——银行、保险和贸易——迅速产生财富并吸引投资,或教育和官僚机构——学校、大学和国家机构——建立支撑其他一切的人力资本和治理能力。"
+ ndp_events.31.f: "分类账或图书馆——两者都是现代化的基础."
+ ndp_events.31.a: "金融部门——建立银行和贸易公司"
+ ndp_events.31.b: "教育和官僚主义——建设人力资本."
+
+ ndp_events.32.t: "人才问题"
+ ndp_events.32.d: "五年之后,服务经济正在增长——但它需要熟练人员来维持这种增长。 一个选择是吸引外国人才:向国外的工程师,金融家和专业人士敞开大门,接受部分收益会回流到外人. 另一个是大量投资于国内教育——速度较慢,但建立留下来的能力。"
+ ndp_events.32.f: "最好的头脑去他们被重视的地方。"
+ ndp_events.32.a: "吸引外国人才——开门."
+ ndp_events.32.b: "投资国内教育——从内部建设"
+
+ ndp_events.33.t: "体制改革"
+ ndp_events.33.d: "八年来,服务经济需要其机构成熟. 自由化本身有两条道路:减少管制、削减繁文缛节、让市场更自由地运作——或加强体制——投资于法治、财产权和政府本身的可靠性。 两者都能够产生增长,但它们能产生出不同类型的国家."
+ ndp_events.33.f: "游戏规则和玩家一样重要."
+ ndp_events.33.a: "自由化市场——放松管制并退步"
+ ndp_events.33.b: "加强机构——投资于法治"
+
+ ndp_events.34.t: "服务发展十年"
+ ndp_events.34.d: "十年服务经济发展完成. 银行比方案开始时更精密,学校更配备工作人员,政府更有能力。 这是否转化为一种能够证明投资合理的广泛繁荣是一个更长期的问题——下一个十年将开始回答这个问题。"
+ ndp_events.34.f: "心灵的基础设施比其他的都长。"
+ ndp_events.34.a: "绘制下一条路线"
+
+ # ==========================================
+ # MODIFIERS
+ # ==========================================
+
+ ndp_modifier_industrial: "工业发展之路"
+ ndp_modifier_industrial_desc: "国家资源用于工业扩张。 建设率上升,制造业吞吐量全面提高."
+
+ ndp_modifier_military: "军事扩张之路"
+ ndp_modifier_military_desc: "我国正在优先发展军事。 以军事技术为研究重点,武装力量正在逐步壮大."
+
+ ndp_modifier_resource: "资源经济路径"
+ ndp_modifier_resource_desc: "国家资源用于农业和采掘业。 地被作活计."
+
+ ndp_modifier_service: "服务经济路径"
+ ndp_modifier_service_desc: "国家资源用于教育、官僚主义和金融发展。 人力资本是增长的动力。"
+
+ ndp_modifier_industrial_heavy: "重工业焦点"
+ ndp_modifier_industrial_heavy_desc: "投资集中在铁,钢,煤——工业实力的基础."
+
+ ndp_modifier_industrial_light: "轻制造焦点"
+ ndp_modifier_industrial_light_desc: "投资主要集中在纺织和消费品制造业。"
+
+ ndp_modifier_state_heavy_industry: "重工业区"
+ ndp_modifier_state_heavy_industry_desc: "本州被定为重工业重点区."
+
+ ndp_modifier_state_light_industry: "轻工业区"
+ ndp_modifier_state_light_industry_desc: "该州被定为轻制造优先区."
+
+ ndp_modifier_industrial_state_investment: "国家投资驱动力"
+ ndp_modifier_industrial_state_investment_desc: "政府直接资助工业建设."
+
+ ndp_modifier_industrial_state_investment_cost: "工业投资成本"
+ ndp_modifier_industrial_state_investment_desc: "国家对工业的投资使预算紧张。"
+
+ ndp_modifier_industrial_private_investment: "私人投资奖励"
+ ndp_modifier_industrial_private_investment_desc: "对私人资本的奖励正在提高投资池的效率。"
+
+ ndp_modifier_industrial_labour_push: "强化劳动政策"
+ ndp_modifier_industrial_labour_push_desc: "工人正被大力推向前进——生产率上升,但不满情绪也上升了。"
+
+ ndp_modifier_industrial_labour_welfare: "工人福利投资"
+ ndp_modifier_industrial_labour_welfare_desc: "对工人条件的投资正在稳定、稳定地增长。"
+
+ ndp_modifier_military_army: "土地理论"
+ ndp_modifier_military_army_desc: "军事方案的重点是土地权力——大规模军队和大陆主导。"
+
+ ndp_modifier_military_navy: "海军理论"
+ ndp_modifier_military_navy_desc: "军事方案的重点是海军力量和力量投射."
+
+ ndp_modifier_military_domestic_arms: "国内军火工业"
+ ndp_modifier_military_domestic_arms_desc: "对国内武器生产的投资正在带来吞吐量的红利。"
+
+ ndp_modifier_military_foreign_arms: "外国采购"
+ ndp_modifier_military_foreign_arms_desc: "外国装备正在增强军事能力。"
+
+ ndp_modifier_military_foreign_arms_cost: "外国采购费用"
+ ndp_modifier_military_foreign_arms_cost_desc: "购买外国军火很贵."
+
+ ndp_modifier_military_nationalist_morale: "民族主义道德运动"
+ ndp_modifier_military_nationalist_morale_desc: "对国家荣誉的呼吁正在解除武装部队的战斗精神。"
+
+ ndp_modifier_military_professional_officers: "专业干事团"
+ ndp_modifier_military_professional_officers_desc: "对军官培训的投资正在改善战术表现。"
+
+ ndp_modifier_resource_agriculture: "农业重点"
+ ndp_modifier_resource_agriculture_desc: "国家资源集中用于农业发展."
+
+ ndp_modifier_resource_extraction: "采掘焦点"
+ ndp_modifier_resource_extraction_desc: "国家资源主要集中在采矿和原材料开采上。"
+
+ ndp_modifier_state_agriculture: "农业优先区"
+ ndp_modifier_state_agriculture_desc: "本州被定为农业重点区."
+
+ ndp_modifier_state_extraction: "开采优先区"
+ ndp_modifier_state_extraction_desc: "这一州被定为原材料开采优先区."
+
+ ndp_modifier_resource_land_expansion: "扩大土地方案"
+ ndp_modifier_resource_land_expansion_desc: "正在开放新地供定居和生产。"
+
+ ndp_modifier_resource_intensification: "提高产量"
+ ndp_modifier_resource_intensification_desc: "现有的农业和采矿业务正被推向更高的产出。"
+
+ ndp_modifier_resource_export_markets: "出口市场驱动器"
+ ndp_modifier_resource_export_markets_desc: "积极开拓外资市场正在提高贸易路线效率."
+
+ ndp_modifier_resource_domestic_supply: "国内供应优先"
+ ndp_modifier_resource_domestic_supply_desc: "将国内粮食安全置于出口收益之上。"
+
+ ndp_modifier_service_finance: "金融部门发展"
+ ndp_modifier_service_finance_desc: "对银行和金融服务的投资正在推动投资联营。"
+
+ ndp_modifier_service_education: "教育和官僚投资"
+ ndp_modifier_service_education_desc: "学校、大学和政府机构都在扩大。"
+
+ ndp_modifier_service_foreign_talent: "外国人才政策"
+ ndp_modifier_service_foreign_talent_desc: "为有技能的外国工人敞开大门正在加速服务部门的增长。"
+
+ ndp_modifier_service_domestic_talent: "国内教育投资"
+ ndp_modifier_service_domestic_talent_desc: "国内教育投资正在建设长期的人力资本。"
+
+ ndp_modifier_service_liberalize: "市场自由化"
+ ndp_modifier_service_liberalize_desc: "减少管制正在提高投资效率和颁布法律。"
+
+ ndp_modifier_service_institutions: "加强体制"
+ ndp_modifier_service_institutions_desc: "对法治和国家能力的投资正在改善治理和合法性。"
+
+ ndp_modifier_abandoned: "被遗弃的发展方案"
+ ndp_modifier_abandoned_desc: "国家发展方案在完成之前被放弃。 对政府规划的信心受到影响。"
+
+ ndp_foreign_investment_secured: "外国投资"
+ ndp_foreign_investment_secured_desc: "外商投资协议对境外资本开放. 建设加快推进,投资集聚增长."
+
+ ndp_foreign_investment_rejected: "外国投资被拒绝"
+ ndp_foreign_investment_rejected_desc: "国家关闭了对外资本的大门. 经济独立得到了维护——但增长缓慢."

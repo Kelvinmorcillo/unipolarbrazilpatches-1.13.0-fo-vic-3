@@ -1,0 +1,315 @@
+﻿l_english:
+
+ MILITARY_PANEL_TITLE_NUCLEAR:0 "Strategic Warfare"
+ NUCLEAR_WARHEADS_LABEL: "Nuclear Arsenal"
+ NUCLEAR_PROGRAMME_STATUS_LABEL: "Programme Status"
+ NUCLEAR_PLANTS_HEADER: "Nuclear Infrastructure"
+ URANIUM_ENRICHMENT_HEADER: "Uranium Enrichment"
+ NUCLEAR_PRODUCTION_HEADER: "Warhead Production"
+ NUCLEAR_ARSENAL_HEADER: "Arsenal"
+ MILITARY_PANEL_TAB_NUCLEAR_TOOLTIP: "Nuclear Weapons Programme"
+ 
+ NUCLEAR_BEGIN_ENRICHMENT_TOOLTIP: "Launch a uranium enrichment programme. Requires at least #bold 3 nuclear plants#! in your territory and major power status. The programme takes several years to complete and will attract international attention. \n #r Signatories of the #b Non-Proliferation Treaty #! cannot enrich uranium. #!"
+ NUCLEAR_BEGIN_PRODUCTION_TOOLTIP: "Manufacture a nuclear warhead. Requires at least #bold 1 nuclear silo#!. Faster than enrichment. Each completed production run adds one warhead to your arsenal."
+ NUCLEAR_ENRICHMENT_PROGRESS_TOOLTIP: "Uranium enrichment progress. Reaches 100 when enrichment is complete and nuclear capability is achieved."
+ NUCLEAR_PRODUCTION_PROGRESS_TOOLTIP: "Warhead production progress. Reaches 100 when the warhead is complete and added to your arsenal."
+ NUCLEAR_PLANTS_INFO: "Nuclear plants in your country: [GetPlayer.MakeScope.ScriptValue('nuclear_plant_count_sv')|v0] \nRequired to begin enrichment: #bold 3#!"
+ NUCLEAR_WEAPONS:0 "[concept_nuclear_weapon]"
+ NUCLEAR_WEAPONS_TOOLTIP: "Our active [concept_nuclear_weapon|Nuclear Warheads]: #bold [Country.MakeScope.Var('nukes').GetValue|0]#!\n\n#bold Top 5 Nuclear Powers:#!\n[GetPlayer.GetCustom('GetNuclearTop5Display')]"
+ NUCLEAR_TOOLTIP_FULL: "Our active [concept_nuclear_weapon|  Warheads] #bold [Country.MakeScope.Var('nukes').GetValue|0]#!\n\n#bold Top 5 Nuclear Powers:#!\n[GetPlayer.GetCustom('GetNuclearTop5Display')]"
+ nuclear_top_none:0 "#italic No country currently possesses [concept_nuclear_weapon|nuclear weapons].#!"
+ nuclear_top_block_1:0 "1. [GetGlobalVariable('nuclear_top_1').GetCountry.GetName] — #bold [GetGlobalVariable('nuclear_top_1').GetCountry.MakeScope.Var('nukes').GetValue|0]#! warheads"
+ nuclear_top_block_2:0 "1. [GetGlobalVariable('nuclear_top_1').GetCountry.GetName] — #bold [GetGlobalVariable('nuclear_top_1').GetCountry.MakeScope.Var('nukes').GetValue|0]#! warheads\n2. [GetGlobalVariable('nuclear_top_2').GetCountry.GetName] — #bold [GetGlobalVariable('nuclear_top_2').GetCountry.MakeScope.Var('nukes').GetValue|0]#! warheads"
+ nuclear_top_block_3:0 "1. [GetGlobalVariable('nuclear_top_1').GetCountry.GetName] — #bold [GetGlobalVariable('nuclear_top_1').GetCountry.MakeScope.Var('nukes').GetValue|0]#! warheads\n2. [GetGlobalVariable('nuclear_top_2').GetCountry.GetName] — #bold [GetGlobalVariable('nuclear_top_2').GetCountry.MakeScope.Var('nukes').GetValue|0]#! warheads\n3. [GetGlobalVariable('nuclear_top_3').GetCountry.GetName] — #bold [GetGlobalVariable('nuclear_top_3').GetCountry.MakeScope.Var('nukes').GetValue|0]#! warheads"
+ nuclear_top_block_4:0 "1. [GetGlobalVariable('nuclear_top_1').GetCountry.GetName] — #bold [GetGlobalVariable('nuclear_top_1').GetCountry.MakeScope.Var('nukes').GetValue|0]#! warheads\n2. [GetGlobalVariable('nuclear_top_2').GetCountry.GetName] — #bold [GetGlobalVariable('nuclear_top_2').GetCountry.MakeScope.Var('nukes').GetValue|0]#! warheads\n3. [GetGlobalVariable('nuclear_top_3').GetCountry.GetName] — #bold [GetGlobalVariable('nuclear_top_3').GetCountry.MakeScope.Var('nukes').GetValue|0]#! warheads\n4. [GetGlobalVariable('nuclear_top_4').GetCountry.GetName] — #bold [GetGlobalVariable('nuclear_top_4').GetCountry.MakeScope.Var('nukes').GetValue|0]#! warheads"
+ nuclear_top_block_5:0 "1. [GetGlobalVariable('nuclear_top_1').GetCountry.GetName] — #bold [GetGlobalVariable('nuclear_top_1').GetCountry.MakeScope.Var('nukes').GetValue|0]#! warheads\n2. [GetGlobalVariable('nuclear_top_2').GetCountry.GetName] — #bold [GetGlobalVariable('nuclear_top_2').GetCountry.MakeScope.Var('nukes').GetValue|0]#! warheads\n3. [GetGlobalVariable('nuclear_top_3').GetCountry.GetName] — #bold [GetGlobalVariable('nuclear_top_3').GetCountry.MakeScope.Var('nukes').GetValue|0]#! warheads\n4. [GetGlobalVariable('nuclear_top_4').GetCountry.GetName] — #bold [GetGlobalVariable('nuclear_top_4').GetCountry.MakeScope.Var('nukes').GetValue|0]#! warheads\n5. [GetGlobalVariable('nuclear_top_5').GetCountry.GetName] — #bold [GetGlobalVariable('nuclear_top_5').GetCountry.MakeScope.Var('nukes').GetValue|0]#! warheads"
+ 
+ building_nuclear_silo:0 "Nuclear Silo"
+ 
+ # ── JOURNAL ENTRIES ───────────────────────
+ 
+ je_uranium_enrichment: "Uranium Enrichment Programme"
+ je_uranium_enrichment_reason: "[ROOT.GetCountry.GetName] has initiated a uranium enrichment programme. Centrifuges are running. Scientists are working. And the world, if it finds out, will want answers.\n\nThe programme advances each month. Additional nuclear plants accelerate progress. War disrupts it. At completion, [ROOT.GetCountry.GetName] will possess nuclear capability — the ability to produce weapons-grade material."
+ 
+ je_enrichment_early_tt: "The programme is in its early stages. Centrifuge cascades are being tested. It will be years before enrichment is complete."
+ je_enrichment_mid_tt: "#bold Enrichment is progressing.#! The cascades are running at capacity. The scientific team is on track."
+ je_enrichment_late_tt: "@warning! #bold Enrichment is approaching completion.#! Weapons-grade uranium is nearly ready."
+ 
+ nuclear_enrichment_progress_bar: "Enrichment Progress"
+ nuclear_enrichment_progress_bar_desc: "Enrichment Progress"
+ nuclear_enrichment_progress_bar_tt: "Monthly enrichment progress"
+ 
+ je_nuclear_production: "Nuclear Warhead Production"
+ je_nuclear_production_reason: "[ROOT.GetCountry.GetName] is manufacturing its first nuclear warhead. The fissile material is ready. The engineering team is assembling the device. Production is faster than enrichment — the hard work is already done."
+ 
+ je_production_early_tt: "The warhead is in early assembly. The engineering team is on schedule."
+ je_production_late_tt: "#bold Production is nearly complete.#! Final assembly and arming checks are underway."
+ 
+ nuclear_production_progress_bar: "Production Progress"
+ nuclear_production_progress_bar_desc: "Production Progress"
+ nuclear_production_progress_bar_tt: "Monthly production progress"
+ 
+ # ── EVENTS ───────────────────────────────
+ 
+ nuclear_events.1.t: "Uranium Enrichment Complete"
+ nuclear_events.1.d: "[ROOT.GetCountry.GetName] has successfully enriched uranium to weapons-grade purity. The programme, conducted over several years in facilities built for the purpose, has achieved its technical objective.\n\nThe country now possesses the scientific and industrial capability to produce nuclear weapons. Whether to proceed with production is a separate decision — but the threshold has been crossed. [ROOT.GetCountry.GetName] is a nuclear-threshold state."
+ nuclear_events.1.f: "The hard part is done."
+ nuclear_events.1.a: "Begin preparing for warhead production"
+ 
+ nuclear_events.2.t: "Intelligence Services: The Programme Has Been Exposed"
+ nuclear_events.2.d: "Foreign intelligence agencies — drawing on satellite imagery, defector reports, and signals intelligence — have concluded with high confidence that [ROOT.GetCountry.GetName] is operating a clandestine nuclear weapons programme.\n\nThe findings are circulating among allied governments. The Security Council has been briefed informally. [ROOT.GetCountry.GetName] can deny, explain, or own it. Each path has consequences."
+ nuclear_events.2.f: "Nothing stays secret forever."
+ nuclear_events.2.a: "Deny — the facilities are purely civilian energy infrastructure"
+ nuclear_events.2.b: "Acknowledge — [ROOT.GetCountry.GetName] has the right to a deterrent"
+ 
+ nuclear_events.3.t: "First Warhead Produced"
+ nuclear_events.3.d: "[ROOT.GetCountry.GetName] has produced its first nuclear warhead. The device is assembled, tested, and stored. The decision of where to deploy it — and under what doctrine — will come later.\n\nFor now: [ROOT.GetCountry.GetName] has entered the nuclear club. The world is a different place than it was this morning."
+ nuclear_events.3.f: "A warhead is a kind of argument. The most consequential kind."
+ nuclear_events.3.a: "The deterrent is established"
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ nuclear_capable_modifier: "Nuclear Threshold State"
+ nuclear_capable_modifier_desc: "[ROOT.GetCountry.GetName] has achieved nuclear capability — the ability to produce weapons-grade fissile material. Prestige and diplomatic standing are enhanced. Production of warheads may now begin."
+ 
+ nuclear_programme_denied: "Programme Denied"
+ nuclear_programme_denied_desc: "[ROOT.GetCountry.GetName] has officially denied operating a nuclear programme. The denial is not universally believed. Infamy generation is increased."
+ 
+ nuclear_programme_acknowledged: "Programme Acknowledged"
+ nuclear_programme_acknowledged_desc: "[ROOT.GetCountry.GetName] has acknowledged its nuclear programme, claiming the right to a deterrent. Relations with major powers have suffered significantly."
+ 
+ nuclear_warhead_produced_modifier: "Nuclear Power"
+ nuclear_warhead_produced_modifier_desc: "[ROOT.GetCountry.GetName] has produced its first nuclear warhead. The country's strategic deterrent is now real."
+ 
+ NUCLEAR_TARGETING_HEADER: "Nuclear Targeting"
+ 
+ NUCLEAR_DEPLOY_10_TOOLTIP: "Deploy 10% of your nuclear arsenal. The smallest practical strike — surgical and limited in scope."
+ NUCLEAR_DEPLOY_25_TOOLTIP: "Deploy 25% of your arsenal. A limited nuclear exchange."
+ NUCLEAR_DEPLOY_50_TOOLTIP: "Deploy half your arsenal. A major nuclear strike."
+ NUCLEAR_DEPLOY_75_TOOLTIP: "Deploy 75% of your arsenal. A devastating first strike."
+ NUCLEAR_DEPLOY_100_TOOLTIP: "Deploy your entire arsenal. Total nuclear war."
+ 
+ NUCLEAR_ADD_TARGET_TOOLTIP: "Add this state to the nuclear target list."
+ NUCLEAR_REMOVE_TARGET_TOOLTIP: "Remove this state from the nuclear target list."
+ NUCLEAR_CLEAR_TARGETLIST_TOOLTIP: "Clear all targeted states."
+ NUCLEAR_CASUALTIES_TOOLTIP: "Estimated civilian deaths across all targeted states, based on warheads deployed and state population. Actual casualties will vary."
+ 
+ NUCLEAR_FIRE_BUTTON_TOOLTIP: "Launch a nuclear strike against all targeted states. Requires at least one target, at least one warhead, and an active war. You will be asked to confirm before the strike is executed."
+ 
+ NUCLEAR_STATE_TARGETED_TOOLTIP: "This state is currently on the nuclear target list."
+ 
+ # ── EVENTS ───────────────────────────────
+ 
+ nuclear_events.4.t: "Launch Nuclear Strike?"
+ nuclear_events.4.d: "The targeting solution is locked. [GetPlayer.MakeScope.ScriptValue('nuclear_warheads_to_use_sv')|v0] warhead(s) have been assigned to [GetPlayer.MakeScope.ScriptValue('nuclear_target_count_sv')|v0] state(s).\n\nEstimated civilian casualties: #R ~[GetPlayer.MakeScope.ScriptValue('nuclear_estimated_total_casualties_sv')|vD]#!\n\nThis action is irreversible. The warheads will be expended. The states will be destroyed. The world will know who did this.\n\nDo you wish to proceed?"
+ nuclear_events.4.f: "There is no taking it back."
+ nuclear_events.4.a: "#R Confirm — launch the strike#!"
+ nuclear_events.4.b: "Abort — stand down"
+ 
+ nuclear_events.5.t: "Nuclear Attack"
+ nuclear_events.5.d: "[ROOT.GetCountry.GetName] has been struck by nuclear weapons.\n\nMultiple warheads have detonated across [ROOT.GetCountry.GetAdjective] territory. Cities are burning. Communications have collapsed in the affected regions. The scale of casualties is not yet known — early estimates suggest the death toll is catastrophic.\n\nThe attack was carried out without warning. There was no declaration. No ultimatum. There was nothing."
+ nuclear_events.5.f: "There is nothing left to say."
+ nuclear_events.5.a: "Begin emergency response"
+ 
+ 
+ # ── EVENT 6: IAEA REQUEST ─────────────────
+ 
+ nuclear_events.6.t: "IAEA Requests Inspection Access"
+ nuclear_events.6.d: "The International Atomic Energy Agency has formally requested access to [ROOT.GetCountry.GetAdjective] nuclear facilities. The request follows intelligence reports — now widely circulated among member states — suggesting the existence of a weapons-grade enrichment programme.\n\nThe IAEA's position is unambiguous: [ROOT.GetCountry.GetName] is a signatory to non-proliferation commitments. Refusing inspection access would constitute a material breach. Allowing it would require opening the facilities to international monitoring — and almost certainly ending the weapons programme.\n\nThe inspectors are waiting for an answer."
+ nuclear_events.6.f: "The inspectors are polite. The request is not."
+ nuclear_events.6.a: "Grant access — allow the IAEA to inspect our facilities"
+ nuclear_events.6.b: "Refuse — [ROOT.GetCountry.GetName] will not submit to foreign inspection"
+ 
+ # ── EVENT 7: UN ULTIMATUM (via IAEA refusal) ──
+ 
+ nuclear_events.7.t: "UN Security Council: Cease Enrichment"
+ nuclear_events.7.d: "The UN Security Council has passed a resolution demanding that [ROOT.GetCountry.GetName] immediately halt its uranium enrichment programme and submit to IAEA verification.\n\nThe vote was not close. The resolution demands full cessation within thirty days and threatens coordinated sanctions if [ROOT.GetCountry.GetName] refuses to comply.\n\nThis is not a request. It is an ultimatum."
+ nuclear_events.7.f: "The Security Council has spoken. What [ROOT.GetCountry.GetName] does now will define its place in the world."
+ nuclear_events.7.a: "Comply — halt enrichment and submit to monitoring"
+ nuclear_events.7.b: "Refuse — [ROOT.GetCountry.GetName] will continue regardless of consequences"
+ 
+ # ── EVENT 8: UN ULTIMATUM (via acknowledgement) ──
+ 
+ nuclear_events.8.t: "UN Security Council: Disarm or Face Consequences"
+ nuclear_events.8.d: "Having acknowledged its nuclear weapons programme, [ROOT.GetCountry.GetName] has left the Security Council with no ambiguity to work with. A resolution has passed demanding immediate cessation of enrichment activity and the dismantlement of weapons-related infrastructure.\n\nThe resolution was passed under Chapter VII — meaning military enforcement has not been ruled out. [ROOT.GetCountry.GetName] has thirty days to comply."
+ nuclear_events.8.f: "Honesty was not rewarded. The ultimatum is the same either way."
+ nuclear_events.8.a: "Comply — halt the programme and submit to verification"
+ nuclear_events.8.b: "Refuse — [ROOT.GetCountry.GetName] will not disarm under pressure"
+ 
+ # ── EVENT 9: GREAT POWER RESPONSE ─────────
+ 
+ nuclear_events.9.t: "Response to [SCOPE.sCountry('nuclear_state').GetName]'s Nuclear Defiance"
+ nuclear_events.9.d: "[SCOPE.sCountry('nuclear_state').GetName] has refused the UN Security Council's ultimatum and continues to enrich uranium toward weapons-grade purity. The sanctions regime is in place.\n\n[ROOT.GetCountry.GetName]'s position must now be made clear. A country in our strategic sphere is developing nuclear weapons in defiance of the international order we helped construct. The question is how forcefully we respond."
+ nuclear_events.9.f: "Words have been tried. This is the moment to decide what comes next."
+ nuclear_events.9.a: "Intervene — launch a diplomatic play to force disarmament"
+ nuclear_events.9.b: "Threaten — make clear the consequences without committing forces"
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ nuclear_iaea_cooperation: "IAEA Cooperation Agreement"
+ nuclear_iaea_cooperation_desc: "[ROOT.GetCountry.GetName] has opened its nuclear facilities to IAEA monitoring. In exchange for verifiable civilian use, international support for nuclear energy infrastructure has been extended."
+ 
+ nuclear_iaea_defiance: "IAEA Access Refused"
+ nuclear_iaea_defiance_desc: "[ROOT.GetCountry.GetName] has refused international inspection of its nuclear facilities. Diplomatic standing has deteriorated significantly."
+ 
+ nuclear_un_compliance: "UN Disarmament Compliance"
+ nuclear_un_compliance_desc: "[ROOT.GetCountry.GetName] has accepted the UN ultimatum and halted its nuclear programme. The decision was politically costly at home."
+ 
+ nuclear_un_sanctions: "UN Nuclear Sanctions"
+ nuclear_un_sanctions_desc: "The UN Security Council has imposed sanctions in response to [ROOT.GetCountry.GetName]'s refusal to halt its nuclear programme. Trade is disrupted and diplomatic isolation is deepening."
+ 
+ nuclear_military_ultimatum: "Military Ultimatum Issued"
+ nuclear_military_ultimatum_desc: "A great power has launched a formal diplomatic play demanding [ROOT.GetCountry.GetName] disarm its nuclear programme. Military action remains a possibility."
+ 
+ nuclear_great_power_pressure: "Great Power Diplomatic Pressure"
+ nuclear_great_power_pressure_desc: "One or more great powers have issued formal warnings over [ROOT.GetCountry.GetName]'s nuclear programme. Prestige and legitimacy are suffering."
+ 
+ nuclear_non_proliferation_war: "Non-Proliferation Intervention"
+ nuclear_non_proliferation_desc: "[ROOT.GetCountry.GetName] has launched a diplomatic intervention to prevent nuclear proliferation. The action has been broadly welcomed by the international community."
+ 
+ nuclear_non_intervention_caution: "Chose Caution Over Intervention"
+ nuclear_non_intervention_caution_desc: "[ROOT.GetCountry.GetName] declined to intervene militarily against a nuclear-armed state, choosing diplomatic pressure instead. Some allies have questioned the resolve."
+ 
+ # ── DIPLOMATIC PLAY LOC ──────────────────
+ nuclear_non_proliferation_play: "Nuclear Disarmament Ultimatum"
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ nuclear_strike_aftermath: "Nuclear Strike Aftermath"
+ nuclear_strike_aftermath_desc: "This state has been struck by nuclear weapons. Infrastructure is devastated, the population is in collapse, and radiation is contaminating the land."
+ 
+ nuclear_strike_launched_modifier: "Nuclear Pariah"
+ nuclear_strike_launched_modifier_desc: "[ROOT.GetCountry.GetName] has used nuclear weapons in anger. The international community has reacted with horror. Diplomatic standing and prestige have suffered severely."
+ 
+ nuclear_strike_victim_modifier: "Nuclear Victim"
+ nuclear_strike_victim_modifier_desc: "[ROOT.GetCountry.GetName] has suffered a nuclear attack. The national trauma is profound and long-lasting. Recovery will take a generation."
+ 
+ nuclear_disarmament: "Seize WMDs"
+ nuclear_disarmament_desc: "Demand that the target nation completely dismantle its nuclear weapons programme and surrender its existing arsenal. If enforced, all enrichment capability, warhead stockpiles, and programme variables will be stripped — the country must begin from scratch."
+ 
+ # ── EVENT ────────────────────────────────
+ 
+ nuclear_events.10.t: "The Programme Is Gone"
+ nuclear_events.10.d: "The terms of the peace have been carried out. International inspectors have entered [ROOT.GetCountry.GetAdjective] facilities, dismantled the centrifuge cascades, removed the stockpile, and sealed the silos.\n\nYears of scientific work, political risk, and national investment have been erased in weeks. The programme does not exist. The knowledge remains — but the infrastructure, the material, and the legal standing to pursue it are gone.\n\n[ROOT.GetCountry.GetName] may begin again, if it chooses. That will be a different decision, made in different circumstances."
+ nuclear_events.10.f: "It can be rebuilt. It will not be forgotten."
+ nuclear_events.10.a: "Acknowledge the terms"
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ nuclear_disarmament_enforced: "Forced Disarmament"
+ nuclear_disarmament_enforced_desc: "[ROOT.GetCountry.GetName]'s nuclear programme has been forcibly dismantled following military defeat. The political and scientific consequences are severe. Public anger is intense."
+ 
+ nuclear_disarmament_enforcer: "Non-Proliferation Victory"
+ nuclear_disarmament_enforcer_desc: "[ROOT.GetCountry.GetName] successfully enforced nuclear disarmament on a proliferating state. International prestige and diplomatic standing are significantly enhanced."
+ 
+  # ── TREATY ARTICLE ───────────────────────
+ 
+ host_military_bases: "Host Military Bases"
+ host_military_bases_desc: "Permits [scope:source_country.GetName] to station military forces and equipment within [scope:target_country.GetAdjective] territory. Extends [scope:source_country.GetAdjective] conventional missile range to states bordering the host country."
+ 
+ military_base_host_modifier: "Hosting Foreign Military Bases"
+ military_base_host_modifier_desc: "Foreign military forces are stationed in the country's territory under a basing agreement. Some domestic tensions arise from the foreign military presence."
+ 
+ military_base_projector_modifier: "Military Bases Abroad"
+ military_base_projector_modifier_desc: "This country has military forces stationed in allied territory, extending its strategic reach."
+ 
+ # ── ICBM ─────────────────────────────────
+ 
+ je_icbm_programme: "ICBM Development Programme"
+ je_icbm_programme_reason: "[ROOT.GetCountry.GetName] has achieved nuclear capability. The next frontier is delivery: intercontinental ballistic missiles capable of reaching any point on the globe without warning. The programme is long — years of rocketry research, guidance system development, and range testing — but the strategic payoff is absolute. An ICBM-capable state cannot be deterred by geography."
+ 
+ je_icbm_early_tt: "The ICBM programme is in early development. Guidance systems are being tested. It will be years before a viable intercontinental delivery vehicle exists."
+ je_icbm_late_tt: "#bold ICBM development is approaching completion.#! Final range and accuracy tests are underway."
+ 
+ icbm_progress_bar: "ICBM Development"
+ icbm_progress_bar_desc: "Progress toward an intercontinental ballistic missile delivery capability. At 100%, nuclear weapons can be targeted globally regardless of proximity."
+ icbm_progress_bar_tt: "Monthly ICBM development progress"
+ 
+ icbm_capable_modifier: "ICBM Capable"
+ icbm_capable_modifier_desc: "[ROOT.GetCountry.GetName] has developed intercontinental ballistic missiles. Nuclear weapons can now be targeted at any state in the world, regardless of range."
+ 
+ nuclear_events.11.t: "ICBM Programme Complete"
+ nuclear_events.11.d: "[ROOT.GetCountry.GetName] has successfully tested an intercontinental ballistic missile. The device flew its full range, demonstrated terminal guidance accuracy within acceptable parameters, and splashed down in the designated zone.\n\nThe strategic implications are immediate. [ROOT.GetCountry.GetName]'s nuclear deterrent is no longer constrained by geography. Any state on the planet is now, in principle, a potential target.\n\nThe international community will have noted the test. It always does."
+ nuclear_events.11.f: "There is nowhere left to be out of range."
+ nuclear_events.11.a: "The deterrent is now truly global"
+ 
+ # ── CONVENTIONAL MISSILES ─────────────────
+ 
+ CONV_MISSILES_HEADER: "Conventional Missiles"
+ CONV_TARGET_AIRPORT_TOOLTIP: "Target airports in selected states. Each missile has a 3% chance of destroying the airport building."
+ CONV_TARGET_BARRACKS_TOOLTIP: "Target barracks. Each missile has a 3% chance of destroying barracks in each targeted state."
+ CONV_TARGET_NAVAL_TOOLTIP: "Target naval bases. Each missile has a 3% chance of destroying naval infrastructure."
+ CONV_TARGET_NUCLEAR_PLANT_TOOLTIP: "Target nuclear power plants. Each missile has a 3% chance of destroying the facility."
+ CONV_TARGET_SILO_TOOLTIP: "Target nuclear silos. Each missile has a 3% chance of destroying the silo."
+ CONV_TARGET_GOVERNMENT_TOOLTIP: "Target government administration buildings. Each missile has a 3% chance of destroying them."
+ CONV_TARGET_RAILWAY_TOOLTIP: "Target railway infrastructure. Each missile has a 3% chance of destroying the railway."
+ CONV_ADD_TARGET_TOOLTIP: "Add this state to the conventional missile strike list."
+ CONV_REMOVE_TARGET_TOOLTIP: "Remove this state from the conventional missile strike list."
+ CONV_FIRE_TOOLTIP: "Launch a conventional missile strike against all targeted states. Consumes one missile per targeted state. 60 day cooldown applies."
+ 
+ # ── STRATEGIC BOMBING ─────────────────────
+ 
+ STRAT_BOMBING_HEADER: "Strategic Bombing"
+ BOMBING_ADD_TARGET_TOOLTIP: "Add this state to the bombing list for the next run."
+ BOMBING_REMOVE_TARGET_TOOLTIP: "Remove this state from the bombing list."
+ BOMBING_EXECUTE_TOOLTIP: "Execute a strategic bombing run against all targeted states. Devastation is added based on the number of qualifying air formations. 30 day cooldown applies."
+ 
+ NUCLEAR_ICBM_PROGRESS_TOOLTIP: "ICBM development progress. At 100%, nuclear weapons can target any state globally."
+ NUCLEAR_ICBM_TOOLTIP: "Begin development of intercontinental ballistic missiles. Requires nuclear capability. Takes several years. Once complete, nuclear weapons can target any state in the world — not just neighbouring ones."
+ 
+ CONV_PRODUCE_MISSILES_TOOLTIP: "Manufacture a salvo of 5 conventional missiles. Small ongoing production cost. Missiles are consumed on firing — one per targeted state."
+ 
+ missile_production_cost:0 "Missile Production"
+ state_buy_orders_missiles_add:0 "Missile Consumption"
+ 
+ CONV_DEPLOY_10_TOOLTIP: "Fire 10% of your missile stockpile against targeted states."
+ CONV_DEPLOY_25_TOOLTIP: "Fire 25% of your missile stockpile against targeted states."
+ CONV_DEPLOY_50_TOOLTIP: "Fire 50% of your missile stockpile against targeted states."
+ CONV_DEPLOY_75_TOOLTIP: "Fire 75% of your missile stockpile against targeted states."
+ CONV_DEPLOY_100_TOOLTIP: "Fire your entire missile stockpile against targeted states."
+ 
+ CONV_BUILDING_CHANCE_TOOLTIP: "Each missile fired rolls a 3% chance to destroy one of the following buildings in its targeted state, if present:\n\n• Airport\n• Barracks\n• Naval Base\n• Nuclear Power Plant\n• Nuclear Silo\n• Government Administration\n• Railway\n\nAll building types are rolled independently. A single missile salvo may destroy multiple buildings in the same state if it is large enough."
+ 
+ nuclear_events.12.t: "Missile Strike on [ROOT.GetName]"
+ nuclear_events.12.d: "[SCOPE.sCountry('missile_attacker').GetName] has launched a conventional missile strike against [ROOT.GetAdjective] territory. Reports are coming in of impacts across [ROOT.GetAdjective] states — infrastructure damage is being assessed.\n\nThe missiles were not nuclear, but the message is clear. [SCOPE.sCountry('missile_attacker').GetName] is willing to use long-range weapons against us."
+ nuclear_events.12.f: "The craters are already there. The question is what we do next."
+ nuclear_events.12.a: "Assess the damage and respond accordingly"
+
+ missile_strike_victim_modifier: "Conventional Missile Strike"
+ missile_strike_victim_modifier_desc: "Our territory has been targeted by a conventional missile strike. Infrastructure damage and public anxiety are elevated."
+
+ # ── EVENT 13: RETALIATION CHOICE ───────────
+
+ nuclear_events.13.t: "Nuclear Retaliation — Decision Required"
+ nuclear_events.13.d: "[SCOPE.sCountry('nuclear_attacker').GetName] has launched nuclear weapons against [ROOT.GetName]. Our warheads are armed. The launch codes are ready.\n\nA retaliatory strike against [SCOPE.sCountry('nuclear_attacker').GetAdjective] territory would consume 25% of our arsenal and strike all [SCOPE.sCountry('nuclear_attacker').GetAdjective] states. The strike would carry no infamy — the world will understand.\n\nThe alternative is to absorb the attack. There is no dishonour in survival."
+ nuclear_events.13.f: "The order only needs to be given once."
+ nuclear_events.13.a: "Retaliate — launch 25% of the arsenal against [SCOPE.sCountry('nuclear_attacker').GetName]"
+ nuclear_events.13.b: "Stand down — absorb the strike, preserve the arsenal"
+
+ nuclear_first_strike_response: "Nuclear Retaliation (First Strike Response)"
+ nuclear_first_strike_response_desc: "[ROOT.GetName] has launched a nuclear counterstrike in response to an unprovoked nuclear attack on its territory. The international community recognises the right to retaliation — infamy gain is significantly reduced."
+
+ nuclear_absorbed_first_strike: "Nuclear Strike Absorbed"
+ nuclear_absorbed_first_strike_desc: "[ROOT.GetName] endured a nuclear strike without retaliating. The restraint has been noted internationally. Diplomatic standing and prestige are considerably enhanced."
+
+ # ── EVENT 14: RETALIATION NOTIFICATION ─────
+
+ nuclear_events.14.t: "Nuclear Retaliation Inbound"
+ nuclear_events.14.d: "Our nuclear strike has been answered. [ROOT.GetName] has launched a retaliatory strike — warheads are confirmed inbound.\n\nWe initiated the exchange. The consequences are ours to bear."
+ nuclear_events.14.f: "Every strike invites the next one."
+ nuclear_events.14.a: "Brace for impact"
+ 
+  # ── PRODUCTION QUEUE ───────────────────────
+
+ nuclear_queue_add: "Queue Warhead"
+ nuclear_queue_add_desc: "Add a warhead to the production queue. Queued warheads are produced automatically, one after another, as long as a nuclear silo is available.\n\n#bold Currently queued: [GetPlayer.MakeScope.Var('nuclear_production_queue').GetValue|0]#!"
+ nuclear_queue_subtract: "Remove from Queue"
+ nuclear_queue_subtract_desc: "Remove a warhead from the production queue.\n\n#bold Currently queued: [GetPlayer.MakeScope.Var('nuclear_production_queue').GetValue|0]#!"
+ nuclear_queue_count: "Queued: #bold [GetPlayer.MakeScope.Var('nuclear_production_queue').GetValue|0]#!"
+ nuclear_queue_label: "[GetPlayer.MakeScope.Var('nuclear_production_queue').GetValue|0]"
+ # ── MISSILE PRODUCTION QUEUE ───────────────
+
+ missile_queue_add: "Queue Missile Salvo"
+ missile_queue_add_desc: "Add a missile salvo (+5 missiles) to the production queue. Queued salvos are produced automatically, one after another, as each production cycle finishes.\n\n#bold Currently queued: [GetPlayer.MakeScope.Var('missile_production_queue').GetValue|0]#! salvo(s)"
+ missile_queue_subtract: "Remove from Queue"
+ missile_queue_subtract_desc: "Remove a missile salvo from the production queue.\n\n#bold Currently queued: [GetPlayer.MakeScope.Var('missile_production_queue').GetValue|0]#! salvo(s)"

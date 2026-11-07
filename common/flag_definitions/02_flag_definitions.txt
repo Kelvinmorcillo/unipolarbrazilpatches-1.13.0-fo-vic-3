@@ -1,0 +1,391 @@
+﻿# FLAG_DEFINITION_LIST = {		# countries search for a list with the same name as their tag, the DEFAULT list is always included, if no flag definition is applicable for a country then its tag is used a COA_KEY
+# 	includes = ANOTHER_LIST		# includes another list in this list, can be repeated
+# 
+# 	flag_definition = {			# the flag definitions that make up this list, can be repeated
+# 		coa = [list] COA_KEY	# main flag, optional list keyword denotes a coa template
+# 		allow_overlord_canton = yes				# default no
+# 		coa_with_overlord_canton = <[list] coa>	# flag where a canton can be placed, optional list keyword same as above, defaults to coa
+# 		overlord_canton_offset = { x y }		# canton placement offset, default { 0 0 }
+# 		overlord_canton_scale = { x y }			# canton placement scale, default { 0.5 0.5 }
+# 		subject_canton = [list] COA_KEY	# canton applied to subjects by this country, optional list keyword same as above
+# 
+# 		priority = value		# valid flag definition with the highest priority applies
+# 		trigger = {}			# a trigger that determines if this flag definition is valid, see below for scope
+#       allow_revolutionary_indicator = yes      # Default = yes. If yes, a temporary revolutionary indicator will appear while the country is revolutionary
+#       revolutionary_canton = [list] COA_KEY   # Optional. Default = default_revolutionary_canton. Defines which flag should be used as canton while this country is revolutionary
+# 	}
+# }
+
+#            | existing country | releasing a country | country formation |
+# |==========|==================|=====================|===================|
+# |root      | definition       | definition          | definition        |
+# |----------|------------------|---------------------|-------------------|
+# |target    | country          | N/A                 | N/A               |
+# |----------|------------------|---------------------|-------------------|
+# |initiator | N/A              | player              | player            |
+# |----------|------------------|---------------------|-------------------|
+# |actor     | country          | player              | player            |
+# |----------|------------------|---------------------|-------------------|
+# |          | country's        |                     | player's          |
+# |overlord  | direct overlord  | player              | direct overlord   |
+# |          | if it exists     |                     | if it exists      |
+# |----------|------------------|---------------------|-------------------|
+
+# common variables
+@coa_width = 768
+@coa_height = 512
+@canton_scale_cross_x = @[ ( 333 / coa_width ) + 0.001 ]
+@canton_scale_cross_y = @[ ( 205 / coa_height ) + 0.001 ]
+@canton_scale_sweden_x = @[ ( 255 / coa_width ) + 0.001 ]
+@canton_scale_sweden_y = @[ ( 204 / coa_height ) + 0.001 ]
+@canton_scale_norway_x = @[ ( 192 / coa_width ) + 0.001 ]
+@canton_scale_norway_y = @[ ( 192 / coa_height ) + 0.001 ]
+@canton_scale_denmark_x = @[ ( 220 / coa_width ) + 0.001 ]
+@canton_scale_denmark_y = @[ ( 220 / coa_height ) + 0.001 ]
+@third = @[1/3]
+
+
+
+DEFAULT = {
+	flag_definition = {
+		coa = list "anarchy"
+		priority = 500
+		trigger = {
+			coa_def_anarchy_flag_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = list "communist"
+		priority = 1000
+		trigger = {
+			coa_def_communist_flag_trigger = yes
+		}
+	}
+}
+
+REPLACE_OR_CREATE:TNT = { # Transnystria
+	flag_definition = {
+		coa = TNT
+		subject_canton = TNT
+		priority = 1
+	}
+	flag_definition = {
+		coa = TNT_communist
+		priority = 1500
+		trigger = { 
+			coa_def_communist_flag_trigger = yes
+		}
+	}		
+}
+REPLACE_OR_CREATE:ZAP = { # Zapatista
+	flag_definition = {
+		coa = ZAP
+		subject_canton = ZAP
+		priority = 1
+	}
+	flag_definition = {
+		coa = ZAP_anarch
+		priority = 1500
+		trigger = { 
+			coa_def_anarchy_flag_trigger = yes
+		}
+	}		
+}	
+REPLACE_OR_CREATE:FEJ = { # Fejuve
+	flag_definition = {
+		coa = FEJ
+		subject_canton = FEJ
+		priority = 1
+	}
+	flag_definition = {
+		coa = FEJ_anarch
+		priority = 1500
+		trigger = { 
+			coa_def_communist_flag_trigger = yes
+		}
+	}		
+}	
+
+# Fixes 1.9.6
+
+REPLACE_OR_CREATE:ICE = { # iceland
+	flag_definition = {
+		coa = ICE
+		allow_overlord_canton = yes
+		subject_canton = ICE
+		priority = 99
+		trigger = { 
+			always = yes
+		}
+	}
+}
+
+REPLACE_OR_CREATE:NRW = { # norway
+	flag_definition = {
+		coa = NRW
+		allow_overlord_canton = yes
+		subject_canton = NRW
+		priority = 99
+		trigger = { 
+			always = yes
+		}
+	}
+}
+
+REPLACE_OR_CREATE:CZC = { # czechia
+	flag_definition = {
+		coa = CZC
+		allow_overlord_canton = yes
+		subject_canton = CZC
+		priority = 99
+		trigger = { 
+			always = yes
+		}
+	}
+}
+
+REPLACE_OR_CREATE:KYR = { # Kyrgyzstan
+	flag_definition = {
+		coa = KYR
+		allow_overlord_canton = yes
+		subject_canton = KYR
+		priority = 99
+		trigger = { 
+			always = yes
+		}
+	}
+}
+
+REPLACE_OR_CREATE:PHP = { # philippines
+	flag_definition = {
+		coa = PHP
+		allow_overlord_canton = yes
+		subject_canton = PHP
+		priority = 99
+		trigger = { 
+			always = yes
+		}
+	}
+}
+
+REPLACE_OR_CREATE:BOL = { # bolivia
+	flag_definition = {
+		coa = BOL
+		allow_overlord_canton = yes
+		subject_canton = BOL
+		priority = 99
+		trigger = { 
+			always = yes
+		}
+	}
+}
+
+REPLACE_OR_CREATE:XCH = { # chile
+	flag_definition = {
+		coa = XCH
+		allow_overlord_canton = yes
+		subject_canton = XCH
+		priority = 99
+		trigger = { 
+			always = yes
+		}
+	}
+}
+
+REPLACE_OR_CREATE:XAR = { # argentina
+	flag_definition = {
+		coa = XAR
+		allow_overlord_canton = yes
+		subject_canton = XAR
+		priority = 99
+		trigger = { 
+			always = yes
+		}
+	}
+}
+
+REPLACE_OR_CREATE:XEC = { # ecuador
+	flag_definition = {
+		coa = XEC
+		allow_overlord_canton = yes
+		subject_canton = XEC
+		priority = 99
+		trigger = { 
+			always = yes
+		}
+	}
+}
+
+REPLACE_OR_CREATE:DNK = { # Donetsk
+	flag_definition = {
+		coa = DNK
+		subject_canton = DNK
+		coa_with_overlord_canton = DNK_subject			
+		allow_overlord_canton = yes	
+		overlord_canton_offset = { 0.067 0.1 }
+		overlord_canton_scale = { 0.4 0.4 }			
+		priority = 1
+	}		
+}
+
+REPLACE_OR_CREATE:LUH = { # Luhansk
+	flag_definition = {
+		coa = LUH
+		subject_canton = LUH
+		coa_with_overlord_canton = LUH_subject			
+		allow_overlord_canton = yes	
+		overlord_canton_offset = { 0.067 0.1 }
+		overlord_canton_scale = { 0.4 0.4 }			
+		priority = 1
+	}		
+}
+
+REPLACE_OR_CREATE:ANA = { # Afghan Northern Alliance
+	flag_definition = {
+		coa = ANA
+		subject_canton = ANA
+		coa_with_overlord_canton = ANA_subject
+		allow_overlord_canton = yes
+		overlord_canton_offset = { 0.067 0.1 }
+		overlord_canton_scale = { 0.4 0.4 }
+		priority = 1
+	}
+	flag_definition = {
+		coa = ANA_subject_GBR
+		allow_overlord_canton = yes
+		priority = 50
+		trigger = {
+			coa_def_british_ensign_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = ANA_subject_FRA
+		allow_overlord_canton = yes
+		overlord_canton_offset = { 0.067 0.1 }
+		overlord_canton_scale = { 0.39 0.385 }
+		priority = 50
+		trigger = {
+			coa_def_french_ensign_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = ANA_subject_GBR
+		allow_overlord_canton = yes
+		priority = 50
+		trigger = {
+			coa_def_spanish_ensign_trigger = yes
+		}
+	}
+}
+
+REPLACE_OR_CREATE:FSY = { # Free Syria
+	flag_definition = {
+		coa = FSY
+		subject_canton = FSY
+		coa_with_overlord_canton = FSY_subject
+		allow_overlord_canton = yes
+		overlord_canton_offset = { 0.067 0.1 }
+		overlord_canton_scale = { 0.4 0.4 }
+		priority = 1
+	}
+	flag_definition = {
+		coa = FSY_subject_GBR
+		allow_overlord_canton = yes
+		priority = 50
+		trigger = {
+			coa_def_british_ensign_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = FSY_subject_FRA
+		allow_overlord_canton = yes
+		overlord_canton_offset = { 0.067 0.1 }
+		overlord_canton_scale = { 0.39 0.385 }
+		priority = 50
+		trigger = {
+			coa_def_french_ensign_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = FSY_subject_GBR
+		allow_overlord_canton = yes
+		priority = 50
+		trigger = {
+			coa_def_spanish_ensign_trigger = yes
+		}
+	}
+}
+
+REPLACE_OR_CREATE:HTH = { # Houthis
+	flag_definition = {
+		coa = HTH
+		subject_canton = HTH
+		coa_with_overlord_canton = HTH_subject
+		allow_overlord_canton = yes
+		overlord_canton_offset = { 0.067 0.1 }
+		overlord_canton_scale = { 0.4 0.4 }
+		priority = 1
+	}
+	flag_definition = {
+		coa = HTH_subject_GBR
+		allow_overlord_canton = yes
+		priority = 50
+		trigger = {
+			coa_def_british_ensign_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = HTH_subject_FRA
+		allow_overlord_canton = yes
+		overlord_canton_offset = { 0.067 0.1 }
+		overlord_canton_scale = { 0.39 0.385 }
+		priority = 50
+		trigger = {
+			coa_def_french_ensign_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = HTH_subject_GBR
+		allow_overlord_canton = yes
+		priority = 50
+		trigger = {
+			coa_def_spanish_ensign_trigger = yes
+		}
+	}
+}
+
+REPLACE_OR_CREATE:DRK = {
+	flag_definition = {
+		coa = DRK_zaire
+		subject_canton = DRK
+		coa_with_overlord_canton = DRK_subject
+		allow_overlord_canton = yes
+		overlord_canton_offset = { 0.067 0.1 }
+		overlord_canton_scale = { 0.4 0.4 }
+		priority = 1
+	}
+	flag_definition = {
+		coa = DRK
+		subject_canton = DRK
+		coa_with_overlord_canton = DRK_subject
+		allow_overlord_canton = yes
+		overlord_canton_offset = { 0.067 0.1 }
+		overlord_canton_scale = { 0.4 0.4 }
+		priority = 1
+		trigger = {
+			has_variable = changed_name_to_DRK
+		}
+	}
+}
+
+REPLACE_OR_CREATE:HMS = { # Hamas
+	flag_definition = {
+		coa = HMS
+		subject_canton = HMS
+		coa_with_overlord_canton = HMS_subject
+		allow_overlord_canton = yes
+		overlord_canton_offset = { 0.067 0.1 }
+		overlord_canton_scale = { 0.4 0.4 }
+		priority = 1
+	}
+}

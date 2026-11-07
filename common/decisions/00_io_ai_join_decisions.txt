@@ -1,0 +1,431 @@
+
+# These exist because AI countries do not use the scripted GUI buttons.
+# They mirror the IO button flow while adding anti-spam global cooldowns.
+
+#io_ai_request_join_un = {
+#	is_shown = {
+#		is_ai = yes
+#		is_country_type = recognized
+#		NOT = { is_target_in_global_variable_list = { name = io_un_members target = this } }
+#	}
+#
+#	possible = {
+#		is_ai = yes
+#		is_country_type = recognized
+#		NOT = { is_target_in_global_variable_list = { name = io_un_members target = this } }
+#		NOT = { has_variable = io_pending_org }
+#		NOT = { has_variable = io_cooldown_un }
+#		NOT = { has_variable = io_ai_application_cooldown }
+#		NOT = { has_global_variable = io_ai_un_application_global_cooldown }
+#	}
+#
+#	when_taken = {
+#		io_ai_apply_to_un = yes
+#	}
+#
+#	ai_chance = {
+#		base = 2
+#		modifier = {
+#			trigger = { is_country_type = recognized }
+#			add = 5
+#		}
+#	}
+#
+#	cooldown = { days = 365 }
+#}
+
+io_ai_request_join_nato = {
+	is_shown = {
+		is_ai = yes
+		NOT = { is_target_in_global_variable_list = { name = io_nato_members target = this } }
+		OR = {
+			capital = { is_in_geographic_region = geographic_region_europe }
+			capital = { is_in_geographic_region = geographic_region_north_america }
+			c:TRK ?= this
+		}
+	}
+
+	possible = {
+		is_ai = yes
+		NOT = { is_target_in_global_variable_list = { name = io_nato_members target = this } }
+		NOT = { has_variable = io_pending_org }
+		NOT = { has_variable = io_cooldown_nato }
+		NOT = { has_variable = io_ai_application_cooldown }
+		NOT = { has_global_variable = io_ai_nato_application_global_cooldown }
+		NOT = { io_has_authoritarian_government_laws = yes }
+		OR = {
+			capital = { is_in_geographic_region = geographic_region_europe }
+			capital = { is_in_geographic_region = geographic_region_north_america }
+			c:TRK ?= this
+		}
+	}
+
+	when_taken = {
+		io_ai_apply_to_nato = yes
+	}
+
+	ai_chance = {
+		base = 1
+		modifier = {
+			trigger = {
+				OR = {
+					has_attitude = { who = c:USA attitude = attitude_friendly }
+					has_attitude = { who = c:USA attitude = attitude_amicable }
+					has_attitude = { who = c:USA attitude = attitude_cooperative }
+				}
+			}
+			add = 4
+		}
+		modifier = {
+			trigger = { legitimacy > 60 }
+			add = 2
+		}
+	}
+
+	cooldown = { days = 365 }
+}
+
+io_ai_request_join_g7 = {
+	is_shown = {
+		is_ai = yes
+		NOT = { is_target_in_global_variable_list = { name = io_g7_members target = this } }
+		OR = {
+			country_rank = rank_value:great_power
+			country_rank = rank_value:major_power
+		}
+	}
+
+	possible = {
+		is_ai = yes
+		NOT = { is_target_in_global_variable_list = { name = io_g7_members target = this } }
+		NOT = { has_variable = io_pending_org }
+		NOT = { has_variable = io_cooldown_g7 }
+		NOT = { has_variable = io_ai_application_cooldown }
+		NOT = { has_global_variable = io_ai_g7_application_global_cooldown }
+		NOT = { io_has_authoritarian_government_laws = yes }
+		OR = {
+			country_rank = rank_value:great_power
+			country_rank = rank_value:major_power
+		}
+	}
+
+	when_taken = {
+		io_ai_apply_to_g7 = yes
+	}
+
+	ai_chance = {
+		base = 1
+		modifier = {
+			trigger = { prestige > 100 }
+			add = 2
+		}
+		modifier = {
+			trigger = { legitimacy > 60 }
+			add = 2
+		}
+	}
+
+	cooldown = { days = 1095 }
+}
+
+io_ai_request_join_opec = {
+	is_shown = {
+		is_ai = yes
+		NOT = { is_target_in_global_variable_list = { name = io_opec_members target = this } }
+		any_scope_state = { has_building = building_oil_rig }
+	}
+
+	possible = {
+		is_ai = yes
+		NOT = { is_target_in_global_variable_list = { name = io_opec_members target = this } }
+		NOT = { has_variable = io_pending_org }
+		NOT = { has_variable = io_cooldown_opec }
+		NOT = { has_variable = io_ai_application_cooldown }
+		NOT = { has_global_variable = io_ai_opec_application_global_cooldown }
+		any_scope_state = { has_building = building_oil_rig }
+	}
+
+	when_taken = {
+		io_ai_apply_to_opec = yes
+	}
+
+	ai_chance = {
+		base = 2
+		modifier = {
+			trigger = { any_scope_state = { has_building = building_oil_rig } }
+			add = 6
+		}
+	}
+
+	cooldown = { days = 730 }
+}
+
+io_ai_request_join_eec = {
+	is_shown = {
+		is_ai = yes
+		NOT = { has_global_variable = io_eec_dissolved }
+		NOT = { is_target_in_global_variable_list = { name = io_eec_members target = this } }
+		capital = { is_in_geographic_region = geographic_region_europe }
+	}
+
+	possible = {
+		is_ai = yes
+		NOT = { has_global_variable = io_eec_dissolved }
+		NOT = { is_target_in_global_variable_list = { name = io_eec_members target = this } }
+		NOT = { has_variable = io_cooldown_eec }
+		NOT = { has_variable = io_pending_org }
+		NOT = { has_variable = io_eec_membership_process_started }
+		NOT = { has_variable = io_ai_application_cooldown }
+		NOT = { has_global_variable = io_ai_eec_application_global_cooldown }
+		capital = { is_in_geographic_region = geographic_region_europe }
+		is_subject = no
+		NOT = { io_has_authoritarian_government_laws = yes }
+	}
+
+	when_taken = {
+		io_ai_start_eec_accession = yes
+	}
+
+	ai_chance = {
+		base = 2
+		modifier = {
+			trigger = { io_meets_eec_accession_criteria = yes }
+			add = 10
+		}
+		modifier = {
+			trigger = { legitimacy > 60 }
+			add = 2
+		}
+	}
+
+	cooldown = { days = 1095 }
+}
+
+io_ai_request_join_eu = {
+	is_shown = {
+		is_ai = yes
+		has_global_variable = io_eu_formed
+		NOT = { is_target_in_global_variable_list = { name = io_eu_members target = this } }
+		capital = { is_in_geographic_region = geographic_region_europe }
+	}
+
+	possible = {
+		is_ai = yes
+		has_global_variable = io_eu_formed
+		NOT = { is_target_in_global_variable_list = { name = io_eu_members target = this } }
+		NOT = { has_variable = io_cooldown_eu }
+		NOT = { has_variable = io_pending_org }
+		NOT = { has_variable = eu_membership_process_started }
+		NOT = { has_variable = io_ai_application_cooldown }
+		NOT = { has_global_variable = io_ai_eu_application_global_cooldown }
+		capital = { is_in_geographic_region = geographic_region_europe }
+		is_subject = no
+		NOT = { io_has_authoritarian_government_laws = yes }
+	}
+
+	when_taken = {
+		io_ai_start_eu_accession = yes
+	}
+
+	ai_chance = {
+		base = 2
+		modifier = {
+			trigger = { io_meets_eu_accession_criteria = yes }
+			add = 12
+		}
+		modifier = {
+			trigger = { legitimacy > 60 }
+			add = 2
+		}
+	}
+
+	cooldown = { days = 1095 }
+}
+
+io_ai_request_join_arab_league = {
+	is_shown = {
+		is_ai = yes
+		NOT = { is_target_in_global_variable_list = { name = io_arab_league_members target = this } }
+		OR = {
+			capital = { is_in_geographic_region = geographic_region_middle_east }
+			capital = { is_in_geographic_region = geographic_region_africa }
+		}
+	}
+
+	possible = {
+		is_ai = yes
+		NOT = { is_target_in_global_variable_list = { name = io_arab_league_members target = this } }
+		NOT = { has_variable = io_pending_org }
+		NOT = { has_variable = io_cooldown_arab_league }
+		NOT = { has_variable = io_ai_application_cooldown }
+		NOT = { has_global_variable = io_ai_arab_league_application_global_cooldown }
+		OR = {
+			capital = { is_in_geographic_region = geographic_region_middle_east }
+			capital = { is_in_geographic_region = geographic_region_africa }
+		}
+	}
+
+	when_taken = {
+		io_ai_apply_to_arab_league = yes
+	}
+
+	ai_chance = {
+		base = 2
+	}
+
+	cooldown = { days = 730 }
+}
+
+io_ai_request_join_imf = {
+	is_shown = {
+		is_ai = yes
+		is_country_type = recognized
+		NOT = { is_target_in_global_variable_list = { name = io_imf_members target = this } }
+	}
+
+	possible = {
+		is_ai = yes
+		is_country_type = recognized
+		NOT = { is_target_in_global_variable_list = { name = io_imf_members target = this } }
+		NOT = { has_variable = io_pending_org }
+		NOT = { has_variable = io_cooldown_imf }
+		NOT = { has_variable = io_ai_application_cooldown }
+		NOT = { has_global_variable = io_ai_imf_application_global_cooldown }
+	}
+
+	when_taken = {
+		io_ai_apply_to_imf = yes
+	}
+
+	ai_chance = {
+		base = 3
+		modifier = {
+			trigger = { is_country_type = recognized }
+			add = 5
+		}
+	}
+
+	cooldown = { days = 730 }
+}
+
+io_ai_request_join_asean = {
+	is_shown = {
+		is_ai = yes
+		NOT = { is_target_in_global_variable_list = { name = io_asean_members target = this } }
+		capital = { is_in_geographic_region = geographic_region_south_east_asia }
+	}
+
+	possible = {
+		is_ai = yes
+		NOT = { is_target_in_global_variable_list = { name = io_asean_members target = this } }
+		NOT = { has_variable = io_pending_org }
+		NOT = { has_variable = io_cooldown_asean }
+		NOT = { has_variable = io_ai_application_cooldown }
+		NOT = { has_global_variable = io_ai_asean_application_global_cooldown }
+		capital = { is_in_geographic_region = geographic_region_south_east_asia }
+	}
+
+	when_taken = {
+		io_ai_apply_to_asean = yes
+	}
+
+	ai_chance = {
+		base = 3
+	}
+
+	cooldown = { days = 730 }
+}
+
+io_ai_request_join_saarc = {
+	is_shown = {
+		is_ai = yes
+		NOT = { is_target_in_global_variable_list = { name = io_saarc_members target = this } }
+		capital = { is_in_geographic_region = geographic_region_india }
+	}
+
+	possible = {
+		is_ai = yes
+		NOT = { is_target_in_global_variable_list = { name = io_saarc_members target = this } }
+		NOT = { has_variable = io_pending_org }
+		NOT = { has_variable = io_cooldown_saarc }
+		NOT = { has_variable = io_ai_application_cooldown }
+		NOT = { has_global_variable = io_ai_saarc_application_global_cooldown }
+		capital = { is_in_geographic_region = geographic_region_india }
+	}
+
+	when_taken = {
+		io_ai_apply_to_saarc = yes
+	}
+
+	ai_chance = {
+		base = 3
+	}
+
+	cooldown = { days = 730 }
+}
+
+io_ai_request_join_cis = {
+	is_shown = {
+		is_ai = yes
+		NOT = { is_target_in_global_variable_list = { name = io_cis_members target = this } }
+		OR = {
+			capital = { is_in_geographic_region = geographic_region_central_asia }
+			capital = { is_in_geographic_region = geographic_region_europe }
+		}
+	}
+
+	possible = {
+		is_ai = yes
+		NOT = { is_target_in_global_variable_list = { name = io_cis_members target = this } }
+		NOT = { has_variable = io_pending_org }
+		NOT = { has_variable = io_cooldown_cis }
+		NOT = { has_variable = io_ai_application_cooldown }
+		NOT = { has_global_variable = io_ai_cis_application_global_cooldown }
+		OR = {
+			capital = { is_in_geographic_region = geographic_region_central_asia }
+			capital = { is_in_geographic_region = geographic_region_europe }
+		}
+	}
+
+	when_taken = {
+		io_ai_apply_to_cis = yes
+	}
+
+	ai_chance = {
+		base = 3
+	}
+
+	cooldown = { days = 730 }
+}
+
+io_ai_request_join_who = {
+	is_shown = {
+		is_ai = yes
+		is_country_type = recognized
+		NOT = { is_target_in_global_variable_list = { name = io_who_members target = this } }
+	}
+
+	possible = {
+		is_ai = yes
+		is_country_type = recognized
+		NOT = { is_target_in_global_variable_list = { name = io_who_members target = this } }
+		NOT = { has_variable = io_pending_org }
+		NOT = { has_variable = io_cooldown_who }
+		NOT = { has_variable = io_ai_application_cooldown }
+		NOT = { has_global_variable = io_ai_who_application_global_cooldown }
+	}
+
+	when_taken = {
+		io_ai_apply_to_who = yes
+	}
+
+	ai_chance = {
+		base = 3
+		modifier = {
+			trigger = { is_country_type = recognized }
+			add = 5
+		}
+	}
+
+	cooldown = { days = 730 }
+}

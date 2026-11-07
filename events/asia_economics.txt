@@ -1,0 +1,19 @@
+﻿namespace = asia_reform
+
+asia_reform.1 = {
+    type = country_event
+    event_image = { video = "asia_farmers_market" }
+    title = asia_reform.1.t
+    desc = asia_reform.1.d
+    flavor = asia_reform.1.f
+
+    duration = 3
+
+    option = {
+        name = asia_reform.1.a
+        add_modifier = {
+            name = booming_trade_economy
+            months = 24
+        }
+    }
+}

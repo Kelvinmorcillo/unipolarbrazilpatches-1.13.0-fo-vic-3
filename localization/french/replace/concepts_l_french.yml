@@ -1,0 +1,7 @@
+﻿l_french:
+
+# replace folder is the best thing to happen to me since december 11
+ concept_literacy:0 "Taux d'éducation tertiaire"
+ concept_literate:0 "Études supérieures"
+ concept_literacy_desc:2 "Pourcentage ou nombre absolu de personnes d'un établissement d'enseignement supérieur ayant obtenu leur diplôme [concept_pop]. Certaines demandes [Concept('concept_profession', '$concept_professions$')] sont plus élevées que d'autres, ce qui limite la valeur [concept_pop_qualifications] pour $concept_pops$ dans d'autres $concept_professions$ à moins que leur valeur $concept_literacy$ ne soit suffisamment élevée. Vous pouvez investir dans votre [SelectLocalization(GetPlayer.IsValid,'concept_literacy_desc_added','Education')] afin de développer plus de $concept_literacy$ dans votre $concept_population$ au fil du temps.\n\n$concept_pops$ fera face à une pénalité de plus en plus élevée à $concept_pop_growth_birthrate$ proportionnelle à leur $concept_literacy$, jusqu'à ce qui suit :\n[GetStaticModifier('literacy_penalty').GetDesc]#!"
+ concept_literacy_desc_added:0 "[GetInstitutionType('institution_schools').GetName]"

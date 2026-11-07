@@ -1,0 +1,83 @@
+﻿namespace = american_disasters
+
+american_disasters.1 = {
+    type = country_event
+    placement = ROOT
+    title = american_disasters.1.t
+    desc = american_disasters.1.d
+    event_image = { video = "1993stormofthecentury" }
+	duration = 2
+    trigger = {
+		OR = {
+        c:USA ?= this
+		c:CAN ?= this
+		}
+        game_date >= 1993.2.28
+        game_date <= 1993.3.31
+        NOT = { has_variable = storm_of_the_century_happened }
+    }
+
+    immediate = { }
+
+    option = {
+        name = american_disasters.1.a
+        set_variable = storm_of_the_century_happened
+        add_modifier = {
+            name = storm_of_the_century
+            months = 3
+        }
+    }
+}
+
+american_disasters.2 = {
+    type = country_event
+    placement = s:STATE_MISSOURI.region_state:USA
+    title = american_disasters.2.t
+    desc = american_disasters.2.d
+    event_image = { video = "greatfloodof1993" }
+	duration = 2
+	
+    trigger = {
+        c:USA ?= this
+        game_date >= 1993.6.1
+        game_date <= 1993.8.31
+        NOT = { has_variable = great_flood_1993_happened }
+    }
+
+    immediate = { set_variable = great_flood_1993_happened }
+
+    option = {
+        name = american_disasters.2.a
+        
+		s:STATE_MISSOURI.region_state:USA = {
+		add_modifier = {
+				name = great_flood_of_1993
+				months = 4
+			}
+		}
+		s:STATE_IOWA.region_state:USA = {
+        add_modifier = {
+                name = great_flood_of_1993
+                months = 4
+            }
+		}
+		s:STATE_ILLINOIS.region_state:USA = {
+            add_modifier = {
+                name = great_flood_of_1993
+                months = 4
+            }
+		}
+		s:STATE_KANSAS.region_state:USA = {
+            add_modifier = {
+                name = great_flood_of_1993
+                months = 4
+            }
+		}
+		s:STATE_MINNESOTA.region_state:USA = {
+            add_modifier = {
+                name = great_flood_of_1993
+                months = 4
+            }
+		}
+	}
+}

@@ -1,0 +1,301 @@
+# Expanded Collapse of Yugoslavia
+
+namespace = yugoslav_collapse
+
+# Begins / crisis cabinet
+yugoslav_collapse.1 = {
+	type = country_event
+	title = yugoslav_collapse.1.t
+	desc = yugoslav_collapse.1.d
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	placement = ROOT
+	event_image = { video = "europenorthamerica_before_the_battle" }
+	duration = 2
+
+	trigger = {
+		c:YUG ?= this
+		has_journal_entry = je_collapse_of_yugoslavia
+		NOT = { has_variable = yugoslav_collapse_started }
+	}
+
+	immediate = {
+		save_scope_as = yugoslav_collapse_root
+		set_variable = yugoslav_collapse_started
+	}
+
+	option = {
+		name = yugoslav_collapse.1.a
+		default_option = yes
+		custom_tooltip = begin_disintegration_tt
+		yugo_increase_pressure_small = yes
+		trigger_event = { id = yugoslav_collapse.2 days = 5 }
+		trigger_event = { id = yugoslav_collapse.3 days = 10 }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = yugoslav_collapse.1.b
+		custom_tooltip = yugoslav_confederal_offer_tt
+		yugo_reduce_pressure_large = yes
+		add_modifier = { name = yugoslav_confederal_negotiations days = 730 }
+		trigger_event = { id = yugoslav_collapse.10 days = 30 }
+		ai_chance = { base = 0 }
+	}
+
+	option = {
+		name = yugoslav_collapse.1.c
+		custom_tooltip = yugoslav_federal_crackdown_tt
+		yugo_increase_pressure_large = yes
+		add_radicals = { value = 0.05 culture = culture:south_slavic }
+		trigger_event = { id = yugoslav_collapse.2 days = 5 }
+		trigger_event = { id = yugoslav_collapse.3 days = 10 }
+		ai_chance = { base = 0 }
+	}
+}
+
+# Croatia breaks
+yugoslav_collapse.2 = {
+	type = country_event
+	title = yugoslav_collapse.2.t
+	desc = yugoslav_collapse.2.d
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	placement = ROOT
+	event_image = { video = "yugoslav_war" }
+	duration = 2
+
+	trigger = {
+		c:YUG ?= this
+		NOT = { has_variable = croatia_crisis_resolved }
+	}
+
+	option = {
+		name = yugoslav_collapse.2.a
+		default_option = yes
+		custom_tooltip = croatia_breaks_tt
+		s:STATE_BOSNIA = { add_claim = c:YUG }
+		s:STATE_SLAVONIA = { add_claim = c:YUG }
+		s:STATE_VLASENICA = { add_claim = c:YUG }
+		s:STATE_LIVNO = { add_claim = c:YUG }
+		s:STATE_BANJA_LUKA = { add_claim = c:YUG }
+		yugo_launch_croatian_war = yes
+		set_variable = yugoslavia_has_collapsed
+		set_variable = croatia_crisis_resolved
+		trigger_event = { id = yugoslav_collapse.4 days = 10 }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = yugoslav_collapse.2.b
+		custom_tooltip = recognize_croatia_tt
+		set_variable = croatia_crisis_resolved
+		yugo_reduce_pressure_small = yes
+		if = { limit = { exists = c:HRV } c:HRV = { add_modifier = { name = peaceful_independence_recognized days = 1095 } } }
+		ai_chance = { base = 0 }
+	}
+}
+
+# Bosnia and entities
+yugoslav_collapse.3 = {
+	type = country_event
+	title = yugoslav_collapse.3.t
+	desc = yugoslav_collapse.3.d
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	placement = ROOT
+	event_image = { video = "yugoslav_war" }
+	duration = 2
+
+	trigger = {
+		c:YUG ?= this
+		NOT = { has_variable = bosnia_crisis_resolved }
+	}
+
+	option = {
+		name = yugoslav_collapse.3.a
+		default_option = yes
+		custom_tooltip = bosnia_slovenia_breaks_tt
+		yugo_create_bosnian_entities = yes
+		yugo_launch_bosnian_war = yes
+		yugo_create_armies_for_new_countries = yes
+		set_variable = yugoslavia_has_collapsed
+		set_variable = bosnia_crisis_resolved
+		trigger_event = { id = yugoslav_collapse.4 days = 10 }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = yugoslav_collapse.3.b
+		custom_tooltip = recognize_bosnia_tt
+		yugo_create_bosnian_entities = yes
+		set_variable = bosnia_crisis_resolved
+		yugo_reduce_pressure_small = yes
+		if = { limit = { exists = c:BOS } c:BOS = { add_modifier = { name = peaceful_independence_recognized days = 1095 } } }
+		ai_chance = { base = 0 }
+	}
+}
+
+# International response
+yugoslav_collapse.4 = {
+	type = country_event
+	title = yugoslav_collapse.4.t
+	desc = yugoslav_collapse.4.d
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	placement = ROOT
+	event_image = { video = "unspecific_politicians_arguing" }
+	duration = 2
+
+	trigger = {
+		c:YUG ?= this
+		has_variable = yugoslavia_has_collapsed
+		NOT = { has_variable = international_response_happened }
+	}
+
+	immediate = { set_variable = international_response_happened }
+
+	option = {
+		name = yugoslav_collapse.4.a
+		default_option = yes
+		custom_tooltip = peacekeeping_mission_tt
+		change_variable = { name = yugo_international_pressure add = 20 }
+		add_modifier = { name = peacekeeping_force_present days = 1095 }
+		if = { limit = { exists = c:SRP } c:SRP = { trigger_event = { id = srpskas.1 days = 1 } } }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = yugoslav_collapse.4.b
+		custom_tooltip = intervention_declined_tt
+		add_radicals = { value = 0.03 culture = culture:south_slavic }
+		if = { limit = { exists = c:SRP } c:SRP = { trigger_event = { id = srpskas.1 days = 1 } } }
+		ai_chance = { base = 0 }
+	}
+}
+
+# Serbia asks for reunification
+yugoslav_collapse.5 = {
+	type = country_event
+	title = yugoslav_collapse.5.t
+	desc = yugoslav_collapse.5.d
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	event_image = { video = "middleeast_battlefield_trenches" }
+	placement = ROOT
+
+	trigger = {
+		OR = { tag = HRV tag = BOS tag = SLV tag = MKD tag = MNE }
+		NOT = { c:YUG = { has_variable = yugoslav_collapse_reunified } }
+		NOT = { has_variable = already_asked_serb_reunification }
+	}
+
+	option = {
+		name = yugoslav_collapse.5.a
+		custom_tooltip = accepts_reunion_tt
+		c:YUG = { annex = ROOT }
+		set_variable = already_asked_serb_reunification
+		ai_chance = { base = 0 }
+	}
+
+	option = {
+		name = yugoslav_collapse.5.b
+		default_option = yes
+		custom_tooltip = rejects_reunion_tt
+		set_variable = already_asked_serb_reunification
+		add_modifier = { name = anti_serbian_sentiment days = 730 }
+		c:YUG = { add_radicals = { value = 0.02 culture = culture:south_slavic } }
+		ai_chance = { base = 100 }
+	}
+}
+
+# Confederal negotiation check
+yugoslav_collapse.10 = {
+	type = country_event
+	title = yugoslav_collapse.10.t
+	desc = yugoslav_collapse.10.d
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	placement = ROOT
+	event_image = { video = "africa_diplomats_negotiating" }
+	duration = 2
+
+	trigger = {
+		c:YUG ?= this
+		has_modifier = yugoslav_confederal_negotiations
+		NOT = { has_variable = yugoslavia_has_collapsed }
+	}
+
+	option = {
+		name = yugoslav_collapse.10.a
+		custom_tooltip = confederal_reforms_continue_tt
+		yugo_reduce_pressure_large = yes
+		ai_chance = { base = 0 }
+	}
+
+	option = {
+		name = yugoslav_collapse.10.b
+		default_option = yes
+		custom_tooltip = confederal_reforms_fail_tt
+		yugo_increase_pressure_large = yes
+		trigger_event = { id = yugoslav_collapse.2 days = 10 }
+		trigger_event = { id = yugoslav_collapse.3 days = 15 }
+		ai_chance = { base = 100 }
+	}
+}
+
+# Salvage success
+yugoslav_collapse.20 = {
+	type = country_event
+	title = yugoslav_collapse.20.t
+	desc = yugoslav_collapse.20.d
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	placement = ROOT
+	event_image = { video = "africa_diplomats_negotiating" }
+	duration = 2
+
+	trigger = {
+		c:YUG ?= this
+		NOT = { has_variable = yugoslavia_has_collapsed }
+		NOT = { has_variable = yugoslavia_salvaged }
+		var:yugo_stability >= 70
+		var:yugo_secession_pressure <= 30
+	}
+
+	option = {
+		name = yugoslav_collapse.20.a
+		default_option = yes
+		set_variable = yugoslavia_salvaged
+		add_modifier = { name = yugoslav_confederal_compromise days = 1825 }
+		ai_chance = { base = 100 }
+	}
+}
+
+# Montenegro referendum / independence
+yugoslav_collapse.30 = {
+	type = country_event
+	title = yugoslav_collapse.30.t
+	desc = yugoslav_collapse.30.d
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	placement = ROOT
+	event_image = { video = "africa_diplomats_negotiating" }
+	duration = 2
+
+	trigger = {
+		c:YUG ?= this
+		game_date >= 2006.5.1
+		NOT = { has_global_variable = montenegro_referendum_happened }
+	}
+
+	immediate = { set_global_variable = montenegro_referendum_happened }
+
+	option = {
+		name = yugoslav_collapse.30.a
+		default_option = yes
+		custom_tooltip = montenegro_independence_tt
+		yugo_create_montenegro = yes
+		yugo_create_armies_for_new_countries = yes
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = yugoslav_collapse.30.b
+		custom_tooltip = montenegro_union_preserved_tt
+		add_radicals = { value = 0.04 culture = culture:south_slavic }
+		ai_chance = { base = 0 }
+	}
+}

@@ -1,0 +1,99 @@
+﻿l_spanish:
+
+ # ==========================================
+ # OLYMPICS — MODIFIERS
+ # ==========================================
+
+ olympics_hosting: "Olympic Host Nation"
+ olympics_hosting_desc: "El mundo está llegando a id=0/año. Los Juegos Olímpicos están en marcha, aportando atención global, turismo y prestigio, junto con los costos considerables y las exigencias logísticas de la puesta en escena del evento deportivo más grande del mundo."
+
+ olympics_hosting_prestige: "Olympic Host Prestige"
+ olympics_hosting_prestige_desc: "La organización de los Juegos Olímpicos ha colocado id=0/año en el centro de la atención mundial. Los beneficios diplomáticos y de poder blando son considerables."
+
+ olympics_recently_hosted: "Reciente anfitrión olímpico"
+ olympics_recently_hosted_desc: "id=0/año hospedó recientemente los Juegos Olímpicos y no es elegible para acoger de nuevo durante varios años."
+
+ olympics_boycott_modifier: "Boicoteo Olímpico"
+ olympics_boycott_modifier_desc: "La decisión de boicotear los Juegos Olímpicos se ha señalado internacionalmente. Algunos socios lo consideran como una posición de principio; otros lo consideran como una provocación innecesaria."
+
+ olympics_result_terrible: "Pobre rendimiento olímpico"
+ olympics_result_terrible_desc: "Los atletas de id=0/año regresaron de los juegos con poco para mostrarlo. El estado de ánimo nacional es una decepción."
+
+ olympics_result_modest: "Desempeño olímpico sólido"
+ olympics_result_modest_desc: "Los atletas de id=0/año se absolvieron respetablemente en el escenario mundial."
+
+ olympics_result_well: "Función olímpica fuerte"
+ olympics_result_well_desc: "Los atletas de id=0/año se realizaron bien en los juegos, trayendo medallas caseras y orgullo nacional."
+
+ olympics_result_gold: "Dominant Olympic Performance"
+ olympics_result_gold_desc: "id=0/año dominaba los Juegos Olímpicos. La medalla es una fuente de inmenso orgullo nacional y ha mejorado el prestigio del país en todo el mundo."
+
+ olympics_doping_caught: "Escándalo de Doping Olímpico"
+ olympics_doping_caught_desc: "Los atletas de id=0/año han sido atrapados usando drogas que promueven el rendimiento. Las medallas han sido despojadas, los funcionarios han renunciado, y el país se enfrenta al oprobio internacional. El daño al prestigio nacional es grave."
+
+ # ==========================================
+ # EVENTS
+ # ==========================================
+
+ you_do_not_dope_athletes:0 "Jugarás con justicia."
+ you_dope_your_athletes:0 "Das a tus atletas drogas de rendimiento, arriesgando la posibilidad de ser atrapado."
+ # olympics.1 — Host selection
+ olympics.1.t: "Una Oferta para acoger los Juegos Olímpicos"
+ olympics.1.d: "El Comité Olímpico Internacional se ha acercado con una propuesta: acoger los próximos Juegos Olímpicos. Como una democracia estable de prestigio internacional, id=1/año cumple con los criterios de alojamiento y el prestigio y la atención que vienen con él son considerables. Por lo tanto, también son los costos y demandas de organizar el evento deportivo más grande del mundo."
+ olympics.1.f: "El mundo necesita un escenario. ¿Construirá uno?"
+ olympics.1.a: "Aceptar — nos honra acoger"
+ olympics.1.b: "Decline — no podemos comprometernos con esto en este momento"
+
+ # olympics.3 — Participation offer
+ olympics.3.t: "Los Juegos Olímpicos están llegando"
+ olympics.3.d: "Los próximos Juegos Olímpicos se celebrarán en idx id=0/año. Cada nación del mundo está invitada a enviar a sus atletas para competir. Los juegos son una oportunidad para id=1 / título para demostrar su fuerza, celebrar su gente, y tomar su lugar en el escenario mundial — o para hacer una declaración política al permanecer lejos."
+ olympics.3.f: "Cada cuatro años, el mundo mira."
+ olympics.3.a: "Enviar a nuestros atletas - vamos a competir"
+ olympics.3.b: "Boicot — nuestra ausencia hablará más alto que nuestros atletas"
+
+ # olympics.3b — Doping choice
+ olympics.11.t: "Los atletas están preparando"
+ olympics.11.d: "Los Juegos Olímpicos están a semanas de distancia. Los atletas de id=0/año han estado entrenando duro, pero la competencia será feroz. Algunos dentro del programa deportivo sugieren silenciosamente que la competencia limpia puede no ser suficiente. Medicamentos que mejoran el rendimiento, administrados cuidadosamente, podrían dar a los atletas el borde que necesitan. El riesgo de detección es real. Las consecuencias de ser atrapados serían graves. Pero las consecuencias de regresar a casa con las manos vacías pueden ser peores para algunos."
+ olympics.11.f: "La victoria tiene muchos padres. La derrota no tiene ninguno."
+ olympics.11.a: "Compite limpio — nuestros atletas harán lo mejor honestamente"
+ olympics.11.b: "Mejorar su preparación — jugamos para ganar"
+
+ # olympics.4 — Caught doping
+ olympics.4.t: "Doping Scandal Rocks the Olympic Team"
+ olympics.4.d: "El Comité Olímpico Internacional ha anunciado que los atletas de idx id=0/año han probado positivamente para sustancias prohibidas de mejora del rendimiento. Las medallas están siendo despojadas. Los funcionarios están siendo suspendidos. La historia es el elemento principal en cada canal deportivo del mundo. Las negaciones del gobierno no se creen. El daño de la reputación es grave y tardará años en recuperarse."
+ olympics.4.f: "El oro empaña más rápido de lo que brilla."
+ olympics.4.a: "Lamentamos profundamente esta lamentable situación"
+
+ # olympics.5 — Terrible
+ olympics.5.t: "Un decepcionante Juegos Olímpicos"
+ olympics.5.d: "Los atletas de id=0/año compitieron, y fueron en gran medida superados. El cuento de medallas es un malentendido. Las actuaciones eran respetables en lugares, embarazosos en otros. De vuelta a casa, la prensa deportiva está haciendo preguntas difíciles sobre los criterios de financiación, preparación y selección. No fue la demostración que nadie esperaba."
+ olympics.5.d_doping: "Los atletas de id=0/año compitieron con asistencia farmacéutica, y aún llegaron a casa casi con las manos vacías. El programa de dopaje ha proporcionado un valor deficiente por su considerable riesgo."
+ olympics.5.f: "Siempre hay los siguientes juegos."
+ olympics.5.a: "El equipo hizo lo mejor que pudo"
+
+ # olympics.6 — Modest
+ olympics.6.t: "Un rendimiento olímpico respetable"
+ olympics.6.d: "Los atletas de id=0/año regresaron de los juegos con logros modestos pero reales. Un puñado de medallas, algunas actuaciones individuales fuertes, y el conocimiento que el país puede competir al más alto nivel. No es un triunfo, pero tampoco es una decepción."
+ olympics.6.d_doping: "Con alguna asistencia farmacéutica, los atletas de id=0/año gestionaron una muestra respetable. El dopaje parece no ser detectado — esta vez."
+ olympics.6.f: "Consistente, si no espectacular."
+ olympics.6.a: "Una muestra sólida para nuestros atletas"
+
+ # olympics.7 — Well
+ olympics.7.t: "Un fuerte rendimiento olímpico"
+ olympics.7.d: "Los atletas de id=0/año regresaron a casa a la bienvenida de los héroes. El recuento de medallas es impresionante, las actuaciones memorables, y el estado de ánimo nacional es boyante. Varios atletas se han convertido en nombres de familia. Es un resultado realmente fuerte que refleja bien en el país y su programa atlético."
+ olympics.7.d_doping: "Los atletas de id=0/tios realizados fuertemente —ayudados, aunque el público no lo sabe, por un programa farmacéutico discreto. Las medallas son reales. Los métodos que los produjeron son menos admirables."
+ olympics.7.f: "La nación está un poco más alta hoy."
+ olympics.7.a: "Nuestros atletas nos han hecho orgullosos"
+
+ # olympics.8 — Gold
+ olympics.8.t: "Triunfo Olímpico — id=0/ Domina los Juegos"
+ olympics.8.d: "Los resultados están en — y <x id=0/año ha dominado los Juegos Olímpicos. La mesa de la medalla cuenta la historia: más oro, más plata, más bronce que casi cualquier otra nación. Los atletas han realizado más allá de todas las expectativas, y el país está celebrando. En el escenario mundial, id=1/año hizo su marca."
+ olympics.8.d_doping: "id=0/año ha dominado los Juegos Olímpicos, ayudados por un programa de dopaje sistemático que hasta ahora no ha sido detectado. Las medallas son reales. La celebración es genuina. Y el secreto, por ahora, es seguro."
+ olympics.8.f: "La historia recordará esto."
+ olympics.8.a: "Nuestros atletas son los mejores del mundo"
+
+ # olympics.9 — Closing ceremony
+ olympics.9.t: "La Llama Olímpica está extinguida"
+ olympics.9.d: "Los Juegos Olímpicos en неx id=0 / título se han acercado. Los atletas se han ido a casa. Los estadios están en silencio. Para id=1 / título, ha sido una experiencia extraordinaria, exigente, costosa y en última instancia vale la pena. Los juegos trajeron al mundo a la puerta de id=2/año, y el país se levantó a la ocasión."
+ olympics.9.f: "Hasta la próxima vez."
+ olympics.9.a: "Es un honor acoger el mundo"

@@ -1,0 +1,19 @@
+﻿CHARACTERS = {
+	c:IRA ?= {
+	create_character = {
+			first_name = "ali"
+			last_name = "khamenei"
+			historical = yes
+			ruler = yes
+			culture = cu:persian
+			birth_date = 1937.02.03
+			dna = dna_ali_khamenei
+			ig_leader = yes
+			interest_group = ig_armed_forces
+			ideology = ideology_theocrat_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+}

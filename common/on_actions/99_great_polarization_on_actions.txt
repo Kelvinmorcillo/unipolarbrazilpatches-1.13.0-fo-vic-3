@@ -1,0 +1,34 @@
+# Great Polarization on-actions
+# on_revolution_start has no stable expected country scope in the logs, so scope into USA explicitly.
+
+on_revolution_start = {
+	effect = {
+		c:USA ?= {
+			if = {
+				limit = {
+					has_journal_entry = je_the_great_polarization
+					NOT = { has_global_variable = second_american_civil_war_started }
+				}
+
+				set_global_variable = second_american_civil_war_started
+				trigger_event = { id = great_polarization.100 popup = yes }
+			}
+		}
+	}
+}
+
+on_yearly_pulse = {
+	effect = {
+		c:USA ?= {
+			if = {
+				limit = {
+					game_date >= 2015.1.1
+					game_date <= 2035.1.1
+					NOT = { has_journal_entry = je_the_great_polarization }
+					NOT = { has_global_variable = second_american_civil_war_started }
+				}
+				add_journal_entry = { type = je_the_great_polarization }
+			}
+		}
+	}
+}

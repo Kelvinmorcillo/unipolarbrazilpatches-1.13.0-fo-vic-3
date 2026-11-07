@@ -1,0 +1,38 @@
+﻿NTravelNetwork = {
+	ARMY_CONNECTION_UNDEVELOPED_COST_MULT = 2.0		# Travel cost multiplier for undeveloped land connections
+	ARMY_CONNECTION_UNDEVELOPED_HARSH_COST_MULT = 4.0		# Travel cost multiplier for undeveloped land connections in harsh environments (deserts, mountains, etc)
+	ARMY_CONNECTION_DIRT_ROAD_COST_MULT = 1.5		# Travel cost multiplier for dirt road land connections
+	ARMY_CONNECTION_HARDENED_ROAD_COST_MULT = 1.25	# Travel cost multiplier for hardened road land connections
+	ARMY_CONNECTION_RAILWAY_COST_MULT = 1.0			# Travel cost multiplier for railway land connections
+	ARMY_CONNECTION_CHARTED_COST_MULT = 1.0			# Travel cost multiplier for ocean/coastal water connections
+	ARMY_CONNECTION_CANAL_COST_MULT = 1.0			# Travel cost multiplier for channel water connections
+	ARMY_CONNECTION_STRAIT_CROSSING_COST_MULT = 4.0			# Travel cost multiplier for strait-crossing connection
+	ARMY_DIRECT_CONNECTION_COST_MULT = 10.0			# Travel cost multiplier for traveling in a direct line from/to a position on the map (without a travel node connection)
+	ARMY_CONNECTION_DOCKING_COST = 300				# Fixed docking/undocking cost for going from a harbor node to a port node (overrides docking connection length)
+	ARMY_CONNECTION_STRAIT_CROSSING_COST = 100		# Fixed additional cost for crossing a strait connection
+
+	FLEET_CONNECTION_UNDEVELOPED_COST_MULT = 100.0	# Travel cost multiplier for undeveloped land connections (unused by fleets)
+	FLEET_CONNECTION_UNDEVELOPED_HARSH_COST_MULT = 100.0		# Travel cost multiplier for undeveloped land connections in harsh environments (deserts, mountains, etc) (unused by fleets)
+	FLEET_CONNECTION_DIRT_ROAD_COST_MULT = 100.0	# Travel cost multiplier for dirt road land connections (unused by fleets)
+	FLEET_CONNECTION_HARDENED_ROAD_COST_MULT = 100.0	# Travel cost multiplier for hardened road land connections (unused by fleets)
+	FLEET_CONNECTION_RAILWAY_COST_MULT = 100.0		# Travel cost multiplier for railway land connections (unused by fleets)
+	FLEET_CONNECTION_CHARTED_COST_MULT = 1.0		# Travel cost multiplier for ocean/coastal water connections
+	FLEET_CONNECTION_CANAL_COST_MULT = 1.0			# Travel cost multiplier for channel water connections
+	FLEET_CONNECTION_STRAIT_CROSSING_COST_MULT = 100.0	# Travel cost multiplier for strait-crossing connection (unused by fleets)
+	FLEET_DIRECT_CONNECTION_COST_MULT = 4.0			# Travel cost multiplier for traveling in a direct line from/to a position on the map (without a travel node connection)
+	FLEET_CONNECTION_DOCKING_COST = 10				# Fixed docking/undocking cost for going from a harbor node to a port node (overrides docking connection length)
+	FLEET_CONNECTION_STRAIT_CROSSING_COST = 100		# Fixed additional cost for crossing a strait connection (unused by fleets)
+
+	DIRECT_CONNECTION_NODE_MAX_NODES = 10			# Only search the closest X travel nodes for direct line map travel
+	DIRECT_CONNECTION_NODE_SEARCH_DISTANCE = 1200	# Default distance allowed to pathfind in a direct line from a (start/target) map point to a travel node (if no valid are found, it is expanded)
+	DIRECT_CONNECTION_MAP_MAX_DISTANCE = 200 		# Maximum distance allowed to pathfind in a direct line between start and target map points directly
+
+	STRAIT_CROSSING_NODE_CREATION_DISTANCE = 5		# Minimum distance between travel nodes, when considering to insert a new travel node for strait-connection
+
+	FORMATION_REPATH_MAX_DAYS_EXTRA = 60			# Maximum nr of days an automatic formation re-pathing may take (when travel access changes in ongoing travel)
+
+	HARSH_ENVIRONMENT_TERRAIN_LABEL = "label_travel_harsh_environment"	# Terrain label which marks nodes in them as being in harsh environment, triggering 'UNDEVELOPED_HARSH' connection type
+
+	PAVED_ROAD_TECH = "urbanization"												# Technology required for paved roads
+	PAVED_ROAD_MIN_INFRASTRUCTURE = 500.0										# Minimum infrastructure for paved roads
+}

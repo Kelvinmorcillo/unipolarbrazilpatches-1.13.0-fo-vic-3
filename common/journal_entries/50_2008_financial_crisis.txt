@@ -1,0 +1,110 @@
+﻿# ==========================================
+# 2008 FINANCIAL CRISIS
+
+je_subprime_mortgage_crisis = {
+	icon = "gfx/interface/icons/event_icons/subprime_mortgage_crisis.dds"
+
+	group = je_group_dilemmas
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	
+	is_shown_when_inactive = {
+		c:USA ?= this
+		any_scope_building = {
+			is_building_type = building_financial_district
+			has_active_production_method = pm_financial_district_subprime_mortgages
+		}
+	}
+
+	possible = {
+		c:USA ?= this
+		any_scope_building = {
+			is_building_type = building_financial_district
+			has_active_production_method = pm_financial_district_subprime_mortgages
+		}
+	}
+
+	should_be_involved = {
+		c:USA ?= this
+	}
+
+	# Complete if securities price drops to
+	# 35% or more below base before timeout
+	complete = {
+		market_capital.market = {
+			mg:securities = {
+				market_goods_cheaper > 0.35
+			}
+		}
+	}
+
+	on_complete = {
+	}
+
+	# 8 months to correct before the crash
+	on_timeout = {
+		# USA enters the Great Recession
+		add_journal_entry = { type = je_great_recession }
+		# Fire for every country with substantial US trade
+		every_country = {
+			limit = {
+				NOT = { c:USA ?= this }
+				exists = c:USA
+				market_capital.market = {
+					market_trade = {
+						target = c:USA.market_capital.market
+						value > 5000
+					}
+				}
+			}
+			add_journal_entry = { type = je_great_recession }
+		}
+	}
+
+	invalid = {
+		NOT = {
+			any_scope_building = {
+				is_building_type = building_financial_district
+				has_active_production_method = pm_financial_district_subprime_mortgages
+			}
+		}
+	}
+
+	transferable = no
+	can_revolution_inherit = no
+	weight = 8000
+	timeout = 240
+}
+
+# ==========================================
+# THE GREAT RECESSION
+# ==========================================
+
+je_great_recession = {
+	icon = "gfx/interface/icons/event_icons/recession.dds"
+
+	group = je_group_dilemmas
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+
+	modifiers_while_active = {
+		great_recession_credit_crunch
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = great_recession_je_usa_tt
+				trigger = { c:USA ?= this }
+			}
+			triggered_desc = {
+				desc = great_recession_je_global_tt
+			}
+		}
+	}
+
+	transferable = no
+	can_revolution_inherit = no
+	weight = 9000
+	timeout = 300
+}

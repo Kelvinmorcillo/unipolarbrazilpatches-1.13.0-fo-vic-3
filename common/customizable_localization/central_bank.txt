@@ -1,0 +1,41 @@
+﻿cb_fiscal_policy = {
+	type = country
+
+	text = {
+		localization_key = cb_policy_loc_1
+		trigger = {
+			has_variable = cb_fiscal_policy
+			var:cb_fiscal_policy = 1
+		}
+	}
+	text = {
+		localization_key = cb_policy_loc_2
+		trigger = {
+			has_variable = cb_fiscal_policy
+			var:cb_fiscal_policy = 2
+		}
+	}
+	text = {
+		localization_key = cb_policy_loc_3
+		trigger = {
+			OR = {
+				NOT = { has_variable = cb_fiscal_policy }
+				var:cb_fiscal_policy = 3
+			}
+		}
+	}
+	text = {
+		localization_key = cb_policy_loc_4
+		trigger = {
+			has_variable = cb_fiscal_policy
+			var:cb_fiscal_policy = 4
+		}
+	}
+	text = {
+		localization_key = cb_policy_loc_5
+		trigger = {
+			has_variable = cb_fiscal_policy
+			var:cb_fiscal_policy = 5
+		}
+	}
+}

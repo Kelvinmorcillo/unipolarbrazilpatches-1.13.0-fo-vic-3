@@ -1,0 +1,387 @@
+﻿l_turkish:
+
+ l_turkish:
+
+ je_drug_trafficking:0 "Uyuşturucu Ticareti"
+ je_drug_trafficking_reason:0 "Narco-trafficking ağları, [ROOT.GetCountry.GetName]'nin siyasi ve ekonomik yaşamında derinden gömülü hale geldi. Karteller ülke aracılığıyla milyarlarca hareket eder - yolsuzluk yetkilileri, özel ordular finanse eder ve devlet tarafından bırakılan bir vakum doldurun. [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] bir yıldızk seçeneği ile karşı karşıya: devlet kendisi kadar güçlü olan ağlarla çalışmak veya otoritenin onları yok etmeye çalıştığını harcamak. Bu, Uyuşturucu akışını yavaşlatarak elde edilebilir ve suçlu sindicates'ten vazgeçebilir."
+
+ je_fighting_cartels:0 "Cartels ile savaşmak"
+ je_fighting_cartels_reason:0 "Ticaret ağları içinde dug var. Başarısız bir politikanın ardından, [ROOT.GetCountry.GetName] hükümeti, kartellere karşı doğrudan askeri eyleme girmeye karar verdi. Genel olarak, karşı-kartel operasyonlarına liderlik etmek için dağıtılmalıdır. Kolay olmayacak - ve hızlı olmayacak."
+
+ cartel_je_working_with_tt:0 "[ROOT.GetCountry.GetName] hükümeti, kartellerle çalışan bir düzenleme kurdu. Otorite ve meşruiyet artıyor - ama ilişki muazzam bir itibar riski taşıyor."
+ cartel_je_cracking_down_tt:0 "Hükümet aktif olarak uyuşturucu kaçakçılığı üzerine çöküyor. Kampanya otoriteyi yok ediyor ancak [ROOT.GetCountry.GetName] uluslararası ayakta."
+ cartel_je_no_policy_tt:0 "Hiçbir politika belirlenmedi. [ROOT.GetCountry.GetName]'nin kartelleri nasıl idare edeceğini seçmek için aşağıdaki düğmeleri kullanın."
+ cartel_fight_je_commander_needed_tt:0 "Hiçbir komutan konuşamamıştır. Alana genel göndermek için aşağıdaki düğmeyi kullanın."
+ cartel_fight_je_commander_active_tt:0 "[SCOPE.sCharacter('cartel_general_storage').GetFullName] [ROOT.GetCountry.GetName]'de önde gelen karşı-kartel işlemleridir."
+
+ mdw_events.7:0 "Test testi testi testi testi testi testi testi testi testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi test testi"
+ 
+ cartel_button_cooperate_name:0 "Cartels ile çalışmak"
+ cartel_button_cooperate_desc:0 "Narco ağları ile çalışan bir düzenleme kurmak. Güçlü yetkiye, meşruiyete ve savunmaya güç verir - ancak önemli infamy ve [SCOPE.sCountry('c:USA').GetName] ile ilişkileri zayıflatır."
+
+ cartel_button_crackdown_name:0 "Crack Down on Trafficking"
+ cartel_button_crackdown_desc:0 "Uyuşturucu kaçakçılığı ağlarına karşı aktif bir kampanya başlat. 200 otorite ve afyon ticaretini yasaklar, ancak [ROOT.GetCountry.GetName]'nin uluslararası ayakta ve prestijini geliştirir."
+ cartel_crackdown_authority_cost_tt:0 "200 yetki gerektirir"
+
+ cartel_button_stop_crackdown_name:0 "Halt the Crackdowndown"
+ cartel_button_stop_crackdown_desc:0 "Otoriteyi korumak için anti-trafficking kampanyasına son verin. Afyon yasağı kaldırılacak ve uluslararası iyi niyet acı çekecek."
+
+ cartel_button_deploy_general_name:0 "Bir Komutan"
+ cartel_button_deploy_general_desc:0 "[ROOT.GetCountry.GetName] karşı-kartel operasyonlarına liderlik etmek için genel olarak seçin."
+ cartel_need_general_tt:0 "Mevcut en az bir general gerektirir"
+
+ cartel_suppression_bar:0 "Cartel Suppression"
+ cartel_suppression_bar_desc:0 "Suppression Progress: #v [JournalEntry.GetCurrentBarProgress(ScriptedProgressBar.Self)|%]#! ([JournalEntry.GetCurrentBarValue(ScriptedProgressBar.Self)|1]/100)"
+ cartel_bar_general_active_tt:0 "Kartellere karşı aktif askeri operasyonlar"
+ cartel_bar_turmoil_tt:0 "Yüksek karışıklık [ROOT.GetCountry.GetName]"
+ cartel_bar_at_war_tt:0 "Askeri kaynaklar aktif bir savaşa yönlendiriliyor"
+
+ # ==========================================
+ # EVENTS
+ # ==========================================
+
+ # cartel.1 — Escobar Captured
+ cartel.1.t:0 "Pablo Escobar Ölü"
+ cartel.1.d:0 "Yıllar sonra manhunt ve artan şiddet, Medellín Cartel'in kurucusu ve lideri Medellín'de güvenli bir ev takip edildi ve [ROOT.GetCountry.GetAdjective] güvenlik güçleri tarafından öldürüldü. Pablo Escobar'ın ölümü, [ROOT.GetCountry.GetAdjective] uyuşturucu ticaretine karşı en önemli darbedir - bir dönemin sonu ve başka bir şeyin belirsiz başlangıcıdır.\n\n Medellín Cartel parçalandı. Ama Cali Cartel ve diğerleri boşluğu doldurmak için hareket edecek. Savaş bitmiyor. Ama bu savaş kazandı."
+ cartel.1.f:0 "Dünyanın en çok aranan adam öldü."
+ cartel.1.a:0 "[ROOT.GetCountry.GetName] narko-terörizme karşı tarihi bir darbe vurdu"
+
+ # cartel.2 — El Chapo Captured
+ cartel.2.t:0 "El Chapo Yakalandı"
+ cartel.2.d:0 "[ROOT.GetCountry.GetAdjective] güvenlik güçleri ve uluslararası istihbarat arasında koordineli bir saldırıda Joaquín 'El Chapo' Guzmán - Sinaloa Cartel ve dünyadaki en güçlü ilaç lordu başkanı - yakalandı. tutuklama, [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] için büyük bir zaferdir. [ROOT.GetCountry.GetRuler.GetLastName]'s counter-cartel kampanyası ve Sinaloa Cartel'in operasyonlarına önemli bir darbe.\n\nEl Chapo şimdi maksimum güvenlik tesislerinde. Orada kalsa başka bir konudur."
+ cartel.2.f:0 "Amerika'daki en çok aranan adam barların arkasında."
+ cartel.2.a:0 "Adalet servis edildi - şimdilik"
+
+ # cartel.3 — El Chapo Escapes
+ cartel.3.t:0 "El Chapo Escaped"
+ cartel.3.d:0 "imkansız oldu. Joaquín 'El Chapo' Guzmán, Altiplano maksimum güvenlik hapishanesinden doğrudan hücresine doğru bir tünel yoluyla kaçtı - aylarca süren ve birçok seviyedeki sorumluları tamamlamak için bir mühendislik feat.\n kaçış uluslararası bir aşağılamadır. [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] hükümeti güvenilirliğine felaket bir darbe aldı. Ve [ROOT.GetCountry.GetAdjective] bölgesinde bir yerde, dünyanın en güçlü uyuşturucu efendisi ücretsizdir."
+ cartel.3.f:0 "Her zaman kaçacaktı. Tek soru ne zaman oldu."
+ cartel.3.a:0 "Bu bir öfke - kafalar yuvarlayacak"
+
+ # cartel.4 — Mexico Turf Division
+ cartel.4.t:0 "Karteller [ROOT.GetCountry.GetName]"
+ cartel.4.d:0 "Başarısız veya mevcut olmayan devlet politikası bir vakum bıraktı. Büyük kartel örgütleri şimdi var - şiddet, müzakere ve yerel otoritelerin seçici yolsuzlukları - [ROOT.GetCountry.GetAdjective] bölge üzerindeki etkisini tanıdı.\n\n CJNG merkezi ve batıyı kontrol eder. Gulf Cartel kuzeydoğu kıyılarına sahiptir. Sinaloa Cartel kuzeybatıda baskındır. Kuzeydoğu Cartel, Coahuila ve Zacatecas'daki kendi topraklarını arabalandırdı. [ROOT.GetCountry.GetAdjective] Devletin etkisi, kendi ülkesinin kısımları üzerinde egemenlik kabul etti.\n\n@warning! Bu duramaz."
+ cartel.4.f:0 "Bölgesini koruyamayan bir devlet bir devlet değildir."
+ cartel.4.a:0 "Kaybettiğimiz şeyi yeniden ifade etmeliyiz"
+
+ # cartel.5 — Assassination
+ cartel.5.t:0 "A Cartel Assassination"
+ cartel.5.d_crackdown:0 "Üst düzey bir polis veya askeri yetkili [ROOT.GetCountry.GetName]'nin karşı-kartel kampanyası suikaste uğradı - kartellerin herkese ulaşabileceği durumu ve sinyali tekrarlamak için tasarlanmış bir cinayet. cenaze yarındır. Soruşturma zaten şüphelileri tespit etti. Soru [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] hükümeti onları takip edecek."
+ cartel.5.d_cooperation:0 "Rakip bir kartel, suçlu ortaklarınızın anahtar yalanlarından birini suikaste uğrattı ve darbe [ROOT.GetCountry.GetName] hükümetine çıktı. Cinayet büyük bir şehirde geniş gün ışığında yapıldı. Devletin bunu yapan erkeklerle hiçbir ilgisi olmadığını iddia etmek imkansız hale geliyor."
+ cartel.5.d_default:0 "Ünlü bir rakam - politikacı, gazeteci veya yargıç - [ROOT.GetCountry.GetName] kartel-linked gunmen tarafından öldürüldü. Cinayet brazen'dir. Mesaj açıktır: karteller devletin korkusu olmadan çalışır."
+ cartel.5.f:0 "Impunity, kartel'in en büyük silahıdır."
+ cartel.5.a:0 "Bu sorumluları bulacağız"
+
+ # cartel.6 — Money Laundering
+ cartel.6.t:0 "Cartel Money Laundering Exposed"
+ cartel.6.d_crackdown:0 "[ROOT.GetCountry.GetAdjective] finansal istihbarat ünitesi, kartel paranın meşru işletmeler aracılığıyla aktığı kanıtları ortaya çıkardı - inşaat şirketleri, restoranlar, araba satıcıları - [ROOT.GetCountry.GetCapital.GetCityHubName]. Laundering operasyonunun ölçeği, resmi ekonominin derin nüfuzunu göstermektedir. Yol pahalı, politik olarak tehlikeli olacak ve rahatsız yerlere yol açabilir."
+ cartel.6.d_cooperation:0 "Uluslararası finansal araştırmacılar, [ROOT.GetCountry.GetName] hükümeti ile bilinen kurumlar aracılığıyla akan şüpheli işlemlere sahiptir. [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] arasındaki bağlantılar [ROOT.GetCountry.GetRuler.GetLastName] yönetimi ve kartel finansmanı gizlemek için daha zor hale geliyor. Bu büyük bir diplomatik olay olabilir."
+ cartel.6.d_default:0 "Araştırmacı gazeteciler, [ROOT.GetCountry.GetName] bankacılık sektörü aracılığıyla büyük ölçekli paranın kanıtlarını yayınladılar - arabatel gerçek gayrimenkul ve iş yatırımlarından temizlenmeden şüphelendi. Merkez bankası bir soruşturma çağrısında bulunuyor."
+ cartel.6.f:0 "Kirli para, nereye bakacağınızı biliyorsanız her yerdedir."
+ cartel.6.a:0 "Nereden gelen soruşturmaya devam ederse,"
+ cartel.6.b:0 "bankacılık sektörü istikrarı korunmalıdır - bırakın"
+
+ # cartel.7 — US Pressure
+ cartel.7.t:0 "Washington Washington Watching"
+ cartel.7.d:0 "[SCOPE.sCountry('c:USA').GetName] Dışişleri Bakanlığı resmi olarak [ROOT.GetCountry.GetName] Dışişleri Bakanı ile bir toplantı talep etti. Gündelik, özel olarak iletişim kurmak, uyuşturucu kaçakçılığıyla ilgilidir - özellikle [SCOPE.sCountry('c:USA').GetAdjective] hükümetin [ROOT.GetCountry.GetName], narkotik kuzeye akışını bozmak için yeterli değildir. [SCOPE.sCountry('c:USA').GetAdjective] yardım - finansal, istihbarat ve muhtemelen askeri - [ROOT.GetCountry.GetName] daha aktif işbirliği halinde gelecek."
+ cartel.7.f:0 "[SCOPE.sCountry('c:USA').GetName] kaldıraçlıdır. Soru, kullanılmış olmasına izin vermek."
+ cartel.7.a:0 "[SCOPE.sCountry('c:USA').GetAdjective] işbirliğini kabul edin - desteğe ihtiyacımız var"
+ cartel.7.b:0 "Decline – [ROOT.GetCountry.GetName] kendi işlerini idare edecek"
+
+ # cartel.8 — Cartel Retaliation
+ cartel.8.t:0 "Kartels Retaliate"
+ cartel.8.d:0 "Çarpıcı kan çekti - ve şimdi karteller kendi çizimlerini yapıyor. [ROOT.GetCountry.GetName] ile koordineli bir dizi saldırı, polis istasyonları, askeri kontrol noktaları ve toplumdaki sivil alanları [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] desteklemek için bilinen [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName]'ın kampanyası. Saldırılar bir mesaj: karteller bir fiyat olmadan yok edilemez. [ROOT.GetCountry.GetName] nasıl cevap vereceğine karar vermelidir."
+ cartel.8.f:0 "Her darbe indi, davetli bir geri dönüş."
+ cartel.8.a:0 "Escalate – biz korkutucu olmayacak"
+ cartel.8.b:0 "Şimdi geri dönün - sivil nüfusun korunması"
+
+ # cartel.9 — Completion
+ cartel.9.t:0 "Uyuşturucu Ticareti onun görevini yerine getiriyor"
+ cartel.9.d_crackdown:0 "Çarpıcı kampanyası derhal hedeflerine ulaştı. Afium pazarı önemli ölçüde sıkıştı - [ROOT.GetCountry.GetName]'nin ticaret ağlarında sürekli baskının doğrudan bir sonucu. Karteller zayıflar. [ROOT.GetCountry.GetName]'nin uluslararası duruşu geliştirildi. Savaş sona erdi, ancak bu tur devlete ait."
+ cartel.9.d_cooperation:0 "Düzenleme ne vaat edildiğini teslim etti. Otorite sağlam, devlet işlevleri ve karteller var - çoğunlukla - pazarlık onların yanında. Bu yönetim veya kapitülasyon, tarihçilerin tartışacağı bir sorudur. opium pazarı kendi hikayesini anlatıyor."
+ cartel.9.d_default:0 "İlaç ticareti gelişti - daha iyi veya daha kötüsü belirsiz kalır. opium pazarı temel fiyatından önemli ölçüde taşındı. [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] Bu dönemde yapılan seçimler, gelecekleri şekillendirecektir."
+ cartel.9.f:0 "Her politika biter. Her seçimin sonuçları vardır."
+ cartel.9.a:0 "Bir bölüm yakınlar"
+
+ # cartel.100 — Timeout
+ cartel.100.t:0 "Pencere Kapalı"
+ cartel.100.d:0 "[ROOT.GetCountry.GetName] uyuşturucu kaçakçılığıyla ilgili her yıl anlamlı bir çatlak veya narco ağları ile istikrarlı bir düzenleme vermedi. Karteller zamanı iyi kullandı. Daha doğrudan bir yaklaşım gerekli olacaktır."
+ cartel.100.f:0 "Inaction bir seçimdir - ve karteller bunu bilir."
+ cartel.100.a:0 "Doğrudan harekete geçmeliyiz"
+
+ # cartel.10 — Escobar news for Americas
+ cartel.10.t:0 "Pablo Escobar Ölü"
+ cartel.10.d:0 "[SCOPE.sCountry('c:CLM').GetName] Haber: Pablo Escobar, Medellín Cartel'in kurucusu ve Latin Amerika'daki narko-terörizm yaşını tanımlayan adam, [SCOPE.sCountry('c:CLM').GetAdjective] güvenlik güçleri tarafından öldürüldü. Batı hemisphere'deki en çok aranan adam öldü. Bölgenin uyuşturucu ticaretindeki dalgalanma etkileri yıllar boyunca hissedilecektir."
+ cartel.10.f:0 "Büyük narkonun yaşı bitti. Ne takip daha kötü olabilir."
+ cartel.10.a:0 "Yeni bir dönem başlar"
+
+ # ==========================================
+ # CARTEL FIGHT EVENTS
+ # ==========================================
+
+ cartel_fight.0.t:0 "Kim Counter-Cartel kampanyasına liderlik edecek?"
+ cartel_fight.0.d:0 "[ROOT.GetCountry.GetName] hükümeti, kartel ağlara karşı doğrudan harekete geçmeyi çözdü. Genel olarak seçilmelidir ve dağıtılmalıdır - yetkinliğe sahip biri ve kirli mücadele eden bir düşmanı takip etmek, siviller arasında gizler ve mermi satın alırken yetkililer satın almak."
+ cartel_fight.0.f:0 "Doğru genel her şeyi değiştirir."
+ cartel_fight.0.a:0 "Deploy [SCOPE.sCharacter('cartel_general_1').GetFullName]"
+ cartel_fight.0.b:0 "Deploy [SCOPE.sCharacter('cartel_general_2').GetFullName]"
+ cartel_fight.0.c:0 "Deploy [SCOPE.sCharacter('cartel_general_3').GetFullName]"
+
+ cartel_fight.1.t:0 "A Major Cartel Bust"
+ cartel_fight.1.d:0 "[SCOPE.sCharacter('cartel_general').GetFullName] başarılı bir operasyon rapor eder: büyük bir kartel dağıtım ağı sönmüş, önemli miktarda narkotik ele geçirilmiş ve tutuklanan orta düzey kartel rakamlar. İyi bir hafta işi. Hız [ROOT.GetCountry.GetName] hükümeti ile."
+ cartel_fight.1.f:0 "İlerleme yapılır."
+ cartel_fight.1.a:0 "Baskıyı tut"
+
+ cartel_fight.2.t:0 "Troops Ambushed"
+ cartel_fight.2.d:0 "[SCOPE.sCharacter('cartel_general').GetFullName]'nin komutası altında bir birim, bir kırsal alanda kartel tabancası tarafından pudralandı. Saldırı iyi koordine edildi ve kartellerin [ROOT.GetCountry.GetAdjective] askeri hareketler hakkında istihbarat olduğunu gösteriyor. Ölümler var. Morale sallanıyor."
+ cartel_fight.2.f:0 "Karteller, seçtikleri zaman bir ordu gibi savaşırlar."
+ cartel_fight.2.a:0 "Regroup ve devam"
+
+ cartel_fight.3.t:0 "Informant Anahtar İstihbaratı Sağlıyor"
+ cartel_fight.3.d:0 "Bir bilgi sahibi - para, kişisel şikayetler veya korku tarafından motive edilen - [SCOPE.sCharacter('cartel_general').GetFullName] kartel güvenli evler, tedarik rotaları ve personel hakkında ayrıntılı bilgi verdi. Bilgi, bölgedeki kartellerin operasyonel kapasitelerini önemli ölçüde bozan bir dizi hassas işlem sağlar."
+ cartel_fight.3.f:0 "Otomobilellerin en büyük kırılganlığı birbirleridir."
+ cartel_fight.3.a:0 "İstihbarat Yasası hemen hemen"
+
+ cartel_fight.10.t:0 "Karteller Kırık Oldu"
+ cartel_fight.10.d:0 "Kampanya bitti. [SCOPE.sCharacter('cartel_general').GetFullName] [ROOT.GetCountry.GetName] Organize kartel aktivitesinin operasyonel irrelevance noktasına kaldırıldı. Anahtar rakamlar öldü veya gözaltında. Ağlar parçalandı. Devlet kendi topraklarını yeniden ilan etti.\n\n Bu çirkin bir savaş oldu. Ama kazandı."
+ cartel_fight.10.f:0 "Devlet, taahhüt ettiğinde ne yapabileceğini göstermiştir."
+ cartel_fight.10.a:0 "Sert bir zafer"
+
+ # ==========================================
+ # MODIFIERS
+ # ==========================================
+
+ cartel_cooperation_modifier:0 "Cartel Arrangement"
+ cartel_cooperation_modifier_desc:0 "Narco ağları ile kapalı bir düzenleme, [ROOT.GetCountry.GetName]'ye önemli kaynaklar ve istikrar getirdi - meşruiyet ve uluslararası üne açık bir maliyet."
+
+ cartel_crackdown_modifier:0 "Anti-Trafficking Kampanyası"
+ cartel_crackdown_modifier_desc:0 "[ROOT.GetCountry.GetName] aktif olarak kartel ağları takip ediyor. Otorite tüketiliyor, ancak uluslararası ayakta duruyor ve afyon ticareti bastırılıyor."
+
+ cartel_crackdown_abandoned:0 "Crackdown Abandoned"
+ cartel_crackdown_abandoned_desc:0 "[ROOT.GetCountry.GetName] anti-trafficking kampanyası durduruldu. Uluslararası topluluk geri dönüşünü belirtti."
+
+ cartel_escobar_captured:0 "Escobar Ölü"
+ cartel_escobar_captured_desc:0 "Pablo Escobar'ın ölümü Medellín Cartel'i parçaladı ve [ROOT.GetCountry.GetAdjective] uyuşturucu ticaretini dönüştürüyor. [ROOT.GetCountry.GetName]'nin uluslararası duruşu dramatik bir şekilde gelişmiştir."
+
+ cartel_el_chapo_captured:0 "El Chapo Yakalandı"
+ cartel_el_chapo_captured_desc:0 "Joaquín Guzmán'in yakalaması Sinaloa Cartel'e önemli bir darbe yaptı ve [ROOT.GetCountry.GetName] uluslararası düzeyde ayakta duran [ROOT.GetCountry.GetName]"
+
+ cartel_el_chapo_escaped:0 "El Chapo Escaped"
+ cartel_el_chapo_escaped_desc:0 "Dünyanın en çok aranan uyuşturucu lordunun [ROOT.GetCountry.GetAdjective] maksimum güvenlik hapishanesinin kaçışı [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] hükümeti."
+
+ cartel_narco_state:0 "Narco State"
+ cartel_narco_state_desc:0 "Cartel örgütleri, [ROOT.GetCountry.GetName] önemli porsiyonlar üzerinde etkili bir bölgesel kontrol kurdular. [ROOT.GetCountry.GetAdjective] devlet, bu alanlarda şiddet üzerine tekelini kaybetti."
+
+ cartel_cjng_controlled:0 "CJNG Bölgesi"
+ cartel_cjng_controlled_desc:0 "Jalisco New Generation Cartel bu devletin suçlu ekonomisini kontrol ediyor. Şiddet, extortion ve kartel yönetimi, [ROOT.GetCountry.GetAdjective] devlet otoritesini terk etti."
+
+ cartel_gulf_controlled:0 "Gulf Cartel Bölgesi"
+ cartel_gulf_controlled_desc:0 "Gulf Cartel burada bölgesel egemenliği kurdu. [ROOT.GetCountry.GetAdjective] devlet otoritesi nominaldir."
+
+ cartel_sinaloa_controlled:0 "Sinaloa Cartel Bölgesi"
+ cartel_sinaloa_controlled_desc:0 "Sinaloa Cartel burada bölgesel egemenliği kurdu. Yerel ekonomi ve [ROOT.GetCountry.GetAdjective] hükümet pervask."
+
+ cartel_northeast_controlled:0 "Kuzeydoğu Cartel Bölgesi"
+ cartel_northeast_controlled_desc:0 "Cartel del Noreste burada egemenlik kurdu, [ROOT.GetCountry.GetAdjective] Kendi şiddet yönetimi ile devlet otoritesini atladı."
+
+ cartel_crackdown_success:0 "Counter-Narco Success"
+ cartel_crackdown_success_desc:0 "[ROOT.GetCountry.GetName]'nin karşı-trafficking kampanyasında büyük bir başarı, hükümetin meşruiyetini ve prestijisini güçlendirdi."
+
+ cartel_assassination_aftermath:0 "Cartel Assassination"
+ cartel_assassination_aftermath_desc:0 "Yüksek profilli bir suikast, [ROOT.GetCountry.GetName] ve daha fazla karmaşaya duyulan kamu güvenini sarsmıştır."
+
+ cartel_laundering_investigation:0 "Para Laundering Research"
+ cartel_laundering_investigation_desc:0 "Cartel para laundering için aktif bir soruşturma [ROOT.GetCountry.GetName]'nin anti-korruption bilgilerini geliştiriyor."
+
+ cartel_laundering_ignored:0 "Para Laundering Overlooked"
+ cartel_laundering_ignored_desc:0 "Laundering soruşturmasını bırakma kararı uluslararası kaşlar yükseltti."
+
+ cartel_us_cooperation_bonus:0 "US Counter-Narcotics İşbirliği"
+ cartel_us_cooperation_bonus_desc:0 "[SCOPE.sCountry('c:USA').GetAdjective] anti-drug programları ile aktif işbirliği, [ROOT.GetCountry.GetName] için istihbarat desteği ve diplomatik faydalar getirdi."
+
+ cartel_us_rejection:0 "ABD Baskı Rejected"
+ cartel_us_rejection_desc:0 "[ROOT.GetCountry.GetName] [SCOPE.sCountry('c:USA').GetAdjective] anti-narcotics işbirliğini reddetti. Yurtiçi otorite korunmuştur, ancak [SCOPE.sCountry('c:USA').GetName] ile ilişkiler serinlendi."
+
+ cartel_retaliation_escalate:0 "Cartels'e Karşı Açıklama"
+ cartel_retaliation_escalate_desc:0 "Cartel retaliation'ı takip etme kararı [ROOT.GetCountry.GetName] ancak hükümet çözülür."
+
+ cartel_retaliation_pullback:0 "Restrained Response"
+ cartel_retaliation_pullback_desc:0 "[ROOT.GetCountry.GetName] hükümeti, kartel retaliasyon sonrası sivilleri korumak için geri çekildi."
+
+ cartel_fight_ambush:0 "Troops Ambushed"
+ cartel_fight_ambush_desc:0 "Cartel tabancası bir [ROOT.GetCountry.GetAdjective] askeri üniteyi rahatlatır, kayıplara ve şu anda karşı-kartel kampanyasını yavaşlatır."
+
+ cartel_fight_victory:0 "Cartels Broken"
+ cartel_fight_victory_desc:0 "Kartellere karşı [ROOT.GetCountry.GetAdjective] askeri kampanya başarılı oldu. Ağlar parçalanmış ve devlet otoritesi restore edilmiştir."
+ 
+ # ==========================================
+ # JOURNAL ENTRIES
+ # ==========================================
+ 
+ je_mexican_drug_war:0 "Meksikalı Uyuşturucu Savaşı"
+ je_mexican_drug_war_reason:0 "Karteller aralarında [ROOT.GetCountry.GetName] bölünmüşlerdir. CJNG, Gulf Cartel, Sinaloa Cartel ve Cartel del Noreste her kontrol bölgesi hükümetin hırsızı zayıf veya yoksundur. Endüstriler yavaşladı. İnsanlar ayrılıyor. Şiddet endemik.\n\n [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] Henüz kartellerle yüzleşmeye karar vermedi. Ancak durum sonsuza kadar festere bırakılamaz – kartel bölgesi hala genişliyor ve her ay tepki verme olayı daha zor bir şekilde hesaplıyor."
+ 
+ je_us_mexico_drug_war_support:0 "Meksika'yı desteklemek"
+ je_us_mexico_drug_war_support_desc:0 "[SCOPE.sCountry('c:MEX').GetName], ülkenin önemli porsiyonlarının kontrolünü ele alan narco-cartel ağlarına karşı varoluşsal bir mücadele ile ilgilidir. [ROOT.GetCountry.GetName] sonucu doğrudan ilgiye sahiptir: narkotik kuzeye, güney sınırının istikrarı ve [SCOPE.sCountry('c:MEX').GetAdjective] devletin bütünlüğü tehlikededir.\n [SCOPE.sCountry('c:MEX').GetName] ile bir askeri yardım anlaşması imzalamak, kaynaklar, istihbarat ve [SCOPE.sCountry('c:MEX').GetRuler.GetPrimaryRoleTitle] [SCOPE.sCountry('c:MEX').GetRuler.GetLastName] hükümeti - ve uyuşturucu savaşın ötesinde iyi bir şekilde ikili ilişkiyi derinleştirmek."
+ 
+ # Status descriptions
+ mdw_je_not_declared_tt:0 "[ROOT.GetCountry.GetName] hükümeti henüz kartellerde savaş ilan etmedi. Durum kötüleşiyor - kartel ağları aktif olarak bölgesel kontrollerini genişletiyor. [ROOT.GetCountry.GetAdjective] kampanyaya askeri uygulamak için aşağıdaki düğmeyi kullanın."
+ mdw_je_commander_needed_tt:0 "Savaş ilan edildi. [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] Şimdi kartel tutulan bölgede operasyonları yürütmek için bir komutan dağıtmalıdır."
+ mdw_je_active_tt:0 "[SCOPE.sCharacter('mdw_commander_storage').GetFullName], [ROOT.GetCountry.GetAdjective] kartellere karşı operasyonlardır. Cartel bölgesi hala rekabet ediliyor - tüm kontrollü devletler savaş ilan edilmeden önce temizlenmelidir."
+ 
+ us_mdw_je_no_pact_tt:0 "[SCOPE.sCountry('c:MEX').GetName] ile hiçbir askeri yardım anlaşması imzalandı. [SCOPE.sCountry('c:MEX').GetRuler.GetPrimaryRoleTitle] ile bir askeri yardım anlaşması önermek için diplomasi ekranından Navigate to the diplomasi screen to offer a askeri yardım anlaşması with [SCOPE.sCountry('c:MEX').GetRuler.GetPrimaryRoleTitle] [SCOPE.sCountry('c:MEX').GetRuler.GetLastName] hükümeti."
+ us_mdw_je_pact_active_tt:0 "Bir askeri yardım anlaşması [SCOPE.sCountry('c:MEX').GetName] ile etkileniyor. [ROOT.GetCountry.GetAdjective] desteği, [SCOPE.sCountry('c:MEX').GetRuler.GetLastName] karşı-kartel kampanyasına yardımcı oluyor."
+ 
+ # ==========================================
+ # SCRIPTED BUTTONS
+ # ==========================================
+ 
+ mdw_button_declare_war_name:0 "Kartelse Savaşı"
+ mdw_button_declare_war_desc:0 "[ROOT.GetCountry.GetAdjective] askeri, kartel ağlarına karşı doğrudan bir kampanya başlattı. Maliyetler 100 otorite ve karşı-kartel kampanyasını ciddi bir şekilde başlatır. Barlar bu bildirim yapılana kadar hareket etmeyecektir."
+ 
+ mdw_button_deploy_commander_name:0 "Bir Komutan"
+ mdw_button_deploy_commander_desc:0 "[ROOT.GetCountry.GetAdjective] bölge genelinde karşı-kartel operasyonlarına liderlik etmek için genel seçin."
+ mdw_need_general_tt:0 "Mevcut en az bir general gerektirir"
+ 
+ # ==========================================
+ # PROGRESS BARS
+ # ==========================================
+ 
+ mdw_suppression_bar:0 "İlerleme Kampanyası"
+ mdw_suppression_bar_desc:0 "İlerleme: #v [JournalEntry.GetCurrentBarProgress(ScriptedProgressBar.Self)|%]#! ([JournalEntry.GetCurrentBarValue(ScriptedProgressBar.Self)|1]/100)"
+ 
+ mdw_peril_bar:0 "Komutan Peril"
+ mdw_peril_bar_desc:0 "Peril: #v [JournalEntry.GetCurrentBarProgress(ScriptedProgressBar.Self)|%]#!"
+ 
+ mdw_bar_commander_active_tt:0 "Aktif [ROOT.GetCountry.GetAdjective] askeri operasyonlar"
+ mdw_bar_multiple_states_tt:0 "Birden çok kartel tutulan devletler - [ROOT.GetCountry.GetAdjective] işlemler incelenir"
+ mdw_bar_us_aid_tt:0 "[SCOPE.sCountry('c:USA').GetAdjective] askeri yardım istihbarat ve lojistik destek sağlıyor"
+ mdw_bar_excess_authority_tt:0 "Güçlü devlet kapasitesi kampanyayı hızlandırıyor"
+ mdw_bar_legitimacy_tt:0 "Yüksek halk desteği [ROOT.GetCountry.GetAdjective] askeri ahlaki"
+ mdw_bar_good_commander_tt:0 "Komutan'ın taktik yeteneği operasyonları hızlandırıyor"
+ mdw_bar_at_war_tt:0 "Askeri kaynaklar aktif bir savaşa yönlendiriliyor"
+ mdw_bar_turmoil_tt:0 "Yüksek ulusal karışıklık [ROOT.GetCountry.GetAdjective] Kampanya kampanyası kampanyası kampanyası kampanyası"
+ mdw_peril_base_tt:0 "Cartel Bölgesindeki Sustained operasyonları sürekli risk taşır"
+ mdw_peril_multiple_states_tt:0 "Birçok cephede faaliyet, komutanın maruz kalmalarını artırır"
+ mdw_peril_us_aid_tt:0 "[SCOPE.sCountry('c:USA').GetAdjective] istihbarat, kumandanların komutanının hedef alma yeteneğini azaltır"
+ mdw_peril_cautious_tt:0 "Komutan'ın ihtiyatlı yaklaşımı kişisel riskin azaltılmasıdır"
+ 
+ # ==========================================
+ # EVENTS
+ # ==========================================
+ 
+ # mdw_events.1 — War Declared
+ mdw_events.1.t:0 "[ROOT.GetCountry.GetName] Kartels Savaşı"
+ mdw_events.1.d:0 "Yıllar süren ürpertici karel genişleme ve yarı-measures başarısız olduktan sonra [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] hükümeti resmi olarak [ROOT.GetCountry.GetAdjective] askerini narco ağlarına karşı kampanyaya adamış durumda. Açıklama önemlidir - sadece operasyonel olarak değil, sembolik olarak. [ROOT.GetCountry.GetAdjective] devlet, durumu kabul etmeyecektir.\n\n Karteller cevap verecektir. Askeri hazır olmalıdır."
+ mdw_events.1.f:0 "Devlet onun çizgisini çizmiştir."
+ mdw_events.1.a:0 "[ROOT.GetCountry.GetName] buna ait olanları yeniden kabul edecek"
+ 
+ # mdw_events.2 — Commander Selection
+ mdw_events.2.t:0 "Kampanyayı kim yönetecek?"
+ mdw_events.2.d:0 "Açıklama yapıldı. Şimdi bir kumandan seçilmelidir - bir kişi savaşı kartel kaplı bölgeye götürmeye istekli, düşmanın zemini bildiği yerde, yerel bilişimcilere sahip ve orduyu yapmaya isteklidir. Bu kirli bir savaş olacak."
+ mdw_events.2.f:0 "Doğru genel her şeyi değiştirir."
+ mdw_events.2.a:0 "Deploy [SCOPE.sCharacter('mdw_commander_1').GetFullName]"
+ mdw_events.2.b:0 "Deploy [SCOPE.sCharacter('mdw_commander_2').GetFullName]"
+ mdw_events.2.c:0 "Deploy [SCOPE.sCharacter('mdw_commander_3').GetFullName]"
+ 
+ # mdw_events.3 — Combat Patrol
+ mdw_events.3.t:0 "[SCOPE.sState('mdw_active_state').GetName]"
+ mdw_events.3.d:0 "[SCOPE.sCharacter('mdw_commander').GetFullName] [SCOPE.sState('mdw_active_state').GetName]'de kartel güçlerle bir dizi ilişki bildiriyor. Karteller bölgelerini tutmak için savaşıyor - yolblocks, keskin nişancılar kullanarak ve güçlü inançlarla ilgili yaklaşımlarda IEDs. İlerleme yapılır, ancak zaman ve kaynaklardaki maliyet önemlidir."
+ mdw_events.3.f:0 "Her kilometre yol temizlendi, kartellerin kullanabileceği bir kilometre."
+ mdw_events.3.a:0 "Sıkıntı - bölgeyi çabucak alın"
+ mdw_events.3.b:0 "Gelişmiş yöntemsel olarak – hareket etmeden önce her pozisyonu güvenli"
+ 
+ # mdw_events.4 — State Cleared
+ mdw_events.4.t:0 "[SCOPE.sState('mdw_active_state').GetName] Cleared"
+ mdw_events.4.d:0 "Önemli bir operasyonel başarı: [SCOPE.sCharacter('mdw_commander').GetFullName] [SCOPE.sState('mdw_active_state').GetName]'daki kartel kuvvetlerin kırılması. Onların komuta yapısı ortadan kaldırıldı, lojistik kesti ve anahtar rakamları öldü veya gözaltında. [ROOT.GetCountry.GetAdjective] askeri işgal güçleri zemini tutmak için hareket eder.\n\n Bir devlet hükümet kontrolü altında geri döndü. Daha fazla kalır."
+ mdw_events.4.f:0 "Harita değişiyor."
+ mdw_events.4.a:0 "Sonrakine devam edin – ivmeyi tut"
+ 
+ # mdw_events.5 — Ambush
+ mdw_events.5.t:0 "Ambush – [SCOPE.sCharacter('mdw_commander').GetFullName]'s Column Is Under Attack"
+ mdw_events.5.d:0 "Cartel tabancası [ROOT.GetCountry.GetAdjective] [SCOPE.sState('mdw_active_state').GetName] askeri sütunu pusulaladı. Saldırı koordine edildi - birden fazla ateş pozisyonu, önceden planlanan geri çekilme rotaları ve sütunun hareketlerinin bilgisi [ROOT.GetCountry.GetAdjective] askeri komuta zinciri içinde bilgi. Ölümler var. [SCOPE.sCharacter('mdw_commander').GetFullName] nişanı yönetiyor."
+ mdw_events.5.f:0 "Karteller, seçtikleri zaman bir ordu gibi savaşırlar."
+ mdw_events.5.a:0 "Savaş - onları takip et ve yok et"
+ mdw_events.5.b:0 "Break contact – regrup ve süpür later"
+ 
+ # mdw_events.6 — Commander Under Fire
+ mdw_events.6.t:0 "[SCOPE.sCharacter('mdw_commander').GetFullName] Tehlikededir"
+ mdw_events.6.d:0 "İstihbarat, saha raporlarının önerdiği şeyi doğruladı: karteller [SCOPE.sCharacter('mdw_commander').GetFullName] öncelikli hedef olarak tespit edildi. Profesyonel bir suikast ekibi onlara karşı görevlendirilmiştir. Tehdit güvenilirdir. Komutanı [ROOT.GetCountry.GetCapital.GetCityHubName]'ye geri çekmek riski azaltacaktır - ancak kampanyanın kritik bir anda ivmesini durduracaktır."
+ mdw_events.6.f:0 "Karteller düşmanlarını inceliyor."
+ mdw_events.6.a:0 "Pull [SCOPE.sCharacter('mdw_commander').GetFullName] geri - kampanya bekleyebilir"
+ mdw_events.6.b:0 "Basın - [SCOPE.sCharacter('mdw_commander').GetFullName] riski kabul eder"
+ 
+ # mdw_events.10 — Victory
+ mdw_events.10.t:0 "İlaç Savaşı Kazandı"
+ mdw_events.10.d:0 "[SCOPE.sCharacter('mdw_commander').GetFullName] son operasyonel raporu gönderir: kartel bölgesel kontrol [ROOT.GetCountry.GetName] arasında kırıldı. Son güçlü inançlar temizlendi. Askeri işgal yerindedir. Cartel ağları hala var - zayıf formda yıllarca yeniden kurulacaklardır - ancak [ROOT.GetCountry.GetAdjective] durumu kendi topraklarında yeniden ifade etti.\n\n Bu kaçınılmaz değildi. Siyasi irade, askeri taahhüt ve birçok yönden şansa ihtiyaç duyacaktır. [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] kazandı - ilk etapta otomobilelleri mümkün kılan koşulları ele almak için zaman."
+ mdw_events.10.f:0 "[ROOT.GetCountry.GetName] onun ne olduğunu yeniden dile getirdi."
+ mdw_events.10.a:0 "Sert bir zafer - ve bir başlangıç"
+ 
+ # mdw_events.11 — Commander Killed
+ mdw_events.11.t:0 "[SCOPE.sCharacter('mdw_commander').GetFullName] Öldürüldü"
+ mdw_events.11.d:0 "En kötüsü oldu. Cartel suikast operasyonu başarılı oldu. [SCOPE.sCharacter('mdw_commander').GetFullName] öldü - [ROOT.GetCountry.GetAdjective] güvenlik hizmetlerinin güvenilir uyarılara rağmen engellemediği bir saldırıda öldürüldü. Haber saatler içinde halktır. Karteller, kontrol ettikleri kasabalarda açıkça kutluyorlar.\n\n Kampanya bitmiyor. Ama ondan kurtarmak için aylar alacak bir darbe yaşadı. Yeni bir komutan bulunmalıdır - ve karteller konsolide etmek için zaman kullanacaklar."
+ mdw_events.11.f:0 "Karteller henüz en önemli darbelerini vurdu."
+ mdw_events.11.a:0 "Bu arada kırılmayacağız – savaş devam ediyor"
+ 
+ # mdw_events.20 — US Aid
+ mdw_events.20.t:0 "[SCOPE.sCountry('c:USA').GetName] Askeri Yardım Anlaşmasını İmzaladı"
+ mdw_events.20.d:0 "[SCOPE.sCountry('c:USA').GetCapital.GetCityHubName] taşındı. [SCOPE.sCountry('c:USA').GetName] resmi olarak [ROOT.GetCountry.GetName] ile bir askeri yardım anlaşması imzaladı - istihbarat kaynakları, danışmanlık personeli, ekipman ve karşı-kartel kampanyasına lojistik destek. Anlaşma önemli bir siyasi gelişmedir: [SCOPE.sCountry('c:USA').GetRuler.GetPrimaryRoleTitle] [SCOPE.sCountry('c:USA').GetRuler.GetLastName] [ROOT.GetCountry.GetName] Doğrudan ulusal ilgi meselesi olarak, \n\n [ROOT.GetCountry.GetName] için, pratik faydalar hemen: Otorite restore edilir, ekipman akandır ve carteller artık [SCOPE.sCountry('c:USA').GetName]'nin tam istihbarat aygıtı ile bir düşmanla yüz yüze gelirler."
+ mdw_events.20.f:0 "[SCOPE.sCountry('c:USA').GetName] işlandığında, denge değişir."
+ mdw_events.20.a:0 "Bu, kampanyası tamamen değiştiriyor"
+ 
+ # ==========================================
+ # MODIFIERS
+ # ==========================================
+ 
+ mdw_war_declared_modifier:0 "Meksikalı Uyuşturucu Savaşı - Aktif Kampanya"
+ mdw_war_declared_modifier_desc:0 "[ROOT.GetCountry.GetName] askerini narco-cartellere karşı doğrudan bir kampanyaya adamış. Otorite tüketiliyor ve askeri meşgul, ancak [ROOT.GetCountry.GetAdjective] devlet kendini iddia ediyor."
+ 
+ mdw_us_aid_modifier:0 "ABD Askeri Yardım"
+ mdw_us_aid_modifier_desc:0 "[SCOPE.sCountry('c:USA').GetName] ile aktif bir askeri yardım anlaşması istihbarat, lojistik ve ekipman [ROOT.GetCountry.GetName] karşı-kartel kampanyasına veriyor."
+ 
+ mdw_victory_modifier:0 "Uyuşturucu Savaşı Kazandı"
+ mdw_victory_modifier_desc:0 "[ROOT.GetCountry.GetName] İlaç Savaşını kazandı. Cartel bölgesel kontrol bozuldu ve [ROOT.GetCountry.GetAdjective] devlet yeniden ifade edilen egemenliği yeniden ortaya çıkardı. Otomobilelleri üreten koşullar kalır - ancak bu savaş kazanılmıştır."
+ 
+ mdw_commander_killed_modifier:0 "Komutan Eylemde Öldürdü"
+ mdw_commander_killed_modifier_desc:0 "Karşı-kartel komutanının suikastı, [ROOT.GetCountry.GetName] ve kartellere olan güvenini sarsmıştır."
+ 
+ mdw_troops_ambushed:0 "Troops Ambushed"
+ mdw_troops_ambushed_desc:0 "[ROOT.GetCountry.GetAdjective] askeri sütun, zararlara neden olan ve geçici olarak saldırgan yetenekleri azaltan kartel kuvvetleri tarafından pusulandı."
+ 
+ # Cartel territory modifier descriptions (MDW context)
+ cartel_cjng_controlled:0 "CJNG Bölgesi"
+ cartel_cjng_controlled_desc:0 "Jalisco New Generation Cartel bu devletin suçlu ekonomisini kontrol ediyor. Endüstriyel aktivite bozulur, altyapı bozuluyor ve insanlar [ROOT.GetCountry.GetAdjective] bölgeyi terk ediyor."
+ 
+ cartel_gulf_controlled:0 "Gulf Cartel Bölgesi"
+ cartel_gulf_controlled_desc:0 "Gulf Cartel burada bölgesel egemenliği kurdu. Ekonomik aktivite bastırılır ve [ROOT.GetCountry.GetAdjective] devlet otoritesi nominaldir."
+ 
+ cartel_sinaloa_controlled:0 "Sinaloa Cartel Bölgesi"
+ cartel_sinaloa_controlled_desc:0 "Sinaloa Cartel bu durumu kontrol eder. Tarımsal çıktı bozuldu ve yerel ekonomi kartel gözetim altında çalışır."
+ 
+ cartel_northeast_controlled:0 "Kuzeydoğu Cartel Bölgesi"
+ cartel_northeast_controlled_desc:0 "Cartel del Noreste burada egemenlik kurdu. [ROOT.GetCountry.GetName]'de altyapı ve bina verimliliği acı çekiyor."
+ 
+ # usa war on drugs
+
+ je_war_on_drugs:0 "Uyuşturucular Savaşı"
+ je_war_on_drugs_reason:0 "Narkotik akışı [ROOT.GetCountry.GetName] ulusal bir krizdir. Cocaine, kahraman ve diğer maddeler - büyük ölçüde Latin Amerika'da ve [ROOT.GetCountry.GetAdjective] sınırlarında üretilen - yıkıcı toplumlar, şiddetli suçlar ve kamu kurumlarını yozlaştırmak.\n\n[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] yönetimi kapsamlı bir kampanyaya karar verdi: Kaynakta tedariki güçlendirmek için uluslararası ortaklıklar, sınırları kapatmak ve talep etmek için yerel uygulama. Kampanya maliyetsiz değildir - daha geniş ekonomide ağırlık gerektiren kaynaklar - ancak alternatif yabancı suçlu ağların merhametinde giderek artan bir ülkedir.\n\n@information! Cartel bölgesi Meksika'da genişleyebilir. Meksika hükümeti ile bir askeri yardım anlaşması bu kampanyanın uluslararası bileşeninin temel taşıdır."
+
+ narco_economy_plantation_bonus:0 "Narco Ekonomi"
+ narco_economy_plantation_bonus_desc:0 "İlaç ticareti kendisini [ROOT.GetCountry.GetName] tarım ekonomisine taşıdı. Plantasyon çıktısı - özellikle afyon - normal seviyelerin üzerinde çalışıyor, kartel talebi ile devam ediyor ve kırsal topluluklara narko-paranın yozlaşması akışı."
+
+ war_on_drugs_active_modifier:0 "Uyuşturucularda Savaş"
+ war_on_drugs_active_modifier_desc:0 "[ROOT.GetCountry.GetAdjective] hükümet uyuşturucu kaçakçılığına karşı kapsamlı bir kampanyaya karar verdi. Uygulamalı çaba - evcil polislik, interdiction operasyonları ve uluslararası işbirliği - ekonomi genelinden gelen kaynakları çizmek ve ulusal verimlilik konusunda mütevazı ama gerçek bir maliyet."
+
+ war_on_drugs_victory_modifier:0 "Uyuşturucularda Savaş - Kazandı"
+ war_on_drugs_victory_modifier_desc:0 "[ROOT.GetCountry.GetAdjective] Uyuşturucular üzerindeki savaş, belirtilen hedeflerine ulaştı. Tedarik bastırıldı, sınırlar uygulanır ve kurumsal çerçeve yerindedir. Kampanya, [ROOT.GetCountry.GetName]'nin otoritesini ve prestijini güçlendirdi - ilaç talebi üreten temel koşullar çözülmedi."
+
+ wod_je_status_active:0 "Kampanya devam ediyor."
+ wod_je_status_ready:0 "Kampanya sona erdirmeye hazır."
+
+ wod_completion_mexico_tt:0 "#bold Askeri Yardım#! Meksika ile pact."
+ wod_completion_enforcement_tt:0 "Ya #bold Ulusal Muhafız #! veya #bold Gizli Polis#!"
+ wod_completion_opium_price_tt:0 "Uyuşturucuların en az #bold% 65 pricier#! Amerikan pazarında."
+ wod_completion_schools_tt:0 "#bold Okullar#! seviye #bold 5#! veya daha yüksek."
+ wod_completion_border_tt:0 "#bold Migration Controls#! veya #bold Kapalı Sınırlar#!"
+ wod_completion_no_safe_injection_tt:0 "#bold Güvenli Enjeksiyon Siteleri#! yok."
+ wod_completion_no_trafficking_allowed_tt:0 "#bold Trafik İzinli#! yok."
+ wod_completion_no_hard_drugs_decriminalized_tt:0 "#bold Hard Drugs Decriminalized#! yok."

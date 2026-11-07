@@ -1,0 +1,216 @@
+﻿# ==========================================
+# CENTRAL BANK FISCAL POLICY — SCRIPTED GUIs
+# Variable: cb_fiscal_policy = 1..5
+#   1 = Most Contractionary
+#   2 = Contractionary
+#   3 = Neutral
+#   4 = Expansionary
+#   5 = Most Expansionary
+# ==========================================
+
+# ── AVAILABILITY ──────────────────────────
+
+cb_can_set_policy = {
+	scope = country
+	is_shown = { always = yes }
+	is_valid = {
+		OR = {
+			has_law = law_type:law_fractional_reserve_banking
+			has_law = law_type:law_full_reserve_banking
+		}
+	}
+}
+
+# ── SELECTED STATE CHECKS ──────────────────
+
+cb_policy_is_1 = {
+	scope = country
+	is_shown = {
+		has_variable = cb_fiscal_policy
+		var:cb_fiscal_policy = 1
+	}
+}
+cb_policy_is_2 = {
+	scope = country
+	is_shown = {
+		has_variable = cb_fiscal_policy
+		var:cb_fiscal_policy = 2
+	}
+}
+cb_policy_is_3 = {
+	scope = country
+	is_shown = {
+		OR = {
+			NOT = { has_variable = cb_fiscal_policy }
+			var:cb_fiscal_policy = 3
+		}
+	}
+}
+cb_policy_is_4 = {
+	scope = country
+	is_shown = {
+		has_variable = cb_fiscal_policy
+		var:cb_fiscal_policy = 4
+	}
+}
+cb_policy_is_5 = {
+	scope = country
+	is_shown = {
+		has_variable = cb_fiscal_policy
+		var:cb_fiscal_policy = 5
+	}
+}
+
+# ── SETTERS ────────────────────────────────
+# Each setter: clears all CB policy modifiers, sets the variable, then
+# applies the correct modifier for the new level + active law.
+# Logic is inlined — scripted GUIs cannot call other scripted GUIs via
+# "name = yes" syntax (that's for scripted_effects only).
+
+cb_set_policy_1 = {
+	scope = country
+	is_shown = { always = yes }
+	is_valid = {
+		OR = {
+			has_law = law_type:law_fractional_reserve_banking
+			has_law = law_type:law_full_reserve_banking
+		}
+	}
+	effect = {
+		remove_modifier = cb_policy_fractional_1
+		remove_modifier = cb_policy_fractional_2
+		remove_modifier = cb_policy_fractional_4
+		remove_modifier = cb_policy_fractional_5
+		remove_modifier = cb_policy_full_1
+		remove_modifier = cb_policy_full_2
+		remove_modifier = cb_policy_full_4
+		remove_modifier = cb_policy_full_5
+		set_variable = { name = cb_fiscal_policy value = 1 }
+		if = {
+			limit = { has_law = law_type:law_fractional_reserve_banking }
+			add_modifier = { name = cb_policy_fractional_1 months = -1 }
+		}
+		else_if = {
+			limit = { has_law = law_type:law_full_reserve_banking }
+			add_modifier = { name = cb_policy_full_1 months = -1 }
+		}
+	}
+	ai_is_valid = { always = no }
+}
+
+cb_set_policy_2 = {
+	scope = country
+	is_shown = { always = yes }
+	is_valid = {
+		OR = {
+			has_law = law_type:law_fractional_reserve_banking
+			has_law = law_type:law_full_reserve_banking
+		}
+	}
+	effect = {
+		remove_modifier = cb_policy_fractional_1
+		remove_modifier = cb_policy_fractional_2
+		remove_modifier = cb_policy_fractional_4
+		remove_modifier = cb_policy_fractional_5
+		remove_modifier = cb_policy_full_1
+		remove_modifier = cb_policy_full_2
+		remove_modifier = cb_policy_full_4
+		remove_modifier = cb_policy_full_5
+		set_variable = { name = cb_fiscal_policy value = 2 }
+		if = {
+			limit = { has_law = law_type:law_fractional_reserve_banking }
+			add_modifier = { name = cb_policy_fractional_2 months = -1 }
+		}
+		else_if = {
+			limit = { has_law = law_type:law_full_reserve_banking }
+			add_modifier = { name = cb_policy_full_2 months = -1 }
+		}
+	}
+	ai_is_valid = { always = no }
+}
+
+cb_set_policy_3 = {
+	scope = country
+	is_shown = { always = yes }
+	is_valid = {
+		OR = {
+			has_law = law_type:law_fractional_reserve_banking
+			has_law = law_type:law_full_reserve_banking
+		}
+	}
+	effect = {
+		remove_modifier = cb_policy_fractional_1
+		remove_modifier = cb_policy_fractional_2
+		remove_modifier = cb_policy_fractional_4
+		remove_modifier = cb_policy_fractional_5
+		remove_modifier = cb_policy_full_1
+		remove_modifier = cb_policy_full_2
+		remove_modifier = cb_policy_full_4
+		remove_modifier = cb_policy_full_5
+		set_variable = { name = cb_fiscal_policy value = 3 }
+		# Neutral: no modifier applied
+	}
+	ai_is_valid = { always = no }
+}
+
+cb_set_policy_4 = {
+	scope = country
+	is_shown = { always = yes }
+	is_valid = {
+		OR = {
+			has_law = law_type:law_fractional_reserve_banking
+			has_law = law_type:law_full_reserve_banking
+		}
+	}
+	effect = {
+		remove_modifier = cb_policy_fractional_1
+		remove_modifier = cb_policy_fractional_2
+		remove_modifier = cb_policy_fractional_4
+		remove_modifier = cb_policy_fractional_5
+		remove_modifier = cb_policy_full_1
+		remove_modifier = cb_policy_full_2
+		remove_modifier = cb_policy_full_4
+		remove_modifier = cb_policy_full_5
+		set_variable = { name = cb_fiscal_policy value = 4 }
+		if = {
+			limit = { has_law = law_type:law_fractional_reserve_banking }
+			add_modifier = { name = cb_policy_fractional_4 months = -1 }
+		}
+		else_if = {
+			limit = { has_law = law_type:law_full_reserve_banking }
+			add_modifier = { name = cb_policy_full_4 months = -1 }
+		}
+	}
+	ai_is_valid = { always = no }
+}
+
+cb_set_policy_5 = {
+	scope = country
+	is_shown = { always = yes }
+	is_valid = {
+		OR = {
+			has_law = law_type:law_fractional_reserve_banking
+			has_law = law_type:law_full_reserve_banking
+		}
+	}
+	effect = {
+		remove_modifier = cb_policy_fractional_1
+		remove_modifier = cb_policy_fractional_2
+		remove_modifier = cb_policy_fractional_4
+		remove_modifier = cb_policy_fractional_5
+		remove_modifier = cb_policy_full_1
+		remove_modifier = cb_policy_full_2
+		remove_modifier = cb_policy_full_4
+		remove_modifier = cb_policy_full_5
+		set_variable = { name = cb_fiscal_policy value = 5 }
+		if = {
+			limit = { has_law = law_type:law_fractional_reserve_banking }
+			add_modifier = { name = cb_policy_fractional_5 months = -1 }
+		}
+		else_if = {
+			limit = { has_law = law_type:law_full_reserve_banking }
+			add_modifier = { name = cb_policy_full_5 months = -1 }
+		}
+	}
+	ai_is_valid = { always = no }
+}

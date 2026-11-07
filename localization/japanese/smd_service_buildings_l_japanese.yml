@@ -1,0 +1,325 @@
+﻿l_japanese:
+
+
+ # BUILDINGS
+ 
+ building_bank:0 "商業銀行"
+ building_bank_desc:0 "預金を受け入れ、信用を管理し、経済全体の資本の流れを容易にする金融機関。 謙虚な貸別荘からデジタルネットワークを振り込むまで、銀行は現代の商取引の背骨です。"
+
+ building_food_service:0 "食品サービス"
+ building_food_service_desc:0 "準備された食品を供給し、一般的な人口に包装された食品を供給する小売およびダイニング施設。 コーナーの食料品からグローバルファーストフードチェーンまで、市民が供給され満足している状態を維持します。"
+
+ building_retail_services:0 "小売サービス"
+ building_retail_services_desc:0 "消費者に直接家具、衣類、工具を販売する商業施設。 小売店は、サプライチェーンの最終リンクであり、日常の家庭用品に産業的な出力を翻訳しています。"
+
+ building_advertising_agency:0 "広告サービス"
+ building_advertising_agency_desc:0 "プロモーションコンテンツの制作・配布に特化した会社です。 広告代理店は、消費者の行動を形作り、需要を促し、プリントされたワイドシートからアルゴリズム的にターゲットを絞ったデジタルキャンペーンに至るまですべてをデプロイします。"
+
+ building_warehouse:0 "店舗情報"
+ building_warehouse_desc:0 "物品の保管と流通のための大きな施設。 倉庫は、経済の物流ハブとして機能します。, 供給と需要をバッファリングし、全国の製品の効率的な移動を可能に."
+
+ building_pharmaceutical_services:0 "医薬品サービス"
+ building_pharmaceutical_services_desc:0 "薬用化合物の分配、研究、および分布に従事する設立。 アポテカリカウンターから最先端のバイオテクノロジーラボまで、医薬品サービスは、公衆衛生を支える治療に生の化学入力を翻訳します。"
+
+ ####################
+ # PRODUCTION METHOD GROUPS
+ ####################
+
+ ### BANKING
+
+ pmg_base_banking:0 "銀行業務"
+ pmg_base_banking_desc:0 "銀行が預金を受け入れ、信用を発行し、顧客や企業との金融取引を実施する主な方法。"
+
+ pmg_securities_trading:0 "証券取引"
+ pmg_securities_trading_desc:0 "銀行が金融証券の取引と仲介に従事しているかどうかを決定し、投資された資本を拡張されたクレジットに変えます。"
+
+ pmg_automation_banking:0 "銀行オートメーション"
+ pmg_automation_banking_desc:0 "銀行が自動システムを採用する度は、機械的チェッカーから人工知能まで、取引を処理し、労働コストを削減します。"
+
+ ### FOOD SERVICES
+
+ pmg_base_food_services:0 "食料品事業"
+ pmg_base_food_services_desc:0 "小規模な近隣店から大規模なオンラインプラットフォームまで、食料品が消費者に販売される主要な小売フォーマット。"
+
+ pmg_restaurant_type:0 "レストランタイプ"
+ pmg_restaurant_type_desc:0 "カジュアルな地元の飲食店から産業ファーストフードのフランチャイズまで、施設が飲食店を運営するかどうかを決定。"
+
+ pmg_food_service_logistics:0 "食品サービス物流"
+ pmg_food_service_logistics_desc:0 "省力セルフチェックアウトシステムや配送インフラなど、食品サービス施設で使用されるチェックアウトおよび充実した方法。"
+
+ ### RETAIL
+
+ pmg_base_retail:0 "小売形式"
+ pmg_base_retail_desc:0 "小規模な独立した店から巨大な大型箱の店および出口の中心への小売りの操作のスケールそしてフォーマット。"
+
+ pmg_retail_specialization:0 "小売特化"
+ pmg_retail_specialization_desc:0 "小売店が家の家具、電子工学、または贅沢な項目のような商品の特定のカテゴリに焦点を合わせているかどうか決定します。"
+
+ pmg_retail_logistics:0 "小売物流"
+ pmg_retail_logistics_desc:0 "セルフチェックアウトターミナル、電子商取引プラットフォーム、自動配送など、小売店が使用するチェックアウトとフルフィルメント方法。"
+
+ ### ADVERTISING
+
+ pmg_base_advertising:0 "広告媒体"
+ pmg_base_advertising_desc:0 "広告代理店がキャンペーンを配信する主なチャネル — 印刷、放送、ダイレクトメール、または屋外サイネージ。"
+
+ pmg_digital_advertising:0 "デジタル広告"
+ pmg_digital_advertising_desc:0 "シンプルなウェブバナーからAI生成されたハイパーターゲティングキャンペーンまで、代理店がデジタル広告手法を採用しているかどうかを決定します。"
+
+ pmg_advertising_research:0 "市場調査"
+ pmg_advertising_research_desc:0 "従来の焦点グループから機械学習主導の分析まで、消費者行動を理解し、影響する研究方法。"
+
+ ### WAREHOUSING
+
+ pmg_base_warehousing:0 "倉庫運用"
+ pmg_base_warehousing_desc:0 "基本的なマニュアルストレージから完全自動フルフィルメントセンターまで、倉庫のコアストレージと配布方法。"
+
+ pmg_warehousing_logistics:0 "在庫管理"
+ pmg_warehousing_logistics_desc:0 "倉庫内の在庫を追跡し、管理するために使用されるシステムは、手書きのレジャーからAI主導のリアルタイム資産管理に使用されます。"
+
+ ### PHARMACEUTICAL SERVICES
+
+ pmg_base_pharmaceutical_services:0 "分配操作"
+ pmg_base_pharmaceutical_services_desc:0 "医薬品化合物が処理され、患者に分配される主な方法は、従来の補助食品からメープルオーダー分布までです。"
+
+ pmg_pharmaceutical_research:0 "医薬品研究"
+ pmg_pharmaceutical_research_desc:0 "設立が医薬品研究に投資するかどうかを決定し、新しい治療の開発を加速し、医薬品の出力を高める。"
+
+ pmg_pharmaceutical_automation:0 "ファーマシーオートメーション"
+ pmg_pharmaceutical_automation_desc:0 "ハンドプリペア処方から完全にロボット薬局システムまで、配合と調剤プロセスで使用される自動化の程度。"
+
+ ####################
+ # PRODUCTION METHODS
+ ####################
+
+ ### BANKING - BASE
+
+ pm_basic_banking:0 "標準貸出"
+ pm_basic_banking_desc:0 "基本的な預金口座と個人ローンを提供するシンプルな金融運用、主に紙のロジャーの管理によってスタッフを務めています。"
+
+ pm_commercial_banking:0 "商業銀行"
+ pm_commercial_banking_desc:0 "企業や消費者に様々な金融商品を提供し、クレジット作成能力を拡大した完全チャーター型商業銀行。"
+
+ pm_electronic_transfers:0 "ペイデイローン"
+ pm_electronic_transfers_desc:0 "電子決済システムおよびワイヤ転送の採用により、資本の移動が劇的に加速し、物理的な書類の信頼性が低下します。"
+
+ pm_online_banking:0 "今すぐ購入, 後で支払う"
+ pm_online_banking_desc:0 "銀行業務の完全デジタル化により、顧客はアカウントを管理し、取引をリモートで実行し、ブランチのオーバーヘッドを削減し、大規模な範囲を拡大することができます。"
+
+ ### BANKING - SECURITIES
+
+ pm_no_securities_trading:0 "有価証券取引なし"
+ pm_no_securities_trading_desc:0 "銀行は、金融市場や有価証券に関与することなく、預金および信用取引にのみ焦点を合わせています。"
+
+ pm_securities_brokerage:0 "証券仲介"
+ pm_securities_brokerage_desc:0 "銀行は、ブローカーデスクを確立し、クライアントは金融証券を売買することができます。 有価証券は、拡大されたクレジット生成にチャネル化されます。"
+
+ pm_derivatives_trading:0 "ヘッジ・ファンド"
+ pm_derivatives_trading_desc:0 "基礎資産から得られる複雑な金融商品取引。 有価証券からクレジット出力を飛躍的に増幅する高リスク・高報酬事業"
+
+ pm_algorithmic_trading:0 "量子取引"
+ pm_algorithmic_trading_desc:0 "機械学習アルゴリズムは、スーパーマン速度で取引を実行し、最小限の人間介入で有価証券ポートフォリオのリターンを最大化します。"
+
+ ### BANKING - AUTOMATION
+
+ pm_manual_tellers:0 "マニュアルテラー"
+ pm_manual_tellers_desc:0 "取引は、カウンターで人的チェッカーによって完全に処理され、重要な事務処理を要求します。"
+
+ pm_atm_network:0 "ATMネットワーク"
+ pm_atm_network_desc:0 "自動チェッカーマシンのネットワークにより、お客様はスタッフなしで基本的な取引を実行し、サービスの可用性を拡張しながら、事務の頭文字を減らすことができます。"
+
+ pm_automated_banking_systems:0 "自動銀行システム"
+ pm_automated_banking_systems_desc:0 "バックオフィスの操作はコンピュータ化され、手動でのデータ記入項目およびトランザクション処理の支柱の必要性を劇的に減らします。"
+
+ pm_ai_financial_advisors:0 "AIファイナンシャルアドバイザー"
+ pm_ai_financial_advisors_desc:0 "Robo-advisorsとAI主導の金融計画ツールは、クライアントの大半のためのヒューマンアドバイザーを交換し、クレジット出力を増加させながら人件費を削減します。"
+
+ ### FOOD SERVICES - BASE
+
+ pm_corner_grocery:0 "コーナー 食料品"
+ pm_corner_grocery_desc:0 "小さな、近隣レベルの食料品店は、限られたステープルグッズを提供しています。 労働集中力は低い頭上および強いコミュニティのタイと。"
+
+ pm_supermarket:0 "スーパーマーケット"
+ pm_supermarket_desc:0 "大型のセルフサービス食料品店では、1つの屋根の下に様々な商品を提供し、効率的なサプライチェーンにより、より高いスループットを実現します。"
+
+ pm_hypermarket:0 "スーパーストア"
+ pm_hypermarket_desc:0 "巨大な複合食料品店と一般商品店、幅広い漁場から顧客を描き、大規模で運営しています。"
+
+ pm_online_grocery:0 "オンライン食料品"
+ pm_online_grocery_desc:0 "食料品は一元化された配分のハブからデジタルそして満たされて発注され、leanerの物理的フットプリントを可能にし、拡大されたカスタマー リーチ。"
+
+ ### FOOD SERVICES - RESTAURANT
+
+ pm_no_restaurants:0 "ダイニングサービスなし"
+ pm_no_restaurants_desc:0 "店内は、食料品の小売、調理済み食品やお食事のオプションがないので、そちらに焦点を合わせています。"
+
+ pm_local_restaurants:0 "ローカルレストラン"
+ pm_local_restaurants_desc:0 "地元のお客様に準備された食事を提供する独立したダイニング施設で、食料品の操作の上に控えめなフードサービス出力を追加します。"
+
+ pm_fast_food_chains:0 "ファーストフードチェーン"
+ pm_fast_food_chains_desc:0 "複数の場所で稼働する標準化された、高スループットのクイックサービスレストラン、産業準備方法による食品サービスの出力を劇的にスケーリングします。"
+
+ pm_fine_dining:0 "ファインダイニング"
+ pm_fine_dining_desc:0 "富裕層向けレストラン運営、熟練労働者や高品質の食材を使ったプレミアムフードサービスの生産"
+
+ ### FOOD SERVICES - LOGISTICS
+
+ pm_manual_food_checkout:0 "手動チェックアウト"
+ pm_manual_food_checkout_desc:0 "すべての顧客の取引は、スタッフのチェックアウトカウンターでキャッシャーによって処理され、サービスピーク要求に重要な労力を必要とする。"
+
+ pm_self_checkout_food:0 "セルフチェックアウトターミナル"
+ pm_self_checkout_food_desc:0 "自動セルフサービスのチェックアウトキオスクは、レジ係のスタッフの必要性を減らし、労働コストを削減し、忙しい期間中のスループットを増加させます。"
+
+ pm_food_delivery_services:0 "食品配送サービス"
+ pm_food_delivery_services_desc:0 "宅配ネットワークを整備し、食料品や惣菜を持ち帰り、家庭で調理することが出来ます。 貯蔵容量を段階の順序に効率的に消費して下さい。"
+
+ pm_drone_food_delivery:0 "ドローン配信"
+ pm_drone_food_delivery_desc:0 "無人機のフリートは、人里のデリバリードライバーを交換し、サービスエリアを横断する間、人件費を飛躍的に削減します。"
+
+ ### RETAIL - BASE
+
+ pm_small_shops:0 "小売店"
+ pm_small_shops_desc:0 "家具、衣料品、ツールをローカル顧客に販売する独立した小売店。 低い頭上式の簡単な操作。"
+
+ pm_department_stores_retail:0 "百貨店"
+ pm_department_stores_retail_desc:0 "部門に組織される大規模なマルチフロアの小売店は、1つの屋根の下で消費者の商品の広い範囲を提供します。"
+
+ pm_big_box_retail:0 "ビッグボックス小売"
+ pm_big_box_retail_desc:0 "倉庫スケールの小売店は、バルク購入力と効率的な物流に依存し、競争力のある価格で商品の大量を提供。"
+
+ pm_outlet_retail:0 "アウトレットセンター"
+ pm_outlet_retail_desc:0 "ブランドが消費者に直接過剰で割引された株式を販売する専用の小売コンプレックス, 目的構築された目的地で高いショッピングトラフィックを集中."
+
+ ### RETAIL - SPECIALIZATION
+
+ pm_no_retail_specialization:0 "一般小売"
+ pm_no_retail_specialization_desc:0 "店は特定の部門の焦点無しの商品の広い、undifferentiatedの組合せを運びます。"
+
+ pm_home_goods_retail:0 "ホーム グッズ 小売"
+ pm_home_goods_retail_desc:0 "店は高級ラインを含む家具および家の家具を、aspirationalの世帯の購入でより高いマージンを捕獲します専門にします。"
+
+ pm_electronics_retail:0 "エレクトロニクス小売"
+ pm_electronics_retail_desc:0 "店舗は、知識のあるフロアスタッフを要求し、技術的に洗練されたクライアントを引き付け、ツールやコンシューマーエレクトロニクスを専門としています。"
+
+ pm_luxury_retail:0 "ラグジュアリーリテール"
+ pm_luxury_retail_desc:0 "ラグジュアリーな衣料品や家具を扱うブティック運営、富裕層の消費者からプレミアム価格を指揮し、販売される単位当たりの強い小売収益を生成します。"
+
+ ### RETAIL - LOGISTICS
+
+ pm_manual_retail_checkout:0 "手動チェックアウト"
+ pm_manual_retail_checkout_desc:0 "すべての販売取引は、スタッフのレジスタで処理され、レジスタスタッフの完全な補完を必要とする。"
+
+ pm_self_checkout_retail:0 "セルフチェックアウトターミナル"
+ pm_self_checkout_retail_desc:0 "セルフサービス決済キオスクにより、顧客は独自の取引を処理し、カシエルのヘッドカウントを減らし、店舗のスループットを改善することができます。"
+
+ pm_ecommerce_retail:0 "Eコマース"
+ pm_ecommerce_retail_desc:0 "ネットストアフロントは、物理的なフットフォールを超えて小売業務のリーチを拡張し、ストレージインフラストラクチャを必要とし、デジタル注文を段階的に満たします。"
+
+ pm_drone_retail_delivery:0 "ドローン配信"
+ pm_drone_retail_delivery_desc:0 "自動無人機の配信は、オンラインオーダーのフルフィルメントタイムを加速しながら、最終マイル宅配業者、急激な配送の人件費を交換します。"
+
+ ### ADVERTISING - BASE
+
+ pm_print_advertising:0 "目隠し掲示板"
+ pm_print_advertising_desc:0 "新聞・雑誌・印刷物等で配布されたキャンペーン 大量の聴衆に達すると紙集中力が有効である。"
+
+ pm_broadcast_advertising:0 "放送広告"
+ pm_broadcast_advertising_desc:0 "ラジオやテレビの広告は、知財や技術生産の才能への投資を必要とする、同時に大規模な視聴者に達します。"
+
+ pm_direct_mail_advertising:0 "ダイレクトメール"
+ pm_direct_mail_advertising_desc:0 "消費者の住所に直接送信されたターゲティングされたプロモーション資料。 高紙消費量は、放送媒体では不可能な人口統計ターゲティングを可能にします。"
+
+ pm_outdoor_advertising:0 "電子掲示板"
+ pm_outdoor_advertising_desc:0 "ビルボード、ポスター、サインは、高トラフィック領域に配置され、ブランドの認知度をスケールで構築します。 広い区域を渡る物理的な設置労働を要求して下さい。"
+
+ ### ADVERTISING - DIGITAL
+
+ pm_no_digital_advertising:0 "デジタル広告なし"
+ pm_no_digital_advertising_desc:0 "エージェンシーは、伝統的なメディアチャネルを通じて独占的に運営し、デジタル広告方法を採用していません。"
+
+ pm_banner_advertising:0 "ウェブバナー広告"
+ pm_banner_advertising_desc:0 "ウェブサイトに配置された静的およびアニメーションバナー広告、代理店の第一ステップをデジタル広告エコシステムにマークします。"
+
+ pm_social_media_advertising:0 "ソーシャルメディア広告"
+ pm_social_media_advertising_desc:0 "ソーシャルメディアプラットフォーム全体に展開されたキャンペーンは、膨大なエンゲージメントの高いオーディエンスにリーチし、知財は、紙上の主要なコストドライバーになりつつあります。"
+
+ pm_algorithmic_targeted_ads:0 "データ収穫"
+ pm_algorithmic_targeted_ads_desc:0 "機械学習アルゴリズムは、コンシューマーデータを分析し、個別にカスタマイズされた広告を配信し、コンバージョン率を最大化し、大規模なキャンペーン効果を実現します。"
+
+ ### ADVERTISING - RESEARCH
+
+ pm_focus_groups:0 "フォーカスグループ"
+ pm_focus_groups_desc:0 "代表的な消費者の小さなパネルは、メッセージングとゲージの反応をテストし、キャンペーン開発をガイドするための定性的な洞察を提供します。"
+
+ pm_consumer_analytics:0 "消費者分析"
+ pm_consumer_analytics_desc:0 "消費者行動の系統的なデータ収集と統計分析は、推測を置き換え、キャンペーンが最大限のインパクトのために精製できるようにします。"
+
+ pm_ai_ad_generation:0 "AI生成コンテンツ"
+ pm_ai_ad_generation_desc:0 "人工知能は、広告のコピー、イメージ、およびターゲティングパラメータを自動生成し、出力を後押ししながら必要なクリエイティブな作業員を劇的に削減します。"
+
+ ### WAREHOUSING - BASE
+
+ pm_basic_warehousing:0 "基本的な貯蔵"
+ pm_basic_warehousing_desc:0 "マニュアルワーカーのスタッフによる簡単な棚保管施設、お持ちの輸送能力を消費し、商品を発送します。"
+
+ pm_climate_controlled_storage:0 "気候制御ストレージ"
+ pm_climate_controlled_storage_desc:0 "温度および湿気調整された貯蔵は敏感な商品の保存、保存することができるプロダクトの範囲を拡大し、スループットを高めることを可能にします。"
+
+ pm_automated_warehouse:0 "自動倉庫"
+ pm_automated_warehouse_desc:0 "ロボットピックシステムと自動コンベアは、ストレージとリトリーバー操作のバルクのための手動労働を交換し、作業者ごとのストレージ出力を急激にブーストします。"
+
+ pm_fulfillment_center:0 "充填センター"
+ pm_fulfillment_center_desc:0 "迅速な注文処理とディスパッチ、統合ストレージ、ソート、梱包、配送を単一のシームレスな操作に最適化された高スループットの物流ハブ。"
+
+ ### WAREHOUSING - LOGISTICS
+
+ pm_manual_inventory:0 "マニュアル在庫"
+ pm_manual_inventory_desc:0 "紙の記録と物理的なカウントを使用して在庫を追跡し、専用の事務員に精度を維持する必要があります。"
+
+ pm_barcode_tracking:0 "バーコードの追跡"
+ pm_barcode_tracking_desc:0 "バーコードスキャニングシステムは、在庫の移動の迅速で正確な記録を可能にし、在庫エラーを減らし、記録を維持するために必要な事務処理を実現します。"
+
+ pm_rfid_tracking:0 "RFID追跡"
+ pm_rfid_tracking_desc:0 "無線周波数識別タグは、手動でスキャンすることなく、倉庫内のすべての項目のリアルタイム、自動追跡を可能にし、在庫の精度とスループットを大幅に改善します。"
+
+ pm_ai_inventory_management:0 "AIの在庫管理"
+ pm_ai_inventory_management_desc:0 "人工知能は、在庫レベルを継続的に最適化し、需要を予測し、再注文を自動化し、廃棄物を減らし、ほとんどの在庫管理スタッフの必要性を排除します。"
+
+ ### PHARMACEUTICAL SERVICES - BASE
+
+ pm_apothecary:0 "ドラッグマート"
+ pm_apothecary_desc:0 "従来のアポテカリは、オピウム由来の調製を含む、生植物および化学入力から得られる薬用化合物を手動で準備し、分配します。"
+
+ pm_pharmacy_dispensing:0 "薬局の調剤"
+ pm_pharmacy_dispensing_desc:0 "医学の規則の下で作動する現代薬は、処方の患者に標準化された薬剤プロダクトを分配します。"
+
+ pm_hospital_pharmacy:0 "病院薬局"
+ pm_hospital_pharmacy_desc:0 "病院やクリニックのネットワークを提供する統合された薬局の操作, 複雑な処方と専門処方の大量処理."
+
+ pm_mail_order_pharmacy:0 "メールオーダー薬局"
+ pm_mail_order_pharmacy_desc:0 "処方は、中枢的に満たされ、患者に直接投稿され、幅広い地理的リーチと高注文量を無駄な物理的フットプリントで実現します。"
+
+ ### PHARMACEUTICAL SERVICES - RESEARCH
+
+ pm_no_drug_research:0 "研究プログラムなし"
+ pm_no_drug_research_desc:0 "設立は、既存の化合物を分配し、医薬品研究開発に投資しません。"
+
+ pm_clinical_trials:0 "tRNAについて"
+ pm_clinical_trials_desc:0 "医薬品の新しい化合物の制御臨床試験を実施し、医薬品開発に貢献し、生産的な出力を拡大する。"
+
+ pm_biotech_research:0 "mRNAの"
+ pm_biotech_research_desc:0 "高度な生態学的研究方法は、薬の発見を加速し、新規治療の開発を可能にし、医薬品の出力を大幅に増加させます。"
+
+ pm_gene_therapy:0 "遺伝子の編集"
+ pm_gene_therapy_desc:0 "最先端の遺伝子編集研究により、疾患の根幹遺伝子原因を標的とした治療の開発を可能にし、医薬品科学のフロンティアを表現しています。"
+
+ ### PHARMACEUTICAL SERVICES - AUTOMATION
+
+ pm_manual_compounding:0 "手動混合"
+ pm_manual_compounding_desc:0 "薬局は、手作業で各処方を手動で準備し、測定します, 熟練したが、重要なスタッフを必要とする時間のかかるプロセス."
+
+ pm_automated_dispensing:0 "自動分配"
+ pm_automated_dispensing_desc:0 "自動分配機は、定期的な処方のフルフィルメントを処理し、薬剤師のスタッフを解放し、複雑なケースに集中し、人件費を削減します。"
+
+ pm_robotic_pharmacy:0 "ロボット薬局"
+ pm_robotic_pharmacy_desc:0 "完全なロボティックディスペンシングシステムは、最小限の人間の介入と処方の大部分を処理します。, 大幅に出力を最大化しながら、スタッフのニーズを切断."

@@ -1,0 +1,73 @@
+je_iraq_disarmament_crisis = {
+    icon = "gfx/interface/icons/event_icons/iraq.dds"
+    group = je_group_foreign_policy
+
+    is_shown_when_inactive = {
+        c:IRQ ?= this
+        game_date < 2003.3.20
+		exists = c:IRQ
+		NOT = { has_variable = je_1_c }
+    }
+
+    possible = {
+        c:IRQ ?= this
+		game_date < 2003.3.20
+		exists = c:IRQ
+		NOT = { has_variable = je_1_c }
+    }
+
+	fail = { game_date >= 2003.1.2 }
+	
+    complete = {
+		OR = {
+        custom_tooltip = {
+			text = iraq_disarmament_resolved_tt
+			has_variable = iraq_disarmament_resolved
+		}
+		NOT = { exists = c:USA }
+		has_subject_relation_with = c:USA
+		has_war_with = c:USA
+		}
+    }
+
+	on_complete = {
+		hidden_effect = { set_variable = je_1_c }
+	}
+    weight = 200
+}
+
+je_us_iraq_disarmament = {
+    icon = "gfx/interface/icons/event_icons/iraq.dds"
+    group = je_group_foreign_policy
+
+    is_shown_when_inactive = {
+        c:USA ?= this
+        game_date < 2003.3.20
+		NOT = { has_variable = je_1_c }
+    }
+
+    possible = {
+        c:USA ?= this
+		game_date < 2003.3.20
+		NOT = { has_variable = je_1_c }
+    }
+
+	fail = { game_date >= 2003.1.2 }
+	
+    complete = {
+		OR = {
+        custom_tooltip = {
+			text = iraq_disarmament_resolved_tt
+			has_variable = iraq_disarmament_resolved
+		}
+		has_subject_relation_with = c:IRQ
+		NOT = { exists = c:IRQ }
+		has_war_with = c:IRQ
+		}
+    }
+	on_complete = {
+		hidden_effect = { set_variable = je_1_c }
+	}
+
+    weight = 200
+}

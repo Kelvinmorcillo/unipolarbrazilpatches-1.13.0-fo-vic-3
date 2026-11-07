@@ -1,0 +1,402 @@
+﻿
+# ==========================================
+# CONDEMN
+# Formal public condemnation. Requires
+# the target to have infamy. Applies a
+# prestige/legitimacy penalty to the target
+# for the duration of the pact.
+# ==========================================
+
+REPLACE_OR_CREATE:condemn = {
+	texture = "gfx/interface/icons/diplomatic_action_icons/liberty_desire.dds"
+	groups = {
+		general
+	}
+	requires_approval = no
+	should_notify_third_parties = yes
+
+	selectable = {
+		NOT = { is_country_type = decentralized }
+	}
+
+	potential = {
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+		}
+	}
+
+	possible = {
+		# Only condemn countries with notable infamy
+		custom_tooltip = {
+			text = condemn_requires_infamy_tt
+			scope:target_country = {
+				infamy >= infamy_threshold:infamous
+			}
+		}
+		# Cannot condemn allies or bloc partners
+		NOT = {
+			has_diplomatic_pact = {
+				who = scope:target_country
+				type = defensive_pact
+			}
+		}
+		NOT = { is_in_same_power_bloc = scope:target_country }
+	}
+
+	accept_effect = {
+		change_relations = { country = scope:target_country value = -15 }
+		if = {
+			limit = {
+				scope:target_country = {
+					is_in_power_bloc = yes
+					is_power_bloc_leader = yes
+				}
+			}
+			custom_tooltip = {
+				text = expel_diplomats_leverage_generation_tt
+			}
+		}
+
+		if = {
+			limit = {
+				scope:target_country = {
+					OR = {
+						country_rank = rank_value:great_power
+						country_rank = rank_value:major_power
+					}
+				}
+			}
+			change_infamy = 10
+		}
+		else_if = {
+			limit = {
+				scope:target_country = {
+					OR = {
+						country_rank = rank_value:minor_power
+						country_rank = rank_value:unrecognized_major_power
+					}
+				}
+			}
+			change_infamy = 7.5
+		}
+		else_if = {
+			limit = {
+				scope:target_country = {
+					OR = {
+						country_rank = rank_value:insignificant_power
+						country_rank = rank_value:unrecognized_regional_power
+					}
+				}
+			}
+			change_infamy = 5
+		}
+		else_if = {
+			limit = {
+				scope:target_country = {
+					country_rank = rank_value:unrecognized_power
+				}
+			}
+			change_infamy = 2.5
+		}
+	}
+	
+	pact = {
+		cost = 100
+		forced_duration = 6
+
+		is_hostile = yes
+		is_two_sided_pact = no
+
+		relations_progress_per_day = -1 # At -100, -1 relations
+
+		first_modifier = {
+			country_pact_leverage_generation_mult = -0.5
+		}
+
+		requirement_to_maintain = {
+			trigger = {
+				custom_tooltip = {
+					text = "DIPLOMATIC_PACT_REQUIREMENT_DIPLOMATIC_AUTONOMY"
+					aggressive_diplomatic_plays_permitted = yes
+					scope:target_country = { aggressive_diplomatic_plays_permitted = yes }
+				}
+			}
+		}
+
+		requirement_to_maintain = {
+			trigger = {
+				custom_tooltip = {
+					text = "DIPLOMATIC_PACT_REQUIREMENT_NO_SUBJECT_RELATION"
+					NOT = {
+						is_subject_of = scope:target_country
+						scope:target_country = { is_subject_of = root }
+					}
+				}
+			}
+		}
+
+	 	requirement_to_maintain = {
+			trigger = {
+				custom_tooltip = {
+					text = DIPLO_ACTION_RELATIONS_POOR_OR_LESS_NOT
+					scope:target_country.relations:root <= relations_threshold:poor
+				}
+			}
+
+			show_about_to_break_warning = {
+				scope:target_country.relations:root >= -23 # this is: poor - 3
+				scope:target_country.relations_change_rate:root > 0
+			}
+		}
+	}
+
+	ai = {
+		check_acceptance_for_will_break = no
+		max_influence_spending_fraction = 0.05
+
+		evaluation_chance = {
+			value = 0.15
+
+			add = {
+				value = country_rank
+				multiply = 0.05
+			}
+		}
+
+		propose_score = {
+			value = 5
+
+			if = {
+				limit = {
+					scope:target_country = { infamy >= infamy_threshold:pariah }
+				}
+				multiply = 3
+			}
+		}
+
+		will_propose = {
+			scope:target_country.infamy >= infamy_threshold:infamous
+			scope:target_country.relations:root <= relations_threshold:poor
+			NOT = { is_in_same_power_bloc = scope:target_country }
+			NOT = {
+				has_diplomatic_pact = {
+					who = scope:target_country
+					type = defensive_pact
+				}
+			}
+		}
+
+		will_break = {
+			OR = {
+				scope:target_country.infamy < infamy_threshold:infamous
+				scope:target_country.relations:root >= relations_threshold:cordial
+				is_in_same_power_bloc = scope:target_country
+			}
+		}
+	}
+}
+
+# ==========================================
+# PROPOSE UN SANCTIONS
+# Starts a UN vote to sanction the target.
+# Only UNSC permanent members can propose.
+# If the vote passes, severe economic
+# penalties apply to the target via
+# un_events.202.
+# ==========================================
+
+REPLACE_OR_CREATE:propose_un_sanctions = {
+	texture = "gfx/interface/icons/diplomatic_action_icons/un.dds"
+	groups = {
+		general
+	}
+	requires_approval = no
+	should_notify_third_parties = yes
+
+	selectable = {
+		NOT = { is_country_type = decentralized }
+	}
+
+	potential = {
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+		}
+		# Only permanent UNSC members can propose
+		has_modifier = permanent_unsc_member
+	}
+
+	possible = {
+		# No active UN motion already in progress
+		custom_tooltip = {
+			text = un_no_motion_active_tt
+			NOT = { has_global_variable = un_motion_active }
+		}
+		custom_tooltip = {
+			text = un_not_sanctioned
+			NOT = { scope:target_country = { has_modifier = un_sanctions_target } }
+		}
+		# Target must have significant infamy
+		custom_tooltip = {
+			text = condemn_requires_infamy_tt
+			scope:target_country = {
+				infamy >= infamy_threshold:notorious
+			}
+		}
+		# Cannot propose against bloc partners or allies
+		NOT = { is_in_same_power_bloc = scope:target_country }
+	}
+
+	accept_effect = {
+		# Register the sanction target globally for un_events.202
+		set_global_variable = {
+			name = un_sanction_target
+			value = scope:target_country
+		}
+		set_global_variable = { name = un_motion_active value = yes }
+		set_global_variable = { name = un_current_motion_type value = flag:motion_sanctions }
+		set_global_variable = { name = un_motion_yes_votes value = 0 }
+		set_global_variable = { name = un_motion_no_votes value = 0 }
+		# Clear prior vote flags
+		every_country = {
+			limit = { has_variable = un_voted_on_motion }
+			remove_variable = un_voted_on_motion
+		}
+		# Notify all countries
+		every_country = {
+			trigger_event = { id = un_events.102 days = 7 }
+		}
+		# Schedule result
+		trigger_event = { id = un_events.202 days = 35 }
+	}
+
+	ai = {
+		check_acceptance_for_will_break = no
+		max_influence_spending_fraction = 0.1
+
+		evaluation_chance = {
+			value = 0.05
+
+			add = {
+				value = country_rank
+				multiply = 0.03
+			}
+		}
+
+		propose_score = {
+			value = 5
+
+			if = {
+				limit = {
+					scope:target_country = { infamy >= infamy_threshold:pariah }
+				}
+				multiply = 3
+			}
+		}
+
+		will_propose = {
+			has_modifier = permanent_unsc_member
+			NOT = { has_global_variable = un_motion_active }
+			scope:target_country.infamy >= infamy_threshold:pariah
+			scope:target_country.relations:root <= relations_threshold:hostile
+			NOT = { is_in_same_power_bloc = scope:target_country }
+			NOT = { scope:target_country = { has_modifier = un_condemnation_target } }
+		}
+
+	}
+}
+
+# ==========================================
+# PROPOSE UN CONDEMNATION
+# Starts a UN vote to formally condemn
+# the target. Less severe than sanctions.
+# Prestige and legitimacy penalties only.
+# ==========================================
+
+REPLACE_OR_CREATE:propose_un_condemnation = {
+	texture = "gfx/interface/icons/diplomatic_action_icons/un.dds"
+	groups = {
+		general
+	}
+	requires_approval = no
+	should_notify_third_parties = yes
+
+	potential = {
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = un_not_condemned
+			NOT = { scope:target_country = { has_modifier = un_condemnation_target } }
+		}
+		custom_tooltip = {
+			text = un_no_motion_active_tt
+			NOT = { has_global_variable = un_motion_active }
+		}
+		custom_tooltip = {
+			text = condemn_requires_infamy_tt
+			scope:target_country = {
+				infamy >= infamy_threshold:infamous
+			}
+		}
+		NOT = { is_in_same_power_bloc = scope:target_country }
+	}
+
+	accept_effect = {
+		set_global_variable = {
+			name = un_sanction_target
+			value = scope:target_country
+		}
+		set_global_variable = { name = un_motion_active value = yes }
+		set_global_variable = { name = un_current_motion_type value = flag:motion_condemnation }
+		set_global_variable = { name = un_motion_yes_votes value = 0 }
+		set_global_variable = { name = un_motion_no_votes value = 0 }
+		every_country = {
+			limit = { has_variable = un_voted_on_motion }
+			remove_variable = un_voted_on_motion
+		}
+		every_country = {
+			trigger_event = { id = un_events.102 days = 7 }
+		}
+		trigger_event = { id = un_events.202 days = 35 }
+	}
+
+	ai = {
+		check_acceptance_for_will_break = no
+		max_influence_spending_fraction = 0.05
+
+		evaluation_chance = {
+			value = 0.08
+
+			add = {
+				value = country_rank
+				multiply = 0.03
+			}
+		}
+
+		propose_score = {
+			value = 8
+
+			if = {
+				limit = {
+					scope:target_country = { infamy >= infamy_threshold:pariah }
+				}
+				multiply = 2
+			}
+		}
+
+		will_propose = {
+			NOT = { scope:target_country = { has_modifier = un_condemnation_target } }
+			NOT = { has_global_variable = un_motion_active }
+			scope:target_country = {
+				infamy >= infamy_threshold:infamous
+			}
+		NOT = { is_in_same_power_bloc = scope:target_country }
+		
+		}
+
+		will_break = { always = no }
+	}
+}

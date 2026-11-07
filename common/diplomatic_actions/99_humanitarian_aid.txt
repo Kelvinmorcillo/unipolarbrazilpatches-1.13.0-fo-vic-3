@@ -1,0 +1,738 @@
+﻿humanitarian_aid = {
+	groups= { general } requires_approval = yes
+	should_notify_third_parties = no
+
+	potential = {
+
+		NOT = { is_country_type = decentralized }
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+		}
+		
+		scope:actor.gdp > scope:target_country.gdp
+		
+	}
+	
+	possible = {
+	
+		has_diplomatic_relevance = scope:target_country
+	
+		scope:target_country = { 
+			NOT = { is_diplomatic_play_enemy_of = root }
+		}
+		
+		in_default = no
+		
+	}
+	
+	pact = {	
+		cost = 25
+		is_two_sided_pact = no
+		infamy_affects_maintenance = yes
+		
+		show_in_outliner = yes
+		can_be_used_in_sway_offers = yes
+		sway_maneuvers_cost = 10
+		
+		relations_progress_per_day = 3 # At 100, +1 relations
+		relations_improvement_max = 100
+		
+		max_target_involvement = 1000
+		target_involvement_applies_to = source_country
+		
+		income_transfer = 0.25
+		max_paying_country_income_to_transfer = 0.10
+		second_country_gets_income_transfer = yes
+		income_transfer_based_on_second_country = yes
+		income_transfer_to_pops = {
+			allow_discriminated = yes
+			upper_strata_pops = {
+				value = 0.30
+				
+				max = 1
+				min = 0
+			}
+			lower_strata_pops = {
+				value = 0.70
+
+				max = 1
+				min = 0				
+			}
+		}
+		
+		first_modifier = {
+			country_infamy_generation_mult = -0.01
+		}
+		
+		second_modifier = {
+			country_pact_leverage_generation_add = 200
+			country_liberty_desire_add = -0.05
+		}
+		
+		weekly_effect = {
+			if = {
+				limit = {
+					NOT = { scope:diplomatic_pact ?= { is_forced_pact = yes } }
+				}	
+				custom_tooltip = {
+					text = request_humanitarian_aid_weekly_obligation_effect
+					if = {
+						limit = {
+							root = {
+								owes_obligation_to = scope:target_country			
+							}						
+						}
+						random_list = { 
+							998 = {}
+							2 = { root = { set_owes_obligation_to = { country = scope:target_country setting = no } } }
+						}				
+					}		
+					else_if = {
+						limit = {
+							NOT = { 
+								scope:target_country = {
+									owes_obligation_to = root			
+								}						
+							}
+						}
+						random_list = { 
+							998 = {}
+							2 = { scope:target_country = { set_owes_obligation_to = { country = root setting = yes } } }
+						}
+					}				
+				}			
+			}
+		}
+		
+		actor_can_break = {
+			always = yes
+		}
+		
+		target_can_break = {
+			always = yes
+		}
+
+		requirement_to_maintain = {
+		
+			trigger = {
+			
+				NOT = { is_country_type = decentralized }
+				scope:target_country = {
+					NOT = { is_country_type = decentralized }
+				} 
+				
+				is_revolutionary = no is_secessionist = no
+				scope:target_country = { is_revolutionary = no is_secessionist = no }
+				
+				NOT = { has_war_with = scope:target_country }
+				
+				in_default = no
+				
+			} 
+			
+		}
+		
+		requirement_to_maintain = {
+		
+			trigger = {
+				#TARGET HAS LOW SOL OR FAMINE
+				scope:target_country = { 
+					OR = { 
+						average_sol < 20
+						any_scope_state = {
+							has_famine = yes
+						}
+					}
+				}
+			}
+			
+		}
+		
+		requirement_to_maintain = {
+		
+			trigger = {
+			
+				NOT = { has_modifier = imf_loan_debtor }
+				
+			}
+			
+		}
+		
+	}
+	
+	accept_effect = {
+	
+		#Lobby
+		add_lobby_appeasement_from_diplomacy_bidirectional = { 
+			FIRST = root
+			SECOND = scope:target_country 
+			PRO_AMOUNT = 1
+			ANTI_AMOUNT = -1
+			FACTOR = appeasement_defensive_pact_formed
+		}
+		
+	}
+	
+	ai = {
+		max_influence_spending_fraction = 0.20
+		
+		evaluation_chance = {
+			value = 0.0
+
+			if = {
+				limit = { country_rank >= rank_value:major_power }
+				add = {
+					value = country_rank
+					multiply = 0.05
+				}				
+			}
+		}
+		
+		# This is only used for determining the value of a humanitarian_aid in sways, so it follows different logic from normal action acceptance
+		# The format here is as if scope:actor was asking if root wants a humanitarian_aid
+		accept_score = {
+			value = 0
+
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_BASE"
+				value = -5
+			}
+			
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_RANK"
+	
+				if = {
+					limit = { scope:actor = { country_rank < scope:target_country.country_rank } }
+					value = -5
+				}
+				
+				if = {
+					limit = { scope:actor = { country_rank > scope:target_country.country_rank } }
+					value = 10
+				}				
+			}				
+			
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_GDP"
+				value = "scope:actor.ai_gdp_comparison(root)"
+				multiply = -1
+				max = 20
+				min = -20
+			}
+			
+			if = {
+				limit = { scope:target_country.scaled_debt >= 0.05 }
+				
+				add = {
+					desc = "DIPLOMATIC_ACCEPTANCE_DEBT"
+					value = scope:target_country.scaled_debt
+					multiply = 30	
+					min = 1
+				}					
+			}
+			else_if = {
+				limit = { 
+					scope:target_country.scaled_gold_reserves >= 0.05 
+				}
+				
+				add = {
+					desc = "DIPLOMATIC_ACCEPTANCE_GOLD_RESERVES"				
+					value = scope:target_country.scaled_gold_reserves
+					multiply = -20
+				}
+			}
+			
+			#TARGET has similar ideology as THIS
+			if = {
+				limit = {
+					scope:actor = {
+						NOR = {
+							AND = { 
+								is_some_kind_of_democracy = yes
+								scope:target_country = { is_some_kind_of_democracy = yes }
+							}
+							AND = { 
+								is_a_monarchy = yes
+								scope:target_country = { is_a_monarchy = yes }
+							}
+							AND = { 
+								is_a_communist_government = yes
+								scope:target_country = { is_a_communist_government = yes }
+							}
+							AND = { 
+								is_a_nationalist_government = yes
+								scope:target_country = { is_a_nationalist_government = yes }
+							}
+							AND = { 
+								is_a_theocratic_government = yes
+								scope:target_country = { is_a_theocratic_government = yes }
+							}
+						}
+					}
+				}
+				add = {
+					desc = "DIPLOMATIC_ACCEPTANCE_IDEOLOGICAL_OPINION_NEGATIVE"
+					value = -25
+				}
+			}
+			else_if = {
+				limit = {
+					scope:actor = {
+						OR = {
+							AND = { 
+								is_some_kind_of_democracy = yes
+								scope:target_country = { is_some_kind_of_democracy = yes }
+							}
+							AND = { 
+								is_a_monarchy = yes
+								scope:target_country = { is_a_monarchy = yes }
+							}
+							AND = { 
+								is_a_communist_government = yes
+								scope:target_country = { is_a_communist_government = yes }
+							}
+							AND = { 
+								is_a_nationalist_government = yes
+								scope:target_country = { is_a_nationalist_government = yes }
+							}
+							AND = { 
+								is_a_theocratic_government = yes
+								scope:target_country = { is_a_theocratic_government = yes }
+							}
+						}
+						OR = {
+							AND = { 
+								left_wing_ruling_coalition = yes
+								scope:target_country = { left_wing_ruling_coalition = yes }
+							}
+							AND = { 
+								right_wing_ruling_coalition = yes
+								scope:target_country = { right_wing_ruling_coalition = yes }
+							}
+						}
+					}
+				}
+				add = {
+					desc = "DIPLOMATIC_ACCEPTANCE_IDEOLOGICAL_OPINION"
+					value = 25
+				}
+			}
+			
+		}		
+	
+		# This is only used for determining the value of a humanitarian_aid in sways, so it follows different logic from normal action acceptance
+		# The format here is as if scope:actor was asking for a humanitarian_aid from root
+		junior_accept_score = {
+			value = 0
+
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_BASE"
+				value = -10
+			}
+
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_RANK"
+
+				if = {
+					limit = { scope:actor = { country_rank > scope:target_country.country_rank } }
+					value = 10
+				}
+
+				if = {
+					limit = { scope:actor = { country_rank < scope:target_country.country_rank } }
+					value = -20
+				}				
+			}				
+
+			subtract = {
+				value = 10
+				multiply = scope:actor.num_income_transfer_pacts
+			}
+
+			subtract = {
+				value = 10
+				multiply = num_income_transfer_pacts
+			}
+			
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_GDP"
+				value = "scope:actor.ai_gdp_comparison(root)"
+				add = 2
+				multiply = -10
+				min = -100
+				max = 100
+			}
+			
+			if = {
+				limit = { ROOT.scaled_debt >= 0.05 }
+				
+				subtract = {
+					desc = "DIPLOMATIC_ACCEPTANCE_DEBT"
+					value = ROOT.scaled_debt
+					multiply = 100	
+					min = 1
+				}					
+			}
+			else_if = {
+				limit = { ROOT.scaled_gold_reserves >= 0.05 }
+				
+				add = {
+					desc = "DIPLOMATIC_ACCEPTANCE_GOLD_RESERVES"				
+					value = ROOT.scaled_gold_reserves
+					multiply = -25
+				}						
+			}
+			
+			#TARGET has similar ideology as THIS
+			if = {
+				limit = {
+					scope:actor = {
+						NOR = {
+							AND = { 
+								is_some_kind_of_democracy = yes
+								scope:target_country = { is_some_kind_of_democracy = yes }
+							}
+							AND = { 
+								is_a_monarchy = yes
+								scope:target_country = { is_a_monarchy = yes }
+							}
+							AND = { 
+								is_a_communist_government = yes
+								scope:target_country = { is_a_communist_government = yes }
+							}
+							AND = { 
+								is_a_nationalist_government = yes
+								scope:target_country = { is_a_nationalist_government = yes }
+							}
+							AND = { 
+								is_a_theocratic_government = yes
+								scope:target_country = { is_a_theocratic_government = yes }
+							}
+						}
+					}
+				}
+				add = {
+					desc = "DIPLOMATIC_ACCEPTANCE_IDEOLOGICAL_OPINION_NEGATIVE"
+					value = -25
+				}
+			}
+			else_if = {
+				limit = {
+					scope:actor = {
+						OR = {
+							AND = { 
+								is_some_kind_of_democracy = yes
+								scope:target_country = { is_some_kind_of_democracy = yes }
+							}
+							AND = { 
+								is_a_monarchy = yes
+								scope:target_country = { is_a_monarchy = yes }
+							}
+							AND = { 
+								is_a_communist_government = yes
+								scope:target_country = { is_a_communist_government = yes }
+							}
+							AND = { 
+								is_a_nationalist_government = yes
+								scope:target_country = { is_a_nationalist_government = yes }
+							}
+							AND = { 
+								is_a_theocratic_government = yes
+								scope:target_country = { is_a_theocratic_government = yes }
+							}
+						}
+						OR = {
+							AND = { 
+								left_wing_ruling_coalition = yes
+								scope:target_country = { left_wing_ruling_coalition = yes }
+							}
+							AND = { 
+								right_wing_ruling_coalition = yes
+								scope:target_country = { right_wing_ruling_coalition = yes }
+							}
+						}
+					}
+				}
+				add = {
+					desc = "DIPLOMATIC_ACCEPTANCE_IDEOLOGICAL_OPINION"
+					value = 25
+				}
+			}
+			
+		}
+	
+		propose_score = {
+			value = 10
+		}
+	
+		will_propose = { 
+			scaled_debt <= 0
+			is_at_war = no
+			net_fixed_income > 0	
+			has_attitude = {
+				who = scope:target_country
+				attitude = protective
+			}
+			OR = {
+				num_income_transfer_pacts < 1
+				AND = {
+					num_income_transfer_pacts < 2
+					income >= 200000
+				}
+				AND = {
+					num_income_transfer_pacts < 3
+					income >= 400000
+				}				
+			}
+			
+			OR = {
+				root = {
+					owes_obligation_to = scope:target_country			
+				}	
+				NOT = { 
+					scope:target_country = {
+						owes_obligation_to = root			
+					}						
+				}
+				AND = {
+					is_at_war = no
+					scope:target_country = { is_at_war = yes }
+				}			
+			}		
+			# We want to have at least five times their income, and at least 50k income in general
+			OR = {
+				AND = {
+					income >= 50000
+					net_fixed_income >= 4000
+					scope:target_country.income <= 10000
+				}
+				AND = {
+					income >= 75000
+					net_fixed_income >= 6000
+					scope:target_country.income <= 15000
+				}				
+				AND = {
+					income >= 100000
+					net_fixed_income >= 8000
+					scope:target_country.income <= 20000
+				}
+				AND = {
+					income >= 125000
+					net_fixed_income >= 10000
+					scope:target_country.income <= 25000
+				}
+				AND = {
+					income >= 150000
+					net_fixed_income >= 12000
+					scope:target_country.income <= 30000
+				}	
+				AND = {
+					income >= 175000
+					net_fixed_income >= 14000
+					scope:target_country.income <= 35000
+				}
+				AND = {
+					income >= 200000
+					net_fixed_income >= 16000
+					scope:target_country.income <= 40000
+				}
+				AND = {
+					income >= 225000
+					net_fixed_income >= 18000
+					scope:target_country.income <= 45000
+				}	
+				AND = {
+					income >= 250000
+					net_fixed_income >= 20000
+					scope:target_country.income <= 50000
+				}					
+			}			
+		}
+		
+		will_break = { 
+			NOT = {
+				AND = {
+					has_variable = forced_humanitarian_aid_time
+					var:forced_humanitarian_aid_time ?= scope:target_country
+				}
+			}
+			OR = {		
+				scaled_debt > 0.25
+				AND = {
+					scaled_debt > 0
+					OR = {
+						net_fixed_income < 0	
+						is_at_war = yes
+					}				
+				}				
+				NOT = {
+					has_attitude = {
+						who = scope:target_country
+						attitude = protective
+					}				
+				}
+				num_income_transfer_pacts > 3
+				AND = {
+					num_income_transfer_pacts > 1
+					OR = {
+						net_fixed_income < -10000	
+						income < 300000
+					}			
+				}
+				AND = {
+					num_income_transfer_pacts > 2
+					OR = {
+						net_fixed_income < -5000					
+						income < 500000
+					}
+				}				
+				NOR = {
+					root = {
+						owes_obligation_to = scope:target_country			
+					}	
+					NOT = { 
+						scope:target_country = {
+							owes_obligation_to = root			
+						}						
+					}
+					AND = {
+						is_at_war = no
+						scope:target_country = { is_at_war = yes }
+					}			
+				}							
+				# Threshold for breaking off a humanitarian_aid is higher than for starting it
+				# We also don't look at net_fixed_income here since starting a humanitarian_aid changes it
+				NOR = {
+					AND = {
+						income >= 40000
+						scope:target_country.income <= 12500
+					}				
+					AND = {
+						income >= 50000
+						scope:target_country.income <= 15000
+					}
+					AND = {
+						income >= 75000
+						scope:target_country.income <= 20000
+					}				
+					AND = {
+						income >= 100000
+						scope:target_country.income <= 25000
+					}
+					AND = {
+						income >= 125000
+						scope:target_country.income <= 30000
+					}
+					AND = {
+						income >= 150000
+						scope:target_country.income <= 35000
+					}	
+					AND = {
+						income >= 175000
+						scope:target_country.income <= 40000
+					}
+					AND = {
+						income >= 200000
+						scope:target_country.income <= 45000
+					}
+					AND = {
+						income >= 225000
+						scope:target_country.income <= 50000
+					}
+					AND = {
+						income >= 250000
+						scope:target_country.income <= 55000
+					}					
+				}						
+			}
+		}			
+	}
+}
+
+request_humanitarian_aid = {
+	groups= { general } requires_approval = yes
+	should_notify_third_parties = no
+
+	selectable = {
+		
+	}
+
+	potential = {
+		
+		is_revolutionary = no is_secessionist = no
+		scope:target_country = {
+			is_revolutionary = no is_secessionist = no
+		}
+		
+		NOT = { is_country_type = decentralized }
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+		}
+		
+		OR = { 
+			average_sol < 20
+			any_scope_state = {
+				has_famine = yes
+			}
+		}
+		
+		scope:target_country = {  
+			
+			scope:target_country.gdp > scope:actor.gdp
+			
+			#Country is independent
+			OR = { 
+				is_sufficiently_independent = yes
+				is_direct_subject_of = scope:actor
+			}
+			
+		}
+		
+		scope:target_country = {
+			NOT = {
+				has_diplomatic_pact = {
+					who = ROOT
+					type = humanitarian_aid
+				}
+			}
+		}
+		
+	}
+	
+	possible = {
+		
+		scope:target_country = {  
+	
+			has_diplomatic_relevance = scope:actor
+		
+			NOT = { is_diplomatic_play_enemy_of = scope:actor }
+			
+			in_default = no
+			
+		}
+		
+	}
+	
+	reverse_pact = humanitarian_aid
+	
+	ai = {
+		check_acceptance_for_will_propose = yes
+
+		propose_score = {
+			value = 10
+		}
+
+		propose_break_score = {
+			value = 10
+		}
+
+		use_obligation_chance = {
+			value = 0
+		}
+
+		owe_obligation_chance = {
+			value = 0
+		}
+	}
+	
+}

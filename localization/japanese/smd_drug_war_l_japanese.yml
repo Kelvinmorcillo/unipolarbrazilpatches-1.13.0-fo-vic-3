@@ -1,0 +1,387 @@
+﻿l_japanese:
+
+ l_japanese:
+
+ je_drug_trafficking:0 "医薬品貿易"
+ je_drug_trafficking_reason:0 "[ROOT.GetCountry.GetName] の政治と経済生活の中で、Narco-trafficking ネットワークは深く埋め込まれています。 カルテルは、国によって数十億台を移動し、公式を破損させ、民間兵器に資金を供給し、州によって残された真空を充填する。 [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] の政府は、スタークの選択肢に直面しています。これは、状態そのものと同じくらい強力になったネットワークで動作するか、またはそれらを破壊しようとする権を消費します。 薬物の流れを遅くし、犯罪者のシンジケートから武装を押下することで実現できます。"
+
+ je_fighting_cartels:0 "カルテルを戦う"
+ je_fighting_cartels_reason:0 "トラフィックネットワークは掘り下げています。 失敗した政策の年後、[ROOT.GetCountry.GetName]の政府は、カルテルに対して直接軍事行動を取るために解決しました。 一般的には、カウンターカルテル操作につながるために展開する必要があります。 簡単ではありません。素早くはいけません。"
+
+ cartel_je_working_with_tt:0 "[ROOT.GetCountry.GetName] の政府は、カルテルとの作業アレンジを確立しました。 権威と正当性は上昇していますが、関係は膨大な評判のリスクを伴います。"
+ cartel_je_cracking_down_tt:0 "政府は、薬物の交通を積極的に分解しています。 キャンペーンは権限を排出するが、[ROOT.GetCountry.GetName]の国際的地位を改善する。"
+ cartel_je_no_policy_tt:0 "方針は定められません。 [ROOT.GetCountry.GetName] がカルテルを扱います。"
+ cartel_fight_je_commander_needed_tt:0 "commander がデプロイされていない。 下のボタンを使用して、全般をフィールドに送信します。"
+ cartel_fight_je_commander_active_tt:0 "[SCOPE.sCharacter('cartel_general_storage').GetFullName] は [ROOT.GetCountry.GetName] のカウンター カルテルの操作を主導しています。"
+
+ mdw_events.7:0 "試験試験試験"
+ 
+ cartel_button_cooperate_name:0 "カルテルで働く"
+ cartel_button_cooperate_desc:0 "ナルコネットワークとの作業アレンジを確立します。 権威、正当性、防衛への強力なブースト — しかし、[SCOPE.sCountry('c:USA').GetName] との実質的な不敬と緊張した関係。"
+
+ cartel_button_crackdown_name:0 "トラフィックの亀裂ダウン"
+ cartel_button_crackdown_desc:0 "ドラッグトラフィックネットワークからアクティブなキャンペーンを開始。 コスト200の権限とオピオム取引を禁止しますが、[ROOT.GetCountry.GetName]の国際的地位と威信を改善します。"
+ cartel_crackdown_authority_cost_tt:0 "200の権限を要求して下さい"
+
+ cartel_button_stop_crackdown_name:0 "亀裂を閉じる"
+ cartel_button_stop_crackdown_desc:0 "反取引キャンペーンを終了して権限を付与します。 オピオムの禁止は持ち上げられ、国際親善は苦しむでしょう。"
+
+ cartel_button_deploy_general_name:0 "Commander のデプロイ"
+ cartel_button_deploy_general_desc:0 "[ROOT.GetCountry.GetName] のカウンターカルテル操作をリードする一般を選択します。"
+ cartel_need_general_tt:0 "少なくとも1つの利用可能な一般"
+
+ cartel_suppression_bar:0 "カルテル抑制"
+ cartel_suppression_bar_desc:0 "抑制の進歩: #v [JournalEntry.GetCurrentBarProgress(ScriptedProgressBar.Self)|%]#! ([JournalEntry.GetCurrentBarValue(ScriptedProgressBar.Self)|1]/100)"
+ cartel_bar_general_active_tt:0 "カルテルに対する積極的な軍事操作"
+ cartel_bar_turmoil_tt:0 "高いturmoilは [ROOT.GetCountry.GetName] のカウンター カルテル操作を妨げます"
+ cartel_bar_at_war_tt:0 "軍事的資源は、アクティブな戦争に転換されています"
+
+ # ==========================================
+ # EVENTS
+ # ==========================================
+
+ # cartel.1 — Escobar Captured
+ cartel.1.t:0 "Pablo Escobar ある デッド"
+ cartel.1.d:0 "マンハントと暴力を取り付けた後、メデリンカーテルの創設者とリーダーはメデリンの安全な家に追跡され、[ROOT.GetCountry.GetAdjective]セキュリティ部隊によって殺されました。 Pablo Escobar の死は、[ROOT.GetCountry.GetAdjective] ドラッグ トレードに対する最も重要な打撃です。 — 1 つの時代の終わり、もう 1 つの終始の不確実性。\n\n Medellín Cartel はシャッタリングされます。 しかし、キャリカルテルなどは真空を埋めるために移動します。 戦争は終わらない。 しかし、この戦いは勝ちました。"
+ cartel.1.f:0 "世界で一番欲しかった男は死にます。"
+ cartel.1.a:0 "[ROOT.GetCountry.GetName] は narco-terrorism に対する歴史的打撃を打った"
+
+ # cartel.2 — El Chapo Captured
+ cartel.2.t:0 "El Chapo ある Captureed"
+ cartel.2.d:0 "[ROOT.GetCountry.GetAdjective] のセキュリティ力と国際的知性、Joaquín 'El Chapo' Guzmán - Sinaloa Cartel と世界で最も強力な薬物主の頭 - が撮影されました。 逮捕は、[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]の大きな勝利です [ROOT.GetCountry.GetRuler.GetLastName] のカウンターカルテルキャンペーンと、シロアカルテルの操作に大きな打撃。\n\nEl チャポは、セキュリティ機能を最大限に活用しています。 彼が他の問題があるかどうか。"
+ cartel.2.f:0 "アメリカで最も望んでいた男はバーの後ろにあります。"
+ cartel.2.a:0 "Justice が提供されました — 今"
+
+ # cartel.3 — El Chapo Escapes
+ cartel.3.t:0 "El Chapo 持っている エスケープ"
+ cartel.3.d:0 "不可能だった。 Joaquín 'El Chapo' GuzmánはAltiplanoの最大のセキュリティ刑務所から直接彼のセルに掘るトンネルを経由して逃げました - 数か月かけてガード、請負業者、および複数のレベルでの公式の適合を完了し、関与するエンジニアリング機能。\n\n エスケープは国際屈辱です。 [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] の政府は、その信頼性に大惨事の打撃を取った。 そして、[ROOT.GetCountry.GetAdjective]の領域のどこかに、世界の最も強力な薬主は自由です。"
+ cartel.3.f:0 "常にエスケープするつもりだった。 質問はいつしかなかった。"
+ cartel.3.a:0 "これは古いです — ヘッドはロールします"
+
+ # cartel.4 — Mexico Turf Division
+ cartel.4.t:0 "カルテルダイド [ROOT.GetCountry.GetName]"
+ cartel.4.d:0 "失敗した年か不在状態の方針は真空を残しました。 主要なカルテル組織は、暴力、交渉、および地方自治体の選択的腐敗により、[ROOT.GetCountry.GetAdjective] 領域にわたる影響のテロ領域が認められた。\n\n CJNGはセンターと西をコントロールします。 湾岸カルテルは北東海岸を保持しています。 ジニロア・カルテルは北西に支配します。 ノースイースト・カルテルは、コアヒラとザカテカスに独自の領土を刻印しました。 [ROOT.GetCountry.GetAdjective] 状態は、その国の部分を上回る、影響力のある sovereignty である。\n\n@warning! 立ちません。"
+ cartel.4.f:0 "領土を守ることができない状態は状態ではありません。"
+ cartel.4.a:0 "失ったものを返還しなければなりません。"
+
+ # cartel.5 — Assassination
+ cartel.5.t:0 "カルテル・アッセンシング"
+ cartel.5.d_crackdown:0 "シニア警察または軍の公式リード [ROOT.GetCountry.GetName] のカウンターカルテルキャンペーンが暗殺されました。これは、カルテルが誰にも達することができる状態と信号を刺激するように設計された標的キル化されています。 明日は葬儀です。 調査は既に疑わしい疑いを識別しました。 質問は [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] かどうか [ROOT.GetCountry.GetRuler.GetLastName] の政府はそれらを追求する意志を持っています。"
+ cartel.5.d_cooperation:0 "ライバルカルテルは、あなたの犯罪パートナーの重要な儀式の1つを暗示し、ブローバックは[ROOT.GetCountry.GetName]の政府に上陸しています。 大都市の広い昼光で殺害が行われました。 状態がこのことをした男性とは何の関係もないと伝えることは不可能になっています。"
+ cartel.5.d_default:0 "著名な人物 — 政治家、ジャーナリスト、または裁判官 — は [ROOT.GetCountry.GetName] のカルテルリンクされた銃門によって暗殺されています。 殺害は勇敢です。 メッセージは明確です:カルテルは、状態を恐れずに動作します。"
+ cartel.5.f:0 "インピニティはカルテルの最大の武器です。"
+ cartel.5.a:0 "私たちは、その責任を見つける"
+
+ # cartel.6 — Money Laundering
+ cartel.6.t:0 "Cartel マネーロンダリング EXPO"
+ cartel.6.d_crackdown:0 "[ROOT.GetCountry.GetAdjective] 金融インテリジェンスユニットは、カルテルのお金が正当な事業を通じて流れているという証拠を明らかにしました。建設会社、レストラン、自動車ディーラー — [ROOT.GetCountry.GetCapital.GetCityHubName] で。 雷操作のスケールは、正式な経済の深い浸透を示唆しています。 トレイルの後に高価で政治的に危険になり、不快な場所につながる可能性があります。"
+ cartel.6.d_cooperation:0 "国際財務調査官は、[ROOT.GetCountry.GetName]の政府に既知の結びつきを持つ機関を流れる疑わしい取引をフラグ付けました。 [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] 間のリンク [ROOT.GetCountry.GetRuler.GetLastName]の管理とカルテルの資金調達は、隠すのが難しくなっています。 これは、主要な外交事件になる可能性があります。."
+ cartel.6.d_default:0 "調査ジャーナリストは、[ROOT.GetCountry.GetName]の銀行セクターを通した大規模なマネーロンダリングの証拠を公表しました。これは、カルテルが不動産や事業投資を通じて清掃される見込みです。 中央銀行は調査を呼びます。"
+ cartel.6.f:0 "どこを見ているかを知っていると、汚れたお金はどこでもあります。"
+ cartel.6.a:0 "それがリードするかどうか調査を追求"
+ cartel.6.b:0 "銀行セクターの安定性は保護されなければならない - それを残す"
+
+ # cartel.7 — US Pressure
+ cartel.7.t:0 "ワシントン 見ている"
+ cartel.7.d:0 "[SCOPE.sCountry('c:USA').GetName] 州務省は、[ROOT.GetCountry.GetName]の外務大臣との会合を正式に要請した。 議題は、個人的に伝えられ、薬物の交通手段に関連します。具体的には、[SCOPE.sCountry('c:USA').GetAdjective] 政府の査定は、[ROOT.GetCountry.GetName]は、北方に麻薬の流れを破壊するのに十分なことをしていません。 [SCOPE.sCountry('c:USA').GetAdjective] の援助 - 財務、知性、そしておそらく軍事的であるという提案があります。[ROOT.GetCountry.GetName] がより積極的に協力していれば、相続することができます。"
+ cartel.7.f:0 "[SCOPE.sCountry('c:USA').GetName] はレバレッジを持っています。 質問は、それが使用されるかどうかです。"
+ cartel.7.a:0 "[SCOPE.sCountry('c:USA').GetAdjective] 連携を受け付けます。"
+ cartel.7.b:0 "Decline — [ROOT.GetCountry.GetName] は自身の業務を処理します。"
+
+ # cartel.8 — Cartel Retaliation
+ cartel.8.t:0 "カルテルレタリー"
+ cartel.8.d:0 "クラックダウンは血液を描画しました — そして今、カルテルは自分自身を描画しています. [ROOT.GetCountry.GetName] を渡る一連の攻撃は、[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] をサポートするために知られているコミュニティの警察署、軍のチェックポイント、および市民区域を標的させました [ROOT.GetCountry.GetRuler.GetLastName] のキャンペーン 攻撃はメッセージです。カルテルは価格なしで破壊することはできません。 [ROOT.GetCountry.GetName] は、どのように反応するか決定しなければなりません。"
+ cartel.8.f:0 "吹き込まれたブローは、吹き込みのリターンです。"
+ cartel.8.a:0 "エスカレート — 未定"
+ cartel.8.b:0 "市民の人口を守るために、今の世話をしましょう"
+
+ # cartel.9 — Completion
+ cartel.9.t:0 "ドラッグトレードがコースを運営"
+ cartel.9.d_crackdown:0 "クラックダウンキャンペーンは、即時の目標を達成しました。 オピオム市場は著しく締まりました — [ROOT.GetCountry.GetName] のトラフィックネットワークの持続的な圧力の直接的な結果をもたらします。 カルテルを弱める。 [ROOT.GetCountry.GetName] の国際順位が向上しました。 戦いは遠くからありますが、このラウンドは状態に属しています。"
+ cartel.9.d_cooperation:0 "約束されたものを納品しました。 権限はそのままで、ステート関数、カルテルは主にバーゲンの側に保持されています。 これは、ガバナンスまたはキャピチュレーションが質問のヒストリアンが議論するかどうか。 オピオム市場は独自のストーリーを伝えています。"
+ cartel.9.d_default:0 "薬の取引は進化しています - より良いものや悪いものでも不明です。 オピオム市場は、そのベース価格から大幅に移転しました。 この期間の [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] で行われた選択肢は、次のものが形成されます。"
+ cartel.9.f:0 "すべての方針は終わります。 あらゆる選択は結果をもたらします。"
+ cartel.9.a:0 "章が閉じる"
+
+ # cartel.100 — Timeout
+ cartel.100.t:0 "窓は閉まりました"
+ cartel.100.d:0 "[ROOT.GetCountry.GetName] のドラッグ・トラフィックに関するインクルーシブ・ポリシーの年は、有意義なクラックダウンやナロコネットワークとの安定した配置をもたらしました。 カルテルは時間によく使われています。 より直接的なアプローチが必要です。"
+ cartel.100.f:0 "インアクションは選択です。そしてカルテルはそれを知っています。"
+ cartel.100.a:0 "直接行動を取る必要があります"
+
+ # cartel.10 — Escobar news for Americas
+ cartel.10.t:0 "Pablo Escobar ある デッド"
+ cartel.10.d:0 "[SCOPE.sCountry('c:CLM').GetName] からのニュース: パブロ・エスコバー(Medellín Cartelの創設者)とラテンアメリカのナルコ・テロリズムの年齢を定義した男性(Medellín Cartelの創設者)は、[SCOPE.sCountry('c:CLM').GetAdjective]セキュリティ部隊によって殺されました。 西洋の半球の中で最も望んでいた男は死にます。 地域の薬物取引におけるリップル効果は、長年にわたって感じられます。"
+ cartel.10.f:0 "素晴らしいナルコの年齢は終わっています。 以下が悪化する可能性があります。"
+ cartel.10.a:0 "新しい時代が始まります"
+
+ # ==========================================
+ # CARTEL FIGHT EVENTS
+ # ==========================================
+
+ cartel_fight.0.t:0 "誰がカウンターキャンペーンをリードしますか?"
+ cartel_fight.0.d:0 "[ROOT.GetCountry.GetName] の政府は、カルテルネットワークに対する直接的な行動を取るために解決しました。 一般は選択され、展開されなければならない - 有能と、汚れた戦う敵を追求する意志と、民間人の間で隠す、そして弾丸を買うので、簡単に公式を購入します。"
+ cartel_fight.0.f:0 "正しい一般がすべてを変えます。"
+ cartel_fight.0.a:0 "デプロイ [SCOPE.sCharacter('cartel_general_1').GetFullName]"
+ cartel_fight.0.b:0 "デプロイ [SCOPE.sCharacter('cartel_general_2').GetFullName]"
+ cartel_fight.0.c:0 "デプロイ [SCOPE.sCharacter('cartel_general_3').GetFullName]"
+
+ cartel_fight.1.t:0 "主要なカルテルバスト"
+ cartel_fight.1.d:0 "[SCOPE.sCharacter('cartel_general').GetFullName] は成功した操作を報告します: 主要なカルテル分布ネットワークは解体されてきました, 偏析の重要な量, 逮捕された中級カルテル数字の数. 週のいい仕事です。 勢いは[ROOT.GetCountry.GetName]の政府とあります。"
+ cartel_fight.1.f:0 "進捗状況を把握"
+ cartel_fight.1.a:0 "圧力を保つ"
+
+ cartel_fight.2.t:0 "Troops Ambushed, オーストラリア"
+ cartel_fight.2.d:0 "[SCOPE.sCharacter('cartel_general').GetFullName] のコマンドの下のユニットは、農村部のカルテル・ガンメンのコマンドが使われています。 攻撃は十分に調整され、カルテルは[ROOT.GetCountry.GetAdjective]軍事的動きの知能を持っていることを示唆しています。 カジュアルです。 モーレは揺れる。"
+ cartel_fight.2.f:0 "カルテルは、彼らが選ぶとき、軍隊のように戦う."
+ cartel_fight.2.a:0 "再グループ化と継続"
+
+ cartel_fight.3.t:0 "重要知能を提供するインフォーマント"
+ cartel_fight.3.d:0 "重要 — お金、個人的な悲しみ、または恐怖によって動機づけられる — カルテルの安全な住宅、供給経路、および人員の詳細な知性を持つ [SCOPE.sCharacter('cartel_general').GetFullName] を提供しました。 情報は、地域のカルテルの運用能力を大幅に低下させる一連の精密操作を可能にします。"
+ cartel_fight.3.f:0 "カルテルの最大の脆弱性はそれぞれです。"
+ cartel_fight.3.a:0 "すぐに知能上の行動"
+
+ cartel_fight.10.t:0 "カルテル 持っている Been Broken"
+ cartel_fight.10.d:0 "キャンペーンは終了しました。 [SCOPE.sCharacter('cartel_general').GetFullName] は、[ROOT.GetCountry.GetName] のカルテル活動を整理したレポートが、運用の関連性を損なっていることを報告しています。 キーの数字は死んだり、またはcustodyで。 ネットワークはフラグメントされます。 状態は領土を返しました。\n\n それは醜い戦いだった. しかし、それは勝ちました。"
+ cartel_fight.10.f:0 "state はコミット時に何ができるかを示しています。"
+ cartel_fight.10.a:0 "激しい勝利"
+
+ # ==========================================
+ # MODIFIERS
+ # ==========================================
+
+ cartel_cooperation_modifier:0 "カルテルアレンジメント"
+ cartel_cooperation_modifier_desc:0 "ナルコネットワークとの暗黙のアレンジは、正当なリソースと安定性を [ROOT.GetCountry.GetName] — 正当性と国際的評判への急なコストで実現しました。"
+
+ cartel_crackdown_modifier:0 "アンチトラフィックキャンペーン"
+ cartel_crackdown_modifier_desc:0 "[ROOT.GetCountry.GetName] は、カルテルネットワークを積極的に追求しています。 権限は消費されますが、国際順位は改善され、オピオム取引は抑制されます。"
+
+ cartel_crackdown_abandoned:0 "クラックダウン放棄"
+ cartel_crackdown_abandoned_desc:0 "[ROOT.GetCountry.GetName] のアンチトラフィックキャンペーンが停止しました。 国際的なコミュニティは逆転を指摘しました。"
+
+ cartel_escobar_captured:0 "Escobar ある デッド"
+ cartel_escobar_captured_desc:0 "Pablo Escobarの死はMedellín Cartelを粉砕し、[ROOT.GetCountry.GetAdjective]ドラッグトレードを変換しています。 [ROOT.GetCountry.GetName] の国際的な地位は劇的に改善されました。"
+
+ cartel_el_chapo_captured:0 "El Chapo キャプチャ"
+ cartel_el_chapo_captured_desc:0 "Joaquín Guzmánの捕獲物はSinaloa Cartelに重要な打撃を扱い、国際的に立っている[ROOT.GetCountry.GetName]の改善しました。"
+
+ cartel_el_chapo_escaped:0 "El Chapo 持っている エスケープ"
+ cartel_el_chapo_escaped_desc:0 "[ROOT.GetCountry.GetAdjective] の最大セキュリティ 刑務所から世界で最も望んでいた薬の主のエスケープは、[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] の壊滅的な恥ずかしがり屋です [ROOT.GetCountry.GetRuler.GetLastName] の政府。"
+
+ cartel_narco_state:0 "ナルコ州"
+ cartel_narco_state_desc:0 "カルテル組織は、[ROOT.GetCountry.GetName] の重要な部分に有効な地上制御を確立しました。 [ROOT.GetCountry.GetAdjective] 状態は、これらの領域における暴力に対する独占を失いました。"
+
+ cartel_cjng_controlled:0 "CJNG テリトリー"
+ cartel_cjng_controlled_desc:0 "ハリスコニュージェネレーションカルテルは、この状態の犯罪経済をコントロールします。 暴力、暴行、およびカルテル・ガバナンスは、[ROOT.GetCountry.GetAdjective] 状態の権限を置き換えています。"
+
+ cartel_gulf_controlled:0 "ガルフ・カルテル・テリトリー"
+ cartel_gulf_controlled_desc:0 "ガルフ・カルテル(Gulf Cartel)は、この地理的な優位性をここに確立しました。 [ROOT.GetCountry.GetAdjective] 状態の権限は nominal です。"
+
+ cartel_sinaloa_controlled:0 "Sinaloaカルテル・テリトリー"
+ cartel_sinaloa_controlled_desc:0 "ジニロア・カルテルは、ここに地理的な優位を確立しました。 地方経済と [ROOT.GetCountry.GetAdjective] 政府は侵襲的である。"
+
+ cartel_northeast_controlled:0 "東北カルテル・テリトリー"
+ cartel_northeast_controlled_desc:0 "カルテル・デル・ノレストは、ここにドミナンスを確立しました, 独自の暴力的なガバナンスで [ROOT.GetCountry.GetAdjective] 状態の権限を失います."
+
+ cartel_crackdown_success:0 "カウンターナーコ成功"
+ cartel_crackdown_success_desc:0 "[ROOT.GetCountry.GetName] の対比キャンペーンで大きな成功を収め、政府の立法と威信を高めました。"
+
+ cartel_assassination_aftermath:0 "カルテル・アッセンシング"
+ cartel_assassination_aftermath_desc:0 "高プロファイルの暗殺は、[ROOT.GetCountry.GetName]で公共の自信を揺れ、ターモイルを増加させました。"
+
+ cartel_laundering_investigation:0 "マネーロンダリング調査"
+ cartel_laundering_investigation_desc:0 "カルテルマネーロンダリングへの積極的な調査は、[ROOT.GetCountry.GetName]の防腐認証情報を改善しています。"
+
+ cartel_laundering_ignored:0 "マネーロンダリングの見通し"
+ cartel_laundering_ignored_desc:0 "雷調査を落とす決定は、国際的に眉毛を上げました."
+
+ cartel_us_cooperation_bonus:0 "米国カウンタ・ナルコティックス協力"
+ cartel_us_cooperation_bonus_desc:0 "[SCOPE.sCountry('c:USA').GetAdjective] アンチドラッグ・プログラムとの積極的な連携により、[ROOT.GetCountry.GetName] へのインテリジェンス・サポートと外交上のメリットが提供されます。"
+
+ cartel_us_rejection:0 "米国の圧力Rejected"
+ cartel_us_rejection_desc:0 "[ROOT.GetCountry.GetName] は [SCOPE.sCountry('c:USA').GetAdjective] の反麻薬の協同を低下させました。 国内の権限は保存されますが、[SCOPE.sCountry('c:USA').GetName] との関連性は冷却されています。"
+
+ cartel_retaliation_escalate:0 "カルテルに対するエスカレート"
+ cartel_retaliation_escalate_desc:0 "[ROOT.GetCountry.GetName] でカルテル再帰後にエスカレートする決定が増加しましたが、政府は解決します。"
+
+ cartel_retaliation_pullback:0 "拘束された応答"
+ cartel_retaliation_pullback_desc:0 "[ROOT.GetCountry.GetName] 政府は、カルテル再帰後に市民を保護するために引き戻しました。"
+
+ cartel_fight_ambush:0 "Troops Ambushed, オーストラリア"
+ cartel_fight_ambush_desc:0 "カルテル・ガンメンは、[ROOT.GetCountry.GetAdjective]の軍事ユニットを明らかにし、カジュアルさと瞬間的にカウンターカルテルキャンペーンを遅くする。"
+
+ cartel_fight_victory:0 "カルテル Broken"
+ cartel_fight_victory_desc:0 "[ROOT.GetCountry.GetAdjective] カルテルに対する軍事キャンペーンが成功しました。 ネットワークはフラグメントされ、状態の権限が復元されています。"
+ 
+ # ==========================================
+ # JOURNAL ENTRIES
+ # ==========================================
+ 
+ je_mexican_drug_war:0 "メキシコの薬物戦争"
+ je_mexican_drug_war_reason:0 "カルテルは [ROOT.GetCountry.GetName] をそれぞれ分けています。 CJNG、ガルフ・カルテル、シニロア・カルテル、カルテル・デル・ノーレストは、政府の書き込みが弱く、または不在である各制御領域。 業界は遅くなっています。 人々は去っています。 \n\n\n[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] の政府は、まだカルテルを直面するコミットしていない。 しかし、状況は無期限にフェスタに残せない - カルテルの領土はまだ拡大しており、インタラクションの毎月は、イベント的な再構成が困難になります。"
+ 
+ je_us_mexico_drug_war_support:0 "メキシコ"
+ je_us_mexico_drug_war_support_desc:0 "[SCOPE.sCountry('c:MEX').GetName] は、国の重要な部分の制御を分離した narco-cartel ネットワークに対する重要な闘争に関与しています。 [ROOT.GetCountry.GetName] は、結果の直接的な関心を持っています: ナルコティックスの流れ 北方、南部の境界の安定性、および [SCOPE.sCountry('c:MEX').GetAdjective] 状態の完全性はすべてstake.\n\n にあります [SCOPE.sCountry('c:MEX').GetName] との軍事援助契約に署名すると、リソース、インテリジェンス、および [SCOPE.sCountry('c:MEX').GetRuler.GetPrimaryRoleTitle] に正規化されます。 [SCOPE.sCountry('c:MEX').GetRuler.GetLastName] の政府 — 薬の戦争を超えて井戸を拡張する方法における二国間関係を深める。"
+ 
+ # Status descriptions
+ mdw_je_not_declared_tt:0 "[ROOT.GetCountry.GetName] の政府はまだカルテルの戦争を宣言していません。 状況が悪化する - カルテルネットワークは積極的に彼らの領土制御を拡大しています。 [ROOT.GetCountry.GetAdjective] をキャンペーンにコミットするには、下のボタンを使用します。"
+ mdw_je_commander_needed_tt:0 "戦争は宣言されています。 [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] は、カルテル・ヘルドの領域で操作をリードするために、司令官をデプロイしなければなりません。"
+ mdw_je_active_tt:0 "[SCOPE.sCharacter('mdw_commander_storage').GetFullName] は、カルテルに対して [ROOT.GetCountry.GetAdjective] 操作をリードしています。 カルテルの領土はまだ競争されている - 戦争が勝ち取られる前に、すべての制御された状態はクリアされなければなりません。"
+ 
+ us_mdw_je_no_pact_tt:0 "[SCOPE.sCountry('c:MEX').GetName] に軍事援助契約が署名されていない。 [SCOPE.sCountry('c:MEX').GetRuler.GetPrimaryRoleTitle] で軍事援助条約を提案するために外交画面に移動 [SCOPE.sCountry('c:MEX').GetRuler.GetLastName] の政府。"
+ us_mdw_je_pact_active_tt:0 "軍事援助契約は、[SCOPE.sCountry('c:MEX').GetName] で有効です。[ROOT.GetCountry.GetAdjective] のサポートは、[SCOPE.sCountry('c:MEX').GetRuler.GetPrimaryRoleTitle] [SCOPE.sCountry('c:MEX').GetRuler.GetLastName] のカウンターカルテルキャンペーンを支援しています。"
+ 
+ # ==========================================
+ # SCRIPTED BUTTONS
+ # ==========================================
+ 
+ mdw_button_declare_war_name:0 "カルテルの決闘"
+ mdw_button_declare_war_desc:0 "[ROOT.GetCountry.GetAdjective] 軍隊をカルテルネットワークに対する直接キャンペーンにコミットします。 コスト100の権限で、偽造のカルテルキャンペーンを開始。 この宣言が行われるまで棒は動かない。"
+ 
+ mdw_button_deploy_commander_name:0 "Commander のデプロイ"
+ mdw_button_deploy_commander_desc:0 "[ROOT.GetCountry.GetAdjective] 領域を渡るカウンターカルテル操作をリードする一般を選択します。"
+ mdw_need_general_tt:0 "少なくとも1つの利用可能な一般"
+ 
+ # ==========================================
+ # PROGRESS BARS
+ # ==========================================
+ 
+ mdw_suppression_bar:0 "キャンペーンの進捗"
+ mdw_suppression_bar_desc:0 "操作の進歩: #v [JournalEntry.GetCurrentBarProgress(ScriptedProgressBar.Self)|%]#! ([JournalEntry.GetCurrentBarValue(ScriptedProgressBar.Self)|1]/100)"
+ 
+ mdw_peril_bar:0 "コマンドパーイ"
+ mdw_peril_bar_desc:0 "操作のパーIL: #v [JournalEntry.GetCurrentBarProgress(ScriptedProgressBar.Self)|%]#!"
+ 
+ mdw_bar_commander_active_tt:0 "活動的な [ROOT.GetCountry.GetAdjective] 軍の操作"
+ mdw_bar_multiple_states_tt:0 "複数のカルテルヘルド状態 — [ROOT.GetCountry.GetAdjective] 操作は薄く広がります"
+ mdw_bar_us_aid_tt:0 "[SCOPE.sCountry('c:USA').GetAdjective] 軍事援助は、インテリジェンスとロジスティックのサポートを提供します"
+ mdw_bar_excess_authority_tt:0 "強力な状態容量がキャンペーンを加速"
+ mdw_bar_legitimacy_tt:0 "高い公正なサポートは、[ROOT.GetCountry.GetAdjective]軍事道徳を維持しています"
+ mdw_bar_good_commander_tt:0 "Commanderの戦術的なスキルは、操作を加速しています"
+ mdw_bar_at_war_tt:0 "軍事的資源は、アクティブな戦争に転換されています"
+ mdw_bar_turmoil_tt:0 "高い国民のturmoilは[ROOT.GetCountry.GetAdjective]を妨げます キャンペーン"
+ mdw_peril_base_tt:0 "カルテルの領土の持続的な操作は一定の危険を運びます"
+ mdw_peril_multiple_states_tt:0 "多くのフロントで操作すると、司令官の露出が増加します"
+ mdw_peril_us_aid_tt:0 "[SCOPE.sCountry('c:USA').GetAdjective] インテリジェンスは、司令官をターゲットにするカルテルの能力を減らす"
+ mdw_peril_cautious_tt:0 "Commanderの慎重なアプローチは、個人的なリスクを削減しています"
+ 
+ # ==========================================
+ # EVENTS
+ # ==========================================
+ 
+ # mdw_events.1 — War Declared
+ mdw_events.1.t:0 "[ROOT.GetCountry.GetName] カルテルの宣言戦争"
+ mdw_events.1.d:0 "カルテルの増減と半減期の失敗の年後、[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] の政府は、ナロコネットワークに対するキャンペーンに [ROOT.GetCountry.GetAdjective] の軍隊を正式にコミットしています。 宣言は重要なことです。ただ操作的には意味がありません。 [ROOT.GetCountry.GetAdjective] 状態は、ステータス quo.\n\n を受け付けないとアサートしています。 カルテルは対応します。 軍隊は準備が整う必要があります。"
+ mdw_events.1.f:0 "状態は線を描画しました。"
+ mdw_events.1.a:0 "[ROOT.GetCountry.GetName] は、その属のものを返します"
+ 
+ # mdw_events.2 — Commander Selection
+ mdw_events.2.t:0 "誰がキャンペーンをリードしますか?"
+ mdw_events.2.d:0 "宣言をした。 今、司令官は選ばれなければならない - 敵は、敵が地面を知っているカルテルヘルド領域に戦いを取るために喜んで、ローカルの非公式を持っている、そして軍隊ができないことをやろうとしています。 汚れた戦いになります。"
+ mdw_events.2.f:0 "正しい一般がすべてを変えます。"
+ mdw_events.2.a:0 "デプロイ [SCOPE.sCharacter('mdw_commander_1').GetFullName]"
+ mdw_events.2.b:0 "デプロイ [SCOPE.sCharacter('mdw_commander_2').GetFullName]"
+ mdw_events.2.c:0 "デプロイ [SCOPE.sCharacter('mdw_commander_3').GetFullName]"
+ 
+ # mdw_events.3 — Combat Patrol
+ mdw_events.3.t:0 "[SCOPE.sState('mdw_active_state').GetName] の連絡先"
+ mdw_events.3.d:0 "[SCOPE.sCharacter('mdw_commander').GetFullName] は、[SCOPE.sState('mdw_active_state').GetName] のカルテルフォースとの一連のエンゲージメントを報告します。 カルテルは、道路ブロック、スニッカー、およびIEDsを使用して、既知の強固さに近づくために、その領土を保持するために戦っています。 進歩は成り立っていますが、時間とリソースのコストは大幅です。"
+ mdw_events.3.f:0 "毎キロメートルクリアされたロードは、カルテルが使用できないキロです。"
+ mdw_events.3.a:0 "硬いプッシュ — すぐに領土を取る"
+ mdw_events.3.b:0 "方法的にアドバンス — 移動する前に各ポジションを固定する"
+ 
+ # mdw_events.4 — State Cleared
+ mdw_events.4.t:0 "[SCOPE.sState('mdw_active_state').GetName] はっきりしました"
+ mdw_events.4.d:0 "重要な運用成功: [SCOPE.sCharacter('mdw_commander').GetFullName] は、[SCOPE.sState('mdw_active_state').GetName] のカルテルが壊れていると報告します。 彼らのコマンド構造は解体されてきました, 彼らの物流カット, そして、そのキーの数字は、死にていますか、保管中. [ROOT.GetCountry.GetAdjective] 軍占領部隊は、地面を保持するために移動されます。\n\n 政府統制下に1つの状態が戻ります。 もっとも残ります。"
+ mdw_events.4.f:0 "地図は変更されます。"
+ mdw_events.4.a:0 "次に移動 — 勢いを保つ"
+ 
+ # mdw_events.5 — Ambush
+ mdw_events.5.t:0 "Ambush — [SCOPE.sCharacter('mdw_commander').GetFullName] の列は攻撃中"
+ mdw_events.5.d:0 "カルテル・ガンメンは、[ROOT.GetCountry.GetAdjective] の軍の列を [SCOPE.sState('mdw_active_state').GetName] で埋めました。 攻撃は調整された — 複数のフィリングポジション、事前計画された離脱ルート、およびコマンドの [ROOT.GetCountry.GetAdjective] ミリ秒単位で有益者を示唆する列の動きの知識。 カジュアルです。 [SCOPE.sCharacter('mdw_commander').GetFullName] はエンゲージメントの管理です。"
+ mdw_events.5.f:0 "カルテルは、彼らが選ぶとき、軍隊のように戦う."
+ mdw_events.5.a:0 "それらを追求し、破壊する"
+ mdw_events.5.b:0 "壊れた接触 — 後で再グループおよび広がり"
+ 
+ # mdw_events.6 — Commander Under Fire
+ mdw_events.6.t:0 "[SCOPE.sCharacter('mdw_commander').GetFullName] 危険中"
+ mdw_events.6.d:0 "インテリジェンスは、フィールドレポートが提案されていることを確認しました: カルテルは、優先ターゲットとして [SCOPE.sCharacter('mdw_commander').GetFullName] を識別しました。 プロフェッショナルなアッシエーションチームは、それらに対して取り組んできました。 脅威は明確です。 [ROOT.GetCountry.GetCapital.GetCityHubName] に戻すとリスクが減りますが、キャンペーンの勢いを重要な瞬間に停止します。"
+ mdw_events.6.f:0 "カルテルは敵を調べます。"
+ mdw_events.6.a:0 "[SCOPE.sCharacter('mdw_commander').GetFullName] を取り戻す — キャンペーンは待ちます"
+ mdw_events.6.b:0 "[SCOPE.sCharacter('mdw_commander').GetFullName] を押すとリスクが受けられます。"
+ 
+ # mdw_events.10 — Victory
+ mdw_events.10.t:0 "薬物戦争はウォンです"
+ mdw_events.10.d:0 "[SCOPE.sCharacter('mdw_commander').GetFullName] は、最終的な運用報告を送信します。カルテルテリアコントロールは [ROOT.GetCountry.GetName] を渡って壊れています。 最後の強要はクリアされています。 軍事占領は配置されています。 カルテルネットワークは依然として存在します。 — 弱体化したフォームで数年にわたって再構成されますが、[ROOT.GetCountry.GetAdjective] 状態は、独自の領域に反省しました。\n\n 必然的ではありませんでした。 それは多くの方法で、政治的意志、軍事的コミットメント、そして、運を必要とします。 [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] が勝ったのは時間です。最初の場所でカルテルを作る条件に対処します。"
+ mdw_events.10.f:0 "[ROOT.GetCountry.GetName] は、彼女とは何かを再宣言しました。"
+ mdw_events.10.a:0 "厳しい勝利と始まり"
+ 
+ # mdw_events.11 — Commander Killed
+ mdw_events.11.t:0 "[SCOPE.sCharacter('mdw_commander').GetFullName] 蜂が殺された"
+ mdw_events.11.d:0 "最悪の出来事 カルテルの暗殺手術が成功しました。 [SCOPE.sCharacter('mdw_commander').GetFullName] は死にます。[ROOT.GetCountry.GetAdjective] セキュリティサービスは、信頼できる警告にもかかわらず防ぐ失敗したという攻撃で殺されます。 ニュースは随時公開しています。 カルテルは、管理する町の通りに開いて祝います。\n\n キャンペーンは終了していません。 しかし、それはから回復するために数ヶ月かかる打撃に苦しんでいます。 新しい司令官が見つからなければならず、カルテルは統合する時間を使用します。"
+ mdw_events.11.f:0 "カルテルは、まだ最も重要な打撃を打たれています。"
+ mdw_events.11.a:0 "私たちは、このことによって壊れません - 戦いは継続します"
+ 
+ # mdw_events.20 — US Aid
+ mdw_events.20.t:0 "[SCOPE.sCountry('c:USA').GetName] 軍事援助協定に署名しました"
+ mdw_events.20.d:0 "[SCOPE.sCountry('c:USA').GetCapital.GetCityHubName] が移動しました。 [SCOPE.sCountry('c:USA').GetName] は、正式に [ROOT.GetCountry.GetName] と軍事援助協定を締結しました。これにより、インテリジェンスリソース、アドバイザリー人事、機器、および対面カルテルキャンペーンへのロジスティックサポートをコミットしています。 合意は重要な政治発展です。[SCOPE.sCountry('c:USA').GetRuler.GetPrimaryRoleTitle] という信号 [SCOPE.sCountry('c:USA').GetRuler.GetLastName] の管理は、直接的な国民の利益の問題として [ROOT.GetCountry.GetName] の安定性を考慮します。\n\n [ROOT.GetCountry.GetName] の場合、実用的な利点は即時です: 当局は復元され、装置はフローリングされ、カルテルは [SCOPE.sCountry('c:USA').GetName] の完全知能機器で敵に直面しています。"
+ mdw_events.20.f:0 "[SCOPE.sCountry('c:USA').GetName] がコミットすると、残高がシフトされます。"
+ mdw_events.20.a:0 "キャンペーンを完全に変更する"
+ 
+ # ==========================================
+ # MODIFIERS
+ # ==========================================
+ 
+ mdw_war_declared_modifier:0 "メキシコの薬物戦争 - アクティブキャンペーン"
+ mdw_war_declared_modifier_desc:0 "[ROOT.GetCountry.GetName] は narco-cartels に対する直接キャンペーンに軍隊を託しました。 権限は消費され、軍隊は従事していますが、[ROOT.GetCountry.GetAdjective] 状態はそれ自体を主張しています。"
+ 
+ mdw_us_aid_modifier:0 "米国軍援助"
+ mdw_us_aid_modifier_desc:0 "[SCOPE.sCountry('c:USA').GetName] との積極的な軍事援助契約は、[ROOT.GetCountry.GetName] のカウンターカルテルキャンペーンに、インテリジェンス、物流、および機器を提供します。"
+ 
+ mdw_victory_modifier:0 "薬物戦争ウォン"
+ mdw_victory_modifier_desc:0 "[ROOT.GetCountry.GetName] は薬物戦争に勝ちました。 Cartel の地理的制御は壊れ、[ROOT.GetCountry.GetAdjective] 状態は再調整された sovereignty を持っています。 カルテルを生産する条件は残っていますが、この戦いは勝ちました。"
+ 
+ mdw_commander_killed_modifier:0 "アクションで殺された司令官"
+ mdw_commander_killed_modifier_desc:0 "カウンターカルテルの司令官のAssinationは、[ROOT.GetCountry.GetName]で公的な自信を揺さぶり、カルテルを埋めました。"
+ 
+ mdw_troops_ambushed:0 "Troops Ambushed, オーストラリア"
+ mdw_troops_ambushed_desc:0 "[ROOT.GetCountry.GetAdjective] 軍の列はカルテルの力によって妨げられ、偶然を引き起こし、一時的に攻撃的な能力を減らす。"
+ 
+ # Cartel territory modifier descriptions (MDW context)
+ cartel_cjng_controlled:0 "CJNG テリトリー"
+ cartel_cjng_controlled_desc:0 "ハリスコニュージェネレーションカルテルは、この状態の犯罪経済をコントロールします。 産業活動は破壊され、インフラは悪化し、人々は[ROOT.GetCountry.GetAdjective]の領域を残しています。"
+ 
+ cartel_gulf_controlled:0 "ガルフ・カルテル・テリトリー"
+ cartel_gulf_controlled_desc:0 "ガルフ・カルテル(Gulf Cartel)は、この地理的な優位性をここに確立しました。 経済活動は抑制され、[ROOT.GetCountry.GetAdjective] 状態の権限は公称です。"
+ 
+ cartel_sinaloa_controlled:0 "Sinaloaカルテル・テリトリー"
+ cartel_sinaloa_controlled_desc:0 "Sinaloa Cartelはこの状態を制御します。 農業の出力は破壊され、ローカル経済はカルテルの監督の下で作動します。"
+ 
+ cartel_northeast_controlled:0 "東北カルテル・テリトリー"
+ cartel_northeast_controlled_desc:0 "カルテル・デル・ノレストは、ここにドミナンスを確立しました。 [ROOT.GetCountry.GetName] のインフラと建設の生産性は苦しむ。"
+ 
+ # usa war on drugs
+
+ je_war_on_drugs:0 "薬物の戦争"
+ je_war_on_drugs_reason:0 "[ROOT.GetCountry.GetName] への麻薬の流れは国家危機です。 カイン、ヘロイン、およびその他の物質 — 主にラテンアメリカで生成され、[ROOT.GetCountry.GetAdjective] 国境を越えた密輸された — は、コミュニティの破壊、激しい犯罪の燃料化、および公的機関の破損です。\n\n[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] の運営は包括的なキャンペーンにコミットしています: 供給源、国境を閉じる国内の執行機関、および社会的投資を解決するための国際パートナーシップ。 キャンペーンは費用がかかりません。そのリソースはより広い経済を重ねる必要がありますが、代替手段は、外国の犯罪ネットワークの慈悲でますますます国です。\n\n@information! メキシコではカルテルの領土が拡大する場合があります。 メキシコ政府との軍事援助協定は、このキャンペーンの国際的なコンポーネントの礎です。"
+
+ narco_economy_plantation_bonus:0 "ナルコ経済"
+ narco_economy_plantation_bonus_desc:0 "薬物取引は、[ROOT.GetCountry.GetName]の農業経済に埋め込まれています。 植栽出力 — 特にオピオムは、カルテルの需要とナルコマネーの腐敗の流れを農村のコミュニティに維持し、通常のレベルで実行されます。"
+
+ war_on_drugs_active_modifier:0 "医薬品戦争"
+ war_on_drugs_active_modifier_desc:0 "[ROOT.GetCountry.GetAdjective] 政府は薬物のトラフィックに対する包括的なキャンペーンにコミットしています。 執行の努力 — 国内の政治、予測の操作、国際協力 — は、経済全体からリソースを描画し、国家の生産性に最も適しているが、実質のコストを課しています。"
+
+ war_on_drugs_victory_modifier:0 "医薬品戦争 — ウォン"
+ war_on_drugs_victory_modifier_desc:0 "[ROOT.GetCountry.GetAdjective] 医薬品戦争は、その目的を達成しました。 供給が抑制され、境界線が強化され、機関フレームワークが配置されています。 キャンペーンは [ROOT.GetCountry.GetName] の権威と威信を強化しましたが、薬物需要を生成する根本的な条件は解決されていません。"
+
+ wod_je_status_active:0 "キャンペーンは続行します。"
+ wod_je_status_ready:0 "キャンペーンは終了する準備が整います。"
+
+ wod_completion_mexico_tt:0 "メキシコとの #bold 軍事援助#! の pact を持って下さい。"
+ wod_completion_enforcement_tt:0 "#bold 国民の監視#! か #bold 秘密の警察#! か採用して下さい。"
+ wod_completion_opium_price_tt:0 "薬物が米国市場で少なくとも #bold 65% の pricier#! であるまで国際的な薬物供給を抑制して下さい。"
+ wod_completion_schools_tt:0 "#bold Schools#! を #bold 5#! 以上レベルに上げます。"
+ wod_completion_border_tt:0 "#bold 移行制御#! または #bold クローズドボーダー#! のいずれかを採用します。"
+ wod_completion_no_safe_injection_tt:0 "#bold 安全な注入の場所#! を持っていません。"
+ wod_completion_no_trafficking_allowed_tt:0 "#bold の 交通許可されていない#! 。"
+ wod_completion_no_hard_drugs_decriminalized_tt:0 "#bold 硬質医薬品の決定#! を持たないでください。"

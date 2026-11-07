@@ -1,0 +1,7 @@
+﻿l_german:
+
+# replace folder is the best thing to happen to me since december 11
+ concept_literacy:0 "Tertiärbildungsrate"
+ concept_literate:0 "Hochschulbildung"
+ concept_literacy_desc:2 "Die prozentuale oder absolute Anzahl von Individuen in einem [concept_pop], die an einer tertiären Institution des Lernens studiert haben. Bestimmte [Concept('concept_profession', '$concept_professions$')] Nachfrage höher $concept_literacy$ als andere, Begrenzung der [concept_pop_qualifications] für $concept_pops$ in anderen $concept_professions$, es sei denn, ihr $concept_literacy$ ist hoch genug. Sie können in Ihren [SelectLocalization(GetPlayer.IsValid,'concept_literacy_desc_added','Education')] investieren, um höhere $concept_literacy$ in Ihrem $concept_population$ über die Zeit zu entwickeln.\nx id=11/>x id=12/>x id=12/> wird einer zunehmenden Strafe auf $concept_pop_growth_birthrate$ proportional zu ihren $concept_literacy$, bis zu folgenden:<x id=15/x >x id=16/x id=16/x id=16/x"
+ concept_literacy_desc_added:0 "[GetInstitutionType('institution_schools').GetName]"

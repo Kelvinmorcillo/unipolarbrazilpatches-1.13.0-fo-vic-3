@@ -1,0 +1,38 @@
+﻿CHARACTERS = {
+	c:BRZ ?= {
+	create_character = {
+			template = BRZ_lula_da_silva
+		}
+	create_character = {
+			template = BRZ_itamar_franco
+		}
+	create_character = {
+			template = BRZ_roberto_marinho
+		}
+	create_character = {
+			template = BRZ_jose_sarney
+		}
+	create_character = {
+			template = BRZ_fernando_cardoso
+		}
+	create_character = {
+			template = BRZ_paulo_arns
+		}
+	create_character = {
+			first_name = "fernando_collor"
+			last_name = "de_mello"
+			historical = yes
+			ruler = yes
+			culture = cu:brazilian
+			birth_date = 1949.3.31
+			dna = dna_fernando_collor_de_mello
+			ig_leader = yes
+			interest_group = ig_petty_bourgeoisie
+			ideology = ideology_conservative_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+		
+	}
+}

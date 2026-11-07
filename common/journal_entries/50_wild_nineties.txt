@@ -1,0 +1,24 @@
+je_russia_wild_nineties = {
+    icon = "gfx/interface/icons/event_icons/event_wild_nineties.dds"
+    group = je_group_domestic_policy
+
+    is_shown_when_inactive = {
+        c:RUS ?= this
+        game_date <= 2000.1.1
+    }
+
+    possible = {
+        c:RUS ?= this
+		game_date <= 2000.1.1
+    }
+
+    complete = {
+        game_date >= 2000.1.1
+    }
+
+    on_monthly_pulse = {
+    }
+
+    weight = 100
+    should_be_pinned_by_default_uninvolved_or_context = yes
+}

@@ -1,0 +1,7 @@
+﻿l_braz_por:
+
+# replace folder is the best thing to happen to me since december 11
+ concept_literacy:0 "Taxa de Educação Terciária"
+ concept_literate:0 "Educado pela Faculdade"
+ concept_literacy_desc:2 "O percentual ou número absoluto de indivíduos em uma [concept_pop] que se graduaram em uma instituição terciária de aprendizagem. Certos [Concept('concept_profession', '$concept_professions$')] exigem maior $concept_literacy$ do que outros, limitando o [concept_pop_qualifications] para $concept_pops$ em outros $concept_professions$ a menos que o seu $concept_literacy$ seja suficientemente alto. Você pode investir no seu [SelectLocalization(GetPlayer.IsValid,'concept_literacy_desc_added','Education')] para desenvolver maior $concept_literacy$ no seu $concept_population$ ao longo do tempo.\n\n$concept_pops$ enfrentará uma penalidade crescente para $concept_pop_growth_birthrate$ proporcional ao seu $concept_literacy$, até o seguinte:\n[GetStaticModifier('literacy_penalty').GetDesc]#!"
+ concept_literacy_desc_added:0 "[GetInstitutionType('institution_schools').GetName]"

@@ -1,0 +1,387 @@
+﻿l_simp_chinese:
+
+ l_simp_chinese:
+
+ je_drug_trafficking:0 "毒品贸易"
+ je_drug_trafficking_reason:0 "贩毒网络已深深地植入了[ROOT.GetCountry.GetName]的政治和经济生活。 卡特尔通过国家流动了数十亿——腐败官员,资助私人军队,并填补国家留下的真空. [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName]的政府面临一个严峻的选择:与国家本身几乎一样强大的网络合作,或花掉当局仍在试图摧毁的网络。 这可以通过减缓毒品流动和从犯罪集团中夺取武器来实现。"
+
+ je_fighting_cartels:0 "打击卡特尔"
+ je_fighting_cartels_reason:0 "贩运网络已经挖出。 在多年政策失败后, " x id=0 " 政府决心对卡特尔采取直接军事行动。 必须部署一名将军领导反卡特尔行动。 这样做并不容易,而且不会很快。"
+
+ cartel_je_working_with_tt:0 "[ROOT.GetCountry.GetName]政府与卡特尔建立了工作安排。 权威和合法性正在提高——但这种关系具有巨大的声誉风险。"
+ cartel_je_cracking_down_tt:0 "政府积极打击贩毒. 这场运动正在耗尽权力,但提高了[ROOT.GetCountry.GetName]的国际地位。"
+ cartel_je_no_policy_tt:0 "未制定任何政策。 使用下面的按钮来选择[ROOT.GetCountry.GetName]将如何处理卡特尔。"
+ cartel_fight_je_commander_needed_tt:0 "没有部署指挥官。 使用下面的按钮将一个将军送入球场."
+ cartel_fight_je_commander_active_tt:0 "[SCOPE.sCharacter('cartel_general_storage').GetFullName]在[ROOT.GetCountry.GetName]中领先反卡特尔操作."
+
+ mdw_events.7:0 "测试测试"
+ 
+ cartel_button_cooperate_name:0 "与卡特尔合作"
+ cartel_button_cooperate_desc:0 "与毒品网络建立工作安排。 强大的促进权威、合法性和国防——但与[SCOPE.sCountry('c:USA').GetName]关系严重不光彩和紧张。"
+
+ cartel_button_crackdown_name:0 "打击贩运活动"
+ cartel_button_crackdown_desc:0 "积极开展打击贩毒网络运动. 耗资200项权力并禁止鸦片贸易,但提高了[ROOT.GetCountry.GetName]的国际地位和声望。"
+ cartel_crackdown_authority_cost_tt:0 "需要200项授权"
+
+ cartel_button_stop_crackdown_name:0 "停止崩溃"
+ cartel_button_stop_crackdown_desc:0 "停止反贩运运动以维护权威。 鸦片禁令将取消,国际善意将受到损害。"
+
+ cartel_button_deploy_general_name:0 "部署一名指挥官"
+ cartel_button_deploy_general_desc:0 "选择一个在 [ROOT.GetCountry.GetName] 中引导反卡特尔操作的常规 。"
+ cartel_need_general_tt:0 "需要至少一个可用的通用"
+
+ cartel_suppression_bar:0 "卡特尔抑制"
+ cartel_suppression_bar_desc:0 "平息进度: #v [JournalEntry.GetCurrentBarProgress(ScriptedProgressBar.Self)|%]#!([JournalEntry.GetCurrentBarValue(ScriptedProgressBar.Self)|1]/100)"
+ cartel_bar_general_active_tt:0 "针对卡特尔的主动军事行动"
+ cartel_bar_turmoil_tt:0 "高度动荡正在阻碍[ROOT.GetCountry.GetName]的反卡特尔业务"
+ cartel_bar_at_war_tt:0 "军事资源被转用于战争"
+
+ # ==========================================
+ # EVENTS
+ # ==========================================
+
+ # cartel.1 — Escobar Captured
+ cartel.1.t:0 "巴勃罗·埃斯科瓦尔已去世"
+ cartel.1.d:0 "麦德林卡特尔的创始人和领导人被跟踪到麦德林的一个安全屋并被 " x id=0 " 安全部队杀害。 巴勃罗·埃斯科瓦尔的逝世是有史以来对"x id=1/"毒品交易所打击的最重大打击——一个时代的结束,另一个时代的不确定开端. \n\n 麦德林卡特尔破碎了 但卡利卡特尔等人会移动以填补真空. 战争还没结束 但这场战役已取胜."
+ cartel.1.f:0 "世上最通缉的人死了"
+ cartel.1.a:0 "[ROOT.GetCountry.GetName] 打击了毒品-恐怖主义的历史性打击"
+
+ # cartel.2 — El Chapo Captured
+ cartel.2.t:0 "查普被俘虏了"
+ cartel.2.d:0 "在由"x id=0"安全部队和国际情报部门协调的戏剧性突袭中,被俘获了"El Chapo" Guzmán——辛那罗卡特尔的首领和世界上最强大的毒枭. 逮捕是[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]的重大胜利。 [ROOT.GetCountry.GetRuler.GetLastName]的反卡特尔运动和对锡那罗亚卡特尔业务的重大打击. \n\nEl 查波现在在最高安全级别 他是否留在那里是另一个问题。"
+ cartel.2.f:0 "美洲最被通缉的人在监狱里"
+ cartel.2.a:0 "正义得到了伸张——目前"
+
+ # cartel.3 — El Chapo Escapes
+ cartel.3.t:0 "埃尔·查波逃跑了"
+ cartel.3.d:0 "这不可能发生 Joaquín 'El Chapo' Guzmán通过直接挖入牢房的地道从Altiplano最高警戒监狱逃出——这一工程成就花了几个月时间才完成,涉及多个级别的警卫、承包商和官员的串通。 越狱是国际的耻辱 [永久失效連結] (中文(简体) ). [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [x id=3/>] 政府对其公信力造成了灾难性打击. 而在"x id=4/"地盘上某地,世界上最强大的毒枭是自由的."
+ cartel.3.f:0 "他总是会逃跑的 唯一的问题是什么时候"
+ cartel.3.a:0 "令人愤慨的是,"
+
+ # cartel.4 — Mexico Turf Division
+ cartel.4.t:0 "卡特尔分割[ROOT.GetCountry.GetName]"
+ cartel.4.d:0 "多年的失败或缺席的国家政策留下了真空. 主要的卡特尔组织现在通过暴力、谈判和地方当局的有选择地腐败,在[ROOT.GetCountry.GetAdjective]地区建立了公认的领土势力范围。 CJNG控制了中部和西部. 海湾卡特尔占据了东北海岸. 锡那罗亚卡特尔在西北地区占主导地位. 东北卡特尔在科阿韦拉和萨卡特卡斯划出自己的地盘. [ROOT.GetCountry.GetAdjective]国家实际上放弃了对本国部分领土的主权。 \n\n@warning! 这是不能容忍的。"
+ cartel.4.f:0 "不能保护其领土的国家不是国家。"
+ cartel.4.a:0 "我们必须收回失去的东西"
+
+ # cartel.5 — Assassination
+ cartel.5.t:0 "卡特尔暗杀"
+ cartel.5.d_crackdown:0 "领导"x id=0"反卡特尔运动的高级警察或军官被暗杀了——这次定点清除是为了恐吓国家,并暗示卡特尔可以接触到任何人. 葬礼是明天 调查已经查明嫌疑人。 问题是[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName]政府有追求他们的意志."
+ cartel.5.d_cooperation:0 "一个竞争的卡特尔已经暗杀了你的犯罪伙伴之一 关键中尉, 打击正在降落在[ROOT.GetCountry.GetName]的政府。 屠杀是在大城市的光天化日之下进行的。 假想国家与凶手毫无关系,"
+ cartel.5.d_default:0 "著名人物——政治家、记者或法官——在[ROOT.GetCountry.GetName]被与卡特尔有联系的枪手所暗杀。 杀戮是无耻的。 信息是明确的:卡特尔的运作不惧怕国家。"
+ cartel.5.f:0 "有罪不罚是卡特尔最大的武器。"
+ cartel.5.a:0 "我们会找到责任人"
+
+ # cartel.6 — Money Laundering
+ cartel.6.t:0 "卡特尔 洗钱"
+ cartel.6.d_crackdown:0 "一个 " x id=0 " 的金融情报单位发现,有证据表明,卡特尔资金通过合法企业 -- -- 建筑公司、餐馆、汽车经销商 -- -- 在 " x id=1 " 中流动。 洗钱行动的规模表明正规经济深入人心。 追随小道会很昂贵,政治上很危险,可能导致不适之地."
+ cartel.6.d_cooperation:0 "国际金融调查员标明了通过已知与政府有联系的机构进行的可疑交易。 [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] 之间的链接 [ROOT.GetCountry.GetRuler.GetLastName] 管理和卡特尔融资越来越难隐瞒。 这可能成为重大外交事件。"
+ cartel.6.d_default:0 "调查记者公布了通过[ROOT.GetCountry.GetName]的银行部门进行大规模洗钱的证据——涉嫌通过房地产和商业投资清洗卡特尔所得收益。 央行要求调查."
+ cartel.6.f:0 "脏钱无处不在,如果你知道在哪里看。"
+ cartel.6.a:0 "随时随地进行调查"
+ cartel.6.b:0 "银行部门的稳定必须得到保护——不要这样"
+
+ # cartel.7 — US Pressure
+ cartel.7.t:0 "华盛顿 是观看"
+ cartel.7.d:0 "[SCOPE.sCountry('c:USA').GetName] (韩语). 国务院正式要求会见"××"的外相. 私下宣传的议程涉及贩毒问题——特别是政府关于`x id=2/>在扰乱麻醉品向北流动方面做得不够的评估。 有人建议,如果 " x id=5 " 更加积极地合作,就可以提供 " x id=4 " 援助——金融、情报和可能的军事援助。"
+ cartel.7.f:0 "[SCOPE.sCountry('c:USA').GetName]有杠杆. 问题在于是否允许使用。"
+ cartel.7.a:0 "接受 [SCOPE.sCountry('c:USA').GetAdjective] 合作——我们需要支持"
+ cartel.7.b:0 "下降- [ROOT.GetCountry.GetName] 将处理自己的事务"
+
+ # cartel.8 — Cartel Retaliation
+ cartel.8.t:0 "卡特尔革命"
+ cartel.8.d:0 "镇压已经招来鲜血——现在卡特尔正在招来自己的血. 一系列跨越 " x id=0 " 的协同攻击针对警察局、军事检查站和已知支持 " x id=1 " 的社区的平民地区。 [ROOT.GetCountry.GetRuler.GetLastName]的竞选活动。 这些攻击是一个信息:没有代价,卡特尔就无法被摧毁。 [ROOT.GetCountry.GetName] 必须决定如何响应。"
+ cartel.8.f:0 "每一次被击倒都是一击而返"
+ cartel.8.a:0 "升级——我们不会被恐吓"
+ cartel.8.b:0 "暂时撤出——保护平民"
+
+ # cartel.9 — Completion
+ cartel.9.t:0 "毒品贸易一直在运行"
+ cartel.9.d_crackdown:0 "镇压运动已经实现了眼前的目标。 鸦片市场大幅度收紧——这是[ROOT.GetCountry.GetName]对贩运网络的持续压力的直接后果。 卡特尔被削弱。 国际地位已有所改善。 争相相相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相去相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相相"
+ cartel.9.d_cooperation:0 "这一安排实现了承诺。 当局是完好无损的,国家行使职能,卡特尔大多站在他们一边。 这是治理还是投降是历史学家会争论的一个问题. 鸦片市场讲述了自己的故事."
+ cartel.9.d_default:0 "毒品贸易已经发展——无论是好还是坏,仍然不清楚。 鸦片市场已大大偏离了其基本价格。 这个时期由[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName]作出的选择将决定接下来会发生什么."
+ cartel.9.f:0 "每个政策都结束了。 每一种选择都有后果。"
+ cartel.9.a:0 "结束一章"
+
+ # cartel.100 — Timeout
+ cartel.100.t:0 "窗口已关闭"
+ cartel.100.d:0 "多年来对 " x id=0 " 的贩毒政策没有结果,既未产生有意义的镇压,也未与毒品网络达成稳定安排。 卡特尔很好地利用了时间。 需要采取更直接的办法。"
+ cartel.100.f:0 "不采取行动是一种选择——卡特尔知道这一点。"
+ cartel.100.a:0 "我们必须直接行动"
+
+ # cartel.10 — Escobar news for Americas
+ cartel.10.t:0 "巴勃罗·埃斯科瓦尔已去世"
+ cartel.10.d:0 "消息来自[SCOPE.sCountry('c:CLM').GetName] : 巴勃罗·埃斯科瓦尔(Pablo Escobar)是麦德林卡特尔的创始人,也是确定拉丁美洲毒品-恐怖主义年龄的人,被安全部队杀害。 西半球最通缉犯死了 该区域毒品贸易的连锁作用将持续多年。"
+ cartel.10.f:0 "大毒药之岁已出. 下面的情况可能更糟。"
+ cartel.10.a:0 "新时代开始了"
+
+ # ==========================================
+ # CARTEL FIGHT EVENTS
+ # ==========================================
+
+ cartel_fight.0.t:0 "谁领导反卡特尔运动?"
+ cartel_fight.0.d:0 "[ROOT.GetCountry.GetName] 政府决心对卡特尔网络采取直接行动。 必须挑选并部署一个将军——一个有能力和意志去追击一个与肮脏战斗,隐藏在平民中,买官同买子弹一样容易的敌人."
+ cartel_fight.0.f:0 "正确的将军会改变一切"
+ cartel_fight.0.a:0 "部署 [SCOPE.sCharacter('cartel_general_1').GetFullName]"
+ cartel_fight.0.b:0 "部署 [SCOPE.sCharacter('cartel_general_2').GetFullName]"
+ cartel_fight.0.c:0 "部署 [SCOPE.sCharacter('cartel_general_3').GetFullName]"
+
+ cartel_fight.1.t:0 "大型卡特尔快克"
+ cartel_fight.1.d:0 "[SCOPE.sCharacter('cartel_general').GetFullName] 报告一项成功行动:一个主要的卡特尔分销网络被摧毁,大量毒品被缉获,一些中级卡特尔人士被拘捕。 这是一个很好的一周的工作。 势头与"x id=1/"的政府相伴."
+ cartel_fight.1.f:0 "正在取得进展。"
+ cartel_fight.1.a:0 "保持压力"
+
+ cartel_fight.2.t:0 "埋伏部队"
+ cartel_fight.2.d:0 "由"x id=0"指挥下的一个单位在农村被卡特尔枪手所伏击. 袭击经过了良好的协调,表明卡特尔掌握了[ROOT.GetCountry.GetAdjective]军事运动的情报。 有人员伤亡。 道德被动摇。"
+ cartel_fight.2.f:0 "卡特尔在他们选择的时候像军队一样战斗."
+ cartel_fight.2.a:0 "重新组合并继续进行"
+
+ cartel_fight.3.t:0 "线人提供关键情报"
+ cartel_fight.3.d:0 "以金钱、个人冤情或恐惧为动机的线人向 " x id=0 " 提供了有关卡特尔安全屋、供应路线和人员的详细情报。 这些信息使得一系列精确的行动大大地削弱了卡特尔在该地区的业务能力。"
+ cartel_fight.3.f:0 "卡特尔的最大弱点是彼此。"
+ cartel_fight.3.a:0 "立即对情报采取行动"
+
+ cartel_fight.10.t:0 "卡特尔已经断裂"
+ cartel_fight.10.d:0 "竞选结束. [SCOPE.sCharacter('cartel_general').GetFullName] 报告称,在 [ROOT.GetCountry.GetName] 中组织卡特尔活动已拆除至与业务无关的程度。 关键人物已死亡或被羁押。 网络支离破碎。 国家已收回领土。 这是一个丑陋的战斗。 但已经赢了"
+ cartel_fight.10.f:0 "国家已经显示它能做什么 当它做出。"
+ cartel_fight.10.a:0 "来之不易的胜利"
+
+ # ==========================================
+ # MODIFIERS
+ # ==========================================
+
+ cartel_cooperation_modifier:0 "卡特尔安排"
+ cartel_cooperation_modifier_desc:0 "与麻醉品网络的隐含安排给 " x id=0 " 带来了大量资源和稳定性,对合法性和国际声誉造成了巨大损失。"
+
+ cartel_crackdown_modifier:0 "打击贩运运动"
+ cartel_crackdown_modifier_desc:0 "[ROOT.GetCountry.GetName]正在积极寻求卡特尔网络。 当局正在被消耗,但国际地位正在提高,鸦片贸易被压制。"
+
+ cartel_crackdown_abandoned:0 "已废弃"
+ cartel_crackdown_abandoned_desc:0 "禁止贩卖人口的运动已经停止。 国际社会注意到了这一逆转。"
+
+ cartel_escobar_captured:0 "埃斯科瓦尔死了"
+ cartel_escobar_captured_desc:0 "Pablo Escobar的死粉碎了麦德林卡特尔, [ROOT.GetCountry.GetName] 国际地位得到显著提高."
+
+ cartel_el_chapo_captured:0 "查普被抓获"
+ cartel_el_chapo_captured_desc:0 "华金·古斯曼被俘事件给锡那罗亚卡特尔带来重大打击并提升了"x id=0"的国际地位."
+
+ cartel_el_chapo_escaped:0 "埃尔·查波逃跑了"
+ cartel_el_chapo_escaped_desc:0 "世界最被通缉的毒枭从"x id=0""最高警戒监狱"越狱,对"x id=1"来说是一个灾难性的尴尬. [ROOT.GetCountry.GetRuler.GetLastName] 的政务."
+
+ cartel_narco_state:0 "纳科州"
+ cartel_narco_state_desc:0 "卡特尔组织对[ROOT.GetCountry.GetName]的很大一部分建立了有效的领土控制。 [ROOT.GetCountry.GetAdjective] 国家已经丧失了对这些地区暴力的垄断。"
+
+ cartel_cjng_controlled:0 "CJNG地区"
+ cartel_cjng_controlled_desc:0 "哈利斯科新一代卡特尔特工控制着这个国家的犯罪经济. 暴力、敲诈和卡特尔治理已经取代了国家权力。"
+
+ cartel_gulf_controlled:0 "海湾卡特尔领地"
+ cartel_gulf_controlled_desc:0 "海湾卡特尔在此建立了领地统治地位. [ROOT.GetCountry.GetAdjective] 国家权力是名义上的。"
+
+ cartel_sinaloa_controlled:0 "锡那罗亚卡特尔领地"
+ cartel_sinaloa_controlled_desc:0 "锡那罗亚卡特尔在此建立了领地统治地位. 它对当地经济和 " x id=0 " 政府的影响是普遍的。"
+
+ cartel_northeast_controlled:0 "东北卡特尔地区"
+ cartel_northeast_controlled_desc:0 "诺雷斯特卡特尔在此建立了统治地位,取代了以暴力治理的国家权力。"
+
+ cartel_crackdown_success:0 "反纳科成功"
+ cartel_crackdown_success_desc:0 "在"x id=0"的反贩运运动中取得的重大成功,提升了政府的合法性和声望."
+
+ cartel_assassination_aftermath:0 "卡特尔暗杀"
+ cartel_assassination_aftermath_desc:0 "一场引人注目的暗杀动摇了公众对 " x id=0 " 的信心并加剧了动荡。"
+
+ cartel_laundering_investigation:0 "洗钱调查"
+ cartel_laundering_investigation_desc:0 "对卡特尔洗钱活动的积极调查正在改进“x id=0”的反腐败资格。"
+
+ cartel_laundering_ignored:0 "被忽略的洗钱活动"
+ cartel_laundering_ignored_desc:0 "撤销洗钱调查的决定在国际上引起人们的注意。"
+
+ cartel_us_cooperation_bonus:0 "美国禁毒合作组织"
+ cartel_us_cooperation_bonus_desc:0 "与[SCOPE.sCountry('c:USA').GetAdjective]的禁毒方案的积极合作为[ROOT.GetCountry.GetName]带来了情报支持和外交利益。"
+
+ cartel_us_rejection:0 "拒绝美国的压力"
+ cartel_us_rejection_desc:0 "[ROOT.GetCountry.GetName] 已下降 [SCOPE.sCountry('c:USA').GetAdjective] 禁毒合作。 国内权威得以保留,但与[SCOPE.sCountry('c:USA').GetName]的关系已冷却。"
+
+ cartel_retaliation_escalate:0 "针对卡特尔的升级"
+ cartel_retaliation_escalate_desc:0 "在卡特尔报复后升级的决定增加了[ROOT.GetCountry.GetName]的动荡,但表明政府决心。"
+
+ cartel_retaliation_pullback:0 "应急反应"
+ cartel_retaliation_pullback_desc:0 "(原始内容存档于2018-07-21). [ROOT.GetCountry.GetName]政府撤走,在卡特尔报复后保护平民."
+
+ cartel_fight_ambush:0 "埋伏部队"
+ cartel_fight_ambush_desc:0 "卡特尔枪手伏击了一支 " x id=0 " 军事部队,造成人员伤亡并暂时减缓了反卡特尔行动。"
+
+ cartel_fight_victory:0 "卡特尔已断裂"
+ cartel_fight_victory_desc:0 "对卡特尔的军事行动已经成功。 这些网络支离破碎,国家权力已经恢复。"
+ 
+ # ==========================================
+ # JOURNAL ENTRIES
+ # ==========================================
+ 
+ je_mexican_drug_war:0 "墨西哥毒品战争"
+ je_mexican_drug_war_reason:0 "卡特尔相互之间划分了[ROOT.GetCountry.GetName]。 CJNG,海湾卡特尔,锡那罗亚卡特尔,以及诺雷斯特卡特尔 每一个政府令令薄弱或缺席的控制权地区. 工业减速了 人们要走了。 暴力是地方性的。\n\n[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle][ROOT.GetCountry.GetRuler.GetLastName]政府尚未承诺直接打击卡特尔。 但是,这种情况不能无限期地恶化——卡特尔领土仍在扩大,每个月不采取行动都会使最终的清算变得更加困难。"
+ 
+ je_us_mexico_drug_war_support:0 "支助墨西哥"
+ je_us_mexico_drug_war_support_desc:0 "[SCOPE.sCountry('c:MEX').GetName]正在同夺取该国大部分控制权的贩毒卡特尔网络进行生存斗争。 [ROOT.GetCountry.GetName] 与结果有直接关系:麻醉品向北流动,南部边界稳定,[SCOPE.sCountry('c:MEX').GetAdjective]状态的完整性都处于危险之中. \n\n 与 " x id=5 " 签署军事援助协定将为 " x id=6 " 提供资源、情报和合法性。 \x id=7\>政府——以远远超出毒品战争的方式深化双边关系."
+ 
+ # Status descriptions
+ mdw_je_not_declared_tt:0 "`x id=0'的政府尚未向卡特尔宣战。 情况正在恶化——卡特尔网络正在积极扩大其领土控制。 使用下面的按钮将 [ROOT.GetCountry.GetAdjective] 军事投入到战役中."
+ mdw_je_commander_needed_tt:0 "战事已宣. [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName]现在必须部署一名指挥官,领导在卡特尔控制地的行动。"
+ mdw_je_active_tt:0 "[SCOPE.sCharacter('mdw_commander_storage').GetFullName] 正在领导针对卡特尔的行动。 卡特尔领土仍然在争论之中——所有被控制的国家必须在宣布战争取胜之前被清除."
+ 
+ us_mdw_je_no_pact_tt:0 "没有与[SCOPE.sCountry('c:MEX').GetName]签署任何军事援助协定。 导航到外交屏幕上,提出以 [SCOPE.sCountry('c:MEX').GetRuler.GetPrimaryRoleTitle] 为标准的军事援助条约 [SCOPE.sCountry('c:MEX').GetRuler.GetLastName] 的政务."
+ us_mdw_je_pact_active_tt:0 "一项军事援助协定已生效,内容为[SCOPE.sCountry('c:MEX').GetName]。[ROOT.GetCountry.GetAdjective] 支持有助于维持[SCOPE.sCountry('c:MEX').GetRuler.GetPrimaryRoleTitle][SCOPE.sCountry('c:MEX').GetRuler.GetLastName]的反卡特尔运动。"
+ 
+ # ==========================================
+ # SCRIPTED BUTTONS
+ # ==========================================
+ 
+ mdw_button_declare_war_name:0 "对卡特尔宣战"
+ mdw_button_declare_war_desc:0 "请军方直接打击卡特尔网络。 花费100个权限,并认真开始反卡特尔运动. 酒吧不会移动 直到这个声明。"
+ 
+ mdw_button_deploy_commander_name:0 "部署一名指挥官"
+ mdw_button_deploy_commander_desc:0 "选择一个将军来领导跨越[ROOT.GetCountry.GetAdjective]领土的反卡特尔操作."
+ mdw_need_general_tt:0 "需要至少一个可用的通用"
+ 
+ # ==========================================
+ # PROGRESS BARS
+ # ==========================================
+ 
+ mdw_suppression_bar:0 "运动进展"
+ mdw_suppression_bar_desc:0 "操作进度: #v [JournalEntry.GetCurrentBarProgress(ScriptedProgressBar.Self)|%]#! ([JournalEntry.GetCurrentBarValue(ScriptedProgressBar.Self)|1]/100)"
+ 
+ mdw_peril_bar:0 "指挥官"
+ mdw_peril_bar_desc:0 "隐蔽行动: #v [JournalEntry.GetCurrentBarProgress(ScriptedProgressBar.Self)|%]#!"
+ 
+ mdw_bar_commander_active_tt:0 "现行 [ROOT.GetCountry.GetAdjective] 军事行动"
+ mdw_bar_multiple_states_tt:0 "多个卡特尔控股国家- [ROOT.GetCountry.GetAdjective] 业务分散"
+ mdw_bar_us_aid_tt:0 "[SCOPE.sCountry('c:USA').GetAdjective] 军事援助提供情报和后勤支助"
+ mdw_bar_excess_authority_tt:0 "强大的国家能力正在加速运动"
+ mdw_bar_legitimacy_tt:0 "公众高度支持正在维持 " x id=0 " 的军事士气"
+ mdw_bar_good_commander_tt:0 "指挥官的战术技巧正在加速行动"
+ mdw_bar_at_war_tt:0 "军事资源被转用于战争"
+ mdw_bar_turmoil_tt:0 "国家高度动荡阻碍了[ROOT.GetCountry.GetAdjective] 运动"
+ mdw_peril_base_tt:0 "在卡特尔领土上持续开展业务的风险始终不变。"
+ mdw_peril_multiple_states_tt:0 "在许多战线上行动会增加指挥官的暴露度"
+ mdw_peril_us_aid_tt:0 "[SCOPE.sCountry('c:USA').GetAdjective] 情报正在削弱卡特尔针对指挥官的能力"
+ mdw_peril_cautious_tt:0 "指挥官的谨慎态度是减少个人风险"
+ 
+ # ==========================================
+ # EVENTS
+ # ==========================================
+ 
+ # mdw_events.1 — War Declared
+ mdw_events.1.t:0 "[ROOT.GetCountry.GetName] 宣布对卡特尔的战争"
+ mdw_events.1.d:0 "经过多年的卡特尔扩张和半计量失败,[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] ×××××××××××××××××××××××××××政府正式承诺用"×××"军事力量开展打击"贩毒网络"的运动. 宣言意义重大——不仅是在操作上,而且在象征上。 [ROOT.GetCountry.GetAdjective]状态主张不接受现状. \n\n 卡特尔将作出反应。 军队必须准备好。"
+ mdw_events.1.f:0 "并州已下分出."
+ mdw_events.1.a:0 "[ROOT.GetCountry.GetName] 将回收属于它的东西"
+ 
+ # mdw_events.2 — Commander Selection
+ mdw_events.2.t:0 "谁领导这场运动?"
+ mdw_events.2.d:0 "宣说已. 现在必须选择一个指挥官——一个愿意把战斗带入卡特尔控制的领土的人,在那里敌人知道地面,有当地的线人,并且愿意做军队不能做的事情. 这将是一场肮脏的战斗。"
+ mdw_events.2.f:0 "正确的将军会改变一切"
+ mdw_events.2.a:0 "部署 [SCOPE.sCharacter('mdw_commander_1').GetFullName]"
+ mdw_events.2.b:0 "部署 [SCOPE.sCharacter('mdw_commander_2').GetFullName]"
+ mdw_events.2.c:0 "部署 [SCOPE.sCharacter('mdw_commander_3').GetFullName]"
+ 
+ # mdw_events.3 — Combat Patrol
+ mdw_events.3.t:0 "联系方式为[SCOPE.sState('mdw_active_state').GetName]"
+ mdw_events.3.d:0 "[SCOPE.sCharacter('mdw_commander').GetFullName]在[SCOPE.sState('mdw_active_state').GetName]中报告了一系列与卡特尔势力的交战。 卡特尔正在为控制其领土而战斗——使用路障、狙击手和简易爆炸装置接近已知据点。 正在取得进展,但时间和资源方面的成本很高。"
+ mdw_events.3.f:0 "清理的每公里道路都是卡特尔无法使用的一公里。"
+ mdw_events.3.a:0 "用力推,快夺地盘"
+ mdw_events.3.b:0 "预先有条不紊地——在前进前确保每个职位的安全"
+ 
+ # mdw_events.4 — State Cleared
+ mdw_events.4.t:0 "[SCOPE.sState('mdw_active_state').GetName] 已经清除"
+ mdw_events.4.d:0 "一个重大的行动成功:[SCOPE.sCharacter('mdw_commander').GetFullName]报告说,[SCOPE.sState('mdw_active_state').GetName]中的卡特尔力量被打破。 他们的指挥结构被拆除,后勤被切断,他们的关键人物已经死亡或被拘留。 [ROOT.GetCountry.GetAdjective] 军事占领部队正在移动以守住地面。 \n\n 一个州又被政府控制了 还有更多"
+ mdw_events.4.f:0 "地图有变."
+ mdw_events.4.a:0 "继续前进——保持势头"
+ 
+ # mdw_events.5 — Ambush
+ mdw_events.5.t:0 "埋伏 — [SCOPE.sCharacter('mdw_commander').GetFullName] 的列正受到攻击"
+ mdw_events.5.d:0 "卡特尔枪手在[ROOT.GetCountry.GetAdjective]中伏击了[SCOPE.sState('mdw_active_state').GetName]的军事纵队。 袭击经过了协调——多个射击阵地,预先计划撤退路线,以及知道纵队的行踪,表明在"x id=2/"军事指挥链内有线人. 有人员伤亡。 [SCOPE.sCharacter('mdw_commander').GetFullName]正在管理业务约定。"
+ mdw_events.5.f:0 "卡特尔在他们选择的时候像军队一样战斗."
+ mdw_events.5.a:0 "通过——追击并摧毁它们"
+ mdw_events.5.b:0 "中断接触——稍后重新组合并进行扫荡"
+ 
+ # mdw_events.6 — Commander Under Fire
+ mdw_events.6.t:0 "[SCOPE.sCharacter('mdw_commander').GetFullName] (中文(简体) ). 危险"
+ mdw_events.6.d:0 "情报部门证实了实地报告所暗示的:卡特尔将 " x id=0 " 确定为优先目标。 一个专业的暗杀小组负责对付他们。 这种威胁是可信的。 将指挥官调回 " x id=1 " 将降低风险,但在关键时刻将停止竞选势头。"
+ mdw_events.6.f:0 "卡特尔研究他们的敌人。"
+ mdw_events.6.a:0 "将 [SCOPE.sCharacter('mdw_commander').GetFullName] 调回 — 竞选活动可以等"
+ mdw_events.6.b:0 "按-[SCOPE.sCharacter('mdw_commander').GetFullName] 接受风险"
+ 
+ # mdw_events.10 — Victory
+ mdw_events.10.t:0 "毒品战争是元"
+ mdw_events.10.d:0 "[SCOPE.sCharacter('mdw_commander').GetFullName] 发送最后业务报告:卡特尔领土控制已被突破 [ROOT.GetCountry.GetName] 。 最后的据点已经清空. 军事占领已经到位。 卡特尔网络仍然存在——它们将多年来以被削弱的形式重组——但[ROOT.GetCountry.GetAdjective]国家已重申对本国领土的主权。\n\n 这不是不可避免的。 这需要政治意愿、军事承诺以及许多方面的运气。 [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName]赢得的是时间——解决使卡特尔成为可能的条件。"
+ mdw_events.10.f:0 "[ROOT.GetCountry.GetName]已经收回她的东西。"
+ mdw_events.10.a:0 "艰难的胜利——和开始"
+ 
+ # mdw_events.11 — Commander Killed
+ mdw_events.11.t:0 "[SCOPE.sCharacter('mdw_commander').GetFullName] > 已被杀死"
+ mdw_events.11.d:0 "最糟糕的情况发生了。 卡特尔暗杀行动成功. [SCOPE.sCharacter('mdw_commander').GetFullName] 已经死亡—— 在一次袭击中被杀死,尽管发出了可信的警告,但 [ROOT.GetCountry.GetAdjective] 安全部门未能阻止袭击。 新闻在数小时内公开. 卡特尔在其控制的城镇街道上公开庆祝。 竞选还没结束 但是,它遭受了一次需要几个月才能恢复的打击。 必须找到新的指挥官——卡特尔将利用时间加以巩固。"
+ mdw_events.11.f:0 "卡特尔遭受了最严重的打击。"
+ mdw_events.11.a:0 "我们不会因此被打破,战斗仍在继续"
+ 
+ # mdw_events.20 — US Aid
+ mdw_events.20.t:0 "[SCOPE.sCountry('c:USA').GetName] 已签署军事援助协定"
+ mdw_events.20.d:0 "[SCOPE.sCountry('c:USA').GetCapital.GetCityHubName]已经移动。 [SCOPE.sCountry('c:USA').GetName]与 [ROOT.GetCountry.GetName]正式签署军事援助协定——承诺向反卡特尔运动提供情报资源、咨询人员、设备和后勤支助。 该协议是一个重大的政治发展:它表明[SCOPE.sCountry('c:USA').GetRuler.GetPrimaryRoleTitle] [SCOPE.sCountry('c:USA').GetRuler.GetLastName]行政部门将[ROOT.GetCountry.GetName]的稳定视为直接国家利益。\n\n 就[ROOT.GetCountry.GetName]而言,实际好处是直接的:权威得到恢复,设备在流动,卡特尔现在面临一个敌人,其完全的情报机构是[SCOPE.sCountry('c:USA').GetName],正在对付他们。"
+ mdw_events.20.f:0 "当[SCOPE.sCountry('c:USA').GetName] 承诺时,余额会转移。"
+ mdw_events.20.a:0 "这完全改变了运动"
+ 
+ # ==========================================
+ # MODIFIERS
+ # ==========================================
+ 
+ mdw_war_declared_modifier:0 "墨西哥毒品战争——积极运动"
+ mdw_war_declared_modifier_desc:0 "[ROOT.GetCountry.GetName] 已承诺其军队直接打击毒贩。 当局正在被消耗,军方正在介入,但 " x id=1/ " 状态在坚持自己的立场。"
+ 
+ mdw_us_aid_modifier:0 "美国军事援助"
+ mdw_us_aid_modifier_desc:0 "一项与[SCOPE.sCountry('c:USA').GetName]的活跃军事援助协定正在为[ROOT.GetCountry.GetName]的反卡特尔运动提供情报、后勤和装备。"
+ 
+ mdw_victory_modifier:0 "药战元"
+ mdw_victory_modifier_desc:0 "[ROOT.GetCountry.GetName]已经赢得了毒品战争. 卡特尔领土控制被打破, " x id=1/ " 国家已重申主权。 产生卡特尔的条件依然存在——但这场战斗已经取胜。"
+ 
+ mdw_commander_killed_modifier:0 "指挥官阵亡"
+ mdw_commander_killed_modifier_desc:0 "反卡特尔指挥官被暗杀,动摇了公众对 " x id=0 " 的信心,使卡特尔胆大妄为。"
+ 
+ mdw_troops_ambushed:0 "埋伏部队"
+ mdw_troops_ambushed_desc:0 "一支 [ROOT.GetCountry.GetAdjective] 军事纵队被卡特尔部队伏击,造成人员伤亡并暂时减少进攻能力。"
+ 
+ # Cartel territory modifier descriptions (MDW context)
+ cartel_cjng_controlled:0 "CJNG地区"
+ cartel_cjng_controlled_desc:0 "哈利斯科新一代卡特尔特工控制着这个国家的犯罪经济. 工业活动被打乱,基础设施正在恶化,人们正在离开 " x id=0 " 领土。"
+ 
+ cartel_gulf_controlled:0 "海湾卡特尔领地"
+ cartel_gulf_controlled_desc:0 "海湾卡特尔在此建立了领地统治地位. 经济活动受到压制,[ROOT.GetCountry.GetAdjective]国家权力是名义上的。"
+ 
+ cartel_sinaloa_controlled:0 "锡那罗亚卡特尔领地"
+ cartel_sinaloa_controlled_desc:0 "锡那罗亚卡特尔控制着这个状态. 农业产量被中断,当地经济在卡特尔的监督下运作。"
+ 
+ cartel_northeast_controlled:0 "东北卡特尔地区"
+ cartel_northeast_controlled_desc:0 "诺雷斯特卡特尔在此建立了统治地位. 在[ROOT.GetCountry.GetName]中,基础设施和建筑生产力正在受苦受难。"
+ 
+ # usa war on drugs
+
+ je_war_on_drugs:0 "禁毒战争"
+ je_war_on_drugs_reason:0 "麻醉品流入 " x id=0 " 是全国性危机。 可卡因、海洛因和其他物质——主要在拉丁美洲生产并走私到[ROOT.GetCountry.GetAdjective]边境——是破坏性的社区,助长暴力犯罪并腐蚀公共机构。 `x id=5/>政府承诺开展全面运动:国际伙伴关系扼杀源头供应,国内执法关闭边境,社会投资解决需求。 这场运动不是没有代价的——它所需要的资源在更广泛的经济中所占有比重——但另一种选择是越来越受外国犯罪网络支配的国家。 墨西哥的卡特尔领土可能正在扩大。 与墨西哥政府达成的军事援助协定是这一运动的国际组成部分的基石。"
+
+ narco_economy_plantation_bonus:0 "纳克经济"
+ narco_economy_plantation_bonus_desc:0 "毒品贸易已嵌入了[ROOT.GetCountry.GetName]的农业经济。 种植产出——特别是鸦片——超过了正常水平,因为卡特尔的需求和毒品资金流入农村社区的腐化。"
+
+ war_on_drugs_active_modifier:0 "禁毒战争"
+ war_on_drugs_active_modifier_desc:0 "政府承诺开展打击贩毒的全面运动。 执法努力——国内治安、阻截行动和国际合作——正在从整个经济中汲取资源,给国家生产力带来适度而实际的代价。"
+
+ war_on_drugs_victory_modifier:0 "禁毒战争——元"
+ war_on_drugs_victory_modifier_desc:0 "[ROOT.GetCountry.GetAdjective] (韩语). 禁毒战争实现了既定目标。 供应受到压制,边界被强制,体制框架已经到位。 该运动加强了`x id=1/>的权威和威望,尽管产生药物需求的基本条件尚未解决。"
+
+ wod_je_status_active:0 "竞选活动仍在继续。"
+ wod_je_status_ready:0 "运动即将结束。"
+
+ wod_completion_mexico_tt:0 "与墨西哥签订《军事援助协定》。"
+ wod_completion_enforcement_tt:0 "采用#bold 国民警卫队#! 或#bold 秘密警察#!。"
+ wod_completion_opium_price_tt:0 "在药物在美国市场至少达到 #bold 65%的pricier #!之前,禁止国际药物供应。"
+ wod_completion_schools_tt:0 "将 #bold 学校 #! 机构提升到 #bold 5 #!或更高一级。"
+ wod_completion_border_tt:0 "采用 #bold 迁移控制 #! 或 #bold 关闭边界 #!。"
+ wod_completion_no_safe_injection_tt:0 "没有 #bold 安全注射站点 #!."
+ wod_completion_no_trafficking_allowed_tt:0 "没有 #bold 允许的贩运 #!。"
+ wod_completion_no_hard_drugs_decriminalized_tt:0 "没有 #bold 硬药去刑事化 #!。"

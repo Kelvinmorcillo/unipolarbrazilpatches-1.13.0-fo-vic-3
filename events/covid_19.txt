@@ -1,0 +1,899 @@
+﻿namespace = plague
+ 
+# ==========================================
+# COVID-19 PLANDEMIC EVENTS
+# ==========================================
+ 
+# ── wuhan virus
+covid.1 = {
+	type = country_event
+	placement = scope:plague_origin_state
+ 
+	title = covid.1.t
+	desc = covid.1.d
+	flavor = covid.1.f
+ 
+	event_image = {
+		video = "unspecific_sick_in_hospital"
+	}
+ 
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+ 
+	icon = "gfx/interface/icons/event_icons/pandemic.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		NOT = { has_global_variable = covid_pandemic }
+		# Fires for China only
+		c:PRC ?= this
+		# 2020 start
+		game_date >= 2020.1.1
+	}
+ 
+	immediate = {
+		set_global_variable = covid_pandemic 
+		set_variable = { name = plague_originator }
+		save_scope_as = plague_originator_country
+		# Origin: China's central state (Hubei region)
+		random_scope_state = {
+			limit = {
+				is_incorporated = yes
+				state_region = s:STATE_HUNAN
+			}
+			save_scope_as = plague_origin_state
+			set_variable = plague_originator_state
+			randomize_plague_level_effect = yes
+			add_covid_modifier_effect = yes
+		}
+	}
+ 
+	option = {
+		name = covid.1.a
+		default_option = yes
+		scope:plague_origin_state = {
+			custom_tooltip = plague_state_mortality.tt
+		}
+		custom_tooltip = plague_decisions_available.tt
+		hidden_effect = {
+			every_country = {
+				limit = {
+					NOT = { this = ROOT }
+					is_player = yes
+				}
+				trigger_event = { id = covid.4 }
+			}
+		}
+		add_journal_entry = { type = je_covid_pandemic }
+		set_variable = country_hit_by_plague
+	}
+}
+ 
+# ── PANDEMIC SPREADS ──────────────────────
+ 
+# Plague spreads
+covid.2 = {
+	type = country_event
+	placement = scope:plague_spread_target
+
+	title = covid.2.t
+	desc = covid.2.d
+	flavor = covid.2.f
+
+	event_image = {
+		video = "unspecific_sick_in_hospital"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/pandemic.dds"
+
+	duration = 3
+
+	trigger = {
+		has_global_variable = spanish_flu
+		OR = {
+			AND = {
+				NOT = {
+					has_journal_entry = je_spanish_flu
+				}
+				any_scope_state = {
+					has_variable = plague_international_spread_var
+				}
+			}
+			any_scope_state = {
+				NOT = { has_modifier = plague_modifier }
+				NOT = { has_variable = state_hit_by_plague }
+				any_neighbouring_state = {
+					has_modifier = plague_modifier
+				}
+			}
+		}
+	}
+
+	immediate = {
+		random_country = {
+			limit = {
+				has_variable = plague_originator
+			}
+			save_scope_as = plague_originator_country
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_journal_entry = je_spanish_flu
+				}
+				any_scope_state = {
+					has_variable = plague_international_spread_var
+				}
+			}
+			random_scope_state = {
+				limit = {
+					has_variable = plague_international_spread_var
+				}
+				save_scope_as = plague_spread_target
+				remove_variable = plague_international_spread_var
+			}
+		}
+		else = {
+			random_scope_state = {
+				limit = {
+					NOT = { has_modifier = plague_modifier }
+					NOT = { has_variable = state_hit_by_plague }
+					any_neighbouring_state = {
+						has_modifier = plague_modifier
+					}
+				}
+				save_scope_as = plague_spread_target
+			}
+		}
+		scope:plague_spread_target = {
+			randomize_plague_level_effect = yes
+			add_plague_modifier_effect = yes
+			if = {
+				limit = {
+					any_neighbouring_state = {
+						owner = ROOT
+						NOT = { has_modifier = plague_modifier }
+					}
+				}
+				random_neighbouring_state = {
+					limit = {
+						owner = ROOT
+						NOT = { has_modifier = plague_modifier }
+					}
+					save_scope_as = plague_spread_target_2
+					randomize_plague_level_effect = yes
+					add_plague_modifier_effect = yes
+				}
+			}
+		}
+	}
+
+	option = {
+		name = plague.2.a
+		show_as_tooltip = {
+			scope:plague_spread_target = {
+				custom_tooltip = plague_state_mortality.tt
+				if = {
+					limit = {
+						owner = { has_variable = plague_lockdown }
+					}
+					add_modifier = {
+						name = plague_lockdown_mod
+						months = 6
+					}
+				}
+				else_if = {
+					limit = {
+						owner = { has_variable = plague_measures }
+					}
+					add_modifier = {
+						name = plague_measures_mod
+						months = 6
+					}
+				}
+			}
+			if = {
+				limit = {
+					exists = scope:plague_spread_target_2
+				}
+				scope:plague_spread_target_2 = {
+					custom_tooltip = plague_state_mortality.tt
+					if = {
+						limit = {
+							owner = { has_variable = plague_lockdown }
+						}
+						add_modifier = {
+							name = plague_lockdown_mod
+							months = 6
+						}
+					}
+					else_if = {
+						limit = {
+							owner = { has_variable = plague_measures }
+						}
+						add_modifier = {
+							name = plague_measures_mod
+							months = 6
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_journal_entry = je_spanish_flu
+				}
+			}
+			add_journal_entry = { type = je_spanish_flu }
+			set_variable = country_hit_by_plague # so that countries cannot get JE multiple times
+		}
+		custom_tooltip = plague_decisions_available.tt
+	}
+}
+ 
+# ── SECOND/THIRD WAVE (HIDDEN) ────────────
+ 
+covid.3 = {
+	type = state_event
+	placement = ROOT
+ 
+	title = covid.3.t
+	desc = covid.3.d
+	flavor = covid.3.f
+ 
+	hidden = yes
+ 
+	event_image = { video = "unspecific_sick_in_hospital" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/pandemic.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		exists = var:plague_wave
+		var:plague_wave < 5
+	}
+ 
+	immediate = {
+		randomize_plague_level_effect = yes
+		add_covid_modifier_effect = yes
+		owner = {
+			if = {
+				limit = { NOT = { has_journal_entry = je_covid_pandemic } }
+				add_journal_entry = { type = je_covid_pandemic }
+				set_variable = country_hit_by_plague
+			}
+		}
+	}
+}
+ 
+# ── NOTIFICATION TO OTHER PLAYER COUNTRIES ─
+ 
+covid.4 = {
+	type = country_event
+	placement = ROOT
+ 
+	title = covid.4.t
+	desc = covid.1.d
+	flavor = covid.1.f
+ 
+	duration = 3
+ 
+	event_image = { video = "unspecific_sick_in_hospital" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/pandemic.dds"
+ 
+	trigger = {
+		# triggered by covid.1
+	}
+ 
+	immediate = {
+		random_country = {
+			limit = { has_variable = plague_originator }
+			save_scope_as = plague_originator_country
+			random_scope_state = {
+				limit = { has_variable = plague_originator_state }
+				save_scope_as = plague_originator_state
+			}
+		}
+	}
+ 
+	option = {
+		name = covid.4.a
+		custom_tooltip = plague_might_spread.tt
+	}
+}
+ 
+# ── CHOOSE PANDEMIC RESPONSE ──────────────
+ 
+covid.5 = {
+	type = country_event
+	placement = ROOT
+ 
+	title = covid.5.t
+	desc = covid.5.d
+	flavor = covid.5.f
+ 
+	event_image = { video = "unspecific_sick_in_hospital" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/pandemic.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		# triggered by covid decision
+	}
+ 
+	immediate = {
+		random_country = {
+			limit = { has_variable = plague_originator }
+			save_scope_as = plague_originator_country
+		}
+	}
+ 
+	option = { # full lockdown
+		name = covid.5.a
+		custom_tooltip = plague_lockdown.tt
+		set_variable = { name = plague_lockdown }
+		every_scope_state = {
+			limit = { has_modifier = plague_modifier }
+			add_modifier = { name = plague_lockdown_mod months = 6 }
+			if = {
+				limit = { has_modifier = plague_measures_mod }
+				remove_modifier = plague_measures_mod
+			}
+			if = {
+				limit = { has_variable = plague_measures }
+				remove_variable = plague_measures
+			}
+		}
+	}
+ 
+	option = { # masks and social distancing
+		name = covid.5.b
+		default_option = yes
+		custom_tooltip = plague_measures.tt
+		set_variable = { name = plague_measures }
+		every_scope_state = {
+			limit = { has_modifier = plague_modifier }
+			add_modifier = { name = plague_measures_mod months = 6 }
+			if = {
+				limit = { has_modifier = plague_lockdown_mod }
+				remove_modifier = plague_lockdown_mod
+			}
+			if = {
+				limit = { has_variable = plague_lockdown }
+				remove_variable = plague_lockdown
+			}
+		}
+	}
+ 
+	option = { # think about the economy
+		name = covid.5.c
+		custom_tooltip = plague_no_response.tt
+		remove_variable = plague_measures
+		remove_variable = plague_lockdown
+		every_scope_state = {
+			limit = {
+				OR = {
+					has_modifier = plague_lockdown_mod
+					has_modifier = plague_measures_mod
+				}
+			}
+			if = {
+				limit = { has_modifier = plague_lockdown_mod }
+				remove_modifier = plague_lockdown_mod
+			}
+			else = {
+				remove_modifier = plague_measures_mod
+			}
+		}
+	}
+}
+ 
+# ── PANDEMIC IMPACTS WAR SUPPORT ─────────
+ 
+covid.7 = {
+	type = country_event
+	placement = scope:plague_state
+ 
+	title = covid.7.t
+	desc = covid.7.d
+	flavor = covid.7.f
+ 
+	event_image = { video = "unspecific_sick_in_hospital" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/pandemic.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		is_at_war = yes
+		any_scope_state = {
+			is_incorporated = yes
+			has_modifier = plague_modifier
+		}
+		any_interest_group = {
+			is_in_government = no
+			NOT = { has_modifier = plague_war }
+			leader = {
+				has_ideology = ideology:ideology_pacifist
+			}
+		}
+		NOT = { has_variable = plague_war_timer }
+	}
+ 
+	immediate = {
+		set_variable = { name = plague_war_timer months = 12 }
+		random_country = {
+			limit = { has_variable = plague_originator }
+			save_scope_as = plague_originator_country
+		}
+		random_scope_state = {
+			limit = {
+				is_incorporated = yes
+				has_modifier = plague_modifier
+			}
+			save_scope_as = plague_state
+		}
+		random_interest_group = {
+			limit = {
+				is_in_government = no
+				NOT = { has_modifier = plague_war }
+				leader = { has_ideology = ideology:ideology_pacifist }
+			}
+			save_scope_as = pacifist_ig
+			leader = { save_scope_as = pacifist_leader }
+		}
+	}
+ 
+	cancellation_trigger = {
+		has_variable = covid_pandemic_over
+	}
+ 
+	option = { # accept the unrest
+		name = covid.7.a
+		default_option = yes
+		scope:plague_state = {
+			add_radicals_in_state = { value = medium_radicals }
+		}
+		scope:pacifist_ig = {
+			add_modifier = { name = plague_war months = 24 }
+		}
+	}
+ 
+	option = { # propaganda and reassurance
+		name = covid.7.b
+		trigger = {
+			has_technology_researched = mass_propaganda
+			institution_investment_level = {
+				institution = institution_health_system
+				value >= 3
+			}
+		}
+		highlighted_option = yes
+		scope:plague_state = {
+			add_radicals_in_state = { value = small_radicals }
+		}
+		scope:pacifist_ig = {
+			add_modifier = { name = plague_war months = 12 }
+		}
+	}
+ 
+	option = { # censorship
+		name = covid.7.c
+		trigger = {
+			OR = {
+				has_law_or_variant = law_type:law_censorship
+				has_law_or_variant = law_type:law_outlawed_dissent
+			}
+		}
+		highlighted_option = yes
+		scope:plague_state = {
+			add_radicals_in_state = { value = small_radicals }
+		}
+		scope:pacifist_ig = {
+			add_modifier = { name = plague_war months = 12 }
+		}
+	}
+}
+ 
+# ── POVERTY AND EVICTIONS ─────────────────
+ 
+covid.8 = {
+	type = country_event
+	placement = scope:plague_poverty_state
+ 
+	title = covid.8.t
+	desc = covid.8.d
+	flavor = covid.8.f
+ 
+	event_image = { video = "europenorthamerica_rich_and_poor" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/pandemic.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		any_scope_state = {
+			is_incorporated = yes
+			has_modifier = plague_modifier
+			OR = {
+				has_modifier = plague_lockdown_mod
+				has_modifier = plague_measures_mod
+			}
+			state_unemployment_rate >= 0.2
+		}
+		NOT = { has_variable = plague_poverty_timer }
+	}
+ 
+	immediate = {
+		set_variable = { name = plague_poverty_timer months = 12 }
+		random_country = {
+			limit = { has_variable = plague_originator }
+			save_scope_as = plague_originator_country
+		}
+		random_scope_state = {
+			limit = {
+				is_incorporated = yes
+				has_modifier = plague_modifier
+				OR = {
+					has_modifier = plague_lockdown_mod
+					has_modifier = plague_measures_mod
+				}
+				state_unemployment_rate >= 0.2
+			}
+			save_scope_as = plague_poverty_state
+		}
+		ig:ig_landowners ?= { save_scope_as = landowner_ig }
+	}
+ 
+	cancellation_trigger = {
+		has_variable = covid_pandemic_over
+	}
+ 
+	option = { # eviction ban
+		name = covid.8.a
+		scope:landowner_ig = {
+			add_modifier = { name = plague_eviction_ban months = 12 }
+		}
+		if = {
+			limit = {
+				any_interest_group = {
+					leader = { has_ideology = ideology:ideology_anarchist }
+				}
+			}
+			every_interest_group = {
+				limit = { has_ideology = ideology:ideology_anarchist }
+				add_modifier = plague_eviction_ban_anarchist
+			}
+		}
+	}
+ 
+	option = { # social security
+		name = covid.8.b
+		trigger = {
+			institution_investment_level = {
+				institution = institution_social_security
+				value = 3
+			}
+		}
+		highlighted_option = yes
+		add_modifier = { name = plague_welfare_cost months = 12 }
+		if = {
+			limit = {
+				any_interest_group = {
+					leader = {
+						OR = {
+							has_ideology = ideology:ideology_vanguardist
+							has_ideology = ideology:ideology_communist
+							has_ideology = ideology:ideology_social_democrat
+						}
+					}
+				}
+			}
+			every_interest_group = {
+				limit = {
+					leader = {
+						OR = {
+							has_ideology = ideology:ideology_vanguardist
+							has_ideology = ideology:ideology_communist
+							has_ideology = ideology:ideology_social_democrat
+						}
+					}
+				}
+				add_modifier = { name = plague_welfare_reliance months = 12 }
+			}
+		}
+	}
+ 
+	option = { # ignore the poor
+		name = covid.8.c
+		default_option = yes
+		scope:plague_poverty_state = {
+			add_radicals_in_state = {
+				value = medium_radicals
+				strata = lower
+			}
+		}
+		if = {
+			limit = {
+				any_interest_group = {
+					leader = {
+						OR = {
+							has_ideology = ideology:ideology_vanguardist
+							has_ideology = ideology:ideology_communist
+							has_ideology = ideology:ideology_social_democrat
+							has_ideology = ideology:ideology_anarchist
+						}
+					}
+				}
+			}
+			every_interest_group = {
+				limit = {
+					leader = {
+						OR = {
+							has_ideology = ideology:ideology_vanguardist
+							has_ideology = ideology:ideology_communist
+							has_ideology = ideology:ideology_social_democrat
+							has_ideology = ideology:ideology_anarchist
+						}
+					}
+				}
+				add_modifier = { name = plague_no_poverty_measures months = 12 }
+			}
+		}
+	}
+}
+ 
+# ── ANTI-MASK / ANTI-LOCKDOWN RESISTANCE ──
+ 
+covid.9 = {
+	type = country_event
+	placement = ROOT
+ 
+	title = covid.9.t
+	desc = covid.9.d
+	flavor = covid.9.f
+ 
+	event_image = { video = "europenorthamerica_political_extremism" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		OR = {
+			has_variable = plague_lockdown
+			has_variable = plague_measures
+		}
+		any_scope_state = {
+			has_modifier = plague_modifier
+			OR = {
+				has_modifier = plague_lockdown_mod
+				has_modifier = plague_measures_mod
+			}
+			is_incorporated = yes
+		}
+		any_interest_group = {
+			has_ideology = ideology:ideology_laissez_faire
+			is_in_government = no
+		}
+		NOT = { has_variable = plague_antimask_timer }
+	}
+ 
+	immediate = {
+		set_variable = { name = plague_antimask_timer months = 12 }
+		random_country = {
+			limit = { has_variable = plague_originator }
+			save_scope_as = plague_originator_country
+		}
+		random_interest_group = {
+			limit = {
+				has_ideology = ideology:ideology_laissez_faire
+				is_in_government = no
+			}
+			save_scope_as = anti_mask_ig
+			leader = { save_scope_as = anti_mask_ig_leader }
+		}
+	}
+ 
+	cancellation_trigger = {
+		has_variable = covid_pandemic_over
+	}
+ 
+	option = { # ignore demands
+		name = covid.9.a
+		default_option = yes
+		scope:anti_mask_ig = {
+			add_modifier = { name = anti_mask_ignored months = 12 }
+		}
+	}
+ 
+	option = { # cave in
+		name = covid.9.b
+		custom_tooltip = plague_no_response.tt
+		remove_variable = plague_measures
+		remove_variable = plague_lockdown
+		every_scope_state = {
+			limit = {
+				OR = {
+					has_modifier = plague_lockdown_mod
+					has_modifier = plague_measures_mod
+				}
+			}
+			remove_modifier = plague_lockdown_mod
+			remove_modifier = plague_measures_mod
+		}
+		scope:anti_mask_ig = {
+			add_modifier = { name = anti_mask_appeased months = 12 }
+		}
+		set_variable = { name = plague_response_cooldown days = 182 }
+	}
+ 
+	option = { # discredit with science
+		name = covid.9.c
+		trigger = {
+			has_technology_researched = modern_nursing
+			institution_investment_level = {
+				institution = institution_health_system
+				value >= 3
+			}
+		}
+		highlighted_option = yes
+		scope:anti_mask_ig = {
+			add_modifier = { name = anti_mask_discredited months = 12 }
+		}
+	}
+}
+ 
+# ── HIDDEN: NEXT WAVE CHECKER ─────────────
+ 
+covid.100 = {
+	type = state_event
+	placement = ROOT
+ 
+	title = covid.3.t
+	desc = covid.3.d
+	flavor = covid.3.f
+ 
+	hidden = yes
+	duration = 1
+ 
+	trigger = {
+		exists = var:plague_wave
+		var:plague_wave < 5
+	}
+ 
+	immediate = {
+		check_the_next_covid_wave = yes
+	}
+}
+ 
+# ── HIDDEN: INTERNATIONAL SPREAD ─────────
+ 
+covid.200 = {
+	type = country_event
+	placement = ROOT
+ 
+	title = covid.3.t
+	desc = covid.3.d
+	flavor = covid.3.f
+ 
+	hidden = yes
+	duration = 1
+ 
+	trigger = {
+		OR = {
+			any_scope_state = {
+				has_modifier = plague_modifier
+				any_neighbouring_state = {
+					NOT = { has_modifier = plague_modifier }
+					NOT = { has_variable = state_hit_by_plague }
+					owner = {
+						NOT = { this = ROOT }
+						NOT = { has_journal_entry = je_covid_pandemic }
+						NOT = { has_variable = country_hit_by_plague }
+						NOT = { is_country_type = decentralized }
+					}
+				}
+			}
+			any_country = {
+				NOT = { THIS = ROOT }
+				market = root.market
+				NOT = { has_journal_entry = je_covid_pandemic }
+				NOT = { has_variable = country_hit_by_plague }
+				NOT = { is_country_type = decentralized }
+			}
+		}
+	}
+ 
+	immediate = {
+		if = {
+			limit = {
+				any_scope_state = {
+					has_modifier = plague_modifier
+					any_neighbouring_state = {
+						NOT = { has_modifier = plague_modifier }
+						NOT = { has_variable = state_hit_by_plague }
+						owner = {
+							NOT = { this = ROOT }
+							NOT = { has_journal_entry = je_covid_pandemic }
+							NOT = { has_variable = country_hit_by_plague }
+							NOT = { is_country_type = decentralized }
+						}
+					}
+				}
+			}
+			random_scope_state = {
+				limit = {
+					has_modifier = plague_modifier
+					any_neighbouring_state = {
+						NOT = { has_modifier = plague_modifier }
+						NOT = { has_variable = state_hit_by_plague }
+						owner = {
+							NOT = { this = ROOT }
+							NOT = { has_journal_entry = je_covid_pandemic }
+							NOT = { has_variable = country_hit_by_plague }
+							NOT = { is_country_type = decentralized }
+						}
+					}
+				}
+				random_neighbouring_state = {
+					limit = {
+						NOT = { has_modifier = plague_modifier }
+						NOT = { has_variable = state_hit_by_plague }
+						owner = {
+							NOT = { this = ROOT }
+							NOT = { has_journal_entry = je_covid_pandemic }
+							NOT = { has_variable = country_hit_by_plague }
+							NOT = { is_country_type = decentralized }
+						}
+					}
+					set_variable = { name = plague_international_spread_var }
+					owner = {
+						trigger_event = { id = covid.2 }
+					}
+				}
+			}
+		}
+		else = {
+			random_country = {
+				limit = {
+					NOT = { THIS = ROOT }
+					market = root.market
+					NOT = { has_journal_entry = je_covid_pandemic }
+					NOT = { has_variable = country_hit_by_plague }
+					NOT = { is_country_type = decentralized }
+				}
+				if = {
+					limit = {
+						any_scope_state = { has_building = building_trade_center }
+					}
+					random_scope_state = {
+						limit = { has_building = building_trade_center }
+						set_variable = { name = plague_international_spread_var }
+					}
+				}
+				else_if = {
+					limit = {
+						any_scope_state = { has_building = building_port }
+					}
+					random_scope_state = {
+						limit = { has_building = building_port }
+						set_variable = { name = plague_international_spread_var }
+					}
+				}
+				else = {
+					capital = {
+						set_variable = { name = plague_international_spread_var }
+					}
+				}
+				trigger_event = { id = covid.2 }
+			}
+		}
+	}
+}

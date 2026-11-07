@@ -1,0 +1,203 @@
+
+je_io_eec_membership_process = {
+	icon = "gfx/interface/icons/event_icons/event_european_union.dds"
+	group = je_group_foreign_policy
+	should_be_pinned_by_default_uninvolved_or_context = yes
+
+	is_shown_when_inactive = {
+		has_variable = io_eec_membership_process_started
+	}
+
+	possible = {
+		has_variable = io_eec_membership_process_started
+		NOT = { is_target_in_global_variable_list = { name = io_eec_members target = ROOT } }
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = io_eec_membership_status_ready
+				trigger = { io_meets_eec_accession_criteria = yes }
+			}
+			triggered_desc = {
+				desc = io_eec_membership_status_reforming
+				trigger = { always = yes }
+			}
+		}
+	}
+
+	complete = {
+		custom_tooltip = {
+			text = io_accession_country_in_europe_tt
+			capital = { is_in_geographic_region = geographic_region_europe }
+		}
+		custom_tooltip = {
+			text = io_accession_not_subject_tt
+			is_subject = no
+		}
+		custom_tooltip = {
+			text = io_accession_democratic_government_tt
+			io_has_democratic_government_laws = yes
+		}
+		custom_tooltip = {
+			text = io_accession_no_authoritarian_laws_tt
+			NOT = { io_has_authoritarian_government_laws = yes }
+		}
+		custom_tooltip = {
+			text = io_accession_voting_rights_tt
+			OR = {
+				has_law = law_type:law_universal_suffrage
+				has_law = law_type:law_census_voting
+			}
+		}
+		custom_tooltip = {
+			text = io_accession_civil_liberties_tt
+			OR = {
+				has_law = law_type:law_right_of_assembly
+				has_law = law_type:law_protected_speech
+			}
+		}
+		custom_tooltip = {
+			text = io_accession_elected_bureaucrats_tt
+			has_law = law_type:law_elected_bureaucrats
+		}
+		custom_tooltip = {
+			text = io_eec_accession_trade_policy_tt
+			OR = {
+				has_law = law_type:law_free_trade
+				has_law = law_type:law_protectionism
+			}
+		}
+	}
+
+	invalid = {
+		has_global_variable = io_eec_dissolved
+	}
+
+	on_invalid = {
+		remove_variable = io_eec_membership_process_started
+		set_variable = { name = io_cooldown_eec years = 1 }
+		trigger_event = { id = io_accession_events.3 popup = yes }
+	}
+
+	on_complete = {
+		io_finalize_eec_accession = yes
+	}
+
+	fail = {
+		custom_tooltip = {
+			text = io_accession_authoritarian_failure_tt
+			io_has_authoritarian_government_laws = yes
+		}
+	}
+
+	on_fail = {
+		io_cancel_eec_accession = yes
+	}
+
+	transferable = no
+	can_revolution_inherit = no
+	weight = 5000
+}
+
+je_io_eu_membership_process = {
+	icon = "gfx/interface/icons/event_icons/event_european_union.dds"
+	group = je_group_foreign_policy
+	should_be_pinned_by_default_uninvolved_or_context = yes
+
+	is_shown_when_inactive = {
+		has_variable = eu_membership_process_started
+	}
+
+	possible = {
+		has_variable = eu_membership_process_started
+		NOT = { is_target_in_global_variable_list = { name = io_eu_members target = ROOT } }
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = io_eu_membership_status_ready
+				trigger = { io_meets_eu_accession_criteria = yes }
+			}
+			triggered_desc = {
+				desc = io_eu_membership_status_reforming
+				trigger = { always = yes }
+			}
+		}
+	}
+
+	complete = {
+		custom_tooltip = {
+			text = io_accession_country_in_europe_tt
+			capital = { is_in_geographic_region = geographic_region_europe }
+		}
+		custom_tooltip = {
+			text = io_accession_not_subject_tt
+			is_subject = no
+		}
+		custom_tooltip = {
+			text = io_accession_democratic_government_tt
+			io_has_democratic_government_laws = yes
+		}
+		custom_tooltip = {
+			text = io_accession_no_authoritarian_laws_tt
+			NOT = { io_has_authoritarian_government_laws = yes }
+		}
+		custom_tooltip = {
+			text = io_accession_voting_rights_tt
+			OR = {
+				has_law = law_type:law_universal_suffrage
+				has_law = law_type:law_census_voting
+			}
+		}
+		custom_tooltip = {
+			text = io_accession_civil_liberties_tt
+			OR = {
+				has_law = law_type:law_right_of_assembly
+				has_law = law_type:law_protected_speech
+			}
+		}
+		custom_tooltip = {
+			text = io_accession_elected_bureaucrats_tt
+			has_law = law_type:law_elected_bureaucrats
+		}
+		custom_tooltip = {
+			text = io_eu_accession_free_trade_tt
+			has_law = law_type:law_free_trade
+		}
+		custom_tooltip = {
+			text = io_eu_accession_minorities_tt
+			OR = {
+				has_law = law_type:law_multicultural
+				has_law = law_type:law_cultural_exclusion
+			}
+		}
+		custom_tooltip = {
+			text = io_eu_accession_migration_tt
+			OR = {
+				has_law = law_type:law_no_migration_controls
+				has_law = law_type:law_migration_controls
+			}
+		}
+	}
+
+	on_complete = {
+		io_finalize_eu_accession = yes
+	}
+
+	fail = {
+		custom_tooltip = {
+			text = io_accession_authoritarian_failure_tt
+			io_has_authoritarian_government_laws = yes
+		}
+	}
+
+	on_fail = {
+		io_cancel_eu_accession = yes
+	}
+
+	transferable = no
+	can_revolution_inherit = no
+	weight = 5000
+}

@@ -1,0 +1,35 @@
+﻿CHARACTERS = {
+	c:SAF ?= {
+	create_character = {
+			first_name = "frederik_willem"
+			last_name = "de_klerk"
+			historical = yes
+			ruler = yes
+			culture = cu:british
+			birth_date = 1936.3.31
+			dna = dna_f_w_de_klerk
+			ig_leader = yes
+			interest_group = ig_petty_bourgeoisie
+			ideology = ideology_liberal_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+	create_character = {
+			first_name = "nelson"
+			last_name = "mandela"
+			historical = yes
+			ruler = no
+			culture = cu:boer
+			birth_date = 1918.3.31
+			dna = dna_nelson_mandela
+			ig_leader = yes
+			interest_group = ig_trade_unions
+			ideology = ideology_democratic_socialist_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+		
+	}
+}

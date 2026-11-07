@@ -1,0 +1,241 @@
+# Israel-Palestine Peacetime Journal System
+# Place in: common/journal_entries/
+#
+# This journal entry represents the unstable periods between major escalations.
+# The visible temperature/progress bar is controlled by add_progress effects.
+# Bar state is read with scripted_bar_progress triggers.
+
+je_israel_palestine_peacetime = {
+	group = je_group_international
+	icon = "gfx/interface/icons/event_icons/israelpalestine.dds"
+
+	is_shown_in_lobby = {
+		OR = {
+			c:ISR ?= this
+			c:PAL ?= this
+		}
+	}
+
+	scripted_progress_bar = je_israel_palestine_tension_bar
+
+	scripted_button = je_ip_peacetime_security_coordination_button
+	scripted_button = je_ip_peacetime_closure_policy_button
+	scripted_button = je_ip_peacetime_settlement_freeze_button
+	scripted_button = je_ip_peacetime_international_mediation_button
+	scripted_button = je_ip_peacetime_grassroots_outreach_button
+	scripted_button = je_ip_peacetime_mass_mobilization_button
+
+	should_be_involved = {
+		OR = {
+			c:ISR ?= this
+			c:PAL ?= this
+		}
+	}
+
+	should_show_when_not_involved = {
+		always = no
+	}
+
+	immediate = {
+		if = {
+			limit = { NOT = { has_global_variable = ip_peacetime_negotiations } }
+			set_global_variable = { name = ip_peacetime_negotiations value = 10 }
+		}
+		if = {
+			limit = { NOT = { has_global_variable = ip_peacetime_security_coordination } }
+			set_global_variable = { name = ip_peacetime_security_coordination value = 10 }
+		}
+		if = {
+			limit = { NOT = { has_global_variable = ip_peacetime_international_pressure } }
+			set_global_variable = { name = ip_peacetime_international_pressure value = 0 }
+		}
+		if = {
+			limit = { NOT = { has_global_variable = ip_peacetime_started } }
+			set_global_variable = ip_peacetime_started
+		}
+	}
+
+	immediate_all_involved = {
+		add_modifier = {
+			name = ip_uneasy_status_quo
+		}
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_ip_peacetime_status_calm
+				trigger = {
+				any_country = { limit = { OR = {  c:ISR ?= this c:PAL ?= this } }
+					je:je_israel_palestine_peacetime = {
+							scripted_bar_progress = {
+								name = je_israel_palestine_tension_bar
+								value < 0.35
+								}
+						}
+					}
+				}
+			}
+			triggered_desc = {
+				desc = je_ip_peacetime_status_fragile
+				trigger = {
+				any_country = { limit = { OR = {  c:ISR ?= this c:PAL ?= this } }
+				je_israel_palestine_peacetime = {
+						scripted_bar_progress = {
+							name = je_israel_palestine_tension_bar
+							value < 0.70
+						}
+					}
+				}
+			}
+		}
+			triggered_desc = {
+				desc = je_ip_peacetime_status_crisis
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			# Baseline drift: the situation decays unless actively managed.
+			ip_temperature_add_1 = yes
+
+			# Effective security coordination can keep the calm.
+			if = {
+				limit = {
+					global_var:ip_peacetime_security_coordination >= 25
+				}
+				ip_temperature_subtract_1 = yes
+			}
+
+			# Talks reduce tension only if they are already meaningful.
+			if = {
+				limit = {
+					global_var:ip_peacetime_negotiations >= 25
+				}
+				ip_temperature_subtract_1 = yes
+			}
+
+			# High international pressure reduces escalation room, but hurts Israel diplomatically.
+			if = {
+				limit = {
+					global_var:ip_peacetime_international_pressure >= 30
+				}
+				ip_temperature_subtract_1 = yes
+				c:ISR ?= {
+					add_modifier = {
+						name = ip_international_scrutiny
+						months = 6
+					}
+				}
+			}
+			if = { limit = {
+				any_country = { limit = { OR = {  c:ISR ?= this c:PAL ?= this } }
+				je:je_israel_palestine_peacetime ?= {
+							scripted_bar_progress = {
+								name = je_israel_palestine_tension_bar
+								value <= 0.85
+							}
+						}
+					}
+				}
+				set_global_variable = ip_major_escalation_warning
+				c:ISR = { trigger_event = { id = ip_peacetime.10 popup = yes } }
+				c:PAL = { trigger_event = { id = ip_peacetime.10 popup = yes } }
+			}
+			# Random peacetime incidents and openings.
+			random_list = {
+				8 = {}
+				2 = { c:ISR ?= { trigger_event = ip_peacetime.1 } }
+				2 = { c:PAL ?= { trigger_event = ip_peacetime.2 } }
+				1 = { c:ISR ?= { trigger_event = ip_peacetime.3 } }
+				1 = { c:PAL ?= { trigger_event = ip_peacetime.4 } }
+				1 = { c:ISR ?= { trigger_event = ip_peacetime.5 } }
+				1 = { c:PAL ?= { trigger_event = ip_peacetime.6 } }
+			}
+		}
+	}
+	
+	invalid = {
+		OR = {
+			NOT = { exists = c:ISR }
+			NOT = { exists = c:PAL }
+
+			# Peacetime JE disappears during actual war/intifada phase.
+			AND = {
+				c:ISR ?= {
+					has_war_with = c:PAL
+				}
+			}
+			has_global_variable = intifada_started
+			has_global_variable = intifada_uprising_phase
+		}
+	}
+
+	on_invalid = {
+		hidden_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						c:ISR ?= this
+						c:PAL ?= this
+					}
+				}
+				remove_modifier = ip_uneasy_status_quo
+				remove_modifier = ip_security_coordination
+				remove_modifier = ip_closure_policy
+				remove_modifier = ip_settlement_freeze
+				remove_modifier = ip_grassroots_outreach
+				remove_modifier = ip_international_scrutiny
+				remove_modifier = ip_political_backlash
+			}
+		}
+	}
+
+	complete = {
+		custom_tooltip = {
+			text = je_ip_peacetime_complete_tt
+			je:je_israel_palestine_peacetime ?= {
+				je_israel_palestine_peacetime = {
+					scripted_bar_progress = {
+						name = je_israel_palestine_tension_bar
+						value <= 0.05
+					}
+				}
+			}
+			global_var:ip_peacetime_negotiations >= 60
+			global_var:ip_peacetime_security_coordination >= 40
+		}
+	}
+
+	on_complete = {
+		every_country = {
+			limit = {
+				OR = {
+					c:ISR ?= this
+					c:PAL ?= this
+				}
+			}
+			trigger_event = { id = ip_peacetime.20 popup = yes }
+			add_modifier = {
+				name = ip_stabilized_peace_process
+				years = 5
+				is_decaying = yes
+			}
+		}
+		hidden_effect = {
+			remove_global_variable = ip_peacetime_negotiations
+			remove_global_variable = ip_peacetime_security_coordination
+			remove_global_variable = ip_peacetime_international_pressure
+			remove_global_variable = ip_peacetime_started
+			remove_global_variable = ip_major_escalation_warning
+		}
+	}
+
+	weight = 10000
+	should_be_pinned_by_default_involved = yes
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

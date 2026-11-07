@@ -1,0 +1,568 @@
+# conservatives
+
+REPLACE_OR_CREATE:conservative_party = {
+	color = { 108 64 179 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = party_christian_social_party
+				trigger = {
+					exists = c:AUS
+					THIS = c:AUS
+				}
+			}
+			triggered_desc = {
+				desc = party_constitutional_party
+				trigger = {
+					exists = c:PEU
+					THIS = c:PEU
+				}
+			}
+			triggered_desc = {
+				desc = party_national_autonomist
+				trigger = {
+					exists = c:ARG
+					THIS = c:ARG
+				}
+			}
+			triggered_desc = {
+				desc = party_anc
+				trigger = {
+					exists = c:SAF
+					THIS = c:SAF
+				}
+			}
+			triggered_desc = {
+				desc = party_tories
+				trigger = {
+					exists = c:GBR
+					THIS = c:GBR
+				}
+			}
+			triggered_desc = {
+				desc = party_republicans
+				trigger = {
+					exists = c:USA
+					THIS = c:USA
+				}
+			}
+			triggered_desc = {
+				desc = party_moderate_party
+				trigger = {
+					exists = c:SPA
+					THIS = c:SPA
+				}
+			}
+			triggered_desc = {
+				desc = party_regenerator_party
+				trigger = {
+					exists = c:POR
+					THIS = c:POR
+				}
+			}
+			triggered_desc = {
+				desc = party_lantmanna_party
+				trigger = {
+					exists = c:SWE
+					THIS = c:SWE
+				}
+			}
+			triggered_desc = {
+				desc = party_finnish_party
+				trigger = {
+					exists = c:FIN
+					THIS = c:FIN
+				}
+			}
+			triggered_desc = {
+				desc = party_catholic_party
+				trigger = {
+					exists = c:BEL
+					THIS = c:BEL
+				}
+			}
+			triggered_desc = {
+				desc = party_party_of_the_right
+				trigger = {
+					exists = c:LUX
+					THIS = c:LUX
+				}
+			}
+			triggered_desc = {
+				desc = party_peoples_party
+				trigger = {
+					exists = c:MON
+					THIS = c:MON
+				}
+			}
+			triggered_desc = {
+				desc = party_resistance_party
+				trigger = {
+					exists = c:FRA
+					THIS = c:FRA
+					has_variable = orleanist_restoration_var
+				}
+			}
+			triggered_desc = {
+				desc = party_party_of_order
+				trigger = {
+					exists = c:FRA
+					THIS = c:FRA
+					NOT = { has_variable = orleanist_restoration_var }
+				}
+			}
+			triggered_desc = {
+				desc = party_moderate_party
+				trigger = {
+					country_has_primary_culture = cu:brazilian
+					has_law = law_type:law_monarchy
+					OR = {
+						game_date <= 1837.1.1
+						has_modifier = brz_regency
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_conservative
+				trigger = {
+					country_has_primary_culture = cu:brazilian
+					has_law = law_type:law_monarchy
+					NOT = {
+						has_modifier = brz_regency
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_bahia_republican_party
+				trigger = {
+					country_has_primary_culture = cu:brazilian
+					OR = {
+						has_law = law_type:law_presidential_republic
+						has_law = law_type:law_parliamentary_republic
+					}
+					any_scope_state = {
+						state_region = s:STATE_BAHIA
+					}
+					trigger_if = {
+						limit = {
+							any_scope_state = {
+								state_region = s:STATE_SAO_PAULO
+							}
+						}
+						s:STATE_BAHIA.region_state:BRZ.gdp > s:STATE_SAO_PAULO.region_state:BRZ.gdp
+					}
+					trigger_if = {
+						limit = {
+							any_scope_state = {
+								state_region = s:STATE_MINAS_GERAIS
+							}
+						}
+						s:STATE_BAHIA.region_state:BRZ.gdp > s:STATE_MINAS_GERAIS.region_state:BRZ.gdp
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_sao_paulo_republican_party
+				trigger = {
+					country_has_primary_culture = cu:brazilian
+					OR = {
+						has_law = law_type:law_presidential_republic
+						has_law = law_type:law_parliamentary_republic
+					}
+					any_scope_state = {
+						state_region = s:STATE_SAO_PAULO
+					}
+					trigger_if = {
+						limit = {
+							any_scope_state = {
+								state_region = s:STATE_MINAS_GERAIS
+							}
+						}
+						s:STATE_SAO_PAULO.region_state:BRZ.gdp > s:STATE_MINAS_GERAIS.region_state:BRZ.gdp
+					}
+					trigger_if = {
+						limit = {
+							any_scope_state = {
+								state_region = s:STATE_BAHIA
+							}
+						}
+						s:STATE_SAO_PAULO.region_state:BRZ.gdp > s:STATE_BAHIA.region_state:BRZ.gdp
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_minas_gerais_republican_party
+				trigger = {
+					country_has_primary_culture = cu:brazilian
+					OR = {
+						has_law = law_type:law_presidential_republic
+						has_law = law_type:law_parliamentary_republic
+					}
+					any_scope_state = {
+						state_region = s:STATE_MINAS_GERAIS
+					}
+					trigger_if = {
+						limit = {
+							any_scope_state = {
+								state_region = s:STATE_SAO_PAULO
+							}
+						}
+						s:STATE_MINAS_GERAIS.region_state:BRZ.gdp > s:STATE_SAO_PAULO.region_state:BRZ.gdp
+					}
+					trigger_if = {
+						limit = {
+							any_scope_state = {
+								state_region = s:STATE_BAHIA
+							}
+						}
+						s:STATE_MINAS_GERAIS.region_state:BRZ.gdp > s:STATE_BAHIA.region_state:BRZ.gdp
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_federal_republican_party
+				trigger = {
+					country_has_primary_culture = cu:brazilian
+					OR = {
+						has_law = law_type:law_presidential_republic
+						has_law = law_type:law_parliamentary_republic
+					}
+					NOR = {
+						any_scope_state = {
+							state_region = s:STATE_SAO_PAULO
+						}
+						any_scope_state = {
+							state_region = s:STATE_MINAS_GERAIS
+						}
+						any_scope_state = {
+							state_region = s:STATE_BAHIA
+						}
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_octobrist_party
+				trigger = {
+					exists = c:RUS
+					THIS = c:RUS
+					has_law = law_type:law_monarchy
+				}
+			}
+			triggered_desc = {
+				desc = party_united_russia
+				trigger = {
+					exists = c:RUS
+					THIS = c:RUS
+				}
+			}
+			triggered_desc = {
+				desc = party_constitutional_association
+				trigger = {
+					exists = c:CHI
+					THIS = c:CHI
+					has_law = law_type:law_monarchy
+				}
+			}
+			triggered_desc = {
+				desc = party_imperial_rule_party
+				trigger = {
+					exists = c:JAP
+					THIS = c:JAP
+					has_law = law_type:law_monarchy
+				}
+			}
+			triggered_desc = {
+				desc = party_moderate_socialists_party
+				trigger = {
+					exists = c:PER
+					THIS = c:PER
+				}
+			}
+			triggered_desc = {
+				desc = party_napist_party
+				trigger = {
+					exists = c:GRE
+					THIS = c:GRE
+					has_law = law_type:law_monarchy
+					ruler = {
+						culture = {
+							has_discrimination_trait = german_speaking
+						}
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_ethnikon_komma
+				trigger = {
+					exists = c:GRE
+					THIS = c:GRE
+				}
+			}
+			triggered_desc = {
+				desc = party_blanco_party
+				trigger = {
+					exists = c:URU
+					THIS = c:URU
+				}
+			}
+			triggered_desc = {
+				desc = party_colorado_party
+				trigger = {
+					exists = c:PRG
+					THIS = c:PRG
+				}
+			}
+			triggered_desc = {
+				desc = party_the_right
+				trigger = {
+					OR = {
+						country_has_primary_culture = cu:north_italian
+						country_has_primary_culture = cu:south_italian
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_hoyre
+				trigger = {
+					country_has_primary_culture = cu:norwegian
+				}
+			}
+			triggered_desc = {
+				desc = party_democratic_party
+				trigger = {
+					country_has_primary_culture = cu:dixie
+				}
+			}
+			triggered_desc = {
+				desc = party_hojre
+				trigger = {
+					country_has_primary_culture = cu:danish
+				}
+			}
+			triggered_desc = {
+				desc = party_liberal_conservative_party
+				trigger = {
+					country_has_primary_culture = cu:anglo_canadian
+				}
+			}
+			triggered_desc = {
+				desc = party_congress_nationalist_party
+				trigger = {
+					exists = py:social_democrat_party
+					OR = {
+						c:BIC ?= this
+						c:BHT ?= this
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_conservative
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/conservatism.dds"
+	}
+	
+	# THIS IS RUN ONLY ONCE AT GAME START
+	valid_for_country = {
+	NOT = {
+		OR = {
+			AND = {
+				exists = c:AST
+				THIS = c:AST
+			}
+			AND = {
+				exists = c:BRZ
+				THIS = c:BRZ
+			}
+			AND = {
+				exists = c:CAN
+				THIS = c:CAN
+			}
+			AND = {
+				exists = c:FRA
+				THIS = c:FRA
+			}
+			AND = {
+				exists = c:GBR
+				THIS = c:GBR
+			}
+			AND = {
+				exists = c:GER
+				THIS = c:GER
+			}
+			AND = {
+				exists = c:MEX
+				THIS = c:MEX
+			}
+			AND = {
+				exists = c:RUS
+				THIS = c:RUS
+			}
+			AND = {
+				exists = c:USA
+				THIS = c:USA
+			}
+		}
+			AND = {
+				exists = c:VNZ
+				THIS = c:VNZ
+			}
+		
+			AND = {
+				exists = c:IDA
+				THIS = c:IDA
+			}
+			AND = {
+				exists = c:BHT
+				THIS = c:BHT
+			}
+		
+	}
+	}
+
+		available_for_interest_group = {
+		is_marginal = no
+		OR = {
+			leader = { has_ideology = ideology:ideology_conservative_leader }
+			leader = { has_ideology = ideology:ideology_neoliberal_leader }
+			leader = { has_ideology = ideology:ideology_moderate_leader }
+			leader = { has_ideology = ideology:ideology_corporatist_leader }
+			leader = { has_ideology = ideology:ideology_theocrat_leader }
+			leader = { has_ideology = ideology:ideology_monarchist_leader }
+			leader = { has_ideology = ideology:ideology_neocon_leader }
+			leader = { has_ideology = ideology:ideology_authoritarian_capitalist_leader }
+			leader = { has_ideology = ideology:ideology_right_wing_populist_leader }
+			has_ideology = ideology:ideology_conservative
+			has_ideology = ideology:ideology_right_economy
+			has_ideology = ideology:ideology_authoritarian
+			has_ideology = ideology:ideology_traditionalist
+			has_ideology = ideology:ideology_centre_economy
+			has_ideology = ideology:ideology_regionalist
+			has_ideology = ideology:ideology_monarchist
+			has_ideology = ideology:ideology_republican
+			is_interest_group_type = ig_landowners
+			is_interest_group_type = ig_petty_bourgeoisie
+			is_interest_group_type = ig_industrialists
+		}
+	}
+
+	# Root - IG considering joining
+	# scope:number - the number of IGs that would join this party before the root IG
+	join_weight = {
+		value = {
+			value = -5
+			desc = "base_value"
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_conservative_leader }
+				leader = { has_ideology = ideology:ideology_neoliberal_leader }
+				leader = { has_ideology = ideology:ideology_moderate_leader }
+				leader = { has_ideology = ideology:ideology_corporatist_leader }
+			}
+			}
+			add = { value = 45 desc = "leader_ideological_compatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_theocrat_leader }
+				leader = { has_ideology = ideology:ideology_monarchist_leader }
+				leader = { has_ideology = ideology:ideology_neocon_leader }
+				leader = { has_ideology = ideology:ideology_authoritarian_capitalist_leader }
+				leader = { has_ideology = ideology:ideology_right_wing_populist_leader }
+			}
+			}
+			add = { value = 20 desc = "leader_adjacent_ideology" }
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_marxist_leader }
+				leader = { has_ideology = ideology:ideology_anarchist_leader }
+				leader = { has_ideology = ideology:ideology_state_socialist_leader }
+				leader = { has_ideology = ideology:ideology_jihadist_leader }
+				leader = { has_ideology = ideology:ideology_fascist_leader }
+			}
+			}
+			add = { value = -50 desc = "leader_ideological_incompatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_conservative
+				has_ideology = ideology:ideology_right_economy
+				has_ideology = ideology:ideology_authoritarian
+			}
+			}
+			add = { value = 35 desc = "interest_group_ideological_compatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_traditionalist
+				has_ideology = ideology:ideology_centre_economy
+				has_ideology = ideology:ideology_regionalist
+				has_ideology = ideology:ideology_monarchist
+				has_ideology = ideology:ideology_republican
+			}
+			}
+			add = { value = 15 desc = "interest_group_adjacent_ideology" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_far_left_economy
+				has_ideology = ideology:ideology_communist
+				has_ideology = ideology:ideology_progressive
+				has_ideology = ideology:ideology_theocrat
+			}
+			}
+			add = { value = -35 desc = "interest_group_ideological_incompatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				is_interest_group_type = ig_landowners
+				is_interest_group_type = ig_petty_bourgeoisie
+				is_interest_group_type = ig_industrialists
+			}
+			}
+			add = { value = 20 desc = "from_archetype_party" }
+		}
+		if = {
+			limit = {
+				is_powerful = yes
+				OR = {
+					leader = { has_ideology = ideology:ideology_conservative_leader }
+					leader = { has_ideology = ideology:ideology_neoliberal_leader }
+					leader = { has_ideology = ideology:ideology_moderate_leader }
+					leader = { has_ideology = ideology:ideology_corporatist_leader }
+					has_ideology = ideology:ideology_conservative
+					has_ideology = ideology:ideology_right_economy
+					has_ideology = ideology:ideology_authoritarian
+				}
+			}
+			add = { value = 20 desc = "powerful_ig" }
+		}
+		if = {
+			limit = {
+				scope:number = 1
+				is_powerful = no
+				is_marginal = no
+			}
+			multiply = { value = 2 desc = "from_influential_supporting_member" }
+		}
+		else_if = {
+			limit = { scope:number = 2 }
+			multiply = { value = 0.75 desc = "from_two_prior_members" }
+		}
+	}
+
+}

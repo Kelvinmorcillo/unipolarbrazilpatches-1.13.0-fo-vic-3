@@ -1,0 +1,20 @@
+je_haiti_political_crisis = {
+    icon = "gfx/interface/icons/event_icons/event_protest.dds"
+    group = je_group_dilemmas
+
+    is_shown_when_inactive = {
+        c:HAI ?= this
+		game_date <= 1994.10.1
+    }
+
+    possible = {
+        c:HAI ?= this
+        game_date <= 1994.10.1
+    }
+
+    complete = {
+            game_date >= 1994.10.1
+    }
+
+    should_be_pinned_by_default_uninvolved_or_context = yes
+}

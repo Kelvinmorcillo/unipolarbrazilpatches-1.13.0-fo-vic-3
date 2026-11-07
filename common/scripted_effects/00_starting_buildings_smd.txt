@@ -1,0 +1,5425 @@
+# SMD 1992 - Starting Buildings Scripted Effects
+#
+# Three development tracks:
+#   western      = service economy (First World)
+#   second_world = manufacturing/industrial economy (Second World / NICs)
+#   third_world  = resource/agricultural economy (Third World)
+#
+# Five population tiers per track:
+#   tiny   = < 250,000
+#   small  = 250,000 – 750,000
+#   medium = 750,000 – 2,000,000
+#   large  = 2,000,000 – 5,000,000
+#   huge   = 5,000,000+
+#
+# Job ratio target: ~40% of population employed
+# Each building level probably employs ~3,000 workers
+# Approximate target levels per tier:
+#   tiny   → ~15–20  total levels  (100k pop avg)
+#   small  → ~65     total levels  (500k pop avg)
+#   medium → ~165    total levels  (1.25M pop avg)
+#   large  → ~465    total levels  (3.5M pop avg)
+#   huge   → ~1065   total levels  (8M pop avg)
+#   very_huge  = ~10,000,000 pop  → target ~1,330 levels  (10M * 0.4 / 3000)
+#   mega       = ~20,000,000 pop  → target ~2,665 levels  (20M * 0.4 / 3000)
+#
+# No ownership assignment in these effects.
+# No REPLACE_OR_CREATE prefix needed for scripted effects.
+
+###############################################################################
+# WESTERN (First World) - Service Economy
+# Profile: High services, moderate light industry, good infrastructure,
+#          telecom, banking, professional services, universities, airports.
+#          Agriculture minimal. Advanced military for large/huge.
+###############################################################################
+
+# ---------------------------------------------------------------------------
+# WESTERN TINY  (< 250,000 pop | ~15 levels target)
+# ---------------------------------------------------------------------------
+effect_starting_buildings_western_tiny = {
+
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 1
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_dye_plantation"
+		level = 12
+		reserves = 1
+		
+	}
+	create_building = {
+		building = "building_railway"
+		level = 1
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 1
+			reserves = 1
+		}
+	}
+
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 1
+		reserves = 1
+	}
+
+	# Telecom
+	create_building = {
+		building = "building_telecommunications"
+		level = 1
+		reserves = 1
+	}
+
+	# Services
+	create_building = {
+		building = "building_professional_service"
+		level = 1
+		reserves = 1
+	}
+	create_building = {
+		building = "building_food_service"
+		level = 1
+		reserves = 1
+	}
+	create_building = {
+		building = "building_retail_services"
+		level = 1
+		reserves = 1
+	}
+	create_building = {
+		building = "building_bank"
+		level = 1
+		reserves = 1
+	}
+
+	# Light Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 1
+		reserves = 1
+	}
+
+	# Airport (regional)
+	create_building = {
+		building = "building_airport"
+		level = 1
+		reserves = 1
+	}
+
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 1
+		reserves = 1
+	}
+}
+
+# ---------------------------------------------------------------------------
+# WESTERN SMALL  (250,000–750,000 pop | ~65 levels target)
+# ---------------------------------------------------------------------------
+effect_starting_buildings_western_small = {
+
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 3
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 2
+			reserves = 1
+		}
+	}
+
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 2
+		reserves = 1
+	}
+
+	# Telecom
+	create_building = {
+		building = "building_telecommunications"
+		level = 1
+		reserves = 1
+	}
+
+	# Services (core of western economy)
+	create_building = {
+		building = "building_professional_service"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_bank"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_food_service"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_retail_services"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_advertising_agency"
+		level = 1
+		reserves = 1
+	}
+	create_building = {
+		building = "building_warehouse"
+		level = 2
+		reserves = 1
+	}
+
+	# Light Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 2
+		reserves = 1
+	}
+
+	# Education
+	create_building = {
+		building = "building_university"
+		level = 1
+		reserves = 1
+	}
+
+	# Airport
+	create_building = {
+		building = "building_airport"
+		level = 1
+		reserves = 1
+	}
+
+	# Arts
+	create_building = {
+		building = "building_art_academy"
+		level = 1
+		reserves = 1
+	}
+
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 2
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 1
+			reserves = 1
+		}
+	}
+}
+
+# ---------------------------------------------------------------------------
+# WESTERN MEDIUM  (750,000–2,000,000 pop | ~165 levels target)
+# ---------------------------------------------------------------------------
+effect_starting_buildings_western_medium = {
+
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 20
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 6
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 5
+			reserves = 1
+		}
+	}
+
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 4
+		reserves = 1
+	}
+
+	# Telecom
+	create_building = {
+		building = "building_telecommunications"
+		level = 2
+		reserves = 1
+	}
+
+	# Core Services
+	create_building = {
+		building = "building_professional_service"
+		level = 12
+		reserves = 1
+	}
+	create_building = {
+		building = "building_bank"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_food_service"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_retail_services"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_advertising_agency"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_warehouse"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_pharmaceutical_services"
+		level = 2
+		reserves = 1
+	}
+
+	# Light Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 6
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_furniture_manufactory"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chemical_plant"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_automotive_industry"
+		level = 15
+		reserves = 1
+	}
+
+	# High Tech (1992 western)
+	create_building = {
+		building = "building_electrics_industry"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_computer_industry"
+		level = 1
+		reserves = 1
+	}
+
+	# Automotive
+	create_building = {
+		building = "building_motor_industry"
+		level = 2
+		reserves = 1
+	}
+
+	# Education & Culture
+	create_building = {
+		building = "building_university"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_art_academy"
+		level = 2
+		reserves = 1
+	}
+
+	# Airport
+	create_building = {
+		building = "building_airport"
+		level = 2
+		reserves = 1
+	}
+
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_arms_industry"
+		level = 1
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 1
+			reserves = 1
+		}
+		create_building = {
+			building = "building_shipyard"
+			level = 1
+			reserves = 1
+		}
+	}
+}
+
+# ---------------------------------------------------------------------------
+# WESTERN LARGE  (2,000,000–5,000,000 pop | ~465 levels target)
+# ---------------------------------------------------------------------------
+effect_starting_buildings_western_large = {
+
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 55
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_paper_mill"
+		level = 15
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 15
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 15
+		reserves = 1
+	}
+	create_building = {
+		building = "building_automotive_industry"
+		level = 21
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 12
+			reserves = 1
+		}
+	}
+
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_nuclear_plant"
+		level = 2
+		reserves = 1
+	}
+
+	# Telecom
+	create_building = {
+		building = "building_telecommunications"
+		level = 5
+		reserves = 1
+	}
+
+	# Core Services
+	create_building = {
+		building = "building_professional_service"
+		level = 35
+		reserves = 1
+	}
+	create_building = {
+		building = "building_bank"
+		level = 15
+		reserves = 1
+	}
+	create_building = {
+		building = "building_food_service"
+		level = 28
+		reserves = 1
+	}
+	create_building = {
+		building = "building_retail_services"
+		level = 28
+		reserves = 1
+	}
+	create_building = {
+		building = "building_advertising_agency"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_warehouse"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_pharmaceutical_services"
+		level = 5
+		reserves = 1
+	}
+
+	# Light Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 15
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_furniture_manufactory"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_paper_mill"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chemical_plant"
+		level = 6
+		reserves = 1
+	}
+
+	# Heavy & High Tech Industry
+	create_building = {
+		building = "building_steel_mill"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_electrics_industry"
+		level = 6
+		reserves = 1
+	}
+	create_building = {
+		building = "building_computer_industry"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chip_industry"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_motor_industry"
+		level = 6
+		reserves = 1
+	}
+	create_building = {
+		building = "building_aeronautics_industry"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_appliance_manufactory"
+		level = 8
+		reserves = 1
+	}
+	
+	# Education & Culture
+	create_building = {
+		building = "building_university"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_art_academy"
+		level = 4
+		reserves = 1
+	}
+
+	# Airport
+	create_building = {
+		building = "building_airport"
+		level = 4
+		reserves = 1
+	}
+
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_arms_industry"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_artillery_foundry"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_munition_plant"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_war_machine_industry"
+		level = 1
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 2
+			reserves = 1
+		}
+		create_building = {
+			building = "building_shipyard"
+			level = 2
+			reserves = 1
+		}
+	}
+}
+
+# ---------------------------------------------------------------------------
+# WESTERN HUGE  (5,000,000+ pop | ~1065 levels target)
+# ---------------------------------------------------------------------------
+effect_starting_buildings_western_huge = {
+
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 130
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 22
+		reserves = 1
+	}
+	create_building = {
+		building = "building_paper_mill"
+		level = 20
+		reserves = 1
+	}
+	create_building = {
+		building = "building_appliance_manufactory"
+		level = 20
+		reserves = 1
+	}
+	create_building = {
+		building = "building_automotive_industry"
+		level = 26
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 25
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 30
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 25
+			reserves = 1
+		}
+	}
+
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 20
+		reserves = 1
+	}
+	create_building = {
+		building = "building_nuclear_plant"
+		level = 5
+		reserves = 1
+	}
+
+	# Telecom
+	create_building = {
+		building = "building_telecommunications"
+		level = 10
+		reserves = 1
+	}
+
+	# Core Services
+	create_building = {
+		building = "building_professional_service"
+		level = 80
+		reserves = 1
+	}
+	create_building = {
+		building = "building_bank"
+		level = 35
+		reserves = 1
+	}
+	create_building = {
+		building = "building_food_service"
+		level = 65
+		reserves = 1
+	}
+	create_building = {
+		building = "building_retail_services"
+		level = 65
+		reserves = 1
+	}
+	create_building = {
+		building = "building_advertising_agency"
+		level = 18
+		reserves = 1
+	}
+	create_building = {
+		building = "building_warehouse"
+		level = 22
+		reserves = 1
+	}
+	create_building = {
+		building = "building_pharmaceutical_services"
+		level = 12
+		reserves = 1
+	}
+
+	# Light Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 30
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 15
+		reserves = 1
+	}
+	create_building = {
+		building = "building_furniture_manufactory"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_paper_mill"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chemical_plant"
+		level = 12
+		reserves = 1
+	}
+	create_building = {
+		building = "building_glassworks"
+		level = 4
+		reserves = 1
+	}
+
+	# Heavy & High Tech Industry
+	create_building = {
+		building = "building_steel_mill"
+		level = 12
+		reserves = 1
+	}
+	create_building = {
+		building = "building_electrics_industry"
+		level = 14
+		reserves = 1
+	}
+	create_building = {
+		building = "building_computer_industry"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chip_industry"
+		level = 6
+		reserves = 1
+	}
+	create_building = {
+		building = "building_motor_industry"
+		level = 14
+		reserves = 1
+	}
+	create_building = {
+		building = "building_aeronautics_industry"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_synthetics_plant"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_tooling_workshop"
+		level = 6
+		reserves = 1
+	}
+
+	# Education & Culture
+	create_building = {
+		building = "building_university"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_art_academy"
+		level = 8
+		reserves = 1
+	}
+
+	# Airport
+	create_building = {
+		building = "building_airport"
+		level = 8
+		reserves = 1
+	}
+	
+	# create_building = {
+	# 	building = "building_spaceport"
+	# 	level = 1
+	# 	reserves = 1
+	# }
+
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_arms_industry"
+		level = 6
+		reserves = 1
+	}
+	create_building = {
+		building = "building_artillery_foundry"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_munition_plant"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_war_machine_industry"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_aeronautics_industry"
+		level = 2
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 4
+			reserves = 1
+		}
+		create_building = {
+			building = "building_shipyard"
+			level = 4
+			reserves = 1
+		}
+	}
+}
+
+
+###############################################################################
+# SECOND WORLD - Manufacturing / Industrial Economy
+# Profile: Heavy on manufacturing, steel, chemicals, arms. Moderate services.
+#          State-controlled infrastructure. Some agriculture retained.
+#          Universities present. Telecom lagging behind western.
+###############################################################################
+
+# ---------------------------------------------------------------------------
+# SECOND WORLD TINY  (< 250,000 pop | ~15 levels target)
+# ---------------------------------------------------------------------------
+effect_starting_buildings_second_world_tiny = {
+
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 1
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 1
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 2
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 1
+			reserves = 1
+		}
+	}
+
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 1
+		reserves = 1
+	}
+
+	# Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 1
+		reserves = 1
+	}
+
+	# Agriculture
+	create_building = {
+		building = "building_wheat_farm"
+		level = 1
+		reserves = 1
+	}
+	create_building = {
+		building = "building_livestock_ranch"
+		level = 1
+		reserves = 1
+	}
+
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 1
+		reserves = 1
+	}
+}
+
+# ---------------------------------------------------------------------------
+# SECOND WORLD SMALL  (250,000–750,000 pop | ~65 levels target)
+# ---------------------------------------------------------------------------
+effect_starting_buildings_second_world_small = {
+
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 6
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 4
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 2
+			reserves = 1
+		}
+	}
+
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 2
+		reserves = 1
+	}
+
+	# Telecom (basic)
+	create_building = {
+		building = "building_telecommunications"
+		level = 1
+		reserves = 1
+	}
+
+	# Light Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_furniture_manufactory"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_paper_mill"
+		level = 2
+		reserves = 1
+	}
+
+	# Heavy Industry
+	create_building = {
+		building = "building_steel_mill"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_tooling_workshop"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chemical_plant"
+		level = 2
+		reserves = 1
+	}
+
+	# Agriculture
+	create_building = {
+		building = "building_wheat_farm"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_livestock_ranch"
+		level = 2
+		reserves = 1
+	}
+
+	# Services (limited)
+	create_building = {
+		building = "building_food_service"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_retail_services"
+		level = 2
+		reserves = 1
+	}
+
+	# Education
+	create_building = {
+		building = "building_university"
+		level = 1
+		reserves = 1
+	}
+
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_arms_industry"
+		level = 1
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 1
+			reserves = 1
+		}
+	}
+}
+
+# ---------------------------------------------------------------------------
+# SECOND WORLD MEDIUM  (750,000–2,000,000 pop | ~165 levels target)
+# ---------------------------------------------------------------------------
+effect_starting_buildings_second_world_medium = {
+
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 14
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 8
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 5
+			reserves = 1
+		}
+	}
+
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 5
+		reserves = 1
+	}
+
+	# Telecom
+	create_building = {
+		building = "building_telecommunications"
+		level = 2
+		reserves = 1
+	}
+
+	# Light Industry (dominant sector)
+	create_building = {
+		building = "building_food_industry"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_furniture_manufactory"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_paper_mill"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_glassworks"
+		level = 2
+		reserves = 1
+	}
+
+	# Heavy Industry
+	create_building = {
+		building = "building_steel_mill"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_tooling_workshop"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chemical_plant"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_motor_industry"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_electrics_industry"
+		level = 3
+		reserves = 1
+	}
+
+	# Agriculture
+	create_building = {
+		building = "building_wheat_farm"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_livestock_ranch"
+		level = 3
+		reserves = 1
+	}
+
+	# Mining
+	create_building = {
+		building = "building_coal_mine"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_iron_mine"
+		level = 3
+		reserves = 1
+	}
+
+	# Services (limited)
+	create_building = {
+		building = "building_food_service"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_retail_services"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_bank"
+		level = 2
+		reserves = 1
+	}
+
+	# Education
+	create_building = {
+		building = "building_university"
+		level = 2
+		reserves = 1
+	}
+
+	# Airport
+	create_building = {
+		building = "building_airport"
+		level = 1
+		reserves = 1
+	}
+	
+	create_building = {
+		building = "building_dye_plantation"
+		level = 12
+		reserves = 1
+		
+	}
+
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_arms_industry"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_artillery_foundry"
+		level = 1
+		reserves = 1
+	}
+	create_building = {
+		building = "building_munition_plant"
+		level = 2
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 1
+			reserves = 1
+		}
+		create_building = {
+			building = "building_shipyard"
+			level = 1
+			reserves = 1
+		}
+	}
+}
+
+# ---------------------------------------------------------------------------
+# SECOND WORLD LARGE  (2,000,000–5,000,000 pop | ~465 levels target)
+# ---------------------------------------------------------------------------
+effect_starting_buildings_second_world_large = {
+
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 35
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 18
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 12
+			reserves = 1
+		}
+	}
+
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 12
+		reserves = 1
+	}
+	create_building = {
+		building = "building_nuclear_plant"
+		level = 2
+		reserves = 1
+	}
+
+	# Telecom
+	create_building = {
+		building = "building_telecommunications"
+		level = 4
+		reserves = 1
+	}
+
+	# Light Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 25
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 20
+		reserves = 1
+	}
+	create_building = {
+		building = "building_furniture_manufactory"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_paper_mill"
+		level = 14
+		reserves = 1
+	}
+	create_building = {
+		building = "building_glassworks"
+		level = 4
+		reserves = 1
+	}
+
+	# Heavy Industry
+	create_building = {
+		building = "building_steel_mill"
+		level = 20
+		reserves = 1
+	}
+	create_building = {
+		building = "building_tooling_workshop"
+		level = 12
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chemical_plant"
+		level = 12
+		reserves = 1
+	}
+	create_building = {
+		building = "building_motor_industry"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_electrics_industry"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_synthetics_plant"
+		level = 3
+		reserves = 1
+	}
+
+	# Agriculture
+	create_building = {
+		building = "building_wheat_farm"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_livestock_ranch"
+		level = 6
+		reserves = 1
+	}
+	create_building = {
+		building = "building_maize_farm"
+		level = 4
+		reserves = 1
+	}
+
+	# Mining
+	create_building = {
+		building = "building_coal_mine"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_iron_mine"
+		level = 6
+		reserves = 1
+	}
+	create_building = {
+		building = "building_lead_mine"
+		level = 3
+		reserves = 1
+	}
+
+	# Services
+	create_building = {
+		building = "building_food_service"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_retail_services"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_bank"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_warehouse"
+		level = 5
+		reserves = 1
+	}
+
+	# Education
+	create_building = {
+		building = "building_university"
+		level = 4
+		reserves = 1
+	}
+
+	# Airport
+	create_building = {
+		building = "building_airport"
+		level = 2
+		reserves = 1
+	}
+
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_arms_industry"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_artillery_foundry"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_munition_plant"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_war_machine_industry"
+		level = 2
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 2
+			reserves = 1
+		}
+		create_building = {
+			building = "building_shipyard"
+			level = 2
+			reserves = 1
+		}
+	}
+}
+
+# ---------------------------------------------------------------------------
+# SECOND WORLD HUGE  (5,000,000+ pop | ~1065 levels target)
+# ---------------------------------------------------------------------------
+effect_starting_buildings_second_world_huge = {
+
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 80
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 22
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 15
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 35
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 25
+			reserves = 1
+		}
+	}
+
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 25
+		reserves = 1
+	}
+	create_building = {
+		building = "building_nuclear_plant"
+		level = 5
+		reserves = 1
+	}
+
+	# Telecom
+	create_building = {
+		building = "building_telecommunications"
+		level = 8
+		reserves = 1
+	}
+
+	# Light Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 55
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 45
+		reserves = 1
+	}
+	create_building = {
+		building = "building_furniture_manufactory"
+		level = 22
+		reserves = 1
+	}
+	create_building = {
+		building = "building_paper_mill"
+		level = 24
+		reserves = 1
+	}
+	create_building = {
+		building = "building_glassworks"
+		level = 8
+		reserves = 1
+	}
+
+	# Heavy Industry
+	create_building = {
+		building = "building_steel_mill"
+		level = 45
+		reserves = 1
+	}
+	create_building = {
+		building = "building_tooling_workshop"
+		level = 25
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chemical_plant"
+		level = 25
+		reserves = 1
+	}
+	create_building = {
+		building = "building_motor_industry"
+		level = 18
+		reserves = 1
+	}
+	create_building = {
+		building = "building_electrics_industry"
+		level = 18
+		reserves = 1
+	}
+	create_building = {
+		building = "building_synthetics_plant"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_explosives_factory"
+		level = 5
+		reserves = 1
+	}
+
+	# Agriculture
+	create_building = {
+		building = "building_wheat_farm"
+		level = 18
+		reserves = 1
+	}
+	create_building = {
+		building = "building_rye_farm"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_maize_farm"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_livestock_ranch"
+		level = 12
+		reserves = 1
+	}
+
+	# Mining
+	create_building = {
+		building = "building_coal_mine"
+		level = 18
+		reserves = 1
+	}
+	create_building = {
+		building = "building_iron_mine"
+		level = 14
+		reserves = 1
+	}
+	create_building = {
+		building = "building_lead_mine"
+		level = 6
+		reserves = 1
+	}
+	create_building = {
+		building = "building_sulfur_mine"
+		level = 5
+		reserves = 1
+	}
+
+	# Services
+	create_building = {
+		building = "building_food_service"
+		level = 22
+		reserves = 1
+	}
+	create_building = {
+		building = "building_retail_services"
+		level = 22
+		reserves = 1
+	}
+	create_building = {
+		building = "building_bank"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_warehouse"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_professional_service"
+		level = 8
+		reserves = 1
+	}
+
+	# Education
+	create_building = {
+		building = "building_university"
+		level = 8
+		reserves = 1
+	}
+
+	# Airport
+	create_building = {
+		building = "building_airport"
+		level = 5
+		reserves = 1
+	}
+
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 18
+		reserves = 1
+	}
+	create_building = {
+		building = "building_arms_industry"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_artillery_foundry"
+		level = 6
+		reserves = 1
+	}
+	create_building = {
+		building = "building_munition_plant"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_war_machine_industry"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_aeronautics_industry"
+		level = 3
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 4
+			reserves = 1
+		}
+		create_building = {
+			building = "building_shipyard"
+			level = 4
+			reserves = 1
+		}
+	}
+}
+
+
+###############################################################################
+# THIRD WORLD - Resource / Agricultural Economy
+# Profile: Dominated by agriculture, mining, logging, oil extraction.
+#          Minimal industry. Very limited services. Poor infrastructure.
+#          Low telecom. Large military relative to economy (typical of era).
+###############################################################################
+
+# ---------------------------------------------------------------------------
+# THIRD WORLD TINY  (< 250,000 pop | ~15 levels target)
+# ---------------------------------------------------------------------------
+effect_starting_buildings_third_world_tiny = {
+
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 1
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 1
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 1
+			reserves = 1
+		}
+	}
+
+	# Power (minimal)
+	create_building = {
+		building = "building_power_plant"
+		level = 1
+		reserves = 1
+	}
+
+	# Agriculture (primary sector)
+	create_building = {
+		building = "building_wheat_farm"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_livestock_ranch"
+		level = 2
+		reserves = 1
+	} 
+
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 1
+		reserves = 1
+	}
+}
+
+# ---------------------------------------------------------------------------
+# THIRD WORLD SMALL  (250,000–750,000 pop | ~65 levels target)
+# ---------------------------------------------------------------------------
+effect_starting_buildings_third_world_small = {
+
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 2
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 2
+			reserves = 1
+		}
+	}
+
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 1
+		reserves = 1
+	}
+
+	# Agriculture (dominant)
+	create_building = {
+		building = "building_wheat_farm"
+		level = 15
+		reserves = 1
+	}
+	create_building = {
+		building = "building_maize_farm"
+		level = 14
+		reserves = 1
+	}
+	create_building = {
+		building = "building_millet_farm"
+		level = 13
+		reserves = 1
+	}
+	create_building = {
+		building = "building_rice_farm"
+		level = 13
+		reserves = 1
+	}
+	create_building = {
+		building = "building_livestock_ranch"
+		level = 14
+		reserves = 1
+	}
+
+	# Resource Extraction
+	create_building = {
+		building = "building_logging_camp"
+		level = 13
+		reserves = 1
+	}
+	create_building = {
+		building = "building_coal_mine"
+		level = 12
+		reserves = 1
+	}
+	create_building = {
+		building = "building_iron_mine"
+		level = 12
+		reserves = 1
+	}
+
+	# Basic Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 3
+		reserves = 1
+	}
+
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 3
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 1
+			reserves = 1
+		}
+	}
+}
+
+# ---------------------------------------------------------------------------
+# THIRD WORLD MEDIUM  (750,000–2,000,000 pop | ~165 levels target)
+# ---------------------------------------------------------------------------
+effect_starting_buildings_third_world_medium = {
+
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 4
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 4
+			reserves = 1
+		}
+	}
+
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 3
+		reserves = 1
+	}
+
+	if = {
+		limit = { is_sea_adjacent = yes }
+		create_building = {
+			building = "building_fishing_wharf"
+			level = 3
+			reserves = 1
+		}
+	}
+
+	# Agriculture (dominant)
+	create_building = {
+		building = "building_wheat_farm"
+		level = 20
+		reserves = 1
+	}
+	create_building = {
+		building = "building_maize_farm"
+		level = 28
+		reserves = 1
+	}
+	create_building = {
+		building = "building_rice_farm"
+		level = 26
+		reserves = 1
+	}
+	create_building = {
+		building = "building_millet_farm"
+		level = 26
+		reserves = 1
+	}
+	create_building = {
+		building = "building_rye_farm"
+		level = 24
+		reserves = 1
+	}
+	create_building = {
+		building = "building_livestock_ranch"
+		level = 28
+		reserves = 1
+	}
+	if = {
+		limit = { is_sea_adjacent = yes }
+		create_building = {
+			building = "building_fishing_wharf"
+			level = 3
+			reserves = 1
+		}
+	}
+	
+	# Resource Extraction
+	create_building = {
+		building = "building_logging_camp"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_coal_mine"
+		level = 12
+		reserves = 1
+	}
+	create_building = {
+		building = "building_iron_mine"
+		level = 12
+		reserves = 1
+	}
+	create_building = {
+		building = "building_lead_mine"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_oil_rig"
+		level = 3
+		reserves = 1
+	}
+
+	create_building = {
+		building = "building_dye_plantation"
+		level = 12
+		reserves = 1
+		
+	}
+	
+	# Basic Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 2
+		reserves = 1
+	}
+
+	# Education (minimal)
+	create_building = {
+		building = "building_university"
+		level = 1
+		reserves = 1
+	}
+
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_arms_industry"
+		level = 1
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 1
+			reserves = 1
+		}
+	}
+}
+
+# ---------------------------------------------------------------------------
+# THIRD WORLD LARGE  (2,000,000–5,000,000 pop | ~465 levels target)
+# ---------------------------------------------------------------------------
+effect_starting_buildings_third_world_large = {
+
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 22
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 11
+		reserves = 1
+	}
+	create_building = {
+		building = "building_dye_plantation"
+		level = 12
+		reserves = 1
+		
+	}
+	create_building = {
+		building = "building_railway"
+		level = 8
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 8
+			reserves = 1
+		}
+	}
+
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 2
+		reserves = 1
+	}
+
+	# Telecom (rudimentary)
+	create_building = {
+		building = "building_telecommunications"
+		level = 1
+		reserves = 1
+	}
+
+	# Agriculture (dominant)
+	create_building = {
+		building = "building_livestock_ranch"
+		level = 66
+		reserves = 1
+	}
+	if = {
+		limit = { is_sea_adjacent = yes }
+		create_building = {
+			building = "building_fishing_wharf"
+			level = 6
+			reserves = 1
+		}
+	}
+	
+	# Agriculture (dominant)
+	create_building = {
+		building = "building_wheat_farm"
+		level = 45
+		reserves = 1
+	}
+	create_building = {
+		building = "building_maize_farm"
+		level = 60
+		reserves = 1
+	}
+	create_building = {
+		building = "building_rice_farm"
+		level = 65
+		reserves = 1
+	}
+	create_building = {
+		building = "building_millet_farm"
+		level = 54
+		reserves = 1
+	}
+	create_building = {
+		building = "building_rye_farm"
+		level = 82
+		reserves = 1
+	}
+	create_building = {
+		building = "building_livestock_ranch"
+		level = 58
+		reserves = 1
+	}
+	if = {
+		limit = { is_sea_adjacent = yes }
+		create_building = {
+			building = "building_fishing_wharf"
+			level = 6
+			reserves = 1
+		}
+	}
+
+	# Resource Extraction
+	create_building = {
+		building = "building_logging_camp"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_coal_mine"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_iron_mine"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_lead_mine"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_sulfur_mine"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_oil_rig"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_rubber_plantation"
+		level = 5
+		reserves = 1
+	}
+
+	# Industry (emerging)
+	create_building = {
+		building = "building_food_industry"
+		level = 12
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_steel_mill"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chemical_plant"
+		level = 3
+		reserves = 1
+	}
+
+	# Services
+	create_building = {
+		building = "building_food_service"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_retail_services"
+		level = 6
+		reserves = 1
+	}
+	create_building = {
+		building = "building_bank"
+		level = 2
+		reserves = 1
+	}
+
+	# Education
+	create_building = {
+		building = "building_university"
+		level = 2
+		reserves = 1
+	}
+
+	# Airport
+	create_building = {
+		building = "building_airport"
+		level = 1
+		reserves = 1
+	}
+
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_arms_industry"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_munition_plant"
+		level = 2
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 1
+			reserves = 1
+		}
+	}
+}
+
+# ---------------------------------------------------------------------------
+# THIRD WORLD HUGE  (5,000,000+ pop | ~1065 levels target)
+# ---------------------------------------------------------------------------
+effect_starting_buildings_third_world_huge = {
+
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 50
+		reserves = 1
+	}
+	create_building = {
+		building = "building_dye_plantation"
+		level = 12
+		reserves = 1
+		
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 18
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 18
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 15
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 15
+			reserves = 1
+		}
+	}
+
+	# Agriculture (overwhelmingly dominant)
+	create_building = {
+		building = "building_wheat_farm"
+		level = 75
+		reserves = 1
+	}
+	create_building = {
+		building = "building_maize_farm"
+		level = 45
+		reserves = 1
+	}
+	create_building = {
+		building = "building_rice_farm"
+		level = 75
+		reserves = 1
+	}
+	create_building = {
+		building = "building_millet_farm"
+		level = 30
+		reserves = 1
+	}
+	create_building = {
+		building = "building_rye_farm"
+		level = 18
+		reserves = 1
+	}
+	create_building = {
+		building = "building_livestock_ranch"
+		level = 40
+		reserves = 1
+	}
+	
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 12
+		reserves = 1
+	}
+
+	# Telecom (rudimentary)
+	create_building = {
+		building = "building_telecommunications"
+		level = 2
+		reserves = 1
+	}
+
+	create_building = {
+		building = "building_dye_plantation"
+		level = 12
+		reserves = 1
+		
+	}
+	if = {
+		limit = { is_sea_adjacent = yes }
+		create_building = {
+			building = "building_fishing_wharf"
+			level = 12
+			reserves = 1
+		}
+	}
+
+	# Resource Extraction
+	create_building = {
+		building = "building_logging_camp"
+		level = 20
+		reserves = 1
+	}
+	create_building = {
+		building = "building_coal_mine"
+		level = 20
+		reserves = 1
+	}
+	create_building = {
+		building = "building_iron_mine"
+		level = 18
+		reserves = 1
+	}
+	create_building = {
+		building = "building_lead_mine"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_sulfur_mine"
+		level = 6
+		reserves = 1
+	}
+	create_building = {
+		building = "building_gold_mine"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_oil_rig"
+		level = 18
+		reserves = 1
+	}
+	create_building = {
+		building = "building_rubber_plantation"
+		level = 10
+		reserves = 1
+	}
+
+	# Industry (emerging/limited)
+	create_building = {
+		building = "building_food_industry"
+		level = 25
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 18
+		reserves = 1
+	}
+	create_building = {
+		building = "building_steel_mill"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chemical_plant"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_tooling_workshop"
+		level = 4
+		reserves = 1
+	}
+
+	# Services
+	create_building = {
+		building = "building_food_service"
+		level = 18
+		reserves = 1
+	}
+	create_building = {
+		building = "building_retail_services"
+		level = 14
+		reserves = 1
+	}
+	create_building = {
+		building = "building_bank"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_warehouse"
+		level = 5
+		reserves = 1
+	}
+
+	# Education
+	create_building = {
+		building = "building_university"
+		level = 3
+		reserves = 1
+	}
+
+	# Airport
+	create_building = {
+		building = "building_airport"
+		level = 2
+		reserves = 1
+	}
+
+	# Military (large, typical of developing world 1992)
+	create_building = {
+		building = "building_barrack"
+		level = 20
+		reserves = 1
+	}
+	create_building = {
+		building = "building_arms_industry"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_artillery_foundry"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_munition_plant"
+		level = 4
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 2
+			reserves = 1
+		}
+	}
+}
+
+#### mega and huge
+
+effect_starting_buildings_western_very_huge = {
+
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 165
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 28
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 25
+		reserves = 1
+	}
+	create_building = {
+		building = "building_automotive_industry"
+		level = 37
+		reserves = 1
+	}
+	create_building = {
+		building = "building_appliance_manufactory"
+		level = 35
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 40
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 32
+			reserves = 1
+		}
+	}
+
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 25
+		reserves = 1
+	}
+	create_building = {
+		building = "building_nuclear_plant"
+		level = 7
+		reserves = 1
+	}
+
+	# Telecom
+	create_building = {
+		building = "building_telecommunications"
+		level = 13
+		reserves = 1
+	}
+
+	# Core Services
+	create_building = {
+		building = "building_professional_service"
+		level = 100
+		reserves = 1
+	}
+	create_building = {
+		building = "building_bank"
+		level = 45
+		reserves = 1
+	}
+	create_building = {
+		building = "building_food_service"
+		level = 82
+		reserves = 1
+	}
+	create_building = {
+		building = "building_retail_services"
+		level = 82
+		reserves = 1
+	}
+	create_building = {
+		building = "building_advertising_agency"
+		level = 22
+		reserves = 1
+	}
+	create_building = {
+		building = "building_warehouse"
+		level = 28
+		reserves = 1
+	}
+	create_building = {
+		building = "building_pharmaceutical_services"
+		level = 15
+		reserves = 1
+	}
+
+	# Light Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 38
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 20
+		reserves = 1
+	}
+	create_building = {
+		building = "building_furniture_manufactory"
+		level = 12
+		reserves = 1
+	}
+	create_building = {
+		building = "building_paper_mill"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chemical_plant"
+		level = 15
+		reserves = 1
+	}
+	create_building = {
+		building = "building_glassworks"
+		level = 6
+		reserves = 1
+	}
+
+	# Heavy & High Tech Industry
+	create_building = {
+		building = "building_steel_mill"
+		level = 15
+		reserves = 1
+	}
+	create_building = {
+		building = "building_electrics_industry"
+		level = 18
+		reserves = 1
+	}
+	create_building = {
+		building = "building_computer_industry"
+		level = 13
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chip_industry"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_motor_industry"
+		level = 18
+		reserves = 1
+	}
+	create_building = {
+		building = "building_aeronautics_industry"
+		level = 7
+		reserves = 1
+	}
+	create_building = {
+		building = "building_synthetics_plant"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_tooling_workshop"
+		level = 8
+		reserves = 1
+	}
+
+	# Education & Culture
+	create_building = {
+		building = "building_university"
+		level = 13
+		reserves = 1
+	}
+	create_building = {
+		building = "building_art_academy"
+		level = 10
+		reserves = 1
+	}
+
+	# Airport
+	create_building = {
+		building = "building_airport"
+		level = 10
+		reserves = 1
+	}
+
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 13
+		reserves = 1
+	}
+	create_building = {
+		building = "building_arms_industry"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_artillery_foundry"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_munition_plant"
+		level = 6
+		reserves = 1
+	}
+	create_building = {
+		building = "building_war_machine_industry"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_aeronautics_industry"
+		level = 3
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 5
+			reserves = 1
+		}
+		create_building = {
+			building = "building_shipyard"
+			level = 5
+			reserves = 1
+		}
+	}
+}
+
+###############################################################################
+# WESTERN - 20 Million Tier
+###############################################################################
+
+effect_starting_buildings_western_mega = {
+
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 330
+		reserves = 1
+	}
+	create_building = {
+		building = "building_automotive_industry"
+		level = 65
+		reserves = 1
+	}
+	create_building = {
+		building = "building_appliance_manufactory"
+		level = 55
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 55
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 40
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 80
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 65
+			reserves = 1
+		}
+	}
+
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 50
+		reserves = 1
+	}
+	create_building = {
+		building = "building_nuclear_plant"
+		level = 14
+		reserves = 1
+	}
+
+	# Telecom
+	create_building = {
+		building = "building_telecommunications"
+		level = 26
+		reserves = 1
+	}
+
+	# Core Services
+	create_building = {
+		building = "building_professional_service"
+		level = 200
+		reserves = 1
+	}
+	create_building = {
+		building = "building_bank"
+		level = 90
+		reserves = 1
+	}
+	create_building = {
+		building = "building_food_service"
+		level = 165
+		reserves = 1
+	}
+	create_building = {
+		building = "building_retail_services"
+		level = 165
+		reserves = 1
+	}
+	create_building = {
+		building = "building_advertising_agency"
+		level = 45
+		reserves = 1
+	}
+	create_building = {
+		building = "building_warehouse"
+		level = 55
+		reserves = 1
+	}
+	create_building = {
+		building = "building_pharmaceutical_services"
+		level = 30
+		reserves = 1
+	}
+
+	# Light Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 75
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 38
+		reserves = 1
+	}
+	create_building = {
+		building = "building_furniture_manufactory"
+		level = 25
+		reserves = 1
+	}
+	create_building = {
+		building = "building_paper_mill"
+		level = 20
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chemical_plant"
+		level = 30
+		reserves = 1
+	}
+	create_building = {
+		building = "building_glassworks"
+		level = 10
+		reserves = 1
+	}
+
+	# Heavy & High Tech Industry
+	create_building = {
+		building = "building_steel_mill"
+		level = 30
+		reserves = 1
+	}
+	create_building = {
+		building = "building_electrics_industry"
+		level = 35
+		reserves = 1
+	}
+	create_building = {
+		building = "building_computer_industry"
+		level = 26
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chip_industry"
+		level = 16
+		reserves = 1
+	}
+	create_building = {
+		building = "building_motor_industry"
+		level = 35
+		reserves = 1
+	}
+	create_building = {
+		building = "building_aeronautics_industry"
+		level = 14
+		reserves = 1
+	}
+	create_building = {
+		building = "building_synthetics_plant"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_tooling_workshop"
+		level = 15
+		reserves = 1
+	}
+
+	# Education & Culture
+	create_building = {
+		building = "building_university"
+		level = 26
+		reserves = 1
+	}
+	create_building = {
+		building = "building_art_academy"
+		level = 20
+		reserves = 1
+	}
+
+	# Airport
+	create_building = {
+		building = "building_airport"
+		level = 20
+		reserves = 1
+	}
+
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 25
+		reserves = 1
+	}
+	create_building = {
+		building = "building_arms_industry"
+		level = 15
+		reserves = 1
+	}
+	create_building = {
+		building = "building_artillery_foundry"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_munition_plant"
+		level = 12
+		reserves = 1
+	}
+	create_building = {
+		building = "building_war_machine_industry"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_aeronautics_industry"
+		level = 5
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 10
+			reserves = 1
+		}
+		create_building = {
+			building = "building_shipyard"
+			level = 10
+			reserves = 1
+		}
+	}
+}
+
+###############################################################################
+# SECOND WORLD - 10 Million Tier
+###############################################################################
+
+effect_starting_buildings_second_world_very_huge = {
+
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 100
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 28
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 25
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 45
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 32
+			reserves = 1
+		}
+	}
+
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 32
+		reserves = 1
+	}
+	create_building = {
+		building = "building_nuclear_plant"
+		level = 7
+		reserves = 1
+	}
+
+	# Telecom
+	create_building = {
+		building = "building_telecommunications"
+		level = 10
+		reserves = 1
+	}
+
+	# Light Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 70
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 58
+		reserves = 1
+	}
+	create_building = {
+		building = "building_furniture_manufactory"
+		level = 28
+		reserves = 1
+	}
+	create_building = {
+		building = "building_paper_mill"
+		level = 20
+		reserves = 1
+	}
+	create_building = {
+		building = "building_glassworks"
+		level = 10
+		reserves = 1
+	}
+
+	# Heavy Industry
+	create_building = {
+		building = "building_steel_mill"
+		level = 58
+		reserves = 1
+	}
+	create_building = {
+		building = "building_tooling_workshop"
+		level = 32
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chemical_plant"
+		level = 32
+		reserves = 1
+	}
+	create_building = {
+		building = "building_motor_industry"
+		level = 23
+		reserves = 1
+	}
+	create_building = {
+		building = "building_electrics_industry"
+		level = 23
+		reserves = 1
+	}
+	create_building = {
+		building = "building_synthetics_plant"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_explosives_factory"
+		level = 7
+		reserves = 1
+	}
+
+	# Agriculture
+	create_building = {
+		building = "building_wheat_farm"
+		level = 23
+		reserves = 1
+	}
+	create_building = {
+		building = "building_rye_farm"
+		level = 13
+		reserves = 1
+	}
+	create_building = {
+		building = "building_maize_farm"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_livestock_ranch"
+		level = 15
+		reserves = 1
+	}
+
+	# Mining
+	create_building = {
+		building = "building_coal_mine"
+		level = 23
+		reserves = 1
+	}
+	create_building = {
+		building = "building_iron_mine"
+		level = 18
+		reserves = 1
+	}
+	create_building = {
+		building = "building_lead_mine"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_sulfur_mine"
+		level = 6
+		reserves = 1
+	}
+
+	# Services
+	create_building = {
+		building = "building_food_service"
+		level = 28
+		reserves = 1
+	}
+	create_building = {
+		building = "building_retail_services"
+		level = 28
+		reserves = 1
+	}
+	create_building = {
+		building = "building_bank"
+		level = 13
+		reserves = 1
+	}
+	create_building = {
+		building = "building_warehouse"
+		level = 13
+		reserves = 1
+	}
+	create_building = {
+		building = "building_professional_service"
+		level = 10
+		reserves = 1
+	}
+
+	# Education
+	create_building = {
+		building = "building_university"
+		level = 10
+		reserves = 1
+	}
+
+	# Airport
+	create_building = {
+		building = "building_airport"
+		level = 7
+		reserves = 1
+	}
+
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 23
+		reserves = 1
+	}
+	create_building = {
+		building = "building_arms_industry"
+		level = 13
+		reserves = 1
+	}
+	create_building = {
+		building = "building_artillery_foundry"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_munition_plant"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_war_machine_industry"
+		level = 7
+		reserves = 1
+	}
+	create_building = {
+		building = "building_aeronautics_industry"
+		level = 4
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 5
+			reserves = 1
+		}
+		create_building = {
+			building = "building_shipyard"
+			level = 5
+			reserves = 1
+		}
+	}
+}
+
+###############################################################################
+# SECOND WORLD - 20 Million Tier
+###############################################################################
+
+effect_starting_buildings_second_world_mega = {
+
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 200
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 55
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 44
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 90
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 65
+			reserves = 1
+		}
+	}
+
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 65
+		reserves = 1
+	}
+	create_building = {
+		building = "building_nuclear_plant"
+		level = 14
+		reserves = 1
+	}
+
+	# Telecom
+	create_building = {
+		building = "building_telecommunications"
+		level = 20
+		reserves = 1
+	}
+
+	# Light Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 140
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 115
+		reserves = 1
+	}
+	create_building = {
+		building = "building_furniture_manufactory"
+		level = 55
+		reserves = 1
+	}
+	create_building = {
+		building = "building_paper_mill"
+		level = 38
+		reserves = 1
+	}
+	create_building = {
+		building = "building_glassworks"
+		level = 20
+		reserves = 1
+	}
+
+	# Heavy Industry
+	create_building = {
+		building = "building_steel_mill"
+		level = 115
+		reserves = 1
+	}
+	create_building = {
+		building = "building_tooling_workshop"
+		level = 65
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chemical_plant"
+		level = 65
+		reserves = 1
+	}
+	create_building = {
+		building = "building_motor_industry"
+		level = 45
+		reserves = 1
+	}
+	create_building = {
+		building = "building_electrics_industry"
+		level = 45
+		reserves = 1
+	}
+	create_building = {
+		building = "building_synthetics_plant"
+		level = 20
+		reserves = 1
+	}
+	create_building = {
+		building = "building_explosives_factory"
+		level = 13
+		reserves = 1
+	}
+
+	# Agriculture
+	create_building = {
+		building = "building_wheat_farm"
+		level = 45
+		reserves = 1
+	}
+	create_building = {
+		building = "building_rye_farm"
+		level = 26
+		reserves = 1
+	}
+	create_building = {
+		building = "building_maize_farm"
+		level = 20
+		reserves = 1
+	}
+	create_building = {
+		building = "building_livestock_ranch"
+		level = 30
+		reserves = 1
+	}
+
+	# Mining
+	create_building = {
+		building = "building_coal_mine"
+		level = 45
+		reserves = 1
+	}
+	create_building = {
+		building = "building_iron_mine"
+		level = 36
+		reserves = 1
+	}
+	create_building = {
+		building = "building_lead_mine"
+		level = 16
+		reserves = 1
+	}
+	create_building = {
+		building = "building_sulfur_mine"
+		level = 13
+		reserves = 1
+	}
+
+	# Services
+	create_building = {
+		building = "building_food_service"
+		level = 55
+		reserves = 1
+	}
+	create_building = {
+		building = "building_retail_services"
+		level = 55
+		reserves = 1
+	}
+	create_building = {
+		building = "building_bank"
+		level = 26
+		reserves = 1
+	}
+	create_building = {
+		building = "building_warehouse"
+		level = 26
+		reserves = 1
+	}
+	create_building = {
+		building = "building_professional_service"
+		level = 20
+		reserves = 1
+	}
+
+	# Education
+	create_building = {
+		building = "building_university"
+		level = 20
+		reserves = 1
+	}
+
+	# Airport
+	create_building = {
+		building = "building_airport"
+		level = 13
+		reserves = 1
+	}
+
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 45
+		reserves = 1
+	}
+	create_building = {
+		building = "building_arms_industry"
+		level = 26
+		reserves = 1
+	}
+	create_building = {
+		building = "building_artillery_foundry"
+		level = 16
+		reserves = 1
+	}
+	create_building = {
+		building = "building_munition_plant"
+		level = 20
+		reserves = 1
+	}
+	create_building = {
+		building = "building_war_machine_industry"
+		level = 13
+		reserves = 1
+	}
+	create_building = {
+		building = "building_aeronautics_industry"
+		level = 8
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 10
+			reserves = 1
+		}
+		create_building = {
+			building = "building_shipyard"
+			level = 10
+			reserves = 1
+		}
+	}
+}
+
+###############################################################################
+# THIRD WORLD - 10 Million Tier
+###############################################################################
+
+effect_starting_buildings_third_world_very_huge = {
+
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 65
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 23
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 25
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 20
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 20
+			reserves = 1
+		}
+	}
+
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 16
+		reserves = 1
+	}
+
+	# Telecom
+	create_building = {
+		building = "building_telecommunications"
+		level = 3
+		reserves = 1
+	}
+
+	if = {
+		limit = { is_sea_adjacent = yes }
+		create_building = {
+			building = "building_fishing_wharf"
+			level = 16
+			reserves = 1
+		}
+	}
+
+	# Agriculture
+	create_building = {
+		building = "building_wheat_farm"
+		level = 72
+		reserves = 1
+	}
+	create_building = {
+		building = "building_maize_farm"
+		level = 58
+		reserves = 1
+	}
+	create_building = {
+		building = "building_rice_farm"
+		level = 52
+		reserves = 1
+	}
+	create_building = {
+		building = "building_millet_farm"
+		level = 39
+		reserves = 1
+	}
+	create_building = {
+		building = "building_rye_farm"
+		level = 23
+		reserves = 1
+	}
+	create_building = {
+		building = "building_livestock_ranch"
+		level = 52
+		reserves = 1
+	}
+	if = {
+		limit = { is_sea_adjacent = yes }
+		create_building = {
+			building = "building_fishing_wharf"
+			level = 16
+			reserves = 1
+		}
+	}
+	
+	# Resource Extraction
+	create_building = {
+		building = "building_logging_camp"
+		level = 26
+		reserves = 1
+	}
+	create_building = {
+		building = "building_coal_mine"
+		level = 26
+		reserves = 1
+	}
+	create_building = {
+		building = "building_iron_mine"
+		level = 23
+		reserves = 1
+	}
+	create_building = {
+		building = "building_lead_mine"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_sulfur_mine"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_gold_mine"
+		level = 7
+		reserves = 1
+	}
+	create_building = {
+		building = "building_oil_rig"
+		level = 23
+		reserves = 1
+	}
+	create_building = {
+		building = "building_rubber_plantation"
+		level = 13
+		reserves = 1
+	}
+
+	# Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 32
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 23
+		reserves = 1
+	}
+	create_building = {
+		building = "building_steel_mill"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chemical_plant"
+		level = 7
+		reserves = 1
+	}
+	create_building = {
+		building = "building_tooling_workshop"
+		level = 5
+		reserves = 1
+	}
+
+	# Services
+	create_building = {
+		building = "building_food_service"
+		level = 23
+		reserves = 1
+	}
+	create_building = {
+		building = "building_retail_services"
+		level = 18
+		reserves = 1
+	}
+	create_building = {
+		building = "building_bank"
+		level = 7
+		reserves = 1
+	}
+	create_building = {
+		building = "building_warehouse"
+		level = 7
+		reserves = 1
+	}
+
+	# Education
+	create_building = {
+		building = "building_university"
+		level = 4
+		reserves = 1
+	}
+
+	# Airport
+	create_building = {
+		building = "building_airport"
+		level = 3
+		reserves = 1
+	}
+
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 26
+		reserves = 1
+	}
+	create_building = {
+		building = "building_arms_industry"
+		level = 7
+		reserves = 1
+	}
+	create_building = {
+		building = "building_artillery_foundry"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_munition_plant"
+		level = 5
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 3
+			reserves = 1
+		}
+	}
+}
+
+###############################################################################
+# THIRD WORLD - 20 Million Tier
+###############################################################################
+
+effect_starting_buildings_third_world_mega = {
+
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 130
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 45
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 35
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 38
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 38
+			reserves = 1
+		}
+	}
+
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 30
+		reserves = 1
+	}
+
+	# Telecom
+	create_building = {
+		building = "building_telecommunications"
+		level = 6
+		reserves = 1
+	}
+
+	if = {
+		limit = { is_sea_adjacent = yes }
+		create_building = {
+			building = "building_fishing_wharf"
+			level = 30
+			reserves = 1
+		}
+	}
+
+	# Agriculture
+	create_building = {
+		building = "building_wheat_farm"
+		level = 145
+		reserves = 1
+	}
+	create_building = {
+		building = "building_maize_farm"
+		level = 115
+		reserves = 1
+	}
+	create_building = {
+		building = "building_rice_farm"
+		level = 100
+		reserves = 1
+	}
+	create_building = {
+		building = "building_millet_farm"
+		level = 78
+		reserves = 1
+	}
+	create_building = {
+		building = "building_rye_farm"
+		level = 45
+		reserves = 1
+	}
+	create_building = {
+		building = "building_livestock_ranch"
+		level = 100
+		reserves = 1
+	}
+	if = {
+		limit = { is_sea_adjacent = yes }
+		create_building = {
+			building = "building_fishing_wharf"
+			level = 30
+			reserves = 1
+		}
+	}
+	
+	# Resource Extraction
+	create_building = {
+		building = "building_logging_camp"
+		level = 52
+		reserves = 1
+	}
+	create_building = {
+		building = "building_coal_mine"
+		level = 52
+		reserves = 1
+	}
+	create_building = {
+		building = "building_iron_mine"
+		level = 45
+		reserves = 1
+	}
+	create_building = {
+		building = "building_lead_mine"
+		level = 20
+		reserves = 1
+	}
+	create_building = {
+		building = "building_sulfur_mine"
+		level = 16
+		reserves = 1
+	}
+	create_building = {
+		building = "building_gold_mine"
+		level = 13
+		reserves = 1
+	}
+	create_building = {
+		building = "building_oil_rig"
+		level = 45
+		reserves = 1
+	}
+	create_building = {
+		building = "building_rubber_plantation"
+		level = 26
+		reserves = 1
+	}
+
+	# Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 65
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 45
+		reserves = 1
+	}
+	create_building = {
+		building = "building_steel_mill"
+		level = 20
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chemical_plant"
+		level = 13
+		reserves = 1
+	}
+	create_building = {
+		building = "building_tooling_workshop"
+		level = 10
+		reserves = 1
+	}
+
+	# Services
+	create_building = {
+		building = "building_food_service"
+		level = 45
+		reserves = 1
+	}
+	create_building = {
+		building = "building_retail_services"
+		level = 36
+		reserves = 1
+	}
+	create_building = {
+		building = "building_bank"
+		level = 13
+		reserves = 1
+	}
+	create_building = {
+		building = "building_warehouse"
+		level = 13
+		reserves = 1
+	}
+
+	# Education
+	create_building = {
+		building = "building_university"
+		level = 8
+		reserves = 1
+	}
+
+	# Airport
+	create_building = {
+		building = "building_airport"
+		level = 5
+		reserves = 1
+	}
+
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 52
+		reserves = 1
+	}
+	create_building = {
+		building = "building_arms_industry"
+		level = 13
+		reserves = 1
+	}
+	create_building = {
+		building = "building_artillery_foundry"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_munition_plant"
+		level = 10
+		reserves = 1
+	}
+	create_building = {
+		building = "building_war_machine_industry"
+		level = 3
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 5
+			reserves = 1
+		}
+	}
+}
+
+# india china
+
+effect_starting_buildings_india_china_tiny = {
+ 
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 1
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 1
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 1
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 1
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 1
+			reserves = 1
+		}
+	}
+ 
+	# Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 1
+		reserves = 1
+	}
+ 
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 1
+		reserves = 1
+	}
+}
+ 
+# ---------------------------------------------------------------------------
+# INDIA/CHINA SMALL  (250,000–750,000 pop | ~20 levels target)
+# ---------------------------------------------------------------------------
+effect_starting_buildings_india_china_small = {
+ 
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 1
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 1
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 1
+			reserves = 1
+		}
+	}
+ 
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 1
+		reserves = 1
+	}
+ 
+	# Light Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 2
+		reserves = 1
+	}
+ 
+	# Heavy Industry
+	create_building = {
+		building = "building_steel_mill"
+		level = 1
+		reserves = 1
+	}
+ 
+	# Services
+	create_building = {
+		building = "building_food_service"
+		level = 1
+		reserves = 1
+	}
+	create_building = {
+		building = "building_retail_services"
+		level = 1
+		reserves = 1
+	}
+ 
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 1
+		reserves = 1
+	}
+	create_building = {
+		building = "building_arms_industry"
+		level = 1
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 1
+			reserves = 1
+		}
+	}
+}
+ 
+# ---------------------------------------------------------------------------
+# INDIA/CHINA MEDIUM  (750,000–2,000,000 pop | ~50 levels target)
+# ---------------------------------------------------------------------------
+effect_starting_buildings_india_china_medium = {
+ 
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 1
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 3
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 2
+			reserves = 1
+		}
+	}
+ 
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 2
+		reserves = 1
+	}
+ 
+	# Telecom
+	create_building = {
+		building = "building_telecommunications"
+		level = 1
+		reserves = 1
+	}
+ 
+	# Light Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_furniture_manufactory"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_paper_mill"
+		level = 1
+		reserves = 1
+	}
+ 
+	# Heavy Industry
+	create_building = {
+		building = "building_steel_mill"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_tooling_workshop"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chemical_plant"
+		level = 2
+		reserves = 1
+	}
+ 
+	# Mining
+	create_building = {
+		building = "building_coal_mine"
+		level = 1
+		reserves = 1
+	}
+	create_building = {
+		building = "building_iron_mine"
+		level = 1
+		reserves = 1
+	}
+ 
+	# Services
+	create_building = {
+		building = "building_food_service"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_retail_services"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_bank"
+		level = 1
+		reserves = 1
+	}
+ 
+	# Education
+	create_building = {
+		building = "building_university"
+		level = 1
+		reserves = 1
+	}
+ 
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_arms_industry"
+		level = 1
+		reserves = 1
+	}
+	create_building = {
+		building = "building_munition_plant"
+		level = 1
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 1
+			reserves = 1
+		}
+	}
+}
+ 
+# ---------------------------------------------------------------------------
+# INDIA/CHINA LARGE  (2,000,000–5,000,000 pop | ~145 levels target)
+# ---------------------------------------------------------------------------
+effect_starting_buildings_india_china_large = {
+ 
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 13
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 6
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 4
+			reserves = 1
+		}
+	}
+ 
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 4
+		reserves = 1
+	}
+ 
+	# Telecom
+	create_building = {
+		building = "building_telecommunications"
+		level = 1
+		reserves = 1
+	}
+ 
+	# Light Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 11
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 9
+		reserves = 1
+	}
+	create_building = {
+		building = "building_furniture_manufactory"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_paper_mill"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_glassworks"
+		level = 2
+		reserves = 1
+	}
+ 
+	# Heavy Industry
+	create_building = {
+		building = "building_steel_mill"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_tooling_workshop"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chemical_plant"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_motor_industry"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_electrics_industry"
+		level = 2
+		reserves = 1
+	}
+ 
+	# Mining
+	create_building = {
+		building = "building_coal_mine"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_iron_mine"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_lead_mine"
+		level = 1
+		reserves = 1
+	}
+	create_building = {
+		building = "building_oil_rig"
+		level = 2
+		reserves = 1
+	}
+ 
+	# Services
+	create_building = {
+		building = "building_food_service"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_retail_services"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_bank"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_warehouse"
+		level = 2
+		reserves = 1
+	}
+ 
+	# Education
+	create_building = {
+		building = "building_university"
+		level = 2
+		reserves = 1
+	}
+ 
+	# Airport
+	create_building = {
+		building = "building_airport"
+		level = 1
+		reserves = 1
+	}
+ 
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_arms_industry"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_artillery_foundry"
+		level = 1
+		reserves = 1
+	}
+	create_building = {
+		building = "building_munition_plant"
+		level = 2
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 1
+			reserves = 1
+		}
+		create_building = {
+			building = "building_shipyard"
+			level = 1
+			reserves = 1
+		}
+	}
+}
+ 
+# ---------------------------------------------------------------------------
+# INDIA/CHINA HUGE  (5,000,000+ pop | ~333 levels target)
+# ---------------------------------------------------------------------------
+effect_starting_buildings_india_china_huge = {
+ 
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 29
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 7
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 18
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 13
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 9
+			reserves = 1
+		}
+	}
+ 
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 9
+		reserves = 1
+	}
+	create_building = {
+		building = "building_nuclear_plant"
+		level = 1
+		reserves = 1
+	}
+ 
+	# Telecom
+	create_building = {
+		building = "building_telecommunications"
+		level = 3
+		reserves = 1
+	}
+ 
+	# Light Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 25
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 21
+		reserves = 1
+	}
+	create_building = {
+		building = "building_furniture_manufactory"
+		level = 8
+		reserves = 1
+	}
+	create_building = {
+		building = "building_paper_mill"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_glassworks"
+		level = 3
+		reserves = 1
+	}
+ 
+	# Heavy Industry
+	create_building = {
+		building = "building_steel_mill"
+		level = 18
+		reserves = 1
+	}
+	create_building = {
+		building = "building_tooling_workshop"
+		level = 9
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chemical_plant"
+		level = 9
+		reserves = 1
+	}
+	create_building = {
+		building = "building_motor_industry"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_electrics_industry"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_synthetics_plant"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_explosives_factory"
+		level = 2
+		reserves = 1
+	}
+ 
+	# Mining
+	create_building = {
+		building = "building_coal_mine"
+		level = 7
+		reserves = 1
+	}
+	create_building = {
+		building = "building_iron_mine"
+		level = 6
+		reserves = 1
+	}
+	create_building = {
+		building = "building_lead_mine"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_sulfur_mine"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_oil_rig"
+		level = 5
+		reserves = 1
+	}
+ 
+	# Services
+	create_building = {
+		building = "building_food_service"
+		level = 9
+		reserves = 1
+	}
+	create_building = {
+		building = "building_retail_services"
+		level = 7
+		reserves = 1
+	}
+	create_building = {
+		building = "building_bank"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_warehouse"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_professional_service"
+		level = 2
+		reserves = 1
+	}
+ 
+	# Education
+	create_building = {
+		building = "building_university"
+		level = 3
+		reserves = 1
+	}
+ 
+	# Airport
+	create_building = {
+		building = "building_airport"
+		level = 2
+		reserves = 1
+	}
+ 
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 9
+		reserves = 1
+	}
+	create_building = {
+		building = "building_arms_industry"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_artillery_foundry"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_munition_plant"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_war_machine_industry"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_aeronautics_industry"
+		level = 1
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 2
+			reserves = 1
+		}
+		create_building = {
+			building = "building_shipyard"
+			level = 2
+			reserves = 1
+		}
+	}
+}
+ 
+
+effect_starting_buildings_india_china_very_large = {
+ 
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 11
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 15
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 4
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 2
+			reserves = 1
+		}
+	}
+ 
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 2
+		reserves = 1
+	}
+ 
+	# Telecom
+	create_building = {
+		building = "building_telecommunications"
+		level = 1
+		reserves = 1
+	}
+ 
+	# Light Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 7
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 6
+		reserves = 1
+	}
+	create_building = {
+		building = "building_furniture_manufactory"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_paper_mill"
+		level = 2
+		reserves = 1
+	}
+ 
+	# Heavy Industry
+	create_building = {
+		building = "building_steel_mill"
+		level = 6
+		reserves = 1
+	}
+	create_building = {
+		building = "building_tooling_workshop"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chemical_plant"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_motor_industry"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_electrics_industry"
+		level = 2
+		reserves = 1
+	}
+ 
+	# Mining
+	create_building = {
+		building = "building_coal_mine"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_iron_mine"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_oil_rig"
+		level = 1
+		reserves = 1
+	}
+ 
+	# Services
+	create_building = {
+		building = "building_food_service"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_retail_services"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_bank"
+		level = 1
+		reserves = 1
+	}
+ 
+	# Education
+	create_building = {
+		building = "building_university"
+		level = 1
+		reserves = 1
+	}
+ 
+	# Airport
+	create_building = {
+		building = "building_airport"
+		level = 1
+		reserves = 1
+	}
+ 
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_arms_industry"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_artillery_foundry"
+		level = 1
+		reserves = 1
+	}
+	create_building = {
+		building = "building_munition_plant"
+		level = 1
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 1
+			reserves = 1
+		}
+		create_building = {
+			building = "building_shipyard"
+			level = 1
+			reserves = 1
+		}
+	}
+}
+ 
+###############################################################################
+# INDIA / CHINA MEGA  (~413 levels target)
+###############################################################################
+ 
+effect_starting_buildings_india_china_mega = {
+ 
+	# Universal Infrastructure
+	create_building = {
+		building = "building_trade_center"
+		level = 31
+		reserves = 1
+	}
+	create_building = {
+		building = "building_construction_sector"
+		level = 9
+		reserves = 1
+	}
+	create_building = {
+		building = "building_government_administration"
+		level = 21
+		reserves = 1
+	}
+	create_building = {
+		building = "building_railway"
+		level = 13
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_port"
+			level = 7
+			reserves = 1
+		}
+	}
+ 
+	# Power
+	create_building = {
+		building = "building_power_plant"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_nuclear_plant"
+		level = 1
+		reserves = 1
+	}
+ 
+	# Telecom
+	create_building = {
+		building = "building_telecommunications"
+		level = 1
+		reserves = 1
+	}
+ 
+	# Light Industry
+	create_building = {
+		building = "building_food_industry"
+		level = 21
+		reserves = 1
+	}
+	create_building = {
+		building = "building_textile_mill"
+		level = 17
+		reserves = 1
+	}
+	create_building = {
+		building = "building_furniture_manufactory"
+		level = 7
+		reserves = 1
+	}
+	create_building = {
+		building = "building_paper_mill"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_glassworks"
+		level = 5
+		reserves = 1
+	}
+ 
+	# Heavy Industry
+	create_building = {
+		building = "building_steel_mill"
+		level = 17
+		reserves = 1
+	}
+	create_building = {
+		building = "building_tooling_workshop"
+		level = 9
+		reserves = 1
+	}
+	create_building = {
+		building = "building_chemical_plant"
+		level = 9
+		reserves = 1
+	}
+	create_building = {
+		building = "building_motor_industry"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_electrics_industry"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_synthetics_plant"
+		level = 2
+		reserves = 1
+	}
+ 
+	# Mining
+	create_building = {
+		building = "building_coal_mine"
+		level = 7
+		reserves = 1
+	}
+	create_building = {
+		building = "building_iron_mine"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_lead_mine"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_sulfur_mine"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_oil_rig"
+		level = 3
+		reserves = 1
+	}
+ 
+	# Services
+	create_building = {
+		building = "building_food_service"
+		level = 7
+		reserves = 1
+	}
+	create_building = {
+		building = "building_retail_services"
+		level = 5
+		reserves = 1
+	}
+	create_building = {
+		building = "building_bank"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_warehouse"
+		level = 2
+		reserves = 1
+	}
+ 
+	# Education
+	create_building = {
+		building = "building_university"
+		level = 2
+		reserves = 1
+	}
+ 
+	# Airport
+	create_building = {
+		building = "building_airport"
+		level = 1
+		reserves = 1
+	}
+ 
+	# Military
+	create_building = {
+		building = "building_barrack"
+		level = 13
+		reserves = 1
+	}
+	create_building = {
+		building = "building_arms_industry"
+		level = 4
+		reserves = 1
+	}
+	create_building = {
+		building = "building_artillery_foundry"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_munition_plant"
+		level = 3
+		reserves = 1
+	}
+	create_building = {
+		building = "building_war_machine_industry"
+		level = 2
+		reserves = 1
+	}
+	create_building = {
+		building = "building_aeronautics_industry"
+		level = 1
+		reserves = 1
+	}
+	if = {
+		limit = { is_coastal = yes }
+		create_building = {
+			building = "building_naval_base"
+			level = 1
+			reserves = 1
+		}
+		create_building = {
+			building = "building_shipyard"
+			level = 1
+			reserves = 1
+		}
+	}
+}
+ 
+ 
+effect_apply_buildings_western = {
+	add_supply_ships = 525
+	set_variable = already_got_buildings 
+	every_scope_state = {
+	if = {
+		limit = {
+			state_population < 250000
+		}
+		effect_starting_buildings_western_tiny = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 250000
+			state_population < 750000
+		}
+		effect_starting_buildings_western_small = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 750000
+			state_population < 2000000
+		}
+		effect_starting_buildings_western_medium = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 2000000
+			state_population < 5000000
+		}
+		effect_starting_buildings_western_large = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 5000000
+			state_population < 10000000
+		}
+		effect_starting_buildings_western_huge = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 10000000
+			state_population < 20000000
+		}
+		effect_starting_buildings_western_very_huge = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 20000000
+		}
+		effect_starting_buildings_western_mega = yes
+	}
+	}
+}
+
+effect_apply_buildings_second_world = {
+	set_variable = already_got_buildings 
+	add_supply_ships = 325
+	every_scope_state = {
+	if = {
+		limit = {
+			state_population < 250000
+		}
+		effect_starting_buildings_second_world_tiny = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 250000
+			state_population < 750000
+		}
+		effect_starting_buildings_second_world_small = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 750000
+			state_population < 2000000
+		}
+		effect_starting_buildings_second_world_medium = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 2000000
+			state_population < 5000000
+		}
+		effect_starting_buildings_second_world_large = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 5000000
+			state_population < 10000000
+		}
+		effect_starting_buildings_second_world_huge = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 10000000
+			state_population < 20000000
+		}
+		effect_starting_buildings_second_world_very_huge = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 20000000
+		}
+		effect_starting_buildings_second_world_mega = yes
+	}
+	}
+}
+
+effect_apply_buildings_india_china = {
+	set_variable = already_got_buildings 
+	add_supply_ships = 475
+	every_scope_state = {
+	if = {
+		limit = {
+			state_population < 250000
+		}
+		effect_starting_buildings_india_china_tiny = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 250000
+			state_population < 750000
+		}
+		effect_starting_buildings_india_china_small = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 750000
+			state_population < 2000000
+		}
+		effect_starting_buildings_india_china_medium = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 2000000
+			state_population < 5000000
+		}
+		effect_starting_buildings_india_china_medium = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 5000000
+			state_population < 10000000
+		}
+		effect_starting_buildings_india_china_very_large = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 10000000
+			state_population < 20000000
+		}
+		effect_starting_buildings_india_china_very_large = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 20000000
+			state_population < 40000000
+		}
+		effect_starting_buildings_india_china_very_large = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 40000000
+		}
+		effect_starting_buildings_india_china_mega = yes
+	}
+	}
+}
+
+effect_apply_buildings_third_world = {
+	set_variable = already_got_buildings
+	add_supply_ships = 125
+	every_scope_state = {
+	if = {
+		limit = {
+			state_population < 250000
+		}
+		effect_starting_buildings_third_world_tiny = yes
+		}
+	else_if = {
+		limit = {
+			state_population >= 250000
+			state_population < 750000
+		}
+		effect_starting_buildings_third_world_small = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 750000
+			state_population < 2000000
+		}
+		effect_starting_buildings_third_world_medium = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 2000000
+			state_population < 5000000
+		}
+		effect_starting_buildings_third_world_large = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 5000000
+			state_population < 10000000
+		}
+		effect_starting_buildings_third_world_huge = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 10000000
+			state_population < 20000000
+		}
+		effect_starting_buildings_third_world_very_huge = yes
+	}
+	else_if = {
+		limit = {
+			state_population >= 20000000
+		}
+		effect_starting_buildings_third_world_mega = yes
+	}
+	}
+}
+

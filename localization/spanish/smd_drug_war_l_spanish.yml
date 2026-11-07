@@ -1,0 +1,387 @@
+﻿l_spanish:
+
+ l_spanish:
+
+ je_drug_trafficking:0 "El comercio de drogas"
+ je_drug_trafficking_reason:0 "Las redes de narcotráfico se han integrado profundamente en la vida política y económica de id=0/año. Los cárteles mueven miles de millones a través del país, corrompiendo funcionarios, financiando ejércitos privados y llenando un vacío dejado por el estado. El gobierno de idx id=1/ título id=2/ título se enfrenta a una gran elección: trabajar con las redes que se han vuelto casi tan poderosas como el propio estado, o pasar qué autoridad sigue tratando de destruirlas. Esto se puede lograr reduciendo el flujo de drogas y confiscando armamentos de los sindicatos criminales."
+
+ je_fighting_cartels:0 "Lucha contra los carretes"
+ je_fighting_cartels_reason:0 "Las redes de tráfico han excavado. Tras años de política fallida, el gobierno de id=0/año ha decidido tomar acciones militares directas contra los cárteles. Debe desplegarse un general para dirigir las operaciones de contracartel. No será fácil, y no será rápido."
+
+ cartel_je_working_with_tt:0 "El gobierno de id=0/año ha establecido un acuerdo de trabajo con los cárteles. La autoridad y la legitimidad aumentan, pero la relación conlleva un enorme riesgo de reputación."
+ cartel_je_cracking_down_tt:0 "El gobierno está luchando activamente contra el narcotráfico. La campaña es drenar autoridad pero mejorar la posición internacional de id=0/año."
+ cartel_je_no_policy_tt:0 "No se ha establecido ninguna política. Utilice los botones de abajo para elegir cómo idx id=0/año manejará los cárteles."
+ cartel_fight_je_commander_needed_tt:0 "No se ha desplegado ningún comandante. Utilice el botón de abajo para enviar un general al campo."
+ cartel_fight_je_commander_active_tt:0 "id=0/año está llevando a cabo operaciones contra-cartel en <x id=1/Consejo."
+
+ mdw_events.7:0 "prueba de prueba"
+ 
+ cartel_button_cooperate_name:0 "Trabajar con los carretes"
+ cartel_button_cooperate_desc:0 "Establecer un acuerdo de trabajo con las redes narco. Potenciales impulsos a la autoridad, legitimidad y defensa, pero sustancial infamia y relaciones tensas con id=0/año."
+
+ cartel_button_crackdown_name:0 "Crack Down on Trafficking"
+ cartel_button_crackdown_desc:0 "Iniciar una campaña activa contra las redes de narcotráfico. Coste 200 autoridad y prohibe el comercio de opio, pero mejora la posición y prestigio internacional de id=0/cero."
+ cartel_crackdown_authority_cost_tt:0 "Requiere 200 autoridades"
+
+ cartel_button_stop_crackdown_name:0 "Deténganse."
+ cartel_button_stop_crackdown_desc:0 "Fin de la campaña contra la trata para conservar la autoridad. Se levantará la prohibición del opio y sufrirá la buena voluntad internacional."
+
+ cartel_button_deploy_general_name:0 "Despliegue a un Comandante"
+ cartel_button_deploy_general_desc:0 "Seleccione un general para liderar operaciones de contracartel en <x id=0/ Conf."
+ cartel_need_general_tt:0 "Requiere al menos un general disponible"
+
+ cartel_suppression_bar:0 "Cartel Suppression"
+ cartel_suppression_bar_desc:0 "Progreso de supresión: id=0/ título id=1/ título indicax id=2/año (seguido id=3/año/100)"
+ cartel_bar_general_active_tt:0 "Operaciones militares activas contra los cárteles"
+ cartel_bar_turmoil_tt:0 "La turbulencia alta está dificultando las operaciones de contracartel en idu"
+ cartel_bar_at_war_tt:0 "Se están desviando recursos militares a una guerra activa"
+
+ # ==========================================
+ # EVENTS
+ # ==========================================
+
+ # cartel.1 — Escobar Captured
+ cartel.1.t:0 "Pablo Escobar está muerto"
+ cartel.1.d:0 "Después de años de violencia de caza y montaje, el fundador y líder del Cartel de Medellín ha sido rastreado a una casa segura en Medellín y asesinado por las fuerzas de seguridad id=0/cero. La muerte de Pablo Escobar es el golpe más significativo jamás alcanzado contra el comercio de drogas id=1/ título, el fin de una era, y el comienzo incierto de otra. El Cartel de Medellín está destrozado. Pero el Cartel de Cali y otros se moverán para llenar el vacío. La guerra no ha terminado. Pero esta batalla ha sido ganada."
+ cartel.1.f:0 "El hombre más buscado del mundo está muerto."
+ cartel.1.a:0 "id=0/año ha golpeado un golpe histórico contra el narcoterrorismo"
+
+ # cartel.2 — El Chapo Captured
+ cartel.2.t:0 "El Chapo es capturado"
+ cartel.2.d:0 "En una redada dramática coordinada entre las fuerzas de seguridad de id=0/año y la inteligencia internacional, Joaquín 'El Chapo' Guzmán, jefe del cártel de Sinaloa y el más poderoso señor de las drogas del mundo, ha sido capturado. El arresto es una gran victoria para id=1/año id=2 / campaña contra el cártel del usuario y un golpe significativo a las operaciones del cártel de Sinaloa. Chapo está ahora en una instalación de máxima seguridad. Si se queda allí es otro asunto."
+ cartel.2.f:0 "El hombre más buscado en las Américas está detrás de las rejas."
+ cartel.2.a:0 "Se ha prestado justicia, por ahora"
+
+ # cartel.3 — El Chapo Escapes
+ cartel.3.t:0 "El Chapo ha escapado"
+ cartel.3.d:0 "Lo imposible ha pasado. Joaquín 'El Chapo' Guzmán ha escapado de la prisión de máxima seguridad de Altiplano a través de un túnel excavado directamente en su celda, una hazaña de ingeniería que tardó meses en completar e implicar la complicidad de guardias, contratistas y funcionarios a múltiples niveles. La fuga es una humillación internacional. El gobierno de id=2/año ha tomado un golpe catastrófico a su credibilidad. Y en algún lugar en el territorio id=4/ título, el más poderoso narcotraficante del mundo es libre."
+ cartel.3.f:0 "Siempre iba a escapar. La única pregunta era cuándo."
+ cartel.3.a:0 "Esto es una indignación — los cabezales se lanzarán"
+
+ # cartel.4 — Mexico Turf Division
+ cartel.4.t:0 "Los carretes dividen id=0/"
+ cartel.4.d:0 "Años de política estatal fallida o ausentes han dejado vacío. Las principales organizaciones cárteles han establecido ahora, mediante la violencia, la negociación y la corrupción selectiva de las autoridades locales, esferas territoriales reconocidas de influencia en todo el territorio id=0/año. El CJNG controla el centro y el oeste. El Cartel del Golfo tiene la costa noreste. El Cártel de Sinaloa es dominante en el noroeste. El Cártel del Nordeste ha excavado su propio territorio en Coahuila y Zacatecas. El estado id=3/propiado tiene, en efecto, soberanía cedida sobre partes de su propio país. Esto no puede soportar."
+ cartel.4.f:0 "Un estado que no puede proteger su territorio no es un estado."
+ cartel.4.a:0 "Debemos recuperar lo que se perdió."
+
+ # cartel.5 — Assassination
+ cartel.5.t:0 "A Cartel Assassination"
+ cartel.5.d_crackdown:0 "Se ha asesinado una campaña de contracartel de la policía o un funcionario militar de categoría superior, que tiene por objeto intimidar al Estado y señalar que los carteles pueden llegar a cualquiera. El funeral es mañana. La investigación ya ha identificado sospechosos. La pregunta es si El gobierno de id=2/año tiene la voluntad de perseguirlos."
+ cartel.5.d_cooperation:0 "Un cártel rival ha asesinado a uno de los tenientes clave de sus socios criminales, y el golpe de espalda está aterrizando en el gobierno de id=0/año. The killing was carried out in broad daylight in a major city. Es imposible pretender que el estado no tiene nada que ver con los hombres que hicieron esto."
+ cartel.5.d_default:0 "Una figura prominente —político, periodista o juez— ha sido asesinada por hombres armados vinculados a cárteles en idx id=0/año. El asesinato es descarado. El mensaje es claro: los cárteles operan sin temor al estado."
+ cartel.5.f:0 "La impunidad es el arma más grande del cártel."
+ cartel.5.a:0 "Encontraremos a los responsables."
+
+ # cartel.6 — Money Laundering
+ cartel.6.t:0 "Cartel Money Laundering Exposed"
+ cartel.6.d_crackdown:0 "Una unidad de inteligencia financiera id=0/tio ha descubierto evidencia de que el dinero del cártel está fluyendo a través de negocios legítimos — empresas de construcción, restaurantes, concesionarios de automóviles— en <x id=1/año. La escala de la operación de lavado sugiere una profunda penetración de la economía formal. Seguir el sendero será caro, políticamente peligroso, y puede llevar a lugares incómodos."
+ cartel.6.d_cooperation:0 "Investigadores financieros internacionales han registrado transacciones sospechosas que fluyen a través de instituciones con vínculos conocidos con el gobierno de id=0/año. Los enlaces entre id=1/ La administración y la financiación de cárteles se están haciendo más difíciles de ocultar. Esto podría convertirse en un importante incidente diplomático."
+ cartel.6.d_default:0 "Los periodistas investigadores han publicado evidencias de lavado de dinero a gran escala a través del sector bancario de id=0/propiedad, sospechoso de ser el producto del cártel que se limpia a través de inversiones inmobiliarias y comerciales. El banco central pide una investigación."
+ cartel.6.f:0 "El dinero sucio está en todas partes si sabes dónde buscar."
+ cartel.6.a:0 "Proseguir la investigación dondequiera que conduce"
+ cartel.6.b:0 "Debe protegerse la estabilidad del sector bancario; déjalo"
+
+ # cartel.7 — US Pressure
+ cartel.7.t:0 "Washington Es mirar"
+ cartel.7.d:0 "El id=0/ El Departamento de Estado ha solicitado formalmente una reunión con el Ministro de Relaciones Exteriores de id=1/año. La agenda, comunicada en privado, se relaciona con el tráfico de drogas - específicamente la evaluación del gobierno de id=2/ título que <x id=3/año no está haciendo lo suficiente para interrumpir el flujo de narcóticos hacia el norte. Hay una sugerencia de que la asistencia financiera, de inteligencia y posiblemente militar podría ser próxima si ierex id=5/año coopera más activamente."
+ cartel.7.f:0 "id=0/tio tiene apalancamiento. La pregunta es si dejar que se utilice."
+ cartel.7.a:0 "Aceptar id=0/conferenciar - necesitamos el apoyo"
+ cartel.7.b:0 "Decline — <x id=0/ título manejará sus propios asuntos"
+
+ # cartel.8 — Cartel Retaliation
+ cartel.8.t:0 "The Cartels Retaliate"
+ cartel.8.d:0 "La represión ha sacado sangre, y ahora los cárteles están sacando la suya. Una serie coordinada de ataques entre las estaciones de policía, los puestos de control militares y las zonas civiles de las comunidades conocidas por prestar apoyo a las comisarías de policía, los puestos de control militares y las zonas civiles Identificax id=2/ campaña de título. Los ataques son un mensaje: los cárteles no pueden ser destruidos sin precio. id=3/ título debe decidir cómo responder."
+ cartel.8.f:0 "Cada golpe aterrizó es un golpe invitando a regresar."
+ cartel.8.a:0 "Escalada, no nos intimidarán"
+ cartel.8.b:0 "Retirar por ahora — proteger a la población civil"
+
+ # cartel.9 — Completion
+ cartel.9.t:0 "El comercio de drogas tiene su curso"
+ cartel.9.d_crackdown:0 "La campaña de represión ha logrado sus objetivos inmediatos. El mercado de opio se ha endurecido significativamente, una consecuencia directa de la presión sostenida de id=0/jero sobre las redes de tráfico. Los cárteles están debilitados. Ha mejorado la posición internacional de id=1/año. La lucha está lejos de terminar, pero esta ronda pertenece al estado."
+ cartel.9.d_cooperation:0 "El acuerdo ha entregado lo prometido. La autoridad está intacta, las funciones estatales y los cárteles han mantenido, sobre todo, a su lado del trato. Si esto es gobernanza o capitulación es una pregunta que los historiadores debatirán. El mercado de opio cuenta su propia historia."
+ cartel.9.d_default:0 "El comercio de drogas ha evolucionado, ya sea para bien o para mal, no está claro. El mercado de opio se ha movido significativamente de su precio base. Las opciones hechas por id=0/ título id=1/(s) en este periodo darán forma a lo que viene después."
+ cartel.9.f:0 "Cada política termina. Cada elección tiene consecuencias."
+ cartel.9.a:0 "Un capítulo cierra"
+
+ # cartel.100 — Timeout
+ cartel.100.t:0 "La ventana ha cerrado"
+ cartel.100.d:0 "Años de política inconclusiva sobre el tráfico de drogas en las redes narcotraficantes no han dado lugar a una represión significativa ni a un arreglo estable con las redes narco. Los cárteles han usado bien el tiempo. Se necesitará un enfoque más directo."
+ cartel.100.f:0 "La inacción es una opción, y los cárteles lo saben."
+ cartel.100.a:0 "Debemos actuar directamente."
+
+ # cartel.10 — Escobar news for Americas
+ cartel.10.t:0 "Pablo Escobar está muerto"
+ cartel.10.d:0 "Noticias de id=0/año: Pablo Escobar, fundador del Cártel de Medellín y el hombre que definía la edad del narco-terrorismo en América Latina, ha sido asesinado por las fuerzas de seguridad id=1/prop. El hombre más buscado del hemisferio occidental está muerto. Los efectos de onda en el comercio de drogas de la región se sentirán durante años."
+ cartel.10.f:0 "La edad del gran narco ha terminado. Lo que sigue puede ser peor."
+ cartel.10.a:0 "Una nueva era comienza"
+
+ # ==========================================
+ # CARTEL FIGHT EVENTS
+ # ==========================================
+
+ cartel_fight.0.t:0 "¿Quién liderará la campaña de contracartel?"
+ cartel_fight.0.d:0 "El gobierno de idx id=0/año ha decidido tomar acción directa contra las redes de carteles. Debe seleccionarse y desplegarse un general, uno con la competencia y la voluntad de perseguir a un enemigo que combate sucio, se esconde entre civiles, y compra funcionarios tan fácilmente como compra balas."
+ cartel_fight.0.f:0 "El general correcto cambia todo."
+ cartel_fight.0.a:0 "Despliegue id=0/"
+ cartel_fight.0.b:0 "Despliegue id=0/"
+ cartel_fight.0.c:0 "Despliegue id=0/"
+
+ cartel_fight.1.t:0 "A Major Cartel Bust"
+ cartel_fight.1.d:0 "id=0/año informa de una operación exitosa: se ha desmantelado una importante red de distribución de cárteles, se han incautado cantidades significativas de narcóticos y se han detenido varias figuras de cárteles de nivel medio. Es una buena semana de trabajo. El impulso es con el gobierno de id=1/año."
+ cartel_fight.1.f:0 "Se están logrando progresos."
+ cartel_fight.1.a:0 "Mantenga la presión"
+
+ cartel_fight.2.t:0 "Troops Ambushed"
+ cartel_fight.2.d:0 "Una unidad bajo el mando de id=0/año ha sido emboscada por hombres de carteles en una zona rural. El ataque fue bien coordinado y sugiere que los cárteles tienen inteligencia sobre los movimientos militares id=1/tio. Hay bajas. Morale está sacudida."
+ cartel_fight.2.f:0 "Los carteles luchan como un ejército cuando eligen."
+ cartel_fight.2.a:0 "Reagrupar y continuar"
+
+ cartel_fight.3.t:0 "Informant Provides Key Intelligence"
+ cartel_fight.3.d:0 "Un informante — motivado por el dinero, la queja personal, o el miedo— ha proporcionado id=0/año información detallada sobre casas seguras de cártel, rutas de suministro y personal. La información permite una serie de operaciones de precisión que degradan significativamente la capacidad operacional de los cárteles en la región."
+ cartel_fight.3.f:0 "La mayor vulnerabilidad de los cárteles es el uno al otro."
+ cartel_fight.3.a:0 "Ley de inteligencia inmediatamente"
+
+ cartel_fight.10.t:0 "Los carretes han sido rotos"
+ cartel_fight.10.d:0 "La campaña ha terminado. Se ha desmantelado hasta el punto de irrelevancia operacional. Las figuras clave están muertas o bajo custodia. Las redes están fragmentadas. El estado ha reclamado su territorio. Ha sido una pelea fea. Pero se ha ganado."
+ cartel_fight.10.f:0 "El estado ha mostrado lo que puede hacer cuando se compromete."
+ cartel_fight.10.a:0 "Una victoria dura"
+
+ # ==========================================
+ # MODIFIERS
+ # ==========================================
+
+ cartel_cooperation_modifier:0 "Cartel Arrangement"
+ cartel_cooperation_modifier_desc:0 "Un arreglo implícito con redes narco ha aportado considerables recursos y estabilidad a id=0/año — a un costo pronunciado para la legitimidad y la reputación internacional."
+
+ cartel_crackdown_modifier:0 "Campaña contra la trata"
+ cartel_crackdown_modifier_desc:0 "id=0/año está buscando activamente redes de carteles. La autoridad está siendo consumida, pero la posición internacional está mejorando y se suprime el comercio de opio."
+
+ cartel_crackdown_abandoned:0 "Crackdown Abandoned"
+ cartel_crackdown_abandoned_desc:0 "Se ha detenido la campaña de lucha contra la trata de personas. La comunidad internacional ha observado la inversión."
+
+ cartel_escobar_captured:0 "Escobar está muerto"
+ cartel_escobar_captured_desc:0 "La muerte de Pablo Escobar ha destrozado el Cártel de Medellín y está transformando el comercio de drogas id=0/año. La posición internacional de id=1/ título ha mejorado dramáticamente."
+
+ cartel_el_chapo_captured:0 "El Chapo Captured"
+ cartel_el_chapo_captured_desc:0 "La captura de Joaquín Guzmán ha dado un golpe significativo al Cártel de Sinaloa y mejorado id=0/año's de pie internacional."
+
+ cartel_el_chapo_escaped:0 "El Chapo ha escapado"
+ cartel_el_chapo_escaped_desc:0 "El escape del narcotraficante más buscado del mundo de una prisión de seguridad máxima de id=0 / título es una vergüenza catastrófica para id=1/ El gobierno de id=2/año."
+
+ cartel_narco_state:0 "Narco State"
+ cartel_narco_state_desc:0 "Las organizaciones de cártel han establecido un control territorial efectivo sobre porciones significativas de id=0/año. El estado id=1/propio ha perdido su monopolio de la violencia en estas áreas."
+
+ cartel_cjng_controlled:0 "CJNG Territory"
+ cartel_cjng_controlled_desc:0 "Los agentes de Jalisco New Generation Cartel controlan la economía criminal de este estado. La violencia, la extorsión y la gobernanza de cárteles han desplazado a la autoridad estatal id=0."
+
+ cartel_gulf_controlled:0 "Gulf Cartel Territory"
+ cartel_gulf_controlled_desc:0 "El Cártel del Golfo ha establecido el dominio territorial aquí. La autoridad estatal es nominal."
+
+ cartel_sinaloa_controlled:0 "Territorio del Cártel de Sinaloa"
+ cartel_sinaloa_controlled_desc:0 "El Cártel de Sinaloa ha establecido el dominio territorial aquí. Su influencia sobre la economía local y el gobierno id=0/año es omnipresente."
+
+ cartel_northeast_controlled:0 "Territorio del cártel noreste"
+ cartel_northeast_controlled_desc:0 "El Cartel del Noreste ha establecido la dominación aquí, desplazando id=0 / autoridad estatal con su propia gobernanza violenta."
+
+ cartel_crackdown_success:0 "Counter-Narco Success"
+ cartel_crackdown_success_desc:0 "Un gran éxito en la campaña contra la trata de personas de id=0/año ha impulsado la legitimidad y el prestigio del gobierno."
+
+ cartel_assassination_aftermath:0 "Cartel Assassination"
+ cartel_assassination_aftermath_desc:0 "Un asesinato de alto perfil ha sacudido la confianza pública en el id=0/⁄4 y ha aumentado la turbulencia."
+
+ cartel_laundering_investigation:0 "Money Laundering Investigation"
+ cartel_laundering_investigation_desc:0 "Una investigación activa sobre el blanqueo de dinero del cártel está mejorando las credenciales anticorrupción de id=0/año."
+
+ cartel_laundering_ignored:0 "Blanqueo de dinero"
+ cartel_laundering_ignored_desc:0 "La decisión de abandonar la investigación sobre el blanqueo ha aumentado las cejas a nivel internacional."
+
+ cartel_us_cooperation_bonus:0 "US Counter-Narcotics Cooperation"
+ cartel_us_cooperation_bonus_desc:0 "La cooperación activa con los programas antidrogas de id=0/ título ha aportado apoyo de inteligencia y beneficios diplomáticos a idx id=1/conferencia."
+
+ cartel_us_rejection:0 "Rechazo de presión estadounidense"
+ cartel_us_rejection_desc:0 "id=0/año ha rechazado la cooperación antinarcóticos. La autoridad interna se conserva pero las relaciones con id=2/año se han enfriado."
+
+ cartel_retaliation_escalate:0 "Escalada contra los carretes"
+ cartel_retaliation_escalate_desc:0 "La decisión de escalar después de la represalia de los cárteles ha aumentado la turbulencia en idx id=0/año, pero indica la resolución del gobierno."
+
+ cartel_retaliation_pullback:0 "Respuesta restringida"
+ cartel_retaliation_pullback_desc:0 "El gobierno de id=0/año hizo retroceder para proteger a los civiles después de la represalia de los cárteles."
+
+ cartel_fight_ambush:0 "Troops Ambushed"
+ cartel_fight_ambush_desc:0 "Los artilleros de cártel emboscaron una unidad militar id=0, causando bajas y desacelerando momentáneamente la campaña de contracartel."
+
+ cartel_fight_victory:0 "Carros rotos"
+ cartel_fight_victory_desc:0 "La campaña militar contra los cárteles ha tenido éxito. Las redes están fragmentadas y se ha restablecido la autoridad estatal."
+ 
+ # ==========================================
+ # JOURNAL ENTRIES
+ # ==========================================
+ 
+ je_mexican_drug_war:0 "La Guerra Mexicana de Drogas"
+ je_mexican_drug_war_reason:0 "Los cárteles han dividido entre sí. CJNG, el Cártel del Golfo, el Cártel de Sinaloa y el Cártel del Noreste controlan cada territorio donde la escritura del gobierno es débil o ausente. Las industrias han disminuido. La gente se va. La violencia es endémica.Seguido id=1/ título indicax id=2/ títuloEl gobierno de <x id=3/ título id=4/año aún no se ha comprometido a enfrentar directamente a los cárteles. Pero la situación no puede dejarse para profundizar indefinidamente: el territorio cártel se está expandiendo, y cada mes de inacción hace que el cálculo final sea más difícil."
+ 
+ je_us_mexico_drug_war_support:0 "Apoyo a México"
+ je_us_mexico_drug_war_support_desc:0 "Se trata de una lucha existencial contra las redes narcocartel que se han apoderado del control de partes significativas del país. id=1/año tiene un interés directo en el resultado: el flujo de narcóticos hacia el norte, la estabilidad de la frontera sur, y la integridad del estado id=2/ título están en juego. La firma de un acuerdo de asistencia militar con لx id=5/año proporcionaría recursos, inteligencia y legitimidad a لx id=6/ <x id=7/ gobierno de confianza - y profundizar la relación bilateral de maneras que se extienden mucho más allá de la guerra de drogas."
+ 
+ # Status descriptions
+ mdw_je_not_declared_tt:0 "El gobierno de id=0/año no ha declarado aún la guerra contra los cárteles. La situación está empeorando: las redes de cárteles están ampliando activamente su control territorial. Utilice el botón de abajo para comprometer el militar id=1/tio a la campaña."
+ mdw_je_commander_needed_tt:0 "La guerra ha sido declarada. Ahora debe desplegar un comandante para dirigir operaciones en territorio controlado por el cártel."
+ mdw_je_active_tt:0 "id=0/año está llevando a cabo operaciones de id=1/año contra los cárteles. El territorio cártel sigue siendo impugnado; todos los estados controlados deben ser despejados antes de que la guerra pueda ser declarada ganada."
+ 
+ us_mdw_je_no_pact_tt:0 "No se ha firmado ningún acuerdo de asistencia militar con id=0/año. Navegue a la pantalla de diplomacia para proponer un tratado de asistencia militar con id=1 El gobierno de id=2/año."
+ us_mdw_je_pact_active_tt:0 "Un acuerdo de asistencia militar está en vigor con неx id=0/año. неx id=1/conferencia está ayudando a mantener la campaña de contra-cartel de id=2/año."
+ 
+ # ==========================================
+ # SCRIPTED BUTTONS
+ # ==========================================
+ 
+ mdw_button_declare_war_name:0 "Declare War on the Cartels"
+ mdw_button_declare_war_desc:0 "Encomendar a los militares id=0/año a una campaña directa contra las redes de carteles. Coste 100 autoridad y comienza la campaña contra-cartel en serio. Los bares no se moverán hasta que se haga esta declaración."
+ 
+ mdw_button_deploy_commander_name:0 "Despliegue a un Comandante"
+ mdw_button_deploy_commander_desc:0 "Seleccione un general para liderar operaciones contra-cartel a través de territorio id=0/."
+ mdw_need_general_tt:0 "Requiere al menos un general disponible"
+ 
+ # ==========================================
+ # PROGRESS BARS
+ # ==========================================
+ 
+ mdw_suppression_bar:0 "Progresos en la campaña"
+ mdw_suppression_bar_desc:0 "Progreso de la operación: id=0/ título id=1/ fielx id=2/año (seguido id=3/año/100)"
+ 
+ mdw_peril_bar:0 "Commander Peril"
+ mdw_peril_bar_desc:0 "Operación Pérdida: id=0/ título id=1/ título indicax id=2/ título"
+ 
+ mdw_bar_commander_active_tt:0 "Operaciones militares activas"
+ mdw_bar_multiple_states_tt:0 "Múltiples estados controlados por el cártel — <x id=0 / iOS operaciones se distribuyen delgadamente"
+ mdw_bar_us_aid_tt:0 "La asistencia militar id=0/tio está proporcionando apoyo logístico y de inteligencia"
+ mdw_bar_excess_authority_tt:0 "Una fuerte capacidad estatal está acelerando la campaña"
+ mdw_bar_legitimacy_tt:0 "El alto apoyo público sostiene la moral militar de id=0"
+ mdw_bar_good_commander_tt:0 "La habilidad táctica del comandante está acelerando las operaciones"
+ mdw_bar_at_war_tt:0 "Se están desviando recursos militares a una guerra activa"
+ mdw_bar_turmoil_tt:0 "La agitación nacional alta está impediendo el id=0/ campaña"
+ mdw_peril_base_tt:0 "Las operaciones sostenidas en territorio cártel conllevan un riesgo constante"
+ mdw_peril_multiple_states_tt:0 "Operar en muchos frentes aumenta la exposición del comandante"
+ mdw_peril_us_aid_tt:0 "id=0 / Inteligencia de propiedad reduce la capacidad de los cárteles para dirigirse al comandante"
+ mdw_peril_cautious_tt:0 "El enfoque cauteloso del comandante está reduciendo el riesgo personal"
+ 
+ # ==========================================
+ # EVENTS
+ # ==========================================
+ 
+ # mdw_events.1 — War Declared
+ mdw_events.1.t:0 "id=0/año Declares Guerra de los Carretes"
+ mdw_events.1.d:0 "Después de años de expansión del cártel y faltaron medias medidas, El gobierno de id=1/año ha comprometido formalmente el militar id=2/tio a una campaña contra las redes narco. La declaración es significativa, no sólo operacional, sino simbólicamente. El estado id=3/propiano significa que no aceptará el status quo. Los cárteles responderán. Los militares deben estar listos."
+ mdw_events.1.f:0 "El estado ha dibujado su línea."
+ mdw_events.1.a:0 "id=0/año reclamará lo que le pertenece"
+ 
+ # mdw_events.2 — Commander Selection
+ mdw_events.2.t:0 "¿Quién liderará la campaña?"
+ mdw_events.2.d:0 "Se ha hecho la declaración. Ahora hay que elegir a un comandante, uno dispuesto a tomar la lucha en territorio controlado por el cártel, donde el enemigo conoce la tierra, tiene informantes locales, y está dispuesto a hacer cosas que el ejército no puede. Será una pelea sucia."
+ mdw_events.2.f:0 "El general correcto cambia todo."
+ mdw_events.2.a:0 "Despliegue id=0/"
+ mdw_events.2.b:0 "Despliegue id=0/"
+ mdw_events.2.c:0 "Despliegue id=0/"
+ 
+ # mdw_events.3 — Combat Patrol
+ mdw_events.3.t:0 "Contacto en id=0/"
+ mdw_events.3.d:0 "id=0/año reporta una serie de compromisos con las fuerzas del cártel en ierex id=1/año. Los cárteles luchan por mantener su territorio, utilizando barricadas, francotiradores y artefactos explosivos improvisados sobre enfoques de fortalezas conocidas. Se están logrando progresos, pero el costo en el tiempo y los recursos es significativo."
+ mdw_events.3.f:0 "Cada kilómetro de camino es un kilómetro que los cárteles no pueden usar."
+ mdw_events.3.a:0 "Empujar duro — tomar el territorio rápidamente"
+ mdw_events.3.b:0 "Avance metódicamente — asegurar cada posición antes de seguir adelante"
+ 
+ # mdw_events.4 — State Cleared
+ mdw_events.4.t:0 "Se ha aclarado"
+ mdw_events.4.d:0 "Un éxito operativo significativo: <x id=0/ título reporta que las fuerzas del cártel en יx id=1/ título han sido rotas. Su estructura de mando ha sido desmantelada, su corte logístico, y sus figuras clave están muertas o bajo custodia. Las fuerzas de ocupación militar se están moviendo para mantener el terreno. Un estado está bajo control del gobierno. Quedan más."
+ mdw_events.4.f:0 "El mapa está cambiando."
+ mdw_events.4.a:0 "Muévete al siguiente: mantén el impulso"
+ 
+ # mdw_events.5 — Ambush
+ mdw_events.5.t:0 "Ambush — idx id=0 / título de columna está bajo ataque"
+ mdw_events.5.d:0 "Los artilleros de cártel han emboscado una columna militar de id=0/año en Identificax id=1/año. El ataque fue coordinado — múltiples posiciones de disparo, rutas de retirada preplanificadas y conocimiento de los movimientos de la columna que sugieren un informante dentro de la cadena de mando militar de id=2/tio. Hay bajas. id=3/propiación está gestionando el compromiso."
+ mdw_events.5.f:0 "Los carteles luchan como un ejército cuando eligen."
+ mdw_events.5.a:0 "Luchar a través — perseguirlos y destruirlos"
+ mdw_events.5.b:0 "Contacto de ruptura - reagrupar y barrer más tarde"
+ 
+ # mdw_events.6 — Commander Under Fire
+ mdw_events.6.t:0 "id=0/ Está en peligro."
+ mdw_events.6.d:0 "La inteligencia ha confirmado lo que los informes sobre el terreno han estado sugiriendo: los cárteles han identificado como un objetivo prioritario. Se ha encomendado a un equipo profesional de asesinato. La amenaza es creíble. Retirar al comandante de nuevo a неx id=1/ título reduciría el riesgo, pero frenaría el impulso de la campaña en un momento crítico."
+ mdw_events.6.f:0 "Los carteles estudian a sus enemigos."
+ mdw_events.6.a:0 "Tire de id=0 / confianza atrás - la campaña puede esperar"
+ mdw_events.6.b:0 "Pulse en — <x id=0/ título acepta el riesgo"
+ 
+ # mdw_events.10 — Victory
+ mdw_events.10.t:0 "La Guerra de las Drogas es Won"
+ mdw_events.10.d:0 "id=0/año envía el informe operativo final: el control territorial del cártel se ha roto a través de id=1/año. Las últimas fortalezas han sido limpiadas. La ocupación militar está en vigor. Las redes de cártel todavía existen — se reconstituirán a lo largo de años en forma debilitada— pero el estado id=2/año ha reafirmado la soberanía sobre su propio territorio. Esto no era inevitable. Requirió voluntad política, compromiso militar y, de muchas maneras, suerte. Lo que ha ganado id=5/ título id=6/ título ha ganado es tiempo — tiempo para abordar las condiciones que hicieron posible los cárteles en primer lugar."
+ mdw_events.10.f:0 "Se ha reclamado lo que es suyo."
+ mdw_events.10.a:0 "Una victoria dura y un comienzo"
+ 
+ # mdw_events.11 — Commander Killed
+ mdw_events.11.t:0 "id=0/año Ha sido asesinado"
+ mdw_events.11.d:0 "Lo peor ha pasado. La operación de asesinato del cártel tuvo éxito. id=0/año está muerto, muerto en un ataque que los servicios de seguridad id=1/ título no pudieron evitar a pesar de advertencias creíbles. Las noticias son públicas dentro de horas. Los cárteles están celebrando abiertamente en las calles de las ciudades que controlan. La campaña no ha terminado. Pero ha sufrido un golpe que tardará meses en recuperarse. Hay que encontrar un nuevo comandante, y los cárteles usarán el tiempo para consolidarse."
+ mdw_events.11.f:0 "Los cárteles han golpeado su golpe más importante aún."
+ mdw_events.11.a:0 "No nos romperemos por esto: la lucha continúa"
+ 
+ # mdw_events.20 — US Aid
+ mdw_events.20.t:0 "Se ha firmado un acuerdo de asistencia militar"
+ mdw_events.20.d:0 "Se ha movido. id=1/año ha firmado formalmente un acuerdo de asistencia militar con <x id=2/(conferir recursos de inteligencia, personal asesor, equipo y apoyo logístico a la campaña contra el cartel. El acuerdo es un desarrollo político significativo: indica que Identificax id=4 / administración del título se refiere a la estabilidad de id=5/conferencia como cuestión de interés nacional directo. Para неx id=8/tio, los beneficios prácticos son inmediatos: la autoridad es restaurada, el equipo está fluyendo, y los cárteles ahora se enfrentan a un enemigo con el aparato de inteligencia completo de неx id=9/año trabajando contra ellos."
+ mdw_events.20.f:0 "Cuando se compromete id=0/ título, el saldo cambia."
+ mdw_events.20.a:0 "Esto cambia completamente la campaña"
+ 
+ # ==========================================
+ # MODIFIERS
+ # ==========================================
+ 
+ mdw_war_declared_modifier:0 "Guerra Mexicana de Drogas — Campaña activa"
+ mdw_war_declared_modifier_desc:0 "id=0/año ha comprometido su ejército a una campaña directa contra los narco-cartels. La autoridad está siendo consumida y el ejército está comprometido, pero el estado id=1 / título se está afirmando."
+ 
+ mdw_us_aid_modifier:0 "Asistencia militar estadounidense"
+ mdw_us_aid_modifier_desc:0 "Un acuerdo de asistencia militar activo con id=0/año está proporcionando inteligencia, logística y equipo a la campaña de contra-cartel de id=1/ prendas de contacto."
+ 
+ mdw_victory_modifier:0 "Guerra contra las drogas"
+ mdw_victory_modifier_desc:0 "id=0/año ha ganado la Guerra de las Drogas. El control territorial del cártel se ha roto y el estado de id=1/año ha reafirmado la soberanía. Las condiciones que produjeron los cárteles permanecen, pero esta batalla ha sido ganada."
+ 
+ mdw_commander_killed_modifier:0 "Comandante asesinado en acción"
+ mdw_commander_killed_modifier_desc:0 "El asesinato del comandante de la contracartel ha sacudido la confianza pública en id=0/mento e incorporó los cárteles."
+ 
+ mdw_troops_ambushed:0 "Troops Ambushed"
+ mdw_troops_ambushed_desc:0 "Una columna militar id=0/tio fue emboscada por las fuerzas del cártel, causando bajas y reduciendo temporalmente la capacidad ofensiva."
+ 
+ # Cartel territory modifier descriptions (MDW context)
+ cartel_cjng_controlled:0 "CJNG Territory"
+ cartel_cjng_controlled_desc:0 "Los agentes de Jalisco New Generation Cartel controlan la economía criminal de este estado. La actividad industrial se interrumpe, la infraestructura se está deteriorando y la gente está dejando territorio id=0/año."
+ 
+ cartel_gulf_controlled:0 "Gulf Cartel Territory"
+ cartel_gulf_controlled_desc:0 "El Cártel del Golfo ha establecido el dominio territorial aquí. La actividad económica es suprimida y la autoridad estatal de id=0/año es nominal."
+ 
+ cartel_sinaloa_controlled:0 "Territorio del Cártel de Sinaloa"
+ cartel_sinaloa_controlled_desc:0 "El Cártel de Sinaloa controla este estado. Se ha interrumpido la producción agrícola y la economía local funciona bajo supervisión de cárteles."
+ 
+ cartel_northeast_controlled:0 "Territorio del cártel noreste"
+ cartel_northeast_controlled_desc:0 "El Cartel del Noreste ha establecido la dominación aquí. La infraestructura y la productividad de construcción en id=0/año están sufriendo."
+ 
+ # usa war on drugs
+
+ je_war_on_drugs:0 "La guerra contra las drogas"
+ je_war_on_drugs_reason:0 "El flujo de narcóticos en id=0/año es una crisis nacional. La cocaína, la heroína y otras sustancias — producidas en gran parte en América Latina y traficadas a través de las fronteras de id=1/ título— son comunidades devastadoras, que alimentan delitos violentos y corrompen las instituciones públicas. Identificax id=5/ La administración del usuario se ha comprometido a una campaña integral: asociaciones internacionales para estrangular la oferta en la fuente, la ejecución nacional para cerrar las fronteras y la inversión social para hacer frente a la demanda. La campaña no es sin costo, los recursos que requiere pesan sobre la economía más amplia, pero la alternativa es un país cada vez más a merced de las redes criminales extranjeras. El territorio del cártel puede estar en expansión en México. Un acuerdo de asistencia militar con el gobierno mexicano es la piedra angular del componente internacional de esta campaña."
+
+ narco_economy_plantation_bonus:0 "Narco Economy"
+ narco_economy_plantation_bonus_desc:0 "El comercio de drogas se ha incorporado a la economía agrícola de id=0/año. La producción de plantación, en particular el opio, se encuentra por encima de los niveles normales, sostenida por la demanda de cárteles y la corriente corrupta del dinero narco hacia las comunidades rurales."
+
+ war_on_drugs_active_modifier:0 "Guerra contra las drogas"
+ war_on_drugs_active_modifier_desc:0 "El gobierno de id=0/año se ha comprometido a una campaña integral contra el narcotráfico. El esfuerzo de ejecución —policía interna, operaciones de interdicción y cooperación internacional— está aprovechando recursos de toda la economía e imponiendo un costo modesto pero real a la productividad nacional."
+
+ war_on_drugs_victory_modifier:0 "Guerra contra las drogas"
+ war_on_drugs_victory_modifier_desc:0 "El id=0/ La guerra contra las drogas ha alcanzado sus objetivos declarados. Se ha suprimido el suministro, se aplican las fronteras y se ha establecido el marco institucional. La campaña ha fortalecido la autoridad y el prestigio de id=1/año, aunque no se han resuelto las condiciones subyacentes que producen demanda de drogas."
+
+ wod_je_status_active:0 "La campaña continúa."
+ wod_je_status_ready:0 "La campaña está lista para concluir."
+
+ wod_completion_mexico_tt:0 "Tener un pacto de id=0/ título de asistencia militar realizadox id=1/ título con México."
+ wod_completion_enforcement_tt:0 "Adopta ya sea id=0/ título Guardia Nacional realizadax id=1/ título o idx id=2/ título Policía Secreta realizadax id=3/año."
+ wod_completion_opium_price_tt:0 "Suprimir el suministro internacional de drogas hasta que las drogas sean al menos id=0/ título 65% pricier madex id=1/año en el mercado americano."
+ wod_completion_schools_tt:0 "Aumentar la institución id=0/ títulos realizadosx id=1/ título para nivelar id=2/ título 5 significax id=3/ título o superior."
+ wod_completion_border_tt:0 "Adoptar o bien id=0/ título Controles de migración realizadosx id=1/ título o idx id=2/ título Cerrado Fronteras realizadasx id=3/año."
+ wod_completion_no_safe_injection_tt:0 "No tienes id=0/ &gt; Sitios de inyección seguras hechosx id=1/ &gt; ."
+ wod_completion_no_trafficking_allowed_tt:0 "No tienes id=0/ Trata de personas Permitida realizar trabajosx id=1/año."
+ wod_completion_no_hard_drugs_decriminalized_tt:0 "No tienes id=0/conferencia descriminalizados identificadox id=1/conferencia."

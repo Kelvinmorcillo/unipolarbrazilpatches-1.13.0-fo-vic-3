@@ -1,0 +1,48 @@
+je_rwandan_genocide = {
+    icon = "gfx/interface/icons/event_icons/event_skull.dds"
+    group = je_group_dilemmas
+    should_be_pinned_by_default_uninvolved_or_context = yes
+
+    is_shown_when_inactive = {
+        c:RWA ?= this
+        game_date >= 1994.04.01
+        game_date <= 1994.12.31
+        NOT = { has_variable = genocide_ended }
+    }
+
+    possible = {
+        c:RWA ?= this
+		NOT = { has_variable = genocide_ended }
+    }
+
+    on_monthly_pulse = {
+        change_variable = { name = genocide_progress value = 10 }
+        if = {
+            limit = { check_variable = { name = genocide_progress value >= 100 } }
+            set_variable = genocide_ended
+        }
+    }
+
+    complete = {
+		OR = {
+		custom_tooltip = {
+			text = genocide_ended
+			has_variable = genocide_ended
+		}
+		AND = { 
+			NOT = { has_modifier = rwandan_genocide }
+			game_date >= 1994.05.01
+			}
+		}
+    }
+
+    on_complete = {
+        add_modifier = {
+            name = post_rwandan_genocide_reconstruction
+            months = 8
+        }
+        add_radicals = { value = -0.05 }
+    }
+
+    custom_tooltip = je_rwandan_genocide_progress_tt
+}

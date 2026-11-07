@@ -1,0 +1,73 @@
+﻿CHARACTERS = {
+	c:GBR ?= {
+	create_character = {
+			template = GBR_richard_vincent
+		}
+	create_character = {
+			template = GBR_tony_blair
+		}
+	create_character = {
+			template = GBR_norman_willis
+		}
+	create_character = {
+			template = GBR_gerald_grosvenor
+		}
+	create_character = {
+			template = GBR_stephen_hawking
+		}
+	create_character = {
+			template = GBR_tony_benn
+		}
+	create_character = {
+			first_name = "elizabeth"
+			last_name = "alexandra_mary"
+			historical = yes
+			female = yes
+			ruler = yes
+			culture = cu:british
+			birth_date = 1945.4.21
+			dna = dna_elizabeth_ii
+			ig_leader = no
+			interest_group = ig_devout
+			ideology = ideology_moderate_leader
+			traits = {
+				reserved
+				charismatic
+				honorable
+				aesthete
+				compliant
+			}
+		}
+	create_character = {
+			first_name = "john"
+			last_name = "major"
+			historical = yes
+			ruler = no
+			culture = cu:british
+			birth_date = 1943.3.31
+			dna = dna_john_major
+			ig_leader = yes
+			interest_group = ig_petty_bourgeoisie
+			ideology = ideology_neoliberal_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+	create_character = {
+			first_name = "margaret"
+			last_name = "thatcher"
+			historical = yes
+			ruler = no
+			culture = cu:british
+			birth_date = 1925.3.31
+			dna = dna_thatcher
+			ig_leader = no
+			female = yes
+			interest_group = ig_industrialists
+			ideology = ideology_neoliberal_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+}

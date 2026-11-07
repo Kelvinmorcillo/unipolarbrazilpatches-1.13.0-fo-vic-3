@@ -1,0 +1,93 @@
+﻿
+sg_rising_economy = {
+	category = sgcat_rising_powers
+	is_repeatable = no
+
+	trigger = {
+		exists = yes
+	}
+
+	on_start = {
+		add_journal_entry = {
+			type = je_rising_economy
+			objective_subgoal = sg_rising_economy
+		}
+	}
+}
+
+sg_rising_sovereignty = {
+	category = sgcat_rising_powers
+	is_repeatable = no
+
+	trigger = {
+		exists = yes
+	}
+
+	on_start = {
+		add_journal_entry = {
+			type = je_rising_sovereignty
+			objective_subgoal = sg_rising_sovereignty
+		}
+	}
+}
+
+sg_rising_military = {
+	category = sgcat_rising_powers
+	is_repeatable = no
+
+	unlocking_subgoals_all = {
+		sg_rising_sovereignty
+	}
+
+	trigger = {
+		
+	}
+
+	on_start = {
+		add_journal_entry = {
+			type = je_rising_military
+			objective_subgoal = sg_rising_military
+		}
+	}
+}
+
+sg_rising_prestige = {
+	category = sgcat_rising_powers
+	is_repeatable = no
+
+	unlocking_subgoals_all = {
+		sg_rising_economy
+		sg_rising_military
+	}
+
+	trigger = {
+		
+	}
+
+	on_start = {
+		add_journal_entry = {
+			type = je_rising_prestige
+			objective_subgoal = sg_rising_prestige
+		}
+	}
+}
+
+sg_rising_endgame = {
+	category = sgcat_rising_powers
+	is_repeatable = no
+
+	unlocking_subgoals_all = {
+		sg_rising_prestige
+	}
+
+	trigger = {
+		
+	}
+
+	on_start = {
+		add_journal_entry = {
+			type = je_rising_endgame
+			objective_subgoal = sg_rising_endgame
+		}
+	}
+}

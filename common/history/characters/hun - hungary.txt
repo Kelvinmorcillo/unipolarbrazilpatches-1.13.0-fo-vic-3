@@ -1,0 +1,19 @@
+﻿CHARACTERS = {
+	c:HUN ?= {
+	create_character = {
+			first_name = "jozsef"
+			last_name = "antall"
+			historical = yes
+			ruler = yes
+			culture = cu:hungarian
+			birth_date = 1932.3.31
+			dna = dna_jozsef_antall
+			ig_leader = yes
+			interest_group = ig_rural_folk
+			ideology = ideology_conservative_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+}

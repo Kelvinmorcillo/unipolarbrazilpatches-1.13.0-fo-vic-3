@@ -1,0 +1,426 @@
+﻿l_japanese:
+
+ # modifiers
+ nato_modifier:0 "佐藤 仁"
+ je_group_international:0 "インターナショナル"
+ # je groups
+ 
+ je_group_foreign_policy:0 "外国政策"
+ je_group_domestic_policy:0 "国内政策"
+ je_group_space_exploration:0 "宇宙探査"
+ je_group_dilemmas:0 "ジレンマス"
+ je_group_advancements:0 "プロモーション"
+ je_group_objectives:0 "オブジェクト"
+ asian_economy_boost:0 "経済解放"
+ 
+ # transit rights
+ 
+ je_transit_rights: "ランドロック!"
+ je_transit_rights_reason: "[ROOT.GetCountry.GetName] は海岸線がありません。 国際市場へのアクセスは、近隣諸国の善意に完全に依存します。 取引と戦略的な柔軟性のために、少なくとも1つとトランジットの権利協定を守ることは不可欠です。"
+ secure_transit_rights_treaty:0 "任意の近隣の非上陸国とトランジットの権利条約に署名します。"
+ # ==========================================
+ # JOURNAL ENTRY
+ # ==========================================
+ 
+ je_covid_pandemic: "COVID-19 パンデミック"
+ je_covid_pandemic_reason: "[ROOT.GetCountry.GetName] に新たに登場し、世界中に急速に広がっています。 COVID-19は、生活メモリの任意の病原体よりも速く広がります, 一緒に近代的な世界を結ぶ貿易と旅行の密なネットワークを活用. 死亡率は高齢者と免疫成分に集中していますが、そのせん断は接触するすべての国の圧倒的な健康システムに脅迫します。\n\nポリシーを設定するには、#bold COVID-19 Response#!の決定を使用します。 ロックダウンはスプレッドを遅くしますが、経済を槌で打ちます。 マスクや散乱は効果が低いが、より持続可能である。 何もしないのは、あまりにも選択です - electorateと死者は思い出します。"
+ 
+ # ==========================================
+ # covid.1 — PANDEMIC ARRIVES
+ # ==========================================
+ 
+ covid.1.t: "新型コロナウイルス"
+ covid.1.d: "[SCOPE.sState('plague_origin_state').GetName]、[ROOT.GetCountry.GetName] で異常な肺症例のクラスターが報告されています。 [ROOT.GetCountry.GetAdjective] 保健当局による予備分析は、以前に未知のコロナウイルスを示唆しています。これは、孵化期の期間で、彼らは病気であることを知っている前に、キャリアが伝染していることが十分にあります。\n\n世界保健機関は通知されています。 ローカルのアウトブレイクが残っているか、または次の週に行われた決定により、何かが起こるか。"
+ covid.1.f: "新しい病原体。 お問い合わせ"
+ covid.1.a: "WHOを通知し、連絡先のトレースを開始"
+ 
+ # ==========================================
+ # covid.2 — SPREAD
+ # ==========================================
+ 
+ covid.2.t: "COVID-19 キャッシュ [ROOT.GetCountry.GetName]"
+ covid.2.d: "[SCOPE.sCountry('plague_originator_country').GetName] で最初に識別された新型コロナウイルスの症例は [ROOT.GetCountry.GetName] で確認されています。 ウイルスは、旅行者、取引ルート、または単に接続された世界の目に見えない流れを介して到着しました。\n\n[ROOT.GetCountry.GetAdjective]医療当局は、パンデミック応答プロトコルを活性化しています。 #bold COVID-19 Response#! ポリシーを設定する決定を使用してください。"
+ covid.2.f: "時間が経ちました。"
+ covid.2.a: "パンデミックプロトコルの有効化"
+ 
+ # ==========================================
+ # covid.3 — SUBSEQUENT WAVES
+ # ==========================================
+ 
+ covid.3.t: "オミクロンバリアント"
+ covid.3.d: "COVID-19感染の新鮮な波を引き起こした新しい変形。 保健機関は、封入プロトコルを再評価しています。"
+ covid.3.f: "ウイルスは、まだ私たちと一緒にいます。"
+ 
+ # ==========================================
+ # covid.4 — NOTIFICATION TO OTHER PLAYERS
+ # ==========================================
+ 
+ covid.4.t: "ウーハン、中国からの新ウイルス"
+ covid.4.a: "状況を密接に監視"
+ 
+ # ==========================================
+ # covid.5 — RESPONSE CHOICE
+ # ==========================================
+ 
+ covid.5.t: "COVID-19対応方針"
+ covid.5.d: "[ROOT.GetCountry.GetName] はパンデミックにどのように反応するか? 選択は、次の年の経済と社会的な風景を定義します。"
+ covid.5.f: "オプションはありません。 トレードオフのみ。"
+ covid.5.a: "完全なロックダウン — 企業を閉じ、動きを制限する"
+ covid.5.b: "マスクの日付と社会的分散ガイドライン"
+ covid.5.c: "経済を開放し、回復を優先します"
+ 
+ # ==========================================
+ # covid.7 — WAR SUPPORT
+ # ==========================================
+ 
+ covid.7.t: "パンデミックは戦争の努力を損なう"
+ covid.7.d: "COVID-19 は [ROOT.GetCountry.GetName] の人口を重ね、 [SCOPE.gsInterestGroup('pacifist_ig').GetName] — は [SCOPE.sCharacter('pacifist_leader').GetFullName] によって導かれ、パンデミックと戦う国が同時に戦争を持続できるかどうかを疑問に思います。 人口は排出されます。 フィールド病院は、リソースのフロントラインの物流と競合しています。"
+ covid.7.f: "ウイルスを戦うか、敵と戦う。 どちらも難しい。"
+ covid.7.a: "戦争は続いています。ウイルスは変化しません"
+ covid.7.b: "道徳を維持するために公衆衛生のメッセージングを使用する"
+ covid.7.c: "敗北者物語を抑制"
+ 
+ # ==========================================
+ # covid.8 — POVERTY AND EVICTIONS
+ # ==========================================
+ 
+ covid.8.t: "パンデミックの経済料金"
+ covid.8.d: "パンデミックは、数千の [ROOT.GetCountry.GetAdjective] の労働者の仕事を費やし、 [SCOPE.sState('plague_poverty_state').GetName] では、失業率は20%を超えています。 宿泊料金の支払いはできません。 [SCOPE.gsInterestGroup('landowner_ig').GetName] で返された家主は、必然的な権利をプッシュしています。 ウイルスに感染した領域では、貧困が集中しています。"
+ covid.8.f: "パンデミック内のパンデミック。"
+ covid.8.a: "賃貸料の凍結と脱退モレチウムを課す"
+ covid.8.b: "社会的セキュリティと失業のメリットを拡大"
+ covid.8.c: "市場はそれを整理します"
+ 
+ # ==========================================
+ # covid.9 — ANTI-MASK RESISTANCE
+ # ==========================================
+ 
+ covid.9.t: "アンチロックダウンプロテスト"
+ covid.9.d: "[SCOPE.gsInterestGroup('anti_mask_ig').GetName] は [SCOPE.sCharacter('anti_mask_ig_leader').GetFullName] によって導かれる、[ROOT.GetCountry.GetName] のパンデミックの制限に対する大量プロテスを組織しました。 自分の立場:ロックダウンとマスクの義務は政府の過度であり、経済的被害は健康上のリスクよりも大きい、そして市民は自分の選択肢を作る権利を持っています。\n\n プロテスは成長しています。 [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] の応答が優先されます。"
+ covid.9.f: "マスク。 選んだ丘。"
+ covid.9.a: "保有会社 — 制限滞在"
+ covid.9.b: "スタンドダウン — 制限を解除"
+ covid.9.c: "委員会の科学的再生と公衆衛生キャンペーン"
+ 
+ # ==========================================
+ # DECISION
+ # ==========================================
+ 
+ covid_response: "COVID-19 応答"
+ covid_response_desc: "[ROOT.GetCountry.GetName] のポリシーを設定し、COVID-19 パンデミックを管理します。 状況が変化するにつれて、この決定は6ヶ月ごとに方針を調整することができます。"
+ 
+ ### second american civil war 
+ 
+ ALK:0 "アラスカ"
+ ALK_ADJ:0 "アラスカ"
+ REA:0 "レッドアメリカ"
+ REA_ADJ:0 "レッドアメリカン"
+ BAM:0 "ブルーアメリカ"
+ BAM_ADJ:0 "ブルーアメリカン"
+ je_the_great_polarization:0 "極性偏光"
+ je_the_great_polarization_reason:0 "アメリカの政治は、エスカレート偏光の期間を入力します。 \n------------------------------------------------------------------------- \n 偏光: #v [Country.MakeScope.Var('great_polarization_intensity').GetValue]#!。 \n 機関の信頼: #v [Country.MakeScope.Var('great_polarization_institutional_trust').GetValue] #! \n 左圧力: #v #v 機関の信頼: #v #v [Country.MakeScope.Var('great_polarization_institutional_trust').GetValue] #! #! #!"
+ great_polarization_status_right_president:0 "右翼の在留資格は、リベラル、社会主義者、共産主義者、そして少数民族の運動を活性化しています。"
+ great_polarization_status_left_president:0 "左翼の優先順位は、保守的、自由主義的、伝統主義者、名声主義者、宗教的虐待運動を活気づけています。"
+ great_polarization_status_unstable_center:0 "壊れやすいセンターは偏光を含むのに苦労します。"
+ great_polarization_depolarized_tt:0 "偏光を #v 15#! に減らし、 #v 80#! または 2035 以降に高くなります。 現在の偏光: #v [Country.MakeScope.Var('great_polarization_intensity').GetValue]#!。 現在の信頼: #v [Country.MakeScope.Var('great_polarization_institutional_trust').GetValue]#!#!"
+ great_polarization_civil_war_tt:0 "第2回アメリカ民戦が始まりました。"
+ je_second_american_civil_war:0 "第二アメリカの市民戦争"
+ je_second_american_civil_war_reason:0 "米国は、ライバル政府に偽造されています。 レッド・アメリカとブルー・アメリカは主要な戦闘員であり、ブレイクアウト状態は外交的な提案を通してコートすることができます。"
+ second_american_civil_war_status:0 "ユニオンは、防腐剤です。"
+ second_american_civil_war_blue_status:0 "ブルー・アメリカは、暴動状態を上回る中、リベラル社会の民主的な秩序を維持しようとしています。"
+ second_american_civil_war_red_status:0 "レッド・アメリカは、暴露状態を上回る一方で、保守的なアメリカの統合を目指しています。"
+ second_american_civil_war_complete_header:0 "レッド・アメリカまたはブルー・アメリカが破壊されたり、アネックスしたり、サブレフトされたりすると、民戦が終わってしまう。"
+ second_american_civil_war_blue_defeated_tt:0 "ブルーアメリカは存在しません。"
+ second_american_civil_war_red_defeated_tt:0 "レッドアメリカは存在しません。"
+ second_american_civil_war_blue_annexed_tt:0 "ブルー・アメリカは、レッド・アメリカに拠点を構えています。"
+ second_american_civil_war_red_annexed_tt:0 "レッド・アメリカは、ブルー・アメリカに拠点を構えています。"
+ great_polarization.1.t:0 "極性偏光"
+ great_polarization.1.d:0 "米国は、メディアの断片化、文化戦争の政治、および異質圏間の相互の恐怖によって運転される政治的偏光の新しい時代に入ります。"
+ great_polarization.1.f:0 "それぞれの選挙は存在します。 あらゆるスキャンダルが証明されます。 すべての悲劇が武器になります。"
+ great_polarization.1.a:0 "中心は割れ始めます。"
+ great_polarization.30.t:0 "ジョージ・フロイドの殺害"
+ great_polarization.30.d:0 "警察によるジョージ・フロイドの殺害は、説明責任、政治的な正義の要求と全国の抗議波を引き起こしました。"
+ great_polarization.30.f:0 "ビデオはローカルに滞在しません。 国民の指示になります。"
+ great_polarization.30.a:0 "通りの噴火。"
+ great_polarization.30.b:0 "深刻な変革を約束します。"
+ great_polarization.31.t:0 "チャップ/チャズ"
+ great_polarization.31.d:0 "シアトルに占有されたプロテクションゾーンが形成され、反ポリス活動主義と状態の回復の恐れの国民の象徴となっています。"
+ great_polarization.31.f:0 "コミュニティ・セルフ・ルレです。 相手に、ミニチュアで倒れます。"
+ great_polarization.31.a:0 "スタンドオフをプレイしましょう。"
+ great_polarization.31.b:0 "ゾーンをクリアします。"
+ great_polarization.32.t:0 "バトラーの暗殺を試みる"
+ great_polarization.32.d:0 "ペンシルバニア州ブトラのラリーでドナルド・トランプの思いやりを試みたペンシルバニア州は政治的暴力と復讐の恐怖を脅かしています。"
+ great_polarization.32.f:0 "画像は事実よりも速く移動します。"
+ great_polarization.32.a:0 "怒りの正しい性格。"
+ great_polarization.32.b:0 "国民の落ち着きのためのアピール。"
+ great_polarization.33.t:0 "キングスなし"
+ great_polarization.33.d:0 "スローガン「ノーキングス」の下の質量デモンストレーションは、全国のストリートを埋め、サポーターが民主主義の防衛と対戦相手によってデ安定化抵抗として組み込まれています。"
+ great_polarization.33.f:0 "それが違いを忘れてしまったことを恐れている共和国でmonarchyに対する群衆のチャント。"
+ great_polarization.33.a:0 "動きは広がります。"
+ great_polarization.33.b:0 "対向を防衛する。"
+ great_polarization.34.t:0 "ミネソタ州ローメーカーがターゲット"
+ great_polarization.34.d:0 "ミネソタ州の法律事務所を対象とするシューティングは、政治争議が組織的な暴力に立ち向かう国民の恐れを深めています。"
+ great_polarization.34.f:0 "ドアステップはフロントラインになります。"
+ great_polarization.34.a:0 "セキュリティは政治になります。"
+ great_polarization.34.b:0 "スペクトルを横断して政治的暴力を非難する。"
+ great_polarization.35.t:0 "チャーリー・カーク・アサイン"
+ great_polarization.35.d:0 "パブリックイベントで話しながら、チャーリー・カークの暗唱は、アメリカのエスケープ政治危機のフラッシュポイントとなっています。"
+ great_polarization.35.f:0 "マイクがサイレントに落ち、動きが大きくなる。"
+ great_polarization.35.a:0 "正しいラジカル。"
+ great_polarization.35.b:0 "殺害を非難し、温度を下げます。"
+ great_polarization.36.t:0 "アイスシューティング"
+ great_polarization.36.d:0 "連邦移民エージェント関与の致命的な射撃は、反ICE の抗議をトリガーしました。, 国家の不足, 連邦電力上の激しい引数."
+ great_polarization.36.f:0 "バッジは引数になります。"
+ great_polarization.36.a:0 "抗議が広がる。"
+ great_polarization.36.b:0 "業務の中断と調査"
+ great_polarization.37.t:0 "議決権行使"
+ great_polarization.37.d:0 "最高裁判所の判決は、投票権法を鋭く弱め、軽度の投票権力が2026選挙前に解体されるという告発を無視しています。"
+ great_polarization.37.f:0 "裁判所は教義で語っています。 国は力を聞く。"
+ great_polarization.37.a:0 "信頼の崩壊。"
+ great_polarization.37.b:0 "緊急のvotingライトの法律を浄化して下さい。"
+ great_polarization.100.t:0 "第二アメリカの市民戦争"
+ great_polarization.100.d:0 "革命的な危機は米国を破壊しました。 連邦当局は競争し、武装事実は、国をライバル政府に追いつくために始まります。"
+ great_polarization.100.f:0 "組合が生き残る可能性があるかどうかを尋ねた最初の市民戦争。 2 番目はユニオンが何であるかを尋ねます。"
+ great_polarization.100.a:0 "ユニオンのひび。"
+ great_polarization.120.t:0 "ブルーアメリカからのオファー"
+ great_polarization.120.d:0 "Blue Americaは、市民戦争の側面に加わり、認識、保護、戦争の協力を提供しています。"
+ great_polarization.120.f:0 "地図が燃えているとき、中立性は保つのは難しいです。"
+ great_polarization.120.a:0 "Blue Americaに参加"
+ great_polarization.120.b:0 "残ります。"
+ great_polarization.121.t:0 "レッドアメリカからのオファー"
+ great_polarization.121.d:0 "レッド・アメリカは、市民戦争の側面に加わり、認識、保護、戦争の協力を提供しています。"
+ great_polarization.121.f:0 "問題は、戦うかどうかではありませんが、そのフラグの下で。"
+ great_polarization.121.a:0 "レッド・アメリカに参加"
+ great_polarization.121.b:0 "残ります。"
+ 2acw_offer_new_africa_blue_tt:0 "新規アフリカ認証、市民権保証、およびブルーアメリカへの交換における警告保護を提供します。"
+ 2acw_offer_new_africa_red_tt:0 "レッド・アメリカに加盟するための交換で、新しいアフリカの自律性と警告保護を提供します。"
+ 2acw_offer_navajo_blue_tt:0 "ナバホの認知と保護された自律性をBlue Americaに交換する。"
+ 2acw_offer_navajo_red_tt:0 "ナバホの認知と保護された自律性をRed Americaに交換できます。"
+ 2acw_offer_california_blue_tt:0 "カリフォルニアを招待して、ブルーの石炭に正式に参加。"
+ 2acw_offer_texas_red_tt:0 "テキサス州を招待して、赤の石炭に正式に参加。"
+ 2acw_offer_hawaii_blue_tt:0 "ブルー・アメリカに加わり、ハワイでハワイのプロテクションを提供。"
+ 2acw_offer_hawaii_red_tt:0 "ハワイは、レッド・アメリカに加盟する際のハワイで保護します。"
+ 2acw_offer_alaska_blue_tt:0 "Blue Americaに加入する交換でAlaska保護を提供します。"
+ 2acw_offer_alaska_red_tt:0 "レッド・アメリカに加わる交換でアラスカ保護を提供します。"
+ great_polarization_baseline:0 "極性偏光"
+ great_polarization_right_wing_president:0 "右翼の在留資格"
+ great_polarization_left_wing_president:0 "左翼の残留"
+ great_polarization_event_violence:0 "政治違反"
+ great_polarization_reform_concessions:0 "フォームの必要"
+ great_polarization_minorities_targeted:0 "対象となる少数民族"
+ great_polarization_online_radicalization:0 "オンラインラジカル化"
+ second_american_civil_war_outbreak:0 "第二アメリカの市民戦争"
+ Blue_American_Federal_Forces:0 "青いアメリカの連邦軍"
+ Red_American_State_Guards:0 "赤いアメリカの州の監視"
+ California_State_Defense_Forces:0 "カリフォルニア州防衛部隊"
+ Texas_State_Guard:0 "テキサス州の州の監視"
+ New_African_Liberation_Forces:0 "新しいアフリカ解放力"
+ Navajo_Defense_Forces:0 "ナバホ防衛部隊"
+ Hawaii_Defense_Forces:0 "ハワイ防衛部隊"
+ Alaska_Defense_Forces:0 "アラスカ防衛部隊"
+ 2acw_blue_alignment_treaty:0 "ブルー・アメリカ・アライメント"
+ 2acw_red_alignment_treaty:0 "レッド・アメリカ・アライメント"
+ second_american_civil_war:0 "第二アメリカの市民戦争"
+ je_the_great_polarization:0 "極性偏光"
+ je_the_great_polarization_reason:0 "アメリカの政治は、エスカレート偏光の期間を入力します。 \n 偏光: #v [Country.MakeScope.Var('great_polarization_intensity').GetValue]#! 。 \n 機関の信頼: #v [Country.MakeScope.Var('great_polarization_institutional_trust').GetValue]#! 。 \n 左圧力: #v [Country.MakeScope.Var('great_polarization_left_pressure').GetValue] #! #! [Country.MakeScope.Var('great_polarization_institutional_trust').GetValue] #!\n \n"
+
+ great_polarization_status_right_president:0 "右翼の在留資格は、リベラル、社会主義者、共産主義者、そして少数民族の運動を活性化しています。"
+ great_polarization_status_left_president:0 "左翼の優先順位は、保守的、自由主義的、伝統主義者、名声主義者、宗教的虐待運動を活気づけています。"
+ great_polarization_status_unstable_center:0 "壊れやすいセンターは偏光を含むのに苦労します。"
+
+ great_polarization_complete_header:0 "危機が悪用される場合、または米国が市民戦争に崩壊した場合、大きな偏光は終わります。"
+ great_polarization_depolarized_tt:0 "偏光を #v 15#! に減らし、 #v 80#! 以上を上げます。 現在の偏光: #v [Country.MakeScope.Var('great_polarization_intensity').GetValue]#!。 現在の信頼: #v [Country.MakeScope.Var('great_polarization_institutional_trust').GetValue] #!#!#!"
+ great_polarization_civil_war_tt:0 "第2回アメリカ民戦が始まりました。"
+
+ je_second_american_civil_war:0 "第二アメリカの市民戦争"
+ je_second_american_civil_war_reason:0 "米国は新しい市民戦争に入った。 このジャーナルエントリは、次のデザインパスの足場です, 地域のアメリカのブレイクアウト途上国が作成され、互いに戦うために作られます."
+ second_american_civil_war_status:0 "ユニオンは、防腐剤です。"
+ second_american_civil_war_placeholder_tt:0 "プレースホルダ:次の実装パスでブレイクアウトしたアメリカの国、軍隊、戦争を作成します。"
+
+ great_polarization.1.t:0 "極性偏光"
+ great_polarization.1.d:0 "米国は、メディアの断片化、文化戦争の政治、および異質圏間の相互の恐怖によって運転される政治的偏光の新しい時代に入ります。"
+ great_polarization.1.f:0 "それぞれの選挙は存在します。 あらゆるスキャンダルが証明されます。 すべての悲劇が武器になります。"
+ great_polarization.1.a:0 "中心は割れ始めます。"
+
+ great_polarization.2.t:0 "ポリチカルモチベーションマス撮影"
+ great_polarization.2.d:0 "政治の錬術に縛られた大量撮影は、国をショックしました。 競争の事実はすぐに非難、保証、市民の自由、およびideologyに論じます。"
+ great_polarization.2.f:0 "死者が喪失する。 葬儀が始まる前に、物語が求められます。"
+ great_polarization.2.a:0 "アウトレイジは分割をフィードします。"
+ great_polarization.2.b:0 "深刻なバイパルトマンの反応を見てください。"
+
+ great_polarization.3.t:0 "アッセンシングを試みる"
+ great_polarization.3.d:0 "政治的な人物の暗示が政治的暴力が正常化される恐れを提起しました。"
+ great_polarization.3.f:0 "ショットは、そのターゲットを逃したが、共和国を襲った。"
+ great_polarization.3.a:0 "国のリコイル。"
+ great_polarization.3.b:0 "保護セキュリティの拡大"
+
+ great_polarization.4.t:0 "Algorithmic Outrage(アルゴリズム)"
+ great_polarization.4.d:0 "ソーシャルメディアプラットフォームは、政治的な攻撃を増幅し、何百万を根本的なコンテンツ、陰謀ネットワーク、およびアイデンティティ主導の対向動を発揮しています。"
+ great_polarization.4.f:0 "飼料は説得しません。 エスカレーター。"
+ great_polarization.4.a:0 "残留機械が加速します。"
+ great_polarization.4.b:0 "圧力プラットフォームを適度に。"
+
+ great_polarization.5.t:0 "万博の波"
+ great_polarization.5.d:0 "強力な数字に対する公序良俗の波は、虐待、性別、および機関的な偽りに対する国民の反論を引き起こしました。"
+ great_polarization.5.f:0 "ウィスパードが検索できるようになりました。"
+ great_polarization.5.a:0 "リコーニングは広がります。"
+ great_polarization.5.b:0 "説明責任のための機関チャネルを構築します。"
+
+ great_polarization.6.t:0 "対象となる少数民族"
+ great_polarization.6.d:0 "少数民族のコミュニティに対する敵意のサージは、抗議、対抗議、そして危機主義、アイデンティティ、および国の持ち物に対する更新された議論をトリガーしました。"
+ great_polarization.6.f:0 "いくつかはバックラッシュです。 他の人にとって、それは生存です。"
+ great_polarization.6.a:0 "道路は再び埋めます。"
+ great_polarization.6.b:0 "バックラッシュを非難し、温度を下げます。"
+
+ great_polarization.20.t:0 "温度の滝"
+ great_polarization.20.d:0 "偏光は消えていませんが、最も危険なスパイラルが中断されています。 政治機関は、いくつかの合法性を取り戻しました."
+ great_polarization.20.f:0 "市民が同意するので、市民が生き残っているが、それらが十分に失うを受け入れるため。"
+ great_polarization.20.a:0 "ユニオンの耐えます。"
+
+ great_polarization.21.t:0 "ダイド・エントレンケ"
+ great_polarization.21.d:0 "即時危機は市民戦争に爆発していませんが、偏光はアメリカの政治生活に埋め込まれています。"
+ great_polarization.21.f:0 "発熱は壊れませんでした。 慢性になりました。"
+ great_polarization.21.a:0 "新しいノーマル。"
+
+ great_polarization.100.t:0 "第二アメリカの市民戦争"
+ great_polarization.100.d:0 "革命的な危機は米国を破壊しました。 連邦当局は競争し、武装事実は、国をライバル政府に追いつくために始まります。"
+ great_polarization.100.f:0 "組合が生き残る可能性があるかどうかを尋ねた最初の市民戦争。 2 番目はユニオンが何であるかを尋ねます。"
+ great_polarization.100.a:0 "ユニオンのひび。"
+
+ great_polarization_baseline:0 "極性偏光"
+ great_polarization_baseline_desc:0 "政治的な雰囲気はますます激化し、反応する。"
+
+ great_polarization_right_wing_president:0 "右翼の在留資格"
+ great_polarization_right_wing_president_desc:0 "右翼の社長は、精力化されたリベラル、社会主義者、コミュニスト、そして少数民族の権益運動を持っています。"
+
+ great_polarization_left_wing_president:0 "左翼の残留"
+ great_polarization_left_wing_president_desc:0 "左翼の社長は、精力的な保守的、自由主義者、伝統主義者、名声主義者、宗教的悪性反対運動を持っています。"
+
+ great_polarization_divided_media:0 "拡張偏光"
+ great_polarization_divided_media_desc:0 "メディア環境は、政治的なキャンプを互いに隔離し続けます。"
+
+ great_polarization_attempted_assassination:0 "アッセンシングを試みる"
+ great_polarization_attempted_assassination_desc:0 "政治の暴力は、公共の信頼を揺さげています。"
+
+ great_polarization_mass_shooting_aftermath:0 "ポリチカルモチベーションマス撮影"
+ great_polarization_mass_shooting_aftermath_desc:0 "政治的なモチベーションのマスカレーは社会的な葛藤を深くしました。"
+
+ great_polarization_reform_concessions:0 "フォームの必要"
+ great_polarization_reform_concessions_desc:0 "重大な改革反応は政治的緊張を下げました。"
+
+ great_polarization_security_crackdown:0 "セキュリティクラックダウン"
+ great_polarization_security_crackdown_desc:0 "拡張されたセキュリティ対策は、バックラッシュを危険にしながら、状態の圧力が増加しました。"
+
+ great_polarization_online_radicalization:0 "オンラインラジカル化"
+ great_polarization_online_radicalization_desc:0 "社会的プラットフォームは、政治的動員と不足を加速しています。"
+
+ great_polarization_minorities_targeted:0 "対象となる少数民族"
+ great_polarization_minorities_targeted_desc:0 "少数民族のコミュニティは、高い敵性を高め、応答を整理しています。"
+
+ great_polarization_metoo_mobilization:0 "パブリックレッカー"
+ great_polarization_metoo_mobilization_desc:0 "公共の露出の波は動員された口径および根本的な動きを備えています。"
+
+ second_american_civil_war_outbreak:0 "第二アメリカの市民戦争"
+ second_american_civil_war_outbreak_desc:0 "米国は革命的な紛争に陥りました。"
+ 
+ state_pop_support_movement_centrist_add:0 "Centristの動きポップアトラクション"
+ state_pop_support_movement_conservative_add:0 "保守的な運動ポップアトラクション"
+ state_pop_support_movement_cultural_majority_add:0 "文化的重要性運動ポップアトラクション"
+ state_pop_support_movement_fascist_add:0 "ファシストの動きポップアトラクション"
+ state_pop_support_movement_liberal_add:0 "自由運動ポップアトラクション"
+ state_pop_support_movement_liberal_conservative_add:0 "リベラルコンサベーティブムーブメントポップアトラクション"
+ state_pop_support_movement_libertarian_add:0 "リベルタリアン運動ポップアトラクション"
+ state_pop_support_movement_social_democratic_add:0 "社会的民主運動ポップアトラクション"
+ state_pop_support_movement_traditionalist_add:0 "伝統運動ポップアトラクション"
+ state_pop_support_movement_centrist_add_desc:0 "Centristの動きにポップな魅力を変えます。"
+ state_pop_support_movement_conservative_add_desc:0 "保守的な動きに向かってポップアップアトラクションを変更します。"
+ state_pop_support_movement_cultural_majority_add_desc:0 "文化大国の動きにポップな魅力を変化させます。"
+ state_pop_support_movement_fascist_add_desc:0 "ファシストの動きに向かってポップアップアトラクションを変更します。"
+ state_pop_support_movement_liberal_add_desc:0 "リベラル運動へのポップアップアトラクションを変更します。"
+ state_pop_support_movement_liberal_conservative_add_desc:0 "リベラル・コンサベーティブ・ムーブメントへのポップアップ・アトラクション変更"
+ state_pop_support_movement_libertarian_add_desc:0 "リベルタリアンの動きに向かってポップアップアトラクションを変更します。"
+ state_pop_support_movement_social_democratic_add_desc:0 "社会的民主主義運動へのポップアップアトラクションを変更します。"
+ state_pop_support_movement_traditionalist_add_desc:0 "伝統の動きにポップな魅力を変化させます。"
+ 
+ great_polarization.130.t:0 "鉛ブルーアメリカ?"
+ great_polarization.130.d:0 "米国では、政権の自由または中心左の文字がブルーアメリカに最も近いところにある。 あなたは、ブルーアメリカとして戦争を続けるか、アメリカ合衆国の残骸に残っている可能性があります。"
+ great_polarization.130.f:0 "政府は継続を主張することができますが、まだ従う機関に電力が従います。"
+ great_polarization.130.a:0 "ブルーアメリカへの切り替え"
+ great_polarization.130.b:0 "米国に在住。"
+
+ great_polarization.131.t:0 "リードレッドアメリカ?"
+ great_polarization.131.d:0 "米国では、連邦政府の右翼の文字がRed Americaに最も近いところにある。 戦争を継続する可能性があります。 レッド・アメリカ またはアメリカ合衆国の居住者と残っている。"
+ great_polarization.131.f:0 "フラグは同じ形状ですが、変更した国は同じです。"
+ great_polarization.131.a:0 "レッドアメリカへの切り替え"
+ great_polarization.131.b:0 "米国に在住。"
+
+ great_polarization_switch_blue_tt:0 "#bold Blue America#! に国を切り替えます。"
+ great_polarization_switch_red_tt:0 "国を #bold Red America#! に切り替えます。"
+ great_polarization_stay_usa_tt:0 "米国のままにします。"
+
+ great_polarization_complete_header:0 "危機が悪用される場合、または米国が市民戦争に崩壊した場合、大きな偏光は終わります。"
+ 
+ great_polarization.38.t:0 "U.S キャピトル 包囲された"
+ great_polarization.38.d:0 "群衆は、苦しく競争された選挙の後、米国のカピトールを歪め、国を衝撃し、政治的な紛争が憲法上の拘束によって破壊される恐れを深めています。"
+ great_polarization.38.f:0 "ルーンダはシンボルの戦場になります。"
+ great_polarization.38.a:0 "パブリック・トレンブルズ"
+ great_polarization.38.b:0 "攻撃を非難し、信頼を再構築する。"
+ 
+ ## other western countries
+ 
+ je_rise_of_the_right:0 "右側の上昇"
+ je_rise_of_the_right_reason:0 "ウェスト全体で、右翼のポピュリストの動きは、メディアの断片、移行のバックラッシュ、文化戦争の政治、および抗establishmentの回復を通して強さを得ています。 2035年までに、右翼の動きは強く、右翼のポピュリストのリーダーは出現する可能性が高い。"
+
+ rise_of_the_right_status_baseline:0 "右翼の動きは強さを得ています。"
+ rise_of_the_right_status_strong:0 "右翼のポピリストサージは、国家の政治を再構築しています。"
+ rise_of_the_right_completion_header:0 "2035年以降は、この波のサブサイド。"
+ rise_of_the_right_ends_2035_tt:0 "#bold 1月 1, 2035#! の後の右端の上昇。"
+ rise_of_the_right_spawnrate_tt:0 "右翼のポピュリストのリーダーのスプーン率が増加しました。 正確なスプーン重量は、イドロジー/キャラクタースプーンファイルで手動で処理されます。"
+
+ rise_of_the_right.1.t:0 "右側の上昇"
+ rise_of_the_right.1.d:0 "右翼のポピリスト電流が全国の政治に入りました。 機関の不信、エリツ、文化的バックラッシュ、および断片メディア環境での怒りから強さを引き出します。"
+ rise_of_the_right.1.f:0 "古き良きパーティーはオフィスを構えています。 新たな政治は、クラウドの保持方法を学習しています。"
+ rise_of_the_right.1.a:0 "政治センターはもはや安全ではありません。"
+
+ rise_of_the_right.10.t:0 "アルゴリスミック・アナガー"
+ rise_of_the_right.10.d:0 "オンライン政治ネットワークは、反establishmentの不足を増幅し、右の翼のポピリストの動きを伝統的なパーティーの外部を整理する新しい方法を与えます。"
+ rise_of_the_right.10.f:0 "フィードはラリーになります。 グリーヴァンスはプラットフォームとなります。"
+ rise_of_the_right.10.a:0 "時代は広がります。"
+ rise_of_the_right.10.b:0 "市民の機関を経由して戻ってプッシュ."
+
+ rise_of_the_right.11.t:0 "移行バックラッシュ"
+ rise_of_the_right.11.d:0 "移民、統合、国家のアイデンティティに対する怒りの衝動は、正しい動きを強化しました。"
+ rise_of_the_right.11.f:0 "境界は、古い秩序が答えられないすべての恐怖のシンボルになります。"
+ rise_of_the_right.11.a:0 "バックラッシュは成長します。"
+ rise_of_the_right.11.b:0 "議論をデエスカレート."
+
+ rise_of_the_right.12.t:0 "ポピュラーズブレイクスルー"
+ rise_of_the_right.12.d:0 "右翼のポピリストファクションは、その言語とアジェンダに応答するために主流のパーティーを強制し、古いパーティーシステムを介して壊れています。"
+ rise_of_the_right.12.f:0 "お部屋の外に一度はありました。 そもそもそもそもそも部屋が建てられています。"
+ rise_of_the_right.12.a:0 "正しいサージ。"
+ rise_of_the_right.12.b:0 "センターを再構築します。"
+
+ rise_of_the_right.13.t:0 "ストリート政治"
+ rise_of_the_right.13.d:0 "宣言、対称の儀式、およびウイルスの対立は、政治が議会や通りに出て移動してきた感覚を深化しました。"
+ rise_of_the_right.13.f:0 "チャントは、その幼い形のポリシーです。"
+ rise_of_the_right.13.a:0 "通りは根本化します。"
+ rise_of_the_right.13.b:0 "温度を冷却して下さい。"
+
+ rise_of_the_right_baseline:0 "右側の上昇"
+ rise_of_the_right_baseline_desc:0 "右翼の動きは、全国の政治の強みを身につけています。"
+
+ rise_of_the_right_populist_surge:0 "右翼ポピュリストサージ"
+ rise_of_the_right_populist_surge_desc:0 "右翼のポピュリストは政治的な風景を再構築しています。"
+
+ rise_of_the_right_migration_backlash:0 "移行バックラッシュ"
+ rise_of_the_right_migration_backlash_desc:0 "移民と国家のアイデンティティは、政治動員の中央のドライバーになりました."
+
+ rise_of_the_right_online_radicalization:0 "アルゴリスミック・アナガー"
+ rise_of_the_right_online_radicalization_desc:0 "オンライン外傷は、右翼の政治動員を加速しています。"
+
+ rise_of_the_right_establishment_response:0 "営業体制"
+ rise_of_the_right_establishment_response_desc:0 "主流機関は、ポップアップサージを吸収または無効化しようとしています。"
+
+ rise_of_the_right_populist_leader_spawn_tooltip_modifier:0 "右翼ポピリストオープニング"
+ rise_of_the_right_populist_leader_spawn_tooltip_modifier_desc:0 "右翼のポピュリストのリーダーのスプーン率が増加しました。 実際のイデオロギーは、手動で処理されます。"
+ 

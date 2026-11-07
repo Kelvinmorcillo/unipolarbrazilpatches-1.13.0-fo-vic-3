@@ -1,0 +1,72 @@
+﻿je_oil_titans = {
+	icon = "gfx/interface/icons/event_icons/oil.dds"
+ 
+	group = je_group_foreign_policy
+ 
+	should_be_pinned_by_default_uninvolved_or_context = yes
+ 
+	is_shown_when_inactive = {
+		OR = {
+			c:SAU ?= this
+			c:KUW ?= this
+			c:UAE ?= this
+			c:QAT ?= this
+			c:BHR ?= this
+		}
+	}
+ 
+	possible = {
+		OR = {
+			c:SAU ?= this
+			c:KUW ?= this
+			c:UAE ?= this
+			c:QAT ?= this
+			c:BHR ?= this
+		}
+	}
+ 
+	should_be_involved = {
+		OR = {
+			c:SAU ?= this
+			c:KUW ?= this
+			c:UAE ?= this
+			c:QAT ?= this
+			c:BHR ?= this
+		}
+	}
+ 
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = oil_titans_top3_tt
+				trigger = {
+					"goods_production_rank(g:oil)" <= 3
+				}
+			}
+			triggered_desc = {
+				desc = oil_titans_top10_tt
+				trigger = {
+					"goods_production_rank(g:oil)" <= 10
+				}
+			}
+			triggered_desc = {
+				desc = oil_titans_outside_tt
+			}
+		}
+	}
+ 
+	complete = {
+		"goods_production_rank(g:oil)" <= 3
+	}
+ 
+	on_complete = {
+		add_modifier = {
+			name = oil_titans_bonus
+			months = -1
+		}
+	}
+ 
+	transferable = no
+	can_revolution_inherit = no
+	weight = 7000
+}

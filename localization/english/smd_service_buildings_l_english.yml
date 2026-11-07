@@ -1,0 +1,325 @@
+﻿l_english:
+
+
+ # BUILDINGS
+ 
+ building_bank:0 "Commercial Bank"
+ building_bank_desc:0 "A financial institution that accepts deposits, manages credit, and facilitates the flow of capital throughout the economy. From humble lending houses to sprawling digital networks, banks are the backbone of modern commerce."
+
+ building_food_service:0 "Food Services"
+ building_food_service_desc:0 "Retail and dining establishments that supply prepared and packaged food to the general population. Encompasses everything from corner groceries to global fast-food chains, keeping citizens fed and satisfied."
+
+ building_retail_services:0 "Retail Services"
+ building_retail_services_desc:0 "A commercial establishment selling furniture, clothing, and tools directly to consumers. Retail stores are the final link in the supply chain, translating industrial output into everyday household goods."
+
+ building_advertising_agency:0 "Advertising Services"
+ building_advertising_agency_desc:0 "A firm specializing in the creation and distribution of promotional content. Advertising agencies shape consumer behavior and drive demand, deploying everything from printed broadsheets to algorithmically targeted digital campaigns."
+
+ building_warehouse:0 "Warehouse"
+ building_warehouse_desc:0 "A large facility for the storage and distribution of goods. Warehouses serve as the logistical hubs of the economy, buffering supply and demand and enabling the efficient movement of products across the country."
+
+ building_pharmaceutical_services:0 "Pharmaceutical Services"
+ building_pharmaceutical_services_desc:0 "An establishment engaged in the dispensing, research, and distribution of medicinal compounds. From apothecary counters to cutting-edge biotech labs, pharmaceutical services translate raw chemical inputs into treatments that sustain public health."
+
+ ####################
+ # PRODUCTION METHOD GROUPS
+ ####################
+
+ ### BANKING
+
+ pmg_base_banking:0 "Banking Operations"
+ pmg_base_banking_desc:0 "The core methods by which the bank accepts deposits, issues credit, and conducts financial transactions with customers and businesses."
+
+ pmg_securities_trading:0 "Securities Trading"
+ pmg_securities_trading_desc:0 "Determines whether the bank engages in the trading and brokerage of financial securities, transforming invested capital into expanded credit."
+
+ pmg_automation_banking:0 "Banking Automation"
+ pmg_automation_banking_desc:0 "The degree to which the bank employs automated systems — from mechanical tellers to artificial intelligence — to process transactions and reduce labor costs."
+
+ ### FOOD SERVICES
+
+ pmg_base_food_services:0 "Grocery Operations"
+ pmg_base_food_services_desc:0 "The primary retail format through which groceries are sold to consumers, ranging from small neighborhood shops to massive online platforms."
+
+ pmg_restaurant_type:0 "Restaurant Type"
+ pmg_restaurant_type_desc:0 "Determines whether the establishment also operates dining facilities, and what kind — from casual local eateries to industrial fast food franchises."
+
+ pmg_food_service_logistics:0 "Food Service Logistics"
+ pmg_food_service_logistics_desc:0 "The checkout and fulfillment methods used by food service establishments, including labor-saving self-checkout systems and delivery infrastructure."
+
+ ### RETAIL
+
+ pmg_base_retail:0 "Retail Format"
+ pmg_base_retail_desc:0 "The scale and format of the retail operation, from small independent shops to enormous big-box stores and outlet centers."
+
+ pmg_retail_specialization:0 "Retail Specialization"
+ pmg_retail_specialization_desc:0 "Determines whether the retail store focuses on a particular category of goods, such as home furnishings, electronics, or luxury items."
+
+ pmg_retail_logistics:0 "Retail Logistics"
+ pmg_retail_logistics_desc:0 "The checkout and fulfillment methods used by retail establishments, including self-checkout terminals, e-commerce platforms, and autonomous delivery."
+
+ ### ADVERTISING
+
+ pmg_base_advertising:0 "Advertising Medium"
+ pmg_base_advertising_desc:0 "The primary channel through which the advertising agency distributes its campaigns — print, broadcast, direct mail, or outdoor signage."
+
+ pmg_digital_advertising:0 "Digital Advertising"
+ pmg_digital_advertising_desc:0 "Determines whether the agency has adopted digital advertising methods, from simple web banners to AI-generated hyper-targeted campaigns."
+
+ pmg_advertising_research:0 "Market Research"
+ pmg_advertising_research_desc:0 "The research methods employed to understand and influence consumer behavior, from traditional focus groups to machine-learning-driven analytics."
+
+ ### WAREHOUSING
+
+ pmg_base_warehousing:0 "Warehousing Operations"
+ pmg_base_warehousing_desc:0 "The core storage and distribution methods of the warehouse, from basic manual storage to fully automated fulfillment centers."
+
+ pmg_warehousing_logistics:0 "Inventory Management"
+ pmg_warehousing_logistics_desc:0 "The systems used to track and manage inventory within the warehouse, from handwritten ledgers to AI-driven real-time asset management."
+
+ ### PHARMACEUTICAL SERVICES
+
+ pmg_base_pharmaceutical_services:0 "Dispensing Operations"
+ pmg_base_pharmaceutical_services_desc:0 "The primary method by which pharmaceutical compounds are processed and dispensed to patients, from traditional apothecary work to mail-order distribution."
+
+ pmg_pharmaceutical_research:0 "Drug Research"
+ pmg_pharmaceutical_research_desc:0 "Determines whether the establishment invests in pharmaceutical research, accelerating the development of new treatments and boosting medicinal output."
+
+ pmg_pharmaceutical_automation:0 "Pharmacy Automation"
+ pmg_pharmaceutical_automation_desc:0 "The degree of automation employed in the compounding and dispensing process, from hand-prepared formulations to fully robotic pharmacy systems."
+
+ ####################
+ # PRODUCTION METHODS
+ ####################
+
+ ### BANKING - BASE
+
+ pm_basic_banking:0 "Standard Lending"
+ pm_basic_banking_desc:0 "A simple financial operation offering basic deposit accounts and personal loans, staffed primarily by clerks managing paper ledgers."
+
+ pm_commercial_banking:0 "Commercial Banking"
+ pm_commercial_banking_desc:0 "A fully chartered commercial bank offering a range of financial products to businesses and consumers, with expanded credit creation capacity."
+
+ pm_electronic_transfers:0 "Payday Loans"
+ pm_electronic_transfers_desc:0 "The adoption of electronic payment systems and wire transfers dramatically accelerates the movement of capital, reducing reliance on physical paperwork."
+
+ pm_online_banking:0 "Buy Now, Pay Later"
+ pm_online_banking_desc:0 "Full digitalization of banking operations allows customers to manage accounts and conduct transactions remotely, reducing branch overhead while massively expanding reach."
+
+ ### BANKING - SECURITIES
+
+ pm_no_securities_trading:0 "No Securities Trading"
+ pm_no_securities_trading_desc:0 "The bank focuses solely on deposit and credit operations, with no involvement in financial markets or securities."
+
+ pm_securities_brokerage:0 "Securities Brokerage"
+ pm_securities_brokerage_desc:0 "The bank establishes a brokerage desk, allowing clients to buy and sell financial securities. Consumed securities are channeled into expanded credit generation."
+
+ pm_derivatives_trading:0 "Hedge-Funds"
+ pm_derivatives_trading_desc:0 "The bank trades in complex financial instruments derived from underlying assets. High-risk, high-reward operations that dramatically amplify credit output from securities."
+
+ pm_algorithmic_trading:0 "Quant Trading"
+ pm_algorithmic_trading_desc:0 "Machine-learning algorithms execute trades at superhuman speed, maximizing returns on securities portfolios with minimal human intervention."
+
+ ### BANKING - AUTOMATION
+
+ pm_manual_tellers:0 "Manual Tellers"
+ pm_manual_tellers_desc:0 "Transactions are handled entirely by human tellers at the counter, requiring significant clerical staffing."
+
+ pm_atm_network:0 "ATM Network"
+ pm_atm_network_desc:0 "A network of automated teller machines allows customers to conduct basic transactions without staff, reducing clerical headcount while extending service availability."
+
+ pm_automated_banking_systems:0 "Automated Banking Systems"
+ pm_automated_banking_systems_desc:0 "Back-office operations are computerized, dramatically reducing the need for manual data entry and transaction processing clerks."
+
+ pm_ai_financial_advisors:0 "AI Financial Advisors"
+ pm_ai_financial_advisors_desc:0 "Robo-advisors and AI-driven financial planning tools replace human advisors for the majority of clients, slashing labor costs while increasing credit output."
+
+ ### FOOD SERVICES - BASE
+
+ pm_corner_grocery:0 "Corner Grocery"
+ pm_corner_grocery_desc:0 "Small, neighborhood-level grocery shops offering a limited selection of staple goods. Labor-intensive but with low overhead and strong community ties."
+
+ pm_supermarket:0 "Supermarket"
+ pm_supermarket_desc:0 "Large self-service grocery stores offering a wide variety of goods under one roof, with efficient supply chains enabling higher throughput."
+
+ pm_hypermarket:0 "Superstore"
+ pm_hypermarket_desc:0 "Enormous combined grocery and general merchandise stores, drawing customers from wide catchment areas and operating at massive scale."
+
+ pm_online_grocery:0 "Online Grocery"
+ pm_online_grocery_desc:0 "Groceries are ordered digitally and fulfilled from centralized distribution hubs, enabling a leaner physical footprint and expanded customer reach."
+
+ ### FOOD SERVICES - RESTAURANT
+
+ pm_no_restaurants:0 "No Dining Services"
+ pm_no_restaurants_desc:0 "The establishment focuses solely on grocery retail, with no prepared food or dining options."
+
+ pm_local_restaurants:0 "Local Restaurants"
+ pm_local_restaurants_desc:0 "Independent dining establishments serving prepared meals to local customers, adding modest food service output on top of grocery operations."
+
+ pm_fast_food_chains:0 "Fast Food Chains"
+ pm_fast_food_chains_desc:0 "Standardized, high-throughput quick-service restaurants operating across multiple locations, dramatically scaling food service output through industrial preparation methods."
+
+ pm_fine_dining:0 "Fine Dining"
+ pm_fine_dining_desc:0 "Upscale restaurant operations catering to wealthier clientele, generating premium food service output through skilled labor and high-quality ingredients."
+
+ ### FOOD SERVICES - LOGISTICS
+
+ pm_manual_food_checkout:0 "Manual Checkout"
+ pm_manual_food_checkout_desc:0 "All customer transactions are processed by cashiers at staffed checkout counters, requiring significant labor to service peak demand."
+
+ pm_self_checkout_food:0 "Self-Checkout Terminals"
+ pm_self_checkout_food_desc:0 "Automated self-service checkout kiosks reduce the need for cashier staff, lowering labor costs and increasing throughput during busy periods."
+
+ pm_food_delivery_services:0 "Food Delivery Services"
+ pm_food_delivery_services_desc:0 "A delivery network is established, allowing customers to receive groceries and prepared food at home. Consumes storage capacity to stage orders efficiently."
+
+ pm_drone_food_delivery:0 "Drone Delivery"
+ pm_drone_food_delivery_desc:0 "Autonomous drone fleets replace human delivery drivers, dramatically cutting labor costs while enabling near-instant delivery across service areas."
+
+ ### RETAIL - BASE
+
+ pm_small_shops:0 "Small Shops"
+ pm_small_shops_desc:0 "Independent retail shops selling a modest range of furniture, clothing, and tools to local customers. Simple operations with low overhead."
+
+ pm_department_stores_retail:0 "Department Stores"
+ pm_department_stores_retail_desc:0 "Large multi-floor retail establishments organized into departments, offering a comprehensive range of consumer goods under one roof."
+
+ pm_big_box_retail:0 "Big-Box Retail"
+ pm_big_box_retail_desc:0 "Warehouse-scale retail outlets offering high volumes of goods at competitive prices, relying on bulk purchasing power and efficient logistics."
+
+ pm_outlet_retail:0 "Outlet Centers"
+ pm_outlet_retail_desc:0 "Dedicated retail complexes where brands sell excess and discounted stock directly to consumers, concentrating high shopping traffic in purpose-built destinations."
+
+ ### RETAIL - SPECIALIZATION
+
+ pm_no_retail_specialization:0 "General Retail"
+ pm_no_retail_specialization_desc:0 "The store carries a broad, undifferentiated mix of goods with no particular category focus."
+
+ pm_home_goods_retail:0 "Home Goods Retail"
+ pm_home_goods_retail_desc:0 "The store specializes in furniture and home furnishings, including luxury lines, capturing higher margins on aspirational household purchases."
+
+ pm_electronics_retail:0 "Electronics Retail"
+ pm_electronics_retail_desc:0 "The store specializes in tools and consumer electronics, requiring knowledgeable floor staff and attracting a technically sophisticated clientele."
+
+ pm_luxury_retail:0 "Luxury Retail"
+ pm_luxury_retail_desc:0 "A boutique operation dealing in luxury clothing and furniture, commanding premium prices from wealthy consumers and generating strong retail revenue per unit sold."
+
+ ### RETAIL - LOGISTICS
+
+ pm_manual_retail_checkout:0 "Manual Checkout"
+ pm_manual_retail_checkout_desc:0 "All sales transactions are processed at staffed registers, requiring a full complement of cashier staff."
+
+ pm_self_checkout_retail:0 "Self-Checkout Terminals"
+ pm_self_checkout_retail_desc:0 "Self-service payment kiosks allow customers to process their own transactions, reducing cashier headcount and improving store throughput."
+
+ pm_ecommerce_retail:0 "E-Commerce"
+ pm_ecommerce_retail_desc:0 "An online storefront extends the reach of the retail operation beyond physical footfall, requiring storage infrastructure to stage and fulfill digital orders."
+
+ pm_drone_retail_delivery:0 "Drone Delivery"
+ pm_drone_retail_delivery_desc:0 "Autonomous drone delivery replaces last-mile couriers, sharply cutting delivery labor costs while accelerating fulfillment times for online orders."
+
+ ### ADVERTISING - BASE
+
+ pm_print_advertising:0 "Obnoxious Billboards"
+ pm_print_advertising_desc:0 "Campaigns distributed through newspapers, magazines, and printed materials. Paper-intensive but effective at reaching literate mass audiences."
+
+ pm_broadcast_advertising:0 "Broadcast Advertising"
+ pm_broadcast_advertising_desc:0 "Radio and television advertisements reach vast audiences simultaneously, requiring investment in intellectual property and technical production talent."
+
+ pm_direct_mail_advertising:0 "Direct Mail"
+ pm_direct_mail_advertising_desc:0 "Targeted promotional materials sent directly to consumer addresses. High paper consumption but allows for demographic targeting not possible with broadcast media."
+
+ pm_outdoor_advertising:0 "Electronic Billboards"
+ pm_outdoor_advertising_desc:0 "Billboards, posters, and signage placed in high-traffic areas to build brand awareness at scale. Requires physical installation labor across wide areas."
+
+ ### ADVERTISING - DIGITAL
+
+ pm_no_digital_advertising:0 "No Digital Advertising"
+ pm_no_digital_advertising_desc:0 "The agency operates exclusively through traditional media channels and has not adopted digital advertising methods."
+
+ pm_banner_advertising:0 "Web Banner Advertising"
+ pm_banner_advertising_desc:0 "Static and animated banner advertisements placed on websites, marking the agency's first steps into the digital advertising ecosystem."
+
+ pm_social_media_advertising:0 "Social Media Advertising"
+ pm_social_media_advertising_desc:0 "Campaigns deployed across social media platforms reach enormous and highly engaged audiences, with intellectual property becoming the primary cost driver over paper."
+
+ pm_algorithmic_targeted_ads:0 "Data Harvesting"
+ pm_algorithmic_targeted_ads_desc:0 "Machine-learning algorithms analyze consumer data to serve individually tailored advertisements, maximizing conversion rates and campaign effectiveness at massive scale."
+
+ ### ADVERTISING - RESEARCH
+
+ pm_focus_groups:0 "Focus Groups"
+ pm_focus_groups_desc:0 "Small panels of representative consumers are convened to test messaging and gauge reactions, providing qualitative insight to guide campaign development."
+
+ pm_consumer_analytics:0 "Consumer Analytics"
+ pm_consumer_analytics_desc:0 "Systematic data collection and statistical analysis of consumer behavior replaces guesswork, allowing campaigns to be refined for maximum impact."
+
+ pm_ai_ad_generation:0 "AI-Generated Content"
+ pm_ai_ad_generation_desc:0 "Artificial intelligence generates and optimizes advertising copy, imagery, and targeting parameters autonomously, dramatically reducing the creative workforce needed while boosting output."
+
+ ### WAREHOUSING - BASE
+
+ pm_basic_warehousing:0 "Basic Storage"
+ pm_basic_warehousing_desc:0 "Simple shelved storage facilities staffed by manual laborers, consuming transportation capacity to receive and dispatch goods."
+
+ pm_climate_controlled_storage:0 "Climate-Controlled Storage"
+ pm_climate_controlled_storage_desc:0 "Temperature and humidity-regulated storage allows for the preservation of sensitive goods, expanding the range of products that can be stored and increasing throughput."
+
+ pm_automated_warehouse:0 "Automated Warehouse"
+ pm_automated_warehouse_desc:0 "Robotic picking systems and automated conveyors replace manual labor for the bulk of storage and retrieval operations, sharply boosting storage output per worker."
+
+ pm_fulfillment_center:0 "Fulfillment Center"
+ pm_fulfillment_center_desc:0 "A high-throughput logistics hub optimized for rapid order processing and dispatch, integrating storage, sorting, packing, and shipping into a single seamless operation."
+
+ ### WAREHOUSING - LOGISTICS
+
+ pm_manual_inventory:0 "Manual Inventory"
+ pm_manual_inventory_desc:0 "Stock is tracked using paper records and physical counts, requiring dedicated clerical staff to maintain accuracy."
+
+ pm_barcode_tracking:0 "Barcode Tracking"
+ pm_barcode_tracking_desc:0 "Barcode scanning systems enable rapid, accurate recording of stock movements, reducing inventory errors and the clerical labor needed to maintain records."
+
+ pm_rfid_tracking:0 "RFID Tracking"
+ pm_rfid_tracking_desc:0 "Radio-frequency identification tags allow real-time, automated tracking of every item in the warehouse without manual scanning, dramatically improving inventory accuracy and throughput."
+
+ pm_ai_inventory_management:0 "AI Inventory Management"
+ pm_ai_inventory_management_desc:0 "Artificial intelligence continuously optimizes stock levels, predicts demand, and automates reordering, reducing waste and eliminating the need for most inventory management staff."
+
+ ### PHARMACEUTICAL SERVICES - BASE
+
+ pm_apothecary:0 "Drugmart"
+ pm_apothecary_desc:0 "A traditional apothecary manually prepares and dispenses medicinal compounds derived from raw botanical and chemical inputs, including opium-derived preparations."
+
+ pm_pharmacy_dispensing:0 "Pharmacy Dispensing"
+ pm_pharmacy_dispensing_desc:0 "A modern pharmacy operating under medical regulation, dispensing standardized pharmaceutical products to patients on prescription."
+
+ pm_hospital_pharmacy:0 "Hospital Pharmacy"
+ pm_hospital_pharmacy_desc:0 "An integrated pharmacy operation serving a hospital or clinic network, handling high volumes of complex prescriptions and specialized formulations."
+
+ pm_mail_order_pharmacy:0 "Mail-Order Pharmacy"
+ pm_mail_order_pharmacy_desc:0 "Prescriptions are fulfilled centrally and dispatched directly to patients by post, enabling wide geographic reach and high order volumes with a lean physical footprint."
+
+ ### PHARMACEUTICAL SERVICES - RESEARCH
+
+ pm_no_drug_research:0 "No Research Program"
+ pm_no_drug_research_desc:0 "The establishment focuses solely on dispensing existing compounds and does not invest in pharmaceutical research or development."
+
+ pm_clinical_trials:0 "tRNA"
+ pm_clinical_trials_desc:0 "The establishment conducts controlled clinical trials of new pharmaceutical compounds, contributing to drug development and expanding its productive output."
+
+ pm_biotech_research:0 "mRNA"
+ pm_biotech_research_desc:0 "Advanced biotechnological research methods accelerate drug discovery, enabling the development of novel treatments and significantly increasing pharmaceutical output."
+
+ pm_gene_therapy:0 "Gene Editing"
+ pm_gene_therapy_desc:0 "Cutting-edge gene editing research enables the development of treatments targeting the root genetic causes of disease, representing the frontier of pharmaceutical science."
+
+ ### PHARMACEUTICAL SERVICES - AUTOMATION
+
+ pm_manual_compounding:0 "Manual Compounding"
+ pm_manual_compounding_desc:0 "Pharmacists manually prepare and measure each prescription by hand, a skilled but time-consuming process requiring significant staffing."
+
+ pm_automated_dispensing:0 "Automated Dispensing"
+ pm_automated_dispensing_desc:0 "Automated dispensing machines handle routine prescription fulfillment, freeing pharmacist staff to focus on complex cases and reducing labor costs."
+
+ pm_robotic_pharmacy:0 "Robotic Pharmacy"
+ pm_robotic_pharmacy_desc:0 "Fully robotic dispensing systems process the vast majority of prescriptions with minimal human intervention, dramatically cutting staffing needs while maximizing output."

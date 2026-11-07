@@ -1,0 +1,997 @@
+﻿######################################## USA (NEW) ########################################
+ 
+# Visa
+company_visa = {
+	icon = "gfx/interface/icons/company_icons/usa/american_visa.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+ 
+	building_types = {
+		building_bank
+		building_professional_service
+	}
+ 
+	extension_building_types = {
+		building_telecommunications
+		building_software_industry
+	}
+ 
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+ 
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_CALIFORNIA
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_bank
+				level >= 3
+			}
+		}
+	}
+ 
+	prosperity_modifier = {
+		building_bank_throughput_add = 0.15
+		country_trade_route_cost_mult = -0.10
+		building_professional_service_throughput_add = 0.10
+	}
+ 
+	ai_weight = {
+		value = 3
+	}
+}
+ 
+# Bear Stearns
+company_bear_stearns = {
+	icon = "gfx/interface/icons/company_icons/usa/american_bear_stearns.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+ 
+	building_types = {
+		building_bank
+		building_professional_service
+	}
+ 
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+ 
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NEW_YORK
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_bank
+				level >= 5
+			}
+		}
+	}
+ 
+	prosperity_modifier = {
+		building_bank_throughput_add = 0.20
+		country_free_charters_add = 1
+		interest_group_ig_industrialists_approval_add = 2
+	}
+ 
+	ai_weight = {
+		value = 3
+	}
+}
+ 
+# MGM
+company_mgm = {
+	icon = "gfx/interface/icons/company_icons/usa/american_mgm.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+ 
+	building_types = {
+		building_art_academy
+		building_professional_service
+	}
+ 
+	extension_building_types = {
+		building_telecommunications
+		building_software_industry
+	}
+ 
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+ 
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_CALIFORNIA
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_art_academy
+				level >= 3
+			}
+		}
+	}
+ 
+	prosperity_modifier = {
+		building_art_academy_throughput_add = 0.15
+		country_influence_mult = 0.10
+		country_authority_add = 150
+	}
+ 
+	ai_weight = {
+		value = 3
+	}
+}
+ 
+# Lehman Brothers
+company_lehman_brothers = {
+	icon = "gfx/interface/icons/company_icons/usa/american_lehman.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+ 
+	building_types = {
+		building_bank
+		building_professional_service
+	}
+ 
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+ 
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NEW_YORK
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_professional_service
+				level >= 5
+			}
+		}
+	}
+ 
+	prosperity_modifier = {
+		building_bank_throughput_add = 0.15
+		building_professional_service_throughput_add = 0.15
+		country_decree_cost_mult = -0.10
+	}
+ 
+	ai_weight = {
+		value = 3
+	}
+}
+ 
+# Pfizer
+company_pfizer = {
+	icon = "gfx/interface/icons/company_icons/usa/pfizer.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+ 
+	building_types = {
+		building_pharmaceutical_services
+		building_chemical_plant
+	}
+ 
+	extension_building_types = {
+		building_professional_service
+	}
+ 
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+ 
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NEW_YORK
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_pharmaceutical_services
+				level >= 3
+			}
+		}
+	}
+ 
+	prosperity_modifier = {
+		building_pharmaceutical_services_throughput_add = 0.20
+		state_mortality_mult = -0.01
+		country_tech_research_speed_mult = 0.05
+	}
+ 
+	ai_weight = {
+		value = 3
+	}
+}
+ 
+# Johnson & Johnson
+company_johnson_and_johnson = {
+	icon = "gfx/interface/icons/company_icons/usa/johnson_and_johnson.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+ 
+	building_types = {
+		building_pharmaceutical_services
+	}
+ 
+	extension_building_types = {
+		building_chemical_plant
+		building_food_industry
+	}
+ 
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+ 
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NEW_YORK
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_pharmaceutical_services
+				level >= 3
+			}
+		}
+	}
+ 
+	prosperity_modifier = {
+		building_pharmaceutical_services_throughput_add = 0.15
+		state_mortality_mult = -0.01
+		state_standard_of_living_add = 1.0
+	}
+ 
+	ai_weight = {
+		value = 3
+	}
+}
+ 
+# Nike
+company_nike = {
+	icon = "gfx/interface/icons/company_icons/usa/nike.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+ 
+	building_types = {
+		building_textile_mill
+		building_retail_services
+	}
+ 
+	extension_building_types = {
+		building_rubber_plantation
+		building_cotton_plantation
+	}
+ 
+	possible_prestige_goods = {
+		prestige_good_nike_shoes
+	}
+ 
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+ 
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_CALIFORNIA
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_retail_services
+				level >= 3
+			}
+		}
+	}
+ 
+	prosperity_modifier = {
+		building_textile_mill_throughput_add = 0.15
+		building_retail_services_throughput_add = 0.10
+		country_influence_mult = 0.10
+	}
+ 
+	ai_weight = {
+		value = 3
+	}
+}
+ 
+# OpenAI
+company_openai = {
+	icon = "gfx/interface/icons/company_icons/usa/american_openai.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+ 
+	building_types = {
+		building_software_industry
+		building_chip_industry
+	}
+ 
+	extension_building_types = {
+		building_professional_service
+		building_art_academy
+	}
+ 
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+ 
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_CALIFORNIA
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_computer_industry
+				level >= 5
+			}
+		}
+	}
+ 
+	prosperity_modifier = {
+		building_computer_industry_throughput_add = 0.15
+		country_tech_research_speed_mult = 0.10
+		country_prestige_mult = 0.08
+	}
+ 
+	ai_weight = {
+		value = 3
+	}
+}
+ 
+# Anthropic
+company_anthropic = {
+	icon = "gfx/interface/icons/company_icons/usa/american_anthropic.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+ 
+	building_types = {
+		building_software_industry
+	}
+ 
+	extension_building_types = {
+		building_chip_industry
+		building_professional_service
+		building_computer_industry
+	}
+ 
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+ 
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_CALIFORNIA
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_computer_industry
+				level >= 5
+			}
+		}
+	}
+ 
+	prosperity_modifier = {
+		building_computer_industry_throughput_add = 0.12
+		country_tech_research_speed_mult = 0.12
+		country_tech_spread_mult = 0.10
+	}
+ 
+	ai_weight = {
+		value = 3
+	}
+}
+
+# alphabet
+company_alphabet = {
+	icon = "gfx/interface/icons/company_icons/usa/american_alphabet.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+ 
+	building_types = {
+		building_software_industry
+	}
+ 
+	extension_building_types = {
+		building_computer_industry
+	}
+ 
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+ 
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_CALIFORNIA
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_computer_industry
+				level >= 5
+			}
+		}
+	}
+ 
+	prosperity_modifier = {
+		building_computer_industry_throughput_add = 0.12
+		country_tech_research_speed_mult = 0.12
+		country_tech_spread_mult = 0.10
+	}
+ 
+	ai_weight = {
+		value = 3
+	}
+}
+ 
+######################################## GERMANY ########################################
+ 
+# Adidas
+company_adidas = {
+	icon = "gfx/interface/icons/company_icons/germany/adidas.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+ 
+	building_types = {
+		building_textile_mill
+		building_retail_services
+	}
+ 
+	extension_building_types = {
+		building_rubber_plantation
+		building_cotton_plantation
+	}
+ 
+	possible_prestige_goods = {
+		prestige_good_adidas_shoes
+	}
+ 
+	potential = {
+		country_has_primary_culture = cu:north_german
+	}
+ 
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_BAVARIA
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_textile_mill
+				level >= 3
+			}
+		}
+	}
+ 
+	prosperity_modifier = {
+		building_textile_mill_throughput_add = 0.15
+		building_retail_services_throughput_add = 0.10
+		country_prestige_mult = 0.08
+	}
+ 
+	ai_weight = {
+		value = 3
+	}
+}
+ 
+######################################## GREAT BRITAIN ########################################
+ 
+# AstraZeneca
+company_astrazeneca = {
+	icon = "gfx/interface/icons/company_icons/britain/astrazeneca.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+ 
+	building_types = {
+		building_pharmaceutical_services
+		building_chemical_plant
+	}
+ 
+	extension_building_types = {
+		building_professional_service
+	}
+ 
+	potential = {
+		country_has_primary_culture = cu:british
+	}
+ 
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_LOWLANDS
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_pharmaceutical_services
+				level >= 3
+			}
+		}
+	}
+ 
+	prosperity_modifier = {
+		building_pharmaceutical_services_throughput_add = 0.20
+		state_mortality_mult = -0.06
+		country_tech_research_speed_mult = 0.08
+	}
+ 
+	ai_weight = {
+		value = 3
+	}
+}
+ 
+######################################## CHINA ########################################
+ 
+# Alibaba
+company_alibaba = {
+	icon = "gfx/interface/icons/company_icons/china/alibaba.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+ 
+	building_types = {
+		building_trade_center
+		building_retail_services
+	}
+ 
+	extension_building_types = {
+		building_telecommunications
+		building_computer_industry
+	}
+ 
+	potential = {
+		country_has_primary_culture = cu:han
+	}
+ 
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_JIANGSU
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_trade_center
+				level >= 3
+			}
+		}
+	}
+ 
+	prosperity_modifier = {
+		building_trade_center_throughput_add = 0.15
+		country_trade_route_competitiveness_mult = 0.15
+		building_retail_services_throughput_add = 0.10
+	}
+ 
+	ai_weight = {
+		value = 3
+	}
+}
+ 
+# Tencent
+company_tencent = {
+	icon = "gfx/interface/icons/company_icons/china/tencent.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+ 
+	building_types = {
+		building_telecommunications
+		building_computer_industry
+	}
+ 
+	extension_building_types = {
+		building_art_academy
+		building_chip_industry
+	}
+ 
+	potential = {
+		country_has_primary_culture = cu:han
+	}
+ 
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_GUANGDONG
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_telecommunications
+				level >= 3
+			}
+		}
+	}
+ 
+	prosperity_modifier = {
+		building_telecommunications_throughput_add = 0.15
+		building_computer_industry_throughput_add = 0.10
+		country_authority_add = 200
+	}
+ 
+	ai_weight = {
+		value = 3
+	}
+}
+ 
+# Ping An Insurance
+company_pingan = {
+	icon = "gfx/interface/icons/company_icons/china/ping_an.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+ 
+	building_types = {
+		building_bank
+		building_professional_service
+	}
+ 
+	potential = {
+		country_has_primary_culture = cu:han
+	}
+ 
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_GUANGDONG
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_bank
+				level >= 3
+			}
+		}
+	}
+ 
+	prosperity_modifier = {
+		building_bank_throughput_add = 0.15
+		building_professional_service_throughput_add = 0.10
+		country_free_charters_add = 1
+	}
+ 
+	ai_weight = {
+		value = 3
+	}
+}
+ 
+# CNPC (China National Petroleum Corporation)
+company_cnpc = {
+	icon = "gfx/interface/icons/company_icons/china/cnpc.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_oil_drills.dds"
+	flavored_company = yes
+ 
+	building_types = {
+		building_oil_rig
+		building_railway
+	}
+ 
+	extension_building_types = {
+		building_coal_mine
+	}
+ 
+	potential = {
+		country_has_primary_culture = cu:han
+	}
+ 
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_BEIJING
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_oil_rig
+				level >= 3
+			}
+		}
+	}
+ 
+	prosperity_modifier = {
+		building_group_bg_oil_extraction_throughput_add = 0.25
+		building_railway_throughput_add = 0.10
+	}
+ 
+	ai_weight = {
+		value = 3
+	}
+}
+ 
+# State Grid Corporation of China
+company_state_grid = {
+	icon = "gfx/interface/icons/company_icons/china/state_grid.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+ 
+	building_types = {
+		building_power_plant
+		building_railway
+	}
+ 
+	extension_building_types = {
+		building_coal_mine
+		building_oil_rig
+	}
+ 
+	potential = {
+		country_has_primary_culture = cu:han
+	}
+ 
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_BEIJING
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_power_plant
+				level >= 3
+			}
+		}
+	}
+ 
+	prosperity_modifier = {
+		building_power_plant_throughput_add = 0.20
+		building_railway_throughput_add = 0.15
+		state_infrastructure_from_population_add = 2
+		state_infrastructure_from_population_max_add = 30
+	}
+ 
+	ai_weight = {
+		value = 3
+	}
+}
+ 
+# Baidu
+company_baidu = {
+	icon = "gfx/interface/icons/company_icons/china/baidu.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+ 
+	building_types = {
+		building_computer_industry
+		building_telecommunications
+	}
+ 
+	extension_building_types = {
+		building_chip_industry
+		building_software_industry
+	}
+ 
+	potential = {
+		country_has_primary_culture = cu:han
+	}
+ 
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_BEIJING
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_computer_industry
+				level >= 3
+			}
+		}
+	}
+ 
+	prosperity_modifier = {
+		building_computer_industry_throughput_add = 0.15
+		country_tech_research_speed_mult = 0.08
+		country_tech_spread_mult = 0.08
+	}
+ 
+	ai_weight = {
+		value = 3
+	}
+}
+ 
+# ByteDance
+company_bytedance = {
+	icon = "gfx/interface/icons/company_icons/china/bytedance.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+ 
+	building_types = {
+		building_telecommunications
+		building_art_academy
+		building_software_industry
+	}
+ 
+	extension_building_types = {
+		building_computer_industry
+	}
+ 
+	potential = {
+		country_has_primary_culture = cu:han
+	}
+ 
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_BEIJING
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_telecommunications
+				level >= 3
+			}
+		}
+	}
+ 
+	prosperity_modifier = {
+		building_telecommunications_throughput_add = 0.15
+		building_art_academy_throughput_add = 0.10
+		country_influence_mult = 0.12
+	}
+ 
+	ai_weight = {
+		value = 3
+	}
+}
+ 
+# Sinopec
+company_sinopec = {
+	icon = "gfx/interface/icons/company_icons/china/sinopec.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_oil_drills.dds"
+	flavored_company = yes
+ 
+	building_types = {
+		building_oil_rig
+		building_chemical_plant
+	}
+ 
+	extension_building_types = {
+		building_synthetics_plant
+	}
+ 
+	potential = {
+		country_has_primary_culture = cu:han
+	}
+ 
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_BEIJING
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_oil_rig
+				level >= 3
+			}
+		}
+	}
+ 
+	prosperity_modifier = {
+		building_group_bg_oil_extraction_throughput_add = 0.20
+		building_chemical_plant_throughput_add = 0.10
+	}
+ 
+	ai_weight = {
+		value = 3
+	}
+}
+ 
+# Xiaomi
+company_xiaomi = {
+	icon = "gfx/interface/icons/company_icons/china/xiaomi.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+ 
+	building_types = {
+		building_electrics_industry
+		building_chip_industry
+	}
+ 
+	extension_building_types = {
+		building_computer_industry
+		building_telecommunications
+		building_software_industry
+	}
+ 
+	possible_prestige_goods = {
+		prestige_good_xiaomi_phones
+	}
+ 
+	potential = {
+		country_has_primary_culture = cu:han
+	}
+ 
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_BEIJING
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_electrics_industry
+				level >= 3
+			}
+		}
+	}
+ 
+	prosperity_modifier = {
+		building_electrics_industry_throughput_add = 0.15
+		building_chip_industry_throughput_add = 0.08
+		country_tech_spread_mult = 0.10
+	}
+ 
+	ai_weight = {
+		value = 3
+	}
+}
+ 
+######################################## IRELAND ########################################
+ 
+# Accenture
+company_accenture = {
+	icon = "gfx/interface/icons/company_icons/ireland/accenture.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+ 
+	building_types = {
+		building_professional_service
+		building_software_industry
+	}
+ 
+	extension_building_types = {
+		building_telecommunications
+		building_computer_industry
+	}
+ 
+	potential = {
+		country_has_primary_culture = cu:irish
+	}
+ 
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_LEINSTER
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_professional_service
+				level >= 3
+			}
+		}
+	}
+ 
+	prosperity_modifier = {
+		building_professional_service_throughput_add = 0.20
+		country_tech_research_speed_mult = 0.08
+		country_bureaucracy_mult = 0.08
+	}
+ 
+	ai_weight = {
+		value = 3
+	}
+}
+ 
+######################################## FRANCE ########################################
+ 
+# TotalEnergies
+company_totalenergies = {
+	icon = "gfx/interface/icons/company_icons/france/totalenergies.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_oil_drills.dds"
+	flavored_company = yes
+ 
+	building_types = {
+		building_oil_rig
+		building_coal_mine
+	}
+ 
+	extension_building_types = {
+		building_chemical_plant
+		building_power_plant
+	}
+ 
+	potential = {
+		country_has_primary_culture = cu:french
+	}
+ 
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_ILE_DE_FRANCE
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_oil_rig
+				level >= 3
+			}
+		}
+	}
+ 
+	prosperity_modifier = {
+		building_group_bg_oil_extraction_throughput_add = 0.25
+		building_power_plant_throughput_add = 0.10
+		country_influence_mult = 0.08
+	}
+ 
+	ai_weight = {
+		value = 3
+	}
+}

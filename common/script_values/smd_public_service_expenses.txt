@@ -1,0 +1,164 @@
+﻿
+smd_public_service_admin_base = {
+	value = 0
+	add = "country_has_building_type_levels(bt:building_government_administration)"
+	min = 1
+}
+
+smd_public_service_pop_factor = {
+	value = smd_population
+	divide = 1000000
+}
+
+
+
+# ================================================================
+# HEALTHCARE
+# ================================================================
+smd_healthcare_expense_value = {
+	value = 0
+
+	if = {
+		limit = {
+			has_institution = institution_health_system
+			OR = {
+				has_law = law_type:law_charitable_health_system
+				has_law = law_type:law_private_health_insurance
+				has_law = law_type:law_public_health_insurance
+			}
+		}
+
+		# PRIMARY: government administration levels
+		value = smd_public_service_admin_base
+		multiply = 12	# per-admin-level cost knob (healthcare)
+
+		# SECONDARY: health institution investment as a small uplift
+		# (each level of investment adds +10% to the admin-driven base)
+		multiply = {
+			value = institution:institution_health_system.investment
+			multiply = 0.10
+			add = 1
+		}
+
+		# law cost profile
+		if = {
+			limit = { has_law = law_type:law_public_health_insurance }
+			multiply = 1.5
+		}
+		else_if = {
+			limit = { has_law = law_type:law_charitable_health_system }
+			multiply = 0.5	# charity offloads cost off the state
+		}
+
+		# light population scaler
+		multiply = smd_public_service_pop_factor
+	}
+
+	min = 0
+}
+
+# ================================================================
+# EDUCATION
+# ================================================================
+smd_education_expense_value = {
+	value = 0
+
+	if = {
+		limit = {
+			has_institution = institution_schools
+			OR = {
+				has_law = law_type:law_public_schools
+				has_law = law_type:law_universal_college
+				has_law = law_type:law_compulsory_primary_school
+				has_law = law_type:law_privatized_preschool_education
+				has_law = law_type:law_universal_childcare
+			}
+		}
+
+		# PRIMARY: government administration levels
+		value = smd_public_service_admin_base
+		multiply = 5	# per-admin-level cost knob (education)
+
+		# SECONDARY: schools institution investment as a small uplift
+		multiply = {
+			value = institution:institution_schools.investment
+			multiply = 0.05
+			add = 1
+		}
+
+		# public/college systems cost the state more
+		if = {
+			limit = { has_law = law_type:law_universal_college }
+			multiply = 1.5
+		}
+		else_if = {
+			limit = { has_law = law_type:law_public_schools }
+			multiply = 1.25
+		}
+
+		# --- childcare / primary schooling surcharges ---
+		# Expressed as multipliers on the admin-driven base so they
+		# scale with the size of the state apparatus.
+		if = {
+			limit = { has_law = law_type:law_compulsory_primary_school }
+			multiply = 1.4
+		}
+		if = {
+			limit = { has_law = law_type:law_privatized_preschool_education }
+			multiply = 1.2
+		}
+		if = {
+			limit = { has_law = law_type:law_universal_childcare }
+			multiply = 1.8
+		}
+
+		# light population scaler
+		multiply = smd_public_service_pop_factor
+	}
+
+	min = 0
+}
+
+# ================================================================
+# POLICE
+# ================================================================
+smd_police_expense_value = {
+	value = 0
+
+	if = {
+		limit = {
+			has_institution = institution_police
+			OR = {
+				has_law = law_type:law_local_police
+				has_law = law_type:law_dedicated_police
+				has_law = law_type:law_militarized_police
+			}
+		}
+
+		# PRIMARY: government administration levels
+		value = smd_public_service_admin_base
+		multiply = 2	# per-admin-level cost knob (police)
+
+		# SECONDARY: police institution investment as a small uplift
+		multiply = {
+			value = institution:institution_police.investment
+			multiply = 0.10
+			add = 1
+		}
+
+		# more centralized/militarized policing costs more
+		if = {
+			limit = { has_law = law_type:law_militarized_police }
+			multiply = 1.75
+		}
+		else_if = {
+			limit = { has_law = law_type:law_dedicated_police }
+			multiply = 1.35
+		}
+
+		# light population scaler
+		multiply = smd_public_service_pop_factor
+	}
+
+	min = 0
+}

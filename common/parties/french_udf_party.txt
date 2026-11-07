@@ -1,0 +1,171 @@
+
+
+REPLACE_OR_CREATE:french_udf_party = {
+	color = { 110 165 225 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = party_french_udf
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/fr_udf.dds"
+	}
+	
+	# THIS IS RUN ONLY ONCE AT GAME START
+	valid_for_country = {
+	THIS = c:FRA
+	}
+
+		available_for_interest_group = {
+		is_marginal = no
+		OR = {
+			leader = { has_ideology = ideology:ideology_liberal_leader }
+			leader = { has_ideology = ideology:ideology_social_liberal_leader }
+			leader = { has_ideology = ideology:ideology_progressive_leader }
+			leader = { has_ideology = ideology:ideology_moderate_leader }
+			leader = { has_ideology = ideology:ideology_technocrat_leader }
+			leader = { has_ideology = ideology:ideology_classical_liberal_leader }
+			leader = { has_ideology = ideology:ideology_conservative_leader }
+			has_ideology = ideology:ideology_centre_economy
+			has_ideology = ideology:ideology_individualist
+			has_ideology = ideology:ideology_republican
+			has_ideology = ideology:ideology_globalist
+			has_ideology = ideology:ideology_right_economy
+			has_ideology = ideology:ideology_progressive
+			has_ideology = ideology:ideology_regionalist
+			is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_professionals
+			is_interest_group_type = ig_petty_bourgeoisie
+		}
+	}
+
+	# Root - IG considering joining
+	# scope:number - the number of IGs that would join this party before the root IG
+	join_weight = {
+		value = {
+			value = -5
+			desc = "base_value"
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_liberal_leader }
+				leader = { has_ideology = ideology:ideology_social_liberal_leader }
+			}
+			}
+			add = { value = 45 desc = "leader_ideological_compatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_progressive_leader }
+				leader = { has_ideology = ideology:ideology_moderate_leader }
+				leader = { has_ideology = ideology:ideology_technocrat_leader }
+				leader = { has_ideology = ideology:ideology_classical_liberal_leader }
+				leader = { has_ideology = ideology:ideology_conservative_leader }
+			}
+			}
+			add = { value = 20 desc = "leader_adjacent_ideology" }
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_marxist_leader }
+				leader = { has_ideology = ideology:ideology_state_socialist_leader }
+				leader = { has_ideology = ideology:ideology_fascist_leader }
+				leader = { has_ideology = ideology:ideology_jihadist_leader }
+				leader = { has_ideology = ideology:ideology_theocrat_leader }
+				leader = { has_ideology = ideology:ideology_monarchist_leader }
+			}
+			}
+			add = { value = -50 desc = "leader_ideological_incompatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_centre_economy
+				has_ideology = ideology:ideology_individualist
+				has_ideology = ideology:ideology_republican
+				has_ideology = ideology:ideology_globalist
+			}
+			}
+			add = { value = 35 desc = "interest_group_ideological_compatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_right_economy
+				has_ideology = ideology:ideology_progressive
+				has_ideology = ideology:ideology_regionalist
+			}
+			}
+			add = { value = 15 desc = "interest_group_adjacent_ideology" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_far_left_economy
+				has_ideology = ideology:ideology_totalitarian
+				has_ideology = ideology:ideology_communist
+				has_ideology = ideology:ideology_theocrat
+				has_ideology = ideology:ideology_monarchist
+			}
+			}
+			add = { value = -35 desc = "interest_group_ideological_incompatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				is_interest_group_type = ig_intelligentsia
+				is_interest_group_type = ig_professionals
+				is_interest_group_type = ig_petty_bourgeoisie
+			}
+			}
+			add = { value = 20 desc = "from_archetype_party" }
+		}
+		if = {
+			limit = {
+				owner = { OR = { has_law = law_type:law_presidential_republic has_law = law_type:law_parliamentary_republic } }
+			}
+			add = { value = 10 desc = "democratic_government" }
+		}
+		if = {
+			limit = {
+				has_ideology = ideology:ideology_republican
+			}
+			add = { value = 10 desc = "republican_interest_group" }
+		}
+		if = {
+			limit = {
+				is_powerful = yes
+				OR = {
+					leader = { has_ideology = ideology:ideology_liberal_leader }
+					leader = { has_ideology = ideology:ideology_social_liberal_leader }
+					has_ideology = ideology:ideology_centre_economy
+					has_ideology = ideology:ideology_individualist
+					has_ideology = ideology:ideology_republican
+					has_ideology = ideology:ideology_globalist
+				}
+			}
+			add = { value = 20 desc = "powerful_ig" }
+		}
+		if = {
+			limit = {
+				scope:number = 1
+				is_powerful = no
+				is_marginal = no
+			}
+			multiply = { value = 2 desc = "from_influential_supporting_member" }
+		}
+		else_if = {
+			limit = { scope:number = 2 }
+			multiply = { value = 0.75 desc = "from_two_prior_members" }
+		}
+	}
+
+}

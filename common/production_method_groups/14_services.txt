@@ -1,0 +1,220 @@
+﻿### BANKING
+
+pmg_base_banking = {
+	texture = "gfx/interface/icons/production_method_icons/medicines.dds"
+	production_methods = {
+		pm_basic_banking
+		pm_commercial_banking
+		pm_electronic_transfers
+		pm_online_banking
+	}
+}
+
+pmg_securities_trading = {
+	texture = "gfx/interface/icons/production_method_icons/medicines.dds"
+	production_methods = {
+		pm_no_securities_trading
+		pm_securities_brokerage
+		pm_derivatives_trading
+		pm_algorithmic_trading
+	}
+}
+
+pmg_automation_banking = {
+	texture = "gfx/interface/icons/production_method_icons/medicines.dds"
+	production_methods = {
+		pm_manual_tellers
+		pm_atm_network
+		pm_automated_banking_systems
+		pm_ai_financial_advisors
+	}
+}
+
+### FOOD SERVICES
+
+pmg_base_food_services = {
+	texture = "gfx/interface/icons/production_method_icons/medicines.dds"
+	production_methods = {
+		pm_corner_grocery
+		pm_supermarket
+		pm_hypermarket
+		pm_online_grocery
+	}
+}
+
+pmg_restaurant_type = {
+	texture = "gfx/interface/icons/production_method_icons/medicines.dds"
+	production_methods = {
+		pm_no_restaurants
+		pm_local_restaurants
+		pm_fast_food_chains
+		pm_fine_dining
+	}
+}
+
+pmg_food_service_logistics = {
+	texture ="gfx/interface/icons/production_method_icons/medicines.dds"
+	production_methods = {
+		pm_manual_food_checkout
+		pm_self_checkout_food
+		pm_food_delivery_services
+		pm_drone_food_delivery
+	}
+}
+
+### RETAIL SERVICES
+
+pmg_base_retail = {
+	texture = "gfx/interface/icons/production_method_icons/medicines.dds"
+	production_methods = {
+		pm_small_shops
+		pm_department_stores_retail
+		pm_big_box_retail
+		pm_outlet_retail
+	}
+}
+
+pmg_retail_specialization = {
+	texture = "gfx/interface/icons/production_method_icons/medicines.dds"
+	production_methods = {
+		pm_no_retail_specialization
+		pm_home_goods_retail
+		pm_electronics_retail
+		pm_luxury_retail
+	}
+}
+
+pmg_retail_logistics = {
+	texture = "gfx/interface/icons/production_method_icons/medicines.dds"
+	production_methods = {
+		pm_manual_retail_checkout
+		pm_self_checkout_retail
+		pm_ecommerce_retail
+		pm_drone_retail_delivery
+	}
+}
+
+### ADVERTISING
+
+pmg_base_advertising = {
+	texture = "gfx/interface/icons/production_method_icons/medicines.dds"
+	production_methods = {
+		pm_print_advertising
+		pm_broadcast_advertising
+		pm_direct_mail_advertising
+		pm_outdoor_advertising
+	}
+}
+
+pmg_digital_advertising = {
+	texture = "gfx/interface/icons/production_method_icons/medicines.dds"
+	production_methods = {
+		pm_no_digital_advertising
+		pm_banner_advertising
+		pm_social_media_advertising
+		pm_algorithmic_targeted_ads
+	}
+}
+
+pmg_advertising_research = {
+	texture = "gfx/interface/icons/production_method_icons/medicines.dds"
+	production_methods = {
+		pm_focus_groups
+		pm_consumer_analytics
+		pm_ai_ad_generation
+	}
+}
+
+### WAREHOUSING
+
+pmg_base_warehousing = {
+	texture = "gfx/interface/icons/production_method_icons/medicines.dds"
+	production_methods = {
+		pm_basic_warehousing
+		pm_climate_controlled_storage
+		pm_automated_warehouse
+		pm_fulfillment_center
+	}
+}
+
+pmg_warehousing_logistics = {
+	texture = "gfx/interface/icons/production_method_icons/medicines.dds"
+	production_methods = {
+		pm_manual_inventory
+		pm_barcode_tracking
+		pm_rfid_tracking
+		pm_ai_inventory_management
+	}
+}
+
+### PHARMACEUTICAL SERVICES
+
+pmg_base_pharmaceutical_services = {
+	texture = "gfx/interface/icons/production_method_icons/medicines.dds"
+	production_methods = {
+		pm_apothecary
+		pm_pharmacy_dispensing
+		pm_hospital_pharmacy
+		pm_mail_order_pharmacy
+	}
+}
+
+pmg_pharmaceutical_research = {
+	texture = "gfx/interface/icons/production_method_icons/medicines.dds"
+	production_methods = {
+		pm_no_drug_research
+		pm_clinical_trials
+		pm_biotech_research
+		pm_gene_therapy
+	}
+}
+
+pmg_pharmaceutical_automation = {
+	texture = "gfx/interface/icons/production_method_icons/medicines.dds"
+	production_methods = {
+		pm_manual_compounding
+		pm_automated_dispensing
+		pm_robotic_pharmacy
+	}
+}
+
+## nuke
+
+pmg_base_building_nuclear_silo = {
+	texture = "gfx/interface/icons/production_method_icons/medicines.dds"
+	production_methods = {
+		pm_base_building_nuclear_silo
+	}
+}
+
+pmg_casino = {
+	icon = "gfx/interface/icons/production_method_icons/casino.dds"
+ 
+	production_methods = {
+		pm_no_casino
+		pm_casino
+		pm_online_gambling
+	}
+}
+
+pmg_software_production = {
+	icon = "gfx/interface/icons/production_method_icons/basic_software.dds"
+ 
+	production_methods = {
+		pm_basic_software_development
+		pm_commercial_software
+		pm_enterprise_software
+		pm_ai_software
+	}
+}
+ 
+pmg_software_automation = {
+	icon = "gfx/interface/icons/production_method_icons/no_automation.dds"
+ 
+	production_methods = {
+		pm_manual_development
+		pm_dev_tooling
+		pm_cloud_infrastructure
+	}
+}
+ 

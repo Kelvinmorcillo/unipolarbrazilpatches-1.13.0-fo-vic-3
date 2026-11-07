@@ -1,0 +1,43 @@
+﻿COUNTRIES = {
+	c:CRM = {
+		
+		 
+
+		set_tax_level = medium
+		
+		# Laws
+		activate_law = law_type:law_mass_conscription
+		activate_law = law_type:law_appointed_bureaucrats
+		activate_law = law_type:law_compulsory_primary_school
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_cultural_exclusion
+		activate_law = law_type:law_resettlement_enticement
+		activate_law = law_type:law_autocracy
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_religious_schools
+		activate_law = law_type:law_outlawed_dissent
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_public_health_insurance
+		activate_law = law_type:law_national_guard
+		activate_law = law_type:law_serfdom_banned
+		activate_law = law_type:law_migration_controls
+		activate_law = law_type:law_militarized_police
+		activate_law = law_type:law_slavery_banned
+		activate_law = law_type:law_graduated_taxation
+		activate_law = law_type:law_protectionism
+		activate_law = law_type:law_no_minority_rights
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_unions_outlawed
+		activate_law = law_type:law_completely_unregulated
+
+			
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 1		}
+
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 2
+		}
+	}
+}

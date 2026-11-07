@@ -1,0 +1,577 @@
+﻿namespace = mani_pulite
+
+# ==========================================
+# TANGENTOPOLI PHASE EVENTS
+# ==========================================
+
+# ── MANI PULITE.1 — A ROUTINE ARREST ─────
+# Mario Chiesa, chairman of a Milan old
+# people's home, is caught with a bribe.
+# He tries to flush it down the toilet.
+# The opening crack.
+
+mani_pulite.1 = {
+	type = country_event
+	placement = ROOT
+
+	title = mani_pulite.1.t
+	desc = mani_pulite.1.d
+	flavor = mani_pulite.1.f
+
+	event_image = { video = "bodycam" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = {
+		c:ITA ?= this
+		has_journal_entry = je_tangentopoli
+		NOT = { has_variable = chiesa_arrested }
+	}
+
+	immediate = {
+		set_variable = chiesa_arrested
+	}
+
+	option = {
+		name = mani_pulite.1.a
+		# The arrest is dismissed as a minor local matter
+		add_modifier = {
+			name = tangentopoli_chiesa_arrest
+			months = 12
+		}
+		change_variable = { name = tangentopoli_exposure add = 5 }
+	}
+}
+
+# ── MANI PULITE.2 — THE FIRST CONFESSIONS ─
+# Facing prison, minor functionaries begin
+# to talk. Each name leads to another.
+# The system is starting to unravel.
+
+mani_pulite.2 = {
+	type = country_event
+	placement = ROOT
+
+	title = mani_pulite.2.t
+	desc = mani_pulite.2.d
+	flavor = mani_pulite.2.f
+
+	event_image = { video = "middleeast_courtroom_upheaval" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = {
+		c:ITA ?= this
+		has_journal_entry = je_tangentopoli
+		has_variable = chiesa_arrested
+		var:tangentopoli_exposure >= 20
+		NOT = { has_variable = first_confessions }
+	}
+
+	immediate = {
+		set_variable = first_confessions
+		random_interest_group = {
+			limit = {
+				is_in_government = yes
+				is_powerful = yes
+			}
+			save_scope_as = compromised_ig
+		}
+	}
+
+	option = {
+		name = mani_pulite.2.a
+		# Accept the confessions — let the investigation widen
+		change_variable = { name = tangentopoli_exposure add = 10 }
+		scope:compromised_ig = {
+			add_modifier = {
+				name = tangentopoli_ig_under_scrutiny
+				months = 24
+			}
+		}
+		add_modifier = {
+			name = tangentopoli_widening_investigation
+			months = 24
+		}
+	}
+
+	option = {
+		name = mani_pulite.2.b
+		# Try to contain it — use authority to suppress the spread
+		trigger = {
+			country_authority_add >= 150
+		}
+		change_variable = { name = tangentopoli_exposure add = 3 }
+		add_modifier = {
+			name = tangentopoli_suppression_attempt
+			months = 12
+		}
+		country_add_legitimacy = -10
+	}
+}
+
+# ==========================================
+# MANI PULITE INVESTIGATION PHASE EVENTS
+# Fire during je_mani_pulite.
+# ==========================================
+
+# ── MANI PULITE.5 — MANI PULITE BEGINS ────
+# Di Pietro's investigation goes public.
+# Italy learns what everyone suspected.
+# This fires as the completion of
+# je_tangentopoli and opening of je_mani_pulite.
+
+mani_pulite.5 = {
+	type = country_event
+	placement = ROOT
+
+	title = mani_pulite.5.t
+	desc = mani_pulite.5.d
+	flavor = mani_pulite.5.f
+
+	event_image = { video = "southamerica_election" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = {
+		# triggered by je_tangentopoli on_complete
+	}
+
+	option = {
+		name = mani_pulite.5.a
+		# The investigation proceeds — full exposure
+		default_option = yes
+		add_modifier = {
+			name = mani_pulite_investigation_begins
+			months = -1
+		}
+		change_variable = { name = investigation_progress add = 15 }
+		# Legitimacy craters as the scale becomes clear
+		add_modifier = {
+			name = tangentopoli_legitimacy_crisis
+			months = 36
+		}
+	}
+}
+
+# ── MANI PULITE.6 — AVVISI DI GARANZIA ───
+# Notices of investigation arrive for
+# politicians and businessmen across Italy.
+# "Avviso di garanzia" becomes shorthand
+# for disgrace.
+
+mani_pulite.6 = {
+	type = country_event
+	placement = ROOT
+
+	title = mani_pulite.6.t
+	desc = mani_pulite.6.d
+	flavor = mani_pulite.6.f
+
+	event_image = { video = "europenorthamerica_springtime_of_nations" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = {
+		c:ITA ?= this
+		has_journal_entry = je_mani_pulite
+		NOT = { has_variable = avvisi_garanzia_fired }
+	}
+
+	immediate = {
+		set_variable = avvisi_garanzia_fired
+		random_interest_group = {
+			limit = {
+				is_in_government = yes
+			}
+			save_scope_as = indicted_ig
+			leader = { save_scope_as = indicted_leader }
+		}
+	}
+
+	option = {
+		name = mani_pulite.6.a
+		# Cooperate with investigators
+		default_option = yes
+		change_variable = { name = investigation_progress add = 8 }
+		scope:indicted_ig = {
+			add_modifier = {
+				name = tangentopoli_ig_under_scrutiny
+				months = 24
+			}
+		}
+		country_add_legitimacy = -5
+	}
+
+	option = {
+		name = mani_pulite.6.b
+		# Resist — use executive pressure
+		trigger = { country_authority_add >= 100 }
+		change_variable = { name = political_resistance add = 10 }
+		change_variable = { name = investigation_progress add = 2 }
+		add_modifier = {
+			name = tangentopoli_suppression_attempt
+			months = 12
+		}
+		any_scope_state = {
+			limit = {
+				is_incorporated = yes
+				turmoil >= 0.05
+			}
+			add_radicals_in_state = { value = small_radicals }
+		}
+	}
+}
+
+# ── MANI PULITE.7 — CRAXI'S TOMATOES ─────
+# Bettino Craxi, Socialist leader and
+# former Prime Minister, emerges from
+# the Raphael Hotel to face a crowd.
+# They pelt him with coins and tomatoes.
+# He flees to Tunisia. The Socialists
+# are finished.
+
+mani_pulite.7 = {
+	type = country_event
+	placement = ROOT
+
+	title = mani_pulite.7.t
+	desc = mani_pulite.7.d
+	flavor = mani_pulite.7.f
+
+	event_image = { video = "unspecific_temperance_movement" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = {
+		c:ITA ?= this
+		has_journal_entry = je_mani_pulite
+		var:investigation_progress >= 30
+		NOT = { has_variable = craxi_exile }
+	}
+
+	immediate = {
+		set_variable = craxi_exile
+		# The dominant governing IG takes the hit —
+		# represents the Socialist/DC collapse
+		random_interest_group = {
+			limit = {
+				is_in_government = yes
+				ig_approval >= 0
+			}
+			save_scope_as = disgraced_party
+			leader = { save_scope_as = disgraced_leader }
+		}
+	}
+
+	option = {
+		name = mani_pulite.7.a
+		# The fall of the old guard
+		default_option = yes
+		change_variable = { name = investigation_progress add = 12 }
+		scope:disgraced_party = {
+			add_modifier = {
+				name = tangentopoli_party_collapse
+				months = 36
+			}
+		}
+		# Radicals surge as the political contract breaks
+		every_scope_state = {
+			limit = { is_incorporated = yes }
+			add_radicals_in_state = { value = medium_radicals }
+		}
+		add_modifier = {
+			name = tangentopoli_legitimacy_crisis
+			months = 24
+		}
+	}
+
+	option = {
+		name = mani_pulite.7.b
+		# Try to rehabilitate — accept responsibility
+		change_variable = { name = investigation_progress add = 6 }
+		scope:disgraced_party = {
+			add_modifier = {
+				name = tangentopoli_ig_under_scrutiny
+				months = 24
+			}
+		}
+		every_scope_state = {
+			limit = { is_incorporated = yes }
+			add_radicals_in_state = { value = small_radicals }
+		}
+	}
+}
+
+# ── MANI PULITE.8 — TANGENTOPOLI SPREADS ─
+# The investigation reaches the South.
+# Construction contracts, EU agricultural
+# subsidies, public works — the system
+# was nationwide.
+
+mani_pulite.8 = {
+	type = country_event
+	placement = scope:tangentopoli_south_state
+
+	title = mani_pulite.8.t
+	desc = mani_pulite.8.d
+	flavor = mani_pulite.8.f
+
+	event_image = { video = "unspecific_vandalized_storefront" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = {
+		c:ITA ?= this
+		has_journal_entry = je_mani_pulite
+		var:investigation_progress >= 45
+		NOT = { has_variable = tangentopoli_south }
+		any_scope_state = {
+			OR = {
+				state_region = s:STATE_SICILY
+				state_region = s:STATE_CALABRIA
+			}
+		}
+	}
+
+	immediate = {
+		set_variable = tangentopoli_south
+		random_scope_state = {
+			limit = {
+				OR = {
+					state_region = s:STATE_SICILY
+					state_region = s:STATE_CALABRIA
+				}
+			}
+			save_scope_as = tangentopoli_south_state
+		}
+	}
+
+	option = {
+		name = mani_pulite.8.a
+		# Extend the investigation
+		change_variable = { name = investigation_progress add = 10 }
+		scope:tangentopoli_south_state = {
+			add_radicals_in_state = { value = medium_radicals strata = lower }
+		}
+		add_modifier = {
+			name = tangentopoli_south_exposure
+			months = 24
+		}
+	}
+
+	option = {
+		name = mani_pulite.8.b
+		# Political resistance from southern clients
+		change_variable = { name = political_resistance add = 8 }
+		change_variable = { name = investigation_progress add = 3 }
+		interest_group_ig_landowners_approval_add = -5
+	}
+}
+
+# ── MANI PULITE.9 — DECRETO BIONDI ───────
+# The government attempts to pass the
+# "Biondi Decree" — emergency legislation
+# that would release bribers from
+# investigative custody. Public outrage
+# forces its withdrawal within days.
+# Named after justice minister Biondi.
+
+mani_pulite.9 = {
+	type = country_event
+	placement = ROOT
+
+	title = mani_pulite.9.t
+	desc = mani_pulite.9.d
+	flavor = mani_pulite.9.f
+
+	event_image = { video = "law" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = {
+		c:ITA ?= this
+		has_journal_entry = je_mani_pulite
+		var:political_resistance >= 30
+		NOT = { has_variable = decreto_biondi }
+	}
+
+	immediate = {
+		set_variable = decreto_biondi
+	}
+
+	option = {
+		name = mani_pulite.9.a
+		# Push through the decree — protect the political class
+		change_variable = { name = political_resistance add = 15 }
+		change_variable = { name = investigation_progress add = -5 }
+		# But the backlash is severe
+		add_modifier = {
+			name = tangentopoli_legitimacy_crisis
+			months = 24
+		}
+		every_scope_state = {
+			limit = { is_incorporated = yes }
+			add_radicals_in_state = { value = medium_radicals }
+		}
+	}
+
+	option = {
+		name = mani_pulite.9.b
+		# Withdraw the decree under public pressure
+		default_option = yes
+		change_variable = { name = investigation_progress add = 10 }
+		change_variable = { name = political_resistance add = -5 }
+		country_add_legitimacy = -8
+		add_modifier = {
+			name = mani_pulite_public_mandate
+			months = 12
+		}
+	}
+}
+
+# ==========================================
+# RESOLUTION EVENTS
+# ==========================================
+
+# ── MANI PULITE.10 — THE FIRST REPUBLIC FALLS
+# Investigation wins. The party system
+# of the post-war era is destroyed.
+# New political forces emerge from the ruins.
+
+mani_pulite.10 = {
+	type = country_event
+	placement = ROOT
+
+	title = mani_pulite.10.t
+	desc = mani_pulite.10.d
+	flavor = mani_pulite.10.f
+
+	event_image = { video = "libyan_society" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = {
+		# triggered by je_mani_pulite on_complete
+	}
+
+	immediate = {
+		# Save the most powerful IG for the transition narrative
+		random_interest_group = {
+			limit = {
+				is_in_government = yes
+				is_powerful = yes
+			}
+			save_scope_as = old_guard_ig
+		}
+	}
+
+	option = {
+		name = mani_pulite.10.a
+		# Embrace the clean break — accelerate reforms
+		default_option = yes
+		remove_modifier = tangentopoli_systemic_corruption
+		remove_modifier = tangentopoli_legitimacy_crisis
+		add_modifier = {
+			name = mani_pulite_clean_hands_victory
+			months = 60
+		}
+		scope:old_guard_ig = {
+			add_modifier = {
+				name = tangentopoli_party_collapse
+				months = 48
+			}
+		}
+		# The political earthquake creates both loyalists and radicals
+		every_scope_state = {
+			limit = { is_incorporated = yes }
+			add_loyalists_in_state = { value = medium_radicals strata = middle }
+			add_radicals_in_state = { value = small_radicals strata = lower }
+		}
+		country_add_legitimacy = 15
+	}
+
+	option = {
+		name = mani_pulite.10.b
+		# Manage the transition — controlled reform
+		remove_modifier = tangentopoli_systemic_corruption
+		add_modifier = {
+			name = mani_pulite_cautious_transition
+			months = 48
+		}
+		scope:old_guard_ig = {
+			add_modifier = {
+				name = tangentopoli_ig_under_scrutiny
+				months = 36
+			}
+		}
+		every_scope_state = {
+			limit = { is_incorporated = yes }
+			add_radicals_in_state = { value = small_radicals }
+		}
+		country_add_legitimacy = 5
+	}
+}
+
+# ── MANI PULITE.15 — THE INVESTIGATION IS BURIED
+# Political resistance wins. The magistrates
+# are transferred, discredited, or simply
+# defunded. The system survives — damaged
+# but intact. Italy's corruption goes
+# underground rather than being eliminated.
+
+mani_pulite.15 = {
+	type = country_event
+	placement = ROOT
+
+	title = mani_pulite.15.t
+	desc = mani_pulite.15.d
+	flavor = mani_pulite.15.f
+
+	event_image = { video = "police_dog" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = {
+		# triggered by je_mani_pulite on_fail
+	}
+
+	option = {
+		name = mani_pulite.15.a
+		# The system closes ranks
+		default_option = yes
+		remove_modifier = tangentopoli_legitimacy_crisis
+		add_modifier = {
+			name = mani_pulite_investigation_buried
+			months = -1
+		}
+		# Corruption continues but more hidden
+		add_modifier = {
+			name = tangentopoli_systemic_corruption
+			months = 60
+		}
+		every_scope_state = {
+			limit = { is_incorporated = yes }
+			add_radicals_in_state = { value = large_radicals strata = lower }
+		}
+		country_add_legitimacy = -20
+	}
+}

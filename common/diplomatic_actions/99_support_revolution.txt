@@ -1,0 +1,409 @@
+﻿support_revolution = {
+	groups = { general }
+	requires_approval = yes
+	can_use_obligations = no
+	
+	potential = {
+		country_rank >= rank_value:great_power
+		is_revolutionary = no
+		is_secessionist = no
+		scope:target_country = {
+			OR = {
+				is_revolutionary = yes
+				is_secessionist = yes
+			}
+		}
+		is_sufficiently_independent = yes
+	}
+ 
+	possible = {
+		has_diplomatic_relevance = scope:target_country
+ 
+		in_default = no
+ 
+		is_junior_in_customs_union = no
+		scope:target_country = { is_junior_in_customs_union = no }
+ 
+		custom_tooltip = {
+			text = DIPLO_ACTION_MARKET_CONNECTION_REQUIRED
+			OR = {
+				AND = {
+					market = { has_port = yes }
+					scope:target_country.market = { has_port = yes }
+				}
+				market = {
+					any_scope_country = {
+						is_adjacent_to_country = scope:target_country
+					}
+				}
+			}
+		}
+	}
+ 
+	accept_effect = {
+		add_lobby_appeasement_from_diplomacy_bidirectional = {
+			FIRST = root
+			SECOND = scope:target_country
+			PRO_AMOUNT = 5
+			ANTI_AMOUNT = -5
+			FACTOR = appeasement_defensive_pact_formed
+		}
+ 
+		change_relations = { country = scope:target_country value = 200 }
+ 
+		every_country = {
+			limit = {
+				OR = {
+					has_war_with = scope:target_country
+					has_diplomatic_pact = {
+						who = ROOT
+						type = rivalry
+					}
+				}
+			}
+			change_relations = { country = ROOT value = -20 }
+		}
+	}
+ 
+	decline_effect = {
+		change_relations = { country = scope:target_country value = -50 }
+	}
+ 
+	pact = {
+		cost = 100
+		is_two_sided_pact = yes
+ 
+		relations_progress_per_day = 1
+		relations_improvement_max = 100
+		
+		first_modifier = {
+			unit_experience_gain_mult = 0.5
+			building_training_rate_mult = 0.25
+			country_military_goods_cost_mult = -0.35
+			country_military_tech_spread_mult = 0.15
+			
+		}
+		second_modifier = {
+			country_pact_leverage_generation_add = 400
+			country_military_goods_cost_mult = 0.10
+		}
+ 
+		requirement_to_maintain = {
+			trigger = {
+				country_rank >= rank_value:great_power
+				is_revolutionary = no
+				is_secessionist = no
+				scope:target_country = {
+					OR = {
+						is_revolutionary = yes
+						is_secessionist = yes
+					}
+				}
+				is_sufficiently_independent = yes
+				NOT = { has_war_with = scope:target_country }
+				in_default = no
+				is_junior_in_customs_union = no
+				scope:target_country = { is_junior_in_customs_union = no }
+				custom_tooltip = {
+					text = DIPLO_ACTION_MARKET_CONNECTION_REQUIRED
+					OR = {
+						AND = {
+							market = { has_port = yes }
+							scope:target_country.market = { has_port = yes }
+						}
+						market = {
+							any_scope_country = {
+								is_adjacent_to_country = scope:target_country
+							}
+						}
+					}
+				}
+			}
+		}
+ 
+		manual_break_effect = {
+			change_relations = { country = scope:target_country value = -10 }
+		}
+ 
+		auto_break_effect = {
+		}
+ 
+		weekly_effect = {
+			if = {
+				limit = {
+					root = { owes_obligation_to = scope:target_country }
+				}
+				random_list = {
+					99 = {}
+					1 = { root = { set_owes_obligation_to = { country = scope:target_country setting = no } } }
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						scope:target_country = { owes_obligation_to = root }
+					}
+				}
+				random_list = {
+					99 = {}
+					1 = { scope:target_country = { set_owes_obligation_to = { country = root setting = yes } } }
+				}
+			}
+		}
+	}
+ 
+	ai = {
+		check_acceptance_for_will_break = yes
+		check_acceptance_for_will_propose = yes
+ 
+		evaluation_chance = {
+			value = 0.25
+		}
+ 
+		will_propose = {
+			scaled_debt <= 0
+ 
+			# Sponsor shares ruling ideology with the revolutionary target
+			OR = {
+				# Both have vanguardist/communist governance
+				AND = {
+					any_interest_group = {
+						is_in_government = yes
+						leader = { has_ideology = ideology:ideology_communist_leader }
+					}
+					scope:target_country = {
+						any_interest_group = {
+							is_in_government = yes
+							leader = { has_ideology = ideology:ideology_communist_leader }
+						}
+					}
+				}
+				AND = {
+					any_interest_group = {
+						is_in_government = yes
+						leader = { has_ideology = ideology:ideology_progressive_leader }
+					}
+					scope:target_country = {
+						any_interest_group = {
+							is_in_government = yes
+							leader = { has_ideology = ideology:ideology_progressive_leader }
+						}
+					}
+				}
+				AND = {
+					any_interest_group = {
+						is_in_government = yes
+						leader = { has_ideology = ideology:ideology_populist_leader }
+					}
+					scope:target_country = {
+						any_interest_group = {
+							is_in_government = yes
+							leader = { has_ideology = ideology:ideology_populist_leader }
+						}
+					}
+				}
+				AND = {
+					any_interest_group = {
+						is_in_government = yes
+						leader = { has_ideology = ideology:ideology_jihadist_leader }
+					}
+					scope:target_country = {
+						any_interest_group = {
+							is_in_government = yes
+							leader = { has_ideology = ideology:ideology_jihadist_leader }
+						}
+					}
+				}
+				AND = {
+					any_interest_group = {
+						is_in_government = yes
+						leader = { has_ideology = ideology:ideology_socialist_leader }
+					}
+					scope:target_country = {
+						any_interest_group = {
+							is_in_government = yes
+							leader = { has_ideology = ideology:ideology_socialist_leader }
+						}
+					}
+				}
+				AND = {
+					any_interest_group = {
+						is_in_government = yes
+						leader = { has_ideology = ideology:ideology_moderate_leader }
+					}
+					scope:target_country = {
+						any_interest_group = {
+							is_in_government = yes
+							leader = { has_ideology = ideology:ideology_moderate_leader }
+						}
+					}
+				}
+				# Both have democratic/liberal governance
+				AND = {
+					any_interest_group = {
+						is_in_government = yes
+						leader = { has_ideology = ideology:ideology_liberal_leader }
+					}
+					scope:target_country = {
+						any_interest_group = {
+							is_in_government = yes
+							leader = { has_ideology = ideology:ideology_liberal_leader }
+						}
+					}
+				}
+				# Both have nationalist governance
+				AND = {
+					any_interest_group = {
+						is_in_government = yes
+						leader = { has_ideology = ideology:ideology_nationalist_leader }
+					}
+					scope:target_country = {
+						any_interest_group = {
+							is_in_government = yes
+							leader = { has_ideology = ideology:ideology_nationalist_leader }
+						}
+					}
+				}
+				# Both have theocratic governance
+				AND = {
+					any_interest_group = {
+						is_in_government = yes
+						leader = { has_ideology = ideology:ideology_traditionalist_leader }
+					}
+					scope:target_country = {
+						any_interest_group = {
+							is_in_government = yes
+							leader = { has_ideology = ideology:ideology_traditionalist_leader }
+						}
+					}
+				}
+				# Target is rivalled by someone THIS rivals
+				any_country = {
+					has_war_with = scope:target_country
+					has_diplomatic_pact = {
+						who = ROOT
+						type = rivalry
+					}
+				}
+			}
+		}
+ 
+		will_break = {
+			OR = {
+				scaled_debt > 0.5
+ 
+				# No longer share any ruling ideology with the target
+				NOR = {
+					AND = {
+						any_interest_group = {
+							is_in_government = yes
+							leader = { has_ideology = ideology:ideology_vanguardist }
+						}
+						scope:target_country = {
+							any_interest_group = {
+								is_in_government = yes
+								leader = { has_ideology = ideology:ideology_vanguardist }
+							}
+						}
+					}
+					AND = {
+						any_interest_group = {
+							is_in_government = yes
+							leader = { has_ideology = ideology:ideology_liberal }
+						}
+						scope:target_country = {
+							any_interest_group = {
+								is_in_government = yes
+								leader = { has_ideology = ideology:ideology_liberal }
+							}
+						}
+					}
+					AND = {
+						any_interest_group = {
+							is_in_government = yes
+							leader = { has_ideology = ideology:ideology_nationalist }
+						}
+						scope:target_country = {
+							any_interest_group = {
+								is_in_government = yes
+								leader = { has_ideology = ideology:ideology_nationalist }
+							}
+						}
+					}
+					AND = {
+						any_interest_group = {
+							is_in_government = yes
+							leader = { has_ideology = ideology:ideology_traditionalist }
+						}
+						scope:target_country = {
+							any_interest_group = {
+								is_in_government = yes
+								leader = { has_ideology = ideology:ideology_traditionalist }
+							}
+						}
+					}
+					any_country = {
+						has_war_with = scope:target_country
+						has_diplomatic_pact = {
+							who = ROOT
+							type = rivalry
+						}
+					}
+				}
+			}
+		}
+ 
+		junior_accept_score = {
+			value = -5
+ 
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_RELATIONS"
+				if = {
+					limit = {
+						relations(scope:actor) >= relations_threshold:cordial
+					}
+					value = 25
+				}
+				if = {
+					limit = {
+						relations(scope:actor) >= relations_threshold:friendly
+					}
+					value = 50
+				}
+			}
+		}
+ 
+		propose_score = {
+			value = 10
+		}
+ 
+		propose_break_score = {
+			value = 10
+		}
+ 
+		use_obligation_chance = {
+			value = 0
+			add = {
+				if = {
+					limit = {
+						scope:target_country = { country_rank = root.country_rank }
+					}
+					value = 25
+				}
+			}
+			add = {
+				if = {
+					limit = {
+						scope:target_country = { country_rank > root.country_rank }
+					}
+					value = 50
+				}
+			}
+		}
+ 
+		owe_obligation_chance = {
+			value = 0
+		}
+	}
+}
+ 

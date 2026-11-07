@@ -1,0 +1,684 @@
+﻿je_request_iosa_aid_button = {
+	name = "je_request_iosa_aid_button"
+	desc = "je_request_iosa_aid_button_desc"
+
+	visible = {
+		always = yes
+	}
+
+	cooldown = { days = 75 }
+
+	ai_chance = {
+		value = 100
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = countries_available_to_request_aid_from
+			any_country = {
+				NOT = { is_subject = yes }
+				NOT = { this = root }
+				relations:root >= 0
+				country_rank >= rank_value:major 
+					NOT = {
+						OR = {
+							tag = IDS # Indonesia
+							tag = SRI # Sri Lanka
+							tag = THA # Thailand
+							tag = IDA # India
+							tag = MLD # Maldives
+							}
+					}
+					NOT = { has_variable = has_sent_iosa }
+			}
+		}
+	}
+
+	effect = {
+		save_scope_as = iosa_aid_requester
+		set_variable = { name = iosa_aid_cooldown days = 75 }
+		random_country = {
+			limit = {
+				NOT = { is_subject = yes }
+				NOT = { this = root }
+				relations:root >= 0
+				country_rank >= rank_value:major_power
+				NOT = {
+						OR = {
+							tag = IDS # Indonesia
+							tag = SRI # Sri Lanka
+							tag = THA # Thailand
+							tag = IDA # India
+							tag = MLD # Maldives
+							}
+					}
+					NOT = { has_variable = has_sent_iosa }
+			}
+			trigger_event = { id = indian_ocean_tsunami.2 popup = yes }
+		}
+	}
+}
+
+quebec_concessions_button = {
+    name = "quebec_concessions_button"
+    desc = "quebec_concessions_button_desc"
+    visible = { always = yes }
+    ai_chance = { value = 10 }
+	cooldown = { days = 30 }
+	
+    possible = { NOT = {
+		custom_tooltip = {
+			text = too_many_quebec_concessions
+			var:quebec_concessions_used >= 2
+			} 
+		}
+	}
+
+    effect = {
+		custom_tooltip = {
+			text = quebec_happiness_10
+		}
+        je:je_quebec_happiness = {
+			add_progress = {
+				value = 5
+				name = quebec_happiness_bar
+			}
+		}
+        change_variable = { name = quebec_concessions_used add = 1 }
+    }
+}
+
+quebec_ignore_button = {
+    name = "quebec_ignore_button"
+    desc = "quebec_ignore_button_desc"
+    visible = { always = yes }
+	ai_chance = { value = 0 }
+	cooldown = { days = 45 }
+	
+    possible = { always = yes }
+
+    effect = {
+        je:je_quebec_happiness = {
+			add_progress = {
+				value = -5
+				name = quebec_happiness_bar
+			}
+		}
+		custom_tooltip = {
+			text = quebec_happiness_minus_10
+		}
+    }
+}
+
+je_troubles_increase_troop_button = {
+	name = "je_troubles_increase_troop_button"
+	desc = "je_troubles_increase_troop_button_desc"
+	cooldown = { days = 30 }
+	visible = {
+		always = yes
+	}
+	
+	possible = {
+		custom_tooltip = {
+			text = below_99_troop_strr
+			je:je_troubles_in_northern_ireland = {
+                "scripted_bar_progress(troubles_troop_strength_bar)" <= 99
+            }
+		}
+	}
+	
+	ai_chance = { value = 25 }
+
+	possible = { always = yes }
+	
+	effect = {
+		custom_tooltip = increases_troop_strength_5
+		custom_tooltip = this_will_piss_off_ira
+		je:je_troubles_in_northern_ireland = {
+			add_progress = {
+				value = 8
+				name = troubles_troop_strength_bar
+			}
+		}
+	}
+}
+
+je_request_bin_laden_extradition_button = {
+    name = "je_request_bin_laden_extradition_button"
+    desc = "je_request_bin_laden_extradition_button_desc"
+	cooldown = { days = 20 }
+	ai_chance = {
+        value = 10
+    }
+    visible = {
+        c:USA = this
+        has_journal_entry = je_hunt_for_bin_laden
+        NOT = { has_variable = bin_laden_extradition_requested }
+    }
+
+    ai_chance = {
+        value = 5
+    }
+
+    possible = {
+        is_at_war = no
+        exists = c:AFG
+    }
+
+    effect = {
+        set_variable = bin_laden_extradition_requested
+        c:AFG = { trigger_event = { id = afghanistan.1 popup = yes } }
+    }
+}
+
+accuse_iraq_wmds_button = {
+    name = accuse_iraq_wmds_button
+    desc = accuse_iraq_wmds_button_desc
+	cooldown = { days = 20 }
+    visible = {
+        c:USA ?= this
+        NOT = { has_variable = iraq_wmds_accused }
+		has_variable = bin_laden_extradition_requested
+    }
+
+    possible = {
+        exists = c:IRQ
+        is_at_war = no
+		NOT = { has_war_with = c:IRQ }
+		NOT = { has_subject_relation_with = c:IRQ }
+    }
+
+    effect = {
+        set_variable = iraq_wmds_accused
+        c:IRQ = {
+            trigger_event = { id = iraq_war.1 popup = yes }
+        }
+    }
+
+    ai_chance = {
+        value = 10
+    }
+}
+
+end_war_on_terror_button = {
+    name = end_war_on_terror_button
+    desc = end_war_on_terror_button_desc
+
+    visible = {
+        has_variable = war_on_terror_campaign_started
+		c:USA ?= this
+		game_date >= 2006.1.1
+    }
+
+    possible = {
+        has_variable = war_on_terror_campaign_started
+    }
+
+    effect = {
+        remove_variable = war_on_terror_campaign_started
+    }
+
+    ai_chance = {
+        value = 0
+    }
+}
+
+# ── COOPERATE WITH CARTELS ────────────────
+
+cartel_button_cooperate = {
+	name = cartel_button_cooperate_name
+	desc = cartel_button_cooperate_desc
+
+	visible = {
+		NOT = { has_variable = cartel_cooperation }
+		NOT = { has_variable = cartel_crackdown }
+	}
+
+	possible = {
+		always = yes
+	}
+
+	effect = {
+		set_variable = cartel_cooperation
+		add_modifier = {
+			name = cartel_cooperation_modifier
+			months = -1
+		}
+		# Infamy hit — working with cartels is noticed internationally
+		add_infamy = 15
+		# US relationship penalty — placeholder until US system is built
+		if = {
+			limit = { exists = c:USA }
+			change_relations = {
+				country = c:USA
+				value = -30
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 40
+		modifier = {
+			trigger = {
+				authority < 100
+			}
+			add = 30
+		}
+	}
+}
+
+# ── CRACK DOWN ON TRAFFICKING ─────────────
+
+cartel_button_crackdown = {
+	name = cartel_button_crackdown_name
+	desc = cartel_button_crackdown_desc
+
+	visible = {
+		NOT = { has_variable = cartel_cooperation }
+		NOT = { has_variable = cartel_crackdown }
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = cartel_crackdown_authority_cost_tt
+			authority >= 200
+		}
+	}
+
+	effect = {
+		set_variable = cartel_crackdown
+		add_authority = -200
+		add_modifier = {
+			name = cartel_crackdown_modifier
+			months = -1
+		}
+		# Opium trade penalty — crackdown suppresses the market
+		add_banned_goods = g:opium
+	}
+
+	ai_chance = {
+		value = 60
+		modifier = {
+			trigger = {
+				authority < 200
+			}
+			add = -60
+		}
+	}
+}
+
+#
+
+cartel_button_stop_crackdown = {
+	name = cartel_button_stop_crackdown_name
+	desc = cartel_button_stop_crackdown_desc
+
+	visible = {
+		has_variable = cartel_crackdown
+	}
+
+	possible = {
+		always = yes
+	}
+
+	effect = {
+		remove_variable = cartel_crackdown
+		remove_modifier = cartel_crackdown_modifier
+		# Unban opium trade
+		remove_banned_goods = g:opium
+		add_modifier = {
+			name = cartel_crackdown_abandoned
+			months = 24
+		}
+	}
+
+	ai_chance = {
+		value = 10
+		modifier = {
+			trigger = { authority < 50 }
+			add = 50
+		}
+	}
+}
+
+cartel_button_deploy_general = {
+	name = cartel_button_deploy_general_name
+	desc = cartel_button_deploy_general_desc
+
+	visible = {
+		NOT = {
+			any_scope_character = {
+				has_variable = cartel_general_var
+			}
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = cartel_need_general_tt
+			any_scope_character = {
+				is_busy = no
+				is_ruler = no
+				has_role = general
+			}
+		}
+	}
+
+	effect = {
+		trigger_event = { id = cartel_fight.11 popup = yes }
+	}
+
+	ai_chance = { value = 100 }
+}
+
+mdw_button_declare_war = {
+	name = mdw_button_declare_war_name
+	desc = mdw_button_declare_war_desc
+
+	visible = {
+		NOT = { has_variable = mdw_war_declared }
+	}
+
+	possible = {
+		always = yes
+	}
+
+	effect = {
+		set_variable = mdw_war_declared
+		trigger_event = { id = mdw_events.1 popup = yes }
+	}
+
+	ai_chance = {
+		value = 80
+		modifier = {
+			trigger = { authority < 100 }
+			add = -40
+		}
+	}
+}
+
+# Deploy Commander
+# Only visible after declaration, when no commander active
+mdw_button_deploy_commander = {
+	name = mdw_button_deploy_commander_name
+	desc = mdw_button_deploy_commander_desc
+
+	visible = {
+		has_variable = mdw_war_declared
+		NOT = {
+			any_scope_character = {
+				has_variable = mdw_commander_var
+			}
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = mdw_need_general_tt
+			any_scope_character = {
+				is_busy = no
+				is_ruler = no
+				has_role = general
+			}
+		}
+	}
+
+	effect = {
+		trigger_event = { id = mdw_events.2 popup = yes }
+	}
+
+	ai_chance = { value = 100 }
+}
+
+
+opec_propose_increase_button = {
+	name = "opec_propose_increase_button"
+	desc = "opec_propose_increase_button_desc"
+	cooldown = { days = 365 }
+
+	visible = {
+		NOT = { has_global_variable = opec_vote_active }
+	}
+
+	possible = {
+		is_target_in_global_variable_list = { name = io_opec_members target = this }
+		custom_tooltip = {
+			text = opec_no_vote_active_tt
+			NOT = { has_global_variable = opec_vote_active }
+		}
+		NOR = { has_modifier = opec_decreased_production has_modifier = opec_increased_production }
+	}
+
+	ai_chance = {
+		value = 10
+		# AI more likely to propose increase when oil is expensive
+		modifier = {
+			trigger = {
+				market = { mg:oil = { market_goods_pricier > 0.25 } }
+			}
+			add = 40
+		}
+		# Less likely when oil is cheap
+		modifier = {
+			trigger = {
+				market = { mg:oil = { market_goods_cheaper > 0.10 } }
+			}
+			add = -15
+		}
+	}
+
+	effect = {
+		set_global_variable = { name = opec_vote_active value = yes }
+		set_global_variable = { name = opec_vote_type value = flag:opec_increase }
+		set_global_variable = { name = opec_yes_votes value = 0 }
+		set_global_variable = { name = opec_no_votes value = 0 }
+		je:je_opec = {
+			add_progress = {
+				value = -12
+				name = opec_vote_progress_bar
+			}
+		}
+		# Clear prior vote flags
+		every_country = {
+			limit = { has_variable = opec_voted }
+			remove_variable = opec_voted
+		}
+		# Notify all OPEC members
+		every_country = {
+			limit = { is_target_in_global_variable_list = { name = io_opec_members target = this } }
+			trigger_event = { id = opec_events.1 days = 0 popup = yes }
+		}
+		# Schedule result after 30 days
+		trigger_event = { id = opec_events.10 days = 30 }
+	}
+}
+
+### ══════════════════════════════════════════
+### PROPOSE PRODUCTION DECREASE
+### ══════════════════════════════════════════
+
+opec_propose_decrease_button = {
+	name = "opec_propose_decrease_button"
+	desc = "opec_propose_decrease_button_desc"
+	cooldown = { days = 365 }
+
+	visible = {
+		NOT = { has_global_variable = opec_vote_active }
+	}
+
+	possible = {
+		is_target_in_global_variable_list = { name = io_opec_members target = this }
+		custom_tooltip = {
+			text = opec_no_vote_active_tt
+			NOT = { has_global_variable = opec_vote_active }
+		}
+		NOR = { has_modifier = opec_decreased_production has_modifier = opec_increased_production }
+	}
+
+	ai_chance = {
+		value = 10
+		# AI more likely to propose decrease when oil is cheap
+		modifier = {
+			trigger = {
+				market = { mg:oil = { market_goods_cheaper > 0.10 } }
+			}
+			add = 40
+		}
+		# Less likely when oil is expensive
+		modifier = {
+			trigger = {
+				market = { mg:oil = { market_goods_pricier > 0.25 } }
+			}
+			add = -15
+		}
+	}
+
+	effect = {
+		set_global_variable = { name = opec_vote_active value = yes }
+		set_global_variable = { name = opec_vote_type value = flag:opec_decrease }
+		set_global_variable = { name = opec_yes_votes value = 0 }
+		set_global_variable = { name = opec_no_votes value = 0 }
+		je:je_opec = {
+			add_progress = {
+				value = -12
+				name = opec_vote_progress_bar
+			}
+		}
+		every_country = {
+			limit = { has_variable = opec_voted }
+			remove_variable = opec_voted
+		}
+		every_country = {
+			limit = { is_target_in_global_variable_list = { name = io_opec_members target = this } }
+			trigger_event = { id = opec_events.1 days = 0 popup = yes }
+		}
+		trigger_event = { id = opec_events.10 days = 30 }
+	}
+}
+
+### ══════════════════════════════════════════
+### VOTE YAY — visible when vote is active and not yet voted
+### ══════════════════════════════════════════
+
+opec_vote_yay_button = {
+	name = "opec_vote_yay_button"
+	desc = "opec_vote_yay_button_desc"
+
+	visible = {
+		has_global_variable = opec_vote_active
+		NOT = { has_variable = opec_voted }
+		is_target_in_global_variable_list = { name = io_opec_members target = this }
+	}
+
+	possible = {
+		always = yes
+	}
+
+	ai_chance = {
+		value = 50
+		# For increase votes: AI favors if oil is expensive (they can sell more)
+		modifier = {
+			trigger = {
+				global_var:opec_vote_type = flag:opec_increase
+				market = { mg:oil = { market_goods_pricier > 0.15 } }
+			}
+			add = 30
+		}
+		# For decrease votes: AI favors if oil is cheap (restrict supply)
+		modifier = {
+			trigger = {
+				global_var:opec_vote_type = flag:opec_decrease
+				market = { mg:oil = { market_goods_cheaper > 0.10 } }
+			}
+			add = 30
+		}
+		# For embargo votes: AI favors if target has high infamy
+		modifier = {
+			trigger = {
+				global_var:opec_vote_type = flag:opec_embargo
+				has_global_variable = opec_embargo_target
+				global_var:opec_embargo_target = {
+					infamy >= infamy_threshold:pariah
+				}
+			}
+			add = 30
+		}
+		# AI less likely to embargo if target is friendly
+		modifier = {
+			trigger = {
+				global_var:opec_vote_type = flag:opec_embargo
+				has_global_variable = opec_embargo_target
+				has_attitude = { who = global_var:opec_embargo_target attitude = friendly }
+			}
+			add = -50
+		}
+	}
+
+	effect = {
+		set_variable = opec_voted
+		je:je_opec = {
+			add_progress = {
+				value = 1
+				name = opec_vote_progress_bar
+			}
+		}
+	}
+}
+
+### ══════════════════════════════════════════
+### VOTE NAY
+### ══════════════════════════════════════════
+
+opec_vote_nay_button = {
+	name = "opec_vote_nay_button"
+	desc = "opec_vote_nay_button_desc"
+
+	visible = {
+		has_global_variable = opec_vote_active
+		NOT = { has_variable = opec_voted }
+		is_target_in_global_variable_list = { name = io_opec_members target = this }
+	}
+
+	possible = {
+		always = yes
+	}
+
+	ai_chance = {
+		value = 50
+		# Oppose increase when oil is cheap
+		modifier = {
+			trigger = {
+				global_var:opec_vote_type = flag:opec_increase
+				market = { mg:oil = { market_goods_cheaper > 0.10 } }
+			}
+			add = 20
+		}
+		# Oppose decrease when oil is expensive
+		modifier = {
+			trigger = {
+				global_var:opec_vote_type = flag:opec_decrease
+				market = { mg:oil = { market_goods_pricier > 0.15 } }
+			}
+			add = 20
+		}
+		# Oppose embargo if target is in same power bloc
+		modifier = {
+			trigger = {
+				global_var:opec_vote_type = flag:opec_embargo
+				has_global_variable = opec_embargo_target
+				is_in_same_power_bloc = global_var:opec_embargo_target
+			}
+			add = 50
+		}
+	}
+
+	effect = {
+		set_variable = opec_voted
+		je:je_opec = {
+			add_progress = {
+				value = -1
+				name = opec_vote_progress_bar
+			}
+		}
+	}
+}

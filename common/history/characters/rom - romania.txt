@@ -1,0 +1,19 @@
+﻿CHARACTERS = {
+	c:ROM ?= {
+	create_character = {
+			first_name = "ion"
+			last_name = "iliescu"
+			historical = yes
+			ruler = yes
+			culture = cu:romanian
+			birth_date = 1928.3.31
+			dna = dna_ion_iliescu
+			ig_leader = yes
+			interest_group = ig_petty_bourgeoisie
+			ideology = ideology_conservative_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+}

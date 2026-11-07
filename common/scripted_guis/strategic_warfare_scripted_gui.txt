@@ -1,0 +1,1223 @@
+﻿# ==========================================
+# NUCLEAR WEAPONS — SCRIPTED GUIs
+# Place in common/scripted_guis/
+#
+# State variables used (all country scope):
+#   nukes                    — warhead count
+#   uranium_enrichment_progress  — 0-100
+#   nuclear_production_progress  — 0-100
+#   nuclear_enrichment_active    — flag: enriching
+#   nuclear_capable              — flag: can produce
+#   nuclear_production_active    — flag: producing
+# ==========================================
+
+# ── STATE CHECKS (used for visible/enabled) ─
+
+# No programme at all
+nuclear_has_no_programme = {
+	scope = country
+	is_shown = {
+		NOT = { has_variable = nuclear_enrichment_active }
+		NOT = { has_variable = nuclear_capable }
+		NOT = { has_variable = nuclear_production_active }
+	}
+}
+
+# Currently enriching uranium
+nuclear_is_enriching = {
+	scope = country
+	is_shown = {
+		has_variable = nuclear_enrichment_active
+		NOT = { has_variable = nuclear_capable }
+	}
+}
+
+# Enrichment complete — can now produce
+nuclear_is_capable = {
+	scope = country
+	is_shown = {
+		has_variable = nuclear_capable
+		NOT = { has_variable = nuclear_production_active }
+	}
+}
+
+# Currently producing a warhead
+nuclear_is_producing = {
+	scope = country
+	is_shown = {
+		has_variable = nuclear_production_active
+	}
+}
+
+# Has no warheads yet
+nuclear_has_no_warheads = {
+	scope = country
+	is_shown = {
+		NOT = { has_variable = nukes }
+	}
+}
+
+# ── BEGIN ENRICHMENT ────────────────────────
+
+# Button visibility: show only when no programme and not already capable
+nuclear_can_begin_enrichment = {
+	scope = country
+	is_shown = {
+		NOT = { has_variable = nuclear_enrichment_active }
+		NOT = { has_variable = nuclear_capable }
+		NOT = { has_variable = nuclear_production_active }
+	}
+	is_valid = {
+		# Must have at least 3 nuclear plants
+		# nuclear_plant_count_sv is a scripted value you define that counts
+		# building_nuclear_plant in all states
+		any_scope_state = {
+			is_incorporated = yes
+			has_building = building_nuclear_plant
+			count >= 3
+		}
+		# Must be major or great power
+		country_rank >= rank_value:major_power
+		# Not already in default
+		in_default = no
+		NOT = { has_modifier = io_treaty_npt_signatory }
+	}
+	ai_is_valid = {
+		country_rank >= rank_value:great_power
+		NOT = { has_variable = nuclear_enrichment_active }
+		NOT = { has_variable = nuclear_capable }
+	}
+	ai_chance = { value = 20 }
+	ai_frequency = { months = 24 }
+}
+
+# The actual begin enrichment effect
+nuclear_begin_enrichment = {
+	scope = country
+	is_shown = {
+		NOT = { has_variable = nuclear_enrichment_active }
+		NOT = { has_variable = nuclear_capable }
+	}
+	is_valid = {
+		any_scope_state = {
+			is_incorporated = yes
+			has_building = building_nuclear_plant
+			count >= 3
+		}
+		country_rank >= rank_value:major_power
+		in_default = no
+	}
+	effect = {
+		set_variable = nuclear_enrichment_active
+		set_variable = {
+			name = uranium_enrichment_progress
+			value = 0
+		}
+		# Open the enrichment journal entry
+		add_journal_entry = { type = je_uranium_enrichment }
+	}
+	ai_is_valid = { always = no }
+}
+
+# ── BEGIN WARHEAD PRODUCTION ─────────────────
+
+nuclear_can_begin_production = {
+	scope = country
+	is_shown = {
+		has_variable = nuclear_capable
+		NOT = { has_variable = nuclear_production_active }
+	}
+	is_valid = {
+		# Need at least one nuclear silo
+		any_scope_state = {
+			is_incorporated = yes
+			has_building = building_nuclear_silo
+		}
+		in_default = no
+	}
+	ai_is_valid = {
+		has_variable = nuclear_capable
+		NOT = { has_variable = nuclear_production_active }
+	}
+	ai_chance = { value = 80 }
+	ai_frequency = { months = 6 }
+}
+
+nuclear_begin_production = {
+	scope = country
+	is_shown = {
+		has_variable = nuclear_capable
+		NOT = { has_variable = nuclear_production_active }
+	}
+	is_valid = {
+		any_scope_state = {
+			is_incorporated = yes
+			has_building = building_nuclear_silo
+		}
+		in_default = no
+	}
+	effect = {
+		set_variable = nuclear_production_active
+		set_variable = {
+			name = nuclear_production_progress
+			value = 0
+		}
+		add_journal_entry = { type = je_nuclear_production }
+	}
+	ai_is_valid = { always = no }
+}
+
+# ── PRODUCTION QUEUE ─────────────────────────
+# nuclear_production_queue holds the number of warheads
+# queued for production. The + button adds to the queue.
+# Clicking "Manufacture Nuclear Warhead" begins producing the
+# first warhead; each time one completes, if the queue is > 0
+# it decrements and the next one starts automatically.
+
+# Add one to the production queue (does NOT start production)
+nuclear_queue_add = {
+	scope = country
+	is_shown = {
+		has_variable = nuclear_capable
+	}
+	is_valid = {
+		any_scope_state = {
+			is_incorporated = yes
+			has_building = building_nuclear_silo
+		}
+		in_default = no
+	}
+	effect = {
+		if = {
+			limit = { NOT = { has_variable = nuclear_production_queue } }
+			set_variable = { name = nuclear_production_queue value = 1 }
+		}
+		else = {
+			change_variable = { name = nuclear_production_queue add = 1 }
+		}
+		# Clamp to a sane maximum
+		if = {
+			limit = { var:nuclear_production_queue > 99 }
+			set_variable = { name = nuclear_production_queue value = 99 }
+		}
+	}
+	ai_is_valid = { always = no }
+}
+
+# Remove one from the production queue
+nuclear_queue_subtract = {
+	scope = country
+	is_shown = {
+		has_variable = nuclear_capable
+	}
+	is_valid = {
+		has_variable = nuclear_production_queue
+		var:nuclear_production_queue > 0
+		in_default = no
+	}
+	effect = {
+		change_variable = { name = nuclear_production_queue add = -1 }
+		if = {
+			limit = { var:nuclear_production_queue < 0 }
+			set_variable = { name = nuclear_production_queue value = 0 }
+		}
+	}
+	ai_is_valid = { always = no }
+}
+
+# ── DEPLOYMENT AND SHIT ───────────
+# Five buttons set nuclear_deployment_percentage.
+# Disabled when already at that value.
+ 
+nuclear_set_deploy_10 = {
+	scope = country
+	is_shown = { has_variable = nuclear_capable }
+	effect = {
+		set_variable = { name = nuclear_deployment_percentage value = 10 }
+	}
+	ai_is_valid = { always = no }
+}
+ 
+nuclear_set_deploy_25 = {
+	scope = country
+	is_shown = { has_variable = nuclear_capable }
+	effect = {
+		set_variable = { name = nuclear_deployment_percentage value = 25 }
+	}
+	ai_is_valid = { always = no }
+}
+ 
+nuclear_set_deploy_50 = {
+	scope = country
+	is_shown = { has_variable = nuclear_capable }
+	effect = {
+		set_variable = { name = nuclear_deployment_percentage value = 50 }
+	}
+	ai_is_valid = { always = no }
+}
+ 
+nuclear_set_deploy_75 = {
+	scope = country
+	is_shown = { has_variable = nuclear_capable }
+	effect = {
+		set_variable = { name = nuclear_deployment_percentage value = 75 }
+	}
+	ai_is_valid = { always = no }
+}
+ 
+nuclear_set_deploy_100 = {
+	scope = country
+	is_shown = { has_variable = nuclear_capable }
+	effect = {
+		set_variable = { name = nuclear_deployment_percentage value = 100 }
+	}
+	ai_is_valid = { always = no }
+}
+ 
+# ── TARGET LIST — STATE MEMBERSHIP CHECK ────
+# Used in GUI visible= to colour/show add vs remove.
+# Also used in map_markers.gui for the marker overlay.
+ 
+state_is_in_targetlist = {
+	scope = country
+	is_shown = {
+		any_in_list = {
+			variable = wmd_target_list
+			THIS = scope:target_selected_state
+		}
+	}
+}
+ 
+# ── TARGET LIST — ADD STATE ──────────────────
+# Adds a state to wmd_target_list.
+# Also adds its owner to wmd_target_list_c if not present.
+ 
+nuclear_add_target_state = {
+	scope = country
+	is_shown = {
+		NOT = {
+			any_in_list = {
+				variable = wmd_target_list
+				THIS = scope:target_list_selected_state
+			}
+		}
+	}
+	is_valid = {
+		has_variable = nuclear_capable
+		var:nukes >= 1
+	}
+	effect = {
+		add_to_variable_list = {
+			name = wmd_target_list
+			target = scope:target_list_selected_state
+		}
+		# Add the owning country to wmd_target_list_c if not already present
+		scope:target_list_selected_state = {
+			owner = {
+				if = {
+					limit = {
+						NOT = {
+							any_in_list = {
+								variable = wmd_target_list_c
+								THIS = PREV
+							}
+						}
+					}
+					ROOT = {
+						add_to_variable_list = {
+							name = wmd_target_list_c
+							target = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+	ai_is_valid = { always = no }
+}
+ 
+# ── TARGET LIST — REMOVE STATE ───────────────
+# Removes a state from wmd_target_list.
+# Also cleans up wmd_target_list_c if that country
+# has no more states in the list.
+ 
+nuclear_remove_target_state = {
+	scope = country
+	is_shown = {
+		any_in_list = {
+			variable = wmd_target_list
+			THIS = scope:target_list_selected_state
+		}
+	}
+	effect = {
+		remove_list_variable = {
+			name = wmd_target_list
+			target = scope:target_list_selected_state
+		}
+		# Clean up country from wmd_target_list_c if no states remain
+		every_in_list = {
+			variable = wmd_target_list_c
+			limit = {
+				NOT = {
+					any_in_list = {
+						variable = wmd_target_list
+						owner = THIS
+					}
+				}
+			}
+			ROOT = {
+				remove_list_variable = {
+					name = wmd_target_list_c
+					target = PREV
+				}
+			}
+		}
+	}
+	ai_is_valid = { always = no }
+}
+ 
+# ── TARGET LIST — CLEAR ALL ──────────────────
+ 
+nuclear_clear_targetlist = {
+	scope = country
+	is_shown = {
+		any_in_list = { variable = wmd_target_list always = yes }
+	}
+	effect = {
+		clear_variable_list = wmd_target_list
+		clear_variable_list = wmd_target_list_c
+	}
+	ai_is_valid = { always = no }
+}
+ 
+# ── COUNTRY EXPANSION TOGGLE ─────────────────
+# Controls whether a country's states are shown
+# expanded in the target list.
+ 
+nuclear_targetlist_expand_country = {
+	scope = country
+	is_shown = {
+		NOT = { has_variable = nuclear_targetlist_expanded_country }
+	}
+	effect = {
+		set_variable = nuclear_targetlist_expanded_country
+	}
+	ai_is_valid = { always = no }
+}
+ 
+nuclear_targetlist_contract_country = {
+	scope = country
+	is_shown = {
+		has_variable = nuclear_targetlist_expanded_country
+	}
+	effect = {
+		remove_variable = nuclear_targetlist_expanded_country
+	}
+	ai_is_valid = { always = no }
+}
+ 
+# ── FIRE CHECK (enabled gate) ─────────────────
+# Shown only when all conditions for firing are met.
+ 
+nuclear_can_fire = {
+	scope = country
+	is_shown = {
+		has_variable = nuclear_capable
+		var:nukes >= 1
+		has_variable = nuclear_deployment_percentage
+		any_in_list = { variable = wmd_target_list always = yes }
+	}
+}
+ 
+# ── FIRE EXECUTE ─────────────────────────────
+# Triggers the launch confirmation event.
+# Does NOT immediately fire — the event is the
+# final decision gate.
+ 
+nuclear_fire_execute = {
+	scope = country
+	is_shown = {
+		has_variable = nuclear_capable
+		var:nukes >= 1
+		has_variable = nuclear_deployment_percentage
+		any_in_list = { variable = wmd_target_list always = yes }
+	}
+	is_valid = {
+		has_variable = nuclear_capable
+		var:nukes >= 1
+		any_in_list = { variable = wmd_target_list always = yes }
+	}
+	effect = {
+		trigger_event = { id = nuclear_events.4 popup = yes }
+	}
+	ai_is_valid = { always = no }
+}
+ 
+# ── TARGET LIST POPULATED CHECK ──────────────
+# Used for visible gates on the target list section.
+ 
+nuclear_targetlist_is_set = {
+	scope = country
+	is_shown = {
+		any_in_list = { variable = wmd_target_list always = yes }
+	}
+}
+ 
+# ── ENEMY STATES AVAILABLE CHECK ────────────
+# Shows the "add targets" section only when at war.
+ 
+nuclear_has_enemies = {
+	scope = country
+	is_shown = {
+		is_at_war = yes
+		has_variable = nuclear_capable
+		var:nukes >= 1
+	}
+}
+
+# ── STATE ELIGIBILITY CHECKS ────────────────
+ 
+# Is this state a valid MISSILE target?
+# Must be: enemy-owned AND (neighbouring player state OR
+# bordering an ally OR bordering a military-base-host country)
+# OR blockaded by the player
+state_is_valid_missile_target = {
+	scope = country
+	is_shown = {
+		OR = {
+			# State borders a state owned by ROOT
+			any_neighbouring_state = {
+				owner = ROOT
+			}
+			# State borders a state owned by an ally
+			any_neighbouring_state = {
+				owner = {
+					has_diplomatic_pact = {
+						who = ROOT
+						type = alliance
+					}
+				}
+			}
+			# State borders a country that hosts ROOT's military bases
+			any_neighbouring_state = {
+				owner = {
+					any_scope_treaty = {
+						any_scope_article = {
+							has_type = host_military_bases
+							source_country = ROOT
+						}
+					}
+				}
+			}
+			# State is blockaded by ROOT
+			is_blockaded_by = ROOT
+			# ROOT has ICBMs — global range
+			has_variable = icbm_programme_complete
+		}
+	}
+}
+ 
+# Is this state already in the conventional target list?
+conv_state_is_targeted = {
+	scope = country
+	is_shown = {
+		any_in_list = {
+			variable = conventional_target_list
+			THIS = scope:conv_target_state
+		}
+	}
+}
+ 
+# Is this state already in the bombing target list?
+bombing_state_is_targeted = {
+	scope = country
+	is_shown = {
+		any_in_list = {
+			variable = bombing_target_list
+			THIS = scope:bombing_target_state
+		}
+	}
+}
+ 
+# ── CONVENTIONAL MISSILE TARGET MANAGEMENT ──
+ 
+conventional_add_target = {
+	scope = country
+	is_shown = {
+		NOT = {
+			any_in_list = {
+				variable = conventional_target_list
+				THIS = scope:conv_target_state
+			}
+		}
+	}
+	effect = {
+		add_to_variable_list = {
+			name = conventional_target_list
+			target = scope:conv_target_state
+		}
+		# Add owner to conventional_target_list_c for grouping
+		scope:conv_target_state = {
+			owner = {
+				if = {
+					limit = {
+						NOT = {
+							any_in_list = {
+								variable = conventional_target_list_c
+								THIS = PREV
+							}
+						}
+					}
+					ROOT = {
+						add_to_variable_list = {
+							name = conventional_target_list_c
+							target = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+	ai_is_valid = { always = no }
+}
+ 
+conventional_remove_target = {
+	scope = country
+	is_shown = {
+		any_in_list = {
+			variable = conventional_target_list
+			THIS = scope:conv_target_state
+		}
+	}
+	effect = {
+		remove_list_variable = {
+			name = conventional_target_list
+			target = scope:conv_target_state
+		}
+		every_in_list = {
+			variable = conventional_target_list_c
+			limit = {
+				NOT = {
+					any_in_list = {
+						variable = conventional_target_list
+						owner = THIS
+					}
+				}
+			}
+			ROOT = {
+				remove_list_variable = {
+					name = conventional_target_list_c
+					target = PREV
+				}
+			}
+		}
+	}
+	ai_is_valid = { always = no }
+}
+ 
+conventional_clear_targets = {
+	scope = country
+	is_shown = {
+		any_in_list = { variable = conventional_target_list }
+	}
+	effect = {
+		clear_variable_list = conventional_target_list
+		clear_variable_list = conventional_target_list_c
+	}
+	ai_is_valid = { always = no }
+}
+ 
+# ── CONVENTIONAL BUILDING TARGET TOGGLES ────
+ 
+conv_toggle_airport = {
+	scope = country
+	is_shown = { has_variable = conventional_missiles }
+	#is_valid = {
+	#	NOT = { has_variable = missile_target_airport }
+	#}
+	effect = {
+		if = {
+			limit = { has_variable = missile_target_airport }
+			remove_variable = missile_target_airport
+		}
+		else = { set_variable = missile_target_airport }
+	}
+	ai_is_valid = { always = no }
+}
+conv_toggle_barracks = {
+	scope = country
+	is_shown = { has_variable = conventional_missiles }
+	effect = {
+		if = {
+			limit = { has_variable = missile_target_barracks }
+			remove_variable = missile_target_barracks
+		}
+		else = { set_variable = missile_target_barracks }
+	}
+	ai_is_valid = { always = no }
+}
+conv_toggle_naval_base = {
+	scope = country
+	is_shown = { has_variable = conventional_missiles }
+	effect = {
+		if = {
+			limit = { has_variable = missile_target_naval_base }
+			remove_variable = missile_target_naval_base
+		}
+		else = { set_variable = missile_target_naval_base }
+	}
+	ai_is_valid = { always = no }
+}
+conv_toggle_nuclear_plant = {
+	scope = country
+	is_shown = { has_variable = conventional_missiles }
+	effect = {
+		if = {
+			limit = { has_variable = missile_target_nuclear_plant }
+			remove_variable = missile_target_nuclear_plant
+		}
+		else = { set_variable = missile_target_nuclear_plant }
+	}
+	ai_is_valid = { always = no }
+}
+conv_toggle_nuclear_silo = {
+	scope = country
+	is_shown = { has_variable = conventional_missiles }
+	effect = {
+		if = {
+			limit = { has_variable = missile_target_nuclear_silo }
+			remove_variable = missile_target_nuclear_silo
+		}
+		else = { set_variable = missile_target_nuclear_silo }
+	}
+	ai_is_valid = { always = no }
+}
+conv_toggle_government = {
+	scope = country
+	is_shown = { has_variable = conventional_missiles }
+	effect = {
+		if = {
+			limit = { has_variable = missile_target_government }
+			remove_variable = missile_target_government
+		}
+		else = { set_variable = missile_target_government }
+	}
+	ai_is_valid = { always = no }
+}
+conv_toggle_railway = {
+	scope = country
+	is_shown = { has_variable = conventional_missiles }
+	effect = {
+		if = {
+			limit = { has_variable = missile_target_railway }
+			remove_variable = missile_target_railway
+		}
+		else = { set_variable = missile_target_railway }
+	}
+	ai_is_valid = { always = no }
+}
+ 
+# ── CONVENTIONAL MISSILE FIRE ────────────────
+ 
+conventional_can_fire = {
+	scope = country
+	is_shown = {
+		var:conventional_missiles >= 1
+		is_at_war = yes
+		any_in_list = { variable = conventional_target_list }
+	}
+}
+ 
+conventional_fire_missiles = {
+	scope = country
+	is_shown = {
+		has_variable = conventional_missiles
+		var:conventional_missiles >= 1
+		is_at_war = yes
+		NOT = { has_variable = missile_cooldown }
+	}
+	is_valid = {
+		has_variable = conventional_missiles
+		var:conventional_missiles >= 1
+		any_in_list = { variable = conventional_target_list always = yes }
+		NOT = { has_variable = missile_cooldown }
+	}
+	effect = {
+		# Initialize deployment % to 100 if never set
+		if = {
+			limit = { NOT = { has_variable = conv_deployment_percentage } }
+			set_variable = { name = conv_deployment_percentage value = 100 }
+		}
+		# Strike handles missile consumption and building hits
+		conventional_missile_strike = yes
+		# Clear targets
+		clear_variable_list = conventional_target_list
+		clear_variable_list = conventional_target_list_c
+		# 60 day cooldown
+		set_variable = { name = missile_cooldown days = 60 }
+	}
+	ai_is_valid = { always = no }
+}
+ 
+# ── STRATEGIC BOMBING TARGET MANAGEMENT ─────
+ 
+bombing_add_target = {
+	scope = country
+	is_shown = {
+		NOT = {
+			any_in_list = {
+				variable = bombing_target_list
+				THIS = scope:bombing_target_state
+			}
+		}
+	}
+	effect = {
+		add_to_variable_list = {
+			name = bombing_target_list
+			target = scope:bombing_target_state
+		}
+	}
+	ai_is_valid = { always = no }
+}
+ 
+bombing_remove_target = {
+	scope = country
+	is_shown = {
+		any_in_list = {
+			variable = bombing_target_list
+			THIS = scope:bombing_target_state
+		}
+	}
+	effect = {
+		remove_list_variable = {
+			name = bombing_target_list
+			target = scope:bombing_target_state
+		}
+	}
+	ai_is_valid = { always = no }
+}
+ 
+bombing_clear_targets = {
+	scope = country
+	is_shown = {
+		any_in_list = { variable = bombing_target_list }
+	}
+	effect = {
+		clear_variable_list = bombing_target_list
+	}
+	ai_is_valid = { always = no }
+}
+ 
+# ── BOMBING BUILDING TARGET TOGGLES ─────────
+ 
+bombing_toggle_airport = {
+	scope = country
+	is_shown = { aircraft_formation_count_sv >= 1 }
+	effect = {
+		if = {
+			limit = { has_variable = bombing_target_airport }
+			remove_variable = bombing_target_airport
+		}
+		else = { set_variable = bombing_target_airport }
+	}
+	ai_is_valid = { always = no }
+}
+bombing_toggle_barracks = {
+	scope = country
+	is_shown = { aircraft_formation_count_sv >= 1 }
+	effect = {
+		if = {
+			limit = { has_variable = bombing_target_barracks }
+			remove_variable = bombing_target_barracks
+		}
+		else = { set_variable = bombing_target_barracks }
+	}
+	ai_is_valid = { always = no }
+}
+bombing_toggle_naval_base = {
+	scope = country
+	is_shown = { aircraft_formation_count_sv >= 1 }
+	effect = {
+		if = {
+			limit = { has_variable = bombing_target_naval_base }
+			remove_variable = bombing_target_naval_base
+		}
+		else = { set_variable = bombing_target_naval_base }
+	}
+	ai_is_valid = { always = no }
+}
+bombing_toggle_nuclear_plant = {
+	scope = country
+	is_shown = { aircraft_formation_count_sv >= 1 }
+	effect = {
+		if = {
+			limit = { has_variable = bombing_target_nuclear_plant }
+			remove_variable = bombing_target_nuclear_plant
+		}
+		else = { set_variable = bombing_target_nuclear_plant }
+	}
+	ai_is_valid = { always = no }
+}
+bombing_toggle_nuclear_silo = {
+	scope = country
+	is_shown = { aircraft_formation_count_sv >= 1 }
+	effect = {
+		if = {
+			limit = { has_variable = bombing_target_nuclear_silo }
+			remove_variable = bombing_target_nuclear_silo
+		}
+		else = { set_variable = bombing_target_nuclear_silo }
+	}
+	ai_is_valid = { always = no }
+}
+bombing_toggle_government = {
+	scope = country
+	is_shown = { aircraft_formation_count_sv >= 1 }
+	effect = {
+		if = {
+			limit = { has_variable = bombing_target_government }
+			remove_variable = bombing_target_government
+		}
+		else = { set_variable = bombing_target_government }
+	}
+	ai_is_valid = { always = no }
+}
+bombing_toggle_railway = {
+	scope = country
+	is_shown = { aircraft_formation_count_sv >= 1 }
+	effect = {
+		if = {
+			limit = { has_variable = bombing_target_railway }
+			remove_variable = bombing_target_railway
+		}
+		else = { set_variable = bombing_target_railway }
+	}
+	ai_is_valid = { always = no }
+}
+ 
+# ── BOMBING EXECUTE ──────────────────────────
+ 
+bombing_can_execute = {
+	scope = country
+	is_shown = {
+		aircraft_formation_count_sv >= 1
+		is_at_war = yes
+		any_in_list = { variable = bombing_target_list always = yes }
+	}
+}
+ 
+bombing_execute = {
+	scope = country
+	is_shown = {
+		aircraft_formation_count_sv >= 1
+		is_at_war = yes
+		NOT = { has_variable = bombing_cooldown }
+	}
+	is_valid = {
+		aircraft_formation_count_sv >= 1
+		any_in_list = { variable = bombing_target_list always = yes }
+		NOT = { has_variable = bombing_cooldown }
+	}
+	effect = {
+		strategic_bombing_run = yes
+		clear_variable_list = bombing_target_list
+		# 30 day cooldown
+		set_variable = {
+			name = bombing_cooldown
+			days = 30
+		}
+	}
+	ai_is_valid = { always = no }
+}
+ 
+# Check cooldown for bombing
+bombing_on_cooldown = {
+	scope = country
+	is_shown = {
+		has_variable = bombing_cooldown
+	}
+}
+ 
+# ── NUCLEAR RANGE GATE ───────────────────────
+# Nuclear targets must neighbour player OR
+# player has ICBMs
+ 
+nuclear_target_in_range = {
+	scope = country
+	is_shown = {
+		OR = {
+			has_variable = icbm_programme_complete
+			any_neighbouring_state = {
+				owner = ROOT
+			}
+			any_scope_state = {
+				any_neighbouring_state = {
+					owner = ROOT
+				}
+			}
+		}
+	}
+}
+ 
+# ── ADDITIONAL STATE CHECKS ──────────────────
+ 
+# Has at least 1 conventional missile (for UI visibility)
+conventional_has_missiles = {
+	scope = country
+	is_shown = {
+		has_variable = conventional_missiles
+		var:conventional_missiles >= 1
+		is_at_war = yes
+	}
+}
+ 
+# Has qualifying air formations (for UI visibility)
+bombing_has_aircraft = {
+	scope = country
+	is_shown = {
+		is_at_war = yes
+		any_military_formation = {
+			is_army = yes
+			any_combat_unit = {
+				OR = {
+					has_unit_type = unit_type:combat_unit_type_fixed_wing_aircraft
+					has_unit_type = unit_type:combat_unit_type_multirole_aircraft
+					has_unit_type = unit_type:combat_unit_type_stealth_aircraft
+					has_unit_type = unit_type:combat_unit_type_uav
+					has_unit_type = unit_type:combat_unit_type_autonomous_aircraft
+				}
+				percent >= 0.25
+			}
+		}
+	}
+}
+ 
+# Missile cooldown check
+missile_on_cooldown = {
+	scope = country
+	is_shown = { has_variable = missile_cooldown }
+}
+ 
+# Bombing cooldown check (already defined above as bombing_on_cooldown)
+ 
+# Target list populated checks
+conventional_targetlist_is_set = {
+	scope = country
+	is_shown = {
+		any_in_list = { variable = conventional_target_list always = yes }
+	}
+}
+ 
+bombing_targetlist_is_set = {
+	scope = country
+	is_shown = {
+		any_in_list = { variable = bombing_target_list always = yes }
+	}
+}
+ 
+# ── ICBM PROGRAMME BUTTON ────────────────
+ 
+nuclear_can_begin_icbm = {
+	scope = country
+	is_shown = {
+		has_variable = nuclear_capable
+		NOT = { has_variable = icbm_programme_complete }
+		NOT = { has_variable = icbm_progress }
+	}
+	is_valid = {
+		has_variable = nuclear_capable
+		NOT = { has_variable = icbm_programme_complete }
+		NOT = { has_variable = icbm_progress }
+		in_default = no
+	}
+}
+ 
+nuclear_begin_icbm = {
+	scope = country
+	is_shown = {
+		has_variable = nuclear_capable
+		NOT = { has_variable = icbm_programme_complete }
+		NOT = { has_variable = icbm_progress }
+	}
+	is_valid = {
+		has_variable = nuclear_capable
+		in_default = no
+	}
+	effect = {
+		set_variable = { name = icbm_progress value = 0 }
+		add_journal_entry = { type = je_icbm_programme }
+	}
+	ai_is_valid = { always = no }
+}
+ 
+nuclear_icbm_in_progress = {
+	scope = country
+	is_shown = {
+		has_variable = icbm_progress
+		NOT = { has_variable = icbm_programme_complete }
+	}
+}
+ 
+nuclear_icbm_complete = {
+	scope = country
+	is_shown = {
+		has_variable = icbm_programme_complete
+	}
+}
+ 
+# ── MISSILE PRODUCTION ───────────────────
+# Produces 5 missiles per salvo.
+# Requires explosives and steel production
+# (has building_munitions_plant or similar).
+# For now: requires major power + not in default.
+# Each production costs infamy (representing
+# the strategic commitment).
+ 
+can_produce_missiles = {
+	scope = country
+	is_shown = { has_modifier = missile_production_cost }
+	is_valid = {
+		in_default = no
+		NOT = { has_modifier = missile_production_cost }
+	}
+}
+
+can_refresh_nukes = {
+	scope = country
+	is_valid = {
+		is_at_war = yes
+	}
+}
+
+refresh_targetting = {
+	scope = country
+	effect = {
+		nuclear_rebuild_enemy_list = yes
+	}
+}
+
+produce_missiles = {
+	scope = country
+	is_shown = { always = yes }
+	is_valid = {
+		in_default = no
+		country_rank >= rank_value:recognized
+	}
+	effect = {
+		if = {
+			limit = { NOT = { has_variable = conventional_missiles } }
+			set_variable = { name = conventional_missiles value = 5 }
+		}
+		else = {
+			change_variable = { name = conventional_missiles add = 5 }
+		}
+		# Small cost — representing production investment
+		add_modifier = {
+			name = missile_production_cost
+			months = 3
+		}
+	}
+	ai_is_valid = { always = no }
+}
+
+# ── MISSILE PRODUCTION QUEUE ─────────────────
+# missile_production_queue holds the number of salvos queued.
+# The + button adds to the queue. Each salvo produces when off
+# cooldown; the on_action (99_nuclear_on_actions) auto-produces
+# the next queued salvo when the cooldown expires.
+
+# Add one salvo to the missile production queue
+missile_queue_add = {
+	scope = country
+	is_shown = { always = yes }
+	is_valid = {
+		in_default = no
+		country_rank >= rank_value:recognized
+	}
+	effect = {
+		if = {
+			limit = { NOT = { has_variable = missile_production_queue } }
+			set_variable = { name = missile_production_queue value = 1 }
+		}
+		else = {
+			change_variable = { name = missile_production_queue add = 1 }
+		}
+		if = {
+			limit = { var:missile_production_queue > 99 }
+			set_variable = { name = missile_production_queue value = 99 }
+		}
+	}
+	ai_is_valid = { always = no }
+}
+
+# Remove one salvo from the missile production queue
+missile_queue_subtract = {
+	scope = country
+	is_shown = { always = yes }
+	is_valid = {
+		has_variable = missile_production_queue
+		var:missile_production_queue > 0
+		in_default = no
+	}
+	effect = {
+		change_variable = { name = missile_production_queue add = -1 }
+		if = {
+			limit = { var:missile_production_queue < 0 }
+			set_variable = { name = missile_production_queue value = 0 }
+		}
+	}
+	ai_is_valid = { always = no }
+}
+
+# Process the missile queue — produce a salvo if off cooldown and queue > 0
+missile_process_queue = {
+	scope = country
+	effect = {
+		if = {
+			limit = {
+				has_variable = missile_production_queue
+				var:missile_production_queue > 0
+				NOT = { has_modifier = missile_production_cost }
+				in_default = no
+			}
+			change_variable = { name = missile_production_queue add = -1 }
+			if = {
+				limit = { NOT = { has_variable = conventional_missiles } }
+				set_variable = { name = conventional_missiles value = 5 }
+			}
+			else = {
+				change_variable = { name = conventional_missiles add = 5 }
+			}
+			add_modifier = {
+				name = missile_production_cost
+				months = 3
+			}
+		}
+	}
+}
+
+conv_set_deploy_10 = {
+	scope = country
+	effect = { set_variable = { name = conv_deployment_percentage value = 10 } }
+	ai_is_valid = { always = no }
+}
+conv_set_deploy_25 = {
+	scope = country
+	effect = { set_variable = { name = conv_deployment_percentage value = 25 } }
+	ai_is_valid = { always = no }
+}
+conv_set_deploy_50 = {
+	scope = country
+	effect = { set_variable = { name = conv_deployment_percentage value = 50 } }
+	ai_is_valid = { always = no }
+}
+conv_set_deploy_75 = {
+	scope = country
+	effect = { set_variable = { name = conv_deployment_percentage value = 75 } }
+	ai_is_valid = { always = no }
+}
+conv_set_deploy_100 = {
+	scope = country
+	effect = { set_variable = { name = conv_deployment_percentage value = 100 } }
+	ai_is_valid = { always = no }
+}

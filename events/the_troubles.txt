@@ -1,0 +1,144 @@
+﻿namespace = troubles_events
+
+troubles_events.1 = {
+	type = country_event
+	placement = s:STATE_ULSTER.region_state:GBR
+	title = troubles_events.1.t
+	desc = troubles_events.1.d
+	event_image = { video = "asia_factory_accident" }
+	duration = 2
+	trigger = {
+	}
+
+	option = {
+		name = troubles_events.1.a
+		custom_tooltip = decreases_troop_strength_5
+		je:je_troubles_in_northern_ireland = {
+			add_progress = {
+				value = -5
+				name = troubles_troop_strength_bar
+			}
+		}
+		s:STATE_ULSTER.region_state:GBR = {
+			add_modifier = {
+				name = recent_ira_attack
+				months = 2
+			}
+		}
+	}
+}
+
+troubles_events.2 = {
+	type = country_event
+	placement = s:STATE_ULSTER.region_state:GBR
+	title = troubles_events.2.t
+	desc = troubles_events.2.d
+	event_image = { video = "middleeast_battlefield_trenches" }
+	duration = 2
+	trigger = {
+	}
+
+	option = {
+		name = troubles_events.2.a
+		s:STATE_ULSTER.region_state:GBR = {
+			add_modifier = {
+				name = recent_ira_attack
+				months = 2
+			}
+		}
+		custom_tooltip = decreases_troop_strength_5
+		je:je_troubles_in_northern_ireland = {
+			add_progress = {
+				value = -5
+				name = troubles_troop_strength_bar
+			}
+		}
+	}
+}
+
+troubles_events.3 = {
+	type = country_event
+	placement = s:STATE_ULSTER.region_state:GBR
+	title = troubles_events.3.t
+	desc = troubles_events.3.d
+	event_image = { video = "helicopter" }
+	duration = 2
+	trigger = {
+	}
+
+	option = {
+		name = troubles_events.3.a
+		custom_tooltip = decreases_troop_strength_10
+		je:je_troubles_in_northern_ireland = {
+			add_progress = {
+				value = -10
+				name = troubles_troop_strength_bar
+			}
+		}
+		s:STATE_ULSTER.region_state:GBR = {
+			add_radicals = 0.05
+		}
+	}
+}
+
+troubles_events.4 = {
+	type = country_event
+	placement = s:STATE_ULSTER.region_state:GBR
+	title = troubles_events.4.t
+	desc = troubles_events.4.d
+	event_image = { video = "middleeast_battlefield_trenches" }
+	duration = 2
+	trigger = {
+	}
+
+	option = {
+		name = troubles_events.4.a
+		custom_tooltip = increases_troop_strength_10
+		je:je_troubles_in_northern_ireland = {
+			add_progress = {
+				value = 10
+				name = troubles_troop_strength_bar
+			}
+		}
+		s:STATE_ULSTER.region_state:GBR = {
+			add_modifier = {
+				name = recent_ira_attack
+				months = 2
+			}
+		}
+		change_variable = {
+			name = var:troubles_troop_strength
+			add = 3
+		}
+	}
+}
+
+# Attack in Northern Ireland
+troubles_events.5 = {
+	type = country_event
+	placement = s:STATE_ULSTER.region_state:GBR
+	title = troubles_events.5.t
+	desc = troubles_events.5.d
+	event_image = { video = "unspecific_vandalized_storefront" }
+	duration = 2
+	trigger = {
+		je:je_troubles_in_northern_ireland = {
+                "scripted_bar_progress(troubles_troop_strength_bar)" >= 50
+            }
+	}
+
+
+	option = {
+		name = troubles_events.5.a
+		custom_tooltip = decreases_troop_strength_5
+		je:je_troubles_in_northern_ireland = {
+			add_progress = {
+				value = -5
+				name = troubles_troop_strength_bar
+			}
+		}
+		s:STATE_ULSTER.region_state:GBR = {
+			add_radicals = 0.05
+		}
+	}
+}

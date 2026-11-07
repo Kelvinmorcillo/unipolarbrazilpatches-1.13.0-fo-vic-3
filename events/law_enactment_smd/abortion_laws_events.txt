@@ -1,0 +1,378 @@
+﻿namespace = abortion_laws
+
+
+# ==========================================
+# abortion_laws.1
+# "Life Begins at Conception"
+# Fires when enacting banned abortions.
+# The devout IG frames the ban in
+# absolute moral terms.
+# checkpoint_advance
+# ==========================================
+
+abortion_laws.1 = {
+	type = country_event
+	placement = ROOT
+
+	title = abortion_laws.1.t
+	desc = abortion_laws.1.d
+	flavor = abortion_laws.1.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_banned_abortions
+		NOT = { has_modifier = abortion_law_moral_absolute }
+		any_interest_group = {
+			is_interest_group_type = ig_devout
+			ig_counts_as_marginal = no
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = abortion_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				is_interest_group_type = ig_devout
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = devout_ig
+			leader = {
+				save_scope_as = devout_leader
+			}
+		}
+	}
+
+	# Option A: Embrace the moral framing — life is sacred and the state must protect it
+	option = {
+		name = abortion_laws.1.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = abortion_law_moral_absolute
+			# = 2
+		}
+		scope:devout_ig = {
+			add_modifier = {
+				name = abortion_law_devout_empowered
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 65 }
+	}
+
+	# Option B: Frame it as demographic policy — keep religion out of the justification
+	option = {
+		name = abortion_laws.1.b
+		add_enactment_modifier = {
+			name = abortion_law_moral_absolute
+		}
+		add_enactment_modifier = {
+			name = abortion_law_demographic_framing
+		}
+		scope:devout_ig = {
+			add_modifier = {
+				name = abortion_law_devout_sidelined
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 35 }
+	}
+}
+
+
+# ==========================================
+# abortion_laws.2
+# "The Exceptions Question"
+# Fires when enacting banned or restricted
+# abortions. The debate turns to rape,
+# incest, and medical necessity.
+# checkpoint_debate
+# ==========================================
+
+abortion_laws.2 = {
+	type = country_event
+	placement = ROOT
+
+	title = abortion_laws.2.t
+	desc = abortion_laws.2.d
+	flavor = abortion_laws.2.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		OR = {
+			is_enacting_law = law_type:law_banned_abortions
+			is_enacting_law = law_type:law_restricted_abortion
+		}
+		NOT = { has_modifier = abortion_law_exceptions_debate }
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = abortion_law_scope
+		}
+	}
+
+	# Option A: No exceptions — the law must be absolute to mean anything
+	option = {
+		name = abortion_laws.2.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = abortion_law_exceptions_debate
+			# = 2
+		}
+		ai_chance = { base = 50 }
+	}
+
+	# Option B: Allow narrow medical exceptions — the hardest cases must be addressed
+	option = {
+		name = abortion_laws.2.b
+		add_enactment_modifier = {
+			name = abortion_law_exceptions_debate
+		}
+		add_enactment_modifier = {
+			name = abortion_law_medical_exceptions
+		}
+		ai_chance = { base = 50 }
+	}
+}
+
+
+# ==========================================
+# abortion_laws.3
+# "The State Has No Place in This Decision"
+# Fires when enacting unrestricted abortions.
+# The intelligentsia argues bodily
+# autonomy is the foundation of
+# all other rights.
+# checkpoint_advance
+# ==========================================
+
+abortion_laws.3 = {
+	type = country_event
+	placement = ROOT
+
+	title = abortion_laws.3.t
+	desc = abortion_laws.3.d
+	flavor = abortion_laws.3.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_unrestricted_abortions
+		NOT = { has_modifier = abortion_law_autonomy_argument }
+		any_interest_group = {
+			is_interest_group_type = ig_intelligentsia
+			ig_counts_as_marginal = no
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = abortion_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				is_interest_group_type = ig_intelligentsia
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = intelligentsia_ig
+			leader = {
+				save_scope_as = intelligentsia_leader
+			}
+		}
+	}
+
+	# Option A: Make bodily autonomy the centrepiece — no state has the right to compel pregnancy
+	option = {
+		name = abortion_laws.3.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = abortion_law_autonomy_argument
+			# = 2
+		}
+		scope:intelligentsia_ig = {
+			add_modifier = {
+				name = abortion_law_intelligentsia_engaged
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = {
+			base = 65
+			modifier = {
+				trigger = {
+					exists = ruler
+					ruler = {
+						OR = {
+							has_ideology = ideology_progressive_leader
+							has_ideology = ideology_liberal_leader
+						}
+					}
+				}
+				add = 20
+			}
+		}
+	}
+
+	# Option B: Frame it as a healthcare matter — keep the philosophical argument out
+	option = {
+		name = abortion_laws.3.b
+		add_enactment_modifier = {
+			name = abortion_law_autonomy_argument
+		}
+		add_enactment_modifier = {
+			name = abortion_law_healthcare_framing
+		}
+		scope:intelligentsia_ig = {
+			add_modifier = {
+				name = abortion_law_intelligentsia_sidelined
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 35 }
+	}
+}
+
+
+# ==========================================
+# abortion_laws.4
+# "The Devout Will Not Yield"
+# Fires when enacting unrestricted
+# or restricted abortions. Religious
+# opposition mounts against any
+# liberalization.
+# checkpoint_stall
+# ==========================================
+
+abortion_laws.4 = {
+	type = country_event
+	placement = ROOT
+
+	title = abortion_laws.4.t
+	desc = abortion_laws.4.d
+	flavor = abortion_laws.4.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		OR = {
+			is_enacting_law = law_type:law_unrestricted_abortions
+			is_enacting_law = law_type:law_restricted_abortion
+		}
+		NOT = { has_modifier = abortion_law_religious_opposition }
+		any_interest_group = {
+			is_interest_group_type = ig_devout
+			ig_counts_as_marginal = no
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = abortion_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				is_interest_group_type = ig_devout
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = devout_ig
+			leader = {
+				save_scope_as = devout_leader
+			}
+		}
+	}
+
+	# Option A: Confront the opposition directly — the state governs, not the church
+	option = {
+		name = abortion_laws.4.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = abortion_law_religious_opposition
+			# = -1
+		}
+		scope:devout_ig = {
+			add_modifier = {
+				name = abortion_law_devout_rebuked
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = {
+			base = 55
+			modifier = {
+				trigger = {
+					exists = ruler
+					ruler = {
+						OR = {
+							has_ideology = ideology_progressive_leader
+							has_ideology = ideology_socialist_leader
+							has_ideology = ideology_communist_leader
+						}
+					}
+				}
+				add = 20
+			}
+		}
+	}
+
+	# Option B: Offer conscience protections — medical staff may decline on moral grounds
+	option = {
+		name = abortion_laws.4.b
+		add_enactment_modifier = {
+			name = abortion_law_religious_opposition
+			# = -2
+		}
+		scope:devout_ig = {
+			add_modifier = {
+				name = abortion_law_devout_appeased
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 45 }
+	}
+}

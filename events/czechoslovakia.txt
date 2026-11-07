@@ -1,0 +1,580 @@
+﻿namespace = velvet_divorce
+
+# ── VELVET DIVORCE.1 — THE CRISIS OPENS ──
+# Fires at game start for CZH.
+# The founding event of the chain.
+ 
+velvet_divorce.1 = {
+	type = country_event
+	placement = ROOT
+	title = velvet_divorce.1.t
+	desc = velvet_divorce.1.d
+	flavor = velvet_divorce.1.f
+ 
+	event_image = { video = "unspecific_politicians_arguing" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		c:CZH ?= this
+		current_game_date >= 1992.1.1
+		NOT = { has_variable = velvet_divorce_opened }
+	}
+ 
+	immediate = {
+		set_variable = velvet_divorce_opened
+	}
+ 
+	option = {
+		name = velvet_divorce.1.a
+		default_option = yes
+		# Open the JE
+		add_journal_entry = { type = je_velvet_divorce }
+		add_modifier = {
+			name = czh_federal_strain
+			months = 24
+		}
+		ai_chance = { base = 100 }
+	}
+}
+ 
+# ── VELVET DIVORCE.2 — ECONOMIC GRIEVANCES ─
+# Slovakia's industrialized socialist
+# economy is struggling with the transition.
+# Czechia is adapting faster. Slovak
+# politicians blame Prague.
+ 
+velvet_divorce.2 = {
+	type = country_event
+	placement = ROOT
+	title = velvet_divorce.2.t
+	desc = velvet_divorce.2.d
+	flavor = velvet_divorce.2.f
+ 
+	event_image = { video = "unspecific_ruler_speaking_to_people" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		c:CZH ?= this
+		has_journal_entry = je_velvet_divorce
+		NOT = { has_variable = czh_economic_grievance_fired }
+	}
+ 
+	immediate = {
+		set_variable = czh_economic_grievance_fired
+	}
+ 
+	option = {
+		# Redistribute federal funds to Slovakia
+		name = velvet_divorce.2.a
+		default_option = yes
+		je:je_velvet_divorce = {
+			add_progress = {
+			  value = 8
+			  name = federal_cohesion_bar
+			}
+		}
+		je:je_velvet_divorce = {
+			add_progress = {
+			  value = -5
+			  name = separatist_pressure_bar
+			}
+		}
+		add_modifier = {
+			name = czh_slovak_subsidy
+			months = 24
+		}
+		ai_chance = { base = 60 }
+	}
+ 
+	option = {
+		# Allow market forces to decide — no subsidy
+		name = velvet_divorce.2.b
+		je:je_velvet_divorce = {
+			add_progress = {
+			  value = 8
+			  name = federal_cohesion_bar
+			}
+		}
+		je:je_velvet_divorce = {
+			add_progress = {
+			  value = -3
+			  name = separatist_pressure_bar
+			}
+		}
+		ai_chance = { base = 40 }
+	}
+}
+ 
+# ── VELVET DIVORCE.3 — THE SOVEREIGNTY DECLARATION
+# Slovak National Council passes a
+# declaration of sovereignty. Not yet
+# independence — but the direction is clear.
+ 
+velvet_divorce.3 = {
+	type = country_event
+	placement = ROOT
+	title = velvet_divorce.3.t
+	desc = velvet_divorce.3.d
+	flavor = velvet_divorce.3.f
+ 
+	event_image = { video = "europenorthamerica_political_extremism" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		c:CZH ?= this
+		has_journal_entry = je_velvet_divorce
+		var:separatist_pressure >= 35
+		NOT = { has_variable = czh_sovereignty_declaration_fired }
+	}
+ 
+	immediate = {
+		set_variable = czh_sovereignty_declaration_fired
+	}
+ 
+	option = {
+		# Condemn the declaration — defend federal authority
+		name = velvet_divorce.3.a
+		default_option = yes
+		je:je_velvet_divorce = {
+			add_progress = {
+			  value = 5
+			  name = federal_cohesion_bar
+			}
+		}
+		je:je_velvet_divorce = {
+			add_progress = {
+			  value = -5
+			  name = separatist_pressure_bar
+			}
+		}
+		add_modifier = {
+			name = czh_federal_authority_asserted
+			months = 18
+		}
+		ai_chance = { base = 45 }
+	}
+ 
+	option = {
+		# Open negotiations — offer greater Slovak autonomy
+		name = velvet_divorce.3.b
+		je:je_velvet_divorce = {
+			add_progress = {
+			  value = 12
+			  name = federal_cohesion_bar
+			}
+		}
+		je:je_velvet_divorce = {
+			add_progress = {
+			  value = -5
+			  name = separatist_pressure_bar
+			}
+		}
+		add_modifier = {
+			name = czh_autonomy_negotiations
+			months = 24
+		}
+		ai_chance = { base = 55 }
+	}
+}
+ 
+# ── VELVET DIVORCE.4 — MECIAR AND KLAUS ────
+# Vladimír Mečiar (Slovak PM) and Václav
+# Klaus (Czech PM) have met for talks.
+# The two men have fundamentally
+# different visions for the country.
+ 
+velvet_divorce.4 = {
+	type = country_event
+	placement = ROOT
+	title = velvet_divorce.4.t
+	desc = velvet_divorce.4.d
+	flavor = velvet_divorce.4.f
+ 
+	event_image = { video = "parliament" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		c:CZH ?= this
+		has_journal_entry = je_velvet_divorce
+		var:separatist_pressure >= 45
+		NOT = { has_variable = czh_meciar_klaus_fired }
+	}
+ 
+	immediate = {
+		set_variable = czh_meciar_klaus_fired
+	}
+ 
+	option = {
+		# Back Klaus — push for a unified market-reform programme
+		name = velvet_divorce.4.a
+		default_option = yes
+		je:je_velvet_divorce = {
+			add_progress = {
+			  value = 8
+			  name = federal_cohesion_bar
+			}
+		}
+		je:je_velvet_divorce = {
+			add_progress = {
+			  value = 5
+			  name = separatist_pressure_bar
+			}
+		}
+		ai_chance = { base = 50 }
+	}
+ 
+	option = {
+		# Compromise — offer a looser confederation
+		name = velvet_divorce.4.b
+		je:je_velvet_divorce = {
+			add_progress = {
+			  value = 5
+			  name = federal_cohesion_bar
+			}
+		}
+		je:je_velvet_divorce = {
+			add_progress = {
+			  value = -10
+			  name = separatist_pressure_bar
+			}
+		}
+		add_modifier = {
+			name = czh_confederation_talks
+			months = 24
+		}
+		ai_chance = { base = 50 }
+	}
+}
+ 
+# ── VELVET DIVORCE.5 — PUBLIC REFERENDUM PUSH
+# Slovak politicians are pushing for a
+# referendum on independence.
+# Havel opposes a referendum — he believes
+# the public would vote to stay together,
+# but fears the process itself
+# would deepen divisions.
+ 
+velvet_divorce.5 = {
+	type = country_event
+	placement = ROOT
+	title = velvet_divorce.5.t
+	desc = velvet_divorce.5.d
+	flavor = velvet_divorce.5.f
+ 
+	event_image = { video = "unspecific_temperance_movement" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		c:CZH ?= this
+		has_journal_entry = je_velvet_divorce
+		var:separatist_pressure >= 55
+		NOT = { has_variable = czh_referendum_push_fired }
+	}
+ 
+	immediate = {
+		set_variable = czh_referendum_push_fired
+	}
+ 
+	option = {
+		# Hold the referendum — let the people decide
+		name = velvet_divorce.5.a
+		# High risk: if it passes, dissolution accelerates
+		# If it fails, it's a powerful signal for unity
+		je:je_velvet_divorce = {
+			add_progress = {
+			  value = -5
+			  name = federal_cohesion_bar
+			}
+		}
+		je:je_velvet_divorce = {
+			add_progress = {
+			  value = 15
+			  name = separatist_pressure_bar
+			}
+		}
+		ai_chance = { base = 40 }
+	}
+ 
+	option = {
+		# Block the referendum — follow Havel's position
+		name = velvet_divorce.5.b
+		default_option = yes
+		je:je_velvet_divorce = {
+			add_progress = {
+			  value = 5
+			  name = federal_cohesion_bar
+			}
+		}
+		je:je_velvet_divorce = {
+			add_progress = {
+			  value = 15
+			  name = separatist_pressure_bar
+			}
+		}
+		add_modifier = {
+			name = czh_referendum_blocked
+			months = 12
+		}
+		ai_chance = { base = 60 }
+	}
+}
+ 
+# ==========================================
+# RESOLUTION EVENTS
+# ==========================================
+ 
+# ── VELVET DIVORCE.10 — CZECHOSLOVAKIA SURVIVES
+# Player achieved 100 federal cohesion.
+# The dissolution was prevented.
+ 
+velvet_divorce.10 = {
+	type = country_event
+	placement = ROOT
+	title = velvet_divorce.10.t
+	desc = velvet_divorce.10.d
+	flavor = velvet_divorce.10.f
+ 
+	event_image = { video = "unspecific_world_fair" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		# triggered by je_velvet_divorce on_complete
+	}
+ 
+	option = {
+		name = velvet_divorce.10.a
+		default_option = yes
+		add_modifier = {
+			name = czh_federal_union_preserved
+			months = 60
+		}
+		add_loyalists = { value = medium_radicals }
+		ai_chance = { base = 100 }
+	}
+}
+ 
+# ── VELVET DIVORCE.15 — THE VELVET DIVORCE ─
+# Separatist pressure reached 100.
+# Czechoslovakia dissolves peacefully
+# on January 1, 1993.
+# ==========================================
+ 
+velvet_divorce.15 = {
+	type = country_event
+	placement = ROOT
+	title = velvet_divorce.15.t
+	desc = velvet_divorce.15.d
+	flavor = velvet_divorce.15.f
+ 
+	event_image = { video = "opposition_speaker" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		# triggered by je_velvet_divorce on_fail
+	}
+ 
+	# Option A: Accept the dissolution and remain as observer
+	option = {
+		name = velvet_divorce.15.a
+		default_option = yes
+			create_country = {
+                        tag = SVK
+                        origin = this
+						province = p:xC54074
+						on_created = {
+							s:STATE_SLOVAKIA = { 
+							set_owner_of_provinces = {
+													country = c:SVK
+													provinces = { xC54074 xB23DA0 x7DE5D3 x51E061 x20C000 x02CE3A x7b4775 x695F42 x516161 xCA932B x853117 x90E0E0 xD06161 x082416 xB386BA x1F3F2B x6B444C xFC6F14 x51306A }
+										}
+							}
+					}
+			}
+			if = { limit = { is_player = yes }
+			play_as = c:SVK
+			}
+			create_country = {
+                        tag = CZC
+                        origin = this
+						province = p:x71E041
+						on_created = {
+							s:STATE_BOHEMIA = { 
+							set_owner_of_provinces = {
+													country = c:CZC
+													provinces = { x71E041 xCDE96E x0B9B4F x465A13 x81C142 x9080A0 xFA371D x9C175D x61902F xEE1941 x716141 xA40163 x400226 x1D6B94 x67FE18 xF06141 xAFD2D1 xF0E041 xD286DB x2ED2B3 x74C71F }
+										}
+							}
+							s:STATE_MORAVIA = { 
+							set_owner_of_provinces = {
+													country = c:CZC
+													provinces = { x08AA4B xD9A784 x49C8F7 xEF6080 x12778D x71E080 x4B3444 x1D088E xF0E080 x10DFDF }
+										}
+							}
+					}
+			}
+		# Notify Czechia and Slovakia if they are player-controlled
+		if = {
+			limit = {
+				exists = c:CZC
+				c:CZC = { is_player = yes }
+			}
+			c:CZC = {
+				trigger_event = { id = velvet_divorce.16 }
+				trigger_event = { id = velvet_divorce.18 days = 3 }
+			}
+		}
+		if = {
+			limit = {
+				exists = c:SVK
+				c:SVK = { is_player = yes }
+			}
+			c:SVK = {
+				trigger_event = { id = velvet_divorce.17 }
+				trigger_event = { id = velvet_divorce.18 days = 3 }
+			}
+		}
+ 
+		# If the CZH player wants to switch
+		if = {
+			limit = { is_player = yes }
+			trigger_event = { id = velvet_divorce.18 days = 3 }
+		}
+ 
+		ai_chance = { base = 100 }
+	}
+}
+ 
+# ── VELVET DIVORCE.16 — CZECHIA FOUNDED ────
+# Notification event for the Czech player
+# if someone is playing Czechia.
+ 
+velvet_divorce.16 = {
+	type = country_event
+	placement = ROOT
+	title = velvet_divorce.16.t
+	desc = velvet_divorce.16.d
+	flavor = velvet_divorce.16.f
+ 
+	event_image = { video = "unspecific_ruler_speaking_to_people" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		# triggered by velvet_divorce.15
+	}
+ 
+	option = {
+		name = velvet_divorce.16.a
+		default_option = yes
+		add_modifier = {
+			name = czc_new_republic_founding
+			months = 36
+		}
+		ai_chance = { base = 100 }
+	}
+}
+ 
+# ── VELVET DIVORCE.17 — SLOVAKIA FOUNDED ───
+# Notification event for the Slovak player.
+ 
+velvet_divorce.17 = {
+	type = country_event
+	placement = ROOT
+	title = velvet_divorce.17.t
+	desc = velvet_divorce.17.d
+	flavor = velvet_divorce.17.f
+ 
+	event_image = { video = "unspecific_ruler_speaking_to_people" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		# triggered by velvet_divorce.15
+	}
+ 
+	option = {
+		name = velvet_divorce.17.a
+		default_option = yes
+		add_modifier = {
+			name = svk_new_republic_founding
+			months = 36
+		}
+		ai_chance = { base = 100 }
+	}
+}
+ 
+# ── VELVET DIVORCE.18 — SWITCH COUNTRY ─────
+# Fires for the CZH player 3 days after
+# dissolution. Lets them switch to
+# Czechia or Slovakia, or remain
+# as CZH until the country ceases to exist.
+ 
+velvet_divorce.18 = {
+	type = country_event
+	placement = ROOT
+	title = velvet_divorce.18.t
+	desc = velvet_divorce.18.d
+	flavor = velvet_divorce.18.f
+ 
+	event_image = { video = "unspecific_ruler_speaking_to_people" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		is_player = yes
+	}
+ 
+	# Play as Czechia
+	option = {
+		name = velvet_divorce.18.a
+		trigger = {
+			exists = c:CZC
+		}
+		play_as = c:CZC
+		ai_chance = { base = 0 }  # AI never switches
+	}
+ 
+	# Play as Slovakia
+	option = {
+		name = velvet_divorce.18.b
+		trigger = {
+			exists = c:SVK
+		}
+		play_as = c:SVK
+		ai_chance = { base = 0 }
+	}
+ 
+	# Remain and watch the dissolution complete
+	option = {
+		name = velvet_divorce.18.c
+		default_option = yes
+		ai_chance = { base = 100 }
+	}
+}

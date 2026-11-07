@@ -1,0 +1,82 @@
+je_troubles_in_northern_ireland = {
+	icon = "gfx/interface/icons/generic_icons/battalions.dds"
+    group = je_group_dilemmas
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	
+	is_shown_when_inactive = {
+		NOT = { has_variable = good_friday_agreement }
+        c:GBR ?= this
+		country_or_subject_owns_entire_state_region = s:STATE_LEINSTER
+    }
+	
+	possible = {
+		c:GBR ?= this
+		NOT = { has_variable = good_friday_agreement }
+		country_or_subject_owns_entire_state_region = s:STATE_LEINSTER
+	}
+	
+	complete = {
+	custom_tooltip = {
+			text = good_friday_agreement_tt
+			has_variable = good_friday_agreement
+		}
+	}
+
+	fail = { NOT = { c:GBR = { country_or_subject_owns_entire_state_region = s:STATE_LEINSTER } } }
+	
+	on_monthly_pulse = {
+		random_events = {
+			chance_to_happen = 50
+			25 = troubles_events.1
+			25 = troubles_events.2
+			20 = troubles_events.3
+			15 = troubles_events.4
+			25 = ni_peace_events.5
+		}
+	}
+
+	scripted_button = je_troubles_increase_troop_button
+	scripted_progress_bar = troubles_troop_strength_bar
+}
+
+je_northern_ireland_peace_process = {
+	icon = "gfx/interface/icons/journal_entries/event_scales.dds"
+	group = je_group_dilemmas
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	
+	is_shown_when_inactive = {
+		OR = {
+			c:GBR ?= this
+			c:IRE ?= this
+		}
+		c:GBR = { country_or_subject_owns_entire_state_region = s:STATE_LEINSTER }
+		has_variable = ni_peace_downing_decl
+	}
+
+	possible = {
+		c:GBR = { country_or_subject_owns_entire_state_region = s:STATE_LEINSTER }
+		OR = {
+			c:GBR ?= this
+			c:IRE ?= this
+		}
+		has_variable = ni_peace_downing_decl
+	}
+
+	complete = {
+		custom_tooltip = {
+			text = good_friday_agreement_tt
+			has_variable = good_friday_agreement
+		}
+	}
+
+	on_monthly_pulse = {
+		random_events = {
+			chance_to_happen = 25
+			20 = ni_peace_events.2 # Multi-party talks
+			5 = ni_peace_events.3 # Ceasefire declared
+		}
+	}
+
+	weight = 100
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

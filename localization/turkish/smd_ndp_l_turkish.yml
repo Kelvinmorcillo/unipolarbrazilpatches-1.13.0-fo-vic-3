@@ -1,0 +1,288 @@
+﻿l_turkish:
+
+ je_national_development: "Ulusal Kalkınma Yolu"
+ je_national_development_reason: "Her ulusun enerjilerine nerede odaklanmasını seçmesi gerekir. Ulusal bir gelişme planı kaynakları, politikası ve siyasi on yıl boyunca tek bir stratejik vizyonun arkasında yoğunlaşır. Akıllı seçin - seçim program sona erinceye kadar terslanamaz."
+
+ je_foreign_investment: "Dış Yatırım"
+ je_foreign_investment_reason: "Büyük güçlerden sermaye çekmek, yerli kaynakların izin verdiğinin ötesine geçebilir. Yabancı bir yatırım anlaşması ülkeyi dış ticaret dışında açacaktı - tüm fırsatlarla ve entaillere bağlı bağımlılıklarla."
+ has_foreign_investment_or_trade_agreement_with_west_tt:0 "Amerika Birleşik Devletleri, Birleşik Krallık veya Fransa ile yabancı bir yatırım ve ticaret anlaşması imzalayın"
+ 
+ ndp_status_industrial_tt: "Endüstriyel genişleme devam ediyor. Ülke, üretim ve ağır sanayi üssünü inşa etmeye yönelik kaynakları yönetiyor."
+ ndp_status_military_tt: "Askeri genişleme devam ediyor. Ülke silahlı kuvvetlere, doktrinine ve savunma endüstrilerine yatırım yapıyor."
+ ndp_status_resource_tt: "Kaynak ekonomisi gelişimi devam ediyor. Ülke tarıma ve ham materyal ekstraksiyona odaklanıyor."
+ ndp_status_service_tt: "Hizmet Ekonomisi gelişimi devam ediyor. Ülke finansal sektör, eğitim ve devlet kapasitelerini inşa ediyor."
+ ndp_status_none_tt: "Hiçbir gelişim yolu şu anda aktif değildir. On yıllık bir ulusal gelişim programına başlamak için bir yol seçin."
+
+ fi_status_seeking_tt: "Ülke büyük bir güçle yabancı bir yatırım anlaşması arıyor. Bu dergi girişi tamamlamak için bir yatırım anlaşması imzalayın."
+ fi_status_secured_tt: "Yabancı bir yatırım anlaşması güvence altına alındı. Yabancı sermaye akıyor."
+
+ ndp_button_industrial_name: "Endüstriyel genişleme"
+ ndp_button_industrial_desc: "Üretim üssünü inşa etmek için ulusal kaynaklara odaklanın. Ağır endüstri, ışık üretimi ve inşaat. Yıl 2: ağır endüstri vs ışık üretimi."
+
+ ndp_button_military_name: "Askeri Genişleme"
+ ndp_button_military_desc: "Silahlı güçleri önceliklendirmek. Ordu ve donanma, askeri araştırma ve silah üretimi. Yıl 2: Arazi doktrini ve deniz inşası."
+
+ ndp_button_resource_name: "Kaynak Ekonomisi"
+ ndp_button_resource_desc: "Arazinin etrafındaki ekonomiyi inşa edin. Tarım ve ekstraktif endüstrileri güçlendirin. Yıl 2: tarım vs ham malzeme ekstraksiyon."
+
+ ndp_button_service_name: "Hizmet Ekonomisi"
+ ndp_button_service_desc: "Devlet kapasitesi, eğitim ve finansal sektör geliştirin. Bürokrasi, araştırma hızı ve yatırım. Yıl 2: finansal sektör vs eğitim ve bürokrasi."
+
+ ndp_button_abandon_name: "Abandon Path"
+ ndp_button_abandon_desc: "Abandon mevcut geliştirme programı. Tüm aktif yol değiştiricileri kaldırılacak ve iki yıl boyunca prestijli ve meşru bir ceza uygulanacak. Daha sonra yeni bir yol seçebilirsiniz."
+
+ fi_button_reject_name: "Emekli Yabancı Yatırım"
+ fi_button_reject_desc: "Kapıyı yabancı sermayeye kapatın. Bu, dergi girişi sona erecek ve uzun vadeli bir yatırım cezası uygulanacak, ancak ekonomik bağımsızlığı koruyacak ve otoriteyi güçlendirecektir."
+
+ # Tooltip keys
+ ndp_no_path_active_tt: "Hiçbir gelişim yolu şu anda aktif"
+ ndp_abandon_cost_tt: "Yolun Terkedilmesi 2 yıl boyunca meşru ve prestijli bir ceza uygulanacak."
+
+ national_development_progress_bar: "Development Progress Development"
+ national_development_progress_bar_desc: "Development Progress Development"
+ ndp_bar_active_path_tt: "Aktif gelişim yolu"
+ ndp_bar_industrial_mines_tt: "Ağır endüstri üssü kuruldu"
+ ndp_bar_industrial_factories_tt: "Üretim sektörü büyüyen"
+ ndp_bar_military_army_tt: "Büyük duran ordu"
+ ndp_bar_military_conscription_tt: "Mass conscriptionrated"
+ ndp_bar_resource_farms_tt: "Tarımsal çıktı güçlü"
+ ndp_bar_resource_extraction_tt: "Verilen endüstriler kuruldu"
+ ndp_bar_service_literacy_tt: "Yüksek okuryazarlık hizmeti gelişimini hızlandırıyor"
+ ndp_bar_service_university_tt: "Üniversite altyapısı mevcut"
+ ndp_bar_turmoil_tt: "Yüksek karışıklık yavaşladı"
+ ndp_bar_at_war_tt: "Savaş gelişim programını bozar"
+
+ # ==========================================
+ # OPENING EVENT — ndp_events.0
+ # ==========================================
+
+ ndp_events.0.t: "Ulusal Gelişim Programı Başlıyor"
+ ndp_events.0.d_industrial: "[ROOT.GetCountry.GetName] hükümeti on yıl endüstriyel genişlemeye karar verdi. Yatırım fabrikalara, madenlere ve onları bağlayan altyapıya doğru akacaktır. Plan hırslıdır - ve önemli engeller - ama vizyon açıktır: [ROOT.GetCountry.GetName]'nin dünyadaki yeri tanımlayacak verimli kapasite inşa etmek."
+ ndp_events.0.d_military: "[ROOT.GetCountry.GetName] hükümeti on yıl askeri genişlemeye karar verdi. Barracks inşa edilecek, eğitilmiş memurlar ve doktrinler reforme edilecek. Motivasyonun savunma, deterrence ya da hırs olsun, dünyaya mesajı güvenilmez: [ROOT.GetCountry.GetName] ciddiye alınmak niyetindedir."
+ ndp_events.0.d_resource: "[ROOT.GetCountry.GetName] hükümeti on yıl kaynak ekonomisi gelişimine karar verdi. Arazinin kendisi – toprakları ve mineralleri – büyüme motoru olacak. [ROOT.GetCountry.GetName] zaten sahip olduğu bir bahis ve bundan çok daha fazlasını yapmak için bir plan."
+ ndp_events.0.d_service: "[ROOT.GetCountry.GetName] hükümeti on yıl hizmet ekonomisi gelişimine karar verdi. Okullar, bankalar ve hükümet bakanlıklar tüm yatırım görecek. Ücret daha akıllı, daha iyi bir ülke nihayetinde daha güçlü bir ülkedir."
+ ndp_events.0.f: "On yıl. Bir yön."
+ ndp_events.0.a: "Program başlayalım"
+
+ # ==========================================
+ # INDUSTRIAL PATH EVENTS
+ # ==========================================
+
+ ndp_events.1.t: "Endüstri Sorusu"
+ ndp_events.1.d: "Geliştirme programına iki yıl, endüstriyel yatırımın yönü açıklanmalıdır. Ülke her şeyi bir kere inşa edemez. Planlayıcılar ve sanayiciler bölünmüştür: bazı savunma kaynakları ağır endüstriye odaklanır - demir, çelik, kömür - modern gücün günahlarını. Diğerleri, ışık üretiminin daha hızlı geri dönüşler ve daha geniş bir iş sunduğunu savunuyorlar."
+ ndp_events.1.f: "Çelik veya bez - ulus seçim yapmalı."
+ ndp_events.1.a: "Ağır endüstri - modern gücün temellerini inşa edin"
+ ndp_events.1.b: "Işık üretimi – işe öncelik ve tüketici malları"
+
+ ndp_events.2.t: "Yatırım Drive"
+ ndp_events.2.d: "Endüstri programı ivme kazanıyor, ancak inşaatın hızı sermayenin nereden geldiğine bağlıdır. Hükümet planlayıcıları doğrudan devlet yatırımı için baskı yapıyor - fonları piyasa belirsizliği olmayan öncelik sektörlerine yönlendirmek. Özel endüstriciler bu rekabete karşı ve kar teşvikleri bürokratik tahsislerden daha iyi sonuçlar üretecektir."
+ ndp_events.2.f: "Pazar veya plan - tartışma endüstrinin kendisi kadar eski."
+ ndp_events.2.a: "Devlet destekli yatırım - hükümet inşa edecek"
+ ndp_events.2.b: "Özel işletme - yatırımcıları çekmek ve geri adım geri çekmek"
+
+ ndp_events.3.t: "İşçi Sorusu"
+ ndp_events.3.d: "Fabrikalar çalışıyor ve madenler üretiyor - ancak mümkün kılan işçiler daha fazla talep ediyorlar. Geliştirme programı iş yarattı, ancak aynı zamanda beklentileri yarattı. Fabrika sahipleri daha uzun saatler ve daha az kısıtlama isterler. İşçi organizatörleri tam tersini istiyor. Hükümet bu argümanın hangi tarafında olduğuna karar vermelidir."
+ ndp_events.3.f: "Motor kömür üzerinde çalışır - ve onu kazmak için."
+ ndp_events.3.a: "Push üretkenliği - işgücünden maksimum çıktı çıkarın"
+ ndp_events.3.b: "İşçilere yatırım - daha iyi koşullar istikrarlı, sürekli büyüme anlamına gelir"
+
+ ndp_events.4.t: "A Decade of Industry"
+ ndp_events.4.d: "On yıllık endüstriyel gelişim tamamlandı. Fabrikalar inşa edildi, demiryolları kuruldu, madenler genişletildi - sonuçlar gerçek ve görünür. [ROOT.GetCountry.GetName], program başladığından beri daha güçlü bir üretken üssü ile önümüzdeki on yıla girer. Şimdi soru bir sonraki geliyor."
+ ndp_events.4.f: "Forge işini yaptı."
+ ndp_events.4.a: "Bir sonraki kurs"
+ ten_year_programme_concluded:0 "On yıl programı sonuçlandı."
+ # ==========================================
+ # MILITARY PATH EVENTS
+ # ==========================================
+
+ ndp_events.11.t: "The The Soru"
+ ndp_events.11.d: "İki yıllık askeri genişleme daha fazla asker, daha fazla silah ve daha fazla seçenek üretti - ancak doktrinin temel sorusu çözülmemiştir. Genel Personel bölünmüştür. Arazi gücüne odaklanmak için bir gerçek basın: kitlesel ordular, savunma derinliği ve kıtasal egemenlik. Bir diğeri, deniz genişlemesinin daha büyük stratejik esneklik sunduğunu ve [ROOT.GetCountry.GetName]'nin sınırlarının ötesinde proje gücü kurma yeteneğine sahip olduğunu savunuyor."
+ ndp_events.11.f: "Kılıcı veya filosu - her biri farklı bir güç vizyonu anlamına gelir."
+ ndp_events.11.a: "Arazi doktrini – komşu olmayan ordu inşa etmek"
+ ndp_events.11.b: "Deniz doktrini - ufkun ötesinde proje gücü"
+
+ ndp_events.12.t: "Procurement Debate"
+ ndp_events.12.d: "Askerin modern ekipmana ihtiyacı var - ama nereden gelmeli? Yurtiçi silah üretimi askeri güçle birlikte endüstriyel kapasite inşa edecek, ancak olgunluğa zaman ve yatırım alacak. Yabancı tedarik finansal maliyetle daha hızlı sonuçlar sunar ve bazı generallerin rahatsız bulduğu dış tedarikçilere bağımlılık yaratır."
+ ndp_events.12.f: "En iyi silah aslında alanınız olan kişidir."
+ ndp_events.12.a: "Yerli silah endüstrileri inşa edin - kendi yeterliliğe yatırım"
+ ndp_events.12.b: "Yabancı satın almak - acil yetenek için maliyeti kabul edin"
+
+ ndp_events.13.t: "Ordu Ruhu"
+ ndp_events.13.d: "Askeri programa sekiz yıl içinde, donanım yerinde - ama sadece donanım savaş kazanmıyor. Şimdi soru, gücün mücadele ruhudur. Bazı memurlar milliyetçi bir ahlaki kampanya için tartışır: her asker daha zor savaşacak vatanseverliğe ve ulusal onura hitap eder. Diğerleri subay corps'un profesyonelliğine yatırım yapmayı savunuyorlar - liderlik, taktikler ve kurumsal bilgi."
+ ndp_events.13.f: "Bir ordu ekipmanla savaşıyor - ve ruhu."
+ ndp_events.13.a: "Milliyetçi bir ahlaki kampanya başlat - mücadele ruhunu karıştırın"
+ ndp_events.13.b: "Memur Akrepleri Profesyonelleştirmek - Liderlike Yatırım"
+
+ ndp_events.14.t: "Askeri Genişlemenin On Yılı"
+ ndp_events.14.d: "On yıllık askeri gelişme tamamlandı. [ROOT.GetCountry.GetName] silahlı kuvvetler daha büyük, daha iyi donanımlı ve program başladığından daha yeteneklidir. Bu kapasiteyle yaptıkları şey - ve yatırımın maliyetine değip değmeyeceği – takip eden kararlarla belirlenecektir."
+ ndp_events.14.f: "Kılıcı kaldırılmıştır. Şimdi onun amacını bulmak gerekir."
+ ndp_events.14.a: "Bir sonraki kurs"
+
+ # ==========================================
+ # RESOURCE ECONOMY PATH EVENTS
+ # ==========================================
+
+ ndp_events.21.t: "The Land's Bounty"
+ ndp_events.21.d: "Kaynak programına iki yıl, temel seçim yapılmalıdır: Hangi tür kaynak ekonomisi [ROOT.GetCountry.GetName] inşa edecek? Tarım - büyüyen bir popülasyonu beslemek ve ihracat ürünlerini üretmek - istikrar ve geniş istihdam sağlar. Ham malzeme ekstraksiyonu - madencilik, giriş, sondaj - daha hızlı gelir sunuyor ancak daha uçucu ve mal fiyat salaklarına maruz kalan ekonomiyi terk ediyor."
+ ndp_events.21.f: "Dünya, verdiği şeyi verir. Soru, sormak istediğiniz şeydir."
+ ndp_events.21.a: "Tarım - ekmek gemisi inşa"
+ ndp_events.21.b: "Ekstraksiyon - altında serveti kazmak"
+
+ ndp_events.22.t: "Arazi Politikası"
+ ndp_events.22.d: "Beş yıl içinde, kaynak programı merkezi arazi sorusunu karşılamaktadır. Hala üretime getirilebilecek veya kullanılmış bir bölge var - ancak altyapı, yerleşimciler ve yasal çerçevelerde yatırım gerektirir. Alternatif, mevcut arazide üretimi yoğunlaştırmak, zaten çalıştığı şeyden daha fazla çıkış yapmak."
+ ndp_events.22.f: "Yeni toprak veya daha derin kökleri - çiftçinin sonsuz ikilemi."
+ ndp_events.22.a: "Yeni topraklara genişletin – sınırı açık"
+ ndp_events.22.b: "Mevcut üretimi artırmak - sahip olduğumuz şeyden daha fazlasını elde edin"
+
+ ndp_events.23.t: "İhracat Sorusu"
+ ndp_events.23.d: "Programa sekiz yıl içinde, kaynak sektörü üretiyor - ancak hangi faydaların nereye gittiğine bağlıdır. Dış pazarlarla ihracat anlaşmalarını görmek gelir genişletecek ve [ROOT.GetCountry.GetName] küresel ticaret ağlarına entegre edecek, ancak dış taleplere bağımlılık yaratır. Ülkeyi fiyat şoklarından arındırır ve gıda güvenliğini güçlendirecektir, ancak ihracatın kârlarını bozar."
+ ndp_events.23.f: "Dünyayı besleyin veya önce ulusu besleyin."
+ ndp_events.23.a: "Seek ihracat pazarları - yurtdışında fazla satmak"
+ ndp_events.23.b: "Yerli tedariki önceliklendirmek - kârın üstünde gıda güvenliği"
+
+ ndp_events.24.t: "Bir Decade of Resource Development"
+ ndp_events.24.d: "On yıllık kaynak ekonomisi gelişimi tamamlandı. Çiftlikler, madenler ve [ROOT.GetCountry.GetName] Program başladığından daha fazlasını yapıyorlar. Elde edilen kazanımlar oldukça paylaşılırsa – ve çıkarmanın sürdürülebilir olup olmadığı – önümüzdeki on yıl cevap verecek sorulardır."
+ ndp_events.24.f: "Arazi ne verir, arazi hatırlıyor."
+ ndp_events.24.a: "Bir sonraki kurs"
+
+ # ==========================================
+ # SERVICE ECONOMY PATH EVENTS
+ # ==========================================
+
+ ndp_events.31.t: "Hizmet Sorusu"
+ ndp_events.31.d: "Servis programına iki yıl, yön açıklanmalıdır. Bir hizmet ekonomisinin iki vizyonu öncelik için rekabet eder: finansal sektör - bankacılık, sigorta ve ticaret - zenginlik hızla üretir ve yatırım veya eğitim ve bürokrasi - okullar, üniversiteler ve devlet kurumları - insan sermayesi ve yönetişim kapasitesi her şeyi destekler."
+ ndp_events.31.f: "Lider veya kütüphane - her ikisi de modernitenin temelleridir."
+ ndp_events.31.a: "Finansal sektör – bankaları ve ticaret evlerini inşa edin"
+ ndp_events.31.b: "Eğitim ve bürokrasi - insan sermayesi inşa"
+
+ ndp_events.32.t: "Yetenek Sorusu"
+ ndp_events.32.d: "Beş yıl içinde, hizmet ekonomisi büyüyor - ancak bu büyümeyi sürdürmek için yetenekli insanlara ihtiyaç duyuyor. Bir seçenek yabancı yetenekleri çekmek: kapıları yurtdışından mühendislere, finanseçilere ve profesyonellere açın, bazı kazanımlarların dışarıdan geri akacağını kabul edin. Diğeri yerli eğitime ağır yatırım yapmaktır - daha yavaş, ama kalan kapasiteler inşa etmektir."
+ ndp_events.32.f: "En iyi zihinler değerli oldukları yere gider."
+ ndp_events.32.a: "yabancı yetenekleri çekmek - kapıları açın"
+ ndp_events.32.b: "Yerli eğitime yatırım - içeriden inşa edin"
+
+ ndp_events.33.t: "Kurumsal Reform"
+ ndp_events.33.d: "Sekiz yıl içinde, hizmet ekonomisi kurumlarına olgunluğa ihtiyaç duyar. İki yol kendilerini sunuyor: liberalleşme - düzenlemeleri azaltmak, kırmızı kaseti kesmek ve piyasaların daha özgürce çalışmasını sağlamak - veya kurumsal güçlendirme - hukuk, mülkiyet hakları ve hükümetin güvenilirliğini yatırım. Her ikisi de büyüme üretebilir, ancak farklı ülkeler üretirler."
+ ndp_events.33.f: "Oyunun kuralları oyuncular kadar önemlidir."
+ ndp_events.33.a: "Liberalize marketler – deregulate and step back back back back"
+ ndp_events.33.b: "Güç kurumları - hukuk kuralına yatırım"
+
+ ndp_events.34.t: "Hizmet Geliştirme Yılı"
+ ndp_events.34.d: "On yıllık hizmet ekonomisi gelişimi tamamlandı. Bankalar daha sofistike, okullar daha iyi personel, program başladığından daha yetenekli. Bu, yatırımın daha uzun vadeli bir soru olduğunu söyleyen geniş refah türüne çevirebilir – bir sonraki on yılın cevap vermeye başlayacağı."
+ ndp_events.34.f: "Zihin altyapısı diğer tüm diğerlerini sonlandırır."
+ ndp_events.34.a: "Bir sonraki kurs"
+
+ # ==========================================
+ # MODIFIERS
+ # ==========================================
+
+ ndp_modifier_industrial: "Industrial Development Path"
+ ndp_modifier_industrial_desc: "Ulusal kaynaklar endüstriyel genişlemeye yöneliktir. İnşaat oranları yukarı ve üretim kurulunda gelişiyor."
+
+ ndp_modifier_military: "Askeri Genişleme Yolu"
+ ndp_modifier_military_desc: "Ülke askeri gelişime öncelik veriyor. Araştırma askeri teknolojiye odaklanmıştır ve silahlı kuvvetler inşa ediliyor."
+
+ ndp_modifier_resource: "Kaynak Ekonomisi"
+ ndp_modifier_resource_desc: "Ulusal kaynaklar tarımsal ve ekstraktif endüstrilere yöneliktir. Arazi işe koymaktır."
+
+ ndp_modifier_service: "Hizmet Ekonomisi Yolu"
+ ndp_modifier_service_desc: "Ulusal kaynaklar eğitim, bürokrasi ve finansal gelişime yöneliktir. İnsan sermayesi büyümenin motorudur."
+
+ ndp_modifier_industrial_heavy: "Heavy Industry Focus"
+ ndp_modifier_industrial_heavy_desc: "Yatırım demir, çelik ve kömürde yoğunlaşmıştır - endüstriyel gücün temelleri."
+
+ ndp_modifier_industrial_light: "Işık İmalat Focus"
+ ndp_modifier_industrial_light_desc: "Yatırım tekstil ve tüketici ürünleri üretiminde yoğunlaşmıştır."
+
+ ndp_modifier_state_heavy_industry: "Ağır Endüstri Bölgesi"
+ ndp_modifier_state_heavy_industry_desc: "Bu devlet ağır bir endüstri önceliği bölgesi olarak adlandırılmıştır."
+
+ ndp_modifier_state_light_industry: "Işık Endüstri Bölgesi"
+ ndp_modifier_state_light_industry_desc: "Bu devlet bir ışık üretim önceliği bölgesi olarak adlandırılmıştır."
+
+ ndp_modifier_industrial_state_investment: "Devlet Yatırım Drive"
+ ndp_modifier_industrial_state_investment_desc: "Hükümet doğrudan endüstriyel inşaatı finanse ediyor."
+
+ ndp_modifier_industrial_state_investment_cost: "Endüstriyel Yatırım Maliyetleri"
+ ndp_modifier_industrial_state_investment_desc: "Endüstrideki devlet yatırımları bütçeyi güçlendiriyor."
+
+ ndp_modifier_industrial_private_investment: "Özel Yatırım Teşvikleri"
+ ndp_modifier_industrial_private_investment_desc: "Özel sermaye için teşvikler, yatırım havuzu verimliliğini artırıyor."
+
+ ndp_modifier_industrial_labour_push: "Yoğun Çalışma Politikası"
+ ndp_modifier_industrial_labour_push_desc: "İşçiler zor itiliyor - verimlilik artıyor, ama bu yüzden hoşnutsuzluk."
+
+ ndp_modifier_industrial_labour_welfare: "İşer Welfare Investment"
+ ndp_modifier_industrial_labour_welfare_desc: "İşçi koşullarında yatırım istikrar ve istikrarlı bir büyümede ödenir."
+
+ ndp_modifier_military_army: "Land Doctrine"
+ ndp_modifier_military_army_desc: "Askeri program toprak gücüne odaklanmıştır - kitlesel ordular ve kıtasal egemenlik."
+
+ ndp_modifier_military_navy: "Deniz Kuvvetleri"
+ ndp_modifier_military_navy_desc: "Askeri program deniz gücüne ve güç projeksiyonuna odaklanmıştır."
+
+ ndp_modifier_military_domestic_arms: "Yurtiçi Arms Industry"
+ ndp_modifier_military_domestic_arms_desc: "Yerli silah üretimindeki yatırım, transkriptte kar öder."
+
+ ndp_modifier_military_foreign_arms: "Yabancı Satın Alma"
+ ndp_modifier_military_foreign_arms_desc: "Yabancı ekipman askeri kapasiteyi artırıyor."
+
+ ndp_modifier_military_foreign_arms_cost: "Yabancı Satın Alma Maliyetleri"
+ ndp_modifier_military_foreign_arms_cost_desc: "Yabancı silah satın almak pahalı."
+
+ ndp_modifier_military_nationalist_morale: "Nationalist Morale Kampanyası"
+ ndp_modifier_military_nationalist_morale_desc: "Ulusal onura başvurmak, silahlı güçlerin savaş ruhunu kaldırmaktır."
+
+ ndp_modifier_military_professional_officers: "Profesyonel Subay Kolordu"
+ ndp_modifier_military_professional_officers_desc: "Görevli eğitimdeki yatırım taktik performans geliştirmektir."
+
+ ndp_modifier_resource_agriculture: "Tarım Odaklığı"
+ ndp_modifier_resource_agriculture_desc: "Ulusal kaynaklar tarımsal gelişim üzerinde yoğunlaşmaktadır."
+
+ ndp_modifier_resource_extraction: "Ekstraksiyon Focus Focus"
+ ndp_modifier_resource_extraction_desc: "Ulusal kaynaklar madencilik ve ham malzeme çıkarma üzerinde yoğunlaşır."
+
+ ndp_modifier_state_agriculture: "Tarım Önceliği Bölgesi"
+ ndp_modifier_state_agriculture_desc: "Bu devlet bir tarım önceliği bölgesi olarak adlandırılmıştır."
+
+ ndp_modifier_state_extraction: "Öncekilik Bölgesi"
+ ndp_modifier_state_extraction_desc: "Bu devlet çiğ bir malzeme çıkarma önceliği bölgesi olarak adlandırılmıştır."
+
+ ndp_modifier_resource_land_expansion: "Arazi Genişleme Programı"
+ ndp_modifier_resource_land_expansion_desc: "Yeni toprak yerleşim ve üretim için açılıyor."
+
+ ndp_modifier_resource_intensification: "Prodüksiyon Intensification"
+ ndp_modifier_resource_intensification_desc: "Mevcut tarım ve madencilik operasyonları daha yüksek çıktıya itiliyor."
+
+ ndp_modifier_resource_export_markets: "Export Market Drive"
+ ndp_modifier_resource_export_markets_desc: "Yabancı piyasaların aktif arayışı, ticaret rota verimliliğini geliştiriyor."
+
+ ndp_modifier_resource_domestic_supply: "Yurtiçi Supply Beforeity"
+ ndp_modifier_resource_domestic_supply_desc: "Yurtiçi gıda güvenliğini ihracat kazançları üzerinden önce yapmak."
+
+ ndp_modifier_service_finance: "Finansal Sektör Geliştirme"
+ ndp_modifier_service_finance_desc: "bankacılık ve finansal hizmetlere yatırım havuzunu artırıyor."
+
+ ndp_modifier_service_education: "Eğitim ve Bürokrasi Yatırım"
+ ndp_modifier_service_education_desc: "Okullar, üniversiteler ve hükümet kurumları tüm genişletiliyor."
+
+ ndp_modifier_service_foreign_talent: "Yabancı Yetenek Politikası"
+ ndp_modifier_service_foreign_talent_desc: "yetenekli yabancı işçilere açık kapılar servis sektörü büyümesini hızlandırıyor."
+
+ ndp_modifier_service_domestic_talent: "Yurtiçi Eğitim Yatırım Yatırımı"
+ ndp_modifier_service_domestic_talent_desc: "Yerli eğitime yatırım uzun vadeli insan sermayesi inşa ediyor."
+
+ ndp_modifier_service_liberalize: "Market Liberalization"
+ ndp_modifier_service_liberalize_desc: "Azaltılı yönetmelik yatırım verimliliğini ve yasayı güçlendiriyor."
+
+ ndp_modifier_service_institutions: "Kurumsal güçlendirme"
+ ndp_modifier_service_institutions_desc: "Hukuk ve devlet kapasitesinin yönetimi ve meşruiyetini artırmaktır."
+
+ ndp_modifier_abandoned: "Abandoned Development Programme"
+ ndp_modifier_abandoned_desc: "Ulusal gelişim programı tamamlanmadan önce terk edildi. Hükümet planlamasında güven acı çekti."
+
+ ndp_foreign_investment_secured: "Yabancı Yatırım: Yabancı Yatırım"
+ ndp_foreign_investment_secured_desc: "Yabancı bir yatırım anlaşması ülkeyi dış sermayeye açtı. İnşaat hızlanıyor ve yatırım havuzu büyüyor."
+
+ ndp_foreign_investment_rejected: "Yabancı Yatırım Rejected"
+ ndp_foreign_investment_rejected_desc: "Ülke kapılarını yabancı sermayeye kapattı. Ekonomik bağımsızlık korunmuştur - ancak büyüme daha yavaştır."

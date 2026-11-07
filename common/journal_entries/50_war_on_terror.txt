@@ -1,0 +1,74 @@
+je_war_on_terror = {
+    icon = "gfx/interface/icons/event_icons/bicorne_hat.dds"
+    group = je_group_dilemmas
+
+    is_shown_when_inactive = {
+        c:USA ?= this
+    }
+
+    possible = {
+        c:USA ?= this
+		has_variable = war_on_terror_campaign_started
+    }
+
+    # Journal completes when the US no longer has the variable
+    complete = {
+		custom_tooltip = {
+					text = war_on_terror_stopped_tt
+					 NOT = { has_variable = war_on_terror_campaign_started }
+					}
+    }
+
+    on_monthly_pulse = {
+        
+    }
+	scripted_button = accuse_iraq_wmds_button
+	scripted_button = end_war_on_terror_button
+    should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+je_hunt_for_bin_laden = {
+    icon = "gfx/interface/icons/event_icons/bin_laden.dds"
+    should_be_pinned_by_default_uninvolved_or_context = yes
+	group = je_group_dilemmas
+	
+	is_shown_when_inactive = {
+        c:USA ?= this
+    }
+
+    possible = {
+        c:USA ?= this
+		has_variable = hunt_for_bin_laden
+    }
+
+    scripted_progress_bar = hunt_bin_laden_progress_bar
+	scripted_button = je_request_bin_laden_extradition_button
+    complete = {
+		OR = {
+			custom_tooltip = {
+					text = osama_bar_completed
+					je:je_hunt_for_bin_laden = {
+                "scripted_bar_progress(hunt_bin_laden_progress_bar)" >= 99
+				}
+					}
+				custom_tooltip = {
+					text = osama_extradited
+					has_variable = osama_extradited 
+					}
+				}
+    }
+
+	on_monthly_pulse = {
+		random_events = {
+			chance_to_happen = 35
+			10 = usa_wot.20
+			10 = usa_wot.21
+			10 = usa_wot.22
+		}
+	}
+	
+    on_complete = {
+        trigger_event = { id = usa_wot.11 } # Capture/killing event
+		remove_variable = hunt_for_bin_laden
+    }
+}

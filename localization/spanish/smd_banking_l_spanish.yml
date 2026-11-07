@@ -1,0 +1,49 @@
+﻿l_spanish:
+ # ── TAB RENAME ────────────────────────────
+ BUDGET_TAB_ASSETS: "Sistema Financiero"
+ BUDGET_TAB_FINANCE: "Activos"
+ # ── CENTRAL BANKING PANEL ─────────────────
+ BUDGET_CENTRAL_BANKING_HEADER: "Banco Central"
+ BUDGET_CENTRAL_BANK_LAW_LABEL: "Política actual:"
+ BUDGET_FISCAL_POLICY_LABEL: "Política monetaria"
+
+ # Scripted loc keys
+ cb_policy_loc_1: "id=0/(es) La mayoría de los constrenos realizadosx id=1/"
+ cb_policy_loc_2: "id=0/(concentrado)"
+ cb_policy_loc_3: "id=0/% Neutral correspondx id=1/"
+ cb_policy_loc_4: "id=0/% Expansionary"
+ cb_policy_loc_5: "id=0/(es) La mayoría de los Expansionarios realizadosx id=1"
+
+ # ── BUTTON TOOLTIPS — FRACTIONAL RESERVE ──
+ CB_POLICY_1_TOOLTIP: "id=10% id=1x"
+ CB_POLICY_2_TOOLTIP: "id=0 id=0/ id=7 id=8x id=8x id=0 id=0 id=5/(0) id=2/(s) = id=2/(s) Construyendo Reservas Máximas de Efectivo: idx id=25/año -12.5%"
+ CB_POLICY_3_TOOLTIP: "id=0/ título Estable id=1/ títulox id=2/ fielx id=3/ fielx id=4/ El banco central no toma posición activa. No se aplican modificadores."
+ CB_POLICY_4_TOOLTIP: "id=0 id=0/(0)/(0)/(0)/(s))"
+ CB_POLICY_5_TOOLTIP: "id=0 id=0/conferencia mayor id=4/(s)"
+
+ # Fractional Reserve variants
+ CB_POLICY_1_FRAC: "id=0/conferencia mayor - Reserva fraccional efectuadax id=1/ fieltrox id=2/ fielx id=3/ títulox id=4/conferenciaEl banco central ajusta las condiciones de crédito significativamente.Seguido: id=5/conceptor id=6/conceptor id=7/conceptor Bank Throughput id=11x id=13 contacto"
+ CB_POLICY_2_FRAC: "id=0/Contractary - Reserva Fraccional efectuadax id=1/ Clavex id=2/ fieltrox id=3/ Clavex id=4/ El banco central aplica un ajuste leve a las condiciones de crédito.Seguido id=5/ fielx id=6/ indicax id=7/ renta Bank Throughput id=8/ otorgax id=5 % indicax id=9/ indicax id=10/ título indicax id=11/ título Financial District Throughput ierex id=12/ tercero identificadox id=13/año"
+ CB_POLICY_3_FRAC: "id=0/ título Neutral - Reserva fraccional realizadax id=1/ título significax id=2/ título recomendadox id=3/ títulox id=4/ título El banco central no toma posición activa. No se aplican modificadores."
+ CB_POLICY_4_FRAC: "id=0/ título Expansionario - Reserva fraccional efectuadax id=1/ fielx id=2/ fielx id=3/ títulox id=4/ título El banco central facilita las condiciones de crédito para estimular los préstamos.Seguido id=5/ fielx id=6/ implicadox id=7/ renta Bank Throughput id=8/ otorgante-5% seccionx id=9/ título autorizadox id=10/ indicax id=11/ título Financial District Throughput idu identificadox id=12/ ratio+5% secuerdox id=13/año"
+ CB_POLICY_5_FRAC: "id=0/conferencia La mayoría de los Expansionarios - Reserva fraccional efectuadax id=1/conferenciax id=2/ arrendamientox id=3/ indicax id=4/conferenciaEl banco central estimula agresivamente el sector financiero."
+
+ # Full Reserve variants
+ CB_POLICY_1_FULL: "id=0/(es) Más contrincante - Reserva completa realizadax id=1/conferencia indicax id=2/Nombre seleccionadox id=3/ fielx id=4/ Los requisitos de reserva se maximizan, reduciendo drásticamente la disponibilidad de crédito.Seguido id=5/ título indicax id=6/ especificadox id=7/ coeficiente de interés de préstamo id=8/ contacto-1% identificadox id=9/ título recomendadox id=10/ título indicax id=11/ título Reservas de efectivo idux id=12/año+25% fielx id=13/"
+ CB_POLICY_2_FULL: "id=0/conductor - Reserva completa realizadax id=1/conferencia indicax id=2/(incluido)x id=3/(incluido)x id=4/ títuloLos requisitos de reserva se ajustan modestamente."
+ CB_POLICY_3_FULL: "id=0/conferencia Neutral - Reserva completa realizadax id=1/Consejo identificadox id=2/ consiguiente recomendadox id=3/ fielx id=4/conferencia Los requisitos de reserva siguen siendo mínimos. No se aplicaron modificadores adicionales."
+ CB_POLICY_4_FULL: "id=0/(0) Expansionary - Reserva completa realizadax id=1/ título significax id=2/ título seleccionadox id=3/ fielx id=4/ Los requerimientos de reserva se relajan para permitir mayores préstamos.Seguido id=5/ fielx id=6/ especificadox id=7/ coeficiente de interés de préstamo id=8/ título+0.5% seccionadox id=9/ título significax id=10/ indicax id=11/ título Reservas de efectivo id=12/ tercero-12.5% se indica id=13/"
+ CB_POLICY_5_FULL: "id=0/conferencia La mayoría de los Expansionarios - Reserva completa realizadax id=1/conferencia indicax id=2/conceptor identificadox id=3/ indicax id=4/conferenciaLos requisitos de reserva se minimizan para maximizar la capacidad de préstamo."
+
+ # ── MODIFIER NAMES ────────────────────────
+ cb_policy_fractional_1: "La mayoría de la política monetaria contracciones"
+ cb_policy_fractional_2: "Política monetaria de tracción"
+ cb_policy_fractional_4: "Expansionary Monetary Policy"
+ cb_policy_fractional_5: "Most Expansionary Monetary Policy"
+ cb_policy_full_1: "La mayoría de la política de reserva restringida"
+ cb_policy_full_2: "Política de Reserva"
+ cb_policy_full_4: "Política de Reserva Ampliada"
+ cb_policy_full_5: "La mayoría de la política de Reserva Expansionaria"
+ 
+ building_group_bg_banking_throughput_add_desc:0 "Un modificador para la entrada de bancos comerciales"
+ building_financial_district_throughput_add_desc:0 "A modofier to the throughput of Financial Districts"

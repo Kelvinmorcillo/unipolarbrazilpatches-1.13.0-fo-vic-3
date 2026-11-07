@@ -1,0 +1,1203 @@
+﻿namespace = arab_spring
+
+# ==========================================
+# arab_spring.1 — The Spark
+# Fired by on_action when a revolution
+# including liberals/progressives occurs.
+# Analogous to peoples_springtime.1
+# ==========================================
+
+arab_spring.18 = {
+	type = country_event
+	event_image = {
+		video = "arab_spring"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	title = arab_spring.1.t
+	desc = arab_spring.1.d
+	
+	flavor = arab_spring.1.f
+
+	trigger = {
+		game_date >= 2010.11.31
+		is_in_geographic_region = geographic_region_middle_east
+		NOT = {
+			OR = {
+				has_law = law:law_census_voting
+				has_law = law:law_universal_suffrage
+				c:ISR ?= this
+			}
+			has_law = law:law_elected_bureaucrats
+		}
+		NOT = { has_variable = completed_arab_spring }
+		NOT = { 
+			has_variable = asp_1_event
+		}
+		
+	}
+
+	immediate = {
+		set_variable = asp_1_event
+		set_global_variable = arab_spring_happening
+		
+		if = {
+			limit = {
+				NOT = {
+					any_political_movement = {
+						is_political_movement_type = movement_liberal
+					}
+				}
+			}
+			create_political_movement = { type = movement_liberal }
+		}
+		random_political_movement = {
+			limit = { is_political_movement_type = movement_liberal }
+			save_scope_as = protest_movement
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_political_movement = {
+						is_political_movement_type = movement_traditionalist
+					}
+				}
+				OR = {
+					country_has_accepted_religion = sunni
+					country_has_accepted_religion = shiite
+				}
+			}
+			create_political_movement = { type = movement_traditionalist }
+		}
+		if = {
+			limit = {
+				scope:protest_movement ?= {
+					any_supporting_character = { has_role = agitator }
+				}
+			}
+			scope:protest_movement ?= {
+				random_supporting_character = {
+					limit = { has_role = agitator }
+					save_scope_as = protest_ig_leader
+				}
+			}
+		}
+	}
+
+	duration = 3
+
+	option = {	# Rally behind the protests
+		name = arab_spring.1.a
+		add_radicals = { value = medium_radicals strata = lower }
+		add_radicals = { value = small_radicals strata = middle }
+		if = {
+			limit = { exists = scope:protest_ig_leader }
+			scope:protest_ig_leader = {
+				add_modifier = {
+					name = arab_spring_popular_dissident
+					days = normal_modifier_time
+				}
+			}
+		}
+	}
+
+	option = {	# Acknowledge grievances without endorsing street protests
+		name = arab_spring.1.b
+		default_option = yes
+		add_radicals = { value = small_radicals strata = lower }
+		if = {
+			limit = { exists = scope:protest_ig_leader }
+			scope:protest_ig_leader = {
+				add_modifier = {
+					name = arab_spring_regime_collaborator
+					days = normal_modifier_time
+				}
+			}
+		}
+	}
+}
+
+# ==========================================
+# arab_spring.29 — The Contagion
+# Neighbouring country gets pulled into
+# the Spring. Analogous to peoples_springtime.2
+# ==========================================
+
+arab_spring.20 = {
+	type = country_event
+	event_image = {
+		video = "burnt_building"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	title = arab_spring.2.t
+	desc = arab_spring.2.d
+	flavor = arab_spring.2.f
+
+	trigger = {
+		# Triggered by arab_spring.4
+	}
+
+	duration = 3
+	cooldown = { days = short_modifier_time }
+
+	immediate = {
+		random_interest_group = {
+			limit = {
+				ig_counts_as_marginal = no
+				OR = {
+					is_interest_group_type = ig_intelligentsia
+					is_interest_group_type = ig_trade_unions
+					is_interest_group_type = ig_petty_bourgeoisie
+					is_interest_group_type = ig_rural_folk
+					is_interest_group_type = ig_industrialists
+				}
+				leader = {
+					NOR = {
+						has_ideology = ideology:ideology_liberal_leader
+						has_ideology = ideology:ideology_progressive_leader
+						has_ideology = ideology:ideology_communist_leader
+						has_ideology = ideology:ideology_jihadist_leader
+					}
+				}
+			}
+			save_scope_as = inspired_ig
+		}
+	}
+
+	option = {	# Welcome the contagion
+		name = arab_spring.2.a
+		scope:inspired_ig = {
+			leader = {
+				set_ideology = ideology:ideology_liberal_leader
+				add_modifier = {
+					name = arab_spring_popular_dissident
+					days = normal_modifier_time
+				}
+			}
+		}
+	}
+
+	option = {	# Denounce foreign agitators
+		name = arab_spring.2.b
+		default_option = yes
+		scope:inspired_ig = {
+			leader = {
+				set_ideology = ideology:ideology_liberal_leader
+				add_modifier = {
+					name = arab_spring_regime_collaborator
+					days = normal_modifier_time
+				}
+			}
+		}
+	}
+}
+
+# ==========================================
+# arab_spring.3 — New Voices of Dissent
+# Monthly pulse — IG leaders radicalize
+# toward liberal/progressive ideology.
+# Analogous to peoples_springtime.3
+# ==========================================
+
+arab_spring.3 = {
+	type = country_event
+	event_image = { video = "injured_agitator" }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	title = arab_spring.3.t
+	desc = arab_spring.3.d
+	flavor = arab_spring.3.f
+
+	trigger = {
+		has_journal_entry = je_arab_spring
+		any_interest_group = {
+			OR = {
+				is_interest_group_type = ig_intelligentsia
+				is_interest_group_type = ig_trade_unions
+				is_interest_group_type = ig_petty_bourgeoisie
+				is_interest_group_type = ig_rural_folk
+				is_interest_group_type = ig_industrialists
+			}
+			leader = {
+				NOR = {
+					has_ideology = ideology:ideology_liberal_leader
+					has_ideology = ideology:ideology_progressive_leader
+				}
+			}
+		}
+		empty_agitator_slots >= 1
+	}
+
+	immediate = {
+		random_interest_group = {
+			limit = {
+				OR = {
+					is_interest_group_type = ig_intelligentsia
+					is_interest_group_type = ig_trade_unions
+					is_interest_group_type = ig_petty_bourgeoisie
+					is_interest_group_type = ig_rural_folk
+					is_interest_group_type = ig_industrialists
+				}
+				leader = {
+					NOR = {
+						has_ideology = ideology:ideology_liberal_leader
+						has_ideology = ideology:ideology_progressive_leader
+					}
+				}
+			}
+			save_scope_as = inspired_ig
+		}
+	}
+
+	duration = 3
+	cooldown = { days = short_modifier_time }
+
+	option = {	# Promote a liberal leader directly
+		name = arab_spring.3.a
+		ai_chance = { base = 25 }
+		custom_tooltip = {
+			text = arab_spring.3.a.tt
+			create_character = {
+				ig_leader = yes
+				ideology = ideology_liberal_leader
+				interest_group = scope:inspired_ig
+			}
+		}
+	}
+
+	option = {	# Create an agitator instead
+		name = arab_spring.3.b
+		default_option = yes
+		ai_chance = {
+			base = 75
+			modifier = {
+				trigger = {
+					scope:inspired_ig = { ig_approval < -5 }
+				}
+				add = -50
+			}
+		}
+		scope:inspired_ig = {
+			add_modifier = {
+				name = arab_spring_dissidents_within
+				days = short_modifier_time
+			}
+		}
+		create_character = {
+			is_agitator = yes
+			ideology = ideology_liberal_leader
+			interest_group = scope:inspired_ig
+		}
+	}
+}
+
+# ==========================================
+# arab_spring.4 — The Wave Spreads
+# Monthly pulse — spread to a neighbouring
+# country. Analogous to peoples_springtime.4
+# ==========================================
+
+arab_spring.4 = {
+	type = country_event
+	event_image = { video = "libyan_society" }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	title = arab_spring.4.t
+	desc = arab_spring.4.d
+	flavor = arab_spring.4.f
+
+	trigger = {
+		has_journal_entry = je_arab_spring
+		any_neighbouring_state = {
+			owner = {
+				is_in_geographic_region = geographic_region_middle_east
+				NOT = { has_law = law_type:law_elected_bureaucrats }
+				any_interest_group = {
+					is_powerful = yes
+					OR = {
+						is_interest_group_type = ig_intelligentsia
+						is_interest_group_type = ig_trade_unions
+						is_interest_group_type = ig_petty_bourgeoisie
+						is_interest_group_type = ig_rural_folk
+						is_interest_group_type = ig_industrialists
+					}
+					leader = {
+						NOR = {
+							has_ideology = ideology:ideology_liberal_leader
+							has_ideology = ideology:ideology_progressive_leader
+							has_ideology = ideology:ideology_communist_leader
+							has_ideology = ideology:ideology_jihadist_leader
+						}
+					}
+				}
+			}
+		}
+		any_interest_group = {
+			leader = {
+				OR = {
+					has_ideology = ideology:ideology_liberal_leader
+					has_ideology = ideology:ideology_progressive_leader
+				}
+			}
+		}
+	}
+
+	duration = 3
+	cooldown = { days = normal_modifier_time }
+
+	option = {	# Actively export the revolution
+		name = arab_spring.4.a
+		random_neighbouring_state = {
+			limit = {
+				owner = {
+					is_in_geographic_region = geographic_region_middle_east
+					NOT = { has_law = law_type:law_elected_bureaucrats }
+					any_interest_group = {
+						is_powerful = yes
+						OR = {
+							is_interest_group_type = ig:ig_intelligentsia
+							is_interest_group_type = ig:ig_trade_unions
+							is_interest_group_type = ig:ig_petty_bourgeoisie
+							is_interest_group_type = ig:ig_rural_folk
+							is_interest_group_type = ig:ig_industrialists
+						}
+						leader = {
+							NOR = {
+								has_ideology = ideology:ideology_liberal_leader
+								has_ideology = ideology:ideology_progressive_leader
+								has_ideology = ideology:ideology_communist_leader
+								has_ideology = ideology:ideology_jihadist_leader
+							}
+						}
+					}
+				}
+			}
+			owner = {
+				trigger_event = { id = arab_spring.18 days = 0 }
+			}
+		}
+		every_interest_group = {
+			limit = {
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_liberal_leader
+						has_ideology = ideology:ideology_progressive_leader
+					}
+				}
+			}
+			add_modifier = {
+				name = arab_spring_spread_the_spring
+				months = 6
+			}
+		}
+	}
+
+	option = {	# Stay focused at home
+		name = arab_spring.4.b
+		default_option = yes
+		every_interest_group = {
+			limit = {
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_liberal_leader
+						has_ideology = ideology:ideology_progressive_leader
+					}
+				}
+			}
+			add_modifier = {
+				name = arab_spring_contained_movement
+				days = short_modifier_time
+			}
+		}
+	}
+}
+
+# ==========================================
+# arab_spring.5 — Underground Networks
+# Monthly pulse — dissidents in the shadows
+# cause turmoil. Analogous to peoples_springtime.5
+# ==========================================
+
+arab_spring.5 = {
+	type = country_event
+	event_image = { video = "gaddafi" }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	title = arab_spring.5.t
+	desc = arab_spring.5.d
+	flavor = arab_spring.5.f
+
+	trigger = {
+		has_journal_entry = je_arab_spring
+		any_interest_group = {
+			leader = {
+				OR = {
+					has_ideology = ideology:ideology_liberal_leader
+					has_ideology = ideology:ideology_progressive_leader
+				}
+			}
+			ig_approval <= unhappy
+		}
+	}
+
+	duration = 3
+	cooldown = { days = short_modifier_time }
+
+	option = {	# Unrest in the provinces
+		name = arab_spring.5.a
+		random_scope_state = {
+			limit = {
+				is_incorporated = yes
+				is_capital = no
+			}
+			add_radicals_in_state = { value = very_large_radicals }
+		}
+		default_option = yes
+		random_country = {
+			limit = { NOT = { is_in_geographic_region = geographic_region_middle_east }
+				OR = {
+					has_law = law_type:law_universal_suffrage
+					has_law = law_type:law_census_voting
+				}
+				has_law = law_type:law_elected_bureaucrats
+				country_rank >= rank_value:major_power
+			}
+		trigger_event = { id = arab_spring_intl.1 days = 1 }
+		}
+		ai_chance = { base = 90 }
+	}
+
+	option = {	# Unrest reaches the capital
+		name = arab_spring.5.b
+		random_country = {
+			limit = { NOT = { is_in_geographic_region = geographic_region_middle_east }
+				OR = {
+					has_law = law_type:law_universal_suffrage
+					has_law = law_type:law_census_voting
+				}
+				has_law = law_type:law_elected_bureaucrats
+				country_rank >= rank_value:major_power
+			}
+		trigger_event = { id = arab_spring_intl.1 days = 1 }
+		}
+		capital = {
+			add_radicals_in_state = { value = very_large_radicals }
+		}
+		ai_chance = { base = 10 }
+	}
+}
+
+# ==========================================
+# arab_spring.6 — The Spring is Over
+# Fired by on_action when the JE ends.
+# Notifies all involved countries.
+# Analogous to peoples_springtime.6
+# ==========================================
+
+arab_spring.6 = {
+	type = country_event
+	event_image = { video = "libyan_society" }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	title = arab_spring.6.t
+	desc = arab_spring.6.d
+	flavor = arab_spring.6.f
+
+	cooldown = { days = never_fire_again_modifier_time }
+	duration = 3
+
+	option = {
+		name = arab_spring.6.a
+		custom_tooltip = arab_spring.6.a.tt
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { has_global_variable = arab_spring_happened }
+				}
+				every_country = {
+					limit = {
+						OR = {
+							has_journal_entry = je_arab_spring
+							has_variable = completed_arab_spring
+						}
+						NOT = { this = root }
+					}
+					trigger_event = { id = arab_spring.6 days = 1 }
+				}
+			}
+		}
+		default_option = yes
+	}
+}
+
+# ==========================================
+# arab_spring.7 — Islamist Forces Consolidate
+# Arab Winter completion — Islamist/nationalist
+# victory. Analogous to peoples_springtime.7
+# ==========================================
+
+arab_spring.7 = {
+	type = country_event
+	event_image = { video = "libyan_society" }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	title = arab_spring.7.t
+	desc = arab_spring.7.d
+	flavor = arab_spring.7.f
+
+	duration = 3
+
+	immediate = {
+		random_interest_group = {
+			limit = {
+				is_in_government = yes
+				OR = {
+					has_ideology = ideology:ideology_jihadist_movement
+					leader = {
+						OR = {
+							has_ideology = ideology:ideology_jihadist_leader
+							has_ideology = ideology:ideology_traditionalist_leader
+							has_ideology = ideology:ideology_nationalist_leader
+						}
+					}
+				}
+			}
+			save_scope_as = islamist_ig
+		}
+	}
+
+	option = {	# Embrace the Islamist consolidation
+		name = arab_spring.7.a
+		add_modifier = {
+			name = arab_winter_islamist_consolidation
+			days = normal_modifier_time
+		}
+	}
+
+	option = {	# Grudging acceptance — stabilize without triumphalism
+		name = arab_spring.7.b
+		default_option = yes
+		add_loyalists = { value = 0.1 }
+	}
+}
+
+# ==========================================
+# arab_spring.71 — A Democratic Transition
+# Arab Winter completion — reformist victory.
+# Analogous to peoples_springtime.71
+# ==========================================
+
+arab_spring.71 = {
+	type = country_event
+	event_image = { video = "arab_spring" }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	title = arab_spring.71.t
+	desc = arab_spring.71.d
+	flavor = arab_spring.71.f
+
+	duration = 3
+
+	immediate = {
+		random_interest_group = {
+			limit = {
+				is_in_government = yes
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_liberal_leader
+						has_ideology = ideology:ideology_progressive_leader
+					}
+				}
+			}
+			save_scope_as = reformist_ig
+		}
+		random_primary_culture = {
+			save_scope_as = primary_culture_scope
+		}
+	}
+
+	option = {	# Push for full democratic reform now
+		name = arab_spring.71.a
+		every_interest_group = {
+			limit = {
+				law_stance = {
+					law = law_type:law_universal_suffrage
+					value > neutral
+				}
+			}
+			add_modifier = {
+				name = arab_spring_democratic_transition
+				days = normal_modifier_time
+			}
+		}
+	}
+
+	option = {	# Consolidate cautiously
+		name = arab_spring.71.b
+		default_option = yes
+		add_loyalists = {
+			value = 0.1
+			culture = scope:primary_culture_scope
+		}
+		add_modifier = {
+			name = arab_spring_democratic_transition
+			days = normal_modifier_time
+			multiplier = 0.5
+		}
+	}
+}
+
+# ==========================================
+# arab_spring.8 — The Crackdown
+# JE failure/timeout — uprising suppressed.
+# Analogous to peoples_springtime.8
+# ==========================================
+
+arab_spring.8 = {
+	type = country_event
+	event_image = { video = "arab_spring" }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	title = arab_spring.8.t
+	desc = arab_spring.8.d
+	flavor = arab_spring.8.f
+
+	duration = 3
+
+	trigger = {
+		OR = {
+			has_variable = arab_winter_revolution_crushed
+			AND = {
+				var:arab_spring_timer_var >= 12
+				any_political_movement = {
+					OR = {
+						is_political_movement_type = movement_liberal
+						is_political_movement_type = movement_progressive
+					}
+					political_movement_support <= 0.10
+					is_being_suppressed = yes
+				}
+				NOT = {
+					any_scope_character = {
+						OR = {
+							has_role = politician
+							has_role = agitator
+						}
+						OR = {
+							has_ideology = ideology:ideology_liberal_leader
+							has_ideology = ideology:ideology_progressive_leader
+						}
+					}
+				}
+				NOT = { has_variable = completed_arab_spring }
+			}
+		}
+	}
+
+	immediate = {
+		set_variable = { name = completed_arab_spring }
+		if = {
+			limit = { has_variable = arab_winter_revolution_crushed }
+			remove_variable = arab_winter_revolution_crushed
+		}
+	}
+
+	option = {	# Celebrate the restoration of order
+		name = arab_spring.8.a
+		add_modifier = {
+			name = arab_winter_revolution_crushed
+			days = normal_modifier_time
+		}
+	}
+
+	option = {	# Quiet relief — no triumphalism
+		name = arab_spring.8.b
+		default_option = yes
+		add_loyalists = { value = 0.1 }
+	}
+
+	after = {
+		je:je_arab_spring ?= {
+			remove_involved_country = ROOT
+		}
+		hidden_effect = {
+			set_strategy = ai_strategy_conservative_agenda
+		}
+		# Restore the authoritarian laws saved at JE start
+		if = {
+			limit = {
+				has_variable = authoritarian_distribution_of_power_law
+				has_variable = authoritarian_free_speech_law
+				has_variable = authoritarian_internal_security_law
+			}
+			if = {
+				limit = {
+					NOT = { has_law = var:authoritarian_distribution_of_power_law }
+				}
+				activate_law = var:authoritarian_distribution_of_power_law
+			}
+			if = {
+				limit = {
+					NOT = { has_law = var:authoritarian_free_speech_law }
+				}
+				activate_law = var:authoritarian_free_speech_law
+			}
+			if = {
+				limit = {
+					NOT = { has_law = var:authoritarian_internal_security_law }
+				}
+				activate_law = var:authoritarian_internal_security_law
+			}
+		}
+	}
+}
+
+# ==========================================
+# arab_spring.9 — The People's Revolution
+# Weekly pulse — insurrectionary movement,
+# capital in revolt. Analogous to peoples_springtime.9
+# ==========================================
+
+arab_spring.9 = {
+	type = country_event
+	event_image = { video = "burnt_building" }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	title = arab_spring.9.t
+	desc = arab_spring.9.d
+	flavor = arab_spring.9.f
+
+	duration = 3
+	cooldown = { days = normal_modifier_time }
+
+	trigger = {
+		any_political_movement = {
+			OR = {
+				is_political_movement_type = movement_liberal
+				is_political_movement_type = movement_progressive
+				is_political_movement_type = movement_social_democratic
+			}
+			is_insurrectionary = yes
+		}
+		capital = { is_in_revolt = yes }
+		NOT = { has_variable = had_arab_spring_revolution }
+	}
+
+	immediate = {
+		save_scope_as = relevant_country
+		capital = { save_scope_as = relevant_state }
+		ruler = { save_scope_as = ruler_scope }
+	}
+
+	cancellation_trigger = {
+		has_variable = had_arab_spring_revolution
+	}
+
+	option = {	# Full democratic transition
+		name = arab_spring.9.a
+		default_option = yes
+		set_variable = had_arab_spring_revolution
+		hidden_effect = {
+			set_immune_to_revolutions = yes
+			add_modifier = {
+				name = modifier_arab_spring_transition_cabinet
+				days = 120
+				is_decaying = yes
+			}
+		}
+		if = {
+			limit = { NOT = { has_law = law_type:law_universal_suffrage } }
+			activate_law = law_type:law_universal_suffrage
+		}
+		if = {
+			limit = { NOT = { has_law = law_type:law_right_of_assembly } }
+			activate_law = law_type:law_right_of_assembly
+		}
+		if = {
+			limit = { NOT = { has_law = law_type:law_national_guard } }
+			activate_law = law_type:law_national_guard
+		}
+		hidden_effect = {
+			ordered_interest_group = {
+				limit = {
+					OR = {
+						has_ideology = ideology:ideology_liberal_movement
+						leader = {
+							OR = {
+								has_ideology = ideology:ideology_liberal_leader
+								has_ideology = ideology:ideology_progressive_leader
+							}
+						}
+					}
+				}
+				order_by = ig_clout
+				position = 0
+				check_range_bounds = no
+				add_modifier = {
+					name = modifier_arab_spring_kick_out_of_insurrection
+					days = 75
+				}
+			}
+		}
+		every_interest_group = {
+			limit = {
+				is_in_government = yes
+				NOR = {
+					has_ideology = ideology:ideology_liberal_movement
+					leader = {
+						OR = {
+							has_ideology = ideology:ideology_liberal_leader
+							has_ideology = ideology:ideology_progressive_leader
+						}
+					}
+				}
+			}
+			add_modifier = {
+				name = modifier_arab_spring_regime_ig_defeated
+				months = 12
+				is_decaying = yes
+			}
+		}
+		show_as_tooltip = {
+			every_interest_group = {
+				limit = {
+					is_in_government = yes
+					NOR = {
+						has_ideology = ideology:ideology_liberal_movement
+						leader = {
+							OR = {
+								has_ideology = ideology:ideology_liberal_leader
+								has_ideology = ideology:ideology_progressive_leader
+							}
+						}
+					}
+				}
+				remove_ruling_interest_group = yes
+			}
+			ordered_interest_group = {
+				limit = {
+					OR = {
+						has_ideology = ideology:ideology_liberal_movement
+						leader = {
+							OR = {
+								has_ideology = ideology:ideology_liberal_leader
+								has_ideology = ideology:ideology_progressive_leader
+							}
+						}
+					}
+				}
+				order_by = ig_clout
+				position = 0
+				check_range_bounds = no
+				abandon_revolution = yes
+				add_ruling_interest_group = yes
+			}
+			call_election = { months = 2 }
+		}
+		hidden_effect = {
+			set_strategy = ai_strategy_progressive_agenda
+			trigger_event = { id = arab_spring.91 days = 5 }
+		}
+	}
+
+	option = {	# Partial transition — census voting only
+		name = arab_spring.9.b
+		set_variable = had_arab_spring_revolution
+		hidden_effect = {
+			set_immune_to_revolutions = yes
+			add_modifier = {
+				name = modifier_arab_spring_transition_cabinet
+				days = 120
+				is_decaying = yes
+			}
+		}
+		if = {
+			limit = { NOT = { has_law = law_type:law_census_voting } }
+			activate_law = law_type:law_census_voting
+		}
+		if = {
+			limit = { NOT = { has_law = law_type:law_right_of_assembly } }
+			activate_law = law_type:law_right_of_assembly
+		}
+		if = {
+			limit = { NOT = { has_law = law_type:law_national_guard } }
+			activate_law = law_type:law_national_guard
+		}
+		hidden_effect = {
+			ordered_interest_group = {
+				limit = {
+					OR = {
+						has_ideology = ideology:ideology_liberal_movement
+						leader = {
+							OR = {
+								has_ideology = ideology:ideology_liberal_leader
+								has_ideology = ideology:ideology_progressive_leader
+							}
+						}
+					}
+				}
+				order_by = ig_clout
+				position = 0
+				check_range_bounds = no
+				add_modifier = {
+					name = modifier_arab_spring_kick_out_of_insurrection
+					days = 75
+				}
+			}
+		}
+		every_interest_group = {
+			limit = {
+				is_in_government = yes
+				NOR = {
+					has_ideology = ideology:ideology_liberal_movement
+					leader = {
+						OR = {
+							has_ideology = ideology:ideology_liberal_leader
+							has_ideology = ideology:ideology_progressive_leader
+						}
+					}
+				}
+			}
+			add_modifier = {
+				name = modifier_arab_spring_regime_ig_defeated
+				months = 12
+				is_decaying = yes
+			}
+		}
+		show_as_tooltip = {
+			every_interest_group = {
+				limit = {
+					is_in_government = yes
+					NOR = {
+						has_ideology = ideology:ideology_liberal_movement
+						leader = {
+							OR = {
+								has_ideology = ideology:ideology_liberal_leader
+								has_ideology = ideology:ideology_progressive_leader
+							}
+						}
+					}
+				}
+				remove_ruling_interest_group = yes
+			}
+			ordered_interest_group = {
+				limit = {
+					OR = {
+						has_ideology = ideology:ideology_liberal_movement
+						leader = {
+							OR = {
+								has_ideology = ideology:ideology_liberal_leader
+								has_ideology = ideology:ideology_progressive_leader
+							}
+						}
+					}
+				}
+				order_by = ig_clout
+				position = 0
+				check_range_bounds = no
+				abandon_revolution = yes
+				add_ruling_interest_group = yes
+			}
+			call_election = { months = 2 }
+		}
+		hidden_effect = {
+			set_strategy = ai_strategy_progressive_agenda
+			trigger_event = { id = arab_spring.91 days = 5 }
+		}
+	}
+
+	option = {	# The civil war deepens
+		name = arab_spring.9.c
+		random_civil_war = {
+			add_civil_war_progress = revolution_advance_large
+		}
+	}
+}
+
+# ==========================================
+# arab_spring.91 — Revolution Follow-up
+# Hidden — executes the government reshuffle
+# after the revolution fires.
+# Analogous to peoples_springtime.91
+# ==========================================
+
+arab_spring.91 = {
+	type = country_event
+	event_image = { video = "burnt_building" }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	hidden = yes
+	duration = 3
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		ordered_interest_group = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_liberal_movement
+					leader = {
+						OR = {
+							has_ideology = ideology:ideology_liberal_leader
+							has_ideology = ideology:ideology_progressive_leader
+						}
+					}
+				}
+			}
+			order_by = ig_clout
+			position = 0
+			check_range_bounds = no
+			abandon_revolution = yes
+			add_ruling_interest_group = yes
+		}
+		every_interest_group = {
+			limit = {
+				is_in_government = yes
+				NOR = {
+					has_ideology = ideology:ideology_liberal_movement
+					leader = {
+						OR = {
+							has_ideology = ideology:ideology_liberal_leader
+							has_ideology = ideology:ideology_progressive_leader
+						}
+					}
+				}
+			}
+			remove_ruling_interest_group = yes
+			add_modifier = {
+				name = modifier_arab_spring_regime_ig_defeated
+				months = 12
+				is_decaying = yes
+			}
+		}
+		call_election = { months = 2 }
+		update_party_support = yes
+		hidden_effect = {
+			if = {
+				limit = { in_election_campaign = yes }
+				every_active_party = {
+					limit = {
+						party_has_members = yes
+						OR = {
+							is_party_type = liberal_party
+							is_party_type = progressive_party
+						}
+					}
+					add_momentum = momentum_very_large
+				}
+			}
+		}
+		set_immune_to_revolutions = no
+	}
+}
+
+# ==========================================
+# arab_spring.10 — The Arab Winter Begins
+# Weekly pulse — revolution succeeded,
+# democratic laws in place. Spawns je_arab_winter.
+# Analogous to peoples_springtime.10
+# ==========================================
+
+arab_spring.10 = {
+	type = country_event
+	event_image = { video = "opposition_speaker" }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	title = arab_spring.10.t
+	desc = arab_spring.10.d
+	flavor = arab_spring.10.f
+
+	duration = 3
+
+	trigger = {
+		AND = {
+			OR = {
+				has_variable = had_arab_spring_revolution
+				any_interest_group = {
+					is_in_government = yes
+					OR = {
+						has_ideology = ideology:ideology_liberal_movement
+						leader = {
+							OR = {
+								has_ideology = ideology:ideology_liberal_leader
+								has_ideology = ideology:ideology_progressive_leader
+							}
+						}
+					}
+				}
+			}
+			OR = {
+				has_law_or_variant = law_type:law_census_voting
+				has_law_or_variant = law_type:law_universal_suffrage
+			}
+		}
+		NOT = { has_variable = completed_arab_spring }
+	}
+
+	immediate = {
+		set_variable = completed_arab_spring
+		# Tag the season for flavour text
+		if = {
+			limit = { OR = { month >= 11 month < 2 } }
+			set_variable = arab_winter_season_winter
+		}
+		if = {
+			limit = { month >= 2 month < 5 }
+			set_variable = arab_winter_season_spring
+		}
+		if = {
+			limit = { month >= 5 month < 8 }
+			set_variable = arab_winter_season_summer
+		}
+		if = {
+			limit = { month >= 8 month < 11 }
+			set_variable = arab_winter_season_autumn
+		}
+		set_variable = { name = completed_arab_spring }
+	}
+
+	option = {	# Embrace the transition — push for consolidation
+		name = arab_spring.10.a
+		default_option = yes
+		custom_tooltip = {
+			text = arab_winter_tt
+			set_variable = arab_winter
+		}
+	}
+
+	option = {	# Prepare for the counter-revolution
+		name = arab_spring.10.b
+		custom_tooltip = {
+			text = arab_winter_tt
+			set_variable = arab_winter
+		}
+		custom_tooltip = {
+			text = arab_winter_counter_revolution_bonus_tt
+			set_variable = { name = var_counter_revolution_bonus value = 1 }
+		}
+	}
+}

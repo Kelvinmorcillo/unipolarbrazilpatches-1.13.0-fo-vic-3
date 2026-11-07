@@ -1,0 +1,14 @@
+﻿DIPLOMACY = {
+	c:XDE = {
+		create_diplomatic_pact = {
+			country = c:GRN
+			type = dominion
+		}
+	}
+	c:ISR = {
+		create_diplomatic_pact = {
+			country = c:PAL
+			type = dominion
+		}
+	}
+}

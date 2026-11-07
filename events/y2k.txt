@@ -1,0 +1,110 @@
+﻿namespace = y2k_events
+
+# ==========================================
+# Y2K SCARE
+# Fires in December 1999 for all countries.
+# Player gets to choose their response —
+# invest in fixing it (cost, small bonus)
+# or dismiss it (risk of minor penalty).
+# ==========================================
+
+y2k_events.1 = {
+	type = country_event
+	placement = ROOT
+	title = y2k_events.1.t
+	desc = y2k_events.1.d
+	flavor = y2k_events.1.f
+
+	event_image = { video = "early_computer" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	duration = 3
+
+	trigger = {
+		game_date >= 1999.08.01
+        game_date <= 1999.12.31
+		NOT = { has_variable = y2k_scare_fired }
+	}
+
+	immediate = {
+		set_variable = y2k_scare_fired
+		trigger_event = { id = y2k_events.2 days = 153 }
+	}
+
+	option = {
+		# Invest heavily in Y2K compliance programs
+		name = y2k_events.1.a
+		default_option = yes
+		ai_chance = { base = 70 }
+		# Expensive but averts any disruption
+		add_modifier = {
+			name = y2k_compliance_investment
+			months = 13		# Expires well after January 2000
+		}
+	}
+
+	option = {
+		# Dismiss it as overblown panic
+		name = y2k_events.1.b
+		ai_chance = { base = 30 }
+		# No immediate cost — but the celebration event
+		# will carry a small disruption penalty
+		set_variable = y2k_dismissed
+	}
+}
+
+# ==========================================
+# NEW YEAR 2000 CELEBRATION
+# Fires January 2000 for all countries.
+# Countries that dismissed Y2K get a brief
+# infrastructure disruption.
+# Everyone else gets a legitimacy boost
+# from the spectacle of the millennium.
+# ==========================================
+
+y2k_events.2 = {
+	type = country_event
+	placement = ROOT
+	title = y2k_events.2.t
+	desc = y2k_events.2.d
+	flavor = y2k_events.2.f
+
+	event_image = { video = "unspecific_world_fair" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	duration = 3
+
+	trigger = {
+		 game_date >= 1999.12.01
+        game_date <= 2000.2.01
+	}
+
+	immediate = {
+		set_global_variable = y2k_celebration_fired
+	}
+
+	option = {
+		# The world survived — celebrate
+		name = y2k_events.2.a
+		default_option = yes
+		ai_chance = { base = 100 }
+
+		# Millennium optimism — everyone gets a small boost
+		add_modifier = {
+			name = millennium_celebration
+			months = 6
+		}
+
+		# Countries that dismissed Y2K face a brief disruption
+		if = {
+			limit = { has_variable = y2k_dismissed }
+			add_modifier = {
+				name = y2k_minor_disruption
+				months = 3
+			}
+			remove_variable = y2k_dismissed
+		}
+	}
+}

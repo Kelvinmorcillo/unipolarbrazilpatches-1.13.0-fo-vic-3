@@ -1,0 +1,160 @@
+﻿l_simp_chinese:
+# ==========================================
+ # OBJECTIVE
+ # ==========================================
+ 
+ objective_the_west: "西方"
+ objective_the_west_desc: "必须维持和扩大自由的国际秩序——民主、自由贸易、集体安全和人权。 [ROOT.GetCountry.GetName] 处于构建它的系统的核心。 任务不仅在于维持已存在的东西,而且在于确保当世纪结束的时候,世界大国要么处于秩序之内,要么无法挑战."
+ 
+ # ==========================================
+ # SUBGOAL NAMES AND DESCRIPTIONS
+ # ==========================================
+ 
+ sg_west_open_trade: "储备货币状况"
+ sg_west_open_trade_desc: "西方金融系统运行于[ROOT.GetCountry.GetAdjective]信用. 将 " x id=1/ " 作为信贷的主要出口国——1 000多单位——巩固作为全球经济支柱的 " x id=2/ " 金融体系。"
+ 
+ sg_west_alliances: "联盟网络"
+ sg_west_alliances_desc: "西方秩序是一个集体安全项目. 与至少四个国家订立军事援助协定,建立遏制侵略的联盟网络,并通过伙伴关系而不是占领来规划 [ROOT.GetCountry.GetAdjective]权力。"
+ 
+ sg_west_human_rights: "自由民主框架"
+ sg_west_human_rights_desc: "西方不仅有财富,而且有价值。 颁布普选制、工人保护、废除奴隶制和受保护的言论——自由民主社会的体制基础。 建设命令 [ROOT.GetCountry.GetName] 必须值得捍卫。"
+ 
+ sg_west_education: "受过教育的公民"
+ sg_west_education_desc: "民主参与和经济活力都取决于受过教育的人口。 投资学校系统到5级,识字率至少达到75%。 知情的公民是自由秩序最持久的基础。"
+ 
+ sg_west_gdp: "经济领导"
+ sg_west_gdp_desc: "西方秩序被经济重量所掩盖. [ROOT.GetCountry.GetName]必须至少占全球GDP的25%——使 [ROOT.GetCountry.GetAdjective] 经济规模太大,对全球体系太重要,任何竞争者都无法令人信服地挑战。"
+ 
+ sg_west_endgame: "单极运动"
+ sg_west_endgame_desc: "最后的挑战。 必须将 [SCOPE.sCountry('c:RUS').GetName] 和 [SCOPE.sCountry('c:CHI').GetName] 都置于命令之内,或使其无法威胁命令。 他们要么实行民主化,实行普选制,并签订防御性条约(x id=2/),要么他们的权力低于大国的级别。 没有第三种选择可以维持秩序。"
+ 
+ # ==========================================
+ # JOURNAL ENTRY NAMES AND DESCRIPTIONS
+ # ==========================================
+ 
+ je_west_open_trade: "财务支配"
+ je_west_open_trade_reason: "[ROOT.GetCountry.GetAdjective]美元-或任何 [ROOT.GetCountry.GetName]称其货币-是世界储备货币. 其他国家持有它,解决贸易,并围绕它建立金融系统。 向国际市场出口1 000多单位信贷巩固了这一地位,并给 " x id=2/ " 全球金融体系带来任何军事力量都无法复制的结构性影响力。"
+ 
+ je_west_alliances: "集体安全"
+ je_west_alliances_reason: "北约 (原始内容存档于2018-10-21). ANZUS. 界定西方集团的安全伙伴关系不仅仅是军事安排,而是政治承诺。 与至少四个国家订立军事援助协定。 每个合伙企业的覆盖范围为[ROOT.GetCountry.GetAdjective]并减少维持秩序的费用。"
+ 
+ je_west_human_rights: "机构基金会"
+ je_west_human_rights_reason: "普选。 工人保护. 废除奴隶制。 保护演说. 这些不是西方模型的可选添加——它们是模型. 没有他们,[ROOT.GetCountry.GetName]所捍卫的只是权力,而不是原则。 颁布所有四项法令,建立自由秩序所需的体制基础。"
+ 
+ je_west_education: "全民教育"
+ je_west_education_reason: "西方模式依赖于能够阅读,理性,参与的公民. 投资于5级学校,全国识字率达到75%。 光有正确的法律是不够的——必须让人民受过足够的教育才能使用这些法律。"
+ 
+ je_west_gdp: "占全球国内生产总值的5%"
+ je_west_gdp_reason: "尺寸很重要。 [ROOT.GetCountry.GetName]必须至少占全球经济产出的四分之一。 在这个尺度下, [ROOT.GetCountry.GetAdjective] 经济不仅规模大,而且是不可或缺的。 以"x id=2"进行世界贸易,从"x id=3"借出,不能使"x id=4"成为敌人."
+ 
+ je_west_endgame: "历史结束"
+ je_west_endgame_reason: "年龄问题:能将"x id=0"和"x id=1/"都作为系统对抗西方秩序的对手吗?\n\n 对每个国家来说,下列情况之一必须是真实的:\n•> 他们通过了民主共和国,普选制,并与"x id=5/>\n•"签署防御条约. 其权力等级已低于主要权力等级\n\n 当这两个条件都满足时,单极瞬间就完成了."
+ 
+ # ==========================================
+ # PROGRESS TOOLTIPS
+ # ==========================================
+ 
+ je_west_open_trade_progressing_tt: "信贷出口正在增长—— " x id=0 " 金融系统正在扩大"
+ je_west_alliances_progressing_tt: "联盟网络正在形成——需要更多的伙伴"
+ je_west_human_rights_progressing_tt: "一些权利框架已经到位——整套权利框架尚未颁布"
+ je_west_education_progressing_tt: "学校系统正在发展——5级投资和75%的识字率是目标"
+ je_west_gdp_progressing_tt: "[ROOT.GetCountry.GetName]占全球国内生产总值的15%以上——目标是25%。"
+ je_west_endgame_progressing_tt: "一个对手被削弱或民主化,另一个仍然是系统性挑战"
+ 
+ # ==========================================
+ # OBJECTIVE
+ # ==========================================
+
+ objective_the_east: "东方"
+ objective_the_east_desc: "西方的自由主义秩序并不是唯一的可能的世界. [ROOT.GetCountry.GetName]有不同的模式——国家方向,集体力量,主权发展的模式. 任务是证明这种模式在经济实力和全球影响上能够与西方相匹配,并建立一个由"x id=1/"而不是由美国来定义国际秩序术语的世界."
+
+ # ==========================================
+ # SUBGOAL NAMES AND DESCRIPTIONS
+ # ==========================================
+
+ sg_east_state_industry: "工业基地"
+ sg_east_state_industry_desc: "东方模式依赖于国家将投资引向重工业的能力. 保持干预或指挥经济,建设至少10个的建设能力,并发展铁矿开采至少5个拥有强占的等级. 这是经济基础 其他一切取决于。"
+
+ sg_east_great_power: "大国地位"
+ sg_east_great_power_desc: "东方对西方霸权的挑战只能由真正的大国来承担. 达到大国的级别——与"x id=0"没有谈判,与弱取一等."
+
+ sg_east_sphere: "东方集团"
+ sg_east_sphere_desc: "构建构成[ROOT.GetCountry.GetName]势力范围的盟国网络. 与至少四个国家订立军事援助协定。 联盟不是慈善机构,而是电力投放的基础设施。"
+
+ sg_east_currency: "东方储备货币"
+ sg_east_currency_desc: "美元支配是西方最持久的优势——它允许美国以全球经济为代价来资助其霸权. 挑战它。 向国际市场出口1000多单位信贷,并保持有竞争力地进行证券出价,以吸引外国投资者. 东方储备货币不仅仅是经济货币,而是地缘政治。"
+
+ sg_east_endgame: "多极世界"
+ sg_east_endgame_desc: "最后的挑战。 美国、大不列颠和法国——西方秩序的三大支柱——必须各自消除。 对于每一个:他们的权力级别要么低于一个大国,要么以[ROOT.GetCountry.GetName]签署防御条约。 当三个条件都满足后,世界秩序就发生了变化."
+
+ je_east_state_industry: "工业基金会"
+ je_east_state_industry_reason: "国家必须将投资直接投向重工业,而不是将其留给市场。 保持干预或指挥经济,建设至少10个建筑能力,并在75%的占用率或更高时发展出大量的铁矿开采能力。 没有这一工业基础,[ROOT.GetCountry.GetName]就无法维持东方挑战所需要的军事和经济分量。"
+
+ je_east_great_power: "升入伟大的力量"
+ je_east_great_power_reason: "达到大能之阶. 目前, " x id=0 " 可能是世界上最强的国家之一 -- -- 但大国地位是正式承认 " x id=1 " 属于就全球秩序作出决定的会议室。 这是随后一切的先决条件。"
+
+ je_east_sphere: "四个军事伙伴"
+ je_east_sphere_reason: "与至少四个国家订立军事援助协定。 [ROOT.GetCountry.GetName]不能单独挑战西方联盟体系. 东方领域必须是一个真正的集体——依赖[ROOT.GetCountry.GetName]的状态,而[ROOT.GetCountry.GetName]可以依赖这些状态作为回报."
+
+ je_east_currency: "挑战美元支配地位"
+ je_east_currency_reason: "[SCOPE.sCountry('c:USA').GetAdjective]美元储备货币地位是几十年来西方得以超越其重量的结构优势. 与之相匹配需要向国际市场出口1000多个信用单位——并将[ROOT.GetCountry.GetAdjective]的证券价格保持在其基准值的25%以内,以便外国投资者发现它们具有吸引力.\n\n 其他国家自愿使用的东方金融体系不仅仅是经济成就。 这是宣布美元不是唯一的选择。"
+
+ je_east_endgame: "西方列强中立化"
+ je_east_endgame_reason: "世界秩序在它的守护者无法再守护时会发生变化. 所有这三个问题都必须解决:\n\n•x id=2/>:主要权力等级以下,或签署防御条约以[ROOT.GetCountry.GetName]\n•x id=5/>:主要权力等级以下,或签署防御条约以[ROOT.GetCountry.GetName]\n•x id=8/>:主要权力等级以下,或签署防御条约以[ROOT.GetCountry.GetName]\n\n 当所有三个条件都得到满足时,[ROOT.GetCountry.GetName]并不仅仅幸免于西方秩序. 它已经取代了它。"
+
+ je_east_state_industry_progressing_tt: "工业基础正在发展——建设能力和铁矿开采尚未达到目标."
+ je_east_great_power_progressing_tt: "[ROOT.GetCountry.GetName] 是一个大国 – 大国地位在所及范围内"
+ je_east_sphere_progressing_tt: "联盟网络正在扩大——需要四项军事援助协定"
+ je_east_currency_progressing_tt: "信贷出口正在增长——需要1 000个单位来确定储备货币状况"
+ je_east_endgame_progressing_tt: "至少有一个西方势力被中和了——其他势力仍然在."
+ 
+ # ==========================================
+ # OBJECTIVE
+ # ==========================================
+
+ objective_rising_powers: "新兴大国"
+ objective_rising_powers_desc: "世界不必分为两个集团。 [ROOT.GetCountry.GetName] 拒绝选择—— 在华盛顿和莫斯科之间, 在美元和接下来的任何事情之间, 在帝国和帝国之间。 第三种方式比两种选择都难。 它需要真正的经济分量,可信的军事实力,以及外交技巧,来团结一个只有一件事共同点的国家联盟:它们也拒绝选择."
+
+ # ==========================================
+ # SUBGOAL NAMES AND DESCRIPTIONS
+ # ==========================================
+
+ sg_rising_economy: "经济基金会"
+ sg_rising_economy_desc: "建设一个至少占全球国内生产总值10%的经济,其规模足以支撑第三个集团,同时将任何单一伙伴的贸易风险保持在40%以下。 主权始于经济独立."
+
+ sg_rising_sovereignty: "完全主权独立"
+ sg_rising_sovereignty_desc: "增长的力量不能是一个客户国。 达到主要权力等级,达到至少50个的威望,并确保 " x id=0 " 既不是任何权力的主体,也不是 " x id=1 " 或 " x id=2 " 的傀儡。 第三道从取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取取."
+
+ sg_rising_military: "军事信誉"
+ sg_rising_military_desc: "第三种方法只有在能够自卫的情况下才可信. 达到大权并出战的军衔 一支至少有100个单位的军队 一个不能保护自己的不结盟国家不会长期保持不结盟。"
+
+ sg_rising_prestige: "国际承认"
+ sg_rising_prestige_desc: "达到全球国家排名5或更高,威望至少为150. `x id=0' 绝不能忽视——不仅仅是一个区域强国,而是大国必须在它们所作的每一项计算中说明的强国。"
+
+ sg_rising_endgame: "第三集团"
+ sg_rising_endgame_desc: "领导由8个或8个以上成员组成的权力集团,成为大国. 这是概念的证明——世界政治的第三极,足够大和可信,无论西方还是东方都无法吸收或排除. 当 [ROOT.GetCountry.GetName] 领导八个国家时,世界是多极化的。"
+
+ je_rising_economy: "占全球国内生产总值的5%"
+ je_rising_economy_reason: "将[ROOT.GetCountry.GetName]的经济建设到全球产出的10%以上——在经济上不依赖任何单一强国。 目标经济规模太大,不能屈服,过于多样化,无法被任何单一的封锁所扼杀. \n\n@information! 对任何单一伙伴的贸易依赖必须保持在总市场活动的40%以下。"
+
+ je_rising_sovereignty: "主权和独立"
+ je_rising_sovereignty_reason: "取得50个或50个以上的主要权力和声望,同时保持完全独立——不是任何国家的主体,也不是任何外国势力的傀儡。 完全的主权独立不是旅程的结束。 这是开始。"
+
+ je_rising_military: "可信力量"
+ je_rising_military_reason: "达到强军的级别和战地 一支至少有100个单位的军队 [ROOT.GetCountry.GetName] 必须能够捍卫自己的选择。 一个不能自卫的不结盟国家会发现它的结盟是由其他国家决定的。"
+
+ je_rising_prestige: "前5名——不可否认"
+ je_rising_prestige_reason: "达到全球国家排名5名或以上,声望至少为150名. 在这个层次上, " x id=0 " 不是一个区域性的好奇心——它是一个世界强国,其立场不容忽视,其一致性确实受到质疑,它的认可是值得的。"
+
+ je_rising_endgame: "领导第三集团"
+ je_rising_endgame_reason: "领导由8个或8个以上成员组成的权力集团,成为大国. 8个国家选择围绕[ROOT.GetCountry.GetName]而不是"x id=1/"或"x id=2/"来组织,这不仅仅是外交成就——这是国际政治的结构性事实. 第三道道所现. 它有成员。 它有一个领导者。 超能者必须为此负责."
+
+ # ==========================================
+ # PROGRESS TOOLTIPS
+ # ==========================================
+
+ je_rising_economy_progressing_tt: "[ROOT.GetCountry.GetName] 占全球国内生产总值的2%以上——5%是目标"
+ je_rising_sovereignty_progressing_tt: "[ROOT.GetCountry.GetName] 得到承认和独立——主要权力级别和声望需要50"
+ je_rising_military_progressing_tt: "军事能力正在增强——大军衔和军队规模100是目标"
+ je_rising_prestige_progressing_tt: "[ROOT.GetCountry.GetName] 正在接近前5名—— 声望150, 全球排名5"
+ je_rising_endgame_progressing_tt: "这个集团正在组建——需要8个成员来完成目标"

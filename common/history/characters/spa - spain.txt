@@ -1,0 +1,26 @@
+﻿CHARACTERS = {
+	c:SPA ?= {
+	create_character = {
+			template = SPA_jose_maria_aznar
+		}
+	create_character = {
+			template = SPA_juan_carlos_de_borbon
+		}
+	create_character = {
+			first_name = "felipe"
+			last_name = "gonzalez"
+			historical = yes
+			ruler = no
+			culture = cu:spanish
+			birth_date = 1942.3.31
+			dna = dna_felipe_gonzalez
+			ig_leader = yes
+			interest_group = ig_petty_bourgeoisie
+			ideology = ideology_progressive_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+		
+	}
+}

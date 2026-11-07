@@ -1,0 +1,75 @@
+
+je_opec = {
+	icon = "gfx/interface/icons/event_icons/event_opec.dds"
+	group = je_group_international
+
+	is_shown_when_inactive = { always = yes }
+	
+	possible = {
+		has_global_variable_list = io_opec_members
+	}
+
+	on_monthly_pulse = {
+	}
+
+	should_be_involved = {
+		is_target_in_global_variable_list = { name = io_opec_members target = this }
+	}
+
+	status_desc = {
+		first_valid = {
+			# Production increase vote active
+			triggered_desc = {
+				desc = opec_je_voting_increase_tt
+				trigger = {
+					has_global_variable = opec_vote_active
+					global_var:opec_vote_type = flag:opec_increase
+				}
+			}
+			# Production decrease vote active
+			triggered_desc = {
+				desc = opec_je_voting_decrease_tt
+				trigger = {
+					has_global_variable = opec_vote_active
+					global_var:opec_vote_type = flag:opec_decrease
+				}
+			}
+			# Embargo vote active
+			triggered_desc = {
+				desc = opec_je_voting_embargo_tt
+				trigger = {
+					has_global_variable = opec_vote_active
+					global_var:opec_vote_type = flag:opec_embargo
+				}
+			}
+			# Increased production in effect
+			triggered_desc = {
+				desc = opec_je_increased_production_tt
+				trigger = {
+					any_country = { has_modifier = opec_increased_production }
+				}
+			}
+			# Decreased production in effect
+			triggered_desc = {
+				desc = opec_je_decreased_production_tt
+				trigger = {
+					any_country = { has_modifier = opec_decreased_production }
+				}
+			}
+			# No vote active, no modifier active
+			triggered_desc = {
+				desc = opec_je_idle_tt
+			}
+		}
+	}
+
+	scripted_button = opec_propose_increase_button
+	scripted_button = opec_propose_decrease_button
+	scripted_button = opec_vote_yay_button
+	scripted_button = opec_vote_nay_button
+
+	scripted_progress_bar = opec_vote_progress_bar
+
+	weight = 998
+	should_be_pinned_by_default_involved = yes
+}

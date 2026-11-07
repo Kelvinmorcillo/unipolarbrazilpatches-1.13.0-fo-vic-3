@@ -1,0 +1,16 @@
+﻿l_braz_por:
+
+ GDP_TOOLTIP:1 "#header [Country.GetAdjective] [concept_gdp]#!\n@money![Country.MakeScope.ScriptValue('cwp_gdp')|Dv] (#u #tooltippable #tooltip:[Country.GetTooltipTag],COUNTRY PIB OWNERSHIP TOOLTIP [Country.GetDomesticallyOwnedGDPFraction|%1b]#!#!#!) domesticamente propriedade $concept_gdp_short$ ([Country.GetGDPRanking])\n@money![Country.MakeScope.ScriptValue('cwp_gdp_per_capita')|2*v] [Concept('concept_gdp_per_capita', '$concept_gdp_per_capita_short$')] ([Country.GetGDPPerCapitaRanking])"
+ COUNTRY_GDP_OWNERSHIP_TOOLTIP: "#header [concept_gdp_ownership] em [Country.GetName]#!\n#u [Country.GetDomesticallyOwnedGDPFraction|%1b]#! (@money![Country.GetGDP|Dv]) domesticamente propriedade $concept_gdp_short$\n$TOOLTIP_DELIMITER$\n[SelectLocalization(IsZero_CFixedPoint(Country.GetForeignOwnedGDPFraction), 'NO_FOREIGNLY_OWNED_PERCENTAGE', 'COUNTRY_FOREIGNLY_OWNED_PERCENTAGE')]\n\n[SelectLocalization(IsZero_CFixedPoint(Country.GetGDPOwnedInForeignCountries), 'NO_OWNED_FOREIGN_GDP_BY_COUNTRY', 'OWNED_FOREIGN_GDP_BY_COUNTRY')]"
+
+ COUNTRY_ALL_GDP: "@money!#v [Country.GetGDPWithOwnershipsInForeignCountries|D]#!"
+ DOMESTIC_COUNTRY_GDP: "@money!#v [Country.GetGDP|D]#!"
+ FOREIGN_COUNTRY_GDP: "@money!#u [Country.GetGDPOwnedInForeignCountries|Db]#!"
+ COUNTRY_ALL_OWNERSHIP: "#u [Country.GetDomesticallyOwnedGDPFraction|%1b]#![ConcatIfNeitherEmpty(' + ', AddLocalizationIf(NotZero_CFixedPoint(Country.GetGDPOwnedInForeignCountries), 'FOREIGN_COUNTRY_GDP'))]"
+ 
+ ERROR_DEER_TOOLTIP:0 "#header Dangnabit!#!\n#instruction Clique esquerdo#! para abrir o Registo de Erro\n#instruction Botão direito do mouse#! para fazê-lo desaparecer (até que você o aborreça novamente)"
+ ERROR_MANUL_TOOLTIP: "#header Engana-me uma vez, vergonha... vergonha para ti. Você me engana - você não pode ser enganado novamente!#!\n#instruction Clique esquerdo#! para abrir o Log de Erro\n#instruction Botão direito do mouse#! para fazê-lo desaparecer (até que você o aborreça novamente)"
+ 
+ OH_DEER:0 ""#italic Que vergonha! #! #bold [ErrorDeer.NumberOrErrors|v]#! #italic erro(s)!#!""
+ ERROR_MANUL: "#italic #! #bold [ErrorDeer.NumberOrErrors|v]#! #italic Missões realizadas."
+ ERROR_DEER_SLOW_TICK_OPERATIONS:0 "#header Operações de marcação lenta #!"

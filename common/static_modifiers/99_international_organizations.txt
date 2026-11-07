@@ -1,0 +1,350 @@
+﻿nato_modifier = {
+	icon = gfx/interface/icons/event_icons/event_nato.dds
+	power_bloc_cohesion_add = 250
+	power_bloc_leverage_generation_mult = -0.50
+	country_lobby_leverage_generation_mult = 0.75
+	country_pact_leverage_generation_mult = 1.0
+	country_leverage_resistance_mult = -5
+}
+
+un_peacekeepers_deployed = {
+	icon = "gfx/interface/icons/event_icons/event_united_nations.dds"
+	country_war_exhaustion_casualties_mult = -0.15
+	country_authority_add = 250
+	country_standard_of_living_cultural_erasure_add	= 1.0
+	country_standard_of_living_full_acceptance_add = 1.0
+	country_standard_of_living_open_prejudice_add = 1.0
+	country_standard_of_living_second_rate_citizen_add = 1.0
+	country_standard_of_living_violent_hostility_add = 1.0
+	country_support_independence_weekly_liberty_desire_add = 2.5
+	country_revolution_progress_mult = -0.75
+	country_radicals_from_legitimacy_mult = -0.75
+	country_prestige_mult = -0.15
+	country_infamy_generation_mult = 0.25
+}
+
+un_peacekeepers_vetoed = {
+icon = "gfx/interface/icons/event_icons/modifier_rifle_positive.dds"
+country_prestige_mult = -0.05
+}
+
+permanent_unsc_member = {
+icon = "gfx/interface/icons/event_icons/event_united_nations.dds"
+country_prestige_mult = 0.10
+}
+
+unsc_member = {
+icon = "gfx/interface/icons/event_icons/event_united_nations.dds"
+country_prestige_mult = 0.05
+}
+
+modifier_eu_member_state = {
+    icon = "gfx/interface/icons/event_icons/event_european_union.dds"
+    country_authority_add = -75
+	country_no_advantage_loss_from_lack_of_interest_bool = yes
+	country_port_connection_cost_mult = -0.15
+	country_construction_goods_cost_mult = -0.15
+	country_company_throughput_bonus_add = 0.15
+	country_company_construction_efficiency_bonus_add = 0.15
+	state_trade_capacity_mult = 0.10
+	state_trade_quantity_mult = 0.10
+	state_trade_advantage_mult = 0.15
+	state_export_advantage_mult = 0.15
+	state_import_advantage_mult = 0.15
+	country_liberty_desire_decrease_mult = -999
+	country_liberty_desire_increase_mult = -999
+}
+
+eu_sanctions_ready = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    country_influence_mult = 0.25
+    country_prestige_mult = 0.05
+}
+
+eu_deeper_trade_ties = {
+    state_trade_capacity_mult = 0.10
+	state_trade_quantity_mult = 0.10
+	state_trade_advantage_mult = 0.15
+	state_export_advantage_mult = 0.15
+	state_import_advantage_mult = 0.15
+	state_market_access_price_impact = 0.15
+}
+
+eu_cultural_exchange = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    state_assimilation_mult = 0.10
+    state_migration_pull_mult = 0.05
+    country_tech_spread_mult = 0.25
+}
+
+un_resolution_environment = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_pollution_generation_add              = -500
+	country_prestige_mult                       = 0.03
+	country_infamy_decay_mult                   = 0.05
+}
+ 
+# World Peace Resolution
+un_resolution_peace = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_infamy_generation_mult              = -0.10
+	country_diplomatic_reputation_add           = 1
+	country_legitimacy_base_add                 = 5
+}
+ 
+# Economic Development Resolution
+un_resolution_economy = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_construction_add                    = 2
+	country_investment_pool_efficiency_mult     = 0.05
+	country_prestige_mult                       = 0.02
+}
+ 
+# UNESCO Technology Resolution
+un_resolution_technology = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	state_education_access_add                  = 0.02
+	state_pop_qualifications_mult               = 0.03
+	country_prestige_mult                       = 0.02
+}
+
+# financial_sanctions diplomatic action — removed on pact break
+financial_sanctions_target = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	building_group_bg_banking_throughput_add    = -0.30
+	building_financial_district_throughput_add  = -0.25
+	country_investment_pool_efficiency_mult     = -0.15
+	country_minting_add                         = -20
+	country_infamy_decay_mult                   = -0.10
+}
+ 
+# condemn diplomatic action — removed on pact break
+condemned_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	country_prestige_mult                       = -0.05
+	country_legitimacy_base_add                 = -5
+	country_infamy_decay_mult                   = -0.05
+}
+ 
+# UN sanctions vote passed — 60 months, severe
+un_sanctions_target = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	building_group_bg_banking_throughput_add    = -0.50
+	building_financial_district_throughput_add  = -0.40
+	country_investment_pool_efficiency_mult     = -0.30
+	country_construction_add                    = -5
+	country_infamy_decay_mult                   = -0.20
+	country_prestige_mult                       = -0.10
+	country_legitimacy_base_add                 = -10
+}
+ 
+# UN condemnation vote passed — 60 months, moderate
+un_condemnation_target = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	country_prestige_mult                       = -0.25
+	country_legitimacy_base_add                 = -15
+	country_infamy_decay_mult                   = -0.10
+	country_investment_pool_efficiency_mult     = -0.10
+}
+
+un_peacekeeping_contribution = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_mult               = 0.05
+	country_influence_mult              = 0.03
+}
+
+# International Organizations — Modifiers
+### ══════════════════════════════════════════
+### FINANCIAL AGREEMENT MEMBERS (G7, IMF)
+### +5% influence, +1 diplomatic reputation
+### ══════════════════════════════════════════
+ 
+io_financial_agreement_member = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_influence_mult = 0.05
+	country_diplomatic_reputation_add = 1
+}
+ 
+### ══════════════════════════════════════════
+### FREE TRADE AGREEMENT MEMBERS
+### A customs union has been formed between all members.
+### Members share market access and trade privileges.
+### ══════════════════════════════════════════
+ 
+io_free_trade_agreement_member = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	# Customs union-like benefits — market integration
+	state_market_access_price_impact = 0.05
+}
+ 
+### ══════════════════════════════════════════
+### OPEC MEMBER
+### Petroleum cartel coordination bonuses.
+### Trade advantage for oil exports.
+### ══════════════════════════════════════════
+ 
+io_opec_member = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	goods_trade_advantage_oil_mult = 0.25
+	building_group_bg_oil_extraction_throughput_add = 0.25
+}
+ 
+### ══════════════════════════════════════════
+### MILITARY DEFENSE AGREEMENT MEMBERS
+### Collective security — defensive pacts with all members.
+### Applied as treaties, not as a static modifier.
+### ══════════════════════════════════════════
+ 
+io_military_defense_agreement_member = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_mult = 0.02
+}
+ 
+### ══════════════════════════════════════════
+### CULTURAL PACT MEMBERS (Arab League)
+### Shared heritage promotes technology spread
+### and reduces revolutionary sentiment.
+### ══════════════════════════════════════════
+ 
+io_cultural_pact_member = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_tech_spread_add = 0.1
+	country_revolution_progress_mult = -0.05
+}
+ 
+### ══════════════════════════════════════════
+### NGO MODIFIERS
+### ══════════════════════════════════════════
+ 
+io_ngo_subsidized_bonus = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_mult = 0.02
+}
+ 
+io_ngo_banned_penalty = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_prestige_mult = -0.02
+}
+ 
+### ══════════════════════════════════════════
+### TREATY SIGNATORY MODIFIERS
+### ══════════════════════════════════════════
+ 
+io_treaty_geneva_signatory = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_infamy_generation_mult = -0.05
+}
+ 
+io_treaty_cwc_signatory = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+}
+ 
+io_treaty_npt_signatory = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_infamy_generation_mult = -0.03
+	country_prestige_mult = 0.02
+}
+ 
+io_treaty_bwc_signatory = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_diplomatic_reputation_add = 1
+}
+ 
+io_treaty_cat_signatory = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_mult = 0.03
+}
+
+### IAEA — Nuclear safety expertise → technology spread
+io_ngo_iaea_high_support = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_tech_spread_add = 0.15
+}
+ 
+### RED CROSS — Humanitarian aid → mortality reduction
+io_ngo_redcross_high_support = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_mortality_mult = 0.01
+}
+ 
+### AMNESTY INTERNATIONAL — Human rights standing → legitimacy
+io_ngo_amnesty_high_support = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_add = 5
+}
+
+## paris agreement
+
+io_treaty_paris_signatory = {
+ 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+ 	state_pollution_generation_add = -250
+	 state_infrastructure_mult = -0.03
+ 	
+}
+
+# NGO Event Modifiers
+# Place in: common/modifiers/ (append to existing or new file)
+
+### ══════════════════════════════════════════
+### AMNESTY INTERNATIONAL
+### ══════════════════════════════════════════
+
+# Applied when you engage with Amnesty's criticism of oppressive laws
+ngo_amnesty_scrutiny = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_legitimacy_base_add = -3
+}
+
+# Applied when you promise reforms during high turmoil
+ngo_amnesty_reform_pressure = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_revolution_progress_mult = 0.05
+	country_legitimacy_base_add = -2
+}
+
+### ══════════════════════════════════════════
+### RED CROSS
+### ══════════════════════════════════════════
+
+# Applied when you accept Red Cross aid during wartime devastation
+ngo_redcross_aid = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_mortality_mult = -0.01
+	country_prestige_add = 3
+}
+
+# Applied when you cooperate with Red Cross wartime conduct criticism
+ngo_redcross_cooperation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_infamy_generation_mult = -0.05
+}
+
+# Applied when you accept Red Cross peacetime relief
+ngo_redcross_relief = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_mortality_mult = -0.01
+	country_prestige_add = 2
+}
+
+### ══════════════════════════════════════════
+### IAEA
+### ══════════════════════════════════════════
+
+# Applied when you allow IAEA inspectors into your nuclear facilities
+ngo_iaea_inspectors = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_tech_spread_add = 0.10
+	country_diplomatic_reputation_add = 1
+}
+
+opec_increased_production = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds"
+	building_group_bg_oil_extraction_throughput_add = 0.20
+	country_prestige_add = 5
+}
+
+opec_decreased_production = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds"
+	building_group_bg_oil_extraction_throughput_add = -0.15
+	country_prestige_add = 3
+}

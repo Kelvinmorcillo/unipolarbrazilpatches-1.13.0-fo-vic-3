@@ -1,0 +1,49 @@
+﻿l_simp_chinese:
+ # ── TAB RENAME ────────────────────────────
+ BUDGET_TAB_ASSETS: "金融系统"
+ BUDGET_TAB_FINANCE: "资产"
+ # ── CENTRAL BANKING PANEL ─────────────────
+ BUDGET_CENTRAL_BANKING_HEADER: "中央银行"
+ BUDGET_CENTRAL_BANK_LAW_LABEL: "当前政策:"
+ BUDGET_FISCAL_POLICY_LABEL: "货币政策政策"
+
+ # Scripted loc keys
+ cb_policy_loc_1: "#R 多数收缩器 #!"
+ cb_policy_loc_2: "#r 收缩器 #!"
+ cb_policy_loc_3: "#Y 中性 #!"
+ cb_policy_loc_4: "#g 扩展 #!"
+ cb_policy_loc_5: "#G 大多数扩展 #!"
+
+ # ── BUTTON TOOLTIPS — FRACTIONAL RESERVE ──
+ CB_POLICY_1_TOOLTIP: "#bold 大部分收缩机 <x id=1/×××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××(××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××"
+ CB_POLICY_2_TOOLTIP: "#bold 收缩机 <x id=1/××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××× 建立最大现金储备: #red-12.5% #!"
+ CB_POLICY_3_TOOLTIP: "#bold 稳定 #!\n#tooltip_separator!\n 中央银行没有采取积极的立场。 未适用修改条款。"
+ CB_POLICY_4_TOOLTIP: "#bold扩张 #!<x id=2/××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××"
+ CB_POLICY_5_TOOLTIP: "#bold 大部分扩展版 #!\n#tooltip_separator!<x id=4/×××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××"
+
+ # Fractional Reserve variants
+ CB_POLICY_1_FRAC: "#bold 多数收缩剂 — 小数储备 #!\n#tooltip_separator!\n 央行大幅收紧信贷条件. \n\n@red_cross! 银行通通量 #b+10%#!\n @red_cross! 金融区通量 #b-10%#!"
+ CB_POLICY_2_FRAC: "#bold 收缩-分数储备 #!\n#tooltip_separator!\n 中央银行对信贷条件实行适度收紧. <x id=5/××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××"
+ CB_POLICY_3_FRAC: "#bold 中性 — 小数保留地 #!\n#tooltip_separator!\n 中央银行没有采取积极的立场。 未适用修改条款。"
+ CB_POLICY_4_FRAC: "#bold 扩展-分数储备 #!\n#tooltip_separator!\n 央行放宽信贷条件以刺激出贷. \n\n@green_checkmark! Bank 通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通通."
+ CB_POLICY_5_FRAC: "#bold 多数扩展态 — 小数储备 #!\n#tooltip_separator!\n 央行大力刺激金融部门. \n\n@green_checkmark! 银行通通量 #b-25%#!\n@green_checkmark! 金融区通量 #b+25%#!"
+
+ # Full Reserve variants
+ CB_POLICY_1_FULL: "#bold 多数收缩器 — 完全储备 #!\n#tooltip_separator!\n 准备金需求被最大化,大幅降低信用供给. \n\n@green_checkmark! 贷款利率 #b-1%#!\n@green_checkmark! 现金储备 #b+x id=13/>"
+ CB_POLICY_2_FULL: "#bold 收缩器 — 全额储备 #!\n#tooltip_separator!\n 储蓄要求适度收紧. \n<x id=6×××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××"
+ CB_POLICY_3_FULL: "#bold 中性 — 完全保留 #!\n#tooltip_separator!\n 准备金要求保持在法定最低水平。 没有适用额外的修改语句。"
+ CB_POLICY_4_FULL: "#bold 扩展-全储备 #!\n#tooltip_separator!\n 放宽了储备要求,允许更多出借. \n\n@red_cross! 贷款利率 #b+0.5%#!\n@red_cross! 现金储备 #b 12.5%#!"
+ CB_POLICY_5_FULL: "#bold 大部分扩展型 — 全额储备 #!\n#tooltip_separator!\n 储蓄要求被最小化,以最大限度地提高出借能力. \n\n@red_cross! 贷款利率 #b+1%#!\n@red_cross! 现金储备 #b-25%#!"
+
+ # ── MODIFIER NAMES ────────────────────────
+ cb_policy_fractional_1: "大多数收缩性货币政策"
+ cb_policy_fractional_2: "收缩性货币政策"
+ cb_policy_fractional_4: "扩大的货币政策"
+ cb_policy_fractional_5: "最扩展的货币政策"
+ cb_policy_full_1: "大部分合同储备政策"
+ cb_policy_full_2: "合同储备政策"
+ cb_policy_full_4: "扩大储备政策"
+ cb_policy_full_5: "扩大储备政策"
+ 
+ building_group_bg_banking_throughput_add_desc:0 "商业银行吞吐量的修改"
+ building_financial_district_throughput_add_desc:0 "金融区吞吐量的模范"

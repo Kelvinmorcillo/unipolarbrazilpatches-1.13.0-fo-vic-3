@@ -1,0 +1,99 @@
+﻿l_turkish:
+
+ # ==========================================
+ # OLYMPICS — MODIFIERS
+ # ==========================================
+
+ olympics_hosting: "Olimpik Ev sahibi Ulus"
+ olympics_hosting_desc: "Dünya [ROOT.GetCountry.GetName] geliyor. Olimpiyat Oyunları, küresel dikkat, turizm ve prestij getiriyor - dünyanın en büyük spor etkinliğine yönelik önemli maliyetler ve lojistik talepleri ile birlikte."
+
+ olympics_hosting_prestige: "Olimpik Host Prestige"
+ olympics_hosting_prestige_desc: "Olimpiyat Oyunlarına ev sahipliği yaptı [ROOT.GetCountry.GetName] dünya dikkatinin merkezinde. Diplomatik ve yumuşak güç avantajları önemli."
+
+ olympics_recently_hosted: "Son Olimpiyat Host"
+ olympics_recently_hosted_desc: "[ROOT.GetCountry.GetName] Olimpik Oyunları son zamanlarda ev sahipliği yaptı ve birkaç yıl boyunca tekrar ev sahipliği yapmaya uygun değil."
+
+ olympics_boycott_modifier: "Olimpik Boycott"
+ olympics_boycott_modifier_desc: "Olimpik Oyunları boykot kararı uluslararası olarak kaydedildi. Bazı ortaklar bunu ilke olarak görüyor; diğerleri bunu gereksiz provokasyon olarak görüyor."
+
+ olympics_result_terrible: "Zavallı Olimpiyat Performansı"
+ olympics_result_terrible_desc: "[ROOT.GetCountry.GetName] sporcular, bunun için göstermek için oyunlardan geri döndü. Ulusal ruh hayal kırıklığıdır."
+
+ olympics_result_modest: "Solid Olimpiyat Performansı"
+ olympics_result_modest_desc: "[ROOT.GetCountry.GetName] sporcular kendilerini dünya sahnesinde saygıdeğer bir şekilde karşılamaktadırlar."
+
+ olympics_result_well: "Güçlü Olimpiyat Performansı"
+ olympics_result_well_desc: "[ROOT.GetCountry.GetName] sporcular oyunlarda iyi performans gösterdi, ev madalyaları ve ulusal gurur getiriyor."
+
+ olympics_result_gold: "Dominant Olimpiyat Performansı"
+ olympics_result_gold_desc: "[ROOT.GetCountry.GetName] Olimpiyat Oyunlarına hükmetti. madalya çok büyük bir ulusal gurur kaynağıdır ve ülke çapındaki prestijini geliştirdi."
+
+ olympics_doping_caught: "Olimpiyat Doping Scandal"
+ olympics_doping_caught_desc: "[ROOT.GetCountry.GetName] sporcular performans-enhancing ilaçları kullanarak yakalandı. Madalyası kaldırıldı, yetkililer istifa etti ve ülke uluslararası opprobrium ile karşı karşıya. Ulusal prestijiye zarar şiddetlidir."
+
+ # ==========================================
+ # EVENTS
+ # ==========================================
+
+ you_do_not_dope_athletes:0 "Oldukça oynayacaksın"
+ you_dope_your_athletes:0 "Sporcu performansınızı teşvik eden ilaçlara veriyorsunuz, yakalanmanın pozitifliğini riske atın."
+ # olympics.1 — Host selection
+ olympics.1.t: "Olimpiyatlara ev sahipliği yapmak için bir teklif"
+ olympics.1.d: "Uluslararası Olimpiyat Komitesi, bir teklifle [ROOT.GetCountry.GetName]'ye yaklaştı: bir sonraki Olimpiyat Oyunlarına ev sahipliği yaptı. Uluslararası duruşun istikrarlı bir demokrasisi olarak, [ROOT.GetCountry.GetName] barındırma kriterleri karşılar - ve bununla gelen prestijli ve dikkat önemlidir. Ayrıca, dünyanın en büyük spor etkinliğini organize etmek için maliyetler ve talepler de vardır."
+ olympics.1.f: "Dünya bir aşamaya ihtiyaç duyar. [ROOT.GetCountry.GetName] bir tane inşa edecek mi?"
+ olympics.1.a: "Kabul - ev sahibi olmaktan onur duyuyoruz"
+ olympics.1.b: "Decline – bu sefer bunu yapamıyoruz"
+
+ # olympics.3 — Participation offer
+ olympics.3.t: "Olimpiyat Oyunları Geliyor"
+ olympics.3.d: "Bir sonraki Olimpiyat Oyunları [SCOPE.sCountry('olympics_host_scope').GetName]'da yapılacaktır. Dünyadaki her ulus, sporcularını rekabet etmeye davet edilir. Oyunlar [ROOT.GetCountry.GetName] gücünü göstermek için bir fırsat, halkını kutlamak ve dünya sahnesinde yerini almak - ya da uzak kalmakla siyasi bir açıklama yapmak."
+ olympics.3.f: "Her dört yıl, dünya izliyor."
+ olympics.3.a: "Sporcularımızı gönderin - yarışacağız"
+ olympics.3.b: "Boycott – yokluğumuz atletlerimizden daha yüksek sesle konuşacak"
+
+ # olympics.3b — Doping choice
+ olympics.11.t: "Sporcular Hazırlanıyor"
+ olympics.11.d: "Olimpiyat Oyunları haftalar uzaklıktadır. [ROOT.GetCountry.GetName]'nin sporcular zor antrenman yapıyor - ancak rekabet şiddetli olacak. Spor programından bazıları, temiz rekabetin yeterli olamayacağını sessizce öneriyor. Performans ilaçları dikkatli bir şekilde uygulandı, sporculara ihtiyaç duydukları kenar verebilir.\n\n Tespit riski gerçek. Yakalanmanın sonuçları ciddi olurdu. Ancak eve geri dönmenin sonuçları boş el bazıları için daha kötü olabilir."
+ olympics.11.f: "Zaferin birçok babası var. Defeat'in hiçbiri yok."
+ olympics.11.a: "Rakip temiz - sporcularımız en iyi dürüst dürüstçe yapacaklar"
+ olympics.11.b: "Hazırlıklarını geliştirmek - kazanmak için oynuyoruz"
+
+ # olympics.4 — Caught doping
+ olympics.4.t: "Doping Scandal Rocks the Olympic Team"
+ olympics.4.d: "Uluslararası Olimpiyat Komitesi, [ROOT.GetCountry.GetName] sporcuların yasaklanmış performans teşvik edici maddeler için olumlu test ettiğini açıkladı. Madalyası kaldırıldı. Resmiler askıya alındı. Hikaye, dünyadaki her spor kanalında öncü öğedir.\n\n Hükümetin inkarları inanılmıyor. Uygar hasar şiddetlidir ve kurtarmak için yıllar alacaktır."
+ olympics.4.f: "Gold tarnishes, parlamasından daha hızlı."
+ olympics.4.a: "Bu talihsiz durumdan derinden pişmanlık duyuyoruz"
+
+ # olympics.5 — Terrible
+ olympics.5.t: "Olimpik Oyunlar"
+ olympics.5.d: "[ROOT.GetCountry.GetName] sporcular yarıştı - ve büyük ölçüde sınıflandı. Uzun madalya meagre. Gösteriler yerlerde saygın, başkalarına utanç vericiydi. Eve dön, spor basını finans, hazırlık ve seçim kriterleri hakkında zor sorular soruyor. Kimsenin umduğunu göstermedi."
+ olympics.5.d_doping: "[ROOT.GetCountry.GetName] sporcular farmasötik yardımla yarıştı - ve hala eve neredeyse boş geldi. Doping programı, önemli riski için zayıf değer verdi."
+ olympics.5.f: "Her zaman bir sonraki oyunlar var."
+ olympics.5.a: "Takım en iyilerini yaptı"
+
+ # olympics.6 — Modest
+ olympics.6.t: "Saygıdeğer bir Olimpiyat Performansı"
+ olympics.6.d: "[ROOT.GetCountry.GetName] sporcular, mütevazı ama gerçek başarıları olan oyunlardan geri döndü. Bir avuç madalya, bazı güçlü bireysel performanslar ve ülkenin en yüksek seviyede rekabet edebileceği bilgi. Bu bir zafer değil, ama bir hayal kırıklığı değil."
+ olympics.6.d_doping: "Bazı farmasötik yardımla, [ROOT.GetCountry.GetName] sporcular saygın bir gösteri başardı. Doping, tespit edilmemiş gibi görünüyor - bu sefer."
+ olympics.6.f: "Consistent, eğer muhteşem değilse."
+ olympics.6.a: "Sporcularımız için sağlam bir gösteri"
+
+ # olympics.7 — Well
+ olympics.7.t: "Güçlü bir Olimpiyat Performansı"
+ olympics.7.d: "[ROOT.GetCountry.GetName] sporcular bir kahramana eve döndüler. madalya sayısı etkileyicidir, performanslar unutulmazdır ve ulusal ruhçudur. Çeşitli sporcular ev isimleri haline geldi. Gerçekten güçlü bir sonuç, ülkede ve onun atletik programı üzerinde iyi yansıtan."
+ olympics.7.d_doping: "[ROOT.GetCountry.GetName] sporcular güçlü bir şekilde gerçekleştirildi - yardım etti, ancak halk bunu gizli bir farmasötik programla bilmiyor. madalyalar gerçek. Onları üreten yöntemler daha az takdir edilebilir."
+ olympics.7.f: "Ülke bugün biraz daha uzun duruyor."
+ olympics.7.a: "Sporcularımız bizi gururlandırdı"
+
+ # olympics.8 — Gold
+ olympics.8.t: "Olimpiyat Triumph – [ROOT.GetCountry.GetName] Oyunlar"
+ olympics.8.d: "Sonuçlar - ve [ROOT.GetCountry.GetName] Olimpiyat Oyunlarına hükmetmiştir. Masa hikayeyi anlatıyor: neredeyse başka bir ulustan daha altın, daha gümüş, daha bronz. Sporcular tüm beklentilerin ötesinde gerçekleştirildi ve ülke kutluyor. Dünya sahnesinde, [ROOT.GetCountry.GetName] işaretini yaptı."
+ olympics.8.d_doping: "[ROOT.GetCountry.GetName] Olimpik Oyunlar'a hükmetti - şu ana kadar sistematik bir doping programı tarafından yardım etti. madalyalar gerçek. kutlama gerçek. Ve sır, şimdilik güvenli."
+ olympics.8.f: "Tarih bunu hatırlayacak."
+ olympics.8.a: "Sporcularımız dünyadaki en iyiler."
+
+ # olympics.9 — Closing ceremony
+ olympics.9.t: "Olimpik Flame Extinguished"
+ olympics.9.d: "[SCOPE.sState('capital_scope').GetCityHubName] Olimpiyat Oyunları yakın bir yere çekildi. Sporcular eve gitti. stadyumlar sessiz kalıyor. [ROOT.GetCountry.GetName] için, olağanüstü bir deneyim oldu - talep etmek, pahalı ve nihayetinde buna değer. Oyunlar dünyayı [ROOT.GetCountry.GetName]'ın kapısına getirdi ve ülke fırsata yükseldi."
+ olympics.9.f: "Bir dahaki zamana kadar."
+ olympics.9.a: "Dünyayı barındırmak için bir onurdu"

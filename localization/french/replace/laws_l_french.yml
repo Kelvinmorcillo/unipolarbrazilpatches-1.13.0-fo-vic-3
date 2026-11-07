@@ -1,0 +1,640 @@
+﻿l_french:
+  
+  # Leader Ideologies
+ ideology_moderate:0 "Modéré"
+ ideology_moderate_desc:0 "#lore Ce chef est considéré comme modéré dans leur groupe d'intérêt, sans idéologie particulière.#!"
+ 
+ ideology_traditionalist:0 "Traditionniste"
+ ideology_traditionalist_desc:0 "#lore Ce leader croit au maintien des coutumes traditionnelles, les considérant comme une extension des lois naturelles. #!"
+
+ ideology_traditionalist_minoritarian: "Traditionaliste mineur"
+ ideology_traditionalist_minoritarian_desc:0 "#lore Ce leader croit au maintien des coutumes traditionnelles, les considérant comme une extension des lois naturelles. Alors que leur pays reste sous la domination d'une autre religion, ils s'opposeront à imposer la religion d'État à la population. #!"
+
+ ideology_atheist:1 "Nihiliste"
+ ideology_atheist_desc:1 "#lore Ce leader accorde la priorité à l'interrogation et au renversement de l'ordre social traditionnel et des institutions à tout prix, cherchant à jeter les bases d'une société entièrement révolutionnaire. #!"
+
+ ideology_republican_leader:0 "Républicains"
+ ideology_republican_leader_desc:0 "#lore Ce dirigeant cherche à établir une république dirigée par des élus. #!"
+
+ ideology_radical:0 "Radical"
+ ideology_radical_desc:0 "#lore Ce leader s'efforce de réaliser des réformes libérales radicales pour faire progresser les idéaux démocratiques. #!"
+
+ ideology_abolitionist:0 "Abolitionniste"
+ ideology_abolitionist_desc:0 "#lore Ce leader trouve l'esclavage une violation abominable des droits humains et cherche à l'abolir du monde. #!"
+
+ ideology_slaver:0 "Esclave"
+ ideology_slaver_desc:0 "#lore Ce leader considère l'esclavage comme une partie naturelle de leur mode de vie et s'oppose à son abolition. #!"
+
+ ideology_feminist:0 "Féministe"
+ ideology_feminist_desc:0 "#lore Ce leader soutient que les femmes sont égales aux hommes et s'efforcent d'étendre leurs droits en tant que citoyennes.#!"
+ 
+ ideology_reformer:0 "Réformateur"
+ ideology_reformer_desc:0 "#lore Ce leader veut faire quelques changements incrémentiels pour rendre la société un peu plus égale. Mais pas trop.#!"
+
+ ideology_pacifist:0 "Pacifique"
+ ideology_pacifist_desc:0 "#lore Ce chef croit en la non-violence comme leur méthode et la paix comme leur but.#!"
+
+ ideology_jingoist_leader:0 "Jingoist"
+ ideology_jingoist_leader_desc:0 "#lore Ce leader préconise une politique étrangère agressive, mettant l'accent sur la disponibilité à aller à la guerre pour faire avancer ses ambitions. #!"
+
+ ideology_royalist:0 "Royaliste"
+ ideology_royalist_desc:0 "#lore Les loyautés de ce leader sont envers la monarchie et son souverain légitime.#!"
+ 
+ ideology_social_democrat:0 "Social-démocrate"
+ ideology_social_democrat_desc:0 "#lore Ce leader croit en la réalisation d'une société socialiste par la réforme parlementaire. #!"
+
+ ideology_communist:0 "Communiste"
+ ideology_communist_desc:0 "#lore Ce leader croit en la classe ouvrière qui saisit le pouvoir politique par tous les moyens nécessaires. #!"
+
+ ideology_vanguardist:0 "Vanguardiste"
+ ideology_vanguardist_desc:0 "#lore Ce dirigeant croit en la réalisation d'une société socialiste par un parti d'avant-garde de radicaux dévoués. #!"
+
+ ideology_fascist:0 "Fasciste"
+ ideology_fascist_desc:0 "#lore Ce leader est un ultranationaliste qui épouse la renaissance des valeurs traditionnelles et autoritaires perçues dans un contexte moderne. #!"
+
+ ideology_anarchist:0 "Anarchiste"
+ ideology_anarchist_desc:0 "#lore Ce dirigeant cherche à abolir la hiérarchie, l'autorité et l'État, laissant les gens se gouverner. #!"
+
+ ideology_ethno_nationalist:0 "Ethno-Nationaliste"
+ ideology_ethno_nationalist_desc:0 "#lore Ce leader croit en une nation définie pour des raisons ethniques. #!"
+
+ ideology_theocrat:0 "Théocrate"
+ ideology_theocrat_desc:0 "#lore Ce chef croit en un état dirigé par l'église en ligne avec les valeurs doctrinales.#!"
+
+ ideology_market_liberal:0 "Marché libéral"
+ ideology_market_liberal_desc:0 "#lore Ce leader croit que la main invisible du marché libre devrait être la force directrice de l'économie nationale."
+ 
+ ideology_liberal_leader:0 "Libéraux"
+ ideology_liberal_leader_desc:0 "#lore Ce leader privilégie l'institution de la démocratie et s'oppose à une domination incontestée sur la nation. #!"
+
+  # Interest Group Ideologies
+
+ ideology_paternalistic:0 "Paternaliste"
+ ideology_paternalistic_desc:0 "#lore Ce groupe a peu de foi dans le peuple qui tente de se gouverner, croyant qu'il a besoin d'une aristocratie traditionnelle.#!"
+  
+ ideology_patriarchal:0 "Patriarcaux"
+ ideology_patriarchal_desc:0 "#lore Ce groupe croit que les hommes devraient avoir une autorité politique et que les femmes devraient obéir à leurs pères et à leurs maris.#!"
+   
+ ideology_republican:0 "Républicains"
+ ideology_republican_desc:0 "#lore Ce groupe croit que les meilleurs dirigeants sont élus par vote public et soutient une forme républicaine de gouvernement.#!"
+  
+ ideology_populist:0 "Populiste"
+ ideology_populist_desc:0 "#lore Ce groupe croit en la gouvernance du peuple et cherche à étendre la franchise à toutes les classes sociales.#!"
+  
+ ideology_stratocratic:0 "Stratocratique"
+ ideology_stratocratic_desc:0 "#lore Ce groupe favorise le maintien d'une hiérarchie dans la société par des formes traditionnelles de fiscalité et de relations de travail.#!"
+  
+ ideology_oligarchic:0 "Oligarchique"
+ ideology_oligarchic_desc:0 "#lore Ce groupe favorise la monopolisation du pouvoir entre les mains d'un État laïque contrôlé par les oligarchies locales.#!"
+
+ ideology_laissez_faire:0 "Laisser-Faire"
+ ideology_laissez_faire_desc:0 "#lore Ce groupe croit en la libre circulation du commerce et des forces de travail, favorisant le jugement des marchés sur celui des gouvernements.#!"
+  
+ ideology_individualist:0 "Individualiste"
+ ideology_individualist_desc:0 "#lore Ce groupe croit que chaque personne est responsable de son propre sort et s'oppose aux programmes gouvernementaux pour fournir des services qui peuvent être payés par la personne.#!"
+  
+ ideology_pious:0 "Pieux"
+ ideology_pious_desc:0 "#lore Ce groupe croit que les principes religieux sont des vérités morales primordiales et qu'ils devraient pénétrer toute la société.#!"
+  
+ ideology_particularist:0 "Spécialiste"
+ ideology_particularist_desc:0 "#lore Ce groupe veut l'autonomie locale dans son travail, sans dispositions féodales de servitude sous contrat.#!"
+  
+ ideology_isolationist:0 "Isolationniste"
+ ideology_isolationist_desc:0 "#lore Ce groupe veut que l'État se concentre sur les affaires intérieures, s'opposant aux ambitions de s'étendre aux pays étrangers ainsi qu'à l'immigration de ces pays.#!"
+  
+ ideology_moralist:0 "Moralist"
+ ideology_moralist_desc:1 "#lore Ce groupe croit fermement en un ordre moral religieux et considère la diversité des opinions comme une menace à cet ordre.#!"
+  
+ ideology_jingoist:0 "Jingoist"
+ ideology_jingoist_desc:0 "#lore Ce groupe croit en une politique étrangère agressive et maintient une armée pour la soutenir.#!"
+
+ ideology_loyalist:0 "Loyalist"
+ ideology_loyalist_desc:0 "#lore Ce groupe croit que chaque citoyen devrait payer ses cotisations pour financer les fonctions vitales de l'État.#!"
+ 
+ ideology_meritocratic:0 "méritocratique"
+ ideology_meritocratic_desc:0 "#lore Ce groupe croit que le succès est gagné et que ceux qui l'ont atteint méritent la responsabilité et la richesse qui l'accompagnent.#!"
+   
+ ideology_patriotic:0 "Patriotique"
+ ideology_patriotic_desc:0 "#lore Ce groupe est farouchement dévoué à son pays et veut des mesures sévères contre ceux qui répandraient la dissidence.#!"
+  
+ ideology_liberal:0 "Libéraux"
+ ideology_liberal_desc:0 "#lore Ce groupe considère la liberté et l'égalité juridique comme des valeurs importantes à protéger.#!"
+  
+ ideology_anti_clerical:0 "Anti-Clerc"
+ ideology_anti_clerical_desc:1 "#lore Ce groupe s'oppose à l'influence de la religion organisée sur le système politique et éducatif. Ils croient que les esprits rationnels devraient être à l'avant-garde de la gouvernance.#!"
+  
+ ideology_proletarian:0 "Prolétarien"
+ ideology_proletarian_desc:0 "#lore Ce groupe voit la politique à travers la lutte des classes et les côtés avec les travailleurs dans ce conflit.#!"
+  
+ ideology_egalitarian:0 "Egalitaire"
+ ideology_egalitarian_desc:0 "#lore Ce groupe estime que le traitement égal et humain des personnes devrait être la pierre angulaire de la politique politique.#!"
+   
+ ideology_anti_slavery:0 "Anti-esclavage"
+ ideology_anti_slavery_desc:0 "#lore Ce groupe abhorre l'esclavage et le considère comme une caractéristique d'un passé barbare.#!"
+ 
+ ideology_pro_slavery:0 "Pro-esclavage"
+ ideology_pro_slavery_desc:0 "#lore Ce groupe considère l'esclavage comme un élément nécessaire d'une société qui fonctionne bien.#!"
+  
+ ideology_reactionary:0 "Réactionnaire"
+ ideology_reactionary_desc:0 "#lore Ce groupe est nostalgique pour un passé, réel ou imaginaire, où seuls les rois gouvernaient sur une société uniforme.#!"
+ 
+ ideology_plutocratic:0 "Plutocratique"
+ ideology_plutocratic_desc:0 "#lore Ce groupe croit que les riches ont prouvé leur valeur en tant que décideurs et forment une élite intellectuelle bien adaptée pour établir le cours de la société.#!"
+
+ ideology_agrarian:0 "Agraire"
+ ideology_agrarian_desc:0 "#lore Ce groupe estime que la politique économique devrait être axée sur l'agriculture et les intérêts des agriculteurs.#!"
+
+ ideology_corporatist: "Corporatiste"
+ ideology_corporatist_desc: "#lore Ce groupe croit en la résolution des conflits entre les classes par l'application de principes religieux.#!"
+
+ ideology_corporatist_leader: "Corporatiste"
+ ideology_corporatist_leader_desc: "#lore Ce leader croit en la résolution du conflit de classe par des concessions de la classe supérieure et la collaboration entre différents groupes sociaux.#!"
+
+ ideology_agrarian_jeffersonian:0 "Jeffersonian"
+ ideology_agrarian_jeffersonian_desc:0 "#lore Ce groupe croit que la classe des petits agriculteurs constitue la fondation du pays, soutenant l'agarisme comme base d'une société libre.#!"
+
+  # flavor ideologies
+
+ ideology_republican_paternalistic:0 "Élitiste"
+ ideology_republican_paternalistic_desc:0 "#lore Ce groupe favorise la domination par l'élite débarquée, mais soutient toujours une forme républicaine de gouvernement.#!"
+
+ ideology_scholar_paternalistic:0 "Chercheurs généraux"
+ ideology_scholar_paternalistic_desc:0 "#lore Ce groupe préférerait voir le pays dirigé par un monarque conseillé par les sages et instruits.#!"
+
+ ideology_junker_paternalistic:0 "Junker"
+ ideology_junker_paternalistic_desc:0 "#lore Ce groupe croit que la noblesse débarquée est la mieux adaptée pour mener le pays à son avenir.#!"
+
+ ideology_papal_paternalistic:1 "Baronial"
+ ideology_papal_paternalistic_desc:0 "#lore Ce groupe soutient l'autorité du Pape et la hiérarchie traditionnelle du Saint-Siège.#!"
+
+ ideology_confucian:0 "Conficien"
+ ideology_confucian_desc:0 "#lore Ce groupe croit dans les enseignements de Confucius, soutenant un ordre social qu'ils considèrent comme enraciné dans les lois du Ciel.#!"
+
+ ideology_bakufu:0 "Bakoufu"
+ ideology_bakufu_desc:0 "#lore Ce groupe soutient le shogunat et croit que le pouvoir appartient à la classe des guerriers.#!"
+ 
+ ideology_shinto_moralist:0 "La piété shintoïste"
+ ideology_shinto_moralist_desc:0 "#lore Ce groupe croit en la divinité de l'Empereur et lie cette croyance au vieux culte des dieux et des esprits.#!"
+
+ ideology_caudillismo:0 "Caudillismo"
+ ideology_caudillismo_desc:0 "#lore Ce groupe a tendance à soutenir les chefs forts ayant des antécédents militaires sur la primauté du droit constitutionnel.#!"
+
+ ideology_heavenly_kingdom_theocratic:0 "Dieu Adorateur"
+ ideology_heavenly_kingdom_theocratic_desc:0 "#lore Ce groupe soutient l'idée que tous les gens deviennent fils et filles de Dieu lorsqu'ils sont rachetés par le Christ, et favorise une forme théocratique de gouvernement.#!"
+
+ ideology_papal_moralist:0 "Pontifical"
+ ideology_papal_moralist_desc:0 "#lore Ce groupe a une forte dévotion à maintenir les pouvoirs temporels et ecclésiastiques de l'Église catholique.#!"
+
+ ideology_liberal_modern: "Libéraux"
+ ideology_liberal_modern_desc: "#lore Ce groupe considère la liberté et l'égalité juridique comme des valeurs importantes à protéger.#!"
+
+ ideology_egalitarian_modern: "Egalitaire"
+ ideology_egalitarian_modern_desc: "#lore Ce groupe estime que le traitement égal et humain des personnes devrait être la pierre angulaire de la politique politique.#!"
+
+ ideology_enclavist: "Enclaveur"
+ ideology_enclavist_desc: "#lore L'intérêt de ce groupe réside dans la préservation de sa position de classe dirigeante coloniale, en s'éloignant de ses sujets et en préservant son pouvoir au moyen d'un système bureaucratique complexe et irréprochable.#!"
+
+ ideology_malthusian: "Malthusiens"
+ ideology_malthusian_desc: "#lore Ce groupe souscrit aux théories économiques établies par Thomas Malthus, estimant que tout effort visant à atténuer la pauvreté doit être autodéprimé en raison de la croissance démographique qui en résulte.#!"
+
+ liberal_and_egalitarian_amended_tt: "Les positions [GetIdeology('ideology_liberal').GetName] et [GetIdeology('ideology_egalitarian').GetName] [Concept('concept_ideology','$concept_ideologies$')]' sur les positions $lawgroup_rights_of_women$ changeront"
+
+ # Movement Ideologies
+
+ ideology_royalist_movement: "Royaliste"
+ ideology_royalist_movement_desc: "#lore Les loyautés de ce groupe sont envers la monarchie et son souverain légitime.#!"
+
+ ideology_absolutist_movement: "Absolutiste"
+ ideology_absolutist_movement_desc: "#lore Ce groupe est fidèle à l'institution de la monarchie, et soutient la doter de pouvoir absolu.#!"
+
+ ideology_anarchist_movement: "Anarchiste"
+ ideology_anarchist_movement_desc: "#lore Ce groupe cherche l'abolition de la hiérarchie, de l'autorité et de l'État, laissant les gens se gouverner. #!"
+
+ ideology_communist_movement: "Communiste"
+ ideology_communist_movement_desc: "#lore Ce groupe croit en la classe ouvrière qui saisit le pouvoir politique par tous les moyens nécessaires. #!"
+
+ ideology_vanguardist_movement: "Vanguardiste"
+ ideology_vanguardist_movement_desc: "#lore Ce groupe croit en la réalisation d'une société socialiste à travers un parti d'avant-garde de radicaux dévoués. #!"
+
+ ideology_radical_movement: "Radical"
+ ideology_radical_movement_desc:1 "#lore Ce groupe s'efforce de réaliser des réformes libérales radicales pour faire progresser les idéaux démocratiques. #!"
+
+ ideology_liberal_movement: "Libéraux"
+ ideology_liberal_movement_desc: "#lore Ce groupe valorise l'institution de la démocratie et soutient la garantie des libertés essentielles pour les citoyens. #!"
+
+ ideology_pluralist_movement_1: "Pluraliste"
+ ideology_pluralist_movement_1_desc: "#lore Ce groupe souhaite préserver ses traditions culturelles, son identité et sa langue. #!"
+
+ ideology_pluralist_movement_2: "$ideology_pluralist_movement_1$"
+ ideology_pluralist_movement_2_desc: "$ideology_pluralist_movement_1_desc$"
+
+ ideology_pluralist_movement_3: "$ideology_pluralist_movement_1$"
+ ideology_pluralist_movement_3_desc: "$ideology_pluralist_movement_1_desc$"
+
+ ideology_pluralist_movement_4: "$ideology_pluralist_movement_1$"
+ ideology_pluralist_movement_4_desc: "$ideology_pluralist_movement_1_desc$"
+
+  # Government Principles group
+ lawgroup_governance_principles:0 "Principes de gouvernance"
+ lawgroup_governance_principles_desc:0 "Les principes fondamentaux et l'autorité par lesquels votre pays est gouverné. Détermine qui est le chef de l'État."
+  
+ law_chiefdom:0 "Chef"
+ law_chiefdom_desc:0 "Un système politique préindustriel hiérarchique basé sur la parenté, avec un seigneur de guerre ou aîné d'une famille éminente à la tête. Il est incapable d'exercer un contrôle centralisé efficace sur des États entiers."
+ law_monarchy:0 "Monarchie"
+ law_monarchy_desc:0 "Une forme de gouvernance où une dynastie aristocratique représente l'identité nationale du pays et donne des pouvoirs exécutifs au chef royal de la dynastie."
+ law_presidential_republic:0 "République présidentielle"
+ law_presidential_republic_desc:0 "Un système politique où le pouvoir est détenu par le peuple et ses représentants élus. Les Républiques ont un élu ou désigné $RULER_TITLE_PRESIDENT$ comme chef de l'État."
+ law_parliamentary_republic:0 "République parlementaire"
+ law_parliamentary_republic_desc:0 "Un système politique où le pouvoir est détenu par le peuple et ses représentants élus. Le chef du pouvoir législatif agit en qualité de chef de l'État et est appelé $RULER_TITLE_CHANCELLOR$."
+ law_theocracy:0 "Théocratie"
+ law_theocracy_desc:0 "Le gouvernement est dirigé par un clergé et leur interprétation des saintes Écritures. Le chef de l'État est nominalement la personne du culte, bien qu'en pratique un représentant du monde choisi par mérite, statut ou naissance."
+ law_council_republic:0 "Conseil"
+ law_council_republic_desc:0 "Un système politique où les travailleurs élisent des délégués aux conseils locaux. Élargit les concepts d'organisation du travail à la gouvernance générale."
+ law_corporate_state:0 "État des entreprises"
+ law_corporate_state_desc:0 "Un système politique fondé sur une collaboration institutionnalisée entre des groupes d'entreprises officiellement reconnus. L'État sert de forum de négociation entre les différentes classes sociales."
+ law_corporate_state_1:0 "État des entreprises"
+ law_corporate_state_1_desc:0 "Un système politique fondé sur une collaboration institutionnalisée entre des groupes d'entreprises officiellement reconnus. L'État sert de forum de négociation entre les différentes classes sociales."
+  # Free speech group
+ lawgroup_free_speech:0 "Discours libre"
+ lawgroup_free_speech_desc:0 "Lois régissant la liberté d'expression et le droit de réunion publique."
+  
+ law_outlawed_dissent:0 "Dissident interdit"
+ law_outlawed_dissent_desc:0 "La critique du gouvernement est considérée comme une trahison et une illégalité."
+ law_censorship:0 "Censure"
+ law_censorship_desc:0 "Il y a une censure active de la presse et aucun droit de réunion garanti."
+ law_right_of_assembly:0 "Droit de réunion"
+ law_right_of_assembly_desc:0 "Les citoyens jouissent du droit de réunion publique."
+ law_protected_speech:0 "Discours protégé"
+ law_protected_speech_desc:0 "La protection de la liberté d'expression est inscrite dans la loi."
+  
+  # Army Model group
+ lawgroup_army_model:0 "Modèle d'armée"
+ lawgroup_army_model_desc:0 "Comment votre armée est organisée et réglementée."
+  
+ law_peasant_levies:0 "Lévis paysannes"
+ law_peasant_levies_desc:0 "La force principale de l'armée vient de l'infanterie conscrite avec zéro à l'entraînement de base."
+ law_national_militia:0 "Milice nationale"
+ law_national_militia_desc:0 "L'armée permanente est petite, mais les milices locales peuvent être mobilisées pour défendre leurs maisons."
+ law_mass_conscription:0 "Conscription de masse"
+ law_mass_conscription_desc:0 "Un grand nombre de conscrits d'infanterie peuvent être activés au besoin pour compléter l'armée professionnelle."
+ law_professional_army:0 "Armée professionnelle"
+ law_professional_army_desc:0 "L'armée est composée de réguliers professionnels bien formés."
+  
+  # Distribution of Power group
+ lawgroup_distribution_of_power:0 "Distribution de puissance"
+ lawgroup_distribution_of_power_desc:0 "La répartition du pouvoir politique. Détermine à qui le chef de l'État est responsable."
+  
+ law_autocracy:0 "Autocratie"
+ law_autocracy_desc:0 "Le pouvoir du chef de l'État est absolu et ils ne sont tenus responsables devant aucune puissance terrestre."
+ law_oligarchy:0 "Oligarchie"
+ law_oligarchy_desc:1 "Le chef de l'État partage le pouvoir et la responsabilité avec un petit groupe d'individus puissants et non élus."
+ law_landed_voting:0 "Vote déclaré"
+ law_landed_voting_desc:0 "Ceux qui possèdent des terres ou des immobilisations ont droit à un vote."
+ law_wealth_voting:0 "Vote de richesse"
+ law_wealth_voting_desc:1 "Les citoyens riches se voient accorder un vote. Les hommes plus riches se voient accorder plus de voix."
+ law_census_voting:0 "Suffrages de recensement"
+ law_census_voting_desc:0 "Les hommes alphabétisés ayant un statut particulier sont mis aux voix."
+ law_universal_suffrage:0 "Suffrage universel"
+ law_universal_suffrage_desc:0 "Chaque adulte a droit à un vote égal."
+ law_elder_council:0 "Conseil des anciens"
+ law_elder_council_desc:0 "Les hommes les plus vénérés ont leur mot à dire dans la gouvernance de la nation."
+ law_anarchy:0 "Anarchie"
+ law_anarchy_desc:1 "Les communautés locales gouvernent leurs propres affaires et envoient des représentants pour siéger à des conseils coopératifs plus importants. Sans hiérarchie formelle, l'autorité centrale est difficile à exercer."
+ law_single_party_state: "État à parti unique"
+ law_single_party_state_desc: "L'État est régi par un seul parti politique légal, qui a le monopole de toute activité politique au sein de la nation."
+ ruler_in_party_tt: "Le [concept_ruler] de cette nation est membre d'un [concept_interest_group] qui a une politique active [concept_party]"
+ sps_no_party_tt: "Cette nation n'a aucun actif [Concept('concept_party', 'Political Parties')]"
+ sps_government_reshuffle_tt: "La composition [concept_government] sera mise à jour avec les membres de l'unité juridique [concept_party]"
+  
+  # Voting System group
+ law_first_past_the_post:0 "Premier passé"
+ law_first_past_the_post_desc:0 "Aussi connu sous le nom de gagnant prend tout, ce système élit le candidat unique qui gagne le plus de sièges dans les sous-élections régionales. Il a tendance à créer des gouvernements à parti unique dotés de mandats forts, mais il est vulnérable à la gerrymannerie."
+ law_proportional_representation:0 "Représentation proportionnelle"
+ law_proportional_representation_desc:0 "Ce système répartit les sièges parlementaires proportionnellement au nombre de suffrages exprimés. Il a tendance à créer des gouvernements de coalition multipartite où le compromis est essentiel pour faire quoi que ce soit."
+  
+  # Workplace Safety group
+ lawgroup_labor_rights:0 "Droits du travail"
+ lawgroup_labor_rights_desc:0 "Les droits des travailleurs."
+  
+ law_serfdom:0 "Serfdom"
+ law_serfdom_desc:0 "Les paysans sont liés à leur terre et doivent travailler pour leurs maîtres féodaux."
+ law_no_workers_rights:0 "Pas de droits des travailleurs"
+ law_no_workers_rights_desc:0 "Les travailleurs n'ont aucun droit de travail particulier garanti par l'État."
+ law_regulatory_bodies:0 "Organes réglementaires"
+ law_regulatory_bodies_desc:0 "Des institutions gouvernementales ont été créées pour réglementer les excès des employeurs."
+ law_worker_protections:0 "Protection des travailleurs"
+ law_worker_protections_desc:0 "Les travailleurs bénéficient d'une protection étendue qui est consacrée par la loi."
+  
+  # Children's Rights group
+ lawgroup_childrens_rights:0 "Droits de l'enfant"
+ lawgroup_childrens_rights_desc:0 "Les droits et la protection des enfants."
+  
+ law_child_labor_allowed:0 "Travail des enfants admis"
+ law_child_labor_allowed_desc:0 "Aucune restriction légale n'est imposée au travail des enfants."
+ law_restricted_child_labor:0 "Travail limité des enfants"
+ law_restricted_child_labor_desc:0 "Aucun enfant n'est autorisé au sol de l'usine."
+ law_compulsory_primary_school:0 "École primaire obligatoire"
+ law_compulsory_primary_school_desc:0 "Tous les enfants doivent fréquenter plusieurs années d'école primaire pendant lesquelles ils sont interdits de travailler."
+  
+  # Slavery group
+ lawgroup_slavery:0 "Esclavage"
+ lawgroup_slavery_desc:0 "Les gens comme propriété."
+  
+ law_slavery_banned:0 "L'esclavage interdit"
+ law_slavery_banned_desc:0 "Aucun être humain ne peut appartenir à un autre."
+ law_debt_slavery:0 "Dette Esclavage"
+ law_debt_slavery_desc:0 "Ceux qui ne peuvent pas effacer leurs dettes perdent plutôt leur personne en tant que biens de leur créancier."
+ law_slave_trade:0 "Traite des esclaves"
+ law_slave_trade_desc:0 "La demande de main-d'œuvre bon marché est satisfaite par un commerce déshumanisant dans les organismes étrangers."
+ law_legacy_slavery:0 "L ' esclavage"
+ law_legacy_slavery_desc:0 "Comme compromis entre abolitionnistes et esclaves, l'institution de l'esclavage peut continuer tant qu'elle ne s'étend pas."
+  
+  # Church and State group
+ lawgroup_church_and_state:0 "Église et État"
+ lawgroup_church_and_state_desc:0 "La relation entre les gouverneurs physiques et spirituels."
+  
+ law_state_religion:0 "Religion de l ' État"
+ law_state_religion_desc:0 "L'église est un organe officiel de l'État. Toutes les religions minoritaires sont victimes de discrimination."
+ law_freedom_of_conscience:0 "Liberté de conscience"
+ law_freedom_of_conscience_desc:0 "L'État a une religion officielle d'État, mais le peuple peut choisir quoi croire. Seules les religions particulièrement exotiques sont victimes de discrimination."
+ law_total_separation:0 "Total des cessations de service"
+ law_total_separation_desc:0 "Aucune église ou foi ne peut interférer dans les fonctions gouvernementales. Aucune religion ne peut faire l ' objet de discrimination."
+ law_atheist_state:0 "État athée"
+ law_atheist_state_desc:0 "La prédication des croyances religieuses est interdite, et la pratique est froncée. Toutes les religions sont victimes de discrimination."
+  
+   # Citizenship group
+ lawgroup_citizenship:0 "Citoyenneté"
+ lawgroup_citizenship_desc:0 "Élargir les droits de la citoyenneté."
+  
+ law_ethnostate:0 "Ethnostate"
+ law_ethnostate_desc:1 "L'État se considère inextricablement lié à une certaine ethnie, avec d'autres ethnies interdites de citoyenneté. Toutes les cultures étrangères sont victimes de discrimination."
+ law_national_supremacy:0 "Suprématie nationale"
+ law_national_supremacy_desc:1 "L'État définit ses citoyens en respectant une certaine identité nationale, qui est considérée comme suprême sur tous les autres. Les cultures étrangères sont victimes de discrimination à moins qu'elles ne partagent à la fois le patrimoine et la langue (ou d'autres coutumes)."
+ law_racial_segregation:0 "Ségrégation raciale"
+ law_racial_segregation_desc:1 "L'État considère que les droits de citoyenneté sont liés à la notion d'héritage racial partagé. Les cultures étrangères de patrimoine différent font l'objet de discriminations."
+ law_cultural_exclusion:0 "Exclusion culturelle"
+ law_cultural_exclusion_desc:1 "L'État accorde des droits de citoyenneté aux personnes de toutes les identités culturelles, tout en considérant qu'une certaine identité officielle est primordiale. Les cultures étrangères sans rien en commun avec vos cultures primaires sont discriminées."
+ law_multicultural:0 "Multiculturalisme"
+ law_multicultural_desc:1 "L'État défend l'égalité des droits à la citoyenneté pour les personnes de toutes les identités culturelles et ne tente pas de défendre officiellement une certaine culture sur d'autres. Aucune culture n'est discriminée."
+ law_subjecthood: "Sujet"
+ law_subjecthood_desc: "L'État définit son peuple comme étant avant tout sujet d'un souverain, en faisant peu d'efforts pour encourager toute nationalité officielle. Les cultures sont largement laissées à leurs propres mécanismes au sein de leurs propres communautés."
+
+  # Caste Hegemony, a Social Stratification law group
+ lawgroup_caste_hegemony: "Hégémonie de caste"
+ lawgroup_caste_hegemony_desc: "Éradication des droits des membres de la société fondée sur le système britannique de castes indiennes."
+ law_hindu_caste_enforced: "Système de castes appliqué"
+ law_hindu_caste_enforced_desc: "La hiérarchie des castes est légalement appliquée et empêche la mobilité socioéconomique à la hausse."
+ law_hindu_caste_codified: "Système de caste codifié"
+ law_hindu_caste_codified_desc: "La hiérarchie des castes est reconnue et utilisée pour limiter la mobilité socioéconomique ascendante."
+ law_hindu_caste_not_enforced: "Caste non appliquée"
+ law_hindu_caste_not_enforced_desc: "La mobilité socio-économique fondée sur la caste n'est pas limitée par la loi, mais la discrimination peut persister."
+ law_affirmative_action: "Action positive"
+ law_affirmative_action_desc: "Mesures actives visant à créer une situation socioéconomique équitable, en accordant la priorité aux groupes précédemment marginalisés."
+  
+  # Economic System group
+ lawgroup_economic_system:0 "Système économique"
+ lawgroup_economic_system_desc:0 "Les principes fondamentaux de votre économie."
+
+ law_traditionalism:0 "Traditionnalisme"
+ law_traditionalism_desc:0 "Économie de subsistance préindustrielle avec peu de contrôle central."
+ law_agrarianism:0 "Agrarisme"
+ law_agrarianism_desc:0 "Une économie rurale privilégiant le développement agricole et la communauté."
+ law_cooperative_ownership:0 "Propriété coopérative"
+ law_cooperative_ownership_desc:0 "Un système économique basé sur le concept de la propriété sociale, où la production excédentaire est répartie plus uniformément entre les travailleurs."
+ law_command_economy:0 "Économie du commandement"
+ law_command_economy_desc:0 "Une économie interventionniste intérieure où le gouvernement gère directement la plupart des aspects de la production."
+ law_laissez_faire:0 "Laisser-Faire"
+ law_laissez_faire_desc:0 "Une économie libérale fondée sur les principes de l'avantage comparatif et que moins d'interventions gouvernementales signifie une croissance plus forte"
+ law_interventionism:0 "Interventionnisme"
+ law_interventionism_desc:0 "Pour assurer la stabilité de notre pays, le gouvernement doit freiner les pires excès d'entreprises privées."
+
+ # Trade Policy group
+ lawgroup_trade_policy:0 "Politique commerciale"
+ lawgroup_trade_policy_desc:0 "Lois régissant le commerce et l'échange de marchandises par-delà les frontières."
+ 
+ law_free_trade:0 "Libre échange"
+ law_free_trade_desc:1 "Le libre échange des marchandises ne doit pas être entravé, car le commerce est dans l'intérêt de tous."
+ law_protectionism:0 "Protectionnisme"
+ law_protectionism_desc:0 "Nos industries doivent être protégées contre les déprédations des acteurs du marché étranger."
+ law_isolationism:0 "Isolationnisme"
+ law_isolationism_desc:0 "Une économie axée sur la satisfaction des besoins de la nation à l'intérieur, tout en se tenant à l'écart des affaires des autres."
+ law_mercantilism:0 "Objectif d'exportation"
+ law_mercantilism_desc:0 "Une économie axée sur l'exportation qui met l'accent sur le maintien d'un compte courant positif et la concurrence avec d'autres pays."
+
+  # Taxation Group
+ lawgroup_taxation:0 "Fiscalité"
+ lawgroup_taxation_desc:0 "Comment l'État augmente les revenus en taxant ses citoyens."
+ law_consumption_based_taxation:0 "Fiscalité fondée sur la consommation"
+ law_consumption_based_taxation_desc:0 "Un régime fiscal où il n'y a pas de revenus directs ou d'impôts par habitant et où les revenus sont perçus par l'imposition de la consommation de biens."
+ law_land_based_taxation:0 "Fiscalité foncière"
+ law_land_based_taxation_desc:0 "Une forme traditionnelle de taxation foncière, recueillie principalement auprès de la paysannerie."
+ law_per_capita_based_taxation:0 "Fiscalité régressive"
+ law_per_capita_based_taxation_desc:0 "Un régime fiscal qui impose des impôts disproportionnés aux pauvres par une combinaison de revenus et d'impôts par habitant."
+ law_proportional_taxation:0 "Fiscalité proportionnelle"
+ law_proportional_taxation_desc:0 "Un système fiscal essentiellement fondé sur le revenu qui tente de s'assurer que chacun paie une part à peu près égale de son revenu à l'État."
+ law_graduated_taxation:0 "Fiscalité progressive"
+ law_graduated_taxation_desc:0 "Un système fiscal qui vise à imposer la charge de la fiscalité principalement sur le bien-être grâce à des impôts élevés sur les dividendes."
+  
+  # Education System group
+ lawgroup_education_system:0 "Système éducatif"
+ lawgroup_education_system_desc:0 "Car quand les enfants sont finis avec des corvées de cheminée."
+  
+ law_no_schools:0 "Aucune école"
+ law_no_schools_desc:0 "L'éducation est la responsabilité des parents. Seuls les citoyens les plus tranquilles apprennent à lire et à écrire."
+ law_religious_schools:0 "Écoles religieuses"
+ law_religious_schools_desc:0 "Laisser l'Église s'occuper de l'éducation de l'État assure une population loyale et moralement saine."
+ law_private_schools:0 "Écoles privées"
+ law_private_schools_desc:0 "L'école est mieux laissée aux intérêts privés qui peuvent assurer la liberté de choix dans l'éducation."
+ law_public_schools:0 "Écoles publiques"
+ law_public_schools_desc:0 "La scolarisation relève de la responsabilité de l'État et doit être normalisée et accessible à tous."
+  
+  # Health System group
+ lawgroup_health_system:0 "Système de santé"
+ lawgroup_health_system_desc:1 "Lois sur la participation (ou l'absence) du gouvernement à la prestation de soins de santé à ses citoyens."
+  
+ law_no_health_system:0 "Pas de système de santé"
+ law_no_health_system_desc:1 "Le gouvernement ne finance aucun système de santé."
+ law_charitable_health_system:0 "Hôpitaux caritatifs"
+ law_charitable_health_system_desc:0 "Les organisations charitables, souvent religieuses, apportent de l'aide à toute personne malade ou mourante, dans la mesure de ses capacités."
+ law_private_health_insurance:0 "Assurance maladie privée"
+ law_private_health_insurance_desc:0 "La santé de la population est gérée par un système d'hôpitaux privés payés dans le cadre de programmes privés d'assurance-maladie, assurant le bien-être de ceux qui peuvent s'en permettre le moins possible sur le Trésor public."
+ law_public_health_insurance:0 "Assurance maladie publique"
+ law_public_health_insurance_desc:0 "Le gouvernement offre un programme d'assurance-maladie financé par l'État qui assure l'égalité d'accès aux soins pour tous."
+ 
+  # Welfare group
+ lawgroup_welfare:0 "Détente et loisirs"
+ lawgroup_welfare_desc:0 "Aide gouvernementale pour les revenus défavorisés."
+  
+ law_no_social_security:0 "Pas de sécurité sociale"
+ law_no_social_security_desc:0 "Il n'appartient pas à l'État de pourvoir à ceux qui ne peuvent pas subvenir à leurs besoins."
+ law_poor_laws:0 "Mauvaises lois"
+ law_poor_laws_desc:0 "Obtenir les clochards et les clochards de nos rues et dans les ateliers en vaut la peine."
+ law_wage_subsidies:1 "Subventions salariales"
+ law_wage_subsidies_desc:1 "Tous ceux qui sont prêts à travailler ont le droit de manger. Nul ne doit manquer de moyens pour subvenir aux besoins de sa famille."
+ law_old_age_pension:0 "Pension de vieillesse"
+ law_old_age_pension_desc:0 "Il y a une limite pratique à l'âge où notre main-d'œuvre n'est plus efficace et leur bien-être ultérieur doit relever de la compétence du gouvernement."
+ law_disability_insurance:0 "Assurance invalidité"
+ law_disability_insurance_desc:0 "C'est la responsabilité de l'État de prendre soin de ceux qui, sans faute de leur part, se trouvent incapables de travailler."
+  
+  # Rights of Women group
+ lawgroup_rights_of_women:0 "aux droits de la femme"
+ lawgroup_rights_of_women_desc:0 "Les règles légales du sexe plus juste."
+  
+ law_no_womens_rights:0 "La tutelle juridique"
+ law_no_womens_rights_desc:0 "Les femmes sont légalement placées sous la tutelle des hommes et jouissent de très peu de droits."
+ law_women_own_property:0 "Femmes qualifiées"
+ law_women_own_property_desc:0 "Qu'elles soient héritées ou acquises d'une autre manière, même les femmes ont le droit et le devoir de posséder et de chérir leurs biens."
+ law_women_in_the_workplace:0 "Les femmes sur le lieu de travail"
+ law_women_in_the_workplace_desc:0 "Comment pourrons-nous maintenir les fourneaux de progrès enflammés avec seulement la moitié de la main-d'œuvre potentielle?"
+ law_womens_suffrage:0 "Femmes"
+ law_womens_suffrage_desc:0 "Dans l'ajustement du nouvel ordre de choses, nous, les femmes, exigeons une voix égale; nous n'accepterons rien de moins."
+  
+  # Policing
+ lawgroup_policing:0 "Services de police"
+ lawgroup_policing_desc:0 "Les priorités de la police nationale."
+
+ law_no_police:0 "Pas de police"
+ law_no_police_desc:0 "Aucune forme de police structurée n'existe dans ce pays."
+ law_local_police:0 "Police locale"
+ law_local_police_desc:0 "Ce pays compte des forces de police locales."
+ law_dedicated_police:0 "Force de police spécialisée"
+ law_dedicated_police_desc:0 "Ce pays dispose d'une force de police spécialisée et d'une formation normalisée."
+ law_militarized_police:0 "Police militaire"
+ law_militarized_police_desc:0 "En donnant à votre force de police de l'équipement militaire et de la formation militaire, leur efficacité dans la réalisation de votre volonté augmente."
+  
+  # Bureaucracy
+ lawgroup_bureaucracy:0 "Bureaucratie"
+ lawgroup_bureaucracy_desc:0 "Comment votre pays est administré."
+
+ law_hereditary_bureaucrats:0 "Bureaux héréditaires"
+ law_hereditary_bureaucrats_desc:0 "Les bureaucrates occupent leur place par le biais de l'héritage traditionnel, qui transmet les responsabilités à leurs enfants."
+ law_appointed_bureaucrats:0 "Bureaux nommés"
+ law_appointed_bureaucrats_desc:0 "Les bureaucrates sont nommés par les dirigeants pour servir les intérêts du pays en échange de salaires élevés."
+ law_meritocratic_bureaucracy:0 "Bureaucratie méritocratique"
+ law_meritocratic_bureaucracy_desc:0 "Les bureaucrates se disputent des postes de pouvoir par le mérite. Avec le temps, cela crée d'énormes administrations byzantines."
+ law_elected_bureaucrats:0 "Bureaux élus"
+ law_elected_bureaucrats_desc:0 "Les gouverneurs locaux sont élus par leurs électeurs, décentralisation du pouvoir tout en facilitant la gestion des citoyens."
+  
+  # Colonization
+ lawgroup_colonization:0 "Colonisation"
+ lawgroup_colonization_desc:0 "Votre position sur l'établissement de colonies pour supplanter et conquérir [concept_decentralized_nation]."
+  
+ law_no_colonial_affairs:0 "Pas d ' affaires coloniales"
+ law_no_colonial_affairs_desc:0 "Le pays ne s'engage dans aucun type officiel de colonisation et ne peut établir de colonies."
+ law_colonial_resettlement:0 "Réinstallation coloniale"
+ law_colonial_resettlement_desc:0 "Des colonies sont établies pour fournir des terres aux colons des États constitués en société du pays."
+ law_colonial_exploitation:0 "Exploitation coloniale"
+ law_colonial_exploitation_desc:0 "Des colonies sont établies pour exploiter la région pour ses ressources naturelles et sa main-d'œuvre bon marché."
+  
+  # Internal Security
+ lawgroup_internal_security:0 "Sécurité intérieure"
+ lawgroup_internal_security_desc:0 "Gardez vos affaires en ordre."
+  
+ law_no_home_affairs:0 "Pas d'affaires intérieures"
+ law_no_home_affairs_desc:0 "L'État ne fait aucune tentative particulière pour mettre un terme aux troubles et aux soulèvements."
+ law_national_guard:0 "Garde nationale"
+ law_national_guard_desc:0 "L'État peut recourir à la force militaire pour réprimer les troubles domestiques."
+ law_secret_police:0 "Police secrète"
+ law_secret_police_desc:0 "La police secrète suit de près les éléments radicaux et les dissidents."
+ law_guaranteed_liberties:0 "Libertés garanties"
+ law_guaranteed_liberties_desc:1 "Le bureau des affaires intérieures de l'État est uniquement axé sur le traitement des griefs des citoyens, et il est interdit d'enquêter ou de les arrêter sans motif valable."
+  
+  # Migration
+ lawgroup_migration:0 "Migrations"
+ lawgroup_migration_desc:0 "Contrôler le flux des gens."
+  
+ law_no_migration_controls:0 "Pas de contrôle des migrations"
+ law_no_migration_controls_desc:0 "Le pays ne tente pas de contrôler les mouvements transfrontaliers."
+ law_migration_controls:0 "Contrôles migratoires"
+ law_migration_controls_desc:0 "Seuls les peuples de cultures et de religions non victimes de discrimination peuvent émigrer à l'intérieur ou à l'extérieur du pays."
+ law_closed_borders:0 "Frontières fermées"
+ law_closed_borders_desc:0 "Aucune migration à l'intérieur ou à l'extérieur du pays n'est autorisée."
+
+ liberate_slaves_tt:0 "Tous [GetPopType('slaves').GetName] seront libérés"
+ enslave_discriminated_farm_workers_tt:0 "Tous les $laborers$ dont le faible [concept_acceptance] travaillant sur des fermes, des ranchs et des plantations dans d'anciens États esclaves seront [Concept('concept_slavery', '$concept_enslaved$')]."
+ 
+ enact_law_radical_leftist_government_warning_desc:0 "@warning! L'action de ce [concept_law] peut amener [Concept('concept_country', '$concept_countries$')] sans une forme similaire de $lawgroup_governance_principles$ à devenir agressive contre nous."
+ enact_law_radical_leftist_economy_warning_desc:0 "@warning! L'action de ce [concept_law] peut amener [Concept('concept_country', '$concept_countries$')] sans une forme similaire de $lawgroup_economic_system$ à devenir agressive contre nous."
+
+ # Labour Associations
+ lawgroup_labour_associations: "Associations de travail"
+ lawgroup_labour_associations_desc: "Règlement sur les associations de travailleurs et d'artisans."
+
+ law_guild_system: "Système de guilde"
+ law_guild_system_desc: "Un système dans lequel l'admissibilité à l'emploi dans certains domaines dépend de l'appartenance à une corporation artisanale ou marchande officielle."
+ law_combination_acts: "Actes combinés"
+ law_combination_acts_desc: "La création d'associations de travail de quelque nature que ce soit est interdite par la loi."
+ law_anti_strike_laws: "Lois anti-strike"
+ law_anti_strike_laws_desc: "Si la formation d'associations syndicales est autorisée, les grèves et certaines formes de négociation collective sont interdites."
+ law_right_to_associate: "Droit d ' association"
+ law_right_to_associate_desc: "Aucune restriction particulière n'est imposée à la formation et à l'activité des associations de travailleurs."
+ law_corporatized_unions: "Unions consolidées"
+ law_corporatized_unions_desc: "Les associations professionnelles sont placées sous le contrôle de l'État, soit par une fusion obligatoire en une union nationale unique, soit par l'incorporation des associations existantes dans les fonctions de l'État."
+
+
+# Luddites
+ law_industry_banned: "Industrie interdite"
+ law_industry_banned_desc: "Une vision économique qui rejette l'industrie lourde et l'automatisation, préférant les fruits d'un travail honnête aux machines sans âme."
+ industry_banned_tt: "Il ne sera plus possible de construire #bold Industrie lourde #! bâtiments"
+ industry_banned_destroy_tt: "@warning! Tous #bold Industrie lourde #! Les bâtiments de ce pays seront démantelés"
+ ideology_luddite: "Luddite"
+ ideology_luddite_desc: "Les luddites s'opposent à l'automatisation industrielle ou, dans des cas plus extrêmes, à l'industrie elle-même."
+
+  
+ law_extraction_economy: "Économie de l'extraction"
+ law_extraction_economy_desc: "Un système économique colonial qui se concentre sur l'extraction maximale du capital au profit du métropole."
+
+# Land Reform Laws
+ lawgroup_land_reform: "Réforme foncière"
+ lawgroup_land_reform_desc: "Les lois régissant les terres agricoles et les personnes qui les travaillent."
+ law_tenant_farmers: "Agriculteurs locataires"
+ law_tenant_farmers_desc: "Les terres agricoles appartiennent à des élites héréditaires. Les travailleurs ne sont pas liés à la terre et peuvent chercher un autre emploi s'ils le trouvent."
+ law_homesteading: "Logement"
+ law_homesteading_desc: "Les agriculteurs revendiquent des parcelles de terre qu'ils travaillent aux côtés de leurs salariés."
+ law_commercialized_agriculture: "Agriculture commercialisée"
+ law_commercialized_agriculture_desc: "L'agriculture est une entreprise comme toute autre, soumise aux forces du marché et détenue par le capital."
+ law_collectivized_agriculture: "Agriculture collectivisée"
+ law_collectivized_agriculture_desc:1 "Les terres agricoles sont organisées en parcelles exploitées par des groupes d'agriculteurs en tant qu'entreprise commune."
+
+ pm_homesteading: "Logement"
+ pm_homesteading_building_subsistence: "Logement"
+ pm_privately_owned_plantation: "Propriété privée"
+ pm_publicly_traded_plantation: "Commerce public"
+ pm_government_run_plantation: "Exécution gouvernementale"
+
+ # Jacksonian Democrat
+ ideology_jacksonian_democrat: "démocrate jamsonien"
+ ideology_jacksonian_democrat_desc: "Ce caractère plaide pour une plus grande participation du public au gouvernement - pour une certaine définition de «public»."
+
+ #Enactment Stages
+ enactment_phase_0_tec: "Formulation"
+ enactment_phase_1_tec: "Révision"
+ enactment_phase_2_tec: "Mise en œuvre"
+
+ enactment_phase_0_courep: "Débat"
+ enactment_phase_1_courep: "Amendement"
+ enactment_phase_2_courep: "Approbation"
+
+ enactment_phase_0_autocracy: "Présentation"
+ enactment_phase_1_autocracy: "Examen"
+ enactment_phase_2_autocracy: "Adoption"
+
+ enactment_phase_0_demrep: "Parrainage"
+ enactment_phase_1_demrep: "Etude"
+ enactment_phase_2_demrep: "Vote"
+
+ enactment_phase_0_conmon: "Renvoi"
+ enactment_phase_1_conmon: "Rédaction"
+ enactment_phase_2_conmon: "Vote"
+
+ enactment_phase_0_mon: "Présentation"
+ enactment_phase_1_mon: "Examen"
+ enactment_phase_2_mon: "Avis conforme"
+
+ enactment_phase_0_generic: "Rédaction"
+ enactment_phase_1_generic: "Amendement"
+ enactment_phase_2_generic: "Vote"
+
+ # Frontier Colonization
+ law_frontier_colonization: "Colonisation des frontières"
+ law_frontier_colonization_desc: "Les frontières sauvages de nos frontières sont mûres si elles peuvent d'abord être pacifiées et apprivoisées."

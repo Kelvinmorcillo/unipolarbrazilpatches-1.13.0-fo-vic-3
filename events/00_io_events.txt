@@ -1,0 +1,208 @@
+namespace = io_events
+
+### ══════════════════════════════════════════
+### VOTE EVENT — sent to each member
+### ══════════════════════════════════════════
+
+io_events.1 = {
+	type = country_event
+	placement = ROOT
+	title = io_events.1.t
+	desc = io_events.1.d
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	event_image = { video = "africa_diplomats_negotiating" }
+	duration = 3
+
+	option = {
+		name = io_events.1.a # Accept
+		default_option = yes
+		ai_chance = {
+			base = 50
+			modifier = { trigger = { has_attitude = { who = scope:io_applicant attitude = attitude_friendly } } add = 40 }
+			modifier = { trigger = { has_attitude = { who = scope:io_applicant attitude = attitude_amicable } } add = 30 }
+			modifier = { trigger = { has_attitude = { who = scope:io_applicant attitude = attitude_cooperative } } add = 20 }
+			modifier = { trigger = { has_attitude = { who = scope:io_applicant attitude = attitude_protective } } add = 50 }
+			modifier = { trigger = { has_attitude = { who = scope:io_applicant attitude = attitude_loyal } } add = 50 }
+			modifier = { trigger = { has_attitude = { who = scope:io_applicant attitude = attitude_neutral } } add = 5 }
+			modifier = { trigger = { has_attitude = { who = scope:io_applicant attitude = attitude_wary } } add = -20 }
+			modifier = { trigger = { has_attitude = { who = scope:io_applicant attitude = attitude_antagonistic } } add = -40 }
+			modifier = { trigger = { has_attitude = { who = scope:io_applicant attitude = attitude_hostile } } add = -100 }
+			modifier = { trigger = { has_attitude = { who = scope:io_applicant attitude = attitude_belligerent } } add = -100 }
+			modifier = { trigger = { has_attitude = { who = scope:io_applicant attitude = attitude_domineering } } add = -30 }
+		}
+		change_relations = { country = scope:io_applicant value = 5 }
+	}
+
+	option = {
+		name = io_events.1.b # Reject
+		ai_chance = {
+			base = 10
+			modifier = { trigger = { has_attitude = { who = scope:io_applicant attitude = attitude_hostile } } add = 90 }
+			modifier = { trigger = { has_attitude = { who = scope:io_applicant attitude = attitude_belligerent } } add = 80 }
+			modifier = { trigger = { has_attitude = { who = scope:io_applicant attitude = attitude_antagonistic } } add = 50 }
+		}
+		# Immediately reject — set rejected variable, fire rejection event, cancel pending acceptance
+		scope:io_applicant = {
+			set_variable = { name = io_application_rejected days = 60 }
+			trigger_event = { id = io_events.3 days = 1 }
+		}
+		change_relations = { country = scope:io_applicant value = -10 }
+	}
+}
+
+### ══════════════════════════════════════════
+### ACCEPTED — fires after 30 days if not rejected
+### Checks io_pending_org and applies the correct effects
+### ══════════════════════════════════════════
+
+io_events.2 = {
+	type = country_event
+	placement = ROOT
+	title = io_events.2.t
+	desc = io_events.2.d
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	event_image = { video = "africa_diplomats_negotiating" }
+	duration = 3
+
+	trigger = {
+		NOT = { has_variable = io_application_rejected }
+		has_variable = io_pending_org
+	}
+
+	immediate = {
+		# UN
+		if = {
+			limit = { var:io_pending_org = 1 }
+			add_to_global_variable_list = { name = io_un_members target = ROOT }
+		}
+		# NATO
+		if = {
+			limit = { var:io_pending_org = 2 }
+			add_to_global_variable_list = { name = io_nato_members target = ROOT }
+			add_modifier = { name = io_military_defense_agreement_member }
+			every_country = {
+				limit = {
+					is_target_in_global_variable_list = { name = io_nato_members target = this }
+					NOT = { this = ROOT }
+					NOR = {
+						any_scope_treaty = { binds = ROOT any_scope_article = { has_type = defensive_pact } }
+					}
+				}
+				save_scope_as = nato_member_target
+				ROOT = {
+					create_treaty = {
+						name = io_nato_defensive_pact_name
+						first_country = ROOT
+						second_country = scope:nato_member_target
+						is_draft = no
+						binding_period = { years = 999 }
+						articles_to_create = {
+							{
+								article = defensive_pact
+							}
+						}
+					}
+				}
+			}
+		}
+		# G7
+		if = {
+			limit = { var:io_pending_org = 3 }
+			add_to_global_variable_list = { name = io_g7_members target = ROOT }
+			add_modifier = { name = io_financial_agreement_member }
+		}
+		# OPEC
+		if = {
+			limit = { var:io_pending_org = 4 }
+			add_to_global_variable_list = { name = io_opec_members target = ROOT }
+			add_modifier = { name = io_opec_member }
+		}
+		# EEC
+		if = {
+			limit = { var:io_pending_org = 5 }
+			add_to_global_variable_list = { name = io_eec_members target = ROOT }
+			add_modifier = { name = io_free_trade_agreement_member }
+			join_power_bloc = c:EUR
+		}
+		# EU
+		if = {
+			limit = { var:io_pending_org = 6 }
+			add_to_global_variable_list = { name = io_eu_members target = ROOT }
+			add_modifier = { name = io_free_trade_agreement_member }
+			join_power_bloc = c:EUR
+		}
+		# Arab League
+		if = {
+			limit = { var:io_pending_org = 7 }
+			add_to_global_variable_list = { name = io_arab_league_members target = ROOT }
+			add_modifier = { name = io_cultural_pact_member }
+		}
+		# IMF
+		if = {
+			limit = { var:io_pending_org = 8 }
+			add_to_global_variable_list = { name = io_imf_members target = ROOT }
+			add_modifier = { name = io_financial_agreement_member }
+		}
+		# ESA
+		if = {
+			limit = { var:io_pending_org = 9 }
+			add_to_global_variable_list = { name = io_esa_members target = ROOT }
+		}
+		# ASEAN
+		if = {
+			limit = { var:io_pending_org = 10 }
+			add_to_global_variable_list = { name = io_asean_members target = ROOT }
+		}
+		# SAARC
+		if = {
+			limit = { var:io_pending_org = 11 }
+			add_to_global_variable_list = { name = io_saarc_members target = ROOT }
+		}
+		# CIS
+		if = {
+			limit = { var:io_pending_org = 12 }
+			add_to_global_variable_list = { name = io_cis_members target = ROOT }
+		}
+		# WHO
+		if = {
+			limit = { var:io_pending_org = 13 }
+			add_to_global_variable_list = { name = io_who_members target = ROOT }
+		}
+
+		remove_variable = io_pending_org
+	}
+
+	option = {
+		name = io_events.2.a
+		default_option = yes
+		post_notification = io_accepted_notification
+	}
+}
+
+### ══════════════════════════════════════════
+### REJECTED — at least one member voted no
+### ══════════════════════════════════════════
+
+io_events.3 = {
+	type = country_event
+	placement = ROOT
+	title = io_events.3.t
+	desc = io_events.3.d
+	icon = "gfx/interface/icons/event_icons/event_unrest.dds"
+	event_image = { video = "africa_diplomats_negotiating" }
+	duration = 3
+
+	immediate = {
+		# Clean up pending state
+		if = {
+			limit = { has_variable = io_pending_org }
+			remove_variable = io_pending_org
+		}
+	}
+
+	option = {
+		name = io_events.3.a
+		default_option = yes
+		post_notification = io_rejected_notification
+	}
+}

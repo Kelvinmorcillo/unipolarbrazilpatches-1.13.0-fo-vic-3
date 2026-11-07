@@ -1,0 +1,16 @@
+﻿l_turkish:
+
+ GDP_TOOLTIP:1 "#header [Country.GetAdjective] [concept_gdp]\n@money![Country.MakeScope.ScriptValue('cwp_gdp')|Dv] (#u #tooltippable #tooltip:[Country.GetTooltipTag]$concept_gdp_short$<x=><x=><x=><x=><x=><x id=>#!#!<x id=>#!<x id=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x id=><x=><x=><x=><x id=><x id=><x=><x=><x=><x=>"
+ COUNTRY_GDP_OWNERSHIP_TOOLTIP: "#header [concept_gdp_ownership] [Country.GetName]\n#u [Country.GetDomesticallyOwnedGDPFraction|%1b]#! (@money![Country.GetGDP|Dv]) ev sahibi $concept_gdp_short$\n$TOOLTIP_DELIMITER$<x id=>\n<x id=>\n<x id=>\n<x id=>\n"
+
+ COUNTRY_ALL_GDP: "@money!#v [Country.GetGDPWithOwnershipsInForeignCountries|D]#!"
+ DOMESTIC_COUNTRY_GDP: "@money!#v [Country.GetGDP|D]#!"
+ FOREIGN_COUNTRY_GDP: "@money!#u [Country.GetGDPOwnedInForeignCountries|Db]#!"
+ COUNTRY_ALL_OWNERSHIP: "#u [Country.GetDomesticallyOwnedGDPFraction|%1b]#![ConcatIfNeitherEmpty(' + ', AddLocalizationIf(NotZero_CFixedPoint(Country.GetGDPOwnedInForeignCountries), 'FOREIGN_COUNTRY_GDP'))]"
+ 
+ ERROR_DEER_TOOLTIP:0 "#header Dangnabit!#!\n#instruction Açık Hata Log\n#instruction Doğru-Click#! Bunu geri almak için ( tekrar üzgün olana kadar)"
+ ERROR_MANUL_TOOLTIP: "#header Beni bir kez, utandırın - seni utan. Beni kandırıyorsun – tekrar kandıramazsın!#!\n#instruction Sol #! açık hata Log\n#instruction Doğru-Click#! Bunu geri almak için ( tekrar üzgün olana kadar)"
+ 
+ OH_DEER:0 ""#italic Shame on, utanç size? #! #bold [ErrorDeer.NumberOrErrors|v]#! #italic hata(s)!#!"
+ ERROR_MANUL: "#italic #! #bold [ErrorDeer.NumberOrErrors|v]#! #italic Misyonlar Accomplished."
+ ERROR_DEER_SLOW_TICK_OPERATIONS:0 "#header Slow Tick Operasyon#!"

@@ -1,0 +1,146 @@
+je_kurdistan_war = {
+	group = je_group_international
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+    is_shown_in_lobby = {
+        OR = {
+        	c:TRK ?= this
+        	c:KDS ?= this
+        }
+    }
+
+	modifiers_while_active = {
+		kurdistan_war_guerilla_warfare
+	}
+
+	scripted_progress_bar = je_kurdistan_war_score_bar
+	scripted_button = je_kurdistan_war_spring_offensive_button
+	scripted_button = je_kurdistan_war_security_operation_button
+
+	should_be_involved = {
+		OR = {
+			c:TRK ?= this
+			c:KDS ?= this
+		}
+	}
+
+	should_show_when_not_involved = {
+		always = no
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_global_variable = trk_kurdistan_war_score }
+			}
+			set_global_variable = {
+				name = trk_kurdistan_war_score
+				value = 0
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_global_variable = kur_kurdistan_war_score }
+			}
+			set_global_variable = {
+				name = kur_kurdistan_war_score
+				value = 0
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_global_variable = kurdistan_war_skirmish_phase }
+			}
+			set_global_variable = kurdistan_war_skirmish_phase
+		}
+	}
+
+	immediate_all_involved = {
+		set_variable = coup_immunity
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_kurdistan_war_status
+				trigger = {
+					has_global_variable = kurdistan_war_skirmish_phase
+				}
+			}
+			triggered_desc = {
+				desc = je_kurdistan_war_status_final_phase
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			c:KDS ?= {
+				random_list = {
+					9 = {}
+					1 = { trigger_event = kurdistan_war.6 }
+				}
+			}
+			c:TRK ?= {
+				random_list = {
+					9 = {}
+					1 = { trigger_event = kurdistan_war.5 }
+				}
+			}
+		}
+	}
+
+	complete = {
+		custom_tooltip = {
+			text = je_kurdistan_war_complete
+			NAND = {
+				exists = c:KDS
+				exists = c:TRK
+			}
+		}
+	}
+
+	on_complete_all_involved = {
+		if = {
+			limit = {
+				c:KDS ?= this
+			}
+			add_modifier = {
+				name = kurdistan_war_kur_reward
+				years = 20
+				is_decaying = yes
+			}
+		}
+		else_if = {
+			limit = {
+				c:TRK ?= this
+			}
+			add_modifier = {
+				name = kurdistan_war_trk_reward
+				years = 20
+				is_decaying = yes
+			}
+		}
+		trigger_event = kurdistan_war.2
+		hidden_effect = {
+			remove_global_variable = trk_kurdistan_war_score
+			remove_global_variable = kur_kurdistan_war_score
+			remove_global_variable = kurdistan_war_skirmish_phase
+			remove_global_variable = kurdistan_war_final_phase
+			remove_modifier = trk_security_operation
+			remove_modifier = kur_mountain_resistance
+			remove_modifier = trk_counterinsurgency_expenses
+			remove_modifier = kur_guerrilla_networks
+			set_immune_to_revolutions = no
+			remove_variable = coup_immunity
+		}
+	}
+
+	weight = 10000
+
+	should_be_pinned_by_default_involved = yes
+	should_be_pinned_by_default_uninvolved_or_ineligible = no
+}

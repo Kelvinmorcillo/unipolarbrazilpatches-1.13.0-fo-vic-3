@@ -1,0 +1,266 @@
+﻿law_total_prohibition = {
+	group = lawgroup_drug_regulations
+	icon = "gfx/interface/icons/law_icons/smd/total_prohibition.dds"
+
+	progressiveness = 0
+
+	modifier = {
+		country_authority_mult                              = 0.05
+		country_legitimacy_base_add                        = 5
+		country_turmoil_effects_mult                       = 0.10
+		state_mortality_mult                               = 0.02
+		building_opium_plantation_throughput_add           = -0.25
+		interest_group_ig_devout_pol_str_mult              = 0.10
+	}
+
+	ai_will_do = {
+		OR = {
+			has_law = law_type:law_total_prohibition
+			has_law = law_type:law_alcohol_tobacco_legal
+		}
+	}
+
+	ai_enact_weight_modifier = {
+		value = 0
+
+		if = {
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
+			add = 750
+		}
+		# Authoritarian governments more likely to prohibit
+		if = {
+			limit = {
+				OR = {
+					has_law = law_type:law_autocracy
+					has_law = law_type:law_single_party_state
+				}
+			}
+			add = 100
+		}
+		# Devout IG in government pushes for prohibition
+		if = {
+			limit = {
+				any_interest_group = {
+					is_interest_group_type = ig_devout
+					is_in_government = yes
+					is_powerful = yes
+				}
+			}
+			add = 150
+		}
+	}
+}
+
+# ── ALCOHOL & TOBACCO LEGAL ───────────────
+# The default legal framework for most
+# countries at game start. Legal alcohol
+# and tobacco, all other substances banned.
+
+law_alcohol_tobacco_legal = {
+	group = lawgroup_drug_regulations
+	icon = "gfx/interface/icons/law_icons/smd/alcohol_and_tobacco.dds"
+
+	progressiveness = 20
+
+	modifier = {
+		country_legitimacy_base_add                        = 3
+		state_mortality_mult                               = 0.01
+		building_opium_plantation_throughput_add           = -0.15
+		interest_group_ig_petty_bourgeoisie_pol_str_mult   = 0.05
+	}
+
+	ai_will_do = {
+		always = yes
+	}
+
+	ai_enact_weight_modifier = {
+		value = 100
+
+		if = {
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
+			add = 750
+		}
+	}
+}
+
+# ── MARIJUANA DECRIMINALIZATION ───────────
+# Personal possession of cannabis is no
+# longer a criminal offence. Trade remains
+# illegal. SOL improves slightly as
+# enforcement costs fall.
+
+law_marijuana_decriminalization = {
+	group = lawgroup_drug_regulations
+	icon = "gfx/interface/icons/law_icons/smd/marijuana.dds"
+
+	progressiveness = 40
+
+	modifier = {
+		country_authority_mult                             = 0.03
+		country_legitimacy_base_add                        = -3
+		state_mortality_mult                               = 0.01
+		interest_group_ig_intelligentsia_pol_str_mult      = 0.05
+	}
+
+	ai_will_do = {
+		NOR = {
+			has_law = law_type:law_safe_injection_sites
+			has_law = law_type:law_trafficking_allowed
+			has_law = law_type:law_hard_drugs_decriminalized
+		}
+	}
+
+	ai_enact_weight_modifier = {
+		value = 0
+
+		if = {
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
+			add = 750
+		}
+		if = {
+			limit = {
+				has_law = law_type:law_universal_suffrage
+				literacy_rate >= 0.50
+			}
+			add = 75
+		}
+	}
+}
+
+# ── HARD DRUG DECRIMINALIZATION ───────────
+# Possession of harder substances is
+# treated as a public health matter rather
+# than a criminal one. Reduces turmoil
+# from prosecution but increases usage.
+# Referenced in je_war_on_drugs as a
+# disqualifying condition.
+
+law_hard_drugs_decriminalized = {
+	group = lawgroup_drug_regulations
+	icon = "gfx/interface/icons/law_icons/smd/hard_drug_decriminalization.dds"
+
+	progressiveness = 60
+
+	modifier = {
+		country_authority_mult                             = 0.05
+		country_legitimacy_base_add                        = -8
+		country_prestige_mult                              = -0.03
+		state_mortality_mult                               = 0.03
+		building_opium_plantation_throughput_add           = 0.10
+		interest_group_ig_intelligentsia_pol_str_mult      = 0.10
+	}
+
+	ai_will_do = {
+		NOR = {
+			has_law = law_type:law_safe_injection_sites
+			has_law = law_type:law_trafficking_allowed
+		}
+		has_law_or_variant = law_type:law_marijuana_decriminalization
+	}
+
+	ai_enact_weight_modifier = {
+		value = 0
+
+		if = {
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
+			add = 750
+		}
+		if = {
+			limit = {
+				has_law = law_type:law_universal_suffrage
+				literacy_rate >= 0.60
+				has_law = law_type:law_marijuana_decriminalization
+			}
+			add = 50
+		}
+	}
+}
+
+# ── SAFE-INJECTION SITES ──────────────────
+# Supervised facilities where users can
+# consume drugs under medical supervision.
+# Significantly reduces mortality.
+# Referenced in je_war_on_drugs as a
+# disqualifying condition.
+
+law_safe_injection_sites = {
+	group = lawgroup_drug_regulations
+	icon = "gfx/interface/icons/law_icons/smd/safe_injection.dds"
+
+	progressiveness = 80
+
+	modifier = {
+		# Significant mortality reduction — the point of the policy
+		state_mortality_mult                               = -0.01
+		country_legitimacy_base_add                        = -10
+		country_prestige_mult                              = -0.05
+		country_expenses_add                               = 25
+		building_opium_plantation_throughput_add           = 0.15
+		interest_group_ig_intelligentsia_pol_str_mult      = 0.10
+		interest_group_ig_intelligentsia_approval_add      = 1
+	}
+
+	ai_will_do = {
+		NOT = { has_law = law_type:law_trafficking_allowed }
+		has_law_or_variant = law_type:law_hard_drugs_decriminalized
+	}
+
+	ai_enact_weight_modifier = {
+		value = 0
+
+		if = {
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
+			add = 750
+		}
+		if = {
+			limit = {
+				has_law = law_type:law_public_health_insurance
+				literacy_rate >= 0.70
+			}
+			add = 50
+		}
+	}
+}
+
+# ── TRAFFICKING ALLOWED ───────────────────
+# The trade in controlled substances is
+# fully legalised and regulated.
+# Massive economic boon from drug trade
+# but crippling prestige and legitimacy
+# costs. Referenced in je_war_on_drugs as
+# a disqualifying condition.
+
+law_trafficking_allowed = {
+	group = lawgroup_drug_regulations
+	icon = "gfx/interface/icons/law_icons/smd/drug_trade.dds"
+
+	progressiveness = 100
+
+	modifier = {
+		building_opium_plantation_throughput_add           = 0.30
+		building_group_bg_plantations_throughput_add       = 0.10
+		country_legitimacy_base_add                        = -20
+		country_prestige_mult                              = -0.15
+		country_infamy_decay_mult                          = -0.20
+		state_mortality_mult                               = 0.06
+		state_mortality_turmoil_mult                       = 0.03
+	}
+
+	ai_will_do = {
+		# AI will only take this if cooperating with cartels
+		has_variable = cartel_cooperation
+	}
+
+	ai_enact_weight_modifier = {
+		value = 0
+
+		if = {
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
+			add = 750
+		}
+		if = {
+			limit = { has_variable = cartel_cooperation }
+			add = 200
+		}
+	}
+}

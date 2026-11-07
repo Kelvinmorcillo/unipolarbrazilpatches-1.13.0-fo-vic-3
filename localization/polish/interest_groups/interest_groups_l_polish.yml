@@ -1,0 +1,190 @@
+﻿l_polish:
+
+  # Base IGs
+ ig_rural_folk:0 "Rural Folk"
+ ig_rural_folk_only_icon:0 "@rural_folk!"
+ ig_rural_folk_desc:0 "Ludzie na wsi, których interesy polityczne są w większości zgodne z ich agrorarian źródeł utrzymania."
+ ig_devout:0 "Fundamentaliści religijni"
+ ig_devout_only_icon:0 "@devout!"
+ ig_devout_desc:0 "Najbardziej oddani zwolennicy religii większości, postrzegający ją jako najlepsze źródło moralnej i politycznej mądrości."
+ ig_industrialists:0 "Korporacje"
+ ig_industrialists_only_icon:0 "@industrialists!"
+ ig_industrialists_desc:0 "Inwestorzy i akcjonariusze zainteresowani rozwojem technologicznym i rozwojem przemysłowym."
+ ig_landowners:0 "Właściciele gruntów"
+ ig_landowners_only_icon:0 "@landowners!"
+ ig_landowners_desc:0 "Właściciele wielkich posiadłości i rozległych plantacji, właściciele ziemscy są opiekunami tradycji i starych pieniędzy."
+ ig_intelligentsia:0 "Akademia"
+ ig_intelligentsia_only_icon:0 "@intelligentsia!"
+ ig_intelligentsia_desc:0 "Intelektualiści wiodący trendy narodu w literaturze, sztuce, muzyce i teatrze. Obejmuje również wspólną klasę kierowniczą /"
+ ig_petty_bourgeoisie:0 "Urbanity"
+ ig_petty_bourgeoisie_only_icon:0 "@petty_bourgeoisie!"
+ ig_petty_bourgeoisie_desc:0 "Małe firmy, urzędnicy biurowi, księgowi i inne osoby, które są uważane za -między bogatych i biednych warstw."
+ ig_armed_forces:0 "Siły zbrojne"
+ ig_armed_forces_only_icon:0 "@armed_forces!"
+ ig_armed_forces_desc:0 "Zawodowi żołnierze i inni, których interesy są ściśle związane z wojskiem kraju."
+ ig_trade_unions:0 "Związki zawodowe"
+ ig_trade_unions_only_icon:0 "@trade_unions!"
+ ig_trade_unions_desc:0 "Zorganizowana praca stara się organizować pracowników w kopalniach, fabrykach i polach, a tym samym łączyć mocne strony różnych interesów w jednym głosie."
+
+  # Religious IGs
+ ig_catholic_church:0 "Kościół katolicki"
+ ig_catholic_church_desc:0 "Katolicyzm jest największą sektą chrześcijaństwa. Wierzący uważają, że arcybiskup Rzymu, Papież, jest nieprzerwanym następcą władzy Jezusa Chrystusa przez św. Piotra. Inne ważne wierzenia to czczenie świętych i Maryi Dziewicy."
+ ig_orthodox_church:0 "Kościół prawosławny"
+ ig_orthodox_church_desc:0 "Kościoły prawosławne zazwyczaj są kościołami wschodnimi, nie w komunii z papieżem."
+ ig_oriental_orthodox_church:1 "Orientalny kościół prawosławny"
+ ig_oriental_orthodox_church_desc:1 "Orientalne kościoły ortodoksyjne zazwyczaj są kościołami Bliskiego Wschodu, nie w komunii z Papieżem."
+ ig_anglican_church:0 "Kościół anglikański"
+ ig_anglican_church_desc:0 "Kościół anglikański został stworzony przez króla Henryka VIII podczas protestanckiej reformacji. Anglikanie wierzą, że Biblia jest głównym autorytetem chrześcijańskiego dogmatu, odrzucając Papieża, będąc mniej radykalnym niż inne kościoły ewangelickie."
+ ig_evangelical_church:0 "Kościół ewangelicki"
+ ig_evangelical_church_desc:0 "Podczas protestanckiej reformacji kościoły ewangelickie powstały głównie w Europie Północnej. Ewangeliści wierzą, że Biblia jest jedynym autorytetem chrześcijańskiego dogmatu, odrzucając Papieża i widząc katolickie czczenie świętych, które graniczy z bałwochwalstwem."
+ ig_rabbinical_council:0 "Rada Rabinowa"
+ ig_rabbinical_council_desc:0 "Przywództwo żydowskiej ludności w kraju ma tendencję do bycia dobrze wykształconym rabinem z silnymi tradycjami debaty i stypendiów."
+ ig_sunni_madrasahs:1 "Sunni Ulema"
+ ig_sunni_madrasahs_desc:1 "Sunnizm jest największą sektą islamu. Wierzy, że Muhammad został zastąpiony przez swojego wujka Abu Bakra jako kalif islamu, w przeciwieństwie do poglądu Shi 'a, że jego syn-in-law Ali był prawowitym następcą."
+ ig_shia_madrasahs:1 "Shi 'a Ulema"
+ ig_shia_madrasahs_desc:1 "Shi 'ism jest drugą co do wielkości sektą islamu. Wierzący twierdzą, że Muhammad został zastąpiony jako kalif islamu przez jego syna, Ali, w przeciwieństwie do Sunni pogląd, że jego wujek Abu Bakr był prawowitym następcą."
+ ig_hindu_priesthood:0 "Hinduskie kapłaństwo"
+ ig_hindu_priesthood_desc:0 "Prawdopodobnie najstarszą religią zorganizowaną, która wciąż istnieje, hinduizm utrzymuje, że przerwanie cyklu reinkarnacji i osiągnięcie Nirvany wymaga przestrzegania systemu kasty, w którym jednostki pełnią rolę, aby poprawić swoją karmę, tak jak wielu bogów czczonych przez hindusów służy różnym rolom."
+ ig_vajrayana_monks:0 "Mnisi Vajrayana"
+ ig_vajrayana_monks_desc:0 "Buddyzm Vajrayana jest najsilniejszy w Tybecie i Mongolii. Podkreśla zastosowanie medytacji i samodyscypliny."
+ ig_mahayana_monks:0 "Mahayana Monks"
+ ig_mahayana_monks_desc:0 "Buddyzm Mahajany jest najsilniejszy w Chinach, Wietnamie i Korei. Podkreśla, że każdy w społeczeństwie powinien być zachęcany do poszukiwania oświecenia poprzez doskonałość. Mahayana widzi Buddę jako postać podobną do Boga."
+ ig_theravada_monks:0 "Mnisi Theravada"
+ ig_theravada_monks_desc:0 "Buddyzm Theravada jest najsilniejszy w Birmie, Syjamie, Kambodży i Cejlonie. To kładzie duży nacisk na osoby poszukujące Nirvana przerwać cykl reinkarnacji. Theravada widzi Buddę nie jako Boga, ale jako oświeconego człowieka, który pokazał reszcie ludzkości drogę do doskonałości."
+ ig_shinto_monks:0 "Mnisi Shinto"
+ ig_shinto_monks_desc:0 "Shintoizm jest wiarą synkretyczną, łączącą buddyjskie koncepcje karmy i reinkarnacji z kultem i plaginacją kami, duchami natury i martwymi przodkami."
+ ig_pagan_shamans:0 "Szamanki pogańskie"
+ ig_pagan_shamans_desc:0 "Animacja jest kultem i plaginacją naturalnych duchów. Rytuały podejmowane przez animistów obejmują ofiary żywności i zwierząt gospodarskich oraz spożywanie leków halucynogennych do duchowych podróży introspekcji."
+
+  # Taiping IGs
+ ig_taiping_god_worshippers:0 "Społeczeństwo God- Czczenie"
+ ig_taiping_god_worshippers_desc:0 "Godne-Czczenie, czyli Stowarzyszenie Emperor- Czczenie, jest synkretyczną chrześcijańską wiarą wybitną wśród Królestwa Niebieskiego, wspierającą interpretację chrześcijaństwa, która postrzega wszystkich wierzących jako synów i córki Boga."
+
+  # British IGs
+ ig_landed_gentry:0 "Gatunek lądowy"
+ ig_landed_gentry_desc:0 "Właściciele wielkich posiadłości i rozległych nieruchomości, szlachta są strażnikami tradycji i starych pieniędzy."
+
+  # Prussian IGs
+ ig_junkers:0 "Junkers"
+ ig_junkers_desc:0 "Zdesperowani przez "pasterów jung" (młodych panów), którzy szli w ślad za krzyżackimi podbojami pogańskiego bałtyku, aby osiedlić i chrześcijanizować Pruskie ziemie, Junkers są pruskimi szlachtą i głównymi właścicielami. Mają tendencję do sprzeciwiania się działaniom na rzecz demokracji jako zagrożenia dla elitarnych rządów."
+
+  # USA IGs
+ ig_southern_planters:0 "Właściciele domów"
+ ig_southern_planters_desc:0 "Podczas gdy w ostatnich czasach mieszkalnictwo stało się coraz rzadsze, grupy ludzi, które twierdzą, że są stowarzyszeniami właścicieli domów, zajmującymi się zakupem i sprzedażą nieruchomości dla celów zysku sztucznie zawyżały koszty utrzymania."
+ ig_evangelicals:0 "Ardent chrześcijan"
+ ig_evangelicals_desc:0 "Chrześcijanie argentyńscy z zaskakująco szerokiej gamy wyznań protestanckich, wszyscy chrześcijanie zgadzają się, że naród musi znaleźć swoje duchowe przebudzenie, aby ocalić się od wzrostu sekularyzmu w całym kraju."
+ ig_yeoman_farmers:0 "Rural South therners"
+ ig_yeoman_farmers_desc:1 "Mała amerykańska klasa wiejska, uważana przez wielu Ojców Założycieli za fundament narodu. Klasa jeomanów od dawna stała się awangardą amerykańskiego populizmu wiejskiego."
+ ig_wallstreet:0 "Wall Street"
+ ig_wallstreet_desc:0 "Banki inwestycyjne na Wall Street w Nowym Jorku są podstawą amerykańskiego systemu finansowego, co wyciąga ogromny wpływ na całą gospodarkę."
+ ig_silicon_valley:0 "Dolina krzemowa"
+ ig_silicon_valley_desc:0 "Programiści i praca z domu wizy komputerowe, które zarządzają codziennym życiem w Internecie."
+ ig_american_middle_class:0 "Ameryka Środkowa"
+ ig_american_middle_class_desc:0 "Amerykańska klasa średnia stanowi większość bazy konsumentów w kraju, praca, która daje realne pensje."
+ ig_digital_activists:0 "Aktywiści cyfrowo"
+ ig_digital_activists_desc:0 "Różni wpływowi online władają naszą populacją."
+  # Ottoman IGs
+ ig_local_governors:0 "Lokalni gubernatorzy"
+ ig_local_governors_desc:0 "Władcy prowincji mogą nabyć ogromny wpływ budując lokalne sieci patronackie. Dynastie mogą stać się tak potężne, że są skutecznie niezależnymi stanami tylko nominalnie powiązanymi z Imperium."
+
+  # Chinese IGs
+ ig_literati:0 "Literati"
+ ig_literati_desc:0 "Uczeni w Chinach odgrywają ważną rolę, zarówno jako zwolennicy rządu, jak i krytycy."
+ ig_scholar_officials:0 "Uczniowie"
+ ig_scholar_officials_desc:0 "Wylądowany szlachta w Chinach nie jest tak naprawdę szlachtą Chin. Utrzymują swoje bogactwo poprzez zakup nieruchomości, ale zawdzięczają swoją władzę swojej pozycji w rządzie."
+ ig_confucian:0 "Uczeni konfucjańscy"
+ ig_confucian_desc:0 "Konfucjanizm, bardziej w tradycji społecznej, współistnieje komfortowo z mnóstwem wyznań, ale mimo to wymaga społecznej harmonii i silnych moralności od tych, którzy go naśladują."
+
+  # Papal IGs
+ ig_roman_landowners:1 "Szlachetność obywatelska"
+ ig_roman_landowners_desc:1 "Składając się z szlachetnych rodzin i elit, którym papież nadał tytuły, rzymska szlachta obywatelska służy jako ludzie bogactwa, wpływów i doczesnej władzy na terytorium Stolicy Apostolskiej."
+ ig_roman_curia:0 "Kuria rzymska"
+ ig_roman_curia_desc:0 "Kuria Rzymska, czyli "Sąd Rzymu", jak to się czasem zdaje, jest instytucją administracyjną Stolicy Apostolskiej, sprawującą władzę kościelną i czasową."
+
+  # Japanese IGs
+ ig_samurai:0 "Samuraj"
+ ig_samurai_desc:0 "Samurai są dziedziczną wojskową arystokracją Japonii, służącą jako uprzywilejowani opiekunowie potężnego ziemianina Daimyo i jako egzekutorzy ich feudalnej woli panów."
+ ig_shogunate:0 "Szogunat"
+ ig_shogunate_desc:0 "Szogunat odnosi się do rządu wojskowego, który rządził Japonią w imieniu cesarza od XII wieku. Poparcie potężnych władców feudalnych, Daimyo, zaprzysiężenie jest poświęcone utrzymaniu tradycyjnego porządku Japonii."
+ ig_peasants:1 "Heimin"
+ ig_peasants_desc:0 "Heimin oznacza japońską klasę zwykłych ludzi, urodzonych bez jakichkolwiek przywilejów społecznych, z interesami politycznymi przede wszystkim odzwierciedlającymi interesy rolników wiejskich."
+ ig_buddhist_monks:0 "Mnisi buddyjscy"
+ ig_buddhist_monks_desc:0 "Istniejący obok, często sprzeczny z rodzimej japońskiej wiary w kami, przez XIX-wieczny buddyzm jest obecny w Japonii od ponad tysiąclecia. Szkoły buddyjskie protekcjonizowane przez państwo przez całą epokę Edo podkreślają syntetyczną relację między kami i buddami."
+
+  # Hawaiian IGs
+ ig_christian_missionaries:0 "Chrześcijańscy misjonarze"
+ ig_christian_missionaries_desc:0 "Chrześcijańscy misjonarze przybyli na Hawaje kilka dekad temu, ale już zastąpili Kahunę jako dominującą klasę hawajską. Opowiadają się za handlem z zachodnimi mocarstwami, przyciągając imigrantów z Zachodu i nawróceniem rodzimych Hawajczyków na chrześcijaństwo."
+ ig_alii:0 "Ali 'i"
+ ig_alii_desc:0 "Ali 'i reprezentują mniejszą szlachtę Hawajów w służbie panującej monarchy. Opowiadają się za tradycyjnymi wartościami i zachowaniem rządów monarchii."
+ ig_maka_ainana:0 "Maka 'āinana Przewodniczący"
+ ig_maka_ainana_desc:0 "Maka 'āinana reprezentuje wiejską klasę Hawajów, często pracującą na plantacjach i rybołówstwie. Opowiadają się one za tradycyjnymi wartościami oraz za ciągłą zależnością gospodarczą Hawajów od sektora rolnego."
+ ig_hawaiian_democrats:0 "Demokraci"
+ ig_hawaiian_democrats_desc:0 "Demokraci reprezentują liberalnych reformatorów Hawajów. Opowiadają się za usunięciem absolutnej władzy monarchy na rzecz demokratycznego reżimu i ciągłych stosunków handlowych z siłami zachodnimi."
+
+  # Swedish IGs
+ ig_church_of_sweden:0 "Kościół Szwecji"
+ ig_church_of_sweden_desc:0 "Kościół Szwecji został zainicjowany przez króla Gustava Vasy w XVI wieku i jest oficjalnym kościołem państwowym Szwecji. Jako instytucja luterańska Kościół utrzymuje, że Biblia jest jedynym autorytetem dogmatu chrześcijańskiego, odrzucając tym samym autorytet Papieża i tradycje takie jak czczenie świętych."
+
+  # Finnish IGs
+ ig_church_of_finland: "Kościół Finlandii"
+ ig_church_of_finland_desc: "Kościół Finlandii, urodzony w 1809 r., został założony jako oficjalny kościół państwowy. Jako instytucja luterańska Kościół utrzymuje, że Biblia jest jedynym autorytetem dogmatu chrześcijańskiego, odrzucając tym samym autorytet Papieża i tradycje takie jak czczenie świętych."
+
+# Danish IGs
+ ig_church_of_denmark: "Kościół Danii"
+ ig_church_of_denmark_desc: "Kościół Danii, założony w XVI wieku przez króla chrześcijanina III, jest oficjalnym kościołem państwowym Danii. Jako instytucja luterańska Kościół utrzymuje, że Biblia jest jedynym autorytetem dogmatu chrześcijańskiego, odrzucając tym samym autorytet Papieża i tradycje takie jak czczenie świętych."
+
+# Norwegian IGs
+ ig_aristocracy_of_officials: "Arystokracja urzędników"
+ ig_aristocracy_of_officials_desc: "Z powodu braku jakiejkolwiek znaczącej historycznej szlachty, a instytucja została formalnie zniesiona w 1821 roku, wyższa klasa Norwegii składa się z urzędników służby cywilnej, prawników, księży i lekarzy zajmujących stanowiska tradycyjnej szlachty."
+ ig_church_of_norway: "Kościół Norwegii"
+ ig_church_of_norway_desc: "Kościół Norwegii został ustanowiony jako oddzielny organ od Kościoła Rzymskokatolickiego i zintegrowany z państwem norweskim w XVI wieku w wyniku protestanckiej reformacji. Jako instytucja luterańska Kościół utrzymuje, że Biblia jest jedynym autorytetem dogmatu chrześcijańskiego, odrzucając tym samym autorytet Papieża i tradycje takie jak czczenie świętych."
+
+  # Korean IGs
+ ig_yangban:0 "Urzędnicy Yangban"
+ ig_yangban_desc:0 "Yangban reprezentuje przylądek Korei, który czerpie swoje tytuły i wpływy z pozycji w krajowym aparacie biurokratycznym. Wyeliminowanie konfucjanskich ideałów Scholarofficial, są obrońcami tradycyjnego porządku Korei."
+
+  # Russian IGs
+ ig_gentry_assembly:0 "Zgromadzenie gatunków"
+ ig_gentry_assembly_desc:0 "Zgromadzenie Gentry jest samorządowym organem reprezentującym rosyjską arystokrację. Udzielony oficjalny status w 1785 roku, Zgromadzenie od tego czasu opowiada się za utrzymaniem lub rozszerzeniem tradycyjnych uprawnień i przywilejów szlachty."
+
+  # Australian IGs
+ ig_squattocracy: "Squattocracy"
+ ig_squattocracy_desc: ""Squattocracy" reprezentuje klasę białych australijskich osadników, którzy zajęli duże sieci gruntów z niewielkim lub bez roszczeń prawnych. Często pierwsi osadnicy przybywający na dany obszar, squattokracy zyskali ogromne bogactwo i wpływy społeczne głównie dzięki dochodom z hodowli zwierząt na ich terytorium."
+
+  # Austrian IGs
+ austrian_aristocracy:0 "Austriacka arystokracja"
+ austrian_aristocracy_desc: "Austriacka arystokracja reprezentuje ugruntowaną, szlachetną klasę Austrii, historycznie odznaczoną szlachetnymi tytułami przez Świętych Cesarzy Rzymskich Habsburgów i arcyksiążąt Austrii i posiadającą ogromny wpływ na dziedziniec cesarski."
+
+  # Misc Igs
+ ig_red_army:0 "Armia Czerwona"
+ ig_red_army_desc:0 "Armia Czerwona jest instytucją poświęconą obronie i propagowaniu Rewolucji, urodzoną poprzez połączenie tradycyjnych sił zbrojnych z proletariatem i ideologią komunistyczną."
+ ig_fellahin: "Fellahin"
+ ig_fellahin_desc: "Uzyskując swoje imię z pługów, które pracują i pól, do których dochodzą, fellahin są rolnikami i chłopcami Egiptu."
+
+  # Indian IGs
+  ig_zamindars: "Zamindary"
+  ig_zamindars_desc: "Zamindarowie są zazwyczaj dziedzicznymi właścicielami dużych posiadłości. Często reprezentują pozostałości arystokracji Mughalera, przyznają prawo do pobierania przychodów z gruntów w imieniu swoich władców."
+
+  ig_east_india_company: "East India Company"
+  ig_east_india_company_desc: "Spółka East India jest prywatną korporacją, której zadaniem jest rządzenie Indiami pod nadzorem brytyjskiego parlamentu. Po cofnięciu swojego mandatu handlowego w 1833 r. stał się on organem czysto administracyjnym."
+
+  ig_presidency_armies: "Prezydencja Armie"
+  ig_presidency_armies_desc: "Armie Prezydencji są siłami zbrojnymi kolonialnych Indii, zazwyczaj składającymi się z Indian Sepoys pod dowództwem europejskich oficerów."
+
+  ig_indian_army: "Armia indyjska"
+  ig_indian_army_desc: "Armia indyjska jest główną uzbrojoną siłą kolonialnych Indii, utworzoną przez zjednoczenie Armii Prezydencji w pojedyncze ciało. Składa się w dużej mierze z rodzimych indyjskich żołnierzy pod dowództwem europejskich oficerów."
+
+  ig_ryots: "Ryots Przewodniczący"
+  ig_ryots_desc: "Ryots są tradycyjnymi rolnikami i chłopcami z Indii, zazwyczaj bez własnej ziemi. Ich interesy są w dużej mierze agroragiczne."
+
+  ig_civil_servants: "Służba cywilna"
+  ig_civil_servants_desc: "Służba Cywilna obejmuje rodzimą indyjską inteligencję, która rozwinęła się głównie z różnych organów indyjskiej kolonialnej biurokracji. Zazwyczaj posiadają oni lub pełnili role urzędników lub innych administratorów niższego szczebla."
+
+  ig_government_of_india: "Rząd Indii"
+  ig_government_of_india_desc: "Rząd Indii odnosi się do europejskiej administracji kolonialnej, której zadaniem jest wspieranie interesów korony brytyjskiej w Indiach."
+
+  ig_bhadralok: "Bhadraloks"
+  ig_bhadralok_desc: "Bhadralok, albo "gentlemen" obejmują Moneyed klasy średniej indyjskiego społeczeństwa. Grupa ta w swojej obecnej formie powstała w Bengalu, wśród rodzimych kupców bengalskich, przemysłowców i finansistów, którzy dostosowali się do East India Company podczas podboju Indii."
+
+  ig_kisanharu: "Kisanharu"
+  ig_kisanharu_desc: "Kisanharu są tradycyjnymi rolnikami i chłopcami Nepalu, zazwyczaj bez własnej ziemi. Ich interesy są w dużej mierze agroragiczne."

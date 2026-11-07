@@ -1,0 +1,568 @@
+﻿namespace = gun_laws
+
+# ==========================================
+# gun_laws.1
+# "The Safety Argument"
+# Fires when enacting banned firearms.
+# Public health advocates and the
+# intelligentsia make the case that
+# fewer guns means fewer deaths.
+# checkpoint_advance
+# ==========================================
+
+gun_laws.1 = {
+	type = country_event
+	placement = ROOT
+
+	title = gun_laws.1.t
+	desc = gun_laws.1.d
+	flavor = gun_laws.1.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_banned_firearms
+		NOT = { has_modifier = gun_law_safety_argument }
+		any_interest_group = {
+			is_interest_group_type = ig_intelligentsia
+			ig_counts_as_marginal = no
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = gun_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				is_interest_group_type = ig_intelligentsia
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = intelligentsia_ig
+			leader = {
+				save_scope_as = intelligentsia_leader
+			}
+		}
+	}
+
+	# Option A: Embrace the public health framing — the data is on our side
+	option = {
+		name = gun_laws.1.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = gun_law_safety_argument
+			# = 2
+		}
+		scope:intelligentsia_ig = {
+			add_modifier = {
+				name = gun_law_intelligentsia_engaged
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				trigger = {
+					exists = ruler
+					ruler = {
+						OR = {
+							has_ideology = ideology_progressive_leader
+							has_ideology = ideology_liberal_leader
+						}
+					}
+				}
+				add = 20
+			}
+		}
+	}
+
+	# Option B: Frame it as a law and order issue — keep the public health advocates out
+	option = {
+		name = gun_laws.1.b
+		add_enactment_modifier = {
+			name = gun_law_safety_argument
+		}
+		scope:intelligentsia_ig = {
+			add_modifier = {
+				name = gun_law_intelligentsia_sidelined
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 40 }
+	}
+}
+
+
+# ==========================================
+# gun_laws.2
+# "The Armed Forces Weigh In"
+# Fires when enacting banned firearms.
+# Military leadership sees civilian
+# disarmament as a stabilizing measure —
+# but worries about enforcement costs.
+# checkpoint_debate
+# ==========================================
+
+gun_laws.2 = {
+	type = country_event
+	placement = ROOT
+
+	title = gun_laws.2.t
+	desc = gun_laws.2.d
+	flavor = gun_laws.2.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_banned_firearms
+		NOT = { has_modifier = gun_law_military_position }
+		any_interest_group = {
+			is_interest_group_type = ig_armed_forces
+			ig_counts_as_marginal = no
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = gun_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				is_interest_group_type = ig_armed_forces
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = military_ig
+			leader = {
+				save_scope_as = military_leader
+			}
+		}
+	}
+
+	# Option A: Welcome their backing — a disarmed population is an orderly one
+	option = {
+		name = gun_laws.2.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = gun_law_military_position
+			# = 2
+		}
+		scope:military_ig = {
+			add_modifier = {
+				name = gun_law_military_backing
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 60 }
+	}
+
+	# Option B: Keep the military out of domestic law — this is a civilian matter
+	option = {
+		name = gun_laws.2.b
+		add_enactment_modifier = {
+			name = gun_law_military_position
+		}
+		scope:military_ig = {
+			add_modifier = {
+				name = gun_law_military_sidelined
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 40 }
+	}
+}
+
+
+# ==========================================
+# gun_laws.3
+# "Rural Resistance"
+# Fires when enacting banned or licensed
+# firearms. Farmers and rural folk push
+# back — guns are tools, not weapons.
+# checkpoint_stall
+# ==========================================
+
+gun_laws.3 = {
+	type = country_event
+	placement = ROOT
+
+	title = gun_laws.3.t
+	desc = gun_laws.3.d
+	flavor = gun_laws.3.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		OR = {
+			is_enacting_law = law_type:law_banned_firearms
+			is_enacting_law = law_type:law_licensed_firearms
+		}
+		NOT = { has_modifier = gun_law_rural_resistance }
+		any_interest_group = {
+			is_interest_group_type = ig_rural_folk
+			ig_counts_as_marginal = no
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = gun_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				is_interest_group_type = ig_rural_folk
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = rural_ig
+			leader = {
+				save_scope_as = rural_leader
+			}
+		}
+	}
+
+	# Option A: Hold firm — urban laws apply everywhere equally
+	option = {
+		name = gun_laws.3.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = gun_law_rural_resistance
+			# = -1
+		}
+		scope:rural_ig = {
+			add_modifier = {
+				name = gun_law_rural_folk_alienated
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				trigger = {
+					exists = ruler
+					ruler = {
+						OR = {
+							has_ideology = ideology_progressive_leader
+							has_ideology = ideology_liberal_leader
+						}
+					}
+				}
+				add = 15
+			}
+		}
+	}
+
+	# Option B: Offer rural exemptions — hunting and livestock protection are legitimate uses
+	option = {
+		name = gun_laws.3.b
+		add_enactment_modifier = {
+			name = gun_law_rural_resistance
+			# = -2
+		}
+		scope:rural_ig = {
+			add_modifier = {
+				name = gun_law_rural_folk_appeased
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 50 }
+	}
+}
+
+
+# ==========================================
+# gun_laws.4
+# "A Right, Not a Privilege"
+# Fires when enacting unrestricted firearms.
+# Gun rights advocates frame ownership
+# as a fundamental liberty — any
+# restriction is a step toward tyranny.
+# checkpoint_advance
+# ==========================================
+
+gun_laws.4 = {
+	type = country_event
+	placement = ROOT
+
+	title = gun_laws.4.t
+	desc = gun_laws.4.d
+	flavor = gun_laws.4.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_unrestricted_firearms
+		NOT = { has_modifier = gun_law_rights_framing }
+		any_interest_group = {
+			is_interest_group_type = ig_rural_folk
+			ig_counts_as_marginal = no
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = gun_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				is_interest_group_type = ig_rural_folk
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = rural_ig
+			leader = {
+				save_scope_as = rural_leader
+			}
+		}
+	}
+
+	# Option A: Embrace the liberty argument — an armed citizenry is a free one
+	option = {
+		name = gun_laws.4.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = gun_law_rights_framing
+			# = 2
+		}
+		scope:rural_ig = {
+			add_modifier = {
+				name = gun_law_rural_folk_energized
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				trigger = {
+					exists = ruler
+					ruler = {
+						has_ideology = ideology_market_liberal
+					}
+				}
+				add = 20
+			}
+		}
+	}
+
+	# Option B: Frame it practically — focus on self-defence and conscription readiness
+	option = {
+		name = gun_laws.4.b
+		add_enactment_modifier = {
+			name = gun_law_rights_framing
+		}
+		add_enactment_modifier = {
+			name = gun_law_practical_framing
+		}
+		ai_chance = { base = 40 }
+	}
+}
+
+
+# ==========================================
+# gun_laws.5
+# "The Safety Lobby Fights Back"
+# Fires when enacting unrestricted firearms.
+# Public health advocates and the
+# intelligentsia mount organised opposition
+# to full civilian armament.
+# checkpoint_debate
+# ==========================================
+
+gun_laws.5 = {
+	type = country_event
+	placement = ROOT
+
+	title = gun_laws.5.t
+	desc = gun_laws.5.d
+	flavor = gun_laws.5.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_unrestricted_firearms
+		NOT = { has_modifier = gun_law_safety_lobby_opposition }
+		any_interest_group = {
+			is_interest_group_type = ig_intelligentsia
+			ig_counts_as_marginal = no
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = gun_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				is_interest_group_type = ig_intelligentsia
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = intelligentsia_ig
+			leader = {
+				save_scope_as = intelligentsia_leader
+			}
+		}
+	}
+
+	# Option A: Rebut them publicly — freedom carries its own risks
+	option = {
+		name = gun_laws.5.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = gun_law_safety_lobby_opposition
+			# = -1
+		}
+		scope:intelligentsia_ig = {
+			add_modifier = {
+				name = gun_law_intelligentsia_rebuked
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 55 }
+	}
+
+	# Option B: Ignore them — do not dignify the opposition with a response
+	option = {
+		name = gun_laws.5.b
+		add_enactment_modifier = {
+			name = gun_law_safety_lobby_opposition
+			# = -2
+		}
+		scope:intelligentsia_ig = {
+			add_modifier = {
+				name = gun_law_intelligentsia_ignored
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 45 }
+	}
+}
+
+
+# ==========================================
+# gun_laws.6
+# "Licensing Is Not Freedom"
+# Fires when enacting licensed firearms.
+# Both sides are unhappy — gun rights
+# advocates see it as a restriction,
+# safety advocates see it as insufficient.
+# checkpoint_stall
+# ==========================================
+
+gun_laws.6 = {
+	type = country_event
+	placement = ROOT
+
+	title = gun_laws.6.t
+	desc = gun_laws.6.d
+	flavor = gun_laws.6.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_licensed_firearms
+		NOT = { has_modifier = gun_law_compromise_resistance }
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = gun_law_scope
+		}
+	}
+
+	# Option A: Defend the middle ground — licensing is reasonable and proportionate
+	option = {
+		name = gun_laws.6.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = gun_law_compromise_resistance
+			# = -1
+		}
+		add_enactment_modifier = {
+			name = gun_law_compromise_defended
+			# = 2
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				trigger = {
+					exists = ruler
+					ruler = { has_ideology = ideology_liberal_leader }
+				}
+				add = 20
+			}
+		}
+	}
+
+	# Option B: Acknowledge the tension — promise a review once the law beds in
+	option = {
+		name = gun_laws.6.b
+		add_enactment_modifier = {
+			name = gun_law_compromise_resistance
+			# = -2
+		}
+		ai_chance = { base = 40 }
+	}
+}

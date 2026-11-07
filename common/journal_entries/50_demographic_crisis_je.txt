@@ -1,0 +1,162 @@
+je_demographic_crisis = {
+	icon = "gfx/interface/icons/event_icons/fetus.dds"
+	group = je_group_dilemmas
+
+	is_shown_when_inactive = {
+		OR = {
+			c:JPN ?= this
+			c:PRC ?= this
+			c:STK ?= this
+			c:ROC ?= this
+			c:NRK ?= this
+			c:RUS ?= this
+		}
+	}
+
+	possible = {
+		OR = {
+			c:JPN ?= this
+			c:PRC ?= this
+			c:STK ?= this
+			c:ROC ?= this
+			c:NRK ?= this
+			c:RUS ?= this
+		}
+	}
+
+	immediate = {
+		# Set the progress counter — need 120 months of sustained birth rate
+		set_variable = { name = demographic_months_sustained value = 0 }
+		set_variable = { name = demographic_months_required value = 120 }
+
+		# Apply the crisis — workforce ratio penalty
+		every_scope_state = {
+			add_modifier = { name = demographic_crisis_workforce_penalty }
+		}
+
+		# Apply the decaying temporary buffer (50 years)
+		every_scope_state = {
+			add_modifier = { name = demographic_crisis_buffer months = 1200 is_decaying = yes  }
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			# Check if pro-natalist conditions are met this month
+			if = {
+				limit = {
+					# Must have pro-natalist social policies
+					OR = {
+						has_law = law_type:law_universal_childcare
+						has_law = law_type:law_privatized_preschool_education
+					}
+					# Must have healthcare
+					OR = {
+						has_law = law_type:law_public_health_insurance
+						has_law = law_type:law_private_health_insurance
+					}
+					# Must have welfare support
+					OR = {
+						has_law = law_type:law_old_age_pension
+						has_law = law_type:law_wage_subsidies
+						has_law = law_type:law_universal_basic_income
+						has_law = law_type:law_student_coverage
+					}
+					# Must have housing
+					OR = {
+						has_law = law_type:law_housing_projects
+						has_law = law_type:law_public_housing_program
+						has_law = law_type:law_universal_housing
+					}
+					# Average SOL must be reasonable (middle class satisfied)
+					average_sol >= 12
+				}
+				# Conditions met — progress ticks
+				change_variable = { name = demographic_months_sustained add = 1 }
+			}
+			else = {
+				# Conditions NOT met — progress decays
+				if = {
+					limit = { var:demographic_months_sustained > 0 }
+					change_variable = { name = demographic_months_sustained add = -2 }
+					clamp_variable = { name = demographic_months_sustained min = 0 max = 120 }
+				}
+			}
+		}
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_demographic_crisis_progressing_tt
+				trigger = {
+					var:demographic_months_sustained > 0
+					# Conditions currently met
+					OR = {
+						has_law = law_type:law_universal_childcare
+						has_law = law_type:law_privatized_preschool_education
+					}
+					OR = {
+						has_law = law_type:law_public_health_insurance
+						has_law = law_type:law_private_health_insurance
+					}
+					OR = {
+						has_law = law_type:law_old_age_pension
+						has_law = law_type:law_wage_subsidies
+						has_law = law_type:law_universal_basic_income
+						has_law = law_type:law_student_coverage
+					}
+					OR = {
+						has_law = law_type:law_housing_projects
+						has_law = law_type:law_public_housing_program
+						has_law = law_type:law_universal_housing
+					}
+					average_sol >= 12
+				}
+			}
+			triggered_desc = {
+				desc = je_demographic_crisis_stalling_tt
+				trigger = {
+					var:demographic_months_sustained > 0
+				}
+			}
+			triggered_desc = {
+				desc = je_demographic_crisis_idle_tt
+			}
+		}
+	}
+
+	scripted_progress_bar = demographic_crisis_progress_bar
+
+	complete = {
+		custom_tooltip = {
+			text = demographic_crisis_sustained_tt
+			var:demographic_months_sustained >= 120
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = demographic_events.2 days = 0 }
+		# Remove the permanent workforce penalty from all states
+		every_scope_state = {
+			if = {
+				limit = { has_modifier = demographic_crisis_workforce_penalty }
+				remove_modifier = demographic_crisis_workforce_penalty
+			}
+		}
+		# Apply a permanent recovery modifier
+		every_scope_state = {
+			add_modifier = { name = demographic_crisis_resolved }
+		}
+		# Clean up
+		remove_variable = demographic_months_sustained
+		remove_variable = demographic_months_required
+	}
+
+	fail = {
+		always = no
+	}
+
+	weight = 999
+	should_be_pinned_by_default_involved = yes
+}

@@ -1,0 +1,16 @@
+﻿l_japanese:
+
+ GDP_TOOLTIP:1 "#header [Country.GetAdjective] [concept_gdp]#!\n@money![Country.MakeScope.ScriptValue('cwp_gdp')|Dv] (#u #tooltippable #tooltip:、country  GDP OWNERSHIP TOOLTIP [Country.MakeScope.ScriptValue('cwp_gdp')|Dv] (#u #tooltippable #tooltippable #tooltip:[Country.GetTooltipTag][Country.GetTooltipTag][Country.GetTooltipTag][Country.GetTooltipTag][Country.GetTooltipTag][Country.GetTooltipTag] id=10/></>"
+ COUNTRY_GDP_OWNERSHIP_TOOLTIP: "#header [concept_gdp_ownership] [Country.GetName]#!\n#u [Country.GetDomesticallyOwnedGDPFraction|%1b]#! (@money![Country.GetGDP|Dv]) を国内所有 $concept_gdp_short$\n$TOOLTIP_DELIMITER$$TOOLTIP_DELIMITER$\n\n\n\n"
+
+ COUNTRY_ALL_GDP: "@money!#v [Country.GetGDPWithOwnershipsInForeignCountries|D]#!"
+ DOMESTIC_COUNTRY_GDP: "@money!#v [Country.GetGDP|D]#!"
+ FOREIGN_COUNTRY_GDP: "@money!#u [Country.GetGDPOwnedInForeignCountries|Db]#!"
+ COUNTRY_ALL_OWNERSHIP: "#u [Country.GetDomesticallyOwnedGDPFraction|%1b]#![ConcatIfNeitherEmpty(' + ', AddLocalizationIf(NotZero_CFixedPoint(Country.GetGDPOwnedInForeignCountries), 'FOREIGN_COUNTRY_GDP'))]"
+ 
+ ERROR_DEER_TOOLTIP:0 "#header Dangnabit!#!\n#instruction 左クリック#! でエラーログ\n#instruction を開く 右クリック#! を離れる"
+ ERROR_MANUL_TOOLTIP: "#header 一度私を冷やす、恥ずかしがりすぎます。 あなたは私を愚かに - あなたは再びfooledを取得することはできません!#!\n#instruction 左クリック#! エラーログを開くには\n#instruction 右クリック#! を離れる"
+ 
+ OH_DEER:0 ""#italic 恥ずかしいですか?#! #bold [ErrorDeer.NumberOrErrors|v]#! #italic エラー(s)!#!""
+ ERROR_MANUL: "#italic #! #bold [ErrorDeer.NumberOrErrors|v]#! #italic ミッションが認定されました。"
+ ERROR_DEER_SLOW_TICK_OPERATIONS:0 "#header スローティックオペレーション#!"

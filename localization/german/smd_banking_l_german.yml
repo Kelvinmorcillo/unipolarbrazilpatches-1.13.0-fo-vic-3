@@ -1,0 +1,49 @@
+﻿l_german:
+ # ── TAB RENAME ────────────────────────────
+ BUDGET_TAB_ASSETS: "Finanzsystem"
+ BUDGET_TAB_FINANCE: "Forderungen"
+ # ── CENTRAL BANKING PANEL ─────────────────
+ BUDGET_CENTRAL_BANKING_HEADER: "Zentralbanken"
+ BUDGET_CENTRAL_BANK_LAW_LABEL: "Aktuelle Politik:"
+ BUDGET_FISCAL_POLICY_LABEL: "Geldpolitik Stance"
+
+ # Scripted loc keys
+ cb_policy_loc_1: "#R Die meisten Vertragsverletzungen"
+ cb_policy_loc_2: "#r Contractary#!"
+ cb_policy_loc_3: "#Y Neutral#!"
+ cb_policy_loc_4: "#g Expansions-#!"
+ cb_policy_loc_5: "<x id=======                                                                     "
+
+ # ── BUTTON TOOLTIPS — FRACTIONAL RESERVE ──
+ CB_POLICY_1_TOOLTIP: "<============================================================================================"
+ CB_POLICY_2_TOOLTIP: "<x id==3/>x id=4/>x id=5/> Gebäude Maximum Cash Reserven: #red -12.5% #!"
+ CB_POLICY_3_TOOLTIP: "#bold Stabil #!x id=2/>x id=3/>x id=4/> Die Zentralbank nimmt keine aktive Haltung ein. Keine Modifikatoren angewendet."
+ CB_POLICY_4_TOOLTIP: "<======================================================================================"
+ CB_POLICY_5_TOOLTIP: "<=============================================================================================="
+
+ # Fractional Reserve variants
+ CB_POLICY_1_FRAC: "#!x id=2/>x id=3/>x id=4/>x"
+ CB_POLICY_2_FRAC: "#bold Contracting — Fractional Reserve#!x id=2/>x id=3/>x id=4/> Die Zentralbank wendet eine leichte Anziehungskraft auf Kreditbedingungen an.\nx id=6/>x id=7/> Bankdurchsatz #b+5%#!x id=10/>>x id=11/> Financial District Throughput #bx id=13/>x id=13/>"
+ CB_POLICY_3_FRAC: "#bold Neutral — Fractional Reserve#!x id=2/>x id=3/>x id=4/> Die Zentralbank nimmt keine aktive Haltung ein. Keine Modifikatoren angewendet."
+ CB_POLICY_4_FRAC: "#bold Expansion — Fractional Reserve#!x id=2/>x id=3/>x id=4/>x Die Zentralbank erleichtert die Kreditbedingungen, um die Kreditvergabe zu stimulieren.\nx id=6/>x id=7/> Bankdurchsatz #b-5%#!x id=10/>>x id=11/>/>"
+ CB_POLICY_5_FRAC: "#!x id=2/>x id=3/>x id=4/>Die Zentralbank stimuliert den Finanzsektor aggressiv.\nx id=6/>x id=7/>"
+
+ # Full Reserve variants
+ CB_POLICY_1_FULL: "#bold Die meisten Vertragspartner — Full Reserve#!x id=2/>x id=3/>x id=4/> Reserveanforderungen sind maximiert, drastisch reduziert die Kreditverfügbarkeit.\nx id=6/>x id=7/> Kreditzinssatz #b-1%#!x id=10/>x id=11/> Cash Reserven #b+25%#!"
+ CB_POLICY_2_FULL: "#bold Contractary — Full Reserve>x id=1/>x id=2/>x id=3/>x id=4/>Reservierungsanforderungen werden bescheiden.\nx id=6/>x id=7/> Loan Interest Rate #b-0.5%x id=9/>x id="
+ CB_POLICY_3_FULL: "#bold Neutral — Full Reserve#!x id=2/>x id=3/>x id=4/> Die Reserveanforderungen bleiben auf dem gesetzlichen Minimum. Keine zusätzlichen Modifikatoren angewendet."
+ CB_POLICY_4_FULL: "#bold Expansion — Full Reserve#!x id=2/>x id=3/>x id=4/> Die Reserveanforderungen werden entspannt, um größere Kredite zu ermöglichen.\nx id=6/>x id=7/> Loan Interest Rate #b+0.5%x id=9/>x id=10/>>x id=11/>x Cash Reserves #b-12.5%x id=13/>"
+ CB_POLICY_5_FULL: "#bold Die meisten Erweiterungen — Vollständige Reserve #!x id=2/>x id=3/>x id=4/>Reservierungsanforderungen werden auf maximierende Kreditfähigkeit minimiert.\nx id=6/>x id=7/>"
+
+ # ── MODIFIER NAMES ────────────────────────
+ cb_policy_fractional_1: "Die meisten vertraglichen Geldpolitik"
+ cb_policy_fractional_2: "Kontraktive Geldpolitik"
+ cb_policy_fractional_4: "Erweiterung der Geldpolitik"
+ cb_policy_fractional_5: "Die umfangreichste Währungspolitik"
+ cb_policy_full_1: "Die meisten Kontraktionsschutzmaßnahmen"
+ cb_policy_full_2: "Vertragliche Reservepolitik"
+ cb_policy_full_4: "Erweiterung der Reservepolitik"
+ cb_policy_full_5: "Die meisten Erweiterungsreserven"
+ 
+ building_group_bg_banking_throughput_add_desc:0 "Ein Modifizierer zum Durchsatz von Commercial Banks"
+ building_financial_district_throughput_add_desc:0 "Modofier zum Durchsatz von Finanzbezirken"

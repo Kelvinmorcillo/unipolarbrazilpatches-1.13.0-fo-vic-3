@@ -1,0 +1,749 @@
+﻿l_english:
+
+ # ==========================================
+ # ENACTMENT EVENT LOCALIZATION
+ # ==========================================
+
+ # drug_laws.1 — Cost of Prohibition
+ drug_laws.1.t:0 "The Cost of Prohibition"
+ drug_laws.1.d:0 "The campaign to prohibit all intoxicating substances in [ROOT.GetCountry.GetName] has begun — but enforcement is proving expensive. Police and prosecutors need resources. Borders need to be watched. The alternative — declaring prohibition and hoping compliance follows — has not worked anywhere it has been tried.\n\n[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName]'s government must decide how seriously it is prepared to take this."
+ drug_laws.1.f:0 "A law without enforcement is a suggestion."
+ drug_laws.1.a:0 "Full enforcement — spare no expense"
+ drug_laws.1.b:0 "Measured enforcement — build compliance over time"
+
+ # drug_laws.2 — The Church Speaks
+ drug_laws.2.t:0 "The [SCOPE.sCharacter('devout_leader').GetPrimaryRoleTitle] Speaks"
+ drug_laws.2.d:0 "[SCOPE.sCharacter('devout_leader').GetFullName], leader of the [SCOPE.gsInterestGroup('devout_ig').GetName], has issued a public statement endorsing the government's movement toward stricter substance regulation. The framing is explicitly moral — intoxication as spiritual corruption, prohibition as the righteous work of the state. The question is whether to embrace this framing or maintain a secular basis for the legislation."
+ drug_laws.2.f:0 "Moral authority and legal authority are not the same thing — but they can work together."
+ drug_laws.2.a:0 "Welcome their support — a united front strengthens the law"
+ drug_laws.2.b:0 "Keep this a secular matter — decline their framing"
+
+ # drug_laws.3 — The Intelligentsia Makes Its Case
+ drug_laws.3.t:0 "[SCOPE.sCharacter('intelligentsia_leader').GetFullName] Makes the Case for Evidence"
+ drug_laws.3.d:0 "[SCOPE.sCharacter('intelligentsia_leader').GetFullName], representing the [SCOPE.gsInterestGroup('intelligentsia_ig').GetName], has published a detailed analysis of drug decriminalization policy from countries that have already enacted it. The findings are unambiguous: incarceration rates fall, overdose deaths fall, enforcement costs fall. The report is being widely read — and widely attacked by conservative interests who argue evidence is beside the point."
+ drug_laws.3.f:0 "The data does not care about the debate."
+ drug_laws.3.a:0 "Back the research — publish it and let the evidence lead"
+ drug_laws.3.b:0 "Keep academics out of politics"
+
+ # drug_laws.4 — Medical Establishment
+ drug_laws.4.t:0 "Doctors Support Harm Reduction"
+ drug_laws.4.d:0 "The [ROOT.GetCountry.GetAdjective] medical establishment — led by public health officials and addiction specialists — has formally backed the proposed safe-injection site legislation. Their argument is straightforward: supervised consumption reduces overdose deaths, connects users to treatment, and does not increase drug use rates. The evidence from other countries is compelling. The political opposition from religious and conservative groups is equally predictable."
+ drug_laws.4.f:0 "Medicine is not morality. But lives are lives."
+ drug_laws.4.a:0 "Back the medical consensus — the evidence is clear"
+ drug_laws.4.b:0 "Frame this as a moral question — medicine does not have all the answers"
+
+ # drug_laws.5 — International Condemnation
+ drug_laws.5.t:0 "The World Is Watching"
+ drug_laws.5.d:0 "The prospect of [ROOT.GetCountry.GetName] legalising the drug trade has attracted immediate international attention. [SCOPE.sCountry('c:USA').GetName] has issued a formal diplomatic note expressing concern. Multiple other governments have made their displeasure known. The international consensus on drug prohibition — however imperfectly enforced — is clear, and [ROOT.GetCountry.GetName] is about to step outside it."
+ drug_laws.5.f:0 "Sovereignty is easy to declare. Its consequences take longer to arrive."
+ drug_laws.5.a:0 "Defy international opinion — [ROOT.GetCountry.GetName] makes its own laws"
+ drug_laws.5.b:0 "Proceed quietly — make no statements, invite no confrontation"
+
+ # drug_laws.6 — Criminal Networks Resist
+ drug_laws.6.t:0 "The Cartels Are Fighting the Law"
+ drug_laws.6.d:0 "The proposed drug legislation threatens the existing criminal economy. Networks that profit from the current grey zone between tolerance and prohibition have begun working actively against the law's passage — corrupting local officials, spreading disinformation, and in some cases, intimidating legislators. The pushback is organised, well-funded, and effective.\n\n[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] must decide how to respond."
+ drug_laws.6.f:0 "The cartels prefer the laws that give them room to operate."
+ drug_laws.6.a:0 "Accept the setback — move more carefully"
+ drug_laws.6.b:0 "Escalate enforcement — root out the networks resisting the law"
+
+ # ==========================================
+ # ENACTMENT MODIFIER NAMES
+ # ==========================================
+
+ drug_law_prohibition_enforcement:0 "Prohibition Enforcement Campaign"
+ drug_law_prohibition_enforcement_desc:0 "A well-resourced enforcement campaign is improving the chances of prohibition being enacted and observed."
+
+ drug_law_enforcement_cost:0 "Enforcement Expenditure"
+ drug_law_enforcement_cost_desc:0 "The costs of the drug enforcement campaign are placing additional demands on the state budget."
+
+ drug_law_religious_backing:0 "Religious Endorsement"
+ drug_law_religious_backing_desc:0 "The support of the religious establishment is lending moral authority to the legislation and improving its chances of passage."
+
+ drug_law_devout_empowered:0 "Empowered by the Drug Debate"
+ drug_law_devout_empowered_desc:0 "The public association with drug prohibition legislation has strengthened this group's political standing."
+
+ drug_law_academic_push:0 "Academic Evidence Campaign"
+ drug_law_academic_push_desc:0 "Published research supporting decriminalization is shifting the terms of the debate in favor of the legislation."
+
+ drug_law_intelligentsia_engaged:0 "Intelligentsia Engaged"
+ drug_law_intelligentsia_engaged_desc:0 "The intelligentsia is actively engaged in the drug policy debate, boosting the legislative campaign's credibility."
+
+ drug_law_intelligentsia_ignored:0 "Intelligentsia Sidelined"
+ drug_law_intelligentsia_ignored_desc:0 "The decision to exclude academic voices from the drug policy debate has frustrated the intelligentsia."
+
+ drug_law_medical_backing:0 "Medical Consensus Behind the Law"
+ drug_law_medical_backing_desc:0 "The endorsement of the medical establishment is providing scientific credibility to the harm reduction legislation."
+
+ drug_law_moral_framing:0 "Moral Rather Than Medical Framing"
+ drug_law_moral_framing_desc:0 "Framing drug policy as a moral question rather than a medical one is complicating the evidence-based case for safe-injection sites."
+
+ drug_law_international_pressure:0 "International Condemnation"
+ drug_law_international_pressure_desc:0 "International pressure against the proposed legislation is complicating its passage and damaging [ROOT.GetCountry.GetName]'s reputation."
+
+ drug_law_sovereignty_declared:0 "Sovereignty Asserted"
+ drug_law_sovereignty_declared_desc:0 "[ROOT.GetCountry.GetName] has publicly asserted its right to set its own drug policy regardless of international opinion."
+
+ drug_law_criminal_pushback:0 "Criminal Networks Resisting"
+ drug_law_criminal_pushback_desc:0 "Organised crime is actively working to prevent the passage of drug legislation that would threaten its operations."
+
+ # disability_laws.1 — Employer Resistance
+ disability_laws.1.t:0 "Employers Push Back Against Workplace Accommodations"
+ disability_laws.1.d:0 "The proposed workplace accommodations legislation has drawn an organised response from [ROOT.GetCountry.GetAdjective] employers. [SCOPE.sCharacter('employer_leader').GetFullName], speaking for the [SCOPE.gsInterestGroup('employer_ig').GetName], has argued that the compliance costs are unworkable — that small businesses in particular cannot absorb the expense of modifying equipment, adjusting duties, and restructuring workplaces to accommodate disabled employees.\n\nThe government must decide how to respond."
+ disability_laws.1.f:0 "Every inclusive policy has someone arguing the costs are too high."
+ disability_laws.1.a:0 "Hold firm — compliance with the law is not optional"
+ disability_laws.1.b:0 "Offer a transition period — phased compliance over several years"
+ 
+ # disability_laws.2 — Construction Lobby
+ disability_laws.2.t:0 "The Construction Industry Objects"
+ disability_laws.2.d:0 "The proposed accessible infrastructure legislation has drawn a formal objection from the [ROOT.GetCountry.GetAdjective] construction industry. Their argument: the requirement to retrofit existing buildings to meet accessibility standards is technically complex and prohibitively expensive for many property owners. They are calling for either a grandfather clause for existing structures or a much longer implementation timeline."
+ disability_laws.2.f:0 "Every building that was built without a ramp is now a political problem."
+ disability_laws.2.a:0 "Enforce strict standards — full compliance on schedule, no exceptions"
+ disability_laws.2.b:0 "Phase compliance — grandfather existing structures, new standards for new builds"
+ 
+ # disability_laws.3 — Who Pays
+ disability_laws.3.t:0 "Who Pays for the Accessible Infrastructure?"
+ disability_laws.3.d:0 "The accessible infrastructure legislation raises a question the bill's drafters have so far avoided: who actually pays for the retrofit? If the obligation falls entirely on private property owners, smaller landlords and businesses will be disproportionately burdened. If the state subsidises the work, the public budget takes the hit. The legislature is deadlocked on the question."
+ disability_laws.3.f:0 "Inclusion has a price. The argument is about who pays it."
+ disability_laws.3.a:0 "State subsidy — the government absorbs retrofit costs to speed compliance"
+ disability_laws.3.b:0 "Private obligation — property owners bear the cost of compliance"
+ 
+ # disability_laws.4 — Medical Endorsement
+ disability_laws.4.t:0 "[SCOPE.sCharacter('medical_leader').GetFullName] Endorses Public Treatments"
+ disability_laws.4.d:0 "[SCOPE.sCharacter('medical_leader').GetFullName] of the [SCOPE.gsInterestGroup('medical_ig').GetName] has published a formal endorsement of the public treatments legislation, citing evidence that state-funded disability treatment produces measurable gains in workforce participation, reduces long-term healthcare costs, and improves population-wide outcomes. The endorsement is being used by supporters to argue that this is not charity — it is investment."
+ disability_laws.4.f:0 "Medicine does not distinguish between the deserving and the undeserving sick."
+ disability_laws.4.a:0 "Commission a public health report — let the evidence make the case"
+ disability_laws.4.b:0 "Keep the framing political — this is a rights issue, not a medical one"
+ 
+ # disability_laws.5 — Fiscal Resistance
+ disability_laws.5.t:0 "[SCOPE.sCharacter('fiscal_leader').GetFullName] Says the State Cannot Afford This"
+ disability_laws.5.d:0 "[SCOPE.sCharacter('fiscal_leader').GetFullName], representing the [SCOPE.gsInterestGroup('fiscal_ig').GetName], has delivered a stark assessment: the ongoing cost of comprehensive public disability treatment is unsustainable. The state is already stretched. This legislation, if enacted in full, will require either tax increases or cuts elsewhere. The question is not whether [ROOT.GetCountry.GetName] wants to care for its disabled citizens — it is whether it can."
+ disability_laws.5.f:0 "A budget is a moral document."
+ disability_laws.5.a:0 "Hold the line — the expense is a moral obligation, not a choice"
+ disability_laws.5.b:0 "Phase in spending — staged implementation over several years"
+ 
+ # disability_laws.6 — Advocates Rally
+ disability_laws.6.t:0 "Disability Advocates Make Their Case"
+ disability_laws.6.d:0 "A coalition of disability rights organisations has begun a public campaign in support of the proposed legislation. Their message is direct: [ROOT.GetCountry.GetAdjective] society has excluded disabled people from full participation for too long. The legislation being debated is not a favour — it is a correction of a longstanding injustice. The campaign has attracted sympathetic coverage and is shifting public opinion."
+ disability_laws.6.f:0 "Nothing about us without us."
+ disability_laws.6.a:0 "Formally receive their delegation — give the campaign official backing"
+ disability_laws.6.b:0 "Acknowledge the campaign without amplifying it"
+ 
+ # disability_laws.7 — Conservative Opposition
+ disability_laws.7.t:0 "[SCOPE.sCharacter('conservative_leader').GetFullName] Leads the Opposition"
+ disability_laws.7.d:0 "[SCOPE.sCharacter('conservative_leader').GetFullName] of the [SCOPE.gsInterestGroup('conservative_ig').GetName] has organised a public opposition campaign against the disability legislation. The argument is familiar: that state dependency undermines individual character, that the productive population cannot be expected to carry an expanding burden of support, and that existing private charity is sufficient. The framing is drawing criticism from disability rights groups, but it is resonating with parts of the electorate."
+ disability_laws.7.f:0 "The argument against inclusion is always about someone else's burden."
+ disability_laws.7.a:0 "Rebut publicly — make the moral case for the legislation directly"
+ disability_laws.7.b:0 "Do not dignify it with a response — press forward"
+ 
+ # ==========================================
+ # ENACTMENT MODIFIER NAMES
+ # ==========================================
+ 
+ disability_employer_pressure:0 "Employer Compliance Campaign"
+ disability_employer_pressure_desc:0 "The government has held firm against employer resistance. The legislation will proceed on schedule."
+ 
+ disability_compliance_delay:0 "Employer Transition Period Granted"
+ disability_compliance_delay_desc:0 "Employers have been given additional time to comply with workplace accommodation requirements, slowing the law's passage."
+ 
+ disability_construction_lobby:0 "Construction Industry Engaged"
+ disability_construction_lobby_desc:0 "The construction industry's objections have been addressed, reducing active opposition to the accessible infrastructure legislation."
+ 
+ disability_strict_standards:0 "Strict Compliance Standards"
+ disability_strict_standards_desc:0 "Firm accessibility standards have been set with no grandfather clauses. Compliance will be full and on schedule."
+ 
+ disability_phased_compliance:0 "Phased Infrastructure Compliance"
+ disability_phased_compliance_desc:0 "Existing structures have been grandfathered. New standards apply only to new construction, slowing the law's broader impact."
+ 
+ disability_funding_debate:0 "Funding Framework Established"
+ disability_funding_debate_desc:0 "The question of who pays for accessible infrastructure has been resolved, removing a major obstacle to the law's passage."
+ 
+ disability_state_subsidy:0 "State Infrastructure Subsidy"
+ disability_state_subsidy_desc:0 "The state is absorbing retrofit costs directly. Compliance will be faster — but the budget is under additional pressure."
+ 
+ disability_medical_endorsement:0 "Medical Establishment Endorses Treatments"
+ disability_medical_endorsement_desc:0 "The medical profession's public endorsement of public disability treatment is lending scientific credibility to the legislation."
+ 
+ disability_fiscal_resistance:0 "Fiscal Conservatives Engaged"
+ disability_fiscal_resistance_desc:0 "The fiscal resistance to public disability treatment has been addressed. The law moves forward."
+ 
+ disability_phased_spending:0 "Staged Disability Treatment Spending"
+ disability_phased_spending_desc:0 "Public disability treatment will be phased in gradually, reducing immediate budget pressure at the cost of a slower rollout."
+ 
+ disability_advocate_push:0 "Disability Advocates Mobilized"
+ disability_advocate_push_desc:0 "A public campaign by disability rights organisations is building political momentum for the legislation."
+ 
+ disability_conservative_opposition:0 "Conservative Opposition Addressed"
+ disability_conservative_opposition_desc:0 "Conservative opposition to the disability legislation has been engaged and partially neutralised."
+ 
+ disability_public_rebuttal:0 "Public Rebuttal of Conservative Opposition"
+ disability_public_rebuttal_desc:0 "The government's direct rebuttal of conservative framing has shifted the terms of the debate in favor of the legislation."
+ 
+  # environment_laws.1 — Industry Voluntary Compliance
+ environment_laws.1.t:0 "[SCOPE.sCharacter('industry_leader').GetFullName] Offers Voluntary Compliance"
+ environment_laws.1.d:0 "[SCOPE.sCharacter('industry_leader').GetFullName], speaking for the [SCOPE.gsInterestGroup('industry_ig').GetName], has made a public offer: if the government agrees to build voluntary compliance mechanisms into the environmental framework rather than mandating enforcement, industry will cooperate. The offer is being presented as pragmatic partnership. Critics argue it is an attempt to neuter the legislation before it passes."
+ environment_laws.1.f:0 "Voluntary compliance is the fossil fuel industry's favourite kind."
+ environment_laws.1.a:0 "Accept — build voluntary compliance into the framework"
+ environment_laws.1.b:0 "Reject — mandatory enforcement only, no carve-outs"
+ 
+ # environment_laws.2 — Scientific Backing
+ environment_laws.2.t:0 "[SCOPE.sCharacter('science_leader').GetFullName] Publishes Environmental Report"
+ environment_laws.2.d:0 "[SCOPE.sCharacter('science_leader').GetFullName] of the [SCOPE.gsInterestGroup('science_ig').GetName] has published a comprehensive study documenting the environmental and public health costs of [ROOT.GetCountry.GetName]'s current trajectory. The findings are unambiguous: pollution levels are rising, mortality is affected, and ecosystems are under stress. The proposed legislation, the report concludes, is not just desirable — it is necessary."
+ environment_laws.2.f:0 "The data does not wait for political convenience."
+ environment_laws.2.a:0 "Commission an official response — publish the findings with government backing"
+ environment_laws.2.b:0 "Acknowledge the report without amplifying it"
+ 
+ # environment_laws.3 — International Praise
+ environment_laws.3.t:0 "The International Community Praises [ROOT.GetCountry.GetName]'s Environmental Leadership"
+ environment_laws.3.d:0 "Word of [ROOT.GetCountry.GetName]'s proposed environmental legislation has reached the international community, and the response has been unexpectedly warm. Several nations have issued statements praising [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName]'s government for its ambition. Environmental advocacy groups are calling [ROOT.GetCountry.GetName] a model for others to follow."
+ environment_laws.3.f:0 "Leadership is easier to claim than to sustain."
+ environment_laws.3.a:0 "Leverage the moment — host international environmental talks"
+ environment_laws.3.b:0 "Keep this domestic — avoid overcommitting to international obligations"
+ 
+ # environment_laws.4 — Compliance Cost Debate
+ environment_laws.4.t:0 "Who Bears the Cost of Environmental Compliance?"
+ environment_laws.4.d:0 "The environmental legislation has opened a fierce debate about responsibility. Industry argues that compliance costs — retrofitting factories, changing supply chains, updating waste management — will fall disproportionately on producers and ultimately on consumers. Environmental groups counter that these costs represent the true price of pollution that has been silently borne by the public for decades."
+ environment_laws.4.f:0 "Pollution has always had a cost. The question is who pays it."
+ environment_laws.4.a:0 "Polluter pays — industry bears the cost of its own compliance"
+ environment_laws.4.b:0 "State subsidy — the government shares the compliance burden to speed adoption"
+ 
+ # environment_laws.5 — Constitutional Challenge
+ environment_laws.5.t:0 "[SCOPE.sCharacter('industry_opposition_leader').GetFullName] Challenges the Legality of Nature Rights"
+ environment_laws.5.d:0 "[SCOPE.sCharacter('industry_opposition_leader').GetFullName] of the [SCOPE.gsInterestGroup('industry_opposition_ig').GetName] has announced a formal legal challenge to the proposed guaranteed rights of nature legislation. The argument: granting legal standing to rivers, forests, and ecosystems constitutes an unconstitutional interference with property rights and economic freedom. The challenge has attracted significant support from landowning and industrial interests."
+ environment_laws.5.f:0 "Nature has no lawyers. It has to borrow ours."
+ environment_laws.5.a:0 "Defend the framework — let the courts rule on its merits"
+ environment_laws.5.b:0 "Limit the scope — negotiate to avoid a prolonged legal battle"
+ 
+ # environment_laws.6 — Environmental Disaster
+ environment_laws.6.t:0 "Environmental Disaster in [SCOPE.sState('disaster_state_scope').GetName]"
+ environment_laws.6.d:0 "While the environmental legislation is under debate, [SCOPE.sState('disaster_state_scope').GetName] has been struck by an environmental crisis — a factory spill, a river contamination, or a pollution incident of sufficient scale that it has reached the national news. The timing is significant. Supporters argue it proves the legislation is urgently needed. [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName]'s government must decide how to respond."
+ environment_laws.6.f:0 "Every disaster is also an argument."
+ environment_laws.6.a:0 "Use the moment — demand urgent passage of the environmental law"
+ environment_laws.6.b:0 "Contain the story — manage public reaction without escalating"
+ 
+ env_voluntary_compliance:0 "Industry Voluntary Compliance"
+ env_voluntary_compliance_desc:0 "Industry has agreed to voluntary compliance with the environmental framework, reducing active opposition and improving the law's chances of passage."
+ 
+ env_mandatory_enforcement:0 "Mandatory Enforcement Framework"
+ env_mandatory_enforcement_desc:0 "The government has rejected voluntary compliance in favour of mandatory enforcement. The law is stronger — and industry opposition more determined."
+ 
+ env_scientific_backing:0 "Scientific Community Endorsement"
+ env_scientific_backing_desc:0 "A published scientific report endorsing the environmental legislation is shifting public and legislative opinion in its favour."
+ 
+ env_international_praise:0 "International Environmental Praise"
+ env_international_praise_desc:0 "International recognition of [ROOT.GetCountry.GetName]'s environmental leadership is building domestic momentum for the legislation."
+ 
+ env_diplomatic_push:0 "Environmental Diplomatic Initiative"
+ env_diplomatic_push_desc:0 "[ROOT.GetCountry.GetName] is hosting international environmental talks, adding diplomatic prestige to the legislative push."
+ 
+ env_compliance_cost_debate:0 "Compliance Cost Framework Resolved"
+ env_compliance_cost_debate_desc:0 "The debate over who bears environmental compliance costs has been resolved, removing a major obstacle from the legislation's path."
+ 
+ env_polluter_pays:0 "Polluter Pays Principle"
+ env_polluter_pays_desc:0 "Industry has been made responsible for its own compliance costs. The law is stronger; the opposition is louder."
+ 
+ env_state_subsidy:0 "State Environmental Compliance Subsidy"
+ env_state_subsidy_desc:0 "The state is subsidising environmental compliance to reduce industry resistance and accelerate adoption."
+ 
+ env_constitutional_challenge:0 "Constitutional Challenge"
+ env_constitutional_challenge_desc:0 "A legal challenge to the guaranteed rights of nature legislation has slowed its passage through the legislature."
+ 
+ env_legal_defence:0 "Legal Defence of Nature Rights"
+ env_legal_defence_desc:0 "The government's legal defence of the nature rights framework has bolstered confidence in its constitutional validity."
+ 
+ env_disaster_response:0 "Disaster Leveraged for Legislation"
+ env_disaster_response_desc:0 "The government has used an environmental disaster to build urgent public and legislative support for the environmental law."
+ 
+ env_disaster_suppressed:0 "Disaster Story Contained"
+ env_disaster_suppressed_desc:0 "The environmental disaster has been managed quietly. Public pressure has not built — and neither has legislative momentum."
+ 
+ env_disaster_state_modifier:0 "Environmental Disaster"
+ env_disaster_state_modifier_desc:0 "This state has suffered an environmental disaster — a spill, contamination, or ecological collapse — that is generating additional pollution and raising mortality."
+ 
+ childrens_childcare.1.t:0 "The Market Knows Best"
+ childrens_childcare.1.d:0 "With the debate over privatized preschool underway, business associations have emerged as enthusiastic backers. Private providers, they argue, will compete for quality — driving innovation that a state monopoly never could. Critics, however, warn that without meaningful regulation, only families who can afford the fees will benefit."
+ childrens_childcare.1.f:0 "The market has an answer for everything. Whether it has the right one here remains to be seen."
+ childrens_childcare.1.a:0 "Let the market lead — competition will drive quality upward."
+ childrens_childcare.1.b:0 "Regulate pricing — private providers must guarantee access."
+
+ childrens_childcare.2.t:0 "Who Raises the Child?"
+ childrens_childcare.2.d:0 "Religious and traditional voices have grown uneasy with the expansion of formalized early childhood education. The family, they insist, is the proper cradle of moral development — and any institution, however well-intentioned, that supplants the parent risks eroding the foundations of civil society."
+ childrens_childcare.2.f:0 "Behind every policy question about children lies a deeper one: who do they belong to?"
+ childrens_childcare.2.a:0 "Reassure them — this supports families, it does not replace them."
+ childrens_childcare.2.b:0 "Dismiss the concern — early education is not a moral question."
+
+ childrens_childcare.3.t:0 "The Fiscal Reckoning"
+ childrens_childcare.3.d:0 "Universal childcare is an ambitious commitment — and an expensive one. Fiscal conservatives have seized on the projected costs, warning that the state cannot simply absorb an entitlement of this scale without consequence. The government must decide: absorb the cost and press forward, or slow the rollout and buy time."
+ childrens_childcare.3.f:0 "Every great social programme eventually meets its accountant."
+ childrens_childcare.3.a:0 "Fund it — absorb the cost and move forward."
+ childrens_childcare.3.b:0 "Phase it in — delay full implementation to manage the burden."
+
+ childrens_childcare.4.t:0 "Workers' Liberation or Dependency?"
+ childrens_childcare.4.d:0 "The labour movement finds itself divided. For many workers, universal childcare is a liberation — freeing parents, especially mothers, to enter the workforce on equal terms. But a skeptical faction argues that state-provided benefits are a poor substitute for genuine wage gains, and that embracing childcare risks taking pressure off employers to actually pay a living wage."
+ childrens_childcare.4.f:0 "Not every reform that helps workers is a workers' reform."
+ childrens_childcare.4.a:0 "Childcare is a labour issue — embrace it as workers' policy."
+ childrens_childcare.4.b:0 "Wages first — keep the movements separate."
+
+ childrens_childcare.5.t:0 "The Research Speaks"
+ childrens_childcare.5.d:0 "Economists and child development researchers have entered the debate with a straightforward argument: investment in early childhood yields the highest long-term returns of any public spending. The data, they say, is unambiguous. The question is whether the government wishes to make that case publicly — or whether it prefers to keep the debate in political, rather than evidential, terms."
+ childrens_childcare.5.f:0 "The evidence rarely wins debates on its own. But it helps."
+ childrens_childcare.5.a:0 "Commission a public report — let the evidence lead."
+ childrens_childcare.5.b:0 "Keep academics out of the legislative process."
+ 
+ childrens_rights_market_preschool_framing:0 "Private Sector Backing"
+ childrens_rights_market_preschool_framing_desc:0 "Business interests have thrown their weight behind the privatized preschool model, lending momentum to the enactment process."
+
+ childrens_rights_access_mandate:0 "Access Mandate Imposed"
+ childrens_rights_access_mandate_desc:0 "Pricing regulations have been attached to the law, requiring private providers to meet access standards. Compliance negotiations are slowing the passage."
+
+ childrens_rights_family_values_debate:0 "Family Primacy Acknowledged"
+ childrens_rights_family_values_debate_desc:0 "The government has framed preschool expansion as a support for families rather than a replacement, easing conservative resistance to the law."
+
+ childrens_rights_fiscal_resistance:0 "Fiscal Conservative Resistance"
+ childrens_rights_fiscal_resistance_desc:0 "Opposition to the projected costs of universal childcare is stalling the legislative process and undermining the government's enactment position."
+
+ childrens_rights_funded_mandate:0 "Funded State Commitment"
+ childrens_rights_funded_mandate_desc:0 "The government has committed to absorbing the full cost of universal childcare, strengthening the case for enactment at the expense of the public purse."
+
+ childrens_rights_labour_framing:0 "Labour Movement Mobilized"
+ childrens_rights_labour_framing_desc:0 "The trade unions have endorsed universal childcare as a workers' issue, adding organized political weight to the enactment effort."
+
+ childrens_rights_academic_endorsement:0 "Academic Endorsement"
+ childrens_rights_academic_endorsement_desc:0 "Researchers and economists have publicly backed universal childcare, lending evidential credibility to the government's legislative push."
+
+ childrens_rights_business_engaged:0 "Private Sector Engaged"
+ childrens_rights_business_engaged_desc:0 "Business owners see opportunity in a privatized early education market and are actively lending their influence to see the law passed."
+
+ childrens_rights_devout_reassured:0 "Devout Reassured"
+ childrens_rights_devout_reassured_desc:0 "Religious voices have been placated by the government's acknowledgement that the family remains the primary moral institution — not the state."
+
+ childrens_rights_devout_alienated:0 "Devout Alienated"
+ childrens_rights_devout_alienated_desc:0 "The dismissal of traditional family concerns has left the devout deeply uneasy about the direction of the government's social policy."
+
+ childrens_rights_unions_mobilized:0 "Unions Mobilized"
+ childrens_rights_unions_mobilized_desc:0 "The trade unions have rallied behind universal childcare, framing it as an extension of the workers' struggle for economic dignity."
+
+ childrens_rights_unions_skeptical:0 "Unions Skeptical"
+ childrens_rights_unions_skeptical_desc:0 "A significant faction within the labour movement believes state benefits are no substitute for genuine wage gains, and is withholding its full support."
+
+ childrens_rights_intelligentsia_engaged:0 "Intelligentsia Engaged"
+ childrens_rights_intelligentsia_engaged_desc:0 "Academics and researchers are actively making the public case for universal childcare, citing evidence that early investment yields the highest long-term social returns."
+
+ childrens_rights_intelligentsia_sidelined:0 "Intelligentsia Sidelined"
+ childrens_rights_intelligentsia_sidelined_desc:0 "The academic community has been shut out of the legislative debate, leaving the intelligentsia frustrated and disengaged from the government's agenda."
+ 
+ womens_rights_laws.1.t:0 "The Letter of the Law"
+ womens_rights_laws.1.d:0 "As the legislation on legal protections takes shape, a debate has broken out over its reach. Reformers within the intelligentsia argue that a narrow law will be circumvented within a generation — protections must be written into every institution, or they will mean nothing. Their opponents warn that overreach now will invite a constitutional crisis that buries the entire effort."
+ womens_rights_laws.1.f:0 "Every law is only as strong as the will to enforce it — and the courage to write it broadly enough to matter."
+ womens_rights_laws.1.a:0 "Write it broadly — protections must reach every institution."
+ womens_rights_laws.1.b:0 "Keep the scope narrow — secure the passage first."
+
+ womens_rights_laws.2.t:0 "The Traditionalist Objection"
+ womens_rights_laws.2.d:0 "Conservative voices — landowners, clergy, and their allies — have organised against the legal protections bill, calling it an affront to the natural order of society. Their case is rooted less in practical objection than in a profound unease with what the law represents. The government must decide whether to meet this challenge in open debate or to let the opposition exhaust itself."
+ womens_rights_laws.2.f:0 "When tradition speaks, it rarely offers an argument — only a feeling."
+ womens_rights_laws.2.a:0 "Meet them in open debate — rebut their case publicly."
+ womens_rights_laws.2.b:0 "Let them air their grievances — do not give them a martyr's platform."
+
+ womens_rights_laws.3.t:0 "The Employers Push Back"
+ womens_rights_laws.3.d:0 "Structural egalitarianism is not merely a question of rights — it is a question of how business is run. The employer class has raised a coordinated objection, arguing that mandated representation amounts to state interference in private hiring decisions. They are not opposed to women in the workplace, they insist, only to being told exactly how many and in what roles."
+ womens_rights_laws.3.f:0 "Every generation of reformers has been told the timing is wrong. The timing is never wrong for those who benefit from delay."
+ womens_rights_laws.3.a:0 "Mandate compliance — no exceptions and no phase-in."
+ womens_rights_laws.3.b:0 "Offer a transition period — give employers time to adjust."
+
+ womens_rights_laws.4.t:0 "Women in Public Life"
+ womens_rights_laws.4.d:0 "The trade unions have taken a keen interest in the structural egalitarianism bill. Working women, they argue, have always been at the centre of organised labour — underpaid, underrepresented, and essential. The question is whether the government will formally recognise this alliance, making the bill a joint cause, or keep the reform on its own terms."
+ womens_rights_laws.4.f:0 "The factory floor has always known what the parliament is only beginning to admit."
+ womens_rights_laws.4.a:0 "Make it a joint cause — working women and labour together."
+ womens_rights_laws.4.b:0 "Keep the movements distinct — the law stands on its own merits."
+
+ womens_rights_laws.5.t:0 "A Society Transformed"
+ womens_rights_laws.5.d:0 "The matriarchy bill has provoked a reaction unlike anything seen in recent legislative memory. Its opponents do not merely object to a policy — they object to what it signals about the direction of this society. The backlash is fierce and organised. The government must decide whether to face it directly, or to press forward quietly and let the law make its own case once enacted."
+ womens_rights_laws.5.f:0 "There is no revolution that does not feel, to those being displaced, like an ending."
+ womens_rights_laws.5.a:0 "Confront the backlash — the arc of history bends forward."
+ womens_rights_laws.5.b:0 "Weather the storm quietly — let the law speak for itself."
+
+ womens_rights_laws.6.t:0 "The Old Guard Resists"
+ womens_rights_laws.6.d:0 "Landowners and the devout have united in their opposition to the matriarchy bill with a fervour that goes beyond normal legislative resistance. This is, for them, an existential challenge to the social fabric. Their networks are being mobilised, their pulpits and parlours turned into sites of opposition. The government must decide how firmly to respond."
+ womens_rights_laws.6.f:0 "The old guard has always been loudest in its final hours."
+ womens_rights_laws.6.a:0 "Crush the opposition — this government will not be held hostage."
+ womens_rights_laws.6.b:0 "Negotiate — offer cultural concessions to reduce the friction."
+
+ womens_rights_legal_scope:0 "Broad Legal Mandate"
+ womens_rights_legal_scope_desc:0 "The intelligentsia has successfully pushed for wide-reaching statutory protections, lending momentum and credibility to the enactment effort."
+
+ womens_rights_narrow_scope:0 "Narrow Scope Imposed"
+ womens_rights_narrow_scope_desc:0 "The decision to limit the law's reach has complicated the enactment process, as advocates and opponents alike recalibrate their positions."
+
+ womens_rights_traditionalist_debate:0 "Traditionalist Challenge Engaged"
+ womens_rights_traditionalist_debate_desc:0 "The government has entered into public debate with conservative opposition, shifting the terms of the enactment fight."
+
+ womens_rights_employer_resistance:0 "Employer Lobby Resistance"
+ womens_rights_employer_resistance_desc:0 "Organised business opposition to mandated representation is actively stalling the legislative process."
+
+ womens_rights_union_mobilization:0 "Labour Movement Mobilized"
+ womens_rights_union_mobilization_desc:0 "The trade unions have thrown their organised weight behind structural egalitarianism, boosting the enactment effort."
+
+ womens_rights_societal_backlash:0 "Societal Backlash"
+ womens_rights_societal_backlash_desc:0 "The scale of change proposed by the matriarchy bill has triggered a broad and organised resistance that is slowing the legislative process."
+
+ womens_rights_vanguard_push:0 "Vanguard Push"
+ womens_rights_vanguard_push_desc:0 "The government has committed to confronting opposition directly, positioning itself as the leading edge of social transformation."
+
+ womens_rights_old_guard_opposition:0 "Old Guard Opposition"
+ womens_rights_old_guard_opposition_desc:0 "Landowners and the devout have united in organised resistance, stalling the matriarchy bill and testing the government's resolve."
+
+ womens_rights_intelligentsia_engaged:0 "Intelligentsia Engaged"
+ womens_rights_intelligentsia_engaged_desc:0 "Academics and reformers are actively lending their public authority to the case for broad legal protections."
+
+ womens_rights_intelligentsia_disappointed:0 "Intelligentsia Disappointed"
+ womens_rights_intelligentsia_disappointed_desc:0 "The decision to narrow the law's scope has frustrated reformist intellectuals who fear a half-measure will be undone within a generation."
+
+ womens_rights_conservatives_rebuked:0 "Conservatives Rebuked"
+ womens_rights_conservatives_rebuked_desc:0 "The government's public rebuttal has embarrassed the traditionalist opposition, though it has also sharpened their resolve."
+
+ womens_rights_conservatives_placated:0 "Conservatives Placated"
+ womens_rights_conservatives_placated_desc:0 "By allowing the opposition to air its grievances without direct confrontation, the government has reduced immediate friction."
+
+ womens_rights_employers_overruled:0 "Employers Overruled"
+ womens_rights_employers_overruled_desc:0 "The employer class has been told compliance is mandatory and non-negotiable, breeding resentment but clearing the path forward."
+
+ womens_rights_employers_appeased:0 "Employers Appeased"
+ womens_rights_employers_appeased_desc:0 "A phased transition has softened business opposition, reducing resistance at the cost of a slower implementation."
+
+ womens_rights_unions_allied:0 "Unions Allied"
+ womens_rights_unions_allied_desc:0 "The trade unions have formally allied with the egalitarianism movement, adding organised political muscle to the enactment effort."
+
+ womens_rights_unions_neutral:0 "Unions Neutral"
+ womens_rights_unions_neutral_desc:0 "The labour movement has chosen to maintain its distance from the egalitarianism bill, offering neither active support nor opposition."
+
+ womens_rights_old_guard_suppressed:0 "Old Guard Suppressed"
+ womens_rights_old_guard_suppressed_desc:0 "The government has moved decisively against the old guard's opposition, weakening their political position but radicalising their base."
+
+ womens_rights_old_guard_negotiated:0 "Old Guard Negotiated"
+ womens_rights_old_guard_negotiated_desc:0 "Concessions to the old guard have blunted the worst of their opposition, though their fundamental disagreement with the law remains."
+ 
+ ubi.1.t:0 "The Cost of Unconditional"
+ ubi.1.d:0 "The price tag of universal basic income has become impossible to ignore. Fiscal conservatives have seized on the projected expenditure, warning that an unconditional payment to every citizen — employed or not, wealthy or poor — will place an unsustainable burden on public finances. The government must decide whether to commit to full funding now or buy time with a phased approach."
+ ubi.1.f:0 "Every promise of universal provision eventually meets the same question: who pays, and how much?"
+ ubi.1.a:0 "Commit to full funding — absorb the cost and press forward."
+ ubi.1.b:0 "Phase in payments — delay full implementation to manage costs."
+
+ ubi.2.t:0 "Will Anyone Work?"
+ ubi.2.d:0 "Employers and landowners have found their rallying cry against universal basic income: if the state guarantees an income regardless of effort, why would anyone choose to labour? The argument is intuitive and politically potent, even if the evidence is more ambiguous. The government must choose between making the economic case for UBI on its merits, or conceding the concern by attaching minimum work requirements to the payments."
+ ubi.2.f:0 "The fear that people will stop working if given the chance has outlasted every policy that proved it wrong."
+ ubi.2.a:0 "Make the economic case — security enables productivity, not idleness."
+ ubi.2.b:0 "Attach work requirements — concede the concern to reduce resistance."
+
+ ubi.3.t:0 "Freedom From Want"
+ ubi.3.d:0 "For the trade unions, universal basic income is not merely a welfare policy — it is the fulfilment of the labour movement's oldest demand: freedom from the compulsion of poverty. With the legislation underway, union leaders are eager to claim the moment as their own, lending organised political muscle to the enactment effort. The government must decide whether to embrace that alliance or to keep the rollout as a quiet administrative matter."
+ ubi.3.f:0 "The right to say no to bad work has always been the real demand behind every wage dispute."
+ ubi.3.a:0 "Embrace the mandate — let the unions lead the public campaign."
+ ubi.3.b:0 "Keep it a government initiative — avoid over-politicizing the rollout."
+
+ welfare_ubi_fiscal_alarm:0 "Fiscal Alarm Raised"
+ welfare_ubi_fiscal_alarm_desc:0 "Fiscal conservatives have mobilized against the projected cost of universal basic income, stalling the enactment process and forcing the government onto the defensive."
+
+ welfare_ubi_funded_commitment:0 "Funded State Commitment"
+ welfare_ubi_funded_commitment_desc:0 "The government has committed to absorbing the full cost of UBI, strengthening its enactment position at significant expense to the public purse."
+
+ welfare_ubi_labour_disincentive_debate:0 "Labour Disincentive Rebutted"
+ welfare_ubi_labour_disincentive_desc:0 "The government has engaged publicly with concerns about work incentives, making the economic case that financial security enables rather than undermines labour participation."
+
+ welfare_ubi_work_requirements:0 "Work Requirements Attached"
+ welfare_ubi_work_requirements_desc:0 "Minimum work conditions have been attached to UBI payments, slowing implementation but reducing employer opposition to the law."
+
+ welfare_ubi_popular_mandate:0 "Popular Mandate Declared"
+ welfare_ubi_popular_mandate_desc:0 "The trade unions have publicly declared UBI the culmination of the labour movement's struggle, adding organised political momentum to the enactment effort."
+
+ welfare_ubi_employers_unconvinced:0 "Employers Unconvinced"
+ welfare_ubi_employers_unconvinced_desc:0 "Despite the government's economic arguments, the employer class remains sceptical that unconditional income will not reduce the labour supply."
+
+ welfare_ubi_employers_appeased:0 "Employers Appeased"
+ welfare_ubi_employers_appeased_desc:0 "Work requirements have softened employer opposition to UBI, reducing their active resistance to the law's passage."
+
+ welfare_ubi_unions_mobilized:0 "Unions Mobilized"
+ welfare_ubi_unions_mobilized_desc:0 "The trade unions are actively campaigning for universal basic income, framing it as the definitive victory in the long struggle for workers' economic freedom."
+
+ welfare_ubi_unions_sidelined:0 "Unions Sidelined"
+ welfare_ubi_unions_sidelined_desc:0 "The government's decision to keep UBI as a quiet administrative rollout has left the trade unions frustrated and disengaged from the enactment effort."
+
+ gun_laws.1.t:0 "The Safety Argument"
+ gun_laws.1.d:0 "Reformers and public health advocates have seized on the firearms ban as a moment to make the evidence-based case: fewer guns in circulation means fewer deaths. The data, they argue, is unambiguous. The government must decide whether to formally embrace this framing, lending the ban intellectual credibility, or to keep the debate on law-and-order terms and sideline the public health voices."
+ gun_laws.1.f:0 "The safest societies are not always the most armed ones."
+ gun_laws.1.a:0 "Embrace the public health framing — the data is on our side."
+ gun_laws.1.b:0 "Frame it as law and order — keep the public health advocates out."
+
+ # ==========================================
+ # gun_laws.2 — The Armed Forces Weigh In
+ # ==========================================
+ gun_laws.2.t:0 "The Armed Forces Weigh In"
+ gun_laws.2.d:0 "Military leadership has an interest in the firearms ban that goes beyond politics. A disarmed civilian population is harder to organize against the state, easier to conscript on state terms, and less likely to sustain an insurgency. Their backing could be decisive — but bringing the military into a domestic legislative debate carries its own complications."
+ gun_laws.2.f:0 "The army has always known that the most dangerous weapon is the one not under its command."
+ gun_laws.2.a:0 "Welcome their backing — a disarmed population is an orderly one."
+ gun_laws.2.b:0 "Keep the military out of domestic law — this is a civilian matter."
+
+ # ==========================================
+ # gun_laws.3 — Rural Resistance
+ # ==========================================
+ gun_laws.3.t:0 "Rural Resistance"
+ gun_laws.3.d:0 "The countryside is not listening to the argument being made in the capital. For rural communities, firearms are not a political statement — they are tools, inherited alongside the land, used for hunting, for livestock protection, and for the basic security of isolated settlements. Restricting them is not a policy question but a personal affront. The government must decide how firmly to hold the line."
+ gun_laws.3.f:0 "The people who wrote the law have never had to wait three hours for a constable."
+ gun_laws.3.a:0 "Hold firm — urban laws apply everywhere equally."
+ gun_laws.3.b:0 "Offer rural exemptions — hunting and livestock protection are legitimate uses."
+
+ # ==========================================
+ # gun_laws.4 — A Right, Not a Privilege
+ # ==========================================
+ gun_laws.4.t:0 "A Right, Not a Privilege"
+ gun_laws.4.d:0 "The advocates of unrestricted firearms have found their argument and they are not letting go of it: ownership is a right, not a privilege to be granted by the state. Any licensing system, any registration requirement, any restriction at all is the first step on the road to tyranny. The government must decide whether to embrace this framing and the political energy it generates, or to make the case on more practical grounds."
+ gun_laws.4.f:0 "There is a particular kind of freedom that can only be held at gunpoint."
+ gun_laws.4.a:0 "Embrace the liberty argument — an armed citizenry is a free one."
+ gun_laws.4.b:0 "Frame it practically — focus on self-defence and conscription readiness."
+
+ # ==========================================
+ # gun_laws.5 — The Safety Lobby Fights Back
+ # ==========================================
+ gun_laws.5.t:0 "The Safety Lobby Fights Back"
+ gun_laws.5.d:0 "The intelligentsia and public health voices that opposed the firearms ban have not gone quiet — they have redirected their energy toward opposing unrestricted ownership. Their arguments are familiar: the evidence does not support the claim that more guns produce safer societies. The government must decide whether to engage them in public debate or to deny them the platform."
+ gun_laws.5.f:0 "Every argument for unrestricted firearms eventually has to answer for the bodies."
+ gun_laws.5.a:0 "Rebut them publicly — freedom carries its own risks."
+ gun_laws.5.b:0 "Ignore them — do not dignify the opposition with a response."
+
+ # ==========================================
+ # gun_laws.6 — Licensing Is Not Freedom
+ # ==========================================
+ gun_laws.6.t:0 "Licensing Is Not Freedom"
+ gun_laws.6.d:0 "The licensed firearms bill has managed the rare feat of uniting both sides of the debate in opposition. Gun rights advocates see any licensing requirement as an infringement on a fundamental liberty. Safety advocates see it as a half-measure that does nothing meaningful to reduce harm. The government finds itself defending a middle ground that neither flank wants to occupy."
+ gun_laws.6.f:0 "A compromise that satisfies no one may still be the right answer."
+ gun_laws.6.a:0 "Defend the middle ground — licensing is reasonable and proportionate."
+ gun_laws.6.b:0 "Acknowledge the tension — promise a review once the law beds in."
+
+ gun_law_safety_argument:0 "Public Health Case Made"
+ gun_law_safety_argument_desc:0 "The government has adopted a public health framing for the firearms ban, lending the legislation intellectual credibility and broadening its appeal."
+
+ gun_law_military_position:0 "Military Endorsement"
+ gun_law_military_position_desc:0 "Military leadership has publicly backed civilian disarmament, adding institutional authority to the enactment effort."
+
+ gun_law_rural_resistance:0 "Rural Resistance"
+ gun_law_rural_resistance_desc:0 "Rural communities are actively resisting firearms restrictions, stalling the legislative process and forcing the government to justify the law to its most affected citizens."
+
+ gun_law_rights_framing:0 "Liberty Framing Adopted"
+ gun_law_rights_framing_desc:0 "The government has embraced the argument that gun ownership is a fundamental right, energizing supporters and lending the law a principled foundation."
+
+ gun_law_practical_framing:0 "Practical Framing Adopted"
+ gun_law_practical_framing_desc:0 "The case for unrestricted firearms has been made on practical grounds — self-defence and conscription readiness — rather than ideological ones."
+
+ gun_law_safety_lobby_opposition:0 "Safety Lobby Opposition"
+ gun_law_safety_lobby_opposition_desc:0 "Public health advocates and the intelligentsia are mounting organised opposition to unrestricted firearms, stalling the enactment process."
+
+ gun_law_compromise_resistance:0 "Compromise Under Fire"
+ gun_law_compromise_resistance_desc:0 "The licensed firearms bill is being resisted from both directions — gun rights advocates see it as an infringement, safety advocates see it as insufficient."
+
+ gun_law_compromise_defended:0 "Compromise Defended"
+ gun_law_compromise_defended_desc:0 "The government has made a public case for the licensed firearms middle ground, pushing back against opposition from both flanks."
+
+ gun_law_intelligentsia_engaged:0 "Intelligentsia Engaged"
+ gun_law_intelligentsia_engaged_desc:0 "Public health researchers and reformers are actively lending their authority to the case for firearms restrictions."
+
+ gun_law_intelligentsia_sidelined:0 "Intelligentsia Sidelined"
+ gun_law_intelligentsia_sidelined_desc:0 "The government has chosen to frame the firearms ban as a law and order matter, keeping public health voices out of the debate."
+
+ gun_law_intelligentsia_rebuked:0 "Intelligentsia Rebuked"
+ gun_law_intelligentsia_rebuked_desc:0 "The safety lobby has been publicly challenged and their arguments dismissed, though this has sharpened their opposition."
+
+ gun_law_intelligentsia_ignored:0 "Intelligentsia Ignored"
+ gun_law_intelligentsia_ignored_desc:0 "The government has declined to engage with safety lobby opposition, denying them a platform at the cost of deepening their frustration."
+
+ gun_law_military_backing:0 "Military Backing"
+ gun_law_military_backing_desc:0 "The armed forces have publicly endorsed civilian disarmament, lending decisive institutional weight to the enactment effort."
+
+ gun_law_military_sidelined:0 "Military Sidelined"
+ gun_law_military_sidelined_desc:0 "The government has kept military leadership out of the domestic firearms debate, leaving the armed forces disengaged from the legislative process."
+
+ gun_law_rural_folk_alienated:0 "Rural Folk Alienated"
+ gun_law_rural_folk_alienated_desc:0 "Uniform enforcement of firearms restrictions has left rural communities feeling targeted by a government that does not understand their way of life."
+
+ gun_law_rural_folk_appeased:0 "Rural Folk Appeased"
+ gun_law_rural_folk_appeased_desc:0 "Exemptions for hunting and livestock protection have softened rural opposition to the restrictions without abandoning the law's core intent."
+
+ gun_law_rural_folk_energized:0 "Rural Folk Energized"
+ gun_law_rural_folk_energized_desc:0 "The liberty framing of unrestricted firearms has resonated powerfully with rural communities, generating strong grassroots support for the law."
+ 
+  # ==========================================
+ # lgbtq_laws.1 — The Church Demands Action
+ # ==========================================
+ lgbtq_laws.1.t:0 "The Church Demands Action"
+ lgbtq_laws.1.d:0 "The devout have made their position clear: the active suppression of homosexuality is not merely a political preference but a moral obligation. Religious leaders are demanding that the government frame the legislation in explicitly theological terms, lending the weight of divine authority to the law. The government must decide whether to embrace that framing or to keep the justification on secular grounds."
+ lgbtq_laws.1.f:0 "The most dangerous laws are the ones that believe they answer to a higher authority."
+ lgbtq_laws.1.a:0 "Embrace the moral framing — this is a matter of divine law."
+ lgbtq_laws.1.b:0 "Frame it as social order — keep religion out of the justification."
+
+ # ==========================================
+ # lgbtq_laws.2 — The Cost of Enforcement
+ # ==========================================
+ lgbtq_laws.2.t:0 "The Cost of Enforcement"
+ lgbtq_laws.2.d:0 "A law against homosexuality is only as effective as its enforcement. The question before the government is not whether to restrict — that debate is settled — but how aggressively the state apparatus will pursue violations. Full enforcement is expensive and invasive. Passive enforcement relies on social pressure and denunciation. Each approach carries its own costs."
+ lgbtq_laws.2.f:0 "The state that legislates private behaviour must decide how deeply into private life it is willing to reach."
+ lgbtq_laws.2.a:0 "Full enforcement — spare no expense."
+ lgbtq_laws.2.b:0 "Passive enforcement — let social pressure do the work."
+
+ # ==========================================
+ # lgbtq_laws.3 — Decriminalization Is Not Endorsement
+ # ==========================================
+ lgbtq_laws.3.t:0 "Decriminalization Is Not Endorsement"
+ lgbtq_laws.3.d:0 "Conservative voices have greeted the decriminalization bill with predictable alarm. The government's preferred argument — that removing criminal penalties does not constitute moral endorsement — has not satisfied them. The question is whether to make that case publicly and directly, or to proceed quietly and avoid the attention that a public debate would generate."
+ lgbtq_laws.3.f:0 "The distance between tolerance and approval has never felt so contested."
+ lgbtq_laws.3.a:0 "Make the case clearly — decriminalization removes punishment, not endorsement."
+ lgbtq_laws.3.b:0 "Keep it quiet — pass the reform without drawing attention to it."
+
+ # ==========================================
+ # lgbtq_laws.4 — The Intelligentsia Makes Its Case
+ # ==========================================
+ lgbtq_laws.4.t:0 "The Intelligentsia Makes Its Case"
+ lgbtq_laws.4.d:0 "Reformers and legal scholars have entered the debate with a straightforward argument: the state has no legitimate interest in the private conduct of consenting adults, and the criminalization of homosexuality is a violation of the most basic principles of personal liberty. The government must decide whether to formally align with this argument or to keep the reform on purely legislative terms."
+ lgbtq_laws.4.f:0 "Liberty that requires permission from the state is not liberty at all."
+ lgbtq_laws.4.a:0 "Let them lead the argument — personal liberty is inalienable."
+ lgbtq_laws.4.b:0 "Keep it legislative — avoid the philosophical debate."
+
+ # ==========================================
+ # lgbtq_laws.5 — Marriage Is a Social Institution
+ # ==========================================
+ lgbtq_laws.5.t:0 "Marriage Is a Social Institution"
+ lgbtq_laws.5.d:0 "Conservatives have found their most potent argument against marriage equality: marriage is not merely a legal arrangement but a social institution with roots older than the state itself. To redefine it is to unravel something that cannot be put back together. The government must choose between confronting this argument head-on or attempting to soften the opposition through religious exemptions."
+ lgbtq_laws.5.f:0 "Every institution was new once."
+ lgbtq_laws.5.a:0 "Reframe it — civil marriage belongs to the state, not the church."
+ lgbtq_laws.5.b:0 "Offer religious exemptions — churches may decline to perform ceremonies."
+
+ # ==========================================
+ # lgbtq_laws.6 — Equal Before the Law
+ # ==========================================
+ lgbtq_laws.6.t:0 "Equal Before the Law"
+ lgbtq_laws.6.d:0 "The intelligentsia has framed marriage equality as the logical conclusion of civil rights — a society that grants some citizens rights it denies to others on the basis of who they love is a society that has not yet made good on its own promises. The government must decide whether to treat this moment as a landmark or to extend the rights quietly without the weight of declaration."
+ lgbtq_laws.6.f:0 "Equality that has to be kept quiet was never quite equality at all."
+ lgbtq_laws.6.a:0 "Make it a landmark — equality before the law admits no exceptions."
+ lgbtq_laws.6.b:0 "Keep it administrative — extend the rights quietly without a declaration."
+
+ # ==========================================
+ # abortion_laws.1 — Life Begins at Conception
+ # ==========================================
+ abortion_laws.1.t:0 "Life Begins at Conception"
+ abortion_laws.1.d:0 "The devout have arrived at the abortion debate with a position that admits no compromise: life begins at conception, and the state is morally obligated to protect it from that moment forward. Their demand is not merely that abortion be banned, but that the ban be framed in terms that reflect its moral seriousness. The government must decide whether to embrace that framing or to justify the law on demographic and political grounds instead."
+ abortion_laws.1.f:0 "The most absolute moral positions are the ones that leave no room for the hardest cases."
+ abortion_laws.1.a:0 "Embrace the moral framing — life is sacred and the state must protect it."
+ abortion_laws.1.b:0 "Frame it as demographic policy — keep religion out of the justification."
+
+ # ==========================================
+ # abortion_laws.2 — The Exceptions Question
+ # ==========================================
+ abortion_laws.2.t:0 "The Exceptions Question"
+ abortion_laws.2.d:0 "No sooner has the bill entered the enactment process than its opponents have found the most difficult ground on which to contest it: the cases of rape, incest, and medical necessity. These are the cases that turn abstract moral positions into lived realities. The government must decide whether to hold the line with an absolute ban or to carve out narrow medical exceptions that acknowledge the hardest circumstances."
+ abortion_laws.2.f:0 "Abstract principles have a way of becoming very concrete when they are someone else's life."
+ abortion_laws.2.a:0 "No exceptions — the law must be absolute to mean anything."
+ abortion_laws.2.b:0 "Allow narrow medical exceptions — the hardest cases must be addressed."
+
+ # ==========================================
+ # abortion_laws.3 — The State Has No Place in This Decision
+ # ==========================================
+ abortion_laws.3.t:0 "The State Has No Place in This Decision"
+ abortion_laws.3.d:0 "The case for unrestricted abortion has found its most powerful formulation in the language of bodily autonomy: no state has the right to compel a person to continue a pregnancy against their will. The intelligentsia is making this argument publicly and with considerable force. The government must decide whether to adopt it as the centrepiece of the reform or to present the change as a straightforward matter of healthcare access."
+ abortion_laws.3.f:0 "The right to one's own body is either universal or it is not a right at all."
+ abortion_laws.3.a:0 "Make bodily autonomy the centrepiece — no state has the right to compel pregnancy."
+ abortion_laws.3.b:0 "Frame it as healthcare — keep the philosophical argument out."
+
+ # ==========================================
+ # abortion_laws.4 — The Devout Will Not Yield
+ # ==========================================
+ abortion_laws.4.t:0 "The Devout Will Not Yield"
+ abortion_laws.4.d:0 "Any movement toward liberalizing abortion law has been met with organised religious opposition that shows no sign of softening. The devout regard this as a matter on which no compromise is possible, and they are prepared to use every political tool available to stall the legislation. The government must decide whether to confront them directly or to offer conscience protections that soften their resistance without satisfying their demands."
+ abortion_laws.4.f:0 "The opposition that believes it is answering to God is the hardest opposition to negotiate with."
+ abortion_laws.4.a:0 "Confront them directly — the state governs, not the church."
+ abortion_laws.4.b:0 "Offer conscience protections — medical staff may decline on moral grounds."
+
+ # ==========================================
+ # LGBTQ Enactment Modifier Localization
+ # ==========================================
+ lgbtq_law_religious_mandate:0 "Religious Mandate Declared"
+ lgbtq_law_religious_mandate_desc:0 "The devout have publicly framed the oppression law as a moral and religious obligation, lending theological authority to the enactment effort."
+
+ lgbtq_law_enforcement_scope:0 "Enforcement Scope Set"
+ lgbtq_law_enforcement_scope_desc:0 "The government has committed to active enforcement of the restrictions, strengthening the law's legislative momentum."
+
+ lgbtq_law_enforcement_cost:0 "Enforcement Costs Absorbed"
+ lgbtq_law_enforcement_cost_desc:0 "Full enforcement of the restrictions is being funded, placing additional strain on public expenditure."
+
+ lgbtq_law_decrim_framing:0 "Decriminalization Framed"
+ lgbtq_law_decrim_framing_desc:0 "The government has carefully framed decriminalization as the removal of punishment rather than an endorsement, easing the path through debate."
+
+ lgbtq_law_quiet_passage:0 "Quiet Passage Attempted"
+ lgbtq_law_quiet_passage_desc:0 "The decision to avoid public debate has slowed the enactment process as the reform proceeds without organised public support."
+
+ lgbtq_law_liberty_argument:0 "Liberty Argument Made"
+ lgbtq_law_liberty_argument_desc:0 "The intelligentsia has publicly framed decriminalization as a matter of personal liberty, lending philosophical credibility to the reform."
+
+ lgbtq_law_institution_debate:0 "Institution Debate Engaged"
+ lgbtq_law_institution_debate_desc:0 "The government has entered into public debate over the nature of marriage as a civil institution, shifting the terms of the enactment fight."
+
+ lgbtq_law_religious_exemptions:0 "Religious Exemptions Offered"
+ lgbtq_law_religious_exemptions_desc:0 "Religious institutions have been offered exemptions from performing same-sex ceremonies, slowing implementation but softening conservative opposition."
+
+ lgbtq_law_equality_mandate:0 "Equality Mandate Declared"
+ lgbtq_law_equality_mandate_desc:0 "The government has formally declared marriage equality a civil rights landmark, generating strong political momentum for enactment."
+
+ lgbtq_law_devout_empowered:0 "Devout Empowered"
+ lgbtq_law_devout_empowered_desc:0 "The religious community has been formally brought into the legislative framing, strengthening their political position and deepening their engagement."
+
+ lgbtq_law_devout_sidelined:0 "Devout Sidelined"
+ lgbtq_law_devout_sidelined_desc:0 "The government has kept religious framing out of the justification, leaving the devout disengaged and quietly frustrated."
+
+ lgbtq_law_conservatives_unconvinced:0 "Conservatives Unconvinced"
+ lgbtq_law_conservatives_unconvinced_desc:0 "The conservative opposition has heard the government's framing and remains unpersuaded, maintaining their resistance to the reform."
+
+ lgbtq_law_conservatives_rebuked:0 "Conservatives Rebuked"
+ lgbtq_law_conservatives_rebuked_desc:0 "The government has publicly challenged conservative opposition to marriage equality, embarrassing their position but sharpening their resolve."
+
+ lgbtq_law_conservatives_placated:0 "Conservatives Placated"
+ lgbtq_law_conservatives_placated_desc:0 "Religious exemptions have reduced the immediate intensity of conservative opposition without resolving the underlying disagreement."
+
+ lgbtq_law_intelligentsia_engaged:0 "Intelligentsia Engaged"
+ lgbtq_law_intelligentsia_engaged_desc:0 "Reformers and legal scholars are actively making the public case for LGBTQ rights, lending intellectual authority to the enactment effort."
+
+ lgbtq_law_intelligentsia_sidelined:0 "Intelligentsia Sidelined"
+ lgbtq_law_intelligentsia_sidelined_desc:0 "The government has chosen to keep the reform on legislative rather than philosophical terms, leaving the intelligentsia without a formal role in the debate."
+
+ abortion_law_moral_absolute:0 "Moral Absolute Declared"
+ abortion_law_moral_absolute_desc:0 "The devout have successfully framed the abortion ban as a moral absolute, lending theological authority to the enactment effort."
+
+ abortion_law_demographic_framing:0 "Demographic Framing Adopted"
+ abortion_law_demographic_framing_desc:0 "The government has justified the abortion ban on demographic and political grounds, keeping religious language out of the official justification."
+
+ abortion_law_exceptions_debate:0 "Exceptions Debate Resolved"
+ abortion_law_exceptions_debate_desc:0 "The government has taken a clear position on the exceptions question, providing a firm basis for the enactment process to continue."
+
+ abortion_law_medical_exceptions:0 "Medical Exceptions Allowed"
+ abortion_law_medical_exceptions_desc:0 "Narrow medical exceptions have been written into the legislation, slowing passage but reducing opposition from moderates."
+
+ abortion_law_autonomy_argument:0 "Bodily Autonomy Argued"
+ abortion_law_autonomy_argument_desc:0 "The intelligentsia has made bodily autonomy the centrepiece of the case for unrestricted abortion, generating strong support among reformist IGs."
+
+ abortion_law_healthcare_framing:0 "Healthcare Framing Adopted"
+ abortion_law_healthcare_framing_desc:0 "The government has framed unrestricted abortion as a healthcare matter, broadening its appeal while avoiding the deeper philosophical debate."
+
+ abortion_law_religious_opposition:0 "Religious Opposition Mounted"
+ abortion_law_religious_opposition_desc:0 "The devout are actively stalling the liberalization of abortion law, mounting organised opposition that is testing the government's resolve."
+
+ abortion_law_devout_empowered:0 "Devout Empowered"
+ abortion_law_devout_empowered_desc:0 "The religious community has been placed at the centre of the abortion ban's justification, strengthening their political position considerably."
+
+ abortion_law_devout_sidelined:0 "Devout Sidelined"
+ abortion_law_devout_sidelined_desc:0 "The government has kept religious framing out of the abortion ban, leaving the devout present but without a formal role in the justification."
+
+ abortion_law_devout_rebuked:0 "Devout Rebuked"
+ abortion_law_devout_rebuked_desc:0 "The government has directly confronted religious opposition to abortion liberalization, weakening the devout's political position but radicalizing their base."
+
+ abortion_law_devout_appeased:0 "Devout Appeased"
+ abortion_law_devout_appeased_desc:0 "Conscience protections for medical staff have softened religious opposition to abortion liberalization without satisfying the devout's core demands."
+
+ abortion_law_intelligentsia_engaged:0 "Intelligentsia Engaged"
+ abortion_law_intelligentsia_engaged_desc:0 "Legal scholars and reformers are actively making the public case for abortion rights, lending intellectual and moral credibility to the enactment effort."
+
+ abortion_law_intelligentsia_sidelined:0 "Intelligentsia Sidelined"
+ abortion_law_intelligentsia_sidelined_desc:0 "The decision to frame abortion access as a healthcare matter has kept the intelligentsia out of the philosophical debate they wanted to lead."

@@ -1,0 +1,749 @@
+﻿l_simp_chinese:
+
+ # ==========================================
+ # ENACTMENT EVENT LOCALIZATION
+ # ==========================================
+
+ # drug_laws.1 — Cost of Prohibition
+ drug_laws.1.t:0 "禁止的代价"
+ drug_laws.1.d:0 "禁止 " x id=0 " 中所有中毒物质的运动已经开始,但执法费用昂贵。 警察和检察官需要资源。 边界需要被监视。 另一种做法——宣布禁止和希望遵守——在任何地方都没有奏效。"
+ drug_laws.1.f:0 "不强制执行的法律是一种建议。"
+ drug_laws.1.a:0 "全面执行——不遗余力"
+ drug_laws.1.b:0 "衡量执法情况——逐步建立合规性"
+
+ # drug_laws.2 — The Church Speaks
+ drug_laws.2.t:0 "[SCOPE.sCharacter('devout_leader').GetPrimaryRoleTitle] (韩语). 说话"
+ drug_laws.2.d:0 "领导者[SCOPE.sCharacter('devout_leader').GetFullName], 框架是明确的道德——醉为精神腐败,禁止作为国家的正义工作。 问题是,是接受这一框架还是维持立法的世俗基础。"
+ drug_laws.2.f:0 "道德权威和法律权威不是一回事——但两者可以合作."
+ drug_laws.2.a:0 "欢迎他们的支持——统一战线加强法律"
+ drug_laws.2.b:0 "保持世俗主义,"
+
+ # drug_laws.3 — The Intelligentsia Makes Its Case
+ drug_laws.3.t:0 "[SCOPE.sCharacter('intelligentsia_leader').GetFullName] (中文(简体) ). 提出证据的理由"
+ drug_laws.3.d:0 "代表 " x id=1 " 的 " x id=0 " 发表了一份详细分析已经颁布 " x id=1 " 的国家的毒品非刑罪化政策。 调查结果是明确的:监禁率下降、过量死亡下降、执行费用下降。 报告正在被广泛阅读——并且受到主张证据的保守利益集团的广泛攻击,这是不切实际的。"
+ drug_laws.3.f:0 "数据并不关心辩论。"
+ drug_laws.3.a:0 "支持研究——发表并让证据主导"
+ drug_laws.3.b:0 "让学者远离政治"
+
+ # drug_laws.4 — Medical Establishment
+ drug_laws.4.t:0 "医生支持减少伤害"
+ drug_laws.4.d:0 "由公共卫生官员和戒毒专家领导的 " x id=0 " 医疗机构已正式支持拟议的安全注射场所立法。 他们的观点是直截了当的:有监督的消费可以减少过量的死亡,将使用者与治疗联系起来,并且不会增加吸毒率. 其他国家的证据是令人信服的。 宗教和保守团体的政治反对派同样可以预见。"
+ drug_laws.4.f:0 "医学不是道德 但众生即是众生."
+ drug_laws.4.a:0 "支持医学共识——证据清楚"
+ drug_laws.4.b:0 "这是道德问题 医学没有答案"
+
+ # drug_laws.5 — International Condemnation
+ drug_laws.5.t:0 "世界观察"
+ drug_laws.5.d:0 "毒品贸易合法化的前景已引起国际社会立即注意。 [SCOPE.sCountry('c:USA').GetName]已发出正式外交照会,表示关切。 其他多届政府纷纷表示不满. 关于禁止毒品的国际共识是明确的——无论这种共识如何不完善地执行——而且 " x id=2/ " 即将脱离这一共识。"
+ drug_laws.5.f:0 "主权是很容易宣布的。 其后果需要更长的时间才能到达。"
+ drug_laws.5.a:0 "拒绝国际舆论——[ROOT.GetCountry.GetName] 制定自己的法律"
+ drug_laws.5.b:0 "悄悄地进行——不要发言,不要招来对抗"
+
+ # drug_laws.6 — Criminal Networks Resist
+ drug_laws.6.t:0 "卡特尔与法律斗争"
+ drug_laws.6.d:0 "拟议的毒品立法威胁到现有的犯罪经济。 从目前容忍和禁止之间的灰色地带获益的网络已开始积极反对法律的通过——腐蚀地方官员,散布虚假信息,有时还恐吓立法者。 后推被组织起来,资金充足,且有效. \n\n[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName]必须决定如何响应."
+ drug_laws.6.f:0 "卡特尔更喜欢给予它们经营空间的法律。"
+ drug_laws.6.a:0 "接受挫折——更加小心"
+ drug_laws.6.b:0 "加紧执法——铲除抵制法律的网络"
+
+ # ==========================================
+ # ENACTMENT MODIFIER NAMES
+ # ==========================================
+
+ drug_law_prohibition_enforcement:0 "禁止执法运动"
+ drug_law_prohibition_enforcement_desc:0 "资源充足的执法运动正在增加颁布和遵守禁令的机会。"
+
+ drug_law_enforcement_cost:0 "执行支出"
+ drug_law_enforcement_cost_desc:0 "毒品执法运动的费用对国家预算提出了额外要求。"
+
+ drug_law_religious_backing:0 "宗教认可"
+ drug_law_religious_backing_desc:0 "宗教机构的支持正在赋予立法道德权威,并增加其通过的机会。"
+
+ drug_law_devout_empowered:0 "毒品辩论赋予的权力"
+ drug_law_devout_empowered_desc:0 "与禁止毒品立法有关的公共协会加强了这一群体的政治地位。"
+
+ drug_law_academic_push:0 "学术证据运动"
+ drug_law_academic_push_desc:0 "支持非刑罪化的公开研究正在改变辩论的条件,使之有利于立法。"
+
+ drug_law_intelligentsia_engaged:0 "智能游戏"
+ drug_law_intelligentsia_engaged_desc:0 "知识分子积极参与了毒品政策辩论,提升了立法运动的公信力."
+
+ drug_law_intelligentsia_ignored:0 "边线"
+ drug_law_intelligentsia_ignored_desc:0 "将学术声音排除在药物政策辩论之外的决定使知识分子感到沮丧."
+
+ drug_law_medical_backing:0 "法律背后的医学共识"
+ drug_law_medical_backing_desc:0 "医疗机构的认可为减少伤害立法提供了科学的可信度。"
+
+ drug_law_moral_framing:0 "道德而不是医学上的伤痛"
+ drug_law_moral_framing_desc:0 "将毒品政策视为道德问题而不是医学问题,使安全注射场所的循证案例复杂化。"
+
+ drug_law_international_pressure:0 "国际谴责"
+ drug_law_international_pressure_desc:0 "对拟议立法的国际压力使立法的通过复杂化并损害到[ROOT.GetCountry.GetName]的声誉。"
+
+ drug_law_sovereignty_declared:0 "主权要求"
+ drug_law_sovereignty_declared_desc:0 "[ROOT.GetCountry.GetName]公开宣称,不管国际舆论如何,它有权制定自己的毒品政策。"
+
+ drug_law_criminal_pushback:0 "打击犯罪网络"
+ drug_law_criminal_pushback_desc:0 "有组织犯罪正在积极努力防止通过可能威胁其行动的毒品立法。"
+
+ # disability_laws.1 — Employer Resistance
+ disability_laws.1.t:0 "雇主反对工作场所住宿"
+ disability_laws.1.d:0 "拟议的工作场所住宿立法从 " x id=0 " 雇主那里得到了有组织的回应。 [SCOPE.sCharacter('employer_leader').GetFullName],代表[SCOPE.gsInterestGroup('employer_ig').GetName]发言,认为合规成本不可行——小企业尤其不能承担设备改造、调整职责和改造工作场所以容纳残疾雇员的费用。 \n\n 政府必须决定如何应对。"
+ disability_laws.1.f:0 "每个包容性政策都有人认为成本太高。"
+ disability_laws.1.a:0 "坚持——遵守法律不是可选择的"
+ disability_laws.1.b:0 "提供过渡期——数年分阶段遵守"
+ 
+ # disability_laws.2 — Construction Lobby
+ disability_laws.2.t:0 "建筑业物体"
+ disability_laws.2.d:0 "拟议的无障碍基础设施立法遭到建筑业的正式反对。 他们的论点:要求对现有建筑物进行改造以达到无障碍标准在技术上是复杂的,对许多财产所有人来说是极其昂贵的。 他们要求要么为现有结构制定祖父条款,要么规定更长的执行时限。"
+ disability_laws.2.f:0 "没有坡道建造的每一栋建筑,现在都成了政治问题."
+ disability_laws.2.a:0 "执行严格的标准——充分遵守时间表,无例外"
+ disability_laws.2.b:0 "分阶段遵守——祖父现有结构,新建筑的新标准"
+ 
+ # disability_laws.3 — Who Pays
+ disability_laws.3.t:0 "谁为无障碍基础设施付费?"
+ disability_laws.3.d:0 "无障碍基础设施立法引发了法案起草者迄今回避的一个问题:谁实际为改造付费? 如果义务完全由私人财产所有者承担,较小的地主和企业将负担过重。 如果国家补贴工作,公共预算将承担打击。 立法机构在这个问题上陷入了僵局."
+ disability_laws.3.f:0 "包容是有代价的。 争论在于谁支付."
+ disability_laws.3.a:0 "国家补助——政府承担改造费用以加快达标."
+ disability_laws.3.b:0 "私人义务——财产所有人承担遵守义务的费用"
+ 
+ # disability_laws.4 — Medical Endorsement
+ disability_laws.4.t:0 "[SCOPE.sCharacter('medical_leader').GetFullName] 认可公开治疗"
+ disability_laws.4.d:0 "`x id=0'的 " <x id=1"已公布了对公共治疗立法的正式认可,引用了国家资助的残疾治疗在劳动力参与方面产生可衡量收益、降低长期保健费用并改进整个人口的结果的证据。 支持者正在利用这种认可来辩称这不是慈善——而是投资。"
+ disability_laws.4.f:0 "医学没有区分值得治疗的病人和不值得治疗的病人。"
+ disability_laws.4.a:0 "委托编写公共卫生报告——让证据说明情况"
+ disability_laws.4.b:0 "保持政治框架——这是一个权利问题,而不是医学问题"
+ 
+ # disability_laws.5 — Fiscal Resistance
+ disability_laws.5.t:0 "[SCOPE.sCharacter('fiscal_leader').GetFullName] (中文(简体) ). 说国家无力支付这个"
+ disability_laws.5.d:0 "代表 " x id=1 " 的 " x id=0 " 作了严峻的评估:公共综合残疾治疗的持续费用是不可持续的。 州已伸. 这项立法如全部颁布,将要求增加或削减其他地方的税收。 问题不在于[ROOT.GetCountry.GetName]是否想要照顾其残疾公民,而在于是否能够照顾残疾公民。"
+ disability_laws.5.f:0 "预算是道德文件。"
+ disability_laws.5.a:0 "坚持到底——费用是道德义务,不是选择"
+ disability_laws.5.b:0 "支出阶段——数年实施"
+ 
+ # disability_laws.6 — Advocates Rally
+ disability_laws.6.t:0 "残疾人倡导者提出他们的理由"
+ disability_laws.6.d:0 "残疾人权利组织联盟已开始开展支持拟议立法的公共运动。 他们的信息是直接的: " x id=0 " 社会将残疾人排除在充分参与之外太久了。 正在辩论的立法不是偏袒,而是纠正长期不公正的现象。 该运动吸引了同情的报导,并正在改变公众舆论。"
+ disability_laws.6.f:0 "没有我们我们什么也没有。"
+ disability_laws.6.a:0 "正式接待其代表团,正式支持竞选活动。"
+ disability_laws.6.b:0 "承认这场运动而不扩大范围"
+ 
+ # disability_laws.7 — Conservative Opposition
+ disability_laws.7.t:0 "[SCOPE.sCharacter('conservative_leader').GetFullName] (中文(简体) ). 领导反对派"
+ disability_laws.7.d:0 "`x id=0'的`x id=1'组织了反对残疾人立法的公共反对运动。 这个论点是众所周知的:国家依赖损害个人的特性,不能期望生产人口承担越来越大的支助负担,现有的私人慈善事业已经足够了。 这一框架受到残疾人权利团体的批评,但与部分选民一致。"
+ disability_laws.7.f:0 "反对包容的论点总是针对别人的负担."
+ disability_laws.7.a:0 "公开反驳——直接为立法提出道德理由"
+ disability_laws.7.b:0 "不要用回应来贬低它——按前进"
+ 
+ # ==========================================
+ # ENACTMENT MODIFIER NAMES
+ # ==========================================
+ 
+ disability_employer_pressure:0 "雇主合规运动"
+ disability_employer_pressure_desc:0 "政府坚决反对雇主的反抗。 立法将按计划进行。"
+ 
+ disability_compliance_delay:0 "雇主过渡期"
+ disability_compliance_delay_desc:0 "雇主有更多的时间遵守工作场所的住宿要求,从而延缓了法律的通过。"
+ 
+ disability_construction_lobby:0 "建筑业"
+ disability_construction_lobby_desc:0 "建筑业的反对意见已得到解决,减少了对无障碍基础设施立法的积极反对。"
+ 
+ disability_strict_standards:0 "严格遵守标准"
+ disability_strict_standards_desc:0 "制定了严格的无障碍标准,没有祖父条款。 遵守将充分和如期执行。"
+ 
+ disability_phased_compliance:0 "分阶段遵守基础设施规定"
+ disability_phased_compliance_desc:0 "现有结构是祖传的。 新标准仅适用于新建筑,减缓了法律更广泛的影响."
+ 
+ disability_funding_debate:0 "供资框架"
+ disability_funding_debate_desc:0 "由谁支付无障碍基础设施费用的问题已经解决,消除了通过法律的主要障碍。"
+ 
+ disability_state_subsidy:0 "国家基础设施补贴"
+ disability_state_subsidy_desc:0 "国家直接吸收改造费用. 遵守速度将加快——但预算面临额外压力。"
+ 
+ disability_medical_endorsement:0 "医疗机构"
+ disability_medical_endorsement_desc:0 "医务界公开认可公共残疾治疗,使立法具有科学可信性。"
+ 
+ disability_fiscal_resistance:0 "财政保守党"
+ disability_fiscal_resistance_desc:0 "解决了财政对公共残疾治疗的阻力. 法行而后进."
+ 
+ disability_phased_spending:0 "分阶段残疾治疗开支"
+ disability_phased_spending_desc:0 "公共残疾治疗将逐步逐步实施,以放慢推出速度为代价,减少眼前的预算压力。"
+ 
+ disability_advocate_push:0 "动员残疾人倡导者"
+ disability_advocate_push_desc:0 "残疾人权利组织开展的一场公共运动正在为立法形成政治势头。"
+ 
+ disability_conservative_opposition:0 "已解决的保守反对派"
+ disability_conservative_opposition_desc:0 "保守派反对残疾立法,并部分中和。"
+ 
+ disability_public_rebuttal:0 "保守反对派公开反驳"
+ disability_public_rebuttal_desc:0 "政府对于保守框架的直接反驳 改变了辩论的条件 支持立法。"
+ 
+  # environment_laws.1 — Industry Voluntary Compliance
+ environment_laws.1.t:0 "[SCOPE.sCharacter('industry_leader').GetFullName] 自愿遵守"
+ environment_laws.1.d:0 "[SCOPE.sCharacter('industry_leader').GetFullName] 代表 [SCOPE.gsInterestGroup('industry_ig').GetName] 发表公开提议:如果政府同意将自愿遵约机制纳入环境框架,而不是强制强制执行,工业界将进行合作。 这一提议被作为务实的伙伴关系提出。 批评者认为,这是企图在立法通过之前削弱立法。"
+ environment_laws.1.f:0 "自愿遵守是矿物燃料工业最喜欢的种类。"
+ environment_laws.1.a:0 "接受——将自愿遵守纳入框架"
+ environment_laws.1.b:0 "拒绝——只强制强制执行,不设例外"
+ 
+ # environment_laws.2 — Scientific Backing
+ environment_laws.2.t:0 "[SCOPE.sCharacter('science_leader').GetFullName] 发布环境报告"
+ environment_laws.2.d:0 "[SCOPE.sCharacter('science_leader').GetFullName]的[SCOPE.gsInterestGroup('science_ig').GetName]发表了一份综合研究报告,记录了[ROOT.GetCountry.GetName]当前轨迹的环境和公共卫生成本。 调查结果是明确的:污染水平正在上升,死亡率受到影响,生态系统受到压力。 报告的结论是,拟议的立法不仅是可取的,而且是必要的。"
+ environment_laws.2.f:0 "数据不待政治方便。"
+ environment_laws.2.a:0 "委托官方答复——在政府支持下公布调查结果"
+ environment_laws.2.b:0 "确认报告,但不加以扩充"
+ 
+ # environment_laws.3 — International Praise
+ environment_laws.3.t:0 "国际社会赞颂[ROOT.GetCountry.GetName]环境领导力"
+ environment_laws.3.d:0 "‘x id=0'提议的环境立法之言已传入国际社会,反应出人意料地热烈. 若干国家发表了表扬政府野心的声明。 环境宣传团体称 " x id=3/ " 是其他人效仿的模式。"
+ environment_laws.3.f:0 "领导地位比维持地位容易。"
+ environment_laws.3.a:0 "利用时机——主办国际环境会谈."
+ environment_laws.3.b:0 "保持这项国内义务——避免过度履行国际义务"
+ 
+ # environment_laws.4 — Compliance Cost Debate
+ environment_laws.4.t:0 "谁承担环境合规的成本?"
+ environment_laws.4.d:0 "环境立法引发了对责任的激烈辩论。 工业界认为,合规成本——改造工厂、改变供应链、更新废物管理——将不成比例地落在生产者和最终落在消费者身上。 环境团体反驳说,这些费用是几十年来公众默默地承担的真正污染代价。"
+ environment_laws.4.f:0 "污染总是要付出代价的。 问由谁出."
+ environment_laws.4.a:0 "污染者付费——工业承担其遵守规定的费用"
+ environment_laws.4.b:0 "国家补贴——政府分担加快收养的合规负担."
+ 
+ # environment_laws.5 — Constitutional Challenge
+ environment_laws.5.t:0 "[SCOPE.sCharacter('industry_opposition_leader').GetFullName] (中文(简体) ). 挑战自然权利的合法性"
+ environment_laws.5.d:0 "`x id=0'的`x id=1'已宣布对拟议的自然法保障权利提出正式的法律质疑。 论点:赋予河流、森林和生态系统以法律地位构成了对财产权和经济自由的违宪干涉。 这一挑战得到土地拥有和工业利益的大力支持。"
+ environment_laws.5.f:0 "大自然没有律师 它必须借用我们的。"
+ environment_laws.5.a:0 "捍卫框架——让法院就其案情作出裁决"
+ environment_laws.5.b:0 "限制范围——通过谈判避免长期的法律斗争"
+ 
+ # environment_laws.6 — Environmental Disaster
+ environment_laws.6.t:0 "环境灾害,以[SCOPE.sState('disaster_state_scope').GetName]"
+ environment_laws.6.d:0 "虽然环境立法正在辩论之中,但环境危机(工厂溢出、河流被污染或污染事件规模之大,已传入全国新闻)使 " x id=0 " 受到冲击。 时机很重要。 支持者认为,这证明迫切需要立法。 [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] 政府必须决定如何回应."
+ environment_laws.6.f:0 "每起灾难也是一种争论。"
+ environment_laws.6.a:0 "利用时机——要求紧急通过环境法"
+ environment_laws.6.b:0 "包含故事——管理公众反应而不升级"
+ 
+ env_voluntary_compliance:0 "行业自愿遵守"
+ env_voluntary_compliance_desc:0 "工业界同意自愿遵守环境框架,减少积极的反对并增加法律通过的机会。"
+ 
+ env_mandatory_enforcement:0 "强制性执行框架"
+ env_mandatory_enforcement_desc:0 "政府拒绝自愿遵守,主张强制执行。 法律更加有力——行业反对更加坚定."
+ 
+ env_scientific_backing:0 "科学界认可"
+ env_scientific_backing_desc:0 "一份支持环境立法的已发表的科学报告正在改变公众和立法意见,使之有利于环境立法。"
+ 
+ env_international_praise:0 "国际环境颂"
+ env_international_praise_desc:0 "国际承认[ROOT.GetCountry.GetName] 的环境领导正在为立法建立国内势头。"
+ 
+ env_diplomatic_push:0 "环境外交倡议"
+ env_diplomatic_push_desc:0 "[ROOT.GetCountry.GetName]正在主办国际环境会谈,为立法推动增添了外交声望."
+ 
+ env_compliance_cost_debate:0 "已解决的遵约成本框架"
+ env_compliance_cost_debate_desc:0 "关于谁承担环境履约费用的辩论已经解决,消除了立法道路上的一个主要障碍。"
+ 
+ env_polluter_pays:0 "污染者付费原则"
+ env_polluter_pays_desc:0 "工业界已对其自身的履约成本负责。 法律更有力;反对派更响亮."
+ 
+ env_state_subsidy:0 "国家环境合规补贴"
+ env_state_subsidy_desc:0 "国家正在补贴遵守环境规定,以减少工业阻力并加快采用。"
+ 
+ env_constitutional_challenge:0 "宪法挑战"
+ env_constitutional_challenge_desc:0 "对自然法保障权利的一项法律挑战减缓了通过立法机构的速度。"
+ 
+ env_legal_defence:0 "对自然权利的法律保护"
+ env_legal_defence_desc:0 "政府对自然权利框架的法律保护增强了人们对其宪法有效性的信心。"
+ 
+ env_disaster_response:0 "利用灾害促进立法"
+ env_disaster_response_desc:0 "政府利用了一场环境灾难来为环境法建立紧急的公共和立法支持."
+ 
+ env_disaster_suppressed:0 "包含的灾难故事"
+ env_disaster_suppressed_desc:0 "环境灾难得到了悄悄的管理。 公共压力尚未形成,而且也没有立法势头。"
+ 
+ env_disaster_state_modifier:0 "环境灾难"
+ env_disaster_state_modifier_desc:0 "该国遭受了环境灾难——溢出、被污染或生态崩溃——正在造成更多的污染并增加死亡率。"
+ 
+ childrens_childcare.1.t:0 "市场最知道"
+ childrens_childcare.1.d:0 "随着关于私营学前学校的辩论正在进行,商业协会已成为热情的支持者。 他们认为,私营供应商将竞争质量——推动国家垄断从未实现的创新。 然而,批评者警告说,如果没有有意义的监管,只有能够负担费用的家庭才会受益。"
+ childrens_childcare.1.f:0 "市场对一切有答. 是否有正确的一个在这里仍然有待观察。"
+ childrens_childcare.1.a:0 "让市场主导——竞争将推动质量上扬."
+ childrens_childcare.1.b:0 "规范定价——私营供应商必须保证准入。"
+
+ childrens_childcare.2.t:0 "谁抚养孩子?"
+ childrens_childcare.2.d:0 "随着正规的幼儿教育的扩大,宗教和传统的声音日益不安。 他们坚持认为,家庭是道德发展的适当摇篮,任何取代父母的机构,不管其用意如何,都有可能侵蚀民间社会的基础。"
+ childrens_childcare.2.f:0 "每个关于儿童的政策问题背后都有一个更深层的问题:他们属于谁?"
+ childrens_childcare.2.a:0 "说服他们——这支持家庭,而不是取而代之。"
+ childrens_childcare.2.b:0 "排除关注——早期教育不是一个道德问题."
+
+ childrens_childcare.3.t:0 "财政调整"
+ childrens_childcare.3.d:0 "普及儿童保育是一项雄心勃勃的承诺,也是一项昂贵的承诺。 财政保守派控制了预计费用,警告说国家不能简单地吸收这种规模的应享权利而不产生后果。 政府必须决定:吸收成本并推进,或者放慢推出速度并争取时间."
+ childrens_childcare.3.f:0 "每一个伟大的社会方案最终都会遇到其会计."
+ childrens_childcare.3.a:0 "为它提供资金——承担费用并向前迈进。"
+ childrens_childcare.3.b:0 "分阶段——推迟全面实施来管理负担。"
+
+ childrens_childcare.4.t:0 "工人解放还是依赖?"
+ childrens_childcare.4.d:0 "劳工运动发现自己是分裂的. 对许多工人来说,普及儿童保育是一种解放——使父母特别是母亲能够平等地进入劳动力队伍。 但是,一个持怀疑态度的派别认为,国家提供的福利是真正工资收益的劣等替代物,而接受儿童保育风险则会给雇主带来压力,迫使他们实际支付生活工资。"
+ childrens_childcare.4.f:0 "并非每一个帮助工人的改革都是工人的改革."
+ childrens_childcare.4.a:0 "儿童保育是一个劳工问题——把它当作工人政策。"
+ childrens_childcare.4.b:0 "工资首先——保持流动分开。"
+
+ childrens_childcare.5.t:0 "研究说"
+ childrens_childcare.5.d:0 "经济学家和儿童发展研究者以直截了当的论点进入辩论:对幼儿期的投资是任何公共开支的长期收益最高的。 他们说,这些数据是明确的。 问题在于政府是否希望公开这个案例,或者它是否更愿意将辩论保持在政治而不是证据意义上."
+ childrens_childcare.5.f:0 "证据本身很少赢得辩论。 但它有帮助。"
+ childrens_childcare.5.a:0 "委托一份公开报告——让证据主导。"
+ childrens_childcare.5.b:0 "使学术界不参与立法进程。"
+ 
+ childrens_rights_market_preschool_framing:0 "私营部门支助"
+ childrens_rights_market_preschool_framing_desc:0 "商业利益集团已经将其重心放在私有化的学龄前教育模式后面,为颁布进程提供了动力。"
+
+ childrens_rights_access_mandate:0 "访问任务已套用"
+ childrens_rights_access_mandate_desc:0 "法律附有定价条例,要求私营供应商达到准入标准。 遵约谈判减缓了通行速度。"
+
+ childrens_rights_family_values_debate:0 "家庭优先权得到确认"
+ childrens_rights_family_values_debate_desc:0 "政府将扩大学前班规定为对家庭的支持而不是替代,缓解了保守派对法律的抵制."
+
+ childrens_rights_fiscal_resistance:0 "财政保守抵抗组织"
+ childrens_rights_fiscal_resistance_desc:0 "对普及儿童保育的预计费用的反对使立法进程停滞不前并破坏了政府的颁布立场。"
+
+ childrens_rights_funded_mandate:0 "国家供资承诺"
+ childrens_rights_funded_mandate_desc:0 "政府承诺承担普及儿童保育的全部费用,加强以公共资金为代价颁布法律的理由。"
+
+ childrens_rights_labour_framing:0 "动员起来的劳工运动"
+ childrens_rights_labour_framing_desc:0 "工会已经将普及儿童保育视为一个工人问题,从而在立法工作中增加了有组织的政治影响力。"
+
+ childrens_rights_academic_endorsement:0 "学术认可"
+ childrens_rights_academic_endorsement_desc:0 "研究人员和经济学家公开支持普及儿童保育,使政府的立法推力具有证据可信度。"
+
+ childrens_rights_business_engaged:0 "私营部门参与"
+ childrens_rights_business_engaged_desc:0 "企业主在私有化的早期教育市场看到机会,并积极施加影响,以确保法律获得通过。"
+
+ childrens_rights_devout_reassured:0 "绕道"
+ childrens_rights_devout_reassured_desc:0 "政府承认家庭仍然是主要的道德机构,而不是国家,这使宗教的声音得到安慰。"
+
+ childrens_rights_devout_alienated:0 "被抛弃"
+ childrens_rights_devout_alienated_desc:0 "解除了传统家庭的顾虑,使得虔诚者对政府的社会政策方向深感不安."
+
+ childrens_rights_unions_mobilized:0 "动员的工会"
+ childrens_rights_unions_mobilized_desc:0 "工会支持普及儿童保育,认为这是工人争取经济尊严斗争的延伸。"
+
+ childrens_rights_unions_skeptical:0 "工会怀疑主义"
+ childrens_rights_unions_skeptical_desc:0 "劳工运动中的一个重要派别认为,国家福利不能取代真正的工资收益,并拒不给予充分支持。"
+
+ childrens_rights_intelligentsia_engaged:0 "智能游戏"
+ childrens_rights_intelligentsia_engaged_desc:0 "学者和研究人员正积极公开说明普及儿童保育的理由,并援引证据表明,早期投资可带来最高的长期社会收益。"
+
+ childrens_rights_intelligentsia_sidelined:0 "边线"
+ childrens_rights_intelligentsia_sidelined_desc:0 "学术界被排斥在立法辩论之外,使知识分子感到沮丧并脱离了政府的议程."
+ 
+ womens_rights_laws.1.t:0 "法律条文"
+ womens_rights_laws.1.d:0 "随着有关法律保护的立法的形成,一场辩论已经展开。 知识分子内部的改革者认为,狭义的法律会在一代人之内被规避——保护必须写入每个机构,否则就毫无意义了. 他们的反对者警告说,现在过度介入将引发一场宪法危机,使整个努力得到巩固。"
+ womens_rights_laws.1.f:0 "每部法律都只有执行它的意愿——以及写得足够宽广以至重要的勇气——一样强大."
+ womens_rights_laws.1.a:0 "广泛写作——每个机构都必须得到保护。"
+ womens_rights_laws.1.b:0 "保持瞄准镜的收窄——先确保通过."
+
+ womens_rights_laws.2.t:0 "传统主义的反对"
+ womens_rights_laws.2.d:0 "保守派的声音——地主,神职人员及其盟友——组织起来反对法律保护法案,称该法案是对社会自然秩序的冒犯. 他们的理由与其说是实际反对,不如说是深为不满法律。 政府必须决定是否在公开辩论中迎接这一挑战,还是让反对派自行解决."
+ womens_rights_laws.2.f:0 "当传统说话的时候,它很少提出一个论点——只是一种感觉."
+ womens_rights_laws.2.a:0 "在公开辩论中与他们见面——公开反驳他们的情况。"
+ womens_rights_laws.2.b:0 "让他们表达他们的不满——不要给他们一个烈士的纲领."
+
+ womens_rights_laws.3.t:0 "雇主推倒"
+ womens_rights_laws.3.d:0 "结构平等主义不仅仅是一个权利问题——它是一个如何经营企业的问题。 雇主阶级提出了协调一致的反对意见,认为法定代表人构成国家对私人雇用决定的干涉。 她们并不反对工作场所的妇女,她们坚持只被告知她们有多少人和担任什么角色。"
+ womens_rights_laws.3.f:0 "每一代改革者都被告知时机不对. 对于从拖延中受益的人来说,时机永远是错的。"
+ womens_rights_laws.3.a:0 "遵守规定——没有例外,也没有逐步实施。"
+ womens_rights_laws.3.b:0 "规定一个过渡期——让雇主有时间进行调整。"
+
+ womens_rights_laws.4.t:0 "妇女参与公共生活"
+ womens_rights_laws.4.d:0 "工会对结构平等法案极感兴趣。 她们认为,工作妇女一直处于有组织劳动的中心——报酬低、代表性低和至关重要。 问题是,政府是否正式承认这一联盟,使该法案成为一项共同事业,还是保持改革本身的条件。"
+ womens_rights_laws.4.f:0 "工厂的地板一直知道议会刚刚开始承认什么。"
+ womens_rights_laws.4.a:0 "使其成为一个共同事业——劳动妇女和劳动。"
+ womens_rights_laws.4.b:0 "保持运动的分明性——法律本身是非曲直。"
+
+ womens_rights_laws.5.t:0 "一个变革了的社会"
+ womens_rights_laws.5.d:0 "母权法案引起了与近期立法记忆中所见不同的反应. 其反对者不仅反对一项政策——他们反对它表明的这个社会的方向。 反弹很激烈而且有组织 政府必须决定是直接面对它,还是悄悄地向前进,一旦法律颁布,就让法律为自己辩护."
+ womens_rights_laws.5.f:0 "对那些流离失所的人来说,没有象结束那样没有感觉的革命。"
+ womens_rights_laws.5.a:0 "面对反弹——历史的弧向前进."
+ womens_rights_laws.5.b:0 "悄悄地为风暴吹风——让法律为自己说话."
+
+ womens_rights_laws.6.t:0 "老卫士抵抗者"
+ womens_rights_laws.6.d:0 "地主和虔诚者联合起来反对母权制法案,其热情超越了正常的立法阻力. 对他们来说,这是对社会结构的一种生存挑战。 他们的网络正在被动员起来,他们的纸币和妓院被变成反对的场所。 政府必须决定如何坚定地作出反应。"
+ womens_rights_laws.6.f:0 "老后卫在最后几个小时里总是声音最响."
+ womens_rights_laws.6.a:0 "粉碎反对派——这个政府不会被扣为人质."
+ womens_rights_laws.6.b:0 "谈判——提出减少摩擦的文化让步."
+
+ womens_rights_legal_scope:0 "广泛的法律授权"
+ womens_rights_legal_scope_desc:0 "知识分子成功地推动了广泛的法定保护,为颁布努力提供了动力和信誉。"
+
+ womens_rights_narrow_scope:0 "窄范围嵌入"
+ womens_rights_narrow_scope_desc:0 "限制法律影响的决定使颁布过程复杂化,因为倡导者和反对者都重新调整了立场。"
+
+ womens_rights_traditionalist_debate:0 "传统主义挑战"
+ womens_rights_traditionalist_debate_desc:0 "政府已与保守派反对派展开公开辩论,改变了立法斗争的条件."
+
+ womens_rights_employer_resistance:0 "雇主游说抵抗组织"
+ womens_rights_employer_resistance_desc:0 "组织企业反对法定代表制,正在积极拖延立法进程。"
+
+ womens_rights_union_mobilization:0 "动员起来的劳工运动"
+ womens_rights_union_mobilization_desc:0 "工会将有组织的力量放在结构平等主义的后面,推动了立法努力。"
+
+ womens_rights_societal_backlash:0 "社会反弹"
+ womens_rights_societal_backlash_desc:0 "母权制法案提出的改革规模引发了广泛而有组织的抵制,使立法进程放缓."
+
+ womens_rights_vanguard_push:0 "前锋推"
+ womens_rights_vanguard_push_desc:0 "政府承诺直接对抗反对派,把自己定位为社会变革的先锋."
+
+ womens_rights_old_guard_opposition:0 "老卫兵反对派"
+ womens_rights_old_guard_opposition_desc:0 "土地所有者和虔诚者联合起来进行有组织的抵抗,拖延了母权制法案,考验了政府的决心."
+
+ womens_rights_intelligentsia_engaged:0 "智能游戏"
+ womens_rights_intelligentsia_engaged_desc:0 "学者和改革者正积极将自己的公共权力赋予案件,以提供广泛的法律保护。"
+
+ womens_rights_intelligentsia_disappointed:0 "虚度"
+ womens_rights_intelligentsia_disappointed_desc:0 "缩小法律范围的决定令改革主义知识分子感到沮丧,他们担心半个措施会在一代人之内被推翻."
+
+ womens_rights_conservatives_rebuked:0 "保守党"
+ womens_rights_conservatives_rebuked_desc:0 "政府公开的反驳令传统主义的反对者感到尴尬,虽然也使他们的决心更加坚定."
+
+ womens_rights_conservatives_placated:0 "保温剂"
+ womens_rights_conservatives_placated_desc:0 "政府允许反对派在没有直接对抗的情况下表达不满,从而减少了即时的摩擦."
+
+ womens_rights_employers_overruled:0 "雇主否决"
+ womens_rights_employers_overruled_desc:0 "雇主阶层被告知,遵守是强制性的,是不可谈判的,滋生出怨恨,但为前进的道路扫清了道路。"
+
+ womens_rights_employers_appeased:0 "雇主"
+ womens_rights_employers_appeased_desc:0 "分阶段的过渡使企业的反对情绪有所缓和,以降低执行速度为代价减少了抵制."
+
+ womens_rights_unions_allied:0 "联盟"
+ womens_rights_unions_allied_desc:0 "工会正式与平等主义运动结盟,为立法工作增加了有组织的政治力量。"
+
+ womens_rights_unions_neutral:0 "中立工会"
+ womens_rights_unions_neutral_desc:0 "劳工运动选择与平等主义法案保持距离,既不提供积极支持,也不提供反对."
+
+ womens_rights_old_guard_suppressed:0 "老后卫被镇压"
+ womens_rights_old_guard_suppressed_desc:0 "政府果断地反对了老后卫的反对,削弱了他们的政治立场而激进他们的根据地."
+
+ womens_rights_old_guard_negotiated:0 "老警卫谈判"
+ womens_rights_old_guard_negotiated_desc:0 "对老后卫的让步使他们最恶劣的反对情绪落空,尽管他们根本上与法律的分歧仍然存在."
+ 
+ ubi.1.t:0 "无条件的代价"
+ ubi.1.d:0 "普遍基本收入的价格标签已不可忽视。 财政保守派控制了预计支出,警告说,无条件向每个公民——无论是否就业、贫富——付款,都会给公共财政带来不可持续的负担。 政府必须决定是否承诺现在提供全部资金,还是分阶段争取时间。"
+ ubi.1.f:0 "普遍提供的每一条承诺最终都会遇到同样的问题:谁付费,多少?"
+ ubi.1.a:0 "承诺提供全额资金——承担费用并向前推进。"
+ ubi.1.b:0 "付款阶段——推迟充分执行管理费用。"
+
+ ubi.2.t:0 "有人能工作吗?"
+ ubi.2.d:0 "雇主和土地所有者发现他们的集会呼声反对普遍的基本收入:如果国家保证收入,不管付出何种努力,为什么有人会选择劳动? 这个论点是直觉的,政治上很有力,即使证据比较模糊. 政府必须选择对UBI进行经济论证,或者在支付款项时附加最低工作要求,以承认这种关切。"
+ ubi.2.f:0 "人们担心,如果有机会,人们就会停止工作,这种担心已经超越了证明错误的所有政策。"
+ ubi.2.a:0 "以经济为例——安全能够提高生产力,而不是无所事事。"
+ ubi.2.b:0 "附加工作要求——承认减少阻力的关切."
+
+ ubi.3.t:0 "免于匮乏的自由"
+ ubi.3.d:0 "对工会来说,普遍的基本收入不仅仅是一项福利政策——这是满足劳工运动最古老的要求:摆脱贫困。 随着立法的进行,工会领导人渴望把这一时刻作为他们自己的时机,为立法努力提供有组织的政治力量。 政府必须决定是否接受这一联盟,还是将推出作为一个静悄悄的行政事项。"
+ ubi.3.f:0 "拒绝做坏工作的权利一直是每个工资纠纷背后的真正需求。"
+ ubi.3.a:0 "接受这项任务——让工会领导公共运动。"
+ ubi.3.b:0 "保持政府主动性——避免过度搞政治化"走出去"."
+
+ welfare_ubi_fiscal_alarm:0 "财务警报"
+ welfare_ubi_fiscal_alarm_desc:0 "财政保守派对全民基本收入的预计成本进行了动员,拖延了立法进程并迫使政府采取防御行动。"
+
+ welfare_ubi_funded_commitment:0 "国家供资承诺"
+ welfare_ubi_funded_commitment_desc:0 "政府已承诺承担UBI的全部费用,加强其立法地位,为公共资金支付大笔费用。"
+
+ welfare_ubi_labour_disincentive_debate:0 "劳动奖励"
+ welfare_ubi_labour_disincentive_desc:0 "政府公开关注工作奖励,使经济情况证明财政保障能够而不是损害劳工参与。"
+
+ welfare_ubi_work_requirements:0 "工作要求"
+ welfare_ubi_work_requirements_desc:0 "统一工资补助的支付附加了最低工作条件,减缓了执行速度,但减少了雇主对法律的反对。"
+
+ welfare_ubi_popular_mandate:0 "民众授权"
+ welfare_ubi_popular_mandate_desc:0 "工会公开宣布UBI是劳工运动斗争的高潮,为立法努力增添了有组织的政治动力."
+
+ welfare_ubi_employers_unconvinced:0 "雇主无说服力"
+ welfare_ubi_employers_unconvinced_desc:0 "尽管政府的经济论点,雇主阶层仍然怀疑无条件的收入不会减少劳动力供给."
+
+ welfare_ubi_employers_appeased:0 "雇主"
+ welfare_ubi_employers_appeased_desc:0 "工作要求软化了雇主对UBI的反对,减少了他们对法律通过的积极抵制."
+
+ welfare_ubi_unions_mobilized:0 "动员的工会"
+ welfare_ubi_unions_mobilized_desc:0 "工会正在积极开展普及基本收入的运动,把它定为争取工人经济自由的长期斗争的决定性胜利。"
+
+ welfare_ubi_unions_sidelined:0 "工会"
+ welfare_ubi_unions_sidelined_desc:0 "政府决定保留UBI作为静悄悄的行政推出令工会感到沮丧并脱离了立法努力."
+
+ gun_laws.1.t:0 "安全辩论"
+ gun_laws.1.d:0 "改革人士和公共卫生倡导者抓住枪械禁令的时机,将证据立案:流通的枪支减少意味着死亡人数减少. 他们认为,这些数据是明确的。 政府必须决定是正式接受这一框架,赋予禁止的知识信誉,还是继续就法律和秩序条款进行辩论,将公共卫生的声音放在一边。"
+ gun_laws.1.f:0 "最安全的社会并不总是最有武装的社会。"
+ gun_laws.1.a:0 "接受公共卫生框架——数据在我们一边。"
+ gun_laws.1.b:0 "把它定为法律和秩序——不让公共卫生倡导者参与。"
+
+ # ==========================================
+ # gun_laws.2 — The Armed Forces Weigh In
+ # ==========================================
+ gun_laws.2.t:0 "武装部队"
+ gun_laws.2.d:0 "军事领导人关心的火器禁令超出了政治范围。 解除武装的平民更难组织起来反对国家,更容易被国家征召入伍,更不可能维持叛乱。 他们的支持可能是决定性的——但将军队纳入国内立法辩论本身就会产生问题。"
+ gun_laws.2.f:0 "军队一直知道最危险的武器是不受其指挥的武器."
+ gun_laws.2.a:0 "欢迎他们的支持——解除武装的人口是有秩序的。"
+ gun_laws.2.b:0 "让军队远离国内法——这是民事问题。"
+
+ # ==========================================
+ # gun_laws.3 — Rural Resistance
+ # ==========================================
+ gun_laws.3.t:0 "农村抵抗运动"
+ gun_laws.3.d:0 "乡下不听京城所议. 对农村社区来说,火器不是一种政治声明——火器是工具,与土地一起继承,用于狩猎、牲畜保护和孤立定居点的基本安全。 限制它们不是政策问题,而是个人的冒犯。 政府必须决定如何坚决守住防线."
+ gun_laws.3.f:0 "写法律的人从来不需要等三个小时才能找到警察。"
+ gun_laws.3.a:0 "坚持——城市法在各地平等适用."
+ gun_laws.3.b:0 "提供农村豁免——狩猎和牲畜保护是合法用途。"
+
+ # ==========================================
+ # gun_laws.4 — A Right, Not a Privilege
+ # ==========================================
+ gun_laws.4.t:0 "权利,不是特权"
+ gun_laws.4.d:0 "无限制火器的倡导者找到了他们的论点,他们并没有放弃这种论点:所有权是一种权利,而不是国家给予的特权。 任何许可证制度、任何登记要求、任何限制都是走向暴政的第一步。 政府必须决定是否接受这一框架及其产生的政治能量,或以更实际的理由说明问题。"
+ gun_laws.4.f:0 "有一种特殊的自由只能被枪口所持有."
+ gun_laws.4.a:0 "接受自由的论点——武装公民是自由的。"
+ gun_laws.4.b:0 "实际框架——侧重于自卫和征兵准备。"
+
+ # ==========================================
+ # gun_laws.5 — The Safety Lobby Fights Back
+ # ==========================================
+ gun_laws.5.t:0 "安全大厅反击"
+ gun_laws.5.d:0 "反对火器禁令的知识分子和公共卫生声音并没有平静下来——他们把精力转向反对不受限制的所有权。 他们的论点是熟悉的:证据不能支持关于更多的枪支产生更安全的社会的说法. 政府必须决定是否让他们参与公共辩论,还是拒绝让他们参与平台。"
+ gun_laws.5.f:0 "任何关于无限制火器的论点最终都必须为尸体负责。"
+ gun_laws.5.a:0 "公开反驳他们——自由有其自身的风险。"
+ gun_laws.5.b:0 "忽略他们——不要用回应来贬低反对派."
+
+ # ==========================================
+ # gun_laws.6 — Licensing Is Not Freedom
+ # ==========================================
+ gun_laws.6.t:0 "许可证不是自由"
+ gun_laws.6.d:0 "持有执照的火器法案管理了将辩论双方联合起来进行反对的罕见的功绩。 枪支权利倡导者认为任何许可证要求都侵犯了基本自由。 安全倡导者认为这是半个措施,对减少伤害没有任何意义。 政府发现自己捍卫了一个中间立场 双方都不想占领"
+ gun_laws.6.f:0 "任何满足不了的妥协可能仍然是正确的答案。"
+ gun_laws.6.a:0 "捍卫中间立场——发放许可证是合理和相称的。"
+ gun_laws.6.b:0 "承认紧张局势——承诺一旦法律生效就进行审查。"
+
+ gun_law_safety_argument:0 "公共卫生个案"
+ gun_law_safety_argument_desc:0 "政府通过了火器禁令的公共卫生框架,赋予立法以知识上的信誉并扩大其吸引力。"
+
+ gun_law_military_position:0 "军事认可"
+ gun_law_military_position_desc:0 "军事领导人公开支持解除平民武装,为颁布工作增加了机构权威。"
+
+ gun_law_rural_resistance:0 "农村抵抗运动"
+ gun_law_rural_resistance_desc:0 "农村社区正在积极抵制火器限制,拖延立法进程并迫使政府为其受影响最大的公民辩护。"
+
+ gun_law_rights_framing:0 "通过"
+ gun_law_rights_framing_desc:0 "政府赞成这样的论点,即拥有枪支是一项基本权利,激励支持者,并为法律提供原则基础。"
+
+ gun_law_practical_framing:0 "采用的实用格式"
+ gun_law_practical_framing_desc:0 "使用不受限制的火器的理由是实际的——自卫和征兵准备——而不是意识形态的。"
+
+ gun_law_safety_lobby_opposition:0 "安全游说反对派"
+ gun_law_safety_lobby_opposition_desc:0 "公共卫生倡导者和知识分子正在组织起来反对不受限制的火器,从而拖延了颁布程序。"
+
+ gun_law_compromise_resistance:0 "火下妥协"
+ gun_law_compromise_resistance_desc:0 "持照火器法案正遭到双方的抵制——枪权倡导者视之为侵权,安全倡导者视之为不足."
+
+ gun_law_compromise_defended:0 "捍卫妥协"
+ gun_law_compromise_defended_desc:0 "政府公开提出持照火器中间地带的理由,"
+
+ gun_law_intelligentsia_engaged:0 "智能游戏"
+ gun_law_intelligentsia_engaged_desc:0 "公共卫生研究人员和改革者正在积极为限制火器的案例提供授权。"
+
+ gun_law_intelligentsia_sidelined:0 "边线"
+ gun_law_intelligentsia_sidelined_desc:0 "政府选择将禁止火器规定为法律和秩序事项,不让公众在辩论中发表意见。"
+
+ gun_law_intelligentsia_rebuked:0 "智力反弹"
+ gun_law_intelligentsia_rebuked_desc:0 "安全游说团受到公开质疑,他们的论点被驳回,尽管这加深了他们的反对。"
+
+ gun_law_intelligentsia_ignored:0 "智能被忽略"
+ gun_law_intelligentsia_ignored_desc:0 "政府拒绝与安全游说团体的反对派接触,以加深他们的挫折为代价,拒绝为他们提供一个平台."
+
+ gun_law_military_backing:0 "军事后援"
+ gun_law_military_backing_desc:0 "武装部队已公开赞同解除平民武装,使颁布工作具有决定性的体制影响力。"
+
+ gun_law_military_sidelined:0 "军事侧线"
+ gun_law_military_sidelined_desc:0 "政府不让军事领导人参与国内的火器辩论,使武装部队脱离立法进程。"
+
+ gun_law_rural_folk_alienated:0 "农村外来民俗"
+ gun_law_rural_folk_alienated_desc:0 "统一执行火器限制令农村社区感到受到一个不了解其生活方式的政府的攻击。"
+
+ gun_law_rural_folk_appeased:0 "农村民俗"
+ gun_law_rural_folk_appeased_desc:0 "对狩猎和牲畜保护的豁免在不放弃法律核心意图的情况下使农村对限制的反对有所缓和。"
+
+ gun_law_rural_folk_energized:0 "农村民俗化"
+ gun_law_rural_folk_energized_desc:0 "自由制定不受限制的火器与农村社区有着强烈的共鸣,引起了基层对法律的大力支持。"
+ 
+  # ==========================================
+ # lgbtq_laws.1 — The Church Demands Action
+ # ==========================================
+ lgbtq_laws.1.t:0 "教会要求采取行动"
+ lgbtq_laws.1.d:0 "虔诚者表明了他们的立场:积极压制同性恋不仅仅是一种政治偏好,而是一种道德义务. 宗教领袖要求政府以明确的神学术语制定立法,赋予法律以神权重. 政府必须决定是接受这种框架,还是以世俗理由为理由。"
+ lgbtq_laws.1.f:0 "最危险的法律是那些相信对上级负责的法律."
+ lgbtq_laws.1.a:0 "拥抱道德框架——这是神圣法律的问题。"
+ lgbtq_laws.1.b:0 "把它定为社会秩序——不让宗教成为借口。"
+
+ # ==========================================
+ # lgbtq_laws.2 — The Cost of Enforcement
+ # ==========================================
+ lgbtq_laws.2.t:0 "执行费用"
+ lgbtq_laws.2.d:0 "禁止同性恋的法律只有其执行效力。 政府面前的问题不是是否限制——辩论已经解决——而是国家机构将如何严厉地进行侵权行为。 全面执法费用高昂,具有侵略性。 被动强制执行依赖于社会压力和谴责。 每种方法都承担自己的费用。"
+ lgbtq_laws.2.f:0 "立法规定私人行为的国家必须决定它是否愿意深入私人生活。"
+ lgbtq_laws.2.a:0 "全面执行——不惜一切代价。"
+ lgbtq_laws.2.b:0 "被动执行——让社会压力来做这项工作."
+
+ # ==========================================
+ # lgbtq_laws.3 — Decriminalization Is Not Endorsement
+ # ==========================================
+ lgbtq_laws.3.t:0 "非刑罪化不是认可"
+ lgbtq_laws.3.d:0 "保守派的声音以可预测的警报欢迎非刑罪化法案。 政府偏好的论点——取消刑事处罚并不构成道德认可——并没有满足这些论点. 问题在于是公开和直接地提出这个案例,还是静悄悄地进行下去,并避免引起公众辩论的注意。"
+ lgbtq_laws.3.f:0 "容忍与认可之间的距离从未感到如此有争议。"
+ lgbtq_laws.3.a:0 "明确立案——非刑罪化取消处罚,不认可."
+ lgbtq_laws.3.b:0 "保持安静——通过改革而不引起注意."
+
+ # ==========================================
+ # lgbtq_laws.4 — The Intelligentsia Makes Its Case
+ # ==========================================
+ lgbtq_laws.4.t:0 "智者有理而论"
+ lgbtq_laws.4.d:0 "改革者和法律学者以直截了当的论据进入了辩论:国家对同意成人的私人行为没有合法利益,将同性恋定为犯罪违反了个人自由的最基本原则. 政府必须决定是正式同意这一论点,还是将改革保留在纯粹的立法条款上。"
+ lgbtq_laws.4.f:0 "需要国家许可的自由绝不是自由。"
+ lgbtq_laws.4.a:0 "让他们主导争论——个人自由是不可剥夺的。"
+ lgbtq_laws.4.b:0 "保持立法——避免哲学辩论."
+
+ # ==========================================
+ # lgbtq_laws.5 — Marriage Is a Social Institution
+ # ==========================================
+ lgbtq_laws.5.t:0 "婚姻是一个社会机构"
+ lgbtq_laws.5.d:0 "保守派发现他们反对婚姻平等的最有力论点:婚姻不仅仅是一种法律安排,而是一种根基比国家本身更古老的社会制度。 重新定义它就是破解一些无法重新组合的东西。 政府必须选择直面这个论点,或者试图通过宗教豁免来软化反对派。"
+ lgbtq_laws.5.f:0 "每个机构都曾经是新的"
+ lgbtq_laws.5.a:0 "重新塑造它——民间婚姻属于国家,而不是教会."
+ lgbtq_laws.5.b:0 "提供宗教豁免——教会可能拒绝举行仪式."
+
+ # ==========================================
+ # lgbtq_laws.6 — Equal Before the Law
+ # ==========================================
+ lgbtq_laws.6.t:0 "法律面前人人平等"
+ lgbtq_laws.6.d:0 "知识分子将婚姻平等视为公民权利的逻辑结论——一个赋予一些公民权利的社会,它根据自己所爱的人而否定了其他人的权利——这个社会还没有兑现自己的诺言。 政府必须决定是否将这一时刻视为一个里程碑,还是在没有宣言份量的情况下悄悄地扩大权利。"
+ lgbtq_laws.6.f:0 "必须保持缄默的平等从来没有完全平等。"
+ lgbtq_laws.6.a:0 "使之成为一个里程碑——法律面前人人平等不容有任何例外。"
+ lgbtq_laws.6.b:0 "保持其行政性——在没有宣言的情况下悄悄地扩展权利."
+
+ # ==========================================
+ # abortion_laws.1 — Life Begins at Conception
+ # ==========================================
+ abortion_laws.1.t:0 "人生从概念开始"
+ abortion_laws.1.d:0 "虔诚者在堕胎辩论中采取的立场不容妥协:生命始于受孕,国家有道德义务从那一刻起保护它。 他们不仅要求禁止堕胎,而且要求以体现其道德严肃性的方式制定禁令。 政府必须决定是否接受这种框架,或者以人口和政治理由证明法律合理。"
+ abortion_laws.1.f:0 "最绝对的道德立场是那些为最难的案件留有余地的立场。"
+ abortion_laws.1.a:0 "拥抱道德框架——生命是神圣的,国家必须保护它。"
+ abortion_laws.1.b:0 "作为人口政策的框架——不让宗教成为借口。"
+
+ # ==========================================
+ # abortion_laws.2 — The Exceptions Question
+ # ==========================================
+ abortion_laws.2.t:0 "二. 例外问题"
+ abortion_laws.2.d:0 "该法案刚刚进入颁布过程,其反对者就找到了最难提出异议的理由:强奸、乱伦和医疗需要。 这些情况将抽象的道德立场变为现实。 政府必须决定是否遵守绝对禁止的规定,还是制定承认最恶劣情况的狭隘的医疗例外。"
+ abortion_laws.2.f:0 "抽象原则在成为他人生活时,会变得非常具体."
+ abortion_laws.2.a:0 "没有任何例外——法律必须绝对意味着任何事情。"
+ abortion_laws.2.b:0 "允许狭隘的医疗例外——必须解决最难的病例。"
+
+ # ==========================================
+ # abortion_laws.3 — The State Has No Place in This Decision
+ # ==========================================
+ abortion_laws.3.t:0 "国家无权作出这一决定"
+ abortion_laws.3.d:0 "在无限制堕胎的情况下,最有力的表述是身体自主:任何国家都无权强迫一个人违背自己的意愿继续妊娠。 知识分子正以相当的力量公开地提出这一论点。 政府必须决定是否将《宪法》作为改革的核心,还是将《宪法》作为直接的卫生保健问题提出来。"
+ abortion_laws.3.f:0 "拥有自己身体的权利要么具有普遍性,要么根本不是一项权利。"
+ abortion_laws.3.a:0 "使身体自主成为中心——任何国家都无权强迫怀孕。"
+ abortion_laws.3.b:0 "把它设定为保健——保持哲学争论。"
+
+ # ==========================================
+ # abortion_laws.4 — The Devout Will Not Yield
+ # ==========================================
+ abortion_laws.4.t:0 "自由意志不义"
+ abortion_laws.4.d:0 "任何争取堕胎法自由化的运动都遭到有组织的宗教反对,没有软化的迹象。 虔诚者认为这是不可能妥协的问题,他们准备利用一切可用的政治工具来拖延立法。 政府必须决定是直接对抗他们,还是提供良心保护来软化他们的抵抗而不满足他们的要求."
+ abortion_laws.4.f:0 "认为它向上帝负责的反对派是最难与之谈判的反对派。"
+ abortion_laws.4.a:0 "直接对付他们——国家管理,而不是教会。"
+ abortion_laws.4.b:0 "提供良心保护——医务人员可能因道德原因下降。"
+
+ # ==========================================
+ # LGBTQ Enactment Modifier Localization
+ # ==========================================
+ lgbtq_law_religious_mandate:0 "宗教授权"
+ lgbtq_law_religious_mandate_desc:0 "虔诚者公开将压迫法定为道德和宗教义务,赋予颁布工作神学权威."
+
+ lgbtq_law_enforcement_scope:0 "执行范围设置"
+ lgbtq_law_enforcement_scope_desc:0 "政府承诺积极实施限制,加强法律的立法势头."
+
+ lgbtq_law_enforcement_cost:0 "执行费用"
+ lgbtq_law_enforcement_cost_desc:0 "充分执行这些限制正在得到资助,给公共开支带来额外压力。"
+
+ lgbtq_law_decrim_framing:0 "非刑罪化框架"
+ lgbtq_law_decrim_framing_desc:0 "政府仔细地将非刑罪化定义为去除惩罚,而不是认可,通过辩论放宽了道路."
+
+ lgbtq_law_quiet_passage:0 "静悄悄的通过"
+ lgbtq_law_quiet_passage_desc:0 "避免公开辩论的决定减缓了颁布进程,因为改革在没有有组织的公众支持的情况下进行。"
+
+ lgbtq_law_liberty_argument:0 "自由辩论"
+ lgbtq_law_liberty_argument_desc:0 "知识分子公开将非刑罪化视为个人自由问题,使改革具有哲学可信性。"
+
+ lgbtq_law_institution_debate:0 "机构辩论"
+ lgbtq_law_institution_debate_desc:0 "政府就婚姻作为民事机构的性质展开了公开辩论,改变了立法斗争的条件。"
+
+ lgbtq_law_religious_exemptions:0 "宗教豁免"
+ lgbtq_law_religious_exemptions_desc:0 "宗教机构被豁免举行同性仪式,减缓了执行速度,但软化了保守反对派。"
+
+ lgbtq_law_equality_mandate:0 "宣布的平等任务"
+ lgbtq_law_equality_mandate_desc:0 "政府正式宣布婚姻平等为民权地标,为颁布法律创造了强大的政治动力."
+
+ lgbtq_law_devout_empowered:0 "已取消"
+ lgbtq_law_devout_empowered_desc:0 "宗教界已正式纳入立法,加强了其政治立场并深化了参与。"
+
+ lgbtq_law_devout_sidelined:0 "已删除边线"
+ lgbtq_law_devout_sidelined_desc:0 "政府一直以宗教为借口,让虔诚者脱离,悄悄地感到沮丧。"
+
+ lgbtq_law_conservatives_unconvinced:0 "无说服力的保守派"
+ lgbtq_law_conservatives_unconvinced_desc:0 "保守派反对派已经听到政府的布局,并且仍然没有被说服,维持了他们对改革的抵制."
+
+ lgbtq_law_conservatives_rebuked:0 "保守党"
+ lgbtq_law_conservatives_rebuked_desc:0 "政府公开挑战保守派反对婚姻平等,使他们的立场尴尬,但坚定了他们的决心."
+
+ lgbtq_law_conservatives_placated:0 "保温剂"
+ lgbtq_law_conservatives_placated_desc:0 "宗教豁免降低了保守派反对派的即时强度而未解决潜在的分歧."
+
+ lgbtq_law_intelligentsia_engaged:0 "智能游戏"
+ lgbtq_law_intelligentsia_engaged_desc:0 "改革者和法律学者正积极为LGBTQ权利公开立案,将智力权威赋予了颁布努力."
+
+ lgbtq_law_intelligentsia_sidelined:0 "边线"
+ lgbtq_law_intelligentsia_sidelined_desc:0 "政府选择将改革保留在立法而不是哲学术语上,让知识分子在辩论中没有正式的角色."
+
+ abortion_law_moral_absolute:0 "道德绝对宣言"
+ abortion_law_moral_absolute_desc:0 "虔诚者成功地将禁止堕胎规定为道德上的绝对性,赋予了立法工作神学权威。"
+
+ abortion_law_demographic_framing:0 "通过的人口结构"
+ abortion_law_demographic_framing_desc:0 "政府以人口和政治理由为堕胎禁令辩护,将宗教语言排除在官方理由之外。"
+
+ abortion_law_exceptions_debate:0 "辩论"
+ abortion_law_exceptions_debate_desc:0 "政府在例外问题上采取了明确的立场,为继续颁布进程提供了坚实的基础。"
+
+ abortion_law_medical_exceptions:0 "允许的医疗例外"
+ abortion_law_medical_exceptions_desc:0 "法律中只有很少的医疗例外规定,减缓了通行速度,但减少了温和派的反对。"
+
+ abortion_law_autonomy_argument:0 "Bodily 自治论"
+ abortion_law_autonomy_argument_desc:0 "知识分子已经把身体自主作为不受限制堕胎案件的核心,在改革主义者IGs中获得了强有力的支持."
+
+ abortion_law_healthcare_framing:0 "通过"
+ abortion_law_healthcare_framing_desc:0 "政府把不受限制的堕胎定为保健问题,扩大了其吸引力,同时避免了更深入的哲学辩论。"
+
+ abortion_law_religious_opposition:0 "宗教反对派"
+ abortion_law_religious_opposition_desc:0 "虔诚者正在积极拖延堕胎法的自由化,组织起来的反对正在考验政府的决心。"
+
+ abortion_law_devout_empowered:0 "已取消"
+ abortion_law_devout_empowered_desc:0 "禁止堕胎的理由是宗教团体的核心,大大加强了他们的政治地位。"
+
+ abortion_law_devout_sidelined:0 "已删除边线"
+ abortion_law_devout_sidelined_desc:0 "政府一直将宗教框架置于堕胎禁令之外,让虔诚者在场,但没有正式说明理由。"
+
+ abortion_law_devout_rebuked:0 "已删除"
+ abortion_law_devout_rebuked_desc:0 "政府直接面对宗教反对堕胎自由化,削弱了虔诚者的政治立场而激进其基础."
+
+ abortion_law_devout_appeased:0 "遗弃"
+ abortion_law_devout_appeased_desc:0 "对医务人员的良心保护在不满足虔诚者的核心要求的情况下,削弱了对堕胎自由化的宗教反对。"
+
+ abortion_law_intelligentsia_engaged:0 "智能游戏"
+ abortion_law_intelligentsia_engaged_desc:0 "法律学者和改革者正在积极公开堕胎权,为颁布工作提供知识和道德方面的信誉。"
+
+ abortion_law_intelligentsia_sidelined:0 "边线"
+ abortion_law_intelligentsia_sidelined_desc:0 "将堕胎作为保健事项的决定,使知识分子无法参与他们想领导的哲学辩论。"

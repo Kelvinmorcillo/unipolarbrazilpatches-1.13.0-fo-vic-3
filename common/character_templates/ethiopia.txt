@@ -1,0 +1,34 @@
+﻿ETH_meles_zenawi = {
+	first_name = Meles
+	last_name = Zenawi
+	historical = yes
+	culture = cu:amhara
+	birth_date = 1955.5.8
+	dna = dna_meles_zenawi
+	ig_leader = yes
+	ruler = yes
+	interest_group = ig_armed_forces
+	ideology = ideology_state_socialist_leader
+	traits = {
+		experienced_political_operator
+		meticulous
+		innovative
+	}
+}
+ 
+ETH_tamrat_layne = {
+	first_name = Tamrat
+	last_name = Layne
+	historical = yes
+	culture = cu:amhara
+	birth_date = 1950.1.1 # Approximate
+	dna = dna_tamrat_layne
+	ig_leader = yes
+	interest_group = ig_petty_bourgeoisie
+	ideology = ideology_authoritarian_capitalist_leader
+	traits = {
+		experienced_political_operator
+		charismatic
+		basic_political_operator
+	}
+}

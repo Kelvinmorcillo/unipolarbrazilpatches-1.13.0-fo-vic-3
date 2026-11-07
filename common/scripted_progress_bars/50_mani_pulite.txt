@@ -1,0 +1,81 @@
+﻿# ==========================================
+# TANGENTOPOLI EXPOSURE BAR
+# Tracks how far the corruption network
+# has been penetrated. When it hits 100
+# the Mani Pulite JE opens.
+# ==========================================
+
+tangentopoli_exposure_bar = {
+	name = "tangentopoli_exposure_bar"
+	desc = "tangentopoli_exposure_bar_desc"
+	second_desc = "tangentopoli_exposure_bar_second_desc"
+
+	start_value = 0
+	min_value = 0
+	max_value = 100
+
+	default = yes
+
+	monthly_progress = {
+		if = {
+			limit = { exists = var:tangentopoli_exposure }
+			add = {
+				desc = "tangentopoli_bar_from_exposure"
+				value = var:tangentopoli_exposure
+			}
+		}
+	}
+}
+
+# ==========================================
+# INVESTIGATION PROGRESS BAR
+# How far the magistrates have gotten.
+# ==========================================
+
+investigation_progress_bar = {
+	name = "investigation_progress_bar"
+	desc = "investigation_progress_bar_desc"
+
+	start_value = 0
+	min_value = 0
+	max_value = 100
+
+	default = yes
+
+	monthly_progress = {
+		if = {
+			limit = { exists = var:investigation_progress }
+			add = {
+				desc = "investigation_bar_progress"
+				value = var:investigation_progress
+			}
+		}
+	}
+}
+
+# ==========================================
+# POLITICAL RESISTANCE BAR
+# How hard the political class is pushing
+# back. Inverted — red bar.
+# ==========================================
+
+political_resistance_bar = {
+	name = "political_resistance_bar"
+	desc = "political_resistance_bar_desc"
+
+	start_value = 0
+	min_value = 0
+	max_value = 100
+
+	default_bad = yes
+
+	monthly_progress = {
+		if = {
+			limit = { exists = var:political_resistance }
+			add = {
+				desc = "political_resistance_bar_progress"
+				value = var:political_resistance
+			}
+		}
+	}
+}

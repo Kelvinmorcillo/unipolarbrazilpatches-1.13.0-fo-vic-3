@@ -1,0 +1,253 @@
+# ==========================================
+# NATIONAL DEVELOPMENT PATH — MODIFIERS
+# ==========================================
+
+# ── PATH ACTIVE MODIFIERS (country scope) ─
+
+ndp_modifier_industrial = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	building_group_bg_manufacturing_throughput_add  = 0.05
+	state_construction_mult = 0.05
+	country_law_enactment_success_add               = 0.05
+}
+
+ndp_modifier_military = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_military_tech_research_speed_mult       = 0.05
+	army_offense_mult                               = 0.03
+}
+
+ndp_modifier_resource = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	building_group_bg_agriculture_throughput_add    = 0.05
+	building_group_bg_mining_throughput_add         = 0.05
+	state_construction_mult                   = 0.05
+}
+
+ndp_modifier_service = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	country_bureaucracy_mult                        = 0.05
+	country_society_tech_research_speed_mult        = 0.05
+	state_construction_mult                   = 0.05
+}
+
+# ── INDUSTRIAL SUB-CHOICES ─────────────────
+
+ndp_modifier_industrial_heavy = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	building_group_bg_heavy_industry_throughput_add = 0.10
+	building_iron_mine_throughput_add               = 0.10
+	building_coal_mine_throughput_add               = 0.10
+	country_production_tech_research_speed_mult     = 0.05
+}
+
+ndp_modifier_industrial_light = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	building_textile_mills_throughput_add           = 0.10
+	building_group_bg_light_industry_throughput_add = 0.10
+	state_pop_qualifications_mult                   = 0.05
+}
+
+ndp_modifier_state_heavy_industry = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	building_group_bg_heavy_industry_throughput_add = 0.05
+}
+
+ndp_modifier_state_light_industry = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	building_group_bg_light_industry_throughput_add = 0.05
+}
+
+ndp_modifier_industrial_state_investment = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	state_construction_mult                   = 0.2
+	building_group_bg_manufacturing_throughput_add  = 0.05
+}
+
+ndp_modifier_industrial_state_investment_cost = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_mult                           = 0.05
+}
+
+ndp_modifier_industrial_private_investment = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_investment_pool_efficiency_mult         = 0.10
+	country_investment_pool_contribution_add        = 0.05
+}
+
+ndp_modifier_industrial_labour_push = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	building_group_bg_manufacturing_throughput_add  = 0.10
+	building_group_bg_heavy_industry_throughput_add = 0.10
+}
+
+ndp_modifier_industrial_labour_welfare = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	building_group_bg_manufacturing_throughput_add  = 0.05
+	country_turmoil_effects_mult                    = -0.10
+	state_pop_qualifications_mult                   = 0.05
+}
+
+# ── MILITARY SUB-CHOICES ───────────────────
+
+ndp_modifier_military_army = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	army_offense_mult                               = 0.05
+	army_defense_mult                               = 0.05
+	unit_morale_loss_mult                           = -0.05
+	state_conscription_rate_add                     = 0.05
+}
+
+ndp_modifier_military_navy = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_military.dds
+	navy_offense_mult                               = 0.10
+	navy_defense_mult                               = 0.10
+	country_naval_power_projection_mult             = 0.10
+}
+
+ndp_modifier_military_domestic_arms = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	building_arms_industry_throughput_add           = 0.15
+	building_war_machine_throughput_add             = 0.10
+}
+
+ndp_modifier_military_foreign_arms = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	army_offense_mult                               = 0.05
+	army_defense_mult                               = 0.05
+}
+
+ndp_modifier_military_foreign_arms_cost = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_mult                           = 0.05
+}
+
+ndp_modifier_military_nationalist_morale = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	unit_morale_loss_mult                           = -0.10
+	state_conscription_rate_add                     = 0.05
+}
+
+ndp_modifier_military_professional_officers = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	army_offense_mult                               = 0.05
+	building_training_rate_mult                     = 0.15
+}
+
+# ── RESOURCE SUB-CHOICES ──────────────────
+
+ndp_modifier_resource_agriculture = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	building_group_bg_agriculture_throughput_add    = 0.10
+	building_wheat_farm_throughput_add              = 0.10
+	building_rye_farm_throughput_add                = 0.10
+	state_mortality_mult                            = -0.05
+}
+
+ndp_modifier_resource_extraction = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	building_group_bg_mining_throughput_add         = 0.10
+	building_coal_mine_throughput_add               = 0.10
+	building_iron_mine_throughput_add               = 0.10
+	building_oil_rig_throughput_add                 = 0.10
+}
+
+ndp_modifier_state_agriculture = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	building_group_bg_agriculture_throughput_add    = 0.05
+}
+
+ndp_modifier_state_extraction = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	building_group_bg_mining_throughput_add         = 0.05
+}
+
+ndp_modifier_resource_land_expansion = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	state_migration_pull_mult                       = 0.10
+	state_construction_mult = 0.1
+}
+
+ndp_modifier_resource_intensification = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	building_group_bg_agriculture_throughput_add    = 0.05
+	building_group_bg_mining_throughput_add         = 0.05
+}
+
+ndp_modifier_resource_export_markets = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_trade_route_efficiency_mult             = 0.10
+	country_export_advantage_mult                   = 0.10
+}
+
+ndp_modifier_resource_domestic_supply = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	state_mortality_mult                            = -0.05
+	country_authority_mult                          = 0.05
+}
+
+# ── SERVICE SUB-CHOICES ───────────────────
+
+ndp_modifier_service_finance = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_investment_pool_efficiency_mult         = 0.10
+	country_investment_pool_contribution_add        = 0.05
+	building_financial_district_throughput_add      = 0.15
+}
+
+ndp_modifier_service_education = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	country_bureaucracy_mult                        = 0.10
+	country_society_tech_research_speed_mult        = 0.05
+	building_university_throughput_add              = 0.10
+}
+
+ndp_modifier_service_foreign_talent = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	state_migration_pull_mult                       = 0.15
+	country_society_tech_research_speed_mult        = 0.05
+}
+
+ndp_modifier_service_domestic_talent = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	country_education_fervor_add                    = 5
+	building_university_throughput_add              = 0.10
+}
+
+ndp_modifier_service_liberalize = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_investment_pool_efficiency_mult         = 0.10
+	country_law_enactment_success_add               = 0.10
+}
+
+ndp_modifier_service_institutions = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_bureaucracy_mult                        = 0.10
+	country_legitimacy_base_add                     = 5
+	country_law_enactment_success_add               = 0.05
+}
+
+# ── PENALTY / SPECIAL ─────────────────────
+
+ndp_modifier_abandoned = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_prestige_mult                           = -0.05
+	country_authority_mult                          = -0.05
+	country_legitimacy_base_add                     = -5
+}
+
+# ── FOREIGN INVESTMENT JE ─────────────────
+
+ndp_foreign_investment_secured = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_investment_pool_efficiency_mult         = 0.15
+	country_investment_pool_contribution_add        = 0.10
+	country_construction_goods_cost_mult = -0.35
+}
+
+ndp_foreign_investment_rejected = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_investment_pool_efficiency_mult         = -0.05
+	country_infamy_decay_mult                       = 0.10
+	country_authority_mult                          = 0.15
+}

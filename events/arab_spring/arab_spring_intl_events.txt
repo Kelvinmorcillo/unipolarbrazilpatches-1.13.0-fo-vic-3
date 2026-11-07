@@ -1,0 +1,341 @@
+﻿namespace = arab_spring_intl
+
+# ==========================================
+# arab_spring_intl.1
+# "The Arab World Is Burning"
+#
+# Fires for western democratic countries
+# when the Arab Spring activates globally.
+# Gives the player a meaningful foreign
+# policy choice with real consequences.
+# ==========================================
+
+arab_spring_intl.1 = {
+	type = country_event
+	placement = root
+
+	event_image = {
+		video = "gaddafi"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+
+	title = arab_spring_intl.1.t
+	desc = arab_spring_intl.1.d
+	flavor = arab_spring_intl.1.f
+
+	duration = 3
+
+	trigger = {
+		NOT = { is_in_geographic_region = geographic_region_middle_east }
+		OR = {
+			has_law = law_type:law_universal_suffrage
+			has_law = law_type:law_census_voting
+		}
+		has_law = law_type:law_elected_bureaucrats
+	}
+
+	immediate = {
+		set_variable = arab_spring_intl_policy_set
+		# Save a scope to a representative Arab Spring country
+		# for use in the desc (Tunisia if it exists, else random)
+		if = {
+			limit = { exists = c:XTU }
+			c:XTU = { save_scope_as = spring_country_scope }
+		}
+		else = {
+			random_country = {
+				limit = {
+					has_journal_entry = je_arab_spring
+				}
+				save_scope_as = spring_country_scope
+			}
+		}
+	}
+
+	# ── OPTION A: Support the protesters ────────────
+	option = {
+		name = arab_spring_intl.1.a
+		# Anger authoritarian regimes in the region
+		every_country = {
+			limit = {
+				is_in_geographic_region = geographic_region_middle_east
+				NOT = { has_journal_entry = je_arab_spring }
+				OR = {
+					has_law = law_type:law_autocracy
+					has_law = law_type:law_oligarchy
+					has_law = law_type:law_single_party_state
+				}
+			}
+			change_relations = {
+				country = root
+				value = -5
+			}
+		}
+		# Apply pro-democracy stance modifier
+		add_modifier = {
+			name = arab_spring_intl_pro_democracy_stance
+			months = 4
+		}
+		# Boost protest movement support in Arab Spring countries
+		every_country = {
+			limit = {
+				has_journal_entry = je_arab_spring
+			}
+			every_political_movement = {
+				limit = {
+					OR = {
+						is_political_movement_type = movement_liberal
+						is_political_movement_type = movement_progressive
+					}
+				}
+				add_modifier = {
+					name = arab_spring_intl_western_backing
+					months = 12
+				}
+			}
+		}
+
+		ai_chance = {
+			base = 50
+			# More likely for countries with strong civil society traditions
+			modifier = {
+				trigger = {
+					has_law = law_type:law_protected_speech
+				}
+				add = 25
+			}
+			# Less likely if economically dependent on Arab oil
+			modifier = {
+				trigger = {
+					any_country = {
+						is_in_geographic_region = geographic_region_middle_east
+						has_diplomatic_pact = { who = root type = trade_agreement }
+					}
+				}
+				add = -35
+			}
+		}
+	}
+
+	# ── OPTION B: Back the regime — stability first ──
+	option = {
+		name = arab_spring_intl.1.b
+
+		# Strengthen ties with incumbent Arab regimes
+		every_country = {
+			limit = {
+				is_in_geographic_region = geographic_region_middle_east
+				OR = {
+					has_law = law_type:law_autocracy
+					has_law = law_type:law_oligarchy
+					has_law = law_type:law_single_party_state
+				}
+			}
+			change_relations = {
+				country = root
+				value = 5
+			}
+		}
+		add_modifier = {
+			name = arab_spring_intl_stability_first_stance
+			months = 24
+		}
+		# Boost crackdown progress in Arab Winter countries
+		#every_country = {
+		#	limit = {
+		#		has_journal_entry = je_arab_winter
+		#	}
+		#	add_modifier = {
+		#		name = arab_spring_intl_regime_backing
+		#		months = 12
+		#	}
+		# }
+
+		ai_chance = {
+			base = 20
+			# More likely if economically dependent on Arab oil
+			modifier = {
+				trigger = {
+					any_country = {
+						is_in_geographic_region = geographic_region_middle_east
+						has_diplomatic_pact = { who = root type = trade_agreement }
+					}
+				}
+				add = 25
+			}
+			# Less likely for strong democracies
+			modifier = {
+				trigger = {
+					has_law = law_type:law_protected_speech
+					has_law = law_type:law_universal_suffrage
+				}
+				add = -20
+			}
+		}
+	}
+
+	# ── OPTION C: Call for restraint — neutral ───────
+	option = {
+		name = arab_spring_intl.1.c
+		default_option = yes
+
+		# Apply neutral stance modifier
+		add_modifier = {
+			name = arab_spring_intl_neutral_stance
+			months = 24
+		}
+
+		ai_chance = {
+			base = 30
+		}
+	}
+}
+
+# ==========================================
+# arab_spring_intl.2
+# "The Question of Intervention"
+#
+# Fires for western democracies when a
+# specific Arab Spring country descends
+# into civil war (Libya-style situation).
+# Only fires if they previously chose to
+# support the protesters in .1.
+# ==========================================
+
+arab_spring_intl.2 = {
+	type = country_event
+	placement = root
+
+	event_image = {
+		video = "fighterjets"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	title = arab_spring_intl.2.t
+	desc = arab_spring_intl.2.d
+	flavor = arab_spring_intl.2.f
+
+	duration = 3
+
+	trigger = {
+		has_variable = arab_spring_intl_policy_set
+		# Must have already backed the protesters
+		has_modifier = arab_spring_intl_pro_democracy_stance
+		# An Arab Spring country must be in civil war
+		any_country = {
+			has_journal_entry = je_arab_spring
+			is_at_war = yes
+			OR = {
+				tag = LBY
+				tag = SYR
+				tag = YEM
+			}
+		}
+		NOT = { has_variable = arab_spring_intl_intervention_decided }
+	}
+
+	cooldown = { days = never_fire_again_modifier_time }
+
+	immediate = {
+		set_variable = arab_spring_intl_intervention_decided
+		# Save the civil war country
+		random_country = {
+			limit = {
+				has_journal_entry = je_arab_spring
+				is_at_war = yes
+				OR = {
+					tag = LBY
+					tag = SYR
+					tag = YEM
+				}
+			}
+			save_scope_as = civil_war_country_scope
+		}
+	}
+
+	# ── OPTION A: Enforce a no-fly zone / limited intervention
+	option = {
+		name = arab_spring_intl.2.a
+
+		add_modifier = {
+			name = arab_spring_intl_no_fly_zone
+			months = 24
+		}
+		# Military pressure on the regime
+		scope:civil_war_country_scope = {
+			every_political_movement = {
+				limit = {
+					OR = {
+						is_political_movement_type = movement_liberal
+						is_political_movement_type = movement_progressive
+					}
+				}
+				add_modifier = {
+					name = arab_spring_intl_western_backing
+					months = 24
+				}
+			}
+		}
+		# Costs prestige and some infamy
+		add_modifier = {
+			name = arab_spring_intl_intervention_costs
+			months = 36
+		}
+
+		ai_chance = {
+			base = 25
+			modifier = {
+				trigger = { is_great_power = yes }
+				add = 25
+			}
+		}
+	}
+
+	# ── OPTION B: Arm and support opposition forces
+	option = {
+		name = arab_spring_intl.2.b
+
+		add_modifier = {
+			name = arab_spring_intl_arming_rebels
+			months = 36
+		}
+		scope:civil_war_country_scope = {
+			every_political_movement = {
+				limit = {
+					OR = {
+						is_political_movement_type = movement_liberal
+						is_political_movement_type = movement_progressive
+						is_political_movement_type = movement_jihadist
+					}
+				}
+				add_modifier = {
+					name = arab_spring_intl_western_backing
+					months = 24
+				}
+			}
+		}
+
+		ai_chance = {
+			base = 30
+		}
+	}
+
+	# ── OPTION C: Stay out of it — not our war
+	option = {
+		name = arab_spring_intl.2.c
+		default_option = yes
+
+		add_modifier = {
+			name = arab_spring_intl_non_interventionist
+			months = 24
+		}
+
+		ai_chance = {
+			base = 45
+		}
+	}
+}

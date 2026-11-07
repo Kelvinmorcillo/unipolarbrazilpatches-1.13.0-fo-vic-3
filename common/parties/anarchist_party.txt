@@ -1,0 +1,191 @@
+﻿# Niche party for anarchists in specific circumstances
+
+REPLACE_OR_CREATE:anarchist_party = {
+	color = { 0 0 0 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = party_cnt
+				trigger = {
+					exists = c:SPA
+					THIS = c:SPA
+				}
+			}
+			triggered_desc = {
+				desc = party_socialist_league
+				trigger = {
+					exists = c:GBR
+					THIS = c:GBR
+				}
+			}
+			triggered_desc = {
+				desc = party_anarcho_communist_federation
+				trigger = {
+					exists = c:FRA
+					THIS = c:FRA
+				}
+			}
+			triggered_desc = {
+				desc = party_maximalist_federation
+				trigger = {
+					country_has_primary_culture = cu:portuguese
+				}
+			}
+			triggered_desc = {
+				desc = party_young_socialists
+				trigger = {
+					OR = {
+						country_has_primary_culture = cu:norwegian
+						country_has_primary_culture = cu:danish
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_italian_syndicalist_union
+				trigger = {
+					OR = {
+						country_has_primary_culture = cu:north_italian
+						country_has_primary_culture = cu:south_italian
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_anarchist
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/anarchist.dds"
+	}
+	unlocking_technologies = {
+		anarchism
+	}
+	
+	# THIS IS RUN ONLY ONCE AT GAME START
+	valid_for_country = {
+		always = yes
+	}
+
+		available_for_interest_group = {
+		is_marginal = no
+		OR = {
+			leader = { has_ideology = ideology:ideology_anarchist_leader }
+			leader = { has_ideology = ideology:ideology_marxist_leader }
+			leader = { has_ideology = ideology:ideology_market_socialist_leader }
+			leader = { has_ideology = ideology:ideology_left_wing_populist_leader }
+			has_ideology = ideology:ideology_individualist
+			has_ideology = ideology:ideology_communitarian
+			has_ideology = ideology:ideology_left_economy
+			has_ideology = ideology:ideology_progressive
+			has_ideology = ideology:ideology_communist
+			is_interest_group_type = ig_trade_unions
+		}
+	}
+
+	# Root - IG considering joining
+	# scope:number - the number of IGs that would join this party before the root IG
+	join_weight = {
+		value = {
+			value = -5
+			desc = "base_value"
+		}
+		if = {
+			limit = {
+				leader = { has_ideology = ideology:ideology_anarchist_leader }
+			}
+			add = { value = 45 desc = "leader_ideological_compatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_marxist_leader }
+				leader = { has_ideology = ideology:ideology_market_socialist_leader }
+				leader = { has_ideology = ideology:ideology_left_wing_populist_leader }
+			}
+			}
+			add = { value = 20 desc = "leader_adjacent_ideology" }
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_state_socialist_leader }
+				leader = { has_ideology = ideology:ideology_authoritarian_capitalist_leader }
+				leader = { has_ideology = ideology:ideology_fascist_leader }
+				leader = { has_ideology = ideology:ideology_theocrat_leader }
+				leader = { has_ideology = ideology:ideology_monarchist_leader }
+			}
+			}
+			add = { value = -50 desc = "leader_ideological_incompatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_individualist
+				has_ideology = ideology:ideology_communitarian
+			}
+			}
+			add = { value = 35 desc = "interest_group_ideological_compatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_left_economy
+				has_ideology = ideology:ideology_progressive
+				has_ideology = ideology:ideology_communist
+			}
+			}
+			add = { value = 15 desc = "interest_group_adjacent_ideology" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_totalitarian
+				has_ideology = ideology:ideology_authoritarian
+				has_ideology = ideology:ideology_theocrat
+				has_ideology = ideology:ideology_monarchist
+				has_ideology = ideology:ideology_militarist
+			}
+			}
+			add = { value = -35 desc = "interest_group_ideological_incompatibility" }
+		}
+		if = {
+			limit = {
+				is_interest_group_type = ig_trade_unions
+			}
+			add = { value = 20 desc = "from_archetype_party" }
+		}
+		if = {
+			limit = {
+				owner = { OR = { has_law = law_type:law_outlawed_dissent has_law = law_type:law_secret_police has_law = law_type:law_autocracy } }
+			}
+			add = { value = 15 desc = "anti_authoritarian_reaction" }
+		}
+		if = {
+			limit = {
+				is_powerful = yes
+				OR = {
+					leader = { has_ideology = ideology:ideology_anarchist_leader }
+					has_ideology = ideology:ideology_individualist
+					has_ideology = ideology:ideology_communitarian
+				}
+			}
+			add = { value = 20 desc = "powerful_ig" }
+		}
+		if = {
+			limit = {
+				scope:number = 1
+				is_powerful = no
+				is_marginal = no
+			}
+			multiply = { value = 2 desc = "from_influential_supporting_member" }
+		}
+		else_if = {
+			limit = { scope:number = 2 }
+			multiply = { value = 0.75 desc = "from_two_prior_members" }
+		}
+	}
+
+}

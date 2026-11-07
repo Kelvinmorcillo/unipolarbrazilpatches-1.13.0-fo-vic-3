@@ -1,0 +1,19 @@
+﻿CHARACTERS = {
+	c:NIR ?= {
+	create_character = {
+			first_name = "albert"
+			last_name = "reynolds"
+			historical = yes
+			ruler = yes
+			culture = cu:irish
+			birth_date = 1932.11.03
+			dna = dna_albert_reynolds
+			ig_leader = yes
+			interest_group = ig_rural_folk
+			ideology = ideology_conservative_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+}

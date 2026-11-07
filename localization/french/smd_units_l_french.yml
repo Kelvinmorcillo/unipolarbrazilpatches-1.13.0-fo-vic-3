@@ -1,0 +1,104 @@
+﻿l_french:
+
+# groups
+
+combat_unit_group_aircraft:0 "Avion"
+
+# SMD units
+
+combat_unit_type_irregular_infantry:0 "Bataillon irrégulier"
+combat_unit_type_foot_infantry:0 "Bataillon des pieds"
+combat_unit_type_foot_infantry:0 "L'infanterie des pieds est idéale pour la défense."
+combat_unit_type_light_infantry:0 "Bataillon léger"
+combat_unit_type_light_infantry:0 "L'infanterie légère est bien arrondie"
+combat_unit_type_mechanized_infantry:0 "bataillon mécanisé"
+combat_unit_type_mechanized_infantry:0 "L'infanterie mécanisée est idéale pour attaquer."
+combat_unit_type_armored_infantry:0 "Bataillon-citerne"
+combat_unit_type_armored_infantry:0 "Les divisions d'infanterie blindées comprennent des chars idéaux pour attaquer."
+combat_unit_type_cybernetic_infantry:0 "Bataillon cybernétique"
+combat_unit_type_cybernetic_infantry:0 "L'infanterie cybernétique ressemble à l'infanterie de pied sur les stéroïdes - excellent pour la défense."
+combat_unit_type_mech_infantry:0 "Mécha"
+combat_unit_type_mech_infantry:0 "Mecha sont des armes fortes qui causent une grave dévastation."
+
+combat_unit_type_mortar_artillery:0 "Mortier"
+combat_unit_type_mortar_artillery:0 "Les Mortar sont bons pour se défendre."
+combat_unit_type_field_artillery:0 "Arme de campagne"
+combat_unit_type_field_artillery:0 "Les armes de campagne sont des pièces d'artillerie bien arrondies."
+combat_unit_type_howitzer_artillery:0 "Boutonnier"
+combat_unit_type_howitzer_artillery:0 "Les obusiers sont de puissantes armes de défense."
+combat_unit_type_missile_artillery:0 "Artillerie des missiles"
+combat_unit_type_missile_artillery:0 "Les batteries de missiles excellent dans la défense."
+combat_unit_type_orbital_strike:0 "Cannon orbital"
+combat_unit_type_orbital_strike:0 "Les frappes orbitales excellent à défendre."
+
+combat_unit_type_fixed_wing_aircraft:0 "Avions à voilure fixe"
+combat_unit_type_fixed_wing_aircraft:0 "Les avions débloquent de puissantes options de mobilisation."
+combat_unit_type_multirole_aircraft:0 "Aéronefs multiroles"
+combat_unit_type_multirole_aircraft:0 "Plusieurs avions débloquent des options de mobilisation puissantes."
+combat_unit_type_stealth_aircraft:0 "Aéronefs volants"
+combat_unit_type_stealth_aircraft:0 "Les avions volants débloquent des options de mobilisation puissantes."
+combat_unit_type_uav:0 "Véhicule aérien sans pilote"
+combat_unit_type_uav:0 "Les UAV causent des dégâts supplémentaires."
+combat_unit_type_autonomous_aircraft:0 "Autonome Aicraft"
+combat_unit_type_autonomous_aircraft:0 "Des avions autonomes débloquent de puissantes options de mobilisation."
+
+# ships
+
+combat_unit_type_frigate:0 "Frégate"
+combat_unit_type_frigate:0 "Les frégates sont de petits navires d'escorte."
+combat_unit_type_destroyer:0 "Détruire"
+combat_unit_type_destroyer:0 "Destroyers sont excellents pour escorter les convois."
+combat_unit_type_stealth_destroyer:0 "Détruire la fuite"
+combat_unit_type_stealth_destroyer:0 "Les destroyers sont une mise à niveau directe des destroyers."
+combat_unit_type_littoral_combat_ship:0 "Navire de combat littoral"
+combat_unit_type_littoral_combat_ship:0 "Les navires de combat littoral sont des destroyers moins chers."
+combat_unit_type_cruiser:0 "Un croiseur de missiles"
+combat_unit_type_cruiser:0 "Les croiseurs de missiles sont des navires puissants, semblables aux navires de guerre modernes."
+combat_unit_type_battleship:0 "Bataille"
+combat_unit_type_battleship:0 "Bataille le plus fort du jeu."
+combat_unit_type_carrier:0 "Transporteur d'aéronefs"
+combat_unit_type_carrier:0 "Les transporteurs aériens sont plus faibles que les navires de combat, sauf s'ils sont associés à l'ordre de sortie du transporteur."
+combat_unit_type_supercarrier:0 "Supertransporteur"
+combat_unit_type_supercarrier:0 "Supertransporteurs sont le navire le plus fort dans le jeu une fois jumelé avec l'ordre des sorties porteuses."
+combat_unit_type_attack_submarine:0 "Sous-marin d'attaque"
+combat_unit_type_attack_submarine:0 "Les sous-marins d'attaque sont le meilleur choix pour les raids de convoi."
+combat_unit_type_nuclear_submarine:0 "Sous-marin nucléaire"
+combat_unit_type_nuclear_submarine:0 "Les sous-marins nucléaires sont bons pour le combat naval."
+combat_unit_type_helicopter_carrier:0 "Hélicoptère"
+combat_unit_type_helicopter_carrier:0 "Les hélicoptères sont bons pour escorter les convois."
+combat_unit_type_awacs:0 "Alerte rapide aéroportée"
+combat_unit_type_awacs:0 "Les AWAC nous permettent de détecter rapidement les flottes dans le même nœud que nous."
+
+## marines
+combat_unit_type_marines:0 "Marines"
+combat_unit_type_marines_desc:0 "Un type d'unité d'infanterie spécialisée dans les opérations amphibies"
+
+combat_unit_type_spec_ops:0 "Forces spéciales"
+combat_unit_type_spec_ops_desc:0 "Un type d'unité d'infanterie spécialisée dans les opérations secrètes"
+
+combat_unit_type_space_marines:0 "Marines spatiales"
+combat_unit_type_space_marines:0 "Un type d'unité d'infanterie capable d'opérer à la fois sur Terre et dans l'espace, facilement disponible pour être déployé partout dans le monde."
+
+# mobe options:
+
+aircraft_types:0 "Types d'aéronefs"
+aircraft_types_desc:0 "Types d'avions utilisés par cette armée."
+
+mobilization_option_fighters:0 "Avions de chasse"
+mobilization_option_fighters:0 "Des chasseurs combattent d'autres avions"
+mobilization_option_cas:0 "Fermer le soutien aérien"
+mobilization_option_cas_desc:0 "Des avions de soutien aérien rapprochés fournissent un soutien direct à nos troupes au sol."
+mobilization_option_bombers:0 "Les bombardiers stratégiques"
+mobilization_option_bombers:0 "Les bombardiers stratégiques font des ravages derrière les lignes ennemies"
+
+mobilization_option_attack_helicopter:0 "Hélicoptères"
+mobilization_option_attack_helicopter_desc:0 "Les hélicoptères d'attaque sont utiles pour apporter une puissance de feu lourde à nos ennemis."
+
+mobilization_option_fpv_drone:0 "Drones FPV"
+mobilization_option_fpv_drone_desc:0 "Les drones FPV sont utilisés pour dévaster le moral des combattants ennemis."
+
+mobilization_option_medevac:0 "Évacuation des hélicoptères"
+mobilization_option_medevac_desc:0 "L'évacuation des hélicoptères nous permet d'extraire rapidement les victimes des zones de combat."
+
+mobilization_option_robotic_dog:0 "Chien robotique"
+mobilization_option_robotic_dog_desc:0 "Un chien robotisé utilisé pour la détection des mines sans coûter des vies humaines ou animales"

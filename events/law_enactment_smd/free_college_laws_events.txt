@@ -1,0 +1,294 @@
+﻿namespace = free_college
+
+
+# ==========================================
+# free_college.1
+# "Who Pays for the Degree?"
+# Fires when enacting universal college.
+# Fiscal conservatives question whether
+# the state should fund higher education
+# for everyone.
+# checkpoint_stall
+# ==========================================
+
+free_college.1 = {
+	type = country_event
+	placement = ROOT
+
+	title = free_college.1.t
+	desc = free_college.1.d
+	flavor = free_college.1.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_universal_college
+		NOT = { has_modifier = education_college_fiscal_resistance }
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = education_law_scope
+		}
+	}
+
+	# Option A: Commit to full public funding — higher education is a public good
+	option = {
+		name = free_college.1.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = education_college_fiscal_resistance
+			# = -1
+		}
+		add_enactment_modifier = {
+			name = education_college_public_funded
+			# = money_amount_#_small
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				trigger = {
+					exists = ruler
+					ruler = {
+						OR = {
+							has_ideology = ideology_progressive_leader
+							has_ideology = ideology_socialist_leader
+							has_ideology = ideology_communist_leader
+						}
+					}
+				}
+				add = 25
+			}
+		}
+	}
+
+	# Option B: Introduce means-tested subsidies — fund the poor, not the wealthy
+	option = {
+		name = free_college.1.b
+		add_enactment_modifier = {
+			name = education_college_fiscal_resistance
+			# = -2
+		}
+		ai_chance = { base = 50 }
+	}
+}
+
+
+# ==========================================
+# free_college.2
+# "The Meritocracy Objection"
+# Fires when enacting universal college.
+# Private school advocates argue that
+# universal access will dilute standards
+# and undermine academic excellence.
+# checkpoint_debate
+# ==========================================
+
+free_college.2 = {
+	type = country_event
+	placement = ROOT
+
+	title = free_college.2.t
+	desc = free_college.2.d
+	flavor = free_college.2.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_universal_college
+		NOT = { has_modifier = education_college_meritocracy_debate }
+		any_interest_group = {
+			OR = {
+				is_interest_group_type = ig_landowners
+				is_interest_group_type = ig_petty_bourgeoisie
+			}
+			ig_counts_as_marginal = no
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = education_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				OR = {
+					is_interest_group_type = ig_landowners
+					is_interest_group_type = ig_petty_bourgeoisie
+				}
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = elite_ig
+			leader = {
+				save_scope_as = elite_leader
+			}
+		}
+	}
+
+	# Option A: Defend universal access — excellence is not the preserve of the wealthy
+	option = {
+		name = free_college.2.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = education_college_meritocracy_debate
+			# = 2
+		}
+		scope:elite_ig = {
+			add_modifier = {
+				name = education_college_elites_rebuked
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = {
+			base = 55
+			modifier = {
+				trigger = {
+					exists = ruler
+					ruler = {
+						OR = {
+							has_ideology = ideology_progressive_leader
+							has_ideology = ideology_liberal_leader
+						}
+					}
+				}
+				add = 20
+			}
+		}
+	}
+
+	# Option B: Preserve elite institutions alongside universal access
+	option = {
+		name = free_college.2.b
+		add_enactment_modifier = {
+			name = education_college_meritocracy_debate
+		}
+		add_enactment_modifier = {
+			name = education_college_elite_carveout
+		}
+		scope:elite_ig = {
+			add_modifier = {
+				name = education_college_elites_appeased
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 45 }
+	}
+}
+
+
+# ==========================================
+# free_college.3
+# "The Intelligentsia Speaks"
+# Fires when enacting universal college.
+# Academics and reformers make the case
+# for universal higher education as the
+# foundation of a modern society.
+# checkpoint_advance
+# ==========================================
+
+free_college.3 = {
+	type = country_event
+	placement = ROOT
+
+	title = free_college.3.t
+	desc = free_college.3.d
+	flavor = free_college.3.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_universal_college
+		NOT = { has_modifier = education_college_academic_endorsement }
+		any_interest_group = {
+			is_interest_group_type = ig_intelligentsia
+			ig_counts_as_marginal = no
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = education_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				is_interest_group_type = ig_intelligentsia
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = intelligentsia_ig
+			leader = {
+				save_scope_as = intelligentsia_leader
+			}
+		}
+	}
+
+	# Option A: Invite them into the debate — let the academics lead the argument
+	option = {
+		name = free_college.3.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = education_college_academic_endorsement
+			# = 2
+		}
+		scope:intelligentsia_ig = {
+			add_modifier = {
+				name = education_college_intelligentsia_engaged
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = {
+			base = 65
+			modifier = {
+				trigger = { literacy_rate >= 0.50 }
+				add = 20
+			}
+		}
+	}
+
+	# Option B: Keep it a political decision — academics advise, they do not govern
+	option = {
+		name = free_college.3.b
+		add_enactment_modifier = {
+			name = education_college_academic_endorsement
+		}
+		scope:intelligentsia_ig = {
+			add_modifier = {
+				name = education_college_intelligentsia_sidelined
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 35 }
+	}
+}

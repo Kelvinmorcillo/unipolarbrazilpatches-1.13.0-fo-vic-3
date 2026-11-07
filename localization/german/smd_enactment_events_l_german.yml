@@ -1,0 +1,749 @@
+﻿l_german:
+
+ # ==========================================
+ # ENACTMENT EVENT LOCALIZATION
+ # ==========================================
+
+ # drug_laws.1 — Cost of Prohibition
+ drug_laws.1.t:0 "Die Kosten des Verbots"
+ drug_laws.1.d:0 "Die Kampagne, alle berauschenden Substanzen in [ROOT.GetCountry.GetName] zu verbieten, hat begonnen — aber die Durchsetzung ist teuer. Polizei und Staatsanwälte brauchen Ressourcen. Grenzen müssen überwacht werden. Die Alternative — Verbotserklärung und Erfüllungsgehilfen — hat nirgendwo gearbeitet, wo sie versucht wurde.\n>x id=2/>x id=3/> [ROOT.GetCountry.GetRuler.GetLastName]'s Regierung muss entscheiden, wie ernst sie dazu bereit ist."
+ drug_laws.1.f:0 "Ein Gesetz ohne Durchsetzung ist ein Vorschlag."
+ drug_laws.1.a:0 "Vollstreckung — ohne Kosten"
+ drug_laws.1.b:0 "Gemessene Durchsetzung — Konformität über die Zeit aufbauen"
+
+ # drug_laws.2 — The Church Speaks
+ drug_laws.2.t:0 "[SCOPE.sCharacter('devout_leader').GetPrimaryRoleTitle] Spricht"
+ drug_laws.2.d:0 "[SCOPE.sCharacter('devout_leader').GetFullName], Anführer der [SCOPE.gsInterestGroup('devout_ig').GetName], hat eine öffentliche Erklärung herausgegeben, die die Bewegung der Regierung in Richtung einer strengeren Stoffregulierung behindert. Die Betrügerei ist explizit moralisch — Betrügerung als geistige Korruption, Verbot als die gerechte Arbeit des Staates. Die Frage ist, ob dies zu berücksichtigen oder eine säkulare Grundlage für die Rechtsvorschriften zu erhalten ist."
+ drug_laws.2.f:0 "Die Moralbehörde und die Justizbehörde sind nicht dasselbe, sondern sie können zusammenarbeiten."
+ drug_laws.2.a:0 "Willkommen ihre Unterstützung — eine Einheitsfront stärkt das Gesetz"
+ drug_laws.2.b:0 "Halten Sie dies für eine säkulare Angelegenheit — lehnen Sie ihre Schaumbildung ab"
+
+ # drug_laws.3 — The Intelligentsia Makes Its Case
+ drug_laws.3.t:0 "[SCOPE.sCharacter('intelligentsia_leader').GetFullName] Macht den Fall für Beweise"
+ drug_laws.3.d:0 "[SCOPE.sCharacter('intelligentsia_leader').GetFullName], das die [SCOPE.gsInterestGroup('intelligentsia_ig').GetName] darstellt, hat eine detaillierte Analyse der Drogendekriminalisierungspolitik aus Ländern veröffentlicht, die sie bereits umgesetzt haben. Die Ergebnisse sind eindeutig: Inhaftierungsraten sinken, Todesfälle überdosieren, die Durchsetzungskosten sinken. Der Bericht wird weitgehend gelesen — und weithin von konservativen Interessen angegriffen, die Beweismittel sind neben dem Punkt."
+ drug_laws.3.f:0 "Die Daten kümmern sich nicht um die Debatte."
+ drug_laws.3.a:0 "Zurück zur Forschung — veröffentlichen es und lassen Sie die Beweise führen"
+ drug_laws.3.b:0 "Akademiker aus Politik halten"
+
+ # drug_laws.4 — Medical Establishment
+ drug_laws.4.t:0 "Ärzte unterstützen Harmreduktion"
+ drug_laws.4.d:0 "Die von Beamten der öffentlichen Gesundheit und Suchtspezialisten geführte id===========                                                                                                                                                                                                                                       Ihr Argument ist einfach: Der überwachte Verbrauch reduziert Überdosierung der Todesfälle, verbindet die Benutzer mit der Behandlung und erhöht die Drogenkonsumrate nicht. Die Beweise aus anderen Ländern sind zwingend. Die politische Opposition von religiösen und konservativen Gruppen ist ebenso vorhersehbar."
+ drug_laws.4.f:0 "Medizin ist keine Moral. Aber Leben sind Leben."
+ drug_laws.4.a:0 "Zurück zum medizinischen Konsens - die Beweise sind klar"
+ drug_laws.4.b:0 "Rahmen dies als moralische Frage — Medizin hat nicht alle Antworten"
+
+ # drug_laws.5 — International Condemnation
+ drug_laws.5.t:0 "Die Welt beobachtet"
+ drug_laws.5.d:0 "Die Aussicht auf die Legalisierung von [ROOT.GetCountry.GetName] des Drogenhandels hat unmittelbar internationale Aufmerksamkeit erregt. [SCOPE.sCountry('c:USA').GetName] hat eine formelle diplomatische Anmerkung mit Besorgnis herausgegeben. Mehrere andere Regierungen haben ihre Unzufriedenheit bekannt gemacht. Der internationale Konsens über das Verbot des Drogenkonsums, der jedoch unvollkommen durchgesetzt wird, ist klar, und [ROOT.GetCountry.GetName] geht davon aus."
+ drug_laws.5.f:0 "Souveränität ist leicht zu erklären. Seine Konsequenzen müssen länger ankommen."
+ drug_laws.5.a:0 "Internationale Meinung — [ROOT.GetCountry.GetName] macht eigene Gesetze"
+ drug_laws.5.b:0 "Ruhe gesagt — keine Aussagen machen, keine Konfrontation einladen"
+
+ # drug_laws.6 — Criminal Networks Resist
+ drug_laws.6.t:0 "Die Kartelle kämpfen gegen das Gesetz"
+ drug_laws.6.d:0 "Die vorgeschlagene Drogengesetzgebung bedroht die bestehende kriminelle Wirtschaft. Netzwerke, die von der gegenwärtigen Grauzone zwischen Toleranz und Verbot profitieren, haben begonnen, aktiv gegen die Passage des Gesetzes zu arbeiten — die lokalen Beamten zu korrumpieren, die Desinformation zu verbreiten und in einigen Fällen die Gesetzgeber einzuschüchtern. Der Rückschlag wird organisiert, gut finanziert und effektiv.\nx id=1/>>x id=2/> [ROOT.GetCountry.GetRuler.GetLastName] muss entscheiden, wie man reagiert."
+ drug_laws.6.f:0 "Die Kartelle bevorzugen die Gesetze, die ihnen Raum zu bedienen."
+ drug_laws.6.a:0 "Akzeptieren Sie den Rückschlag – bewegen Sie sich vorsichtiger"
+ drug_laws.6.b:0 "Eskalate Durchsetzung — Wurzel aus den Netzwerken, die dem Gesetz widerstehen"
+
+ # ==========================================
+ # ENACTMENT MODIFIER NAMES
+ # ==========================================
+
+ drug_law_prohibition_enforcement:0 "Kampagne zur Durchsetzung von Verboten"
+ drug_law_prohibition_enforcement_desc:0 "Eine gut ausgelagerte Durchsetzungskampagne verbessert die Chancen, dass Verbote erlassen und beobachtet werden."
+
+ drug_law_enforcement_cost:0 "Ausgaben für die Durchsetzung"
+ drug_law_enforcement_cost_desc:0 "Die Kosten der Drogenbekämpfungskampagne stellen zusätzliche Anforderungen an den Staatshaushalt."
+
+ drug_law_religious_backing:0 "Religiöse Endorsement"
+ drug_law_religious_backing_desc:0 "Die Unterstützung des religiösen Establishments ist die Verleihung der moralischen Autorität an die Rechtsvorschriften und die Verbesserung der Möglichkeiten der Passage."
+
+ drug_law_devout_empowered:0 "Ermächtigt durch die Drogendebatte"
+ drug_law_devout_empowered_desc:0 "Die öffentliche Vereinigung mit dem Drogenverbot hat die politische Stellung dieser Gruppe gestärkt."
+
+ drug_law_academic_push:0 "Akademische Evidenzkampagne"
+ drug_law_academic_push_desc:0 "Die publizierte Forschung, die die Entkriminalisierung unterstützt, verschiebt die Begriffe der Debatte zugunsten der Rechtsvorschriften."
+
+ drug_law_intelligentsia_engaged:0 "Intelligentsia verlobt"
+ drug_law_intelligentsia_engaged_desc:0 "Die Intelligenz engagiert sich aktiv in der Debatte über die Drogenpolitik und fördert die Glaubwürdigkeit der Legislativkampagne."
+
+ drug_law_intelligentsia_ignored:0 "Intelligentsia Sideline"
+ drug_law_intelligentsia_ignored_desc:0 "Die Entscheidung, akademische Stimmen aus der Debatte über die Drogenpolitik auszuschließen, hat die Intelligenz frustriert."
+
+ drug_law_medical_backing:0 "Medizinische Consensus Hinter dem Gesetz"
+ drug_law_medical_backing_desc:0 "Die Befürwortung des medizinischen Establishments ist die wissenschaftliche Glaubwürdigkeit für die Schadensersatzgesetzgebung."
+
+ drug_law_moral_framing:0 "Moral Rather Than Medical Framing"
+ drug_law_moral_framing_desc:0 "Die Framing-Drogenpolitik als moralische Frage statt als eine medizinische, erschwert den evidenzbasierten Fall für sichere Injektionsstellen."
+
+ drug_law_international_pressure:0 "International Condemnation"
+ drug_law_international_pressure_desc:0 "Der internationale Druck gegen die vorgeschlagene Gesetzgebung erschwert seinen Durchgang und schädigt den Ruf von [ROOT.GetCountry.GetName]."
+
+ drug_law_sovereignty_declared:0 "Souveränität besessen"
+ drug_law_sovereignty_declared_desc:0 "[ROOT.GetCountry.GetName] hat sein Recht öffentlich geltend gemacht, unabhängig von der internationalen Meinung eine eigene Drogenpolitik festzulegen."
+
+ drug_law_criminal_pushback:0 "Kriminelle Netzwerke"
+ drug_law_criminal_pushback_desc:0 "Organisiertes Verbrechen arbeitet aktiv daran, die Durchführung von Drogengesetzen zu verhindern, die ihre Operationen gefährden würden."
+
+ # disability_laws.1 — Employer Resistance
+ disability_laws.1.t:0 "Arbeitgeber Push Back Against Workplace Unterkünfte"
+ disability_laws.1.d:0 "Die vorgeschlagene Gesetzgebung zur Arbeitsplatzbeschaffung hat eine organisierte Antwort von [ROOT.GetCountry.GetAdjective] Arbeitgebern gezogen. [SCOPE.sCharacter('employer_leader').GetFullName], sprechend für die [SCOPE.gsInterestGroup('employer_ig').GetName], hat argumentiert, dass die Compliance-Kosten nicht bearbeitbar sind — dass kleine Unternehmen insbesondere nicht die Kosten für die Änderung von Ausrüstungen, Anpassungspflichten und Umstrukturierung von Arbeitsplätzen für Behinderte übernehmen können.\nx id=4/> Die Regierung muss entscheiden, wie man reagiert."
+ disability_laws.1.f:0 "Jede inklusive Politik hat jemand, der die Kosten argumentiert, zu hoch."
+ disability_laws.1.a:0 "Festhalten — die Einhaltung des Gesetzes ist nicht optional"
+ disability_laws.1.b:0 "Angebot einer Übergangszeit — Phased Compliance über mehrere Jahre"
+ 
+ # disability_laws.2 — Construction Lobby
+ disability_laws.2.t:0 "Die Objekte der Bauindustrie"
+ disability_laws.2.d:0 "Die vorgeschlagene barrierefreie Infrastrukturgesetzgebung hat einen formellen Einwand aus der Bauindustrie [ROOT.GetCountry.GetAdjective] gezogen. Ihr Argument: Die Notwendigkeit, bestehende Gebäude nachzurüsten, um Zugänglichkeitsstandards zu erfüllen, ist für viele Eigentümer technisch aufwendig und verbietend teuer. Sie fordern entweder eine Großvaterklausel für bestehende Strukturen oder eine viel längere Umsetzungsfrist."
+ disability_laws.2.f:0 "Jedes Gebäude, das ohne Rampe gebaut wurde, ist jetzt ein politisches Problem."
+ disability_laws.2.a:0 "Durchsetzung strenger Standards — Vollständige Einhaltung des Zeitplans, keine Ausnahmen"
+ disability_laws.2.b:0 "Phase Compliance — Großvater bestehender Strukturen, neue Standards für Neubauten"
+ 
+ # disability_laws.3 — Who Pays
+ disability_laws.3.t:0 "Wer bezahlt die barrierefreie Infrastruktur?"
+ disability_laws.3.d:0 "Die zugängliche Infrastrukturgesetzgebung stellt eine Frage, die die Verfasser der Rechnung bisher vermieden haben: Wer zahlt eigentlich für die Nachrüstung? Wenn die Verpflichtung ausschließlich auf Privatbesitzer fällt, werden kleinere Vermieter und Unternehmen unverhältnismäßig belastet. Wenn der Staat die Arbeit subventioniert, nimmt der öffentliche Haushalt den Treffer. Die Legislative ist in der Frage versperrt."
+ disability_laws.3.f:0 "Inklusion hat einen Preis. Das Argument ist, wer es bezahlt."
+ disability_laws.3.a:0 "Staatliche Subvention — die Regierung nimmt die Nachrüstkosten auf, um die Einhaltung zu beschleunigen"
+ disability_laws.3.b:0 "Private Verpflichtung — Eigentumsinhaber tragen die Kosten der Einhaltung"
+ 
+ # disability_laws.4 — Medical Endorsement
+ disability_laws.4.t:0 "[SCOPE.sCharacter('medical_leader').GetFullName] Endorses Public Treatments"
+ disability_laws.4.d:0 "[SCOPE.sCharacter('medical_leader').GetFullName] der [SCOPE.gsInterestGroup('medical_ig').GetName] hat eine förmliche Befürwortung der Rechtsvorschriften der öffentlichen Behandlungen veröffentlicht, unter Hinweis auf die Tatsache, dass eine staatliche Behindertenbehandlung messbare Gewinne in der Erwerbsbeteiligung hervorruft, langfristige Gesundheitskosten senkt und die bevölkerungsweiten Ergebnisse verbessert. Die Befürwortung wird von den Befürwortern verwendet, um zu argumentieren, dass dies keine Nächstenliebe ist — es ist Investitionen."
+ disability_laws.4.f:0 "Die Medizin unterscheidet sich nicht zwischen dem Verdienst und dem unbewahrten Kranken."
+ disability_laws.4.a:0 "Kommission einen Bericht über die öffentliche Gesundheit — lassen Sie die Beweise den Fall"
+ disability_laws.4.b:0 "Das ist eine Frage der Rechte, nicht eine medizinische."
+ 
+ # disability_laws.5 — Fiscal Resistance
+ disability_laws.5.t:0 "[SCOPE.sCharacter('fiscal_leader').GetFullName] sagt der Staat kann nicht Afford Dies"
+ disability_laws.5.d:0 "[SCOPE.sCharacter('fiscal_leader').GetFullName], repräsentiert die [SCOPE.gsInterestGroup('fiscal_ig').GetName], hat eine starke Bewertung abgegeben: Die laufenden Kosten für eine umfassende öffentliche Behinderungsbehandlung sind unbrauchbar. Der Zustand ist bereits gestreckt. Diese Rechtsvorschriften werden, wenn sie vollständig erlassen werden, entweder Steuererhöhungen oder Kürzungen an anderer Stelle erfordern. Die Frage ist nicht, ob [ROOT.GetCountry.GetName] sich um die Behinderten kümmern will — ob es möglich ist."
+ disability_laws.5.f:0 "Ein Budget ist ein moralisches Dokument."
+ disability_laws.5.a:0 "Halten Sie die Linie — die Kosten ist eine moralische Verpflichtung, nicht eine Wahl"
+ disability_laws.5.b:0 "Phase der Ausgaben — inszenierte Umsetzung über mehrere Jahre"
+ 
+ # disability_laws.6 — Advocates Rally
+ disability_laws.6.t:0 "Verstöße gegen die Behinderung machen ihren Fall"
+ disability_laws.6.d:0 "Eine Koalition von Behindertenorganisationen hat eine öffentliche Kampagne zur Unterstützung der vorgeschlagenen Rechtsvorschriften begonnen. Ihre Nachricht ist direkt: [ROOT.GetCountry.GetAdjective] Gesellschaft hat behinderte Menschen zu lange von der vollen Teilnahme ausgeschlossen. Die zu diskutierenden Rechtsvorschriften sind kein Befürworter, sondern eine Korrektur einer langfristigen Ungerechtigkeit. Die Kampagne hat die sympathische Abdeckung angezogen und die öffentliche Meinung verschoben."
+ disability_laws.6.f:0 "Nichts über uns ohne uns."
+ disability_laws.6.a:0 "förmlich ihre Delegation erhalten — dem offiziellen Unterstützungsdienst der Kampagne"
+ disability_laws.6.b:0 "Anerkennung der Kampagne ohne Verstärkung"
+ 
+ # disability_laws.7 — Conservative Opposition
+ disability_laws.7.t:0 "[SCOPE.sCharacter('conservative_leader').GetFullName] Führt die Opposition"
+ disability_laws.7.d:0 "[SCOPE.sCharacter('conservative_leader').GetFullName] der [SCOPE.gsInterestGroup('conservative_ig').GetName] hat eine öffentliche Oppositionskampagne gegen die Behinderungsgesetzgebung organisiert. Das Argument ist bekannt: dass die staatliche Abhängigkeit den individuellen Charakter untergräbt, dass die produktive Bevölkerung nicht erwartet werden kann, dass sie eine wachsende Unterstützungslast trägt, und dass die bestehende private Wohltätigkeit ausreichend ist. Die Begrüßung zieht Kritik an den Gruppen der Behinderungen, aber sie schwingt sich mit Teilen der Wählerschaft."
+ disability_laws.7.f:0 "Das Argument gegen die Inklusion geht immer um die Last eines anderen."
+ disability_laws.7.a:0 "Veröffentlichung — die moralische Angelegenheit der Rechtsvorschriften unmittelbar"
+ disability_laws.7.b:0 "Nicht würdigen Sie es mit einer Antwort — drücken Sie nach vorne"
+ 
+ # ==========================================
+ # ENACTMENT MODIFIER NAMES
+ # ==========================================
+ 
+ disability_employer_pressure:0 "Mitarbeiter Compliance Kampagne"
+ disability_employer_pressure_desc:0 "Die Regierung hat gegen den Widerstand des Arbeitgebers entschieden. Die Rechtsvorschriften werden planmäßig fortgeführt."
+ 
+ disability_compliance_delay:0 "Arbeitgeber Übergangszeitraum gewährt"
+ disability_compliance_delay_desc:0 "Die Arbeitgeber haben zusätzliche Zeit gegeben, um den Anforderungen an die Arbeitsplatzbeherbergung zu entsprechen und die gesetzliche Durchreise zu verlangsamen."
+ 
+ disability_construction_lobby:0 "Bauindustrie Engaged"
+ disability_construction_lobby_desc:0 "Die Einwände der Bauindustrie wurden angesprochen, was den aktiven Widerstand gegen die zugänglichen Infrastrukturgesetze verringert."
+ 
+ disability_strict_standards:0 "Strict Compliance Standards"
+ disability_strict_standards_desc:0 "Es wurden strenge Zugänglichkeitsstandards ohne Großvaterklauseln festgelegt. Die Einhaltung wird voll und termingerecht sein."
+ 
+ disability_phased_compliance:0 "Einhaltung von Phaseninfrastrukturen"
+ disability_phased_compliance_desc:0 "Vorhandene Strukturen wurden erweitert. Neue Standards gelten nur für Neubauten und verlangsamen die breiteren Auswirkungen des Gesetzes."
+ 
+ disability_funding_debate:0 "Förderrahmen gegründet"
+ disability_funding_debate_desc:0 "Die Frage, wer für eine barrierefreie Infrastruktur zahlt, wurde gelöst und ein großes Hindernis für die Rechtsdurchführung entfernt."
+ 
+ disability_state_subsidy:0 "Staatliche Infrastruktur Zuschüsse"
+ disability_state_subsidy_desc:0 "Der Zustand absorbiert die Nachrüstkosten direkt. Die Einhaltung wird schneller, aber der Haushalt ist unter zusätzlichem Druck."
+ 
+ disability_medical_endorsement:0 "Medizinische Einrichtungen Endorses Behandlungen"
+ disability_medical_endorsement_desc:0 "Die öffentliche Befürwortung der öffentlichen Invaliditätsbehandlung durch den medizinischen Beruf verleiht der Gesetzgebung wissenschaftliche Glaubwürdigkeit."
+ 
+ disability_fiscal_resistance:0 "Fiscal Conservatives Engaged"
+ disability_fiscal_resistance_desc:0 "Der steuerliche Widerstand gegen die Behandlung der öffentlichen Behinderung wurde angesprochen. Das Gesetz geht voran."
+ 
+ disability_phased_spending:0 "Stufenlose Behandlung von Behinderungen"
+ disability_phased_spending_desc:0 "Die Behandlung von öffentlichen Behinderungen wird schrittweise durchgeführt, wodurch der unmittelbare Haushaltsdruck auf Kosten eines langsameren Rollouts reduziert wird."
+ 
+ disability_advocate_push:0 "Behinderte bekennen Mobilisiert"
+ disability_advocate_push_desc:0 "Eine öffentliche Kampagne von Behindertenorganisationen baut politische Impulse für die Gesetzgebung."
+ 
+ disability_conservative_opposition:0 "Konservative Opposition Angesprochen"
+ disability_conservative_opposition_desc:0 "Konservativer Widerstand gegen die Behinderungsgesetzgebung wurde engagiert und teilweise neutralisiert."
+ 
+ disability_public_rebuttal:0 "Public Rebuttal of Conservative Opposition"
+ disability_public_rebuttal_desc:0 "Die unmittelbare Widersprüchlichkeit des konservativen Rahmings der Regierung hat die Bedingungen der Debatte zugunsten der Gesetzgebung verschoben."
+ 
+  # environment_laws.1 — Industry Voluntary Compliance
+ environment_laws.1.t:0 "[SCOPE.sCharacter('industry_leader').GetFullName] Angebote freiwillige Einhaltung"
+ environment_laws.1.d:0 "[SCOPE.sCharacter('industry_leader').GetFullName], das für die [SCOPE.gsInterestGroup('industry_ig').GetName] spricht, hat ein öffentliches Angebot gemacht: Wenn die Regierung zustimmt, freiwillige Compliance-Mechanismen in den Umweltrahmen zu bauen, anstatt die Durchsetzung zu mandieren, wird die Industrie zusammenarbeiten. Das Angebot wird als pragmatische Partnerschaft präsentiert. Kritiker argumentieren, dass es ein Versuch ist, die Rechtsvorschriften zu bereinigen, bevor es passiert."
+ environment_laws.1.f:0 "Freiwillige Compliance ist die bevorzugte Art der fossilen Brennstoffindustrie."
+ environment_laws.1.a:0 "Akzeptieren Sie die freiwillige Einhaltung des Rahmens"
+ environment_laws.1.b:0 "Reject — nur Zwangsvollstreckung, keine Carve-Outs"
+ 
+ # environment_laws.2 — Scientific Backing
+ environment_laws.2.t:0 "[SCOPE.sCharacter('science_leader').GetFullName] veröffentlicht Umweltbericht"
+ environment_laws.2.d:0 "[SCOPE.sCharacter('science_leader').GetFullName] der [SCOPE.gsInterestGroup('science_ig').GetName] hat eine umfassende Studie veröffentlicht, die die Umwelt- und Gesundheitskosten von [ROOT.GetCountry.GetName]'s current trajectory dokumentiert. Die Ergebnisse sind eindeutig: Die Umweltverschmutzung steigt, die Sterblichkeit ist betroffen und Ökosysteme sind unter Stress. Die vorgeschlagene Gesetzgebung, der Bericht schließt, ist nicht nur wünschenswert - es ist notwendig."
+ environment_laws.2.f:0 "Die Daten warten nicht auf politische Bequemlichkeit."
+ environment_laws.2.a:0 "Kommission eine offizielle Antwort — die Ergebnisse mit Unterstützung der Regierung veröffentlichen"
+ environment_laws.2.b:0 "Anerkennung des Berichts ohne Verstärkung"
+ 
+ # environment_laws.3 — International Praise
+ environment_laws.3.t:0 "Die International Community Praises [ROOT.GetCountry.GetName]'s Environmental Leadership"
+ environment_laws.3.d:0 "Wort von [ROOT.GetCountry.GetName]'s vorgeschlagene Umweltgesetzgebung hat die internationale Gemeinschaft erreicht, und die Antwort war unerwartet warm. Mehrere Nationen haben Erklärungen abgegeben, die [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName]'s Regierung für ihren Ehrgeiz praktizieren. Umweltvertretungsgruppen nennen [ROOT.GetCountry.GetName] ein Modell für andere zu folgen."
+ environment_laws.3.f:0 "Führung ist einfacher zu behaupten als zu erhalten."
+ environment_laws.3.a:0 "Leverage the moment — Gastgeber internationaler Umweltgespräche"
+ environment_laws.3.b:0 "Halten Sie dieses Inland — vermeiden Sie Überwindung der internationalen Verpflichtungen"
+ 
+ # environment_laws.4 — Compliance Cost Debate
+ environment_laws.4.t:0 "Wer trägt die Kosten der Umweltverträglichkeit?"
+ environment_laws.4.d:0 "Die Umweltgesetzgebung hat eine heftige Debatte über die Verantwortung eröffnet. Die Industrie argumentiert, dass die Compliance-Kosten — die Umrüstung von Fabriken, die Änderung der Lieferketten, die Aktualisierung der Abfallwirtschaft — unverhältnismäßig auf die Erzeuger und letztlich auf die Verbraucher sinken werden. Umweltgruppen streiten, dass diese Kosten den wahren Preis der Verschmutzung darstellen, der seit Jahrzehnten von der Öffentlichkeit still getragen wurde."
+ environment_laws.4.f:0 "Die Verschmutzung hatte immer eine Kosten. Die Frage ist, wer sie bezahlt."
+ environment_laws.4.a:0 "Der Verursacher zahlt — die Industrie trägt die Kosten seiner eigenen Einhaltung"
+ environment_laws.4.b:0 "Staatliche Subvention — die Regierung teilt die Compliance-Bürgschaft für die rasche Annahme"
+ 
+ # environment_laws.5 — Constitutional Challenge
+ environment_laws.5.t:0 "[SCOPE.sCharacter('industry_opposition_leader').GetFullName] Herausforderungen der Rechtmäßigkeit der Naturrechte"
+ environment_laws.5.d:0 "[SCOPE.sCharacter('industry_opposition_leader').GetFullName] der [SCOPE.gsInterestGroup('industry_opposition_ig').GetName] hat eine formale rechtliche Herausforderung für die vorgeschlagenen garantierten Naturgesetze angekündigt. Das Argument: Die Gewährung einer Rechtsstellung für Flüsse, Wälder und Ökosysteme stellt eine verfassungswidrige Störung der Eigentumsrechte und der wirtschaftlichen Freiheit dar. Die Herausforderung hat beträchtliche Unterstützung von Grund- und Industrieinteressen angezogen."
+ environment_laws.5.f:0 "Die Natur hat keine Anwälte. Es muss uns ausleihen."
+ environment_laws.5.a:0 "Verteidigen Sie den Rahmen — lassen Sie die Gerichte auf seine Verdienste"
+ environment_laws.5.b:0 "Beschränken Sie den Anwendungsbereich — verhandeln, um einen längeren rechtlichen Kampf zu vermeiden"
+ 
+ # environment_laws.6 — Environmental Disaster
+ environment_laws.6.t:0 "Umweltkatastrophe in [SCOPE.sState('disaster_state_scope').GetName]"
+ environment_laws.6.d:0 "Während die Umweltgesetzgebung in der Debatte steht, ist [SCOPE.sState('disaster_state_scope').GetName] von einer Umweltkrise getroffen worden — einer Fabrikverschüttung, einer Flussverunreinigung oder einer Verschmutzung, die hinreichend groß ist, dass sie die nationalen Nachrichten erreicht hat. Das Timing ist signifikant. Die Unterstützer argumentieren, dass die Rechtsvorschriften dringend benötigt werden. [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName]'s Regierung muss entscheiden, wie man reagiert."
+ environment_laws.6.f:0 "Jede Katastrophe ist auch ein Argument."
+ environment_laws.6.a:0 "Benutzen Sie den Moment — fordern Sie dringende Durchführung des Umweltrechts"
+ environment_laws.6.b:0 "Enthalten Sie die Geschichte — Verwaltung der öffentlichen Reaktion ohne eskalieren"
+ 
+ env_voluntary_compliance:0 "Branchenfreiwillige Compliance"
+ env_voluntary_compliance_desc:0 "Die Industrie hat die freiwillige Einhaltung des Umweltrahmens vereinbart, die aktive Opposition zu reduzieren und die Chancen des Gesetzes zu verbessern."
+ 
+ env_mandatory_enforcement:0 "Mandatsrahmen"
+ env_mandatory_enforcement_desc:0 "Die Regierung hat die freiwillige Einhaltung zugunsten der Zwangsvollstreckung abgelehnt. Das Gesetz ist stärker — und die Industrie Opposition entschlossener."
+ 
+ env_scientific_backing:0 "Wissenschaftliche Endpunkte der Gemeinschaft"
+ env_scientific_backing_desc:0 "Ein veröffentlichter wissenschaftlicher Bericht, der die Umweltgesetzgebung befürwortet, verlagert die öffentliche und rechtliche Stellungnahme."
+ 
+ env_international_praise:0 "Internationale Umweltpraktiken"
+ env_international_praise_desc:0 "Die internationale Anerkennung von [ROOT.GetCountry.GetName]'s Umweltführerschaft baut häusliche Dynamik für die Gesetzgebung."
+ 
+ env_diplomatic_push:0 "Umweltdiplominitiative"
+ env_diplomatic_push_desc:0 "<x id==========                                                                                                                                                                                                                                                  "
+ 
+ env_compliance_cost_debate:0 "Compliance-Kostenrahmen aufgelöst"
+ env_compliance_cost_debate_desc:0 "Die Debatte darüber, wer die Umweltverträglichkeitskosten trägt, wurde aufgelöst und ein großes Hindernis aus dem Weg der Gesetzgebung entfernt."
+ 
+ env_polluter_pays:0 "Verursacherprinzip"
+ env_polluter_pays_desc:0 "Die Industrie ist für eigene Compliance-Kosten verantwortlich gemacht worden. Das Gesetz ist stärker, die Opposition ist lauter."
+ 
+ env_state_subsidy:0 "Staatliche Umweltverträglichkeitsprüfung"
+ env_state_subsidy_desc:0 "Der Staat subventioniert die Umweltverträglichkeit, um den Widerstand der Industrie zu reduzieren und die Annahme zu beschleunigen."
+ 
+ env_constitutional_challenge:0 "Konstitutionelle Herausforderung"
+ env_constitutional_challenge_desc:0 "Eine rechtliche Herausforderung für die garantierten Rechte der Naturgesetzgebung hat seinen Übergang durch die Gesetzgebung verlangsamt."
+ 
+ env_legal_defence:0 "Rechtliche Verteidigung der Naturrechte"
+ env_legal_defence_desc:0 "Die rechtliche Verteidigung des Naturrechtsrahmens der Regierung hat das Vertrauen in ihre verfassungsrechtliche Gültigkeit gestärkt."
+ 
+ env_disaster_response:0 "Disaster Leveraged für Gesetzgebung"
+ env_disaster_response_desc:0 "Die Regierung hat eine Umweltkatastrophe genutzt, um dringende öffentliche und legislative Unterstützung für das Umweltrecht zu schaffen."
+ 
+ env_disaster_suppressed:0 "Geschichte der Katastrophe"
+ env_disaster_suppressed_desc:0 "Die Umweltkatastrophe wurde ruhig geführt. Der öffentliche Druck ist nicht aufgebaut — und hat weder eine gesetzgeberische Dynamik."
+ 
+ env_disaster_state_modifier:0 "Umweltkatastrophe"
+ env_disaster_state_modifier_desc:0 "Dieser Zustand hat eine Umweltkatastrophe erlitten, eine Verschüttung, Kontamination oder einen ökologischen Zusammenbruch, die zusätzliche Verschmutzung und die Sterblichkeit verursacht."
+ 
+ childrens_childcare.1.t:0 "Der Markt weiß das Beste"
+ childrens_childcare.1.d:0 "Mit der Debatte über die privatisierte Vorschule haben sich Wirtschaftsverbände als begeisterte Hintergründe entwickelt. Private Anbieter, sie argumentieren, werden für Qualität konkurrieren — Innovation vorantreiben, die ein Staatsmonopol nie könnte. Kritiken warnen jedoch, dass ohne sinnvolle Regulierung nur Familien, die sich die Gebühren leisten können, profitieren werden."
+ childrens_childcare.1.f:0 "Der Markt hat eine Antwort für alles. Ob es die richtige hier hat, bleibt zu sehen."
+ childrens_childcare.1.a:0 "Der Wettbewerb wird die Qualität nach oben treiben."
+ childrens_childcare.1.b:0 "Preisregulierung — private Anbieter müssen den Zugang garantieren."
+
+ childrens_childcare.2.t:0 "Wer hebt das Kind?"
+ childrens_childcare.2.d:0 "Religiöse und traditionelle Stimmen sind unruhig mit der Erweiterung der formalisierten frühkindlichen Bildung gewachsen. Die Familie, die sie darauf bestehen, ist die richtige Wiege der moralischen Entwicklung — und jede Institution, die jedoch gut beachtet wird, dass die Eltern Risiken erstickt, die Grundlagen der Zivilgesellschaft zu erodieren."
+ childrens_childcare.2.f:0 "Hinter jeder politischen Frage über Kinder liegt eine tiefere: zu wem gehören sie?"
+ childrens_childcare.2.a:0 "Beruhigen Sie sie — das unterstützt Familien, es ersetzt sie nicht."
+ childrens_childcare.2.b:0 "Die Beunruhigung — die frühe Bildung ist keine moralische Frage."
+
+ childrens_childcare.3.t:0 "Die Fiskalrechnung"
+ childrens_childcare.3.d:0 "Die universelle Kinderbetreuung ist ein ehrgeiziges Engagement – und eine teure. Fiskale Konservative haben die projizierten Kosten beschlagnahmt, warnen, dass der Staat ohne Konsequenz nicht einfach einen Anspruch auf diese Skala aufnehmen kann. Die Regierung muss entscheiden: nehmen Sie die Kosten auf und drücken Sie nach vorne, oder verlangsamen Sie den Rollout und kaufen Sie Zeit."
+ childrens_childcare.3.f:0 "Jedes große Sozialprogramm trifft schließlich seinen Buchhalter."
+ childrens_childcare.3.a:0 "— die Kosten aufzufangen und sich weiter zu bewegen."
+ childrens_childcare.3.b:0 "Phase it in — Verzögern Sie die vollständige Umsetzung, um die Belastung zu bewältigen."
+
+ childrens_childcare.4.t:0 "Befreiung oder Abhängigkeit der Arbeitnehmer?"
+ childrens_childcare.4.d:0 "Die Arbeiterbewegung findet sich geteilt. Für viele Arbeitnehmer ist die universelle Kinderbetreuung eine Befreiung — Eltern, insbesondere Mütter, zu gleichen Bedingungen in die Belegschaft einzusteigen. Aber eine skeptische Fraktion argumentiert, dass staatliche Leistungen ein schlechter Ersatz für echte Lohnzuwächse sind, und dass die Einbindung von Kinderbetreuungsrisiken, die Arbeitgeber Druck nehmen, um tatsächlich einen Lebenslohn zu zahlen."
+ childrens_childcare.4.f:0 "Nicht jede Reform, die den Arbeitnehmern hilft, ist eine Arbeiterreform."
+ childrens_childcare.4.a:0 "Kinderbetreuung ist eine Arbeitsfrage — sie als Arbeitnehmerpolitik anzunehmen."
+ childrens_childcare.4.b:0 "Löhne zuerst — halten Sie die Bewegungen getrennt."
+
+ childrens_childcare.5.t:0 "Die Forschung spricht"
+ childrens_childcare.5.d:0 "Ökonomen und Kinderentwicklungsforscher sind mit einem einfachen Argument in die Debatte eingetreten: Investitionen in die frühkindliche Kindheit liefern die höchsten langfristigen Renditen aller öffentlichen Ausgaben. Die Daten sind eindeutig. Die Frage ist, ob die Regierung diesen Fall öffentlich machen will – oder ob sie die Debatte lieber politisch und nicht offensichtlich hält."
+ childrens_childcare.5.f:0 "Die Beweise gewinnen selten eigene Debatten. Aber es hilft."
+ childrens_childcare.5.a:0 "Kommission einen öffentlichen Bericht — lassen Sie die Beweise führen."
+ childrens_childcare.5.b:0 "Halten Sie Wissenschaftler aus dem Gesetzgebungsprozess."
+ 
+ childrens_rights_market_preschool_framing:0 "Privater Sektor"
+ childrens_rights_market_preschool_framing_desc:0 "Die Unternehmensinteressen haben ihr Gewicht hinter das privatisierte Vorschulmodell geworfen, was dem Umsetzungsprozess einen Impuls verleiht."
+
+ childrens_rights_access_mandate:0 "Zutrittsmandat Imposed"
+ childrens_rights_access_mandate_desc:0 "Die Preisbestimmungen wurden dem Gesetz beigefügt, wonach private Anbieter Zugriffsnormen erfüllen müssen. Compliance-Verhandlungen verlangsamen die Passage."
+
+ childrens_rights_family_values_debate:0 "Familie Primaly anerkannt"
+ childrens_rights_family_values_debate_desc:0 "Die Regierung hat die Vorschulausweitung als Unterstützung für Familien anstelle eines Ersatzes gerahmt, wodurch konservativer Widerstand gegen das Gesetz."
+
+ childrens_rights_fiscal_resistance:0 "Fiskaler konservativer Widerstand"
+ childrens_rights_fiscal_resistance_desc:0 "Die Ablehnung der prognostizierten Kosten der allgemeinen Kinderbetreuung hemmt den Gesetzgebungsprozess und untergräbt die Position der Regierung."
+
+ childrens_rights_funded_mandate:0 "Geförderte staatliche Verpflichtung"
+ childrens_rights_funded_mandate_desc:0 "Die Regierung hat sich verpflichtet, die vollen Kosten für die allgemeine Kinderbetreuung zu absorbieren und den Fall für die Umsetzung auf Kosten der öffentlichen Hand zu verstärken."
+
+ childrens_rights_labour_framing:0 "Arbeitsbewegung Mobilisiert"
+ childrens_rights_labour_framing_desc:0 "Die Gewerkschaften haben die allgemeine Kinderbetreuung als Arbeitnehmerfrage unterstützt, indem sie die Bemühungen um die Umsetzung des politischen Gewichtes ergänzten."
+
+ childrens_rights_academic_endorsement:0 "Akademische Endpunkte"
+ childrens_rights_academic_endorsement_desc:0 "Forscher und Ökonomen haben die allgemeine Kinderbetreuung öffentlich unterstützt und der Regierung offensichtliche Glaubwürdigkeit verliehen."
+
+ childrens_rights_business_engaged:0 "Privater Sektor Engaged"
+ childrens_rights_business_engaged_desc:0 "Unternehmer sehen die Möglichkeit in einem privatisierten frühen Bildungsmarkt und leihen aktiv ihren Einfluss, um das Gesetz verabschiedet zu sehen."
+
+ childrens_rights_devout_reassured:0 "Versichert"
+ childrens_rights_devout_reassured_desc:0 "Religiöse Stimmen wurden von der Regierung anerkannt, dass die Familie bleibt die primäre moralische Institution - nicht der Staat."
+
+ childrens_rights_devout_alienated:0 "Entfremdet"
+ childrens_rights_devout_alienated_desc:0 "Die Entlassung traditioneller Familienbelange hat den Verteidiger zutiefst unruhig über die Richtung der Sozialpolitik der Regierung gelassen."
+
+ childrens_rights_unions_mobilized:0 "Gewerkschaften mobilisiert"
+ childrens_rights_unions_mobilized_desc:0 "Die Gewerkschaften haben die universelle Kinderbetreuung hinter sich gelassen und sie als eine Erweiterung des Kampfes der Arbeiter für die wirtschaftliche Würde bezeichnet."
+
+ childrens_rights_unions_skeptical:0 "Gewerkschaften Skeptical"
+ childrens_rights_unions_skeptical_desc:0 "Eine beträchtliche Tatsache innerhalb der Arbeitsbewegung ist der Ansicht, dass staatliche Leistungen keinen Ersatz für echte Lohnzuwächse darstellen und ihre volle Unterstützung zurückhalten."
+
+ childrens_rights_intelligentsia_engaged:0 "Intelligentsia verlobt"
+ childrens_rights_intelligentsia_engaged_desc:0 "Akademiker und Forscher machen aktiv den öffentlichen Fall für die allgemeine Kinderbetreuung, indem sie belegen, dass frühe Investitionen die höchsten langfristigen sozialen Renditen erzielen."
+
+ childrens_rights_intelligentsia_sidelined:0 "Intelligentsia Sideline"
+ childrens_rights_intelligentsia_sidelined_desc:0 "Die akademische Gemeinschaft wurde aus der Legislativdebatte geschlossen, so dass die Intelligenz frustriert und aus der Agenda der Regierung ausgeschaltet."
+ 
+ womens_rights_laws.1.t:0 "Das Gesetzbuch"
+ womens_rights_laws.1.d:0 "Da die Rechtsvorschriften über den Rechtsschutz prägen, hat sich eine Debatte über ihre Reichweite ausgeweitet. Reformer in der Intelligenz argumentieren, dass ein enges Gesetz innerhalb einer Generation umgangen wird — Schutz muss in jede Institution geschrieben werden, oder sie werden nichts bedeuten. Ihre Gegner warnen, dass die Übertretung jetzt eine Verfassungskrise einlädt, die den gesamten Aufwand begräbt."
+ womens_rights_laws.1.f:0 "Jedes Gesetz ist nur so stark wie der Wille, es durchzusetzen — und der Mut, es breit genug zu schreiben, um zu handeln."
+ womens_rights_laws.1.a:0 "Schreiben Sie es weitgehend — Schutz muss jede Institution erreichen."
+ womens_rights_laws.1.b:0 "Halten Sie den Umfang schmal — sichern Sie die Passage zuerst."
+
+ womens_rights_laws.2.t:0 "Die Traditionalistin"
+ womens_rights_laws.2.d:0 "Konservative Stimmen — Landbesitzer, Kleriker und ihre Verbündeten — haben gegen die Gesetzesvorlage des Rechtsschutzes organisiert und sie zu einer Spitze der natürlichen Ordnung der Gesellschaft erklärt. Ihr Fall ist weniger im praktischen Einwand verwurzelt als in einem tiefen Unwohlsein mit dem, was das Gesetz darstellt. Die Regierung muss entscheiden, ob sie diese Herausforderung in offener Debatte erfüllen oder die Opposition selbst erschöpfen lässt."
+ womens_rights_laws.2.f:0 "Wenn Tradition spricht, bietet es selten ein Argument – nur ein Gefühl."
+ womens_rights_laws.2.a:0 "Sie in offener Aussprache zu treffen — ihren Fall öffentlich abzugeben."
+ womens_rights_laws.2.b:0 "Lassen Sie sie ihre Traurigkeit lüften — geben Sie ihnen keine Märtyrer-Plattform."
+
+ womens_rights_laws.3.t:0 "Die Mitarbeiter Push Back"
+ womens_rights_laws.3.d:0 "Der strukturelle Egalitarismus ist nicht nur eine Frage der Rechte, sondern es geht darum, wie Geschäfte laufen. Die Arbeitgeberklasse hat einen koordinierten Einwand erhoben, der argumentiert, dass die beauftragte Vertretung staatliche Eingriffe in private Einstellungsentscheidungen bedeutet. Sie sind nicht gegen Frauen am Arbeitsplatz, sie bestehen darauf, nur um genau zu sagen, wie viele und in welchen Rollen."
+ womens_rights_laws.3.f:0 "Jede Generation von Reformern wurde gesagt, dass das Timing falsch ist. Das Timing ist nie falsch für diejenigen, die von Verzögerung profitieren."
+ womens_rights_laws.3.a:0 "Verpflichtungserfüllung — keine Ausnahmen und kein Einphasen."
+ womens_rights_laws.3.b:0 "Bieten Sie eine Übergangszeit an — geben Sie den Arbeitgebern Zeit, sich anzupassen."
+
+ womens_rights_laws.4.t:0 "Frauen im öffentlichen Leben"
+ womens_rights_laws.4.d:0 "Die Gewerkschaften haben ein starkes Interesse an der strukturellen Gleichheitsrechnung genommen. Sie argumentieren, dass die Arbeitsfrauen immer im Zentrum der organisierten Arbeit gewesen seien – unterbezahlt, unterrepräsentiert und wesentlich. Die Frage ist, ob die Regierung dieses Bündnis formell anerkennt, die Rechnung zu einer gemeinsamen Ursache macht oder die Reform auf eigene Faust hält."
+ womens_rights_laws.4.f:0 "Der Fabrikboden hat immer gewusst, was das Parlament erst zugibt."
+ womens_rights_laws.4.a:0 "Es ist eine gemeinsame Sache — Frauen und Arbeit zusammen zu arbeiten."
+ womens_rights_laws.4.b:0 "Behalten Sie die Bewegungen deutlich — das Gesetz steht auf eigenen Werten."
+
+ womens_rights_laws.5.t:0 "Eine Gesellschaft transformiert"
+ womens_rights_laws.5.d:0 "Die Matriarchierechnung hat eine Reaktion im Gegensatz zu allem, was in jüngster Legislativgedächtnis gesehen wurde, provoziert. Seine Gegner widersprechen nicht nur einer Politik — sie widersprechen dem, was sie über die Richtung dieser Gesellschaft signalisiert. Der Kampf ist heftig und organisiert. Die Regierung muss entscheiden, ob sie sich direkt zu stellen, oder sich still zu drängen und das Gesetz einmal einen eigenen Fall zu machen."
+ womens_rights_laws.5.f:0 "Es gibt keine Revolution, die sich nicht anfühlt, zu denen, die vertrieben werden, wie ein Ende."
+ womens_rights_laws.5.a:0 "Konfrontieren Sie den Gegenschlag — der Bogen der Geschichte biegt sich nach vorne."
+ womens_rights_laws.5.b:0 "Wetter der Sturm ruhig — lassen Sie das Gesetz für sich sprechen."
+
+ womens_rights_laws.6.t:0 "Der alte Wachdienst"
+ womens_rights_laws.6.d:0 "Die Landbesitzer und die Witwe haben sich in ihrer Opposition zu der Matriarchierechnung mit einem Ferrour vereint, der über den normalen gesetzlichen Widerstand hinausgeht. Das ist für sie eine existentielle Herausforderung für den sozialen Stoff. Ihre Netzwerke werden mobilisiert, ihre Pulpen und Parlours verwandelten sich in Oppositionsstellen. Die Regierung muss entscheiden, wie fest sie reagiert."
+ womens_rights_laws.6.f:0 "Die alte Wache war in den letzten Stunden immer am lautesten."
+ womens_rights_laws.6.a:0 "Crush the Opposition — diese Regierung wird nicht Geisel gehalten werden."
+ womens_rights_laws.6.b:0 "Verhandlungen — bieten kulturelle Zugeständnisse, um die Reibung zu reduzieren."
+
+ womens_rights_legal_scope:0 "Broad Legal Mandat"
+ womens_rights_legal_scope_desc:0 "Die Intelligenz hat sich erfolgreich für weitreichende gesetzliche Schutzmaßnahmen, für die Förderung von Dynamik und Glaubwürdigkeit für die Umsetzungsbemühungen eingesetzt."
+
+ womens_rights_narrow_scope:0 "Narrow Scope Imposed"
+ womens_rights_narrow_scope_desc:0 "Die Entscheidung, die Reichweite des Gesetzes zu begrenzen, hat den Umsetzungsprozess kompliziert, da Befürworter und Gegner ihre Positionen neu kalibrieren."
+
+ womens_rights_traditionalist_debate:0 "Traditionelle Herausforderung Engaged"
+ womens_rights_traditionalist_debate_desc:0 "Die Regierung hat eine öffentliche Debatte mit konservativer Opposition geführt und die Bedingungen des Inkrafttretenskampfes verschoben."
+
+ womens_rights_employer_resistance:0 "Mitarbeiter Lobby Widerstand"
+ womens_rights_employer_resistance_desc:0 "Organisierter geschäftlicher Widerstand gegen die Mandatsvertretung hemmt den Gesetzgebungsprozess aktiv."
+
+ womens_rights_union_mobilization:0 "Arbeitsbewegung Mobilisiert"
+ womens_rights_union_mobilization_desc:0 "Die Gewerkschaften haben ihr organisiertes Gewicht hinter den strukturellen Egalitarismus geworfen, was die Anstrengung der Inszenierung erhöht."
+
+ womens_rights_societal_backlash:0 "Socistal Backlash"
+ womens_rights_societal_backlash_desc:0 "Die von der Matriarchie vorgelegte Änderungsskala hat einen breiten und organisierten Widerstand ausgelöst, der den Gesetzgebungsprozess verlangsamt."
+
+ womens_rights_vanguard_push:0 "Vanguard Push"
+ womens_rights_vanguard_push_desc:0 "Die Regierung hat sich verpflichtet, die Opposition direkt zu konfrontieren und sich als führender Rand der sozialen Transformation zu positionieren."
+
+ womens_rights_old_guard_opposition:0 "Alte Wache Opposition"
+ womens_rights_old_guard_opposition_desc:0 "Die Landbesitzer und der Devout haben sich im organisierten Widerstand vereint, den Matriarchie-Schatz gestoppt und die Entschlossenheit der Regierung getestet."
+
+ womens_rights_intelligentsia_engaged:0 "Intelligentsia verlobt"
+ womens_rights_intelligentsia_engaged_desc:0 "Akademiker und Reformer vergeben aktiv ihre öffentliche Autorität an den Fall des breiten Rechtsschutzes."
+
+ womens_rights_intelligentsia_disappointed:0 "Intelligentsia vernichtet"
+ womens_rights_intelligentsia_disappointed_desc:0 "Die Entscheidung, den Geltungsbereich des Gesetzes zu verjüngen, hat frustrierte reformistische Intellektuelle, die eine Halbmaßnahme fürchten, innerhalb einer Generation rückgängig gemacht."
+
+ womens_rights_conservatives_rebuked:0 "Konservative Rebuked"
+ womens_rights_conservatives_rebuked_desc:0 "Die öffentliche Rebütalität der Regierung hat die traditionelle Opposition peinlich gemacht, obwohl sie auch ihre Entschlossenheit geschärft hat."
+
+ womens_rights_conservatives_placated:0 "Konservierungsstoffe plattiert"
+ womens_rights_conservatives_placated_desc:0 "Indem die Opposition ihre Traurigkeiten ohne direkte Konfrontation lüften lässt, hat die Regierung sofortige Reibung reduziert."
+
+ womens_rights_employers_overruled:0 "Arbeitgeber überholt"
+ womens_rights_employers_overruled_desc:0 "Der Arbeitgeberklasse wurde mitgeteilt, dass die Einhaltung obligatorisch und nicht verhandelbar ist, Züchtung Ressentment aber Clearing der Weg nach vorne."
+
+ womens_rights_employers_appeased:0 "Arbeitgeber"
+ womens_rights_employers_appeased_desc:0 "Eine Phased-Übergang hat die geschäftliche Opposition erweicht und den Widerstand auf Kosten einer langsameren Umsetzung reduziert."
+
+ womens_rights_unions_allied:0 "Eingereichte Unionen"
+ womens_rights_unions_allied_desc:0 "Die Gewerkschaften haben sich formal mit der egalitären Bewegung verbündet, indem sie den Handlungsbemühungen den organisierten politischen Muskeln hinzufügen."
+
+ womens_rights_unions_neutral:0 "Unionsneutral"
+ womens_rights_unions_neutral_desc:0 "Die Arbeiterbewegung hat sich dazu entschlossen, ihren Abstand von der Gleichheitsrechnung zu halten, die weder aktive Unterstützung noch Opposition bietet."
+
+ womens_rights_old_guard_suppressed:0 "Alte Wache unterdrückt"
+ womens_rights_old_guard_suppressed_desc:0 "Die Regierung hat sich entschieden gegen die Opposition der alten Wache bewegt, ihre politische Position geschwächt, aber ihre Basis radikalisiert."
+
+ womens_rights_old_guard_negotiated:0 "Alte Wache verhandelt"
+ womens_rights_old_guard_negotiated_desc:0 "Die Konzessionen an die alte Wache haben das Schlimmste ihrer Opposition verschwommen, obwohl ihre grundsätzliche Meinungsverschiedenheit mit dem Gesetz bleibt."
+ 
+ ubi.1.t:0 "Die Kosten der bedingungslosen"
+ ubi.1.d:0 "Die Preismarke des allgemeinen Grundeinkommens ist nicht zu ignorieren. Die Finanzkonservativen haben sich auf die prognostizierten Ausgaben beworben und warnen, dass eine bedingungslose Zahlung an jeden Bürger — beschäftigt oder nicht, reich oder arm — eine unhaltbare Belastung für die öffentlichen Finanzen darstellen wird. Die Regierung muss entscheiden, ob sie sich jetzt zur vollen Finanzierung verpflichtet oder Zeit mit einem Phased-Ansatz zu kaufen."
+ ubi.1.f:0 "Jedes Versprechen der universellen Bestimmung erfüllt schließlich die gleiche Frage: wer zahlt, und wie viel?"
+ ubi.1.a:0 "Bemühen Sie sich auf die vollständige Finanzierung — die Kosten aufzufangen und nach vorne zu drücken."
+ ubi.1.b:0 "Phase der Zahlungen — Verzögerung der vollständigen Umsetzung, um die Kosten zu verwalten."
+
+ ubi.2.t:0 "Wird jemand arbeiten?"
+ ubi.2.d:0 "Arbeitgeber und Landbesitzer haben ihren Ruf gegen das allgemeine Grundeinkommen gefunden: Wenn der Staat unabhängig von der Anstrengung ein Einkommen garantiert, warum sollte jemand sich für die Arbeit entscheiden? Das Argument ist intuitiv und politisch stark, auch wenn die Beweise mehr eindeutig sind. Die Regierung muss sich entscheiden, den wirtschaftlichen Fall für die UBI auf ihre Verdienste zu stellen oder die Sorge zu stellen, indem sie Mindestarbeitsanforderungen an die Zahlungen anschließt."
+ ubi.2.f:0 "Die Angst, dass die Menschen aufhören, zu arbeiten, wenn die Chance gegeben hat, hat jede Politik, die es falsch bewiesen."
+ ubi.2.a:0 "Machen Sie den wirtschaftlichen Fall — Sicherheit ermöglicht Produktivität, nicht Leerheit."
+ ubi.2.b:0 "Befestigen Sie die Arbeitsanforderungen — stellen Sie die Sorge, den Widerstand zu reduzieren."
+
+ ubi.3.t:0 "Freiheit des Verlangens"
+ ubi.3.d:0 "Für die Gewerkschaften ist das allgemeine Grundeinkommen nicht nur eine Wohlfahrtspolitik — es ist die Erfüllung der ältesten Forderung der Arbeiterbewegung: die Freiheit von der Armut. Mit den geltenden Rechtsvorschriften sind die Gewerkschaftsführer bestrebt, den Moment als ihre eigene, organisierte politische Muskulatur zu den Anstrengungen zu beanspruchen. Die Regierung muss entscheiden, ob sie dieses Bündnis umarmen oder den Rollout als eine ruhige administrative Angelegenheit halten soll."
+ ubi.3.f:0 "Das Recht, keine schlechte Arbeit zu sagen, war immer die echte Nachfrage hinter jedem Lohnstreit."
+ ubi.3.a:0 "Bewahren Sie das Mandat — lassen Sie die Gewerkschaften die öffentliche Kampagne führen."
+ ubi.3.b:0 "Bewahren Sie es auf eine Regierungsinitiative – vermeiden Sie eine Überpolitisierung des Rollouts."
+
+ welfare_ubi_fiscal_alarm:0 "Alarm ausgelöst"
+ welfare_ubi_fiscal_alarm_desc:0 "Fiskale Konservative haben gegen die projizierten Kosten des allgemeinen Grundeinkommens mobilisiert, den Enactment-Prozess gestoppt und die Regierung auf die Verteidigung gezwungen."
+
+ welfare_ubi_funded_commitment:0 "Geförderte staatliche Verpflichtung"
+ welfare_ubi_funded_commitment_desc:0 "Die Regierung hat sich verpflichtet, die vollen Kosten von UBI zu absorbieren, und ihre Umsetzungsposition zu erheblichen Kosten für die öffentliche Hand zu stärken."
+
+ welfare_ubi_labour_disincentive_debate:0 "Arbeitsunfälle"
+ welfare_ubi_labour_disincentive_desc:0 "Die Regierung hat sich öffentlich mit Bedenken über Arbeitsanreize beschäftigt, was den wirtschaftlichen Fall macht, dass die finanzielle Sicherheit die Erwerbsbeteiligung nicht untergraben kann."
+
+ welfare_ubi_work_requirements:0 "Anforderungen an die Arbeit"
+ welfare_ubi_work_requirements_desc:0 "Mindestarbeitsbedingungen wurden an UBI-Zahlungen gebunden, die Umsetzung verlangsamt, aber die Opposition des Arbeitgebers zum Gesetz reduziert."
+
+ welfare_ubi_popular_mandate:0 "Angemeldetes Mandat"
+ welfare_ubi_popular_mandate_desc:0 "Die Gewerkschaften haben die UBI öffentlich zum Höhepunkt des Kampfes der Arbeiterbewegung erklärt, indem sie die politische Dynamik der Handlungsbemühungen verstärkte."
+
+ welfare_ubi_employers_unconvinced:0 "Arbeitgeber unbesiegt"
+ welfare_ubi_employers_unconvinced_desc:0 "Trotz der wirtschaftlichen Argumente der Regierung bleibt die Arbeitgeberklasse skeptisch, dass bedingungsloses Einkommen das Arbeitskräfteangebot nicht reduzieren wird."
+
+ welfare_ubi_employers_appeased:0 "Arbeitgeber"
+ welfare_ubi_employers_appeased_desc:0 "Die Arbeitsanforderungen haben die Opposition des Arbeitgebers gegenüber der UBI erweicht, wodurch der aktive Widerstand gegen die Rechtsdurchführung reduziert wird."
+
+ welfare_ubi_unions_mobilized:0 "Gewerkschaften mobilisiert"
+ welfare_ubi_unions_mobilized_desc:0 "Die Gewerkschaften setzen sich aktiv für das universale Grundeinkommen ein, indem sie es als den endgültigen Sieg im langen Kampf um die wirtschaftliche Freiheit der Arbeiter brüllen."
+
+ welfare_ubi_unions_sidelined:0 "Unions Sidelined"
+ welfare_ubi_unions_sidelined_desc:0 "Die Entscheidung der Regierung, die UBI als ein ruhiges administratives Rollout zu halten, hat die Gewerkschaften frustriert und außer Eingriff mit der Durchsetzungsbemühung."
+
+ gun_laws.1.t:0 "Das Sicherheitsargument"
+ gun_laws.1.d:0 "Die Reformer und die Befürworter der öffentlichen Gesundheit haben das Feuerwaffenverbot als einen Moment ergriffen, um den evidenzbasierten Fall zu machen: weniger Waffen im Umlauf bedeutet weniger Tod. Die Daten sind eindeutig. Die Regierung muss entscheiden, ob sie formal dieses Gremium umarmen, das Verbot der intellektuellen Glaubwürdigkeit ausleihen oder die Debatte über Rechts- und Ordnungsbedingungen und die Stimmen der öffentlichen Gesundheit halten soll."
+ gun_laws.1.f:0 "Die sichersten Gesellschaften sind nicht immer die bewaffnetsten."
+ gun_laws.1.a:0 "Bewundern Sie die öffentliche Gesundheit Friaming — die Daten sind auf unserer Seite."
+ gun_laws.1.b:0 "Tragen Sie es als Gesetz und Ordnung — halten die öffentliche Gesundheit Befürworter aus."
+
+ # ==========================================
+ # gun_laws.2 — The Armed Forces Weigh In
+ # ==========================================
+ gun_laws.2.t:0 "Die Streitkräfte wägen ein"
+ gun_laws.2.d:0 "Die militärische Führung hat ein Interesse an dem Feuerwaffenverbot, das über die Politik hinausgeht. Eine entwaffnete Zivilbevölkerung ist schwieriger, gegen den Staat zu organisieren, einfacher zu staatlichen Bedingungen zu beschreiben und weniger wahrscheinlich eine Aufständlichkeit zu erhalten. Ihre Unterstützung könnte entscheidend sein — aber das Militär in eine nationale Legislativdebatte zu bringen, trägt ihre eigenen Komplikationen."
+ gun_laws.2.f:0 "Die Armee hat immer gewusst, dass die gefährlichste Waffe nicht unter ihrem Befehl ist."
+ gun_laws.2.a:0 "Willkommen ihre Unterstützung — eine entwaffnete Bevölkerung ist eine geordnete."
+ gun_laws.2.b:0 "Halten Sie das Militär aus dem häuslichen Recht — das ist eine zivile Angelegenheit."
+
+ # ==========================================
+ # gun_laws.3 — Rural Resistance
+ # ==========================================
+ gun_laws.3.t:0 "Ländlicher Widerstand"
+ gun_laws.3.d:0 "Die Landschaft hört nicht auf das Argument der Hauptstadt. Für die ländlichen Gemeinden sind Waffen keine politische Erklärung — sie sind Werkzeuge, die neben dem Land geerbt werden, für die Jagd verwendet, für den Tierschutz und für die grundlegende Sicherheit isolierter Siedlungen. Sie einzuschränken ist keine politische Frage, sondern eine persönliche Angelegenheit. Die Regierung muss entscheiden, wie fest die Linie halten."
+ gun_laws.3.f:0 "Die Leute, die das Gesetz geschrieben haben, mussten nie drei Stunden auf einen Konstable warten."
+ gun_laws.3.a:0 "Festhalten — Stadtgesetze gelten überall gleich."
+ gun_laws.3.b:0 "Angebot ländlicher Ausnahmen — Jagd und Tierschutz sind legitime Verwendungen."
+
+ # ==========================================
+ # gun_laws.4 — A Right, Not a Privilege
+ # ==========================================
+ gun_laws.4.t:0 "Ein Recht, kein Privileg"
+ gun_laws.4.d:0 "Die Befürworter von unbeschränkten Schusswaffen haben ihr Argument gefunden und sie lassen sich nicht davon los: Eigentum ist ein Recht, nicht ein Privileg, das vom Staat gewährt werden soll. Jedes Lizenzsystem, jede Registrierungspflicht, jede Einschränkung überhaupt ist der erste Schritt auf dem Weg zur Tyrannei. Die Regierung muss entscheiden, ob sie diese Umarmung und die von ihr erzeugte politische Energie umarmen oder aus praktischen Gründen den Fall machen soll."
+ gun_laws.4.f:0 "Es gibt eine besondere Art von Freiheit, die nur an Gunpoint gehalten werden kann."
+ gun_laws.4.a:0 "Bewundern Sie das Freiheitsargument — eine bewaffnete Bürgerschaft ist eine freie."
+ gun_laws.4.b:0 "Rahmen es praktisch — Fokus auf Selbstverteidigung und Konskriptionsbereitschaft."
+
+ # ==========================================
+ # gun_laws.5 — The Safety Lobby Fights Back
+ # ==========================================
+ gun_laws.5.t:0 "Die Sicherheitslobby kämpft zurück"
+ gun_laws.5.d:0 "Die Intelligenz und die öffentliche Gesundheit Stimmen, die gegen das Feuerwaffenverbot verstoßen haben, sind nicht still geworden — sie haben ihre Energie in Richtung gegen ungehinderte Eigentum umgeleitet. Ihre Argumente sind bekannt: Die Beweise unterstützen nicht die Behauptung, dass mehr Waffen sicherere Gesellschaften produzieren. Die Regierung muss entscheiden, ob sie sich an der öffentlichen Debatte beteiligen oder ihnen die Plattform verwehren."
+ gun_laws.5.f:0 "Jedes Argument für unbeschränkte Schusswaffen muss schließlich für die Körper antworten."
+ gun_laws.5.a:0 "Die Freiheit trägt ihre eigenen Risiken."
+ gun_laws.5.b:0 "Ignoriere sie — gräbt die Opposition nicht mit einer Antwort aus."
+
+ # ==========================================
+ # gun_laws.6 — Licensing Is Not Freedom
+ # ==========================================
+ gun_laws.6.t:0 "Lizenzierung ist nicht Freiheit"
+ gun_laws.6.d:0 "Die lizenzierte Feuerwaffenrechnung hat den seltenen Kampf der Vereinigung beider Seiten der Debatte in Opposition geführt. Gun Rights befürwortet jede Lizenzforderung als Verstoß gegen eine grundlegende Freiheit. Sicherheitsbefürworter sehen es als eine Halbmaßnahme, die nichts aussagekräftig macht, Schaden zu reduzieren. Die Regierung verteidigt sich einen mittleren Boden, den weder die Flanke besetzen will."
+ gun_laws.6.f:0 "Ein Kompromiss, der niemand zufriedenstellt, kann immer noch die richtige Antwort sein."
+ gun_laws.6.a:0 "Verteidigen Sie den mittleren Boden — Lizenzierung ist angemessen und verhältnismäßig."
+ gun_laws.6.b:0 "Erkennen Sie die Spannung — versprechen Sie eine Überprüfung, sobald das Gesetz bettet."
+
+ gun_law_safety_argument:0 "Public Health Case Made"
+ gun_law_safety_argument_desc:0 "Die Regierung hat eine öffentliche Gesundheitsversorgung für das Verbot von Feuerwaffen angenommen, die die Rechtsvorschriften intellektueller Glaubwürdigkeit verleiht und ihren Appell erweitert."
+
+ gun_law_military_position:0 "Militärische Endpunkte"
+ gun_law_military_position_desc:0 "Die militärische Führung hat die zivile Abrüstung öffentlich unterstützt und die institutionellen Autoritäten zu den Anstrengungen hinzugefügt."
+
+ gun_law_rural_resistance:0 "Ländlicher Widerstand"
+ gun_law_rural_resistance_desc:0 "Ländliche Gemeinschaften stehen aktiv gegen Waffeneinschränkungen, sperren den Gesetzgebungsprozess und zwingen die Regierung, das Gesetz den betroffenen Bürgern zu rechtfertigen."
+
+ gun_law_rights_framing:0 "Liberty Framing angenommen"
+ gun_law_rights_framing_desc:0 "Die Regierung hat das Argument angenommen, dass Waffenbesitz ein grundlegendes Recht ist, Befürworter zu benennen und dem Gesetz eine prinzipienmäßige Grundlage zu verleihen."
+
+ gun_law_practical_framing:0 "Praktische Entscheidung"
+ gun_law_practical_framing_desc:0 "Der Fall für unbeschränkte Schusswaffen wurde aus praktischen Gründen — Selbstverteidigung und Verschreibungsbereitschaft — statt ideologischer Art gemacht."
+
+ gun_law_safety_lobby_opposition:0 "Zurück zur Übersicht"
+ gun_law_safety_lobby_opposition_desc:0 "Die Befürworter der öffentlichen Gesundheit und die Intelligenz setzen die organisierte Opposition gegen unbeschränkte Feuerwaffen ein, die den Prozess der Inkubation einschränken."
+
+ gun_law_compromise_resistance:0 "Kompromiß unter Feuer"
+ gun_law_compromise_resistance_desc:0 "Die lizenzierte Feuerwaffenrechnung wird aus beiden Richtungen widerstehen — Waffenrechtler sehen es als Verstoß, Sicherheitsbefürworter sehen es als unzureichend."
+
+ gun_law_compromise_defended:0 "Kompromisse verwehrt"
+ gun_law_compromise_defended_desc:0 "Die Regierung hat einen öffentlichen Fall für den lizenzierten Schusswaffen-Mittelstand gemacht, der von beiden Flanken gegen Opposition zurückdrängt."
+
+ gun_law_intelligentsia_engaged:0 "Intelligentsia verlobt"
+ gun_law_intelligentsia_engaged_desc:0 "Forscher und Reformer der öffentlichen Gesundheit leihen aktiv ihre Autorität dem Fall für Waffenbeschränkungen."
+
+ gun_law_intelligentsia_sidelined:0 "Intelligentsia Sideline"
+ gun_law_intelligentsia_sidelined_desc:0 "Die Regierung hat sich dazu entschlossen, das Feuerwaffenverbot als Gesetz und Ordnungsfragen zu rahmen und die Stimmen der öffentlichen Gesundheit aus der Debatte heraus zu halten."
+
+ gun_law_intelligentsia_rebuked:0 "Intelligentsia Rebuked"
+ gun_law_intelligentsia_rebuked_desc:0 "Die Sicherheitslobby wurde öffentlich herausgefordert und ihre Argumente entlassen, obwohl dies ihre Opposition geschärft hat."
+
+ gun_law_intelligentsia_ignored:0 "Intelligentsia ignoriert"
+ gun_law_intelligentsia_ignored_desc:0 "Die Regierung hat abgelehnt, sich mit der Opposition der Sicherheitslobby zu engagieren und ihnen eine Plattform zu verwehren, um ihre Frustration zu vertiefen."
+
+ gun_law_military_backing:0 "Militärische Unterstützung"
+ gun_law_military_backing_desc:0 "Die Streitkräfte haben die zivile Abrüstung öffentlich unterstützt und dem Anstoß der Umsetzung entscheidendes institutionelles Gewicht verliehen."
+
+ gun_law_military_sidelined:0 "Militärseitige Seite"
+ gun_law_military_sidelined_desc:0 "Die Regierung hat die militärische Führung aus der inländischen Schusswaffendebatte gehalten, so dass die Streitkräfte außer Eingriff mit dem Gesetzgebungsprozess."
+
+ gun_law_rural_folk_alienated:0 "Ländliche Folk Aliens"
+ gun_law_rural_folk_alienated_desc:0 "Die einheitliche Durchsetzung von Waffenbeschränkungen hat den ländlichen Gemeinden das Gefühl hinterlassen, von einer Regierung, die ihren Lebensweg nicht versteht, gezielt zu werden."
+
+ gun_law_rural_folk_appeased:0 "Ländliche Folk Appeased"
+ gun_law_rural_folk_appeased_desc:0 "Befreiungen für Jagd- und Tierschutz haben den ländlichen Widerstand gegen die Einschränkungen erweicht, ohne die zentrale Absicht des Gesetzes zu verlassen."
+
+ gun_law_rural_folk_energized:0 "Ländliche Folk Energized"
+ gun_law_rural_folk_energized_desc:0 "Die Freiheitsberaubung von unbeschränkten Feuerwaffen hat stark mit den ländlichen Gemeinden gesungen und eine starke Basisunterstützung für das Gesetz geschaffen."
+ 
+  # ==========================================
+ # lgbtq_laws.1 — The Church Demands Action
+ # ==========================================
+ lgbtq_laws.1.t:0 "Die Kirche fordert Aktion"
+ lgbtq_laws.1.d:0 "Die Witwen haben ihre Position klar gemacht: Die aktive Unterdrückung der Homosexualität ist nicht nur eine politische Präferenz, sondern eine moralische Verpflichtung. Religiöse Führer fordern, dass die Regierung die Rechtsvorschriften in explizit theologischer Hinsicht rahmen und dem Gesetz das Gewicht der göttlichen Autorität verleihen. Die Regierung muss entscheiden, ob sie dieses Friaming umarmen oder die Rechtfertigung aus säkularen Gründen behalten soll."
+ lgbtq_laws.1.f:0 "Die gefährlichsten Gesetze sind diejenigen, die glauben, dass sie auf eine höhere Autorität antworten."
+ lgbtq_laws.1.a:0 "Betrügen Sie die moralische Betrügerei — das ist eine Angelegenheit des göttlichen Gesetzes."
+ lgbtq_laws.1.b:0 "Tragen Sie es als soziale Ordnung — halten Religion aus der Rechtfertigung."
+
+ # ==========================================
+ # lgbtq_laws.2 — The Cost of Enforcement
+ # ==========================================
+ lgbtq_laws.2.t:0 "Die Kosten der Durchsetzung"
+ lgbtq_laws.2.d:0 "Ein Gesetz gegen Homosexualität ist nur so wirksam wie seine Durchsetzung. Die Frage vor der Regierung ist nicht, ob sie diese Debatte einschränken soll, sondern wie aggressiv der Staatsapparat Verstöße nach sich zieht. Volle Durchsetzung ist teuer und invasive. Passive Durchsetzung setzt auf sozialen Druck und Kündigung. Jeder Ansatz trägt seine eigenen Kosten."
+ lgbtq_laws.2.f:0 "Der Staat, der das private Verhalten legalisiert, muss entscheiden, wie tief in das private Leben es zu erreichen bereit ist."
+ lgbtq_laws.2.a:0 "Volle Durchsetzung — ohne Kosten."
+ lgbtq_laws.2.b:0 "Passive Durchsetzung — lass den sozialen Druck die Arbeit tun."
+
+ # ==========================================
+ # lgbtq_laws.3 — Decriminalization Is Not Endorsement
+ # ==========================================
+ lgbtq_laws.3.t:0 "Dekriminalisierung ist nicht Endorsement"
+ lgbtq_laws.3.d:0 "Konservative Stimmen haben die Entkriminalisierung Rechnung mit vorhersehbarem Alarm begrüßt. Das bevorzugte Argument der Regierung - dass die Beseitigung von Strafen keine moralische Unterstützung darstellt - hat sie nicht erfüllt. Die Frage ist, ob wir diesen Fall öffentlich und direkt machen oder ruhig vorangehen und die Aufmerksamkeit, die eine öffentliche Debatte erzeugen würde, vermeiden."
+ lgbtq_laws.3.f:0 "Der Abstand zwischen Toleranz und Genehmigung hat sich nie so bestritten."
+ lgbtq_laws.3.a:0 "Machen Sie den Fall klar — Entkriminalisierung beseitigt Strafe, nicht Bestätigung."
+ lgbtq_laws.3.b:0 "Halten Sie es ruhig — gehen Sie die Reform, ohne darauf aufmerksam zu machen."
+
+ # ==========================================
+ # lgbtq_laws.4 — The Intelligentsia Makes Its Case
+ # ==========================================
+ lgbtq_laws.4.t:0 "Die Intelligentsia macht ihren Fall"
+ lgbtq_laws.4.d:0 "Reformer und Rechtswissenschaftler haben die Debatte mit einem einfachen Argument abgeschlossen: der Staat hat kein berechtigtes Interesse an dem privaten Verhalten der Einwilligung von Erwachsenen, und die Kriminalisierung der Homosexualität ist eine Verletzung der grundlegendsten Prinzipien der persönlichen Freiheit. Die Regierung muss entscheiden, ob sie sich formal an dieses Argument anpasst oder die Reform zu rein rechtlichen Begriffen hält."
+ lgbtq_laws.4.f:0 "Freiheit, die die Erlaubnis vom Staat verlangt, ist überhaupt nicht Freiheit."
+ lgbtq_laws.4.a:0 "Lassen Sie sie das Argument führen — die persönliche Freiheit ist unveräußerlich."
+ lgbtq_laws.4.b:0 "Halten Sie es gesetzgebend — vermeiden Sie die philosophische Debatte."
+
+ # ==========================================
+ # lgbtq_laws.5 — Marriage Is a Social Institution
+ # ==========================================
+ lgbtq_laws.5.t:0 "Ehe ist eine soziale Institution"
+ lgbtq_laws.5.d:0 "Konservative haben ihr mächtigstes Argument gegen die Gleichheit der Ehe gefunden: Ehe ist nicht nur eine rechtliche Vereinbarung, sondern eine soziale Institution mit Wurzeln älter als der Staat selbst. Um neu zu definieren ist es, etwas zu entwirren, das nicht wieder zusammen gestellt werden kann. Die Regierung muss sich entscheiden, sich gegen dieses Argument zu stellen oder die Opposition durch religiöse Ausnahmen zu erweichen."
+ lgbtq_laws.5.f:0 "Jede Institution war einmal neu."
+ lgbtq_laws.5.a:0 "Reframe it — Zivile Ehe gehört zum Staat, nicht zur Kirche."
+ lgbtq_laws.5.b:0 "Angebot religiöse Ausnahmen — Kirchen können die Zeremonien abnehmen."
+
+ # ==========================================
+ # lgbtq_laws.6 — Equal Before the Law
+ # ==========================================
+ lgbtq_laws.6.t:0 "Gleich vor dem Gesetz"
+ lgbtq_laws.6.d:0 "Die Intelligenz hat die Gleichberechtigung der Ehe als logischer Abschluss der bürgerlichen Rechte gerahmt – eine Gesellschaft, die einigen Bürgern Rechte gewährt, die sie anderen auf der Grundlage dessen verweigert, wer sie lieben, ist eine Gesellschaft, die noch nicht auf eigenen Versprechen gut gemacht hat. Die Regierung muss entscheiden, ob sie diesen Moment als Wahrzeichen behandeln oder die Rechte still ohne das Gewicht der Erklärung verlängern soll."
+ lgbtq_laws.6.f:0 "Gleichheit, die ruhig gehalten werden muss, war nie ganz gleich."
+ lgbtq_laws.6.a:0 "Es ist ein Wahrzeichen — Gleichheit vor dem Gesetz gibt keine Ausnahmen."
+ lgbtq_laws.6.b:0 "Halten Sie es administrative — verlängern Sie die Rechte ruhig ohne Erklärung."
+
+ # ==========================================
+ # abortion_laws.1 — Life Begins at Conception
+ # ==========================================
+ abortion_laws.1.t:0 "Das Leben beginnt bei Conception"
+ abortion_laws.1.d:0 "Der Verteidiger ist bei der Abtreibungsdebatte mit einer Position angekommen, die keinen Kompromiss zulässt: Das Leben beginnt bei der Konzeption, und der Staat ist moralisch verpflichtet, ihn vor diesem Moment zu schützen. Ihre Forderung ist nicht nur, dass Abtreibung verboten wird, sondern dass das Verbot in Bezug auf seine moralische Ernsthaftigkeit gerahmt wird. Die Regierung muss entscheiden, ob sie dies umarmen oder das Gesetz aus demographischen und politischen Gründen rechtfertigen soll."
+ abortion_laws.1.f:0 "Die absoluten moralischen Positionen sind diejenigen, die keinen Raum für die härtesten Fälle lassen."
+ abortion_laws.1.a:0 "Betrügen Sie die moralische Betrügerei — das Leben ist heilig und der Staat muss es schützen."
+ abortion_laws.1.b:0 "Sie als demografische Politik rahmen – die Religion aus der Rechtfertigung fernhalten."
+
+ # ==========================================
+ # abortion_laws.2 — The Exceptions Question
+ # ==========================================
+ abortion_laws.2.t:0 "Die Ausnahmefrage"
+ abortion_laws.2.d:0 "Nicht früher hat die Rechnung in den Enactment-Prozess eingegeben, als ihre Gegner haben den schwierigsten Grund gefunden, auf dem sie zu bestreiten: die Fälle von Vergewaltigung, Inzest und medizinische Notwendigkeit. Dies sind die Fälle, die abstrakte moralische Positionen in gelebte Realitäten verwandeln. Die Regierung muss entscheiden, ob sie die Linie mit einem absoluten Verbot zu halten oder enge medizinische Ausnahmen zu besorgen, die die schwierigsten Umstände anerkennen."
+ abortion_laws.2.f:0 "abstrakte Prinzipien haben eine Möglichkeit, sehr konkret zu werden, wenn sie jemand anderes Leben sind."
+ abortion_laws.2.a:0 "Keine Ausnahmen — das Gesetz muss absolut sein, um alles zu bedeuten."
+ abortion_laws.2.b:0 "Erlauben Sie engen medizinischen Ausnahmen — die härtesten Fälle müssen behandelt werden."
+
+ # ==========================================
+ # abortion_laws.3 — The State Has No Place in This Decision
+ # ==========================================
+ abortion_laws.3.t:0 "Der Staat hat keinen Platz in dieser Entscheidung"
+ abortion_laws.3.d:0 "Der Fall für uneingeschränkte Abtreibung hat seine mächtigste Formulierung in der Sprache der körperlichen Autonomie gefunden: kein Staat hat das Recht, eine Person zu zwingen, eine Schwangerschaft gegen ihren Willen fortzusetzen. Die Intelligenz macht dieses Argument öffentlich und mit großer Kraft. Die Regierung muss entscheiden, ob sie als zentrales Element der Reform anzunehmen ist oder die Änderung als eine unkomplizierte Frage des Gesundheitszugangs darzustellen."
+ abortion_laws.3.f:0 "Das Recht auf den eigenen Körper ist entweder universell oder es ist überhaupt kein Recht."
+ abortion_laws.3.a:0 "Machen körperliche Autonomie das Herzstück — kein Staat hat das Recht, Schwangerschaft zu komponieren."
+ abortion_laws.3.b:0 "Frame it as Healthcare — halten Sie das philosophische Argument aus."
+
+ # ==========================================
+ # abortion_laws.4 — The Devout Will Not Yield
+ # ==========================================
+ abortion_laws.4.t:0 "Der Weg wird nicht erretten"
+ abortion_laws.4.d:0 "Jede Bewegung zur Liberalisierung des Abtreibungsrechts wurde mit organisierter religiöser Opposition getroffen, die kein Zeichen der Erweichung zeigt. Die Vertreibung betrachtet dies als eine Angelegenheit, auf der kein Kompromiss möglich ist, und sie sind bereit, jedes politische Instrument zu verwenden, das zur Verfügung steht, um die Rechtsvorschriften zu stoppen. Die Regierung muss entscheiden, ob sie direkt konfrontieren oder Gewissensschutz bieten, die ihren Widerstand erweichen, ohne ihre Forderungen zu erfüllen."
+ abortion_laws.4.f:0 "Die Opposition, die glaubt, dass sie an Gott antwortet, ist die härteste Opposition mit zu verhandeln."
+ abortion_laws.4.a:0 "Konfrontieren Sie sie direkt — der Staat regiert, nicht die Kirche."
+ abortion_laws.4.b:0 "Angebot Gewissensschutz — medizinisches Personal kann aus moralischen Gründen zurückgehen."
+
+ # ==========================================
+ # LGBTQ Enactment Modifier Localization
+ # ==========================================
+ lgbtq_law_religious_mandate:0 "Religiöses Mandat"
+ lgbtq_law_religious_mandate_desc:0 "Der Verteidiger hat das Unterdrückungsgesetz öffentlich als moralische und religiöse Verpflichtung gerahmt, indem er die theologische Autorität dem Anstrengungsaufwand verleiht."
+
+ lgbtq_law_enforcement_scope:0 "Durchsetzung Scope Set"
+ lgbtq_law_enforcement_scope_desc:0 "Die Regierung hat sich zur aktiven Durchsetzung der Beschränkungen verpflichtet, die Legislativdynamik des Gesetzes zu stärken."
+
+ lgbtq_law_enforcement_cost:0 "Vollstreckungskosten absorbiert"
+ lgbtq_law_enforcement_cost_desc:0 "Die Vollstreckung der Beschränkungen wird finanziert, wobei die öffentlichen Ausgaben zusätzlich belastet werden."
+
+ lgbtq_law_decrim_framing:0 "Verkleinerung gerahmt"
+ lgbtq_law_decrim_framing_desc:0 "Die Regierung hat die Entkriminalisierung als die Beseitigung der Strafe und nicht als eine Befürwortung sorgfältig gerahmt und den Weg durch die Debatte erleichtert."
+
+ lgbtq_law_quiet_passage:0 "Quiet Passage versucht"
+ lgbtq_law_quiet_passage_desc:0 "Die Entscheidung, öffentliche Debatten zu vermeiden, hat den Umsetzungsprozess verlangsamt, da die Reform ohne organisierte öffentliche Unterstützung erfolgt."
+
+ lgbtq_law_liberty_argument:0 "Liberty Argument Made"
+ lgbtq_law_liberty_argument_desc:0 "Die Intelligenz hat die Entkriminalisierung öffentlich als eine Frage der persönlichen Freiheit gestaltet und der Reform philosophische Glaubwürdigkeit verliehen."
+
+ lgbtq_law_institution_debate:0 "Institution Schulden Engaged"
+ lgbtq_law_institution_debate_desc:0 "Die Regierung hat eine öffentliche Debatte über die Art der Ehe als eine zivile Institution geführt, die die Bedingungen des Inkrafttretenskampfes verändert."
+
+ lgbtq_law_religious_exemptions:0 "Religiöse Befreiungen"
+ lgbtq_law_religious_exemptions_desc:0 "Religiöse Institutionen wurden Befreiungen von der Durchführung von Gleichgeschlechtszeremonien, der Verlangsamung der Umsetzung, aber der Erweichung konservativer Opposition angeboten."
+
+ lgbtq_law_equality_mandate:0 "Equality Mandat declared"
+ lgbtq_law_equality_mandate_desc:0 "Die Regierung hat formell die Gleichheit der Ehe als Bürgerrechte erklärt und eine starke politische Dynamik für die Umsetzung erzeugt."
+
+ lgbtq_law_devout_empowered:0 "Ermächtigte Entfaltung"
+ lgbtq_law_devout_empowered_desc:0 "Die Religionsgemeinschaft wurde formell in die Legislative gebracht, ihre politische Position gestärkt und ihr Engagement vertieft."
+
+ lgbtq_law_devout_sidelined:0 "Entwickeln Sie Sideline"
+ lgbtq_law_devout_sidelined_desc:0 "Die Regierung hat die religiösen Ausschreitungen aus der Rechtfertigung bewahrt, so dass die Vertreibung außer Eingriff gebracht und ruhig frustriert."
+
+ lgbtq_law_conservatives_unconvinced:0 "Konservierungsstoffe unbesiegt"
+ lgbtq_law_conservatives_unconvinced_desc:0 "Die konservative Opposition hat das Gremium der Regierung gehört und bleibt unbeeindruckt und hält ihren Widerstand gegen die Reform."
+
+ lgbtq_law_conservatives_rebuked:0 "Konservative Rebuked"
+ lgbtq_law_conservatives_rebuked_desc:0 "Die Regierung hat die konservative Opposition gegen die Gleichheit der Ehe öffentlich herausgefordert, ihre Position peinlich, aber ihre Entschlossenheit zu schärfen."
+
+ lgbtq_law_conservatives_placated:0 "Konservierungsstoffe plattiert"
+ lgbtq_law_conservatives_placated_desc:0 "Religiöse Ausnahmen haben die unmittelbare Intensität der konservativen Opposition reduziert, ohne die zugrunde liegende Meinungsverschiedenheit zu lösen."
+
+ lgbtq_law_intelligentsia_engaged:0 "Intelligentsia verlobt"
+ lgbtq_law_intelligentsia_engaged_desc:0 "Reformer und Rechtswissenschaftler machen aktiv den öffentlichen Fall für LGBTQ-Rechte, indem sie die intellektuelle Autorität an die Umsetzungsbemühungen vergeben."
+
+ lgbtq_law_intelligentsia_sidelined:0 "Intelligentsia Sideline"
+ lgbtq_law_intelligentsia_sidelined_desc:0 "Die Regierung hat beschlossen, die Reform der Gesetzgebung statt der philosophischen Begriffe zu halten und die Intelligenz ohne eine formale Rolle in der Debatte zu verlassen."
+
+ abortion_law_moral_absolute:0 "Moral Absolute erklärt"
+ abortion_law_moral_absolute_desc:0 "Der Verteidiger hat das Abtreibungsverbot erfolgreich als moralisches Absolutes gerahmt, indem er die theologische Autorität dem Anstrengungsaufwand verleiht."
+
+ abortion_law_demographic_framing:0 "Demographische Fraktion"
+ abortion_law_demographic_framing_desc:0 "Die Regierung hat das Abtreibungsverbot für demografische und politische Gründe gerechtfertigt, indem sie die Religionssprache aus der offiziellen Rechtfertigung hält."
+
+ abortion_law_exceptions_debate:0 "Ausnahmen Schulden aufgelöst"
+ abortion_law_exceptions_debate_desc:0 "Die Regierung hat eine klare Position in der Frage der Ausnahmen eingenommen und eine feste Grundlage für den Umsetzungsprozess geschaffen."
+
+ abortion_law_medical_exceptions:0 "Erlaubte medizinische Ausnahmen"
+ abortion_law_medical_exceptions_desc:0 "Enge medizinische Ausnahmen wurden in die Rechtsvorschriften geschrieben, verlangsamt die Passage, reduziert aber die Opposition von moderierten."
+
+ abortion_law_autonomy_argument:0 "Bodily Autonomy Argued"
+ abortion_law_autonomy_argument_desc:0 "Die Intelligenz hat körperliche Autonomie zum Kernstück des Falles für uneingeschränkte Abtreibung gemacht und eine starke Unterstützung der reformistischen IGs geschaffen."
+
+ abortion_law_healthcare_framing:0 "Healthcare Framing"
+ abortion_law_healthcare_framing_desc:0 "Die Regierung hat eine uneingeschränkte Abtreibung als Gesundheitswesen gerahmt, ihren Appell erweitert und gleichzeitig die tiefere philosophische Debatte vermieden."
+
+ abortion_law_religious_opposition:0 "Religiöse Opposition montiert"
+ abortion_law_religious_opposition_desc:0 "Der Verteidiger hebt aktiv die Liberalisierung des Abtreibungsgesetzes auf, indem er die organisierte Opposition festlegt, die die Entschlossenheit der Regierung testet."
+
+ abortion_law_devout_empowered:0 "Ermächtigte Entfaltung"
+ abortion_law_devout_empowered_desc:0 "Die Religionsgemeinschaft wurde im Zentrum der Rechtfertigung des Abtreibungsverbots aufgestellt und ihre politische Position erheblich gestärkt."
+
+ abortion_law_devout_sidelined:0 "Entwickeln Sie Sideline"
+ abortion_law_devout_sidelined_desc:0 "Die Regierung hat die religiösen Abtreibung aus dem Abtreibungsverbot bewahrt, indem sie den Abtreibungsvorschlag, aber ohne eine formale Rolle in der Rechtfertigung lässt."
+
+ abortion_law_devout_rebuked:0 "Entdecke Rebuked"
+ abortion_law_devout_rebuked_desc:0 "Die Regierung hat sich direkt mit der religiösen Opposition gegen die Abtreibungsliberalisierung konfrontiert, die politische Position des Verteidigers geschwächt, aber ihre Basis radikalisiert."
+
+ abortion_law_devout_appeased:0 "Entwickle Appeased"
+ abortion_law_devout_appeased_desc:0 "Der Schutz der Gewissen für medizinisches Personal hat die religiöse Opposition gegen die Abtreibungsliberalisierung erweicht, ohne die Kernforderungen der Abtreibung zu erfüllen."
+
+ abortion_law_intelligentsia_engaged:0 "Intelligentsia verlobt"
+ abortion_law_intelligentsia_engaged_desc:0 "Juristische Gelehrte und Reformer machen aktiv den öffentlichen Fall für Abtreibungsrechte, intellektuelle und moralische Glaubwürdigkeit für die Umsetzungsbemühungen."
+
+ abortion_law_intelligentsia_sidelined:0 "Intelligentsia Sideline"
+ abortion_law_intelligentsia_sidelined_desc:0 "Die Entscheidung, den Abtreibungszugang als Gesundheitsversorgung zu rahmen, hat die Intelligenz aus der philosophischen Debatte, die sie führen wollten, bewahrt."

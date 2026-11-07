@@ -1,0 +1,140 @@
+﻿# ── SG 1: REGIONAL ECONOMY ───────────────
+# Build an economy substantial enough to
+# anchor a third bloc — meaningful share
+# of global GDP without Western or Eastern
+# dependency.
+
+je_rising_economy = {
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	icon = "gfx/interface/icons/objectives/na.dds"
+
+	group = je_group_objectives
+
+	complete = {
+		gdp > {
+			value = global_gdp
+			multiply = 0.05
+		}
+		# Self-sufficient — not relying on a single trade partner
+		NOT = {
+			market_capital.market = {
+				market_trade_reliance = {
+					target = c:USA.market_capital.market
+					value > 0.40
+				}
+			}
+		}
+	}
+
+	is_progressing = {
+		gdp > {
+			value = global_gdp
+			multiply = 0.02
+		}
+	}
+
+	weight = 4000
+	transferable = yes
+}
+
+# ── SG 2: SOVEREIGN INDEPENDENCE ─────────
+# A rising power cannot be a subject or
+# satellite of either bloc. Full
+# sovereign independence is the
+# prerequisite for a third way.
+
+je_rising_sovereignty = {
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	icon = "gfx/interface/icons/objectives/na.dds"
+
+	group = je_group_objectives
+
+	complete = {
+		is_subject = no
+		prestige >= 50
+	}
+
+	is_progressing = {
+		is_subject = no
+		country_rank >= rank_value:recognized
+	}
+
+	weight = 4001
+	transferable = yes
+}
+
+# ── SG 3: MILITARY WEIGHT ─────────────────
+# The third way is only credible if it
+# can defend itself. Reach great power
+# status and field a significant army.
+
+je_rising_military = {
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	icon = "gfx/interface/icons/objectives/na.dds"
+
+	group = je_group_objectives
+
+	complete = {
+		army_size >= 100
+	}
+
+	is_progressing = {
+		OR = {
+			army_size >= 50
+		}
+	}
+
+	weight = 4002
+	transferable = yes
+}
+
+# ── SG 4: INTERNATIONAL PRESTIGE ─────────
+# A rising power must be recognised as
+# significant — top five in global ranking
+# with the prestige to match.
+
+je_rising_prestige = {
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	icon = "gfx/interface/icons/objectives/na.dds"
+
+	group = je_group_objectives
+
+	complete = {
+		country_rank >= rank_value:major_power
+	}
+
+	is_progressing = {
+	}
+
+	weight = 4003
+	transferable = yes
+}
+
+# ── SG 5: THE THIRD BLOC ─────────────────
+# The final goal. Lead a power bloc of
+# eight or more members — a genuine third
+# pole in world politics that neither the
+# West nor the East controls.
+
+je_rising_endgame = {
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	icon = "gfx/interface/icons/objectives/na.dds"
+
+	group = je_group_objectives
+
+	complete = {
+		is_power_bloc_leader = yes
+		power_bloc ?= {
+			num_power_bloc_members >= 8
+		}
+	}
+
+	power_bloc ?= {
+		power_bloc = {
+			num_power_bloc_members >= 4
+		}
+	}
+
+	weight = 4004
+	transferable = yes
+}

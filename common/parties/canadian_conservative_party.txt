@@ -1,0 +1,171 @@
+# conservatives
+
+REPLACE_OR_CREATE:canadian_conservative_party = {
+	color = { 35 80 170 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = party_canadian_conservative_party
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/pc.dds"
+	}
+	
+	# THIS IS RUN ONLY ONCE AT GAME START
+	valid_for_country = {
+	THIS = c:CAN
+	}
+
+		available_for_interest_group = {
+		is_marginal = no
+		OR = {
+			leader = { has_ideology = ideology:ideology_conservative_leader }
+			leader = { has_ideology = ideology:ideology_neoliberal_leader }
+			leader = { has_ideology = ideology:ideology_moderate_leader }
+			leader = { has_ideology = ideology:ideology_corporatist_leader }
+			leader = { has_ideology = ideology:ideology_theocrat_leader }
+			leader = { has_ideology = ideology:ideology_monarchist_leader }
+			leader = { has_ideology = ideology:ideology_neocon_leader }
+			leader = { has_ideology = ideology:ideology_authoritarian_capitalist_leader }
+			leader = { has_ideology = ideology:ideology_right_wing_populist_leader }
+			has_ideology = ideology:ideology_conservative
+			has_ideology = ideology:ideology_right_economy
+			has_ideology = ideology:ideology_authoritarian
+			has_ideology = ideology:ideology_traditionalist
+			has_ideology = ideology:ideology_centre_economy
+			has_ideology = ideology:ideology_regionalist
+			has_ideology = ideology:ideology_monarchist
+			has_ideology = ideology:ideology_republican
+			is_interest_group_type = ig_landowners
+			is_interest_group_type = ig_petty_bourgeoisie
+			is_interest_group_type = ig_industrialists
+		}
+	}
+
+	# Root - IG considering joining
+	# scope:number - the number of IGs that would join this party before the root IG
+	join_weight = {
+		value = {
+			value = -5
+			desc = "base_value"
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_conservative_leader }
+				leader = { has_ideology = ideology:ideology_neoliberal_leader }
+				leader = { has_ideology = ideology:ideology_moderate_leader }
+				leader = { has_ideology = ideology:ideology_corporatist_leader }
+			}
+			}
+			add = { value = 45 desc = "leader_ideological_compatibility" }
+		}
+		if = {
+			limit = {
+				leader = { has_ideology = ideology:ideology_neoliberal_leader }
+				game_date <= 2000.1.1
+			}
+			add = { value = 25 desc = "leader_ideological_compatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_theocrat_leader }
+				leader = { has_ideology = ideology:ideology_monarchist_leader }
+				leader = { has_ideology = ideology:ideology_neocon_leader }
+				leader = { has_ideology = ideology:ideology_authoritarian_capitalist_leader }
+				leader = { has_ideology = ideology:ideology_right_wing_populist_leader }
+			}
+			}
+			add = { value = 20 desc = "leader_adjacent_ideology" }
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_marxist_leader }
+				leader = { has_ideology = ideology:ideology_anarchist_leader }
+				leader = { has_ideology = ideology:ideology_state_socialist_leader }
+				leader = { has_ideology = ideology:ideology_jihadist_leader }
+				leader = { has_ideology = ideology:ideology_fascist_leader }
+			}
+			}
+			add = { value = -50 desc = "leader_ideological_incompatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_conservative
+				has_ideology = ideology:ideology_right_economy
+				has_ideology = ideology:ideology_authoritarian
+			}
+			}
+			add = { value = 35 desc = "interest_group_ideological_compatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_traditionalist
+				has_ideology = ideology:ideology_centre_economy
+				has_ideology = ideology:ideology_regionalist
+				has_ideology = ideology:ideology_monarchist
+				has_ideology = ideology:ideology_republican
+			}
+			}
+			add = { value = 15 desc = "interest_group_adjacent_ideology" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_far_left_economy
+				has_ideology = ideology:ideology_communist
+				has_ideology = ideology:ideology_progressive
+				has_ideology = ideology:ideology_theocrat
+			}
+			}
+			add = { value = -35 desc = "interest_group_ideological_incompatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				is_interest_group_type = ig_landowners
+				is_interest_group_type = ig_petty_bourgeoisie
+				is_interest_group_type = ig_industrialists
+			}
+			}
+			add = { value = 20 desc = "from_archetype_party" }
+		}
+		if = {
+			limit = {
+				is_powerful = yes
+				OR = {
+					leader = { has_ideology = ideology:ideology_conservative_leader }
+					leader = { has_ideology = ideology:ideology_neoliberal_leader }
+					leader = { has_ideology = ideology:ideology_moderate_leader }
+					leader = { has_ideology = ideology:ideology_corporatist_leader }
+					has_ideology = ideology:ideology_conservative
+					has_ideology = ideology:ideology_right_economy
+					has_ideology = ideology:ideology_authoritarian
+				}
+			}
+			add = { value = 20 desc = "powerful_ig" }
+		}
+		if = {
+			limit = {
+				scope:number = 1
+				is_powerful = no
+				is_marginal = no
+			}
+			multiply = { value = 2 desc = "from_influential_supporting_member" }
+		}
+		else_if = {
+			limit = { scope:number = 2 }
+			multiply = { value = 0.75 desc = "from_two_prior_members" }
+		}
+	}
+
+}

@@ -1,0 +1,448 @@
+je_kurdistan_war_spring_offensive_button = {
+	name = "je_kurdistan_war_spring_offensive"
+	desc = "je_kurdistan_war_spring_offensive_desc"
+
+	visible = {
+		c:KUR ?= this
+	}
+
+	possible = {
+		c:KUR ?= THIS
+		hidden_trigger = {
+			NOT = { has_global_variable = kurdistan_war_final_phase }
+		}
+		OR = {
+			custom_tooltip = {
+				text = "KURDISTAN_WAR_OFFENSIVE_MINIMUM_SCORE"
+				global_var:kur_kurdistan_war_score >= kurdistan_war_offensive_min_score
+			}
+			game_date >= 1993.1.1
+		}
+	}
+
+	selected = {
+		has_global_variable = kurdistan_war_final_phase
+	}
+
+	effect = {
+		je:je_kurdistan_war ?= {
+			remove_modifier = kurdistan_war_guerilla_warfare
+		}
+		set_global_variable = kurdistan_war_final_phase
+		remove_global_variable = kurdistan_war_skirmish_phase
+		trigger_event = { id = kurdistan_war.1 popup = yes }
+		hidden_effect = { c:TRK ?= { trigger_event = { id = kurdistan_war.1 popup = yes } } }
+
+		add_modifier = {
+			name = kur_mountain_resistance
+			multiplier = {
+				value = global_var:kur_kurdistan_war_score
+				min = 1
+			}
+			years = 1
+			is_decaying = yes
+		}
+		c:TRK ?= {
+			add_modifier = {
+				name = trk_security_operation
+				multiplier = {
+					value = global_var:trk_kurdistan_war_score
+					min = 1
+				}
+				years = 2
+				is_decaying = yes
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 0
+
+		if = {
+			limit = { global_var:kur_kurdistan_war_score >= 10 }
+			add = 10
+		}
+		if = {
+			limit = { global_var:kur_kurdistan_war_score >= 15 }
+			add = 10
+		}
+		if = {
+			limit = { global_var:kur_kurdistan_war_score >= 20 }
+			add = 10
+		}
+		if = {
+			limit = { game_date > 1993.1.1 }
+			add = 10000
+		}
+	}
+}
+
+je_kurdistan_war_security_operation_button = {
+	name = "je_kurdistan_war_security_operation"
+	desc = "je_kurdistan_war_security_operation_desc"
+
+	visible = {
+		c:TRK ?= this
+	}
+
+	possible = {
+		c:TRK ?= THIS
+		hidden_trigger = {
+			NOT = { has_global_variable = kurdistan_war_final_phase }
+		}
+		OR = {
+			custom_tooltip = {
+				text = "KURDISTAN_WAR_OFFENSIVE_MINIMUM_SCORE"
+				global_var:trk_kurdistan_war_score >= kurdistan_war_offensive_min_score
+			}
+			game_date >= 1993.1.1
+		}
+	}
+
+	selected = {
+		has_global_variable = kurdistan_war_final_phase
+	}
+
+	effect = {
+		je:je_kurdistan_war ?= {
+			remove_modifier = kurdistan_war_guerilla_warfare
+		}
+		set_global_variable = kurdistan_war_final_phase
+		remove_global_variable = kurdistan_war_skirmish_phase
+		hidden_effect = { c:KUR ?= { trigger_event = { id = kurdistan_war.1 popup = yes } } }
+		trigger_event = { id = kurdistan_war.1 popup = yes }
+
+		c:KUR ?= {
+			add_modifier = {
+				name = kur_mountain_resistance
+				multiplier = {
+					value = global_var:kur_kurdistan_war_score
+					min = 1
+				}
+				years = 1
+				is_decaying = yes
+			}
+		}
+		add_modifier = {
+			name = trk_security_operation
+			multiplier = {
+				value = global_var:trk_kurdistan_war_score
+				min = 1
+			}
+			years = 2
+			is_decaying = yes
+		}
+	}
+
+	ai_chance = {
+		value = 100
+
+		if = {
+			limit = {
+				c:KUR ?= {
+					is_player = yes
+				}
+			}
+			multiply = 0
+		}
+	}
+}
+
+je_chechen_war_storm_grozny_button = {
+	name = "je_chechen_war_storm_grozny"
+	desc = "je_chechen_war_storm_grozny_desc"
+ 
+	visible = {
+		c:RUS ?= this
+	}
+ 
+	possible = {
+		c:RUS ?= this
+		hidden_trigger = {
+			NOT = { has_global_variable = chechen_war_offensive_launched }
+		}
+		OR = {
+			custom_tooltip = {
+				text = chechen_war_minimum_score_tt
+				global_var:rus_chechen_war_score >= 5
+			}
+			game_date >= 1995.6.1
+		}
+	}
+ 
+	selected = {
+		has_global_variable = chechen_war_offensive_launched
+	}
+ 
+	effect = {
+		je:je_first_chechen_war ?= {
+			remove_modifier = chechen_war_guerilla_warfare
+		}
+		set_global_variable = chechen_war_offensive_launched
+		remove_global_variable = chechen_war_guerilla_phase
+		trigger_event = { id = chechen_war.1 popup = yes }
+		hidden_effect = { c:CCH ?= { trigger_event = { id = chechen_war.1 popup = yes } } }
+ 
+		add_modifier = {
+			name = chechen_war_rus_morale
+			multiplier = {
+				value = global_var:rus_chechen_war_score
+				min = 1
+			}
+			years = 2
+			is_decaying = yes
+		}
+		c:CCH ?= {
+			add_modifier = {
+				name = chechen_mountain_resistance
+				multiplier = {
+					value = global_var:che_chechen_war_score
+					min = 1
+				}
+				years = 1
+				is_decaying = yes
+			}
+		}
+	}
+ 
+	ai_chance = {
+		value = 100
+ 
+		if = {
+			limit = {
+				c:CCH ?= { is_player = yes }
+			}
+			multiply = 0
+		}
+	}
+}
+ 
+### ══════════════════════════════════════════
+### MOUNTAIN OFFENSIVE — Chechen counterattack button
+### Mirrors je_the_first_carlist_war_royal_expedition_button
+### ══════════════════════════════════════════
+ 
+je_chechen_war_mountain_offensive_button = {
+	name = "je_chechen_war_mountain_offensive"
+	desc = "je_chechen_war_mountain_offensive_desc"
+ 
+	visible = {
+		c:CCH ?= this
+	}
+ 
+	possible = {
+		c:CCH ?= this
+		hidden_trigger = {
+			NOT = { has_global_variable = chechen_war_offensive_launched }
+		}
+		OR = {
+			custom_tooltip = {
+				text = chechen_war_minimum_score_tt
+				global_var:che_chechen_war_score >= 5
+			}
+			game_date >= 1995.6.1
+		}
+	}
+ 
+	selected = {
+		has_global_variable = chechen_war_offensive_launched
+	}
+ 
+	effect = {
+		je:je_first_chechen_war ?= {
+			remove_modifier = chechen_war_guerilla_warfare
+		}
+		set_global_variable = chechen_war_offensive_launched
+		remove_global_variable = chechen_war_guerilla_phase
+		hidden_effect = { c:RUS ?= { trigger_event = { id = chechen_war.1 popup = yes } } }
+		trigger_event = { id = chechen_war.1 popup = yes }
+ 
+		c:RUS ?= {
+			add_modifier = {
+				name = chechen_war_rus_morale
+				multiplier = {
+					value = global_var:rus_chechen_war_score
+					min = 1
+				}
+				years = 2
+				is_decaying = yes
+			}
+		}
+		add_modifier = {
+			name = chechen_mountain_resistance
+			multiplier = {
+				value = global_var:che_chechen_war_score
+				min = 1
+			}
+			years = 1
+			is_decaying = yes
+		}
+	}
+ 
+	ai_chance = {
+		value = 0
+ 
+		if = {
+			limit = { global_var:che_chechen_war_score >= 5 }
+			add = 10
+		}
+		if = {
+			limit = { global_var:che_chechen_war_score >= 8 }
+			add = 20
+		}
+		if = {
+			limit = { game_date > 1995.6.1 }
+			add = 10000
+		}
+	}
+}
+
+je_afghan_civil_war_northern_offensive_button = {
+	name = "je_afghan_civil_war_northern_offensive"
+	desc = "je_afghan_civil_war_northern_offensive_desc"
+
+	visible = {
+		c:ANA ?= this
+	}
+
+	possible = {
+		c:ANA ?= THIS
+		hidden_trigger = {
+			NOT = { has_global_variable = afghan_civil_war_final_phase }
+		}
+		OR = {
+			custom_tooltip = {
+				text = "AFGHAN_CIVIL_WAR_OFFENSIVE_MINIMUM_SCORE"
+				global_var:ana_afghan_civil_war_score >= afghan_civil_war_offensive_min_score
+			}
+			game_date >= 1998.1.1
+		}
+	}
+
+	selected = {
+		has_global_variable = afghan_civil_war_final_phase
+	}
+
+	effect = {
+		je:je_afghan_civil_war ?= {
+			remove_modifier = acw_guerrilla_warfare
+		}
+		set_global_variable = afghan_civil_war_final_phase
+		remove_global_variable = afghan_civil_war_skirmish_phase
+		trigger_event = { id = afghan_civil_war.1 popup = yes }
+		hidden_effect = { c:AFG ?= { trigger_event = { id = afghan_civil_war.1 popup = yes } } }
+
+		add_modifier = {
+			name = acw_northern_alliance_mountain_resistance
+			multiplier = {
+				value = global_var:ana_afghan_civil_war_score
+				min = 1
+			}
+			years = 2
+			is_decaying = yes
+		}
+		c:AFG ?= {
+			add_modifier = {
+				name = acw_taliban_security_push
+				multiplier = {
+					value = global_var:afg_afghan_civil_war_score
+					min = 1
+				}
+				years = 2
+				is_decaying = yes
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 0
+
+		if = {
+			limit = { global_var:ana_afghan_civil_war_score >= 20 }
+			add = 5
+		}
+		if = {
+			limit = { global_var:ana_afghan_civil_war_score >= 30 }
+			add = 10
+		}
+		if = {
+			limit = { global_var:ana_afghan_civil_war_score >= 40 }
+			add = 20
+		}
+		if = {
+			limit = { game_date > 1998.1.1 }
+			add = 10000
+		}
+	}
+}
+
+je_afghan_civil_war_taliban_campaign_button = {
+	name = "je_afghan_civil_war_taliban_campaign"
+	desc = "je_afghan_civil_war_taliban_campaign_desc"
+
+	visible = {
+		c:AFG ?= this
+	}
+
+	possible = {
+		c:AFG ?= THIS
+		hidden_trigger = {
+			NOT = { has_global_variable = afghan_civil_war_final_phase }
+		}
+		OR = {
+			custom_tooltip = {
+				text = "AFGHAN_CIVIL_WAR_OFFENSIVE_MINIMUM_SCORE"
+				global_var:afg_afghan_civil_war_score >= afghan_civil_war_offensive_min_score
+			}
+			game_date >= 1998.1.1
+		}
+	}
+
+	selected = {
+		has_global_variable = afghan_civil_war_final_phase
+	}
+
+	effect = {
+		je:je_afghan_civil_war ?= {
+			remove_modifier = acw_guerrilla_warfare
+		}
+		set_global_variable = afghan_civil_war_final_phase
+		remove_global_variable = afghan_civil_war_skirmish_phase
+		hidden_effect = { c:ANA ?= { trigger_event = { id = afghan_civil_war.1 popup = yes } } }
+		trigger_event = { id = afghan_civil_war.1 popup = yes }
+
+		c:ANA ?= {
+			add_modifier = {
+				name = acw_northern_alliance_mountain_resistance
+				multiplier = {
+					value = global_var:ana_afghan_civil_war_score
+					min = 1
+				}
+				years = 2
+				is_decaying = yes
+			}
+		}
+		add_modifier = {
+			name = acw_taliban_security_push
+			multiplier = {
+				value = global_var:afg_afghan_civil_war_score
+				min = 1
+			}
+			years = 2
+			is_decaying = yes
+		}
+	}
+
+	ai_chance = {
+		value = 100
+
+		if = {
+			limit = {
+				c:ANA ?= {
+					is_player = yes
+				}
+			}
+			multiply = 0
+		}
+	}
+}

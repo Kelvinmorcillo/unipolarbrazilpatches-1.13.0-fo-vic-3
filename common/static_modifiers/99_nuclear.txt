@@ -1,0 +1,155 @@
+# ==========================================
+# NUCLEAR MODIFIERS
+# Place in common/modifiers/
+# ==========================================
+ 
+nuclear_capable_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_prestige_mult                       = 0.35
+	country_prestige_from_army_power_projection_mult = 2.5
+}
+ 
+nuclear_programme_denied = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	country_infamy_generation_mult              = 0.10
+}
+ 
+nuclear_programme_acknowledged = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_prestige_mult                       = 0.05
+	country_infamy_generation_mult              = 0.15
+}
+ 
+nuclear_warhead_produced_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_prestige_mult                       = 0.05
+}
+
+# Applied to each struck state — 10 year duration
+nuclear_strike_aftermath = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	state_mortality_mult                        = 0.05
+	state_migration_pull_mult                   = -0.10
+	state_infrastructure_mult = -0.15
+	state_turmoil_effects_mult                  = 0.10
+	state_radicals_from_political_movements_mult = 0.30
+}
+ 
+# Applied to the firing country — 5 year duration
+nuclear_strike_launched_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_prestige_mult                       = -0.10
+	country_infamy_generation_mult              = 0.25
+}
+ 
+# Applied to the nuked country — 20 year duration
+nuclear_strike_victim_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	state_mortality_mult                        = 0.02
+	state_infrastructure_mult = -0.05
+	state_turmoil_effects_mult                  = 0.05
+}
+
+# Applied to country that allows IAEA inspectors
+# Encourages civilian nuclear energy investment
+nuclear_iaea_cooperation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	building_group_bg_power_throughput_add           = 0.25
+	country_prestige_mult                           = 0.05
+	country_infamy_generation_mult                  = -0.10
+}
+ 
+# Applied when IAEA is refused entry
+nuclear_iaea_defiance = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_infamy_generation_mult                  = 0.15
+	country_prestige_mult                           = -0.03
+}
+ 
+# Applied when UN ultimatum is accepted — political cost of capitulation
+nuclear_un_compliance = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	state_radicals_from_political_movements_mult    = 0.10
+	country_infamy_generation_mult                  = -0.15
+}
+ 
+# Applied to the nuclear country when a great power launches a diplomatic play
+nuclear_military_ultimatum = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	state_radicals_from_political_movements_mult    = 0.15
+}
+ 
+# Applied to the nuclear country when great powers issue threats without war
+nuclear_great_power_pressure = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_prestige_mult                           = -0.05
+}
+ 
+# Applied to a great power that launches military intervention
+nuclear_non_proliferation_war = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_prestige_mult                           = 0.15
+}
+ 
+# Applied to a great power that backs down from intervention
+nuclear_non_intervention_caution = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_prestige_mult                           = -0.02
+}
+
+nuclear_disarmament_enforced = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	country_prestige_mult                           = -0.10
+	state_radicals_from_political_movements_mult    = 0.20
+	country_tech_research_speed_mult                = -0.05
+}
+ 
+# Applied to the country that enforced disarmament — 5 year duration
+nuclear_disarmament_enforcer = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_prestige_mult                           = 0.05
+}
+
+military_base_host_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_prestige_mult                           = 0.02
+	# Minor tension from foreign troops on soil
+	state_radicals_from_political_movements_mult    = 0.05
+}
+ 
+military_base_projector_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+}
+ 
+icbm_capable_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_prestige_mult                           = 0.01
+	country_prestige_from_army_power_projection_mult = 0.50
+}
+
+missile_production_cost = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	state_buy_orders_explosives_add = 0.25
+	state_buy_orders_missiles_add = 0.25
+}
+
+nuclear_first_strike_response = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	country_infamy_generation_mult                  = -0.80
+	country_prestige_mult                           = 0.05
+	country_infamy_decay_mult = 0.5
+}
+
+# Applied when a country chooses to absorb a nuclear strike without retaliating
+nuclear_absorbed_first_strike = {
+	country_prestige_mult                           = 0.15
+	country_infamy_generation_mult                  = -0.80
+}
+
+# Applied to conventional missile strike victims
+missile_strike_victim_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	country_legitimacy_base_add                     = -5
+	state_radicals_from_political_movements_mult    = 0.10
+	country_infamy_decay_mult = 0.5
+}

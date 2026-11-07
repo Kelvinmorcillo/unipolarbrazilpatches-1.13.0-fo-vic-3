@@ -1,0 +1,51 @@
+﻿COUNTRIES = {
+	c:ANA = {
+		
+	    set_immune_to_revolutions = yes
+		add_contextless_journal_entry = je_afghan_civil_war
+		set_tax_level = medium
+		
+		# Laws
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_appointed_bureaucrats
+		activate_law = law_type:law_religious_schools
+		activate_law = law_type:law_state_religion
+		activate_law = law_type:law_national_supremacy
+		activate_law = law_type:law_oligarchy
+		activate_law = law_type:law_traditionalism
+		activate_law = law_type:law_private_schools
+		activate_law = law_type:law_outlawed_dissent
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_charitable_health_system
+		activate_law = law_type:law_national_guard
+		activate_law = law_type:law_tenant_farmers
+		activate_law = law_type:law_migration_controls
+		activate_law = law_type:law_militarized_police
+		activate_law = law_type:law_legal_protections
+		activate_law = law_type:law_slavery_banned
+		activate_law = law_type:law_land_based_taxation
+		activate_law = law_type:law_isolationism
+		activate_law = law_type:law_no_subsidies
+		activate_law = law_type:law_banned_abortions
+		activate_law = law_type:law_fractional_reserve_banking
+		activate_law = law_type:law_minimal_recognition
+		activate_law = law_type:law_alcohol_tobacco_prohibited
+		activate_law = law_type:law_no_environmental_regulations
+		activate_law = law_type:law_unrestricted_firearms
+		activate_law = law_type:law_active_oppression
+		activate_law = law_type:law_religious_judiciary
+		activate_law = law_type:law_fairness_doctrine
+		activate_law = law_type:law_no_subsidized_housing
+
+			
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 1
+		}
+
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 1
+		}
+	}
+}

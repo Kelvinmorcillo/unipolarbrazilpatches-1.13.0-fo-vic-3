@@ -1,0 +1,67 @@
+namespace = arab_spring_jihadist_breakaways
+
+arab_spring_jihadist_breakaways.1 = {
+	type = country_event
+	placement = ROOT
+	title = arab_spring_jihadist_breakaways.1.t
+	desc = arab_spring_jihadist_breakaways.1.d
+	flavor = arab_spring_jihadist_breakaways.1.f
+	event_image = { video = "middleeast_battlefield_trenches" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	duration = 3
+
+	trigger = {
+		c:DIS ?= this
+		has_variable = arab_spring_isis_formed
+	}
+
+	option = {
+		name = arab_spring_jihadist_breakaways.1.a
+		default_option = yes
+	}
+}
+
+arab_spring_jihadist_breakaways.2 = {
+	type = country_event
+	placement = ROOT
+	title = arab_spring_jihadist_breakaways.2.t
+	desc = arab_spring_jihadist_breakaways.2.d
+	flavor = arab_spring_jihadist_breakaways.2.f
+	event_image = { video = "middleeast_battlefield_trenches" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	duration = 3
+
+	trigger = {
+		c:DIS ?= this
+		has_variable = arab_spring_isis_spawned_from_periphery
+	}
+
+	option = {
+		name = arab_spring_jihadist_breakaways.2.a
+		default_option = yes
+	}
+}
+
+arab_spring_jihadist_breakaways.3 = {
+	type = country_event
+	placement = ROOT
+	title = arab_spring_jihadist_breakaways.3.t
+	desc = arab_spring_jihadist_breakaways.3.d
+	flavor = arab_spring_jihadist_breakaways.3.f
+	event_image = { video = "middleeast_battlefield_trenches" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	duration = 3
+
+	trigger = {
+		c:HOU ?= this
+		has_variable = arab_spring_houthis_spawned
+	}
+
+	option = {
+		name = arab_spring_jihadist_breakaways.3.a
+		default_option = yes
+	}
+}

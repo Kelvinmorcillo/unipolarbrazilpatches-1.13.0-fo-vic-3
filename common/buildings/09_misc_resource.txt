@@ -1,0 +1,86 @@
+﻿REPLACE_OR_CREATE:building_logging_camp = {
+	building_group = bg_logging
+	icon = "gfx/interface/icons/building_icons/logging_camp.dds"
+	city_type = wood
+	required_construction = construction_cost_low
+	terrain_manipulator = forestry
+	levels_per_mesh = 5
+
+	production_method_groups = {
+		pmg_base_building_logging_camp
+		#pmg_hardwood
+		pmg_equipment
+		pmg_transportation_building_logging_camp
+	}
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_farming.dds"
+}
+
+REPLACE_OR_CREATE:building_rubber_plantation = {
+	building_group = bg_rubber
+	icon = "gfx/interface/icons/building_icons/rubber_lodge.dds"
+	required_construction = construction_cost_low
+	
+	terrain_manipulator = forestry
+
+	unlocking_technologies = {
+		enclosure
+	}
+
+	city_type = wood
+	levels_per_mesh = 5
+	
+	production_method_groups = {
+		pmg_base_building_rubber_plantation
+		pmg_train_automation_building_rubber_plantation
+	}
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_plantations.dds"
+}
+
+REPLACE_OR_CREATE:building_fishing_wharf = {
+	building_group = bg_fishing
+	icon = "gfx/interface/icons/building_icons/fishing_wharf.dds"
+	city_type = port
+	required_construction = construction_cost_low
+	residence_points_per_level = 18
+	entity_constructed = { generic_manufactory_01_mesh }
+	
+	production_method_groups = {
+		pmg_base_building_fishing_wharf
+		pmg_refrigeration_building_fishing_wharf
+	}
+	
+	potential = {
+		OR = {
+			is_sea_adjacent = yes
+			state_region = s:STATE_ONTARIO
+		}
+	}
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_fishing.dds"
+}
+
+
+REPLACE_OR_CREATE:building_oil_rig = {
+	building_group = bg_oil_extraction
+	icon = "gfx/interface/icons/building_icons/oil_rig.dds"
+	city_type = mine
+	levels_per_mesh = 5
+	required_construction = construction_cost_medium
+
+	unlocking_technologies = {
+		steelworking
+	}
+	
+	production_method_groups = {
+		pmg_base_building_oil_rig
+		pmg_transportation_building_oil_rig
+	}
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_oil.dds"
+}

@@ -1,0 +1,293 @@
+﻿l_spanish:
+
+ MILITARY_PANEL_TITLE_NUCLEAR:0 "Strategic Warfare"
+ NUCLEAR_WARHEADS_LABEL: "Nuclear Arsenal"
+ NUCLEAR_PROGRAMME_STATUS_LABEL: "Situación del programa"
+ NUCLEAR_PLANTS_HEADER: "Infraestructura nuclear"
+ URANIUM_ENRICHMENT_HEADER: "Enriquecimiento de uranio"
+ NUCLEAR_PRODUCTION_HEADER: "Warhead Production"
+ NUCLEAR_ARSENAL_HEADER: "Arsenal"
+ MILITARY_PANEL_TAB_NUCLEAR_TOOLTIP: "Programa de armas nucleares"
+ 
+ NUCLEAR_BEGIN_ENRICHMENT_TOOLTIP: "Iniciar un programa de enriquecimiento de uranio. Requiere por lo menos id=0/ título 3 plantas nucleares realizadasx id=1/conferencia en su territorio y estado de potencia principal. El programa lleva varios años completarse y atraerá la atención internacional. id=2/(s) Signatarios del id=4/año Tratado de No Proliferación id=5/año no puede enriquecer uranio."
+ NUCLEAR_BEGIN_PRODUCTION_TOOLTIP: "Fabricar una ojiva nuclear. Requiere por lo menos id=0/año 1 silo nuclear indicadox id=1/Consejo. Más rápido que enriquecimiento. Cada carrera de producción completa agrega una ojiva a su arsenal."
+ NUCLEAR_ENRICHMENT_PROGRESS_TOOLTIP: "Progreso del enriquecimiento de uranio. Alcanza 100 cuando el enriquecimiento es completo y se logra la capacidad nuclear."
+ NUCLEAR_PRODUCTION_PROGRESS_TOOLTIP: "Avances en la producción de cabeza de guerra. Cubre 100 cuando la ojilla está completa y agregada a su arsenal."
+ NUCLEAR_PLANTS_INFO: "Plantas nucleares en su país: неx id=0/año неx id=1/conferenciaRequirido para comenzar el enriquecimiento: неx id=2/ oh 3 didx id=3/ ratio"
+ NUCLEAR_WEAPONS:0 "[concept_nuclear_weapon]"
+ NUCLEAR_WEAPONS_TOOLTIP:0 "Cabezas de guerra nuclear activas: id=0/"
+ 
+ building_nuclear_silo:0 "Nuclear Silo"
+ 
+ # ── JOURNAL ENTRIES ───────────────────────
+ 
+ je_uranium_enrichment: "Programa de Enriquecimiento de uranio"
+ je_uranium_enrichment_reason: "id=0/año ha iniciado un programa de enriquecimiento de uranio. Los centrífugos están corriendo. Los científicos están trabajando. Y el mundo, si lo descubre, querrá respuestas. El programa avanza cada mes. Otras centrales nucleares aceleran el progreso. La guerra lo perturba. Al finalizar, id=3/año se utilizará la capacidad nuclear, la capacidad de producir material apto para armas."
+ 
+ je_enrichment_early_tt: "El programa está en sus primeras etapas. Se están probando cascadas centrífugas. Será años antes de que el enriquecimiento esté completo."
+ je_enrichment_mid_tt: "Se está progresando el enriquecimiento. Las cascadas están funcionando a capacidad. El equipo científico está en camino."
+ je_enrichment_late_tt: "id=0/(s) El enriquecimiento se acerca a la terminación. El uranio apto para armas está casi listo."
+ 
+ nuclear_enrichment_progress_bar: "Progresos en el enriquecimiento"
+ nuclear_enrichment_progress_bar_desc: "Progresos en el enriquecimiento"
+ nuclear_enrichment_progress_bar_tt: "Progresos mensuales en el enriquecimiento"
+ 
+ je_nuclear_production: "Producción de ojivas nucleares"
+ je_nuclear_production_reason: "id=0/año está fabricando su primera ojiva nuclear. El material fisible está listo. El equipo de ingeniería está montando el dispositivo. La producción es más rápida que el enriquecimiento; el trabajo duro ya está hecho."
+ 
+ je_production_early_tt: "La ojiva está en la madrugada. El equipo de ingeniería está programado."
+ je_production_late_tt: "La producción es casi completa. Los controles finales de montaje y armamento están en marcha."
+ 
+ nuclear_production_progress_bar: "Progresos en la producción"
+ nuclear_production_progress_bar_desc: "Progresos en la producción"
+ nuclear_production_progress_bar_tt: "Progresos mensuales en la producción"
+ 
+ # ── EVENTS ───────────────────────────────
+ 
+ nuclear_events.1.t: "Enriquecimiento de uranio completo"
+ nuclear_events.1.d: "id=0/año ha enriquecido con éxito el uranio a la pureza de grado de armas. El programa, realizado a lo largo de varios años en instalaciones construidas a tal efecto, ha alcanzado su objetivo técnico. El país posee ahora la capacidad científica e industrial para producir armas nucleares. Si proceder con la producción es una decisión separada, pero se ha cruzado el umbral. id=3/tio es un estado de detención nuclear."
+ nuclear_events.1.f: "La parte dura está hecha."
+ nuclear_events.1.a: "Comience a prepararse para la producción de ojivas"
+ 
+ nuclear_events.2.t: "Servicios de Inteligencia: El Programa ha sido expuesto"
+ nuclear_events.2.d: "Las agencias de inteligencia extranjeras, aprovechando imágenes satelitales, reportes de desertores e inteligencia de señales, han concluido con alta confianza que idx id=0/ título está operando un programa clandestino de armas nucleares. Los resultados están circulando entre los gobiernos aliados. El Consejo de Seguridad ha sido informado oficiosamente. id=3/ título puede negar, explicar o poseerlo. Cada camino tiene consecuencias."
+ nuclear_events.2.f: "Nada permanece en secreto para siempre."
+ nuclear_events.2.a: "Negación: las instalaciones son puramente infraestructuras de energía civil"
+ nuclear_events.2.b: "El reconocimiento — id=0/ título se realiza con derecho a disuasión"
+ 
+ nuclear_events.3.t: "Primera cabeza de guerra producida"
+ nuclear_events.3.d: "id=0/año produjo su primera ojiva nuclear. El dispositivo está montado, probado y almacenado. La decisión de dónde implementarlo —y bajo qué doctrina— vendrá más adelante. Por ahora: <x id=3/año ha entrado en el club nuclear. El mundo es un lugar diferente al de esta mañana."
+ nuclear_events.3.f: "Una ojiva es una especie de argumento. El tipo más consecuente."
+ nuclear_events.3.a: "Se establece el disuasivo"
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ nuclear_capable_modifier: "Nuclear Threshold State"
+ nuclear_capable_modifier_desc: "id=0/año ha logrado la capacidad nuclear, la capacidad de producir material fisionable apto para armas. El prestigio y la posición diplomática se refuerzan. La producción de ojivas puede comenzar ahora."
+ 
+ nuclear_programme_denied: "Programa denegado"
+ nuclear_programme_denied_desc: "id=0/año ha negado oficialmente el funcionamiento de un programa nuclear. La negación no se cree universalmente. Se incrementa la generación de infamia."
+ 
+ nuclear_programme_acknowledged: "Programa reconocido"
+ nuclear_programme_acknowledged_desc: "id=0/año ha reconocido su programa nuclear, reclamando el derecho a un disuasivo. Las relaciones con los principales poderes han sufrido considerablemente."
+ 
+ nuclear_warhead_produced_modifier: "Nuclear Power"
+ nuclear_warhead_produced_modifier_desc: "id=0/año produjo su primera ojiva nuclear. El disuasión estratégica del país es ahora real."
+ 
+ NUCLEAR_TARGETING_HEADER: "Metas nucleares"
+ 
+ NUCLEAR_DEPLOY_10_TOOLTIP: "Despliegue el 10% de su arsenal nuclear. La huelga práctica más pequeña, quirúrgica y limitada."
+ NUCLEAR_DEPLOY_25_TOOLTIP: "Despliegue el 25% de su arsenal. Un intercambio nuclear limitado."
+ NUCLEAR_DEPLOY_50_TOOLTIP: "Despliegue la mitad de su arsenal. Una huelga nuclear importante."
+ NUCLEAR_DEPLOY_75_TOOLTIP: "Despliegue el 75% de su arsenal. Una primera huelga devastadora."
+ NUCLEAR_DEPLOY_100_TOOLTIP: "Despliegue todo su arsenal. Guerra nuclear total."
+ 
+ NUCLEAR_ADD_TARGET_TOOLTIP: "Añadir este estado a la lista de objetivos nucleares."
+ NUCLEAR_REMOVE_TARGET_TOOLTIP: "Quitar este estado de la lista de objetivos nucleares."
+ NUCLEAR_CLEAR_TARGETLIST_TOOLTIP: "Despejen todos los estados específicos."
+ NUCLEAR_CASUALTIES_TOOLTIP: "Estimación de las muertes civiles en todos los estados destinatarios, sobre la base de las ojivas desplegadas y la población estatal. Las bajas reales variarán."
+ 
+ NUCLEAR_FIRE_BUTTON_TOOLTIP: "Lanzamiento de una huelga nuclear contra todos los estados seleccionados. Requiere al menos un objetivo, al menos una ojiva, y una guerra activa. Se le pedirá que confirme antes de ejecutar la huelga."
+ 
+ NUCLEAR_STATE_TARGETED_TOOLTIP: "Este estado está actualmente en la lista de objetivos nucleares."
+ 
+ # ── EVENTS ───────────────────────────────
+ 
+ nuclear_events.4.t: "¿Iniciar el ataque nuclear?"
+ nuclear_events.4.d: "La solución de objetivos está bloqueada. id=0/(s) cabeza(s) de guerra(s) se han asignado a las víctimas civiles estimadas: id=1/(s) estado(s).Segúnx id=2/ título autorizadox id=3/(s) bajas civiles estimadas: Esta acción es irreversible. Las ojivas serán expulsadas. Los estados serán destruidos. El mundo sabrá quién hizo esto."
+ nuclear_events.4.f: "No hay que devolverlo."
+ nuclear_events.4.a: "id=0/confirme - lanzamiento de la huelga"
+ nuclear_events.4.b: "Aborto"
+ 
+ nuclear_events.5.t: "Ataque nuclear"
+ nuclear_events.5.d: "id=0/año ha sido alcanzado por armas nucleares. Múltiples ojivas han detonado en el territorio id=3/año. Las ciudades están ardiendo. Las comunicaciones se han colapsado en las regiones afectadas. La escala de bajas aún no se conoce: las estimaciones tempranas sugieren que el número de muertos es catastrófico. The attack was carried out without warning. No hubo declaración. Sin ultimátum. No había nada."
+ nuclear_events.5.f: "No queda nada que decir."
+ nuclear_events.5.a: "Inicio de la respuesta de emergencia"
+ 
+ 
+ # ── EVENT 6: IAEA REQUEST ─────────────────
+ 
+ nuclear_events.6.t: "OIEA pide acceso a la inspección"
+ nuclear_events.6.d: "El Organismo Internacional de Energía Atómica ha solicitado oficialmente el acceso a instalaciones nucleares id=0/año. La solicitud sigue los informes de inteligencia, que ahora se distribuyen ampliamente entre los Estados miembros, que sugieren la existencia de un programa de enriquecimiento de grado de armas. La posición del OIEA es inequívoca: <x id=3/año es signatario de los compromisos de no proliferación. La reducción del acceso a la inspección constituiría una violación importante. Permitirlo requeriría abrir las instalaciones a la vigilancia internacional, y casi sin duda terminar el programa de armas. Los inspectores están esperando una respuesta."
+ nuclear_events.6.f: "Los inspectores son educados. La solicitud no lo es."
+ nuclear_events.6.a: "Acceso de subvenciones: permitir al OIEA inspeccionar nuestras instalaciones"
+ nuclear_events.6.b: "Rechazar — id=0/ título no se someterá a inspección extranjera"
+ 
+ # ── EVENT 7: UN ULTIMATUM (via IAEA refusal) ──
+ 
+ nuclear_events.7.t: "Consejo de Seguridad de las Naciones Unidas: Enriquecimiento de la cesación del fuego"
+ nuclear_events.7.d: "El Consejo de Seguridad de las Naciones Unidas ha aprobado una resolución en la que se exige que se ponga fin inmediatamente a su programa de enriquecimiento de uranio y se someta a la verificación del OIEA. La votación no fue cercana. La resolución exige el cese total dentro de treinta días y amenaza las sanciones coordinadas si ierex id=3/propios se niega a cumplir. Esto no es una petición. Es un ultimátum."
+ nuclear_events.7.f: "El Consejo de Seguridad ha hablado. Lo que hace ahora se define su lugar en el mundo."
+ nuclear_events.7.a: "Comply - halt enrichment and submit to monitoring"
+ nuclear_events.7.b: "Rechazar — id=0/ título continuará independientemente de las consecuencias"
+ 
+ # ── EVENT 8: UN ULTIMATUM (via acknowledgement) ──
+ 
+ nuclear_events.8.t: "Consejo de Seguridad de la ONU: Consecuencias de desarme o de cara"
+ nuclear_events.8.d: "Habiendo reconocido su programa de armas nucleares, ierex id=0/año no ha dejado al Consejo de Seguridad con ninguna ambigüedad. Una resolución ha pasado exigiendo el cese inmediato de la actividad de enriquecimiento y el desmantelamiento de la infraestructura relacionada con las armas. La resolución fue aprobada en virtud del Capítulo VII, lo que significa que no se ha descartado la ejecución militar. id=3/año tiene treinta días para cumplir."
+ nuclear_events.8.f: "La honestidad no fue recompensada. El ultimátum es igual."
+ nuclear_events.8.a: "Cumplir el programa y someterlo a verificación"
+ nuclear_events.8.b: "Rechazar — id=0/ título no se desarma bajo presión"
+ 
+ # ── EVENT 9: GREAT POWER RESPONSE ─────────
+ 
+ nuclear_events.9.t: "Respuesta al desafío nuclear de id=0/año"
+ nuclear_events.9.d: "id=0/año ha rechazado el ultimátum del Consejo de Seguridad de las Naciones Unidas y sigue enriqueciendo uranio hacia la pureza de grado de armas. El régimen de sanciones está en su lugar.Se debe aclarar ahora la posición de id=1/ títulox id=2/ título indicadox id=3/ título. Un país en nuestra esfera estratégica está desarrollando armas nucleares en desafío del orden internacional que ayudamos a construir. La pregunta es cómo respondemos con fuerza."
+ nuclear_events.9.f: "Se han intentado palabras. Este es el momento para decidir qué viene después."
+ nuclear_events.9.a: "Intervene - lanzar un juego diplomático para forzar el desarme"
+ nuclear_events.9.b: "Amenazarse — aclarar las consecuencias sin comprometer fuerzas"
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ nuclear_iaea_cooperation: "Acuerdo de Cooperación del OIEA"
+ nuclear_iaea_cooperation_desc: "id=0/año ha abierto sus instalaciones nucleares a la vigilancia del OIEA. A cambio de uso civil verificable, se ha ampliado el apoyo internacional a la infraestructura de energía nuclear."
+ 
+ nuclear_iaea_defiance: "Acceso del OIEA"
+ nuclear_iaea_defiance_desc: "id=0/año ha rechazado la inspección internacional de sus instalaciones nucleares. La posición diplomática se ha deteriorado significativamente."
+ 
+ nuclear_un_compliance: "UN Disarmament Compliance"
+ nuclear_un_compliance_desc: "id=0/año aceptó el ultimátum de la ONU y detuvo su programa nuclear. La decisión era políticamente costosa en casa."
+ 
+ nuclear_un_sanctions: "UN Nuclear Sanctions"
+ nuclear_un_sanctions_desc: "El Consejo de Seguridad de la ONU ha impuesto sanciones en respuesta a la negativa de id=0/año de detener su programa nuclear. El comercio está perturbado y el aislamiento diplomático se está profundizando."
+ 
+ nuclear_military_ultimatum: "Ultimatum militar emitido"
+ nuclear_military_ultimatum_desc: "Una gran potencia ha puesto en marcha una obra diplomática formal exigiendo id=0/ confía desarmar su programa nuclear. La acción militar sigue siendo una posibilidad."
+ 
+ nuclear_great_power_pressure: "Gran poder de presión diplomática"
+ nuclear_great_power_pressure_desc: "Uno o más grandes poderes han emitido advertencias formales sobre el programa nuclear de id=0/año. El Prestige y la legitimidad están sufriendo."
+ 
+ nuclear_non_proliferation_war: "Intervención sobre la no proliferación"
+ nuclear_non_proliferation_desc: "id=0/año ha lanzado una intervención diplomática para prevenir la proliferación nuclear. La comunidad internacional ha acogido con beneplácito la acción."
+ 
+ nuclear_non_intervention_caution: "Chose Caution Over Intervention"
+ nuclear_non_intervention_caution_desc: "Se negó a intervenir militarmente contra un estado armado nuclear, eligiendo la presión diplomática. Algunos aliados han cuestionado la resolución."
+ 
+ # ── DIPLOMATIC PLAY LOC ──────────────────
+ nuclear_non_proliferation_play: "Nuclear Disarmament Ultimatum"
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ nuclear_strike_aftermath: "Nuclear Strike Aftermath"
+ nuclear_strike_aftermath_desc: "Este estado ha sido golpeado por armas nucleares. La infraestructura está devastada, la población está en colapso, y la radiación está contaminando la tierra."
+ 
+ nuclear_strike_launched_modifier: "Nuclear Pariah"
+ nuclear_strike_launched_modifier_desc: "id=0/año ha utilizado armas nucleares en ira. La comunidad internacional ha reaccionado con horror. La posición diplomática y el prestigio han sufrido severamente."
+ 
+ nuclear_strike_victim_modifier: "Víctimas nucleares"
+ nuclear_strike_victim_modifier_desc: "id=0/año ha sufrido un ataque nuclear. El trauma nacional es profundo y duradero. La recuperación tomará una generación."
+ 
+ nuclear_disarmament: "Aprovechar las armas de destrucción en masa"
+ nuclear_disarmament_desc: "Exigir que la nación objetivo desmantele por completo su programa de armas nucleares y entregue su arsenal existente. Si se aplica, se eliminarán todas las capacidades de enriquecimiento, las existencias de ojivas y las variables programáticas: el país debe comenzar desde cero."
+ 
+ # ── EVENT ────────────────────────────────
+ 
+ nuclear_events.10.t: "El programa se ha ido"
+ nuclear_events.10.d: "Se han cumplido los términos de la paz. Los inspectores internacionales han entrado en las instalaciones id=0/año, desmantelaron las cascadas centrífugas, retiraron el arsenal y sellaron el silos. Años de trabajo científico, riesgo político e inversión nacional se han borrado en semanas. El programa no existe. El conocimiento sigue siendo, pero la infraestructura, el material y la posición legal para seguirlo se han ido.Seguido se puede iniciar de nuevo, si lo elige. Esa será una decisión diferente, tomada en diferentes circunstancias."
+ nuclear_events.10.f: "Puede ser reconstruido. No será olvidado."
+ nuclear_events.10.a: "Reconocer los términos"
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ nuclear_disarmament_enforced: "Desarme forzoso"
+ nuclear_disarmament_enforced_desc: "El programa nuclear de id=0/año ha sido desmantelado por la fuerza tras la derrota militar. Las consecuencias políticas y científicas son graves. La ira pública es intensa."
+ 
+ nuclear_disarmament_enforcer: "Non-Proliferation Victory"
+ nuclear_disarmament_enforcer_desc: "id=0/(es) ejecutó con éxito el desarme nuclear en un estado proliferador. El prestigio internacional y la posición diplomática han mejorado considerablemente."
+ 
+  # ── TREATY ARTICLE ───────────────────────
+ 
+ host_military_bases: "Host Military Bases"
+ host_military_bases_desc: "Permisos id=0/año a la estación de fuerzas militares y equipos dentro de un territorio id=1/año. Extiende el rango de misiles convencionales id=2/tio a estados que limitan el país anfitrión."
+ 
+ military_base_host_modifier: "Hosting Foreign Military Bases"
+ military_base_host_modifier_desc: "Las fuerzas militares extranjeras están estacionadas en el territorio del país bajo un acuerdo de basing. Algunas tensiones internas surgen de la presencia militar extranjera."
+ 
+ military_base_projector_modifier: "Bases militares en el extranjero"
+ military_base_projector_modifier_desc: "Este país cuenta con fuerzas militares estacionadas en territorio aliado, ampliando su alcance estratégico."
+ 
+ # ── ICBM ─────────────────────────────────
+ 
+ je_icbm_programme: "ICBM Development Programme"
+ je_icbm_programme_reason: "id=0/año ha logrado la capacidad nuclear. La siguiente frontera es la entrega: misiles balísticos intercontinentales capaces de alcanzar cualquier punto en el mundo sin advertencia. El programa es largo, años de investigación de cohetes, desarrollo de sistemas de orientación y pruebas de alcance, pero el pago estratégico es absoluto. Un Estado capaz de ICBM no puede ser disuadido por geografía."
+ 
+ je_icbm_early_tt: "El programa de fomento de la confianza está en desarrollo temprano. Se están probando los sistemas de orientación. Será años antes de que exista un vehículo de entrega intercontinental viable."
+ je_icbm_late_tt: "El desarrollo de ICBM se aproxima a la terminación. Se están realizando exámenes finales de rango y precisión."
+ 
+ icbm_progress_bar: "ICBM Development"
+ icbm_progress_bar_desc: "Avance hacia una capacidad intercontinental de entrega de misiles balísticos. Al 100%, las armas nucleares pueden ser objeto de ataques a nivel mundial independientemente de su proximidad."
+ icbm_progress_bar_tt: "Progresos mensuales en el desarrollo de la ICBM"
+ 
+ icbm_capable_modifier: "ICBM Capable"
+ icbm_capable_modifier_desc: "id=0/año ha desarrollado misiles balísticos intercontinentales. Ahora las armas nucleares pueden ser dirigidas a cualquier estado del mundo, independientemente de su alcance."
+ 
+ nuclear_events.11.t: "ICBM Programme Complete"
+ nuclear_events.11.d: "id=0/año ha probado con éxito un misil balístico intercontinental. El dispositivo voló su gama completa, demostró la precisión de la orientación terminal dentro de parámetros aceptables, y se bajó en la zona designada. Las consecuencias estratégicas son inmediatas. La disuasión nuclear de id=3/tio ya no está limitada por la geografía. Cualquier estado en el planeta es ahora, en principio, un objetivo potencial. La comunidad internacional habrá tomado nota de la prueba. Siempre lo hace."
+ nuclear_events.11.f: "No queda nada para estar fuera de rango."
+ nuclear_events.11.a: "El disuasor ahora es verdaderamente global"
+ 
+ # ── CONVENTIONAL MISSILES ─────────────────
+ 
+ CONV_MISSILES_HEADER: "Misiles convencionales"
+ CONV_TARGET_AIRPORT_TOOLTIP: "Aeropuertos de destino en determinados estados. Cada misil tiene un 3% de posibilidades de destruir el edificio del aeropuerto."
+ CONV_TARGET_BARRACKS_TOOLTIP: "Apunten a los cuarteles. Cada misil tiene un 3% de posibilidades de destruir barracones en cada estado objetivo."
+ CONV_TARGET_NAVAL_TOOLTIP: "Meta bases navales. Cada misil tiene un 3% de posibilidades de destruir la infraestructura naval."
+ CONV_TARGET_NUCLEAR_PLANT_TOOLTIP: "Metan las centrales nucleares. Cada misil tiene un 3% de posibilidades de destruir la instalación."
+ CONV_TARGET_SILO_TOOLTIP: "Meta los silos nucleares. Cada misil tiene un 3% de posibilidades de destruir el silo."
+ CONV_TARGET_GOVERNMENT_TOOLTIP: "Objetivo de los edificios de la administración pública. Cada misil tiene un 3% de posibilidades de destruirlos."
+ CONV_TARGET_RAILWAY_TOOLTIP: "Infraestructura ferroviaria dirigida. Cada misil tiene un 3% de posibilidades de destruir el ferrocarril."
+ CONV_ADD_TARGET_TOOLTIP: "Añadir este estado a la lista de misiles convencionales."
+ CONV_REMOVE_TARGET_TOOLTIP: "Quitar este estado de la lista de ataque de misiles convencionales."
+ CONV_FIRE_TOOLTIP: "Inicie un ataque de misiles convencionales contra todos los estados seleccionados. Consume un misil por estado objetivo. Se aplica una refrigeración de 60 días."
+ 
+ # ── STRATEGIC BOMBING ─────────────────────
+ 
+ STRAT_BOMBING_HEADER: "Bombing estratégico"
+ BOMBING_ADD_TARGET_TOOLTIP: "Añadir este estado a la lista de bombardeos para la próxima carrera."
+ BOMBING_REMOVE_TARGET_TOOLTIP: "Quitar este estado de la lista de bombardeos."
+ BOMBING_EXECUTE_TOOLTIP: "Ejecutar un bombardeo estratégico contra todos los estados seleccionados. La devastación se añade sobre la base del número de formaciones de aire calificadas. 30 días de refrigeración se aplica."
+ 
+ NUCLEAR_ICBM_PROGRESS_TOOLTIP: "Progresos en el desarrollo de la ICBM. Al 100%, las armas nucleares pueden apuntar a cualquier estado a nivel mundial."
+ NUCLEAR_ICBM_TOOLTIP: "Iniciar el desarrollo de misiles balísticos intercontinentales. Requiere capacidad nuclear. Lleva varios años. Una vez completas, las armas nucleares pueden dirigirse a cualquier estado del mundo, no sólo a los vecinos."
+ 
+ CONV_PRODUCE_MISSILES_TOOLTIP: "Fabrica una salva de 5 misiles convencionales. Pequeño costo de producción en curso. Los misiles se consumen al disparar, uno por estado objetivo."
+ 
+ missile_production_cost:0 "Producción de misiles"
+ state_buy_orders_missiles_add:0 "Consumo de misiles"
+ 
+ CONV_DEPLOY_10_TOOLTIP: "Dispare el 10% de sus arsenales de misiles contra estados específicos."
+ CONV_DEPLOY_25_TOOLTIP: "Dispare el 25% de sus arsenales de misiles contra estados específicos."
+ CONV_DEPLOY_50_TOOLTIP: "Dispare el 50% de sus arsenales de misiles contra estados específicos."
+ CONV_DEPLOY_75_TOOLTIP: "Dispare el 75% de su arsenal de misiles contra estados específicos."
+ CONV_DEPLOY_100_TOOLTIP: "Dispara todo tu arsenal de misiles contra estados específicos."
+ 
+ CONV_BUILDING_CHANCE_TOOLTIP: "Cada misil lanzó una oportunidad de 3% para destruir uno de los siguientes edificios en su estado objetivo, si está presente: secuestrar id=0/Normaltratificadox id=1/ título• Aeropuerto seccionx id=2/ título• Barracks identificadox id=3/ título• Base Naval secundax id=4/ título• Planta de energía nuclear cumplidax id=5/año• Todos los tipos de construcción se enrollan independientemente. Una sola salvamisiles puede destruir múltiples edificios en el mismo estado si es lo suficientemente grande."
+ 
+ nuclear_events.12.t: "Misile Strike en el id=0"
+ nuclear_events.12.d: "id=0/año ha lanzado una huelga de misiles convencionales contra el territorio id=1/año. Se están evaluando los informes de impactos en los estados de id=2/ títulos: se está evaluando el daño de infraestructura. Los misiles no eran nucleares, pero el mensaje está claro. id=5/año está dispuesto a usar armas de largo alcance contra nosotros."
+ nuclear_events.12.f: "Los cráteres ya están allí. La pregunta es lo que haremos después."
+ nuclear_events.12.a: "Evaluar el daño y responder en consecuencia"
+
+ missile_strike_victim_modifier: "Strike de misiles convencionales"
+ missile_strike_victim_modifier_desc: "Nuestro territorio ha sido atacado por un ataque de misiles convencionales. Los daños de infraestructura y la ansiedad pública son elevados."
+
+ # ── EVENT 13: RETALIATION CHOICE ───────────
+
+ nuclear_events.13.t: "Retaliación nuclear - Decisión requerida"
+ nuclear_events.13.d: "id=0/año lanzó armas nucleares contra idx id=1/año. Nuestras ojivas están armadas. Los códigos de lanzamiento están listos.Significados: id=2/ título obtenidosx id=3/ títuloUna huelga de represalia contra el territorio id=4/año consumiría el 25% de nuestro arsenal y atacaría todos los estados id=5/conejo. La huelga no llevaría infamia — el mundo comprenderá. La alternativa es absorber el ataque. No hay deshonra en la supervivencia."
+ nuclear_events.13.f: "El orden sólo debe ser dado una vez."
+ nuclear_events.13.a: "Retaliate — lanzamiento 25% del arsenal contra id=0/"
+ nuclear_events.13.b: "Bajar — absorber la huelga, preservar el arsenal"
+
+ nuclear_first_strike_response: "Retaliation nuclear (First Strike Response)"
+ nuclear_first_strike_response_desc: "id=0/año ha lanzado un ataque nuclear en respuesta a un ataque nuclear no provocado en su territorio. La comunidad internacional reconoce el derecho a represalias: se reduce considerablemente el aumento de la infamia."
+
+ nuclear_absorbed_first_strike: "Abatimiento nuclear"
+ nuclear_absorbed_first_strike_desc: "id=0/año sufrió un ataque nuclear sin represalias. The restraint has been noted international. El prestigio y el prestigio diplomáticos se realzan considerablemente."
+
+ # ── EVENT 14: RETALIATION NOTIFICATION ─────
+
+ nuclear_events.14.t: "Nuclear Retaliation Inbound"
+ nuclear_events.14.d: "Nuestra huelga nuclear ha sido contestada. id=0/año ha lanzado una huelga de represalias - las ojivas de guerra se confirman inbound. Las consecuencias son nuestras para soportar."
+ nuclear_events.14.f: "Cada huelga invita al siguiente."
+ nuclear_events.14.a: "Brace for impact"

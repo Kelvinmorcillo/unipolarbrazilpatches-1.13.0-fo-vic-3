@@ -1,0 +1,58 @@
+﻿l_english:
+
+ # ==========================================
+ # THE DOLLAR 
+ # ==========================================
+
+ je_the_dollar:0 "The Dollar"
+ je_the_dollar_reason:0 "The United States dollar is the world's reserve currency. [ROOT.GetCountry.GetName] exports more credit than any other nation — and in doing so, holds a position of extraordinary financial power.\n\nWhen other nations' financial districts require credit to sustain their operations, they look to [ROOT.GetCountry.GetAdjective] banks to supply it. So long as the dollar flows, those countries' capitalists can build, invest, and profit. Should [ROOT.GetCountry.GetName] choose to restrict that flow — through sanctions, embargo, or deliberate contraction — the consequences for foreign financial markets would be immediate and severe.\n\n@information! Exporting credit is not simply trade. It is the exercise of monetary sovereignty over countries that have come to depend on [ROOT.GetCountry.GetAdjective] financial infrastructure. Their financial districts require credit. If the price of credit rises above the price of securities, their investors begin to lose money. If credit stops flowing altogether, their banks must scramble to produce enough domestically — a process that takes time they may not have."
+
+ je_dollar_status_hegemonic_tt:0 "#bold The dollar is hegemonic.#! [ROOT.GetCountry.GetName] is exporting more than #v 20,000#! units of credit. Foreign financial markets are deeply integrated with [ROOT.GetCountry.GetAdjective] banking infrastructure. The leverage this provides is substantial."
+ je_dollar_status_stronger_tt:0 "#bold The dollar is powerful.#! [ROOT.GetCountry.GetName] is exporting more than #v 10,000#! units of credit. Foreign financial markets are deeply integrated with [ROOT.GetCountry.GetAdjective] banking infrastructure. The leverage this provides is substantial."
+ je_dollar_status_strong_tt:0 "#bold The dollar is influential.#! [ROOT.GetCountry.GetName] is exporting more than #v 5,000#! units of credit. Foreign financial markets are deeply integrated with [ROOT.GetCountry.GetAdjective] banking infrastructure. The leverage this provides is substantial."
+ je_dollar_status_moderate_tt:0 "#bold The dollar is well-established.#! [ROOT.GetCountry.GetName] is exporting more than #v 2,500#! units of credit. Foreign dependence on [ROOT.GetCountry.GetAdjective] credit is real and growing."
+ je_dollar_status_marginal_tt:0 "#bold The dollar is emerging.#! [ROOT.GetCountry.GetName] is exporting credit internationally. The dollar's role as a reserve currency is in its early stages — but the foundation is being laid."
+
+ # ==========================================
+ # THE RESERVE CURRENCY
+ # ==========================================
+
+ je_reserve_currency:0 "Reserve Currency"
+ je_reserve_currency_reason:0 "[ROOT.GetCountry.GetName] exports credit internationally — making [ROOT.GetCountry.GetAdjective] banking sector a significant player in the global financial system.\n\nWhen other nations' financial districts require credit to sustain their operations, they draw from [ROOT.GetCountry.GetAdjective] banks. This creates a form of structural leverage: countries that import credit from [ROOT.GetCountry.GetName] become, to a degree, dependent on the continued flow of that credit for the health of their financial sectors.\n\n@information! Financial districts in importing countries require credit to operate efficiently. When the price of credit rises above the price of securities, their investors lose money on construction and development. A sudden contraction of credit — through sanctions or embargo — would force those countries to produce credit domestically, a slower and more expensive process."
+
+ je_reserve_status_strong_tt:0 "#bold [ROOT.GetCountry.GetAdjective] credit is widely traded.#! Exports exceed #v 5,000#! units. Foreign financial markets have developed significant reliance on [ROOT.GetCountry.GetAdjective] banking supply."
+ je_reserve_status_moderate_tt:0 "#bold [ROOT.GetCountry.GetAdjective] credit is internationally active.#! Exports exceed #v 2,500#! units. A meaningful portion of foreign financial activity depends on [ROOT.GetCountry.GetAdjective] supply."
+ je_reserve_status_marginal_tt:0 "#bold [ROOT.GetCountry.GetAdjective] credit is entering international markets.#! Exports exceed #v 1,000#! units. The role is modest but growing."
+
+ # ==========================================
+ # THE FINANCIAL SYSTEM — je_financial_system
+ # ==========================================
+
+ je_financial_system:0 "The Financial System"
+ je_financial_system_reason:0 "This journal entry is entirely optional — you do not need to engage with the credit and securities system to play the game. It is here as a reference for those who want to understand it.\n\n#bold How the system works#!\n\nCommercial Banks produce #bold credit#!. Financial Districts purchase credit and, on the publicly traded production method, sell #bold securities#!. Securities give investors extra profit when reinvesting into new construction — but only when the price of securities is higher than the price of credit. This means there is a natural equilibrium the market seeks:\n\n• When #bold credit is cheap#! relative to securities, financial districts profit and investors build more aggressively. Construction accelerates across the economy.\n\n• When #bold securities are cheap#! relative to credit, financial districts lose money purchasing credit they cannot profitably convert. Banks find their product less valuable. Construction slows.\n\n@information! The price relationship between credit and securities is therefore the key signal to watch. A healthy spread — securities above credit — means your financial sector is functioning as intended and your capitalists are receiving returns on construction investment.\n\n@warning! If credit rises above securities, your financial districts are operating at a loss on every unit they process. Banks become profitable, but investors slow their activity and your economy grows less dynamically.\n\n#bold The Central Bank#!\n\nYou can use the #bold Central Bank#! institution to influence the production of securities directly. Investing in the Central Bank increases the supply of securities in your market — which drives down their price relative to credit. This will #bold undercut your commercial banks#!, who find their credit less profitable to produce, but it will #bold expand industrial investment#! by keeping the credit-securities spread favorable for your capitalists.\n\nThis is a deliberate trade-off: Central Bank investment favors industrial growth at the expense of banking profitability. Whether that trade-off is worth making depends on your economic strategy."
+
+ je_financial_credit_expensive_tt:0 "#bold Credit is trading above its base price.#! Commercial banks are profitable. Financial districts are paying a premium for credit, which is squeezing their margins on securities production. Investors may slow their construction activity if the spread becomes unfavorable."
+ je_financial_securities_expensive_tt:0 "#bold Securities are trading above their base price.#! Financial districts are profitable — they are converting credit into securities at a healthy margin. Investors are receiving good returns on construction. Banks face modest pressure as their product is priced below the goods they feed."
+ je_financial_balanced_tt:0 "Credit and securities are trading near their base prices. The financial system is in equilibrium — banks are marginally profitable and investors are receiving moderate returns."
+
+ ### Great Recession
+
+ je_subprime_mortgage_crisis:0 "Subprime Mortgage Crisis"
+ je_subprime_mortgage_crisis_reason:0 "[ROOT.GetCountry.GetAdjective] financial institutions are issuing and packaging mortgage-backed securities at scale — bundling subprime home loans into instruments sold across the global financial system. The securities are rated as safe. They are not safe. When the underlying mortgages begin to default, every institution holding these instruments will discover simultaneously that their balance sheets are built on worthless paper.\n\n@warning! If the price of securities does not correct significantly before the crisis matures, the [ROOT.GetCountry.GetAdjective] banking system will freeze — and the shock will be felt by every economy with substantial ties to [ROOT.GetCountry.GetName]."
+
+ je_great_recession:0 "The Great Recession"
+ je_great_recession_reason:0 "The United States financial system has collapsed. Mortgage-backed securities, which are held by banks across the globe have been revealed as near-worthless. The credit markets have frozen. Banks will not lend to each other, let alone to businesses. Investment has dried up. Construction has slowed. The recession is global.\n\nThe market will correct. It always does. The question is how much damage is done before it does."
+
+ # Status descriptions
+ subprime_je_danger_tt:0 "The price of securities has not fallen sufficiently. [ROOT.GetCountry.GetAdjective] mortgage-backed securities are still overvalued — the market has not yet priced in the risk. The longer this persists, the more catastrophic the eventual correction."
+ subprime_je_safe_tt:0 "#bold Securities have dropped more than 35% below base price.#! The market is correcting. If this holds, the crash may be averted — or at least softened."
+
+ great_recession_je_usa_tt:0 "The [ROOT.GetCountry.GetAdjective] banking system is in crisis. The credit crunch is reducing banking throughput sharply, freezing investment and construction. The recession will last until the market corrects — approximately ten months."
+ great_recession_je_global_tt:0 "[ROOT.GetCountry.GetName]'s substantial trade ties with [SCOPE.sCountry('c:USA').GetName] have transmitted the financial shock. [ROOT.GetCountry.GetAdjective] banks are exposed to [SCOPE.sCountry('c:USA').GetAdjective] financial instruments. Credit is tighter, investment has slowed, and the recession has arrived."
+
+ # ==========================================
+ # MODIFIERS
+ # ==========================================
+
+ great_recession_credit_crunch:0 "Credit Crunch"
+ great_recession_credit_crunch_desc:0 "The banking system has seized. Banks are refusing to lend — to businesses, to each other, to anyone. Credit has evaporated. Investment has collapsed. Construction has slowed. The economy will not recover until confidence returns to the financial system."

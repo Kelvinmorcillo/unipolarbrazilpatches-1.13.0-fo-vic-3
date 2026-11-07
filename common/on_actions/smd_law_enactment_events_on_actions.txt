@@ -1,0 +1,124 @@
+
+on_law_checkpoint_advance = {
+	random_events = {
+		# Drug Regulation
+		10 = drug_laws.1		# Prohibition enforcement — hold firm or phase
+		10 = drug_laws.2		# Church endorses restrictive laws
+		10 = drug_laws.3		# Intelligentsia makes case for decriminalization
+		10 = drug_laws.4		# Medical establishment endorses safe-injection sites
+ 
+		# Disability Rights
+		10 = disability_laws.4	# Medical profession endorses public treatments
+		10 = disability_laws.6	# Disability advocates rally for any progressive law
+		
+		# environment 
+		10 = environment_laws.1
+		10 = environment_laws.2
+		10 = environment_laws.3
+		
+		# Children's Rights
+		10 = childrens_rights_laws.1	# Business interests back privatized preschool
+		10 = childrens_rights_laws.4	# Labour movement debates universal childcare
+		
+		# Women's Rights
+		10 = womens_rights_laws.1		# Intelligentsia argues scope of legal protections
+		10 = womens_rights_laws.4		# Trade unions rally behind structural egalitarianism
+		
+		# Welfare
+		10 = ubi.3	
+		
+		# Education
+		10 = free_college.3		# Intelligentsia endorses universal college
+		
+		# Gun Laws
+		10 = gun_laws.1		# Public health case made for firearms ban
+		10 = gun_laws.4		# Gun rights advocates push unrestricted firearms
+		
+		# LGBTQ
+		10 = lgbtq_laws.1		# Church demands active oppression
+		10 = lgbtq_laws.4		# Intelligentsia argues for decriminalization
+		10 = lgbtq_laws.6		# Equality mandate framing for gay marriage
+		
+		# Abortion
+		10 = abortion_laws.1	# Devout frames abortion ban in moral absolutes
+		10 = abortion_laws.3	# Intelligentsia argues bodily autonomy for unrestricted
+	}
+}
+ 
+on_law_checkpoint_debate = {
+	random_events = {
+		# Drug Regulation
+		10 = drug_laws.5		# International condemnation of trafficking legalisation
+ 
+		# Disability Rights
+		10 = disability_laws.1	# Employers push back on workplace accommodations
+		10 = disability_laws.2	# Construction industry objects to architecture law
+		10 = disability_laws.3	# Who pays for accessible infrastructure?
+		
+		# Environment
+		10 = environment_laws.4
+		10 = environment_laws.5
+		
+		# Children's Rights
+		10 = childrens_rights_laws.2	# Conservative challenge to privatized preschool
+		10 = childrens_rights_laws.5	# Intelligentsia endorses universal childcare
+		
+		# Women's Rights
+		10 = womens_rights_laws.2		# Traditionalists object to legal protections
+		10 = womens_rights_laws.5		# Societal backlash against matriarchy
+		
+		# Welfare
+		10 = ubi.2
+		
+		# Education
+		10 = free_college.2		# Elites warn universal access will dilute standards
+		
+		# Gun Laws
+		10 = gun_laws.2		# Armed forces weigh in on civilian disarmament
+		10 = gun_laws.5		# Safety lobby opposes unrestricted firearms
+		
+		# LGBTQ
+		10 = lgbtq_laws.3		# Decriminalization framed against conservative backlash
+		10 = lgbtq_laws.5		# Conservatives challenge gay marriage as institution
+
+		# Abortion
+		10 = abortion_laws.2	# Exceptions debate for ban and restrictions
+	}
+}
+ 
+on_law_checkpoint_stall = {
+	random_events = {
+		# Drug Regulation
+		10 = drug_laws.6		# Criminal networks resist the crackdown
+ 
+		# Disability Rights
+		10 = disability_laws.5	# Fiscal conservatives resist public treatments
+		10 = disability_laws.7	# Conservative backlash against any progressive law
+		
+		# Environment
+		10 = environment_laws.6
+		
+		# Children's Rights
+		10 = childrens_rights_laws.3	# Fiscal conservatives resist universal childcare
+		
+		# Women's Rights
+		10 = womens_rights_laws.3		# Employers resist structural egalitarianism
+		10 = womens_rights_laws.6		# Old guard mounts organised opposition to matriarchy
+		
+		# Welfare
+		10 = ubi.1	
+		
+		# Education
+		10 = free_college.1		# Fiscal conservatives resist public funding of college
+		
+		# Gun Laws
+		10 = gun_laws.3		# Rural resistance to firearms restrictions
+		10 = gun_laws.6		# Both sides resist licensed firearms compromise
+		
+		# LGBTQ
+		10 = lgbtq_laws.2		# Enforcement cost debate for oppression laws
+
+		# Abortion
+		10 = abortion_laws.4	# Devout mounts opposition to liberalization
+	}
+}

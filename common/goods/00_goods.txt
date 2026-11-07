@@ -1,0 +1,816 @@
+﻿# goods types, organized by category
+
+# prestige_factor							Base prestige for occupying the rank MIN_PRESTIGE_AWARD spot on the goods production leaderboard. x2 awarded for every rank above the minimum.
+
+############
+# MILITARY #
+############
+
+REPLACE_OR_CREATE:ammunition = {
+	texture = "gfx/interface/icons/goods_icons/ammunition.dds"
+	cost = 170
+	category = military
+
+	prestige_factor = 5
+	traded_quantity = 5 # 250
+}
+
+REPLACE_OR_CREATE:small_arms = {
+	texture = "gfx/interface/icons/goods_icons/small_arms.dds"
+	cost = 300
+	category = military
+
+	obsession_chance = 0.5
+	prestige_factor = 5
+	traded_quantity = 4 # 240
+}
+
+REPLACE_OR_CREATE:artillery = {
+	texture = "gfx/interface/icons/goods_icons/artillery.dds"
+	cost = 700
+	category = military
+
+	prestige_factor = 5
+	traded_quantity = 3.5 # 245
+	convoy_cost_multiplier = 1.5
+}
+
+REPLACE_OR_CREATE:tanks = {
+	texture = "gfx/interface/icons/goods_icons/tanks.dds"
+	cost = 1000
+	category = military
+
+	prestige_factor = 10
+	traded_quantity = 3 # 240
+	convoy_cost_multiplier = 2.0
+}
+
+REPLACE_OR_CREATE:aeroplanes = {
+	texture = "gfx/interface/icons/goods_icons/aeroplanes.dds"
+	cost = 480
+	category = luxury
+
+	obsession_chance = 0.5
+	prestige_factor = 10
+	traded_quantity = 3 # 240
+	convoy_cost_multiplier = 2.0
+}
+
+# Deprecated
+manowars = {
+	texture = "gfx/interface/icons/goods_icons/man_o_wars.dds"
+	cost = 350
+	category = military
+
+	prestige_factor = 5
+	traded_quantity = 3.5 # 245
+	convoy_cost_multiplier = 0.25
+}
+
+# Deprecated
+ironclads = {
+	texture = "gfx/interface/icons/goods_icons/ironclads.dds"
+	cost = 400
+	category = military
+
+	prestige_factor = 10
+	traded_quantity = 3.5 # 280
+	convoy_cost_multiplier = 0.25
+}
+
+##########
+# STAPLE #
+##########
+
+REPLACE_OR_CREATE:grain = {
+	texture = "gfx/interface/icons/goods_icons/grain.dds"
+	cost = 100
+	category = staple
+
+	prestige_factor = 3
+
+	traded_quantity = 12 # 240
+	convoy_cost_multiplier = 0.25
+
+	consumption_tax_cost = 500
+}
+
+REPLACE_OR_CREATE:fish = {
+	texture = "gfx/interface/icons/goods_icons/fish.dds"
+	cost = 100
+	category = staple
+
+	prestige_factor = 3
+
+	traded_quantity = 12 # 240
+	convoy_cost_multiplier = 0.25
+
+	consumption_tax_cost = 300
+}
+
+REPLACE_OR_CREATE:fabric = {
+	texture = "gfx/interface/icons/goods_icons/fabric.dds"
+	cost = 100
+	category = staple
+
+	prestige_factor = 3
+
+	traded_quantity = 10 # 200
+	convoy_cost_multiplier = 0.25
+
+	consumption_tax_cost = 300
+}
+
+REPLACE_OR_CREATE:wood = {
+	texture = "gfx/interface/icons/goods_icons/wood.dds"
+	cost = 100
+	category = staple
+
+	prestige_factor = 3
+
+	traded_quantity = 10 # 200
+	convoy_cost_multiplier = 0.25
+
+	consumption_tax_cost = 300
+}
+
+REPLACE_OR_CREATE:groceries = {
+	texture = "gfx/interface/icons/goods_icons/groceries.dds"
+	cost = 150
+	category = staple
+
+	prestige_factor = 4
+
+	traded_quantity = 9 # 270
+	convoy_cost_multiplier = 0.5
+
+	consumption_tax_cost = 300
+}
+
+REPLACE_OR_CREATE:clothes = {
+	texture = "gfx/interface/icons/goods_icons/clothes.dds"
+	cost = 150
+	category = staple
+
+	prestige_factor = 4
+
+	traded_quantity = 8 # 240
+	convoy_cost_multiplier = 0.5
+
+	consumption_tax_cost = 300
+}
+
+REPLACE_OR_CREATE:furniture = {
+	texture = "gfx/interface/icons/goods_icons/furniture.dds"
+	cost = 150
+	category = staple
+
+	prestige_factor = 4
+
+	traded_quantity = 8 # 240
+	convoy_cost_multiplier = 0.5
+
+	consumption_tax_cost = 300
+}
+
+REPLACE_OR_CREATE:paper = {
+	texture = "gfx/interface/icons/goods_icons/paper.dds"
+	cost = 150
+	category = staple
+
+	prestige_factor = 4
+
+	traded_quantity = 7 # 210
+	convoy_cost_multiplier = 0.5
+
+	consumption_tax_cost = 200
+}
+
+REPLACE_OR_CREATE:services = {
+	texture = "gfx/interface/icons/goods_icons/services.dds"
+	cost = 150
+	category = staple
+	local = yes
+
+	consumption_tax_cost = 200
+}
+
+REPLACE_OR_CREATE:transportation = {
+	texture = "gfx/interface/icons/goods_icons/transportation.dds"
+	cost = 150
+	category = staple
+	local = yes
+
+	consumption_tax_cost = 200
+}
+
+REPLACE_OR_CREATE:electricity = {
+	texture = "gfx/interface/icons/goods_icons/electricity.dds"
+	cost = 150
+	category = staple
+	local = yes
+
+	consumption_tax_cost = 200
+}
+
+REPLACE_OR_CREATE:merchant_marine = {
+	texture = "gfx/interface/icons/goods_icons/merchant_marine.dds"
+	cost = 250
+	category = staple
+
+	prestige_factor = 8
+	traded_quantity = 4 # 200
+	convoy_cost_multiplier = 0.05
+}
+
+##############
+# INDUSTRIAL #
+##############
+
+REPLACE_OR_CREATE:steamers = {
+	texture = "gfx/interface/icons/goods_icons/steamers.dds"
+	cost = 350
+	category = industrial
+
+	obsession_chance = 0.5
+	prestige_factor = 6
+	traded_quantity = 3.5 # 245
+	convoy_cost_multiplier = 0.25
+}
+
+REPLACE_OR_CREATE:silk = {
+	texture = "gfx/interface/icons/goods_icons/silk.dds"
+	cost = 200
+	category = industrial
+
+	prestige_factor = 6
+	traded_quantity = 5 # 200
+}
+
+REPLACE_OR_CREATE:dye = {
+	texture = "gfx/interface/icons/goods_icons/dye.dds"
+	cost = 200
+	category = industrial
+
+	prestige_factor = 6
+	traded_quantity = 5 # 200
+}
+
+REPLACE_OR_CREATE:sulfur = {
+	texture = "gfx/interface/icons/goods_icons/sulfur.dds"
+	cost = 130
+	category = industrial
+
+	prestige_factor = 3
+	traded_quantity = 4 # 200
+}
+
+REPLACE_OR_CREATE:coal = {
+	texture = "gfx/interface/icons/goods_icons/coal.dds"
+	cost = 150
+	category = industrial
+
+	prestige_factor = 3
+
+	traded_quantity = 7 # 210
+	convoy_cost_multiplier = 0.75
+
+	consumption_tax_cost = 150
+}
+
+REPLACE_OR_CREATE:iron = {
+	texture = "gfx/interface/icons/goods_icons/iron.dds"
+	cost = 200
+	category = industrial
+
+	prestige_factor = 3
+	traded_quantity = 5 # 200
+}
+
+REPLACE_OR_CREATE:lead = {
+	texture = "gfx/interface/icons/goods_icons/lead.dds"
+	cost = 200
+	category = industrial
+
+	prestige_factor = 3
+	traded_quantity = 5 # 200
+}
+
+REPLACE_OR_CREATE:hardwood = {
+	texture = "gfx/interface/icons/goods_icons/hardwood.dds"
+	cost = 200
+	category = industrial
+
+	prestige_factor = 4
+	traded_quantity = 5 # 200
+}
+
+REPLACE_OR_CREATE:rubber = {
+	texture = "gfx/interface/icons/goods_icons/rubber.dds"
+	cost = 200
+	category = industrial
+
+	prestige_factor = 4
+	traded_quantity = 5 # 200
+}
+
+REPLACE_OR_CREATE:oil = {
+	texture = "gfx/interface/icons/goods_icons/oil.dds"
+	cost = 200
+	category = industrial
+
+	prestige_factor = 6
+	traded_quantity = 6 # 240
+
+	consumption_tax_cost = 200
+}
+
+REPLACE_OR_CREATE:engines = {
+	texture = "gfx/interface/icons/goods_icons/locomotives.dds"
+	cost = 300
+	category = industrial
+
+	prestige_factor = 8
+
+	traded_quantity = 4 # 240
+	convoy_cost_multiplier = 1.5
+}
+
+REPLACE_OR_CREATE:steel = {
+	texture = "gfx/interface/icons/goods_icons/steel.dds"
+	cost = 250
+	category = industrial
+
+	prestige_factor = 5
+	traded_quantity = 4 # 200
+}
+
+REPLACE_OR_CREATE:glass = {
+	texture = "gfx/interface/icons/goods_icons/glass.dds"
+	cost = 200
+	category = industrial
+
+	prestige_factor = 5
+	traded_quantity = 5 # 200
+}
+
+REPLACE_OR_CREATE:fertilizer = {
+	texture = "gfx/interface/icons/goods_icons/chemicals.dds"
+	cost = 225
+	category = industrial
+
+	prestige_factor = 3
+
+	traded_quantity = 7 # 210
+}
+
+REPLACE_OR_CREATE:tools = {
+	texture = "gfx/interface/icons/goods_icons/tools.dds"
+	cost = 200
+	category = industrial
+
+	prestige_factor = 5
+	traded_quantity = 5 # 200
+}
+
+REPLACE_OR_CREATE:explosives = {
+	texture = "gfx/interface/icons/goods_icons/explosives.dds"
+	cost = 250
+	category = industrial
+
+	prestige_factor = 6
+
+	traded_quantity = 4 # 200
+	convoy_cost_multiplier = 1.5
+}
+
+##########
+# LUXURY #
+##########
+
+REPLACE_OR_CREATE:porcelain = {
+	texture = "gfx/interface/icons/goods_icons/porcelain.dds"
+	cost = 350
+	category = luxury
+
+	obsession_chance = 1.0
+	prestige_factor = 8
+	convoy_cost_multiplier = 0.75
+	traded_quantity = 3.5 # 245
+}
+
+REPLACE_OR_CREATE:meat = {
+	texture = "gfx/interface/icons/goods_icons/meat.dds"
+	cost = 150
+	category = luxury
+
+	obsession_chance = 1.0
+	prestige_factor = 4
+
+	traded_quantity = 8 # 240
+	convoy_cost_multiplier = 0.75
+
+	consumption_tax_cost = 200
+}
+
+REPLACE_OR_CREATE:fruit = {
+	texture = "gfx/interface/icons/goods_icons/fruit.dds"
+	cost = 150
+	category = luxury
+
+	obsession_chance = 1.0
+	prestige_factor = 4
+
+	traded_quantity = 8 # 240
+	convoy_cost_multiplier = 0.75
+
+	consumption_tax_cost = 200
+}
+
+REPLACE_OR_CREATE:liquor = {
+	texture = "gfx/interface/icons/goods_icons/liquor.dds"
+	cost = 150
+	category = luxury
+
+	obsession_chance = 2.0
+	prestige_factor = 4
+
+	traded_quantity = 8 # 240
+	convoy_cost_multiplier = 0.75
+}
+
+REPLACE_OR_CREATE:wine = {
+	texture = "gfx/interface/icons/goods_icons/wine.dds"
+	cost = 250
+	category = luxury
+
+	obsession_chance = 2.0
+	prestige_factor = 6
+	convoy_cost_multiplier = 0.75
+	traded_quantity = 5 # 250
+}
+
+REPLACE_OR_CREATE:tea = {
+	texture = "gfx/interface/icons/goods_icons/tea.dds"
+	cost = 250
+	category = luxury
+
+	obsession_chance = 1.5
+	prestige_factor = 6
+	convoy_cost_multiplier = 0.75
+	traded_quantity = 5 # 250
+}
+
+REPLACE_OR_CREATE:coffee = {
+	texture = "gfx/interface/icons/goods_icons/coffee.dds"
+	cost = 250
+	category = luxury
+
+	obsession_chance = 1.5
+	prestige_factor = 6
+	convoy_cost_multiplier = 0.75
+	traded_quantity = 5 # 250
+}
+
+REPLACE_OR_CREATE:sugar = {
+	texture = "gfx/interface/icons/goods_icons/sugar.dds"
+	cost = 150
+	category = luxury
+
+	obsession_chance = 1.5
+	prestige_factor = 4
+
+	traded_quantity = 7.5
+	convoy_cost_multiplier = 0.75
+	traded_quantity = 8 # 240
+}
+
+REPLACE_OR_CREATE:tobacco = {
+	texture = "gfx/interface/icons/goods_icons/tobacco.dds"
+	cost = 200
+	category = luxury
+
+	obsession_chance = 2.0
+	prestige_factor = 4
+	convoy_cost_multiplier = 0.75
+	traded_quantity = 5 # 250
+}
+
+REPLACE_OR_CREATE:opium = {
+	texture = "gfx/interface/icons/goods_icons/opium.dds"
+	cost = 250
+	category = luxury
+
+	obsession_chance = 10.0
+	prestige_factor = 2
+	convoy_cost_multiplier = 0.75
+	traded_quantity = 5 # 250
+}
+
+REPLACE_OR_CREATE:automobiles = {
+	texture = "gfx/interface/icons/goods_icons/automobiles.dds"
+	cost = 500
+	category = luxury
+
+	obsession_chance = 1.0
+	prestige_factor = 10
+
+	traded_quantity = 3 # 300
+	convoy_cost_multiplier = 1.5
+
+	pop_consumption_can_add_infrastructure = yes
+}
+
+REPLACE_OR_CREATE:telephones = {
+	texture = "gfx/interface/icons/goods_icons/telephones.dds"
+	cost = 350
+	category = luxury
+
+	obsession_chance = 1.0
+	prestige_factor = 10
+	traded_quantity = 4 # 280
+}
+
+REPLACE_OR_CREATE:radios = {
+	texture = "gfx/interface/icons/goods_icons/radios.dds"
+	cost = 400
+	category = luxury
+
+	obsession_chance = 1.0
+	prestige_factor = 10
+	traded_quantity = 3.5 # 300
+}
+
+REPLACE_OR_CREATE:luxury_clothes = {
+	texture = "gfx/interface/icons/goods_icons/luxury_clothes.dds"
+	cost = 300
+	category = luxury
+
+	obsession_chance = 1.0
+	prestige_factor = 8
+	convoy_cost_multiplier = 0.75
+	traded_quantity = 4 # 240
+}
+
+REPLACE_OR_CREATE:luxury_furniture = {
+	texture = "gfx/interface/icons/goods_icons/luxury_furniture.dds"
+	cost = 300
+	category = luxury
+
+	obsession_chance = 1.0
+	prestige_factor = 8
+	convoy_cost_multiplier = 0.75
+	traded_quantity = 4 # 240
+}
+
+REPLACE_OR_CREATE:gold = {
+	texture = "gfx/interface/icons/goods_icons/gold.dds"
+	cost = 500
+	category = luxury
+	tradeable = no
+	fixed_price = yes
+	prestige_factor = 5
+}
+
+REPLACE_OR_CREATE:fine_art = {
+	texture = "gfx/interface/icons/goods_icons/fine_art.dds"
+	cost = 1000
+	category = luxury
+
+	obsession_chance = 1.0
+	prestige_factor = 10
+
+	traded_quantity = 1.5 # 300
+}
+
+# NEW GOODS FROM SMD
+
+computers = {
+	texture = "gfx/interface/icons/goods_icons/computers.dds"
+	cost = 350
+	category = industrial
+	
+	obsession_chance = 0.5
+	prestige_factor = 15
+	
+	traded_quantity = 3.5
+}
+
+microchips = {
+	texture = "gfx/interface/icons/goods_icons/microchip.dds"
+	cost = 275
+	category = industrial
+	
+	prestige_factor = 15
+	
+	traded_quantity = 3.5
+}
+
+plastic = {
+	texture = "gfx/interface/icons/goods_icons/plastics.dds"
+	cost = 175
+	category = industrial
+	
+	prestige_factor = 15
+	
+	traded_quantity = 5
+}
+
+professional_services = {
+	texture = "gfx/interface/icons/goods_icons/professional_services.dds"
+	cost = 500
+	category = luxury
+	
+	prestige_factor = 15
+	
+	traded_quantity = 2
+}
+
+spacecraft = {
+	texture = "gfx/interface/icons/goods_icons/spacecraft.dds"
+	cost = 800
+	category = military
+	
+	prestige_factor = 35
+	traded_quantity = 0.1
+	convoy_cost_multiplier = 3.5
+}
+
+warplanes = {
+	texture = "gfx/interface/icons/goods_icons/warplanes.dds"
+	cost = 1160
+	category = military
+	
+	prestige_factor = 20
+	traded_quantity = 1
+	convoy_cost_multiplier = 3
+}
+
+video_games = {
+	texture = "gfx/interface/icons/goods_icons/videogames.dds"
+	cost = 275
+	category = luxury
+	
+	obsession_chance = 0.4
+	prestige_factor = 15
+	
+	traded_quantity = 2
+}
+
+missiles = {
+	texture = "gfx/interface/icons/goods_icons/missiles.dds"
+	cost = 450
+	category = military
+	
+	prestige_factor = 8
+	traded_quantity = 2.5
+	convoy_cost_multiplier = 1.6
+}
+
+rotorcraft = {
+	texture = "gfx/interface/icons/goods_icons/rotorcraft.dds"
+	cost = 500
+	category = military
+	
+	prestige_factor = 10
+	traded_quantity = 1.5
+	convoy_cost_multiplier = 2.5
+}
+
+telecommunications = {
+	texture = "gfx/interface/icons/goods_icons/telecommunications.dds"
+	cost = 150
+	category = staple
+	local = yes
+
+	prestige_factor = 4
+	
+	consumption_tax_cost = 200
+}
+
+intellectual_property = {
+	texture = "gfx/interface/icons/goods_icons/intellectual_property.dds"
+	cost = 450
+	category = luxury
+
+	prestige_factor = 16
+	
+	consumption_tax_cost = 200
+}
+
+credit = {
+	texture = "gfx/interface/icons/goods_icons/credit.dds"
+	cost = 300
+	category = luxury
+	prestige_factor = 4
+	
+	consumption_tax_cost = 200
+}
+
+pharmaceuticals = {
+	texture = "gfx/interface/icons/goods_icons/pharmaceuticals.dds"
+	cost = 325
+	category = luxury
+
+	prestige_factor = 4
+	
+	consumption_tax_cost = 100
+}
+
+real_estate = {
+	texture = "gfx/interface/icons/goods_icons/real_estate.dds"
+	cost = 225
+	category = staple
+	local = yes
+	
+	prestige_factor = 4
+	
+	consumption_tax_cost = 300
+}
+
+retail_services = {
+	texture = "gfx/interface/icons/goods_icons/retail.dds"
+	cost = 175
+	category = staple
+	local = yes
+	
+	prestige_factor = 4
+	
+	consumption_tax_cost = 100
+}
+
+food_services = {
+	texture = "gfx/interface/icons/goods_icons/food_services.dds"
+	cost = 200
+	category = staple
+	local = yes
+	
+	prestige_factor = 4
+	
+	consumption_tax_cost = 100
+}
+
+advertising = {
+	texture = "gfx/interface/icons/goods_icons/advertising_services.dds"
+	cost = 250
+	category = industrial
+	
+	prestige_factor = 4
+	
+	consumption_tax_cost = 100
+}
+
+securities = {
+	texture = "gfx/interface/icons/goods_icons/securities.dds"
+	cost = 350
+	category = luxury
+	
+	prestige_factor = 4
+	
+	consumption_tax_cost = 250
+}
+
+storage = {
+	texture = "gfx/interface/icons/goods_icons/storage.dds"
+	cost = 150
+	category = industrial
+	local = yes
+	
+	prestige_factor = 4
+	
+	consumption_tax_cost = 100
+}
+
+appliances = {
+	texture = "gfx/interface/icons/goods_icons/appliances.dds"
+	cost = 300
+	category = luxury
+
+	prestige_factor = 6
+
+	traded_quantity = 8 # 240
+	convoy_cost_multiplier = 0.5
+
+	consumption_tax_cost = 300
+}
+
+luxury_services = {
+	texture = "gfx/interface/icons/goods_icons/luxury_services.dds"
+	cost = 400
+	category = luxury
+
+	prestige_factor = 12
+
+	consumption_tax_cost = 300
+}
+
+# fresh_water = {
+#	texture = "gfx/interface/icons/goods_icons/water.dds"
+#	cost = 1875
+#	category = staple
+#	local = yes
+#	
+#	prestige_factor = 4
+#	
+#	consumption_tax_cost = 400
+# }

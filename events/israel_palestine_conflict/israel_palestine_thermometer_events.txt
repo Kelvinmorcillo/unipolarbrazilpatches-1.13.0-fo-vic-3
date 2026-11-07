@@ -1,0 +1,280 @@
+namespace = ip_peacetime
+
+# Checkpoint Incident
+ip_peacetime.1 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = ip_peacetime.1.t
+	desc = ip_peacetime.1.d
+	flavor = ip_peacetime.1.f
+
+	event_image = {
+		video = "unspecific_vandalized_storefront"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	trigger = {
+		c:ISR ?= this
+	}
+
+	option = {
+		name = ip_peacetime.1.a
+		default_option = yes
+		ip_temperature_add_8 = yes
+		change_global_variable = { name = ip_peacetime_international_pressure add = 3 }
+		add_modifier = { name = ip_security_alert months = 6 }
+	}
+
+	option = {
+		name = ip_peacetime.1.b
+		ip_temperature_add_3 = yes
+		change_global_variable = { name = ip_peacetime_security_coordination add = 3 }
+		add_modifier = { name = ip_security_coordination months = 6 }
+	}
+}
+
+# Palestinian Authority Crackdown
+ip_peacetime.2 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = ip_peacetime.2.t
+	desc = ip_peacetime.2.d
+	flavor = ip_peacetime.2.f
+
+	event_image = {
+		video = "africa_diplomats_negotiating"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	trigger = {
+		c:PAL ?= this
+	}
+
+	option = {
+		name = ip_peacetime.2.a
+		default_option = yes
+		ip_temperature_subtract_6 = yes
+		change_global_variable = { name = ip_peacetime_security_coordination add = 8 }
+		add_modifier = { name = ip_political_backlash months = 8 }
+	}
+
+	option = {
+		name = ip_peacetime.2.b
+		ip_temperature_add_5 = yes
+		change_global_variable = { name = ip_peacetime_security_coordination add = -5 }
+		add_modifier = { name = ip_grassroots_outreach months = 6 }
+	}
+}
+
+# Settlement Announcement
+ip_peacetime.3 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = ip_peacetime.3.t
+	desc = ip_peacetime.3.d
+	flavor = ip_peacetime.3.f
+
+	event_image = {
+		video = "unspecific_city_street"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	trigger = {
+		c:ISR ?= this
+	}
+
+	option = {
+		name = ip_peacetime.3.a
+		default_option = yes
+		ip_temperature_add_10 = yes
+		change_global_variable = { name = ip_peacetime_negotiations add = -5 }
+		change_global_variable = { name = ip_peacetime_international_pressure add = 5 }
+	}
+
+	option = {
+		name = ip_peacetime.3.b
+		ip_temperature_subtract_6 = yes
+		change_global_variable = { name = ip_peacetime_negotiations add = 8 }
+		add_modifier = { name = ip_political_backlash months = 12 }
+	}
+}
+
+# Street Protests
+ip_peacetime.4 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = ip_peacetime.4.t
+	desc = ip_peacetime.4.d
+	flavor = ip_peacetime.4.f
+
+	event_image = {
+		video = "unspecific_vandalized_storefront"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	trigger = {
+		c:PAL ?= this
+	}
+
+	option = {
+		name = ip_peacetime.4.a
+		default_option = yes
+		ip_temperature_add_8 = yes
+		change_global_variable = { name = ip_peacetime_international_pressure add = 5 }
+		add_modifier = { name = ip_mass_mobilization months = 6 }
+	}
+
+	option = {
+		name = ip_peacetime.4.b
+		ip_temperature_subtract_4 = yes
+		change_global_variable = { name = ip_peacetime_negotiations add = 4 }
+		add_modifier = { name = ip_political_backlash months = 8 }
+	}
+}
+
+# International Envoy
+ip_peacetime.5 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = ip_peacetime.5.t
+	desc = ip_peacetime.5.d
+	flavor = ip_peacetime.5.f
+
+	event_image = {
+		video = "africa_diplomats_negotiating"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+
+	trigger = {
+		c:ISR ?= this
+	}
+
+	option = {
+		name = ip_peacetime.5.a
+		default_option = yes
+		change_global_variable = { name = ip_peacetime_negotiations add = 10 }
+		ip_temperature_subtract_4 = yes
+		add_modifier = { name = ip_international_mediation months = 12 }
+		c:PAL ?= {
+			add_modifier = { name = ip_international_mediation months = 12 }
+		}
+	}
+
+	option = {
+		name = ip_peacetime.5.b
+		change_global_variable = { name = ip_peacetime_international_pressure add = 8 }
+		change_global_variable = { name = ip_peacetime_negotiations add = -4 }
+		add_modifier = { name = ip_international_scrutiny months = 8 }
+	}
+}
+
+# Donor Conference
+ip_peacetime.6 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = ip_peacetime.6.t
+	desc = ip_peacetime.6.d
+	flavor = ip_peacetime.6.f
+
+	event_image = {
+		video = "africa_diplomats_negotiating"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_money.dds"
+
+	trigger = {
+		c:PAL ?= this
+	}
+
+	option = {
+		name = ip_peacetime.6.a
+		default_option = yes
+		change_global_variable = { name = ip_peacetime_negotiations add = 8 }
+		ip_temperature_subtract_3 = yes
+		add_modifier = { name = ip_international_mediation months = 12 }
+	}
+
+	option = {
+		name = ip_peacetime.6.b
+		ip_temperature_add_5 = yes
+		change_global_variable = { name = ip_peacetime_international_pressure add = 5 }
+		add_modifier = { name = ip_political_backlash months = 8 }
+	}
+}
+
+# Escalation Warning
+ip_peacetime.10 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = ip_peacetime.10.t
+	desc = ip_peacetime.10.d
+	flavor = ip_peacetime.10.f
+
+	event_image = {
+		video = "europenorthamerica_before_the_battle"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	trigger = {}
+
+	option = {
+		name = ip_peacetime.10.a
+		default_option = yes
+		ip_escalate_to_intifada_warning_effect = yes
+	}
+
+	option = {
+		name = ip_peacetime.10.b
+		ip_temperature_subtract_20 = yes
+		change_global_variable = { name = ip_peacetime_negotiations add = 10 }
+		change_global_variable = { name = ip_peacetime_security_coordination add = 10 }
+		add_modifier = { name = ip_political_backlash months = 18 }
+		remove_global_variable = ip_major_escalation_warning
+	}
+}
+
+# Stabilized Peace Process
+ip_peacetime.20 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = ip_peacetime.20.t
+	desc = ip_peacetime.20.d
+	flavor = ip_peacetime.20.f
+
+	event_image = {
+		video = "africa_diplomats_negotiating"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+
+	trigger = {}
+
+	option = {
+		name = ip_peacetime.20.a
+		default_option = yes
+	}
+}

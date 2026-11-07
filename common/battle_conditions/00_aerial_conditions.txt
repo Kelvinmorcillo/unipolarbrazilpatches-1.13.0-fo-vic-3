@@ -1,0 +1,114 @@
+﻿# new smd
+battle_condition_allied_air_superiority = {
+	icon = "gfx/interface/icons/battle_conditions/allied_air_superiority.dds"
+
+	modifier = {
+		unit_army_offense_mult = 0.15
+		unit_army_defense_mult = 0.2
+	}
+
+	possible = {
+		exists = scope:character
+		scope:character = { 
+			has_role = general 
+		}
+		allied_air_dominance > ennemy_air_dominance
+	}
+ 
+    instant_switch = {
+        opposite_battle_side = {
+				has_battle_condition = battle_condition_enemy_air_superiority
+			}
+		NOR = { 
+			has_battle_condition = battle_condition_pursuit
+			has_battle_condition = battle_condition_panicked_retreat
+		    has_battle_condition = battle_condition_controlled_retreat	
+			opposite_battle_side = {
+				OR = {
+				has_battle_condition = battle_condition_panicked_retreat
+			    has_battle_condition = battle_condition_controlled_retreat	
+				}
+			}
+		}
+	}
+    
+	weight = 50
+}
+
+battle_condition_deathfromabove = {
+	icon = "gfx/interface/icons/battle_conditions/death_from_above.dds"
+
+	modifier = {
+		unit_army_offense_mult = 0.10
+		unit_army_defense_mult = 0.10
+	}
+
+	possible = {
+		exists = scope:character
+		scope:character = { 
+			has_role = general 
+		}
+		commander_military_formation ?= {
+				formation_army_unit_type_fraction = {
+					target = unit_type:combat_unit_type_uav
+					value >= 0.35
+				}
+			}
+		allied_air_dominance > ennemy_air_dominance
+	}
+ 
+    instant_switch = {
+		opposite_battle_side = {
+				has_battle_condition = battle_condition_enemy_air_superiority
+			}
+		NOR = {
+			has_battle_condition = battle_condition_pursuit
+			has_battle_condition = battle_condition_panicked_retreat
+		    has_battle_condition = battle_condition_controlled_retreat	
+			opposite_battle_side = {
+				OR = {
+				has_battle_condition = battle_condition_panicked_retreat
+			    has_battle_condition = battle_condition_controlled_retreat	
+				}
+			}
+		}
+	}
+    
+	weight = 50
+}
+
+
+battle_condition_enemy_air_superiority = {
+	icon = "gfx/interface/icons/battle_conditions/enemy_air_superiority.dds"
+
+	modifier = {
+		unit_morale_loss_mult = 0.2
+	}
+
+	possible = {
+		exists = scope:character
+		scope:character = { 
+			has_role = general 
+		}
+		allied_air_dominance < enemy_air_dominance
+	}
+
+	instant_switch = {
+        opposite_battle_side = {
+				has_battle_condition = battle_condition_allied_air_superiority
+			}
+		 opposite_battle_side = {
+				has_battle_condition = battle_condition_deathfromabove
+			}
+		NOR = { 
+			has_battle_condition = battle_condition_panicked_retreat
+			has_battle_condition = battle_condition_controlled_retreat
+			has_battle_condition = battle_condition_pursuit
+			opposite_battle_side = {
+				has_battle_condition = battle_condition_pursuit
+			}
+		}
+	}
+
+	weight = 50
+}

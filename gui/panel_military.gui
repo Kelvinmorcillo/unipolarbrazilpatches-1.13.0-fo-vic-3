@@ -1,0 +1,2144 @@
+﻿# COPY-PASTED FOR NOW
+@panel_width_minus_10 = 530			# used to be 450
+@panel_width = 540  				# used to be 460
+@panel_width_half = 270				# used to be 230
+@panel_width_plus_10 = 550  		# used to be 470
+@panel_width_plus_14 = 554			# used to be 474
+@panel_width_plus_14_half = 277		# used to be 237
+@panel_width_plus_20 = 560			# used to be 480
+@panel_width_plus_30 = 570			# used to be 490
+@panel_width_plus_70 = 610			# used to be 530
+
+types panel_military {
+	type tab_army = top_illu {
+		size = { @panel_width_plus_20 180 }
+
+		background = {
+			block "illu" {
+				texture = "gfx/interface/illustrations/top_illus/top_illu_army.dds"
+			}
+			using = top_illu_properties
+		}
+
+		vbox = {
+			parentanchor = hcenter
+			margin_top = 10
+			margin_bottom = 20
+
+			hbox = {
+				visible = "[InformationPanel.IsTabSelected('army')]"
+				layoutpolicy_horizontal = expanding
+				margin = { 10 15 }
+
+				# Cost
+				vbox = {
+					layoutpolicy_vertical = expanding
+					tooltip = "ARMY_TOTAL_EXPENSE_BREAKDOWN"
+
+					textbox = {
+						autoresize = yes
+						default_format = "#title"
+						text = "EXPENSES"
+						margin_bottom = 10
+					}
+
+					hbox = {
+						textbox = {
+							raw_text = "@money![Negate_CFixedPoint(Country.PredictTotalArmyExpenses)|D+]"
+							autoresize = yes
+							align = left|nobaseline
+							using = fontsize_mega
+						}
+					}
+
+					widget = {
+						layoutpolicy_vertical = expanding
+						layoutpolicy_horizontal = expanding
+					}
+				}
+
+				# Battalions
+				vbox = {
+					layoutpolicy_vertical = expanding
+					tooltip = "PANEL_MILITARY_ARMY_OVERVIEW_TOOLTIP"
+
+					textbox = {
+						autoresize = yes
+						margin_bottom = 10
+						default_format = "#title"
+						text = "REGULARS_AND_CONSCRIPTS"
+					}
+
+					hbox = {
+						spacing = 30
+
+						### ARMY / FORCELIMIT
+						textbox = {
+							raw_text = "@battalions![Country.GetRegularBattalions|v]"
+							autoresize = yes
+							align = left|nobaseline
+							using = fontsize_mega
+						}
+
+						### ARMY / FORCELIMIT
+						textbox = {
+							raw_text = "@conscripts!#v [Country.CalcConscriptableBattalions]"
+							autoresize = yes
+							align = left|nobaseline
+							using = fontsize_mega
+						}
+					}
+
+					widget = {
+						layoutpolicy_vertical = expanding
+						layoutpolicy_horizontal = expanding
+					}
+				}
+			}
+
+			big_mobilize_all_button = {}
+		}
+
+	}
+
+	type tab_navy = top_illu {
+		size = { @panel_width_plus_20 150 }
+
+		background = {
+			texture = "gfx/interface/illustrations/top_illus/top_illu_navy.dds"
+			using = top_illu_properties
+		}
+
+		flowcontainer = {
+			parentanchor = center
+			spacing = 50
+
+			flowcontainer = {
+				parentanchor = vcenter
+				direction = vertical
+				spacing = 10
+
+				military_panel_ship_info = {}
+
+				military_panel_ship_info = {
+					blockoverride "tooltip" {
+						tooltip = "NAVY_TOTAL_EXPENSE_BREAKDOWN"
+					}
+
+					blockoverride "first_text" {
+						raw_text = "@money![Negate_CFixedPoint(Country.PredictTotalNavyExpenses)|D+]"
+					}
+
+					blockoverride "second_text" {
+						text = "EXPENSES"
+					}
+				}
+			}
+
+			supply_network_information_small = {
+				parentanchor = vcenter
+			}
+		}
+	}
+	
+	# ==========================================
+	# NUCLEAR TAB ILLUSTRATION HEADER
+	# ==========================================
+	# ==========================================
+	# NUCLEAR TAB CONTENT
+	# ==========================================
+	type military_panel_nuclear_content = flowcontainer {
+		direction = vertical
+		spacing = 0
+
+		# ── COMPACT STATUS HEADER ─────────────────
+		widget = {
+			size = { @panel_width_plus_20 90 }
+			background = { using = dropdown_background }
+
+			vbox = {
+				parentanchor = vcenter
+				layoutpolicy_horizontal = expanding
+				margin = { 16 8 }
+				spacing = 6
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					spacing = 0
+
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 2
+						textbox = {
+							autoresize = yes
+							default_format = "#title"
+							raw_text = "NUCLEAR_WARHEADS_LABEL"
+							using = fontsize_small
+						}
+						textbox = {
+							raw_text = "#bold [GetPlayer.MakeScope.Var('nukes').GetValue|0]#! @nukes!"
+							autoresize = yes
+							using = fontsize_large
+						}
+					}
+
+					vertical_divider = {}
+
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 2
+						margin_left = 12
+						textbox = {
+							autoresize = yes
+							default_format = "#title"
+							raw_text = "NUCLEAR_PROGRAMME_STATUS_LABEL"
+							using = fontsize_small
+						}
+						textbox = {
+							visible = "[GetScriptedGui('nuclear_has_no_programme').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							raw_text = "#low No Programme#!"
+							autoresize = yes
+						}
+						textbox = {
+							visible = "[GetScriptedGui('nuclear_is_enriching').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							raw_text = "#v Enriching Uranium#!"
+							autoresize = yes
+						}
+						textbox = {
+							visible = "[GetScriptedGui('nuclear_is_capable').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							raw_text = "#G Nuclear Capable#!"
+							autoresize = yes
+						}
+						textbox = {
+							visible = "[GetScriptedGui('nuclear_is_producing').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							raw_text = "#v Producing Warhead#!"
+							autoresize = yes
+						}
+					}
+				}
+
+				# Enrichment bar
+				hbox = {
+					visible = "[GetScriptedGui('nuclear_is_enriching').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					layoutpolicy_horizontal = expanding
+					spacing = 8
+					textbox = { autoresize = yes raw_text = "Enrichment:" parentanchor = vcenter }
+					green_progressbar_horizontal = {
+						size = { 340 14 }
+						parentanchor = vcenter
+						tooltip = "NUCLEAR_ENRICHMENT_PROGRESS_TOOLTIP"
+						blockoverride "values" {
+							min = 0
+							max = 100
+							value = "[GetPlayer.MakeScope.Var('uranium_enrichment_progress').GetValue]"
+						}
+					}
+					textbox = {
+						autoresize = yes
+						raw_text = "[GetPlayer.MakeScope.Var('uranium_enrichment_progress').GetValue|0]%"
+						parentanchor = vcenter
+					}
+				}
+
+				# Production bar
+				hbox = {
+					visible = "[GetScriptedGui('nuclear_is_producing').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					layoutpolicy_horizontal = expanding
+					spacing = 8
+					textbox = { autoresize = yes raw_text = "Production:" parentanchor = vcenter }
+					gold_progressbar_horizontal = {
+						size = { 340 14 }
+						parentanchor = vcenter
+						tooltip = "NUCLEAR_PRODUCTION_PROGRESS_TOOLTIP"
+						blockoverride "values" {
+							min = 0
+							max = 100
+							value = "[GetPlayer.MakeScope.Var('nuclear_production_progress').GetValue]"
+						}
+					}
+					textbox = {
+						autoresize = yes
+						raw_text = "[GetPlayer.MakeScope.Var('nuclear_production_progress').GetValue|0]%"
+						parentanchor = vcenter
+					}
+				}
+
+				# ICBM bar
+				hbox = {
+					visible = "[GetScriptedGui('nuclear_icbm_in_progress').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					layoutpolicy_horizontal = expanding
+					spacing = 8
+					textbox = { autoresize = yes raw_text = "ICBM:" parentanchor = vcenter }
+					default_progressbar_horizontal = {
+						size = { 340 14 }
+						parentanchor = vcenter
+						tooltip = "NUCLEAR_ICBM_PROGRESS_TOOLTIP"
+						blockoverride "values" {
+							min = 0
+							max = 100
+							value = "[GetPlayer.MakeScope.Var('icbm_progress').GetValue]"
+						}
+					}
+					textbox = {
+						autoresize = yes
+						raw_text = "[GetPlayer.MakeScope.Var('icbm_progress').GetValue|0]%"
+						parentanchor = vcenter
+					}
+				}
+			}
+		}
+
+		divider_clean = { size = { @panel_width_plus_14 4 } }
+
+		# ── SCROLLABLE BODY ───────────────────────
+		scrollbox = {
+			size = { @panel_width_plus_20 580 }
+
+			blockoverride "scrollbox_content" {
+				vbox = {
+					layoutpolicy_horizontal = expanding
+					margin = { 14 10 }
+					spacing = 8
+
+					# ── PROGRAMME ACTIONS ──────────────
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 5
+
+						# Plants count
+						hbox = {
+							layoutpolicy_horizontal = expanding
+							spacing = 6
+							textbox = {
+								autoresize = yes
+								default_format = "#title"
+								raw_text = "NUCLEAR_PLANTS_HEADER"
+								parentanchor = vcenter
+							}
+							textbox = {
+								layoutpolicy_horizontal = expanding
+								autoresize = yes
+								raw_text = "[GetPlayer.MakeScope.ScriptValue('nuclear_plant_count_sv')|v0] / 3 required"
+								parentanchor = vcenter
+							}
+						}
+
+						# Begin enrichment
+						button = {
+							visible = "[GetScriptedGui('nuclear_can_begin_enrichment').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							enabled = "[GetScriptedGui('nuclear_can_begin_enrichment').IsValid( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							using = default_button_map_interaction
+							layoutpolicy_horizontal = expanding
+							size = { 0 36 }
+							onclick = "[GetScriptedGui('nuclear_begin_enrichment').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "NUCLEAR_BEGIN_ENRICHMENT_TOOLTIP"
+							textbox = { parentanchor = center autoresize = yes align = center|nobaseline raw_text = "Begin Uranium Enrichment" }
+						}
+
+						textbox = {
+							visible = "[GetScriptedGui('nuclear_is_enriching').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							autoresize = yes
+							default_format = "#low"
+							raw_text = "Enrichment underway — see journal entry."
+						}
+
+						# Produce warhead (shown when capable) — with + queue button beside it
+						hbox = {
+							visible = "[GetScriptedGui('nuclear_is_capable').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							layoutpolicy_horizontal = expanding
+							spacing = 4
+
+							button = {
+								enabled = "[GetScriptedGui('nuclear_can_begin_production').IsValid( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								using = default_button_map_interaction
+								layoutpolicy_horizontal = expanding
+								size = { 0 36 }
+								onclick = "[GetScriptedGui('nuclear_begin_production').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								tooltip = "NUCLEAR_BEGIN_PRODUCTION_TOOLTIP"
+								textbox = { parentanchor = center autoresize = yes align = center|nobaseline raw_text = "Manufacture Nuclear Warhead" }
+							}
+
+							# Plus button — queue a warhead (only ticks up the number)
+							button = {
+								size = { 36 36 }
+								using = default_button_map_interaction
+								onclick = "[GetScriptedGui('nuclear_queue_add').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+								enabled = "[GetScriptedGui('nuclear_queue_add').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+								tooltip = "nuclear_queue_add_desc"
+								textbox = { parentanchor = center autoresize = yes align = center|nobaseline raw_text = "+" }
+							}
+						}
+
+						# Production queue count (always visible when capable)
+						textbox = {
+							visible = "[GetScriptedGui('nuclear_is_capable').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							autoresize = yes
+							align = left|nobaseline
+							raw_text = "Production Queue: #bold [GetPlayer.MakeScope.Var('nuclear_production_queue').GetValue|0]#!"
+						}
+
+						textbox = {
+							visible = "[GetScriptedGui('nuclear_is_producing').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							autoresize = yes
+							default_format = "#low"
+							raw_text = "Warhead in production — see journal entry."
+						}
+
+						# Current queue during production (ticks down as warheads complete)
+						textbox = {
+							visible = "[GetScriptedGui('nuclear_is_producing').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							autoresize = yes
+							align = left|nobaseline
+							raw_text = "Current Production Queue: #bold [GetPlayer.MakeScope.Var('nuclear_production_queue').GetValue|0]#!"
+						}
+						
+						# ICBM button (shown when capable, not yet complete)
+						button = {
+							visible = "[GetScriptedGui('nuclear_can_begin_icbm').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							enabled = "[GetScriptedGui('nuclear_can_begin_icbm').IsValid( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							using = default_button_map_interaction
+							layoutpolicy_horizontal = expanding
+							size = { 0 36 }
+							onclick = "[GetScriptedGui('nuclear_begin_icbm').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "NUCLEAR_ICBM_TOOLTIP"
+							textbox = { parentanchor = center autoresize = yes align = center|nobaseline raw_text = "Begin ICBM Programme" }
+						}
+
+						# ICBM button (shown when capable, not yet complete)
+						button = {
+							visible = "[GetScriptedGui('can_refresh_nukes').IsValid( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							enabled = "[GetScriptedGui('can_refresh_nukes').IsValid( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							using = default_button_map_interaction
+							layoutpolicy_horizontal = expanding
+							size = { 0 36 }
+							onclick = "[GetScriptedGui('refresh_targetting').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							textbox = { parentanchor = center autoresize = yes align = center|nobaseline raw_text = "Refresh Targeting" }
+						}
+						
+						textbox = {
+							visible = "[GetScriptedGui('nuclear_icbm_in_progress').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							autoresize = yes
+							default_format = "#low"
+							raw_text = "ICBM programme underway — see journal entry."
+						}
+
+						textbox = {
+							visible = "[GetScriptedGui('nuclear_icbm_complete').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							autoresize = yes
+							raw_text = "#G Global range achieved — ICBM capable.#!"
+						}
+					}
+
+					divider_clean = { size = { 500 2 } parentanchor = hcenter }
+
+					# ── NUCLEAR TARGETING ──────────────
+					vbox = {
+						visible = "[GetScriptedGui('nuclear_has_enemies').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						layoutpolicy_horizontal = expanding
+						spacing = 6
+
+						hbox = {
+							layoutpolicy_horizontal = expanding
+							textbox = {
+								layoutpolicy_horizontal = expanding
+								autoresize = yes
+								default_format = "#title"
+								raw_text = "NUCLEAR_TARGETING_HEADER"
+								parentanchor = vcenter
+							}
+							button = {
+								visible = "[GetScriptedGui('nuclear_targetlist_is_set').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								using = default_button
+								size = { 70 24 }
+								raw_text = "Clear"
+								onclick = "[GetScriptedGui('nuclear_clear_targetlist').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								parentanchor = vcenter
+							}
+						}
+
+						# Deploy % selector
+						container = {
+							layoutpolicy_horizontal = expanding
+							size = { 0 36 }
+							hbox = {
+								parentanchor = center
+								spacing = 5
+								textbox = { autoresize = yes raw_text = "Deploy:" parentanchor = vcenter }
+								button = {
+									using = default_button
+									size = { 54 28 }
+									raw_text = "10%"
+									enabled = "[Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('nuclear_deployment_percentage').GetValue, '(CFixedPoint)10'))]"
+									onclick = "[GetScriptedGui('nuclear_set_deploy_10').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									tooltip = "NUCLEAR_DEPLOY_10_TOOLTIP"
+								}
+								button = {
+									using = default_button
+									size = { 54 28 }
+									raw_text = "25%"
+									enabled = "[Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('nuclear_deployment_percentage').GetValue, '(CFixedPoint)25'))]"
+									onclick = "[GetScriptedGui('nuclear_set_deploy_25').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									tooltip = "NUCLEAR_DEPLOY_25_TOOLTIP"
+								}
+								button = {
+									using = default_button
+									size = { 54 28 }
+									raw_text = "50%"
+									enabled = "[Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('nuclear_deployment_percentage').GetValue, '(CFixedPoint)50'))]"
+									onclick = "[GetScriptedGui('nuclear_set_deploy_50').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									tooltip = "NUCLEAR_DEPLOY_50_TOOLTIP"
+								}
+								button = {
+									using = default_button
+									size = { 54 28 }
+									raw_text = "75%"
+									enabled = "[Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('nuclear_deployment_percentage').GetValue, '(CFixedPoint)75'))]"
+									onclick = "[GetScriptedGui('nuclear_set_deploy_75').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									tooltip = "NUCLEAR_DEPLOY_75_TOOLTIP"
+								}
+								button = {
+									using = default_button
+									size = { 54 28 }
+									raw_text = "100%"
+									enabled = "[Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('nuclear_deployment_percentage').GetValue, '(CFixedPoint)100'))]"
+									onclick = "[GetScriptedGui('nuclear_set_deploy_100').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									tooltip = "NUCLEAR_DEPLOY_100_TOOLTIP"
+								}
+							}
+						}
+
+						hbox = {
+							layoutpolicy_horizontal = expanding
+							spacing = 12
+							textbox = {
+								layoutpolicy_horizontal = expanding
+								autoresize = yes
+								raw_text = "Using: #bold [GetPlayer.MakeScope.ScriptValue('nuclear_warheads_to_use_sv')|v0]#! of [GetPlayer.MakeScope.Var('nukes').GetValue|0]"
+							}
+							textbox = {
+								visible = "[GetScriptedGui('nuclear_targetlist_is_set').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								autoresize = yes
+								raw_text = "Estimated Casualties: #R ~[GetPlayer.MakeScope.ScriptValue('nuclear_estimated_total_casualties_sv')|vD]#!"
+								tooltip = "NUCLEAR_CASUALTIES_TOOLTIP"
+							}
+						}
+
+						# Nuclear state browser — range-gated
+						textbox = {
+							autoresize = yes
+							default_format = "#low"
+							raw_text = "Targets (range limited — develop ICBMs for global reach):"
+						}
+
+						scrollbox = {
+							layoutpolicy_horizontal = expanding
+							size = { 0 200 }
+							blockoverride "scrollbox_content" {
+								vbox = {
+									layoutpolicy_horizontal = expanding
+									spacing = 1
+									datamodel_wrap = 1
+									datamodel = "[GetPlayer.MakeScope.GetList('nuclear_ranged_states_list')]"
+									item = {
+										widget = {
+											layoutpolicy_horizontal = expanding
+											size = { 0 26 }
+											datacontext = "[Scope.AccessState]"
+
+											background = {
+												visible = "[GetScriptedGui('state_is_in_targetlist').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('target_selected_state',State.MakeScope).End)]"
+												using = colored_panel_dark
+												color = { 0.55 0.08 0.08 0.6 }
+											}
+
+											hbox = {
+												layoutpolicy_horizontal = expanding
+												margin = { 8 2 }
+												spacing = 5
+
+												icon = {
+													size = { 18 12 }
+													texture = "[State.GetOwner.GetFlag]"
+													parentanchor = vcenter
+												}
+
+												textbox = {
+													layoutpolicy_horizontal = expanding
+													autoresize = yes
+													align = left|nobaseline
+													raw_text = "[State.GetName]"
+												}
+
+												button_icon_round_map_interaction = {
+													size = { 22 22 }
+													parentanchor = vcenter
+													visible = "[Not(GetScriptedGui('state_is_in_targetlist').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('target_selected_state',State.MakeScope).End))]"
+													onclick = "[GetScriptedGui('nuclear_add_target_state').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('target_list_selected_state',State.MakeScope).End)]"
+													tooltip = "NUCLEAR_ADD_TARGET_TOOLTIP"
+													blockoverride "icon" { texture = "gfx/interface/buttons/button_icons/plus.dds" }
+													blockoverride "icon_size" { size = { 55% 55% } }
+												}
+
+												button_icon_round_map_interaction = {
+													size = { 22 22 }
+													parentanchor = vcenter
+													visible = "[GetScriptedGui('state_is_in_targetlist').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('target_selected_state',State.MakeScope).End)]"
+													onclick = "[GetScriptedGui('nuclear_remove_target_state').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('target_list_selected_state',State.MakeScope).End)]"
+													tooltip = "NUCLEAR_REMOVE_TARGET_TOOLTIP"
+													blockoverride "icon" { texture = "gfx/interface/icons/generic_icons/red_cross.dds" }
+													blockoverride "icon_size" { size = { 55% 55% } }
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+
+						hbox = {
+							visible = "[GetScriptedGui('nuclear_targetlist_is_set').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							layoutpolicy_horizontal = expanding
+							margin = { 2 0 }
+							textbox = {
+								autoresize = yes
+								raw_text = "#bold [GetPlayer.MakeScope.ScriptValue('nuclear_target_count_sv')|v0]#! state(s) targeted"
+							}
+						}
+					}
+
+					# Not at war for nukes
+					vbox = {
+						visible = "[Not(GetScriptedGui('nuclear_has_enemies').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						textbox = {
+							autoresize = yes
+							default_format = "#title"
+							raw_text = "NUCLEAR_TARGETING_HEADER"
+						}
+						textbox = {
+							autoresize = yes
+							default_format = "#low"
+							raw_text = "Nuclear targeting available during wartime only."
+						}
+					}
+
+					divider_clean = { size = { 500 2 } parentanchor = hcenter }
+
+					# ── CONVENTIONAL MISSILES ──────────
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 5
+
+						# Header
+						hbox = {
+							layoutpolicy_horizontal = expanding
+							textbox = {
+								layoutpolicy_horizontal = expanding
+								autoresize = yes
+								default_format = "#title"
+								raw_text = "CONV_MISSILES_HEADER"
+								parentanchor = vcenter
+							}
+							textbox = {
+								autoresize = yes
+								raw_text = "#bold [GetPlayer.MakeScope.Var('conventional_missiles').GetValue|0]#! missiles"
+								parentanchor = vcenter
+							}
+						}
+
+						# Produce button — with + queue button beside it
+						hbox = {
+							layoutpolicy_horizontal = expanding
+							spacing = 4
+
+							button = {
+								using = default_button_map_interaction
+								layoutpolicy_horizontal = expanding
+								size = { 0 32 }
+								enabled = "[GetScriptedGui('can_produce_missiles').IsValid( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								onclick = "[GetScriptedGui('produce_missiles').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								tooltip = "CONV_PRODUCE_MISSILES_TOOLTIP"
+								textbox = { parentanchor = center autoresize = yes align = center|nobaseline raw_text = "Produce Missile Salvo (+5)" }
+							}
+
+							# Plus button — queue a salvo (only ticks up the number)
+							button = {
+								size = { 32 32 }
+								using = default_button_map_interaction
+								onclick = "[GetScriptedGui('missile_queue_add').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+								enabled = "[GetScriptedGui('missile_queue_add').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+								tooltip = "missile_queue_add_desc"
+								textbox = { parentanchor = center autoresize = yes align = center|nobaseline raw_text = "+" }
+							}
+						}
+
+						# Production queue count (shown when off cooldown)
+						textbox = {
+							visible = "[GetScriptedGui('can_produce_missiles').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							autoresize = yes
+							align = left|nobaseline
+							raw_text = "Production Queue: #bold [GetPlayer.MakeScope.Var('missile_production_queue').GetValue|0]#!"
+						}
+
+						textbox = {
+							visible = "[GetScriptedGui('can_produce_missiles').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							autoresize = yes
+							default_format = "#low"
+							raw_text = "Production in Progress (12 weeks)"
+						}
+
+						textbox = {
+							visible = "[GetScriptedGui('missile_on_cooldown').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							autoresize = yes
+							default_format = "#low"
+							raw_text = "Missiles reloading — on cooldown."
+						}
+
+						# Current queue during cooldown (ticks down as salvos produce)
+						textbox = {
+							visible = "[GetScriptedGui('missile_on_cooldown').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							autoresize = yes
+							align = left|nobaseline
+							raw_text = "Current Production Queue: #bold [GetPlayer.MakeScope.Var('missile_production_queue').GetValue|0]#!"
+						}
+
+
+						# Active controls
+						vbox = {
+							visible = "[And(GetScriptedGui('conventional_has_missiles').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End), Not(GetScriptedGui('missile_on_cooldown').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
+							layoutpolicy_horizontal = expanding
+							spacing = 4
+
+							# State browser header
+							container = {
+								layoutpolicy_horizontal = expanding
+								size = { 0 34 }
+
+								hbox = {
+									parentanchor = center
+									spacing = 5
+
+									textbox = { autoresize = yes raw_text = "Deploy:" parentanchor = vcenter }
+
+									button = {
+										using = default_button
+										size = { 54 26 }
+										raw_text = "10%"
+										enabled = "[Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('conv_deployment_percentage').GetValue, '(CFixedPoint)10'))]"
+										onclick = "[GetScriptedGui('conv_set_deploy_10').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "CONV_DEPLOY_10_TOOLTIP"
+									}
+									button = {
+										using = default_button
+										size = { 54 26 }
+										raw_text = "25%"
+										enabled = "[Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('conv_deployment_percentage').GetValue, '(CFixedPoint)25'))]"
+										onclick = "[GetScriptedGui('conv_set_deploy_25').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "CONV_DEPLOY_25_TOOLTIP"
+									}
+									button = {
+										using = default_button
+										size = { 54 26 }
+										raw_text = "50%"
+										enabled = "[Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('conv_deployment_percentage').GetValue, '(CFixedPoint)50'))]"
+										onclick = "[GetScriptedGui('conv_set_deploy_50').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "CONV_DEPLOY_50_TOOLTIP"
+									}
+									button = {
+										using = default_button
+										size = { 54 26 }
+										raw_text = "75%"
+										enabled = "[Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('conv_deployment_percentage').GetValue, '(CFixedPoint)75'))]"
+										onclick = "[GetScriptedGui('conv_set_deploy_75').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "CONV_DEPLOY_75_TOOLTIP"
+									}
+									button = {
+										using = default_button
+										size = { 54 26 }
+										raw_text = "100%"
+										enabled = "[Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('conv_deployment_percentage').GetValue, '(CFixedPoint)100'))]"
+										onclick = "[GetScriptedGui('conv_set_deploy_100').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "CONV_DEPLOY_100_TOOLTIP"
+									}
+								}
+							}
+
+							# Missiles-to-fire readout
+							textbox = {
+								autoresize = yes
+								raw_text = "Firing: #bold [GetPlayer.MakeScope.ScriptValue('conventional_missiles_to_use_sv')|v0]#! of [GetPlayer.MakeScope.Var('conventional_missiles').GetValue|0] missiles"
+							}
+							
+							textbox = {
+								autoresize = yes
+								raw_text = "Each missile: #bold 3%#! chance to destroy a random building"
+								tooltip = "CONV_BUILDING_CHANCE_TOOLTIP"
+							}
+							
+							hbox = {
+								layoutpolicy_horizontal = expanding
+								textbox = {
+									layoutpolicy_horizontal = expanding
+									autoresize = yes
+									raw_text = "Target States:"
+									parentanchor = vcenter
+								}
+								button = {
+									visible = "[GetScriptedGui('conventional_targetlist_is_set').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									using = default_button
+									size = { 60 22 }
+									raw_text = "Clear"
+									onclick = "[GetScriptedGui('conventional_clear_targets').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									parentanchor = vcenter
+								}
+							}
+
+							# State browser — full enemy list, no range gate
+							scrollbox = {
+								layoutpolicy_horizontal = expanding
+								size = { 0 140 }
+								blockoverride "scrollbox_content" {
+									vbox = {
+										layoutpolicy_horizontal = expanding
+										spacing = 1
+										datamodel_wrap = 1
+										datamodel = "[GetPlayer.MakeScope.GetList('nuclear_enemy_states_list')]"
+										item = {
+											widget = {
+												layoutpolicy_horizontal = expanding
+												size = { 0 24 }
+												datacontext = "[Scope.AccessState]"
+
+												background = {
+													visible = "[GetScriptedGui('conv_state_is_targeted').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('conv_target_state',State.MakeScope).End)]"
+													using = colored_panel_dark
+													color = { 0.10 0.35 0.10 0.6 }
+												}
+
+												hbox = {
+													layoutpolicy_horizontal = expanding
+													margin = { 8 2 }
+													spacing = 5
+
+													icon = {
+														size = { 18 12 }
+														texture = "[State.GetOwner.GetFlag]"
+														parentanchor = vcenter
+													}
+
+													textbox = {
+														layoutpolicy_horizontal = expanding
+														autoresize = yes
+														align = left|nobaseline
+														raw_text = "[State.GetName]"
+													}
+
+													button_icon_round_map_interaction = {
+														size = { 20 20 }
+														parentanchor = vcenter
+														visible = "[Not(GetScriptedGui('conv_state_is_targeted').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('conv_target_state',State.MakeScope).End))]"
+														onclick = "[GetScriptedGui('conventional_add_target').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('conv_target_state',State.MakeScope).End)]"
+														tooltip = "CONV_ADD_TARGET_TOOLTIP"
+														blockoverride "icon" { texture = "gfx/interface/buttons/button_icons/plus.dds" }
+														blockoverride "icon_size" { size = { 55% 55% } }
+													}
+
+													button_icon_round_map_interaction = {
+														size = { 20 20 }
+														parentanchor = vcenter
+														visible = "[GetScriptedGui('conv_state_is_targeted').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('conv_target_state',State.MakeScope).End)]"
+														onclick = "[GetScriptedGui('conventional_remove_target').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('conv_target_state',State.MakeScope).End)]"
+														tooltip = "CONV_REMOVE_TARGET_TOOLTIP"
+														blockoverride "icon" { texture = "gfx/interface/icons/generic_icons/red_cross.dds" }
+														blockoverride "icon_size" { size = { 55% 55% } }
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+
+							# Fire row
+							hbox = {
+								layoutpolicy_horizontal = expanding
+								spacing = 8
+								textbox = {
+									layoutpolicy_horizontal = expanding
+									autoresize = yes
+									raw_text = "#bold [GetPlayer.MakeScope.ScriptValue('conventional_target_count_sv')|v0]#! state(s) targeted"
+								}
+								button = {
+									using = default_button_map_interaction
+									size = { 120 30 }
+									enabled = "[GetScriptedGui('conventional_can_fire').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									onclick = "[GetScriptedGui('conventional_fire_missiles').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									tooltip = "CONV_FIRE_TOOLTIP"
+									textbox = { parentanchor = center autoresize = yes align = center|nobaseline raw_text = "#v Fire Missiles#!" }
+								}
+							}
+						}
+					}
+
+					divider_clean = { size = { 500 2 } parentanchor = hcenter }
+
+					# ── STRATEGIC BOMBING ──────────────
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 5
+
+						hbox = {
+							layoutpolicy_horizontal = expanding
+							textbox = {
+								layoutpolicy_horizontal = expanding
+								autoresize = yes
+								default_format = "#title"
+								raw_text = "STRAT_BOMBING_HEADER"
+								parentanchor = vcenter
+							}
+							textbox = {
+								autoresize = yes
+								raw_text = "#bold [GetPlayer.MakeScope.ScriptValue('aircraft_formation_count_sv')|v0]#! air formations"
+								parentanchor = vcenter
+							}
+						}
+
+						textbox = {
+							visible = "[GetScriptedGui('bombing_on_cooldown').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							autoresize = yes
+							default_format = "#low"
+							raw_text = "Bombing run complete — aircraft resupplying (30 days)."
+						}
+
+						textbox = {
+							visible = "[Not(GetScriptedGui('bombing_has_aircraft').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+							autoresize = yes
+							default_format = "#low"
+							raw_text = "No qualifying air formations (need ≥25% aircraft) or not at war."
+						}
+
+						vbox = {
+							visible = "[And(GetScriptedGui('bombing_has_aircraft').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End), Not(GetScriptedGui('bombing_on_cooldown').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
+							layoutpolicy_horizontal = expanding
+							spacing = 4
+
+							textbox = {
+								autoresize = yes
+								raw_text = "Devastation per state per run: #bold [GetPlayer.MakeScope.ScriptValue('bombing_devastation_per_run_sv')|v0]#!"
+							}
+
+							# State browser header
+							hbox = {
+								layoutpolicy_horizontal = expanding
+								textbox = {
+									layoutpolicy_horizontal = expanding
+									autoresize = yes
+									raw_text = "Target States:"
+									parentanchor = vcenter
+								}
+								button = {
+									visible = "[GetScriptedGui('bombing_targetlist_is_set').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									using = default_button
+									size = { 60 22 }
+									raw_text = "Clear"
+									onclick = "[GetScriptedGui('bombing_clear_targets').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									parentanchor = vcenter
+								}
+							}
+
+							scrollbox = {
+								layoutpolicy_horizontal = expanding
+								size = { 0 120 }
+								blockoverride "scrollbox_content" {
+									vbox = {
+										layoutpolicy_horizontal = expanding
+										spacing = 1
+										datamodel_wrap = 1
+										datamodel = "[GetPlayer.MakeScope.GetList('nuclear_enemy_states_list')]"
+										item = {
+											widget = {
+												layoutpolicy_horizontal = expanding
+												size = { 0 24 }
+												datacontext = "[Scope.AccessState]"
+
+												background = {
+													visible = "[GetScriptedGui('bombing_state_is_targeted').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('bombing_target_state',State.MakeScope).End)]"
+													using = colored_panel_dark
+													color = { 0.35 0.20 0.05 0.6 }
+												}
+
+												hbox = {
+													layoutpolicy_horizontal = expanding
+													margin = { 8 2 }
+													spacing = 5
+
+													icon = {
+														size = { 18 12 }
+														texture = "[State.GetOwner.GetFlag]"
+														parentanchor = vcenter
+													}
+
+													textbox = {
+														layoutpolicy_horizontal = expanding
+														autoresize = yes
+														align = left|nobaseline
+														raw_text = "[State.GetName]"
+													}
+
+													button_icon_round_map_interaction = {
+														size = { 20 20 }
+														parentanchor = vcenter
+														visible = "[Not(GetScriptedGui('bombing_state_is_targeted').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('bombing_target_state',State.MakeScope).End))]"
+														onclick = "[GetScriptedGui('bombing_add_target').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('bombing_target_state',State.MakeScope).End)]"
+														tooltip = "BOMBING_ADD_TARGET_TOOLTIP"
+														blockoverride "icon" { texture = "gfx/interface/buttons/button_icons/plus.dds" }
+														blockoverride "icon_size" { size = { 55% 55% } }
+													}
+
+													button_icon_round_map_interaction = {
+														size = { 20 20 }
+														parentanchor = vcenter
+														visible = "[GetScriptedGui('bombing_state_is_targeted').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('bombing_target_state',State.MakeScope).End)]"
+														onclick = "[GetScriptedGui('bombing_remove_target').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('bombing_target_state',State.MakeScope).End)]"
+														tooltip = "BOMBING_REMOVE_TARGET_TOOLTIP"
+														blockoverride "icon" { texture = "gfx/interface/icons/generic_icons/red_cross.dds" }
+														blockoverride "icon_size" { size = { 55% 55% } }
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+
+							hbox = {
+								layoutpolicy_horizontal = expanding
+								spacing = 8
+								textbox = {
+									layoutpolicy_horizontal = expanding
+									autoresize = yes
+									raw_text = "#bold [GetPlayer.MakeScope.ScriptValue('bombing_target_count_sv')|v0]#! state(s) queued"
+								}
+								button = {
+									using = default_button_map_interaction
+									size = { 165 30 }
+									enabled = "[GetScriptedGui('bombing_can_execute').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									onclick = "[GetScriptedGui('bombing_execute').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									tooltip = "BOMBING_EXECUTE_TOOLTIP"
+									textbox = { parentanchor = center autoresize = yes align = center|nobaseline raw_text = "#v Execute Bombing#!" }
+								}
+							}
+						}
+					}
+
+					widget = { size = { 1 6 } }
+				}
+			}
+		}
+	}
+
+	type supply_network_information_small = widget {
+		onmousehierarchyenter = "[AccessHighlightManager.HighlightSupplyNetwork(Country.Self)]"
+		onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
+		alwaystransparent = no
+		size = { 330 130 }
+
+		using = entry_bg_fancy_solid_bg
+
+		vbox = {
+			margin = { 20 20 }
+
+			hbox = {
+				tooltip = "SUPPLY_NETWORK_STRENGTH_TOOLTIP"
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+
+				textbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					text = "SUPPLY_NETWORK_STRENGTH_TEXT"
+					align = left|nobaseline
+				}
+				textbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					text = "SUPPLY_NETWORK_STRENGTH_VALUE"
+					align = right|nobaseline
+				}
+			}
+
+			hbox = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+
+				textbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					text = "COUNTRY_SAILORS_VALUE"
+					align = left|nobaseline
+					multiline = yes
+				}
+			}
+		}
+	}
+
+	type military_panel_ship_info = flowcontainer {
+		direction = vertical
+		spacing = 2
+
+		block "tooltip" {
+			tooltip = "PANEL_MILITARY_NAVY_CURRENT_SHIPS_TOOLTIP"
+		}
+
+		textbox = {
+			parentanchor = hcenter
+			autoresize = yes
+			align = nobaseline
+			block "second_text" {
+				text = "TOTAL_SHIPS"
+			}
+		}
+
+		widget = {
+			size = { 100 35 }
+
+			background = {
+				using = entry_bg_simple
+				alpha = 0.5
+			}
+
+			background = {
+				using = dark_area
+			}
+
+			textbox = {
+				autoresize = yes
+				align = nobaseline
+				using = fontsize_xl
+				parentanchor = center
+				max_width = 90
+				using = elide_fontsize_min
+
+				block "first_text" {
+					text = "PANEL_MILITARY_NAVY_CURRENT_SHIPS"
+				}
+			}
+		}
+
+	}
+
+	### MOBILIZATION CONTROLS
+	type mobilization_icon = widget {
+		visible = no
+		size = { 22 22 }
+
+		icon = {
+			size = { 100% 100% }
+			texture = "gfx/interface/backgrounds/round_button_bg.dds"
+		}
+		icon = {
+			size = { 100% 100% }
+			framesize = { 120 120 }
+			texture = "gfx/interface/icons/generic_icons/mobilize_icon.dds"
+			block "frame" {
+				frame = 0
+			}
+		}
+	}
+
+	type icon_with_background_big = widget {
+		size = { 60 60 }
+
+		icon = {
+			size = { 100% 100% }
+			texture = "gfx/interface/backgrounds/round_button_bg.dds"
+		}
+
+		icon = {
+			parentanchor = center
+			framesize = { 120 120 }
+
+			block "icon_size" {
+				size = { 100% 100% }
+			}
+
+			block "texture" {
+				texture = "gfx/interface/icons/generic_icons/mobilize_icon.dds"
+			}
+
+			block "frame" {
+				frame = 0
+			}
+		}
+	}
+
+	type conscription_icon_big = widget {
+		size = { 60 60 }
+
+		icon = {
+			size = { 100% 100% }
+			texture = "gfx/interface/backgrounds/round_button_bg.dds"
+		}
+
+		icon = {
+			parentanchor = center
+			framesize = { 120 120 }
+			size = { 70% 70% }
+			texture = "gfx/interface/icons/lens_toolbar_icons/activate_conscription_centers_lens_option.dds"
+		}
+	}
+
+	type mobilization_controls = widget {
+		size = { 535 60 }
+
+		icon = {
+			texture = "gfx/interface/animation/smoke.dds"
+			size = { 560 180 }
+			parentanchor = bottom|hcenter
+			position = { 0 60 }
+			alpha = 0
+
+			modify_texture = {
+				name = mask_01
+				texture = "gfx/interface/animation/smoke.dds"
+				spriteType = Corneredstretched
+				spriteborder = { 0 0 }
+				blend_mode = alphamultiply
+
+				translate_uv = { 0 0 }
+			}
+
+			modify_texture = {
+				name = mask_02
+				texture = "gfx/interface/animation/smoke.dds"
+				spriteType = Corneredstretched
+				spriteborder = { 0 0 }
+				blend_mode = alphamultiply
+
+				translate_uv = { 0 -0.5 }
+			}
+
+			state = {
+				name = mobilization_effect
+				next = 2
+				duration = 0.8
+				alpha = 1
+
+				modify_texture = {
+					name = mask_01
+					translate_uv = { 0 0.4 }
+				}
+				modify_texture = {
+					name = mask_02
+					translate_uv = { 0 0 }
+				}
+			}
+
+			state = {
+				name = 2
+				next = reset
+				duration = 2.5
+				using = Animation_Curve_EaseOut
+				alpha = 0
+
+				modify_texture = {
+					name = mask_01
+					translate_uv = { 0 0.8 }
+				}
+				modify_texture = {
+					name = mask_02
+					translate_uv = { 0 1 }
+				}
+			}
+
+			state = {
+				name = reset
+
+				modify_texture = {
+					name = mask_01
+					translate_uv = { 0 0 }
+				}
+				modify_texture = {
+					name = mask_02
+					translate_uv = { 0 -0.5 }
+				}
+			}
+		}
+
+		margin_widget = {
+			parentanchor = center
+			margin = { 0 6 }
+			size = { 0 50 }
+			alpha = 0
+
+			state = {
+				name = mobilization_effect
+				next = effect2
+				size = { 530 50 }
+				duration = 0.2
+				alpha = 0.5
+				using = Animation_Curve_Default
+			}
+			state = {
+				name = effect2
+				next = reset
+				size = { 530 50 }
+				duration = 0.4
+				alpha = 0
+				using = Animation_Curve_Default
+			}
+			state = {
+				name = reset
+				size = { 0 50 }
+			}
+
+			icon = {
+				size = { 50% 100% }
+				texture = "gfx/interface/animation/mobilize_effect.dds"
+			}
+			icon = {
+				parentanchor = right
+				mirror = horizontal
+				size = { 50% 100% }
+				texture = "gfx/interface/animation/mobilize_effect.dds"
+			}
+
+			icon = {
+				parentanchor = hcenter
+				size = { 60% 100% }
+				texture = "gfx/interface/animation/mobilize_effect2.dds"
+				alpha = 0.5
+			}
+		}
+
+		icon_with_background_big = {
+			parentanchor = vcenter
+			enabled = "[IsValid( MilitaryFormation.Mobilize )]"
+		}
+	}
+
+	type military_panel_army_content = flowcontainer {
+		direction = vertical
+
+		state = {
+			name = "_show"
+
+			start_sound = {
+				soundeffect = "event:/SFX/UI/SideBar/military"
+			}
+		}
+
+		tab_army = {
+			visible = "[Country.IsCommittedInDiplomaticPlay]"
+		}
+
+		tab_army = {
+			visible = "[Not(Country.IsCommittedInDiplomaticPlay)]"
+			size = { @panel_width_plus_20 120 }
+		}
+
+		default_header = {
+			using = default_list_position
+
+			blockoverride "text" {
+				text = "MILITARY_FORMATIONS_ARMY_HEADER"
+			}
+		}
+
+		widget = { size = { 1 5 }}
+
+		military_formation_list = {}
+
+		widget = { size = { 1 5 }}
+	}
+
+	type military_panel_navy_content = flowcontainer {
+		direction = vertical
+
+		state = {
+			name = "_show"
+			using = fleet_panel_open
+		}
+
+		tab_navy = {}
+
+		textbox = {
+			margin_top = 10
+			margin_bottom = 20
+			parentanchor = hcenter
+			autoresize = yes
+			maximumsize = { @panel_width -1 }
+			minimumsize = { @panel_width -1 }
+			multiline = yes
+			#visible = "[Not(StringIsEmpty(Country.GetSeaNodesMightBeConvoyRaidedInDesc))]"
+			visible = no # todo PRCAL-32539 - Remove this textbox and implement the dynamicgridbox specified in the Jira.
+			text = "[Country.GetSeaNodesMightBeConvoyRaidedInDesc]"
+		}
+
+		default_header = {
+			using = default_list_position
+
+			blockoverride "text" {
+				text = "MILITARY_FORMATIONS_FLEET_HEADER"
+			}
+		}
+
+		widget = { size = { 1 10 }}
+
+		military_formation_list = {
+			blockoverride "datamodel" {
+				datamodel = "[Country.GetMilitaryFormationsFleet]"
+			}
+		}
+
+		widget = { size = { 1 10 }}
+	}
+
+	type panel_military = default_block_window {
+		name = "panel_military"
+		datacontext = "[PanelMilitary.AccessCountry]"
+
+		blockoverride "window_header_name"
+		{
+			text = "MILITARY_PANEL"
+		}
+
+		blockoverride "map_modes_button" {
+			map_modes_single_button_minimized = {
+				datacontext = "[PanelMilitary.GetMapModeList]"
+				using = map_modes_button_position
+			}
+		}
+
+		blockoverride "fixed_top"
+		{
+			tab_buttons = {
+				# Army
+				blockoverride "first_button" {
+					text = "MILITARY_PANEL_TAB_ARMY"
+				}
+				blockoverride "first_button_tooltip" {
+					tooltip = "MILITARY_PANEL_TAB_ARMY"
+				}
+				blockoverride "first_button_click" {
+					onclick = "[InformationPanel.SelectTab('army')]"
+				}
+				blockoverride "first_button_visibility" {
+					visible = "[InformationPanel.IsTabSelected('army')]"
+				}
+				blockoverride "first_button_visibility_checked" {
+					visible = "[Not( InformationPanel.IsTabSelected('army') )]"
+				}
+				blockoverride "first_button_selected" {
+					text = "MILITARY_PANEL_TAB_ARMY_SELECTED"
+				}
+
+				# Mobilization
+				blockoverride "second_button" {
+					text = "MILITARY_FORMATION_PANEL_MOBILIZATION_TAB"
+				}
+				blockoverride "second_button_tooltip" {
+					tooltip = "MILITARY_FORMATION_PANEL_MOBILIZATION_TAB"
+				}
+				blockoverride "second_button_click" {
+					onclick = "[InformationPanel.SelectTab('mobilization')]"
+				}
+				blockoverride "second_button_visibility" {
+					visible = "[InformationPanel.IsTabSelected('mobilization')]"
+				}
+				blockoverride "second_button_visibility_checked" {
+					visible = "[Not( InformationPanel.IsTabSelected('mobilization') )]"
+				}
+				blockoverride "second_button_selected" {
+					text = "MILITARY_FORMATION_PANEL_MOBILIZATION_TAB_SELECTED"
+				}
+				
+				# Nuclear — third slot (replaces Navy)
+				blockoverride "third_button" {
+					raw_text = "MILITARY_PANEL_TITLE_NUCLEAR"
+				}
+				blockoverride "third_button_tooltip" {
+					tooltip = "MILITARY_PANEL_TAB_NUCLEAR_TOOLTIP"
+				}
+				blockoverride "third_button_click" {
+					onclick = "[InformationPanel.SelectTab('nuclear')]"
+				}
+				blockoverride "third_button_visibility" {
+					visible = "[InformationPanel.IsTabSelected('nuclear')]"
+				}
+				blockoverride "third_button_visibility_checked" {
+					visible = "[Not( InformationPanel.IsTabSelected('nuclear') )]"
+				}
+				blockoverride "third_button_selected" {
+					raw_text = "MILITARY_PANEL_TITLE_NUCLEAR"
+				}
+
+				# Navy
+				blockoverride "fourth_button" {
+					text = "MILITARY_PANEL_TAB_NAVY"
+				}
+				blockoverride "fourth_button_tooltip" {
+					tooltip = "MILITARY_PANEL_TAB_NAVY"
+				}
+				blockoverride "fourth_button_click" {
+					onclick = "[InformationPanel.SelectTab('navy')]"
+				}
+				blockoverride "fourth_button_visibility" {
+					visible = "[InformationPanel.IsTabSelected('navy')]"
+				}
+				blockoverride "fourth_button_visibility_checked" {
+					visible = "[Not( InformationPanel.IsTabSelected('navy') )]"
+				}
+				blockoverride "fourth_button_selected" {
+					text = "MILITARY_PANEL_TAB_NAVY_SELECTED"
+				}
+			}
+		}
+
+		blockoverride "scrollarea_content" {
+			flowcontainer = {
+				using = default_list_position
+				direction = vertical
+
+				military_panel_army_content = {
+					visible = "[InformationPanel.IsTabSelected('army')]"
+					using = default_fade_in_out
+				}
+				
+				# ── NUCLEAR TAB CONTENT ───────────────
+				military_panel_nuclear_content = {
+					visible = "[InformationPanel.IsTabSelected('nuclear')]"
+					using = default_fade_in_out
+				}
+
+				military_panel_navy_content = {
+					visible = "[InformationPanel.IsTabSelected('navy')]"
+					using = default_fade_in_out
+				}
+
+				flowcontainer = {
+					visible = "[InformationPanel.IsTabSelected('mobilization')]"
+					direction = vertical
+
+					flowcontainer = {
+						direction = vertical
+						spacing = 5
+						parentanchor = hcenter
+						datamodel = "[Country.GetMilitaryFormationsArmy]"
+						margin_top = 10
+						margin_bottom = 5
+
+						item = {
+							mobilization_widget = {}
+						}
+					}
+				}
+			}
+		}
+
+		blockoverride "fixed_bottom" {
+
+			flowcontainer = {
+				visible = "[Or(InformationPanel.IsTabSelected('army'), InformationPanel.IsTabSelected('navy'))]"
+				direction = vertical
+				spacing = 5
+
+				divider_clean = {
+					size = { @panel_width_plus_14 4 }
+				}
+
+				background = {
+					using = dark_area
+				}
+
+				widget = {
+					size = { 1 1 }
+				}
+
+				flowcontainer = {
+					parentanchor = hcenter
+					spacing = 5
+
+					button = {
+						visible = "[InformationPanel.IsTabSelected('navy')]"
+						using = default_button
+						parentanchor = vcenter
+						size = { 255 50 }
+						onclick = "[PopupManager.ToggleRecruitAdmiral]"
+
+						textbox = {
+							parentanchor = center
+							autoresize = yes
+							align = nobaseline
+							using = fontsize_large
+							using = elide_fontsize_min
+							max_width = 250
+							text = "RECRUIT_ADMIRAL_BUTTON"
+						}
+
+						tooltip = "MILITARY_FORMATION_RECRUIT_ADMIRAL"
+					}
+
+					button = {
+						visible = "[And(InformationPanel.IsTabSelected('navy'), HasDlcFeature('ship_designer'))]"
+						size = { 255 50 }
+						parentanchor = vcenter
+						using = default_button
+						onclick = "[PopupManager.ToggleShipDesignerPopup]"
+						onclick = "[RightClickMenuManager.Close]"
+						tooltip = "SHIP_DESIGNER_CREATE_NEW_TEMPLATE"
+
+						textbox = {
+							parentanchor = center
+							autoresize = yes
+							align = nobaseline
+							using = fontsize_large
+							using = elide_fontsize_min
+							max_width = 250
+							text = "ADD_NEW_TEMPLATE"
+						}
+					}
+				}
+
+				button = {
+					visible = "[InformationPanel.IsTabSelected('navy')]"
+					using = default_button_map_interaction
+					parentanchor = hcenter
+					size = { 520 50 }
+					using = default_content_fade
+					tooltip = "CREATE_FLEET_FORMATION_TOOLTIP"
+					onclick = "[PanelMilitary.OnClickRecruitFleetFormation]"
+
+					textbox = {
+						parentanchor = center
+						autoresize = yes
+						using = fontsize_large
+						align = nobaseline
+						using = elide_fontsize_min
+						max_width = 500
+						text = "CREATE_FLEET_FORMATION"
+					}
+				}
+
+				flowcontainer = {
+					parentanchor = hcenter
+					spacing = 5
+
+					button = {
+						visible = "[InformationPanel.IsTabSelected('army')]"
+						using = default_button
+						parentanchor = vcenter
+						size = { 255 50 }
+						tooltip = "MILITARY_FORMATION_RECRUIT_GENERAL"
+						onclick = "[PopupManager.ToggleRecruitGeneral]"
+
+						textbox = {
+							parentanchor = center
+							autoresize = yes
+							align = nobaseline
+							using = fontsize_large
+							using = elide_fontsize_min
+							max_width = 250
+							text = "RECRUIT_GENERAL_BUTTON"
+						}
+					}
+
+					### CREATE FORMATIONS
+					button = {
+						visible = "[InformationPanel.IsTabSelected('army')]"
+						name = "tutorial_highlight_create_army"
+						using = default_button_map_interaction
+						parentanchor = vcenter
+						size = { 255 50 }
+						using = default_content_fade
+						tooltip = "CREATE_ARMY_FORMATION_TOOLTIP"
+						onclick = "[PanelMilitary.OnClickRecruitArmyFormation]"
+
+						textbox = {
+							parentanchor = center
+							autoresize = yes
+							using = fontsize_large
+							align = nobaseline
+							using = elide_fontsize_min
+							max_width = 250
+							text = "CREATE_ARMY_FORMATION"
+						}
+					}
+				}
+
+				button = {
+					visible = "[And(InformationPanel.IsTabSelected('army'), PanelMilitary.CanAnyUnitInAnyPlayerFormationBeUpgraded)]"
+					using = default_button_map_interaction
+					parentanchor = hcenter
+					size = { 520 50 }
+					tooltip = "MILITARY_FORMATION_UNITS_UPGRADE_ALL_ALL"
+					onclick = "[Execute( PanelMilitary.GetUpgradeAllUnitsInAllFormationsCommand)]"
+					enabled = "[IsValid( PanelMilitary.GetUpgradeAllUnitsInAllFormationsCommand)]"
+
+					textbox = {
+						parentanchor = center
+						autoresize = yes
+						align = nobaseline
+						using = fontsize_large
+						using = elide_fontsize_min
+						max_width = 500
+						text = "MILITARY_FORMATION_UNITS_UPGRADE_ALL"
+					}
+				}
+
+				widget = {
+					size = { 5 5 }
+				}
+			}
+			
+			# ── NUCLEAR LAUNCH BUTTON ────────────────
+			flowcontainer = {
+				visible = "[InformationPanel.IsTabSelected('nuclear')]"
+				direction = vertical
+				spacing = 5
+
+				divider_clean = {
+					size = { @panel_width_plus_14 4 }
+				}
+
+				background = {
+					using = dark_area
+				}
+
+				widget = { size = { 1 5 } }
+
+				button = {
+					using = default_button_map_interaction
+					parentanchor = hcenter
+					size = { 520 50 }
+					using = fontsize_large
+					enabled = "[GetScriptedGui('nuclear_can_fire').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					onclick = "[GetScriptedGui('nuclear_fire_execute').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					tooltip = "NUCLEAR_FIRE_BUTTON_TOOLTIP"
+
+					flowcontainer = {
+						parentanchor = center
+
+						icon = {
+							size = { 30 30 }
+							# Reuse the closest available icon
+							texture = "gfx/interface/icons/goods_icons/missiles.dds"
+							parentanchor = vcenter
+						}
+
+						textbox = {
+							parentanchor = vcenter
+							autoresize = yes
+							align = center|nobaseline
+							raw_text = "#R Launch Nuclear Strike#!"
+						}
+					}
+				}
+
+				widget = { size = { 1 5 } }
+			}
+
+			flowcontainer = {
+				visible = "[And(InformationPanel.IsTabSelected('mobilization'), Country.IsCommittedInDiplomaticPlay)]"
+				margin_bottom = 10
+				direction = vertical
+				spacing = 10
+
+				divider_clean = {
+					size = { @panel_width_plus_14 4 }
+				}
+
+				background = {
+					using = dark_area
+				}
+
+				big_mobilize_all_button = {
+					parentanchor = hcenter
+				}
+			}
+		}
+
+		blockoverride "bottom_spacing" {}
+	}
+}
+
+types mobilization_options {
+	type mobilization_option_small = widget {
+		alpha = "[TransparentIfFalse(Or(MobilizationOption.IsActivated(MilitaryFormation.AccessSelf),IsValid(MobilizationOption.Toggle(MilitaryFormation.AccessSelf))))]"
+		#visible = "[Or(MobilizationOption.IsActivated(MilitaryFormation.AccessSelf),IsValid(MobilizationOption.Toggle(MilitaryFormation.AccessSelf)))]"
+		size = { 40 50 }
+
+		scale = 0.80
+		
+		widget = {
+			size = { 45 50 }
+
+			# Activate
+			widget = {
+				visible = "[Not(MobilizationOption.IsActivated(MilitaryFormation.AccessSelf))]"
+				size = { 100% 100% }
+
+				# Activate button - show confirmation popup
+				button = {
+					using = default_button
+					size = { 100% 100% }
+					visible = "[ShouldAskConfirmation(MobilizationOption.Toggle(MilitaryFormation.AccessSelf))]"
+
+					enabled = "[And(Not(MobilizationOption.IsActivated(MilitaryFormation.AccessSelf)), IsValid(MobilizationOption.Toggle(MilitaryFormation.AccessSelf)))]"
+					onclick = "[PopupManager.AskConfirmation(MobilizationOption.Toggle(MilitaryFormation.AccessSelf))]"
+					tooltip = "ACTIVATE_MOBILIZATION_OPTION_BUTTON_TOOLTIP"
+				}
+
+				# Activate button - no confirmation popup
+				button = {
+					using = default_button
+					size = { 100% 100% }
+					visible = "[Not(ShouldAskConfirmation(MobilizationOption.Toggle(MilitaryFormation.AccessSelf)))]"
+
+					enabled = "[And(Not(MobilizationOption.IsActivated(MilitaryFormation.AccessSelf)), IsValid(MobilizationOption.Toggle(MilitaryFormation.AccessSelf)))]"
+					onclick = "[Execute(MobilizationOption.Toggle(MilitaryFormation.AccessSelf))]"
+					tooltip = "ACTIVATE_MOBILIZATION_OPTION_BUTTON_TOOLTIP"
+				}
+			}
+
+			# Deactivate
+			widget = {
+				visible = "[MobilizationOption.IsActivated(MilitaryFormation.AccessSelf)]"
+				size = { 100% 100% }
+
+				# Deactivate button - show confirmation popup
+				button = {
+					using = default_button
+					size = { 100% 100% }
+					visible = "[ShouldAskConfirmation(MobilizationOption.Toggle(MilitaryFormation.AccessSelf))]"
+
+					enabled = "[And(MobilizationOption.IsActivated(MilitaryFormation.AccessSelf), IsValid(MobilizationOption.Toggle(MilitaryFormation.AccessSelf)))]"
+					onclick = "[PopupManager.AskConfirmation(MobilizationOption.Toggle(MilitaryFormation.AccessSelf))]"
+					tooltip = "DEACTIVATE_MOBILIZATION_OPTION_BUTTON_TOOLTIP"
+				}
+
+				# Deactivate button - no confirmation popup
+				button = {
+					using = default_button
+					size = { 100% 100% }
+					visible = "[Not(ShouldAskConfirmation(MobilizationOption.Toggle(MilitaryFormation.AccessSelf)))]"
+
+					enabled = "[And(MobilizationOption.IsActivated(MilitaryFormation.AccessSelf), IsValid(MobilizationOption.Toggle(MilitaryFormation.AccessSelf)))]"
+					onclick = "[Execute(MobilizationOption.Toggle(MilitaryFormation.AccessSelf))]"
+					tooltip = "DEACTIVATE_MOBILIZATION_OPTION_BUTTON_TOOLTIP"
+				}
+			}
+		}
+
+		icon = {
+			size = { 38 38 }
+			texture = "[MobilizationOption.GetTexture]"
+			parentanchor = center
+		}
+
+		icon = {
+			visible = "[MobilizationOption.IsActivated(MilitaryFormation.AccessSelf)]"
+			using = highlighted_square_selection
+		}
+	}
+
+	type big_mobilize_all_button = container {
+		### Mobilize button
+		widget = {
+			size = { 500 50 }
+			visible = "[And(IsValid( Country.MobilizeAllArmies ), Country.IsCommittedInDiplomaticPlay)]"
+
+			button = {
+				enabled = "[IsValid( Country.MobilizeAllArmies )]"
+
+				parentanchor = right|vcenter
+				using = default_button
+				using = diplomatic_play_mobilize_button_sound
+				size = { 470 50 }
+				using = fontsize_large
+
+				onclick = "[PopupManager.AskConfirmation( Country.MobilizeAllArmies )]"
+				tooltip = "MOBILIZE_ALL_MILITARY_FORMATIONS_BUTTON_TOOLTIP"
+
+				textbox = {
+					text = "MOBILIZE_ALL_MILITARY_FORMATIONS"
+					align = center|nobaseline
+					parentanchor = center
+					margin_right = 30
+					size = { 470 30 }
+					fontsize_min = 12
+					elide = right
+					using = fontsize_large
+				}
+			}
+
+			icon_with_background_big = {
+				parentanchor = left|vcenter
+				enabled = "[IsValid( Country.MobilizeAllArmies )]"
+			}
+		}
+
+		### Demobilize button
+		widget = {
+			size = { 500 50 }
+			visible = "[And(Not(IsValid( Country.MobilizeAllArmies )), Country.IsCommittedInDiplomaticPlay)]"
+
+			button = {
+				enabled = "[IsValid( Country.DemobilizeAllArmies )]"
+
+				parentanchor = right|vcenter
+				using = default_button
+				using = diplomatic_play_mobilize_button_sound
+				size = { 470 50 }
+				using = fontsize_large
+
+				onclick = "[PopupManager.AskConfirmation( Country.DemobilizeAllArmies )]"
+				tooltip = "DEMOBILIZE_ALL_MILITARY_FORMATIONS_BUTTON_TOOLTIP"
+
+				textbox = {
+					text = "DEMOBILIZE_ALL_MILITARY_FORMATIONS"
+					align = center|nobaseline
+					parentanchor = center
+					margin_right = 30
+					size = { 470 30 }
+					fontsize_min = 12
+					elide = right
+					using = fontsize_large
+				}
+			}
+
+			icon_with_background_big = {
+				parentanchor = left|vcenter
+				enabled = "[IsValid( Country.DemobilizeAllArmies )]"
+			}
+		}
+	}
+
+	type mobilization_widget = flowcontainer {
+		direction = vertical
+		minimumsize = { 540 -1 }
+		margin_bottom = 10
+
+		using = entry_bg_fancy
+
+		# Name and info header
+		container = {
+			minimumsize = { @panel_width 35 }
+
+			background = {
+				using = fade_right_entry_fancy_header_colored
+				color = "[MilitaryFormation.GetCountry.GetMapColor]"
+			}
+
+			flowcontainer = {
+				position = { 12 0 }
+				parentanchor = vcenter
+				spacing = 2
+
+				icon = {
+					size = { 30 30 }
+					texture = "[MilitaryFormation.GetFlag]"
+					color = "[MilitaryFormation.GetFlagColor]"
+					parentanchor = vcenter
+				}
+
+				textbox = {
+					maximumsize = { 200 -1 }
+					parentanchor = vcenter
+					multiline = yes
+					autoresize = yes
+					text = "[MilitaryFormation.GetNameNoIcon]"
+					align = nobaseline
+					elide = right
+					margin_right = 3
+				}
+
+				button_icon_goto = {
+					parentanchor = vcenter
+					size = { 25 25 }
+					tooltip = "GO_TO_BUTTON_MILITARY_FORMATION"
+					onclick = "[InformationPanelBar.OpenMilitaryFormationPanelTab( MilitaryFormation.Self, 'default' )]"
+				}
+			}
+
+			# Formation status
+			flowcontainer = {
+				position = { -15 0 }
+				parentanchor = right|vcenter
+
+				block "estimated_costs_visibility" {}
+
+				textbox = {
+					autoresize = yes
+					text = "[MilitaryFormation.GetEstimatedMobilizationCostFormatted]"
+					parentanchor = vcenter
+					align = right|nobaseline
+				}
+			}
+		}
+
+		dynamicgridbox = {
+			datamodel = "[GetMobilizationOptionGroups]"
+			datamodel_wrap = 3
+			flipdirection = yes
+			parentanchor = hcenter
+
+			item = {
+				flowcontainer = {
+					direction = vertical
+
+					textbox = {
+						text = "[MobilizationOptionGroup.GetNameNoFormatting]"
+						autoresize = yes
+						align = nobaseline
+						default_format = "#title"
+						margin_left = 2
+					}
+
+					flowcontainer = {
+						datamodel = "[MobilizationOptionGroup.GetMobilizationOptions]"
+						margin_right = 5
+						margin_bottom = 5
+
+						item = {
+							mobilization_option_small = {}
+						}
+					}
+				}
+			}
+		}
+
+		widget = { size = { 5 5 }}
+		divider_clean = {
+			parentanchor = hcenter
+			size = { 520 2 }
+		}
+		widget = { size = { 5 5 }}
+
+		flowcontainer = {
+			parentanchor = hcenter
+			spacing = 10
+
+			### UNIT NUMBERS AND MANPOWER
+			flowcontainer = {
+				parentanchor = vcenter
+				spacing = 5
+				tooltip = "MILITARY_FORMATION_TOTAL_NUMBER_OF_UNITS_TOOLTIP"
+				minimumsize = { 120 -1 }
+				margin_left = 5
+
+				### ARMY ICON
+				icon = {
+					visible = "[MilitaryFormation.IsArmy]"
+					size = { 23 23 }
+					parentanchor = vcenter
+					texture = "gfx/interface/icons/generic_icons/battalions.dds"
+				}
+
+				### FLEET ICON
+				icon = {
+					visible = "[MilitaryFormation.IsFleet]"
+					size = { 23 23 }
+					parentanchor = vcenter
+					texture = "gfx/interface/icons/generic_icons/flotillas.dds"
+				}
+
+				### ARMY - NUMBER OF UNITS
+				textbox = {
+					parentanchor = vcenter
+					autoresize = yes
+					align = nobaseline
+					text = "MILITARY_FORMATION_TOTAL_NUMBER_OF_UNITS"
+					using = fontsize_large
+					maximumsize = { 90 -1 }
+					fontsize_min = 12
+				}
+
+				widget = { size = { 1 1 }}
+
+				manpower_bar = {}
+			}
+
+			flowcontainer = {
+				minimumsize = { 80 -1 }
+				spacing = 10
+				tooltip = "MILITARY_FORMATION_MORALE_TOOLTIP"
+				parentanchor = vcenter
+
+				### MORALE VALUE
+				textbox = {
+					parentanchor = vcenter
+					autoresize = yes
+					align = right|nobaseline
+
+					text = "MILITARY_FORMATION_MORALE"
+					minimumsize = { 70 -1 }
+				}
+
+				### MORALE BAR
+				morale_bar = {
+					size = { 6 24 }
+					parentanchor = vcenter
+
+					blockoverride "morale_value" {
+						value = "[FixedPointToFloat( MilitaryFormation.GetMorale )]"
+					}
+					blockoverride "morale_color" {
+						color = "[GetMoraleColorVec( MilitaryFormation.GetMorale )]"
+					}
+				}
+			}
+
+			flowcontainer = {
+				tooltip = "MILITARY_FORMATION_ORGANIZATION_TOOLTIP"
+				spacing = 10
+				parentanchor = vcenter
+
+				### ORGANIZATION
+				textbox = {
+					raw_text = "@organization! [MilitaryFormation.GetOrganizationPercentage|%v0]"
+					parentanchor = vcenter
+					align = right|nobaseline
+					minimumsize = { 70 -1 }
+				}
+
+				### ORGANIZATION BAR
+				organization_bar = {
+					size = { 6 24 }
+					parentanchor = vcenter
+
+					blockoverride "organization_value" {
+						value = "[FixedPointToFloat( MilitaryFormation.GetOrganizationPercentage )]"
+					}
+					blockoverride "organization_color" {
+						color = "[GetOrganizationColorVec( MilitaryFormation.GetOrganizationPercentage )]"
+					}
+				}
+			}
+
+			widget = { size = { 1 1 }}
+			vertical_divider = {}
+
+			military_formation_mobilize_button = {
+				parentanchor = vcenter
+				visible = "[MilitaryFormation.IsArmy]"
+
+				blockoverride "size" {
+					size = { 180 50 }
+				}
+
+				blockoverride "button_size" {
+					size = { 160 75% }
+				}
+
+				blockoverride "fontsize" {}
+
+				blockoverride "mobilization_icon_size" {
+					size = { 50 50 }
+				}
+			}
+		}
+	}
+}
+

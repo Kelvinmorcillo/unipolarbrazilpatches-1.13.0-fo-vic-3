@@ -1,0 +1,35 @@
+﻿POL_lech_walesa = {
+	first_name = Lech
+	last_name = Walesa
+	historical = yes
+	ruler = yes
+	culture = cu:polish
+	birth_date = 1943.9.29
+	dna = dna_lech_walesa
+	ig_leader = yes
+	interest_group = ig_armed_forces
+	ideology = ideology_conservative_leader
+	traits = {
+		experienced_political_operator
+		charismatic
+		demagogue
+	}
+}
+ 
+POL_hanna_suchocka = {
+	first_name = Hanna
+	last_name = Suchocka
+	historical = yes
+	female = yes
+	culture = cu:polish
+	birth_date = 1946.4.3
+	dna = dna_hanna_suchocka
+	ig_leader = yes
+	interest_group = ig_professionals
+	ideology = ideology_liberal_leader
+	traits = {
+		experienced_political_operator
+		meticulous
+		incorruptible
+	}
+}

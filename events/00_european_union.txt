@@ -1,0 +1,328 @@
+namespace = eu_events
+
+# ══════════════════════════════════════════════════════════════
+# hidden
+# ══════════════════════════════════════════════════════════════
+
+eu_events.100 = {
+	type = country_event
+	placement = ROOT
+	title = eu_events.100.t
+	desc = eu_events.100.d
+	icon = "gfx/interface/icons/event_icons/event_european_union.dds"
+	event_image = { video = "africa_diplomats_negotiating" }
+	duration = 1
+	hidden = yes
+
+	trigger = {
+		c:EUR ?= this
+		game_date >= 1993.11.1
+		NOT = { has_global_variable = io_eu_formed }
+	}
+
+	immediate = {
+		# Reveal the EU and hide the EEC in the IO panel
+		set_global_variable = io_eu_formed
+		set_global_variable = io_eec_dissolved
+
+		# Send invitation to every EEC member
+		every_country = {
+			limit = {
+				is_target_in_global_variable_list = { name = io_eec_members target = this }
+				NOT = { has_variable = already_got_invitation_to_eu }
+			}
+			trigger_event = { id = eu_events.1 days = 1 popup = yes }
+		}
+	}
+
+	option = {
+	}
+}
+
+# ══════════════════════════════════════════════════════════════
+# Invitation to join the EU (Maastricht Treaty)
+# Sent to all EEC founding members — accept joins the EU,
+# decline means you leave the EEC and are NOT in the EU
+# ══════════════════════════════════════════════════════════════
+
+eu_events.1 = {
+	type = country_event
+	placement = ROOT
+	title = eu_events.1.t
+	desc = eu_events.1.d
+	icon = "gfx/interface/icons/event_icons/event_european_union.dds"
+	event_image = { video = "asia_farmers_market" }
+	duration = 3
+
+	immediate = {
+		set_variable = already_got_invitation_to_eu
+		if = {
+			limit = { is_in_same_power_bloc = c:USA }
+			set_variable = will_rejoin_nato
+		}
+		if = {
+			limit = { NOT = { is_in_same_power_bloc = c:USA } }
+			remove_variable = will_rejoin_nato
+		}
+	}
+
+	trigger = {
+		OR = {
+			c:FRA ?= this
+			c:XBE ?= this
+			c:GBR ?= this
+			c:ENG ?= this
+			c:GER ?= this
+			c:SPA ?= this
+			c:POL ?= this
+			c:NDL ?= this
+			c:IRE ?= this
+			c:ITA ?= this
+			c:XLU ?= this
+			c:XDE ?= this
+			c:GRK ?= this
+		}
+		is_revolutionary = no
+		NOT = { has_variable = eu_member_state }
+		NOT = { has_variable = already_got_invitation_to_eu }
+		game_date >= 1993.11.1
+	}
+
+	option = {
+		name = eu_events.1.a # Accept Membership
+		default_option = yes
+		ai_chance = {
+			base = 100
+		}
+
+		# Original EU membership variable + modifier
+		set_variable = eu_member_state
+		add_loyalists = {
+			pop_type = shopkeepers
+			value = 0.05
+		}
+
+		# IO Panel integration — add to EU member list
+		add_to_global_variable_list = { name = io_eu_members target = ROOT }
+
+		# Keep the free trade modifier (carried over from EEC)
+		if = {
+			limit = { NOT = { has_modifier = io_free_trade_agreement_member } }
+			add_modifier = { name = io_free_trade_agreement_member }
+		}
+
+		# Stay in EUR power bloc (already there from EEC)
+		custom_tooltip = eu_membership_accept_tt
+	}
+
+	option = {
+		name = eu_events.1.b # Decline
+		ai_chance = {
+			base = 0
+		}
+
+		# NOT added to io_eu_members — they chose to stay out
+		# Remove from EEC member list since EEC is dissolving
+		remove_list_global_variable = { name = io_eec_members target = ROOT }
+
+		# Remove the free trade modifier they had from EEC
+		if = {
+			limit = { has_modifier = io_free_trade_agreement_member }
+			remove_modifier = io_free_trade_agreement_member
+		}
+
+		# Relations hit with countries that did join the EU
+		every_country = {
+			limit = {
+				is_target_in_global_variable_list = { name = io_eu_members target = this }
+			}
+			change_relations = { country = ROOT value = -10 }
+		}
+
+		add_radicals = {
+			pop_type = capitalists
+			value = 0.15
+		}
+	}
+}
+
+# ══════════════════════════════════════════════════════════════
+# Formalization to the EU (for countries joining AFTER formation)
+# Used by the request_to_join_eu_decision for later joiners
+# ══════════════════════════════════════════════════════════════
+
+eu_events.99 = {
+	type = country_event
+	placement = ROOT
+	title = eu_events.0.t
+	desc = eu_events.0.d
+	icon = "gfx/interface/icons/event_icons/event_european_union.dds"
+	event_image = { video = "asia_farmers_market" }
+	duration = 3
+
+	trigger = {
+		NOT = { has_variable = eu_member_state }
+		has_variable = eu_membership_process_started
+	}
+
+	immediate = {
+		remove_variable = eu_membership_process_started
+	}
+
+	option = {
+		name = eu_events.1.a # Accept Membership
+		default_option = yes
+		ai_chance = {
+			base = 100
+		}
+
+		set_variable = eu_member_state
+		add_modifier = {
+			name = modifier_eu_member_state
+			days = -1
+		}
+		add_loyalists = {
+			pop_type = shopkeepers
+			value = 0.05
+		}
+
+		# IO Panel integration
+		add_to_global_variable_list = { name = io_eu_members target = ROOT }
+		if = {
+			limit = { NOT = { has_modifier = io_free_trade_agreement_member } }
+			add_modifier = { name = io_free_trade_agreement_member }
+		}
+		join_power_bloc = c:EUR
+
+		custom_tooltip = eu_membership_accept_tt
+	}
+
+	option = {
+		name = eu_events.1.b # Decline
+		add_radicals = {
+			pop_type = capitalists
+			value = 0.15
+		}
+	}
+}
+
+# ══════════════════════════════════════════════════════════════
+# Potential penalties for leaving
+# Now also removes from IO panel EU member list
+# ══════════════════════════════════════════════════════════════
+
+eu_events.2 = {
+	type = country_event
+	placement = ROOT
+	title = eu_events.2.t
+	desc = eu_events.2.d
+	icon = "gfx/interface/icons/event_icons/event_unrest.dds"
+	event_image = { video = "africa_diplomats_negotiating" }
+	duration = 2
+
+	option = {
+		name = eu_events.2.a # Leave the EU
+		remove_variable = eu_member_state
+		remove_modifier = modifier_eu_member_state
+
+		# IO Panel integration — remove from EU member list
+		remove_list_global_variable = { name = io_eu_members target = ROOT }
+		if = {
+			limit = { has_modifier = io_free_trade_agreement_member }
+			remove_modifier = io_free_trade_agreement_member
+		}
+
+		every_country = {
+			limit = {
+				is_target_in_global_variable_list = { name = io_eu_members target = this }
+			}
+			change_relations = { country = ROOT value = -20 }
+		}
+
+		add_radicals = {
+			pop_type = academics
+			value = 0.04
+		}
+	}
+
+	option = {
+		name = eu_events.2.b # Remain
+		add_loyalists = {
+			pop_type = bureaucrats
+			value = 0.03
+		}
+	}
+}
+
+# ══════════════════════════════════════════════════════════════
+# summit
+# ══════════════════════════════════════════════════════════════
+
+eu_events.3 = {
+	type = country_event
+	placement = ROOT
+	title = eu_events.3.t
+	desc = eu_events.3.d
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	event_image = { video = "africa_diplomats_negotiating" }
+	duration = 2
+
+	option = {
+		name = eu_events.3.a # Deepen Trade Ties
+		add_loyalists = { pop_type = shopkeepers value = 0.02 }
+		add_modifier = { name = eu_deeper_trade_ties days = 730 }
+	}
+
+	option = {
+		name = eu_events.3.b # Coordinate Sanctions
+		add_modifier = { name = eu_sanctions_ready days = 730 }
+	}
+
+	option = {
+		name = eu_events.3.c # Promote Cultural Exchange
+		add_loyalists = { pop_type = academics value = 0.03 }
+		add_modifier = { name = eu_cultural_exchange days = 730 }
+	}
+}
+
+# ══════════════════════════════════════════════════════════════
+# idk wtv
+# ══════════════════════════════════════════════════════════════
+
+eu_events.400 = {
+	type = country_event
+	placement = ROOT
+	title = eu_events.3.t
+	desc = eu_events.3.d
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	event_image = { video = "africa_diplomats_negotiating" }
+	duration = 1
+	hidden = yes
+
+	immediate = {
+	}
+
+	option = {
+	}
+}
+
+eu_events.500 = {
+	type = country_event
+	placement = ROOT
+	title = eu_events.3.t
+	desc = eu_events.3.d
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	event_image = { video = "africa_diplomats_negotiating" }
+	duration = 1
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = { has_variable = will_rejoin_nato }
+			join_power_bloc = c:USA
+		}
+	}
+
+	option = {
+	}
+}

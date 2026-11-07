@@ -1,0 +1,108 @@
+﻿l_simp_chinese:
+#################### JE ####################
+# The Internet
+
+economic_union:0 "经济联盟"
+economic_union_pact_desc:0 "两国之间有统一的市场和货币的外交条约."
+subject_type_economic_union:0 "经济联盟"
+subject_type_economic_union:0 "经济联盟"
+subject_type_economic_union_desc:0 "两国之间有统一的市场和货币的外交条约."
+concept_economic_union:0 "经济联盟"
+concept_subject_type_economic_union:0 "经济联盟"
+subject_type_economic_union_no_icon:0 "经济联盟"
+concept_economic_union_desc:0 "两国之间有统一的市场和货币的外交条约."
+
+economic_union2:0 "经济联盟"
+economic_union2_pact_desc:0 "两国之间有统一的市场和货币的外交条约."
+
+eu_events.400:0 "欧洲联盟"
+
+support_revolution:0 "支持革命"
+support_revolution_action_propose_name:0 "支持革命"
+support_revolution_action_break_name:0 "停止支持"
+
+impose_sanctions:0 "施加制裁"
+impose_sanctions_desc: "扣押我国金融资产. 在游戏方面,这创造了一个倒转的银行卷,根据两国GDP的差异,从目标国库直接转移资金."
+impose_sanctions_action_propose_name:0 "金融制裁"
+impose_sanctions_action_break_name:0 "解除制裁"
+impose_sanctions_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName] 对我们实行制裁!"
+impose_sanctions_notification_name: "[INITIATOR_COUNTRY.GetName] 对我们实行制裁!"
+impose_sanctions_notification_desc: "我们受到财政制裁!"
+
+humanitarian_aid:0 "提供人道主义援助"
+humanitarian_aid_desc: "向生活在这个国家的市民提供财政援助。 从我国国库直接汇入 住在这个国家的老爹口袋"
+humanitarian_aid_action_propose_name:0 "人道主义援助"
+humanitarian_aid_action_break_name:0 "停止人道主义援助"
+humanitarian_aid_pact_desc:0 "向生活在这个国家的市民提供财政援助。 从我国国库直接汇入 住在这个国家的老爹口袋"
+humanitarian_aid_notification_name: "[INITIATOR_COUNTRY.GetName] 正在向我们提供人道主义援助!"
+humanitarian_aid_notification_desc: "我们正在恢复人道主义援助。"
+humanitarian_aid_proposal_accepted_name: "接受人道主义援助"
+humanitarian_aid_proposal_accepted_desc: "我们现在提供人道主义援助。"
+
+
+host_military_bases_desc: ""
+host_military_bases_effects_desc: "• 在两个 " x id=0 " 之间订立军事协定,允许一个 " x id=1 " 使用另一个 " x id=3 " 的空军基地发射 " x id=2 " 。"
+host_military_bases_article_short_desc: "[TARGET_COUNTRY.GetNameNoFormatting]可以通过 [SOURCE_COUNTRY.GetNameNoFormatting]发射导弹。"
+
+ smd_create_economic_union:0 "建议经济联盟"
+ smd_create_economic_union_action_name:0 "建议经济联盟"
+ smd_create_economic_union_action_propose_name:0 "建议经济联盟"
+ smd_create_economic_union_desc:0 "提议建立一个以贸易特权和互惠过境权为基础的经济联盟。"
+ smd_create_economic_union_action_notification_name:0 "拟议经济联盟"
+ smd_create_economic_union_action_notification_desc:0 "[INITIATOR_COUNTRY.GetName]提议用 [TARGET_COUNTRY.GetName]建立经济联盟。"
+ smd_create_economic_union_action_notification_third_party_name:0 "拟议经济联盟"
+ smd_create_economic_union_action_notification_third_party_desc:0 "[INITIATOR_COUNTRY.GetName]提议用 [TARGET_COUNTRY.GetName]建立经济联盟。"
+
+ smd_diplomatic_unification:0 "外交统一"
+ smd_diplomatic_unification_action_name:0 "外交统一"
+ smd_diplomatic_unification_action_propose_name:0 "建议统一"
+ smd_diplomatic_unification_desc:0 "提议在经济一体化和文化协调之后实现和平的政治统一。"
+ smd_diplomatic_unification_action_notification_name:0 "拟议外交统一"
+ smd_diplomatic_unification_action_notification_desc:0 "[INITIATOR_COUNTRY.GetName]提议用 [TARGET_COUNTRY.GetName]实现外交统一。"
+ smd_diplomatic_unification_action_notification_third_party_name:0 "拟议外交统一"
+ smd_diplomatic_unification_action_notification_third_party_desc:0 "[INITIATOR_COUNTRY.GetName]提议用 [TARGET_COUNTRY.GetName]实现外交统一。"
+
+ smd_diplomatic_unification_annexation_effect_tt:0 "接受国将被发起国完全吞并."
+ smd_create_economic_union_proposal_accepted_name:0 "经济联盟 接受"
+ smd_create_economic_union_proposal_accepted_desc:0 "[TARGET_COUNTRY.GetName]已接受"x id=1/"的创建经济联盟的建议."
+ smd_create_economic_union_proposal_declined_name:0 "经济联盟被拒绝"
+ smd_create_economic_union_proposal_declined_desc:0 "[TARGET_COUNTRY.GetName]拒绝了"x id=1/"创建经济联盟的建议."
+ smd_diplomatic_unification_proposal_accepted_name:0 "统一接受"
+ smd_diplomatic_unification_proposal_accepted_desc:0 "[TARGET_COUNTRY.GetName] 已接受 [INITIATOR_COUNTRY.GetName] 的外交统一提案,并将附上。"
+ smd_diplomatic_unification_proposal_declined_name:0 "拒绝统一"
+ smd_diplomatic_unification_proposal_declined_desc:0 "[TARGET_COUNTRY.GetName]拒绝了"x id=1/"的外交统一建议."
+ smd_economic_union_base_resistance_tt:0 "各国对加入经济联盟有基本的意愿。"
+ smd_unification_base_resistance_tt:0 "各国有很强的基础不愿意通过外交统一接受吞并。"
+ 
+ treaty_name_smd_economic_union:0 "经济联盟"
+ treaty_name_smd_diplomatic_unification:0 "外交统一条约"
+
+ smd_economic_union_requires_independence_tt:0 "两国必须充分独立。"
+ smd_economic_union_requires_peace_tt:0 "两国必须彼此和睦相处,不致力于外交活动。"
+ smd_economic_union_requires_no_subject_relation_tt:0 "任何国家都不可能是另一个国家的主体或霸主。"
+ smd_economic_union_requires_no_isolationism_tt:0 "两国均不能实行孤立主义经济政策."
+ smd_economic_union_requires_no_duplicate_tt:0 "各国决不能已经建立经济联盟。"
+
+ smd_unification_requires_independence_tt:0 "两国必须充分独立。"
+ smd_unification_requires_peace_tt:0 "两国必须彼此和睦相处,不致力于外交活动。"
+ smd_unification_requires_no_subject_relation_tt:0 "任何国家都不可能是另一个国家的主体或霸主。"
+ smd_unification_requires_economic_union_tt:0 "各国必须有一个经济联盟。"
+ smd_unification_requires_culture_tt:0 "各国必须拥有类似的初级文化,共享初级文化、遗产群体和语言群体,或遗产和语言特征。"
+ smd_unification_requires_good_relations_tt:0 "关系必须至少是友好的。"
+ smd_diplomatic_unification_effect_tt:0 "接受国成为发起国的主权。"
+ 
+ threaten_nuclear_hostilities:0 "威胁核敌对行动"
+ threaten_nuclear_hostilities_action_name:0 "威胁核敌对行动"
+ threaten_nuclear_hostilities_action_propose_name:0 "威胁核敌对行动"
+ threaten_nuclear_hostilities_desc:0 "对另一国发出核威胁。 核边缘政策暂时提高了我们的外交声誉,使其他国家更有可能接受我们的条约。"
+ threaten_nuclear_hostilities_action_notification_name:0 "核敌对行动"
+ threaten_nuclear_hostilities_action_notification_desc:0 "[INITIATOR_COUNTRY.GetName] 已威胁对 [TARGET_COUNTRY.GetName]进行核敌对行动。"
+ threaten_nuclear_hostilities_action_notification_third_party_name:0 "核敌对行动"
+ threaten_nuclear_hostilities_action_notification_third_party_desc:0 "[INITIATOR_COUNTRY.GetName] 已威胁对 [TARGET_COUNTRY.GetName]进行核敌对行动。"
+
+ threaten_nuclear_hostilities_requires_nuclear_capable_tt:0 "我国必须具备核能力。"
+ threaten_nuclear_hostilities_cooldown_tt:0 "我们决不能最近威胁核敌对行动。"
+ threaten_nuclear_hostilities_target_valid_tt:0 "目标必须是有效的、非权力下放的国家。"
+
+ threatened_nuclear_hostilities_diplomatic_reputation:0 "受威胁的核敌对行动"
+ threatened_nuclear_hostilities_diplomatic_reputation_desc:0 "核边缘政策暂时提高了这个国家的外交声誉,使其他国家更有可能接受它的条约."

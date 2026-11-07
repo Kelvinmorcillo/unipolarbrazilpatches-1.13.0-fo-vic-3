@@ -1,0 +1,21 @@
+﻿l_simp_chinese:
+#
+dp_leadership_china:0 "领导中国"
+
+ je_one_china_prc:0 "一个中国政策"
+ je_one_china_prc_reason:0 "有一个中国。 自1949年以来,[ROOT.GetCountry.GetName]一直坚持这一立场——人民共和国是所有中国领土的唯一合法政府,而中华台北要求从福莫萨州执政是历史将纠正的一种暂时的偏差.\n\n 福莫萨与大陆的统一不仅仅是一个战略目标. 它是未完成的内战的解决——"x id=3/"国家恢复的最终行为. 当Formosa处于[ROOT.GetCountry.GetAdjective]控制之下时,羞辱的世纪就会真正结束。"
+ 
+ one_china_prc_owns_formosa_tt:0 "#bold Formosa处于[ROOT.GetCountry.GetAdjective]控制之下. #! "一中一策"得到证实. [ROOT.GetCountry.GetName]为整体."
+ one_china_prc_formosa_uncontrolled_tt:0 "[SCOPE.sState('STATE_FORMOSA').GetName]仍然在[ROOT.GetCountry.GetAdjective]控制之外。 [SCOPE.sCountry('c:ROC').GetName]继续从它的岛屿redoubt声称对大陆拥有主权. 中国的统一尚未完成."
+ 
+ je_one_china_roc:0 "一个中国政策"
+ je_one_china_roc_reason:0 "有一个中国。 自1949年以来,[ROOT.GetCountry.GetName]一直坚持这一立场——中华民国是中国所有领土的合法政府,而中共占领大陆是历史将纠正的暂时错误.\n\n 人民共和国必须纳入宪法秩序。 当中华人民共和国成为"x id=4"的主体时,整合的任务开始——吸收了大陆广大人口和领土成为"x id=5"领导下的统一中国国家."
+ 
+ one_china_roc_has_subject_tt:0 "<x id=0; > [SCOPE.sCountry('c:CHI').GetName]是[ROOT.GetCountry.GetName]的主题. #! 大陆已经进入了"x id=4/"宪法秩序. 目前正在整合广阔的 " x id=5 " 领土。"
+ one_china_roc_no_subject_tt:0 "[SCOPE.sCountry('c:CHI').GetName] 在共产党统治下仍保持独立. [ROOT.GetCountry.GetName]只控制 [SCOPE.sState('STATE_FORMOSA').GetName]及其外围领土。 在[ROOT.GetCountry.GetAdjective]领导下的中国统一尚未完成."
+
+ one_china_reunification_bonus:0 "中国统一"
+ one_china_reunification_bonus_desc:0 "福莫萨与大陆的统一解决了未完成的内战,并治愈了"x id=0"的民族意识中长达一世纪的伤口. 权威、合法性和声望得到显著提高。 分裂主义运动被镇压. 州为通."
+ 
+ one_china_roc_integration_bonus:0 "内地融合"
+ one_china_roc_integration_bonus_desc:0 "'x id=0'使前中华人民共和国处于宪法秩序之内. 整合大陆领土和人口的巨大任务已经展开. 随着 " x id=1/ " 国家将其机构扩展到整个大陆,融入速度大大加快。"

@@ -1,0 +1,127 @@
+﻿REPLACE_OR_CREATE:institution_colonial_affairs = { # Max level from tech
+	icon = "gfx/interface/icons/institution_icons/colonization.dds"
+	background_texture = "gfx/interface/illustrations/institutions/colonization.dds"
+	modifier = {
+		state_colony_growth_creation_factor = 0.1
+	}
+}
+
+REPLACE_OR_CREATE:institution_social_security = {
+	icon = "gfx/interface/icons/institution_icons/social_security.dds"
+	background_texture = "gfx/interface/illustrations/institutions/social_security.dds"
+	modifier = {
+		state_welfare_payments_add = 0.2
+		state_food_security_add = 0.02
+	}
+}
+
+REPLACE_OR_CREATE:institution_workplace_safety = {
+	icon = "gfx/interface/icons/institution_icons/workplace_safety.dds"
+	background_texture = "gfx/interface/illustrations/institutions/workplace_safety.dds"
+	modifier = {
+		building_working_conditions_mult = -0.2
+	}
+}
+
+REPLACE_OR_CREATE:institution_schools = {
+	icon = "gfx/interface/icons/institution_icons/schools.dds"
+	background_texture = "gfx/interface/illustrations/institutions/schools.dds"
+	# Informational only: signals to the player that running the
+	# Schools institution incurs an education expense that scales
+	# with investment level, population and childcare/schooling
+	# laws. The real cost is applied via country_expenses_add in
+	# on_monthly_pulse_country (see smd_public_service_expenses).
+	modifier = {
+		smd_institution_education_expense_mult = 1.0
+	}
+}
+
+REPLACE_OR_CREATE:institution_police = {
+	icon = "gfx/interface/icons/institution_icons/police.dds"
+    background_texture = "gfx/interface/illustrations/institutions/police.dds"
+	modifier = {
+		state_turmoil_effects_mult = -0.1
+		# Informational only: policing incurs a running expense that
+		# scales with investment level, population and policing law.
+		# Real cost applied via country_expenses_add monthly.
+		smd_institution_police_expense_mult = 1.0
+	}
+}
+
+REPLACE_OR_CREATE:institution_health_system = {
+	icon = "gfx/interface/icons/institution_icons/health_service.dds"
+	background_texture = "gfx/interface/illustrations/institutions/health_service.dds"
+	# Informational only: a public health system incurs a running
+	# expense that scales with investment level, population and the
+	# health-system law. Real cost applied via country_expenses_add
+	# monthly (see smd_public_service_expenses).
+	modifier = {
+		smd_institution_healthcare_expense_mult = 1.0
+	}
+}
+
+REPLACE_OR_CREATE:institution_home_affairs = {
+	icon = "gfx/interface/icons/institution_icons/home_affairs.dds"
+	background_texture = "gfx/interface/illustrations/institutions/home_affairs.dds"
+	modifier = {
+		country_revolution_progress_mult = -0.1
+		country_secession_progress_mult = -0.1
+	}
+}
+
+#institution_intelligence_agency = {
+#	icon = "gfx/interface/icons/institution_icons/police.dds"
+#    background_texture = "gfx/interface/illustrations/institutions/police.dds"
+#	modifier = {
+#		country_decree_cost_mult = -0.05
+#		country_influence_mult = 0.03
+#	}
+#}
+
+REPLACE_OR_CREATE:institution_diversity_equity_inclusion = {
+	icon = "gfx/interface/icons/institution_icons/dei.dds"
+	background_texture = "gfx/interface/illustrations/institutions/diversity.dds"
+	modifier = {
+		country_wage_violent_hostility_mult = 0.05
+		country_wage_cultural_erasure_mult = 0.05
+		country_wage_open_prejudice_mult = 0.05
+		country_wage_second_rate_citizen_mult = 0.05
+		
+	}
+}
+
+REPLACE_OR_CREATE:institution_immigration = {
+	icon = "gfx/interface/icons/institution_icons/immigration.dds"
+	background_texture = "gfx/interface/illustrations/institutions/immigration.dds"
+	modifier = {
+		country_migration_restrictiveness_add = 15
+	}
+}
+
+institution_environmental_protection = {
+	icon = "gfx/interface/icons/institution_icons/environment.dds"
+	background_texture = "gfx/interface/illustrations/institutions/environmental_protection.dds"
+	modifier = {
+		# -1500 pollution per level of investment, applied to every state
+		state_pollution_generation_add              = -1500
+		building_throughput_add                     = -0.05
+	}
+}
+
+institution_central_bank = {
+	icon = "gfx/interface/icons/institution_icons/central_bank.dds"
+	background_texture = "gfx/interface/illustrations/institutions/central_bank.dds"
+	modifier = {
+	}
+}
+
+institution_courts = {
+	icon = "gfx/interface/icons/institution_icons/judiciary.dds"
+	background_texture = "gfx/interface/illustrations/institutions/courts.dds"
+	modifier = {
+		state_incorporation_speed_mult        = 0.05
+		country_bureaucrats_pol_str_mult = 0.05
+		country_coup_resistance_add = 0.10
+	}
+}
+ 

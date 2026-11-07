@@ -1,0 +1,3189 @@
+﻿movement_communist = {
+	category = movement_category_ideological
+	
+	ideology = ideology_communist_movement
+	character_ideologies = {
+		ideology_marxist_leader
+		ideology_state_socialist_leader
+		ideology_anarchist_leader
+		ideology_market_socialist_leader
+	}
+	
+	creation_trigger = {
+		
+	}	
+	creation_weight = {
+		value = 100
+	}	
+	on_created = {
+		add_movement_enthusiasm_modifier = yes
+	}
+	character_support_trigger = {
+		OR = {
+			has_ideology = ideology:ideology_marxist_leader
+			has_ideology = ideology:ideology_state_socialist_leader
+			has_ideology = ideology:ideology_anarchist_leader
+			has_ideology = ideology:ideology_market_socialist_leader
+			interest_group ?= {
+				has_ideology = ideology:ideology_far_left_economy
+				has_ideology = ideology:ideology_communist
+			}
+		}
+	}
+	character_support_weight = {
+		value = 200
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_marxist_leader
+					has_ideology = ideology:ideology_state_socialist_leader
+					has_ideology = ideology:ideology_anarchist_leader
+					has_ideology = ideology:ideology_market_socialist_leader
+				}
+			}
+			multiply = { value = 5 }
+		}
+	}
+
+	pop_support_trigger = {
+		NOR = {
+			is_pop_type = capitalists
+			is_pop_type = aristocrats
+			is_pop_type = slaves
+		}
+	}
+
+	pop_support_factors = {
+		movement_support_low_urbanization
+		movement_support_high_literacy
+		movement_support_below_expected_sol
+		movement_support_radicalization
+		movement_support_academics
+		movement_support_laborers
+		movement_support_machinists
+		movement_support_peasants
+		movement_support_rural
+		movement_support_soldiers_conscripts
+	}
+	
+	pop_support_weight = {	
+		add = {
+			desc = "URBAN_STATE"
+			value = 10
+			multiply = state.state_urbanization_rate
+		}	
+	
+		if = {
+			limit = {
+				strata = middle
+			}
+			multiply = {
+				value = 0.10
+				desc = "MIDDLE_NO_ICON"
+			}
+			if = {
+				limit = {
+					is_pop_type = academics
+				}
+				add = {
+					value = 3
+					desc = "POP_ACADEMICS"
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				strata = lower
+			}
+			if = {
+				limit = {
+					is_pop_type = laborers
+				}
+				add = {
+					value = 15
+					desc = "POP_LABORERS"
+				}
+			}		
+			else_if = {
+				limit = {
+					is_pop_type = machinists
+				}
+				add = {
+					value = 25
+					desc = "POP_MACHINISTS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = clerks
+				}
+				add = {
+					value = 6
+					desc = "POP_CLERKS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = professionals
+				}
+				add = {
+					value = 6
+					desc = "POP_PROFESSIONALS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = peasants 
+				}
+				add = {
+					value = 3
+					desc = "POP_PEASANTS"
+				}
+			}
+			else = {
+				add = {
+					value = 6
+					desc = "LOWER_NO_ICON"
+				}
+			}
+
+			if = {
+				limit = {
+					AND = {
+						is_pop_type = soldiers
+						pop_employment_building = building_conscription_center
+					}
+				}
+				multiply = {
+					value = 2
+					desc = "CONSCRIPTS"
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				standard_of_living < state.average_expected_sol
+				strata = lower
+			}
+			add = { # Increases likelihood of support if impoverished
+				desc = "IS_BELOW_EXPECTED_SOL"
+				value = state.average_expected_sol
+				subtract = standard_of_living
+				max = 10
+			}
+		}
+		else_if = {
+			limit = {
+				standard_of_living > state.average_expected_sol
+				strata = lower
+			}
+			add = { # Decreases likelihood of support if well-off
+				desc = "IS_ABOVE_EXPECTED_SOL"
+				value = state.average_expected_sol
+				subtract = standard_of_living
+			}
+		}
+
+		multiply = { # Illiterate pops participate at 1/10 the rate of fully literate pops
+			desc = "POP_LITERACY"
+			value = literacy_rate
+			add = 0.10
+		}
+
+		multiply = { # Multiplied by 2x max
+			desc = "POP_RADICALS"
+			value = pop_radical_fraction
+			add = 1
+		}
+	}
+	
+	revolution = {
+		possible = {
+			political_movement_support >= 0.05
+		}
+		
+		weight = {
+			value = 100
+		}	
+	}
+	
+	secession = {
+		possible = {
+			always = no
+			political_movement_support >= 0.05
+			scope:clout <= 0
+		}
+		
+		weight = {
+			value = 0
+		}		
+	}	
+	
+	additional_radicalism_factors = {
+		owner = {
+			if = {
+				limit = { has_institution = institution_workplace_safety }
+				
+				add = {
+					value = 3
+					subtract = "institution_investment_level(institution_workplace_safety)"
+					multiply = 0.05
+					desc = "INSTITUTION_FUNDING_LEVEL_workplace_safety"
+				}
+			}
+			else = {
+				add = {
+					value = 0.1
+					desc = "NO_INSTITUTION_workplace_safety"
+				}		
+			}		
+		}
+	}
+}
+
+movement_socialist = {
+	category = movement_category_ideological
+	
+	ideology = ideology_democratic_socialist_leader
+	character_ideologies = {
+		ideology_democratic_socialist_leader
+		ideology_market_socialist_leader
+		ideology_state_socialist_leader
+		ideology_left_wing_populist_leader
+	}
+	
+	creation_trigger = {
+		
+	}	
+	creation_weight = {
+		value = 100
+	}	
+	on_created = {
+		add_movement_enthusiasm_modifier = yes
+	}
+	
+	disband_trigger = {
+		
+	}
+	on_disbanded = {
+		
+	}
+	character_support_trigger = {
+		OR = {
+			has_ideology = ideology:ideology_democratic_socialist_leader
+			has_ideology = ideology:ideology_market_socialist_leader
+			has_ideology = ideology:ideology_state_socialist_leader
+			has_ideology = ideology:ideology_left_wing_populist_leader
+			interest_group ?= {
+				has_ideology = ideology:ideology_left_economy
+				has_ideology = ideology:ideology_far_left_economy
+				has_ideology = ideology:ideology_communist
+				has_ideology = ideology:ideology_communitarian
+			}
+		}
+	}
+	character_support_weight = {
+		value = 200
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_democratic_socialist_leader
+					has_ideology = ideology:ideology_market_socialist_leader
+					has_ideology = ideology:ideology_state_socialist_leader
+					has_ideology = ideology:ideology_left_wing_populist_leader
+				}
+			}
+			multiply = { value = 5 }
+		}
+	}
+	
+	pop_support_trigger = {
+		NOR = {
+			is_pop_type = capitalists
+			is_pop_type = aristocrats
+			is_pop_type = slaves
+		}
+	}
+
+	pop_support_factors = {
+		movement_support_high_urbanization
+		movement_support_high_literacy
+		movement_support_below_expected_sol
+		movement_support_radicalization
+		movement_support_academics
+		movement_support_laborers
+		movement_support_machinists
+		movement_support_soldiers_conscripts
+	}
+
+	pop_support_weight = {	
+		add = {
+			desc = "URBAN_STATE"
+			value = 10
+			multiply = state.state_urbanization_rate
+		}	
+	
+		if = {
+			limit = {
+				strata = middle
+			}
+			multiply = {
+				value = 0.10
+				desc = "MIDDLE_NO_ICON"
+			}
+			if = {
+				limit = {
+					is_pop_type = academics
+				}
+				add = {
+					value = 3
+					desc = "POP_ACADEMICS"
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				strata = lower
+			}
+			if = {
+				limit = {
+					is_pop_type = laborers
+				}
+				add = {
+					value = 15
+					desc = "POP_LABORERS"
+				}
+			}		
+			else_if = {
+				limit = {
+					is_pop_type = machinists
+				}
+				add = {
+					value = 24
+					desc = "POP_MACHINISTS"
+				}
+			}
+			else = {
+				add = {
+					value = 6
+					desc = "LOWER_NO_ICON"
+				}
+			}
+
+			if = {
+				limit = {
+					AND = {
+						is_pop_type = soldiers
+						pop_employment_building = building_conscription_center
+					}
+				}
+				multiply = {
+					value = 1.5
+					desc = "CONSCRIPTS"
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				standard_of_living < state.average_expected_sol
+				strata = lower
+			}
+			add = { # Increases likelihood of support if impoverished
+				desc = "IS_BELOW_EXPECTED_SOL"
+				value = state.average_expected_sol
+				subtract = standard_of_living
+				max = 10
+			}
+		}
+		else_if = {
+			limit = {
+				standard_of_living > state.average_expected_sol
+				strata = lower
+			}
+			add = { # Decreases likelihood of support if well-off
+				desc = "IS_ABOVE_EXPECTED_SOL"
+				value = state.average_expected_sol
+				subtract = standard_of_living
+			}
+		}
+
+		multiply = { # Illiterate pops participate at 1/10 the rate of fully literate pops
+			desc = "POP_LITERACY"
+			value = literacy_rate
+			add = 0.10
+		}
+
+		multiply = { # Multiplied by 1.5x max
+			desc = "POP_RADICALS"
+			value = pop_radical_fraction
+			divide = 2
+			add = 1
+		}
+	}
+	
+	revolution = {
+		possible = {
+			political_movement_support >= 0.05
+		}
+		
+		weight = {
+			value = 100
+		}	
+	
+		state_weight = {
+			value = state_urbanization_rate
+			
+			if = {
+				limit = { is_capital = yes }
+				if = {
+					limit = { owner ?= { has_law = law_type:law_council_republic } }
+					multiply = 10.0
+				}
+				else = {
+					multiply = 0.1
+				}
+			}			
+		}
+	}
+	
+	secession = {
+		possible = {
+			always = no
+			political_movement_support >= 0.05
+			scope:clout <= 0
+		}
+		
+		weight = {
+			value = 0
+		}
+
+		state_weight = {
+			value = state_urbanization_rate
+			
+			if = {
+				limit = { is_capital = yes }
+				if = {
+					limit = { owner ?= { has_law = law_type:law_council_republic } }
+					multiply = 10.0
+				}
+				else = {
+					multiply = 0.1
+				}
+			}			
+		}		
+	}	
+	
+	additional_radicalism_factors = {
+		owner = {
+			if = {
+				limit = { has_institution = institution_social_security }
+				
+				add = {
+					value = 3
+					subtract = "institution_investment_level(institution_social_security)"
+					multiply = 0.05
+					desc = "INSTITUTION_FUNDING_LEVEL_social_security"
+				}
+			}
+			else = {
+				add = {
+					value = 0.1
+					desc = "NO_INSTITUTION_social_security"
+				}		
+			}				
+			
+			if = {
+				limit = { has_institution = institution_workplace_safety }
+				
+				add = {
+					value = 3
+					subtract = "institution_investment_level(institution_workplace_safety)"
+					multiply = 0.05
+					desc = "INSTITUTION_FUNDING_LEVEL_workplace_safety"
+				}
+			}
+			else = {
+				add = {
+					value = 0.1
+					desc = "NO_INSTITUTION_workplace_safety"
+				}		
+			}
+
+			add = { 
+				desc = "IS_BELOW_15_SOL"
+				value = 15
+				subtract = average_sol
+				multiply = 0.03
+				min = 0
+			}
+		}
+	}	
+}
+
+movement_social_democratic = {
+	category = movement_category_ideological
+	
+	ideology = ideology_progressive_leader
+	character_ideologies = {
+		ideology_democratic_socialist_leader
+		ideology_progressive_leader
+		ideology_social_liberal_leader
+		ideology_market_socialist_leader
+		ideology_green_leader
+	}
+	
+	creation_trigger = {
+		
+	}	
+	creation_weight = {
+		value = 100
+	}	
+	on_created = {
+		add_movement_enthusiasm_modifier = yes
+	}
+	character_support_trigger = {
+		OR = {
+			has_ideology = ideology:ideology_democratic_socialist_leader
+			has_ideology = ideology:ideology_progressive_leader
+			has_ideology = ideology:ideology_social_liberal_leader
+			has_ideology = ideology:ideology_market_socialist_leader
+			has_ideology = ideology:ideology_green_leader
+			interest_group ?= {
+				has_ideology = ideology:ideology_left_economy
+				has_ideology = ideology:ideology_progressive
+				has_ideology = ideology:ideology_communitarian
+			}
+		}
+	}
+	character_support_weight = {
+		value = 200
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_democratic_socialist_leader
+					has_ideology = ideology:ideology_progressive_leader
+					has_ideology = ideology:ideology_social_liberal_leader
+					has_ideology = ideology:ideology_market_socialist_leader
+					has_ideology = ideology:ideology_green_leader
+				}
+			}
+			multiply = { value = 5 }
+		}
+	}
+	
+	pop_support_trigger = {
+		NOR = {
+			is_pop_type = capitalists
+			is_pop_type = aristocrats
+			is_pop_type = slaves
+		}
+	}
+
+	pop_support_factors = {
+		movement_support_high_urbanization
+		movement_support_high_literacy
+		movement_support_below_expected_sol
+		movement_support_engineers
+		movement_support_academics
+		movement_support_laborers
+		movement_support_machinists
+		movement_support_clerks
+movement_support_professionals
+		movement_support_peasants	
+	}
+	
+	pop_support_weight = {	
+		add = {
+			desc = "URBAN_STATE"
+			value = 10
+			multiply = state.state_urbanization_rate
+		}	
+
+		if = {
+			limit = {
+				strata = upper
+			}
+			multiply = {
+				value = 0.10
+				desc = "UPPER_NO_ICON"
+			}
+		}	
+		else_if = {
+			limit = {
+				strata = middle
+			}
+			multiply = {
+				value = 0.5
+				desc = "MIDDLE_NO_ICON"
+			}
+			if = {
+				limit = {
+					is_pop_type = engineers
+				}
+				add = {
+					value = 3
+					desc = "POP_ENGINEERS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = academics
+				}
+				add = {
+					value = 6
+					desc = "POP_ACADEMICS"
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				strata = lower
+			}
+			if = {
+				limit = {
+					is_pop_type = laborers
+				}
+				add = {
+					value = 18
+					desc = "POP_LABORERS"
+				}
+			}		
+			else_if = {
+				limit = {
+					is_pop_type = machinists
+				}
+				add = {
+					value = 30
+					desc = "POP_MACHINISTS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = clerks
+				}
+				add = {
+					value = 10
+					desc = "POP_CLERKS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = professionals
+				}
+				add = {
+					value = 10
+					desc = "POP_PROFESSIONALS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = peasants 
+				}
+				add = {
+					value = 10
+					desc = "POP_PEASANTS"
+				}
+			}
+			else = {
+				add = {
+					value = 6
+					desc = "LOWER_NO_ICON"
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				standard_of_living < state.average_expected_sol # It is intentional that a labourer being well-off doesn't decrease support for this.
+			}
+			add = { # Increases likelihood of support if impoverished.
+				desc = "IS_BELOW_EXPECTED_SOL"
+				value = state.average_expected_sol
+				subtract = standard_of_living
+				max = 10
+			}
+		}
+
+		multiply = { # Illiterate pops participate at 1/10 the rate of fully literate pops
+			desc = "POP_LITERACY"
+			value = literacy_rate
+			add = 0.10
+		}
+
+		if = { # If a more radical movement exists, it'll poach radicals from this one.
+			limit = {
+				owner ?= {
+					any_political_movement = {
+						OR = {
+							is_political_movement_type = movement_socialist
+							is_political_movement_type = movement_communist
+						}
+					}
+				}
+			}
+			multiply = {
+				desc = "POP_RADICAL_MOVEMENT_LOSSES"
+				value = 1
+				subtract = pop_radical_fraction
+			}
+		}
+	}
+	
+	revolution = {
+		possible = {
+			political_movement_support >= 0.05
+		}
+		
+		weight = {
+			value = 100
+		}	
+	
+		state_weight = {
+			value = state_urbanization_rate
+		}
+	}
+	
+	secession = {
+		possible = {
+			always = no
+			political_movement_support >= 0.05
+			scope:clout <= 0
+		}
+		
+		weight = {
+			value = 0
+		}
+
+		state_weight = {
+			value = state_urbanization_rate
+		}		
+	}	
+	
+	additional_radicalism_factors = {
+		owner = {
+			if = {
+				limit = { has_institution = institution_social_security }
+				
+				add = {
+					value = 3
+					subtract = "institution_investment_level(institution_social_security)"
+					multiply = 0.05
+					desc = "INSTITUTION_FUNDING_LEVEL_social_security"
+				}
+			}
+			else = {
+				add = {
+					value = 0.1
+					desc = "NO_INSTITUTION_social_security"
+				}		
+			}
+			
+			if = {
+				limit = { has_institution = institution_workplace_safety }
+				
+				add = {
+					value = 3
+					subtract = "institution_investment_level(institution_workplace_safety)"
+					multiply = 0.05
+					desc = "INSTITUTION_FUNDING_LEVEL_workplace_safety"
+				}
+			}
+			else = {
+				add = {
+					value = 0.1
+					desc = "NO_INSTITUTION_workplace_safety"
+				}		
+			}			
+		}
+	}	
+}
+
+movement_centrist = {
+	category = movement_category_ideological
+	
+	ideology = ideology_moderate_leader
+	character_ideologies = {
+		ideology_moderate_leader
+		ideology_technocrat_leader
+	}
+	
+	creation_trigger = {
+		
+	}	
+	creation_weight = {
+		value = 100
+	}	
+	on_created = {
+		add_movement_enthusiasm_modifier = yes
+	}
+	character_support_trigger = {
+		OR = {
+			has_ideology = ideology:ideology_moderate_leader
+			has_ideology = ideology:ideology_technocrat_leader
+			interest_group ?= {
+				has_ideology = ideology:ideology_centre_economy
+				has_ideology = ideology:ideology_republican
+			}
+		}
+	}
+	character_support_weight = {
+		value = 200
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_moderate_leader
+					has_ideology = ideology:ideology_technocrat_leader
+				}
+			}
+			multiply = { value = 5 }
+		}
+	}
+
+	pop_support_trigger = {
+		NOT = {
+			is_pop_type = slaves
+		}
+	}
+
+	pop_support_factors = {
+		movement_support_high_literacy
+		movement_support_aristocrats
+		movement_support_clergymen
+		movement_support_shopkeepers
+		movement_support_clerks
+movement_support_professionals
+		movement_support_peasants
+	}
+	
+	pop_support_weight = {	
+		add = {
+			value = 1
+			desc = "POP_BASE_SUPPORT"
+		}
+
+		if = {
+			limit = {
+				strata = upper
+			}
+			if = {
+				limit = {
+					is_pop_type = aristocrats
+				}
+				add = {
+					value = 9
+					desc = "POP_ARISTOCRATS"
+				}
+			}
+			else = {
+				add = {
+					value = 6
+					desc = "UPPER_NO_ICON"
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				strata = middle
+			}
+			if = {
+				limit = {
+					is_pop_type = clergymen
+				}
+				add = {
+					value = 15
+					desc = "POP_CLERGYMEN"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = shopkeepers
+				}
+				add = {
+					value = 12
+					desc = "POP_SHOPKEEPERS"
+				}
+			}
+			else = {
+				add = {
+					value = 9
+					desc = "MIDDLE_NO_ICON"
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				strata = lower
+			}
+			if = {
+				limit = {
+					is_pop_type = clerks
+				}
+				add = {
+					value = 6
+					desc = "POP_CLERKS"
+				}
+			}
+			if = {
+				limit = {
+					is_pop_type = professionals
+				}
+				add = {
+					value = 6
+					desc = "POP_PROFESSIONALS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = peasants
+				}
+				add = {
+					value = 6
+					desc = "POP_PEASANTS"
+				}
+			}
+			else = {
+				add = {
+					value = 3
+					desc = "LOWER_NO_ICON"
+				}
+			}
+		}
+
+		multiply = { # Illiterate pops participate at 1/10 the rate of fully literate pops
+			desc = "POP_LITERACY"
+			value = literacy_rate
+			add = 0.10
+		}
+
+		multiply = { # Intentional that this is different from fascism
+			value = 0.01
+			multiply = pop_acceptance
+			add = 0.20
+			desc = "ACCEPTANCE"
+		}
+	}
+	
+	revolution = {
+		possible = {
+			political_movement_support >= 0.05
+		}
+		
+		weight = {
+			value = 100
+		}	
+	
+		state_weight = {
+			value = 1		
+		}
+	}
+	
+	secession = {
+		possible = {
+			always = no
+			political_movement_support >= 0.05
+			scope:clout <= 0
+		}
+		
+		weight = {
+			value = 0
+		}		
+	}	
+	
+	additional_radicalism_factors = {
+		owner = {
+			if = {
+				limit = { has_institution = institution_schools }
+				
+				add = {
+					value = 3
+					subtract = "institution_investment_level(institution_schools)"
+					multiply = 0.05
+					desc = "INSTITUTION_FUNDING_LEVEL_schools"
+				}
+			}
+			else = {
+				add = {
+					value = 0.1
+					desc = "NO_INSTITUTION_schools"
+				}		
+			}				
+		}
+	}	
+}
+
+movement_liberal_conservative = {
+	category = movement_category_ideological
+	
+	ideology = ideology_liberal_movement
+	character_ideologies = {
+		ideology_liberal_leader
+		ideology_moderate_leader
+		ideology_conservative_leader
+		ideology_neoliberal_leader
+	}
+	
+	disband_trigger = {
+		
+	}
+
+	creation_trigger = {
+		
+	}	
+	creation_weight = {
+		value = 100
+	}	
+	on_created = {
+		add_movement_enthusiasm_modifier = yes
+	}
+	character_support_trigger = {
+		OR = {
+			has_ideology = ideology:ideology_liberal_leader
+			has_ideology = ideology:ideology_moderate_leader
+			has_ideology = ideology:ideology_conservative_leader
+			has_ideology = ideology:ideology_neoliberal_leader
+			interest_group ?= {
+				has_ideology = ideology:ideology_right_economy
+				has_ideology = ideology:ideology_centre_economy
+				has_ideology = ideology:ideology_conservative
+				has_ideology = ideology:ideology_republican
+			}
+		}
+	}
+	character_support_weight = {
+		value = 200
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_liberal_leader
+					has_ideology = ideology:ideology_moderate_leader
+					has_ideology = ideology:ideology_conservative_leader
+					has_ideology = ideology:ideology_neoliberal_leader
+				}
+			}
+			multiply = { value = 5 }
+		}
+	}
+	
+	pop_support_trigger = {
+		NOR = {
+			is_pop_type = clergymen
+			is_pop_type = peasants
+			is_pop_type = slaves
+		}
+	}
+
+	pop_support_factors = {
+		movement_support_high_urbanization
+		movement_support_high_literacy
+		movement_support_capitalists
+		movement_support_aristocrats
+		movement_support_officers
+		movement_support_academics
+		movement_support_bureaucrats
+		movement_support_engineers
+		movement_support_clerks
+movement_support_professionals
+		movement_support_soldiers
+	}
+	
+	pop_support_weight = {	
+		add = {
+			desc = "URBAN_STATE"
+			value = 10
+			multiply = state.state_urbanization_rate
+		}
+
+		if = {
+			limit = {
+				strata = upper
+			}
+			if = {
+				limit = {
+					is_pop_type = capitalists
+				}
+				add = {
+					value = 15
+					desc = "POP_CAPITALISTS"
+				}
+			}
+			if = {
+				limit = {
+					is_pop_type = aristocrats
+				}
+				else = {
+					add = {
+						value = 10
+						desc = "POP_ARISTOCRATS"
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				strata = middle
+			}
+			if = {
+				limit = {
+					is_pop_type = officers
+				}
+				add = {
+					value = 15
+					desc = "POP_OFFICERS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = academics
+				}
+				add = {
+					value = 25
+					desc = "POP_ACADEMICS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = bureaucrats
+				}
+				add = {
+					value = 15
+					desc = "POP_BUREAUCRATS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = engineers
+				}
+				add = {
+					value = 25
+					desc = "POP_BUREAUCRATS"
+				}
+			}
+			else = {
+				add = {
+					value = 10
+					desc = "MIDDLE_NO_ICON"
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				strata = lower
+			}
+			if = {
+				limit = {
+					is_pop_type = clerks
+				}
+				add = {
+					value = 9
+					desc = "POP_CLERKS"
+				}
+			}
+			if = {
+				limit = {
+					is_pop_type = professionals
+				}
+				add = {
+					value = 9
+					desc = "POP_PROFESSIONALS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = soldiers
+				}
+				add = {
+					value = 6
+					desc = "POP_SOLDIERS"
+				}
+			}
+			else = {
+				add = {
+					value = 3
+					desc = "LOWER_NO_ICON"
+				}
+			}
+		}
+
+		multiply = { # Illiterate pops participate at 1/10 the rate of fully literate pops
+			desc = "POP_LITERACY"
+			value = literacy_rate
+			add = 0.10
+		}
+	}
+	
+	revolution = {
+		possible = {
+			political_movement_support >= 0.05
+		}
+		
+		weight = {
+			value = 100
+		}	
+	
+		state_weight = {
+			value = 1		
+		}
+	}
+	
+	secession = {
+		possible = {
+			always = no
+			political_movement_support >= 0.05
+			scope:clout <= 0
+		}
+		
+		weight = {
+			value = 0
+		}		
+	}		
+}
+
+movement_conservative = {
+	category = movement_category_ideological
+	
+	ideology = ideology_conservative_leader
+	character_ideologies = {
+		ideology_conservative_leader
+		ideology_neoliberal_leader
+		ideology_corporatist_leader
+		ideology_theocrat_leader
+		ideology_monarchist_leader
+	}
+	
+	disband_trigger = {
+		
+	}
+
+	creation_trigger = {
+		
+	}	
+	creation_weight = {
+		value = 100
+	}	
+	on_created = {
+		add_movement_enthusiasm_modifier = yes
+	}
+	character_support_trigger = {
+		OR = {
+			has_ideology = ideology:ideology_conservative_leader
+			has_ideology = ideology:ideology_neoliberal_leader
+			has_ideology = ideology:ideology_corporatist_leader
+			has_ideology = ideology:ideology_theocrat_leader
+			has_ideology = ideology:ideology_monarchist_leader
+			interest_group ?= {
+				has_ideology = ideology:ideology_conservative
+				has_ideology = ideology:ideology_traditionalist
+				has_ideology = ideology:ideology_right_economy
+			}
+		}
+	}
+	character_support_weight = {
+		value = 200
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_conservative_leader
+					has_ideology = ideology:ideology_neoliberal_leader
+					has_ideology = ideology:ideology_corporatist_leader
+					has_ideology = ideology:ideology_theocrat_leader
+					has_ideology = ideology:ideology_monarchist_leader
+				}
+			}
+			multiply = { value = 5 }
+		}
+	}
+	
+	pop_support_trigger = {
+		NOT = {
+			is_pop_type = slaves
+		}
+	}
+	
+	pop_support_factors = {
+		movement_support_ruler_popularity
+		movement_support_low_urbanization
+		movement_support_high_literacy
+		movement_support_aristocrats
+		movement_support_farmers
+		movement_support_peasants
+		movement_support_clergymen
+		movement_support_officers
+		movement_support_shopkeepers
+		movement_support_clerks
+movement_support_professionals
+	}
+
+	pop_support_weight = {	
+		add = {
+			desc = "URBAN_STATE" # Increases support in rural states, decreases in urban
+			value = 0.5
+			subtract = state.state_urbanization_rate
+			multiply = 10
+		}
+
+		add = {
+			value = 5
+			desc = "POP_BASE_SUPPORT"
+		}
+	
+		if = {
+			limit = {
+				is_pop_type = aristocrats
+			}
+			add = {
+				value = 50
+				desc = "POP_ARISTOCRATS"
+			}
+		}	
+		else_if = {
+			limit = {
+				is_pop_type = farmers
+			}
+			add = {
+				value = 20
+				desc = "POP_FARMERS"
+			}
+		}
+		else_if = {
+			limit = {
+				is_pop_type = peasants
+			}
+			add = {
+				value = 20
+				desc = "POP_PEASANTS"
+			}
+		}			
+		else_if = {
+			limit = {
+				is_pop_type = clergymen
+			}
+			add = {
+				value = 20
+				desc = "POP_CLERGYMEN"
+			}
+		}	
+		else_if = {
+			limit = {
+				is_pop_type = officers
+			}
+			add = {
+				value = 20
+				desc = "POP_OFFICERS"
+			}
+		}
+		else_if = {
+			limit = {
+				is_pop_type = shopkeepers
+			}
+			add = {
+				value = 15
+				desc = "POP_SHOPKEEPERS"
+			}
+		}
+		else_if = {
+			limit = {
+				is_pop_type = clerks
+			}
+			add = {
+				value = 15
+				desc = "POP_CLERKS"
+			}
+		}
+		else_if = {
+			limit = {
+				is_pop_type = professionals
+			}
+			add = {
+				value = 15
+				desc = "POP_PROFESSIONALS"
+			}
+		}
+
+		if = {
+			limit = {
+				owner ?= {
+					is_a_monarchy = yes
+				}
+				owner.ruler ?= {
+					NOT = { has_trait = trait_child }
+				}
+			}
+			multiply = { # Constitutionalists are less reliant on the monarchs popularity than absolutists
+				add = owner.ruler.popularity
+				multiply = 0.01
+				add = 1
+				min = 0.5
+				max = 1.5
+				desc = "RULER_POPULARITY"
+			}
+		}
+		else_if = {
+			limit = {
+				owner ?= {
+					is_a_monarchy = yes
+				}
+				owner.ruler ?= {
+					has_trait = trait_child
+				}
+			}
+			multiply = {
+				value = 0.75
+				desc = "RULER_IS_CHILD"
+			}			
+		}
+
+		multiply = { # Illiterate pops participate at 1/10 the rate of fully literate pops
+			desc = "POP_LITERACY"
+			value = literacy_rate
+			add = 0.10
+		}
+	}
+	
+	revolution = {
+		possible = {
+			political_movement_support >= 0.05
+		}
+		
+		weight = {
+			value = 100
+		}	
+	
+		state_weight = {
+			value = 1
+
+			subtract = {
+				value = state_urbanization_rate
+				multiply = 0.5
+			}
+			
+			if = {
+				limit = { is_capital = yes }
+				if = {
+					limit = { owner ?= { is_a_monarchy = yes } }
+					multiply = 10.0
+				}
+				else = {
+					multiply = 0.1
+				}
+			}			
+		}
+	}
+	
+	secession = {
+		possible = {
+			always = no
+			political_movement_support >= 0.05
+			scope:clout <= 0
+		}
+		
+		weight = {
+			value = 0
+		}	
+
+		state_weight = {
+			value = 1
+
+			subtract = {
+				value = state_urbanization_rate
+				multiply = 0.5
+			}
+			
+			if = {
+				limit = { is_capital = yes }
+				if = {
+					limit = { owner ?= { is_a_monarchy = yes } }
+					multiply = 10.0
+				}
+				else = {
+					multiply = 0.1
+				}
+			}			
+		}		
+		
+		forced_tags = {
+			
+		}
+	}	
+	
+	additional_radicalism_factors = {
+		owner ?= {
+			if = {
+				limit = {		
+					is_a_monarchy = yes
+				}
+				
+				if = {
+					limit = {
+						OR = {
+							is_enacting_law = law_type:law_presidential_republic
+							is_enacting_law = law_type:law_parliamentary_republic
+							is_enacting_law = law_type:law_theocracy
+							is_enacting_law = law_type:law_council_republic
+						}					
+					}
+					add = {
+						value = 0.25
+						desc = "MONARCHY_BEING_ABOLISHED"
+					}					
+				}
+				else = {
+					add = { # Only care about legitimacy in the context of a monarchy that isn't under direct threat
+						value = 50
+						subtract = legitimacy
+						multiply = 0.005
+						desc = "concept_legitimacy"
+					}				
+				}
+			}		
+		}
+	}	
+}
+
+movement_traditionalist = {
+	category = movement_category_ideological
+	
+	ideology = ideology_traditionalist_leader
+	character_ideologies = {
+		ideology_monarchist_leader
+		ideology_theocrat_leader
+		ideology_conservative_leader
+		ideology_right_wing_populist_leader
+	}
+	
+	creation_trigger = {
+		
+	}	
+	creation_weight = {
+		value = 100
+	}	
+	on_created = {
+		add_movement_enthusiasm_modifier = yes
+	}
+	character_support_trigger = {
+		OR = {
+			has_ideology = ideology:ideology_monarchist_leader
+			has_ideology = ideology:ideology_theocrat_leader
+			has_ideology = ideology:ideology_conservative_leader
+			has_ideology = ideology:ideology_right_wing_populist_leader
+			interest_group ?= {
+				has_ideology = ideology:ideology_traditionalist
+				has_ideology = ideology:ideology_monarchist
+				has_ideology = ideology:ideology_theocrat
+			}
+		}
+	}
+	character_support_weight = {
+		value = 200
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_monarchist_leader
+					has_ideology = ideology:ideology_theocrat_leader
+					has_ideology = ideology:ideology_conservative_leader
+					has_ideology = ideology:ideology_right_wing_populist_leader
+				}
+			}
+			multiply = { value = 5 }
+		}
+	}
+
+	pop_support_trigger = {
+		NOT = {
+			is_pop_type = slaves
+		}
+	}
+
+	pop_support_factors = {
+		movement_support_high_literacy
+		movement_support_aristocrats
+		movement_support_clergymen
+		movement_support_shopkeepers
+		movement_support_farmers
+		movement_support_clerks
+movement_support_professionals
+		movement_support_laborers
+		movement_support_soldiers
+		movement_support_peasants
+	}
+	
+	pop_support_weight = {	
+		add = {
+			value = 1
+			desc = "POP_BASE_SUPPORT"
+		}
+
+		if = {
+			limit = {
+				strata = upper
+			}
+			if = {
+				limit = {
+					is_pop_type = aristocrats
+				}
+				add = {
+					value = 15
+					desc = "POP_ARISTOCRATS"
+				}
+			}
+			else = {
+				add = {
+					value = 6
+					desc = "UPPER_NO_ICON"
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				strata = middle
+			}
+			if = {
+				limit = {
+					is_pop_type = clergymen
+				}
+				add = {
+					value = 15
+					desc = "POP_CLERGYMEN"
+				}
+			}
+			if = {
+				limit = {
+					is_pop_type = shopkeepers
+				}
+				add = {
+					value = 12
+					desc = "POP_SHOPKEEPERS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = farmers
+				}
+				add = {
+					value = 20
+					desc = "POP_FARMERS"
+				}
+			}
+			else = {
+				add = {
+					value = 9
+					desc = "MIDDLE_NO_ICON"
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				strata = lower
+			}
+			if = {
+				limit = {
+					is_pop_type = clerks
+				}
+				add = {
+					value = 10
+					desc = "POP_CLERKS"
+				}
+			}
+			if = {
+				limit = {
+					is_pop_type = professionals
+				}
+				add = {
+					value = 10
+					desc = "POP_PROFESSIONALS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = laborers
+				}
+				add = {
+					value = -3
+					desc = "POP_LABORERS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = soldiers
+				}
+				add = {
+					value = 10
+					desc = "POP_SOLDIERS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = peasants
+				}
+				add = {
+					value = 12
+					desc = "POP_PEASANTS"
+				}
+			}
+			else = {
+				add = {
+					value = 3
+					desc = "LOWER_NO_ICON"
+				}
+			}
+		}
+
+		multiply = { # Illiterate pops participate at 1/10 the rate of fully literate pops
+			desc = "POP_LITERACY"
+			value = literacy_rate
+			add = 0.10
+		}
+
+		multiply = {
+			value = 0.012
+			multiply = pop_acceptance
+			desc = "ACCEPTANCE"
+		}
+	}
+	
+	revolution = {
+		possible = {
+			political_movement_support >= 0.05
+		}
+		
+		weight = {
+			value = 100
+		}	
+	
+		state_weight = {
+			value = 1		
+		}
+	}
+	
+	secession = {
+		possible = {
+			always = no
+			political_movement_support >= 0.05
+			scope:clout <= 0
+		}
+		
+		weight = {
+			value = 0
+		}		
+	}
+
+	additional_radicalism_factors = {
+		owner ?= {
+			add = {
+				value = country_turmoil
+				divide = 0.5
+				desc = "COUNTRY_TURMOIL"
+			}	
+		}
+	}
+}
+
+movement_liberal = {
+	category = movement_category_ideological
+	
+	ideology = ideology_liberal_leader
+	character_ideologies = {
+		ideology_liberal_leader
+		ideology_social_liberal_leader
+		ideology_progressive_leader
+		ideology_technocrat_leader
+		ideology_classical_liberal_leader
+	}
+	
+	creation_trigger = {
+		
+	}	
+	creation_weight = {
+		value = 100
+	}	
+	on_created = {
+		add_movement_enthusiasm_modifier = yes
+	}
+	character_support_trigger = {
+		OR = {
+			has_ideology = ideology:ideology_liberal_leader
+			has_ideology = ideology:ideology_social_liberal_leader
+			has_ideology = ideology:ideology_progressive_leader
+			has_ideology = ideology:ideology_technocrat_leader
+			has_ideology = ideology:ideology_classical_liberal_leader
+			interest_group ?= {
+				has_ideology = ideology:ideology_individualist
+				has_ideology = ideology:ideology_republican
+				has_ideology = ideology:ideology_globalist
+				has_ideology = ideology:ideology_centre_economy
+			}
+		}
+	}
+	character_support_weight = {
+		value = 200
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_liberal_leader
+					has_ideology = ideology:ideology_social_liberal_leader
+					has_ideology = ideology:ideology_progressive_leader
+					has_ideology = ideology:ideology_technocrat_leader
+					has_ideology = ideology:ideology_classical_liberal_leader
+				}
+			}
+			multiply = { value = 5 }
+		}
+	}
+
+	pop_support_trigger = {
+		NOT = {
+			is_pop_type = slaves
+		}
+	}
+
+	pop_support_factors = {
+		movement_support_high_urbanization
+		movement_support_high_literacy
+		movement_support_capitalists
+		movement_support_aristocrats
+		movement_support_shopkeepers
+		movement_support_academics
+		movement_support_bureaucrats
+		movement_support_clerks
+movement_support_professionals
+		movement_support_peasants
+	}
+	
+	pop_support_weight = {	
+		add = {
+			value = 3
+			desc = "POP_BASE_SUPPORT"
+		}
+
+		add = {
+			desc = "URBAN_STATE"
+			value = 10
+			multiply = state.state_urbanization_rate
+		}
+
+		if = {
+			limit = {
+				strata = upper
+			}
+			if = {
+				limit = {
+					is_pop_type = capitalists
+				}
+				add = {
+					value = 25
+					desc = "POP_CAPITALISTS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = aristocrats
+				}
+				add = {
+					value = 6
+					desc = "POP_ARISTOCRATS"
+				}
+			}
+			else = {
+				add = {
+					value = 9
+					desc = "UPPER_NO_ICON"
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				strata = middle
+			}
+			if = {
+				limit = {
+					is_pop_type = shopkeepers
+				}
+				add = {
+					value = 12
+					desc = "POP_SHOPKEEPERS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = academics
+				}
+				add = {
+					value = 24
+					desc = "POP_ACADEMICS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = bureaucrats
+				}
+				add = {
+					value = 12
+					desc = "POP_BUREAUCRATS"
+				}
+			}
+			else = {
+				add = {
+					value = 9
+					desc = "MIDDLE_NO_ICON"
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				strata = lower
+			}
+			if = {
+				limit = {
+					is_pop_type = clerks
+				}
+				add = {
+					value = 6
+					desc = "POP_CLERKS"
+				}
+			}
+			if = {
+				limit = {
+					is_pop_type = professionals
+				}
+				add = {
+					value = 6
+					desc = "POP_PROFESSIONALS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = peasants
+				}
+				add = {
+					value = 0
+					desc = "POP_PEASANTS"
+				}
+			}
+			else = {
+				add = {
+					value = 3
+					desc = "LOWER_NO_ICON"
+				}
+			}
+		}
+
+		multiply = { # Illiterate pops participate at 1/10 the rate of fully literate pops
+			desc = "POP_LITERACY"
+			value = literacy_rate
+			add = 0.10
+		}
+	}
+	
+	revolution = {
+		possible = {
+			political_movement_support >= 0.05
+		}
+		
+		weight = {
+			value = 100
+		}	
+	
+		state_weight = {
+			value = state_urbanization_rate	
+		}
+	}
+	
+	secession = {
+		possible = {
+			always = no
+			political_movement_support >= 0.05
+			scope:clout <= 0
+		}
+		
+		weight = {
+			value = 0
+		}
+
+		state_weight = {
+			value = state_urbanization_rate	
+		}		
+	}	
+	
+	additional_radicalism_factors = {
+		owner = {
+			if = {
+				limit = { has_institution = institution_schools }
+				
+				add = {
+					value = 3
+					subtract = "institution_investment_level(institution_schools)"
+					multiply = 0.05
+					desc = "INSTITUTION_FUNDING_LEVEL_schools"
+				}
+			}
+			else = {
+				add = {
+					value = 0.1
+					desc = "NO_INSTITUTION_schools"
+				}		
+			}				
+		}
+	}		
+}
+
+movement_progressive = {
+	category = movement_category_ideological
+	
+	ideology = ideology_progressive_leader
+	character_ideologies = {
+		ideology_progressive_leader
+		ideology_social_liberal_leader
+		ideology_green_leader
+		ideology_democratic_socialist_leader
+	}
+	
+	creation_trigger = {
+		
+	}	
+	creation_weight = {
+		value = 10
+	}	
+	on_created = {
+		add_movement_enthusiasm_modifier = yes
+	}
+	character_support_trigger = {
+		OR = {
+			has_ideology = ideology:ideology_progressive_leader
+			has_ideology = ideology:ideology_social_liberal_leader
+			has_ideology = ideology:ideology_green_leader
+			has_ideology = ideology:ideology_democratic_socialist_leader
+			interest_group ?= {
+				has_ideology = ideology:ideology_progressive
+				has_ideology = ideology:ideology_left_economy
+				has_ideology = ideology:ideology_communitarian
+			}
+		}
+	}
+	character_support_weight = {
+		value = 200
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_progressive_leader
+					has_ideology = ideology:ideology_social_liberal_leader
+					has_ideology = ideology:ideology_green_leader
+					has_ideology = ideology:ideology_democratic_socialist_leader
+				}
+			}
+			multiply = { value = 5 }
+		}
+	}
+
+	pop_support_trigger = {
+		NOR = {
+			is_pop_type = clergymen
+			is_pop_type = peasants
+			is_pop_type = slaves
+		}
+	}
+
+	pop_support_factors = {
+		movement_support_high_urbanization
+		movement_support_high_literacy
+		movement_support_capitalists
+		movement_support_aristocrats
+		movement_support_officers
+		movement_support_academics
+		movement_support_bureaucrats
+		movement_support_engineers
+		movement_support_clerks
+movement_support_professionals
+		movement_support_soldiers
+		movement_support_je_positivist_movement
+	}	
+	
+	pop_support_weight = {	
+		add = {
+			desc = "URBAN_STATE"
+			value = 10
+			multiply = state.state_urbanization_rate
+		}
+
+		if = {
+			limit = {
+				strata = upper
+			}
+			if = {
+				limit = {
+					is_pop_type = capitalists
+				}
+				add = {
+					value = 6
+					desc = "POP_CAPITALISTS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = aristocrats
+				}
+				add = {
+					value = 3
+					desc = "POP_ARISTOCRATS"
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				strata = middle
+			}
+			if = {
+				limit = {
+					is_pop_type = officers
+				}
+				if = {
+					limit = {
+						owner ?= {
+							OR = {
+								has_law = law_type:law_professional_army
+								has_law = law_type:law_mass_conscription
+							}
+						}
+					}
+					add = {
+						value = 36
+						desc = "POP_OFFICERS"
+					}
+				}
+				else = {
+					add = {
+						value = 25
+						desc = "POP_OFFICERS"
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = academics
+				}
+				add = {
+					value = 15
+					desc = "POP_ACADEMICS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = bureaucrats
+				}
+				add = {
+					value = 10
+					desc = "POP_BUREAUCRATS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = engineers
+				}
+				add = {
+					value = 12
+					desc = "POP_BUREAUCRATS"
+				}
+			}
+			else = {
+				add = {
+					value = 3
+					desc = "MIDDLE_NO_ICON"
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				strata = lower
+			}
+			if = {
+				limit = {
+					is_pop_type = clerks
+				}
+				add = {
+					value = 6
+					desc = "POP_CLERKS"
+				}
+			}
+			if = {
+				limit = {
+					is_pop_type = professionals
+				}
+				add = {
+					value = 6
+					desc = "POP_PROFESSIONALS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = soldiers
+				}
+				add = {
+					value = 15
+					desc = "POP_SOLDIERS"
+				}
+			}
+			else = {
+				add = {
+					value = 3
+					desc = "LOWER_NO_ICON"
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				owner ?= {
+					has_variable = positivist_leaders_increase_var
+				}
+			}
+			if = {
+				limit = {
+					is_pop_type = officers
+				}
+				multiply = {
+					value = 1.25
+					desc = "POSITIVISM_BONUS"
+				}
+			}
+			if = {
+				limit = {
+					is_pop_type = soldiers
+				}
+				add = {
+					value = 1.10
+					desc = "POSITIVISM_BONUS"
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner ?= {
+					has_variable = positivist_leaders_large_increase_var
+				}
+			}
+			if = {
+				limit = {
+					is_pop_type = officers
+				}
+				multiply = {
+					value = 1.5
+					desc = "POSITIVISM_BONUS"
+				}
+			}
+			if = {
+				limit = {
+					is_pop_type = soldiers
+				}
+				add = {
+					value = 1.25
+					desc = "POSITIVISM_BONUS"
+				}
+			}
+		}
+
+		multiply = { # Illiterate pops participate at 1/10 the rate of fully literate pops
+			desc = "POP_LITERACY"
+			value = literacy_rate
+			add = 0.10
+		}
+	}
+	
+	revolution = {
+		possible = {
+			political_movement_support >= 0.05
+		}
+		
+		weight = {
+			value = 100
+		}	
+	
+		state_weight = {
+			value = 1		
+		}
+	}
+	
+	secession = {
+		possible = {
+			always = no
+			political_movement_support >= 0.05
+			scope:clout <= 0
+		}
+		
+		weight = {
+			value = 1000
+		}		
+	}	
+}
+
+movement_libertarian = {
+	category = movement_category_ideological
+	
+	ideology = ideology_right_wing_libertarian_leader
+	character_ideologies = {
+		ideology_right_wing_libertarian_leader
+		ideology_classical_liberal_leader
+		ideology_minarchist_leader
+	}
+	
+	creation_trigger = {
+		
+	}	
+	creation_weight = {
+		value = 100
+	}	
+	on_created = {
+		add_movement_enthusiasm_modifier = yes
+	}
+	character_support_trigger = {
+		OR = {
+			has_ideology = ideology:ideology_right_wing_libertarian_leader
+			has_ideology = ideology:ideology_classical_liberal_leader
+			has_ideology = ideology:ideology_minarchist_leader
+			interest_group ?= {
+				has_ideology = ideology:ideology_far_right_economy
+				has_ideology = ideology:ideology_individualist
+				has_ideology = ideology:ideology_globalist
+			}
+		}
+	}
+	character_support_weight = {
+		value = 200
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_right_wing_libertarian_leader
+					has_ideology = ideology:ideology_classical_liberal_leader
+					has_ideology = ideology:ideology_minarchist_leader
+				}
+			}
+			multiply = { value = 5 }
+		}
+	}
+
+	pop_support_trigger = {
+		NOR = {
+			is_pop_type = clergymen
+			is_pop_type = slaves
+		}
+	}
+
+	pop_support_factors = {
+		movement_support_low_urbanization
+		movement_support_high_literacy
+		movement_support_below_expected_sol
+		movement_support_radicalization
+		movement_support_academics
+		movement_support_laborers
+		movement_support_machinists
+		movement_support_peasants
+		movement_support_rural
+		movement_support_soldiers_conscripts
+	}
+	
+	pop_support_weight = {	
+		add = {
+			desc = "URBAN_STATE" # Increases support in rural states, decreases in urban
+			value = 0.5
+			subtract = state.state_urbanization_rate
+			multiply = 10
+		}
+
+		if = {
+			limit = {
+				strata = middle
+			}
+			multiply = {
+				value = 0.10
+				desc = "MIDDLE_NO_ICON"
+			}
+			if = {
+				limit = {
+					is_pop_type = academics
+				}
+				add = {
+					value = 3
+					desc = "POP_ACADEMICS"
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				strata = lower
+			}
+			if = {
+				limit = {
+					is_pop_type = laborers
+				}
+				add = {
+					value = 12
+					desc = "POP_LABORERS"
+				}
+			}		
+			else_if = {
+				limit = {
+					is_pop_type = machinists
+				}
+				add = {
+					value = 9
+					desc = "POP_MACHINISTS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = peasants 
+				}
+				add = {
+					value = 15
+					desc = "POP_PEASANTS"
+				}
+			}
+			else = {
+				add = {
+					value = 6
+					desc = "LOWER_NO_ICON"
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						pop_employment_building_group = bg_agriculture
+						pop_employment_building_group = bg_ranching
+						pop_employment_building_group = bg_plantations
+						pop_employment_building_group = bg_logging
+						pop_employment_building_group = bg_fishing
+						pop_employment_building_group = bg_whaling
+						pop_employment_building_group = bg_manor_houses
+					}
+				}
+				multiply = {
+					value = 1.25
+					desc = "RURAL_POP"
+				}
+			}
+
+			if = {
+				limit = {
+					AND = {
+						is_pop_type = soldiers
+						pop_employment_building = building_conscription_center
+					}
+				}
+				multiply = {
+					value = 1.15
+					desc = "CONSCRIPTS"
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				standard_of_living < state.average_expected_sol
+				strata = lower # Impoverished middle class pops will support fascists instead
+			}
+			add = { # Increases likelihood of support if impoverished
+				desc = "IS_BELOW_EXPECTED_SOL"
+				value = state.average_expected_sol
+				subtract = standard_of_living
+				max = 10
+			}
+		}
+		else_if = {
+			limit = {
+				standard_of_living > state.average_expected_sol
+				strata = lower
+			}
+			add = { # Decreases likelihood of support if well-off
+				desc = "IS_ABOVE_EXPECTED_SOL"
+				value = state.average_expected_sol
+				subtract = standard_of_living
+			}
+		}
+
+		multiply = { # Illiterate pops participate at 1/10 the rate of fully literate pops
+			desc = "POP_LITERACY"
+			value = literacy_rate
+			add = 0.10
+		}
+
+		multiply = { # Multiplied by 2x max
+			desc = "POP_RADICALS"
+			value = pop_radical_fraction
+			add = 1
+		}
+	}
+	
+	revolution = {
+		possible = {
+			political_movement_support >= 0.05
+		}
+		
+		weight = {
+			value = 100
+		}	
+	}
+	
+	secession = {
+		possible = {
+			always = no
+			political_movement_support >= 0.05
+			scope:clout <= 0
+		}
+		
+		weight = {
+			value = 0
+		}		
+	}	
+	
+	additional_radicalism_factors = {
+		owner = {
+			add = { 
+				desc = "IS_BELOW_15_SOL"
+				value = 15
+				subtract = average_sol
+				multiply = 0.05
+				min = 0
+			}
+		}
+	}	
+}
+
+movement_fascist = {
+	category = movement_category_ideological
+	
+	ideology = ideology_fascist_leader
+	character_ideologies = {
+		ideology_fascist_leader
+		ideology_right_wing_populist_leader
+		ideology_authoritarian_capitalist_leader
+		ideology_neocon_leader
+	}
+	
+	can_pressure_interest_group = {
+		law_stance = {
+			law = law_type:law_appointed_legislature
+			value > neutral
+		}
+		NOT = { 
+			law_stance = {
+				law = law_type:law_HOS_communist_leader
+				value > neutral
+			}
+		}
+	}
+	
+	creation_trigger = {
+		
+	}	
+	creation_weight = {
+		value = 100
+	}	
+	on_created = {
+		add_movement_enthusiasm_modifier = yes
+	}
+	character_support_trigger = {
+		OR = {
+			has_ideology = ideology:ideology_fascist_leader
+			has_ideology = ideology:ideology_right_wing_populist_leader
+			has_ideology = ideology:ideology_authoritarian_capitalist_leader
+			has_ideology = ideology:ideology_neocon_leader
+			interest_group ?= {
+				has_ideology = ideology:ideology_totalitarian
+				has_ideology = ideology:ideology_authoritarian
+				has_ideology = ideology:ideology_militarist
+				has_ideology = ideology:ideology_traditionalist
+			}
+		}
+	}
+	character_support_weight = {
+		value = 200
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_fascist_leader
+					has_ideology = ideology:ideology_right_wing_populist_leader
+					has_ideology = ideology:ideology_authoritarian_capitalist_leader
+					has_ideology = ideology:ideology_neocon_leader
+				}
+			}
+			multiply = { value = 5 }
+		}
+	}
+	
+	pop_support_trigger = {
+		NOT = {
+			is_pop_type = slaves
+		}
+	}
+
+	pop_support_factors = {
+		movement_support_high_literacy
+		movement_support_middle_below_expected_sol
+		movement_support_radicalization
+		movement_support_unemployed
+		movement_support_capitalists
+		movement_support_aristocrats
+		movement_support_shopkeepers
+		movement_support_officers
+		movement_support_farmers
+		movement_support_clerks
+movement_support_professionals
+		movement_support_soldiers
+		movement_support_number_of_claims
+	}
+	
+	pop_support_weight = {	
+		add = {
+			value = 3
+			desc = "POP_BASE_SUPPORT"
+		}
+
+		if = {
+			limit = {
+				strata = upper
+			}
+			if = {
+				limit = {
+					is_pop_type = capitalists
+				}
+				add = {
+					value = 9
+					desc = "POP_CAPITALISTS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = aristocrats
+				}
+				add = {
+					value = 3
+					desc = "POP_ARISTOCRATS" # Fascism is too populist
+				}
+			}
+			else = {
+				add = {
+					value = 6
+					desc = "UPPER_NO_ICON"
+				}
+			}
+
+			if = {
+				limit = {
+					owner ?= {
+						any_political_movement = {
+							OR = {
+								is_political_movement_type = movement_socialist
+								is_political_movement_type = movement_libertarian
+								is_political_movement_type = movement_communist
+							}
+							political_movement_support >= 0.15 # (chuckles) im in danger
+						}
+					}
+				}
+				multiply = {
+					value = 1.5
+					desc = "STRONG_SOCIALIST_MOVEMENT"
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				strata = middle
+			}
+			if = {
+				limit = {
+					is_pop_type = shopkeepers
+				}
+				add = {
+					value = 15
+					desc = "POP_SHOPKEEPERS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = officers
+				}
+				add = {
+					value = 12
+					desc = "POP_OFFICERS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = farmers
+				}
+				add = {
+					value = 12
+					desc = "POP_FARMERS"
+				}
+			}
+			else = {
+				add = {
+					value = 9
+					desc = "MIDDLE_NO_ICON"
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				strata = lower
+			}
+			if = {
+				limit = {
+					is_pop_type = clerks
+				}
+				add = {
+					value = 9
+					desc = "POP_CLERKS"
+				}
+			}
+			if = {
+				limit = {
+					is_pop_type = professionals
+				}
+				add = {
+					value = 9
+					desc = "POP_PROFESSIONALS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = soldiers
+				}
+				add = {
+					value = 6
+					desc = "POP_SOLDIERS"
+				}
+			}
+			else = {
+				add = {
+					value = 3
+					desc = "LOWER_NO_ICON"
+				}
+			}
+		}
+		
+		owner = {
+			if = {
+				limit = {
+					number_of_claims > 0
+				}
+
+				add = {
+					value = 5 # Add a base value for having claims at all
+					add = number_of_claims
+					multiply = 5
+					max = 50
+					desc = "NUMBER_OF_CLAIMS"
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				standard_of_living < state.average_expected_sol
+				strata = middle
+			}
+			add = { # Increases likelihood of support if impoverished
+				desc = "IS_BELOW_EXPECTED_SOL"
+				value = state.average_expected_sol
+				subtract = standard_of_living
+				max = 10
+			}
+		}
+		else_if = {
+			limit = {
+				standard_of_living > state.average_expected_sol
+				strata = middle
+			}
+			add = { # Decreases likelihood of support if well-off
+				desc = "IS_ABOVE_EXPECTED_SOL"
+				value = state.average_expected_sol
+				subtract = standard_of_living
+				min = -5
+			}
+		}
+
+		if = {
+			limit = {
+				is_employed = no
+			}
+			multiply = { 
+				value = 1.5
+				desc = "UNEMPLOYED"
+			}
+		}
+
+		multiply = { # Illiterate pops participate at 1/10 the rate of fully literate pops
+			desc = "POP_LITERACY"
+			value = literacy_rate
+			add = 0.10
+		}
+
+		multiply = {
+			value = 0.012
+			multiply = pop_acceptance
+			desc = "ACCEPTANCE"
+		}
+	}
+	
+	revolution = {
+		possible = {
+			political_movement_support >= 0.05
+		}
+		
+		weight = {
+			value = 100
+		}	
+	
+		state_weight = {
+			value = 1		
+		}
+	}
+	
+	secession = {
+		possible = {
+			always = no
+			political_movement_support >= 0.05
+			scope:clout <= 0
+		}
+		
+		weight = {
+			value = 0
+		}		
+	}	
+	
+	additional_radicalism_factors = {
+		owner = {
+			if = {
+				limit = {
+					owner.number_of_claims > 0
+				}
+				
+				add = {
+					value = 5 # Add a base value for having claims at all
+					add = owner.number_of_claims
+					multiply = 0.025
+					max = 0.3
+					desc = "NUMBER_OF_CLAIMS"
+				}				
+			}
+		}
+	}	
+}
+
+movement_jihadist = {
+	category = movement_category_ideological
+	
+	ideology = ideology_jihadist_leader
+	character_ideologies = {
+		ideology_jihadist_leader
+		ideology_theocrat_leader
+	}
+	
+	can_pressure_interest_group = {
+		law_stance = {
+			law = law_type:law_appointed_legislature
+			value > neutral
+		}
+		NOT = { 
+			law_stance = {
+				law = law_type:law_HOS_communist_leader
+				value > neutral
+			}
+		}
+	}
+	
+	creation_trigger = {
+		
+	}	
+	creation_weight = {
+		value = 100
+	}	
+	on_created = {
+		add_movement_enthusiasm_modifier = yes
+	}
+	character_support_trigger = {
+		OR = {
+			has_ideology = ideology:ideology_jihadist_leader
+			has_ideology = ideology:ideology_theocrat_leader
+			interest_group ?= {
+				has_ideology = ideology:ideology_theocrat
+				has_ideology = ideology:ideology_totalitarian
+				has_ideology = ideology:ideology_traditionalist
+			}
+		}
+	}
+	character_support_weight = {
+		value = 200
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_jihadist_leader
+					has_ideology = ideology:ideology_theocrat_leader
+				}
+			}
+			multiply = { value = 5 }
+		}
+	}
+	
+	pop_support_trigger = {
+		NOT = {
+			is_pop_type = slaves
+		}
+	}
+
+	pop_support_factors = {
+		movement_support_high_literacy
+		movement_support_middle_below_expected_sol
+		movement_support_radicalization
+		movement_support_unemployed
+		movement_support_capitalists
+		movement_support_aristocrats
+		movement_support_shopkeepers
+		movement_support_officers
+		movement_support_farmers
+		movement_support_clerks
+movement_support_professionals
+		movement_support_soldiers
+		movement_support_number_of_claims
+	}
+	
+	pop_support_weight = {	
+		add = {
+			value = 3
+			desc = "POP_BASE_SUPPORT"
+		}
+
+		if = {
+			limit = {
+				strata = upper
+			}
+			if = {
+				limit = {
+					is_pop_type = capitalists
+				}
+				add = {
+					value = 9
+					desc = "POP_CAPITALISTS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = aristocrats
+				}
+				add = {
+					value = 3
+					desc = "POP_ARISTOCRATS" # Fascism is too populist
+				}
+			}
+			else = {
+				add = {
+					value = 6
+					desc = "UPPER_NO_ICON"
+				}
+			}
+
+			if = {
+				limit = {
+					owner ?= {
+						any_political_movement = {
+							OR = {
+								is_political_movement_type = movement_socialist
+								is_political_movement_type = movement_libertarian
+								is_political_movement_type = movement_communist
+							}
+							political_movement_support >= 0.15 # (chuckles) im in danger
+						}
+					}
+				}
+				multiply = {
+					value = 1.5
+					desc = "STRONG_SOCIALIST_MOVEMENT"
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				strata = middle
+			}
+			if = {
+				limit = {
+					is_pop_type = shopkeepers
+				}
+				add = {
+					value = 15
+					desc = "POP_SHOPKEEPERS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = officers
+				}
+				add = {
+					value = 12
+					desc = "POP_OFFICERS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = farmers
+				}
+				add = {
+					value = 12
+					desc = "POP_FARMERS"
+				}
+			}
+			else = {
+				add = {
+					value = 9
+					desc = "MIDDLE_NO_ICON"
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				strata = lower
+			}
+			if = {
+				limit = {
+					is_pop_type = clerks
+				}
+				add = {
+					value = 9
+					desc = "POP_CLERKS"
+				}
+			}
+			if = {
+				limit = {
+					is_pop_type = professionals
+				}
+				add = {
+					value = 9
+					desc = "POP_PROFESSIONALS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = soldiers
+				}
+				add = {
+					value = 6
+					desc = "POP_SOLDIERS"
+				}
+			}
+			else = {
+				add = {
+					value = 3
+					desc = "LOWER_NO_ICON"
+				}
+			}
+		}
+		
+		owner = {
+			if = {
+				limit = {
+					number_of_claims > 0
+				}
+
+				add = {
+					value = 5 # Add a base value for having claims at all
+					add = number_of_claims
+					multiply = 5
+					max = 50
+					desc = "NUMBER_OF_CLAIMS"
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				standard_of_living < state.average_expected_sol
+				strata = middle
+			}
+			add = { # Increases likelihood of support if impoverished
+				desc = "IS_BELOW_EXPECTED_SOL"
+				value = state.average_expected_sol
+				subtract = standard_of_living
+				max = 10
+			}
+		}
+		else_if = {
+			limit = {
+				standard_of_living > state.average_expected_sol
+				strata = middle
+			}
+			add = { # Decreases likelihood of support if well-off
+				desc = "IS_ABOVE_EXPECTED_SOL"
+				value = state.average_expected_sol
+				subtract = standard_of_living
+				min = -5
+			}
+		}
+
+		if = {
+			limit = {
+				is_employed = no
+			}
+			multiply = { 
+				value = 1.5
+				desc = "UNEMPLOYED"
+			}
+		}
+
+		multiply = { # Illiterate pops participate at 1/10 the rate of fully literate pops
+			desc = "POP_LITERACY"
+			value = literacy_rate
+			add = 0.10
+		}
+
+		multiply = {
+			value = 0.012
+			multiply = pop_acceptance
+			desc = "ACCEPTANCE"
+		}
+	}
+	
+	revolution = {
+		possible = {
+			political_movement_support >= 0.05
+		}
+		
+		weight = {
+			value = 100
+		}	
+	
+		state_weight = {
+			value = 1		
+		}
+	}
+	
+	secession = {
+		possible = {
+			always = no
+			political_movement_support >= 0.05
+			scope:clout <= 0
+		}
+		
+		weight = {
+			value = 0
+		}		
+	}	
+	
+	additional_radicalism_factors = {
+		owner = {
+			if = {
+				limit = {
+					owner.number_of_claims > 0
+				}
+				
+				add = {
+					value = 5 # Add a base value for having claims at all
+					add = owner.number_of_claims
+					multiply = 0.025
+					max = 0.3
+					desc = "NUMBER_OF_CLAIMS"
+				}				
+			}
+		}
+	}	
+}

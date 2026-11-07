@@ -1,0 +1,1067 @@
+﻿l_spanish:
+ # United Nations
+ je_united_nations: "Naciones Unidas"
+ je_united_nations_reason: "id=0/id=0/egimos id=1/conferenciaLas Naciones Unidas sirven como un organismo internacional para la diplomacia, el mantenimiento de la paz y los esfuerzos humanitarios.Seax id=2/sentidox id=3/ &gt; Miembros del Consejo de Seguridad Permanentes: identificadox id=4/año- id=5/id seguiste id=6/no- id=13 Las Naciones Unidas son un órgano internacional de diplomacia, mantenimiento de la paz y actividades humanitarias. Las decisiones de la ONU, en particular el Consejo de Seguridad, pueden influir directamente en los acontecimientos futuros en su país."
+
+ # ── PROPOSE BUTTON ────────────────────────
+ 
+ un_propose_motion_button: "Proponer una resolución"
+ un_propose_motion_button_desc: "Proponer una resolución de la ONU para que todos los Estados miembros voten. Si la resolución pasa, todos los países recibirán sus efectos durante cinco años. Sólo se puede proponer una vez al año."
+ un_no_motion_active_tt: "Actualmente no se está debatiendo ninguna resolución"
+ 
+ # ── VOTE BUTTONS ─────────────────────────
+ 
+ un_vote_yay_button: "Votar en Favor"
+ un_vote_yay_button_desc: "Dictar voto de id=0/ título a favor de la resolución actual. Los miembros del Consejo de Seguridad Permanente emitieron votos de doble peso."
+ 
+ un_vote_nay_button: "Voto en contra"
+ un_vote_nay_button_desc: "Dictar id=0/(s) voto contra la resolución actual. Los miembros del Consejo de Seguridad Permanente emitieron votos de doble peso."
+ 
+ # ── MOTION EVENTS ────────────────────────
+ 
+ un_events.100.t: "Naciones Unidas - Proponer una resolución"
+ un_events.100.d: "Como miembro de las Naciones Unidas, ierex id=0/año podrá proponer una resolución para que la Asamblea General vote. Seleccione la resolución para someterse a debate. Todos los Estados Miembros serán notificados y podrán votar utilizando los botones de la entrada de la revista de las Naciones Unidas."
+ un_events.100.a: "Resolución sobre Protección Ambiental"
+ un_events.100.b: "Resolución sobre la Paz Mundial"
+ un_events.100.c: "Resolución sobre el Desarrollo Económico"
+ un_events.100.e: "Resolución sobre la tecnología de la UNESCO"
+ 
+ un_events.101.t: "Naciones Unidas — Resolución bajo debate"
+ un_events.101.d: "Se ha propuesto una resolución en la Asamblea General de las Naciones Unidas. id=0/año puede votar utilizando los botones Yay o Nay en la entrada de la revista de las Naciones Unidas. Los miembros del Consejo de Seguridad Permanente emitieron votos de doble peso. El resultado será anunciado en 120 días."
+ un_events.101.a: "Entendido, deliberaremos"
+ 
+ # ── NOTIFICATIONS ─────────────────────────
+ 
+ un_motion_passed: "Resolución aprobada por la ONU"
+ un_motion_passed_desc: "Ha aprobado una resolución de las Naciones Unidas. id=0/año recibirá sus efectos durante los próximos cinco años."
+ 
+ un_motion_failed: "Resolución de la ONU fallecida"
+ un_motion_failed_desc: "No se ha aprobado una resolución de las Naciones Unidas. La propuesta no recibió suficiente apoyo."
+ 
+ # ── PROGRESS BAR ─────────────────────────
+ 
+ un_je_no_motion_tt: "Actualmente no se debate ninguna resolución. Usar el id=0/ Proponer un botón de Resolución seleccionadax id=1/año para hacer una moción a la Asamblea General."
+ 
+ un_je_voting_environment_tt: "id=0/Consejo Resolución sobre Protección Ambiental - voto en progreso. Los Estados Miembros están emitiendo sus votos. Utilice los botones Yay o Nay a continuación para votar. El resultado se anunciará cuando se cierre el período de votación."
+ 
+ un_je_voting_peace_tt: "id=0/Consejo Resolución sobre la Paz Mundial - voto en progreso. Los Estados Miembros están emitiendo sus votos. Utilice los botones Yay o Nay a continuación para votar. El resultado se anunciará cuando se cierre el período de votación."
+ 
+ un_je_voting_economy_tt: "id=0/Consejo Resolución sobre Desarrollo Económico - voto en progreso. Los Estados Miembros están emitiendo sus votos. Utilice los botones Yay o Nay a continuación para votar. El resultado se anunciará cuando se cierre el período de votación."
+ 
+ un_je_voting_technology_tt: "id=0/Consejo Resolución sobre Tecnología de la UNESCO - voto en progreso. Los Estados Miembros están emitiendo sus votos. Utilice los botones Yay o Nay a continuación para votar. El resultado se anunciará cuando se cierre el período de votación."
+ 
+ un_motion_progress_bar: "Resolución Apoyo"
+ un_motion_progress_bar_desc: "Compartir de Votos favorables: idx id=0/ título id=1/ fieltrox id=2/ título Votos en Favor: (asignx id=3/año)"
+ un_motion_progress_bar_second_desc: ""
+ un_motion_progress_from_yes_votes: ""
+ 
+ # ── RESOLUTION MODIFIERS ─────────────────
+ 
+ un_resolution_environment: "UN Resolution — Environmental Protection"
+ un_resolution_environment_desc: "Las Naciones Unidas han aprobado una resolución sobre protección ambiental. id=0/año se ha comprometido a reducir la generación de contaminación y mejorar las normas ambientales para los próximos cinco años."
+ 
+ un_resolution_peace: "UN Resolution — World Peace"
+ un_resolution_peace_desc: "Las Naciones Unidas han aprobado una resolución sobre la paz mundial. id=0/ título se beneficia de la reducción de la generación de infamia y mejora de la posición diplomática durante los próximos cinco años."
+ 
+ un_resolution_economy: "UN Resolution — Economic Development"
+ un_resolution_economy_desc: "Las Naciones Unidas han aprobado una resolución sobre el desarrollo económico. id=0/¢ recibe bonos de construcción e inversión que reflejan la cooperación económica internacional durante los próximos cinco años."
+ 
+ un_resolution_technology: "Resolución de la ONU - Tecnología de la UNESCO"
+ un_resolution_technology_desc: "Las Naciones Unidas han aprobado una resolución sobre tecnología y educación. id=0/ título se beneficia de mejorar el acceso a la educación y las calificaciones pop para los próximos cinco años."
+ 
+ sb_request_peacekeepers: "Solicitud de personal de mantenimiento de la paz de la ONU"
+ sb_request_peacekeepers_desc: "Exhortar a las Naciones Unidas a desplegar fuerzas de mantenimiento de la paz para ayudar en la solución de conflictos."
+
+ un_events.1.t: "Solicitud de personal de mantenimiento de la paz de la ONU"
+ un_events.1.d: "Podemos pedir a las Naciones Unidas que envíen personal de mantenimiento de la paz para ayudar a poner fin a nuestro conflicto."
+ un_events.1.a: "Presentar la solicitud."
+ un_events.1.b: "No involucres a la ONU."
+
+ un_events.2.t: "Consejo de Seguridad de las Naciones Unidas"
+ un_events.2.d: "El Consejo de Seguridad debe votar por el envío de personal de mantenimiento de la paz a id=0/"
+ un_events.2.a: "Yay."
+ un_events.2.b: "Abstain"
+ un_events.2.c: "Nay"
+ un_events.2.e: "Solicitud de mantenimiento de la paz"
+
+ un_events.3.t: "Pacifickeepers Approved"
+ un_events.3.d: "El Consejo de Seguridad de la ONU ha votado a favor de enviar personal de mantenimiento de la paz."
+ un_events.3.a: "¡Entra!"
+
+ un_events.4.t: "Peacekeepers Rejected"
+ un_events.4.d: "El Consejo de Seguridad de la ONU ha votado en contra de enviarnos personal de mantenimiento de la paz."
+ un_events.4.a: "Estamos solos."
+
+ un_events.10.t: "Miembro del Consejo de Seguridad electo"
+ un_events.10.d: "La Asamblea General de las Naciones Unidas ha elegido un nuevo miembro rotatorio del Consejo de Seguridad: <x id=0/año."
+ un_events.10.a: "Anotado."
+ 
+ unsc_member: "UNSC Member"
+ permanent_unsc_member: "Permanent UNSC Member"
+ un_peacekeepers_vetoed: "Peacekeepers Rejected"
+ un_peacekeepers_deployed: "Naciones Unidas para el Mantenimiento de la Paz"
+ un_already_voting_on_peacekeeping: "Esperen hasta que la ONU termine de votar sobre la actual misión de mantenimiento de la paz."
+ 
+ un_events.5.t: "¿Participa en la Misión de Mantenimiento de la Paz de id=0/año?"
+ un_events.5.d: "El Consejo de Seguridad de las Naciones Unidas ha votado a favor de enviar una misión de mantenimiento de la paz a id=0/año. Los miembros de la asamblea general se han reunido para discutir qué países están dispuestos a enviar a sus hombres a la fray en interés de la paz mundial."
+ un_events.5.a: "Enviaremos id=0/"
+ un_events.5.b: "No participar"
+ 
+ you_vote_yes: "Votos en la FAVOR"
+ you_abstain: "Usted ABSTAIN su voto"
+ you_vote_no: "Votos de nuevo"
+ you_veto: "VETO el proceso."
+ 
+ # ==========================================
+# LOCALIZATION
+# ==========================================
+ 
+ # ── TREATY ARTICLES ──────────────────────
+ 
+ defense_attache: "Send Defense Attaché"
+ defense_attache_desc: "Incrustar asesores militares y oficiales de enlace con las fuerzas armadas del país objetivo. El objetivo gana experiencia y reduce los costos militares; la fuente gana influencia y posición diplomática. El país fuente debe mantener una proyección de potencia más grande que el objetivo."
+ 
+ cultural_exchange: "Cultural Exchange"
+ cultural_exchange_desc: "Establecer un programa formal de intercambio cultural: exposiciones compartidas, programas académicos y contactos entre personas. Ambos países ganan prestigio, influencia y se vuelven más atractivos para los migrantes."
+ 
+ research_partnership: "Research Partnership"
+ research_partnership_desc: "Un acuerdo formal para compartir programas de investigación e instituciones académicas. Ambos países se benefician de una mayor velocidad de investigación y una mayor difusión tecnológica. Requiere que ambas partes sean al menos poderes reconocidos."
+ 
+ human_development_collaboration: "Human Development Collaboration"
+ human_development_collaboration_desc: "Los programas de desarrollo de fondos más ricos del país en el objetivo: salud, educación, bienestar. La fuente paga costos continuos a cambio de influencia y prestigio. El acuerdo rompe si la economía del país fuente cae por debajo del objetivo."
+ 
+ research_partnership_rank_tt: "Ambos países deben tener al menos facultades reconocidas para establecer una asociación de investigación"
+ 
+ # ── DIPLOMATIC ACTIONS ───────────────────
+ 
+ financial_sanctions: "Sanciones financieras"
+ financial_sanctions_desc: "Cortar la relación financiera de id=0/año con el objetivo: bloquear el acceso a los mercados de crédito y restringir el comercio de valores. Los sectores bancarios y financieros del objetivo sufrirán significativamente."
+ 
+ condemn: "Condena"
+ condemn_desc: "Emitir una condena pública formal de las acciones del país objetivo. El objetivo sufre un éxito duradero al prestigio, la legitimidad y la reputación diplomática. Requiere que el objetivo tenga una infamia significativa."
+ condemn_action_notification_name: "¡Nos ha condenado!"
+ condemn_pact_desc: "id=0/(es) ha condenado id=1/año!"
+ condemn_action_notification_desc: "Hemos sido condenados por id=0/año!"
+ condemn_break_name:0 "Retract Condemnation"
+ condemn_pact_desc:0 "Condena las acciones de este país."
+ 
+ propose_un_sanctions: "Proponer las sanciones de la ONU"
+ propose_un_sanctions_desc: "Como miembro permanente del Consejo de Seguridad, podemos proponer que las Naciones Unidas sancionen oficialmente el objetivo. Si el voto pasa, el objetivo se enfrenta a severas sanciones económicas durante cinco años."
+ propose_un_sanctions_action_notification_name: "¡Ha propuesto sanciones contra nosotros!"
+ propose_un_sanctions_pact_desc: "id=0/año se ha movido por sanciones internacionales contra id=1/Consejo!"
+ propose_un_sanctions_action_notification_desc:1 "¡Se ha movido en las Naciones Unidas a proponer sanciones internacionales contra nosotros!"
+ 
+ propose_un_condemnation: "Proponer la Condena de las Naciones Unidas"
+ propose_un_condemnation_desc: "Proponer que las Naciones Unidas condenen formalmente el objetivo. Si el voto pasa, el objetivo sufre un prestigio duradero y daños de legitimidad. Menos severa que las sanciones."
+ propose_un_condemnation__action_notification_name:0 "¡Nos ha propuesto un beneficio de Condenación de la ONU!"
+ propose_un_condemnation_pact_desc:0 "id=0/año se ha movido para condenar internacionalmente contra idx id=1/Consejo!"
+ propose_un_condemnation_action_notification_desc:0 "¡Se ha movido en las Naciones Unidas a proponer una condena internacional contra nosotros!"
+ 
+ condemn_requires_infamy_tt: "El objetivo debe tener una infamia notable"
+ propose_un_sanctions_perm_member_tt: "Sólo los miembros permanentes del Consejo de Seguridad pueden proponer sanciones o condenas de las Naciones Unidas"
+ 
+ # ── UN EVENTS ────────────────────────────
+ 
+ un_events.102.t: "Naciones Unidas — Voto de sanciones"
+ un_events.102.d: "Un miembro permanente del Consejo de Seguridad ha propuesto una resolución contra un Estado miembro. id=0/año puede votar utilizando los botones Yay o Nay en la entrada de la revista de las Naciones Unidas. El resultado será anunciado en 120 días."
+ un_events.102.a: "Vamos a deliberar cuidadosamente"
+ 
+ # ── NOTIFICATIONS ─────────────────────────
+ 
+ un_sanctions_passed: "UN Sanctions Imposed"
+ un_sanctions_passed_desc: "Las Naciones Unidas han votado para imponer sanciones contra id=0/año. Las severas sanciones económicas seguirán vigentes durante cinco años."
+ 
+ un_condemnation_passed: "UN Condemnation Issued"
+ un_condemnation_passed_desc: "Las Naciones Unidas han condenado formalmente la posición internacional de id=0/año."
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ financial_sanctions_target: "Con arreglo a las sanciones financieras"
+ financial_sanctions_target_desc: "Una potencia extranjera ha impuesto sanciones financieras a id=0/año, bloqueando el acceso al crédito internacional y restringiendo el sector financiero."
+ 
+ condemned_modifier: "Condenado internacional"
+ condemned_modifier_desc: "Una potencia extranjera ha condenado formalmente id=0/año. El prestigio y la legitimidad se reducen durante la condena."
+ 
+ un_sanctions_target: "Sanciones de la ONU"
+ un_sanctions_target_desc: "Las Naciones Unidas han votado para imponer sanciones a id=0/año. El sistema financiero internacional está efectivamente cerrado. Durante cinco años siguen vigentes severas sanciones económicas."
+ 
+ un_condemnation_target: "Condena de la ONU"
+ un_condemnation_target_desc: "Las Naciones Unidas han condenado formalmente id=0/año. Prestige, legitimidad y reputación diplomática han sufrido. La condena permanece registrada durante cinco años."
+ 
+ un_je_voting_sanctions_tt: "id=0/ título UN Sanctions Voto: voto en progreso. Un miembro permanente del Consejo de Seguridad ha propuesto sanciones contra id=2/año. Utilice los botones Yay o Nay a continuación para votar. Si la moción pasa, el objetivo enfrentará severas sanciones económicas durante cinco años."
+ 
+ un_je_voting_condemnation_tt: "id=0/ título UN Condemnation Voto - voto en progreso. Un miembro permanente del Consejo de Seguridad ha propuesto una condena formal de id=2/año. Utilice los botones Yay o Nay a continuación para votar. Si la moción pasa, el objetivo sufrirá daños duraderos a su prestigio y legitimidad."
+ 
+ un_je_under_sanctions_tt: "id=0/ título id=1/ título id=2/ título se encuentra actualmente bajo sanciones de las Naciones Unidas. La comunidad internacional ha votado para imponer sanciones económicas a id=4/año. El rendimiento bancario, la inversión y la construcción están severamente reducidos. Las sanciones seguirán vigentes hasta que expiren."
+ 
+ un_je_under_condemnation_tt: "Las Naciones Unidas han condenado formalmente el texto id=3/año La comunidad internacional ha votado para condenar la conducta de id=4/año. Se reduce el prestigio, la legitimidad y la reputación diplomática. La condena permanece registrada hasta que expira."
+ 
+ condemn_action_propose_name:0 "Condena"
+ condemn_action_break_name:0 "Condena retirada"
+ un_not_sanctioned:0 "No está ya bajo sanciones de la ONU."
+ un_not_condemned:0 "No está ya bajo la condena de la ONU."
+ # Propose Motion
+ un_propose_motion_button: "Proponer la resolución de la ONU"
+ un_propose_motion_button_desc: "Resolutions have been disabled currently." # Propose a motion to the United Nations for a vote. Only one motion may be active at a time.
+
+ # Progress On Motion
+ un_motion_progress_bar: "UN Resolution Support"
+ un_motion_progress_bar_desc: "Seguimiento del nivel de apoyo para la actual moción de las Naciones Unidas"
+ un_motion_progress_bar_second_desc: "Los valores más altos indican un apoyo más fuerte."
+
+ un_motion_progress_from_yes_votes: "Sí votos"
+
+ un_events.100.t: "Proponer una moción de las Naciones Unidas"
+ un_events.100.d: "Seleccione la resolución que desea presentar ante el Consejo de Seguridad."
+
+ un_events.100.a: "Propose Resolution on Environmental Protection"
+ un_events.100.b: "Propose Resolution on World Peace"
+ un_events.100.c: "Propose Resolution on Economic Development"
+ un_events.100.e: "Propose Resolution on UNESCO Technology"
+
+ un_events.101.t: "Consejo de Seguridad de las Naciones Unidas"
+ un_events.101.d: "El Consejo de Seguridad de las Naciones Unidas está votando al respecto. Cada miembro votará. Los miembros permanentes pueden vetar una moción con NO voto."
+
+ un_events.101.a: "Votar SÍ"
+ un_events.101.b: "Voto NO"
+
+ un_events.202_veto.t: "UN Resolution Vetoed"
+ un_events.202_veto.d: "La moción 'directx id=0/año' fue vetada por <x id=1/conferencia."
+
+ un_events.203_pass.t: "Resolución aprobada por la ONU"
+ un_events.203_pass.d: "La moción 'directx id=0/año' ha aprobado el voto del Consejo de Seguridad."
+
+ un_events.204_fail.t: "Resolución de la ONU rechazada"
+ un_events.204_fail.d: "La moción 'directx id=0/año' no logró una mayoría en el voto del Consejo de Seguridad."
+ 
+ # Resolution Notification
+ 
+ un_passed: "Resolución aprobada"
+ un_passed_desc: "La moción 'directx id=0/año' ha aprobado el voto del Consejo de Seguridad de las Naciones Unidas"
+ 
+ un_fail: "Resolución fallada"
+ un_fail_desc: "La moción 'directx id=0/año' no logró una mayoría en el voto del Consejo de Seguridad."
+
+ un_vetoed: "Resolución Vetoed"
+ un_vetoed_desc: "La moción 'directx id=0/año' fue vetada por <x id=1/conferencia."
+ 
+ # European Union
+ 
+ je_european_union: "Unión Europea"
+ je_european_union_reason: "La Unión Europea es uno de los proyectos políticos y económicos más ambiciosos de la era moderna. Construido sobre los principios de integración económica, gobernanza compartida y seguridad colectiva, la UE proporciona a sus miembros un mercado común, una política comercial coordinada y un asiento en la mesa para configurar el futuro del continente. La membresía trae la promesa de libre movimiento de bienes, servicios, capital y personas, una oportunidad sin precedentes para la prosperidad. Sin embargo, la Unión no está sin sus desafíos. Los miembros deben navegar por negociaciones complejas, acatar normas supranacionales y comprometer elementos de soberanía nacional. La integración más profunda crece, mientras más el destino de cada miembro está ligado a la del colectivo. Si un país prospera o lucha dentro de la UE depende de su capacidad para equilibrar los intereses nacionales con el bien común, forjando un camino dentro de un sindicato que pretende ser más que la suma de sus partes."
+
+ eu_events.1.t: "Invitación a la Unión Europea"
+ eu_events.1.d: "La Unión Europea ha invitado a nuestro país a unirse como miembro de pleno derecho."
+ eu_events.1.a: "Aceptamos la oferta"
+ eu_events.1.b: "Debemos declinarnos."
+
+ eu_events.2.t: "Debate sobre la composición de la UE"
+ eu_events.2.d: "Las facciones políticas están pidiendo una decisión sobre si permanecer dentro de la UE."
+ eu_events.2.a: "Deja la Unión"
+ eu_events.2.b: "Permanecer en la Unión"
+
+ modifier_eu_member_state: "Estado Miembro de la UE"
+ eu_membership_accept_tt: "Serás miembro de la Unión Europea, ganando beneficios económicos y diplomáticos."
+ eu_member_state: "Estado Miembro de la UE"
+ is_eu_member_state: "Estado Miembro de la UE"
+ 
+ eu_call_summit_button: "Convocar una Cumbre de la UE"
+ eu_call_summit_button_desc: "Invocar a los Estados miembros para discutir el comercio, las sanciones y la cooperación."
+
+ eu_events.3.t: "European Union Summit"
+ eu_events.3.d: "Representantes de todos los Estados miembros de la UE se reúnen para discutir objetivos y desafíos comunes."
+ eu_events.3.a: "Deepen Trade Ties"
+ eu_events.3.b: "Coordinar las sanciones"
+ eu_events.3.c: "Promover el intercambio cultural"
+
+ eu_sanctions_ready: "Preparados para Sanciones"
+ 
+ leave_eu: "Exit the European Union"
+ leave_eu_desc: "Retirada de la Unión Europea, renunciando a sus beneficios económicos e integración política."
+ 
+ eu_member_state_is: "Estado Miembro de la UE"
+ eu_member_state_is_no_longer: "Ya no es un Estado miembro de la UE"
+ eu_deeper_trade_ties: "EU Deeper Trade Ties"
+ eu_deeper_trade_ties_desc: "La integración económica ampliada dentro de la Unión Europea ha aumentado los volúmenes comerciales y ha mejorado el acceso a los mercados entre los Estados miembros."
+
+ eu_cultural_exchange: "European Cultural Exchange"
+ eu_cultural_exchange_desc: "La pertenencia a la Unión Europea ha fomentado la comprensión cultural, la migración y la difusión de nuevas ideas y tecnologías."
+ je_eu_membership_request: "Solicitud de afiliación a la UE"
+ je_eu_membership_request_reason: "Su gobierno ha presentado una solicitud formal para unirse a la Unión Europea. Este proceso implica largas negociaciones, reformas políticas y alineamiento con las leyes y normas de la UE. A lo largo de los próximos años, su país será evaluado sobre su estabilidad económica, gobernanza, derechos humanos y adhesión a los principios democráticos. Acceso al mercado único de la UE: Movimiento libre de bienes, servicios, capital y personas con otros estados miembros: Sin embargo, el proceso es políticamente sensible y puede encontrar resistencia tanto a nivel nacional como a los miembros de la UE existentes."
+ eu_membership_process: "Comienza el proceso de afiliación a la UE"
+ request_to_join_eu_decision: "Solicitud de adhesión a la UE"
+ request_to_join_eu_decision_desc: "Aplicar formalmente para unirse a la Unión Europea."
+ 
+ eu_events.0.t: "Ascensión a la Unión Europea"
+ eu_events.0.d: "Hemos sido oficialmente aceptados en la Unión Europea"
+ 
+ # NATO
+ 
+ allow_leave_nato: "Permite dejar nato dentro de los próximos meses"
+ left_nato: "Saliendo de la OTAN"
+ leave_nato: "Deja la OTAN"
+ leave_nato_desc: "Rescindir nuestra pertenencia a la OTAN, permitiendo que los militares actúen como una fuerza independiente, libre de influencia americana."
+
+ # imf
+
+ je_imf_loan: "FMI Préstamo"
+ je_imf_loan_reason: "Se ha extendido un préstamo del Fondo Monetario Internacional a id=0/año. A cambio de la financiación de emergencia, el país ha aceptado condiciones importantes: tipos de interés elevados, libre comercio obligatorio y obligaciones a los grandes poderes que subscriben el fondo."
+
+ imf_je_obligations_active_tt: "Las grandes obligaciones de poder siguen vigentes. Los acreedores extranjeros mantienen influencia sobre las decisiones clave de política económica."
+ imf_je_obligations_met_tt: "Se han cumplido grandes obligaciones de poder. El país mantiene plena soberanía económica, aunque las condiciones de los préstamos siguen vigentes."
+
+ decision_leave_imf: "Dejar el FMI"
+ decision_leave_imf_desc: "Retirada del Fondo Monetario Internacional. El país ya no será elegible para el apoyo de préstamos del FMI si se acerca a la quiebra, pero estará libre de obligaciones crediticias e interferencias. Esta decisión no puede ser revertida. Nota: Usted no puede salir mientras tiene un préstamo activo del FMI."
+ imf_cannot_leave_while_indebted_tt: "No puede dejar el FMI mientras se encuentra un préstamo activo"
+
+
+ imf_button_pay_obligations_name: "Obligaciones por pagar"
+ imf_button_pay_obligations_desc: "Pagar temprano las grandes obligaciones de poder restantes. Coste 500 oro y requiere deuda inferior al 50%, pero de inmediato restaura la plena soberanía económica y mejora las relaciones con todos los grandes poderes."
+ imf_pay_obligations_cost_tt: "Requiere deuda escalada inferior al 50% y 500 oro"
+ imf_obligations_paid_tt: "Obligaciones pagadas temprano. Mejoraron las relaciones de poder."
+
+ # imf_events.1 — Loan offer
+ imf_events.1.t: "FMI Intervención"
+ imf_events.1.d: "El tesorería de id=0/año está en crisis. La deuda ha alcanzado un nivel que hace que los mercados nerviosos y los acreedores cautelosos. El Fondo Monetario Internacional ha tomado nota y ha enviado una delegación para ofrecer financiación de emergencia. Los términos no son generosos. Los tipos de interés se establecerán en niveles de castigo. El país tendrá que adoptar el libre comercio, independientemente de su política económica actual. Y los grandes poderes que subescriben el fondo esperarán que se cumplan ciertas obligaciones. Pero la alternativa —acercándose a la bancarrota sin una red de seguridad— puede ser peor."
+ imf_events.1.f: "La soberanía y la solvencia rara vez están disponibles al mismo tiempo."
+ imf_events.1.a: "Aceptar el préstamo — necesitamos la financiación"
+ imf_events.1.b: "Rechazar - gestionaremos nuestros propios asuntos"
+
+ # imf_events.2 — Great power notification
+ imf_events.2.t: "Préstamo del FMI extendido"
+ imf_events.2.d: "id=0/año ha aceptado un paquete de préstamos del FMI. Como uno de los grandes poderes que subscriben el fondo, id=1/ título ahora tiene obligaciones de la nación deudora. El acuerdo tiene implicaciones estratégicas y financieras."
+ imf_events.2.f: "La deuda es una forma de diplomacia."
+ imf_events.2.a: "Bien, esto nos da ventaja"
+ imf_events.2.b: "Desgraciadamente: los términos impuestos son demasiado duros"
+
+ # imf_events.3 — Loan complete
+ imf_events.3.t: "Programa del FMI"
+ imf_events.3.d: "Cinco años después de aceptar un préstamo del FMI, id=0/año ha cumplido sus obligaciones programáticas. Los pagos de intereses se han hecho, las condiciones soportadas, y los grandes acreedores de poder satisfechos. El país emerge de la experiencia con su soberanía restaurada — y, una esperanza, con sus finanzas en mejor orden que cuando comenzó."
+ imf_events.3.f: "El libro está equilibrado. Las lecciones son más difíciles de medir."
+ imf_events.3.a: "Hemos pasado por eso."
+
+ # imf_events.4 — Leaving
+ imf_events.4.t: "Retirada del FMI"
+ imf_events.4.d: "Se retira del Fondo Monetario Internacional. La decisión refleja la convicción de que los costos de afiliación —las condiciones, las obligaciones, la pérdida de soberanía económica durante una crisis— superan los beneficios del acceso a la financiación de emergencia. Los grandes poderes no estarán contentos. Y si se trata de una quiebra, no habrá red de seguridad."
+ imf_events.4.f: "La independencia tiene un precio. También depende."
+ imf_events.4.a: "Estamos solos, como deberíamos"
+
+ # imf_events.5 — Great power notification of leaving
+ imf_events.5.t: "Un país ha abandonado el FMI"
+ imf_events.5.d: "Se ha retirado del Fondo Monetario Internacional. La decisión es una reprensión al orden financiero internacional — y señales que <x id=1/ título tiene la intención de trazar su propio curso económico, para mejor o peor."
+ imf_events.5.f: "Un deudor menos. Una palanca menos."
+ imf_events.5.a: "Notas"
+
+ # imf_events.10 — War bonds
+ imf_events.10.t: "Bonos de guerra"
+ imf_events.10.d: "Con el tesoro tenso y la guerra en curso, el Ministerio de Finanzas ha propuesto una medida de emergencia: la emisión de bonos de guerra. Se invitaría a ciudadanos e inversores a prestar dinero al Estado a cambio de futuros pagos con interés, proporcionando una inyección inmediata de efectivo para financiar el esfuerzo de guerra. Los bonos funcionarán —pero son deuda y deuda en compuestos de tiempo de guerra rápidamente. El consumo de suministros aumentará a medida que el dinero fluya en la máquina militar."
+ imf_events.10.f: "Una nación toma prestada contra su futuro para defender su presente."
+ imf_events.10.a: "Emitir los bonos — necesitamos el dinero ahora"
+ imf_events.10.b: "Decline — no hipotecaremos nuestro futuro"
+
+ imf_loan_modifier: "Condiciones de préstamo del FMI"
+ imf_loan_modifier_desc: "Un préstamo del FMI está en su lugar. Las tasas de interés son castigadamente altas y el libre comercio es obligatorio. La inversión extranjera está fluyendo, pero la soberanía económica está limitada y la legitimidad ha sufrido."
+
+ imf_great_power_obligations: "Grandes obligaciones de poder"
+ imf_great_power_obligations_desc: "Los grandes poderes que subscriben al FMI tienen obligaciones de este país como condición del préstamo. Su ventaja sobre la política económica es real."
+
+ imf_refused_loan_modifier: "Fondo Monetario Internacional"
+ imf_refused_loan_modifier_desc: "El país rechazó la asistencia del FMI y gestionará su deuda por sí solo. Las condiciones de crédito han empeorado como resultado."
+
+ imf_post_loan_stability: "Recuperación posterior al programa"
+ imf_post_loan_stability_desc: "El programa del FMI ha concluido. Habiendo cumplido sus obligaciones, el gobierno ha ganado una medida de credibilidad y las finanzas del país están en mejor orden."
+
+ imf_left_modifier: "Fuera del FMI"
+ imf_left_modifier_desc: "Este país se ha retirado del FMI. Está libre de obligaciones crediticias, pero está excluida de la financiación internacional de emergencia. Las corrientes de inversión se reducen."
+
+ war_bonds_modifier: "Bonos de guerra emitidos"
+ war_bonds_modifier_desc: "Se han emitido bonos de guerra de emergencia para financiar los esfuerzos de guerra. Los ingresos han aumentado, pero la deuda está creciendo y el consumo de suministros ha aumentado."
+
+ war_bonds_refused_modifier: "Bonos de guerra declinados"
+ war_bonds_refused_modifier_desc: "El gobierno se negó a emitir bonos de guerra. La disciplina fiscal se mantiene, pero el ejército siente la presión."
+
+ un_events.6.t: "Nuestras fuerzas regresan de la Misión de la ONU"
+ un_events.6.d: "Las fuerzas de id=0/año han completado su servicio en la misión de mantenimiento de la paz de las Naciones Unidas y regresan a casa. La contribución fue modesta en términos militares, pero significativa diplomáticamente — id=1/ título estaba presente cuando importaba. El general ha vuelto."
+ un_events.6.a: "Bienvenido a casa"
+ 
+ un_peacekeeping_contribution: "Contribución de las Naciones Unidas para el Mantenimiento de la Paz"
+ un_peacekeeping_contribution_desc: "id=0/año contribuyó a una misión de mantenimiento de la paz de la ONU. La comunidad internacional ha tomado nota."
+ 
+  # ── EVENT 300: RESOLUTION PASSED ─────────────────────────────────
+ 
+ un_events.300.t: "Resolución aprobada por la ONU"
+ un_events.300.d: "La Asamblea General ha acordado una resolución para abordar cuestiones mundiales y coordinar la cooperación mundial sobre un tema determinado"
+ un_events.300.f: "La resolución conlleva el peso del consenso internacional, por lo que vale."
+ un_events.300.a: "Notas"
+ 
+ UN_RES_DESC_ENVIRONMENT: "id=0/Consejo Resolución sobre Protección Ambiental efectuadax id=1/ implicax id=2/ConsejoLos estados se comprometen a normas ambientales coordinadas y gestión sostenible de recursos. Todos los países reciben el modificador de la resolución ambiental de las Naciones Unidas correspondiente a 12 meses."
+ UN_RES_DESC_PEACE: "La Asamblea General reafirma el compromiso con la solución pacífica de controversias y la reducción del conflicto interestatal.Seguido: id=3/ &lt; &gt; &gt; &gt; id=4/ indicax id=5/ &gt; id=6/ títulox id=7/ id=7/ &gt; Todos los países reciben el modificador de la resolución de paz de las Naciones Unidas correspondiente a 12 meses."
+ UN_RES_DESC_ECONOMY: "id=0/Consejo Resolución sobre Desarrollo Económico realizadax id=1/ títulox id=2/ConsejoLos estados respaldan la inversión coordinada en las economías en desarrollo y la reducción de las barreras comerciales. Todos los países reciben el modificador de id=9/año de la Resolución de Desarrollo Económico de la ONU correspondiente a 12 meses."
+ UN_RES_DESC_TECHNOLOGY: "La Asamblea General establece marcos para el intercambio de tecnología y la investigación científica cooperativa entre los Estados miembros.Seguido: id=3/ títulox id=4/ títulox id=5/ tercero = id=6/ título autorizadox id=7/ título Todos los países reciben el modificador de la tecnología de la ONU de id=9/año por 12 meses."
+ 
+ # ── EVENT 301: RESOLUTION FAILED ─────────────────────────────────
+ 
+ un_events.301.t: "UN Resolution Fails to Pass"
+ un_events.301.d: "La moción ante la Asamblea General de las Naciones Unidas no ha conseguido la mayoría necesaria. La resolución ha sido derrotada y la sesión se suspendió sin resultado.Se aplicarán medidas no aplicadas. La delegación patrocinadora ha expresado su decepción. Otros no lo han hecho."
+ un_events.301.f: "Las Naciones Unidas hacen lo que las Naciones Unidas hacen mejor."
+ un_events.301.a: "Sin sorpresas"
+ 
+ # ── EVENT 302: SANCTIONS (TARGET) ────────────────────────────────
+ 
+ un_events.302.t: "id=0/ Sancionado por las Naciones Unidas"
+ un_events.302.d: "El Consejo de Seguridad de las Naciones Unidas ha aprobado una resolución que impone sanciones económicas a id=0/año. La resolución fue apoyada por la mayoría requerida y tiene efecto inmediatamente. Ahora están en vigor las restricciones comerciales. El aislamiento diplomático se profundiza. Se espera que los Estados Miembros, aunque no se vean obligados, cumplan con el régimen de sanciones. Las sanciones seguirán vigentes durante cinco años a menos que el Consejo de Seguridad se reúna para examinarlas."
+ un_events.302.f: "La soberanía no aísla a un país de la opinión del mundo."
+ un_events.302.a: "Rechazamos esta resolución"
+ 
+ # ── EVENT 303: CONDEMNATION (TARGET) ─────────────────────────────
+ 
+ un_events.303.t: "id=0/ Condenadas por las Naciones Unidas"
+ un_events.303.d: "La Asamblea General de las Naciones Unidas ha aprobado una resolución oficial en la que se condena id=0/año. La condena fue aprobada por mayoría de votos después del debate sobre el suelo. Una condena no conlleva un mecanismo obligatorio de aplicación, pero representa una declaración formal de desaprobación internacional y afectará a idx id=3/ &gt; que se encuentra en la comunidad diplomática durante años."
+ un_events.303.f: "Las palabras no son armas. Pero deja marcas."
+ un_events.303.a: "No seremos conferenciados"
+ 
+ # ── EVENT 304: SANCTIONS/CONDEMNATION (OBSERVERS) ────────────────
+ 
+ un_events.304.t: "UN Punitive Resolution Passed"
+ un_events.304.d: "El Consejo de Seguridad de las Naciones Unidas ha aprobado una resolución en que se establecen sanciones contra otro país. Se enfrentarán a penas severas mientras el mundo coordina la tensión económica contra ellos."
+ un_events.304.f: "La maquinaria de la censura internacional gira lentamente, pero gira."
+ un_events.304.a: "Notas"
+ 
+ UN_304_DESC_SANCTIONS: "El Consejo de Seguridad de las Naciones Unidas ha votado para imponer sanciones económicas a id=0/año. La resolución aprobada por el margen requerido. Se espera que los Estados Miembros cumplan las restricciones."
+ UN_304_DESC_CONDEMNATION: "La Asamblea General de las Naciones Unidas ha condenado formalmente id=0/año por voto mayoritario. La resolución representa una declaración oficial de desaprobación internacional. Si bien una condena no lleva a cabo ninguna aplicación vinculante, coloca id=3/año conducta en el registro y afecta su posición internacional."
+ 
+ ###### International Organizations — Full Localization
+ ####  IMPORTANT: This file must be saved with UTF-8 BOM encoding
+ ####  Place in: localization/english/
+
+ ### ═══════════════════════════════════════
+ ### PANEL & TABS
+ ### ═══════════════════════════════════════
+ io_panel_title: "International Organizations"
+ io_tab_igos_label: "Organizaciones"
+ io_tab_treaties_label: "Tratados"
+ io_tab_ngos_label: "ONG"
+
+ ### ═══════════════════════════════════════
+ ### ORGANIZATION TYPES
+ ### ═══════════════════════════════════════
+ io_type_free_trade: "[concept_free_trade_agreement]"
+ io_type_financial: "[concept_financial_agreement]"
+ io_type_military_defense: "[concept_military_defense_agreement]"
+ io_type_cultural_pact: "[concept_cultural_pact]"
+ io_type_cooperative: "[concept_cooperative_agreement]"
+ io_type_unknown: "[concept_international_organization]"
+
+ ### ═══════════════════════════════════════
+ ### ORGANIZATIONS — Names & Descriptions
+ ### ═══════════════════════════════════════
+
+ ### United Nations
+ io_un_name: "Naciones Unidas"
+ io_un_abbreviation: "ONU"
+ io_un_desc: "El id=0/conferencia es un id=1/conferencia creado para mantener la paz y la seguridad internacionales, desarrollar relaciones de amistad entre las naciones y promover el progreso social. A diferencia de otros id=2/ títulos, la ONU no proporciona directamente modificadores a sus miembros. Su influencia se ejerce mediante resoluciones diplomáticas, mandatos de mantenimiento de la paz e iniciativas mundiales."
+ io_un_tooltip: "El id=0/año es un id=1 / título de las naciones del mundo. Haga clic para ver detalles."
+
+ ### NATO
+ io_nato_name: "North Atlantic Treaty Organization"
+ io_nato_abbreviation: "OTAN"
+ io_nato_desc: "El id=0/ título es un id=1/ título establecido en 1949, obligando a las naciones norteamericanas y europeas en defensa colectiva. Un ataque armado contra un miembro se considera un ataque contra todos. La OTAN coordina ejercicios militares conjuntos, estandariza equipos y mantiene estructuras de mando integradas."
+
+ ### G7
+ io_g7_name: "Grupo de los Siete"
+ io_g7_abbreviation: "G7"
+ io_g7_desc: "El id=0/conferencia es un id=1/conceptor que comprende las mayores economías avanzadas del mundo. Los miembros coordinan la política fiscal, la política monetaria y la gobernanza económica. Los miembros confieren una importante influencia diplomática y credibilidad financiera."
+
+ ### OPEC
+ io_opec_name: "Organization of the Petroleum Exporting Countries"
+ io_opec_abbreviation: "OPEC"
+ io_opec_desc: "El id=0/año es un id=1 / título de las principales naciones productoras de petróleo que coordina las políticas de petróleo entre los países miembros. La OPEP procura garantizar la estabilización de los mercados petroleros y el rendimiento justo de los países productores."
+
+ ### EEC
+ io_eec_name: "Comunidad Económica Europea"
+ io_eec_abbreviation: "EEC"
+ io_eec_desc: "El id=0/conferencia es un id=1/conferencia que establece un mercado común entre los Estados miembros europeos. Reduce las barreras comerciales, armoniza las regulaciones económicas y promueve la libre circulación de bienes, servicios, capital y mano de obra entre las naciones miembros."
+ 
+ ### Arab League
+ io_arab_league_name: "Liga Árabe"
+ io_arab_league_abbreviation: "LAS"
+ io_arab_league_desc: "El id=0 / título es un id=1 / título de naciones de habla árabe que promueve la cooperación política, económica, cultural y social entre sus miembros. La Liga coordina políticas sobre asuntos de interés común y media disputas entre los estados árabes."
+
+ ### IMF
+ io_imf_name: "Fondo Monetario Internacional"
+ io_imf_abbreviation: "FMI"
+ io_imf_desc: "El id=0/año es un id=1/propiedad que promueve la cooperación monetaria internacional, la estabilidad de los tipos de cambio y los arreglos de intercambio ordenado. Proporciona asistencia financiera y asesoramiento normativo a los países miembros que enfrentan dificultades de balanza de pagos."
+
+ ### ESA
+ io_esa_name: "European Space Agency"
+ io_esa_abbreviation: "ESA"
+ io_esa_desc: "El id=0/año es un id=1 / dedicado a la exploración y utilización del espacio exterior. Los Estados Miembros agrupan recursos para desarrollar vehículos de lanzamiento, satélites y misiones científicas que ningún país europeo pueda lograr por sí solo."
+
+ ### ASEAN
+ io_asean_name: "Association of Southeast Asian Nations"
+ io_asean_abbreviation: "ASEAN"
+ io_asean_desc: "El id=0/año es un id=1 / título de las naciones del sudeste asiático que promueven el crecimiento económico, el progreso social y el desarrollo cultural. La ASEAN facilita la estabilidad regional y proporciona un marco para el diálogo multilateral en la región de Asia y el Pacífico."
+
+ ### WHO
+ io_saarc_name: "South Asian Association for Regional Cooperation"
+ io_saarc_desc: "El id=0/ &gt; &gt; es un id=1 / título entre las naciones del Asia meridional dirigidas a la cooperación regional, la coordinación del desarrollo y el diálogo multilateral."
+
+ io_cis_name: "Comunidad de Estados Independientes"
+ io_cis_desc: "El id=0/año es un id=1/% entre los estados post-soviéticos centrado en la consulta regional, la coordinación económica y la cooperación intergubernamental práctica."
+
+ io_who_name: "World Health Organization"
+ io_who_abbreviation: "OMS"
+ io_who_desc: "El id=0/conferencia es un id=1/conferencia que dirige y coordina la política internacional de salud. Proporciona liderazgo en cuestiones de salud mundial, establece normas y normas, supervisa las tendencias de salud y coordina las respuestas a emergencias internacionales de salud."
+
+ ### ═══════════════════════════════════════
+ ### TREATIES — Names & Descriptions
+ ### ═══════════════════════════════════════
+
+ io_treaty_geneva_name: "Convenios de Ginebra"
+ io_treaty_geneva_desc: "Una serie de tratados conocidos como los Convenios de Ginebra se encargan de establecer normas de derecho internacional para el tratamiento humanitario durante los conflictos armados. Los signatarios de la id=0/año acordaron proteger soldados heridos, prisioneros de guerra y civiles en tiempo de guerra."
+
+ io_treaty_cwc_name: "Convención sobre las armas químicas"
+ io_treaty_cwc_desc: "La Convención sobre las armas químicas es un id=0/año que prohíbe el desarrollo, producción, adquisición, almacenamiento, retención, transferencia y uso de armas químicas. Los signatarios convienen en destruir las existencias existentes bajo verificación internacional."
+
+ io_treaty_npt_name: "Tratado sobre la no proliferación"
+ io_treaty_npt_desc: "El Tratado sobre la No Proliferación de las Armas Nucleares es un tratado que tiene por objeto prevenir la propagación de las armas nucleares, promover el desarme y facilitar el uso pacífico de la energía nuclear bajo salvaguardias internacionales."
+
+ io_treaty_bwc_name: "Convención sobre las armas biológicas"
+ io_treaty_bwc_desc: "La Convención sobre las armas biológicas es un id=0/año que prohíbe el desarrollo, la producción y el almacenamiento de armas biológicas y toxínicas. Es el primer tratado multilateral de desarme que prohíbe toda una categoría de armas."
+
+ io_treaty_cat_name: "Convención contra la Tortura"
+ io_treaty_cat_desc: "La Convención contra la Tortura es un id=0/año que prohíbe todas las formas de tortura y tratos o penas crueles, inhumanos o degradantes. Los signatarios se comprometen a adoptar medidas eficaces para prevenir la tortura en su jurisdicción."
+
+ ### ═══════════════════════════════════════
+ ### NGOs — Names & Descriptions
+ ### ═══════════════════════════════════════
+
+ io_iaea_name: "Organismo Internacional de Energía Atómica"
+ io_iaea_abbreviation: "OIEA"
+ io_iaea_desc: "El OIEA promueve el uso pacífico de la energía nuclear y trabaja para prevenir su utilización con fines militares. Realiza inspecciones, presta asistencia técnica y establece normas internacionales de seguridad para las instalaciones nucleares."
+
+ io_redcross_name: "International Red Cross"
+ io_redcross_abbreviation: "CICR"
+ io_redcross_desc: "La Cruz Roja Internacional presta asistencia humanitaria durante los conflictos armados y los desastres naturales. Supervisa el cumplimiento de los Convenios de Ginebra, visita a los prisioneros de guerra y facilita la comunicación entre familiares separados."
+
+ io_amnesty_name: "Amnistía Internacional"
+ io_amnesty_abbreviation: "AI"
+ io_amnesty_desc: "Amnistía Internacional investiga y expone los abusos de los derechos humanos en todo el mundo. It campaigns for the release of political prisoners, the abolition of torture and the death penalty, and the protection of refugees and migrants."
+
+ ### ═══════════════════════════════════════
+ ### BUTTONS
+ ### ═══════════════════════════════════════
+ io_request_join_button: "Solicitud de adhesión"
+ io_leave_button: "Organización"
+ io_ban_button: "Ban"
+ io_unban_button: "Unban"
+ io_subsidize_button: "Subsidize"
+ io_back_button: "Volver a la lista"
+ io_treaty_sign_button: "Convertirse en signatario"
+ io_treaty_withdraw_button: "Retirada"
+
+ ### ═══════════════════════════════════════
+ ### TOOLTIPS & STATUS
+ ### ═══════════════════════════════════════
+ io_ngo_opinion_label: "Opinión de Nosotros"
+ io_ngo_status_active: "Activo"
+ io_ngo_status_banned: "Banned"
+ io_ngo_status_subsidized: "Subvencionados"
+ io_member_indicator_tt: "Su país es miembro de esta organización."
+ io_treaty_signed_tt: "Su país es signatario de este tratado."
+
+ ### ═══════════════════════════════════════
+ ### NOTIFICATIONS
+ ### ═══════════════════════════════════════
+ notification_io_join_request_sent_notification_name: "Solicitud presentada"
+ notification_io_join_request_sent_notification_desc: "Hemos presentado una solicitud para unirse a la organización."
+ notification_io_join_request_sent_notification_tooltip: "#header $notification_io_join_request_sent_notification_name$#!\n$TOOLTIP_DELIMITER$\n$notification_io_join_request_sent_notification_desc$"
+
+ notification_io_left_org_notification_name: "Left Organization"
+ notification_io_left_org_notification_desc: "Nos hemos retirado de la organización. Nuestras relaciones con antiguos compañeros se han deteriorado."
+ notification_io_left_org_notification_tooltip: "#header $notification_io_left_org_notification_name$#!\n$TOOLTIP_DELIMITER$\n$notification_io_left_org_notification_desc$"
+
+ notification_io_accepted_notification_name: "Solicitud aceptada"
+ notification_io_accepted_notification_desc: "Nuestra solicitud de unirse a la organización ha sido aprobada por sus miembros."
+ notification_io_accepted_notification_tooltip: "#header $notification_io_accepted_notification_name$#!\n$TOOLTIP_DELIMITER$\n$notification_io_accepted_notification_desc$"
+
+ notification_io_rejected_notification_name: "Solicitud rechazada"
+ notification_io_rejected_notification_desc: "Nuestra solicitud de unirse a la organización ha sido rechazada por sus miembros."
+ notification_io_rejected_notification_tooltip: "#header $notification_io_rejected_notification_name$#!\n$TOOLTIP_DELIMITER$\n$notification_io_rejected_notification_desc$"
+
+ ### ═══════════════════════════════════════
+ ### TAB DESCRIPTIONS
+ ### ═══════════════════════════════════════
+ io_igos_tab_desc: "Las organizaciones internacionales son instituciones multilaterales que coordinan la política entre las naciones miembros. Haga clic en una organización para ver sus detalles, miembros y acciones disponibles."
+ io_treaties_tab_desc: "Los tratados internacionales son acuerdos vinculantes entre naciones. Su país puede convertirse en signatario para obtener beneficios o retirarse al costo de la condición diplomática."
+ io_ngos_tab_desc: "id=0/ títulos operan independientemente a través de las fronteras. Todas las naciones están afiliadas por defecto. Puede optar por prohibirlos o subvencionarlos, afectando su opinión sobre su país."
+
+ ### ═══════════════════════════════════════
+ ### GAME CONCEPTS
+ ### ═══════════════════════════════════════
+
+ concept_international_organization: "International Organization"
+ concept_international_organization_desc: "International Organizations are institutions that operate across national borders to coordinate policy, promote trade, ensure collective security, or foster cultural exchange among their member nations. Vienen en varias formas: id=0/ títulos, id=1/ títulos, неx id=2/ títulos, неx id=3/ títulos, y неx id=4/ títulos."
+
+ concept_intergovernmental_organization: "Organización Intergubernamental"
+ concept_intergovernmental_organization_desc: "Una Organización Intergubernamental es un id=0/año cuyos miembros son naciones soberanas. A diferencia de id=1/ títulos, las organizaciones intergubernamentales requieren ser miembros formales y pueden proporcionar beneficios diplomáticos, económicos o militares significativos."
+
+ concept_nongovernmental_organization: "Non-Governmental Organization"
+ concept_nongovernmental_organization_desc: "Non-Governmental Organizations are independent institutions that operate internationally without being controlled by any government. Todas las naciones están afiliadas a ONG por defecto. Los gobiernos pueden optar por prohibir, tolerar o subvencionarlos, lo que afecta la opinión de la ONG y los beneficios que proporcionan."
+
+ concept_international_treaty: "Tratado Internacional"
+ concept_international_treaty_desc: "Un Tratado Internacional es un acuerdo vinculante formal entre naciones soberanas. A diferencia de los tratados id=0/ títulos, los tratados no requieren la afiliación organizativa en curso, una nación es o no signataria. Los signatarios reciben beneficios diplomáticos, mientras que el retiro daña las relaciones con otros signatarios."
+
+ international_treaty_type:0 "[concept_international_treaty]
+ concept_free_trade_agreement: "Tratado de Libre Comercio"
+ concept_free_trade_agreement_desc: "Un Tratado de Libre Comercio es un id=0/año que reduce las barreras comerciales entre los países miembros, promoviendo el intercambio de bienes y el crecimiento económico."
+
+ concept_financial_agreement: "Acuerdo financiero"
+ concept_financial_agreement_desc: "Un Acuerdo Financiero es un id=0 / título centrado en la cooperación monetaria, la financiación del desarrollo y la estabilidad financiera entre sus miembros. Los miembros reciben +5% de influencia y +1 de Reputación Diplomática."
+
+ concept_military_defense_agreement: "Acuerdo de Defensa Militar"
+ concept_military_defense_agreement_desc: "Un Acuerdo de Defensa Militar es un id=0/año basado en el principio de seguridad colectiva. Un ataque contra un miembro se considera un ataque contra todos."
+
+ concept_cultural_pact: "Pacto Cultural"
+ concept_cultural_pact_desc: "Un Pacto Cultural es un id=0/año que promueve el patrimonio compartido, el lenguaje y el intercambio cultural entre sus miembros."
+
+ concept_cooperative_agreement: "Acuerdo de cooperación"
+ concept_cooperative_agreement_desc: "Un Acuerdo Cooperativo es un id=0/año centrado en una amplia diplomacia multilateral. A diferencia de otros tipos de organización, los Acuerdos Cooperativos no proporcionan directamente modificadores. Su influencia se ejerce mediante resoluciones e iniciativas."
+
+ concept_united_nations: "Naciones Unidas"
+ concept_united_nations_desc: "Las Naciones Unidas son un id=0 / título de las naciones del mundo, dedicado al mantenimiento de la paz, la seguridad y la cooperación internacionales."
+
+ concept_nato: "OTAN"
+ concept_nato_desc: "La Organización del Tratado del Atlántico del Norte es un id=0/ís que une a las naciones norteamericanas y europeas en defensa colectiva."
+
+ concept_g7: "G7"
+ concept_g7_desc: "El Grupo de los Siete es un id=0 / título de las mayores economías avanzadas del mundo, coordinando la política fiscal y monetaria."
+
+ concept_opec: "OPEC"
+ concept_opec_desc: "La Organización de los Países Exportadores de Petróleo es un id=0/jero que coordina las políticas de petróleo entre las principales naciones productoras de petróleo."
+
+ concept_eec: "EEC"
+ concept_eec_desc: "La Comunidad Económica Europea es un id=0/año que establece un mercado común entre los Estados miembros europeos."
+
+ concept_arab_league: "Liga Árabe"
+ concept_arab_league_desc: "La Liga Árabe es un id=0/año que promueve la cooperación entre las naciones de habla árabe."
+
+ concept_imf: "FMI"
+ concept_imf_desc: "El Fondo Monetario Internacional es un id=0/cero que promueve la cooperación monetaria internacional y la estabilidad financiera."
+
+ concept_esa: "ESA"
+ concept_esa_desc: "La Agencia Espacial Europea es un id=0/año dedicado a la exploración y utilización del espacio."
+
+ concept_asean: "ASEAN"
+ concept_asean_desc: "La Asociación de Naciones del Asia Sudoriental es un id=0/año que promueve el crecimiento económico y la estabilidad regional en el Asia Sudoriental."
+
+ concept_saarc: "SAARC"
+ concept_saarc_desc: "La Asociación del Asia Meridional para la Cooperación Regional es un id=0/año que promueve la cooperación regional entre los estados del Asia Meridional."
+
+ concept_cis: "CIS"
+ concept_cis_desc: "La Comunidad de Estados Independientes es un id=0/año para la coordinación entre varios estados post-soviéticos."
+
+ concept_who: "OMS"
+ concept_who_desc: "La Organización Mundial de la Salud es una política internacional de salud que dirige y coordina."
+
+ concept_iaea: "OIEA"
+ concept_iaea_desc: "El Organismo Internacional de Energía Atómica es un id=0/año que promueve el uso pacífico de la energía nuclear y trabaja para prevenir la proliferación nuclear."
+
+ ### ═══════════════════════════════════════
+ ### MODIFIER LOCALIZATION
+ ### ═══════════════════════════════════════
+ io_financial_agreement_member: "Miembro del Acuerdo Financiero"
+ io_financial_agreement_member_desc: "La adhesión a un acuerdo financiero internacional proporciona mayor influencia y reputación diplomáticas."
+
+ io_free_trade_agreement_member: "Miembro del Acuerdo de Libre Comercio"
+ io_free_trade_agreement_member_desc: "La adhesión a un acuerdo de libre comercio reduce las barreras comerciales con otros miembros."
+
+ io_military_defense_agreement_member: "Pacto de Defensa Militar"
+ io_military_defense_agreement_member_desc: "La pertenencia a un acuerdo de defensa militar garantiza la seguridad colectiva."
+
+ io_cultural_pact_member: "Cultural Pact Member"
+ io_cultural_pact_member_desc: "La pertenencia a un pacto cultural promueve el patrimonio compartido y el intercambio cultural."
+
+ io_ngo_subsidized_bonus: "NGO Subsidized"
+ io_ngo_subsidized_bonus_desc: "Las subvenciones gubernamentales a una organización no gubernamental han mejorado nuestra posición internacional."
+
+ io_ngo_banned_penalty: "NGO Banned"
+ io_ngo_banned_penalty_desc: "La prohibición de una organización no gubernamental ha dañado nuestra posición internacional."
+
+ io_treaty_geneva_signatory: "Convenio de Ginebra"
+ io_treaty_geneva_signatory_desc: "Como signatario de los Convenios de Ginebra, nuestro compromiso con el derecho humanitario reduce la hostilidad internacional."
+
+ io_treaty_cwc_signatory: "CWC Signatory"
+ io_treaty_cwc_signatory_desc: "Como signatario de la Convención sobre las armas químicas, nuestra reputación diplomática se fortalece."
+
+ io_treaty_npt_signatory: "NPT Signatory"
+ io_treaty_npt_signatory_desc: "Como signatario del Tratado sobre la no proliferación, nuestro compromiso con la moderación nuclear se reconoce internacionalmente."
+
+ io_treaty_bwc_signatory: "BWC Signatory"
+ io_treaty_bwc_signatory_desc: "Como signatario de la Convención sobre las armas biológicas, nuestra reputación diplomática se fortalece."
+
+ io_treaty_cat_signatory: "CAT Signatory"
+ io_treaty_cat_signatory_desc: "Como signatario de la Convención contra la Tortura, nuestro compromiso con los derechos humanos aumenta nuestro prestigio."
+
+ ### ═══════════════════════════════════════
+ ### SIDEBAR BUTTON (Community Framework)
+ ### ═══════════════════════════════════════
+ io_sidebar_button: "io sidebar button"
+ io_sidebar_button_desc: "Int'l Organizations"
+ io_sidebar_button_tooltip: "Ver idx id=0/ títulos que operan en todo el mundo."
+
+ ### Additional headers
+ io_modifiers_header: "Modificadores"
+ io_signatory_effects_header: "Efectos signatarios"
+ io_members_header: "Lista de Miembros"
+ 
+ io_eu_power_bloc_name: "Comunidad Económica Europea"
+ io_eec_join_dissolve_bloc_warning: "Unirse al EEC le quitará de su actual bloque de energía."
+ io_dissolve_eu_no_members_tt: "No quedan naciones en la CEE."
+ io_dissolve_eu_effect_tt: "La Unión Europea será disuelta y sus territorios serán absorbidos."
+ io_cooldown_tt: "Recientemente se unió o abandonó esta organización. Debe esperar antes de actuar de nuevo."
+
+ identity_european_community: "Comunidad Europea"
+ identity_european_community_desc: "La Comunidad Europea es una unión aduanera de naciones europeas que promueven el libre comercio, la política agrícola común y la armonización regulatoria en todos los estados miembros. Los miembros comparten un mercado común con regulaciones de productos estandarizadas."
+
+ dissolve_european_union: "Disolver la Unión Europea"
+ dissolve_european_union_desc: "Sin miembros restantes en la Comunidad Económica Europea, la Unión Europea ha perdido su propósito. Podemos disolver formalmente la institución y absorber sus territorios restantes."
+ 
+  ### Financial Agreement (G7, IMF)
+ io_mod_influence_5pct: "id=0/ título id=1/ título +5% significax id=2/ Influencia"
+ io_mod_diplo_rep_1: "id=0/principio id=1/ título +1 significax id=2/ Reputación diplomática"
+ 
+ ### Military Defense Agreement (NATO)
+ io_mod_military_defense_pact: "id=0/ título id=1/ título Pactos de Defensa Mutual"
+ io_mod_prestige_2pct: "id=0/conferencia id=1/conferencia +2% significax id=2/ Prestige"
+ 
+ io_mod_generated_pollution_250: "Contaminación generada: неx id=0/año -250% fielx id=1/"
+ io_mod_state_infrastructure_5: "Infraestructura estatal: id=0/conferencia -3% significax id=1/"
+ # imf
+ io_mod_imf_aid: "id=0/(s) Asistencia para la deuda de emergencia"
+ 
+ ### OPEC
+ io_mod_opec_trade_advantage: "id=0/ título id=1/ título +25% identificadox id=2/ Oil Trade Advantage"
+ io_mod_opec_throughput: "id=0/ título id=1/ título +25% identificadox id=2/ Oil Extraction Throughput"
+ io_mod_opec_customs: "id=0/ título id=1/ contacto Petroleum Cartel Coordination madex id=2/tio entre los miembros"
+ 
+ ### EEC / Free Trade
+ io_mod_eec_customs: "id=0/ título id=1/ título Customs Union madex id=2/tio formado entre todos los miembros"
+ io_mod_free_trade_convoys: "Impacto del precio del mercado: idx id=0/año +5% madex id=1⁄4"
+ io_mod_free_trade_expedition: ""
+ 
+ ### Cultural Pact (Arab League)
+ io_mod_cultural_tech_spread: "id=0/ título id=1/ título +0.10 seguido id=2/ Technology Spread"
+ io_mod_cultural_revolution_suppress: "id=0/ título id=1/conferencia -5% significax id=2/ Progresos en la revolución"
+ 
+ ### Treaties
+ io_mod_infamy_minus5: "id=0/ título id=1/conferencia -5% significax id=2/ Generación de infamia"
+ io_mod_infamy_minus3: "id=0/(s) significax id=1/(s) Generación de infamia"
+ io_mod_prestige_3pct: "id=0/conferencia id=1/conferencia +3% identificadox id=2/ Prestige"
+ io_mod_mobe_options_chem: "Prohibi el empleo de armas químicas"
+ 
+ ### ══════════════════════════════════════════
+ ### MODIFIER DEFINITIONS (localization for modifier tooltips)
+ ### ══════════════════════════════════════════
+ 
+ io_financial_agreement_member: "Miembro del Acuerdo Financiero"
+ io_financial_agreement_member_desc: "La pertenencia a un acuerdo financiero internacional proporciona mayor influencia diplomática y posición entre las principales economías del mundo."
+ 
+ io_free_trade_agreement_member: "Miembro del Acuerdo de Libre Comercio"
+ io_free_trade_agreement_member_desc: "Esta nación es parte en un sindicato aduanero con otros miembros, reduciendo las barreras comerciales y armonizando las regulaciones económicas."
+ 
+ io_opec_member: "OPEC Member"
+ io_opec_member_desc: "Los miembros de la Organización de los Países Exportadores de Petróleo aportan una potencia coordinada de fijación de precios y una mayor capacidad de producción de petróleo."
+ 
+ io_military_defense_agreement_member: "Miembro del Acuerdo de Defensa Militar"
+ io_military_defense_agreement_member_desc: "Esta nación está obligada por compromisos colectivos de seguridad. Un ataque contra cualquier miembro se considera un ataque contra todos."
+ 
+ io_cultural_pact_member: "Cultural Pact Member"
+ io_cultural_pact_member_desc: "El patrimonio compartido y la cooperación cultural entre los Estados miembros aceleran la difusión de nuevas tecnologías y fomentan el sentimiento revolucionario."
+ 
+ ### ══════════════════════════════════════════
+ ### NATO DEFENSIVE PACT TREATY NAME
+ ### ══════════════════════════════════════════
+ 
+ io_nato_defensive_pact_name: "Compromiso de Defensa Mutua de la OTAN"
+ 
+ ### ══════════════════════════════════════════
+ ### UPDATED ORG DESCRIPTIONS reflecting mechanics
+ ### ══════════════════════════════════════════
+ 
+ io_nato_desc: "El id=0/conferencia es un id=1/principal vinculante de naciones norteamericanas y europeas en defensa colectiva. Un ataque armado contra un miembro se considera un ataque contra todos. Unirse a la OTAN crea automáticamente tratados de pactos de defensa mutua con cada Estado miembro existente."
+ 
+ io_opec_desc: "El id=0/año es una organización de las principales naciones exportadoras de petróleo que coordina las políticas de producción petrolera. Los Estados Miembros se benefician de la potencia de fijación de precios de cárteles, obteniendo una importante ventaja comercial en las exportaciones de petróleo y mejorando el rendimiento de extracción de la inversión coordinada."
+ 
+ io_eec_desc: "El id=0/ título es un id=1/(s) que establece una unión aduanera entre los Estados miembros europeos. Los miembros comparten un mercado común con normas de productos normalizadas y políticas comerciales coordinadas, reduciendo las barreras al comercio a través de las fronteras."
+ 
+ io_arab_league_desc: "El id=0 / título es un id=1 / título de naciones de habla árabe que promueve la cooperación política, económica, cultural y social. El patrimonio compartido acelera el intercambio de tecnología e ideas, mientras que la solidaridad de los Estados miembros ayuda a suprimir las presiones revolucionarias internas."
+ 
+  ### ══════════════════════════════════════════
+ ### MEMBERSHIP VOTING EVENTS
+ ### ══════════════════════════════════════════
+ 
+ io_events.1.t: "Solicitud de admisión"
+ io_events.1.d: "id=0/año ha presentado una solicitud formal para unirse a nuestra organización. Como miembro actual, se nos ha pedido que votemos sobre su admisión."
+ io_events.1.a: "Aprobar sus miembros"
+ io_events.1.b: "Rechazar su aplicación"
+ 
+ io_events.2.t: "Solicitud aceptada"
+ io_events.2.d: "Todos los miembros han revisado nuestra solicitud de unirse a la organización. No se plantearon objeciones, y hemos sido admitidos oficialmente."
+ io_events.2.a: "Excelentes noticias"
+ 
+ io_events.3.t: "Solicitud rechazada"
+ io_events.3.d: "Nuestra solicitud de unirse a la organización ha sido rechazada. Al menos un Estado miembro votó en contra de nuestra admisión."
+ io_events.3.a: "Decepcionante"
+ 
+ ### ══════════════════════════════════════════
+ ### EU FORMATION EVENTS
+ ### ══════════════════════════════════════════
+ 
+ io_events.10.t: "El Tratado de Maastricht"
+ io_events.10.d: "Los Estados miembros de la Comunidad Económica Europea han acordado profundizar su integración a través del Tratado sobre la Unión Europea. La CEE se transformará formalmente en la Unión Europea, una unión política y económica con competencias ampliadas en política exterior, justicia y asuntos monetarios."
+ io_events.10.a: "Una nueva era para Europa"
+ 
+ io_events.11.t: "La Unión Europea nace"
+ io_events.11.d: "La Comunidad Económica Europea se ha transformado formalmente en la Unión Europea. Como Estado miembro, nuestra nación es ahora parte de un experimento sin precedentes en la gobernanza supranacional."
+ io_events.11.a: "Un nuevo capítulo comienza"
+ 
+ ### ══════════════════════════════════════════
+ ### EU ORGANIZATION
+ ### ══════════════════════════════════════════
+ 
+ io_eu_name: "Unión Europea"
+ io_eu_abbreviation: "UE"
+ io_eu_desc: "La Unión Europea es una unión política y económica de los estados europeos que logró el id=0/conejo. Establece un mercado único, coordina la política exterior y de seguridad, y promueve la gobernanza compartida a través de sus instituciones en Bruselas. Los miembros se benefician de una unión aduanera y de la armonización reglamentaria."
+ 
+ ### ══════════════════════════════════════════
+ ### NGO HIGH SUPPORT BONUSES
+ ### ══════════════════════════════════════════
+ 
+ io_ngo_iaea_high_support: "OIEA"
+ io_ngo_iaea_high_support_desc: "Nuestro firme apoyo al Organismo Internacional de Energía Atómica nos ha permitido acceder a sus conocimientos técnicos y programas de seguridad nuclear, acelerando la difusión de tecnologías avanzadas."
+ 
+ io_ngo_redcross_high_support: "Red Cross Partnership"
+ io_ngo_redcross_high_support_desc: "Nuestro generoso apoyo a la Cruz Roja Internacional ha sido reconocido internacionalmente, mejorando el prestigio y la posición humanitaria de nuestra nación."
+ 
+ io_ngo_amnesty_high_support: "Amnesty International Partnership"
+ io_ngo_amnesty_high_support_desc: "Nuestro firme apoyo a Amnistía Internacional ha reforzado nuestras credenciales de derechos humanos, fortaleciendo la legitimidad percibida de nuestro gobierno."
+ 
+ ### ══════════════════════════════════════════
+ ### GUI CHANGES — BUTTON RENAME
+ ### ══════════════════════════════════════════
+ 
+ io_support_button: "Apoyo"
+ io_ngo_status_supported: "Apoyo"
+ 
+ ### ══════════════════════════════════════════
+ ### EEC/EU TRANSITION
+ ### ══════════════════════════════════════════
+ 
+ io_eec_dissolved_notice: "La Comunidad Económica Europea ha sido disuelta y sustituida por la Unión Europea."
+ 
+ # G7
+ 
+ io_g7_name_4: "Grupo de los Cuatro"
+ io_g7_name_5: "Grupo de los Cinco"
+ io_g7_name_6: "Grupo de los seis"
+ io_g7_name_7: "Grupo de los Siete"
+ io_g7_name_8: "Grupo de los Ocho"
+ io_g7_name_9: "Group of Nine"
+ io_g7_name_10: "Grupo de los Diez"
+ 
+ io_treaty_paris_name: "Acuerdo de París"
+ io_treaty_paris_desc: "El Acuerdo de París es un id=0/año en la Convención Marco de las Naciones Unidas sobre el Cambio Climático. Los signatarios se comprometen a aportar contribuciones decididas a nivel nacional para reducir las emisiones de gases de efecto invernadero y limitar el aumento de la temperatura mundial."
+
+ io_treaty_paris_signatory: "Firma del Acuerdo de París"
+ io_treaty_paris_signatory_desc: "Como signatario del Acuerdo de París, nuestro compromiso con la cooperación internacional para el clima aumenta nuestra reputación y prestigio diplomáticos."
+ 
+ ### OPEC
+
+ opec_je_voting_increase_tt: "La OPEP está votando sobre una propuesta para aumentar los cupos de producción de petróleo id=1/conferencia. Use los botones abajo para votar."
+ opec_je_voting_decrease_tt: "La OPEP está votando sobre una propuesta de cupos de producción de petróleo id=0/año disminuyendo. Use los botones abajo para votar."
+ opec_je_voting_embargo_tt: "La OPEP está votando sobre una propuesta para imponer un bloqueo petrolero de id=0/año indicadox id=1/año. Use los botones abajo para votar."
+ opec_je_increased_production_tt: "La OPEP ha votado para aumentar los cupos de producción de títulos id=1/ título. Las naciones miembros están produciendo más petróleo para el próximo año."
+ opec_je_decreased_production_tt: "La OPEP ha votado a los cupos de producción de títulos id=0/año disminuyendo. Las naciones miembros restringen la producción de petróleo para el próximo año."
+ opec_je_idle_tt: "No hay voto activo de la OPEP. Los miembros pueden proponer cambios de producción o embargo de petróleo a través de sus botones de entrada de diario."
+
+ ### ══════════════════════════════════════════
+ ### SCRIPTED BUTTONS
+ ### ══════════════════════════════════════════
+
+ opec_propose_increase_button: "Aumento de la producción de proposiciones"
+ opec_propose_increase_button_desc: "Proponer que los miembros de la OPEP aumenten sus cuotas de producción de petróleo. Si se aprueba, todos los miembros reciben mayor extracción de petróleo durante un año."
+ opec_propose_decrease_button: "Propose Producción Disminución"
+ opec_propose_decrease_button_desc: "Proponer que los miembros de la OPEP disminuyan sus cuotas de producción de petróleo para restringir la oferta y aumentar los precios. Si se aprueba, todos los miembros reducen la extracción de petróleo durante un año."
+ opec_vote_yay_button: "Votar en Favor"
+ opec_vote_yay_button_desc: "Votar en apoyo de la actual propuesta de la OPEP."
+ opec_vote_nay_button: "Voto en contra"
+ opec_vote_nay_button_desc: "Votar contra la actual propuesta de la OPEP."
+
+ opec_no_vote_active_tt: "Actualmente no hay votación de la OPEP."
+ opec_not_already_embargoed_tt: "Este país no se encuentra actualmente bajo un embargo petrolero de la OPEP."
+ opec_cannot_embargo_member_tt: "No puede imponer un embargo de petróleo a un miembro de la OPEP."
+
+ je_opec:0 "OPEC"
+ je_opec_reason:0 "La Organización de los Países Exportadores de Petróleo es un id=0/jero que coordina las políticas de petróleo entre las principales naciones productoras de petróleo."
+ ### ══════════════════════════════════════════
+ ### EVENTS
+ ### ══════════════════════════════════════════
+
+ opec_events.1.t: "OPEC Voto iniciado"
+ opec_events.1.d: "Una nación miembro ha pedido un voto dentro de la Organización de los Países Exportadores de Petróleo. Se invita a todos los miembros a votar a través de la entrada de la revista OPEC."
+ opec_events.1.a: "Consideraremos nuestra posición"
+
+ opec_events.10.t: "OPEC Vote Concluded"
+ opec_events.10.d: "El voto de la OPEP ha concluido y los resultados están siendo altos."
+
+ opec_events.11.t: "OPEC aumenta la producción"
+ opec_events.11.d: "Los Estados miembros de la OPEP han votado para aumentar las cuotas de producción de petróleo. Para el próximo año, todas las naciones miembros se beneficiarán de un mayor rendimiento de extracción y de un mejor posicionamiento comercial para las exportaciones de petróleo."
+ opec_events.11.a: "Los grifos están abiertos"
+
+ opec_events.12.t: "OPEC Cuts Production"
+ opec_events.12.d: "Los Estados miembros de la OPEP han votado para reducir las cuotas de producción de petróleo. Para el próximo año, todas las naciones miembros restringirán su producción petrolera a fin de reforzar los precios mundiales de suministro y apoyo."
+ opec_events.12.a: "Vamos a cumplir"
+
+ opec_events.13.t: "OPEC Oil Embargo Imposedido"
+ opec_events.13.d: "La Organización de los Países Exportadores de Petróleo ha votado para imponer un embargo de petróleo. Los Estados miembros de la OPEP restringirán colectivamente las exportaciones de petróleo a la nación objeto de ataques, perturbando gravemente su economía."
+ opec_events.13.a: "Esto volverá a constituir el comercio mundial"
+
+ ### ══════════════════════════════════════════
+ ### DIPLOMATIC ACTION
+ ### ══════════════════════════════════════════
+
+ propose_opec_embargo: "Embargo de petróleo de la OPEP"
+ propose_opec_embargo_desc: "Proponer que la OPEP imponga un embargo colectivo de petróleo a este país, restringiendo las exportaciones de petróleo y perjudicando su suministro energético. Requiere que el objetivo tenga una infamia significativa."
+ propose_opec_embargo_action_name: "Embargo de aceite de proposición"
+ 
+ propose_opec_embargo_propose_name:0 "OPEC Embargo"
+ propose_opec_embargo_pact_desc: "¡La OPEP ha impuesto un embargo de petróleo contra nosotros!"
+ propose_opec_embargo_notification_name: "¡La OPEP está votando por imponernos un embargo!"
+ propose_opec_embargo_notification_desc: "En la actualidad, la OPEP está votando sobre la imposición o no de un embargo de petróleo contra nosotros. Si votan a favor, reducirán drásticamente la cantidad de petróleo negociado con nosotros."
+ 
+ ### ══════════════════════════════════════════
+ ### MODIFIERS
+ ### ══════════════════════════════════════════
+
+ opec_increased_production: "Aumento de la producción de la OPEP"
+ opec_increased_production_desc: "La OPEP ha votado para aumentar las cuotas de producción. Las naciones miembros están extrayendo más petróleo y gozan de una mejor posición comercial."
+
+ opec_decreased_production: "Corte de producción de la OPEP"
+ opec_decreased_production_desc: "La OPEP ha votado para reducir las cuotas de producción. Las naciones Miembros han restringido su producción de petróleo para apoyar los precios mundiales."
+
+ opec_oil_embargo_target: "OPEC Oil Embargo"
+ opec_oil_embargo_target_desc: "Esta nación está bajo un embargo petrolero de la OPEP. Las importaciones de petróleo están severamente restringidas, lo que daña la economía y la situación internacional."
+
+ ### ══════════════════════════════════════════
+ ### NOTIFICATIONS
+ ### ══════════════════════════════════════════
+
+ notification_opec_embargo_imposed_name: "OPEC Oil Embargo"
+ notification_opec_embargo_imposed_desc: "La OPEP ha impuesto un embargo de petróleo a una nación."
+ notification_opec_embargo_imposed_tooltip: "#header $notification_opec_embargo_imposed_name$#!\n$TOOLTIP_DELIMITER$\n$notification_opec_embargo_imposed_desc$"
+
+ ### ══════════════════════════════════════════
+ ### AMNESTY INTERNATIONAL
+ ### ══════════════════════════════════════════
+
+ ngo_amnesty_opinion_minus_15_tt: "id=0/ &gt; Amnistía Internacional opinión: -15 madex id=1"
+ ngo_amnesty_opinion_minus_10_tt: "id=0/ &gt; Amnistía Internacional opinión: -10 hechosx id=1/"
+ ngo_amnesty_opinion_minus_5_tt: "id=0/ &gt; Amnistía Internacional opinión: -5 hechosx id=1"
+ ngo_amnesty_opinion_plus_5_tt: "id=0/ &gt; Amnistía Internacional opinión: +5 hechosx id=1"
+ ngo_amnesty_opinion_plus_10_tt: "id=0/conferencia Amnistía Internacional opinión: +10 hechosx id=1/conferencia"
+
+ ### ══════════════════════════════════════════
+ ### RED CROSS
+ ### ══════════════════════════════════════════
+
+ ngo_redcross_opinion_minus_20_tt: "id=0/conferencia de la Cruz Roja: -20 hechosx id=1/conferencia"
+ ngo_redcross_opinion_minus_15_tt: "id=0/conferencia de la Cruz Roja: -15 madex id=1⁄4"
+ ngo_redcross_opinion_minus_5_tt: "id=0/conferencia de la Cruz Roja: -5 hechosx id=1"
+ ngo_redcross_opinion_plus_5_tt: "id=0/conferencia de la Cruz Roja: +5 hechosx id=1"
+ ngo_redcross_opinion_plus_10_tt: "id=0/conferencia de la Cruz Roja: +10 hechosx id=1/conferencia"
+
+ ### ══════════════════════════════════════════
+ ### IAEA
+ ### ══════════════════════════════════════════
+
+ ngo_iaea_opinion_minus_25_tt: "id=0/conferencia del OIEA: -25 hechosx id=1/"
+ ngo_iaea_opinion_minus_20_tt: "id=0/conferencia del OIEA: -20 hechosx id=1/"
+ ngo_iaea_opinion_plus_10_tt: "id=0/conferencia del OIEA: +10 hechosx id=1/"
+ 
+  ### ══════════════════════════════════════════
+ ### AMNESTY INTERNATIONAL
+ ### ══════════════════════════════════════════
+
+ ngo_events.1.t: "Amnistía Internacional condena nuestras políticas"
+ ngo_events.1.d: "Amnistía Internacional ha publicado un informe condenatorio sobre el historial de derechos humanos de nuestra nación, citando nuestras leyes actuales como una violación sistemática de las libertades fundamentales. La comunidad internacional ha tomado nota, y nuestro gobierno se enfrenta a una presión creciente para abordar estas preocupaciones."
+ ngo_events.1.a: "Su crítica no cambia nada"
+ ngo_events.1.b: "Revisaremos sus preocupaciones"
+
+ ngo_events.2.t: "Amnistía Internacional valora la reforma"
+ ngo_events.2.d: "Nuestras recientes reformas legislativas han sido reconocidas por Amnistía Internacional como un avance significativo para los derechos humanos. Su informe anual destaca nuestro progreso, potenciando la reputación internacional de nuestra nación."
+ ngo_events.2.a: "Estamos orgullosos de nuestro progreso"
+
+ ngo_events.3.t: "Informes de Amnistía sobre disturbios civiles"
+ ngo_events.3.d: "Amnistía Internacional ha publicado un informe especial en el que se documenta el descontento civil generalizado de nuestra nación. Exhortan a nuestro gobierno a abordar las causas profundas del descontento mediante una reforma significativa en lugar de la represión."
+ ngo_events.3.a: "Vamos a considerar reformas"
+ ngo_events.3.b: "Nuestros asuntos internos no son su preocupación"
+
+ ### ══════════════════════════════════════════
+ ### RED CROSS
+ ### ══════════════════════════════════════════
+
+ ngo_events.10.t: "Cruz Roja ofrece ayuda humanitaria"
+ ngo_events.10.d: "La Cruz Roja Internacional se ha ofrecido a desplegar trabajadores humanitarios para ayudar a los civiles afectados por el conflicto en curso. Sus equipos de ayuda están listos para proporcionar atención médica, refugio y alimentos a las poblaciones desplazadas en nuestras regiones devastadas por la guerra."
+ ngo_events.10.a: "Acogemos con beneplácito su asistencia"
+ ngo_events.10.b: "No podemos permitir a los trabajadores extranjeros en una zona de guerra"
+
+ ngo_events.11.t: "Cruz Roja critica la conducta en tiempo de guerra"
+ ngo_events.11.d: "La Cruz Roja Internacional ha emitido una declaración pública en la que expresa profunda preocupación por la conducta de nuestras fuerzas armadas. Los informes de extensas víctimas civiles y destrucción de infraestructura en las zonas de conflicto han señalado a la atención internacional. Instan a todas las partes a que respeten los Convenios de Ginebra."
+ ngo_events.11.a: "Cooperaremos con sus investigadores"
+ ngo_events.11.b: "Negamos estas alegaciones"
+
+ ngo_events.12.t: "Cruz Roja ofrece alivio de crisis"
+ ngo_events.12.d: "A pesar de la ausencia de guerra abierta, la Cruz Roja Internacional ha identificado una creciente crisis humanitaria dentro de nuestras fronteras. La perturbación civil generalizada y la perturbación económica han creado condiciones que requieren asistencia internacional. Ofrecen coordinar los esfuerzos de socorro para las poblaciones afectadas."
+ ngo_events.12.a: "Aceptamos su ayuda"
+ ngo_events.12.b: "Podemos manejar esto nosotros mismos."
+
+ ### ══════════════════════════════════════════
+ ### IAEA
+ ### ══════════════════════════════════════════
+
+ ngo_events.20.t: "OIEA solicita inspección nuclear"
+ ngo_events.20.d: "El Organismo Internacional de Energía Atómica ha solicitado oficialmente el acceso a nuestras instalaciones nucleares para una inspección general de seguridad y cumplimiento. Como no signatario del Tratado sobre la no proliferación, nuestro programa nuclear ha atraído un mayor escrutinio internacional. El OIEA nos asegura que la inspección es rutinaria, pero la negativa enviaría una señal clara a la comunidad internacional."
+ ngo_events.20.a: "Nuestras instalaciones están abiertas a la inspección"
+ ngo_events.20.b: "Nuestro programa nuclear es un asunto soberano"
+
+ ngo_events.21.t: "OIEA encomia el registro de seguridad nuclear"
+ ngo_events.21.d: "Tras un examen de nuestro programa nuclear, el Organismo Internacional de Energía Atómica ha encomiado oficialmente nuestro compromiso con las normas de seguridad y el cumplimiento de la no proliferación. Nuestra adhesión al TNP y la cooperación con los inspectores internacionales han fortalecido nuestra posición en la comunidad nuclear mundial."
+ ngo_events.21.a: "Seguimos comprometidos con la energía nuclear pacífica"
+
+ ngo_events.22.t: "OIEA aumenta la preocupación por la proliferación"
+ ngo_events.22.d: "El Organismo Internacional de Energía Atómica ha alarmado la dirección de nuestro programa nuclear. Sin ser miembros del TNP y con nuestra continua negativa a cooperar con los inspectores, el OIEA ha emitido una declaración oficial en la que expresa preocupación por el posible desarrollo de armas. La comunidad internacional observa de cerca."
+ ngo_events.22.a: "Estamos abiertos al diálogo"
+ ngo_events.22.b: "Afirmamos nuestro derecho soberano a la tecnología nuclear"
+
+ ### ══════════════════════════════════════════
+ ### MODIFIERS
+ ### ══════════════════════════════════════════
+
+ ngo_amnesty_scrutiny: "Under Amnesty Scrutiny"
+ ngo_amnesty_scrutiny_desc: "Amnistía Internacional está vigilando estrechamente nuestro historial de derechos humanos tras las recientes críticas. La legitimidad gubernamental está bajo presión."
+
+ ngo_amnesty_reform_pressure: "Presión de la reforma"
+ ngo_amnesty_reform_pressure_desc: "El informe de Amnistía Internacional sobre disturbios civiles ha creado presión nacional e internacional para la reforma, pero ha ayudado a crear sentimientos revolucionarios."
+
+ ngo_redcross_aid: "Red Cross Humanitarian Aid"
+ ngo_redcross_aid_desc: "Red Cross workers are providing humanitarian assistance to civilians in conflict zones, reducing mortality and enhancing our international reputation."
+
+ ngo_redcross_cooperation: "Cooperación de la Cruz Roja"
+ ngo_redcross_cooperation_desc: "Nuestra cooperación con la Cruz Roja en relación con la conducta en tiempo de guerra ha mejorado nuestra posición internacional y ha reducido la infamia generada por nuestras acciones militares."
+
+ ngo_redcross_relief: "Red Cross Crisis Relief"
+ ngo_redcross_relief_desc: "La Cruz Roja está proporcionando socorro humanitario durante este período de crisis civil, ayudando a estabilizar a las poblaciones afectadas."
+
+ ngo_iaea_inspectors: "Inspectores del OIEA"
+ ngo_iaea_inspectors_desc: "Los inspectores del OIEA están operando dentro de nuestras instalaciones nucleares, compartiendo conocimientos técnicos y de seguridad. Su presencia acelera la transferencia de tecnología y aumenta nuestra reputación diplomática."

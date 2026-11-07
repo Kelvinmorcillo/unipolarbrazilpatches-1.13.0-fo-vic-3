@@ -1,0 +1,806 @@
+
+start_israel_palestine_peacetime_journal_entry_system = {
+	if = {
+		limit = {
+			exists = c:ISR
+			exists = c:PAL
+			NOT = { has_global_variable = ip_peacetime_started }
+			NOT = { has_global_variable = intifada_started }
+			c:ISR ?= {
+				NOT = { has_war_with = c:PAL }
+			}
+		}
+
+		add_contextless_journal_entry = je_israel_palestine_peacetime
+	}
+}
+
+restart_israel_palestine_peacetime_after_escalation = {
+	if = {
+		limit = {
+			exists = c:ISR
+			exists = c:PAL
+			NOT = { has_global_variable = ip_peacetime_started }
+			NOT = { has_global_variable = intifada_started }
+			c:ISR ?= {
+				NOT = { has_war_with = c:PAL }
+			}
+		}
+
+		set_global_variable = { name = ip_peacetime_negotiations value = 5 }
+		set_global_variable = { name = ip_peacetime_security_coordination value = 5 }
+		set_global_variable = { name = ip_peacetime_international_pressure value = 20 }
+
+		add_contextless_journal_entry = je_israel_palestine_peacetime
+
+		# Start a restarted peace process at a tenser 55 instead of the default 35.
+		# Since the progress bar starts at 35, add +20.
+		ip_temperature_add_20 = yes
+	}
+}
+
+# ─────────────────────────────────────────
+# Progress bar helpers
+# ─────────────────────────────────────────
+
+ip_temperature_add_1 = {
+	je:je_israel_palestine_peacetime ?= {
+		add_progress = { value = 1 name = je_israel_palestine_tension_bar }
+	}
+}
+
+ip_temperature_add_3 = {
+	je:je_israel_palestine_peacetime ?= {
+		add_progress = { value = 3 name = je_israel_palestine_tension_bar }
+	}
+}
+
+ip_temperature_add_5 = {
+	je:je_israel_palestine_peacetime ?= {
+		add_progress = { value = 5 name = je_israel_palestine_tension_bar }
+	}
+}
+
+ip_temperature_add_8 = {
+	je:je_israel_palestine_peacetime ?= {
+		add_progress = { value = 8 name = je_israel_palestine_tension_bar }
+	}
+}
+
+ip_temperature_add_10 = {
+	je:je_israel_palestine_peacetime ?= {
+		add_progress = { value = 10 name = je_israel_palestine_tension_bar }
+	}
+}
+
+ip_temperature_add_12 = {
+	je:je_israel_palestine_peacetime ?= {
+		add_progress = { value = 12 name = je_israel_palestine_tension_bar }
+	}
+}
+
+ip_temperature_add_15 = {
+	je:je_israel_palestine_peacetime ?= {
+		add_progress = { value = 15 name = je_israel_palestine_tension_bar }
+	}
+}
+
+ip_temperature_add_20 = {
+	je:je_israel_palestine_peacetime ?= {
+		add_progress = { value = 20 name = je_israel_palestine_tension_bar }
+	}
+}
+
+ip_temperature_add_100 = {
+	je:je_israel_palestine_peacetime ?= {
+		add_progress = { value = 100 name = je_israel_palestine_tension_bar }
+	}
+}
+
+ip_temperature_subtract_1 = {
+	je:je_israel_palestine_peacetime ?= {
+		add_progress = { value = -1 name = je_israel_palestine_tension_bar }
+	}
+}
+
+ip_temperature_subtract_3 = {
+	je:je_israel_palestine_peacetime ?= {
+		add_progress = { value = -3 name = je_israel_palestine_tension_bar }
+	}
+}
+
+ip_temperature_subtract_4 = {
+	je:je_israel_palestine_peacetime ?= {
+		add_progress = { value = -4 name = je_israel_palestine_tension_bar }
+	}
+}
+
+ip_temperature_subtract_5 = {
+	je:je_israel_palestine_peacetime ?= {
+		add_progress = { value = -5 name = je_israel_palestine_tension_bar }
+	}
+}
+
+ip_temperature_subtract_6 = {
+	je:je_israel_palestine_peacetime ?= {
+		add_progress = { value = -6 name = je_israel_palestine_tension_bar }
+	}
+}
+
+ip_temperature_subtract_8 = {
+	je:je_israel_palestine_peacetime ?= {
+		add_progress = { value = -8 name = je_israel_palestine_tension_bar }
+	}
+}
+
+ip_temperature_subtract_12 = {
+	je:je_israel_palestine_peacetime ?= {
+		add_progress = { value = -12 name = je_israel_palestine_tension_bar }
+	}
+}
+
+ip_temperature_subtract_15 = {
+	je:je_israel_palestine_peacetime ?= {
+		add_progress = { value = -15 name = je_israel_palestine_tension_bar }
+	}
+}
+
+ip_temperature_subtract_20 = {
+	je:je_israel_palestine_peacetime ?= {
+		add_progress = { value = -20 name = je_israel_palestine_tension_bar }
+	}
+}
+
+ip_temperature_subtract_25 = {
+	je:je_israel_palestine_peacetime ?= {
+		add_progress = { value = -25 name = je_israel_palestine_tension_bar }
+	}
+}
+
+ip_escalate_to_intifada_warning_effect = {
+	every_country = {
+		limit = {
+			OR = {
+				c:ISR ?= this
+				c:PAL ?= this
+			}
+		}
+		add_modifier = {
+			name = ip_breakdown_of_calm
+			years = 2
+			is_decaying = yes
+		}
+	}
+
+	add_contextless_journal_entry = je_second_intifada
+	c:PAL ?= {
+		create_diplomatic_play = {
+			name = second_intifada
+
+			target_state = c:ISR.capital
+
+			war = yes
+			annex_as_civil_war = yes
+
+			type = dp_revolution
+
+		}
+	}
+}
+
+oslo_i_acceptance_effect = {
+	set_global_variable = oslo_i_signed
+	remove_global_variable = oslo_i_proposed
+
+	c:ISR ?= {
+		add_modifier = {
+			name = oslo_i_peace_process
+			years = 2
+		}
+		change_relations = {
+			country = c:PAL
+			value = 25
+		}
+	}
+
+	c:PAL ?= {
+		add_modifier = {
+			name = oslo_i_palestinian_authority
+			years = 2
+		}
+		change_relations = {
+			country = c:ISR
+			value = 25
+		}
+
+	}
+
+	c:ISR ?= {
+		remove_diplomatic_pact = {
+		 country = c:ISR
+		 type = dominion
+		}
+	}
+	s:STATE_PALESTINE ={
+			set_owner_of_provinces = {
+			 country = c:ISR
+			 provinces = { xE7C6D6 }
+		}
+	}
+	ip_temperature_subtract_25 = yes
+	if = {
+		limit = { has_global_variable = ip_peacetime_negotiations }
+		change_global_variable = { name = ip_peacetime_negotiations add = 35 }
+	}
+	if = {
+		limit = { has_global_variable = ip_peacetime_international_pressure }
+		change_global_variable = { name = ip_peacetime_international_pressure add = -10 }
+	}
+
+	# Oslo II proposal, 720 days later.
+	c:ISR ?= {
+		trigger_event = {
+			id = oslo_accords.2
+			days = 720
+			popup = yes
+		}
+	}
+}
+
+intifada_2005_cleanup_effect = {
+	# Clean Israel and Palestine country modifiers from the Second Intifada system.
+	every_country = {
+		limit = {
+			OR = {
+				c:ISR ?= this
+				c:PAL ?= this
+			}
+		}
+
+		remove_modifier = intifada_urban_uprising
+		remove_modifier = intifada_isr_morale
+		remove_modifier = intifada_popular_resistance
+		remove_modifier = intifada_stone_throwing
+		remove_modifier = intifada_idf_crackdown
+		remove_modifier = intifada_raid_expenses
+		remove_modifier = intifada_international_pressure
+
+		add_modifier = {
+			name = intifada_2005_ceasefire
+			years = 5
+			is_decaying = yes
+		}
+	}
+
+	# Clean Palestinian-state devastation modifier if it exists.
+	c:PAL ?= {
+		every_scope_state = {
+			limit = {
+				has_modifier = intifada_devastation
+			}
+			remove_modifier = intifada_devastation
+		}
+	}
+
+	# Clean global variables used by the Second Intifada package.
+	remove_global_variable = isr_intifada_score
+	remove_global_variable = pal_intifada_score
+	remove_global_variable = intifada_started
+	remove_global_variable = intifada_uprising_phase
+	remove_global_variable = intifada_offensive_launched
+}
+
+
+oslo_ii_acceptance_effect = {
+	set_global_variable = oslo_ii_signed
+	remove_global_variable = oslo_ii_proposed
+
+	c:ISR ?= {
+		add_modifier = {
+			name = oslo_ii_interim_agreement
+			years = 5
+		}
+		add_modifier = {
+			name = oslo_ii_joint_security_framework
+			years = 5
+		}
+		change_relations = {
+			country = c:PAL
+			value = 15
+		}
+	}
+
+	c:PAL ?= {
+		add_modifier = {
+			name = oslo_ii_expanded_self_government
+			years = 5
+		}
+		add_modifier = {
+			name = oslo_ii_administrative_fragmentation
+			years = 5
+		}
+		change_relations = {
+			country = c:ISR
+			value = 15
+		}
+	}
+
+	ip_temperature_subtract_15 = yes
+	if = {
+		limit = { has_global_variable = ip_peacetime_negotiations }
+		change_global_variable = { name = ip_peacetime_negotiations add = 25 }
+	}
+	if = {
+		limit = { has_global_variable = ip_peacetime_security_coordination }
+		change_global_variable = { name = ip_peacetime_security_coordination add = 20 }
+	}
+}
+
+# Expanded Yugoslav Wars Scripted Effects
+
+yugo_monthly_pressure_drift = {
+	if = {
+		limit = { c:YUG ?= this }
+		change_variable = { name = yugo_secession_pressure add = 1 }
+		change_variable = { name = yugo_stability add = -0.5 }
+
+		if = {
+			limit = { infamy >= infamy_threshold:infamous }
+			change_variable = { name = yugo_secession_pressure add = 1 }
+		}
+		if = {
+			limit = { legitimacy < 50 }
+			change_variable = { name = yugo_secession_pressure add = 1 }
+			change_variable = { name = yugo_stability add = -1 }
+		}
+		if = {
+			limit = { has_law = law_type:law_outlawed_dissent }
+			change_variable = { name = yugo_secession_pressure add = 1 }
+		}
+
+		# Player-side stabilising factors
+		if = {
+			limit = { has_law = law_type:law_universal_suffrage }
+			change_variable = { name = yugo_secession_pressure add = -1 }
+			change_variable = { name = yugo_stability add = 0.5 }
+		}
+		if = {
+			limit = { has_modifier = yugoslav_confederal_negotiations }
+			change_variable = { name = yugo_secession_pressure add = -1 }
+			change_variable = { name = yugo_stability add = 1 }
+		}
+		if = {
+			limit = { has_modifier = peacekeeping_force_present }
+			change_variable = { name = yugo_secession_pressure add = -0.5 }
+		}
+
+		# Hard clamps so the bar can't go off scale
+		if = {
+			limit = { var:yugo_secession_pressure > 100 }
+			set_variable = { name = yugo_secession_pressure value = 100 }
+		}
+		if = {
+			limit = { var:yugo_secession_pressure < 0 }
+			set_variable = { name = yugo_secession_pressure value = 0 }
+		}
+		if = {
+			limit = { var:yugo_stability > 100 }
+			set_variable = { name = yugo_stability value = 100 }
+		}
+		if = {
+			limit = { var:yugo_stability < 0 }
+			set_variable = { name = yugo_stability value = 0 }
+		}
+	}
+}
+
+yugo_reduce_pressure_small = {
+	change_variable = { name = yugo_secession_pressure add = -8 }
+	change_variable = { name = yugo_stability add = 5 }
+}
+
+yugo_reduce_pressure_large = {
+	change_variable = { name = yugo_secession_pressure add = -15 }
+	change_variable = { name = yugo_stability add = 10 }
+}
+
+yugo_increase_pressure_small = {
+	change_variable = { name = yugo_secession_pressure add = 8 }
+	change_variable = { name = yugo_stability add = -4 }
+}
+
+yugo_increase_pressure_large = {
+	change_variable = { name = yugo_secession_pressure add = 20 }
+	change_variable = { name = yugo_stability add = -12 }
+}
+
+yugo_create_bosnian_entities = {
+	# Republika Srpska
+	if = {
+		limit = { NOT = { exists = c:SRP } }
+		create_country = {
+			tag = SRP
+			origin = this
+			province = p:xD0A0A0
+			on_created = {
+				s:STATE_VLASENICA = {
+					set_owner_of_provinces = {
+						country = c:SRP
+						provinces = { xD0A0A0 x3F67BA }
+					}
+				}
+				s:STATE_BOSNIA = {
+					set_owner_of_provinces = {
+						country = c:SRP
+						provinces = { x3F67BA x1121E0 x3B7D2B x50209F x7C904A xA40356 }
+					}
+				}
+			}
+		}
+	}
+
+	# Serbian Krajina
+	if = {
+		limit = { NOT = { exists = c:PCK } }
+		create_country = {
+			tag = PCK
+			origin = this
+			province = p:xDA817B
+			on_created = {
+				s:STATE_SLAVONIA = {
+					set_owner_of_provinces = {
+						country = c:PCK
+						provinces = { x902161 x1A4DF9 }
+					}
+				}
+			}
+		}
+	}
+
+	# Bosnia
+	if = {
+		limit = { NOT = { exists = c:BOS } }
+		create_country = {
+			tag = BOS
+			origin = this
+			province = p:x19AF6A
+			on_created = {
+				s:STATE_BOSNIA = { 
+					set_owner_of_provinces = {
+						country = c:BOS
+						provinces = { x23D67C x51A0A0 x5F13FD x9021E0 xDA817B x1E7362 xF06101 xD021A0 xAC2DD3 }
+					}
+				}
+			}
+		}
+	}
+}
+
+yugo_launch_croatian_war = {
+	if = {
+		limit = {
+			exists = c:HRV
+			exists = c:YUG
+			NOT = { c:HRV = { has_variable = croatian_war_started } }
+		}
+		c:HRV = {
+			set_variable = croatian_war_started
+			create_diplomatic_play = {
+				name = croatian_war_of_independence
+				type = dp_secession
+				target_country = c:YUG
+				war = yes
+				add_war_goal = {
+					holder = c:YUG
+					type = annex_country
+					target_country = c:HRV
+				}
+			}
+		}
+	}
+}
+
+yugo_launch_bosnian_war = {
+	if = {
+		limit = {
+			exists = c:SRP
+			exists = c:BOS
+			NOT = { c:SRP = { has_variable = bosnian_war_started } }
+		}
+		c:SRP = {
+			set_variable = bosnian_war_started
+			create_diplomatic_play = {
+				name = bosnia_war
+				type = dp_annex_war
+				target_country = c:BOS
+				war = yes
+				add_war_goal = {
+					holder = c:SRP
+					type = annex_country
+					target_country = c:BOS
+				}
+				add_war_goal = {
+					holder = c:BOS
+					type = annex_country
+					target_country = c:SRP
+				}
+			}
+		}
+	}
+}
+
+yugo_create_kosovo = {
+	if = {
+		limit = {
+			NOT = { exists = c:KOS }
+			exists = c:YUG
+		}
+		create_country = {
+			tag = KOS
+			origin = c:YUG
+			province = p:xB852BB
+			on_created = {
+				s:STATE_KOSOVO = {
+					set_owner_of_provinces = {
+						country = c:KOS
+						provinces = { xB852BB x45E06A xD02161 xA5D3A9 }
+					}
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = { exists = c:KOS }
+		s:STATE_KOSOVO = {
+			set_owner_of_provinces = {
+				country = c:KOS
+				provinces = { xB852BB x45E06A xD02161 xA5D3A9 }
+			}
+		}
+	}
+	c:KOS ?= {
+		set_variable = kosovo_independent
+	}
+}
+
+yugo_create_montenegro = {
+	if = {
+		limit = {
+			exists = c:MGR
+			exists = c:YUG
+		}
+		s:STATE_MONTENEGRO.region_state:YUG = {
+			set_state_owner = c:MGR
+		}
+		c:MNE ?= {
+			set_variable = montenegro_independent
+		}
+	}
+	else_if = {
+		limit = {
+			NOT = { exists = c:MGR }
+			exists = c:YUG
+		}
+		
+		create_country = {
+			tag = MGR
+			origin = c:YUG
+			province = p:x446E84
+			on_created = {
+				s:STATE_MONTENEGRO.region_state:YUG = {
+					set_state_owner = c:MGR
+				}
+			}
+		}
+	}
+}
+
+yugo_end_kosovo_war = {
+	random_diplomatic_play = {
+		limit = {
+			OR = {
+				is_war = yes
+				is_war = no
+			}
+			any_scope_play_involved = { THIS = c:YUG }
+			any_scope_play_involved = { THIS = c:ALB }
+		}
+		end_play = yes
+	}
+	remove_global_variable = kosovo_conflict_active
+	set_global_variable = kosovo_under_international_administration
+}
+
+yugo_nato_bombing_effect = {
+	add_modifier = {
+		name = nato_bombing_aftermath
+		days = 1095
+	}
+	add_radicals = { value = 0.05 }
+	change_variable = { name = yugo_international_pressure add = 25 }
+}
+
+yugo_dayton_peace_effect = {
+	if = { limit = { exists = c:BOS } c:BOS = { add_modifier = { name = dayton_peace_framework days = 1825 } } }
+	if = { limit = { exists = c:SRP } c:SRP = { add_modifier = { name = dayton_peace_framework days = 1825 } } }
+	if = { limit = { exists = c:YUG } c:YUG = { add_modifier = { name = dayton_peace_framework days = 1825 } } }
+	set_global_variable = dayton_agreement_signed
+}
+
+yugo_create_armies_for_new_countries = {
+	if = { limit = { exists = c:HRV } c:HRV = { yugo_create_croatian_army = yes } }
+	if = { limit = { exists = c:BOS } c:BOS = { yugo_create_bosnian_army = yes } }
+	if = { limit = { exists = c:SRP } c:SRP = { yugo_create_srpska_army = yes } }
+	if = { limit = { exists = c:PCK } c:PCK = { yugo_create_krajina_army = yes } }
+	if = { limit = { exists = c:KOS } c:KOS = { yugo_create_kosovo_army = yes } }
+	if = { limit = { exists = c:MNE } c:MNE = { yugo_create_montenegro_army = yes } }
+	if = { limit = { exists = c:SLV } c:SLV = { yugo_create_slovenian_army = yes } }
+	if = { limit = { exists = c:MKD } c:MKD = { yugo_create_macedonian_army = yes } }
+}
+
+yugo_create_croatian_army = {
+	if = {
+		limit = { NOT = { has_variable = yugo_starting_army_created } }
+		set_variable = yugo_starting_army_created
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_europe
+			name = "Croatian_National_Guard"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_CROATIA
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_SLAVONIA
+				count = 6
+			}
+		}
+	}
+}
+
+yugo_create_bosnian_army = {
+	if = {
+		limit = { NOT = { has_variable = yugo_starting_army_created } }
+		set_variable = yugo_starting_army_created
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_europe
+			name = "Army_of_Bosnia_and_Herzegovina"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_BOSNIA
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_BOSNIA
+				count = 6
+			}
+		}
+	}
+}
+
+yugo_create_srpska_army = {
+	if = {
+		limit = { NOT = { has_variable = yugo_starting_army_created } }
+		set_variable = yugo_starting_army_created
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_europe
+			name = "Army_of_Republika_Srpska"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_BANJA_LUKA
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_VLASENICA
+				count = 6
+			}
+		}
+	}
+}
+
+yugo_create_krajina_army = {
+	if = {
+		limit = { NOT = { has_variable = yugo_starting_army_created } }
+		set_variable = yugo_starting_army_created
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_europe
+			name = "Krajina_Serb_Forces"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_SLAVONIA
+				count = 6
+			}
+		}
+	}
+}
+
+yugo_create_kosovo_army = {
+	if = {
+		limit = { NOT = { has_variable = yugo_starting_army_created } }
+		set_variable = yugo_starting_army_created
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_europe
+			name = "Kosovo_Protection_Forces"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_SOUTHERN_SERBIA
+				count = 8
+			}
+		}
+	}
+}
+
+yugo_create_montenegro_army = {
+	if = {
+		limit = { NOT = { has_variable = yugo_starting_army_created } }
+		set_variable = yugo_starting_army_created
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_europe
+			name = "Montenegrin_Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_MONTENEGRO
+				count = 6
+			}
+		}
+	}
+}
+
+yugo_create_slovenian_army = {
+	if = {
+		limit = { NOT = { has_variable = yugo_starting_army_created } }
+		set_variable = yugo_starting_army_created
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_europe
+			name = "Slovenian_Territorial_Defense"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_SLOVENIA
+				count = 6
+			}
+		}
+	}
+}
+
+yugo_create_macedonian_army = {
+	if = {
+		limit = { NOT = { has_variable = yugo_starting_army_created } }
+		set_variable = yugo_starting_army_created
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_europe
+			name = "Macedonian_Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_MACEDONIA
+				count = 6
+			}
+		}
+	}
+}

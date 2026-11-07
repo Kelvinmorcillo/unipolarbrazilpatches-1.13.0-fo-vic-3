@@ -1,0 +1,160 @@
+﻿l_french:
+# ==========================================
+ # OBJECTIVE
+ # ==========================================
+ 
+ objective_the_west: "L'Ouest"
+ objective_the_west_desc: "L'ordre international libéral - démocratie, libre-échange, sécurité collective et droits de l'homme - doit être maintenu et élargi. [ROOT.GetCountry.GetName] est au centre du système qui l'a construit. La tâche n'est pas seulement de maintenir ce qui existe, mais de veiller à ce que, lorsque le siècle se termine, les grandes puissances du monde soient soit dans l'ordre, soit incapables de le contester."
+ 
+ # ==========================================
+ # SUBGOAL NAMES AND DESCRIPTIONS
+ # ==========================================
+ 
+ sg_west_open_trade: "État de la monnaie de réserve"
+ sg_west_open_trade_desc: "Le système financier occidental fonctionne avec un crédit [ROOT.GetCountry.GetAdjective]. Établir [ROOT.GetCountry.GetName] comme l'exportateur dominant de crédit — plus de 1 000 unités — cimentant le système financier [ROOT.GetCountry.GetAdjective] comme l'épine dorsale de l'économie mondiale."
+ 
+ sg_west_alliances: "Réseau d'alliances"
+ sg_west_alliances_desc: "L'ordre occidental est un projet de sécurité collective. Établir des accords d'assistance militaire avec au moins quatre pays, en créant le réseau d'alliances qui dissuade l'agression et projette le pouvoir [ROOT.GetCountry.GetAdjective] par le partenariat plutôt que par l'occupation."
+ 
+ sg_west_human_rights: "Cadre démocratique libéral"
+ sg_west_human_rights_desc: "L'Occident est défini non seulement par sa richesse mais par ses valeurs. Etablir le suffrage universel, les protections des travailleurs, l'abolition de l'esclavage et la protection de la parole, fondements institutionnels d'une société démocratique libérale. L'ordre [ROOT.GetCountry.GetName] est la construction doit valoir la peine d'être défendu."
+ 
+ sg_west_education: "Une citoyenneté éduquée"
+ sg_west_education_desc: "La participation démocratique et le dynamisme économique dépendent d'une population instruite. Investir dans le système scolaire au niveau 5 et atteindre un taux d'alphabétisation d'au moins 75 %. Une citoyenneté informée est le fondement le plus durable de l'ordre libéral."
+ 
+ sg_west_gdp: "Leadership économique"
+ sg_west_gdp_desc: "L'ordre occidental est souscrit par le poids économique. [ROOT.GetCountry.GetName] doit représenter au moins 25 % du PIB mondial, soit [ROOT.GetCountry.GetAdjective] l'économie trop grande et trop centrale au système mondial pour que tout concurrent puisse relever un défi crédible."
+ 
+ sg_west_endgame: "Le moment unipolaire"
+ sg_west_endgame_desc: "Le dernier défi. Les deux [SCOPE.sCountry('c:RUS').GetName] et [SCOPE.sCountry('c:CHI').GetName] doivent être introduits dans l'ordre ou rendus incapables de le menacer. Pour chacun : soit ils démocratisent, adoptent le suffrage universel, et signent un pacte de défense avec [ROOT.GetCountry.GetName], soit leur pouvoir tombe sous le rang d'un pouvoir majeur. Il n'y a pas de troisième option qui préserve l'ordre."
+ 
+ # ==========================================
+ # JOURNAL ENTRY NAMES AND DESCRIPTIONS
+ # ==========================================
+ 
+ je_west_open_trade: "Dominance financière"
+ je_west_open_trade_reason: "Le dollar [ROOT.GetCountry.GetAdjective] — ou tout autre dollar [ROOT.GetCountry.GetName] appelé sa monnaie — est la monnaie de réserve mondiale. D'autres nations la détiennent, s'y installent et construisent leurs systèmes financiers. L'exportation de plus de 1 000 unités de crédit sur les marchés internationaux renforce cette position et donne [ROOT.GetCountry.GetName] un effet de levier structurel sur le système financier mondial qu'aucune force militaire ne peut reproduire."
+ 
+ je_west_alliances: "Sécurité collective"
+ je_west_alliances_reason: "OTAN. NZUS. Les partenariats de sécurité qui définissent le bloc occidental ne sont pas seulement des arrangements militaires, mais des engagements politiques. Établir des accords d'assistance militaire avec au moins quatre pays. Chaque partenariat s'étend à [ROOT.GetCountry.GetAdjective] et réduit le coût du maintien de l'ordre."
+ 
+ je_west_human_rights: "La Fondation institutionnelle"
+ je_west_human_rights_reason: "Au suffrage universel. Protection des travailleurs. L'abolition de l'esclavage. Discours protégé. Ce ne sont pas des ajouts facultatifs au modèle occidental — ils sont le modèle. Sans eux, ce que [ROOT.GetCountry.GetName] défend n'est que le pouvoir, pas le principe. Agissez les quatre pour établir les fondements institutionnels nécessaires à l'ordre libéral."
+ 
+ je_west_education: "Éducation pour tous"
+ je_west_education_reason: "Le modèle occidental dépend des citoyens qui peuvent lire, raisonner et participer. Investir dans les écoles jusqu'au niveau 5 et atteindre un taux national d'alphabétisation de 75 %. Il ne suffit pas d'avoir les bonnes lois — la population doit être suffisamment éduquée pour les utiliser."
+ 
+ je_west_gdp: "5% du PIB mondial"
+ je_west_gdp_reason: "La taille compte. [ROOT.GetCountry.GetName] doit représenter au moins un quart de la production économique mondiale. À cette échelle, la valeur [ROOT.GetCountry.GetAdjective] l'économie n'est pas seulement grande, elle est indispensable. Le monde échange avec [ROOT.GetCountry.GetName], emprunte de [ROOT.GetCountry.GetName] et ne peut se permettre de faire de [ROOT.GetCountry.GetName] un ennemi."
+ 
+ je_west_endgame: "Fin de l'histoire"
+ je_west_endgame_reason: "La question de l'âge : peut-on neutraliser [SCOPE.sCountry('c:RUS').GetName] et [SCOPE.sCountry('c:CHI').GetName] en tant que rivaux systémiques de l'ordre occidental?\n\n Pour chaque pays, l'un des éléments suivants doit être vrai :\n• Ils ont adopté une république démocratique, le suffrage universel, et signé un pacte défensif avec [ROOT.GetCountry.GetName]\n• Leur rang de puissance est tombé sous celui d'une puissance majeure \n\n Lorsque les deux conditions sont remplies, le moment unipolaire est terminé."
+ 
+ # ==========================================
+ # PROGRESS TOOLTIPS
+ # ==========================================
+ 
+ je_west_open_trade_progressing_tt: "Les exportations de crédit augmentent — le système financier [ROOT.GetCountry.GetAdjective] se développe à l'échelle internationale"
+ je_west_alliances_progressing_tt: "Le réseau de l'alliance prend forme — plus de partenaires sont nécessaires"
+ je_west_human_rights_progressing_tt: "Certains cadres de droits sont en place — l'ensemble n'a pas encore été adopté"
+ je_west_education_progressing_tt: "Le système scolaire se développe — les investissements de niveau 5 et l'alphabétisation à 75 % sont les objectifs"
+ je_west_gdp_progressing_tt: "[ROOT.GetCountry.GetName] représente plus de 15 % du PIB mondial — l'objectif est de 25 %"
+ je_west_endgame_progressing_tt: "Un rival a été affaibli ou démocratisé — l'autre reste un défi systémique"
+ 
+ # ==========================================
+ # OBJECTIVE
+ # ==========================================
+
+ objective_the_east: "L'Est"
+ objective_the_east_desc: "L'ordre libéral occidental n'est pas le seul monde possible. [ROOT.GetCountry.GetName] a un modèle différent, celui de la direction de l'État, de la force collective et du développement souverain. La tâche est de démontrer que ce modèle peut correspondre à l'Occident en matière de puissance économique et de portée mondiale, et de construire un monde dans lequel [ROOT.GetCountry.GetName], et non aux États-Unis, définit les termes de l'ordre international."
+
+ # ==========================================
+ # SUBGOAL NAMES AND DESCRIPTIONS
+ # ==========================================
+
+ sg_east_state_industry: "Base industrielle dirigée"
+ sg_east_state_industry_desc: "Le modèle de l'Est repose sur la capacité de l'État à orienter les investissements dans l'industrie lourde. Maintenir une économie interventionniste ou de commandement, renforcer la capacité de construction à au moins 10, et développer l'extraction du fer à au moins 5 avec une forte occupation. C'est la base économique sur laquelle tout le reste dépend."
+
+ sg_east_great_power: "Grande puissance"
+ sg_east_great_power_desc: "Le défi oriental de l'hégémonie occidentale ne peut être relevé que par une véritable grande puissance. Atteindre le rang de grand pouvoir — il n'y a pas de négociation avec [SCOPE.sCountry('c:USA').GetName] comme un égal d'une position de faiblesse."
+
+ sg_east_sphere: "Le Bloc Est"
+ sg_east_sphere_desc: "Construire le réseau d'états alliés qui constitue la sphère d'influence de [ROOT.GetCountry.GetName]. Établir des accords d'assistance militaire avec au moins quatre pays. Les alliances ne sont pas des œuvres de charité — elles sont l'infrastructure de projection d'énergie."
+
+ sg_east_currency: "Monnaie de réserve orientale"
+ sg_east_currency_desc: "La domination du dollar est l'avantage le plus durable de l'Occident — elle permet aux États-Unis de financer leur hégémonie au détriment de l'économie mondiale. Défiez-le. Exporter plus de 1 000 unités de crédit sur les marchés internationaux et maintenir les valeurs mobilières à des prix compétitifs pour attirer les investisseurs étrangers. Une monnaie de réserve orientale n'est pas seulement économique, elle est géopolitique."
+
+ sg_east_endgame: "Un monde multipolaire"
+ sg_east_endgame_desc: "Le dernier défi. Les États-Unis, la Grande-Bretagne et la France — les trois piliers de l'ordre occidental — doivent tous être neutralisés. Pour chacun : soit leur rang de pouvoir tombe en dessous de celui d'une puissance majeure, soit ils signent un pacte de défense avec [ROOT.GetCountry.GetName]. Lorsque les trois conditions sont remplies, l'ordre mondial a changé."
+
+ je_east_state_industry: "La Fondation industrielle"
+ je_east_state_industry_reason: "L'État doit investir directement dans l'industrie lourde, et non pas laisser les marchés. Maintenir une économie interventionniste ou de commandement, renforcer la capacité de construction à au moins 10, et développer une capacité importante d'extraction du fer à 75 % d'occupation ou mieux. Sans cette base industrielle, [ROOT.GetCountry.GetName] ne peut pas maintenir le poids militaire et économique requis par le défi oriental."
+
+ je_east_great_power: "Lève-toi vers la Grande Puissance"
+ je_east_great_power_reason: "Atteindre le rang de grande puissance. À l'heure actuelle, [ROOT.GetCountry.GetName] peut être l'une des nations les plus fortes du monde — mais le statut de grande puissance est la reconnaissance formelle que [ROOT.GetCountry.GetName] appartient à la salle où les décisions concernant l'ordre mondial sont prises. C'est la condition préalable à tout ce qui suit."
+
+ je_east_sphere: "Quatre partenaires militaires"
+ je_east_sphere_reason: "Établir des accords d'assistance militaire avec au moins quatre pays. [ROOT.GetCountry.GetName] ne peut pas remettre en question le seul système d'alliance occidentale. La sphère orientale doit être un véritable collectif — États qui dépendent de [ROOT.GetCountry.GetName] et dont [ROOT.GetCountry.GetName] peut dépendre en retour."
+
+ je_east_currency: "Défi Dollar Dominance"
+ je_east_currency_reason: "Le statut de la monnaie de réserve du dollar [SCOPE.sCountry('c:USA').GetAdjective] est l'avantage structurel qui a permis à l'Ouest de dépasser son poids pendant des décennies. Pour y parvenir, il faut exporter plus de 1 000 unités de crédit sur les marchés internationaux — et conserver des titres [ROOT.GetCountry.GetAdjective] dont le prix ne dépasse pas 25 % de leur valeur de base afin que les investisseurs étrangers les trouvent attrayants.\n\n Un système financier oriental que d'autres utilisent volontiers n'est pas seulement une réalisation économique. C'est une déclaration que le dollar n'est pas le seul choix."
+
+ je_east_endgame: "Les puissances occidentales neutralisées"
+ je_east_endgame_reason: "L'ordre mondial change quand ses gardiens ne peuvent plus le garder. Tous les trois doivent être résolus :\n\n• [SCOPE.sCountry('c:USA').GetName] : sous le rang de puissance majeur, ou signé un pacte de défense avec [ROOT.GetCountry.GetName]\n• [SCOPE.sCountry('c:GBR').GetName] : sous le rang de puissance majeur, ou signé un pacte de défense avec [ROOT.GetCountry.GetName]\n• [SCOPE.sCountry('c:FRA').GetName] : sous le rang de puissance majeur, ou signé un pacte de défense avec [ROOT.GetCountry.GetName]\n\n Lorsque les trois conditions sont remplies, [ROOT.GetCountry.GetName] n'a pas simplement survécu à l'ordre occidental. Il l'a remplacé."
+
+ je_east_state_industry_progressing_tt: "La base industrielle se développe — la capacité de construction et l'extraction de fer ne sont pas encore à la cible"
+ je_east_great_power_progressing_tt: "[ROOT.GetCountry.GetName] est une puissance majeure — le grand pouvoir est à portée de main"
+ je_east_sphere_progressing_tt: "Le réseau d'alliances se développe — quatre accords d'assistance militaire sont nécessaires"
+ je_east_currency_progressing_tt: "Les exportations de crédit augmentent — 1 000 unités sont nécessaires pour établir le statut de monnaie de réserve"
+ je_east_endgame_progressing_tt: "Au moins une puissance occidentale a été neutralisée — les autres restent"
+ 
+ # ==========================================
+ # OBJECTIVE
+ # ==========================================
+
+ objective_rising_powers: "Pouvoirs croissants"
+ objective_rising_powers_desc: "Le monde ne doit pas être divisé entre deux blocs. [ROOT.GetCountry.GetName] refuse de choisir — entre Washington et Moscou, entre le dollar et tout ce qui vient ensuite, entre un empire et un autre. La troisième voie est plus difficile que l'une ou l'autre des alternatives. Elle exige un poids économique véritable, une puissance militaire crédible et la capacité diplomatique de tenir une coalition d'États qui n'ont qu'une chose en commun : ils refusent également de choisir."
+
+ # ==========================================
+ # SUBGOAL NAMES AND DESCRIPTIONS
+ # ==========================================
+
+ sg_rising_economy: "Fondations économiques"
+ sg_rising_economy_desc: "Bâtir une économie qui représente au moins 10 % du PIB mondial — suffisamment substantielle pour ancrer un troisième bloc — tout en maintenant l'exposition commerciale à un partenaire unique inférieur à 40 %. La souveraineté commence par l'indépendance économique."
+
+ sg_rising_sovereignty: "Pleine indépendance souveraine"
+ sg_rising_sovereignty_desc: "Un pouvoir croissant ne peut être un état client. Atteindre un rang de puissance majeur, atteindre un prestige d'au moins 50 et s'assurer que [ROOT.GetCountry.GetName] n'est ni un sujet de puissance ni une marionnette de [SCOPE.sCountry('c:USA').GetName] ou [SCOPE.sCountry('c:RUS').GetName]. La troisième voie commence par la liberté de choisir."
+
+ sg_rising_military: "Crédibilité militaire"
+ sg_rising_military_desc: "La troisième voie n'est crédible que si elle peut se défendre. Atteindre le rang de grand pouvoir et de champ une armée d'au moins 100 unités. Un État non aligné qui ne peut se protéger ne restera pas non aligné longtemps."
+
+ sg_rising_prestige: "Reconnaissance internationale"
+ sg_rising_prestige_desc: "Atteindre un classement mondial de 5 ou mieux avec un prestige d'au moins 150. [ROOT.GetCountry.GetName] doit être impossible à ignorer — non seulement une puissance régionale, mais une puissance que les grandes puissances doivent rendre compte dans chaque calcul qu'elles font."
+
+ sg_rising_endgame: "Le troisième bloc"
+ sg_rising_endgame_desc: "Dirigez un bloc de huit membres ou plus comme une grande puissance. C'est la preuve du concept — un troisième pôle de la politique mondiale, assez grand et suffisamment crédible pour que ni l'Occident ni l'Est ne puissent l'absorber ni le rejeter. Quand [ROOT.GetCountry.GetName] mène huit nations, le monde est multipolaire."
+
+ je_rising_economy: "5% du PIB mondial"
+ je_rising_economy_reason: "Construisez l'économie de [ROOT.GetCountry.GetName] à plus de 10 % de la production mondiale — et faites-le sans dépendre économiquement d'une seule puissance. La cible est une économie trop grande pour être sanctionnée dans la soumission et trop diversifiée pour être étranglée par un quelconque embargo.\n\n@information! La dépendance commerciale vis-à-vis de tout partenaire unique doit rester inférieure à 40 % de l'activité totale du marché."
+
+ je_rising_sovereignty: "Souverain et indépendant"
+ je_rising_sovereignty_reason: "Atteindre le rang de puissance majeur et un prestige de 50 ou mieux, tout en restant pleinement indépendant — pas un sujet d'aucun pays, pas une marionnette d'aucune puissance étrangère. L'indépendance souveraine totale n'est pas la fin du voyage. C'est le début."
+
+ je_rising_military: "Une force crédible"
+ je_rising_military_reason: "Atteindre un grand grade de puissance et de champ une armée d'au moins 100 unités. [ROOT.GetCountry.GetName] doit être capable de défendre ses propres choix. Un pays non aligné qui ne peut se défendre trouvera son alignement décidé par d'autres."
+
+ je_rising_prestige: "Top 5 — Incontestable"
+ je_rising_prestige_reason: "Atteindre un classement mondial de 5 ou mieux et un prestige d'au moins 150. À ce niveau, [ROOT.GetCountry.GetName] n'est pas une curiosité régionale — c'est une puissance mondiale dont les positions ne peuvent être ignorées, dont l'alignement est véritablement contesté et dont l'approbation vaut la peine d'être acquise."
+
+ je_rising_endgame: "Diriger le troisième bloc"
+ je_rising_endgame_reason: "Dirigez un bloc de huit membres ou plus comme une grande puissance. Huit pays qui choisissent de s'organiser autour de [ROOT.GetCountry.GetName] plutôt que de [SCOPE.sCountry('c:USA').GetName] ou [SCOPE.sCountry('c:RUS').GetName] ne sont pas seulement des réalisations diplomatiques — c'est un fait structurel de la politique internationale. La troisième voie existe. Il a des membres. Il a un chef. Les superpuissances devront en rendre compte."
+
+ # ==========================================
+ # PROGRESS TOOLTIPS
+ # ==========================================
+
+ je_rising_economy_progressing_tt: "[ROOT.GetCountry.GetName] représente plus de 2% du PIB mondial — 5% est l'objectif"
+ je_rising_sovereignty_progressing_tt: "[ROOT.GetCountry.GetName] est reconnu et indépendant — un rang de pouvoir majeur et un prestige 50 sont nécessaires"
+ je_rising_military_progressing_tt: "La capacité militaire est en augmentation - un grand grade de puissance et la taille de l'armée 100 sont les cibles"
+ je_rising_prestige_progressing_tt: "[ROOT.GetCountry.GetName] approche du top 5 — le prestige 150 et le classement mondial 5 sont nécessaires"
+ je_rising_endgame_progressing_tt: "Le bloc se forme — 8 membres sont nécessaires pour atteindre l'objectif"

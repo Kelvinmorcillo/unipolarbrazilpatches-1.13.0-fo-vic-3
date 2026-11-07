@@ -1,0 +1,63 @@
+﻿ 
+nuclear_enrichment_progress_bar = {
+	name = "nuclear_enrichment_progress_bar"
+	desc = "nuclear_enrichment_progress_bar_desc"
+ 
+	start_value = 0
+	min_value = 0
+	max_value = 100
+ 
+	default = yes
+ 
+	monthly_progress = {
+		if = {
+			limit = { exists = var:uranium_enrichment_progress }
+			add = {
+				desc = "nuclear_enrichment_progress_bar_tt"
+				value = var:uranium_enrichment_progress
+			}
+		}
+	}
+}
+ 
+nuclear_production_progress_bar = {
+	name = "nuclear_production_progress_bar"
+	desc = "nuclear_production_progress_bar_desc"
+ 
+	start_value = 0
+	min_value = 0
+	max_value = 100
+ 
+	default = yes
+ 
+	monthly_progress = {
+		if = {
+			limit = { exists = var:nuclear_production_progress }
+			add = {
+				desc = "nuclear_production_progress_bar_tt"
+				value = var:nuclear_production_progress
+			}
+		}
+	}
+}
+ 
+icbm_progress_bar = {
+	name = "icbm_progress_bar"
+	desc = "icbm_progress_bar_desc"
+ 
+	start_value = 0
+	min_value = 0
+	max_value = 100
+ 
+	default = yes
+ 
+	monthly_progress = {
+		if = {
+			limit = { exists = var:icbm_progress }
+			add = {
+				desc = "icbm_progress_bar_tt"
+				value = var:icbm_progress
+			}
+		}
+	}
+}

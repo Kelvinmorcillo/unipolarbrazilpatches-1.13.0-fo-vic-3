@@ -1,0 +1,19 @@
+﻿CHARACTERS = {
+	c:TRK ?= {
+	create_character = {
+			first_name = "turgut"
+			last_name = "ozal"
+			historical = yes
+			ruler = yes
+			culture = cu:turkish
+			birth_date = 1927.4.18
+			dna = dna_turgut
+			ig_leader = yes
+			interest_group = ig_armed_forces
+			ideology = ideology_conservative_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+}

@@ -1,0 +1,476 @@
+﻿# ==========================================
+# HISTORICAL AMENDMENTS 
+# ==========================================
+
+# ── UNITED STATES ─────────────────────────
+
+# MEDICAID
+# Federal health insurance for low-income
+# Americans. Parent: charitable or no health
+# system — fills the gap left by private
+# markets.
+
+amendment_medicaid = {
+	parent = law_private_health_insurance
+	allowed_laws = {
+		law_no_health_system
+		law_charitable_health_system
+		law_private_health_insurance
+		law_public_health_insurance
+	}
+	modifier = {
+		# Medicaid expands healthcare access for the poor
+		state_mortality_mult                        = -0.01
+		state_mortality_wealth_mult                 = -0.01
+		state_lower_strata_standard_of_living_add   = 0.25
+	}
+	possible = {
+		c:USA ?= this
+	}
+	ai_will_revoke = {
+		NOT = {
+			any_interest_group = {
+				is_in_government = yes
+				OR = {
+					is_interest_group_type = ig_trade_unions
+					is_interest_group_type = ig_intelligentsia
+					is_interest_group_type = ig_petty_bourgeoisie
+					is_interest_group_type = ig_professionals
+				}
+			}
+		}
+	}
+	can_repeal = {
+		legitimacy >= legitimacy_to_repeal_amendment
+	}
+	amendment_activism_multiplier = 0.75
+}
+
+# OBAMACARE (AFFORDABLE CARE ACT)
+# Mandated private health insurance with
+# subsidies and regulatory standards.
+# Parent: private health insurance law.
+
+amendment_affordable_care_act = {
+	parent = law_private_health_insurance
+	allowed_laws = {
+		law_private_health_insurance
+		law_public_health_insurance
+	}
+	modifier = {
+		# ACA extends private coverage to more of the population
+		state_mortality_mult                        = -0.01
+		state_mortality_wealth_mult                 = -0.01
+		state_lower_strata_standard_of_living_add   = 0.25
+		# Petty bourgeoisie dislike the mandate costs
+	}
+	possible = {
+		c:USA ?= this
+	}
+	ai_will_revoke = {
+		OR = {
+			any_interest_group = {
+				is_in_government = yes
+				is_interest_group_type = ig_petty_bourgeoisie
+				ig_approval < -3
+			}
+			NOT = {
+				any_interest_group = {
+					is_in_government = yes
+					OR = {
+						is_interest_group_type = ig_trade_unions
+						is_interest_group_type = ig_intelligentsia
+					}
+				}
+			}
+		}
+	}
+	can_repeal = {
+		legitimacy >= legitimacy_to_repeal_amendment
+	}
+	amendment_activism_multiplier = 0.75
+}
+
+# 1994 FEDERAL ASSAULT WEAPONS BAN
+# Ten-year prohibition on manufacture
+# of specific semi-automatic weapons
+# and high-capacity magazines for
+# civilian sale.
+
+amendment_federal_assault_weapons_ban = {
+	parent = law_licensed_firearms
+	allowed_laws = {
+		law_unrestricted_firearms
+		law_licensed_firearms
+	}
+	modifier = {
+		# Reduces radicalization slightly — fewer weapons in circulation
+		state_radicals_from_political_movements_mult = -0.03
+		state_turmoil_effects_mult                  = -0.02
+
+	}
+	possible = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+	ai_will_revoke = {
+		NOT = {
+			any_interest_group = {
+				is_in_government = yes
+				OR = {
+					is_interest_group_type = ig_intelligentsia
+					is_interest_group_type = ig_trade_unions
+				}
+			}
+		}
+	}
+	can_repeal = {
+		legitimacy >= legitimacy_to_repeal_amendment
+	}
+	amendment_activism_multiplier = 0.75
+}
+
+# AUTHORIZATION FOR USE OF MILITARY FORCE
+# Post-9/11 AUMF grants the executive
+# broad war-making authority against
+# non-state actors. Reduces infamy
+# generation from military interventions.
+
+amendment_authorization_military_force = {
+	parent = law_professional_army
+	allowed_laws = {
+		law_professional_army
+		law_mass_conscription
+	}
+	modifier = {
+		# AUMF reduces diplomatic blowback from interventions
+		country_infamy_generation_mult              = -0.10
+		country_infamy_generation_against_unrecognized_mult = -0.15
+		# Expands declared interests reach
+		country_max_declared_interests_add          = 1
+		# Concentrates war-making in executive — authority up
+		country_authority_mult                      = 0.05
+	}
+	possible = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+	ai_will_revoke = {
+		NOT = {
+			any_interest_group = {
+				is_in_government = yes
+				OR = {
+					is_interest_group_type = ig_armed_forces
+					is_interest_group_type = ig_landowners
+				}
+			}
+		}
+	}
+	can_repeal = {
+		legitimacy >= legitimacy_to_repeal_amendment
+	}
+	amendment_activism_multiplier = 0.5
+}
+
+# THE PATRIOT ACT
+# Post-9/11 surveillance and law enforcement
+# expansion. Valid under national guard or
+# secret police. Grants some benefits of
+# secret police to national guard states.
+
+amendment_patriot_act = {
+	parent = law_national_guard
+	allowed_laws = {
+		law_national_guard
+		law_secret_police
+	}
+	modifier = {
+		# Domestic surveillance capabilities
+		country_authority_mult                      = 0.05
+		state_turmoil_effects_mult                  = -0.05
+		country_revolution_progress_mult            = -0.05
+		country_secession_progress_mult             = -0.05
+	}
+	possible = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+	ai_will_revoke = {
+		OR = {
+			any_interest_group = {
+				is_in_government = yes
+				is_interest_group_type = ig_intelligentsia
+				ig_approval < -15
+			}
+			NOT = {
+				any_interest_group = {
+					is_in_government = yes
+					OR = {
+						is_interest_group_type = ig_armed_forces
+						is_interest_group_type = ig_landowners
+					}
+				}
+			}
+		}
+	}
+	can_repeal = {
+		legitimacy >= legitimacy_to_repeal_amendment
+	}
+	amendment_activism_multiplier = 0.5
+}
+
+# 1994 CRIME BILL (VIOLENT CRIME CONTROL
+# AND LAW ENFORCEMENT ACT)
+# Expanded prison system, federal police
+# funding, mandatory minimum sentences.
+
+amendment_crime_bill_1994 = {
+	parent = law_dedicated_police
+	allowed_laws = {
+		law_dedicated_police
+		law_militarized_police
+	}
+	modifier = {
+		# More police, more prisons — turmoil falls
+		state_turmoil_effects_mult                  = -0.05
+		state_radicals_from_political_movements_mult = -0.05
+		# But mortality from enforcement rises for the poor
+		state_mortality_turmoil_mult                = 0.05
+		country_expenses_add                        = 25
+		# Rural folk and landowners broadly approve
+		interest_group_ig_rural_folk_approval_add   = 3
+		interest_group_ig_landowners_approval_add   = 3
+		# Trade unions and intelligentsia oppose
+		interest_group_ig_trade_unions_approval_add = -5
+		interest_group_ig_intelligentsia_approval_add = -5
+	}
+	possible = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+	ai_will_revoke = {
+		NOT = {
+			any_interest_group = {
+				is_in_government = yes
+				OR = {
+					is_interest_group_type = ig_landowners
+					is_interest_group_type = ig_rural_folk
+					is_interest_group_type = ig_armed_forces
+				}
+			}
+		}
+	}
+	can_repeal = {
+		legitimacy >= legitimacy_to_repeal_amendment
+	}
+	amendment_activism_multiplier = 0.75
+}
+
+# ── CHINA ─────────────────────────────────
+
+# 1994 TAX REFORM (CHINA)
+# Replaced enterprise-based taxation with
+# value-added tax and shared revenue system.
+# Centralised fiscal power in Beijing.
+
+amendment_china_tax_reform_1994 = {
+	parent = law_proportional_taxation
+	allowed_laws = {
+		law_proportional_taxation
+		law_graduated_taxation
+		law_consumption_based_taxation
+	}
+	modifier = {
+		# Centralised VAT system improves tax collection
+		country_tax_income_add                      = 30
+		state_tax_waste_add                         = -0.05
+		# More fiscal capacity flows to the centre
+		country_authority_mult                      = 0.03
+		country_minting_add                         = 10
+		# Bureaucrats gain from expanded fiscal administration
+		interest_group_ig_petty_bourgeoisie_approval_add = -3
+	}
+	possible = {
+		OR = {
+			country_has_primary_culture = cu:han
+		}
+	}
+	ai_will_revoke = {
+		scaled_debt < 0.20
+	}
+	can_repeal = {
+		legitimacy >= legitimacy_to_repeal_amendment
+	}
+	amendment_activism_multiplier = 0.5
+}
+
+# ONE CHILD POLICY (CHINA)
+# State enforcement of a one-child limit
+# per family. Dramatically reduces birth
+# rate. Parent: migration controls
+# reflects state control over population.
+
+amendment_one_child_policy = {
+	parent = law_public_health_insurance
+	allowed_laws = {
+		law_no_health_system
+		law_charitable_health_system
+		law_private_health_insurance
+		law_public_health_insurance
+	}
+	modifier = {
+		state_birth_rate_mult                       = -0.40
+		state_migration_pull_mult                   = -0.10
+		country_authority_mult                      = 0.15
+	}
+	possible = {
+		always = yes
+	}
+	ai_will_revoke = {
+		always = yes
+	}
+	can_repeal = {
+		legitimacy >= legitimacy_to_repeal_amendment
+	}
+	amendment_activism_multiplier = 0.5
+}
+
+# SOCIALIST MARKET ECONOMY
+# Deng Xiaoping's framework — market
+# mechanisms operating under party
+# direction. State-directed capitalism
+# with socialist characteristics.
+
+amendment_socialist_market_economy = {
+	parent = law_interventionism
+	allowed_laws = {
+		law_interventionism
+		law_command_economy
+	}
+	modifier = {
+		# State direction guides private investment
+		building_nationalization_cost_mult = -0.5
+		building_nationalization_radicals_mult = -0.75
+		country_government_dividends_efficiency_add = 0.4
+		country_authority_mult                      = 0.10
+		country_company_pay_to_establish_bool = yes
+	}
+	possible = {
+		always = yes
+	}
+	ai_will_revoke = {
+		NOT = {
+			has_law = law_type:law_interventionism
+			has_law = law_type:law_command_economy
+		}
+	}
+	can_repeal = {
+		legitimacy >= legitimacy_to_repeal_amendment
+	}
+	amendment_activism_multiplier = 0.5
+}
+
+# ── FRANCE ────────────────────────────────
+
+# 35-HOUR WORK WEEK (AUBRY LAWS, 1998-2000)
+# Mandatory 35-hour statutory work week.
+# Reduces working hours, boosts leisure,
+# increases employment as firms hire
+# more workers to cover hours.
+
+amendment_35_hour_work_week = {
+	parent = law_worker_protections
+	allowed_laws = {
+		law_worker_protections
+	}
+	modifier = {
+		# Better working conditions — the whole point
+		building_working_conditions_mult            = -0.20
+		# Slight throughput cost — fewer hours worked per employee
+		building_throughput_add                     = -0.02
+		# Trade unions very happy
+		interest_group_ig_trade_unions_approval_add = 10
+		interest_group_ig_intelligentsia_approval_add = 5
+		# Industrialists absorb the cost
+	}
+	possible = {
+		OR = {
+			country_has_primary_culture = cu:french
+		}
+	}
+	would_sponsor = {
+		OR = {
+			is_interest_group_type = ig_trade_unions
+			is_interest_group_type = ig_intelligentsia
+		}
+	}
+	ai_will_revoke = {
+		NOT = {
+			any_interest_group = {
+				is_in_government = yes
+				is_interest_group_type = ig_trade_unions
+			}
+		}
+	}
+	can_repeal = {
+		legitimacy >= legitimacy_to_repeal_amendment
+	}
+	amendment_activism_multiplier = 0.75
+}
+
+# PASQUA LAW (1993)
+# Restrictive immigration legislation
+# tightening naturalization requirements,
+# limiting family reunification, and
+# expanding deportation powers.
+
+amendment_pasqua_law = {
+	parent = law_migration_controls
+	allowed_laws = {
+		law_migration_controls
+	}
+	modifier = {
+		# Tighter migration controls and harder naturalization
+		country_migration_restrictiveness_add       = 10
+		state_migration_pull_mult                   = -0.10
+		state_migration_quota_mult                  = -0.20
+		# Reduced acceptance of non-homeland cultures
+		country_acceptance_not_homeland_add         = -5
+		country_acceptance_no_shared_language_trait_add = -5
+	}
+	possible = {
+		OR = {
+			country_has_primary_culture = cu:french
+		}
+	}
+	would_sponsor = {
+		OR = {
+			is_interest_group_type = ig_landowners
+			is_interest_group_type = ig_rural_folk
+			is_interest_group_type = ig_devout
+		}
+	}
+	ai_will_revoke = {
+		NOT = {
+			any_interest_group = {
+				is_in_government = yes
+				OR = {
+					is_interest_group_type = ig_landowners
+					is_interest_group_type = ig_rural_folk
+				}
+			}
+		}
+	}
+	can_repeal = {
+		legitimacy >= legitimacy_to_repeal_amendment
+	}
+	amendment_activism_multiplier = 0.75
+}

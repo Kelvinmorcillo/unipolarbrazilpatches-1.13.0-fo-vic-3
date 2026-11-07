@@ -1,0 +1,478 @@
+
+
+REPLACE_OR_CREATE:liberal_party = {
+	color = { 255 214 13 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = party_civilista_party
+				trigger = {
+					exists = c:PEU
+					THIS = c:PEU
+				}
+			}
+			triggered_desc = {
+				desc = party_national_civic_union
+				trigger = {
+					exists = c:ARG
+					THIS = c:ARG
+				}
+			}
+			triggered_desc = {
+				desc = party_liberal
+				trigger = {
+					exists = c:GBR
+					THIS = c:GBR
+					NOT = { has_law = law_type:law_free_trade }
+				}
+			}
+			triggered_desc = {
+				desc = party_us_democrats
+				trigger = {
+					exists = c:USA
+					THIS = c:USA
+					year > 1853
+				}
+			}
+			triggered_desc = {
+				desc = party_liberal_democrats
+				trigger = {
+					exists = c:SWI
+					THIS = c:SWI
+				}
+			}
+			triggered_desc = {
+				desc = party_republican_party
+				trigger = {
+					exists = c:FRA
+					THIS = c:FRA
+				}
+			}
+			triggered_desc = {
+				desc = party_exalted_liberal
+				trigger = {
+					country_has_primary_culture = cu:brazilian
+					has_law = law_type:law_monarchy
+					ruler = {
+						has_trait = trait_child
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_liberal
+				trigger = {
+					country_has_primary_culture = cu:brazilian
+					has_law = law_type:law_monarchy
+					NOT = {
+						ruler = {
+							has_trait = trait_child
+						}
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_liberal_republican_party
+				trigger = {
+					country_has_primary_culture = cu:brazilian
+					game_date < 1925.1.1
+					NOT = {
+						has_law = law_type:law_monarchy
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_libertador_party
+				trigger = {
+					country_has_primary_culture = cu:brazilian
+					game_date >= 1925.1.1
+				}
+			}
+			triggered_desc = {
+				desc = party_kadets_party
+				trigger = {
+					exists = c:RUS
+					THIS = c:RUS
+				}
+			}
+			triggered_desc = {
+				desc = party_peoples_party
+				trigger = {
+					exists = c:SWE
+					THIS = c:SWE
+				}
+			}
+			triggered_desc = {
+				desc = party_liberal_union
+				trigger = {
+					exists = c:NET
+					THIS = c:NET
+				}
+			}
+			triggered_desc = {
+				desc = party_liberal_league
+				trigger = {
+					exists = c:LUX
+					THIS = c:LUX
+				}
+			}
+			triggered_desc = {
+				desc = party_young_finnish_party
+				trigger = {
+					exists = c:FIN
+					THIS = c:FIN
+				}
+			}
+			triggered_desc = {
+				desc = party_constitutional_party
+				trigger = {
+					exists = c:AUS
+					THIS = c:AUS
+				}
+			}
+			triggered_desc = {
+				desc = party_peoples_party
+				trigger = {
+					exists = c:CRO
+					THIS = c:CRO
+				}
+			}
+			triggered_desc = {
+				desc = party_society_for_progress
+				trigger = {
+					exists = c:PER
+					THIS = c:PER
+				}
+			}
+			triggered_desc = {
+				desc = party_blue_party
+				trigger = {
+					exists = c:PRG
+					THIS = c:PRG
+				}
+			}
+			triggered_desc = {
+				desc = party_great_liberal_party
+				trigger = {
+					exists = c:VNZ
+					THIS = c:VNZ
+				}
+			}
+			triggered_desc = {
+				desc = party_colorado_party
+				trigger = {
+					exists = c:URU
+					THIS = c:URU
+				}
+			}
+			triggered_desc = {
+				desc = party_empire_reform_association
+				trigger = {
+					exists = c:CHI
+					THIS = c:CHI
+					has_law = law_type:law_monarchy
+				}
+			}
+			triggered_desc = {
+				desc = party_freedom_and_accord_party
+				trigger = {
+					exists = c:TUR
+					THIS = c:TUR
+					has_law = law_type:law_monarchy
+				}
+			}
+			triggered_desc = {
+				desc = party_progressive_republican_party
+				trigger = {
+					exists = c:TUR
+					THIS = c:TUR
+					NOT = { has_law = law_type:law_monarchy }
+				}
+			}
+			triggered_desc = {
+				desc = party_constitutional_reform_party
+				trigger = {
+					exists = c:JAP
+					THIS = c:JAP
+				}
+			}
+			triggered_desc = {
+				desc = party_constitutional_party
+				trigger = {
+					exists = c:GRE
+					THIS = c:GRE
+					has_law = law_type:law_monarchy
+					ruler = {
+						culture = {
+							has_discrimination_trait = german_speaking
+						}
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_neoteristikon_komma
+				trigger = {
+					exists = c:GRE
+					THIS = c:GRE
+				}
+			}
+			triggered_desc = {
+				desc = party_the_left
+				trigger = {
+					OR = {
+						country_has_primary_culture = cu:north_italian
+						country_has_primary_culture = cu:south_italian
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_national_liberal_party
+				trigger = {
+					country_has_primary_culture = cu:romanian
+				}
+			}
+			triggered_desc = {
+				desc = party_whig_party
+				trigger = {
+					OR = {
+						AND = {
+							country_has_primary_culture = cu:dixie
+							NOT = {
+								exists = c:USA
+								THIS = c:USA
+							}
+						}
+						AND = {
+							exists = c:USA
+							THIS = c:USA
+							NOT = { has_global_variable = american_civil_war }
+						}
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_progress_party
+				trigger = {
+					OR = {
+						country_has_primary_culture = cu:north_german
+						country_has_primary_culture = cu:south_german
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_progressive_party
+				trigger = {
+					OR = {
+						country_has_primary_culture = cu:spanish
+						country_has_primary_culture = cu:portuguese
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_venstre
+				trigger = {
+					OR = {
+						country_has_primary_culture = cu:norwegian
+						country_has_primary_culture = cu:spanish
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_liberal
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	icon = {
+		default = "gfx/interface/icons/political_parties/liberal.dds"
+	}
+	
+	# THIS IS RUN ONLY ONCE AT GAME START
+	valid_for_country = {
+	NOT = {
+		OR = {
+			AND = {
+				exists = c:BRZ
+				THIS = c:BRZ
+			}
+			AND = {
+				exists = c:CAN
+				THIS = c:CAN
+			}
+			AND = {
+				exists = c:FRA
+				THIS = c:FRA
+			}
+			AND = {
+				exists = c:GBR
+				THIS = c:GBR
+			}
+			AND = {
+				exists = c:GER
+				THIS = c:GER
+			}
+			AND = {
+				exists = c:MEX
+				THIS = c:MEX
+			}
+			AND = {
+				exists = c:RUS
+				THIS = c:RUS
+			}
+			AND = {
+				exists = c:USA
+				THIS = c:USA
+			}
+		}
+	}
+	}
+
+		available_for_interest_group = {
+		is_marginal = no
+		OR = {
+			leader = { has_ideology = ideology:ideology_liberal_leader }
+			leader = { has_ideology = ideology:ideology_social_liberal_leader }
+			leader = { has_ideology = ideology:ideology_progressive_leader }
+			leader = { has_ideology = ideology:ideology_moderate_leader }
+			leader = { has_ideology = ideology:ideology_technocrat_leader }
+			leader = { has_ideology = ideology:ideology_classical_liberal_leader }
+			leader = { has_ideology = ideology:ideology_conservative_leader }
+			has_ideology = ideology:ideology_centre_economy
+			has_ideology = ideology:ideology_individualist
+			has_ideology = ideology:ideology_republican
+			has_ideology = ideology:ideology_globalist
+			has_ideology = ideology:ideology_right_economy
+			has_ideology = ideology:ideology_progressive
+			has_ideology = ideology:ideology_regionalist
+			is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_professionals
+			is_interest_group_type = ig_petty_bourgeoisie
+		}
+	}
+
+	# Root - IG considering joining
+	# scope:number - the number of IGs that would join this party before the root IG
+	join_weight = {
+		value = {
+			value = -5
+			desc = "base_value"
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_liberal_leader }
+				leader = { has_ideology = ideology:ideology_social_liberal_leader }
+			}
+			}
+			add = { value = 45 desc = "leader_ideological_compatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_progressive_leader }
+				leader = { has_ideology = ideology:ideology_moderate_leader }
+				leader = { has_ideology = ideology:ideology_technocrat_leader }
+				leader = { has_ideology = ideology:ideology_classical_liberal_leader }
+				leader = { has_ideology = ideology:ideology_conservative_leader }
+			}
+			}
+			add = { value = 20 desc = "leader_adjacent_ideology" }
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_marxist_leader }
+				leader = { has_ideology = ideology:ideology_state_socialist_leader }
+				leader = { has_ideology = ideology:ideology_fascist_leader }
+				leader = { has_ideology = ideology:ideology_jihadist_leader }
+				leader = { has_ideology = ideology:ideology_theocrat_leader }
+				leader = { has_ideology = ideology:ideology_monarchist_leader }
+			}
+			}
+			add = { value = -50 desc = "leader_ideological_incompatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_centre_economy
+				has_ideology = ideology:ideology_individualist
+				has_ideology = ideology:ideology_republican
+				has_ideology = ideology:ideology_globalist
+			}
+			}
+			add = { value = 35 desc = "interest_group_ideological_compatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_right_economy
+				has_ideology = ideology:ideology_progressive
+				has_ideology = ideology:ideology_regionalist
+			}
+			}
+			add = { value = 15 desc = "interest_group_adjacent_ideology" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_far_left_economy
+				has_ideology = ideology:ideology_totalitarian
+				has_ideology = ideology:ideology_communist
+				has_ideology = ideology:ideology_theocrat
+				has_ideology = ideology:ideology_monarchist
+			}
+			}
+			add = { value = -35 desc = "interest_group_ideological_incompatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				is_interest_group_type = ig_intelligentsia
+				is_interest_group_type = ig_professionals
+				is_interest_group_type = ig_petty_bourgeoisie
+			}
+			}
+			add = { value = 20 desc = "from_archetype_party" }
+		}
+		if = {
+			limit = {
+				owner = { OR = { has_law = law_type:law_presidential_republic has_law = law_type:law_parliamentary_republic } }
+			}
+			add = { value = 10 desc = "democratic_government" }
+		}
+		if = {
+			limit = {
+				has_ideology = ideology:ideology_republican
+			}
+			add = { value = 10 desc = "republican_interest_group" }
+		}
+		if = {
+			limit = {
+				is_powerful = yes
+				OR = {
+					leader = { has_ideology = ideology:ideology_liberal_leader }
+					leader = { has_ideology = ideology:ideology_social_liberal_leader }
+					has_ideology = ideology:ideology_centre_economy
+					has_ideology = ideology:ideology_individualist
+					has_ideology = ideology:ideology_republican
+					has_ideology = ideology:ideology_globalist
+				}
+			}
+			add = { value = 20 desc = "powerful_ig" }
+		}
+		if = {
+			limit = {
+				scope:number = 1
+				is_powerful = no
+				is_marginal = no
+			}
+			multiply = { value = 2 desc = "from_influential_supporting_member" }
+		}
+		else_if = {
+			limit = { scope:number = 2 }
+			multiply = { value = 0.75 desc = "from_two_prior_members" }
+		}
+	}
+
+}

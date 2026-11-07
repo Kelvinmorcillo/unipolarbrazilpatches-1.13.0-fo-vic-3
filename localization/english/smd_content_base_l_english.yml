@@ -1,0 +1,426 @@
+﻿l_english:
+
+ # modifiers
+ nato_modifier:0 "NATO"
+ je_group_international:0 "International"
+ # je groups
+ 
+ je_group_foreign_policy:0 "Foreign Policy"
+ je_group_domestic_policy:0 "Domestic Policy"
+ je_group_space_exploration:0 "Space Exploration"
+ je_group_dilemmas:0 "Dilemmas"
+ je_group_advancements:0 "Advancements"
+ je_group_objectives:0 "Objectives"
+ asian_economy_boost:0 "Economic Liberalization"
+ 
+ # transit rights
+ 
+ je_transit_rights: "Landlocked!"
+ je_transit_rights_reason: "[ROOT.GetCountry.GetName] has no coastline. Access to international markets depends entirely on the goodwill of neighbouring countries. Securing a transit rights agreement with at least one of them is essential for trade and strategic flexibility."
+ secure_transit_rights_treaty:0 "Sign a transit rights treaty with any neighbouring non-landlocked country."
+ # ==========================================
+ # JOURNAL ENTRY
+ # ==========================================
+ 
+ je_covid_pandemic: "COVID-19 Pandemic"
+ je_covid_pandemic_reason: "A novel respiratory coronavirus has emerged in [ROOT.GetCountry.GetName] and is spreading rapidly across the world. COVID-19 spreads faster than any pathogen in living memory, exploiting the dense networks of trade and travel that bind the modern world together. Mortality is concentrated among the elderly and the immunocompromised — but its sheer reach threatens to overwhelm health systems in every country it touches.\n\nUse the #bold COVID-19 Response#! decision to set policy. Lockdowns slow the spread but hammer the economy. Masks and distancing are less effective but more sustainable. Doing nothing is a choice too — one the electorate and the dead will remember."
+ 
+ # ==========================================
+ # covid.1 — PANDEMIC ARRIVES
+ # ==========================================
+ 
+ covid.1.t: "A Novel Coronavirus"
+ covid.1.d: "A cluster of unusual pneumonia cases has been reported in [SCOPE.sState('plague_origin_state').GetName], [ROOT.GetCountry.GetName]. Preliminary analysis by [ROOT.GetCountry.GetAdjective] health authorities suggests a previously unknown coronavirus — spreading human-to-human, with an incubation period long enough that carriers are contagious before they know they are sick.\n\nThe World Health Organization has been notified. Whether this remains a local outbreak or becomes something more depends on decisions made in the next weeks."
+ covid.1.f: "A new pathogen. Again."
+ covid.1.a: "Notify the WHO and begin contact tracing"
+ 
+ # ==========================================
+ # covid.2 — SPREAD
+ # ==========================================
+ 
+ covid.2.t: "COVID-19 Reaches [ROOT.GetCountry.GetName]"
+ covid.2.d: "Cases of the novel coronavirus first identified in [SCOPE.sCountry('plague_originator_country').GetName] have been confirmed in [ROOT.GetCountry.GetName]. The virus has arrived — through a traveler, a trade route, or simply the invisible currents of a connected world.\n\n[ROOT.GetCountry.GetAdjective] health authorities are activating pandemic response protocols. Use the #bold COVID-19 Response#! decision to set policy."
+ covid.2.f: "It was only a matter of time."
+ covid.2.a: "Activate pandemic protocols"
+ 
+ # ==========================================
+ # covid.3 — SUBSEQUENT WAVES
+ # ==========================================
+ 
+ covid.3.t: "The Omicron Variant"
+ covid.3.d: "A new variant has caused a fresh wave of COVID-19 infections. Health authorities are reassessing containment protocols."
+ covid.3.f: "The virus is still with us."
+ 
+ # ==========================================
+ # covid.4 — NOTIFICATION TO OTHER PLAYERS
+ # ==========================================
+ 
+ covid.4.t: "The New Virus from Wuhan, China"
+ covid.4.a: "Monitor the situation closely"
+ 
+ # ==========================================
+ # covid.5 — RESPONSE CHOICE
+ # ==========================================
+ 
+ covid.5.t: "COVID-19 Response Policy"
+ covid.5.d: "How should [ROOT.GetCountry.GetName] respond to the pandemic? The choice will define the economic and social landscape of the next years."
+ covid.5.f: "There are no good options. Only trade-offs."
+ covid.5.a: "Full lockdown — close businesses, restrict movement"
+ covid.5.b: "Mask mandates and social distancing guidelines"
+ covid.5.c: "Keep the economy open — prioritize recovery"
+ 
+ # ==========================================
+ # covid.7 — WAR SUPPORT
+ # ==========================================
+ 
+ covid.7.t: "The Pandemic Undermines the War Effort"
+ covid.7.d: "With COVID-19 ravaging [ROOT.GetCountry.GetName]'s population, [SCOPE.gsInterestGroup('pacifist_ig').GetName] — led by [SCOPE.sCharacter('pacifist_leader').GetFullName] — is questioning whether a country fighting a pandemic can sustain a war simultaneously. The population is exhausted. Field hospitals are competing with front-line logistics for resources."
+ covid.7.f: "Fight the virus or fight the enemy. Doing both is hard."
+ covid.7.a: "The war continues — the virus does not change that"
+ covid.7.b: "Use public health messaging to maintain morale"
+ covid.7.c: "Suppress the defeatist narrative"
+ 
+ # ==========================================
+ # covid.8 — POVERTY AND EVICTIONS
+ # ==========================================
+ 
+ covid.8.t: "The Economic Toll of the Pandemic"
+ covid.8.d: "The pandemic has cost thousands of [ROOT.GetCountry.GetAdjective] workers their jobs, and in [SCOPE.sState('plague_poverty_state').GetName], unemployment has surpassed 20%. Families cannot pay rent. Landlords — backed by [SCOPE.gsInterestGroup('landowner_ig').GetName] — are pushing for the right to evict. Poverty is concentrating in the areas already hardest hit by the virus."
+ covid.8.f: "A pandemic within the pandemic."
+ covid.8.a: "Impose a rent freeze and eviction moratorium"
+ covid.8.b: "Expand social security and unemployment benefits"
+ covid.8.c: "The market will sort it out"
+ 
+ # ==========================================
+ # covid.9 — ANTI-MASK RESISTANCE
+ # ==========================================
+ 
+ covid.9.t: "Anti-Lockdown Protests"
+ covid.9.d: "[SCOPE.gsInterestGroup('anti_mask_ig').GetName], led by [SCOPE.sCharacter('anti_mask_ig_leader').GetFullName], has organized mass protests against [ROOT.GetCountry.GetName]'s pandemic restrictions. Their position: the lockdowns and mask mandates are government overreach, the economic damage is greater than the health risk, and citizens have the right to make their own choices.\n\nThe protests are growing. How [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] responds will set a precedent."
+ covid.9.f: "Masks. The hill they chose."
+ covid.9.a: "Hold firm — the restrictions stay"
+ covid.9.b: "Stand down — lift the restrictions"
+ covid.9.c: "Commission scientific rebuttals and public health campaigns"
+ 
+ # ==========================================
+ # DECISION
+ # ==========================================
+ 
+ covid_response: "COVID-19 Response"
+ covid_response_desc: "Set [ROOT.GetCountry.GetName]'s policy for managing the COVID-19 pandemic. This decision can be taken every six months to adjust policy as the situation evolves."
+ 
+ ### second american civil war 
+ 
+ ALK:0 "Alaska"
+ ALK_ADJ:0 "Alaskan"
+ REA:0 "Red America"
+ REA_ADJ:0 "Red American"
+ BAM:0 "Blue America"
+ BAM_ADJ:0 "Blue American"
+ je_the_great_polarization:0 "The Great Polarization"
+ je_the_great_polarization_reason:0 "American politics has entered a period of escalating polarization. \n--------------------------------------------------------- \n Polarization: #v [Country.MakeScope.Var('great_polarization_intensity').GetValue]#!. \n Institutional trust: #v [Country.MakeScope.Var('great_polarization_institutional_trust').GetValue]#!. \n Left pressure: #v [Country.MakeScope.Var('great_polarization_left_pressure').GetValue]#!. \n Right pressure: #v [Country.MakeScope.Var('great_polarization_right_pressure').GetValue]#!."
+ great_polarization_status_right_president:0 "A right-wing presidency is energizing liberal, social-democratic, socialist, communist, and minority-rights movements."
+ great_polarization_status_left_president:0 "A left-wing presidency is energizing conservative, libertarian, traditionalist, fascist, and religious-majority movements."
+ great_polarization_status_unstable_center:0 "A fragile center struggles to contain polarization."
+ great_polarization_depolarized_tt:0 "Reduce polarization to #v 15#! or lower and raise institutional trust to #v 80#! or higher after 2035. Current polarization: #v [Country.MakeScope.Var('great_polarization_intensity').GetValue]#!. Current trust: #v [Country.MakeScope.Var('great_polarization_institutional_trust').GetValue]#!."
+ great_polarization_civil_war_tt:0 "The Second American Civil War has begun."
+ je_second_american_civil_war:0 "The Second American Civil War"
+ je_second_american_civil_war_reason:0 "The United States has fractured into rival governments. Red America and Blue America are the main combatants, while breakaway states can be courted through diplomatic proposals."
+ second_american_civil_war_status:0 "The union has fractured."
+ second_american_civil_war_blue_status:0 "Blue America seeks to preserve a liberal-social democratic order while winning over breakaway states."
+ second_american_civil_war_red_status:0 "Red America seeks to consolidate conservative America while winning over breakaway states."
+ second_american_civil_war_complete_header:0 "The civil war ends when either Red America or Blue America is destroyed, annexed, or subordinated."
+ second_american_civil_war_blue_defeated_tt:0 "Blue America no longer exists."
+ second_american_civil_war_red_defeated_tt:0 "Red America no longer exists."
+ second_american_civil_war_blue_annexed_tt:0 "Blue America has been subordinated to Red America."
+ second_american_civil_war_red_annexed_tt:0 "Red America has been subordinated to Blue America."
+ great_polarization.1.t:0 "The Great Polarization"
+ great_polarization.1.d:0 "The United States is entering a new era of political polarization, driven by media fragmentation, culture-war politics, and mutual fear between ideological blocs."
+ great_polarization.1.f:0 "Every election becomes existential. Every scandal becomes proof. Every tragedy becomes a weapon."
+ great_polarization.1.a:0 "The center begins to crack."
+ great_polarization.30.t:0 "The Killing of George Floyd"
+ great_polarization.30.d:0 "The killing of George Floyd by police has triggered a nationwide protest wave, with demands for accountability, policing reform, and racial justice."
+ great_polarization.30.f:0 "The video does not stay local. It becomes a national indictment."
+ great_polarization.30.a:0 "The streets erupt."
+ great_polarization.30.b:0 "Promise serious reform."
+ great_polarization.31.t:0 "CHOP / CHAZ"
+ great_polarization.31.d:0 "An occupied protest zone has formed in Seattle, becoming a national symbol of both anti-police activism and fears of state retreat."
+ great_polarization.31.f:0 "To its supporters, it is community self-rule. To its opponents, it is collapse in miniature."
+ great_polarization.31.a:0 "Let the standoff play out."
+ great_polarization.31.b:0 "Clear the zone."
+ great_polarization.32.t:0 "Attempted Assassination in Butler"
+ great_polarization.32.d:0 "An attempted assassination of Donald Trump at a rally in Butler, Pennsylvania has intensified fears of political violence and revenge."
+ great_polarization.32.f:0 "The image travels faster than the facts."
+ great_polarization.32.a:0 "The right rallies in anger."
+ great_polarization.32.b:0 "Appeal for national calm."
+ great_polarization.33.t:0 "No Kings"
+ great_polarization.33.d:0 "Mass demonstrations under the slogan 'No Kings' have filled streets across the country, framed by supporters as a defense of democracy and by opponents as destabilizing resistance."
+ great_polarization.33.f:0 "The crowd chants against monarchy in a republic that fears it has forgotten the difference."
+ great_polarization.33.a:0 "The movement spreads."
+ great_polarization.33.b:0 "Defuse the confrontation."
+ great_polarization.34.t:0 "Minnesota Lawmakers Targeted"
+ great_polarization.34.d:0 "Shootings targeting Minnesota state lawmakers have deepened national fear that political disputes are sliding into organized violence."
+ great_polarization.34.f:0 "A doorstep becomes a front line."
+ great_polarization.34.a:0 "Security becomes politics."
+ great_polarization.34.b:0 "Condemn political violence across the spectrum."
+ great_polarization.35.t:0 "Charlie Kirk Assassinated"
+ great_polarization.35.d:0 "The assassination of Charlie Kirk while speaking at a public event has become a flashpoint in America's escalating political crisis."
+ great_polarization.35.f:0 "A microphone falls silent; a movement grows louder."
+ great_polarization.35.a:0 "The right radicalizes."
+ great_polarization.35.b:0 "Condemn the killing and lower the temperature."
+ great_polarization.36.t:0 "ICE Shootings"
+ great_polarization.36.d:0 "Fatal shootings involving federal immigration agents have triggered anti-ICE protests, national outrage, and fierce arguments over federal power."
+ great_polarization.36.f:0 "The badge becomes the argument."
+ great_polarization.36.a:0 "The protests spread."
+ great_polarization.36.b:0 "Suspend operations and investigate."
+ great_polarization.37.t:0 "Voting Rights Act Gutted"
+ great_polarization.37.d:0 "A Supreme Court ruling has sharply weakened the Voting Rights Act, igniting accusations that minority voting power is being dismantled before the 2026 elections."
+ great_polarization.37.f:0 "The court speaks in doctrine. The country hears power."
+ great_polarization.37.a:0 "Trust collapses."
+ great_polarization.37.b:0 "Pursue emergency voting-rights legislation."
+ great_polarization.100.t:0 "The Second American Civil War"
+ great_polarization.100.d:0 "A revolutionary crisis has broken the United States. Federal authority is contested, and armed factions are beginning to carve the country into rival governments."
+ great_polarization.100.f:0 "The first civil war asked whether the union could survive. The second asks what the union even is."
+ great_polarization.100.a:0 "The union fractures."
+ great_polarization.120.t:0 "An Offer from Blue America"
+ great_polarization.120.d:0 "Blue America offers recognition, protection, and wartime cooperation in exchange for joining its side in the civil war."
+ great_polarization.120.f:0 "Neutrality is hard to keep when the map is burning."
+ great_polarization.120.a:0 "Join Blue America."
+ great_polarization.120.b:0 "Remain apart."
+ great_polarization.121.t:0 "An Offer from Red America"
+ great_polarization.121.d:0 "Red America offers recognition, protection, and wartime cooperation in exchange for joining its side in the civil war."
+ great_polarization.121.f:0 "The question is no longer whether to fight, but under whose flag."
+ great_polarization.121.a:0 "Join Red America."
+ great_polarization.121.b:0 "Remain apart."
+ 2acw_offer_new_africa_blue_tt:0 "Offer New Africa recognition, civil-rights guarantees, and wartime protection in exchange for joining Blue America."
+ 2acw_offer_new_africa_red_tt:0 "Offer New Africa autonomy and wartime protection in exchange for joining Red America."
+ 2acw_offer_navajo_blue_tt:0 "Offer Navajo recognition and protected autonomy in exchange for joining Blue America."
+ 2acw_offer_navajo_red_tt:0 "Offer Navajo recognition and protected autonomy in exchange for joining Red America."
+ 2acw_offer_california_blue_tt:0 "Invite California to formally join the Blue coalition."
+ 2acw_offer_texas_red_tt:0 "Invite Texas to formally join the Red coalition."
+ 2acw_offer_hawaii_blue_tt:0 "Offer Hawaii protection in exchange for joining Blue America."
+ 2acw_offer_hawaii_red_tt:0 "Offer Hawaii protection in exchange for joining Red America."
+ 2acw_offer_alaska_blue_tt:0 "Offer Alaska protection in exchange for joining Blue America."
+ 2acw_offer_alaska_red_tt:0 "Offer Alaska protection in exchange for joining Red America."
+ great_polarization_baseline:0 "The Great Polarization"
+ great_polarization_right_wing_president:0 "Right-Wing Presidency"
+ great_polarization_left_wing_president:0 "Left-Wing Presidency"
+ great_polarization_event_violence:0 "Political Violence"
+ great_polarization_reform_concessions:0 "Reform Concessions"
+ great_polarization_minorities_targeted:0 "Minorities Targeted"
+ great_polarization_online_radicalization:0 "Online Radicalization"
+ second_american_civil_war_outbreak:0 "Second American Civil War"
+ Blue_American_Federal_Forces:0 "Blue American Federal Forces"
+ Red_American_State_Guards:0 "Red American State Guards"
+ California_State_Defense_Forces:0 "California State Defense Forces"
+ Texas_State_Guard:0 "Texas State Guard"
+ New_African_Liberation_Forces:0 "New African Liberation Forces"
+ Navajo_Defense_Forces:0 "Navajo Defense Forces"
+ Hawaii_Defense_Forces:0 "Hawaii Defense Forces"
+ Alaska_Defense_Forces:0 "Alaska Defense Forces"
+ 2acw_blue_alignment_treaty:0 "Blue America Alignment"
+ 2acw_red_alignment_treaty:0 "Red America Alignment"
+ second_american_civil_war:0 "Second American Civil War"
+ je_the_great_polarization:0 "The Great Polarization"
+ je_the_great_polarization_reason:0 "American politics has entered a period of escalating polarization. \n Polarization: #v [Country.MakeScope.Var('great_polarization_intensity').GetValue]#!. \n Institutional trust: #v [Country.MakeScope.Var('great_polarization_institutional_trust').GetValue]#!. \n Left pressure: #v [Country.MakeScope.Var('great_polarization_left_pressure').GetValue]#!. \n Right pressure: #v [Country.MakeScope.Var('great_polarization_right_pressure').GetValue]#!."
+
+ great_polarization_status_right_president:0 "A right-wing presidency is energizing liberal, social-democratic, socialist, communist, and minority-rights movements."
+ great_polarization_status_left_president:0 "A left-wing presidency is energizing conservative, libertarian, traditionalist, fascist, and religious-majority movements."
+ great_polarization_status_unstable_center:0 "A fragile center struggles to contain polarization."
+
+ great_polarization_complete_header:0 "The Great Polarization ends if the crisis is defused, or if the United States collapses into civil war."
+ great_polarization_depolarized_tt:0 "Reduce polarization to #v 15#! or lower and raise institutional trust to #v 80#! or higher. Current polarization: #v [Country.MakeScope.Var('great_polarization_intensity').GetValue]#!. Current trust: #v [Country.MakeScope.Var('great_polarization_institutional_trust').GetValue]#!."
+ great_polarization_civil_war_tt:0 "The Second American Civil War has begun."
+
+ je_second_american_civil_war:0 "The Second American Civil War"
+ je_second_american_civil_war_reason:0 "The United States has entered a new civil war. This journal entry is a scaffold for the next design pass, where regional American breakaway countries will be created and made to fight each other."
+ second_american_civil_war_status:0 "The union has fractured."
+ second_american_civil_war_placeholder_tt:0 "Placeholder: create breakaway American countries, armies, and wars in the next implementation pass."
+
+ great_polarization.1.t:0 "The Great Polarization"
+ great_polarization.1.d:0 "The United States is entering a new era of political polarization, driven by media fragmentation, culture-war politics, and mutual fear between ideological blocs."
+ great_polarization.1.f:0 "Every election becomes existential. Every scandal becomes proof. Every tragedy becomes a weapon."
+ great_polarization.1.a:0 "The center begins to crack."
+
+ great_polarization.2.t:0 "Politically Motivated Mass Shooting"
+ great_polarization.2.d:0 "A mass shooting tied to extremist political rhetoric has shocked the country. Competing factions immediately argue over blame, security, civil liberties, and ideology."
+ great_polarization.2.f:0 "The dead are mourned. The narrative is fought over before the funerals begin."
+ great_polarization.2.a:0 "The outrage feeds the divide."
+ great_polarization.2.b:0 "Seek a serious bipartisan response."
+
+ great_polarization.3.t:0 "Attempted Assassination"
+ great_polarization.3.d:0 "An attempted assassination of a political figure has raised fears that political violence is becoming normalized."
+ great_polarization.3.f:0 "The shot missed its target, but struck the republic."
+ great_polarization.3.a:0 "The country recoils."
+ great_polarization.3.b:0 "Expand protective security."
+
+ great_polarization.4.t:0 "Algorithmic Outrage"
+ great_polarization.4.d:0 "Social media platforms have amplified political outrage, exposing millions to radical content, conspiracy networks, and identity-driven counter-mobilization."
+ great_polarization.4.f:0 "The feed does not persuade. It escalates."
+ great_polarization.4.a:0 "The outrage machine accelerates."
+ great_polarization.4.b:0 "Pressure platforms to moderate."
+
+ great_polarization.5.t:0 "A Wave of Exposure"
+ great_polarization.5.d:0 "A wave of public allegations against powerful figures has triggered a national reckoning over abuse, gender, and institutional hypocrisy."
+ great_polarization.5.f:0 "What had been whispered is now searchable."
+ great_polarization.5.a:0 "The reckoning spreads."
+ great_polarization.5.b:0 "Build institutional channels for accountability."
+
+ great_polarization.6.t:0 "Minorities Targeted"
+ great_polarization.6.d:0 "A surge of hostility toward minority communities has triggered protests, counter-protests, and a renewed debate over racism, identity, and national belonging."
+ great_polarization.6.f:0 "For some, it is backlash. For others, it is survival."
+ great_polarization.6.a:0 "The streets fill again."
+ great_polarization.6.b:0 "Condemn the backlash and lower the temperature."
+
+ great_polarization.20.t:0 "The Temperature Falls"
+ great_polarization.20.d:0 "Polarization has not disappeared, but the most dangerous spiral has been interrupted. Political institutions have regained some legitimacy."
+ great_polarization.20.f:0 "A republic survives not because its citizens agree, but because enough of them accept losing."
+ great_polarization.20.a:0 "The union endures."
+
+ great_polarization.21.t:0 "The Divide Entrenched"
+ great_polarization.21.d:0 "The immediate crisis has not exploded into civil war, but polarization has become embedded in American political life."
+ great_polarization.21.f:0 "The fever did not break. It became chronic."
+ great_polarization.21.a:0 "The new normal."
+
+ great_polarization.100.t:0 "The Second American Civil War"
+ great_polarization.100.d:0 "A revolutionary crisis has broken the United States. Federal authority is contested, and armed factions are beginning to carve the country into rival governments."
+ great_polarization.100.f:0 "The first civil war asked whether the union could survive. The second asks what the union even is."
+ great_polarization.100.a:0 "The union fractures."
+
+ great_polarization_baseline:0 "The Great Polarization"
+ great_polarization_baseline_desc:0 "The political atmosphere is increasingly radicalized and reactive."
+
+ great_polarization_right_wing_president:0 "Right-Wing Presidency"
+ great_polarization_right_wing_president_desc:0 "A right-wing president has energized liberal, social-democratic, socialist, communist, and minority-rights opposition movements."
+
+ great_polarization_left_wing_president:0 "Left-Wing Presidency"
+ great_polarization_left_wing_president_desc:0 "A left-wing president has energized conservative, libertarian, traditionalist, fascist, and religious-majority opposition movements."
+
+ great_polarization_divided_media:0 "Entrenched Polarization"
+ great_polarization_divided_media_desc:0 "The media environment keeps political camps isolated from one another."
+
+ great_polarization_attempted_assassination:0 "Attempted Assassination"
+ great_polarization_attempted_assassination_desc:0 "Political violence has shaken public trust."
+
+ great_polarization_mass_shooting_aftermath:0 "Politically Motivated Mass Shooting"
+ great_polarization_mass_shooting_aftermath_desc:0 "A politically motivated massacre has deepened social conflict."
+
+ great_polarization_reform_concessions:0 "Reform Concessions"
+ great_polarization_reform_concessions_desc:0 "A serious reform response has lowered political tensions."
+
+ great_polarization_security_crackdown:0 "Security Crackdown"
+ great_polarization_security_crackdown_desc:0 "Expanded security measures have increased state pressure while risking backlash."
+
+ great_polarization_online_radicalization:0 "Online Radicalization"
+ great_polarization_online_radicalization_desc:0 "Social platforms are accelerating political mobilization and outrage."
+
+ great_polarization_minorities_targeted:0 "Minorities Targeted"
+ great_polarization_minorities_targeted_desc:0 "Minority communities are facing heightened hostility and organizing in response."
+
+ great_polarization_metoo_mobilization:0 "Public Reckoning"
+ great_polarization_metoo_mobilization_desc:0 "A wave of public exposure has mobilized liberal and radical movements."
+
+ second_american_civil_war_outbreak:0 "Second American Civil War"
+ second_american_civil_war_outbreak_desc:0 "The United States has collapsed into revolutionary conflict."
+ 
+ state_pop_support_movement_centrist_add:0 "Centrist Movement Pop Attraction"
+ state_pop_support_movement_conservative_add:0 "Conservative Movement Pop Attraction"
+ state_pop_support_movement_cultural_majority_add:0 "Cultural Majority Movement Pop Attraction"
+ state_pop_support_movement_fascist_add:0 "Fascist Movement Pop Attraction"
+ state_pop_support_movement_liberal_add:0 "Liberal Movement Pop Attraction"
+ state_pop_support_movement_liberal_conservative_add:0 "Liberal Conservative Movement Pop Attraction"
+ state_pop_support_movement_libertarian_add:0 "Libertarian Movement Pop Attraction"
+ state_pop_support_movement_social_democratic_add:0 "Social Democratic Movement Pop Attraction"
+ state_pop_support_movement_traditionalist_add:0 "Traditionalist Movement Pop Attraction"
+ state_pop_support_movement_centrist_add_desc:0 "Changes pop attraction toward the Centrist movement."
+ state_pop_support_movement_conservative_add_desc:0 "Changes pop attraction toward the Conservative movement."
+ state_pop_support_movement_cultural_majority_add_desc:0 "Changes pop attraction toward the Cultural Majority movement."
+ state_pop_support_movement_fascist_add_desc:0 "Changes pop attraction toward the Fascist movement."
+ state_pop_support_movement_liberal_add_desc:0 "Changes pop attraction toward the Liberal movement."
+ state_pop_support_movement_liberal_conservative_add_desc:0 "Changes pop attraction toward the Liberal Conservative movement."
+ state_pop_support_movement_libertarian_add_desc:0 "Changes pop attraction toward the Libertarian movement."
+ state_pop_support_movement_social_democratic_add_desc:0 "Changes pop attraction toward the Social Democratic movement."
+ state_pop_support_movement_traditionalist_add_desc:0 "Changes pop attraction toward the Traditionalist movement."
+ 
+ great_polarization.130.t:0 "Lead Blue America?"
+ great_polarization.130.d:0 "With the United States fractured, the administration's liberal or center-left character places it closest to Blue America. You may continue the war as Blue America or remain with the remnants of the United States."
+ great_polarization.130.f:0 "A government can claim continuity, but power follows the institutions that still obey."
+ great_polarization.130.a:0 "Switch to Blue America."
+ great_polarization.130.b:0 "Remain as the United States."
+
+ great_polarization.131.t:0 "Lead Red America?"
+ great_polarization.131.d:0 "With the United States fractured, the administration's right-wing character places it closest to Red America. You may continue the war as Red America or remain with the remnants of the United States."
+ great_polarization.131.f:0 "The flag is the same shape, but the country beneath it has changed."
+ great_polarization.131.a:0 "Switch to Red America."
+ great_polarization.131.b:0 "Remain as the United States."
+
+ great_polarization_switch_blue_tt:0 "You will switch country to #bold Blue America#!."
+ great_polarization_switch_red_tt:0 "You will switch country to #bold Red America#!."
+ great_polarization_stay_usa_tt:0 "You will remain as the United States."
+
+ great_polarization_complete_header:0 "The Great Polarization ends if the crisis is defused, or if the United States collapses into civil war."
+ 
+ great_polarization.38.t:0 "U.S Capitol Besieged"
+ great_polarization.38.d:0 "A crowd has stormed the United States Capitol after a bitterly contested election, shocking the country and deepening fears that political conflict is breaking through constitutional restraints."
+ great_polarization.38.f:0 "The rotunda becomes a battlefield of symbols."
+ great_polarization.38.a:0 "The republic trembles."
+ great_polarization.38.b:0 "Condemn the attack and rebuild trust."
+ 
+ ## other western countries
+ 
+ je_rise_of_the_right:0 "The Rise of the Right"
+ je_rise_of_the_right_reason:0 "Across the West, right-wing populist movements are gaining strength through media fragmentation, migration backlash, culture-war politics, and anti-establishment resentment. Until 2035, right-wing movements are stronger and right-wing populist leaders are more likely to emerge."
+
+ rise_of_the_right_status_baseline:0 "Right-wing movements are gaining strength."
+ rise_of_the_right_status_strong:0 "A right-wing populist surge is reshaping national politics."
+ rise_of_the_right_completion_header:0 "This wave subsides after 2035."
+ rise_of_the_right_ends_2035_tt:0 "The Rise of the Right ends after #bold January 1, 2035#!."
+ rise_of_the_right_spawnrate_tt:0 "Right-wing populist leader spawn rate is increased. The exact spawn weights are handled manually in the ideology/character spawn files."
+
+ rise_of_the_right.1.t:0 "The Rise of the Right"
+ rise_of_the_right.1.d:0 "A new right-wing populist current has entered national politics. It draws strength from distrust of institutions, anger at elites, cultural backlash, and a fragmented media environment."
+ rise_of_the_right.1.f:0 "The old parties still hold the offices. The new politics is learning how to hold the crowd."
+ rise_of_the_right.1.a:0 "The political center is no longer safe."
+
+ rise_of_the_right.10.t:0 "Algorithmic Anger"
+ rise_of_the_right.10.d:0 "Online political networks have amplified anti-establishment outrage, giving right-wing populist movements new ways to organize outside traditional parties."
+ rise_of_the_right.10.f:0 "A feed becomes a rally. A grievance becomes a platform."
+ rise_of_the_right.10.a:0 "The outrage spreads."
+ rise_of_the_right.10.b:0 "Push back through civic institutions."
+
+ rise_of_the_right.11.t:0 "Migration Backlash"
+ rise_of_the_right.11.d:0 "A surge of anger over immigration, integration, and national identity has strengthened right-wing movements."
+ rise_of_the_right.11.f:0 "The border becomes a symbol for every fear the old order cannot answer."
+ rise_of_the_right.11.a:0 "The backlash grows."
+ rise_of_the_right.11.b:0 "De-escalate the debate."
+
+ rise_of_the_right.12.t:0 "Populists Break Through"
+ rise_of_the_right.12.d:0 "A right-wing populist faction has broken through the old party system, forcing mainstream parties to respond to its language and agenda."
+ rise_of_the_right.12.f:0 "They were once outside the room. Now the room is built around them."
+ rise_of_the_right.12.a:0 "The right surges."
+ rise_of_the_right.12.b:0 "Rebuild the center."
+
+ rise_of_the_right.13.t:0 "Street Politics"
+ rise_of_the_right.13.d:0 "Demonstrations, counter-demonstrations, and viral confrontations have deepened the sense that politics has moved out of parliament and into the streets."
+ rise_of_the_right.13.f:0 "The chant is policy in its larval form."
+ rise_of_the_right.13.a:0 "The streets radicalize."
+ rise_of_the_right.13.b:0 "Cool the temperature."
+
+ rise_of_the_right_baseline:0 "The Rise of the Right"
+ rise_of_the_right_baseline_desc:0 "Right-wing movements are gaining strength across national politics."
+
+ rise_of_the_right_populist_surge:0 "Right-Wing Populist Surge"
+ rise_of_the_right_populist_surge_desc:0 "Right-wing populists are reshaping the political landscape."
+
+ rise_of_the_right_migration_backlash:0 "Migration Backlash"
+ rise_of_the_right_migration_backlash_desc:0 "Immigration and national identity have become central drivers of political mobilization."
+
+ rise_of_the_right_online_radicalization:0 "Algorithmic Anger"
+ rise_of_the_right_online_radicalization_desc:0 "Online outrage is accelerating right-wing political mobilization."
+
+ rise_of_the_right_establishment_response:0 "Establishment Response"
+ rise_of_the_right_establishment_response_desc:0 "Mainstream institutions are attempting to absorb or defuse the populist surge."
+
+ rise_of_the_right_populist_leader_spawn_tooltip_modifier:0 "Right-Wing Populist Opening"
+ rise_of_the_right_populist_leader_spawn_tooltip_modifier_desc:0 "Right-wing populist leader spawn rate is increased. The actual ideology spawn weights are handled manually."
+ 

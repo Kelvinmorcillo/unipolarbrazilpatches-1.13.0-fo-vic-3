@@ -1,0 +1,43 @@
+﻿CHARACTERS = {
+	c:GER ?= {
+	create_character = {
+			template = GER_klaus_naumann
+		}
+	create_character = {
+			template = GER_heinz_werner_meyer
+		}
+	create_character = {
+			template = GER_edzard_reuter
+		}
+	create_character = {
+			template = GER_otto_von_habsburg
+		}
+	create_character = {
+			template = GER_gunter_grass
+		}
+	create_character = {
+			template = GER_friedrich_wetter
+		}
+	create_character = {
+			template = GER_oskar_lafontaine
+		}
+	create_character = {
+			template = GER_bjorn_engholm
+		}
+	create_character = {
+			first_name = "helmut"
+			last_name = "kohl"
+			historical = yes
+			ruler = yes
+			culture = cu:south_german
+			birth_date = 1930.3.31
+			dna = dna_helmut_kohl
+			ig_leader = yes
+			interest_group = ig_petty_bourgeoisie
+			ideology = ideology_conservative_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+}

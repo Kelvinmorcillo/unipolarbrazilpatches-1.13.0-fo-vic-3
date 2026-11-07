@@ -1,0 +1,41 @@
+﻿federal_cohesion_bar = {
+	name = "federal_cohesion_bar"
+	desc = "federal_cohesion_bar_desc"
+ 
+	start_value = 50
+	min_value = 0
+	max_value = 100
+ 
+	default = yes
+ 
+	monthly_progress = {
+		if = {
+			limit = { exists = var:federal_cohesion }
+			add = {
+				desc = "federal_cohesion_bar_progress_tt"
+				value = var:federal_cohesion
+			}
+		}
+	}
+}
+ 
+separatist_pressure_bar = {
+	name = "separatist_pressure_bar"
+	desc = "separatist_pressure_bar_desc"
+ 
+	start_value = 20
+	min_value = 0
+	max_value = 100
+ 
+	default_bad = yes
+ 
+	monthly_progress = {
+		if = {
+			limit = { exists = var:separatist_pressure }
+			add = {
+				desc = "separatist_pressure_bar_progress_tt"
+				value = var:separatist_pressure
+			}
+		}
+	}
+}

@@ -1,0 +1,102 @@
+# OPEC Oil Embargo Diplomatic Action
+
+REPLACE_OR_CREATE:propose_opec_embargo = {
+	texture = "gfx/interface/icons/diplomatic_action_icons/opec.dds"
+	groups = {
+		general
+	}
+	requires_approval = no
+	should_notify_third_parties = yes
+
+	selectable = {
+		NOT = { is_country_type = decentralized }
+	}
+
+	potential = {
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+		}
+		# Only OPEC members can propose
+		is_target_in_global_variable_list = { name = io_opec_members target = this }
+	}
+
+	possible = {
+		# No active OPEC vote already in progress
+		custom_tooltip = {
+			text = opec_no_vote_active_tt
+			NOT = { has_global_variable = opec_vote_active }
+		}
+		# Target must not already be embargoed
+		custom_tooltip = {
+			text = opec_not_already_embargoed_tt
+			NOT = { scope:target_country = { has_modifier = opec_oil_embargo_target } }
+		}
+		# Target must have significant infamy
+		custom_tooltip = {
+			text = condemn_requires_infamy_tt
+			scope:target_country = {
+				infamy >= infamy_threshold:infamous
+			}
+		}
+		# Cannot embargo fellow OPEC members
+		custom_tooltip = {
+			text = opec_cannot_embargo_member_tt
+			NOT = { is_target_in_global_variable_list = { name = io_opec_members target = scope:target_country } }
+		}
+	}
+
+	accept_effect = {
+		# Register the embargo target globally
+		set_global_variable = {
+			name = opec_embargo_target
+			value = scope:target_country
+		}
+		set_global_variable = { name = opec_vote_active value = yes }
+		set_global_variable = { name = opec_vote_type value = flag:opec_embargo }
+		set_global_variable = { name = opec_yes_votes value = 0 }
+		set_global_variable = { name = opec_no_votes value = 0 }
+		# Clear prior vote flags
+		every_country = {
+			limit = { has_variable = opec_voted }
+			remove_variable = opec_voted
+		}
+		# Notify all OPEC members to vote
+		every_country = {
+			limit = { is_target_in_global_variable_list = { name = io_opec_members target = this } }
+			trigger_event = { id = opec_events.1 days = 0 popup = yes }
+		}
+		# Schedule result after 30 days
+		trigger_event = { id = opec_events.10 days = 30 }
+	}
+
+	ai = {
+		check_acceptance_for_will_break = no
+		max_influence_spending_fraction = 0.1
+
+		evaluation_chance = {
+			value = 0.05
+			add = {
+				value = country_rank
+				multiply = 0.03
+			}
+		}
+
+		propose_score = {
+			value = 5
+			if = {
+				limit = {
+					scope:target_country = { infamy >= infamy_threshold:pariah }
+				}
+				multiply = 3
+			}
+		}
+
+		will_propose = {
+			is_target_in_global_variable_list = { name = io_opec_members target = this }
+			NOT = { has_global_variable = opec_vote_active }
+			scope:target_country.infamy >= infamy_threshold:pariah
+			scope:target_country.relations:root <= relations_threshold:hostile
+			NOT = { is_target_in_global_variable_list = { name = io_opec_members target = scope:target_country } }
+		}
+	}
+}

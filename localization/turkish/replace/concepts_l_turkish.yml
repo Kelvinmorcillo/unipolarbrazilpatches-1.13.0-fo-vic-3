@@ -1,0 +1,7 @@
+﻿l_turkish:
+
+# replace folder is the best thing to happen to me since december 11
+ concept_literacy:0 "Tertiary Education Rate"
+ concept_literate:0 "College-Educated"
+ concept_literacy_desc:2 "Bir [concept_pop]'deki bireylerin yüzdesi veya mutlak sayısı, bir öğrenme kurumundan mezun olan. [Concept('concept_profession', '$concept_professions$')] diğerlerinden daha yüksek $concept_literacy$ talep eder, $concept_pops$ diğer $concept_professions$ $concept_literacy$ onların $concept_literacy$ yeterince yüksek değildir. [SelectLocalization(GetPlayer.IsValid,'concept_literacy_desc_added','Education')] daha yüksek $concept_literacy$ zamanında $concept_population$ daha fazla yatırım yapabilirsiniz.\n\n$concept_pops$$concept_pop_growth_birthrate$ $concept_pop_growth_birthrate$ aşağıdakiler için daha doğru bir ceza ile karşılaşacaktır:\n[GetStaticModifier('literacy_penalty').GetDesc][GetStaticModifier('literacy_penalty').GetDesc]#!<x id=>"
+ concept_literacy_desc_added:0 "[GetInstitutionType('institution_schools').GetName]"

@@ -1,0 +1,31 @@
+
+kurdistan_war_offensive_min_score = {
+	value = 10
+}
+afghan_civil_war_offensive_min_score = {
+ value = 40
+}
+
+yugo_stability_sv = {
+	value = 0
+	if = {
+		limit = { exists = var:yugo_stability }
+		add = var:yugo_stability
+	}
+}
+
+yugo_secession_pressure_sv = {
+	value = 0
+	if = {
+		limit = { exists = var:yugo_secession_pressure }
+		add = var:yugo_secession_pressure
+	}
+}
+
+yugo_international_pressure_sv = {
+	value = 0
+	if = {
+		limit = { exists = var:yugo_international_pressure }
+		add = var:yugo_international_pressure
+	}
+}

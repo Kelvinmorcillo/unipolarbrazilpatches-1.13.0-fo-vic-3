@@ -1,0 +1,1015 @@
+# ============================================================
+# SMD: Nuclear Programme Events
+# events/smd_nuclear_events.txt
+# ============================================================
+
+namespace = nuclear_events
+
+nuclear_events.1 = {
+	type = country_event
+	placement = ROOT
+	title = nuclear_events.1.t
+	desc = nuclear_events.1.d
+	flavor = nuclear_events.1.f
+ 
+	event_image = { video = "unspecific_ruler_speaking_to_people" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/nuclear_bomb.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+	}
+ 
+	option = {
+		name = nuclear_events.1.a
+		default_option = yes
+		set_variable = nuclear_capable
+		add_modifier = {
+			name = nuclear_capable_modifier
+			months = -1
+		}
+		ai_chance = { base = 100 }
+	}
+}
+ 
+# ── NUCLEAR EVENTS.2 — INTELLIGENCE LEAK ───
+# Fires randomly during enrichment.
+# The international community discovers
+# the programme. Fires for player country
+# AND notifies major powers.
+# Note: This is the single event requested
+# in the brief. Expand into a full chain later.
+ 
+nuclear_events.2 = {
+	type = country_event
+	placement = ROOT
+	title = nuclear_events.2.t
+	desc = nuclear_events.2.d
+	flavor = nuclear_events.2.f
+ 
+	event_image = { video = "unspecific_ruler_speaking_to_people" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/nuclear_bomb.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		# triggered by je_uranium_enrichment random_events
+		has_variable = nuclear_enrichment_active
+		NOT = { has_variable = nuclear_programme_exposed }
+	}
+ 
+	immediate = {
+		set_variable = nuclear_programme_exposed
+	}
+ 
+	option = {
+		# Deny everything — maintain operational secrecy
+		name = nuclear_events.2.a
+		default_option = yes
+		# IAEA requests access — denial triggers inspection demand
+		trigger_event = { id = nuclear_events.6 days = 14 }
+		add_modifier = {
+			name = nuclear_programme_denied
+			months = 36
+		}
+		# Notify great powers
+		every_country = {
+			limit = {
+				country_rank >= rank_value:great_power
+				NOT = { this = ROOT }
+			}
+			change_relations = {
+				country = ROOT
+				value = -15
+			}
+		}
+		change_infamy = 45
+		ai_chance = { base = 70 }
+	}
+ 
+	option = {
+		# Acknowledge the programme — own it diplomatically
+		name = nuclear_events.2.b
+		set_variable = nuclear_skipped_iaea
+		trigger_event = { id = nuclear_events.8 days = 7 }
+		add_modifier = {
+			name = nuclear_programme_acknowledged
+			months = 48
+		}
+		every_country = {
+			limit = {
+				country_rank >= rank_value:great_power
+				NOT = { this = ROOT }
+			}
+			change_relations = {
+				country = ROOT
+				value = -25
+			}
+		}
+		change_infamy = 50
+		ai_chance = { base = 30 }
+	}
+}
+ 
+# ── NUCLEAR EVENTS.3 — WARHEAD PRODUCED ────
+ 
+nuclear_events.3 = {
+	type = country_event
+	placement = ROOT
+	title = nuclear_events.3.t
+	desc = nuclear_events.3.d
+	flavor = nuclear_events.3.f
+ 
+	event_image = { video = "unspecific_ruler_speaking_to_people" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/nuclear_bomb.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		# triggered by je_nuclear_production on_complete
+		NOT = { has_variable = first_warhead_produced }
+	}
+ 
+	option = {
+		name = nuclear_events.3.a
+		default_option = yes
+		set_variable = first_warhead_produced
+		add_modifier = {
+			name = nuclear_warhead_produced_modifier
+			months = 24
+		}
+		ai_chance = { base = 100 }
+	}
+}
+
+nuclear_events.4 = {
+	type = country_event
+	placement = ROOT
+	title = nuclear_events.4.t
+	desc = nuclear_events.4.d
+	flavor = nuclear_events.4.f
+ 
+	event_image = { video = "nuclear_explosion" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/nuclear_bomb.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+	}
+ 
+	option = {
+		# CONFIRM — launch the strike
+		name = nuclear_events.4.a
+		change_infamy = 85
+		hidden_effect = {
+			# ── STEP 1: Compute and deduct warheads used ──
+			# We use a temporary variable to track how many
+			# warheads are consumed this strike
+			set_variable = {
+				name = nuclear_warheads_used_this_strike
+				value = nuclear_warheads_to_use_sv
+			}
+			change_variable = {
+				name = nukes
+				subtract = var:nuclear_warheads_used_this_strike
+			}
+			# Clamp nukes to 0 minimum
+			if = {
+				limit = { var:nukes < 0 }
+				set_variable = { name = nukes value = 0 }
+			}
+
+			# ── STEP 2: Strike each targeted state ──────
+			every_in_list = {
+				variable = wmd_target_list
+ 
+				# Kill population: base 5% per warhead spread
+				# across targeted states. Minimum 2%, maximum 75%.
+				kill_population_percent_in_state = {
+					percent = nuclear_estimated_casualties_per_state_full_percent_sv
+				}
+				set_devastation = 75
+				state_region = {
+					spawn_entity_effect = {
+					 name = "env_nuke_explosion"
+					 duration = 40
+					}
+				}
+				set_variable = nuclear_struck
+				# Apply nuclear strike state modifier
+				if = { limit = { NOT = { has_modifier = nuclear_strike_aftermath } }
+					add_modifier = {
+						name = nuclear_strike_aftermath
+						months = 120
+					}
+				}
+			}
+ 
+			# ── STEP 3: Notify each struck country ──────
+			# Collect unique countries, fire the nuked event once per country
+			every_in_list = {
+				variable = wmd_target_list_c
+				trigger_event = { id = nuclear_events.5 days = 1 }
+			}
+ 
+			# ── STEP 5: Modifier on the firing country ──
+			add_modifier = {
+				name = nuclear_strike_launched_modifier
+				months = 60
+			}
+ 
+			# ── STEP 6: Clean up ─────────────────────────
+			clear_variable_list = wmd_target_list
+			clear_variable_list = wmd_target_list_c
+			remove_variable = nuclear_warheads_used_this_strike
+		}
+ 
+		ai_chance = { base = 100 }
+	}
+ 
+	option = {
+		# ABORT — stand down
+		name = nuclear_events.4.b
+		default_option = yes
+		# Target list preserved — player can modify and try again
+		ai_chance = { base = 0 }
+	}
+}
+ 
+# ── NUCLEAR EVENTS.5 — YOU HAVE BEEN NUKED ─
+# Fires for each country that had states
+# targeted in the strike. One event per country.
+# Fired via trigger_event in nuclear_events.4.
+ 
+nuclear_events.5 = {
+	type = country_event
+	placement = ROOT
+	title = nuclear_events.5.t
+	desc = nuclear_events.5.d
+	flavor = nuclear_events.5.f
+ 
+	event_image = { video = "nuclear_explosion" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/nuclear_bomb.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		# Triggered by nuclear_events.4 for each country
+		# in wmd_target_list_c
+	}
+ 
+	option = {
+		name = nuclear_events.5.a
+		default_option = yes
+ 
+		# Long-term national trauma modifier
+		add_modifier = {
+			name = nuclear_strike_victim_modifier
+			months = 240
+		}
+ 
+		# Radicals surge in all affected states
+		every_scope_state = {
+			limit = {
+				has_modifier = nuclear_strike_aftermath
+				is_incorporated = yes
+			}
+			add_radicals_in_state = { value = large_radicals }
+		}
+ 
+		every_scope_state = {
+			limit = {
+				has_variable = nuclear_struck
+			}
+			remove_variable = nuclear_struck
+		}
+		
+		# If this country has nukes, offer retaliation choice (player only)
+		if = {
+			limit = {
+				has_variable = nuclear_capable
+				has_variable = nukes
+				var:nukes >= 1
+				is_player = yes
+			}
+			trigger_event = { id = nuclear_events.13 days = 1 }
+		}
+
+		# AI auto-retaliation — fires 25% arsenal automatically, no event choice
+		if = {
+			limit = {
+				has_variable = nuclear_capable
+				has_variable = nukes
+				var:nukes >= 1
+				is_player = no
+			}
+			hidden_effect = {
+				add_modifier = {
+					name = nuclear_first_strike_response
+					months = 60
+				}
+
+				set_variable = {
+					name = nuclear_retaliation_count
+					value = var:nukes
+				}
+				multiply_variable = {
+					name = nuclear_retaliation_count
+					value = 0.25
+				}
+				round_variable = nuclear_retaliation_count
+				if = {
+					limit = { var:nuclear_retaliation_count < 1 }
+					set_variable = { name = nuclear_retaliation_count value = 1 }
+				}
+
+				change_variable = {
+					name = nukes
+					subtract = var:nuclear_retaliation_count
+				}
+				if = {
+					limit = { var:nukes < 0 }
+					set_variable = { name = nukes value = 0 }
+				}
+
+				# Find the attacker and strike their states
+				random_country = {
+					limit = {
+						any_in_list = {
+							variable = wmd_target_list_c
+							owner = ROOT
+						}
+						has_war_with = ROOT
+					}
+					save_scope_as = nuclear_attacker
+
+					every_scope_state = {
+						limit = { owner = scope:nuclear_attacker }
+						state_region = {
+							spawn_entity_effect = {
+							 name = "env_nuke_explosion"
+							 duration = 40
+							}
+						}
+						kill_population_percent_in_state = { percent = 0.10 }
+						add_modifier = {
+							name = nuclear_strike_aftermath
+							months = 120
+						}
+						add_devastation = 25
+					}
+
+					trigger_event = { id = nuclear_events.14 days = 1 }
+				}
+
+				remove_variable = nuclear_retaliation_count
+			}
+		}
+		
+		ai_chance = { base = 100 }
+	}
+}
+
+# ── NUCLEAR EVENTS.6 — IAEA INSPECTION REQUEST
+# Fires 14 days after the player denies the programme.
+# The IAEA has formally requested access to facilities.
+# Option A: Allow inspection — programme cancelled,
+#           construction bonus granted.
+# Option B: Refuse — triggers UN ultimatum.
+ 
+nuclear_events.6 = {
+	type = country_event
+	placement = ROOT
+	title = nuclear_events.6.t
+	desc = nuclear_events.6.d
+	flavor = nuclear_events.6.f
+ 
+	event_image = { video = "unspecific_ruler_speaking_to_people" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		has_variable = nuclear_programme_exposed
+		has_variable = nuclear_enrichment_active
+		NOT = { has_variable = nuclear_skipped_iaea }
+	}
+ 
+	option = {
+		name = nuclear_events.6.a
+		default_option = yes
+ 
+		# Cancel enrichment — je_uranium_enrichment will close via invalid
+		remove_variable = nuclear_enrichment_active
+		remove_variable = uranium_enrichment_progress
+		remove_variable = nuclear_programme_exposed
+ 
+		custom_tooltip = {
+			text = ngo_iaea_opinion_plus_15_tt
+			change_variable = { name = io_ngo_iaea_opinion add = 15 }
+			clamp_variable = { name = io_ngo_iaea_opinion min = 0 max = 100 }
+		}
+		
+		# IAEA cooperation bonus — encourages civilian nuclear energy
+		add_modifier = {
+			name = nuclear_iaea_cooperation
+			months = 120
+		}
+ 
+		change_infamy = -10
+ 
+		# Great powers appreciate the cooperation
+		every_country = {
+			limit = {
+				country_rank >= rank_value:great_power
+				NOT = { this = ROOT }
+			}
+			change_relations = {
+				country = ROOT
+				value = 10
+			}
+		}
+ 
+		ai_chance = { base = 55 }
+	}
+ 
+	option = {
+		# Refuse inspectors — escalate to UN
+		name = nuclear_events.6.b
+		set_variable = nuclear_iaea_refused
+		custom_tooltip = {
+			text = ngo_iaea_opinion_minus_25_tt
+			change_variable = { name = io_ngo_iaea_opinion add = -25 }
+			clamp_variable = { name = io_ngo_iaea_opinion min = 0 max = 100 }
+		}
+		change_infamy = 20
+		add_modifier = {
+			name = nuclear_iaea_defiance
+			months = 60
+		}
+ 
+		every_country = {
+			limit = {
+				country_rank >= rank_value:great_power
+				NOT = { this = ROOT }
+			}
+			change_relations = {
+				country = ROOT
+				value = -10
+			}
+		}
+ 
+		# UN Security Council convenes — ultimatum incoming
+		trigger_event = { id = nuclear_events.7 days = 14 }
+ 
+		ai_chance = { base = 45 }
+	}
+}
+ 
+# ── NUCLEAR EVENTS.7 — UN ULTIMATUM (via IAEA refusal)
+# ── NUCLEAR EVENTS.8 — UN ULTIMATUM (via acknowledgement)
+# Both events are mechanically identical but have
+# different descriptions reflecting how we got here.
+# Option A: Comply — end enrichment, heavy political cost.
+# Option B: Refuse — sanctions, great powers activated.
+ 
+nuclear_events.7 = {
+	type = country_event
+	placement = ROOT
+	title = nuclear_events.7.t
+	desc = nuclear_events.7.d
+	flavor = nuclear_events.7.f
+ 
+	event_image = { video = "whitehouse" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		# Triggered by nuclear_events.6 option B
+		has_variable = nuclear_iaea_refused
+		has_variable = nuclear_enrichment_active
+	}
+ 
+	immediate = {
+		# Save a great power scope for the response events
+		random_country = {
+			limit = {
+				country_rank >= rank_value:great_power
+				NOT = { this = ROOT }
+				is_at_war = no
+			}
+			save_scope_as = lead_great_power
+		}
+	}
+ 
+	option = {
+		# Comply — end enrichment under duress
+		name = nuclear_events.7.a
+ 
+		set_variable = nuclear_complied_with_un
+		remove_variable = nuclear_enrichment_active
+		remove_variable = uranium_enrichment_progress
+		remove_variable = nuclear_iaea_refused
+ 
+		change_infamy = 15
+		add_modifier = {
+			name = nuclear_un_compliance
+			months = 60
+		}
+ 
+		every_scope_state = {
+			limit = { is_incorporated = yes }
+			add_radicals_in_state = { value = small_radicals }
+		}
+ 
+		ai_chance = { base = 60 }
+	}
+ 
+	option = {
+		# Defy the UN — accept sanctions
+		name = nuclear_events.7.b
+		default_option = yes
+ 
+		set_variable = nuclear_un_sanctions_active
+		add_infamy = 40
+ 
+		# Great powers each receive a response event
+		every_country = {
+			limit = {
+				country_rank >= rank_value:great_power
+				NOT = { this = ROOT }
+				is_at_war = no
+			}
+			trigger_event = { id = nuclear_events.9 days = 7 }
+		}
+ 
+		ai_chance = { base = 40 }
+	}
+}
+ 
+nuclear_events.8 = {
+	type = country_event
+	placement = ROOT
+	title = nuclear_events.8.t
+	desc = nuclear_events.8.d
+	flavor = nuclear_events.8.f
+ 
+	event_image = { video = "europenorthamerica_political_extremism" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		# Triggered by nuclear_events.2 option B (acknowledge)
+		has_variable = nuclear_skipped_iaea
+		has_variable = nuclear_enrichment_active
+	}
+ 
+	option = {
+		# Comply — end enrichment
+		name = nuclear_events.8.a
+ 
+		set_variable = nuclear_complied_with_un
+		remove_variable = nuclear_enrichment_active
+		remove_variable = uranium_enrichment_progress
+		remove_variable = nuclear_skipped_iaea
+ 
+		change_infamy = -15
+		
+		add_modifier = {
+			name = nuclear_un_compliance
+			months = 60
+		}
+ 
+		every_scope_state = {
+			limit = { is_incorporated = yes }
+			add_radicals_in_state = { value = small_radicals }
+		}
+ 
+		ai_chance = { base = 60 }
+	}
+ 
+	option = {
+		# Defy — accept consequences
+		name = nuclear_events.8.b
+		default_option = yes
+ 
+		set_variable = nuclear_un_sanctions_active
+		change_infamy = 20
+ 
+		# Great powers each receive a response event
+		every_country = {
+			limit = {
+				country_rank >= rank_value:great_power
+				NOT = { this = ROOT }
+				is_at_war = no
+			}
+			trigger_event = { id = nuclear_events.9 days = 7 }
+		}
+ 
+		ai_chance = { base = 40 }
+	}
+}
+ 
+# ── NUCLEAR EVENTS.9 — GREAT POWER RESPONSE
+# Fires for each great power when the nuclear country
+# defies UN sanctions. Scoped to the GREAT POWER,
+# not the nuclear country.
+# ROOT = great power receiving this event
+# The nuclear country is accessed via the saved scope.
+#
+# Option A: Intervene militarily — create diplomatic play
+# Option B: Issue threats only — relations hit, sends modifier
+ 
+nuclear_events.9 = {
+	type = country_event
+	placement = ROOT
+	title = nuclear_events.9.t
+	desc = nuclear_events.9.d
+	flavor = nuclear_events.9.f
+ 
+	event_image = { video = "whitehouse" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		# Fired by nuclear_events.7 or nuclear_events.8
+		# ROOT = great power
+		country_rank >= rank_value:great_power
+		is_at_war = no
+	}
+ 
+	immediate = {
+		# Find and save the nuclear country
+		random_country = {
+			limit = {
+				has_variable = nuclear_un_sanctions_active
+				has_variable = nuclear_enrichment_active
+			}
+			save_scope_as = nuclear_state
+		}
+	}
+ 
+	option = {
+		# Military intervention — create a diplomatic play
+		name = nuclear_events.9.a
+		trigger = {
+			is_at_war = no
+			country_rank >= rank_value:great_power
+		}
+ 
+		# Intervening great power gets a wartime legitimacy boost
+		add_modifier = {
+			name = nuclear_non_proliferation_war
+			months = 60
+		}
+ 
+		scope:nuclear_state = {
+			add_modifier = {
+				name = nuclear_military_ultimatum
+				months = 36
+			}
+		}
+ 
+		# Create diplomatic play targeting the nuclear country
+		scope:nuclear_state = {
+			create_diplomatic_play = {
+				name = nuclear_non_proliferation_play
+				escalation = 50
+				war = no
+				initiator = ROOT
+				type = nuclear_disarmament
+			}
+		}
+ 
+		change_relations = {
+			country = scope:nuclear_state
+			value = -40
+		}
+ 
+		ai_chance = {
+			base = 30
+			# Great powers with stronger militaries are more likely to intervene
+			modifier = {
+				add = 20
+				country_rank >= rank_value:great_power
+				military_strength_comparison = {
+					target = scope:nuclear_state
+					comparison = greater_than
+					value = 2
+				}
+			}
+		}
+	}
+ 
+	option = {
+		# Threats only — diplomatic pressure, no war
+		name = nuclear_events.9.b
+		default_option = yes
+ 
+		change_relations = {
+			country = scope:nuclear_state
+			value = -30
+		}
+ 
+		# Apply diplomatic pressure modifier to the nuclear country
+		scope:nuclear_state = {
+			add_modifier = {
+				name = nuclear_great_power_pressure
+				months = 48
+			}
+		}
+ 
+		# The great power gets a minor prestige hit for not intervening
+		add_modifier = {
+			name = nuclear_non_intervention_caution
+			months = 24
+		}
+ 
+		ai_chance = { base = 70 }
+	}
+}
+
+nuclear_events.10 = {
+	type = country_event
+	placement = ROOT
+	title = nuclear_events.10.t
+	desc = nuclear_events.10.d
+	flavor = nuclear_events.10.f
+ 
+	event_image = { video = "europenorthamerica_political_extremism" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+ 
+	duration = 3
+ 
+	trigger = {
+		# Triggered by nuclear_disarmament on_enforced
+	}
+ 
+	option = {
+		name = nuclear_events.10.a
+		default_option = yes
+		ai_chance = { base = 100 }
+	}
+}
+
+nuclear_events.11 = {
+	type = country_event
+	placement = ROOT
+	title = nuclear_events.11.t
+	desc = nuclear_events.11.d
+	flavor = nuclear_events.11.f
+ 
+	event_image = { video = "unspecific_ruler_speaking_to_people" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	duration = 3
+ 
+	trigger = {}
+ 
+	option = {
+		name = nuclear_events.11.a
+		default_option = yes
+		add_modifier = {
+			name = icbm_capable_modifier
+			months = -1
+		}
+		ai_chance = { base = 100 }
+	}
+}
+
+# ── NUCLEAR EVENTS.12 — MISSILE STRIKE NOTIFICATION
+# Fires for each country in conventional_target_list_c
+# when the player launches a conventional missile strike.
+# Scope: ROOT = struck country.
+
+nuclear_events.12 = {
+	type = country_event
+	placement = ROOT
+	title = nuclear_events.12.t
+	desc = nuclear_events.12.d
+	flavor = nuclear_events.12.f
+
+	event_image = { video = "drone_attack" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	duration = 3
+
+	trigger = {}
+
+	immediate = {
+		# Find and save the country that struck us
+		random_country = {
+			limit = {
+				any_in_list = {
+					variable = conventional_target_list_c
+					owner = ROOT
+				}
+			}
+			save_scope_as = missile_attacker
+		}
+	}
+
+	option = {
+		name = nuclear_events.12.a
+		default_option = yes
+		
+		ai_chance = { base = 100 }
+	}
+}
+
+# ── NUCLEAR EVENTS.13 — NUCLEAR RETALIATION CHOICE
+# Fires for the struck country from nuclear_events.5.
+# Only shown if ROOT has nuclear warheads.
+# Player: choose to retaliate or absorb.
+# AI: handled separately by nuclear_events.14.
+
+nuclear_events.13 = {
+	type = country_event
+	placement = ROOT
+	title = nuclear_events.13.t
+	desc = nuclear_events.13.d
+	flavor = nuclear_events.13.f
+
+	event_image = { video = "drone_attack" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	duration = 3
+
+	trigger = {
+		# Only for nuclear-armed countries
+		has_variable = nuclear_capable
+		has_variable = nukes
+		var:nukes >= 1
+		# Only if the attacker still exists and is at war with us
+		any_country = {
+			any_in_list = {
+				variable = wmd_target_list_c
+				owner = ROOT
+			}
+			has_war_with = ROOT
+		}
+	}
+
+	immediate = {
+		# Save the attacker
+		random_country = {
+			limit = {
+				any_in_list = {
+					variable = wmd_target_list_c
+					owner = ROOT
+				}
+				has_war_with = ROOT
+			}
+			save_scope_as = nuclear_attacker
+		}
+	}
+
+	# Option A: Retaliate — fire 25% of arsenal at attacker's states
+	option = {
+		name = nuclear_events.13.a
+
+		hidden_effect = {
+			# Apply first-strike-response modifier — heavy infamy reduction
+			add_modifier = {
+				name = nuclear_first_strike_response
+				months = 60
+			}
+
+			# Compute 25% of arsenal
+			set_variable = {
+				name = nuclear_retaliation_count
+				value = var:nukes
+			}
+			multiply_variable = {
+				name = nuclear_retaliation_count
+				value = 0.25
+			}
+			round_variable = nuclear_retaliation_count
+			if = {
+				limit = { var:nuclear_retaliation_count < 1 }
+				set_variable = { name = nuclear_retaliation_count value = 1 }
+			}
+
+			# Deduct warheads
+			change_variable = {
+				name = nukes
+				subtract = var:nuclear_retaliation_count
+			}
+			if = {
+				limit = { var:nukes < 0 }
+				set_variable = { name = nukes value = 0 }
+			}
+
+			# Strike all states owned by the attacker
+			scope:nuclear_attacker = {
+				every_scope_state = {
+					limit = { owner = scope:nuclear_attacker }
+
+					state_region = {
+						spawn_entity_effect = {
+						 name = "env_nuke_explosion"
+						 duration = 40
+						}
+					}
+				
+					kill_population_percent_in_state = {
+						percent = 0.10
+					}
+
+					add_modifier = {
+						name = nuclear_strike_aftermath
+						months = 120
+					}
+
+					add_devastation = 25
+				}
+
+				# Notify the attacker they've been retaliated against
+				trigger_event = { id = nuclear_events.14 days = 1 }
+
+				# Apply victim modifier to them now
+				add_modifier = {
+					name = nuclear_strike_launched_modifier
+					months = 60
+				}
+			}
+
+			remove_variable = nuclear_retaliation_count
+		}
+
+		# No infamy — retaliation to a first strike
+		ai_chance = { base = 100 }
+	}
+
+	# Option B: Absorb — do not retaliate
+	option = {
+		name = nuclear_events.13.b
+		default_option = yes
+
+		add_modifier = {
+			name = nuclear_absorbed_first_strike
+			months = 36
+		}
+
+		ai_chance = { base = 0 }
+	}
+}
+
+# ── NUCLEAR EVENTS.14 — ATTACKER NOTIFIED OF RETALIATION
+# Fires on the original attacker when the struck
+# country retaliates. Notification only.
+# Also used as the AI auto-retaliation trigger —
+# the AI country fires nuclear_events.14 on itself
+# automatically from nuclear_events.13's immediate block
+# via a separate hidden on_actions path.
+
+nuclear_events.14 = {
+	type = country_event
+	placement = ROOT
+	title = nuclear_events.14.t
+	desc = nuclear_events.14.d
+	flavor = nuclear_events.14.f
+
+	event_image = { video = "nuclear_explosion" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	duration = 3
+
+	trigger = {}
+
+	option = {
+		name = nuclear_events.14.a
+		default_option = yes
+
+		add_modifier = {
+			name = nuclear_strike_victim_modifier
+			months = 240
+		}
+
+		every_scope_state = {
+			limit = {
+				has_modifier = nuclear_strike_aftermath
+				is_incorporated = yes
+			}
+			add_radicals_in_state = { value = large_radicals }
+		}
+
+		ai_chance = { base = 100 }
+	}
+}

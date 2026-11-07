@@ -1,0 +1,540 @@
+# Great Polarization / 2ACW scripted effects
+
+great_polarization_initialize = {
+	if = {
+		limit = { NOT = { has_variable = great_polarization_intensity } }
+		set_variable = { name = great_polarization_intensity value = 35 }
+	}
+	if = {
+		limit = { NOT = { has_variable = great_polarization_left_pressure } }
+		set_variable = { name = great_polarization_left_pressure value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = great_polarization_right_pressure } }
+		set_variable = { name = great_polarization_right_pressure value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = great_polarization_institutional_trust } }
+		set_variable = { name = great_polarization_institutional_trust value = 65 }
+	}
+
+	add_modifier = {
+		name = great_polarization_baseline
+		days = -1
+	}
+}
+
+great_polarization_update_presidential_modifiers = {
+	remove_modifier = great_polarization_right_wing_president
+	remove_modifier = great_polarization_left_wing_president
+
+	if = {
+		limit = { great_polarization_ruler_is_right_wing = yes }
+		add_modifier = {
+			name = great_polarization_right_wing_president
+			days = 35
+		}
+		change_variable = { name = great_polarization_left_pressure add = 3 }
+		change_variable = { name = great_polarization_intensity add = 2 }
+	}
+	else_if = {
+		limit = { great_polarization_ruler_is_left_wing = yes }
+		add_modifier = {
+			name = great_polarization_left_wing_president
+			days = 35
+		}
+		change_variable = { name = great_polarization_right_pressure add = 3 }
+		change_variable = { name = great_polarization_intensity add = 2 }
+	}
+	else_if = {
+		limit = { great_polarization_ruler_is_liberal_or_moderate = yes }
+		change_variable = { name = great_polarization_intensity add = -1 }
+		change_variable = { name = great_polarization_institutional_trust add = 1 }
+	}
+}
+
+great_polarization_raise_tension_small = {
+	change_variable = { name = great_polarization_intensity add = 5 }
+	change_variable = { name = great_polarization_institutional_trust add = -3 }
+}
+
+great_polarization_raise_tension_medium = {
+	change_variable = { name = great_polarization_intensity add = 10 }
+	change_variable = { name = great_polarization_institutional_trust add = -6 }
+}
+
+great_polarization_raise_tension_large = {
+	change_variable = { name = great_polarization_intensity add = 18 }
+	change_variable = { name = great_polarization_institutional_trust add = -10 }
+}
+
+great_polarization_reduce_tension_small = {
+	change_variable = { name = great_polarization_intensity add = -5 }
+	change_variable = { name = great_polarization_institutional_trust add = 3 }
+}
+
+great_polarization_reduce_tension_medium = {
+	change_variable = { name = great_polarization_intensity add = -10 }
+	change_variable = { name = great_polarization_institutional_trust add = 6 }
+}
+
+great_polarization_check_for_second_civil_war = {
+	if = {
+		limit = {
+			c:USA ?= this
+			has_journal_entry = je_the_great_polarization
+			NOT = { has_global_variable = second_american_civil_war_started }
+			great_polarization_civil_war_should_start = yes
+		}
+
+		set_global_variable = second_american_civil_war_started
+		trigger_event = { id = great_polarization.100 popup = yes }
+	}
+}
+
+great_polarization_begin_second_american_civil_war = {
+	set_global_variable = second_american_civil_war_started
+
+	add_modifier = {
+		name = second_american_civil_war_outbreak
+		days = 3650
+	}
+
+	add_journal_entry = {
+		type = je_second_american_civil_war
+	}
+
+	great_polarization_create_2acw_breakaways = yes
+	great_polarization_start_2acw_wars = yes
+	great_polarization_offer_player_switch_2acw_side = yes
+}
+
+great_polarization_create_2acw_breakaways = {
+
+	create_country = { tag = BAM origin = c:USA province = p:xE217B5 }
+	create_country = { tag = REA origin = c:USA province = p:x454965 }
+	create_country = { tag = ALK origin = c:USA province = p:xD82BF2 }
+	create_country = { tag = HWI origin = c:USA province = p:xB5403E }
+	
+	create_country = { tag = NVO origin = c:USA province = p:xbd8033 }
+	
+	if = { limit = { exists = c:BAM } c:BAM = { set_variable = 2acw_blue_aligned } }
+	if = { limit = { exists = c:REA } c:REA = { set_variable = 2acw_red_aligned } }
+
+	if = {
+		limit = { exists = c:TXS }
+		c:TXS = {
+			set_variable = 2acw_red_protectorate
+			set_variable = 2acw_red_aligned
+		}
+	}
+	if = {
+		limit = { exists = c:CAL }
+		c:CAL = {
+			set_variable = 2acw_blue_protectorate
+			set_variable = 2acw_blue_aligned
+		}
+	}
+
+	if = { limit = { exists = c:HWI } c:HWI = { set_variable = 2acw_neutral } }
+	if = { limit = { exists = c:ALK } c:ALK = { set_variable = 2acw_neutral } }
+	if = { limit = { exists = c:NAF } c:NAF = { set_variable = 2acw_unaligned_negotiable } }
+	if = { limit = { exists = c:NVO } c:NVO = { set_variable = 2acw_unaligned_negotiable } }
+
+	great_polarization_transfer_2acw_territory = yes
+	great_polarization_create_2acw_armies = yes
+}
+
+great_polarization_transfer_2acw_territory = {
+
+	 Blue America:
+	 s:STATE_WASHINGTON.region_state:USA = { set_state_owner = c:BAM }
+	 s:STATE_OREGON.region_state:USA = { set_state_owner = c:BAM }
+	 s:STATE_NEVADA.region_state:USA = { set_state_owner = c:BAM }
+	 s:STATE_ARIZONA.region_state:USA = { set_state_owner = c:BAM }
+	 s:STATE_NEW_MEXICO.region_state:USA = { set_state_owner = c:BAM }
+	 s:STATE_COLORADO.region_state:USA = { set_state_owner = c:BAM }
+	 s:STATE_WISCONSIN.region_state:USA = { set_state_owner = c:BAM }
+	 s:STATE_MINNESOTA.region_state:USA = { set_state_owner = c:BAM }
+	 s:STATE_MICHIGAN.region_state:USA = { set_state_owner = c:BAM }
+	 s:STATE_ILLINOIS.region_state:USA = { set_state_owner = c:BAM }
+	 s:STATE_PENNSYLVANIA.region_state:USA = { set_state_owner = c:BAM }
+	 s:STATE_VIRGINIA.region_state:USA = { set_state_owner = c:BAM }
+	 s:STATE_MARYLAND.region_state:USA = { set_state_owner = c:BAM }
+	 s:STATE_DELAWARE.region_state:USA = { set_state_owner = c:BAM }
+	 s:STATE_NEW_JERSEY.region_state:USA = { set_state_owner = c:BAM }
+	 s:STATE_NEW_YORK.region_state:USA = { set_state_owner = c:BAM }
+	 s:STATE_CONNECTICUT.region_state:USA = { set_state_owner = c:BAM }
+	 s:STATE_RHODE_ISLAND.region_state:USA = { set_state_owner = c:BAM }
+	 s:STATE_MASSACHUSETTS.region_state:USA = { set_state_owner = c:BAM }
+	 s:STATE_NEW_HAMPSHIRE.region_state:USA = { set_state_owner = c:BAM }
+	 s:STATE_VERMONT.region_state:USA = { set_state_owner = c:BAM }
+	 s:STATE_MAINE.region_state:USA = { set_state_owner = c:BAM }
+	 s:STATE_WEST_MICRONESIA.region_state:USA = { set_state_owner = c:BAM }
+	 
+	 Red America:
+	 s:STATE_OHIO.region_state:USA = { set_state_owner = c:REA }
+	 s:STATE_INDIANA.region_state:USA = { set_state_owner = c:REA }
+	 s:STATE_IOWA.region_state:USA = { set_state_owner = c:REA }
+	 s:STATE_MONTANA.region_state:USA = { set_state_owner = c:REA }
+	 s:STATE_IDAHO.region_state:USA = { set_state_owner = c:REA }
+	 s:STATE_WYOMING.region_state:USA = { set_state_owner = c:REA }
+	 s:STATE_UTAH.region_state:USA = { set_state_owner = c:REA }
+	 s:STATE_KANSAS.region_state:USA = { set_state_owner = c:REA }
+	 s:STATE_OKLAHOMA.region_state:USA = { set_state_owner = c:REA }
+	 s:STATE_NEBRASKA.region_state:USA = { set_state_owner = c:REA }
+	 s:STATE_SOUTH_DAKOTA.region_state:USA = { set_state_owner = c:REA }
+	 s:STATE_NORTH_DAKOTA.region_state:USA = { set_state_owner = c:REA }
+	 s:STATE_MISSOURI.region_state:USA = { set_state_owner = c:REA }
+	 s:STATE_ARKANSAS.region_state:USA = { set_state_owner = c:REA }
+	 s:STATE_MISSISSIPPI.region_state:USA = { set_state_owner = c:REA }
+	 s:STATE_LOUISIANA.region_state:USA = { set_state_owner = c:REA }
+	 s:STATE_ALABAMA.region_state:USA = { set_state_owner = c:REA }
+	 s:STATE_FLORIDA.region_state:USA = { set_state_owner = c:REA }
+	 s:STATE_KENTUCKY.region_state:USA = { set_state_owner = c:REA }
+	 s:STATE_TENNESSEE.region_state:USA = { set_state_owner = c:REA }
+	 s:STATE_GEORGIA.region_state:USA = { set_state_owner = c:REA }
+	 s:STATE_WEST_VIRGINIA.region_state:USA = { set_state_owner = c:REA }
+	 s:STATE_SOUTH_CAROLINA.region_state:USA = { set_state_owner = c:REA }
+	 s:STATE_NORTH_CAROLINA.region_state:USA = { set_state_owner = c:REA }
+	
+	s:STATE_GEORGIA = {
+	 	set_owner_of_provinces = {
+	 		country = c:BAM
+	 		provinces = { xCB1A53 x13B302 }
+	 	}
+	 }
+	 s:STATE_FLORIDA = {
+	 	set_owner_of_provinces = {
+	 		country = c:BAM
+	 		provinces = { xF0B481 xE58A3D xE740E5 x65ECBE }
+	 	}
+	 }
+	 s:STATE_OHIO = {
+	 	set_owner_of_provinces = {
+	 		country = c:BAM
+	 		provinces = { xC8B64B xE4C01C xA92D73 }
+	 	}
+	 }
+	 
+	 s:STATE_CALIFORNIA.region_state:USA = { set_state_owner = c:BAM }
+	 s:STATE_TEXAS.region_state:USA = { set_state_owner = c:REA }
+	 
+	 s:STATE_ARIZONA = {
+	 	set_owner_of_provinces = {
+	 		country = c:NVO
+	 		provinces = { x808ab5 xa156c7 x9c0fed xbd8033 x2df849 x17e6c3 xef029f xaa2075 xbf0c47 xd08080 xa73de5 x38a656 xa721d9 xf259d7 x557c77 xc94b0f xb03d4f x177225 x34b00a xce729f xfdbd34 xb3dea9 x780de4 x2838b0 x0340ea }
+	 	}
+	 }
+	 s:STATE_UTAH = {
+	 	set_owner_of_provinces = {
+	 		country = c:NVO
+	 		provinces = { x808ab5 xa156c7 x9c0fed xbd8033 x2df849 x17e6c3 xef029f xaa2075 xbf0c47 xd08080 xa73de5 x38a656 xa721d9 xf259d7 x557c77 xc94b0f xb03d4f x177225 x34b00a xce729f xfdbd34 xb3dea9 x780de4 x2838b0 x0340ea }
+	 	}
+	 }
+	 s:STATE_COLORADO = {
+	 	set_owner_of_provinces = {
+	 		country = c:NVO
+	 		provinces = { x808ab5 xa156c7 x9c0fed xbd8033 x2df849 x17e6c3 xef029f xaa2075 xbf0c47 xd08080 xa73de5 x38a656 xa721d9 xf259d7 x557c77 xc94b0f xb03d4f x177225 x34b00a xce729f xfdbd34 xb3dea9 x780de4 x2838b0 x0340ea }
+	 	}
+	 }
+	 s:STATE_NEW_MEXICO = {
+	 	set_owner_of_provinces = {
+	 		country = c:NVO
+	 		provinces = { x808ab5 xa156c7 x9c0fed xbd8033 x2df849 x17e6c3 xef029f xaa2075 xbf0c47 xd08080 xa73de5 x38a656 xa721d9 xf259d7 x557c77 xc94b0f xb03d4f x177225 x34b00a xce729f xfdbd34 xb3dea9 x780de4 x2838b0 x0340ea }
+	 	}
+	 }
+	
+	 s:STATE_HAWAIIAN_ISLANDS.region_state:USA = { set_state_owner = c:HWI }
+	 s:STATE_ALASKA.region_state:USA = { set_state_owner = c:ALK }
+	 
+	 great_polarization_divide_american_nukes = yes
+}
+
+great_polarization_create_2acw_armies = {
+	if = { limit = { exists = c:BAM } c:BAM = { great_polarization_create_blue_army = yes } }
+	if = { limit = { exists = c:REA } c:REA = { great_polarization_create_red_army = yes } }
+	if = { limit = { exists = c:CAL } c:CAL = { great_polarization_create_california_army = yes } }
+	if = { limit = { exists = c:TXS } c:TXS = { great_polarization_create_texas_army = yes } }
+	if = { limit = { exists = c:NAF } c:NAF = { great_polarization_create_new_africa_army = yes } }
+	if = { limit = { exists = c:NVO } c:NVO = { great_polarization_create_navajo_army = yes } }
+	if = { limit = { exists = c:HWI } c:HWI = { great_polarization_create_hawaii_army = yes } }
+	if = { limit = { exists = c:ALK } c:ALK = { great_polarization_create_alaska_army = yes } }
+}
+
+great_polarization_create_blue_army = {
+	if = {
+		limit = { NOT = { has_variable = 2acw_army_created } }
+		set_variable = 2acw_army_created
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_america
+			name = "Blue_American_Federal_Forces"
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = capital.state_region
+				count = 25
+			}
+		}
+	}
+}
+
+great_polarization_create_red_army = {
+	if = {
+		limit = { NOT = { has_variable = 2acw_army_created } }
+		set_variable = 2acw_army_created
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_america
+			name = "Red_American_State_Guards"
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = capital.state_region
+				count = 25
+			}
+		}
+	}
+}
+
+great_polarization_create_california_army = {
+	if = {
+		limit = { NOT = { has_variable = 2acw_army_created } }
+		set_variable = 2acw_army_created
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_america
+			name = "California_State_Defense_Forces"
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = capital.state_region
+				count = 12
+			}
+		}
+	}
+}
+
+great_polarization_create_texas_army = {
+	if = {
+		limit = { NOT = { has_variable = 2acw_army_created } }
+		set_variable = 2acw_army_created
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_america
+			name = "Texas_State_Guard"
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = capital.state_region
+				count = 14
+			}
+		}
+	}
+}
+
+great_polarization_create_new_africa_army = {
+	if = {
+		limit = { NOT = { has_variable = 2acw_army_created } }
+		set_variable = 2acw_army_created
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_america
+			name = "New_African_Liberation_Forces"
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = capital.state_region
+				count = 10
+			}
+		}
+	}
+}
+
+great_polarization_create_navajo_army = {
+	if = {
+		limit = { NOT = { has_variable = 2acw_army_created } }
+		set_variable = 2acw_army_created
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_america
+			name = "Navajo_Defense_Forces"
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = capital.state_region
+				count = 6
+			}
+		}
+	}
+}
+
+great_polarization_create_hawaii_army = {
+	if = {
+		limit = { NOT = { has_variable = 2acw_army_created } }
+		set_variable = 2acw_army_created
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_america
+			name = "Hawaii_Defense_Forces"
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = capital.state_region
+				count = 5
+			}
+		}
+	}
+}
+
+great_polarization_create_alaska_army = {
+	if = {
+		limit = { NOT = { has_variable = 2acw_army_created } }
+		set_variable = 2acw_army_created
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_america
+			name = "Alaska_Defense_Forces"
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = capital.state_region
+				count = 5
+			}
+		}
+	}
+}
+
+great_polarization_start_2acw_wars = {
+	if = {
+		limit = {
+			exists = c:REA
+			exists = c:BAM
+			NOT = { c:REA = { has_war_with = c:BAM } }
+		}
+
+		c:REA = {
+			create_diplomatic_play = {
+				name = second_american_civil_war
+				type = dp_annex_war
+				target_country = c:BAM
+				war = yes
+
+				add_war_goal = {
+					holder = c:REA
+					type = annex_country
+					target_country = c:BAM
+					primary_demand = yes
+				}
+				add_war_goal = {
+					holder = c:BAM
+					type = annex_country
+					target_country = c:REA
+				}
+			}
+		}
+	}
+}
+
+great_polarization_offer_player_switch_2acw_side = {
+	if = {
+		limit = {
+			c:USA ?= this
+			is_player = yes
+			has_global_variable = second_american_civil_war_started
+		}
+
+		if = {
+			limit = {
+				OR = {
+					great_polarization_ruler_is_left_wing = yes
+					great_polarization_ruler_is_liberal_or_moderate = yes
+				}
+			}
+			trigger_event = { id = great_polarization.130 popup = yes }
+		}
+		else_if = {
+			limit = { great_polarization_ruler_is_right_wing = yes }
+			trigger_event = { id = great_polarization.131 popup = yes }
+		}
+		else = {
+			trigger_event = { id = great_polarization.130 popup = yes }
+		}
+	}
+}
+
+great_polarization_switch_player_to_blue_america = {
+	if = {
+		limit = {
+			c:USA ?= this
+			is_player = yes
+			exists = c:BAM
+		}
+		play_as = c:BAM
+	}
+}
+
+great_polarization_switch_player_to_red_america = {
+	if = {
+		limit = {
+			c:USA ?= this
+			is_player = yes
+			exists = c:REA
+		}
+		play_as = c:REA
+	}
+}
+
+great_polarization_breakaway_join_blue_side = {
+	set_variable = 2acw_blue_aligned
+	remove_variable = 2acw_red_aligned
+	remove_variable = 2acw_neutral
+
+	if = {
+		limit = { exists = c:BAM }
+		c:BAM = {
+			create_treaty = {
+				name = 2acw_blue_alignment_treaty
+				first_country = c:BAM
+				second_country = ROOT
+				is_draft = no
+				binding_period = { years = 10 }
+				articles_to_create = {
+					{ article = defensive_pact }
+				}
+			}
+		}
+	}
+}
+
+great_polarization_breakaway_join_red_side = {
+	set_variable = 2acw_red_aligned
+	remove_variable = 2acw_blue_aligned
+	remove_variable = 2acw_neutral
+
+	if = {
+		limit = { exists = c:REA }
+		c:REA = {
+			create_treaty = {
+				name = 2acw_red_alignment_treaty
+				first_country = c:REA
+				second_country = ROOT
+				is_draft = no
+				binding_period = { years = 10 }
+				articles_to_create = {
+					{ article = defensive_pact }
+				}
+			}
+		}
+	}
+}
+
+great_polarization_divide_american_nukes = {
+		c:USA = { set_variable = { name = nukes value = 0 } }
+		if = { limit = { exists = c:BAM } c:BAM = { set_variable = { name = nukes value = 45 } } }
+		if = { limit = { exists = c:REA } c:REA = { set_variable = { name = nukes value = 100 } } }
+		if = { limit = { exists = c:TXS } c:TXS = { set_variable = { name = nukes value = 5 } } }
+		if = { limit = { exists = c:CAL } c:CAL = { set_variable = { name = nukes value = 16 } } }
+		s:STATE_DISTRICT_OF_COLUMBIA.region_state:USA = { set_state_owner = c:BAM }
+}

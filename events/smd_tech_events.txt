@@ -1,0 +1,88 @@
+﻿namespace = smd_tech
+
+smd_tech.1 = {
+	type = country_event
+
+	title = smd_tech.1.t
+	desc = smd_tech.1.d
+	flavor = smd_tech.1.f
+
+	event_image = {
+		video = "early_computer"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	immediate = {
+	}
+
+	option = {
+		name = smd_tech.1.a
+        default_option = yes
+		add_technology_progress = { progress = 3000 technology = mechanized_workshops }
+	}
+	option = {
+		name = smd_tech.1.b
+			add_modifier = {
+				name = government_run_wifi_modifier
+				days = 365
+				multiplier = 1
+			}
+	}
+}
+
+smd_tech.2 = {
+	type = country_event
+
+	title = smd_tech.2.t
+	desc = smd_tech.2.d
+
+	event_image = {
+		video = "early_computer"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	immediate = {
+	}
+
+	option = {
+		name = smd_tech.1.a
+        default_option = yes
+		add_technology_progress = { progress = 2500 technology = chemical_bleaching }
+	}
+}
+
+smd_tech.3 = {
+	type = country_event
+
+	title = smd_tech.3.t
+	desc = smd_tech.3.d
+
+	event_image = {
+		video = "early_computer"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	immediate = {
+	}
+
+	option = {
+		name = smd_tech.3.a
+        default_option = yes
+		add_technology_progress = { progress = 2500 technology = human_rights }
+	}
+}

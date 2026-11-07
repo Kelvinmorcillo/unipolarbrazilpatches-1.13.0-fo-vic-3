@@ -1,0 +1,156 @@
+# War Crimes in Bosnia — expanded with player restraint/investigation options
+
+namespace = yugoslav_war_crimes
+
+# Siege of Sarajevo
+yugoslav_war_crimes.1 = {
+	type = country_event
+	title = yugoslav_war_crimes.1.t
+	desc = yugoslav_war_crimes.1.d
+	event_image = { video = "yugoslav_war" }
+	icon = "gfx/interface/icons/event_icons/event_unrest.dds"
+	duration = 2
+
+	trigger = {
+		NOT = { has_variable = sarajevo_happened }
+		OR = { c:YUG ?= this c:SRP ?= this }
+		c:BOS = { enemy_occupation > 0.20 }
+		game_date >= 1992.5.1
+	}
+
+	option = {
+		name = yugoslav_war_crimes.1.a
+		default_option = yes
+		set_variable = sarajevo_happened
+		add_modifier = { name = international_condemnation months = 12 }
+		add_radicals = { value = 0.05 pop_type = laborers }
+		add_relations = { target = c:USA value = -25 }
+		add_relations = { target = c:GBR value = -25 }
+		add_relations = { target = c:FRA value = -25 }
+		every_country = {
+			limit = { NOT = { OR = { c:YUG ?= this c:SRP ?= this } } }
+			trigger_event = { id = yugoslav_war_crimes.3 days = 3 }
+		}
+		c:BOS = { trigger_event = { id = yugoslav_war_crimes.5 days = 3 } }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = yugoslav_war_crimes.1.b
+		set_variable = sarajevo_happened
+		add_modifier = { name = war_crimes_investigation months = 24 }
+		add_radicals = { value = 0.02 pop_type = soldiers }
+		add_relations = { target = c:USA value = -5 }
+		add_relations = { target = c:GBR value = -5 }
+		add_relations = { target = c:FRA value = -5 }
+		ai_chance = { base = 0 }
+	}
+}
+
+# Srebrenica
+yugoslav_war_crimes.2 = {
+	type = country_event
+	title = yugoslav_war_crimes.2.t
+	desc = yugoslav_war_crimes.2.d
+	event_image = { video = "yugoslav_war" }
+	icon = "gfx/interface/icons/event_icons/event_unrest.dds"
+	duration = 2
+
+	trigger = {
+		NOT = { has_variable = srebrenica_happened }
+		OR = { c:YUG ?= this c:SRP ?= this }
+		c:BOS = { enemy_occupation > 0.20 }
+		game_date >= 1995.1.1
+	}
+
+	option = {
+		name = yugoslav_war_crimes.2.a
+		default_option = yes
+		set_variable = srebrenica_happened
+		add_modifier = { name = international_condemnation months = 24 }
+		add_radicals = { value = 0.15 pop_type = soldiers }
+		add_relations = { target = c:USA value = -25 }
+		add_relations = { target = c:GBR value = -25 }
+		add_relations = { target = c:FRA value = -25 }
+		every_country = {
+			limit = { NOT = { OR = { c:YUG ?= this c:SRP ?= this } } }
+			trigger_event = { id = yugoslav_war_crimes.4 days = 3 }
+		}
+		c:BOS = { trigger_event = { id = yugoslav_war_crimes.5 days = 3 } }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = yugoslav_war_crimes.2.b
+		set_variable = srebrenica_happened
+		add_modifier = { name = war_crimes_investigation months = 36 }
+		add_radicals = { value = 0.04 pop_type = soldiers }
+		add_relations = { target = c:USA value = -5 }
+		add_relations = { target = c:GBR value = -5 }
+		add_relations = { target = c:FRA value = -5 }
+		c:BOS = { trigger_event = { id = yugoslav_war_crimes.5 days = 3 } }
+		ai_chance = { base = 0 }
+	}
+}
+
+yugoslav_war_crimes.3 = {
+	type = country_event
+	title = yugoslav_war_crimes.3.t
+	desc = yugoslav_war_crimes.3.d
+	event_image = { video = "unspecific_politicians_arguing" }
+	duration = 2
+
+	option = {
+		name = yugoslav_war_crimes.3.a
+		default_option = yes
+		add_relations = { target = c:YUG value = -50 }
+		set_owes_obligation = { country = c:BOS setting = yes }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = yugoslav_war_crimes.3.b
+		add_relations = { target = c:YUG value = -20 }
+		set_owes_obligation = { country = c:BOS setting = yes }
+		ai_chance = { base = 0 }
+	}
+}
+
+yugoslav_war_crimes.4 = {
+	type = country_event
+	title = yugoslav_war_crimes.4.t
+	desc = yugoslav_war_crimes.4.d
+	event_image = { video = "unspecific_politicians_arguing" }
+	duration = 2
+
+	option = {
+		name = yugoslav_war_crimes.4.a
+		default_option = yes
+		add_relations = { target = c:YUG value = -75 }
+		set_owes_obligation = { country = c:BOS setting = yes }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = yugoslav_war_crimes.4.b
+		add_relations = { target = c:YUG value = -25 }
+		ai_chance = { base = 0 }
+	}
+}
+
+yugoslav_war_crimes.5 = {
+	type = country_event
+	title = yugoslav_war_crimes.5.t
+	desc = yugoslav_war_crimes.5.d
+	event_image = { video = "yugoslav_war" }
+	duration = 2
+
+	immediate = {
+		add_radicals = { value = 0.1 pop_type = soldiers }
+		add_radicals = { value = 0.05 pop_type = machinists }
+	}
+
+	option = {
+		name = yugoslav_war_crimes.5.a
+		default_option = yes
+		add_modifier = { name = national_grief months = 12 }
+	}
+}

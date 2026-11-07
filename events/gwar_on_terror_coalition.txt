@@ -1,0 +1,269 @@
+namespace = wot_coalition
+
+wot_coalition.1 = {
+	type = country_event
+	placement = ROOT
+	hidden = yes
+
+	trigger = {
+		c:USA ?= this
+		has_variable = war_on_terror_campaign_started
+		NOT = { has_variable = wot_article_5_invoked }
+	}
+
+	immediate = {
+		set_variable = wot_article_5_invoked
+		set_global_variable = wot_article_5_invoked_global
+
+		add_to_global_variable_list = { name = wot_afghanistan_coalition_partners target = c:USA }
+		if = {
+			limit = { exists = c:ANA }
+			add_to_global_variable_list = { name = wot_afghanistan_coalition_partners target = c:ANA }
+		}
+
+		every_country = {
+			limit = {
+				is_target_in_global_variable_list = { name = io_nato_members target = this }
+			}
+			add_to_global_variable_list = { name = wot_afghanistan_coalition_partners target = this }
+			trigger_event = { id = wot_coalition.2 popup = yes }
+		}
+
+		c:PAK ?= {
+			trigger_event = { id = wot_coalition.10 popup = yes }
+		}
+	}
+}
+
+wot_coalition.2 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = wot_coalition.2.t
+	desc = wot_coalition.2.d
+	flavor = wot_coalition.2.f
+
+	event_image = { video = "waronterror" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	trigger = {
+		is_target_in_global_variable_list = { name = io_nato_members target = this }
+		has_global_variable = wot_article_5_invoked_global
+		NOT = { has_variable = wot_article_5_answered }
+	}
+
+	immediate = {
+		set_variable = wot_article_5_answered
+	}
+
+	option = {
+		name = wot_coalition.2.a
+		default_option = yes
+
+		custom_tooltip = wot_article_5_join_war_tt
+
+		add_modifier = {
+			name = wot_article_5_commitment
+			years = 5
+			is_decaying = yes
+		}
+
+		wot_join_us_afghanistan_war = yes
+	}
+}
+
+wot_coalition.3 = {
+	type = country_event
+	placement = ROOT
+	hidden = yes
+
+	trigger = {
+		is_target_in_global_variable_list = { name = io_nato_members target = this }
+		has_variable = wot_article_5_answered
+		NOT = { has_variable = wot_joined_afghanistan_war }
+		c:USA ?= {
+			has_war_with = c:AFG
+		}
+	}
+
+	immediate = {
+		wot_join_us_afghanistan_war = yes
+	}
+}
+
+wot_coalition.10 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = wot_coalition.10.t
+	desc = wot_coalition.10.d
+	flavor = wot_coalition.10.f
+
+	event_image = { video = "africa_diplomats_negotiating" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+
+	trigger = {
+		c:PAK ?= this
+		has_global_variable = wot_article_5_invoked_global
+		NOT = { has_variable = wot_pakistan_decision_made }
+	}
+
+	immediate = {
+		set_variable = wot_pakistan_decision_made
+	}
+
+	option = {
+		name = wot_coalition.10.a
+		default_option = yes
+
+		custom_tooltip = wot_pakistan_cooperate_tt
+
+		set_variable = wot_pakistan_cooperates
+		wot_transfer_kabul_to_northern_alliance = yes
+		wot_create_northern_alliance_war_army = yes
+		wot_northern_alliance_join_afghanistan_play_or_war = yes
+		
+		add_modifier = {
+			name = wot_pakistan_cooperation
+			years = 10
+			is_decaying = yes
+		}
+
+		wot_create_pakistan_coalition_access_treaties = yes
+	}
+
+	option = {
+		name = wot_coalition.10.b
+
+		custom_tooltip = wot_pakistan_refuse_tt
+
+		set_variable = wot_pakistan_refuses
+		add_modifier = {
+			name = wot_pakistan_complicit
+			years = 5
+			is_decaying = yes
+		}
+
+		wot_transfer_kabul_to_northern_alliance = yes
+		wot_create_northern_alliance_war_army = yes
+		wot_northern_alliance_join_afghanistan_play_or_war = yes
+		
+		c:USA ?= {
+			trigger_event = { id = wot_coalition.12 popup = yes }
+		}
+
+		c:USA = {
+		create_diplomatic_play = {
+			name = operation_enduring_freedom
+			type = dp_regime_change
+			target_country = c:PAK
+			war = yes
+			add_escalation = 80
+			add_war_goal = {
+				holder = c:PAK
+				type = humiliation
+				target_country = c:USA
+				}
+			}
+		}
+	}
+}
+
+wot_coalition.11 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = wot_coalition.11.t
+	desc = wot_coalition.11.d
+	flavor = wot_coalition.11.f
+
+	event_image = { video = "africa_diplomats_negotiating" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+
+	trigger = {
+		c:USA ?= this
+		c:PAK ?= { has_variable = wot_pakistan_cooperates }
+	}
+
+	option = {
+		name = wot_coalition.11.a
+		create_treaty = {
+			name = wot_pakistan_coalition_access_treaty_name
+			first_country = root
+			second_country = c:PAK
+
+			is_draft = no
+			binding_period = { years = 10 }
+
+			articles_to_create = {
+				{ 
+					article = military_access
+					source_country = c:PAK
+					target_country = root
+				}
+				{ 
+					article = host_military_bases
+					source_country = c:PAK
+					target_country = root
+				}
+			}
+		}
+		default_option = yes
+	}
+}
+
+wot_coalition.12 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = wot_coalition.12.t
+	desc = wot_coalition.12.d
+	flavor = wot_coalition.12.f
+
+	event_image = { video = "middleeast_battlefield_trenches" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	trigger = {
+		c:USA ?= this
+		c:PAK ?= { has_variable = wot_pakistan_refuses }
+	}
+
+	option = {
+		name = wot_coalition.12.a
+		default_option = yes
+	}
+}
+
+
+# Northern Alliance notification.
+wot_coalition.20 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = wot_coalition.20.t
+	desc = wot_coalition.20.d
+	flavor = wot_coalition.20.f
+
+	event_image = { video = "middleeast_battlefield_trenches" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	trigger = {
+		c:ANA ?= this
+		has_variable = wot_northern_alliance_activated
+	}
+
+	option = {
+		name = wot_coalition.20.a
+		default_option = yes
+	}
+}

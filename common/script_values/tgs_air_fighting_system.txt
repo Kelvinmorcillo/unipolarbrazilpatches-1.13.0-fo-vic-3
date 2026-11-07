@@ -1,0 +1,67 @@
+allied_air_dominance = {
+    value = 0
+    battle = {
+        every_combat_unit = {
+            limit = {
+                owner = scope:character.owner
+            }
+            add = air_dominance_value
+        }
+    }
+}
+
+enemy_air_dominance = {
+    value = 0
+    battle = {
+        every_combat_unit = {
+            limit = {
+                owner = scope:character.opposing_commander.owner
+            }
+            add = air_dominance_value
+        }
+    }
+}
+
+air_dominance_value = {
+	value = 0
+	if = {
+		limit = {
+			has_unit_type = unit_type:combat_unit_type_jet_fighter
+		}
+		add = jet_fighter_air_dominance_value
+	}
+	if = {
+		limit = {
+			has_unit_type = unit_type:combat_unit_type_fighter
+		}
+		add = fighter_air_dominance_value
+	}
+	if = {
+		limit = {
+			has_unit_type = unit_type:combat_unit_type_bomber
+		}
+		add = bomber_air_dominance_value
+	}
+	if = {
+		limit = {
+			has_unit_type = unit_type:combat_unit_type_close_air_support
+		}
+		add = close_air_support_air_dominance_value
+	}
+}
+
+jet_fighter_air_dominance_value = {
+	value = 30
+}
+
+fighter_air_dominance_value = {
+	value = 1
+}
+
+bomber_air_dominance_value = {
+	value = 0.1
+}
+
+close_air_support_air_dominance_value = {
+	value = 0.4
+}

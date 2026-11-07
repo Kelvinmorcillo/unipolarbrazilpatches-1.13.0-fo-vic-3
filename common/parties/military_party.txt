@@ -1,0 +1,238 @@
+﻿# Fallback party for Armed Forces
+
+REPLACE_OR_CREATE:military_party = {
+	color = { 132 100 53 }
+	name = {
+		first_valid = {
+
+			triggered_desc = {
+				desc = party_true_peoples_party
+				trigger = {
+					exists = c:MON
+					THIS = c:MON
+				}
+			}
+			triggered_desc = {
+				desc = party_national_party
+				trigger = {
+					exists = c:SER
+					THIS = c:SER
+				}
+			}
+			triggered_desc = {
+				desc = party_union_of_rights
+				trigger = {
+					exists = c:FRA
+					THIS = c:FRA
+				}
+			}
+			triggered_desc = {
+				desc = party_imperial_clan_party
+				trigger = {
+					exists = c:CHI
+					THIS = c:CHI
+					has_law = law_type:law_monarchy
+				}
+			}
+			triggered_desc = {
+				desc = party_russian_assembly
+				trigger = {
+					exists = c:RUS
+					THIS = c:RUS
+					has_law = law_type:law_monarchy
+				}
+			}
+			triggered_desc = {
+				desc = party_russian_all_military_union
+				trigger = {
+					exists = c:RUS
+					THIS = c:RUS
+					NOT = { has_law = law_type:law_monarchy }
+				}
+			}
+			triggered_desc = {
+				desc = party_imperial_way_party
+				trigger = {
+					exists = c:JAP
+					THIS = c:JAP
+					has_law = law_type:law_monarchy
+				}
+			}
+			triggered_desc = {
+				desc = party_patriotic_union
+				trigger = {
+					country_has_primary_culture = cu:spanish
+				}
+			}
+			triggered_desc = {
+				desc = party_regressivist_party
+				trigger = {
+					country_has_primary_culture = cu:brazilian
+				}
+			}
+			triggered_desc = {
+				desc = party_national_peoples_party
+				trigger = {
+					OR = {
+						country_has_primary_culture = cu:north_german
+						country_has_primary_culture = cu:south_german
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_military
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/military.dds"
+	}
+	
+	# THIS IS RUN ONLY ONCE AT GAME START
+	valid_for_country = {
+		always = yes
+	}
+
+		available_for_interest_group = {
+		is_marginal = no
+		OR = {
+			leader = { has_ideology = ideology:ideology_neocon_leader }
+			leader = { has_ideology = ideology:ideology_authoritarian_capitalist_leader }
+			leader = { has_ideology = ideology:ideology_fascist_leader }
+			leader = { has_ideology = ideology:ideology_state_capitalist_leader }
+			leader = { has_ideology = ideology:ideology_monarchist_leader }
+			leader = { has_ideology = ideology:ideology_conservative_leader }
+			leader = { has_ideology = ideology:ideology_jihadist_leader }
+			has_ideology = ideology:ideology_militarist
+			has_ideology = ideology:ideology_authoritarian
+			has_ideology = ideology:ideology_totalitarian
+			has_ideology = ideology:ideology_nationalist
+			has_ideology = ideology:ideology_conservative
+			has_ideology = ideology:ideology_right_economy
+			has_ideology = ideology:ideology_monarchist
+			has_ideology = ideology:ideology_theocrat
+			is_interest_group_type = ig_armed_forces
+		}
+	}
+
+	# Root - IG considering joining
+	# scope:number - the number of IGs that would join this party before the root IG
+	join_weight = {
+		value = {
+			value = -5
+			desc = "base_value"
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_neocon_leader }
+				leader = { has_ideology = ideology:ideology_authoritarian_capitalist_leader }
+				leader = { has_ideology = ideology:ideology_fascist_leader }
+			}
+			}
+			add = { value = 45 desc = "leader_ideological_compatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_state_capitalist_leader }
+				leader = { has_ideology = ideology:ideology_monarchist_leader }
+				leader = { has_ideology = ideology:ideology_conservative_leader }
+				leader = { has_ideology = ideology:ideology_jihadist_leader }
+			}
+			}
+			add = { value = 20 desc = "leader_adjacent_ideology" }
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_anarchist_leader }
+				leader = { has_ideology = ideology:ideology_green_leader }
+				leader = { has_ideology = ideology:ideology_social_liberal_leader }
+				leader = { has_ideology = ideology:ideology_market_socialist_leader }
+			}
+			}
+			add = { value = -50 desc = "leader_ideological_incompatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_militarist
+				has_ideology = ideology:ideology_authoritarian
+				has_ideology = ideology:ideology_totalitarian
+			}
+			}
+			add = { value = 35 desc = "interest_group_ideological_compatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_nationalist
+				has_ideology = ideology:ideology_conservative
+				has_ideology = ideology:ideology_right_economy
+				has_ideology = ideology:ideology_monarchist
+				has_ideology = ideology:ideology_theocrat
+			}
+			}
+			add = { value = 15 desc = "interest_group_adjacent_ideology" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_individualist
+				has_ideology = ideology:ideology_progressive
+				has_ideology = ideology:ideology_communitarian
+			}
+			}
+			add = { value = -35 desc = "interest_group_ideological_incompatibility" }
+		}
+		if = {
+			limit = {
+				is_interest_group_type = ig_armed_forces
+			}
+			add = { value = 20 desc = "from_archetype_party" }
+		}
+		if = {
+			limit = {
+				owner = { is_at_war = yes }
+			}
+			add = { value = 25 desc = "war" }
+		}
+		if = {
+			limit = {
+				owner = { OR = { has_law = law_type:law_professional_army has_law = law_type:law_mass_conscription } }
+			}
+			add = { value = 10 desc = "military_laws" }
+		}
+		if = {
+			limit = {
+				is_powerful = yes
+				OR = {
+					leader = { has_ideology = ideology:ideology_neocon_leader }
+					leader = { has_ideology = ideology:ideology_authoritarian_capitalist_leader }
+					leader = { has_ideology = ideology:ideology_fascist_leader }
+					has_ideology = ideology:ideology_militarist
+					has_ideology = ideology:ideology_authoritarian
+					has_ideology = ideology:ideology_totalitarian
+				}
+			}
+			add = { value = 20 desc = "powerful_ig" }
+		}
+		if = {
+			limit = {
+				scope:number = 1
+				is_powerful = no
+				is_marginal = no
+			}
+			multiply = { value = 2 desc = "from_influential_supporting_member" }
+		}
+		else_if = {
+			limit = { scope:number = 2 }
+			multiply = { value = 0.75 desc = "from_two_prior_members" }
+		}
+	}
+
+}

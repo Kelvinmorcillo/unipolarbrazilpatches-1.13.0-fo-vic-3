@@ -1,0 +1,139 @@
+﻿namespace = rus_events
+
+# Starts the Crisis 
+rus_events.0 = {
+    type = country_event
+    placement = ROOT
+    title = rus_events.0.t
+    desc = rus_events.0.d
+    event_image = { video = "1993_russian_crisis" }
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+    trigger = {
+        c:RUS ?= this
+        game_date >= 1993.8.21
+        NOT = { has_variable = russia_constitution_crisis_active }
+    }
+
+    immediate = {
+        add_modifier = {
+            name = russia_constitution_crisis_active
+            days = 180
+        }
+		set_variable = russia_constitution_crisis_active
+    }
+
+    option = {
+        name = rus_events.0.a
+        trigger_event = { id = rus_events.1 days = 30 } # Moves to next decision point after 10 days
+    }
+}
+
+rus_events.1 = {
+    type = country_event
+    placement = ROOT
+    title = rus_events.1.t
+    desc = rus_events.1.d
+    event_image = { video = "1993_russian_crisis" }
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+    trigger = {
+        has_variable = russia_constitution_crisis_active
+    }
+
+    option = {
+        name = rus_events.1.a
+        desc = rus_events.1.a.tt
+		default_option = yes
+		ig:ig_armed_forces = {
+        add_modifier = {
+            name = russia_military_loyalty
+            days = 180
+        }
+		}
+		ig:ig_rural_folk = {
+        add_modifier = {
+            name = russia_military_loyalty
+            days = 180
+        }
+		}
+        trigger_event = { id = rus_events.2 days = 30 }
+		trigger_event = { id = rus_events.4 days = 60 }
+    }
+    option = {
+        name = rus_events.1.b
+        desc = rus_events.1.b.tt
+		ig:ig_intelligentsia = {
+        add_modifier = {
+            name = russia_parliamentary_support
+            days = 720
+        }
+		}
+		ig:ig_petty_bourgeoisie = {
+        add_modifier = {
+            name = russia_parliamentary_support
+            days = 720
+        }
+		}
+        trigger_event = { id = rus_events.3 days = 30 }
+    }
+}
+
+rus_events.2 = {
+    type = country_event
+    placement = ROOT
+    title = rus_events.2.t
+    desc = rus_events.2.d
+    event_image = { video = "1993_russian_crisis" }
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+    option = {
+        name = rus_events.2.a
+        add_loyalists = { value = 0.05 }
+    }
+}
+
+rus_events.3 = {
+    type = country_event
+    placement = ROOT
+    title = rus_events.3.t
+    desc = rus_events.3.d
+    event_image = { video = "parliament" }
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+    option = {
+        name = rus_events.3.a
+        add_radicals = { value = 0.05 }
+        add_modifier = {
+            name = russia_constitution_crisis_resolved_mod
+            days = 730
+        }
+        set_variable = russia_constitution_crisis_resolved
+    }
+}
+
+
+# Storming of the white house
+rus_events.4 = {
+    type = country_event
+    placement = ROOT
+    title = rus_events.4.t
+    desc = rus_events.4.d
+    event_image = { video = "stormingofwhitehouse" }
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+    trigger = {
+        has_modifier = russia_military_loyalty
+    }
+
+    immediate = {
+        add_radicals = { value = 0.02 }
+        add_loyalists = { value = 0.02 }
+    }
+
+    option = {
+        name = rus_events.4.a
+        add_modifier = {
+            name = russia_constitution_crisis_resolved_mod
+            days = 730
+        }
+        set_variable = russia_constitution_crisis_resolved
+    }
+}
+
+

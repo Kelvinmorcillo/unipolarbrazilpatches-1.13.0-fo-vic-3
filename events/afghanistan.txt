@@ -1,0 +1,43 @@
+﻿namespace = afghanistan
+
+afghanistan.1 = {
+    type = country_event
+    title = afghanistan.1.t
+    desc = afghanistan.1.d
+    event_image = { video = "diplomatic_meeting" }
+
+    trigger = {
+        c:AFG = this
+		NOT = { has_variable = bin_laden_extradition_requested }
+    }
+
+	immediate = { set_variable = bin_laden_extradition_requested }
+	
+    option = {
+        name = afghanistan.1.a
+		
+        change_relations = {
+			country = c:USA
+			value = 30
+		}
+		c:USA = {
+           trigger_event = { id = usa_wot.5 days = 2 }
+        }
+		ai_chance = { base = 0 }
+       }
+
+    option = {
+        name = afghanistan.1.b
+		default_option = yes
+        every_country = {
+			change_relations = {
+			country = c:AFG
+			value = -50
+			}
+		}
+        c:USA = {
+           trigger_event = { id = usa_wot.6 days = 2 }
+        }
+		ai_chance = { base = 100 }
+    }
+}

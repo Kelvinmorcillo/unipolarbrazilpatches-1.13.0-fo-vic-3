@@ -1,0 +1,71 @@
+﻿namespace = haiti_events
+
+haiti_events.1 = {
+    type = country_event
+    placement = ROOT
+    title = haiti_events.1.t
+    desc = haiti_events.1.d
+    event_image = { video = "helicopter" }
+	duration = 2
+    trigger = {
+		exists = c:HAI
+        OR = {
+            c:USA ?= this
+            c:HAI ?= this
+        }
+        game_date >= 1994.9.1
+        NOT = { has_variable = haiti_intervention_1994_happened }
+    }
+
+    immediate = { set_variable = haiti_intervention_1994_happened }
+
+    option = {
+        name = haiti_events.1.a
+        trigger = {
+            c:USA ?= this
+        }
+		c:HAI = { 
+        country_event = { id = haiti_events.2 days = 3 } # Notify Haiti
+		}
+    }
+
+    option = {
+        name = haiti_events.1.b
+        trigger = {
+            c:HAI ?= this
+        }
+    }
+}
+
+haiti_events.2 = {
+    type = country_event
+    placement = ROOT
+    title = haiti_events.2.t
+    desc = haiti_events.2.d
+    event_image = { video = "unspecific_military_parade" }
+	duration = 2
+    trigger = {
+        c:HAI ?= this
+		NOT = { has_variable = haiti_war_kickoff }
+    }
+
+    immediate = { set_variable = haiti_war_kickoff }
+
+    option = {
+        name = haiti_events.2.a
+		set_variable = 1994_intervention_started
+		c:USA = {
+		create_diplomatic_play = {
+			name = uphold_democracy
+			type = dp_regime_change
+			target_country = c:HAI
+			
+			add_war_goal = {
+				holder = c:HAI
+				type = humiliation
+				target_country = c:USA
+			}
+		}
+	}
+   }
+}

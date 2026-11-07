@@ -1,0 +1,145 @@
+﻿je_war_on_drugs = {
+	icon = "gfx/interface/icons/event_icons/cocaine.dds"
+
+	group = je_group_dilemmas
+
+	is_shown_when_inactive = {
+		c:USA ?= this
+	}
+
+	possible = {
+		c:USA ?= this
+	}
+	
+	modifiers_while_active = {
+		war_on_drugs_active_modifier
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = wod_je_status_ready
+				trigger = {
+					has_diplomatic_pact = {
+						who = c:MEX
+						type = military_assistance
+					}
+					OR = {
+						has_law = law_type:law_national_guard
+						has_law = law_type:law_secret_police
+					}
+					market_capital.market = {
+						mg:opium = {
+							market_goods_pricier > 0.65
+						}
+					}
+					institution_investment_level = {
+						institution = institution_schools
+						value >= 5
+					}
+					OR = {
+						has_law = law_type:law_migration_controls
+						has_law = law_type:law_closed_borders
+					}
+					NOT = { has_law = law_type:law_safe_injection_sites }
+					NOT = { has_law = law_type:law_trafficking_allowed }
+					NOT = { has_law = law_type:law_hard_drugs_decriminalized }
+				}
+			}
+			triggered_desc = {
+				desc = wod_je_status_active
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+
+	complete = {
+		# Military partnership with Mexico
+		custom_tooltip = {
+			text = wod_completion_mexico_tt
+			has_diplomatic_pact = {
+				who = c:MEX
+				type = military_assistance
+			}
+		}
+
+		# Domestic enforcement framework
+		custom_tooltip = {
+			text = wod_completion_enforcement_tt
+			OR = {
+				has_law = law_type:law_national_guard
+				has_law = law_type:law_secret_police
+			}
+		}
+
+		# Opium supply successfully suppressed internationally
+		custom_tooltip = {
+			text = wod_completion_opium_price_tt
+			market_capital.market = {
+				mg:opium = {
+					market_goods_pricier > 0.65
+				}
+			}
+		}
+
+		# Educated population — demand-side awareness
+		custom_tooltip = {
+			text = wod_completion_schools_tt
+			institution_investment_level = {
+				institution = institution_schools
+				value >= 5
+			}
+		}
+
+		# Border enforcement
+		custom_tooltip = {
+			text = wod_completion_border_tt
+			OR = {
+				has_law = law_type:law_migration_controls
+				has_law = law_type:law_closed_borders
+			}
+		}
+
+		# No permissive drug laws
+		custom_tooltip = {
+			text = wod_completion_no_safe_injection_tt
+			NOT = { has_law = law_type:law_safe_injection_sites }
+		}
+		custom_tooltip = {
+			text = wod_completion_no_trafficking_allowed_tt
+			NOT = { has_law = law_type:law_trafficking_allowed }
+		}
+		custom_tooltip = {
+			text = wod_completion_no_hard_drugs_decriminalized_tt
+			NOT = { has_law = law_type:law_hard_drugs_decriminalized }
+		}
+	}
+
+	on_complete = {
+		add_modifier = {
+			name = war_on_drugs_victory_modifier
+			months = 60
+		}
+	}
+
+	fail = {
+		OR = {
+			has_law = law_type:law_safe_injection_sites
+			has_law = law_type:law_trafficking_allowed
+			has_law = law_type:law_hard_drugs_decriminalized
+		}
+	}
+
+	on_fail = {
+		custom_tooltip = {
+			text = wod_fail_tt
+		}
+	}
+
+	transferable = no
+	can_revolution_inherit = no
+	weight = 5000
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

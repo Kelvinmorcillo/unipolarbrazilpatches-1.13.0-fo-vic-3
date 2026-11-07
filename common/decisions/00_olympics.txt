@@ -1,0 +1,34 @@
+﻿bid_for_olympics_decision = {
+	is_shown = {
+		always = yes
+	}
+
+	possible = {
+		is_at_war = no
+		country_rank >= rank_value:major_power
+		is_at_war = no
+		NOT = {
+			any_country = {
+				has_modifier = olympics_hosting
+			}
+		}
+		NOT = { has_modifier = olympics_hosting }
+		NOT = { has_modifier = olympics_recently_hosted }
+		NOT = { has_variable = olympics_declined_host }
+	}
+
+	when_taken = {
+		custom_tooltip = {
+			text = we_can_host_the_next_olympics_tt
+		}
+		trigger_event = {
+			id = olympics.1
+			days = 1
+			popup = yes
+		}
+	}
+
+	ai_chance = {
+		value = 10
+	}
+}

@@ -1,0 +1,190 @@
+# Triggered by on_battle_won
+# Root = attacker or defender country
+# scope:enemy_country = enemy of root
+# scope:battle = battle
+# scope:attacker = attacking commander
+# scope:defender = defending commander
+# scope:state = location state
+kurdistan_war_battle_score = {
+	trigger = {
+		is_involved_in_journal_entry = je_kurdistan_war
+		has_global_variable = kurdistan_war_skirmish_phase
+		scope:enemy_country ?= {
+			is_involved_in_journal_entry = je_kurdistan_war
+		}
+	}
+
+	effect = {
+		if = {
+			limit = {
+				c:KDS ?= this
+			}
+			change_global_variable = {
+				name = kur_kurdistan_war_score
+				add = 1
+			}
+			je:je_kurdistan_war ?= {
+				add_progress = { value = -1 name = je_kurdistan_war_score_bar }
+			}
+		}
+		else_if = {
+			limit = {
+				c:TRK ?= this
+			}
+			change_global_variable = {
+				name = trk_kurdistan_war_score
+				add = 1
+			}
+			je:je_kurdistan_war ?= {
+				add_progress = { value = 1 name = je_kurdistan_war_score_bar }
+			}
+		}
+	}
+}
+
+on_battle_won = {
+	on_actions = {
+		kurdistan_war_battle_score
+		chechen_war_battle_score
+		afghan_civil_war_battle_score
+		intifada_battle_score
+	}
+}
+
+intifada_start_check = {
+ 	effect = {
+ 		if = {
+ 			limit = {
+ 				scope:initiator = { c:ISR ?= this }
+ 				scope:target = { c:PAL ?= this }
+ 				NOT = { has_global_variable = intifada_started }
+ 			}
+ 			set_global_variable = intifada_started
+ 			scope:initiator = {
+ 				add_contextless_journal_entry = je_second_intifada
+ 				trigger_event = { id = intifada_events.7 days = 0 popup = yes }
+ 			}
+ 			scope:target = {
+ 				add_contextless_journal_entry = je_second_intifada
+ 				trigger_event = { id = intifada_events.7 days = 0 popup = yes }
+ 			}
+ 		}
+ 		if = {
+ 			limit = {
+ 				scope:initiator = { c:PAL ?= this }
+ 				scope:target = { c:ISR ?= this }
+ 				NOT = { has_global_variable = intifada_started }
+ 			}
+ 			set_global_variable = intifada_started
+ 			scope:initiator = {
+ 				add_contextless_journal_entry = je_second_intifada
+ 				trigger_event = { id = intifada_events.7 days = 0 popup = yes }
+ 			}
+ 			scope:target = {
+ 				add_contextless_journal_entry = je_second_intifada
+ 				trigger_event = { id = intifada_events.7 days = 0 popup = yes }
+ 			}
+ 		}
+ 	}
+}
+
+intifada_battle_score = {
+ 	trigger = {
+ 		is_involved_in_journal_entry = je_second_intifada
+ 		has_global_variable = intifada_uprising_phase
+ 		scope:enemy_country ?= { is_involved_in_journal_entry = je_second_intifada }
+ 	}
+ 	effect = {
+ 		if = {
+ 			limit = { c:PAL ?= this }
+ 			change_global_variable = { name = pal_intifada_score add = 1 }
+ 			je:je_second_intifada ?= {
+ 				add_progress = { value = -1 name = je_intifada_score_bar }
+ 			}
+ 		}
+ 		else_if = {
+ 			limit = { c:ISR ?= this }
+ 			change_global_variable = { name = isr_intifada_score add = 1 }
+ 			je:je_second_intifada ?= {
+ 				add_progress = { value = 1 name = je_intifada_score_bar }
+ 			}
+ 		}
+ 	}
+}
+
+chechen_war_battle_score = {
+	trigger = {
+		is_involved_in_journal_entry = je_first_chechen_war
+		has_global_variable = chechen_war_guerilla_phase
+		scope:enemy_country ?= {
+			is_involved_in_journal_entry = je_first_chechen_war
+		}
+	}
+ 
+	effect = {
+		if = {
+			limit = { c:CCH ?= this }
+			change_global_variable = {
+				name = che_chechen_war_score
+				add = 1
+			}
+			je:je_first_chechen_war ?= {
+				add_progress = { value = -1 name = je_chechen_war_score_bar }
+			}
+		}
+		else_if = {
+			limit = { c:RUS ?= this }
+			change_global_variable = {
+				name = rus_chechen_war_score
+				add = 1
+			}
+			je:je_first_chechen_war ?= {
+				add_progress = { value = 1 name = je_chechen_war_score_bar }
+			}
+		}
+	}
+}
+
+on_diplomatic_play_started = {
+	on_actions = {
+		chechen_war_start_check
+		intifada_start_check
+	}
+}
+ 
+chechen_war_start_check = {
+	effect = {
+		# Russia initiates against Chechnya
+		if = {
+			limit = {
+				scope:initiator = { c:RUS ?= this }
+				scope:target = { c:CCH ?= this }
+				NOT = { has_global_variable = chechen_war_started }
+			}
+			set_global_variable = chechen_war_started
+			scope:initiator = {
+				trigger_event = { id = chechen_war.7 days = 0 popup = yes }
+			}
+			scope:target = {
+				trigger_event = { id = chechen_war.7 days = 0 popup = yes }
+			}
+		}
+		# Chechnya initiates against Russia
+		if = {
+			limit = {
+				scope:initiator = { c:CCH ?= this }
+				scope:target = { c:RUS ?= this }
+				NOT = { has_global_variable = chechen_war_started }
+			}
+			set_global_variable = chechen_war_started
+			scope:initiator = {
+				trigger_event = { id = chechen_war.7 days = 0 popup = yes }
+			}
+			scope:target = {
+				trigger_event = { id = chechen_war.7 days = 0 popup = yes }
+			}
+		}
+	}
+}
+ 
+

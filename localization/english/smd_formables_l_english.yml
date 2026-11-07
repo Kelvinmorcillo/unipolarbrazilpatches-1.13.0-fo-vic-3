@@ -1,0 +1,21 @@
+﻿l_english:
+#
+dp_leadership_china:0 "Lead China"
+
+ je_one_china_prc:0 "The One China Policy"
+ je_one_china_prc_reason:0 "There is one China. [ROOT.GetCountry.GetName] has maintained this position since 1949 — that the People's Republic is the sole legitimate government of all Chinese territory, and that Chinese Taipei's claim to govern from the state of Formosa is a temporary aberration that history will correct.\n\nThe reunification of Formosa with the mainland is not merely a strategic objective. It is the resolution of the unfinished civil war — the final act of [ROOT.GetCountry.GetAdjective] national restoration. When Formosa is under [ROOT.GetCountry.GetAdjective] control, the century of humiliation truly ends."
+ 
+ one_china_prc_owns_formosa_tt:0 "#bold Formosa is under [ROOT.GetCountry.GetAdjective] control.#! The One China Policy has been vindicated. [ROOT.GetCountry.GetName] is whole."
+ one_china_prc_formosa_uncontrolled_tt:0 "[SCOPE.sState('STATE_FORMOSA').GetName] remains outside [ROOT.GetCountry.GetAdjective] control. [SCOPE.sCountry('c:ROC').GetName] continues to claim sovereignty over the mainland from its island redoubt. The reunification of China is unfinished."
+ 
+ je_one_china_roc:0 "The One China Policy"
+ je_one_china_roc_reason:0 "There is one China. [ROOT.GetCountry.GetName] has maintained this position since 1949 — that the Republic of China is the legitimate government of all Chinese territory, and that the Chinese Communist Party's occupation of the mainland is a temporary aberration that history will correct.\n\nThe People's Republic must be brought within the [ROOT.GetCountry.GetAdjective] constitutional order. When the People's Republic of China becomes a subject of [ROOT.GetCountry.GetName], the task of integration begins — absorbing the mainland's vast population and territory into a unified Chinese state under [ROOT.GetCountry.GetAdjective] leadership."
+ 
+ one_china_roc_has_subject_tt:0 "#bold [SCOPE.sCountry('c:CHI').GetName] is a subject of [ROOT.GetCountry.GetName].#! The mainland has been brought within the [ROOT.GetCountry.GetAdjective] constitutional order. Integration of the vast [SCOPE.sCountry('c:CHI').GetAdjective] territory is now underway."
+ one_china_roc_no_subject_tt:0 "[SCOPE.sCountry('c:CHI').GetName] remains independent under Communist Party rule. [ROOT.GetCountry.GetName] controls only [SCOPE.sState('STATE_FORMOSA').GetName] and its outlying territories. The reunification of China under [ROOT.GetCountry.GetAdjective] leadership is unfinished."
+
+ one_china_reunification_bonus:0 "China Reunified"
+ one_china_reunification_bonus_desc:0 "The reunification of Formosa with the mainland has resolved the unfinished civil war and healed the century-long wound in [ROOT.GetCountry.GetAdjective] national consciousness. Authority, legitimacy, and prestige are dramatically improved. Separatist movements are suppressed. The state is whole."
+ 
+ one_china_roc_integration_bonus:0 "Mainland Integration"
+ one_china_roc_integration_bonus_desc:0 "[ROOT.GetCountry.GetName] has brought the former People's Republic of China within its constitutional order. The immense task of integrating the mainland's territory and population has begun. Incorporation speed is dramatically accelerated as the [ROOT.GetCountry.GetAdjective] state extends its institutions across the continent."

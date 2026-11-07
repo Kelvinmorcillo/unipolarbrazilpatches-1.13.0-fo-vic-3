@@ -1,0 +1,185 @@
+
+# These mirror the scripted GUI buttons but add global anti-spam cooldowns.
+# The global cooldown prevents all AI countries from sending repeated applications
+# to the same organization's member states.
+
+io_ai_common_application_cooldowns = {
+	set_variable = { name = io_ai_application_cooldown years = 3 }
+}
+
+io_ai_apply_to_un = {
+	io_ai_common_application_cooldowns = yes
+	set_variable = { name = io_pending_org value = 1 }
+	set_variable = { name = io_cooldown_un years = 1 }
+	set_global_variable = { name = io_ai_un_application_global_cooldown years = 1 }
+	save_scope_as = io_applicant
+	every_country = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_un_members target = this }
+			NOT = { this = ROOT }
+		}
+		trigger_event = { id = io_events.1 days = 0 popup = yes }
+	}
+	trigger_event = { id = io_events.2 days = 30 }
+}
+
+io_ai_apply_to_nato = {
+	io_ai_common_application_cooldowns = yes
+	set_variable = { name = io_pending_org value = 2 }
+	set_variable = { name = io_cooldown_nato years = 1 }
+	set_global_variable = { name = io_ai_nato_application_global_cooldown years = 1 }
+	save_scope_as = io_applicant
+	every_country = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_nato_members target = this }
+			NOT = { this = ROOT }
+		}
+		trigger_event = { id = io_events.1 days = 0 popup = yes }
+	}
+	trigger_event = { id = io_events.2 days = 30 }
+}
+
+io_ai_apply_to_g7 = {
+	io_ai_common_application_cooldowns = yes
+	set_variable = { name = io_pending_org value = 3 }
+	set_variable = { name = io_cooldown_g7 years = 1 }
+	set_global_variable = { name = io_ai_g7_application_global_cooldown years = 2 }
+	save_scope_as = io_applicant
+	every_country = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_g7_members target = this }
+			NOT = { this = ROOT }
+		}
+		trigger_event = { id = io_events.1 days = 0 popup = yes }
+	}
+	trigger_event = { id = io_events.2 days = 30 }
+}
+
+io_ai_apply_to_opec = {
+	io_ai_common_application_cooldowns = yes
+	set_variable = { name = io_pending_org value = 4 }
+	set_variable = { name = io_cooldown_opec years = 1 }
+	set_global_variable = { name = io_ai_opec_application_global_cooldown years = 1 }
+	save_scope_as = io_applicant
+	every_country = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_opec_members target = this }
+			NOT = { this = ROOT }
+		}
+		trigger_event = { id = io_events.1 days = 0 popup = yes }
+	}
+	trigger_event = { id = io_events.2 days = 30 }
+}
+
+io_ai_start_eec_accession = {
+	io_ai_common_application_cooldowns = yes
+	set_variable = io_eec_membership_process_started
+	set_variable = { name = io_cooldown_eec years = 1 }
+	set_global_variable = { name = io_ai_eec_application_global_cooldown years = 2 }
+	add_journal_entry = { type = je_io_eec_membership_process }
+}
+
+io_ai_start_eu_accession = {
+	io_ai_common_application_cooldowns = yes
+	set_variable = eu_membership_process_started
+	set_variable = { name = io_cooldown_eu years = 1 }
+	set_global_variable = { name = io_ai_eu_application_global_cooldown years = 2 }
+	add_journal_entry = { type = je_io_eu_membership_process }
+}
+
+io_ai_apply_to_arab_league = {
+	io_ai_common_application_cooldowns = yes
+	set_variable = { name = io_pending_org value = 7 }
+	set_variable = { name = io_cooldown_arab_league years = 1 }
+	set_global_variable = { name = io_ai_arab_league_application_global_cooldown years = 1 }
+	save_scope_as = io_applicant
+	every_country = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_arab_league_members target = this }
+			NOT = { this = ROOT }
+		}
+		trigger_event = { id = io_events.1 days = 0 popup = yes }
+	}
+	trigger_event = { id = io_events.2 days = 30 }
+}
+
+io_ai_apply_to_imf = {
+	io_ai_common_application_cooldowns = yes
+	remove_variable = left_imf
+	set_variable = { name = io_pending_org value = 8 }
+	set_variable = { name = io_cooldown_imf years = 1 }
+	set_global_variable = { name = io_ai_imf_application_global_cooldown years = 1 }
+	save_scope_as = io_applicant
+	every_country = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_imf_members target = this }
+			NOT = { this = ROOT }
+		}
+		trigger_event = { id = io_events.1 days = 0 popup = yes }
+	}
+	trigger_event = { id = io_events.2 days = 30 }
+}
+
+io_ai_apply_to_asean = {
+	io_ai_common_application_cooldowns = yes
+	set_variable = { name = io_pending_org value = 10 }
+	set_variable = { name = io_cooldown_asean years = 1 }
+	set_global_variable = { name = io_ai_asean_application_global_cooldown years = 1 }
+	save_scope_as = io_applicant
+	every_country = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_asean_members target = this }
+			NOT = { this = ROOT }
+		}
+		trigger_event = { id = io_events.1 days = 0 popup = yes }
+	}
+	trigger_event = { id = io_events.2 days = 30 }
+}
+
+io_ai_apply_to_saarc = {
+	io_ai_common_application_cooldowns = yes
+	set_variable = { name = io_pending_org value = 11 }
+	set_variable = { name = io_cooldown_saarc years = 1 }
+	set_global_variable = { name = io_ai_saarc_application_global_cooldown years = 1 }
+	save_scope_as = io_applicant
+	every_country = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_saarc_members target = this }
+			NOT = { this = ROOT }
+		}
+		trigger_event = { id = io_events.1 days = 0 popup = yes }
+	}
+	trigger_event = { id = io_events.2 days = 30 }
+}
+
+io_ai_apply_to_cis = {
+	io_ai_common_application_cooldowns = yes
+	set_variable = { name = io_pending_org value = 12 }
+	set_variable = { name = io_cooldown_cis years = 1 }
+	set_global_variable = { name = io_ai_cis_application_global_cooldown years = 1 }
+	save_scope_as = io_applicant
+	every_country = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_cis_members target = this }
+			NOT = { this = ROOT }
+		}
+		trigger_event = { id = io_events.1 days = 0 popup = yes }
+	}
+	trigger_event = { id = io_events.2 days = 30 }
+}
+
+io_ai_apply_to_who = {
+	io_ai_common_application_cooldowns = yes
+	set_variable = { name = io_pending_org value = 13 }
+	set_variable = { name = io_cooldown_who years = 1 }
+	set_global_variable = { name = io_ai_who_application_global_cooldown years = 1 }
+	save_scope_as = io_applicant
+	every_country = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_who_members target = this }
+			NOT = { this = ROOT }
+		}
+		trigger_event = { id = io_events.1 days = 0 popup = yes }
+	}
+	trigger_event = { id = io_events.2 days = 30 }
+}

@@ -1,0 +1,479 @@
+﻿namespace = childrens_childcare
+
+
+# ==========================================
+# childrens_childcare.1
+# "The Market Knows Best"
+# Fires when enacting privatized preschool.
+# Business interests back the law — but
+# critics warn access will be unequal.
+# ==========================================
+
+childrens_childcare.1 = {
+	type = country_event
+	placement = ROOT
+
+	title = childrens_childcare.1.t
+	desc = childrens_childcare.1.d
+	flavor = childrens_childcare.1.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_privatized_preschool_education
+		NOT = { has_modifier = childrens_rights_market_preschool_framing }
+		any_interest_group = {
+			is_interest_group_type = ig_petty_bourgeoisie
+			ig_counts_as_marginal = no
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = childrens_rights_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				is_interest_group_type = ig_petty_bourgeoisie
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = business_ig
+			leader = {
+				save_scope_as = business_leader
+			}
+		}
+	}
+
+	# Option A: Let the market lead — competition will drive quality
+	option = {
+		name = childrens_childcare.1.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = childrens_rights_market_preschool_framing
+			# = 2
+		}
+		scope:business_ig = {
+			add_modifier = {
+				name = childrens_rights_business_engaged
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				trigger = {
+					exists = ruler
+					ruler = { has_ideology = ideology_market_liberal }
+				}
+				add = 20
+			}
+		}
+	}
+
+	# Option B: Regulate pricing — private providers must meet access standards
+	option = {
+		name = childrens_childcare.1.b
+		add_enactment_modifier = {
+			name = childrens_rights_market_preschool_framing
+		}
+		add_enactment_modifier = {
+			name = childrens_rights_access_mandate
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				trigger = {
+					exists = ruler
+					ruler = {
+						OR = {
+							has_ideology = ideology_liberal_leader
+							has_ideology = ideology_progressive_leader
+						}
+					}
+				}
+				add = 20
+			}
+		}
+	}
+}
+
+
+# ==========================================
+# childrens_childcare.2
+# "Who Raises the Child?"
+# Fires when enacting privatized preschool.
+# The devout IG questions whether the state
+# should be involved in early childhood
+# at all.
+# ==========================================
+
+childrens_childcare.2 = {
+	type = country_event
+	placement = ROOT
+
+	title = childrens_childcare.2.t
+	desc = childrens_childcare.2.d
+	flavor = childrens_childcare.2.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_privatized_preschool_education
+		NOT = { has_modifier = childrens_rights_family_values_debate }
+		any_interest_group = {
+			is_interest_group_type = ig_devout
+			ig_counts_as_marginal = no
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = childrens_rights_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				is_interest_group_type = ig_devout
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = devout_ig
+			leader = {
+				save_scope_as = devout_leader
+			}
+		}
+	}
+
+	# Option A: Affirm family primacy — this supports parents, not replaces them
+	option = {
+		name = childrens_childcare.2.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = childrens_rights_family_values_debate
+			# = 2
+		}
+		scope:devout_ig = {
+			add_modifier = {
+				name = childrens_rights_devout_reassured
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 60 }
+	}
+
+	# Option B: Dismiss the concern — early education is not a moral question
+	option = {
+		name = childrens_childcare.2.b
+		add_enactment_modifier = {
+			name = childrens_rights_family_values_debate
+		}
+		scope:devout_ig = {
+			add_modifier = {
+				name = childrens_rights_devout_alienated
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 40 }
+	}
+}
+
+
+# ==========================================
+# childrens_childcare.3
+# "The Fiscal Reckoning"
+# Fires when enacting universal childcare.
+# Fiscal conservatives warn of ballooning
+# costs. The government must decide how
+# to respond.
+# ==========================================
+
+childrens_childcare.3 = {
+	type = country_event
+	placement = ROOT
+
+	title = childrens_childcare.3.t
+	desc = childrens_childcare.3.d
+	flavor = childrens_childcare.3.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_universal_childcare
+		NOT = { has_modifier = childrens_rights_fiscal_resistance }
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = childrens_rights_law_scope
+		}
+	}
+
+	# Option A: Absorb the cost — fund it and press forward
+	option = {
+		name = childrens_childcare.3.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = childrens_rights_fiscal_resistance
+			# = -1
+		}
+		add_enactment_modifier = {
+			name = childrens_rights_funded_mandate
+			# = money_amount_#_small
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				trigger = {
+					exists = ruler
+					ruler = {
+						OR = {
+							has_ideology = ideology_progressive_leader
+							has_ideology = ideology_socialist
+							has_ideology = ideology_communist
+						}
+					}
+				}
+				add = 25
+			}
+		}
+	}
+
+	# Option B: Phase it in — delay full implementation to manage the burden
+	option = {
+		name = childrens_childcare.3.b
+		add_enactment_modifier = {
+			name = childrens_rights_fiscal_resistance
+			# = -2
+		}
+		ai_chance = { base = 50 }
+	}
+}
+
+
+# ==========================================
+# childrens_childcare.4
+# "Workers' Liberation or Dependency?"
+# Fires when enacting universal childcare.
+# The trade unions are divided — some see
+# it as emancipation, others as a distraction
+# from wage demands.
+# ==========================================
+
+childrens_childcare.4 = {
+	type = country_event
+	placement = ROOT
+
+	title = childrens_childcare.4.t
+	desc = childrens_childcare.4.d
+	flavor = childrens_childcare.4.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_universal_childcare
+		NOT = { has_modifier = childrens_rights_labour_framing }
+		any_interest_group = {
+			is_interest_group_type = ig_trade_unions
+			ig_counts_as_marginal = no
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = childrens_rights_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				is_interest_group_type = ig_trade_unions
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = union_ig
+			leader = {
+				save_scope_as = union_leader
+			}
+		}
+	}
+
+	# Option A: Childcare is a labour issue — embrace it as workers' policy
+	option = {
+		name = childrens_childcare.4.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = childrens_rights_labour_framing
+			# = 2
+		}
+		scope:union_ig = {
+			add_modifier = {
+				name = childrens_rights_unions_mobilized
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				trigger = {
+					exists = ruler
+					ruler = {
+						OR = {
+							has_ideology = ideology_socialist
+							has_ideology = ideology_communist
+						}
+					}
+				}
+				add = 20
+			}
+		}
+	}
+
+	# Option B: Wages first — keep the movements separate
+	option = {
+		name = childrens_childcare.4.b
+		add_enactment_modifier = {
+			name = childrens_rights_labour_framing
+		}
+		scope:union_ig = {
+			add_modifier = {
+				name = childrens_rights_unions_skeptical
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 40 }
+	}
+}
+
+
+# ==========================================
+# childrens_childcare.5
+# "The Research Speaks"
+# Fires when enacting universal childcare.
+# The intelligentsia cites developmental
+# economics — early investment pays the
+# highest long-term dividends.
+# ==========================================
+
+childrens_childcare.5 = {
+	type = country_event
+	placement = ROOT
+
+	title = childrens_childcare.5.t
+	desc = childrens_childcare.5.d
+	flavor = childrens_childcare.5.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_universal_childcare
+		NOT = { has_modifier = childrens_rights_academic_endorsement }
+		any_interest_group = {
+			is_interest_group_type = ig_intelligentsia
+			ig_counts_as_marginal = no
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = childrens_rights_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				is_interest_group_type = ig_intelligentsia
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = intelligentsia_ig
+			leader = {
+				save_scope_as = intelligentsia_leader
+			}
+		}
+	}
+
+	# Option A: Commission a public report — let the evidence lead the debate
+	option = {
+		name = childrens_childcare.5.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = childrens_rights_academic_endorsement
+			# = 2
+		}
+		scope:intelligentsia_ig = {
+			add_modifier = {
+				name = childrens_rights_intelligentsia_engaged
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				trigger = { literacy_rate >= 0.60 }
+				add = 20
+			}
+		}
+	}
+
+	# Option B: Keep academics out of the legislative process
+	option = {
+		name = childrens_childcare.5.b
+		add_enactment_modifier = {
+			name = childrens_rights_academic_endorsement
+		}
+		scope:intelligentsia_ig = {
+			add_modifier = {
+				name = childrens_rights_intelligentsia_sidelined
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 40 }
+	}
+}

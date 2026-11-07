@@ -1,0 +1,52 @@
+COUNTRIES = {
+	c:XEG = {
+	
+		set_tax_level = high
+		
+		# Laws
+		activate_law = law_type:law_professional_army
+		activate_law = law_type:law_appointed_bureaucrats
+		activate_law = law_type:law_compulsory_primary_school
+		activate_law = law_type:law_freedom_of_conscience
+		activate_law = law_type:law_cultural_exclusion
+		activate_law = law_type:law_universal_suffrage
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_religious_schools
+		activate_law = law_type:law_censorship
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_charitable_health_system
+		activate_law = law_type:law_national_guard
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_restricted_unions
+		activate_law = law_type:law_commercialized_agriculture
+		activate_law = law_type:law_migration_controls
+		activate_law = law_type:law_militarized_police
+		activate_law = law_type:law_womens_suffrage
+		activate_law = law_type:law_legal_protections
+		activate_law = law_type:law_slavery_banned
+		activate_law = law_type:law_graduated_taxation
+		activate_law = law_type:law_protectionism
+		activate_law = law_type:law_poor_laws
+		activate_law = law_type:law_restricted_abortion
+		activate_law = law_type:law_fractional_reserve_banking
+		activate_law = law_type:law_minimal_recognition
+		activate_law = law_type:law_alcohol_tobacco_legal
+		activate_law = law_type:law_game_law
+		activate_law = law_type:law_licensed_firearms
+		activate_law = law_type:law_restricted_lgbtq
+		activate_law = law_type:law_adversarial_judiciary
+		activate_law = law_type:law_government_content_moderators
+		activate_law = law_type:law_housing_projects
+
+			
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 2
+		}
+	}
+}

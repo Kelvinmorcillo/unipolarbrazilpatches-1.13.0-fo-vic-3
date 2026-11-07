@@ -1,0 +1,113 @@
+﻿namespace = rodney
+
+# Rodney king beat
+rodney.1 = {
+	type = country_event
+	title = rodney.1.t
+	desc = rodney.1.d
+	flavor = rodney.1.f
+	placement = s:STATE_CALIFORNIA.region_state:USA
+	event_image = {
+		video = "rodney_king"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		c:USA ?= this
+		NOT = { has_variable = rodney_king_beat }
+		game_date >= 1992.2.1 
+	}
+
+	immediate = {
+		set_variable = rodney_king_beat
+	}
+
+	option = {
+		name = rodney.1.a
+        default_option = yes
+		s:STATE_CALIFORNIA.region_state:USA = {
+				add_radicals_in_state = {
+				value = 0.75
+				culture = cu:afro_american
+			}
+		}
+		add_radicals = {
+			value = small_radicals
+			culture = culture:afro_american
+		}
+	}
+}
+
+# Rodney king riots
+rodney.2 = {
+	type = country_event
+	title = rodney.2.t
+	desc = rodney.2.d
+	placement = s:STATE_CALIFORNIA.region_state:USA
+	event_image = {
+		video = "africa_soldiers_breaking_protest"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		has_variable = rodney_king_beat
+		NOT = { has_variable = rodney_king_riots }
+		game_date >= 1992.3.1
+	}
+
+	immediate = {
+		set_variable = rodney_king_riots
+	}
+
+	option = {
+		name = rodney.2.a
+        default_option = no
+		s:STATE_CALIFORNIA.region_state:USA = {
+		add_modifier = {
+				name = los_angeles_riots
+				days = 80
+			}
+		}
+		add_radicals = {
+			value = small_radicals
+			culture = culture:afro_american
+		}
+	}
+	
+	option = {
+		name = rodney.2.b
+        default_option = yes
+		ig:ig_intelligentsia = {
+			add_modifier = {
+				name = arrested_protesters
+				days = 75
+			}
+		}
+		ig:ig_trade_unions = {
+			add_modifier = {
+				name = arrested_protesters
+				days = 75
+			}
+		}
+		s:STATE_CALIFORNIA.region_state:USA = {
+		add_modifier = {
+				name = los_angeles_riots
+				days = 75
+			}
+		}
+		add_radicals = {
+			value = 0.15
+			culture = cu:afro_american
+		}
+	}
+}

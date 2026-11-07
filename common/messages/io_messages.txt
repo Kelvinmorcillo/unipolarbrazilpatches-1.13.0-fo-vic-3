@@ -1,0 +1,44 @@
+# International Organizations — Notifications
+# Place in: common/messages/
+
+io_join_request_sent_notification = {
+	type = country
+	texture = "gfx/interface/icons/notification_icons/diplomatic_play.dds"
+	notification_type = toast
+	color = neutral
+}
+
+io_left_org_notification = {
+	type = country
+	texture = "gfx/interface/icons/notification_icons/diplomatic_play.dds"
+	notification_type = toast
+	color = bad
+}
+
+io_accepted_notification = {
+	type = country
+	texture = "gfx/interface/icons/notification_icons/diplomatic_play.dds"
+	notification_type = toast
+	color = good
+}
+
+io_rejected_notification = {
+	type = country
+	texture = "gfx/interface/icons/notification_icons/diplomatic_play.dds"
+	notification_type = toast
+	color = bad
+}
+
+io_opec_decreased_production = {
+	type = country
+	texture = "gfx/interface/icons/notification_icons/diplomatic_play.dds"
+	notification_type = toast
+	color = bad
+}
+
+io_opec_increased_production = {
+	type = country
+	texture = "gfx/interface/icons/notification_icons/diplomatic_play.dds"
+	notification_type = toast
+	color = good
+}

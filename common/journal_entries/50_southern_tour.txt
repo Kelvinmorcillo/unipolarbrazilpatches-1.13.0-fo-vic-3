@@ -1,0 +1,41 @@
+je_china_southern_tour = {
+    icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+    group = je_group_domestic_policy
+    should_be_pinned_by_default_uninvolved_or_context = yes
+
+    is_shown_when_inactive = {
+        c:PRC ?= this
+        game_date <= 1993.01.01
+        NOT = { has_variable = southern_tour_completed }
+    }
+
+    possible = {
+        c:PRC ?= this
+		game_date <= 1993.01.01
+        NOT = { has_variable = southern_tour_completed }
+    }
+
+    on_monthly_pulse = {
+        if = {
+            limit = {
+               game_date >= 1993.01.01
+            }
+            set_variable = southern_tour_completed
+        }
+    }
+
+    complete = {
+		custom_tooltip = { text = je_china_southern_tour_complete
+        has_variable = southern_tour_completed }
+    }
+
+    on_complete = {
+		custom_tooltip = je_china_southern_tour_progress_tt
+        add_modifier = {
+            name = southern_tour_reforms
+            months = 25
+        }
+        add_loyalists = { value = 0.05 }
+    }
+
+}

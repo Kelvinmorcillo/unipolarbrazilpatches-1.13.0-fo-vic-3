@@ -1,0 +1,749 @@
+﻿l_japanese:
+
+ # ==========================================
+ # ENACTMENT EVENT LOCALIZATION
+ # ==========================================
+
+ # drug_laws.1 — Cost of Prohibition
+ drug_laws.1.t:0 "禁止の費用"
+ drug_laws.1.d:0 "[ROOT.GetCountry.GetName] のすべての無毒物質を禁止するキャンペーンは始まりましたが、執行は高価なものになっています。 警察や検察官はリソースを必要としています。 ボーダーは時計が必要です。 代替 — 禁止と接客の遵守を宣言する — 試したところどこにも機能していません。\n\n[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle][ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle][ROOT.GetCountry.GetRuler.GetLastName]の政府は、これを取るために準備されていることを真剣に決定しなければなりません。"
+ drug_laws.1.f:0 "執行のない法律は提案です。"
+ drug_laws.1.a:0 "完全な執行 — 予備費用なし"
+ drug_laws.1.b:0 "測定された執行 — コンプライアンスを時間とともに構築する"
+
+ # drug_laws.2 — The Church Speaks
+ drug_laws.2.t:0 "[SCOPE.sCharacter('devout_leader').GetPrimaryRoleTitle] スピーク"
+ drug_laws.2.d:0 "[SCOPE.sCharacter('devout_leader').GetFullName] は、[SCOPE.gsInterestGroup('devout_ig').GetName] のリーダーで、政府の厳格な物質規制に対する動きを支持しているパブリックステートメントを発行しました。 フラミングは明示的に道徳的であり、精神的な腐敗、状態の義的な仕事としての禁止としての中毒です。 質問は、このフラミングを受け入れるか、法律の世俗的な基礎を維持するかどうかです。"
+ drug_laws.2.f:0 "モールの権威と法的権威は同じことではありませんが、彼らは一緒に働くことができます。"
+ drug_laws.2.a:0 "ようこそ彼らのサポート — 一体化されたフロントが法律を強化"
+ drug_laws.2.b:0 "この世俗的な問題を保つ — フラミングを低下させる"
+
+ # drug_laws.3 — The Intelligentsia Makes Its Case
+ drug_laws.3.t:0 "[SCOPE.sCharacter('intelligentsia_leader').GetFullName] 証拠のケースを作る"
+ drug_laws.3.d:0 "[SCOPE.sCharacter('intelligentsia_leader').GetFullName] は、[SCOPE.gsInterestGroup('intelligentsia_ig').GetName] を表すもので、既に制定した国から薬分化政策の詳細な分析を公表しています。 調査結果は不曖昧です: 加速率が下がり、死が下がり、執行コストが下がります。 レポートは広く読み込まれています - 証拠が点の横にある保守的な利益によって広く攻撃されています。"
+ drug_laws.3.f:0 "データは議論を気にしない。"
+ drug_laws.3.a:0 "研究に戻る — それを公開し、証拠をリードさせる"
+ drug_laws.3.b:0 "政治の学問を守ろう"
+
+ # drug_laws.4 — Medical Establishment
+ drug_laws.4.t:0 "ドクターサポート ハーム削減"
+ drug_laws.4.d:0 "[ROOT.GetCountry.GetAdjective] 医療施設 — 公衆衛生の公式および中毒の専門家によって導かれる — 正式に提案された安全な注射部位の法律を支持しました。 彼らの引数は簡単です: 監視された消費は、過剰摂取量を減らし、ユーザーが治療につながり、薬物使用率を高めません。 他の国からの証拠は説得力があります。 宗教的および保守的なグループからの政治的反対は、同様に予測可能です。"
+ drug_laws.4.f:0 "薬は道徳的ではありません。 しかし、人生は生きています。"
+ drug_laws.4.a:0 "医療コンセンサスを取り戻す - 証拠は明確です"
+ drug_laws.4.b:0 "道徳的な質問としてこれを置く - 薬はすべての答えを持っていません"
+
+ # drug_laws.5 — International Condemnation
+ drug_laws.5.t:0 "世界は見ている"
+ drug_laws.5.d:0 "[ROOT.GetCountry.GetName] 薬物取引の合法化の見込み客は、即時に国際的な注目を集めています。 [SCOPE.sCountry('c:USA').GetName] は、正式なディプロマティックノートを発行しました。 複数の他の政府は、その不快を知られていました。 薬物禁止に関する国際コンセンサス - しかし、不完全強制的である - クリアであり、[ROOT.GetCountry.GetName]は、その外部のステップについてです。"
+ drug_laws.5.f:0 "Sovereigntyが宣言するのは簡単です。 その結果は到着に時間がかかる."
+ drug_laws.5.a:0 "防衛国際意見 — [ROOT.GetCountry.GetName] 独自の法律を作る"
+ drug_laws.5.b:0 "静かに受け継がれ — 声明を出さず、矛盾を招く"
+
+ # drug_laws.6 — Criminal Networks Resist
+ drug_laws.6.t:0 "カルテルは、法律を戦う"
+ drug_laws.6.d:0 "提案された薬物法は、既存の犯罪経済を脅かす。 公差と禁止の間の現在のグレーゾーンから利益を得るネットワークは、法律の通過に対して積極的に作業し始めています — 地元の公式を破損し、変容を広げ、そして場合によっては、立法者を脅迫する。 プッシュバックは整理され、十分にfunded、および有効です。\n\n[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] 応答方法を決定する必要があります。"
+ drug_laws.6.f:0 "カルテルは、操作する部屋を与える法律を好む。"
+ drug_laws.6.a:0 "セットバックを受け入れる - より慎重に移動"
+ drug_laws.6.b:0 "エスカレートの執行 — 法律に抵抗するネットワークをルートアウト"
+
+ # ==========================================
+ # ENACTMENT MODIFIER NAMES
+ # ==========================================
+
+ drug_law_prohibition_enforcement:0 "禁止強化キャンペーン"
+ drug_law_prohibition_enforcement_desc:0 "十分に委託された執行キャンペーンは、禁止が制定され、観察される可能性を改善しています。"
+
+ drug_law_enforcement_cost:0 "強制的な支出"
+ drug_law_enforcement_cost_desc:0 "薬執行キャンペーンの費用は、州の予算に追加の要求を配置しています。"
+
+ drug_law_religious_backing:0 "宗教的な支持"
+ drug_law_religious_backing_desc:0 "宗教施設のサポートは、法律に道徳的な権限を貸与し、通路の機会を改善しています。"
+
+ drug_law_devout_empowered:0 "薬剤の議論によって動力を与えられる"
+ drug_law_devout_empowered_desc:0 "薬物禁止法との公共組合は、このグループの政治の地位を強化しました。"
+
+ drug_law_academic_push:0 "学術証拠キャンペーン"
+ drug_law_academic_push_desc:0 "決定書化をサポートする公開研究は、法律の支持を得て議論の用語をシフトしています。"
+
+ drug_law_intelligentsia_engaged:0 "インテリジェントジアエンゲージ"
+ drug_law_intelligentsia_engaged_desc:0 "インテリジェントジアは、薬物政策の議論に積極的に関与しています, 正当なキャンペーンの信頼性を高める."
+
+ drug_law_intelligentsia_ignored:0 "インテリジェントジア サイドライン"
+ drug_law_intelligentsia_ignored_desc:0 "薬物政策の議論から学術的な声を除外する決定は、インテリジェントジアを挫折しました。"
+
+ drug_law_medical_backing:0 "法の背後にある医療コンセンサス"
+ drug_law_medical_backing_desc:0 "医学の確立の支持は害の減少の法律への科学的な信頼性を提供します。"
+
+ drug_law_moral_framing:0 "医学の組み立てよりモール むしろ"
+ drug_law_moral_framing_desc:0 "医療の1つではなく、道徳的な質問として薬の方針を組み立てることは、安全な注射部位の証拠ベースのケースを合成しています。"
+
+ drug_law_international_pressure:0 "国際非難"
+ drug_law_international_pressure_desc:0 "提案された法律に対する国際圧力は、その通路を構成し、[ROOT.GetCountry.GetName]の評判を損なう。"
+
+ drug_law_sovereignty_declared:0 "Sovereignty アサーテッド"
+ drug_law_sovereignty_declared_desc:0 "[ROOT.GetCountry.GetName] は、国際意見に関係なく、独自の薬物政策を設定する権利を公に主張しています。"
+
+ drug_law_criminal_pushback:0 "刑事ネットワーク抵抗"
+ drug_law_criminal_pushback_desc:0 "組織犯罪は、その操作を脅かす薬の法律の通過を防ぐために積極的に取り組んでいます。"
+
+ # disability_laws.1 — Employer Resistance
+ disability_laws.1.t:0 "雇用主は職場の宿泊施設に戻ります"
+ disability_laws.1.d:0 "提案された職場の宿泊施設の法律は、[ROOT.GetCountry.GetAdjective]雇用主から組織された応答を描画しました。 [SCOPE.sCharacter('employer_leader').GetFullName] は、[SCOPE.gsInterestGroup('employer_ig').GetName] と話すと、コンプライアンスコストが非作業であることを主張しています。特に小規模な企業が機器の変更の費用を吸収し、業務の調整、職場の再構築を禁止している従業員を収容する費用を吸収できません。\n\n 政府は、対応方法を決定する必要があります。"
+ disability_laws.1.f:0 "すべての包括的なポリシーは、費用を主張する人が多いです。"
+ disability_laws.1.a:0 "保有会社 — 法令の遵守はオプションではありません"
+ disability_laws.1.b:0 "移行期間を提供 — 数年以上のフェーズド・コンプライアンス"
+ 
+ # disability_laws.2 — Construction Lobby
+ disability_laws.2.t:0 "建設業界オブジェクト"
+ disability_laws.2.d:0 "提案されたアクセス可能なインフラの法律は、[ROOT.GetCountry.GetAdjective]建設業界から正式な異議を提起しました。 彼らの引数: アクセシビリティ基準を満たす既存の建物を改装する要件は、技術的に複雑で、多くのプロパティ所有者にとって非常に高価です。 既存の構造や実装のタイムラインがはるかに長いため、祖父の句を呼ぶ。"
+ disability_laws.2.f:0 "ランプなしで建てられた建物は政治的な問題です。"
+ disability_laws.2.a:0 "厳しい基準を強制する — スケジュールの完全順守、例外なし"
+ disability_laws.2.b:0 "フェーズ・コンプライアンス — 既存の構造物、新しいビルドの新しい基準"
+ 
+ # disability_laws.3 — Who Pays
+ disability_laws.3.t:0 "誰がアクセシブルなインフラを支払いますか?"
+ disability_laws.3.d:0 "アクセシブルなインフラの法律は、請求書のドラフターがこれまでに回避している質問を提起します:誰が実際に改装のために支払うのですか? 不動産所有者に義務が完全に落ちた場合は、土地家や企業は間違いなく負担します。 状態が作業を補助する場合、公共予算はヒットします。 レギュラチュアは質問にデッドロックされています。"
+ disability_laws.3.f:0 "請求には価格があります。 引数は誰が支払うかについてです。"
+ disability_laws.3.a:0 "国家補助金 - 政府は、コンプライアンスをスピードアップするために、改装コストを吸収します"
+ disability_laws.3.b:0 "プライベートの義務 — 不動産所有者は、コンプライアンスのコストを負担"
+ 
+ # disability_laws.4 — Medical Endorsement
+ disability_laws.4.t:0 "[SCOPE.sCharacter('medical_leader').GetFullName] エンドポイント パブリック トリートメント"
+ disability_laws.4.d:0 "[SCOPE.sCharacter('medical_leader').GetFullName] の [SCOPE.gsInterestGroup('medical_ig').GetName] は、公的な治療の法律の正式な支持を公表しました。これは、国家の有利な障害治療が労働力の参加に測定可能な利益を生成し、長期にわたる医療費を削減し、集団全体の結果を改善するという証拠を引用しています。 これは慈善ではなく、それが投資であると主張するサポーターが支持者によって支持されています。"
+ disability_laws.4.f:0 "薬は、保存と保存不能の病気を区別しません。"
+ disability_laws.4.a:0 "公の健康報告委員会 — 証拠がケースを作るようにしましょう"
+ disability_laws.4.b:0 "偽りの政治を保ちましょう。これは医療者ではなく、権利の問題です。"
+ 
+ # disability_laws.5 — Fiscal Resistance
+ disability_laws.5.t:0 "[SCOPE.sCharacter('fiscal_leader').GetFullName] 状態は、この国を驚かせません"
+ disability_laws.5.d:0 "[SCOPE.sCharacter('fiscal_leader').GetFullName] は、[SCOPE.gsInterestGroup('fiscal_ig').GetName] を表し、スターク評価を配信しました。包括的な公共の障がいの治療の継続的なコストは、持続不可能です。 状態は既に伸びています。 この法律は、満了時に制定された場合、税金の増加または別の場所でカットする必要があります。 質問は、[ROOT.GetCountry.GetName]が無効な市民を世話したいかどうかではありません。"
+ disability_laws.5.f:0 "予算は道徳的な文書です。"
+ disability_laws.5.a:0 "行を保持する — 費用は道徳的義務であり、選択されていない"
+ disability_laws.5.b:0 "数年にわたる導入を段階的に進める"
+ 
+ # disability_laws.6 — Advocates Rally
+ disability_laws.6.t:0 "障害は、彼らのケースを作る"
+ disability_laws.6.d:0 "障がいのある権利組織の連合は、提案された法律の支持で公的なキャンペーンを開始しました。 彼らのメッセージは直接である: [ROOT.GetCountry.GetAdjective] 社会は、あまりにも長い参加から障害者を除外しました。 逸脱する立法は有利ではありません - それは長年にわたる不当の修正です。 キャンペーンは共感的なカバレッジを引き寄せ、公的な意見をシフトしています。"
+ disability_laws.6.f:0 "私達なしで私達について何でも。"
+ disability_laws.6.a:0 "正式に彼らの委任を受け取ります — キャンペーン公式の裏付けを与えます"
+ disability_laws.6.b:0 "キャンペーンを増幅せずに承認する"
+ 
+ # disability_laws.7 — Conservative Opposition
+ disability_laws.7.t:0 "[SCOPE.sCharacter('conservative_leader').GetFullName] 反対を導きます"
+ disability_laws.7.d:0 "[SCOPE.sCharacter('conservative_leader').GetFullName] の [SCOPE.gsInterestGroup('conservative_ig').GetName] は、障がいのある法律に対するパブリックな反対キャンペーンを組織しました。 引数は親しまれています: 状態の依存性は個々の性格を損なうため、生産性の人口はサポートの負荷の拡大を期待できず、既存のプライベートチャリティーは十分です。 フラミングは、障がいのある権利グループから批判を描いていますが、それはelectorateの部分と共鳴しています。"
+ disability_laws.7.f:0 "包含に対する引数は、他の誰かの負担について常にあります。"
+ disability_laws.7.a:0 "公に転記 — 法律の直接道徳的なケースを作る"
+ disability_laws.7.b:0 "応答でそれを認識しないでください。"
+ 
+ # ==========================================
+ # ENACTMENT MODIFIER NAMES
+ # ==========================================
+ 
+ disability_employer_pressure:0 "雇用主のコンプライアンスキャンペーン"
+ disability_employer_pressure_desc:0 "政府は雇用主の抵抗に対してしっかり保持しました。 レギュレーションは予定通りに進行します。"
+ 
+ disability_compliance_delay:0 "雇用主の移行期間の助成"
+ disability_compliance_delay_desc:0 "雇用主は、職場の宿泊施設の要件を遵守し、法律の通過を遅らせるための追加の時間を与えてきました。"
+ 
+ disability_construction_lobby:0 "建設業界 に従事"
+ disability_construction_lobby_desc:0 "建設産業の異議は、アクセス可能なインフラの法律への積極的な反対を減らし、対処されています。"
+ 
+ disability_strict_standards:0 "厳格なコンプライアンス基準"
+ disability_strict_standards_desc:0 "会社のアクセシビリティ基準は、祖父の句無しで設定されています。 コンプライアンスの充実とスケジュールの充実"
+ 
+ disability_phased_compliance:0 "フェーズド・インフラのコンプライアンス"
+ disability_phased_compliance_desc:0 "既存の構造物は祖父にありました。 新しい基準は、法律の広範な影響を遅らせる、新しい構造にのみ適用されます。"
+ 
+ disability_funding_debate:0 "資金調達フレームワーク設立"
+ disability_funding_debate_desc:0 "アクセシブルなインフラの支払いを解決し、法律の通路に大きな障害を取り除きます。"
+ 
+ disability_state_subsidy:0 "国家インフラ補助"
+ disability_state_subsidy_desc:0 "逆フィットコストを直接吸収する状態です。 コンプライアンスは高速になりますが、予算は追加の圧力下にあります。"
+ 
+ disability_medical_endorsement:0 "医学の確立のEndorsesの処置"
+ disability_medical_endorsement_desc:0 "公衆障がいの治療の医学の職業の公共の支持は法律に科学的信頼性を貸しています。"
+ 
+ disability_fiscal_resistance:0 "財務・業績"
+ disability_fiscal_resistance_desc:0 "公の障がい者治療に対する財政の抵抗が対処されています。 法律が進んでいます。"
+ 
+ disability_phased_spending:0 "段階的な障害処理の中断"
+ disability_phased_spending_desc:0 "公共の障がいの治療は、より遅いロールアウトのコストで即時の予算の圧力を減らす、徐々に段階的にフェーズされます。"
+ 
+ disability_advocate_push:0 "障がい者対応のモビル化"
+ disability_advocate_push_desc:0 "障がいのある権利組織による公共キャンペーンは、法律の政治勢力の構築です。"
+ 
+ disability_conservative_opposition:0 "保守的な意見"
+ disability_conservative_opposition_desc:0 "障がいのある法律に対する保守的な反対論は、関与し、部分的に中和されています。"
+ 
+ disability_public_rebuttal:0 "保守的な反対の公序良俗"
+ disability_public_rebuttal_desc:0 "政府の保守的なフラミングの直接再建は、法律の支持を得て議論の条件をシフトしました。"
+ 
+  # environment_laws.1 — Industry Voluntary Compliance
+ environment_laws.1.t:0 "[SCOPE.sCharacter('industry_leader').GetFullName] 提供の任意承諾"
+ environment_laws.1.d:0 "[SCOPE.sCharacter('industry_leader').GetFullName] は、[SCOPE.gsInterestGroup('industry_ig').GetName] と話すことで、公共のオファーをしました。政府は、強制執行を操作するのではなく、環境フレームワークに自主的なコンプライアンスメカニズムを構築することに同意した場合、業界は協力します。 オファーは、実用的なパートナーシップとして提示されています。 批評家は、それが通過する前に法律を無視しようとする試みであると主張しています。"
+ environment_laws.1.f:0 "自主的なコンプライアンスは、化石燃料産業の好適な種類です。"
+ environment_laws.1.a:0 "受け入れ — フレームワークへの自主的なコンプライアンスの構築"
+ environment_laws.1.b:0 "拒否 — 必須の執行のみ、オートアウトなし"
+ 
+ # environment_laws.2 — Scientific Backing
+ environment_laws.2.t:0 "[SCOPE.sCharacter('science_leader').GetFullName] 環境レポートを公開"
+ environment_laws.2.d:0 "[SCOPE.sCharacter('science_leader').GetFullName] の [SCOPE.gsInterestGroup('science_ig').GetName] は、[ROOT.GetCountry.GetName] の現在の軌跡の環境および公衆衛生コストを文書化した包括的な研究を発表しました。 調査結果は不曖昧です: 汚染レベルが上昇し、死亡率が影響され、生態系はストレス下にあります。 提案された立法、報告書は締結します、ちょうど望ましいではありません - それは必要です。"
+ environment_laws.2.f:0 "データは、政治的な利便性を待つことはありません。"
+ environment_laws.2.a:0 "公正な応答を委員会 — 政府の裏付けで発見を公開"
+ environment_laws.2.b:0 "それを増幅せずにレポートを承認する"
+ 
+ # environment_laws.3 — International Praise
+ environment_laws.3.t:0 "国際コミュニティは、[ROOT.GetCountry.GetName]の環境リーダーシップを誇ります"
+ environment_laws.3.d:0 "[ROOT.GetCountry.GetName] の提案された環境法は、国際コミュニティに達し、その応答は予期せず温かくなっています。 一部の国では、[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] の環境のための政府を調達する声明を発表しました。 環境アドボカシーグループは、他の人がフォローするモデルを [ROOT.GetCountry.GetName] と呼びます。"
+ environment_laws.3.f:0 "リーダーシップは、持続可能性よりも要求が容易です。"
+ environment_laws.3.a:0 "瞬間を重ねる — 国際環境の話をホストする"
+ environment_laws.3.b:0 "この国内を保ち、国際的義務の約束を回避"
+ 
+ # environment_laws.4 — Compliance Cost Debate
+ environment_laws.4.t:0 "環境コンプライアンスの費用は誰ですか?"
+ environment_laws.4.d:0 "環境関連の法律は、責任に関する激しい議論を開いた。 コンプライアンスのコストを主張する業界は、工場の改装、サプライチェーンの変更、廃棄物管理の更新など、生産者や最終的に消費者に不利益を生じます。 環境グループは、これらの費用は、公の10年間にサイレントに生まれてきた公害の真の価格を表すことを反対しています。"
+ environment_laws.4.f:0 "汚染は常にコストがかかっています。 質問は誰が支払うかです。"
+ environment_laws.4.a:0 "汚染物質の支払い — 業界は独自のコンプライアンスのコストを負担"
+ environment_laws.4.b:0 "国家補助金 - 政府は、迅速な採用に対するコンプライアンスの負担を共有します"
+ 
+ # environment_laws.5 — Constitutional Challenge
+ environment_laws.5.t:0 "[SCOPE.sCharacter('industry_opposition_leader').GetFullName] 自然権の合法性に挑戦"
+ environment_laws.5.d:0 "[SCOPE.sCharacter('industry_opposition_leader').GetFullName] の [SCOPE.gsInterestGroup('industry_opposition_ig').GetName] は、自然法の提案された保証された権利に対する正式な法的課題を発表しました。 引数: 河川、森、生態系に立たせる法律を付与することで、財産権と経済自由との無関係な干渉を構成します。 土地所有者や産業の利益から大きな支持を集めた課題。"
+ environment_laws.5.f:0 "自然には弁護士はありません。 借りる必要がございます。"
+ environment_laws.5.a:0 "フレームワークを防衛 — 裁判所は、そのメリットに則りましょう"
+ environment_laws.5.b:0 "範囲を制限 — 長期にわたる法的戦いを避けるために交渉"
+ 
+ # environment_laws.6 — Environmental Disaster
+ environment_laws.6.t:0 "[SCOPE.sState('disaster_state_scope').GetName] 環境災害"
+ environment_laws.6.d:0 "環境関連の法律は議論下にあるが、[SCOPE.sState('disaster_state_scope').GetName]は環境危機に追い込まれています。工場のこぼれ、河川の汚染、または国内のニュースに達した十分な規模の汚染事故。 タイミングは重要である。 サポーターは、法律が緊急に必要とされることを証明します。 [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] の政府はどのように反応するかを決定する必要があります。"
+ environment_laws.6.f:0 "災害は、各自の議論です。"
+ environment_laws.6.a:0 "環境法の緊急通過を要求する瞬間を使用する"
+ environment_laws.6.b:0 "ストーリーの達成 — エスカレートせずにパブリックな反応を管理"
+ 
+ env_voluntary_compliance:0 "産業自主コンプライアンス"
+ env_voluntary_compliance_desc:0 "業界は、環境枠組みの自主的なコンプライアンスに合意し、活動的な反対を削減し、法律の通路の機会を改善しました。"
+ 
+ env_mandatory_enforcement:0 "必須の執行フレームワーク"
+ env_mandatory_enforcement_desc:0 "政府は、強制執行の恩恵に自主的なコンプライアンスを拒否しました。 法律はより強く、業界はより決定しました。"
+ 
+ env_scientific_backing:0 "科学研究"
+ env_scientific_backing_desc:0 "環境関連法規を支持する公表された科学的な報告は、その好意で公正かつ正当な意見をシフトしています。"
+ 
+ env_international_praise:0 "国際環境事業"
+ env_international_praise_desc:0 "[ROOT.GetCountry.GetName]の環境的リーダーシップの国際的認識は、法律のための国内の勢いを構築しています。"
+ 
+ env_diplomatic_push:0 "環境外交への取り組み"
+ env_diplomatic_push_desc:0 "[ROOT.GetCountry.GetName] は、国際環境の話をホスティングしています。"
+ 
+ env_compliance_cost_debate:0 "コンプライアンスコストフレームワークの解決"
+ env_compliance_cost_debate_desc:0 "環境コンプライアンスコストを負う者に対する議論は、法律の経路から大きな障害を取り除きます。"
+ 
+ env_polluter_pays:0 "Polluterは原則を支払う"
+ env_polluter_pays_desc:0 "業界は、独自のコンプライアンスコストを担っています。 法律はより強く、反対は大声です。"
+ 
+ env_state_subsidy:0 "国家環境コンプライアンス補助金"
+ env_state_subsidy_desc:0 "状態は企業の抵抗を減らし、採用を加速するために環境の順守を補助しています。"
+ 
+ env_constitutional_challenge:0 "憲法課題"
+ env_constitutional_challenge_desc:0 "自然法の保障された権利への法的課題は、法規に基づいてその通過を遅くしました。"
+ 
+ env_legal_defence:0 "自然権の法的防衛"
+ env_legal_defence_desc:0 "政府の自然権枠組みの法的防衛は、その憲法上の妥当性に自信をもらった。"
+ 
+ env_disaster_response:0 "法律に反する災害"
+ env_disaster_response_desc:0 "政府は、環境災害を利用して、環境法の緊急な公正な支持を築いてきました。"
+ 
+ env_disaster_suppressed:0 "災害の物語 達成"
+ env_disaster_suppressed_desc:0 "環境災害は静かに管理されています。 公衆圧力が組み込まれていない — 正当な勢いがない。"
+ 
+ env_disaster_state_modifier:0 "環境災害"
+ env_disaster_state_modifier_desc:0 "この状態は、環境災害に苦しんでいる - こぼれ、汚染、または生態学的崩壊 - 追加の汚染を発生させ、死亡率を高めています。"
+ 
+ childrens_childcare.1.t:0 "市場は最高の知っています"
+ childrens_childcare.1.d:0 "プリスクール・アンダーウェイを上回る議論で、ビジネス・アソシエーションは熱心なバッカーとして登場しました。 プライベートプロバイダは、彼らが主張し、品質のために競争します - 国家モノポリが決してできない革新を運転します。 批判, しかしながら, 有意義な規制なしで警告, 手数料が恩恵を受けることができる家族だけ."
+ childrens_childcare.1.f:0 "市場はすべてのための答えがあります。 ここが残っているのが正しいか。"
+ childrens_childcare.1.a:0 "市場をリードしましょう — 競争は品質を上方に駆動します。"
+ childrens_childcare.1.b:0 "規制価格設定 — プライベートプロバイダは、アクセスを保証する必要があります。"
+
+ childrens_childcare.2.t:0 "子どもを育てる"
+ childrens_childcare.2.d:0 "宗教的で伝統的な声は、正式な幼年期教育の拡大に不安を抱えています。 家族は、彼らが主張し、道徳的発達の適切なクレードルです。しかし、どんな機関でも、市民社会の基礎を侵食する親のリスクを支持しています。"
+ childrens_childcare.2.f:0 "子どもに関するすべての政策問題の背後にあるのは、より深いことです。誰が所属していますか?"
+ childrens_childcare.2.a:0 "それらを安心 — これは、家族をサポートし、それはそれらを置き換えません。"
+ childrens_childcare.2.b:0 "懸念を却下 — 早期教育は道徳的な質問ではありません。"
+
+ childrens_childcare.3.t:0 "業績ハイライト"
+ childrens_childcare.3.d:0 "ユニバーサル保育は、野心的なコミットメントであり、高価な1つです。 年度の保存料は、予測された費用に押収され、状態が単に結果なしでこのスケールの資格を吸収できないことを警告しています。 政府は決定しなければなりません:費用を吸収し、先に進むか、ロールアウトを遅らせ、時間を買う。"
+ childrens_childcare.3.f:0 "結局のところ、すべての素晴らしい社会プログラムが会計士を満たしています。"
+ childrens_childcare.3.a:0 "費用を吸収し、前進して下さい。"
+ childrens_childcare.3.b:0 "それを段階的に — 負荷を管理するための完全な実装を遅延させます。"
+
+ childrens_childcare.4.t:0 "労働者の解放や依存関係?"
+ childrens_childcare.4.d:0 "労働の動きはそれ自体が分かれている見つけます。 多くの労働者にとって、ユニバーサル保育は解放です - 両親、特に母親を解放し、同じ条件で労働力を入力する。 しかし、状態に証明された利点は、本物の賃金利得のための悪い代替物であり、実際に生活賃金を支払うために雇用主から圧力を取る育児リスクを埋め込むという懐疑的事実論争。"
+ childrens_childcare.4.f:0 "労働者が労働者の改革を支援するすべての改革ではありません。"
+ childrens_childcare.4.a:0 "育児は労働問題であり、労働者の方針としてそれを受け入れます。"
+ childrens_childcare.4.b:0 "最初は、動きを別々に保ちます。"
+
+ childrens_childcare.5.t:0 "研究テーマ"
+ childrens_childcare.5.d:0 "エコノミストと子供の発達研究者は、簡単な引数で議論に入りました。早期の小児期における投資は、あらゆる公共支出の最高の長期リターンをもたらします。 データは、彼らが言うと、それは非曖昧です。 問題は、政府がその場合を公にしたいかどうか、または、証拠ではなく、政治的に議論を保ちたいかどうかです。"
+ childrens_childcare.5.f:0 "証拠は、自分自身で議論を勝ち取ることはめったにありません。 しかし、それは役立ちます。"
+ childrens_childcare.5.a:0 "公報委員会 — 証拠をリードさせます。"
+ childrens_childcare.5.b:0 "立法的なプロセスから学術を守ってください。"
+ 
+ childrens_rights_market_preschool_framing:0 "プライベートセクターのバックアップ"
+ childrens_rights_market_preschool_framing_desc:0 "ビジネスの関心は、プリスクールモデルの背後にある自分の体重を投げました。"
+
+ childrens_rights_access_mandate:0 "アクセスマンデート 変更"
+ childrens_rights_access_mandate_desc:0 "料金規定は、アクセス基準を満たすためのプライベートプロバイダーを必要とする、法律に添付されています。 コンプライアンス交渉は、通路を遅くしています。"
+
+ childrens_rights_family_values_debate:0 "家族 Primacy 覚醒"
+ childrens_rights_family_values_debate_desc:0 "政府は、代替ではなく、家族のための支援として、予備校の拡張をフレーム化し、法律に対する保守的な抵抗を緩和しました。"
+
+ childrens_rights_fiscal_resistance:0 "平成27年度 保存抵抗"
+ childrens_rights_fiscal_resistance_desc:0 "普遍的な育児の計画された費用への反対は、法定的なプロセスを追跡し、政府の制定位置を支配します。"
+
+ childrens_rights_funded_mandate:0 "ファンド・ステート・コミットメント"
+ childrens_rights_funded_mandate_desc:0 "政府は、公共の財布の費用で制定のためのケースを強化し、普遍的な育児の完全なコストを吸収することを約束しています。"
+
+ childrens_rights_labour_framing:0 "労働運動の安定化"
+ childrens_rights_labour_framing_desc:0 "貿易組合は、労働者の課題として普遍的な育児を支持しています, 制定の努力に組織された政治重量を追加します。."
+
+ childrens_rights_academic_endorsement:0 "アカデミック・エクステンダーメント"
+ childrens_rights_academic_endorsement_desc:0 "研究者やエコノミストは、公に普遍的な育児を支持し、政府の立法的なプッシュに対する証拠的な信頼性を貸しています。"
+
+ childrens_rights_business_engaged:0 "プライベートセクタエンゲージ"
+ childrens_rights_business_engaged_desc:0 "ビジネスオーナーは、初期教育市場での機会を見て、積極的に法律が通過することを確認するために、その影響を貸しています。"
+
+ childrens_rights_devout_reassured:0 "Devout 安心"
+ childrens_rights_devout_reassured_desc:0 "宗教的な声は、家族が第一次道徳的な機関を残している政府の承認によって盗まれています。"
+
+ childrens_rights_devout_alienated:0 "Devout エイリアン"
+ childrens_rights_devout_alienated_desc:0 "伝統的な家族の懸念の却下は、政府の社会政策の方向について深く不安を抱えています。"
+
+ childrens_rights_unions_mobilized:0 "連合の安定化"
+ childrens_rights_unions_mobilized_desc:0 "貿易組合は、ユニバーサル保育の背後にある、労働者の経済尊厳の闘争の延長としてそれをフラミングしています。"
+
+ childrens_rights_unions_skeptical:0 "連合無菌"
+ childrens_rights_unions_skeptical_desc:0 "労働運動における重要な事実は、州の利益は、純正賃金の利益の代替物ではないと信じ、その完全なサポートを保留している。"
+
+ childrens_rights_intelligentsia_engaged:0 "インテリジェントジアエンゲージ"
+ childrens_rights_intelligentsia_engaged_desc:0 "アカデミックと研究者は、早期投資が最も長期的な社会的リターンをもたらすという証拠を引用し、普遍的な育児のための公的ケースを積極的に作成しています。"
+
+ childrens_rights_intelligentsia_sidelined:0 "インテリジェントジア サイドライン"
+ childrens_rights_intelligentsia_sidelined_desc:0 "学術コミュニティは、政府の議事堂から不満と失望したインテリジェントジアを残して、立派な議論からシャットアウトされています。"
+ 
+ womens_rights_laws.1.t:0 "法令の規定"
+ womens_rights_laws.1.d:0 "法的な保護に関する法律が形づくにつれて、議論はそのリーチの上に壊れています。 狭い法律が世代内に遮断されると、インテリジェントジアの領域内の改革者は、すべての機関に保護を記述しなければならない、または彼らは何も意味しません。 相手は、今の過信が全体の努力を埋める憲法危機を招くと警告した。"
+ womens_rights_laws.1.f:0 "すべての法律は、それを強制する意志と同じくらい強いです。そして、問題に十分に書き込む勇気。"
+ womens_rights_laws.1.a:0 "それを広く書き込む - 保護は、すべての機関に到達する必要があります。"
+ womens_rights_laws.1.b:0 "スコープを狭く保ち、通路を最初に確保します。"
+
+ womens_rights_laws.2.t:0 "伝統主義の目的"
+ womens_rights_laws.2.d:0 "保守的な声 — 土地所有者, 乱雑な, そして、その同盟国 — 法的保護法案に対して整理しました, 社会の自然な秩序にaffrontそれを呼び出します. 彼らのケースは、法律が表すものの深いユーナーゼよりも実用的な異議で根ざしています。 政府は、この課題を開いた議論で満たすか、反対の排気自体を聞かせるかどうかを決定する必要があります。"
+ womens_rights_laws.2.f:0 "伝統が語るとき、それはまれに引数を提供しています。"
+ womens_rights_laws.2.a:0 "開いている議論で彼らに会いなさい — 自分のケースを一般に再表示する。"
+ womens_rights_laws.2.b:0 "それらを彼らの悲しみを空気させてみましょう - それらに殉教者のプラットフォームを与えないでください。"
+
+ womens_rights_laws.3.t:0 "雇用主のプッシュバック"
+ womens_rights_laws.3.d:0 "構造的なegalitarianismは単なる権利の問題ではありません — それは、ビジネスがどのように動くかの問題です。 雇用主のクラスは、調整された異議を提起しました。これは、プライベートな雇用決定の干渉に関連した表現量を主張しています。 彼らは職場の女性とは対照的ではありません。彼らは主張しています。何と何の役割について正確に言うだけです。"
+ womens_rights_laws.3.f:0 "時代が変わってゆく時代が変わっていきました。 遅延から利益を得る人には、タイミングが間違っていません。"
+ womens_rights_laws.3.a:0 "法令遵守 — 例外もなく、フェーズインなし"
+ womens_rights_laws.3.b:0 "移行期間を提供 — 雇用主が調整する時間を与えます。"
+
+ womens_rights_laws.4.t:0 "パブリックライフの女性"
+ womens_rights_laws.4.d:0 "貿易組合は、構造的なegalitarianism法案に熱心な利益をとっています。 働く女性、彼らは、常に組織の労働の中心にありました - 過払い、代表的、そして不可欠です。 政府は、この同盟を正式に認め、法案を共同原因にするか、または独自の条件で改革を維持するかである。"
+ womens_rights_laws.4.f:0 "工場の床は、常に議会が認め始めているものを知っている。"
+ womens_rights_laws.4.a:0 "共同原因を作る - 働く女性と労働を一緒にする。"
+ womens_rights_laws.4.b:0 "法律は、独自のメリットに際し、異なる動きを保ちます。"
+
+ womens_rights_laws.5.t:0 "変化する社会"
+ womens_rights_laws.5.d:0 "月極法案は、最近の立法的な記憶に見られるものとは異なり、反応を引き起こしています。 相手は単なるポリシーに異ならず、この社会の方向性についてシグナル伝達するものに反対します。 バックラッシュは激しく整理されています。 政府は直面するかどうか、または静かに押し出し、法律が制定されたら独自のケースを作るかどうかを決定しなければなりません。"
+ womens_rights_laws.5.f:0 "終わりのような、変容している人には、感じない革命はありません。"
+ womens_rights_laws.5.a:0 "バックラッシュに直面 — 歴史のアークが進む。"
+ womens_rights_laws.5.b:0 "静かに嵐の天気 — 法律はそれ自体に話しましょう。"
+
+ womens_rights_laws.6.t:0 "古いガードレジスト"
+ womens_rights_laws.6.d:0 "ランド所有者とdevoutは、通常の正規の立法的な抵抗を超えて行くフェールと成熟法案への反対に統合されています。 つまり、社会的な布地に存在する課題です。 彼らのネットワークは動員しています。, 彼らのパルプとパリザーは反対のサイトに変わります. 政府は、どのようにしっかりと反応するかを決定する必要があります。"
+ womens_rights_laws.6.f:0 "古いガードは、常に最終時間に最も大きくなっています。"
+ womens_rights_laws.6.a:0 "反対を破棄する — この政府は、主催者は保持されません。"
+ womens_rights_laws.6.b:0 "ネゴティエート - 摩擦を減らすための文化的な譲歩を提供します。"
+
+ womens_rights_legal_scope:0 "広い法的義務"
+ womens_rights_legal_scope_desc:0 "インテリジェントジアは、広範囲にわたる法的な保護のために成功した押し上げました, 運動量を貸し、制定の努力に信頼性."
+
+ womens_rights_narrow_scope:0 "ナロースコープ 変更"
+ womens_rights_narrow_scope_desc:0 "法律のリーチを制限する決定は、その位置を再較正するような提唱者や相手として、不当な行動プロセスが複雑になっています。"
+
+ womens_rights_traditionalist_debate:0 "伝統のチャレンジ"
+ womens_rights_traditionalist_debate_desc:0 "政府は、保守的な反対論と公共の議論に入った, 制定の戦いの条件をシフト."
+
+ womens_rights_employer_resistance:0 "雇用主のロビーの抵抗"
+ womens_rights_employer_resistance_desc:0 "委任された表現に対する組織的事業の反対は、積極的に立法的なプロセスを宣言しています。"
+
+ womens_rights_union_mobilization:0 "労働運動の安定化"
+ womens_rights_union_mobilization_desc:0 "貿易組合は、構造的なegalitarianismの背後にある組織された重量を投げ、その活動の努力を後押ししています。"
+
+ womens_rights_societal_backlash:0 "Societalバックラッシュ"
+ womens_rights_societal_backlash_desc:0 "matriarchy 法案によって提案された変更のスケールは、法定プロセスを遅くする広範な組織的な抵抗をトリガーしました。"
+
+ womens_rights_vanguard_push:0 "ヴァンガードプッシュ"
+ womens_rights_vanguard_push_desc:0 "政府は、直接反対に直面し、社会的変革のリーディングエッジとしての地位を確立することにコミットしています。"
+
+ womens_rights_old_guard_opposition:0 "古いガードの反対"
+ womens_rights_old_guard_opposition_desc:0 "土地所有者と逸脱は、組織の抵抗に統合され、成熟法案を押印し、政府の解決をテストしています。"
+
+ womens_rights_intelligentsia_engaged:0 "インテリジェントジアエンゲージ"
+ womens_rights_intelligentsia_engaged_desc:0 "幅広い法律上の保護のために、学術および改革者は積極的にその公的機関を貸しています。"
+
+ womens_rights_intelligentsia_disappointed:0 "インテリジェントジア 失望"
+ womens_rights_intelligentsia_disappointed_desc:0 "法律のスコープを狭くする決定は、半減期を恐れる不満のリフォームリストの知的さは、世代内で元に戻ります。"
+
+ womens_rights_conservatives_rebuked:0 "保存料 取り消し"
+ womens_rights_conservatives_rebuked_desc:0 "政府の公共の転帰は、その決議を鋭くしたが、伝統の反対を恥ずかしがらせた。"
+
+ womens_rights_conservatives_placated:0 "保存剤 めっきされる"
+ womens_rights_conservatives_placated_desc:0 "直接対向することなく、その悲しみを空気に反対させることにより、政府はすぐに摩擦を低減しました。"
+
+ womens_rights_employers_overruled:0 "雇用主のオーバール"
+ womens_rights_employers_overruled_desc:0 "雇用主のクラスは、コンプライアンスが必須であり、非交渉的、繁殖力ではなく、パスを先にクリアしていると述べています。"
+
+ womens_rights_employers_appeased:0 "雇用主が認める"
+ womens_rights_employers_appeased_desc:0 "フェーズド・トランジションは、より遅い実装のコストで抵抗を減らす、ビジネス・オポジショニングを軟化しました。"
+
+ womens_rights_unions_allied:0 "連合同盟同盟"
+ womens_rights_unions_allied_desc:0 "貿易組合は、主に食道の動きに味方しました, 制定の努力に政治筋肉を整理."
+
+ womens_rights_unions_neutral:0 "ユニオンニュートラル"
+ womens_rights_unions_neutral_desc:0 "労働の動きは、動的なサポートや反対論を提供し、egalitarianism法案からその距離を維持するために選ばれました。"
+
+ womens_rights_old_guard_suppressed:0 "古いガード押された"
+ womens_rights_old_guard_suppressed_desc:0 "政府は、古いガードの反対に対して決定的に移動しました, 政治的地位を弱めるが、その基盤を根本化."
+
+ womens_rights_old_guard_negotiated:0 "古いガードネゴティエート"
+ womens_rights_old_guard_negotiated_desc:0 "古いガードへの譲受は、法律との基本的な合意が残っているにもかかわらず、その反対の最悪を鈍っています。"
+ 
+ ubi.1.t:0 "無条件の費用"
+ ubi.1.d:0 "普遍的な基本的な所得の価格は無視できませんでした。 会計は、計画された支出、すべての市民に無条件の支払いを警告するために、雇用またはない、裕福または貧しい - 公共の資金に不適切な負担を置きます。 政府は、今の資金調達にコミットするか、段階的なアプローチで時間を購入するかどうかを決定しなければならない。"
+ ubi.1.f:0 "普遍的な規定のあらゆる約束は、最終的に同じ質問を満たします:誰が支払うか、どのくらい?"
+ ubi.1.a:0 "完全な資金調達にコミット — コストを吸収し、転送を押します。"
+ ubi.1.b:0 "支払いのフェーズ — 完全な実装を遅延してコストを管理します。"
+
+ ubi.2.t:0 "誰が働きますか?"
+ ubi.2.d:0 "雇用主と土地所有者は、普遍的な基本所得に対して彼らのラリーの叫びを発見しました: 状態が努力に関係なく収入を保証します、誰もが労働を選ぶ理由? 証拠がより曖昧であっても、引数は直感的で政治的に強力なものです。 政府は、そのメリットにUBIの経済ケースを作るか、支払いに最低限の作業要件を添付することにより、懸念を争う必要があります。"
+ ubi.2.f:0 "チャンスを与えられた場合、人々が働くことを止める恐れは、それが間違っていたことを証明したすべてのポリシーを追い抜いた。"
+ ubi.2.a:0 "経済的なケースを作る — セキュリティは、生産性を低下させない。"
+ ubi.2.b:0 "仕事の要件を満たす — 抵抗を減らすための懸念を隠します。"
+
+ ubi.3.t:0 "欲しいから自由"
+ ubi.3.d:0 "貿易組合にとって、普遍的な基本的な収入は単なる福祉政策ではありません - それは労働運動の最古の要求の達成です:貧困の補償から自由。 レギュレーション・アンダーウェイにより、ユニオン・リーダーは自らの瞬間を主張し、組織化された政治筋肉を制定の努力に貸すことに熱心です。 政府は、その同盟を抱くか、または静かな管理問題としてロールアウトを維持するかを決定する必要があります。"
+ ubi.3.f:0 "悪い仕事が常にすべての賃金紛争の背後にあるという権利。"
+ ubi.3.a:0 "義務を負う — 組合はパブリックキャンペーンをリードさせます。"
+ ubi.3.b:0 "政府のイニシアチブを保ち、ロールアウトを過剰に政治的にすることを避けてください。"
+
+ welfare_ubi_fiscal_alarm:0 "財政警報 上げられる"
+ welfare_ubi_fiscal_alarm_desc:0 "年度の保存料は、普遍的な基本所得の計画された費用に対して動員し、制定プロセスを固定し、防衛に政府を強制しています。"
+
+ welfare_ubi_funded_commitment:0 "ファンド・ステート・コミットメント"
+ welfare_ubi_funded_commitment_desc:0 "政府は、UBIの費用を全額吸収し、公共の財布に重大な費用でその実効位置を強化することにコミットしています。"
+
+ welfare_ubi_labour_disincentive_debate:0 "労働の集中的な再生"
+ welfare_ubi_labour_disincentive_desc:0 "政府は、労働のインセンティブに関する懸念を公然と抱えており、金融安全保障が労働参加を損なうのではなく、経済的ケースを作る。"
+
+ welfare_ubi_work_requirements:0 "作業要件 添付"
+ welfare_ubi_work_requirements_desc:0 "最低限の労働条件は、UBIの支払いに添付され、実装を遅くするが、雇用主が法律に反対するのを減らす。"
+
+ welfare_ubi_popular_mandate:0 "人気マンデート"
+ welfare_ubi_popular_mandate_desc:0 "貿易組合は、公に労働運動の闘争の決定をUBI宣言しました, 制定の努力に政治的運動量を整理しました."
+
+ welfare_ubi_employers_unconvinced:0 "雇用主 未考"
+ welfare_ubi_employers_unconvinced_desc:0 "政府の経済論にもかかわらず、雇用主のクラスは、無条件所得が労働供給を低下させないという概念を残します。"
+
+ welfare_ubi_employers_appeased:0 "雇用主が認める"
+ welfare_ubi_employers_appeased_desc:0 "仕事の要件は、UBIへの雇用主の反対を軟化させ、法律の通過に対する積極的な抵抗を減らします。"
+
+ welfare_ubi_unions_mobilized:0 "連合の安定化"
+ welfare_ubi_unions_mobilized_desc:0 "貿易組合は、労働者の経済的自由のための長い闘争で決定的な勝利として、普遍的な基本的な収入のために積極的にキャンペーンしています。"
+
+ welfare_ubi_unions_sidelined:0 "ユニオン サイドライン"
+ welfare_ubi_unions_sidelined_desc:0 "UBIを静的な管理ロールアウトとして維持するための政府の決定は、取引のユニオンが不満を残し、施行の努力から失望しました。"
+
+ gun_laws.1.t:0 "安全管理"
+ gun_laws.1.d:0 "改革者と公衆衛生擁護者は、証拠ベースのケースを作るために一瞬として火薬禁止に押下しました:循環中の少数の銃はより少ない死を意味します。 データを偽りなく、曖昧です。 政府は、このフラミングを正式に受け入れるかどうかを決定しなければなりません, 禁止の知的信頼性を貸します, または、法面の面で議論を維持し、公衆衛生の声を並べます."
+ gun_laws.1.f:0 "最も安全な社会は、常に最も武装しているものではありません。"
+ gun_laws.1.a:0 "公衆衛生のフラミングを身につける - データは私たちの側にあります。"
+ gun_laws.1.b:0 "法律や注文としてフレーム化 — 公衆衛生が提唱されるようにします。"
+
+ # ==========================================
+ # gun_laws.2 — The Armed Forces Weigh In
+ # ==========================================
+ gun_laws.2.t:0 "軍隊は重量を量ります"
+ gun_laws.2.d:0 "軍事的リーダーシップは、政治を超えて行く火薬禁止に興味を持っています。 武装した民間集団は、状態に対して整理するのが困難で、状態の用語で簡略化しやすく、そして不測を持続する可能性が低い。 彼らの裏付けは決定的である可能性があります - しかし、軍を国内の立法的な議論に持ち込むことは、独自の合併症を運びます。"
+ gun_laws.2.f:0 "軍隊は、最も危険な武器は、そのコマンドの下にあるものであることを常に知られています。"
+ gun_laws.2.a:0 "彼らの裏付けを歓迎します - 武装した人口は秩序に1つです。"
+ gun_laws.2.b:0 "国内の法律で軍隊を守ろう - これは民間人の問題です。"
+
+ # ==========================================
+ # gun_laws.3 — Rural Resistance
+ # ==========================================
+ gun_laws.3.t:0 "農村の抵抗"
+ gun_laws.3.d:0 "田舎は、資本で行われた引数を聞いていません。 農村のコミュニティのために、防火具は政治的な声明ではありません - 彼らは狩猟、家畜保護、および隔離された決済の基本的なセキュリティのために使用される土地と一緒に継承されたツールです。 これらを制限することは、ポリシーの質問ではなく、個人的なaffrontではありません。 政府は、その行をしっかりと保持する方法を決定する必要があります。"
+ gun_laws.3.f:0 "法律を書いている人は、決して3時間待つ必要はなかった。"
+ gun_laws.3.a:0 "事務所を保有する — 都市法は、どこからでも適用されます。"
+ gun_laws.3.b:0 "農村免除 - 狩猟および畜産保護は正当な用途です。"
+
+ # ==========================================
+ # gun_laws.4 — A Right, Not a Privilege
+ # ==========================================
+ gun_laws.4.t:0 "A 権利, ない Privilege"
+ gun_laws.4.d:0 "制限されていない防火具の提唱者は、その引数を発見し、それらがそれに行くことを許可していない:所有権は、州によって付与される特権ではありません。 すべてのライセンスシステム、任意の登録要件、すべての制限は、トラニーへの道の最初のステップです。 政府は、このフラミングとそれが生成する政治エネルギーを受け入れるか、より実用的な地面にケースを作るかどうかを決定しなければなりません。"
+ gun_laws.4.f:0 "ガンポイントでしか保持できない特別な種類の自由があります。"
+ gun_laws.4.a:0 "武装した市民権は自由です。"
+ gun_laws.4.b:0 "実質的にフレーム化 — 自己防衛と説明の信頼性に焦点を当てます。"
+
+ # ==========================================
+ # gun_laws.5 — The Safety Lobby Fights Back
+ # ==========================================
+ gun_laws.5.t:0 "安全ロビーが戻って戦う"
+ gun_laws.5.d:0 "火薬の禁止を反対する知能と公衆衛生の声は、静かに消えていない - 彼らは無許可の所有権を反対に自分のエネルギーをリダイレクトしました。 彼らの引数は馴染みがあります。証拠は、より多くの銃がより安全な社会を生み出すという主張をサポートしていません。 政府は、公共の議論やプラットフォームを否定するかどうかを決定しなければならない。"
+ gun_laws.5.f:0 "禁じられた防火具のためのすべての引数は、最終的に体のために答えなければならない。"
+ gun_laws.5.a:0 "それらを公正に再表示 — 自由は、独自のリスクを運ぶ。"
+ gun_laws.5.b:0 "それらを無視する - 応答で反対を識別しません。"
+
+ # ==========================================
+ # gun_laws.6 — Licensing Is Not Freedom
+ # ==========================================
+ gun_laws.6.t:0 "ライセンスは自由ではありません"
+ gun_laws.6.d:0 "認可された防火服は、反対側の議論の両側を結合する稀有な偉業を管理しました。 ガンの権利擁護者は、基本的自由に対する侵害としてライセンス要件を提示します。 安全対策は、害を抑える意味のない半減策として捉えています。 政府は、フランクが占有する望んでいない中間の地面を守ること自体を見つけます。"
+ gun_laws.6.f:0 "誰にも満足しない妥協は、正しい答えではないかもしれません。"
+ gun_laws.6.a:0 "中間の地面を防衛 — ライセンスは合理的で比例しています。"
+ gun_laws.6.b:0 "緊張を目覚めさせる — 法律のベッドの後にレビューを約束します。"
+
+ gun_law_safety_argument:0 "公衆衛生箱は作りました"
+ gun_law_safety_argument_desc:0 "政府は、銃器禁止のための公衆衛生面を採用し、法律の知的財産権の信頼性を貸し、その魅力を広げています。"
+
+ gun_law_military_position:0 "軍のEndorsement"
+ gun_law_military_position_desc:0 "軍事的リーダーシップは、公に民間人障がい者を支持し、活動の努力に機関の権限を追加します。"
+
+ gun_law_rural_resistance:0 "農村の抵抗"
+ gun_law_rural_resistance_desc:0 "農村のコミュニティは、積極的に防火薬の制限に抵抗しています, 立法的なプロセスを固定し、政府が最も影響を受ける市民に法律を正当化するために."
+
+ gun_law_rights_framing:0 "解放の組み立ては採用しました"
+ gun_law_rights_framing_desc:0 "政府は、銃所有権が基本的権利であり、支持者を活性化し、法律を原則に基づいて貸すという引数を埋め込んでいます。"
+
+ gun_law_practical_framing:0 "実用的な組み立ては採用しました"
+ gun_law_practical_framing_desc:0 "規制されていない防火具のケースは、現実的なものではなく、自己防衛と説明の信頼性 - 実用的な地面で作られています。"
+
+ gun_law_safety_lobby_opposition:0 "安全ロビーの反対"
+ gun_law_safety_lobby_opposition_desc:0 "公衆衛生擁護者および理性的なsiaは不法な防火具に組織された反対論を取付けます、enactmentプロセスをstallingです。"
+
+ gun_law_compromise_resistance:0 "火の下で妥協"
+ gun_law_compromise_resistance_desc:0 "認可された防火服は、両方の方向から抵抗されている - 銃の権利擁護者は、侵害としてそれを見る、安全提唱者は不十分であると見ます。"
+
+ gun_law_compromise_defended:0 "守備防衛"
+ gun_law_compromise_defended_desc:0 "政府は、認可された防火機の中間の地面のための公共のケースを作りました, 両方のフレンクから反対に押し戻します."
+
+ gun_law_intelligentsia_engaged:0 "インテリジェントジアエンゲージ"
+ gun_law_intelligentsia_engaged_desc:0 "公衆衛生研究者や改革家は、防火剤の制限の場合には積極的にその権限を貸与しています。"
+
+ gun_law_intelligentsia_sidelined:0 "インテリジェントジア サイドライン"
+ gun_law_intelligentsia_sidelined_desc:0 "政府は、火薬を法と秩序として禁止し、議論から公衆衛生の声を維持するために選ばれました。"
+
+ gun_law_intelligentsia_rebuked:0 "インテリジェントジア再建"
+ gun_law_intelligentsia_rebuked_desc:0 "安全ロビーは公正にチャレンジし、その引数は却下されていますが、これは彼らの反対を鋭くしました。"
+
+ gun_law_intelligentsia_ignored:0 "インテリジェントジア無視"
+ gun_law_intelligentsia_ignored_desc:0 "政府は、安全ロビーの反対に関与することを拒否しました, 彼らの不満を深める費用でプラットフォームを否定."
+
+ gun_law_military_backing:0 "軍の裏付け"
+ gun_law_military_backing_desc:0 "武装した力は、公に民間人障がい者を支持し、決定的な機関の重みを制定の努力に貸しています。"
+
+ gun_law_military_sidelined:0 "軍の側面"
+ gun_law_military_sidelined_desc:0 "政府は、軍のリーダーシップを国内の防火薬の議論から保ち、軍の軍団は、立法的なプロセスから排出しました。"
+
+ gun_law_rural_folk_alienated:0 "農村民俗 外国人"
+ gun_law_rural_folk_alienated_desc:0 "銃器制限の均一な執行は、命の方法を理解していない政府によって標的とされている農村のコミュニティを残しています。"
+
+ gun_law_rural_folk_appeased:0 "農村民俗鑑賞"
+ gun_law_rural_folk_appeased_desc:0 "狩猟および畜産保護のための免除は、法律の根本的な意図を放棄することなく、制限に農村の反対を軟化しました。"
+
+ gun_law_rural_folk_energized:0 "農村民エンナージド"
+ gun_law_rural_folk_energized_desc:0 "規制されていない防火機の残酷なフラミングは、農村のコミュニティと強力に共鳴し、強力な草の根は、法律のサポートを生成しています。"
+ 
+  # ==========================================
+ # lgbtq_laws.1 — The Church Demands Action
+ # ==========================================
+ lgbtq_laws.1.t:0 "教会は行動を要求します"
+ lgbtq_laws.1.d:0 "devout は自分の立場を明確にしました: 同性愛の積極的な抑制は単なる政治的な好みではなく、道徳的な義務ではありません。 宗教的な指導者は、政府が明示的に病理学的用語の法律をフレーム化し、法律に神の権限の体重を貸すことを要求しています。 政府は、そのフラミングを埋めるか、または世俗的な地面に正当を保つかどうかを決定しなければなりません。"
+ lgbtq_laws.1.f:0 "最も危険な法律は、彼らがより高い権威に答えると信じているものです。"
+ lgbtq_laws.1.a:0 "道徳的なフラミングを護る — これは神の律法の問題です。"
+ lgbtq_laws.1.b:0 "社会的な秩序としてそれを組み立てて下さい — 正当から宗教を守って下さい。"
+
+ # ==========================================
+ # lgbtq_laws.2 — The Cost of Enforcement
+ # ==========================================
+ lgbtq_laws.2.t:0 "執行コスト"
+ lgbtq_laws.2.d:0 "同性愛に対する法則は、その執行としてのみ有効です。 政府の前の質問は制限するかどうかではありません - 議論が解決されます - しかし、積極的な状態の器具は、違反を追求する。 完全な執行は高価で、侵略的です。 受動の執行は社会的圧力およびdenunciationに頼ります。 各アプローチは、独自のコストを処理します。"
+ lgbtq_laws.2.f:0 "プライベート行動をレギュレートする状態は、到達する意思のあるプライベートライフに深く決定しなければなりません。"
+ lgbtq_laws.2.a:0 "完全な執行 — 予備費用なし。"
+ lgbtq_laws.2.b:0 "受動の執行 — 社会的圧力が仕事を行うようにしましょう。"
+
+ # ==========================================
+ # lgbtq_laws.3 — Decriminalization Is Not Endorsement
+ # ==========================================
+ lgbtq_laws.3.t:0 "Decriminalizationは承認されていません"
+ lgbtq_laws.3.d:0 "保守的なボイスは、予測可能なアラームで決定書式請求書を挨拶しました。 政府の好まれた引数 — 刑事罰を取り除くことは道徳的な支持を構成しない — 彼らに満足していない。 質問は、公共の議論が生成するという注意を避けるために、公正かつ直接、または静かに進めるかどうかです。"
+ lgbtq_laws.3.f:0 "公差と承認の間隔は、その理由は決して感じませんでした。"
+ lgbtq_laws.3.a:0 "ケースを明らかにする — 偏見は罰を取り除きます, 支持ではありません."
+ lgbtq_laws.3.b:0 "それを静かに保つ — 注意を引くことなく、改革を通過します。"
+
+ # ==========================================
+ # lgbtq_laws.4 — The Intelligentsia Makes Its Case
+ # ==========================================
+ lgbtq_laws.4.t:0 "インテリジェントジアは、そのケースを作る"
+ lgbtq_laws.4.d:0 "改革者と法的な学者は、簡単な引数で議論に入りました: 状態は、大人の同意の私的行為に正当な利益を持っていないし、同性愛の犯罪は、個人的な自由の最も基本的な原則の違反です。 政府は、正式にこの引数と整列するか、純粋に立法的な用語の改革を維持するかどうかを決定する必要があります。"
+ lgbtq_laws.4.f:0 "国家の許可を必要とする自由は、全く自由ではありません。"
+ lgbtq_laws.4.a:0 "引数を導きましょう。個人的な自由主義は不可解です。"
+ lgbtq_laws.4.b:0 "哲学的な議論を避けるために、それは合法的に保つ。"
+
+ # ==========================================
+ # lgbtq_laws.5 — Marriage Is a Social Institution
+ # ==========================================
+ lgbtq_laws.5.t:0 "結婚は社会的機関です"
+ lgbtq_laws.5.d:0 "保守派は、結婚の平等に対する最も強力な引数を発見しました。結婚は単なる法的なアレンジではなく、国家自体よりも古い根源を持つ社会的な機関です。 再定義するには、一緒に戻すことができない何かを解明することです。 政府は、この引数の頭の上に直面するか、宗教的な免除を通じて反対を軟化しようとすると選択しなければなりません。"
+ lgbtq_laws.5.f:0 "一度に各施設が新しくなりました。"
+ lgbtq_laws.5.a:0 "それを修正 — 市民結婚は、教会ではなく、州に属しています。"
+ lgbtq_laws.5.b:0 "宗教的な免除を提供 — 教会は儀式を実行するために低下する可能性があります。"
+
+ # ==========================================
+ # lgbtq_laws.6 — Equal Before the Law
+ # ==========================================
+ lgbtq_laws.6.t:0 "法前の同等"
+ lgbtq_laws.6.d:0 "インテリジェントジアは、市民権の論理的な結論として、結婚平等を枠組みました - 一部の市民権を付与する社会は、彼らが大好きな人に基づいて、彼らはまだ自分の約束にうまくいかない社会です。 政府は、この瞬間をランドマークとして扱うか、宣言の重みなしで静かに権利を拡張するかを決定しなければならない。"
+ lgbtq_laws.6.f:0 "静かに保たれなければならない平等は全く平等ではありませんでした。"
+ lgbtq_laws.6.a:0 "法律が例外を認めない前に、それはランドマークを作る - 平等。"
+ lgbtq_laws.6.b:0 "管理を保ち、宣言なしで静かに権利を拡張します。"
+
+ # ==========================================
+ # abortion_laws.1 — Life Begins at Conception
+ # ==========================================
+ abortion_laws.1.t:0 "コンセプトから始まる人生"
+ abortion_laws.1.d:0 "devout は妥協を認めない立場で中絶の議論に着きました: 人生は概念で始まり、状態は、その瞬間からそれを保護するために道徳的に義務付けられています。 彼らの需要は、中絶を禁止するだけでなく、その道徳的重症を反映する条件で禁止されていることではありません。 政府は、代わりに、人口統計や政治上の法律を正当化するか、または侵害するかどうかを決定する必要があります。"
+ abortion_laws.1.f:0 "最も絶対的な道徳的な位置は、最も困難な場合の部屋を残さないものです。"
+ abortion_laws.1.a:0 "道徳的なフラミング - 人生は神聖であり、状態はそれを保護しなければなりません。"
+ abortion_laws.1.b:0 "宗教を正当化から守る、人口統計政策としての枠組み。"
+
+ # ==========================================
+ # abortion_laws.2 — The Exceptions Question
+ # ==========================================
+ abortion_laws.2.t:0 "例外の質問"
+ abortion_laws.2.d:0 "相手がそれを競争する最も困難な地面を発見したよりも、法案が制定プロセスに入りました。: 治療、近接、および医療の必要性。 これらは、抽象的な道徳的な位置を生きた現実に変えるケースです。 政府は、絶対的な禁止とラインを保持するか、最も困難な状況を認める狭い医療例外を追い出すかを決定する必要があります。"
+ abortion_laws.2.f:0 "抽象的な原則は、他の人の人生であるときに非常にコンクリートになる方法を持っています。"
+ abortion_laws.2.a:0 "例外なし — 法律は何を意味するべきではありません。"
+ abortion_laws.2.b:0 "狭い医療例外を許可します。最も困難なケースは対処しなければなりません。"
+
+ # ==========================================
+ # abortion_laws.3 — The State Has No Place in This Decision
+ # ==========================================
+ abortion_laws.3.t:0 "国家は、この決定書に場所はありません"
+ abortion_laws.3.d:0 "絶え間ない中絶の症例は、身体の自律性の言語における最も強力な処方を発見しました。状態が、人は自分の意思に対して妊娠を続ける権利を有しません。 インテリジェントジアは、この引数を一般に、かなりの力で公開しています。 政府は、改革のセンターピースとして採用するか、または医療アクセスの簡単な問題として変更を提示するかを決定する必要があります。"
+ abortion_laws.3.f:0 "自分の体への権利は、普遍的であるか、または全く正しいものではありません。"
+ abortion_laws.3.a:0 "中心主義を自治させる — 妊娠を補う権利がない。"
+ abortion_laws.3.b:0 "ヘルスケアとしてフレーム化 — 哲学的な引数を外します。"
+
+ # ==========================================
+ # abortion_laws.4 — The Devout Will Not Yield
+ # ==========================================
+ abortion_laws.4.t:0 "Devoutは収斂しません"
+ abortion_laws.4.d:0 "緩和法へのあらゆる動きは、軟化の兆候を示す組織化された宗教的な反対と会った。 devout は、妥協が不可能な問題として、法律を固定するために利用可能なすべての政治ツールを使用する準備が整っています。 政府は、その要求を満たすことなく、その抵抗を柔らかくする、直接、または良心的な保護を提供するかどうかを決定する必要があります。"
+ abortion_laws.4.f:0 "それは神に答えていると信じる反対は、交渉する最も困難な反対です。"
+ abortion_laws.4.a:0 "直接、教会ではなく、州は支配します。"
+ abortion_laws.4.b:0 "良心保護を提供 — 医療スタッフは道徳的な地面に落ちる可能性があります。"
+
+ # ==========================================
+ # LGBTQ Enactment Modifier Localization
+ # ==========================================
+ lgbtq_law_religious_mandate:0 "宗教的な義務宣言"
+ lgbtq_law_religious_mandate_desc:0 "devout は、公に抑圧法を道徳的かつ宗教的な義務として組み込んでおり、その理論的な権限を制定する。"
+
+ lgbtq_law_enforcement_scope:0 "強化スコープセット"
+ lgbtq_law_enforcement_scope_desc:0 "政府は、規制の積極的な執行にコミットしています, 法律の正当な運動を強化."
+
+ lgbtq_law_enforcement_cost:0 "強化コストを吸収"
+ lgbtq_law_enforcement_cost_desc:0 "制限の完全執行は、公共の支出に追加の負担を配置し、資金供給されています。"
+
+ lgbtq_law_decrim_framing:0 "Decriminalization フレーム"
+ lgbtq_law_decrim_framing_desc:0 "政府は、政令ではなく罰の除去として慎重に決定しました, 議論を通じてパスを緩和."
+
+ lgbtq_law_quiet_passage:0 "静かなパッセージ 試みられた"
+ lgbtq_law_quiet_passage_desc:0 "公的な議論を回避する決定は、公的なサポートを整理することなく、改革が進むにつれて、制定プロセスを遅くしました。"
+
+ lgbtq_law_liberty_argument:0 "Liberty Argument メイド"
+ lgbtq_law_liberty_argument_desc:0 "インテリジェントジアは、一般に個人的な自由の問題として決定的な枠組みを持っています, 改革に対する哲学的な信頼性を貸す."
+
+ lgbtq_law_institution_debate:0 "機関の議論は、"
+ lgbtq_law_institution_debate_desc:0 "政府は、市民機関としての結婚の性質上、公の議論に入った, 制定の戦いの条件をシフト."
+
+ lgbtq_law_religious_exemptions:0 "提供されている宗教的な免除"
+ lgbtq_law_religious_exemptions_desc:0 "宗教的な機関は、同性体儀式を実行し、実装を遅くし、保守的な反対を軟化することから免除を提供してきました。"
+
+ lgbtq_law_equality_mandate:0 "高品質マンデート宣言"
+ lgbtq_law_equality_mandate_desc:0 "政府は、正式に結婚平等に市民権のランドマークを宣言し、制定のための強い政治勢力を生み出しています。"
+
+ lgbtq_law_devout_empowered:0 "Devout エンパワー"
+ lgbtq_law_devout_empowered_desc:0 "宗教的なコミュニティは正式に立派なフラミングをもたらし、政治的な立場を強化し、関与を深めました。"
+
+ lgbtq_law_devout_sidelined:0 "Devout サイドライン"
+ lgbtq_law_devout_sidelined_desc:0 "政府は、正当化から宗教的なフラミングを保ち、暴風が激しく、静かに不満を感じました。"
+
+ lgbtq_law_conservatives_unconvinced:0 "保守的無合意"
+ lgbtq_law_conservatives_unconvinced_desc:0 "保守的な反対論は、政府のフラミングを聞き、不利なままにし、その抵抗を改革に維持しました。"
+
+ lgbtq_law_conservatives_rebuked:0 "保存料 取り消し"
+ lgbtq_law_conservatives_rebuked_desc:0 "政府は、公に結婚平等に対する保守的な反対議題に挑戦し、その立場を恥ずかしがりかしがりながら解決を鋭くしています。"
+
+ lgbtq_law_conservatives_placated:0 "保存剤 めっきされる"
+ lgbtq_law_conservatives_placated_desc:0 "宗教的な免除は、基礎的な合意を解決することなく、保守的な反対の即時の強度を低下させました。"
+
+ lgbtq_law_intelligentsia_engaged:0 "インテリジェントジアエンゲージ"
+ lgbtq_law_intelligentsia_engaged_desc:0 "改革者および法的な学者は積極的にLGBTQの権利のための公共のケースを作っています, 制定の努力に知的財産当局に融資."
+
+ lgbtq_law_intelligentsia_sidelined:0 "インテリジェントジア サイドライン"
+ lgbtq_law_intelligentsia_sidelined_desc:0 "政府は哲学的な言葉ではなく、立法上の改革を維持するために選ばれました, 議論の正式な役割なしにインテリジェントジアを残します."
+
+ abortion_law_moral_absolute:0 "モールアブソリュート宣言"
+ abortion_law_moral_absolute_desc:0 "devout は、中絶禁止を道徳的絶対的として捉え、その理論的な権威を制定した。"
+
+ abortion_law_demographic_framing:0 "応用分野 応用分野"
+ abortion_law_demographic_framing_desc:0 "政府は、公式正当化から宗教的な言語を維持し、人口統計と政治の地上で中絶禁止を正当化しました。"
+
+ abortion_law_exceptions_debate:0 "例外の議論は解決しました"
+ abortion_law_exceptions_debate_desc:0 "政府は、例外の質問に明確な立場をとり、制定プロセスを継続するためのしっかりした根拠を提供します。"
+
+ abortion_law_medical_exceptions:0 "医学の例外は許可しました"
+ abortion_law_medical_exceptions_desc:0 "狭い医療例外は法律に書かれています, 通路を遅くするが、適度からの反対を減らす."
+
+ abortion_law_autonomy_argument:0 "Bodily 自治 argued"
+ abortion_law_autonomy_argument_desc:0 "インテリジェントジアは、規制されていない中絶のためのケースのセンターピースを体力的に自律的に行い、改革者のIG間で強力なサポートを生成しました。"
+
+ abortion_law_healthcare_framing:0 "ヘルスケアの組み立ては採用しました"
+ abortion_law_healthcare_framing_desc:0 "政府は、より深い哲学的議論を回避しながら、その魅力を広げ、医療問題として絶え間ない中絶を強調しました。"
+
+ abortion_law_religious_opposition:0 "宗教的な反対取付けられる"
+ abortion_law_religious_opposition_desc:0 "破壊は積極的に中絶法の自由化を宣言しています, 政府の決議をテストする組織的な反対をマウント."
+
+ abortion_law_devout_empowered:0 "Devout エンパワー"
+ abortion_law_devout_empowered_desc:0 "宗教的なコミュニティは、中絶禁止の正当の中心に置かれ、政治的な地位を強化しています。"
+
+ abortion_law_devout_sidelined:0 "Devout サイドライン"
+ abortion_law_devout_sidelined_desc:0 "政府は、中絶禁止から宗教的なフラミングを保ち、現存するが正当化の正式な役割をもちません。"
+
+ abortion_law_devout_rebuked:0 "ブレイクアウト"
+ abortion_law_devout_rebuked_desc:0 "政府は、直接中絶の解放に宗教的な反対に直面しています, 破壊の政治の位置を弱めるが、その基盤を根本化."
+
+ abortion_law_devout_appeased:0 "Devout アピール"
+ abortion_law_devout_appeased_desc:0 "医療従事者の良心保護は、破壊者のコア要求を満たすことなく、中絶の自由化に宗教的な反対を軟化させました。"
+
+ abortion_law_intelligentsia_engaged:0 "インテリジェントジアエンゲージ"
+ abortion_law_intelligentsia_engaged_desc:0 "法的な学者や改革家は、中絶の権利の公的なケースを積極的に作り上げ、その活動に対する知的および道徳的信頼性を貸しています。"
+
+ abortion_law_intelligentsia_sidelined:0 "インテリジェントジア サイドライン"
+ abortion_law_intelligentsia_sidelined_desc:0 "ヘルスケア問題としての中絶アクセスをフレーム化するための決定は、彼らがリードしたい哲学的な議論のうち、インテリジェントジアを維持してきました。"

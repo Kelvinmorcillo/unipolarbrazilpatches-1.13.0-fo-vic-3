@@ -1,0 +1,89 @@
+﻿l_german:
+  # DELETE:
+    # pm_disabled_gin
+    # pm_disabled_elastics
+    # pm_masticators
+    # pm_rubber_bands
+    # pm_luxury_clothes
+
+  # Agriculture Buildings
+ pm_primary:0 "Primäre"
+ pmg_secondary_building_rye_farm:0 "Sekundär"
+ pmg_secondary_building_wheat_farm:0 "Sekundär"
+ pmg_secondary_building_rice_farm:0 "Sekundär"
+ pmg_secondary_building_maize_farm:0 "Sekundär"
+ pmg_secondary_building_millet_farm:0 "Sekundär"
+ pm_no_secondary:0 "Bewahren Sie einzelne Crop"
+ pm_potatoes:0 "Kartoffeln"
+ pm_vineyards:0 "Weinberge"
+ pm_vineyards_building_maize_farm:0 "Weinberge"
+ pm_apple_orchards:0 "Apfelobst"
+ pm_citrus_orchards:0 "Zitrusfrüchte"
+ pm_fig_orchards:0 "Abb. Obstgärten"
+ pm_fig_orchards_building_rice_farm:0 "Abb. Obstgärten"
+ pm_mulberry_groves:0 "Mulberry Groves"
+
+ pmg_train_automation_building_vineyard_plantation:0 "Verkehr"
+ pmg_base_building_vineyard_plantation:0 "Produktion"
+ default_building_vineyard_plantation:0 "Basisproduktion"
+ automatic_irrigation_building_vineyard_plantation:0 "GVO"
+ 
+ pmg_automation:0 "Automatisierung"
+ pmg_automation_building_food_industry:0 "Automatisierung"
+ pmg_automation_building_textile_mills:0 "Automatisierung"
+ pmg_automation_building_furniture_manufactory:0 "Automatisierung"
+ pmg_automation_building_tooling_workshops:0 "Automatisierung"
+ pmg_automation_building_paper_mills:0 "Automatisierung"
+ pmg_automation_building_steel_mills:0 "Automatisierung"
+ pmg_automation_building_motor_industry:0 "Automatisierung"
+ pm_civilian_priority:0 "Zivile Priorität"
+ pm_military_priority:0 "Militärische Priorität"
+
+  # Textile Mills
+ pm_craftsman_sewing:0 "Luxusproduktion"
+ pm_sewing_machines:0 "Automatisches Vernähen"
+ pm_electric_sewing_machines:0 "3D bedruckte Kleidung"
+ pm_traditional_looms:0 "Mechanisierte Looms"
+ pm_mechanized_looms:0 "Robotic Looms"
+ pm_automatic_power_looms:0 "Tröpfchen"
+
+  # Glassworks
+ pm_leaded_glass:0 "Glas"
+ pm_manual_glassblowing:0 "Extrusion Blow Molding"
+
+  # Chemical Plants
+ pm_leblanc_process:0 "Brine Elektrolyse"
+ pm_no_explosives_production:0 "Priorisierung der chemischen Produktion"
+ pm_ammonia-soda_process:0 "Smart Bombs"
+ pm_vacuum_evaporation:0 "Lasergeführte Bomben"
+ pm_brine_electrolysis:0 "Antimatte Bombe"
+ pmg_fertilizer_production:0 "Chemische Produktion"
+ pm_no_artificial_fertilizers:0 "Keine künstlichen Dünger"
+ pm_artificial_fertilizers:0 "Stickstofffixierung"
+ pm_improved_fertilizer:0 "Haber-Bosch-Prozess"
+ pm_nitrogen_fixation:0 "Synthese von Ammoniak"
+ pm_dyes_production:0 "Dysproduktion"
+ pm_no_synthetic_dyes:0 "Keine synthetischen Farbstoffe"
+ pmg_synthetic_dyes:0 "Synthetische Farbstoffe"
+ pm_silk_production:0 "Seidenproduktion"
+ pm_no_artificial_fibers:0 "Vorrangige Dye Production"
+ pm_rayon:0 "Rayon"
+
+  # Foundries
+ pm_steamworks:0 "Dampfwerke"
+ pm_no_artillery_production:0 "Kleinwaffenproduktion priorisieren"
+ pm_artillery_production:0 "Artillerieproduktion"
+
+  # Motor Industries
+ pmg_automobile_production:0 "Massenproduktion"
+ pm_mass_automobile_production:0 "Motoranlagen"
+ pm_automobile_production:0 "Automobilproduktion"
+
+## SMD
+
+pm_no_chip_production:0 "Chip Montagelinie"
+pm_robotic_assembly:0 "Roboter-Chip-Montage"
+pm_nanobot_assembly:0 "Nanoboter Chip Montage"
+pm_3d_printed_chips:0 "3D gedruckte Chips"
+
+pm_synthetic_rubber:0 "Synthetisches Gummi"

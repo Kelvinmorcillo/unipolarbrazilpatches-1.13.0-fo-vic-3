@@ -1,0 +1,44 @@
+﻿COUNTRIES = {
+	c:HAI = {
+		
+		 
+
+		set_tax_level = medium
+		
+		# Laws
+		activate_law = law_type:law_mass_conscription
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_compulsory_primary_school
+		activate_law = law_type:law_freedom_of_conscience
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_resettlement_enticement
+		activate_law = law_type:law_census_voting
+		activate_law = law_type:law_agrarianism
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_censorship
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_charitable_health_system
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_serfdom_banned
+		activate_law = law_type:law_migration_controls
+		activate_law = law_type:law_militarized_police
+		activate_law = law_type:law_womens_suffrage
+		activate_law = law_type:law_prison_slavery
+		activate_law = law_type:law_graduated_taxation
+		activate_law = law_type:law_protectionism
+		activate_law = law_type:law_unfulfilled_protections
+		activate_law = law_type:law_useless_unions
+		activate_law = law_type:law_political_lobbying
+
+			
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 1
+		}
+
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 4
+		}
+	}
+}

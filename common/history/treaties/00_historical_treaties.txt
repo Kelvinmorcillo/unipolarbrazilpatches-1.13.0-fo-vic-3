@@ -1,0 +1,314 @@
+﻿TREATIES = {
+	# Timor Gap Treaty
+	create_treaty = {
+		name = treaty_name_timor_gap
+		first_country = c:IDS
+		second_country = c:AUZ
+
+		is_draft = no
+		entered_into_force_on = 1991.2.9
+		binding_period = { years = 8 } # Initially to last for 8 years, generally held to have ended in 1840
+
+		articles_to_create = {
+			{ # australian occupation of the south gap
+				article = military_access
+				source_country = c:IDS
+				target_country = c:AUZ
+			}
+			{
+				article = money_transfer
+				source_country = c:IDS
+				target_country = c:AUZ
+				inputs = {
+					{ quantity = 200 } # to model the tax
+				}
+		}
+	 }
+	}
+	create_treaty = {
+		name = treaty_name_timor_gap
+		first_country = c:IDS
+		second_country = c:TML
+
+		is_draft = no
+		entered_into_force_on = 1991.2.9
+		binding_period = { years = 8 } # Initially to last for 8 years, generally held to have ended in 1840
+
+		articles_to_create = {
+			{ # australian occupation of the south gap
+				article = military_access
+				source_country = c:IDS
+				target_country = c:TML
+			}
+			{
+				article = money_transfer
+				source_country = c:IDS
+				target_country = c:TML
+				inputs = {
+					{ quantity = 200 } # to model the tax
+				}
+		}
+	 }
+	}
+	# Elysee treaty
+	create_treaty = {
+		name = treaty_name_elysee_treaty
+		first_country = c:FRA
+		second_country = c:GER
+
+		is_draft = no
+		entered_into_force_on = 1963.1.3
+		binding_period = { years = 30 } #still going strong
+
+		articles_to_create = {
+			{ 
+					article = trade_privilege
+					source_country = c:FRA
+					target_country = c:GER
+			}
+			{
+					article = trade_privilege
+					source_country = c:GER
+					target_country = c:FRA
+				}
+			{
+					article = military_assistance
+					source_country = c:FRA
+					target_country = c:GER
+				}
+				{
+					article = military_assistance
+					source_country = c:GER
+					target_country = c:FRA
+				}
+	 }
+	}
+	# Indus Waters Treaty
+	create_treaty = {
+		name = treaty_name_indus_waters_treaty
+		first_country = c:BHT
+		second_country = c:PAK
+
+		is_draft = no
+		entered_into_force_on = 1960.9.19
+		binding_period = { years = 35 } #still going strong
+
+		articles_to_create = {
+			{
+				article = transit_rights
+				source_country = c:BHT
+				target_country = c:PAK
+			}
+			{
+				article = transit_rights
+				source_country = c:PAK
+				target_country = c:BHT
+			}
+	 }
+	}
+	# US-Israel Alliance
+	create_treaty = {
+		name = treaty_name_us_israel_alliance
+		first_country = c:USA
+		second_country = c:ISR
+
+		is_draft = no
+		entered_into_force_on = 1973.9.19
+		binding_period = { years = 42 }
+
+		articles_to_create = {
+			{ # american-israeli alliance
+					article = defensive_pact
+				}
+				{ # U.S Military Assistance to Israel
+					article = military_assistance
+					source_country = c:USA
+					target_country = c:ISR
+				}
+				{ # US Economic interests in Israel
+					article = foreign_investment_rights
+					source_country = c:USA
+					target_country = c:ISR
+				}
+				{ # U.S Military Assistance to Israel
+					article = military_assistance
+					source_country = c:ISR
+					target_country = c:USA
+				}
+				{ # US Economic interests in Israel
+					article = foreign_investment_rights
+					source_country = c:IRS
+					target_country = c:USA
+				}
+			}
+	 }
+	 
+	 # US-Australia Alliance
+	create_treaty = {
+		name = treaty_name_us_australia_alliance
+		first_country = c:USA
+		second_country = c:AUZ
+
+		is_draft = no
+		entered_into_force_on = 1950.3.19
+		binding_period = { years = 55 }
+
+		articles_to_create = {
+			{
+					article = defensive_pact
+				}
+				{ # U.S Military Assistance to Australia
+					article = military_assistance
+					source_country = c:USA
+					target_country = c:AUZ
+				}
+				{ # US Economic interests in Australia
+					article = foreign_investment_rights
+					source_country = c:USA
+					target_country = c:AUZ
+				}
+				{ # U.S Military Assistance to Australia
+					article = military_assistance
+					source_country = c:USA
+					target_country = c:AUZ
+				}
+				{ # US Economic interests in Australia
+					article = foreign_investment_rights
+					source_country = c:USA
+					target_country = c:AUZ
+				}
+			}
+	 }
+	 
+	  # US-New Zealand Alliance
+	create_treaty = {
+		name = treaty_name_us_new_zealand_alliance
+		first_country = c:USA
+		second_country = c:NZL
+
+		is_draft = no
+		entered_into_force_on = 1950.3.19
+		binding_period = { years = 60 }
+
+		articles_to_create = {
+			{
+					article = defensive_pact
+				}
+			}
+	 }
+	 
+	   # US-Japan Alliance
+	create_treaty = {
+		name = treaty_name_us_japan_alliance
+		first_country = c:USA
+		second_country = c:JPN
+
+		is_draft = no
+		entered_into_force_on = 1945.10.19
+		binding_period = { years = 60 }
+
+		articles_to_create = {
+			{
+					article = defensive_pact
+				}
+			}
+	 }
+	 
+	    # US-South Korea Alliance
+	create_treaty = {
+		name = treaty_name_us_south_korea_alliance
+		first_country = c:USA
+		second_country = c:STK
+
+		is_draft = no
+		entered_into_force_on = 1945.10.19
+		binding_period = { years = 75 }
+
+		articles_to_create = {
+			{
+					article = defensive_pact
+				}
+				{ # U.S Military Assistance to Korea
+					article = military_assistance
+					source_country = c:USA
+					target_country = c:STK
+				}
+				{ # US Economic interests in Korea
+					article = foreign_investment_rights
+					source_country = c:USA
+					target_country = c:STK
+				}
+				{ # U.S Military Assistance to Korea
+					article = military_assistance
+					source_country = c:USA
+					target_country = c:STK
+				}
+				{ # US Economic interests in Korea
+					article = foreign_investment_rights
+					source_country = c:USA
+					target_country = c:STK
+				}
+			}
+	 }
+	   # US-Philippines Alliance
+	create_treaty = {
+		name = treaty_name_us_philippines_alliance
+		first_country = c:USA
+		second_country = c:PHP
+
+		is_draft = no
+		entered_into_force_on = 1945.10.19
+		binding_period = { years = 50 }
+
+		articles_to_create = {
+			{
+					article = defensive_pact
+				}
+			}
+	 }
+	    # US-Taiwan Relations
+	create_treaty = {
+		name = treaty_name_us_taiwan_act
+		first_country = c:USA
+		second_country = c:ROC
+
+		is_draft = no
+		entered_into_force_on = 1979.10.19
+		binding_period = { years = 50 }
+
+		articles_to_create = {
+			{ # United States is legally obligated to defend taiwan, however, theres no telling whether it would.
+				article = guarantee_independence
+				source_country = c:USA
+				target_country = c:ROC
+			}
+			{ # U.S Military Assistance to Taiwan
+					article = military_assistance
+					source_country = c:USA
+					target_country = c:ROC
+				}
+				{ # U.S Military Assistance to Taiwan
+					article = military_assistance
+					source_country = c:USA
+					target_country = c:ROC
+				}
+			}
+	 }
+	 
+	    # China-North Korea Alliance
+	create_treaty = {
+		name = treaty_name_china_north_korea_pact
+		first_country = c:PRC
+		second_country = c:NRK
+
+		is_draft = no
+		entered_into_force_on = 1961.10.19
+		binding_period = { years = 50 }
+
+		articles_to_create = {
+			{
+					article = defensive_pact
+				}
+			}
+	 }
+}

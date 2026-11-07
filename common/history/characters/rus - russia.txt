@@ -1,0 +1,56 @@
+﻿CHARACTERS = {
+	c:RUS ?= {
+	create_character = {
+			template = RUS_pavel_grachev
+		}
+	create_character = {
+			template = RUS_igor_klochkov
+		}
+	create_character = {
+			template = RUS_mikhail_khodorkovsky
+		}
+	create_character = {
+			template = RUS_alexander_rutskoy
+		}
+	create_character = {
+			template = RUS_alexander_solzhenitsyn
+		}
+	create_character = {
+			template = RUS_patriarch_alexy_ii
+		}
+	create_character = {
+			template = RUS_mikhail_gorbachev
+		}
+	create_character = {
+			first_name = "boris"
+			last_name = "yeltsin"
+			historical = yes
+			ruler = yes
+			culture = cu:russian
+			birth_date = 1931.02.03
+			dna = dna_boris_yeltsin
+			ig_leader = yes
+			interest_group = ig_petty_bourgeoisie
+			ideology = ideology_classical_liberal_leader
+			traits = {
+				experienced_political_operator
+				hedonist
+				alcoholic
+			}
+		}
+	create_character = {
+			first_name = "vladimir"
+			last_name = "putin"
+			historical = yes
+			culture = cu:russian
+			birth_date = 1952.10.07
+			dna = dna_putin
+			ig_leader = yes
+			interest_group = ig_professionals
+			ideology = ideology_authoritarian_capitalist_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+}

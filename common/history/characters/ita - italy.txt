@@ -1,0 +1,25 @@
+﻿CHARACTERS = {
+	c:ITA ?= {
+	create_character = {
+			template = ITA_giulio_andreotti
+		}
+	create_character = {
+			template = ITA_umberto_bossi
+		}
+	create_character = {
+			first_name = "francesco"
+			last_name = "cossiga"
+			historical = yes
+			ruler = yes
+			culture = cu:north_italian
+			birth_date = 1928.3.31
+			dna = dna_giulio_andreotti
+			ig_leader = yes
+			interest_group = ig_petty_bourgeoisie
+			ideology = ideology_conservative_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+}

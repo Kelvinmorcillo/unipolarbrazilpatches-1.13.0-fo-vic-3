@@ -1,0 +1,82 @@
+﻿namespace = usa_events
+
+usa_events.1 = {
+    type = country_event
+    placement = ROOT
+    title = usa_events.1.t
+    desc = usa_events.1.d
+    event_image = { video = "parliament" }
+
+    trigger = {
+        c:USA ?= this
+		game_date >= 1999.1.1
+    }
+
+    immediate = {
+       ig:ig_petty_bourgeoisie = {
+			leader = {
+					kill_character = {
+						hidden = yes
+					}
+				}
+		}
+    }
+
+    option = {
+        name = usa_events.1.a
+    }
+}
+
+usa_events.2 = {
+    type = country_event
+    placement = ROOT
+    title = usa_events.2.t
+    desc = usa_events.2.d
+    event_image = { video = "parliament" }
+
+    trigger = {
+		c:USA ?= this
+		game_date >= 2007.6.1
+    }
+
+    immediate = {
+        ig:ig_petty_bourgeoisie = {
+			leader = {
+					kill_character = {
+						hidden = yes
+					}
+				}
+		}
+    }
+
+    option = {
+        name = usa_events.1.a
+    }
+}
+
+usa_events.3 = {
+    type = country_event
+    placement = ROOT
+    title = usa_events.3.t
+    desc = usa_events.3.d
+    event_image = { video = "parliament" }
+
+    trigger = {
+        c:USA ?= this
+		game_date >= 2015.6.1
+    }
+
+    immediate = {
+        ig:ig_professionals = {
+			leader = {
+					kill_character = {
+						hidden = yes
+					}
+				}
+		}
+    }
+
+    option = {
+        name = usa_events.1.a
+    }
+}

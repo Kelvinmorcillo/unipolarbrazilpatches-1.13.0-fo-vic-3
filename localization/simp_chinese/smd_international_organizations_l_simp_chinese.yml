@@ -1,0 +1,1067 @@
+﻿l_simp_chinese:
+ # United Nations
+ je_united_nations: "联 合 国"
+ je_united_nations_reason: "\n\n 联合国是外交、维持和平和人道主义努力的国际机构. \n\n 安全理事会常任理事国: \n- > [GetGlobalVariable('permanent_members_1').GetCountry.GetName]\n- >x id=7/><x x=x=x=x=x=x=x=x=x=x=x9/x9/x10/x10/x><x><x><x><x=x=x=x=x=x=x=x=/12/>x><x><x><x><x><x><x><x><x><x=x=x=x=x=x=x=x=x><x><x><x><x><x><x><x><x><x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x/x=x=x= 联合国是外交、维持和平和人道主义努力的国际机构。 联合国——特别是安全理事会——的决定可直接影响贵国今后的事件。"
+
+ # ── PROPOSE BUTTON ────────────────────────
+ 
+ un_propose_motion_button: "提出一项决议"
+ un_propose_motion_button_desc: "提出由所有会员国投票表决的联合国决议。 如果决议获得通过,所有国家将获得五年的生效。 每年只能提议一次。"
+ un_no_motion_active_tt: "目前没有关于决议的辩论"
+ 
+ # ── VOTE BUTTONS ─────────────────────────
+ 
+ un_vote_yay_button: "以优惠方式投票"
+ un_vote_yay_button_desc: "Cast [ROOT.GetCountry.GetName] 对当前决议投赞成票. 安全理事会常任理事国投了双重票。"
+ 
+ un_vote_nay_button: "反对票"
+ un_vote_nay_button_desc: "Cast [ROOT.GetCountry.GetName] 对当前决议的投票. 安全理事会常任理事国投了双重票。"
+ 
+ # ── MOTION EVENTS ────────────────────────
+ 
+ un_events.100.t: "联合国——提出一项决议"
+ un_events.100.d: "作为联合国会员国, " x id=0 " 可提出一项决议供大会表决。 选择提交辩论的决议。 将通知所有会员国,并可使用联合国日记条目中的按钮进行投票。"
+ un_events.100.a: "关于环境保护的决议"
+ un_events.100.b: "关于世界和平的决议"
+ un_events.100.c: "关于经济发展的决议"
+ un_events.100.e: "关于教科文组织技术的决议"
+ 
+ un_events.101.t: "联合国-正在辩论的决议"
+ un_events.101.d: "联合国大会提出了一项决议。 [ROOT.GetCountry.GetName] 可使用联合国日记条目中的Yay或Nay按钮投出投票。 安全理事会常任理事国投了双重票。 120天后将公布结果。"
+ un_events.101.a: "明白,我们会考虑"
+ 
+ # ── NOTIFICATIONS ─────────────────────────
+ 
+ un_motion_passed: "联合国决议获得通过"
+ un_motion_passed_desc: "联合国通过了一项决议。 [ROOT.GetCountry.GetName] 将在今后五年内收到其效果。"
+ 
+ un_motion_failed: "解析失败"
+ un_motion_failed_desc: "一项联合国决议未能通过。 该建议没有得到足够的支持。"
+ 
+ # ── PROGRESS BAR ─────────────────────────
+ 
+ un_je_no_motion_tt: "目前没有任何决议正在辩论之中。 使用 #bold 提议一个将动议提交大会的决议#!按钮。"
+ 
+ un_je_voting_environment_tt: "#bold 关于环境保护的决议-正在进行中。 #! 成员国正在投票。 用下面的"Yay"或"Nay"按钮来投出你的选票. 投票期限结束时将宣布投票结果。"
+ 
+ un_je_voting_peace_tt: "#bold 关于世界和平的决议-正在进行中。 #! 成员国正在投票。 用下面的"Yay"或"Nay"按钮来投出你的选票. 投票期限结束时将宣布投票结果。"
+ 
+ un_je_voting_economy_tt: "#bold 关于经济发展的决议-正在进行中。 #! 成员国正在投票。 用下面的"Yay"或"Nay"按钮来投出你的选票. 投票期限结束时将宣布投票结果。"
+ 
+ un_je_voting_technology_tt: "#bold 关于联合国教科文组织技术的决议-正在进行中。 #! 成员国正在投票。 用下面的"Yay"或"Nay"按钮来投出你的选票. 投票期限结束时将宣布投票结果。"
+ 
+ un_motion_progress_bar: "决议支持"
+ un_motion_progress_bar_desc: "优先得票份额: #v [JournalEntry.GetCurrentBarProgress(ScriptedProgressBar.Self)|%1]#! 优先得票比例: ([JournalEntry.GetCurrentBarValue(ScriptedProgressBar.Self)|0])"
+ un_motion_progress_bar_second_desc: ""
+ un_motion_progress_from_yes_votes: ""
+ 
+ # ── RESOLUTION MODIFIERS ─────────────────
+ 
+ un_resolution_environment: "联合国决议——环境保护"
+ un_resolution_environment_desc: "联合国通过了一项关于环境保护的决议。 [ROOT.GetCountry.GetName]承诺在今后五年内减少污染并改进环境标准。"
+ 
+ un_resolution_peace: "联合国决议——世界和平"
+ un_resolution_peace_desc: "联合国已经通过了一项关于世界和平的决议。 [ROOT.GetCountry.GetName] 在今后五年中减少丑闻和提高外交地位的好处。"
+ 
+ un_resolution_economy: "联合国决议——经济发展"
+ un_resolution_economy_desc: "联合国已通过一项关于经济发展的决议。 [ROOT.GetCountry.GetName] 获得反映今后五年国际经济合作的建筑和投资奖金。"
+ 
+ un_resolution_technology: "联合国决议——教科文组织技术"
+ un_resolution_technology_desc: "联合国已经通过了一项关于技术和教育的决议。 [ROOT.GetCountry.GetName] 今后五年可享受更好的教育机会和流行资格。"
+ 
+ sb_request_peacekeepers: "请求联合国维持和平人员"
+ sb_request_peacekeepers_desc: "呼吁联合国部署维持和平部队来协助解决冲突。"
+
+ un_events.1.t: "请求联合国维持和平人员"
+ un_events.1.d: "我们可以呼吁联合国派遣维持和平人员来帮助结束我们的冲突。"
+ un_events.1.a: "提交请求。"
+ un_events.1.b: "不涉及联合国。"
+
+ un_events.2.t: "联合国安全理事会"
+ un_events.2.d: "安全理事会必须投票决定派遣维和人员前往[GetGlobalVariable('peacekeeper_requestor').GetCountry.GetName]"
+ un_events.2.a: "耶! 赞!"
+ un_events.2.b: "沉积"
+ un_events.2.c: "反对"
+ un_events.2.e: "Veto [GetGlobalVariable('peacekeeper_requestor').GetCountry.GetName] 的维和请求"
+
+ un_events.3.t: "核定维和人员"
+ un_events.3.d: "联合国安全理事会投票赞成派遣维持和平人员。"
+ un_events.3.a: "进来吧!"
+
+ un_events.4.t: "被拒绝的维和人员"
+ un_events.4.d: "联合国安全理事会投了反对票,拒绝派遣我们维和人员。"
+ un_events.4.a: "We自出."
+
+ un_events.10.t: "安全理事会成员"
+ un_events.10.d: "联合国大会选出了安全理事会新轮换成员:[un_rotating_member.GetName]."
+ un_events.10.a: "已记."
+ 
+ unsc_member: "联合国安理会成员国"
+ permanent_unsc_member: "联合国安理会常任理事国"
+ un_peacekeepers_vetoed: "被拒绝的维和人员"
+ un_peacekeepers_deployed: "联合国维持和平"
+ un_already_voting_on_peacekeeping: "请等待联合国完成对当前维和特派团的投票。"
+ 
+ un_events.5.t: "参加[GetGlobalVariable('peacekeeper_requestor').GetCountry.GetName]的维和任务?"
+ un_events.5.d: "联合国安全理事会投票赞成派遣一个维持和平特派团前往[GetGlobalVariable('peacekeeper_requestor').GetCountry.GetName]。 大会成员聚集一堂,讨论哪些国家愿意为了全球和平而派兵参战。"
+ un_events.5.a: "我们会发送 [SCOPE.sCharacter('peacekeeper_general_1').GetFullName]"
+ un_events.5.b: "不参加"
+ 
+ you_vote_yes: "你赞成"
+ you_abstain: "你放弃了投票"
+ you_vote_no: "你反对"
+ you_veto: "你完成了这个过程。"
+ 
+ # ==========================================
+# LOCALIZATION
+# ==========================================
+ 
+ # ── TREATY ARTICLES ──────────────────────
+ 
+ defense_attache: "派遣国防随员"
+ defense_attache_desc: "向目标国家的武装部队派驻军事顾问和联络官。 目标积累了经验并减少了军事费用;来源增加了影响力和外交地位。 来源国必须保持比目标更大的电能投射."
+ 
+ cultural_exchange: "文化交流"
+ cultural_exchange_desc: "建立正式的文化交流方案——共享展览,学术方案,以及人与人的联系. 这两个国家都获得了声望、影响力,对移民更具吸引力。"
+ 
+ research_partnership: "研究伙伴关系"
+ research_partnership_desc: "正式协议共享研究方案和学术机构. 两国都受益于研究速度的提高和技术传播。 要求双方至少是公认的权力."
+ 
+ human_development_collaboration: "人类发展协作"
+ human_development_collaboration_desc: "较富裕的国家为目标中的发展方案提供资金——保健、教育、福利。 来源支付不断的费用,以换取影响力和声望。 如果来源国的经济低于目标,协议就会破裂。"
+ 
+ research_partnership_rank_tt: "两国必须至少是公认的建立研究伙伴关系的权力"
+ 
+ # ── DIPLOMATIC ACTIONS ───────────────────
+ 
+ financial_sanctions: "金融制裁"
+ financial_sanctions_desc: "切断了[ROOT.GetCountry.GetName]与目标的财务关系——阻碍进入信贷市场,限制证券交易. 目标银行和金融部门将遭受重大损失。"
+ 
+ condemn: "谴责"
+ condemn_desc: "正式公开谴责目标国家的行为。 目标受到声望、合法性和外交声誉的长期打击。 要求目标具有显著的不光彩."
+ condemn_action_notification_name: "[INITIATOR_COUNTRY.GetName] 谴责了我们!"
+ condemn_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName]已谴责 [SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName]!"
+ condemn_action_notification_desc: "我们被"x id=0"谴责了!"
+ condemn_break_name:0 "谴责"
+ condemn_pact_desc:0 "谴责这个国家的行动。"
+ 
+ propose_un_sanctions: "提议联合国制裁"
+ propose_un_sanctions_desc: "作为安全理事会常任理事国,我们可以建议联合国正式制裁目标。 如果投票通过,目标将面临五年的严厉经济处罚."
+ propose_un_sanctions_action_notification_name: "[INITIATOR_COUNTRY.GetName] 提出了联合国对我们的制裁!"
+ propose_un_sanctions_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName]已动议对 [SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName]实施国际制裁!"
+ propose_un_sanctions_action_notification_desc:1 "[INITIATOR_COUNTRY.GetName]已在联合国提出对我们的国际制裁!"
+ 
+ propose_un_condemnation: "提议联合国谴责"
+ propose_un_condemnation_desc: "建议联合国正式谴责该目标。 如果投票通过,目标将遭受持久的威望和合法性损害。 轻于制裁."
+ propose_un_condemnation__action_notification_name:0 "[INITIATOR_COUNTRY.GetName] 提议联合国谴责我们!"
+ propose_un_condemnation_pact_desc:0 "[SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName] 已动议国际谴责 [SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName] !"
+ propose_un_condemnation_action_notification_desc:0 "[INITIATOR_COUNTRY.GetName] 在联合国提出国际上对我们的谴责!"
+ 
+ condemn_requires_infamy_tt: "目标一定有明显的丑闻"
+ propose_un_sanctions_perm_member_tt: "只有安全理事会常任理事国才能提出联合国制裁或谴责"
+ 
+ # ── UN EVENTS ────────────────────────────
+ 
+ un_events.102.t: "联合国-制裁投票"
+ un_events.102.d: "安全理事会一个常任理事国提出了一项针对一个会员国的决议。 [ROOT.GetCountry.GetName] 可使用联合国日记条目中的Yay或Nay按钮投出投票。 120天后将公布结果。"
+ un_events.102.a: "我们会仔细考虑"
+ 
+ # ── NOTIFICATIONS ─────────────────────────
+ 
+ un_sanctions_passed: "联合国制裁"
+ un_sanctions_passed_desc: "联合国投票决定对[ROOT.GetCountry.GetName]实施制裁。 严厉的经济处罚将持续五年。"
+ 
+ un_condemnation_passed: "联合国"
+ un_condemnation_passed_desc: "联合国正式谴责了[ROOT.GetCountry.GetName]. [ROOT.GetCountry.GetName]的国际地位被严重破坏."
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ financial_sanctions_target: "金融制裁"
+ financial_sanctions_target_desc: "外国势力对 " x id=0 " 实行金融制裁,阻止获得国际信贷,限制金融部门。"
+ 
+ condemned_modifier: "国际谴责"
+ condemned_modifier_desc: "一个外国势力正式谴责了"x id=0". 在谴责期间,会减少偏见和合法性。"
+ 
+ un_sanctions_target: "联合国制裁"
+ un_sanctions_target_desc: "联合国投票决定对 " x id=0 " 实施制裁。 国际金融体系实际上已经关闭。 严厉的经济处罚持续五年。"
+ 
+ un_condemnation_target: "联合国谴责"
+ un_condemnation_target_desc: "联合国已正式谴责 " x id=0 " 。 特权、合法性和外交声誉都受到影响。 5年来,谴责一直记录在案。"
+ 
+ un_je_voting_sanctions_tt: "#bold 联合国制裁投票——进行中。 #! 安全理事会一常任理事国已提议对[GetGlobalVariable('un_sanction_target').GetCountry.GetName]实行制裁。 用下面的"Yay"或"Nay"按钮来投出你的选票. 如果动议通过,目标将面临五年的严厉经济处罚."
+ 
+ un_je_voting_condemnation_tt: "#bold 联合国谴责投票——在表决中。 #! 安全理事会一常任理事国已提议正式谴责 " x id=2/ " 。 用下面的"Yay"或"Nay"按钮来投出你的选票. 如果动议通过,目标将遭受对其威望和合法性的长期损害。"
+ 
+ un_je_under_sanctions_tt: "@warning! #bold [ROOT.GetCountry.GetName]目前受到联合国制裁。 #! 国际社会投票决定对[ROOT.GetCountry.GetName]实施经济处罚。 银行业吞吐量,投资量和建筑业被严重削减. 制裁将一直有效,直至到期。"
+ 
+ un_je_under_condemnation_tt: "@warning! #bold [ROOT.GetCountry.GetName]已被联合国正式谴责. #! 国际社会投票谴责了"x id=4"的行为. 特权,合法性,外交声誉被削弱. 谴责将一直记录在案,直至结束。"
+ 
+ condemn_action_propose_name:0 "谴责"
+ condemn_action_break_name:0 "撤销谴责"
+ un_not_sanctioned:0 "尚未受到联合国的制裁。"
+ un_not_condemned:0 "尚未受到联合国谴责。"
+ # Propose Motion
+ un_propose_motion_button: "提出联合国决议"
+ un_propose_motion_button_desc: "Resolutions have been disabled currently." # Propose a motion to the United Nations for a vote. Only one motion may be active at a time.
+
+ # Progress On Motion
+ un_motion_progress_bar: "联合国决议支助"
+ un_motion_progress_bar_desc: "跟踪当前联合国动议的支持级别"
+ un_motion_progress_bar_second_desc: "较高的数值表明支持力度更强。"
+
+ un_motion_progress_from_yes_votes: "赞成"
+
+ un_events.100.t: "提议联合国动议"
+ un_events.100.d: "选择您希望提交安全理事会的决议。"
+
+ un_events.100.a: "关于环境保护的决议提案"
+ un_events.100.b: "关于世界和平的决议提案"
+ un_events.100.c: "关于经济发展的决议提案"
+ un_events.100.e: "关于教科文组织技术的决议提案"
+
+ un_events.101.t: "联合国安全理事会"
+ un_events.101.d: "[GetGlobalVariable('un_current_motion_name')]正由联合国安全理事会表决。 每个成员将投票。 常任理事国可以投反对票否决一项动议。"
+
+ un_events.101.a: "赞成票"
+ un_events.101.b: "票数:"
+
+ un_events.202_veto.t: "联合国决议"
+ un_events.202_veto.d: "“x id=0”动议被“x id=1”否决。"
+
+ un_events.203_pass.t: "联合国决议"
+ un_events.203_pass.d: "“x id=0”动议已经通过安全理事会表决。"
+
+ un_events.204_fail.t: "联合国决议被拒绝"
+ un_events.204_fail.d: "“x id=0”动议未能在安全理事会表决中获得多数票。"
+ 
+ # Resolution Notification
+ 
+ un_passed: "通过的决议"
+ un_passed_desc: "`x id=0'动议通过联合国安全理事会表决"
+ 
+ un_fail: "解析失败"
+ un_fail_desc: "“x id=0”动议未能在安全理事会表决中获得多数票。"
+
+ un_vetoed: "已实现分辨率"
+ un_vetoed_desc: "“x id=0”动议被“x id=1”否决。"
+ 
+ # European Union
+ 
+ je_european_union: "欧洲联盟"
+ je_european_union_reason: "欧洲联盟是现代最雄心勃勃的政治和经济项目之一。 欧盟以经济一体化、共同治理和集体安全等原则为基础,为其成员国提供了共同市场、协调的贸易政策以及决定非洲大陆未来的席位。 成员资格带来了商品、服务、资本和人员自由流动的希望——一个前所未有的繁荣机会。 然而,欧盟并非没有挑战。 各成员必须主持复杂的谈判,遵守超国家规章,并妥协国家主权要素。 更深入地融合,每个成员的命运与集体的命运联系得越多.\n\n 一个国家能否在欧盟内兴起或斗争,取决于它能否在国家利益与共同利益之间取得平衡,在联盟内形成一条旨在超越其各部分之和的道路。"
+
+ eu_events.1.t: "对欧洲联盟的邀请"
+ eu_events.1.d: "欧洲联盟已邀请我国作为正式成员加入。"
+ eu_events.1.a: "我们接受这个提议"
+ eu_events.1.b: "我们必须下降"
+
+ eu_events.2.t: "关于欧盟成员国的辩论"
+ eu_events.2.d: "政治派别要求决定是否留在欧盟。"
+ eu_events.2.a: "离开联盟"
+ eu_events.2.b: "留在联盟内"
+
+ modifier_eu_member_state: "欧盟成员国"
+ eu_membership_accept_tt: "你们将成为欧洲联盟的成员,获得经济和外交利益。"
+ eu_member_state: "欧盟成员国"
+ is_eu_member_state: "欧盟成员国"
+ 
+ eu_call_summit_button: "召开欧盟首脑会议"
+ eu_call_summit_button_desc: "召集成员国讨论贸易、制裁与合作问题。"
+
+ eu_events.3.t: "欧洲联盟首脑会议"
+ eu_events.3.d: "来自欧盟所有成员国的代表聚集一堂,讨论共同目标和挑战。"
+ eu_events.3.a: "加深贸易联系"
+ eu_events.3.b: "协调制裁"
+ eu_events.3.c: "促进文化交流"
+
+ eu_sanctions_ready: "为制裁编写"
+ 
+ leave_eu: "退出欧洲联盟"
+ leave_eu_desc: "退出欧洲联盟,放弃其经济利益和政治一体化。"
+ 
+ eu_member_state_is: "欧盟成员国"
+ eu_member_state_is_no_longer: "不再是欧盟成员国了"
+ eu_deeper_trade_ties: "欧盟更深的贸易纽带"
+ eu_deeper_trade_ties_desc: "欧洲联盟内扩大的经济一体化增加了贸易量并改进了成员国之间的市场准入。"
+
+ eu_cultural_exchange: "欧盟文化交流"
+ eu_cultural_exchange_desc: "加入欧洲联盟促进了文化理解、移徙以及新思想和技术的传播。"
+ je_eu_membership_request: "加入欧盟的申请"
+ je_eu_membership_request_reason: "您的政府提交了加入欧盟的正式申请。\n\n 这一进程涉及漫长的谈判、政策改革以及符合欧盟法律和标准。 在未来几年里,将对贵国的经济稳定、治理、人权和遵守民主原则的情况进行评估。 进入欧盟单一市场\n- 与其他成员国的货物、服务、资本和人员的自由流动\n- 参与欧盟决策机构\n\n 然而,这一进程具有政治敏感性,可能在国内和在欧盟现有成员国遇到抵制。"
+ eu_membership_process: "开始加入欧盟的进程"
+ request_to_join_eu_decision: "加入欧盟的申请"
+ request_to_join_eu_decision_desc: "正式申请加入欧洲联盟。"
+ 
+ eu_events.0.t: "阿森松加入欧洲联盟"
+ eu_events.0.d: "我们已被正式接纳加入欧洲联盟"
+ 
+ # NATO
+ 
+ allow_leave_nato: "让你在未来几个月内离开"
+ left_nato: "离开北约"
+ leave_nato: "离开北约"
+ leave_nato_desc: "恢复我们加入北约,允许军方作为独立力量,不受美国影响."
+
+ # imf
+
+ je_imf_loan: "货币基金组织贷款方案"
+ je_imf_loan_reason: "国际货币基金组织的贷款已延长至[ROOT.GetCountry.GetName]。 作为紧急融资的交换条件,国家接受了一些重大条件:高利率、强制性自由贸易和对承接基金的大国的义务。"
+
+ imf_je_obligations_active_tt: "大国义务仍然有效。 外国债权人保持对关键经济政策决定的影响力。"
+ imf_je_obligations_met_tt: "大国义务已经履行。 该国保留充分的经济主权——尽管贷款条件仍然有效。"
+
+ decision_leave_imf: "离开货币基金组织"
+ decision_leave_imf_desc: "退出国际货币基金组织. 如果该国面临破产,将不再有资格获得货币基金组织的贷款支助,但将不受债权人义务和干涉。 此决定不能被倒转 。 <x id=0/\\\ x id=1> 注:持有IMF现行贷款时不能离开."
+ imf_cannot_leave_while_indebted_tt: "在有贷款时不能离开IMF"
+
+
+ imf_button_pay_obligations_name: "支付债务"
+ imf_button_pay_obligations_desc: "提前还清剩余的大国债务. 耗资500金并需要低于50%的债务,但立即恢复了完全的经济主权并改善了同所有大国的关系."
+ imf_pay_obligations_cost_tt: "要求债务额低于50%和500金"
+ imf_obligations_paid_tt: "债务提前偿还。 大权力关系改善."
+
+ # imf_events.1 — Loan offer
+ imf_events.1.t: "货币基金组织的干预"
+ imf_events.1.d: "[ROOT.GetCountry.GetName] 的金库处于危机之中。 债务已达到使市场紧张和债权人谨慎的水平。 国际货币基金组织已注意到——并已派遣一个代表团提供紧急融资。 条件并不慷慨。 利率将定为惩罚性水平。 不论现行经济政策如何,该国都必须实行自由贸易。 而承接基金的大国会期望某些义务得到履行. 但是,替代办法——在没有安全网的情况下走向彻底破产——可能更糟。"
+ imf_events.1.f: "主权和偿付能力很少同时存在。"
+ imf_events.1.a: "接受贷款——我们需要资金。"
+ imf_events.1.b: "拒绝——我们将管理自己的事务"
+
+ # imf_events.2 — Great power notification
+ imf_events.2.t: "货币基金组织贷款延期"
+ imf_events.2.d: "[SCOPE.sCountry('imf_debtor_scope').GetName]已接受基金组织的一揽子贷款。 作为支持该基金的大国之一, " x id=1/ " 现在承担债务国的义务。 这一安排既涉及战略问题,也涉及经费问题。"
+ imf_events.2.f: "债务是一种外交形式。"
+ imf_events.2.a: "好,这让我们有影响力"
+ imf_events.2.b: "不幸——强加的条件太苛刻了."
+
+ # imf_events.3 — Loan complete
+ imf_events.3.t: "货币基金组织方案完成"
+ imf_events.3.d: "在接受货币基金组织贷款五年后, " x id=0 " 已履行其方案义务。 利息已经支付,条件已经维持,大国债权人也满意。 该国从恢复主权的经验中脱颖而出,人们所希望的是,其财政比其开始时更有秩序。"
+ imf_events.3.f: "分类账是平衡的。 教训更难衡量。"
+ imf_events.3.a: "我们通过它"
+
+ # imf_events.4 — Leaving
+ imf_events.4.t: "退出货币基金组织"
+ imf_events.4.d: "[ROOT.GetCountry.GetName]正在退出国际货币基金组织。 该决定反映了一种信念,即成员资格的代价——危机期间的条件、义务、经济主权的丧失——超过获得紧急融资的好处。 诸大国不乐. 如果[ROOT.GetCountry.GetName]再接近破产,就不会有安全网。"
+ imf_events.4.f: "独立是有代价的。 依赖性也是"
+ imf_events.4.a: "我们孤立无援——我们应该"
+
+ # imf_events.5 — Great power notification of leaving
+ imf_events.5.t: "一个国家离开了货币基金组织"
+ imf_events.5.d: "[SCOPE.sCountry('imf_leaver_scope').GetName]已退出国际货币基金组织。 这一决定是对国际金融秩序的斥责——并表明`x id=1' 无论好坏,都打算规划自己的经济道路。"
+ imf_events.5.f: "少一个债务人。 少一个杠杆。"
+ imf_events.5.a: "已注意到"
+
+ # imf_events.10 — War bonds
+ imf_events.10.t: "战争债券"
+ imf_events.10.d: "随着国库紧张和战争不断,财政部提出了紧急措施:发行战争债券。 将邀请公民和投资者向国家出借资金,以换取未来用利息还款,并立即提供现金注入,以资助战争努力。 债券将起作用——但它们是债务,而债务在战时很快会化为乌有。 随着资金流入军事机器,供应消耗会增加。"
+ imf_events.10.f: "一国借取取取其后来来保卫其现在."
+ imf_events.10.a: "发行债券,我们现在需要钱"
+ imf_events.10.b: "衰落——我们不会抵押我们的未来"
+
+ imf_loan_modifier: "货币基金组织贷款条件"
+ imf_loan_modifier_desc: "货币基金组织贷款到位。 利率高得要命,自由贸易是强制性的。 外国投资流入,但经济主权受到限制,合法性受到损害。"
+
+ imf_great_power_obligations: "大国义务"
+ imf_great_power_obligations_desc: "作为贷款条件,承接货币基金组织的大国从该国承担债务。 它们对经济政策的影响力是真实的。"
+
+ imf_refused_loan_modifier: "货币基金组织贷款被拒绝"
+ imf_refused_loan_modifier_desc: "该国拒绝了货币基金组织的援助,并将单独管理其债务。 信贷条件因此恶化。"
+
+ imf_post_loan_stability: "方案后恢复"
+ imf_post_loan_stability_desc: "货币基金组织的方案已经结束。 在履行其义务后,政府获得了一定程度的信誉——国家财政状况较好."
+
+ imf_left_modifier: "基金组织外"
+ imf_left_modifier_desc: "该国已退出货币基金组织。 它没有债权人义务,但与国际紧急融资隔绝。 投资流量减少。"
+
+ war_bonds_modifier: "发行的战争债券"
+ war_bonds_modifier_desc: "紧急战争债券已经发行,以资助战争努力. 收入增加,但债务增加,供应消费增加。"
+
+ war_bonds_refused_modifier: "战争债券减少"
+ war_bonds_refused_modifier_desc: "政府拒绝发行战争债券. 财政纪律得以维持,但军队感到紧张。"
+
+ un_events.6.t: "我们的部队从联合国特派团返回"
+ un_events.6.d: "[ROOT.GetCountry.GetAdjective]部队已完成在联合国维持和平特派团的服务,正在回国。 这一贡献在军事上是有限的,但在外交上是有意义的—— " x id=1/ " 。 将军归来."
+ un_events.6.a: "欢迎回家"
+ 
+ un_peacekeeping_contribution: "联合国维持和平贡献"
+ un_peacekeeping_contribution_desc: "[ROOT.GetCountry.GetName] 向联合国维持和平特派团派遣部队。 国际社会已注意到这一点。"
+ 
+  # ── EVENT 300: RESOLUTION PASSED ─────────────────────────────────
+ 
+ un_events.300.t: "联合国决议获得通过"
+ un_events.300.d: "大会已商定一项决议,以解决世界性问题并协调关于特定专题的全球合作。"
+ un_events.300.f: "该决议具有国际共识的份量——就价值而言。"
+ un_events.300.a: "已注意到"
+ 
+ UN_RES_DESC_ENVIRONMENT: "#bold 关于环境保护的分辨率 #!\n 成员国承诺协调环境标准和可持续资源管理. \n\n#tooltip_separator!\n@green_checkmark! 所有国家都收到#bold联合国环境溶液#!修改剂,为期12个月。"
+ UN_RES_DESC_PEACE: "#bold 关于世界和平的决议 #!\n 大会重申对和平解决争端和减少国家间冲突的承诺. \n\n#tooltip_separator!\n@green_checkmark! 所有国家都得到#bold联合国和平决议#!修改文本,为期12个月。"
+ UN_RES_DESC_ECONOMY: "#bold 关于经济发展的解决方案 #!\n 成员国支持对发展中经济体的协调投资和降低贸易壁垒. \n\n#tooltip_separator!\n@green_checkmark! 所有国家都收到#bold联合国经济发展决议#!修改文本,为期12个月。"
+ UN_RES_DESC_TECHNOLOGY: "#bold UNESCO Technology resolution #!<x id=2/ 大会为成员国之间的技术共享和合作科学研究建立了框架. \n\n#tooltip_separator!\n@green_checkmark! 所有国家都得到#bold联合国技术分辨率#!修改器,为期12个月。"
+ 
+ # ── EVENT 301: RESOLUTION FAILED ─────────────────────────────────
+ 
+ un_events.301.t: "联合国决议未能通过"
+ un_events.301.d: "提交联合国大会的动议未能获得必要的多数。 决议被否决,届会休会后无结果。\n\n不执行任何措施。 提案国代表团已表示失望。 其他人没有。"
+ un_events.301.f: "联合国尽其所能。"
+ un_events.301.a: "无惊无怪"
+ 
+ # ── EVENT 302: SANCTIONS (TARGET) ────────────────────────────────
+ 
+ un_events.302.t: "[ROOT.GetCountry.GetName] (中文(简体) ). 联合国制裁"
+ un_events.302.d: "联合国安理会通过决议,对"x id=0"实施经济制裁. 决议得到了法定多数的支持并立即生效。\n\n 贸易限制现已生效。 外交孤立加深. 期望会员国遵守制裁制度,但并非强迫。 除非安全理事会开会审查制裁,否则制裁将持续五年。"
+ un_events.302.f: "主权不能使一个国家脱离世界对其的看法。"
+ un_events.302.a: "我们拒绝这个决议"
+ 
+ # ── EVENT 303: CONDEMNATION (TARGET) ─────────────────────────────
+ 
+ un_events.303.t: "[ROOT.GetCountry.GetName] (中文(简体) ). 被联合国谴责"
+ un_events.303.d: "联合国大会通过正式决议,谴责"x id=0". 谴责在辩论结束后以多数票通过。 谴责没有有约束力的执行机制,但它是国际不赞同的正式声明,将影响今后在外交界的地位。"
+ un_events.303.f: "言语不是武器。 但他们留下了痕迹。"
+ un_events.303.a: "我们不会被训导"
+ 
+ # ── EVENT 304: SANCTIONS/CONDEMNATION (OBSERVERS) ────────────────
+ 
+ un_events.304.t: "联合国惩罚性决议通过"
+ un_events.304.d: "联合国安理会通过决议对他国实施制裁. 随着世界协调对它们的经济压力,他们将面临严厉的惩罚。"
+ un_events.304.f: "国际训斥机制慢慢地转了过来,但又转了过来。"
+ un_events.304.a: "已注意到"
+ 
+ UN_304_DESC_SANCTIONS: "联合国安理会投票决定对"x id=0"实施经济制裁. 决议按规定差值通过.\n\n[global_var:un_sanction_target.GetName]将在制裁期间面临贸易限制,外交孤立和重大经济处罚. 会员国应遵守这些限制。"
+ UN_304_DESC_CONDEMNATION: "联合国大会以多数票正式谴责了"x id=0". 决议代表国际不赞成的官方声明. \n\n 虽然谴责没有有约束力的执行,但它将 " x id=3/ " 行为记录在案并影响其国际地位。"
+ 
+ ###### International Organizations — Full Localization
+ ####  IMPORTANT: This file must be saved with UTF-8 BOM encoding
+ ####  Place in: localization/english/
+
+ ### ═══════════════════════════════════════
+ ### PANEL & TABS
+ ### ═══════════════════════════════════════
+ io_panel_title: "国际组织"
+ io_tab_igos_label: "组织"
+ io_tab_treaties_label: "条约"
+ io_tab_ngos_label: "非政府组织"
+
+ ### ═══════════════════════════════════════
+ ### ORGANIZATION TYPES
+ ### ═══════════════════════════════════════
+ io_type_free_trade: "[concept_free_trade_agreement]"
+ io_type_financial: "[concept_financial_agreement]"
+ io_type_military_defense: "[concept_military_defense_agreement]"
+ io_type_cultural_pact: "[concept_cultural_pact]"
+ io_type_cooperative: "[concept_cooperative_agreement]"
+ io_type_unknown: "[concept_international_organization]"
+
+ ### ═══════════════════════════════════════
+ ### ORGANIZATIONS — Names & Descriptions
+ ### ═══════════════════════════════════════
+
+ ### United Nations
+ io_un_name: "联 合 国"
+ io_un_abbreviation: "联合国"
+ io_un_desc: ""x id=0"是"x id=1/"为维护国际和平与安全,发展国家间友好关系,促进社会进步而建立的. 与其他[concept_intergovernmental_organization]s不同的是,联合国不直接向其成员提供修饰剂。 它通过外交决议、维持和平任务和全球倡议发挥影响力。"
+ io_un_tooltip: "[concept_united_nations]是世界各国的[concept_cooperative_agreement]. \n 点击可查看细节 。"
+
+ ### NATO
+ io_nato_name: "北大西洋公约组织"
+ io_nato_abbreviation: "北约"
+ io_nato_desc: "[concept_nato]是一个成立于1949年的"x id=1/",在集体防御中约束北美和欧洲国家. 对一名成员的武装攻击被视为对所有成员的攻击。 北约协调联合军事演习,使装备标准化并维持综合指挥结构。"
+
+ ### G7
+ io_g7_name: "七国集团"
+ io_g7_abbreviation: "7国集团"
+ io_g7_desc: "[concept_g7] 是一个由世界上最大的发达经济体组成的 [concept_financial_agreement]。 成员协调财政政策、货币政策和经济治理。 成员资格具有重大的外交影响和财政信誉。"
+
+ ### OPEC
+ io_opec_name: "石油输出国组织"
+ io_opec_abbreviation: "欧佩克"
+ io_opec_desc: "[concept_opec] 是协调成员国石油政策的主要石油生产国的 [concept_free_trade_agreement]。 欧佩克力求确保石油市场的稳定以及生产国的公平回报。"
+
+ ### EEC
+ io_eec_name: "欧洲经济共同体"
+ io_eec_abbreviation: "欧共体"
+ io_eec_desc: "[concept_eec] 是一种在欧盟成员国之间建立共同市场的 [concept_free_trade_agreement]。 它减少贸易壁垒,协调经济条例,促进货物、服务、资本和劳工在成员国之间的自由流动。"
+ 
+ ### Arab League
+ io_arab_league_name: "阿拉伯联盟"
+ io_arab_league_abbreviation: "阿盟"
+ io_arab_league_desc: "`x id=0'是阿拉伯国家的 " x id=1 " ,促进成员国之间的政治、经济、文化和社会合作。 联盟协调有关共同利益事项的政策并调解阿拉伯国家之间的争端。"
+
+ ### IMF
+ io_imf_name: "国际货币基金组织"
+ io_imf_abbreviation: "货币基金组织"
+ io_imf_desc: "[concept_imf] 是一种促进国际货币合作、汇率稳定和有序汇率安排的 [concept_financial_agreement]。 它向面临国际收支困难的成员国提供财政援助和政策咨询。"
+
+ ### ESA
+ io_esa_name: "欧洲航天局"
+ io_esa_abbreviation: "欧空局"
+ io_esa_desc: "[concept_esa]是专门用于探索和利用外层空间的[concept_cooperative_agreement]。 成员国汇集资源开发运载火箭、卫星和科学飞行任务,没有一个欧洲国家能够单独实现。"
+
+ ### ASEAN
+ io_asean_name: "东南亚国家联盟"
+ io_asean_abbreviation: "东盟"
+ io_asean_desc: "[concept_asean]是东南亚国家促进经济增长、社会进步和文化发展的 " x id=1/ " 。 东盟促进区域稳定,并为亚太区域的多边对话提供框架。"
+
+ ### WHO
+ io_saarc_name: "南亚区域合作联盟"
+ io_saarc_desc: "`x id=0'是南亚国家之间旨在区域合作、发展协调和多边对话的 " x id=1/ " 。"
+
+ io_cis_name: "独立国家联合体"
+ io_cis_desc: "后苏联国家之间的"x id=0"是"x id=1/",专注于区域协商,经济协调,以及务实的政府间合作."
+
+ io_who_name: "世界卫生组织"
+ io_who_abbreviation: "卫生组织"
+ io_who_desc: "[concept_who]是指导和协调国际卫生政策的 [concept_cooperative_agreement]。 它在全球卫生问题上发挥领导作用,制定规范和标准,监测卫生趋势并协调应对国际卫生紧急情况。"
+
+ ### ═══════════════════════════════════════
+ ### TREATIES — Names & Descriptions
+ ### ═══════════════════════════════════════
+
+ io_treaty_geneva_name: "《日内瓦四公约》"
+ io_treaty_geneva_desc: "一系列被称为"日内瓦公约"的条约负责为武装冲突期间的人道主义待遇制定国际法标准. 签署者同意在战时保护受伤的士兵、战俘和平民。"
+
+ io_treaty_cwc_name: "《化学武器公约》"
+ io_treaty_cwc_desc: "《化学武器公约》是一项禁止发展、生产、获取、储存、保留、转让和使用化学武器的 " x id=0 " 公约。 签署国同意在国际核查下销毁现有储存。"
+
+ io_treaty_npt_name: "不扩散条约"
+ io_treaty_npt_desc: "《不扩散核武器条约》是一项 " x id=0 " ,旨在防止核武器扩散,促进裁军并便利在国际保障监督下和平利用核能。"
+
+ io_treaty_bwc_name: "《生物武器公约》"
+ io_treaty_bwc_desc: "《生物武器公约》禁止发展、生产和储存生物和毒素武器。 这是第一个禁止一整类武器的多边裁军条约。"
+
+ io_treaty_cat_name: "禁止酷刑公约"
+ io_treaty_cat_desc: "《禁止酷刑公约》禁止一切形式的酷刑和残忍、不人道或有辱人格的待遇或处罚。 签署国承诺在其管辖范围内采取有效措施防止酷刑。"
+
+ ### ═══════════════════════════════════════
+ ### NGOs — Names & Descriptions
+ ### ═══════════════════════════════════════
+
+ io_iaea_name: "国际原子能机构"
+ io_iaea_abbreviation: "原子能机构"
+ io_iaea_desc: "原子能机构促进和平利用核能并努力防止将核能用于军事目的。 它进行检查,提供技术援助,并为核设施制定国际安全标准。"
+
+ io_redcross_name: "国际红十字会"
+ io_redcross_abbreviation: "红十字委员会"
+ io_redcross_desc: "国际红十字会在武装冲突和自然灾害期间提供人道主义援助。 它监测日内瓦四公约的遵守情况,探访战俘,并便利失散的家庭成员之间的交流。"
+
+ io_amnesty_name: "大赦国际"
+ io_amnesty_abbreviation: "大赦国际"
+ io_amnesty_desc: "大赦国际调查并揭露世界各地侵犯人权的行为。 它开展释放政治犯、废除酷刑和死刑以及保护难民和移民等运动。"
+
+ ### ═══════════════════════════════════════
+ ### BUTTONS
+ ### ═══════════════════════════════════════
+ io_request_join_button: "请求加入"
+ io_leave_button: "休假组织"
+ io_ban_button: "禁止"
+ io_unban_button: "关闭"
+ io_subsidize_button: "补贴"
+ io_back_button: "返回列表"
+ io_treaty_sign_button: "成为签字者"
+ io_treaty_withdraw_button: "撤销"
+
+ ### ═══════════════════════════════════════
+ ### TOOLTIPS & STATUS
+ ### ═══════════════════════════════════════
+ io_ngo_opinion_label: "我们的意见"
+ io_ngo_status_active: "活动"
+ io_ngo_status_banned: "已禁用"
+ io_ngo_status_subsidized: "补贴"
+ io_member_indicator_tt: "贵国是该组织的成员。"
+ io_treaty_signed_tt: "贵国是该条约的签署国。"
+
+ ### ═══════════════════════════════════════
+ ### NOTIFICATIONS
+ ### ═══════════════════════════════════════
+ notification_io_join_request_sent_notification_name: "提交的申请"
+ notification_io_join_request_sent_notification_desc: "我们已经提出加入该组织的请求。"
+ notification_io_join_request_sent_notification_tooltip: "#header $notification_io_join_request_sent_notification_name$#!\n$TOOLTIP_DELIMITER$\n$notification_io_join_request_sent_notification_desc$"
+
+ notification_io_left_org_notification_name: "左侧组织"
+ notification_io_left_org_notification_desc: "我们已退出该组织。 我们同前同事的关系已经恶化。"
+ notification_io_left_org_notification_tooltip: "#header $notification_io_left_org_notification_name$#!\n$TOOLTIP_DELIMITER$\n$notification_io_left_org_notification_desc$"
+
+ notification_io_accepted_notification_name: "申请已接受"
+ notification_io_accepted_notification_desc: "我们加入该组织的请求已得到其成员的批准。"
+ notification_io_accepted_notification_tooltip: "#header $notification_io_accepted_notification_name$#!\n$TOOLTIP_DELIMITER$\n$notification_io_accepted_notification_desc$"
+
+ notification_io_rejected_notification_name: "应用程序被拒绝"
+ notification_io_rejected_notification_desc: "我们加入该组织的请求被其成员拒绝。"
+ notification_io_rejected_notification_tooltip: "#header $notification_io_rejected_notification_name$#!\n$TOOLTIP_DELIMITER$\n$notification_io_rejected_notification_desc$"
+
+ ### ═══════════════════════════════════════
+ ### TAB DESCRIPTIONS
+ ### ═══════════════════════════════════════
+ io_igos_tab_desc: "国际组织是协调成员国之间政策的多边机构。 点击一个组织查看其细节、成员和可用行动。"
+ io_treaties_tab_desc: "国际条约是国家间具有约束力的协定。 贵国可成为获得利益或以外交地位为代价退出的签字国。"
+ io_ngos_tab_desc: "[concept_nongovernmental_organization]s 独立跨境运行. 所有国家都默认附属。 你可选择禁止或补贴他们,影响他们对贵国的看法。"
+
+ ### ═══════════════════════════════════════
+ ### GAME CONCEPTS
+ ### ═══════════════════════════════════════
+
+ concept_international_organization: "国际组织"
+ concept_international_organization_desc: "国际组织是跨国界运作的机构,目的是协调政策、促进贸易、确保集体安全或促进成员国之间的文化交流。 它们有几种形式:[concept_free_trade_agreement]s,[concept_financial_agreement]s,[concept_military_defense_agreement]s,[concept_cultural_pact]s,和[concept_cooperative_agreement]."
+
+ concept_intergovernmental_organization: "政府间组织"
+ concept_intergovernmental_organization_desc: "政府间组织是其成员为主权国家的 " x id=0 " 。 与 " x id=1/ " 不同,政府间组织需要正式成员资格,能够提供重大的外交、经济或军事利益。"
+
+ concept_nongovernmental_organization: "非政府组织"
+ concept_nongovernmental_organization_desc: "非政府组织是独立的机构,在国际上运作,不受任何政府控制。 所有国家默认都附属于非政府组织。 政府可选择禁止、容忍或补贴这些影响非政府组织的意见和它们提供的利益。"
+
+ concept_international_treaty: "国际条约"
+ concept_international_treaty_desc: "国际条约是主权国家之间具有约束力的正式协定。 与 " x id=0 " 不同,条约并不要求持续组织成员资格——一个国家不是签署国就是不是。 签字者享受外交利益,而退出则会损害与其他签字者的关系."
+
+ international_treaty_type:0 "[concept_international_treaty]
+ concept_free_trade_agreement: "自由贸易协定"
+ concept_free_trade_agreement_desc: "自由贸易协定是减少成员国之间贸易壁垒、促进货物交换和经济增长的 " x id=0 " 。"
+
+ concept_financial_agreement: "财务协定"
+ concept_financial_agreement_desc: "金融协定是侧重于成员国之间的货币合作、发展筹资和金融稳定的 " xid=0 " 。 成员获得+5%的影响和+1外交声誉。"
+
+ concept_military_defense_agreement: "军事防卫协定"
+ concept_military_defense_agreement_desc: "军事防卫协定是建立在集体安全原则基础上的 " x id=0 " 。 对一名成员的攻击被视为对所有人的攻击。"
+
+ concept_cultural_pact: "文化公约"
+ concept_cultural_pact_desc: "文化条约是一种促进其成员之间共享遗产、语言和文化交流的 " x id=0 " 。"
+
+ concept_cooperative_agreement: "合作协定"
+ concept_cooperative_agreement_desc: "合作协定是侧重于广泛的多边外交的 " x id=0 " 。 与其他组织类型不同,合作协议并不直接提供修改语. 它们通过决议和倡议发挥影响力。"
+
+ concept_united_nations: "联 合 国"
+ concept_united_nations_desc: "联合国是世界各国的 " xid=0 " ,致力于维护国际和平与安全与合作。"
+
+ concept_nato: "北约"
+ concept_nato_desc: "北大西洋公约组织是一个在集体防御中具有约束力的北美和欧洲国家。"
+
+ concept_g7: "7国集团"
+ concept_g7_desc: "七国集团是世界上最大的发达经济体的 "x id=0",协调财政和货币政策。"
+
+ concept_opec: "欧佩克"
+ concept_opec_desc: "石油输出国组织是一个协调主要石油生产国石油政策的 " x id=0 " 组织。"
+
+ concept_eec: "欧共体"
+ concept_eec_desc: "欧洲经济共同体(European Economy Community)是一个在欧盟成员国之间建立共同市场的"x id=0"."
+
+ concept_arab_league: "阿拉伯联盟"
+ concept_arab_league_desc: "阿拉伯联盟是一个促进阿拉伯国家之间合作的 " x id=0 " 组织。"
+
+ concept_imf: "货币基金组织"
+ concept_imf_desc: "国际货币基金组织是促进国际货币合作和金融稳定的 " x id=0 " 。"
+
+ concept_esa: "欧空局"
+ concept_esa_desc: "欧洲航天局是专门从事空间探索和利用的 " x id=0 " 。"
+
+ concept_asean: "东盟"
+ concept_asean_desc: "东南亚国家联盟是一个促进东南亚经济增长和区域稳定的 " x id=0 " 组织。"
+
+ concept_saarc: "南盟"
+ concept_saarc_desc: "南亚区域合作联盟是一个促进南亚国家间区域合作的 " x id=0 " 组织。"
+
+ concept_cis: "独联体"
+ concept_cis_desc: "独立国家联合体是苏维埃后几个国家之间进行协调的 " x id=0 " 。"
+
+ concept_who: "卫生组织"
+ concept_who_desc: "世界卫生组织是指导和协调国际卫生政策的机构。"
+
+ concept_iaea: "原子能机构"
+ concept_iaea_desc: "国际原子能机构是一个促进和平利用核能并努力防止核扩散的 " x id=0 " 机构。"
+
+ ### ═══════════════════════════════════════
+ ### MODIFIER LOCALIZATION
+ ### ═══════════════════════════════════════
+ io_financial_agreement_member: "财务协定成员"
+ io_financial_agreement_member_desc: "加入国际金融协定可增加外交影响和声誉。"
+
+ io_free_trade_agreement_member: "自由贸易协定成员"
+ io_free_trade_agreement_member_desc: "加入自由贸易协定可减少与其他成员的贸易壁垒。"
+
+ io_military_defense_agreement_member: "军事防御条约"
+ io_military_defense_agreement_member_desc: "加入军事防卫协定可提供集体安全保障。"
+
+ io_cultural_pact_member: "文化公约成员"
+ io_cultural_pact_member_desc: "加入文化公约可促进共享遗产和文化交流。"
+
+ io_ngo_subsidized_bonus: "非政府组织补贴"
+ io_ngo_subsidized_bonus_desc: "政府对一个非政府组织的补贴提高了我们的国际地位。"
+
+ io_ngo_banned_penalty: "非政府组织被取缔"
+ io_ngo_banned_penalty_desc: "取缔一个非政府组织破坏了我们的国际地位。"
+
+ io_treaty_geneva_signatory: "《日内瓦公约》签字国"
+ io_treaty_geneva_signatory_desc: "作为日内瓦四公约的签署国,我们对人道主义法的承诺减少了国际敌对。"
+
+ io_treaty_cwc_signatory: "《化学武器公约》签署国"
+ io_treaty_cwc_signatory_desc: "作为《化学武器公约》的签署国,我们的外交声誉得到提高。"
+
+ io_treaty_npt_signatory: "《不扩散条约》签署国"
+ io_treaty_npt_signatory_desc: "作为《不扩散条约》的签署国,我们对核克制的承诺得到国际承认。"
+
+ io_treaty_bwc_signatory: "《生物武器公约》签署国"
+ io_treaty_bwc_signatory_desc: "作为《生物武器公约》的签署国,我们的外交声誉得到提高。"
+
+ io_treaty_cat_signatory: "CAT 签署国"
+ io_treaty_cat_signatory_desc: "作为《禁止酷刑公约》的签署国,我们对人权的承诺提高了我们的声望。"
+
+ ### ═══════════════════════════════════════
+ ### SIDEBAR BUTTON (Community Framework)
+ ### ═══════════════════════════════════════
+ io_sidebar_button: "io  sidebar 按钮"
+ io_sidebar_button_desc: "组织"
+ io_sidebar_button_tooltip: "查看全球运行的 [concept_international_organization]s。"
+
+ ### Additional headers
+ io_modifiers_header: "修改器"
+ io_signatory_effects_header: "标志效果"
+ io_members_header: "成员名单"
+ 
+ io_eu_power_bloc_name: "欧洲经济共同体"
+ io_eec_join_dissolve_bloc_warning: "加入欧共体将使你脱离你现在的权力集团。"
+ io_dissolve_eu_no_members_tt: "欧共体内没有一个国家。"
+ io_dissolve_eu_effect_tt: "欧洲联盟将被解散,其领土将被吸收。"
+ io_cooldown_tt: "最近加入或离开了这个组织。 一定要等到再行动"
+
+ identity_european_community: "欧洲共同体"
+ identity_european_community_desc: "欧洲共同体是欧洲国家促进自由贸易、共同农业政策以及成员国间监管协调的关税联盟。 成员共享一个具有标准化产品规范的共同市场."
+
+ dissolve_european_union: "解散欧洲联盟"
+ dissolve_european_union_desc: "由于欧洲经济共同体没有剩余成员,欧洲联盟失去了它的宗旨。 我们可以正式解散该机构并吸收其剩余领土。"
+ 
+  ### Financial Agreement (G7, IMF)
+ io_mod_influence_5pct: "@influence! #p +5%#! 影响"
+ io_mod_diplo_rep_1: "@diplomatic_reputation! #p +1 #! 外交信誉"
+ 
+ ### Military Defense Agreement (NATO)
+ io_mod_military_defense_pact: "@alliance_icon! #v 与所有成员的相互防御条约 #!"
+ io_mod_prestige_2pct: "@prestige! #p +2%#! 优先级"
+ 
+ io_mod_generated_pollution_250: "产生的污染:#g-250%#!"
+ io_mod_state_infrastructure_5: "国家基础设施: #r -3%#!"
+ # imf
+ io_mod_imf_aid: "@trade_routes! #v 紧急债务援助"
+ 
+ ### OPEC
+ io_mod_opec_trade_advantage: "@trade_advantage! #p +25%#! 石油贸易优势"
+ io_mod_opec_throughput: "@building_bg_oil_extraction! #p +25%#! 石油开采量"
+ io_mod_opec_customs: "成员中的 @trade_routes! #v 石油卡特尔协调 #!"
+ 
+ ### EEC / Free Trade
+ io_mod_eec_customs: "@market_access! #v 关税联盟 #! 所有成员之间形成"
+ io_mod_free_trade_convoys: "市场价格影响: #g +5%#!"
+ io_mod_free_trade_expedition: ""
+ 
+ ### Cultural Pact (Arab League)
+ io_mod_cultural_tech_spread: "@research! #p +0.10 #! 技术传播"
+ io_mod_cultural_revolution_suppress: "@turmoil! #g -5%#! 革命进展"
+ 
+ ### Treaties
+ io_mod_infamy_minus5: "@infamy! #g -5%#! 造谣"
+ io_mod_infamy_minus3: "@infamy! #g -3%#! 造谣"
+ io_mod_prestige_3pct: "@prestige! #p +3%#! 优先级"
+ io_mod_mobe_options_chem: "禁止使用化学武器"
+ 
+ ### ══════════════════════════════════════════
+ ### MODIFIER DEFINITIONS (localization for modifier tooltips)
+ ### ══════════════════════════════════════════
+ 
+ io_financial_agreement_member: "财务协定成员"
+ io_financial_agreement_member_desc: "加入国际金融协定可增加外交影响和在世界主要经济体中的地位。"
+ 
+ io_free_trade_agreement_member: "自由贸易协定成员"
+ io_free_trade_agreement_member_desc: "这个国家是与其他成员结成关税联盟的一方,减少贸易壁垒并统一经济条例。"
+ 
+ io_opec_member: "欧佩克成员"
+ io_opec_member_desc: "石油输出国组织的成员提供协调一致的定价能力并增强石油生产能力。"
+ 
+ io_military_defense_agreement_member: "军事防卫协定成员"
+ io_military_defense_agreement_member_desc: "我国受到集体安全承诺的约束。 对任何成员的攻击都被视为对所有人的攻击。"
+ 
+ io_cultural_pact_member: "文化公约成员"
+ io_cultural_pact_member_desc: "成员国之间的共同遗产和文化合作加快了新技术的传播并抑制了革命情绪。"
+ 
+ ### ══════════════════════════════════════════
+ ### NATO DEFENSIVE PACT TREATY NAME
+ ### ══════════════════════════════════════════
+ 
+ io_nato_defensive_pact_name: "北约共同防御承诺"
+ 
+ ### ══════════════════════════════════════════
+ ### UPDATED ORG DESCRIPTIONS reflecting mechanics
+ ### ══════════════════════════════════════════
+ 
+ io_nato_desc: "[concept_nato]是一个在集体防御中约束北美和欧洲国家的 [concept_military_defense_agreement]. 对一名成员的武装攻击被视为对所有成员的攻击。 加入北约会自动与每个现有成员国订立共同防御条约."
+ 
+ io_opec_desc: "" x id=0"是一个主要石油出口国的组织,负责协调石油生产政策. 成员国受益于卡特尔定价能力,在石油出口方面获得了重大的贸易优势并增加了来自协调投资的开采吞吐量。"
+ 
+ io_eec_desc: "[concept_eec]是一种在欧盟成员国之间建立关税联盟的 [concept_free_trade_agreement]。 成员国共享一个共同市场,实行标准化的产品监管和协调的贸易政策,减少跨境通商壁垒."
+ 
+ io_arab_league_desc: "`x id=0'是阿拉伯国家促进政治、经济、文化和社会合作的`x id=1'。 共享遗产加速了技术和思想的交流,而成员国的团结有助于抑制内部的革命压力."
+ 
+  ### ══════════════════════════════════════════
+ ### MEMBERSHIP VOTING EVENTS
+ ### ══════════════════════════════════════════
+ 
+ io_events.1.t: "成员"
+ io_events.1.d: "[scope:io_applicant.GetName]已提出加入本组织的正式请求。 作为现任成员,我们被要求就接纳他们的问题进行表决。"
+ io_events.1.a: "二. 核准其成员"
+ io_events.1.b: "驳回其申请"
+ 
+ io_events.2.t: "申请已接受"
+ io_events.2.d: "所有成员都审查了我们加入该组织的申请。 没有人反对,我们已被正式接纳。"
+ io_events.2.a: "不错的消息"
+ 
+ io_events.3.t: "应用程序被拒绝"
+ io_events.3.d: "我们加入该组织的申请被拒绝。 至少有一个成员国投票反对我们的加入。"
+ io_events.3.a: "失望"
+ 
+ ### ══════════════════════════════════════════
+ ### EU FORMATION EVENTS
+ ### ══════════════════════════════════════════
+ 
+ io_events.10.t: "马斯特里赫特条约"
+ io_events.10.d: "欧洲经济共同体成员国已同意通过《欧洲联盟条约》来深化一体化。 欧共体将正式转变为欧洲联盟,这是一个政治和经济联盟,在外交政策、司法和货币事务方面拥有更大的权限。"
+ io_events.10.a: "欧洲的新时代"
+ 
+ io_events.11.t: "欧洲联盟诞生"
+ io_events.11.d: "欧洲经济共同体已正式转变为欧洲联盟。 作为一个成员国,我国现在是超国家治理方面前所未有的试验的一部分。"
+ io_events.11.a: "一个新的章节开始"
+ 
+ ### ══════════════════════════════════════════
+ ### EU ORGANIZATION
+ ### ══════════════════════════════════════════
+ 
+ io_eu_name: "欧洲联盟"
+ io_eu_abbreviation: "欧盟"
+ io_eu_desc: "欧洲联盟是欧洲国家的一个政治和经济联盟,它继承了[concept_eec]。 它建立了一个单一市场,协调外交和安全政策,并通过其在布鲁塞尔的机构促进共同治理。 成员受益于关税同盟和监管协调。"
+ 
+ ### ══════════════════════════════════════════
+ ### NGO HIGH SUPPORT BONUSES
+ ### ══════════════════════════════════════════
+ 
+ io_ngo_iaea_high_support: "原子能机构伙伴关系"
+ io_ngo_iaea_high_support_desc: "我们对国际原子能机构的大力支持使我们获得其技术专长和核安全方案,加速了先进技术的传播。"
+ 
+ io_ngo_redcross_high_support: "红十字会伙伴关系"
+ io_ngo_redcross_high_support_desc: "我们对国际红十字会的慷慨支持已经得到国际承认,提高了我国的威望和人道主义地位."
+ 
+ io_ngo_amnesty_high_support: "大赦国际伙伴关系"
+ io_ngo_amnesty_high_support_desc: "我们对大赦国际的大力支持加强了我们的人权信誉,加强了我们政府所认为的合法性。"
+ 
+ ### ══════════════════════════════════════════
+ ### GUI CHANGES — BUTTON RENAME
+ ### ══════════════════════════════════════════
+ 
+ io_support_button: "支助"
+ io_ngo_status_supported: "支助"
+ 
+ ### ══════════════════════════════════════════
+ ### EEC/EU TRANSITION
+ ### ══════════════════════════════════════════
+ 
+ io_eec_dissolved_notice: "欧洲经济共同体已经解散并被欧洲联盟所取代."
+ 
+ # G7
+ 
+ io_g7_name_4: "四国集团"
+ io_g7_name_5: "五国集团"
+ io_g7_name_6: "六国集团"
+ io_g7_name_7: "七国集团"
+ io_g7_name_8: "八国集团"
+ io_g7_name_9: "九国集团"
+ io_g7_name_10: "十国集团"
+ 
+ io_treaty_paris_name: "巴黎协定"
+ io_treaty_paris_desc: "《巴黎协定》是《联合国气候变化框架公约》的 " x id=0 " 。 签署国承诺为减少温室气体排放并限制全球气温上升作出国家确定的贡献。"
+
+ io_treaty_paris_signatory: "《巴黎协定》签字国"
+ io_treaty_paris_signatory_desc: "作为《巴黎协定》的签署国,我们对国际气候合作的承诺增强了我们的外交声誉和声望。"
+ 
+ ### OPEC
+
+ opec_je_voting_increase_tt: "欧佩克正在就一项增加石油生产配额的提案进行表决。 用下面的按钮来投出你的选票."
+ opec_je_voting_decrease_tt: "欧佩克正在表决一项减少石油生产配额的提案。 用下面的按钮来投出你的选票."
+ opec_je_voting_embargo_tt: "欧佩克正在就实施#bold石油禁运#!的提案进行表决。 用下面的按钮来投出你的选票."
+ opec_je_increased_production_tt: "欧佩克已投票决定#bold增加#!生产配额。 会员国明年将生产更多的石油。"
+ opec_je_decreased_production_tt: "欧佩克已表决通过 #bold 减少 #! 生产配额。 会员国正在限制来年的石油产出。"
+ opec_je_idle_tt: "没有积极的欧佩克投票。 成员可通过其日记条目按钮提出生产变更或石油禁运。"
+
+ ### ══════════════════════════════════════════
+ ### SCRIPTED BUTTONS
+ ### ══════════════════════════════════════════
+
+ opec_propose_increase_button: "增加产量"
+ opec_propose_increase_button_desc: "建议欧佩克成员国增加石油生产配额。 如获通过,所有成员都可获得一年的强化石油开采。"
+ opec_propose_decrease_button: "建议产量减少"
+ opec_propose_decrease_button_desc: "建议欧佩克成员国减少石油生产配额,以限制供应并增加价格。 如果获得通过,所有成员将减少石油开采一年。"
+ opec_vote_yay_button: "优先选举"
+ opec_vote_yay_button_desc: "投票支持欧佩克目前的提案"
+ opec_vote_nay_button: "反对票"
+ opec_vote_nay_button_desc: "投票反对欧佩克目前的提案"
+
+ opec_no_vote_active_tt: "欧佩克目前没有表决权。"
+ opec_not_already_embargoed_tt: "该国目前没有受到欧佩克石油禁运。"
+ opec_cannot_embargo_member_tt: "无法对欧佩克的其他成员实施石油禁运。"
+
+ je_opec:0 "欧佩克"
+ je_opec_reason:0 "石油输出国组织是一个协调主要石油生产国石油政策的 " x id=0 " 组织。"
+ ### ══════════════════════════════════════════
+ ### EVENTS
+ ### ══════════════════════════════════════════
+
+ opec_events.1.t: "欧佩克发起投票"
+ opec_events.1.d: "一个成员国要求在石油输出国组织内进行表决。 请所有成员通过欧佩克期刊条目投票。"
+ opec_events.1.a: "我们会考虑我们的立场"
+
+ opec_events.10.t: "欧佩克投票结束"
+ opec_events.10.d: "欧佩克的投票已经结束,结果正在统计之中。"
+
+ opec_events.11.t: "欧佩克增加产量"
+ opec_events.11.d: "欧佩克成员国投票决定增加石油生产配额. 明年,所有成员国都将受益于较高的采掘吞吐量和石油出口贸易定位的改善。"
+ opec_events.11.a: "水龙头打开了"
+
+ opec_events.12.t: "欧佩克生产量"
+ opec_events.12.d: "欧佩克成员国投票削减石油生产配额. 明年,所有成员国将限制其石油产出,以收紧全球供应和支助价格。"
+ opec_events.12.a: "我们会遵守的"
+
+ opec_events.13.t: "欧佩克石油禁运"
+ opec_events.13.d: "石油输出国组织投票决定实施石油禁运. 欧佩克成员国将集体限制对目标国家的石油出口,严重地破坏其经济。"
+ opec_events.13.a: "这将重新塑造全球贸易"
+
+ ### ══════════════════════════════════════════
+ ### DIPLOMATIC ACTION
+ ### ══════════════════════════════════════════
+
+ propose_opec_embargo: "欧佩克石油禁运提案"
+ propose_opec_embargo_desc: "建议欧佩克对该国实行集体石油禁运,限制石油出口并破坏其能源供应。 要求目标具有显著的不光彩."
+ propose_opec_embargo_action_name: "提议石油禁运"
+ 
+ propose_opec_embargo_propose_name:0 "欧佩克禁运"
+ propose_opec_embargo_pact_desc: "欧佩克对我们实施石油禁运!"
+ propose_opec_embargo_notification_name: "欧佩克投票决定对我们实施禁运!"
+ propose_opec_embargo_notification_desc: "欧佩克目前正在表决是否对我们实施石油禁运。 如果他们投赞成票,它们将大幅度减少与我们交易的石油数量。"
+ 
+ ### ══════════════════════════════════════════
+ ### MODIFIERS
+ ### ══════════════════════════════════════════
+
+ opec_increased_production: "欧佩克产量增加"
+ opec_increased_production_desc: "欧佩克投票决定增加生产配额. 成员国正在开采更多的石油并享有更高的贸易地位。"
+
+ opec_decreased_production: "欧佩克生产量"
+ opec_decreased_production_desc: "欧佩克投票决定削减生产配额. 会员国限制其石油产出以支持全球价格。"
+
+ opec_oil_embargo_target: "欧佩克石油禁运"
+ opec_oil_embargo_target_desc: "该国受到欧佩克石油禁运。 石油进口受到严格限制,破坏了经济和国际地位。"
+
+ ### ══════════════════════════════════════════
+ ### NOTIFICATIONS
+ ### ══════════════════════════════════════════
+
+ notification_opec_embargo_imposed_name: "欧佩克石油禁运"
+ notification_opec_embargo_imposed_desc: "欧佩克对一个国家实行了石油禁运。"
+ notification_opec_embargo_imposed_tooltip: "#header $notification_opec_embargo_imposed_name$#!\n$TOOLTIP_DELIMITER$\n$notification_opec_embargo_imposed_desc$"
+
+ ### ══════════════════════════════════════════
+ ### AMNESTY INTERNATIONAL
+ ### ══════════════════════════════════════════
+
+ ngo_amnesty_opinion_minus_15_tt: "#negative 大赦国际的意见: -15 #!"
+ ngo_amnesty_opinion_minus_10_tt: "#negative 大赦国际的意见: -10 #!"
+ ngo_amnesty_opinion_minus_5_tt: "#negative 大赦国际的意见: -5 #!"
+ ngo_amnesty_opinion_plus_5_tt: "#positive 大赦国际的意见:+5 #!"
+ ngo_amnesty_opinion_plus_10_tt: "#positive 大赦国际的意见:+10 #!"
+
+ ### ══════════════════════════════════════════
+ ### RED CROSS
+ ### ══════════════════════════════════════════
+
+ ngo_redcross_opinion_minus_20_tt: "#negative 红十字会意见: -20 #!"
+ ngo_redcross_opinion_minus_15_tt: "#negative 红十字会的意见: -15 #!"
+ ngo_redcross_opinion_minus_5_tt: "#negative 红十字会的意见: -5 #!"
+ ngo_redcross_opinion_plus_5_tt: "#positive 红十字会意见:+5 #!"
+ ngo_redcross_opinion_plus_10_tt: "#positive 红十字会意见:+10 #!"
+
+ ### ══════════════════════════════════════════
+ ### IAEA
+ ### ══════════════════════════════════════════
+
+ ngo_iaea_opinion_minus_25_tt: "#negative 原子能机构的意见: -25 #!"
+ ngo_iaea_opinion_minus_20_tt: "#negative 原子能机构的意见: -20 #!"
+ ngo_iaea_opinion_plus_10_tt: "#positive 原子能机构的意见:+10 #!"
+ 
+  ### ══════════════════════════════════════════
+ ### AMNESTY INTERNATIONAL
+ ### ══════════════════════════════════════════
+
+ ngo_events.1.t: "大赦国际谴责我们的政策"
+ ngo_events.1.d: "大赦国际发表了关于我国人权记录的可耻报告,指出我国现行法律是对基本自由的蓄意侵犯。 国际社会已经注意到,我国政府面临着解决这些关切的越来越大的压力。"
+ ngo_events.1.a: "他们的批评丝毫没有改变"
+ ngo_events.1.b: "我们将审查他们的关切"
+
+ ngo_events.2.t: "大赦国际赞扬改革"
+ ngo_events.2.d: "大赦国际认为,我们最近的立法改革是朝着人权迈出的重要一步。 他们的年度报告突出了我们的进展,提高了我国的国际声誉。"
+ ngo_events.2.a: "我们为我们的进步而自豪"
+
+ ngo_events.3.t: "关于民事不惩罚的大赦报告"
+ ngo_events.3.d: "大赦国际发表了一份特别报告,其中记录了困扰我国的广泛内乱。 他们呼吁我国政府通过有意义的改革而不是镇压来解决不满的根源。"
+ ngo_events.3.a: "我们将考虑改革"
+ ngo_events.3.b: "我们的内政与他们无关"
+
+ ### ══════════════════════════════════════════
+ ### RED CROSS
+ ### ══════════════════════════════════════════
+
+ ngo_events.10.t: "红十字会提供人道主义援助"
+ ngo_events.10.d: "国际红十字会已提出部署人道主义工作人员,以协助受正在发生的冲突影响的平民。 他们的援助小组准备向我们受战争蹂躏地区的流离失所者提供医疗、住所和食物。"
+ ngo_events.10.a: "我们欢迎他们的协助"
+ ngo_events.10.b: "我们不能允许外国工人进入战区"
+
+ ngo_events.11.t: "红十字会批评战时行为"
+ ngo_events.11.d: "国际红十字会发表公开声明,对我国武装部队的行为深表关切. 关于冲突地区大量平民伤亡和基础设施被破坏的报告已引起国际注意。 他们敦促各方尊重日内瓦四公约。"
+ ngo_events.11.a: "我们会和他们的调查员合作"
+ ngo_events.11.b: "我们否认这些指控"
+
+ ngo_events.12.t: "红十字会提供危机救济组织"
+ ngo_events.12.d: "尽管没有公开战争,但国际红十字会已查明我国境内日益严重的人道主义危机。 广泛的内乱和经济混乱创造了需要国际援助的条件。 它们提出协调对受影响人口的救济工作。"
+ ngo_events.12.a: "我们接受他们的帮助"
+ ngo_events.12.b: "我们能自己搞定的"
+
+ ### ══════════════════════════════════════════
+ ### IAEA
+ ### ══════════════════════════════════════════
+
+ ngo_events.20.t: "原子能机构要求进行核检查"
+ ngo_events.20.d: "国际原子能机构已正式要求进入我们的核设施,以便进行全面的安全和遵守情况检查。 作为《不扩散条约》的非签署国,我国的核计划已受到更严格的国际监督。 原子能机构向我们保证,视察是例行公事,但拒绝视察将向国际社会发出明确信号。"
+ ngo_events.20.a: "我们的设施是开放检查的"
+ ngo_events.20.b: "我们的核计划是主权问题"
+
+ ngo_events.21.t: "原子能机构赞扬核安全记录"
+ ngo_events.21.d: "在审查了我们的核计划后,国际原子能机构正式赞扬了我们对安全标准和遵守不扩散的承诺。 我们遵守《不扩散条约》并与国际视察员合作,加强了我们在全球核界的地位。"
+ ngo_events.21.a: "我们仍然致力于和平核能"
+
+ ngo_events.22.t: "原子能机构提出扩散问题"
+ ngo_events.22.d: "国际原子能机构已对我们的核计划的方向发出警报。 没有《不扩散条约》成员以及我们继续拒绝同视察员合作,原子能机构发表了一项正式声明,对可能的武器发展表示关切。 国际社会正在密切注视。"
+ ngo_events.22.a: "我们愿意进行对话"
+ ngo_events.22.b: "我们主张对核技术的主权"
+
+ ### ══════════════════════════════════════════
+ ### MODIFIERS
+ ### ══════════════════════════════════════════
+
+ ngo_amnesty_scrutiny: "受大赦审查"
+ ngo_amnesty_scrutiny_desc: "在最近受到批评之后,大赦国际正在密切监测我们的人权记录。 政府的合法性受到压力。"
+
+ ngo_amnesty_reform_pressure: "改革压力"
+ ngo_amnesty_reform_pressure_desc: "大赦国际关于内乱的报告为改革带来了国内和国际压力,但有助于抑制革命情绪。"
+
+ ngo_redcross_aid: "红十字会人道主义援助"
+ ngo_redcross_aid_desc: "红十字会工作人员正在向冲突地区的平民提供人道主义援助,降低死亡率并增进我们的国际声誉。"
+
+ ngo_redcross_cooperation: "红十字会合作"
+ ngo_redcross_cooperation_desc: "我们在战时行为方面同红十字会的合作提高了我们的国际地位并减少了由我们军事行动造成的耻辱。"
+
+ ngo_redcross_relief: "红十字会危机救济"
+ ngo_redcross_relief_desc: "在这一国内危机期间,红十字会正在提供人道主义救济,帮助稳定受影响人口。"
+
+ ngo_iaea_inspectors: "原子能机构检查专员"
+ ngo_iaea_inspectors_desc: "原子能机构视察员正在我们的核设施内运作,分享技术专长和安全知识。 它们的存在加快了技术转让,提高了我们的外交声誉。"

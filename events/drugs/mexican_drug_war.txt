@@ -1,0 +1,583 @@
+﻿namespace = mdw_events
+
+# ==========================================
+# mdw_events.1 — War Declared
+# ==========================================
+
+mdw_events.1 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "unspecific_ruler_speaking_to_people" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/mexican_drug_war.dds"
+
+	title = mdw_events.1.t
+	desc = mdw_events.1.d
+	flavor = mdw_events.1.f
+
+	duration = 3
+	trigger = { }
+
+	option = {
+		name = mdw_events.1.a
+		default_option = yes
+		add_modifier = {
+			name = mdw_war_declared_modifier
+			months = -1
+		}
+		add_authority = -100
+	}
+}
+
+# ==========================================
+# mdw_events.2 — Commander Selection
+# ==========================================
+
+mdw_events.2 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "unspecific_military_parade" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/mexican_drug_war.dds"
+
+	title = mdw_events.2.t
+	desc = mdw_events.2.d
+	flavor = mdw_events.2.f
+
+	duration = 3
+
+	trigger = {
+		any_scope_character = {
+			is_busy = no
+			is_ruler = no
+			has_role = general
+		}
+	}
+
+	immediate = {
+		random_scope_character = {
+			limit = { is_busy = no is_ruler = no has_role = general }
+			save_scope_as = mdw_commander_1
+		}
+		random_scope_character = {
+			limit = {
+				is_busy = no is_ruler = no has_role = general
+				NOT = { this = scope:mdw_commander_1 }
+			}
+			save_scope_as = mdw_commander_2
+		}
+		random_scope_character = {
+			limit = {
+				is_busy = no is_ruler = no has_role = general
+				NOR = {
+					this = scope:mdw_commander_1
+					this = scope:mdw_commander_2
+				}
+			}
+			save_scope_as = mdw_commander_3
+		}
+		# Save an affected state for placement
+		random_scope_state = {
+			limit = {
+				owner = c:MEX
+				OR = {
+					has_modifier = cartel_cjng_controlled
+					has_modifier = cartel_gulf_controlled
+					has_modifier = cartel_sinaloa_controlled
+					has_modifier = cartel_northeast_controlled
+				}
+			}
+			save_scope_as = mdw_active_state
+		}
+	}
+
+	option = {
+		name = mdw_events.2.a
+		default_option = yes
+		scope:mdw_commander_1 = {
+			set_variable = mdw_commander_var
+			set_character_busy_and_immortal = yes
+			ROOT = {
+				set_variable = {
+					name = mdw_commander_storage
+					value = prev
+				}
+			}
+		}
+		ai_chance = { base = 50 }
+	}
+
+	option = {
+		name = mdw_events.2.b
+		trigger = { exists = scope:mdw_commander_2 }
+		scope:mdw_commander_2 = {
+			set_variable = mdw_commander_var
+			set_character_busy_and_immortal = yes
+			ROOT = {
+				set_variable = {
+					name = mdw_commander_storage
+					value = prev
+				}
+			}
+		}
+		ai_chance = { base = 30 }
+	}
+
+	option = {
+		name = mdw_events.2.c
+		trigger = { exists = scope:mdw_commander_3 }
+		scope:mdw_commander_3 = {
+			set_variable = mdw_commander_var
+			set_character_busy_and_immortal = yes
+			ROOT = {
+				set_variable = {
+					name = mdw_commander_storage
+					value = prev
+				}
+			}
+		}
+		ai_chance = { base = 20 }
+	}
+}
+
+# ==========================================
+# mdw_events.3 — Combat Patrol
+# ==========================================
+
+mdw_events.3 = {
+	type = country_event
+	placement = scope:mdw_active_state
+
+	event_image = { video = "apc" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/mexican_drug_war.dds"
+
+	title = mdw_events.3.t
+	desc = mdw_events.3.d
+	flavor = mdw_events.3.f
+
+	duration = 3
+
+	trigger = {
+		has_journal_entry = je_mexican_drug_war
+		has_variable = mdw_war_declared
+		any_scope_character = { has_variable = mdw_commander_var }
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		random_scope_character = {
+			limit = { has_variable = mdw_commander_var }
+			save_scope_as = mdw_commander
+		}
+		random_scope_state = {
+			limit = {
+				owner = c:MEX
+				OR = {
+					has_modifier = cartel_cjng_controlled
+					has_modifier = cartel_gulf_controlled
+					has_modifier = cartel_sinaloa_controlled
+					has_modifier = cartel_northeast_controlled
+				}
+			}
+			save_scope_as = mdw_active_state
+		}
+	}
+
+	option = {
+		name = mdw_events.3.a
+		je:je_mexican_drug_war = {
+			add_progress = { name = mdw_suppression_bar value = 10 }
+			add_progress = { name = mdw_peril_bar value = 6 }
+		}
+		ai_chance = { base = 40 }
+	}
+
+	option = {
+		name = mdw_events.3.b
+		default_option = yes
+		je:je_mexican_drug_war = {
+			add_progress = { name = mdw_suppression_bar value = 6 }
+			add_progress = { name = mdw_peril_bar value = 2 }
+		}
+		ai_chance = { base = 60 }
+	}
+}
+
+# ==========================================
+# mdw_events.4 — State Cleared
+# ==========================================
+
+mdw_events.4 = {
+	type = country_event
+	placement = scope:mdw_active_state
+
+	event_image = { video = "flares" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/mexican_drug_war.dds"
+
+	title = mdw_events.4.t
+	desc = mdw_events.4.d
+	flavor = mdw_events.4.f
+
+	duration = 3
+
+	trigger = {
+		has_journal_entry = je_mexican_drug_war
+		has_variable = mdw_war_declared
+		any_scope_character = { has_variable = mdw_commander_var }
+		je:je_mexican_drug_war = {
+			"scripted_bar_progress(mdw_suppression_bar)" >= 25
+		}
+	}
+
+	cooldown = { days = long_modifier_time }
+
+	immediate = {
+		random_scope_character = {
+			limit = { has_variable = mdw_commander_var }
+			save_scope_as = mdw_commander
+		}
+		je:je_mexican_drug_war = {
+			set_bar_progress = {
+			 value = 0
+			 name = mdw_suppression_bar
+			}
+		}
+		je:je_mexican_drug_war = {
+			set_bar_progress = {
+			 value = 0
+			 name = mdw_peril_bar
+			}
+		}
+		# Pick a cartel state to clear
+		random_scope_state = {
+			limit = {
+				owner = c:MEX
+				OR = {
+					has_modifier = cartel_cjng_controlled
+					has_modifier = cartel_gulf_controlled
+					has_modifier = cartel_sinaloa_controlled
+					has_modifier = cartel_northeast_controlled
+				}
+			}
+			save_scope_as = mdw_active_state
+		}
+	}
+
+	option = {
+		name = mdw_events.4.a
+		default_option = yes
+		# Remove whichever cartel modifier the state has
+		scope:mdw_active_state = {
+			remove_modifier = cartel_cjng_controlled
+			remove_modifier = cartel_gulf_controlled
+			remove_modifier = cartel_sinaloa_controlled
+			remove_modifier = cartel_northeast_controlled
+			add_modifier = {
+				name = state_military_occupation
+				months = 36
+			}
+			add_loyalists_in_state = { value = large_radicals }
+		}
+		je:je_mexican_drug_war = {
+			add_progress = { name = mdw_suppression_bar value = 15 }
+			add_progress = { name = mdw_peril_bar value = 3 }
+		}
+	}
+}
+
+# ==========================================
+# mdw_events.5 — Cartel Ambush
+# Dangerous event — high peril.
+# ==========================================
+
+mdw_events.5 = {
+	type = country_event
+	placement = scope:mdw_active_state
+
+	event_image = { video = "gunner" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/mexican_drug_war.dds"
+
+	title = mdw_events.5.t
+	desc = mdw_events.5.d
+	flavor = mdw_events.5.f
+
+	duration = 3
+
+	trigger = {
+		has_journal_entry = je_mexican_drug_war
+		has_variable = mdw_war_declared
+		any_scope_character = { has_variable = mdw_commander_var }
+		je:je_mexican_drug_war = {
+			"scripted_bar_progress(mdw_suppression_bar)" >= 15
+		}
+	}
+
+	cooldown = { days = long_modifier_time }
+
+	immediate = {
+		random_scope_character = {
+			limit = { has_variable = mdw_commander_var }
+			save_scope_as = mdw_commander
+		}
+		random_scope_state = {
+			limit = {
+				owner = c:MEX
+				OR = {
+					has_modifier = cartel_cjng_controlled
+					has_modifier = cartel_gulf_controlled
+					has_modifier = cartel_sinaloa_controlled
+					has_modifier = cartel_northeast_controlled
+				}
+			}
+			save_scope_as = mdw_active_state
+		}
+	}
+
+
+	option = {
+		name = mdw_events.5.a
+		je:je_mexican_drug_war = {
+			add_progress = { name = mdw_suppression_bar value = 8 }
+			add_progress = { name = mdw_peril_bar value = 18 }
+		}
+		add_modifier = {
+			name = mdw_troops_ambushed
+			months = 12
+		}
+		ai_chance = { base = 35 }
+	}
+
+	option = {
+		name = mdw_events.5.b
+		default_option = yes
+		je:je_mexican_drug_war = {
+			add_progress = { name = mdw_suppression_bar value = 1 }
+			add_progress = { name = mdw_peril_bar value = 8 }
+		}
+		ai_chance = { base = 65 }
+	}
+}
+
+# ==========================================
+# mdw_events.6 — Commander Under Fire
+# Fires when peril bar >= 40.
+# Player must choose to pull back or press on.
+# ==========================================
+
+mdw_events.6 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "asia_sepoy_mutiny" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/mexican_drug_war.dds"
+
+	title = mdw_events.6.t
+	desc = mdw_events.6.d
+	flavor = mdw_events.6.f
+
+	duration = 3
+
+	trigger = {
+		has_journal_entry = je_mexican_drug_war
+		has_variable = mdw_war_declared
+		any_scope_character = { has_variable = mdw_commander_var }
+		je:je_mexican_drug_war = {
+			"scripted_bar_progress(mdw_peril_bar)" >= 40
+		}
+		NOT = { has_variable = mdw_commander_under_fire }
+	}
+
+	cooldown = { days = long_modifier_time }
+
+	immediate = {
+		set_variable = mdw_commander_under_fire
+		random_scope_character = {
+			limit = { has_variable = mdw_commander_var }
+			save_scope_as = mdw_commander
+		}
+	}
+
+	# Pull the commander back
+	option = {
+		name = mdw_events.6.a
+		scope:mdw_commander = {
+			set_character_busy_and_immortal = no
+			remove_variable = mdw_commander_var
+		}
+		remove_variable = mdw_commander_storage
+		remove_variable = mdw_commander_under_fire
+		je:je_mexican_drug_war = {
+			add_progress = { name = mdw_peril_bar value = -20 }
+		}
+		ai_chance = { base = 60 }
+	}
+
+	# Press on regardless
+	option = {
+		name = mdw_events.6.b
+		default_option = yes
+		je:je_mexican_drug_war = {
+			add_progress = { name = mdw_peril_bar value = 15 }
+		}
+		ai_chance = { base = 40 }
+	}
+}
+
+# ==========================================
+# mdw_events.10 — Drug War Won
+# Fires on JE completion.
+# ==========================================
+
+mdw_events.10 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "helicopter_attack" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/mexican_drug_war.dds"
+
+	title = mdw_events.10.t
+	desc = mdw_events.10.d
+	flavor = mdw_events.10.f
+
+	duration = 3
+	trigger = { }
+
+	immediate = {
+		random_scope_character = {
+			limit = { has_variable = mdw_commander_var }
+			save_scope_as = mdw_commander
+		}
+	}
+
+	option = {
+		name = mdw_events.10.a
+		default_option = yes
+		scope:mdw_commander ?= {
+			set_character_busy_and_immortal = no
+			remove_variable = mdw_commander_var
+		}
+		remove_variable = mdw_commander_storage
+		remove_variable = mdw_commander_under_fire
+		remove_variable = mdw_war_declared
+		remove_variable = mexican_drug_war_active
+		remove_modifier = mdw_war_declared_modifier
+		add_modifier = {
+			name = mdw_victory_modifier
+			months = 60
+		}
+		add_loyalists = { value = large_radicals strata = lower }
+		add_loyalists = { value = medium_radicals strata = middle }
+	}
+}
+
+# ==========================================
+# mdw_events.11 — Commander Killed
+# Fires on JE failure.
+# ==========================================
+
+mdw_events.11 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "unspecific_military_parade" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/mexican_drug_war.dds"
+
+	title = mdw_events.11.t
+	desc = mdw_events.11.d
+	flavor = mdw_events.11.f
+
+	duration = 3
+	trigger = { }
+
+	immediate = {
+		random_scope_character = {
+			limit = { has_variable = mdw_commander_var }
+			save_scope_as = mdw_commander
+			set_variable = mdw_commander_killed_var
+			place_character_in_void = 24
+		}
+	}
+
+	option = {
+		name = mdw_events.11.a
+		default_option = yes
+		show_as_tooltip = {
+			scope:mdw_commander = {
+				kill_character = yes
+			}
+		}
+		remove_variable = mdw_commander_storage
+		remove_variable = mdw_commander_under_fire
+		# Cartels grow bolder — expand into adjacent states
+		every_scope_state = {
+			limit = {
+				owner = c:MEX
+				is_incorporated = yes
+				NOR = {
+					has_modifier = cartel_cjng_controlled
+					has_modifier = cartel_gulf_controlled
+					has_modifier = cartel_sinaloa_controlled
+					has_modifier = cartel_northeast_controlled
+					has_modifier = state_military_occupation
+				}
+			}
+			# Only expands to 2 states
+			ordered_scope_state = {
+				max = 2
+				add_modifier = {
+					name = cartel_sinaloa_controlled
+					months = 60
+				}
+			}
+		}
+		add_modifier = {
+			name = mdw_commander_killed_modifier
+			months = 36
+		}
+	}
+}
+
+# ==========================================
+# mdw_events.20 — US Military Aid Secured
+# Fires for Mexico when USA completes
+# je_us_mexico_drug_war_support.
+# ==========================================
+
+mdw_events.20 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "whitehouse" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+
+	title = mdw_events.20.t
+	desc = mdw_events.20.d
+	flavor = mdw_events.20.f
+
+	duration = 3
+	trigger = { }
+
+	option = {
+		name = mdw_events.20.a
+		default_option = yes
+		# Free authority and legitimacy boost — US backing shores up the government
+		add_authority = 150
+		add_modifier = {
+			name = mdw_us_aid_modifier
+			months = 60
+		}
+		je:je_mexican_drug_war = {
+			add_progress = { name = mdw_suppression_bar value = 10 }
+		}
+	}
+}

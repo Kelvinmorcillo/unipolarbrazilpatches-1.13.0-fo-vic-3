@@ -1,0 +1,377 @@
+REPLACE_OR_CREATE:ig_intelligentsia = {
+	color = hsv{ 0.65 0.54 0.52 }
+	texture = "gfx/interface/icons/ig_icons/intelligensia.dds"
+	layer = "revolution_dynamic_intelligentsia"
+	index = 3
+	
+	ideologies = {
+		
+		#Economic Ideologies
+		ideology_centre_economy 			#General Economic Beliefs 
+		ideology_regionalist 				#Foreign Economic Policy
+	
+		#Political Ideologies
+		ideology_authoritarian				#General Political Beliefs
+		ideology_conservative				#Specific Political Beliefs
+		ideology_militarist					#Government Types 
+		
+		#Dynamic Ideologies
+		#ideology_neutral_spending
+		#ideology_neutral_population
+		
+	}
+
+	character_ideologies = {
+		ideology_moderate_leader
+		ideology_technocrat_leader
+		ideology_liberal_leader
+		ideology_social_liberal_leader
+		ideology_progressive_leader
+		ideology_neoliberal_leader
+		ideology_state_capitalist_leader
+		ideology_state_socialist_leader
+		ideology_authoritarian_capitalist_leader
+		ideology_democratic_socialist_leader
+	}
+
+	enable = {
+		always = yes
+	}
+	
+	# Deprecated; use on_enable effect to assign traits instead
+	traits = {
+		ig_trait_compliant_civil_service
+		ig_trait_hostile_civil_service
+		ig_trait_propagandists
+	}
+	
+	on_enable = {
+		ig:ig_intelligentsia = {
+			set_ig_trait = ig_trait:ig_trait_compliant_civil_service
+			set_ig_trait = ig_trait:ig_trait_hostile_civil_service
+			set_ig_trait = ig_trait:ig_trait_propagandists
+		}
+	}
+	on_disable = {}	
+	on_character_ig_membership = {}
+	
+	pop_potential = {
+	
+		#Only Accepted Pops can organise into IGs
+		pop_acceptance >= acceptance_status_4
+		
+		#Any pop that works in the government
+		OR = { 
+			is_pop_type = bureaucrats
+			is_pop_type = academics
+			is_pop_type = engineers			#Technologists -- academia is where
+											#the technical professions organise
+			#pop_employment_building_group = bg_government
+		}
+		
+	}
+
+	pop_weight = {
+		value = 1
+		
+		if = {
+			limit = { exists = scope:interest_group exists = leader }
+			multiply = {
+				desc = "LEADER_POPULARITY"
+				scope:interest_group = {
+					leader ?= {
+						value = popularity
+						multiply = 0.0025
+						add = 1
+						max = 1.25
+						min = 0.75
+					}
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				scope:interest_group = {
+					is_in_government = yes
+				}
+			}
+			multiply = {
+				desc = "IN_GOVERNMENT_ATTRACTION"
+				value = 1
+				add = scope:interest_group.modifier:interest_group_in_government_attraction_mult
+				min = 0
+			}
+		}
+		
+		if = {
+			limit = {
+				scope:interest_group = {
+					is_in_government = yes
+				}
+			}
+			multiply = { # Multiplied by 1.25x max
+				desc = "POP_LOYALISTS"
+				value = pop_loyalist_fraction
+				divide = 4
+				add = 1
+			}
+		}
+		if = {
+			limit = {
+				scope:interest_group = {
+					is_in_government = no
+				}
+			}
+			multiply = { # Multiplied by 1.25x max
+				desc = "POP_RADICALS"
+				value = pop_radical_fraction
+				divide = 4
+				add = 1
+			}
+		}
+		
+	}
+
+	monarch_weight = {
+		value = 0
+	}	
+	
+	agitator_weight = {
+		# Agitators more likely to come from populist IG's rather than elitist
+		value = 0.75
+		# Agitators will never be part of a marginalized IG
+		if = {
+			limit = {
+				owner.ig:ig_intelligentsia = {
+					is_marginal = yes
+				}
+			}
+			multiply = {
+				value = 0
+			}
+		}
+	}
+	
+	commander_weight = {
+		value = 0
+	}	
+	
+	executive_weight = {
+		value = 2.0
+	}
+	
+	noble_chance = {
+		value = 0.1
+	}
+	
+	female_commander_chance = {	
+		value = 0.0
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+				}
+
+			}
+			add = {
+				value = 0.05
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_legal_protections
+				}
+
+			}
+			add = {
+				value = 0.15
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_structural_egalitarianism
+				}
+
+			}
+			add = {
+				value = 0.25
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_matriarchy
+				}
+
+			}
+			add = {
+				value = 5.0
+			}
+		}
+	}
+	
+	female_executive_chance = {
+		value = 0.0
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+				}
+
+			}
+			add = {
+				value = 0.15
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_legal_protections
+				}
+
+			}
+			add = {
+				value = 0.25
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_structural_egalitarianism
+				}
+
+			}
+			add = {
+				value = 0.35
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_matriarchy
+				}
+
+			}
+			add = {
+				value = 5.0
+			}
+		}
+	}
+	
+	female_politician_chance = {
+		value = 0.0
+
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+				}
+
+			}
+			add = {
+				value = 0.15
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_legal_protections
+				}
+
+			}
+			add = {
+				value = 0.25
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_structural_egalitarianism
+				}
+
+			}
+			add = {
+				value = 0.35
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_matriarchy
+				}
+
+			}
+			add = {
+				value = 5.0
+			}
+		}
+		
+	}
+	
+	female_agitator_chance = {
+		value = 0.01
+
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+				}
+
+			}
+			add = {
+				value = 0.15
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_legal_protections
+				}
+
+			}
+			add = {
+				value = 0.25
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_structural_egalitarianism
+				}
+
+			}
+			add = {
+				value = 0.35
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_matriarchy
+				}
+
+			}
+			add = {
+				value = 5.0
+			}
+		}
+		
+	}
+	
+	# The chance that a commander belonging to this IG takes over leadership when it changes
+	# scope:character is the most popular commander in the IG
+	commander_leader_chance = {
+		value = 0.25
+		multiply = ig_commander_leader_chance_mult
+	}
+	
+	# The chance that a executive belonging to this IG takes over leadership when it changes
+	# scope:character is the most popular executive in the IG
+	executive_leader_chance = {
+		value = 0.5
+	}
+	
+}

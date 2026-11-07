@@ -1,0 +1,46 @@
+﻿CHARACTERS = {
+	c:JPN ?= {
+	create_character = {
+			template = JPN_akihito
+		}
+	create_character = {
+			template = JPN_yasuhiro_nakasone
+		}
+	create_character = {
+			template = JPN_akira_yamagishi
+		}
+	create_character = {
+			template = JPN_akio_morita
+		}
+	create_character = {
+			template = JPN_morihiro_hosokawa
+		}
+	create_character = {
+			template = JPN_kenzaburo_oe
+		}
+	create_character = {
+			template = JPN_daisaku_ikeda
+		}
+	create_character = {
+			template = JPN_ichiro_ozawa
+		}
+	create_character = {
+			template = JPN_keizo_obuchi
+		}
+	create_character = {
+			first_name = "kiichi"
+			last_name = "miyazawa"
+			historical = yes
+			ruler = no
+			culture = cu:japanese
+			birth_date = 1919.3.31
+			dna = dna_kiichi_miyazawa
+			ig_leader = yes
+			interest_group = ig_rural_folk
+			ideology = ideology_liberal_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+﻿l_turkish:
+#
+dp_leadership_china:0 "Çin'e liderlik ediyor"
+
+ je_one_china_prc:0 "Bir Çin Politikası"
+ je_one_china_prc_reason:0 "Bir Çin var. [ROOT.GetCountry.GetName] 1949'dan beri bu pozisyonu korudu - Halk Cumhuriyeti tüm Çin topraklarının tek meşru hükümetidir ve Çin Taipei'nin Formosa eyaletinden yönetime ilişkin iddiası bu tarihi düzeltecektir.\n\n Formosa'nın anakara ile yeniden birleştirilmesi sadece stratejik bir amaç değildir. Bitmemiş iç savaşın çözümü - [ROOT.GetCountry.GetAdjective] ulusal restorasyonun son eylemi. Formosa [ROOT.GetCountry.GetAdjective] kontrolü altında olduğunda, humiliation yüzyılın gerçekten sona ermektedir."
+ 
+ one_china_prc_owns_formosa_tt:0 "#bold Formosa [ROOT.GetCountry.GetAdjective] kontrol altında.#! Bir Çin Politikası yenilmezdi. [ROOT.GetCountry.GetName] tamamen."
+ one_china_prc_formosa_uncontrolled_tt:0 "[SCOPE.sState('STATE_FORMOSA').GetName] [ROOT.GetCountry.GetAdjective] kontrol dışında kalır. [SCOPE.sCountry('c:ROC').GetName] Analand'ı ada kırmızıoubt'tan devralmaya devam ediyor. Çin'in yeniden birleşmesi bitmiyor."
+ 
+ je_one_china_roc:0 "Bir Çin Politikası"
+ je_one_china_roc_reason:0 "Bir Çin var. [ROOT.GetCountry.GetName] 1949'dan beri bu pozisyonu korudu - Çin Cumhuriyeti tüm Çin topraklarının meşru hükümetidir ve Çin Komünist Partisi'nin ana ülkenin işgali bu tarihi düzeltecek geçici bir aberasyondur.\n\n Halk Cumhuriyeti [ROOT.GetCountry.GetAdjective] Anayasa düzeni içinde getirilmelidir. Çin Halk Cumhuriyeti [ROOT.GetCountry.GetName] bir konu haline geldiğinde, entegrasyon görevi başlar - Analand'ın geniş nüfusunu ve bölgeyi [ROOT.GetCountry.GetAdjective] liderliği altında birleşik bir Çin devleti içine alır."
+ 
+ one_china_roc_has_subject_tt:0 "#bold [SCOPE.sCountry('c:CHI').GetName] [SCOPE.sCountry('c:CHI').GetName] #! Analand [ROOT.GetCountry.GetAdjective] anayasal düzen içinde getirildi. Büyük [SCOPE.sCountry('c:CHI').GetAdjective] toprakların entegrasyonu şimdi devam ediyor."
+ one_china_roc_no_subject_tt:0 "[SCOPE.sCountry('c:CHI').GetName] Komünist Parti kuralı altında bağımsız kalır. [ROOT.GetCountry.GetName] sadece [SCOPE.sState('STATE_FORMOSA').GetName] ve dış bölgeleri kontrol eder. Çin'in [ROOT.GetCountry.GetAdjective] liderliği tamamlanmamıştır."
+
+ one_china_reunification_bonus:0 "Çin Yeniden Tanımladı"
+ one_china_reunification_bonus_desc:0 "Formosa'nın anakara ile yeniden birleşmesi, tamamlanmamış sivil savaşı çözdü ve [ROOT.GetCountry.GetAdjective] ulusal bilinçte Yüzyıl boyu yarayı iyileştirdi. Otorite, meşruiyet ve prestij dramatik olarak gelişmiştir. Separatist hareketler bastırılıyor. Devlet bütündür."
+ 
+ one_china_roc_integration_bonus:0 "Analand Entegrasyon"
+ one_china_roc_integration_bonus_desc:0 "[ROOT.GetCountry.GetName], eski Halk Cumhuriyeti'ni anayasa düzeni içinde getirdi. Analand'ın topraklarını ve nüfusunu bütünleştirmenin son görevi başladı. Akrep hızı, [ROOT.GetCountry.GetAdjective] devlet, kıtadaki kurumlarını genişletiyor."

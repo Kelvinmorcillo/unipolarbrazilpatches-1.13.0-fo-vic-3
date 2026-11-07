@@ -1,0 +1,150 @@
+# Great Polarization modifiers
+# Uses your custom ideological movement keys.
+
+great_polarization_baseline = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+
+	political_movement_radicalism_add = 0.40
+	political_movement_activism_growth_mult = 1.0
+	state_radicals_from_political_movements_mult = 0.15
+
+	state_pop_support_movement_liberal_add = 0.35
+	state_pop_support_movement_conservative_add = 0.35
+	state_pop_support_movement_social_democratic_add = 0.35
+	state_pop_support_movement_cultural_minority_add = 0.35
+}
+
+great_polarization_right_wing_president = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+
+	political_movement_radicalism_add = 0.25
+	political_movement_activism_growth_mult = 3.0
+
+	# Liberal / left / minority opposition.
+	state_pop_support_movement_liberal_add = 0.35
+	state_pop_support_movement_social_democratic_add = 0.35
+	state_pop_support_movement_socialist_add = 0.35
+	state_pop_support_movement_communist_add = 0.35
+	state_pop_support_movement_cultural_minority_add = 0.35
+
+	# Weaker counter-mobilization on the right.
+	state_pop_support_movement_conservative_add = 0.1
+	state_pop_support_movement_traditionalist_add = 0.1
+	state_pop_support_movement_fascist_add = 0.1
+}
+
+great_polarization_left_wing_president = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+
+	political_movement_radicalism_add = 0.25
+	political_movement_activism_growth_mult = 3.0
+
+	# Conservative / traditionalist / nationalist backlash.
+	state_pop_support_movement_conservative_add = 0.35
+	state_pop_support_movement_liberal_conservative_add = 0.35
+	state_pop_support_movement_traditionalist_add = 0.35
+	state_pop_support_movement_fascist_add = 0.35
+	state_pop_support_movement_religious_majority_add = 0.35
+	state_pop_support_movement_libertarian_add = 0.35
+
+	# Weaker counter-mobilization on the left/liberal side.
+	state_pop_support_movement_liberal_add = 0.1
+	state_pop_support_movement_social_democratic_add = 0.1
+	state_pop_support_movement_cultural_minority_add = 0.1
+}
+
+great_polarization_event_violence = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+
+	political_movement_radicalism_add = 0.25
+	political_movement_activism_growth_mult = 1.5
+	state_radicals_from_political_movements_mult = 0.25
+
+	state_pop_support_movement_fascist_add = 0.08
+	state_pop_support_movement_traditionalist_add = 0.08
+	state_pop_support_movement_socialist_add = 0.06
+	state_pop_support_movement_communist_add = 0.06
+}
+
+great_polarization_online_radicalization = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+
+	political_movement_activism_growth_mult = 1.0
+
+	state_pop_support_movement_liberal_add = 0.08
+	state_pop_support_movement_social_democratic_add = 0.08
+	state_pop_support_movement_socialist_add = 0.06
+	state_pop_support_movement_conservative_add = 0.08
+	state_pop_support_movement_liberal_conservative_add = 0.06
+	state_pop_support_movement_traditionalist_add = 0.10
+	state_pop_support_movement_fascist_add = 0.08
+	state_pop_support_movement_cultural_majority_add = 0.06
+	state_pop_support_movement_cultural_minority_add = 0.06
+}
+
+great_polarization_minorities_targeted = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+
+	political_movement_radicalism_add = 0.10
+	state_pop_support_movement_cultural_minority_add = 0.25
+	state_pop_support_movement_liberal_add = 0.10
+	state_pop_support_movement_social_democratic_add = 0.10
+	state_pop_support_movement_cultural_majority_add = 0.08
+	state_pop_support_movement_traditionalist_add = 0.06
+	state_pop_support_movement_fascist_add = 0.04
+}
+
+great_polarization_metoo_mobilization = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+
+	political_movement_activism_growth_mult = 0.75
+
+	state_pop_support_movement_liberal_add = 0.16
+	state_pop_support_movement_social_democratic_add = 0.14
+	state_pop_support_movement_socialist_add = 0.06
+	state_pop_support_movement_cultural_minority_add = 0.08
+	state_pop_support_movement_conservative_add = 0.05
+	state_pop_support_movement_liberal_conservative_add = 0.04
+	state_pop_support_movement_traditionalist_add = 0.05
+}
+
+great_polarization_reform_concessions = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+
+	political_movement_radicalism_add = -0.10
+	political_movement_activism_growth_mult = -0.25
+	state_radicals_from_political_movements_mult = -0.10
+
+	state_pop_support_movement_centrist_add = 0.12
+	state_pop_support_movement_fascist_add = -0.04
+	state_pop_support_movement_communist_add = -0.04
+	state_pop_support_movement_traditionalist_add = -0.04
+}
+
+great_polarization_security_crackdown = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+
+	country_authority_add = -100
+	political_movement_radicalism_add = 0.10
+	state_radicals_from_political_movements_mult = 0.15
+
+	state_pop_support_movement_traditionalist_add = 0.06
+	state_pop_support_movement_fascist_add = 0.06
+	state_pop_support_movement_communist_add = 0.06
+	state_pop_support_movement_socialist_add = 0.06
+}
+
+second_american_civil_war_outbreak = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+
+	country_prestige_mult = -0.25
+	state_radicals_from_political_movements_mult = 0.50
+	political_movement_radicalism_add = 0.50
+
+	state_pop_support_movement_communist_add = 0.15
+	state_pop_support_movement_socialist_add = 0.15
+	state_pop_support_movement_traditionalist_add = 0.20
+	state_pop_support_movement_fascist_add = 0.20
+	state_pop_support_movement_cultural_majority_add = 0.10
+	state_pop_support_movement_cultural_minority_add = 0.10
+}

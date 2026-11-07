@@ -1,0 +1,108 @@
+﻿l_russian:
+#################### JE ####################
+# The Internet
+
+economic_union:0 "Экономический союз"
+economic_union_pact_desc:0 "Дипломатический пакт, в котором существует единый рынок и валюта между двумя государствами."
+subject_type_economic_union:0 "Экономический союз"
+subject_type_economic_union:0 "Экономический союз"
+subject_type_economic_union_desc:0 "Дипломатический пакт, в котором существует единый рынок и валюта между двумя государствами."
+concept_economic_union:0 "Экономический союз"
+concept_subject_type_economic_union:0 "Экономический союз"
+subject_type_economic_union_no_icon:0 "Экономический союз"
+concept_economic_union_desc:0 "Дипломатический пакт, в котором существует единый рынок и валюта между двумя государствами."
+
+economic_union2:0 "Экономический союз"
+economic_union2_pact_desc:0 "Дипломатический пакт, в котором существует единый рынок и валюта между двумя государствами."
+
+eu_events.400:0 "Европейский Союз"
+
+support_revolution:0 "Поддержка революции"
+support_revolution_action_propose_name:0 "Поддержка революции"
+support_revolution_action_break_name:0 "Остановить поддержку"
+
+impose_sanctions:0 "Наложить санкции"
+impose_sanctions_desc: "Захват финансовых активов этой страны. В игровом плане это создает обратный банк-ролл, в котором деньги напрямую перечисляются из казны цели на основе разницы в ВВП между двумя странами."
+impose_sanctions_action_propose_name:0 "Финансовые санкции"
+impose_sanctions_action_break_name:0 "Снятие санкций"
+impose_sanctions_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName] ввел против нас санкции!"
+impose_sanctions_notification_name: "[INITIATOR_COUNTRY.GetName] ввел против нас санкции!"
+impose_sanctions_notification_desc: "Мы попали под финансовые санкции!"
+
+humanitarian_aid:0 "Направить гуманитарную помощь"
+humanitarian_aid_desc: "Оказание финансовой помощи папам, проживающим в этой стране. Переводит деньги из нашей казны прямо в карманы пап, живущих в этой стране."
+humanitarian_aid_action_propose_name:0 "Гуманитарная помощь"
+humanitarian_aid_action_break_name:0 "Прекратить гуманитарную помощь"
+humanitarian_aid_pact_desc:0 "Оказание финансовой помощи папам, проживающим в этой стране. Переводит деньги из нашей казны прямо в карманы пап, живущих в этой стране."
+humanitarian_aid_notification_name: "[INITIATOR_COUNTRY.GetName] - гуманитарная помощь!"
+humanitarian_aid_notification_desc: "Мы получаем гуманитарную помощь."
+humanitarian_aid_proposal_accepted_name: "Принята гуманитарная помощь"
+humanitarian_aid_proposal_accepted_desc: "Сейчас мы оказываем гуманитарную помощь."
+
+
+host_military_bases_desc: ""
+host_military_bases_effects_desc: "• Устанавливает военное соглашение между двумя [Concept('concept_country', '$concept_countries$')], где один $concept_country$ допускается к запуску $concept_missile$ с использованием авиабаз другого $concept_country$"
+host_military_bases_article_short_desc: "[TARGET_COUNTRY.GetNameNoFormatting] может запускать ракеты через [SOURCE_COUNTRY.GetNameNoFormatting]"
+
+ smd_create_economic_union:0 "Предложить экономический союз"
+ smd_create_economic_union_action_name:0 "Предложить экономический союз"
+ smd_create_economic_union_action_propose_name:0 "Предложить экономический союз"
+ smd_create_economic_union_desc:0 "Экономический союз, основанный на торговых привилегиях и взаимных транзитных правах."
+ smd_create_economic_union_action_notification_name:0 "Экономический союз предложил"
+ smd_create_economic_union_action_notification_desc:0 "[INITIATOR_COUNTRY.GetName] предложил экономический союз с [TARGET_COUNTRY.GetName]."
+ smd_create_economic_union_action_notification_third_party_name:0 "Экономический союз предложил"
+ smd_create_economic_union_action_notification_third_party_desc:0 "[INITIATOR_COUNTRY.GetName] предложил экономический союз с [TARGET_COUNTRY.GetName]."
+
+ smd_diplomatic_unification:0 "Дипломатическое объединение"
+ smd_diplomatic_unification_action_name:0 "Дипломатическое объединение"
+ smd_diplomatic_unification_action_propose_name:0 "Предложить объединение"
+ smd_diplomatic_unification_desc:0 "Предложить мирное политическое объединение после экономической интеграции и культурного выравнивания."
+ smd_diplomatic_unification_action_notification_name:0 "Предлагаемое дипломатическое объединение"
+ smd_diplomatic_unification_action_notification_desc:0 "[INITIATOR_COUNTRY.GetName] предложил дипломатическое объединение с [TARGET_COUNTRY.GetName]."
+ smd_diplomatic_unification_action_notification_third_party_name:0 "Предлагаемое дипломатическое объединение"
+ smd_diplomatic_unification_action_notification_third_party_desc:0 "[INITIATOR_COUNTRY.GetName] предложил дипломатическое объединение с [TARGET_COUNTRY.GetName]."
+
+ smd_diplomatic_unification_annexation_effect_tt:0 "Принимающая страна будет полностью аннексирована инициатором."
+ smd_create_economic_union_proposal_accepted_name:0 "Экономический союз принял"
+ smd_create_economic_union_proposal_accepted_desc:0 "[TARGET_COUNTRY.GetName] принял предложение [INITIATOR_COUNTRY.GetName] о создании экономического союза."
+ smd_create_economic_union_proposal_declined_name:0 "Экономический союз отвергнут"
+ smd_create_economic_union_proposal_declined_desc:0 "[TARGET_COUNTRY.GetName] отклонил предложение [INITIATOR_COUNTRY.GetName] о создании экономического союза."
+ smd_diplomatic_unification_proposal_accepted_name:0 "Объединение принято"
+ smd_diplomatic_unification_proposal_accepted_desc:0 "[TARGET_COUNTRY.GetName] принял предложение [INITIATOR_COUNTRY.GetName] о дипломатическом объединении и будет приложен."
+ smd_diplomatic_unification_proposal_declined_name:0 "Объединение отвергнуто"
+ smd_diplomatic_unification_proposal_declined_desc:0 "[TARGET_COUNTRY.GetName] отклонил предложение о дипломатическом объединении [INITIATOR_COUNTRY.GetName]."
+ smd_economic_union_base_resistance_tt:0 "Страны имеют базовое нежелание вступать в экономические союзы."
+ smd_unification_base_resistance_tt:0 "Страны имеют сильную базу нежелания принимать аннексию через дипломатическое объединение."
+ 
+ treaty_name_smd_economic_union:0 "Экономический союз"
+ treaty_name_smd_diplomatic_unification:0 "Договор о дипломатическом объединении"
+
+ smd_economic_union_requires_independence_tt:0 "Обе страны должны быть достаточно независимыми."
+ smd_economic_union_requires_peace_tt:0 "Обе страны должны быть в мире друг с другом и не быть приверженными дипломатической игре."
+ smd_economic_union_requires_no_subject_relation_tt:0 "Ни одна страна уже не может быть субъектом или повелителем другой."
+ smd_economic_union_requires_no_isolationism_tt:0 "Ни одна страна не может проводить изоляционистскую экономическую политику."
+ smd_economic_union_requires_no_duplicate_tt:0 "Страны не должны иметь экономического союза."
+
+ smd_unification_requires_independence_tt:0 "Обе страны должны быть достаточно независимыми."
+ smd_unification_requires_peace_tt:0 "Обе страны должны быть в мире друг с другом и не быть приверженными дипломатической игре."
+ smd_unification_requires_no_subject_relation_tt:0 "Ни одна страна уже не может быть субъектом или повелителем другой."
+ smd_unification_requires_economic_union_tt:0 "Страны должны иметь экономический союз."
+ smd_unification_requires_culture_tt:0 "Страны должны иметь сходные основные культуры, разделяя основную культуру, группу наследия и языковую группу, или наследие и языковые черты."
+ smd_unification_requires_good_relations_tt:0 "Отношения должны быть как минимум дружескими."
+ smd_diplomatic_unification_effect_tt:0 "Принимающая страна становится доминантой инициатора."
+ 
+ threaten_nuclear_hostilities:0 "Угроза ядерной войны"
+ threaten_nuclear_hostilities_action_name:0 "Угроза ядерной войны"
+ threaten_nuclear_hostilities_action_propose_name:0 "Угроза ядерной войны"
+ threaten_nuclear_hostilities_desc:0 "Ядерная угроза против другой страны. Ядерное балансирование на грани войны временно повышает нашу дипломатическую репутацию, делая другие страны более склонными принимать от нас договоры."
+ threaten_nuclear_hostilities_action_notification_name:0 "Ядерные войны под угрозой"
+ threaten_nuclear_hostilities_action_notification_desc:0 "[INITIATOR_COUNTRY.GetName] угрожает ядерным военным действиям против [TARGET_COUNTRY.GetName]."
+ threaten_nuclear_hostilities_action_notification_third_party_name:0 "Ядерные войны под угрозой"
+ threaten_nuclear_hostilities_action_notification_third_party_desc:0 "[INITIATOR_COUNTRY.GetName] угрожает ядерным военным действиям против [TARGET_COUNTRY.GetName]."
+
+ threaten_nuclear_hostilities_requires_nuclear_capable_tt:0 "Наша страна должна быть ядерной."
+ threaten_nuclear_hostilities_cooldown_tt:0 "Мы не должны были в последнее время угрожать ядерными боевыми действиями."
+ threaten_nuclear_hostilities_target_valid_tt:0 "Цель должна быть действительной, недецентрализованной страной."
+
+ threatened_nuclear_hostilities_diplomatic_reputation:0 "Угроза ядерной войны"
+ threatened_nuclear_hostilities_diplomatic_reputation_desc:0 "Ядерное балансирование на грани войны временно увеличило дипломатическую репутацию этой страны, делая другие страны более склонными принимать от нее договоры."

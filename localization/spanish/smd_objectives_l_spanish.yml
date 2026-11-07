@@ -1,0 +1,160 @@
+﻿l_spanish:
+# ==========================================
+ # OBJECTIVE
+ # ==========================================
+ 
+ objective_the_west: "Occidente"
+ objective_the_west_desc: "El orden internacional liberal —democracia, libre comercio, seguridad colectiva y derechos humanos— debe ser sostenido y ampliado. Se encuentra en el centro del sistema que lo construyó. La tarea no es simplemente mantener lo que existe, sino asegurar que cuando el siglo termina, los grandes poderes del mundo están dentro del orden o no pueden desafiarlo."
+ 
+ # ==========================================
+ # SUBGOAL NAMES AND DESCRIPTIONS
+ # ==========================================
+ 
+ sg_west_open_trade: "Estado de la reserva"
+ sg_west_open_trade_desc: "El sistema financiero occidental funciona con el crédito id=0/año. Establecer id=1/ título como el exportador dominante del crédito —más de 1.000 unidades— que cemente el sistema financiero id=2/propios como columna vertebral de la economía global."
+ 
+ sg_west_alliances: "Network of Alliances"
+ sg_west_alliances_desc: "El orden occidental es un proyecto de seguridad colectiva. Establecer acuerdos de asistencia militar con por lo menos cuatro países, construyendo la red de alianzas que disuade la agresión y los proyectos."
+ 
+ sg_west_human_rights: "Marco democrático"
+ sg_west_human_rights_desc: "El Occidente se define no sólo por su riqueza sino por sus valores. Promulgar el sufragio universal, la protección de los trabajadores, la abolición de la esclavitud y el discurso protegido, los fundamentos institucionales de una sociedad democrática liberal. La orden id=0/año es construir debe valer la pena defender."
+ 
+ sg_west_education: "Una ciudadanía educada"
+ sg_west_education_desc: "La participación democrática y el dinamismo económico dependen por igual de una población educada. Invertir en el sistema escolar hasta el nivel 5 y alcanzar una tasa de alfabetización de al menos 75%. Una ciudadanía informada es la base más duradera que el orden liberal tiene."
+ 
+ sg_west_gdp: "Economic Leadership"
+ sg_west_gdp_desc: "El orden occidental está infrascrito por peso económico. id=0/año debe tener en cuenta por lo menos el 25% del PIB global, haciendo que el id=1/ la economía demasiado grande y demasiado central para el sistema global para cualquier rival a un desafío creíble."
+ 
+ sg_west_endgame: "El Momento Unipolar"
+ sg_west_endgame_desc: "El desafío final. Ambos id=0/año y <x id=1/ título deben ser llevados dentro del orden o incapaces de amenazarlo. Para cada uno: o democratizan, adoptan el sufragio universal, y firman un pacto defensivo con id=2/año, o su poder cae por debajo del rango de un poder mayor. No hay tercera opción que preserve el orden."
+ 
+ # ==========================================
+ # JOURNAL ENTRY NAMES AND DESCRIPTIONS
+ # ==========================================
+ 
+ je_west_open_trade: "Dominance financiero"
+ je_west_open_trade_reason: "La moneda de reserva del mundo es la moneda de reserva. Otras naciones lo sostienen, establecen el comercio y construyen sus sistemas financieros alrededor de él. La exportación de más de 1.000 unidades de crédito a los mercados internacionales cementa esta posición y da a los id=2/ títulos estructurales sobre el sistema financiero mundial que ninguna fuerza militar puede reproducir."
+ 
+ je_west_alliances: "Seguridad colectiva"
+ je_west_alliances_reason: "OTAN. ANZUS. Las asociaciones de seguridad que definen el bloque occidental no son sólo arreglos militares, sino compromisos políticos. Concertar acuerdos de asistencia militar con al menos cuatro países. Cada asociación extiende id=0 / contacto y reduce el costo de mantenimiento del orden."
+ 
+ je_west_human_rights: "The Institutional Foundation"
+ je_west_human_rights_reason: "Sufragio universal. Protecciones de trabajadores. La abolición de la esclavitud. Discurso protegido. Estas no son adiciones opcionales al modelo occidental — son el modelo. Sin ellos, lo que id=0/año está defendiendo es sólo poder, no principio. Promulgar los cuatro para establecer la fundación institucional que requiere el orden liberal."
+ 
+ je_west_education: "Educación para Todos"
+ je_west_education_reason: "El modelo occidental depende de los ciudadanos que puedan leer, razonar y participar. Invertir en las escuelas hasta el nivel 5 y alcanzar una tasa nacional de alfabetización del 75%. No es suficiente para tener las leyes adecuadas — la población debe ser suficientemente educada para utilizarlas."
+ 
+ je_west_gdp: "5% del PIB mundial"
+ je_west_gdp_reason: "Cuestiones de tamaño. id=0/año debe tener en cuenta por lo menos una cuarta parte de la producción económica mundial. En esa escala, el id=1/ la economía no es simplemente grande — es indispensable. El mundo negocia con id=2/año, prestatarios de idx id=3/ título, y no puede permitirse hacer un enemigo id=4/=4."
+ 
+ je_west_endgame: "Fin de la Historia"
+ je_west_endgame_reason: "La cuestión de la edad: ¿se puede neutralizar a ambos id=0/año y <x id=1/ título como rivales sistémicos al orden occidental? Para cada país, uno de los siguientes debe ser verdadero: Han adoptado una república democrática, sufragio universal, y firmaron un pacto defensivo con id=5/ títulox id=6/ título• Su rango de poder ha caído por debajo de la de una potencia principal: Cuando se cumplen ambas condiciones, el momento unipolar está completo."
+ 
+ # ==========================================
+ # PROGRESS TOOLTIPS
+ # ==========================================
+ 
+ je_west_open_trade_progressing_tt: "Aumentan las exportaciones de crédito: el sistema financiero id=0/año se está expandiendo internacionalmente"
+ je_west_alliances_progressing_tt: "La red de alianzas está tomando forma: se necesitan más socios"
+ je_west_human_rights_progressing_tt: "Existen algunos marcos de derechos: aún no se ha promulgado el conjunto completo"
+ je_west_education_progressing_tt: "El sistema escolar se está desarrollando: la inversión del nivel 5 y el 75% de la alfabetización son los objetivos"
+ je_west_gdp_progressing_tt: "id=0/año representa más del 15% del PIB global; el objetivo es el 25%"
+ je_west_endgame_progressing_tt: "Un rival ha sido debilitado o democratizado, el otro sigue siendo un desafío sistémico"
+ 
+ # ==========================================
+ # OBJECTIVE
+ # ==========================================
+
+ objective_the_east: "Oriente"
+ objective_the_east_desc: "El orden liberal occidental no es el único mundo posible. id=0/año tiene un modelo diferente: uno de dirección estatal, fuerza colectiva y desarrollo soberano. La tarea es demostrar que este modelo puede igualar a Occidente en el poder económico y el alcance global, y construir un mundo en el que se definen los términos del orden internacional."
+
+ # ==========================================
+ # SUBGOAL NAMES AND DESCRIPTIONS
+ # ==========================================
+
+ sg_east_state_industry: "Base Industrial Dirigida"
+ sg_east_state_industry_desc: "El modelo oriental se basa en la capacidad del Estado para dirigir la inversión a la industria pesada. Mantener una economía intervencionista o de mando, crear capacidad de construcción a al menos 10, y desarrollar la minería de hierro al menos nivel 5 con fuerte ocupación. Esta es la base económica en la que todo lo demás depende."
+
+ sg_east_great_power: "Gran estado de poder"
+ sg_east_great_power_desc: "El desafío oriental a la hegemonía occidental sólo puede ser montado por un gran poder genuino. Alcanzar el rango de gran poder - no hay negociación con id=0 / título como igual a una posición de debilidad."
+
+ sg_east_sphere: "El Bloc Oriental"
+ sg_east_sphere_desc: "Construye la red de estados aliados que constituye la esfera de influencia de id=0/año. Establecer acuerdos de asistencia militar con al menos cuatro países. Las alianzas no son caridad, son la infraestructura de proyección de poder."
+
+ sg_east_currency: "Moneda de la Reserva Oriental"
+ sg_east_currency_desc: "El dominio del dólar es la ventaja más duradera de Occidente: permite a los Estados Unidos financiar su hegemonía a expensas de la economía global. Desafíalo. Exportar más de 1.000 unidades de crédito a mercados internacionales y mantener valores precio competitivo para atraer inversores extranjeros. Una moneda de reserva oriental no es sólo económica — es geopolítica."
+
+ sg_east_endgame: "Un mundo multipolar"
+ sg_east_endgame_desc: "El desafío final. Los Estados Unidos, Gran Bretaña y Francia —los tres pilares del orden occidental— deben ser neutralizados cada uno. Para cada uno: o su rango de poder cae por debajo de la de un poder mayor, o firman un pacto defensivo con id=0/año. Cuando se cumplen las tres condiciones, el orden mundial ha cambiado."
+
+ je_east_state_industry: "The Industrial Foundation"
+ je_east_state_industry_reason: "El Estado debe dirigir la inversión en la industria pesada, no dejarlo en los mercados. Mantener una economía intervencionista o de mando, crear capacidad de construcción a al menos 10, y desarrollar una capacidad de extracción de hierro sustancial al 75% de ocupación o mejor. Sin esta base industrial, no puede soportar el peso militar y económico que requiere el desafío oriental."
+
+ je_east_great_power: "Levántate a Gran Poder"
+ je_east_great_power_reason: "Alcanza el rango de gran poder. En la actualidad id=0/año puede estar entre las naciones más fuertes del mundo, pero el gran estado de poder es el reconocimiento formal de que idx id=1/año pertenece a la sala donde se toman decisiones sobre el orden global. Es el requisito para todo lo que sigue."
+
+ je_east_sphere: "Cuatro asociados militares"
+ je_east_sphere_reason: "Concertar acuerdos de asistencia militar con al menos cuatro países. No puede desafiar el sistema de alianzas occidentales solo. La esfera oriental debe ser un colectivo genuino — estados que dependen de id=1/propiedad y en los que idx id=2/ título puede depender a cambio."
+
+ je_east_currency: "Reto Dólar Dominance"
+ je_east_currency_reason: "El estado de la moneda de reserva de id=0 / dólar de propiedad es la ventaja estructural que ha permitido que Occidente golpee por encima de su peso durante décadas. Para emparejarlo requiere exportar más de 1.000 unidades de crédito a los mercados internacionales, y mantener los valores de valores de id=1/ títulos precio dentro del 25% de su valor base para que los inversores extranjeros los encuentren atractivos. Un sistema financiero oriental que otros utilizan voluntariamente no es sólo un logro económico. Es una declaración que el dólar no es la única opción."
+
+ je_east_endgame: "Las Potencias occidentales neutralizadas"
+ je_east_endgame_reason: "El orden mundial cambia cuando sus guardianes ya no pueden protegerlo. Los tres deben ser resueltos: identificados id=0/ títulox id=1/ título• id=2/ título: debajo de rango de potencia mayor, o firmado un pacto defensivo con id=3/ títulox id=4/ título• Identificax id=5/conferencia: bajo rango de potencia mayor, o firmado un pacto defensivo con idux id=11 contacto Cuando las tres condiciones están satisfechas, id=12/año no ha sobrevivido simplemente al orden occidental. Lo ha reemplazado."
+
+ je_east_state_industry_progressing_tt: "Se está desarrollando la base industrial: la capacidad de construcción y la minería de hierro aún no están a la meta"
+ je_east_great_power_progressing_tt: "id=0/año es una potencia importante: el estado de poder está al alcance"
+ je_east_sphere_progressing_tt: "La red de alianzas está creciendo: se necesitan cuatro acuerdos de asistencia militar"
+ je_east_currency_progressing_tt: "Aumentan las exportaciones de crédito: se necesitan 1.000 unidades para establecer el estado de la moneda de reserva"
+ je_east_endgame_progressing_tt: "Al menos un poder occidental ha sido neutralizado: los otros permanecen"
+ 
+ # ==========================================
+ # OBJECTIVE
+ # ==========================================
+
+ objective_rising_powers: "Potencias crecientes"
+ objective_rising_powers_desc: "El mundo no tiene que dividirse entre dos bloques. Se niega a elegir entre Washington y Moscú, entre el dólar y lo que viene después, entre un imperio y otro. El tercer camino es más difícil que cualquiera de las alternativas. Requiere un peso económico genuino, un poder militar creíble y la habilidad diplomática para mantener una coalición de estados que sólo tienen una cosa en común: también se niegan a elegir."
+
+ # ==========================================
+ # SUBGOAL NAMES AND DESCRIPTIONS
+ # ==========================================
+
+ sg_rising_economy: "Economic Foundations"
+ sg_rising_economy_desc: "Construir una economía que represente al menos el 10% del PIB mundial, lo suficientemente sustancial como para anclar un tercer bloque, manteniendo la exposición al comercio a cualquier socio menor al 40%. La soberanía comienza con la independencia económica."
+
+ sg_rising_sovereignty: "Plena independencia"
+ sg_rising_sovereignty_desc: "Un poder ascendente no puede ser un estado cliente. Alcanzar el rango de potencia principal, alcanzar un prestigio de al menos 50, y garantizar id=0/ título no es un tema de ningún poder ni un títere de <x id=1/ título o <x id=2/año. La tercera forma comienza con la libertad de elegirla."
+
+ sg_rising_military: "Credibilidad militar"
+ sg_rising_military_desc: "La tercera forma es sólo creíble si puede defenderse. Alcanzar el rango de gran poder y campo un ejército de al menos 100 unidades. Un estado no alineado que no puede protegerse no permanecerá alineado por mucho tiempo."
+
+ sg_rising_prestige: "Reconocimiento internacional"
+ sg_rising_prestige_desc: "Alcance una clasificación mundial de 5 o mejor país con un prestigio de al menos 150. id=0/año debe ser imposible de ignorar, no sólo un poder regional, sino que los grandes poderes deben tener en cuenta en cada cálculo que hacen."
+
+ sg_rising_endgame: "El Tercer Bloc"
+ sg_rising_endgame_desc: "Dirigir un bloque de poder de ocho o más miembros como un gran poder. Esta es la prueba del concepto, un tercer polo en la política mundial, lo suficientemente grande y creíble que ni Occidente ni Oriente pueden absorber ni desestimarlo. Cuando idx id=0 / título lidera ocho naciones, el mundo es multipolar."
+
+ je_rising_economy: "5% del PIB mundial"
+ je_rising_economy_reason: "Construir la economía de id=0/tio a más del 10% de la producción global y hacerlo sin depender económicamente de ningún poder único. El objetivo es una economía demasiado grande para ser sancionada en sumisión y demasiado diversificada para ser estrangulada por cualquier embargo único. La dependencia comercial de cualquier socio debe permanecer por debajo del 40% de la actividad total del mercado."
+
+ je_rising_sovereignty: "Sovereign and Independent"
+ je_rising_sovereignty_reason: "Alcanzar el rango de poder principal y un prestigio de 50 o mejor, mientras que permanecer totalmente independiente - no un tema de ningún país, no un títere de cualquier poder extranjero. La plena independencia soberana no es el fin del viaje. Es el comienzo."
+
+ je_rising_military: "Una fuerza creíble"
+ je_rising_military_reason: "Alcanzar gran rango de poder y campo un ejército de al menos 100 unidades. id=0/año debe ser capaz de defender sus propias opciones. Un país no alineado que no puede defenderse encontrará su alineación decidida por otros."
+
+ je_rising_prestige: "Top 5 - Innegable"
+ je_rising_prestige_reason: "Alcanzar una clasificación mundial de 5 o mejor país y un prestigio de al menos 150. A este nivel, id=0 / título no es una curiosidad regional — es un poder mundial cuyas posiciones no pueden ser ignoradas, cuya alineación es realmente impugnada, y cuyo respaldo vale la pena tener."
+
+ je_rising_endgame: "Lead the Third Bloc"
+ je_rising_endgame_reason: "Dirigir un bloque de poder de ocho o más miembros como un gran poder. Ocho naciones que optan por organizarse alrededor de id=0/año en lugar de <x id=1/ título o idx id=2/ título no es sólo un logro diplomático, es un hecho estructural de la política internacional. La tercera manera existe. Tiene miembros. Tiene un líder. Las superpotencias tendrán que explicarlo."
+
+ # ==========================================
+ # PROGRESS TOOLTIPS
+ # ==========================================
+
+ je_rising_economy_progressing_tt: "id=0/año representa más del 2% del PIB global - 5% es el objetivo"
+ je_rising_sovereignty_progressing_tt: "id=0/año es reconocido e independiente, se necesita mayor rango de potencia y prestigio 50"
+ je_rising_military_progressing_tt: "La capacidad militar está creciendo: gran rango de poder y el tamaño del ejército 100 son los objetivos"
+ je_rising_prestige_progressing_tt: "id=0/año se acerca a los 5 primeros - prestigio 150 y clasificación global 5 son necesarios"
+ je_rising_endgame_progressing_tt: "El bloque está formando: se necesitan 8 miembros para completar el objetivo"

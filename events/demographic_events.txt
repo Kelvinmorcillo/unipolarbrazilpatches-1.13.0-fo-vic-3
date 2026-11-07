@@ -1,0 +1,36 @@
+namespace = demographic_events
+
+# Initial crisis notification — fires when JE activates
+demographic_events.1 = {
+	type = country_event
+	placement = ROOT
+	title = demographic_events.1.t
+	desc = demographic_events.1.d
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	event_image = { video = "asia_farmers_market" }
+	duration = 3
+
+	option = {
+		name = demographic_events.1.a
+		default_option = yes
+	}
+}
+
+# Crisis resolved — birth rate sustained for 10 years
+demographic_events.2 = {
+	type = country_event
+	placement = ROOT
+	title = demographic_events.2.t
+	desc = demographic_events.2.d
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	event_image = { video = "asia_farmers_market" }
+	duration = 3
+
+	option = {
+		name = demographic_events.2.a
+		default_option = yes
+		add_loyalists = {
+			value = 0.05
+		}
+	}
+}

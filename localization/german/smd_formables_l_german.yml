@@ -1,0 +1,21 @@
+﻿l_german:
+#
+dp_leadership_china:0 "Führen Sie China"
+
+ je_one_china_prc:0 "Die eine China-Politik"
+ je_one_china_prc_reason:0 "Es gibt ein China. [ROOT.GetCountry.GetName] hat diese Position seit 1949 beibehalten — dass die Volksrepublik die einzige legitime Regierung aller chinesischen Gebiete ist, und dass die Behauptung der chinesischen Taipeh, aus dem Zustand der Formosa zu regieren, eine vorübergehende Abweichung ist, die die Geschichte korrigieren wird.\nx id=2/> Die Wiedervereinigung von Formosa mit dem Festland ist nicht nur ein strategisches Ziel. Es handelt sich um die Entschließung des unvollendeten Bürgerkriegs — des letzten Akts von [ROOT.GetCountry.GetAdjective] nationaler Restauration. Wenn Formosa unter [ROOT.GetCountry.GetAdjective] Kontrolle ist, endet das Jahrhundert der Demütigung wirklich."
+ 
+ one_china_prc_owns_formosa_tt:0 "#bold Formosa ist unter [ROOT.GetCountry.GetAdjective] control.#! Die One China Policy wurde vindicated. [ROOT.GetCountry.GetName] ist ganz."
+ one_china_prc_formosa_uncontrolled_tt:0 "[SCOPE.sState('STATE_FORMOSA').GetName] bleibt außerhalb [ROOT.GetCountry.GetAdjective] Kontrolle. [SCOPE.sCountry('c:ROC').GetName] behauptet weiterhin Souveränität gegenüber dem Festland von seiner Insel redoubt. Die Wiedervereinigung Chinas ist unvollendet."
+ 
+ je_one_china_roc:0 "Die eine China-Politik"
+ je_one_china_roc_reason:0 "Es gibt ein China. [ROOT.GetCountry.GetName] hat diese Position seit 1949 beibehalten — dass die Republik China die legitime Regierung aller chinesischen Gebiete ist, und dass die Besatzung der Kommunistischen Partei Chinas im Festland eine vorübergehende Aberration ist, die die Geschichte korrigieren wird.\nx id=2/> Die Volksrepublik muss in der Verfassungsordnung [ROOT.GetCountry.GetAdjective] eingetragen werden. Wenn die Volksrepublik China zu einem Thema von [ROOT.GetCountry.GetName] wird, beginnt die Integrationsaufgabe — die große Bevölkerung und das Gebiet des Festlands in einen einheitlichen chinesischen Staat unter [ROOT.GetCountry.GetAdjective] Führung aufzunehmen."
+ 
+ one_china_roc_has_subject_tt:0 "#bold [SCOPE.sCountry('c:CHI').GetName] ist ein Gegenstand von [ROOT.GetCountry.GetName]x id=3/> Das Festland wurde in der verfassungsrechtlichen Ordnung [ROOT.GetCountry.GetAdjective] gebracht. Die Integration des weiten Gebiets [SCOPE.sCountry('c:CHI').GetAdjective] ist jetzt im Gange."
+ one_china_roc_no_subject_tt:0 "[SCOPE.sCountry('c:CHI').GetName] bleibt unter kommunistischer Parteiherrschaft unabhängig. [ROOT.GetCountry.GetName] kontrolliert nur [SCOPE.sState('STATE_FORMOSA').GetName] und seine übergehenden Gebiete. Die Wiedervereinigung von China unter [ROOT.GetCountry.GetAdjective] Führung ist unvollendet."
+
+ one_china_reunification_bonus:0 "China Wiedervereinigt"
+ one_china_reunification_bonus_desc:0 "Die Wiedervereinigung von Formosa mit dem Festland hat den unvollendeten Bürgerkrieg gelöst und die Jahrhundertlange Wunde in [ROOT.GetCountry.GetAdjective] nationales Bewusstsein geheilt. Autorität, Legitimität und Prestige sind dramatisch verbessert. Separatistische Bewegungen werden unterdrückt. Der Staat ist ganz."
+ 
+ one_china_roc_integration_bonus:0 "Integration im Festland"
+ one_china_roc_integration_bonus_desc:0 "[ROOT.GetCountry.GetName] hat die ehemalige Volksrepublik China in ihrer verfassungsrechtlichen Ordnung gebracht. Die immense Aufgabe, das Gebiet und die Bevölkerung des Festlands zu integrieren, hat begonnen. Die Einarbeitungsgeschwindigkeit wird drastisch beschleunigt, da der [ROOT.GetCountry.GetAdjective]-Zustand seine Institutionen auf dem ganzen Kontinent ausweitet."

@@ -1,0 +1,276 @@
+
+je_ip_peacetime_security_coordination_button = {
+	name = "je_ip_peacetime_security_coordination"
+	desc = "je_ip_peacetime_security_coordination_desc"
+
+	visible = {
+		OR = {
+			c:ISR ?= this
+			c:PAL ?= this
+		}
+	}
+
+	possible = {
+		hidden_trigger = {
+			NOT = { has_variable = ip_security_coordination_cooldown }
+		}
+	}
+
+	selected = {
+		has_modifier = ip_security_coordination
+	}
+
+	effect = {
+		set_variable = { name = ip_security_coordination_cooldown months = 12 }
+		add_modifier = { name = ip_security_coordination months = 18 }
+
+		change_global_variable = { name = ip_peacetime_security_coordination add = 12 }
+		ip_temperature_subtract_8 = yes
+
+		# Security coordination also creates domestic backlash.
+		if = {
+			limit = { c:PAL ?= this }
+			add_modifier = { name = ip_political_backlash months = 12 }
+		}
+		else_if = {
+			limit = { c:ISR ?= this }
+			change_global_variable = { name = ip_peacetime_international_pressure add = -2 }
+		}
+	}
+
+	ai_chance = {
+		value = 20
+		if = {
+			limit = {
+			je:je_israel_palestine_peacetime ?= {
+				scripted_bar_progress = {
+					name = je_israel_palestine_tension_bar
+					value >= 0.70
+				}
+			}
+		}
+			add = 50
+		}
+	}
+}
+
+je_ip_peacetime_closure_policy_button = {
+	name = "je_ip_peacetime_closure_policy"
+	desc = "je_ip_peacetime_closure_policy_desc"
+
+	visible = { c:ISR ?= this }
+
+	possible = {
+		c:ISR ?= this
+		hidden_trigger = {
+			NOT = { has_variable = ip_closure_policy_cooldown }
+		}
+	}
+
+	selected = {
+		has_modifier = ip_closure_policy
+	}
+
+	effect = {
+		set_variable = { name = ip_closure_policy_cooldown months = 18 }
+		add_modifier = { name = ip_closure_policy months = 18 }
+
+		ip_temperature_subtract_6 = yes
+		change_global_variable = { name = ip_peacetime_security_coordination add = -4 }
+		change_global_variable = { name = ip_peacetime_international_pressure add = 8 }
+
+		c:PAL ?= {
+			add_modifier = { name = ip_economic_restrictions months = 18 }
+		}
+	}
+
+	ai_chance = {
+		value = 25
+		if = {
+			limit = {
+			je:je_israel_palestine_peacetime ?= {
+				scripted_bar_progress = {
+					name = je_israel_palestine_tension_bar
+					value >= 0.70
+				}
+			}
+		}
+			add = 60
+		}
+	}
+}
+
+je_ip_peacetime_settlement_freeze_button = {
+	name = "je_ip_peacetime_settlement_freeze"
+	desc = "je_ip_peacetime_settlement_freeze_desc"
+
+	visible = { c:ISR ?= this }
+
+	possible = {
+		c:ISR ?= this
+		hidden_trigger = {
+			NOT = { has_variable = ip_settlement_freeze_cooldown }
+		}
+	}
+
+	selected = {
+		has_modifier = ip_settlement_freeze
+	}
+
+	effect = {
+		set_variable = { name = ip_settlement_freeze_cooldown months = 24 }
+		add_modifier = { name = ip_settlement_freeze years = 2 }
+
+		ip_temperature_subtract_12 = yes
+		change_global_variable = { name = ip_peacetime_negotiations add = 10 }
+		change_global_variable = { name = ip_peacetime_international_pressure add = -8 }
+
+		add_modifier = { name = ip_political_backlash months = 18 }
+	}
+
+	ai_chance = {
+		value = 10
+		if = {
+			limit = { global_var:ip_peacetime_international_pressure >= 40 }
+			add = 35
+		}
+	}
+}
+
+je_ip_peacetime_international_mediation_button = {
+	name = "je_ip_peacetime_international_mediation"
+	desc = "je_ip_peacetime_international_mediation_desc"
+
+	visible = {
+		OR = {
+			c:ISR ?= this
+			c:PAL ?= this
+		}
+	}
+
+	possible = {
+		hidden_trigger = {
+			NOT = { has_variable = ip_mediation_cooldown }
+		}
+	}
+
+	selected = {
+		has_modifier = ip_international_mediation
+	}
+
+	effect = {
+		set_variable = { name = ip_mediation_cooldown months = 18 }
+		add_modifier = { name = ip_international_mediation months = 18 }
+
+		change_global_variable = { name = ip_peacetime_negotiations add = 15 }
+		ip_temperature_subtract_5 = yes
+		change_global_variable = { name = ip_peacetime_international_pressure add = 5 }
+
+		hidden_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						c:ISR ?= this
+						c:PAL ?= this
+					}
+					NOT = { THIS = ROOT }
+				}
+				add_modifier = { name = ip_international_mediation months = 18 }
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 25
+		if = {
+			limit = {
+			je:je_israel_palestine_peacetime ?= {
+				scripted_bar_progress = {
+					name = je_israel_palestine_tension_bar
+					value >= 0.65
+				}
+			}
+		}
+			add = 40
+		}
+	}
+}
+
+je_ip_peacetime_grassroots_outreach_button = {
+	name = "je_ip_peacetime_grassroots_outreach"
+	desc = "je_ip_peacetime_grassroots_outreach_desc"
+
+	visible = { c:PAL ?= this }
+
+	possible = {
+		c:PAL ?= this
+		hidden_trigger = {
+			NOT = { has_variable = ip_outreach_cooldown }
+		}
+	}
+
+	selected = {
+		has_modifier = ip_grassroots_outreach
+	}
+
+	effect = {
+		set_variable = { name = ip_outreach_cooldown months = 18 }
+		add_modifier = { name = ip_grassroots_outreach months = 18 }
+
+		ip_temperature_subtract_8 = yes
+		change_global_variable = { name = ip_peacetime_negotiations add = 8 }
+		change_global_variable = { name = ip_peacetime_security_coordination add = 4 }
+
+		add_modifier = { name = ip_political_backlash months = 12 }
+	}
+
+	ai_chance = {
+		value = 20
+	}
+}
+
+je_ip_peacetime_mass_mobilization_button = {
+	name = "je_ip_peacetime_mass_mobilization"
+	desc = "je_ip_peacetime_mass_mobilization_desc"
+
+	visible = { c:PAL ?= this }
+
+	possible = {
+		c:PAL ?= this
+		hidden_trigger = {
+			NOT = { has_variable = ip_mass_mobilization_cooldown }
+		}
+	}
+
+	selected = {
+		has_modifier = ip_mass_mobilization
+	}
+
+	effect = {
+		set_variable = { name = ip_mass_mobilization_cooldown months = 18 }
+		add_modifier = { name = ip_mass_mobilization months = 18 }
+
+		ip_temperature_add_12 = yes
+		change_global_variable = { name = ip_peacetime_international_pressure add = 12 }
+		change_global_variable = { name = ip_peacetime_negotiations add = -5 }
+
+		c:ISR ?= {
+			add_modifier = { name = ip_security_alert months = 12 }
+		}
+	}
+
+	ai_chance = {
+		value = 5
+		if = {
+			limit = {
+			je:je_israel_palestine_peacetime ?= {
+				scripted_bar_progress = {
+					name = je_israel_palestine_tension_bar
+					value >= 0.75
+				}
+			}
+		}
+			add = 35
+		}
+	}
+}

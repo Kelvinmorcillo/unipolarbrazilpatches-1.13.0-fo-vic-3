@@ -1,0 +1,237 @@
+﻿POPS = {
+	s:STATE_URAL = {
+		region_state:RUS = {
+			create_pop = {
+				culture = russian
+				size = 1220603
+			}
+			create_pop = {
+				culture = tatar
+				size = 291925
+			}
+			create_pop = {
+				culture = ugrian
+				size = 554276
+			}
+		}
+	}
+	s:STATE_TOMSK = {
+		region_state:RUS = {
+			create_pop = {
+				culture = russian
+				size = 1052985
+			}
+			create_pop = {
+				culture = siberian
+				size = 675970
+			}
+			create_pop = {
+				culture = tatar
+				size = 239272
+			}
+			create_pop = {
+				culture = tuvan
+				size = 298955
+			}
+		}
+		region_state:ATA = {
+			create_pop = {
+				culture = tatar
+				size = 20933
+			}
+			create_pop = {
+				culture = tuvan
+				religion = gelugpa
+				size = 15280
+			}
+		}
+	}
+	s:STATE_TOBOLSK = {
+		region_state:RUS = {
+			create_pop = {
+				culture = russian
+				size = 287925
+			}
+			create_pop = {
+				culture = tatar
+				size = 147850
+			}
+			create_pop = {
+				culture = ugrian
+				size = 221047
+			}
+			create_pop = {
+				culture = siberian
+				size = 174998
+			}
+		}
+	}
+	s:STATE_TUVA = {
+		region_state:TVA = {
+			create_pop = {
+				culture = tuvan
+				size = 73151
+			}
+		}
+	}
+	s:STATE_UPPER_YENISEYSK = {
+		region_state:RUS = {
+			create_pop = {
+				culture = siberian
+				size = 49313
+			}
+			create_pop = {
+				culture = russian
+				size = 43325
+			}
+			create_pop = {
+				culture = ugrian
+				size = 12387
+			}
+			create_pop = {
+				culture = yakut
+				size = 8649
+			}
+		}
+	}
+
+	s:STATE_OB = {
+		region_state:RUS = {
+			create_pop = {
+				culture = ugrian
+				size = 190032
+			}
+			create_pop = {
+				culture = russian
+				size = 113791
+			}
+		}
+	}
+	s:STATE_NENETSIA = {
+		region_state:RUS = {
+			create_pop = {
+				culture = russian
+				size = 23962
+			}
+			create_pop = {
+				culture = ugrian
+				size = 38704
+			}
+		}
+	}
+
+	s:STATE_CHUKOTKA = {
+		region_state:RUS = {
+			create_pop = {
+				culture = inuit
+				size = 8186
+			}
+			create_pop = {
+				culture = siberian
+				size = 7255
+			}
+			create_pop = {
+				culture = russian
+				size = 5382
+			}
+		}
+	}
+	s:STATE_KAMCHATKA = {
+		region_state:RUS = {
+			create_pop = {
+				culture = siberian
+				size = 33329
+			}
+			create_pop = {
+				culture = russian
+				size = 37492
+			}
+		}
+	}
+	
+	s:STATE_OKHOTSK = {
+		region_state:RUS = {
+			create_pop = {
+				culture = yakut
+				size = 21752
+			}
+			create_pop = {
+				culture = yakut
+				religion = orthodox
+				size = 11739
+			}
+			create_pop = {
+				culture = siberian
+				size = 13804
+			}
+			create_pop = {
+				culture = russian
+				size = 17972
+			}
+		}
+	}
+
+	s:STATE_YAKUTSK = {
+		region_state:RUS = {
+			create_pop = {
+				culture = yakut
+				size = 222664
+			}
+			create_pop = {
+				culture = yakut
+				religion = orthodox
+				size = 60834
+			}
+			create_pop = {
+				culture = russian
+				size = 141530
+			}
+			create_pop = {
+				culture = siberian
+				size = 97293
+			}
+		}
+	}
+
+
+	s:STATE_TRANS_BAIKAL = {
+		region_state:RUS = {
+			create_pop = {
+				culture = russian
+				size = 80930
+			}
+			create_pop = {
+				culture = yakut
+				size = 59878
+			}
+			create_pop = {
+				culture = manchu
+				size = 43366
+			}
+			create_pop = {
+				culture = mongol
+				size = 51488
+			}
+			create_pop = {
+				culture = siberian
+				size = 32887
+			}
+		}
+	}
+	s:STATE_IRKUTSK = {
+		region_state:RUS = {
+			create_pop = {
+				culture = russian
+				size = 303123
+			}
+			create_pop = {
+				culture = mongol
+				size = 339186
+			}
+			create_pop = {
+				culture = siberian
+				size = 191940
+			}
+		}
+	}
+}

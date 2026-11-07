@@ -1,0 +1,164 @@
+BRZ_lula_da_silva = {
+	first_name = Luiz
+	last_name = Silva
+	historical = yes
+	culture = cu:brazilian
+	birth_date = 1945.10.27
+	dna = dna_lula_da_silva
+	ig_leader = yes
+	interest_group = ig_trade_unions
+	ideology = ideology_democratic_socialist_leader
+	traits = {
+		charismatic
+		demagogue
+		experienced_political_operator
+	}
+}
+
+BRZ_itamar_franco = {
+	first_name = Itamar
+	last_name = Franco
+	historical = yes
+	culture = cu:brazilian
+	birth_date = 1930.6.28
+	dna = dna_itamar_franco
+	ig_leader = yes
+	interest_group = ig_armed_forces
+	ideology = ideology_authoritarian_capitalist_leader
+	traits = {
+		experienced_political_operator
+		cautious
+		incorruptible
+	}
+}
+ 
+BRZ_roberto_marinho = {
+	first_name = Roberto
+	last_name = Marinho
+	historical = yes
+	culture = cu:brazilian
+	birth_date = 1904.12.3
+	dna = dna_roberto_marinho
+	ig_leader = yes
+	interest_group = ig_industrialists
+	ideology = ideology_conservative_leader
+	traits = {
+		experienced_political_operator
+		arrogant
+		charismatic
+	}
+}
+ 
+BRZ_jose_sarney = {
+	first_name = Jose
+	last_name = Sarney
+	historical = yes
+	culture = cu:brazilian
+	birth_date = 1930.4.24
+	dna = dna_jose_sarney
+	ig_leader = yes
+	interest_group = ig_landowners
+	ideology = ideology_conservative_leader
+	traits = {
+		experienced_political_operator
+		bigoted
+		demagogue
+	}
+}
+ 
+BRZ_fernando_cardoso = {
+	first_name = Fernando
+	last_name = Cardoso
+	historical = yes
+	culture = cu:brazilian
+	birth_date = 1931.6.18
+	dna = dna_fernando_cardoso
+	ig_leader = yes
+	interest_group = ig_intelligentsia
+	ideology = ideology_liberal_leader
+	traits = {
+		erudite
+		experienced_political_operator
+		meticulous
+	}
+}
+ 
+BRZ_paulo_arns = {
+	first_name = Paulo
+	last_name = Arns
+	historical = yes
+	culture = cu:brazilian
+	birth_date = 1921.9.14
+	dna = dna_paulo_arns
+	ig_leader = yes
+	interest_group = ig_devout
+	ideology = ideology_progressive_leader
+	traits = {
+		charismatic
+		pious
+		basic_political_operator
+	}
+}
+
+REPLACE_OR_CREATE:brz_dilma_rousseff_character_template = {
+	first_name = Dilma
+	last_name = Rousseff
+	historical = yes
+	female = yes
+	culture = cu:brazilian
+	birth_date = 1947.12.14
+	dna = dna_dilma_rousseff
+	ideology = ideology_democratic_socialist_leader
+	interest_group = ig_trade_unions
+	traits = {
+		experienced_political_operator
+		meticulous
+	}
+	interest_group_leader_usage = {
+		country_trigger = {
+			exists = c:BRZ
+			this = c:BRZ
+			game_date >= 2011.1.1
+			game_date <= 2016.8.31
+		}
+		interest_group_trigger = {
+			is_marginal = no
+			is_interest_group_type = ig_trade_unions
+		}
+		earliest_usage_date = 2011.1.1
+		latest_usage_date = 2016.8.31
+		chance = 100
+	}
+}
+
+REPLACE_OR_CREATE:brz_lula_da_silva_2022_character_template = {
+	first_name = Luiz
+	last_name = Silva
+	historical = yes
+	female = no
+	culture = cu:brazilian
+	birth_date = 1945.10.27
+	dna = dna_lula_da_silva
+	ideology = ideology_democratic_socialist_leader
+	interest_group = ig_trade_unions
+	traits = {
+		charismatic
+		demagogue
+		expert_political_operator
+		special_character_lulismo
+	}
+	interest_group_leader_usage = {
+		country_trigger = {
+			exists = c:BRZ
+			this = c:BRZ
+			game_date >= 2022.1.1
+		}
+		interest_group_trigger = {
+			is_marginal = no
+			is_interest_group_type = ig_trade_unions
+		}
+		earliest_usage_date = 2022.1.1
+		latest_usage_date = 2035.1.1
+		chance = 100
+	}
+}

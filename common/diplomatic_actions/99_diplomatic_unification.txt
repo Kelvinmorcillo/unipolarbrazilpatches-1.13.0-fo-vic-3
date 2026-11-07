@@ -1,0 +1,590 @@
+# Diplomatic Economic Union + Unification Actions
+
+REPLACE_OR_CREATE:smd_create_economic_union = {
+	groups = { general }
+	requires_approval = yes
+	can_use_obligations = yes
+	uses_random_approval = yes
+	should_notify_third_parties = yes
+	show_effect_in_tooltip = yes
+
+	selectable = {
+		NOT = { is_country_type = decentralized }
+		is_revolutionary = no
+	}
+
+	potential = {
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = smd_economic_union_base_resistance_tt
+			always = yes
+		}
+
+		custom_tooltip = {
+			text = smd_economic_union_requires_independence_tt
+			is_sufficiently_independent = yes
+			scope:target_country = { is_sufficiently_independent = yes }
+		}
+		custom_tooltip = {
+			text = smd_economic_union_requires_peace_tt
+			NOT = { has_war_with = scope:target_country }
+			is_diplomatic_play_committed_participant = no
+			scope:target_country = { is_diplomatic_play_committed_participant = no }
+		}
+		custom_tooltip = {
+			text = smd_economic_union_requires_no_subject_relation_tt
+			NOT = { has_subject_relation_with = scope:target_country }
+			NOT = { scope:target_country = { is_subject_of = scope:actor } }
+		}
+		custom_tooltip = {
+			text = smd_economic_union_requires_no_isolationism_tt
+			NOR = {
+				has_law_or_variant = law_type:law_isolationism
+				scope:target_country = { has_law_or_variant = law_type:law_isolationism }
+			}
+		}
+		custom_tooltip = {
+			text = smd_economic_union_requires_no_duplicate_tt
+			NOT = { smd_has_economic_union_with_target = yes }
+		}
+		scope:target_country = {
+			is_revolutionary = no
+		}
+	}
+
+	accept_effect = {
+		smd_create_economic_union_with_target = yes
+	}
+
+	decline_effect = {
+		change_relations = { country = scope:target_country value = -20 }
+	}
+
+	ai = {
+		check_acceptance_for_will_break = no
+		max_influence_spending_fraction = 0.15
+
+		evaluation_chance = {
+			value = 0.5
+
+			add = {
+				value = country_rank
+				multiply = 0.05
+			}
+		}
+
+		accept_score = {
+			value = 0
+
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_BASE"
+				value = -175
+			}
+
+			### Leverage
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_LEVERAGE"
+				value = "scope:actor.leverage(root)"
+
+				multiply = 0.5
+
+				min = 0
+				max = 200
+			}
+
+			### Relative rank
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_RANK"
+				value = scope:actor.country_rank
+				subtract = 2
+				subtract = country_rank
+				multiply = 10
+			}
+
+			if = {
+				limit = {
+					scope:actor.gdp >= 2000000
+				}
+
+				add = {
+					desc = "DIPLOMATIC_ACCEPTANCE_HIGH_GDP"
+					value = scope:actor.gdp
+					subtract = 1000000
+					divide = 1000000
+					min = 1
+					max = 50
+				}
+			}
+
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_MUTUAL_TRADE_VALUE"
+				value = "mutual_trade_value_with_country(scope:actor)"
+				multiply = 50000
+				divide = {
+					value = gdp
+					min = 1000000
+				}
+				min = 0
+				max = 30
+			}
+
+			if = {
+				limit = { smd_primary_cultures_similar_to_target = yes }
+				add = {
+					desc = "DIPLOMATIC_ACCEPTANCE_CULTURAL_ACCEPTANCE"
+					value = 20
+				}
+			}
+
+			if = {
+				limit = { is_in_same_power_bloc = scope:actor }
+				add = {
+					desc = "DIPLOMATIC_ACCEPTANCE_POWER_BLOC"
+					value = 30
+				}
+			}
+
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_ATTITUDE"
+				if = {
+					limit = {
+						has_attitude = {
+							who = scope:actor
+							attitude = genial
+						}
+					}
+					value = 50
+				}
+				else_if = {
+					limit = {
+						OR = {
+							has_attitude = {
+								who = scope:actor
+								attitude = cooperative
+							}
+							has_attitude = {
+								who = scope:actor
+								attitude = conciliatory
+							}
+							has_attitude = {
+								who = scope:actor
+								attitude = protective
+							}
+						}
+					}
+					value = 25
+				}
+				else_if = {
+					limit = {
+						OR = {
+							has_attitude = {
+								who = scope:actor
+								attitude = antagonistic
+							}
+							has_attitude = {
+								who = scope:actor
+								attitude = domineering
+							}
+							has_attitude = {
+								who = scope:actor
+								attitude = belligerent
+							}
+						}
+					}
+					value = -50
+				}
+				else = {
+					value = -25
+				}
+			}
+
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_RELATIONS"
+				if = {
+					limit = {
+						"relations(scope:actor)" >= relations_threshold:friendly
+					}
+					value = 30
+				}
+				else_if = {
+					limit = {
+						"relations(scope:actor)" >= relations_threshold:amicable
+					}
+					value = 15
+				}
+				else = {
+					value = 0
+				}
+			}
+
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_INFAMY"
+				if = {
+					limit = {
+						"scope:actor.infamy" >= infamy_threshold:infamous
+						"scope:actor.infamy" < infamy_threshold:notorious
+					}
+					value = -10
+				}
+				if = {
+					limit = {
+						"scope:actor.infamy" >= infamy_threshold:notorious
+						"scope:actor.infamy" < infamy_threshold:pariah
+					}
+					value = -25
+				}
+				if = {
+					limit = {
+						"scope:actor.infamy" >= infamy_threshold:pariah
+					}
+					value = -50
+				}
+			}
+		}
+
+		will_propose = {
+			would_accept_diplomatic_action = {
+				actor = scope:target_country
+				type = smd_create_economic_union
+			}
+		}
+
+		propose_score = {
+			value = 20
+		}
+
+		use_obligation_chance = {
+			value = 75
+		}
+
+		owe_obligation_chance = {
+			value = 0
+
+			if = {
+				limit = {
+					scope:target_country = {
+						country_rank >= rank_value:major_power
+					}
+				}
+
+				add = 50
+			}
+		}
+
+		will_propose_even_if_not_accepted = {
+			OR = {
+				has_attitude = {
+					who = scope:target_country
+					attitude = domineering
+				}
+				"leverage(scope:target_country)" >= 500
+			}
+		}
+
+		will_break = {
+			OR = {
+				has_war_with = scope:target_country
+				scope:target_country.relations:root <= relations_threshold:poor
+				has_law_or_variant = law_type:law_isolationism
+				scope:target_country = {
+					has_law_or_variant = law_type:law_isolationism
+				}
+			}
+		}
+	}
+}
+
+REPLACE_OR_CREATE:smd_diplomatic_unification = {
+	groups = { general }
+	requires_approval = yes
+	can_use_obligations = yes
+	uses_random_approval = yes
+	should_notify_third_parties = yes
+	show_effect_in_tooltip = yes
+
+	selectable = {
+		NOT = { is_country_type = decentralized }
+		is_revolutionary = no
+	}
+
+	potential = {
+		# Always visible against proper non-decentralized countries.
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = smd_unification_base_resistance_tt
+			always = yes
+		}
+
+		custom_tooltip = {
+			text = smd_unification_requires_independence_tt
+			is_sufficiently_independent = yes
+			scope:target_country = { is_sufficiently_independent = yes }
+		}
+		custom_tooltip = {
+			text = smd_unification_requires_peace_tt
+			NOT = { has_war_with = scope:target_country }
+			is_diplomatic_play_committed_participant = no
+			scope:target_country = { is_diplomatic_play_committed_participant = no }
+		}
+		custom_tooltip = {
+			text = smd_unification_requires_no_subject_relation_tt
+			NOT = { has_subject_relation_with = scope:target_country }
+			NOT = { scope:target_country = { is_subject_of = scope:actor } }
+		}
+		custom_tooltip = {
+			text = smd_unification_requires_economic_union_tt
+			smd_has_economic_union_with_target = yes
+		}
+		custom_tooltip = {
+			text = smd_unification_requires_culture_tt
+			smd_primary_cultures_similar_to_target = yes
+		}
+		scope:target_country = {
+			is_revolutionary = no
+		}
+	}
+
+	accept_effect = {
+		smd_complete_diplomatic_unification_with_target = yes
+	}
+
+	decline_effect = {
+		change_relations = { country = scope:target_country value = -30 }
+	}
+
+	ai = {
+		check_acceptance_for_will_break = no
+		max_influence_spending_fraction = 0.25
+
+		evaluation_chance = {
+			value = 0.3
+
+			add = {
+				value = country_rank
+				multiply = 0.03
+			}
+		}
+
+		accept_score = {
+			value = 0
+
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_BASE"
+				value = -250
+			}
+
+			### Leverage
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_LEVERAGE"
+				value = "scope:actor.leverage(root)"
+
+				multiply = 0.5
+
+				min = 0
+				max = 250
+			}
+
+			### Cultural acceptance - major factor for unification
+			if = {
+				limit = { smd_primary_cultures_similar_to_target = yes }
+				add = {
+					desc = "DIPLOMATIC_ACCEPTANCE_CULTURAL_ACCEPTANCE"
+					value = 40
+				}
+			}
+
+			### Relative rank
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_RANK"
+				value = scope:actor.country_rank
+				subtract = 2
+				subtract = country_rank
+				multiply = 10
+			}
+
+			if = {
+				limit = {
+					scope:actor.gdp >= 2000000
+				}
+
+				add = {
+					desc = "DIPLOMATIC_ACCEPTANCE_HIGH_GDP"
+					value = scope:actor.gdp
+					subtract = 1000000
+					divide = 1000000
+					min = 1
+					max = 50
+				}
+			}
+
+			if = {
+				limit = { is_in_same_power_bloc = scope:actor }
+				add = {
+					desc = "DIPLOMATIC_ACCEPTANCE_POWER_BLOC"
+					value = 25
+				}
+			}
+
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_ATTITUDE"
+				if = {
+					limit = {
+						has_attitude = {
+							who = scope:actor
+							attitude = genial
+						}
+					}
+					value = 60
+				}
+				else_if = {
+					limit = {
+						has_attitude = {
+							who = scope:actor
+							attitude = protective
+						}
+					}
+					value = 40
+				}
+				else_if = {
+					limit = {
+						OR = {
+							has_attitude = {
+								who = scope:actor
+								attitude = cooperative
+							}
+							has_attitude = {
+								who = scope:actor
+								attitude = conciliatory
+							}
+						}
+					}
+					value = 25
+				}
+				else_if = {
+					limit = {
+						OR = {
+							has_attitude = {
+								who = scope:actor
+								attitude = antagonistic
+							}
+							has_attitude = {
+								who = scope:actor
+								attitude = domineering
+							}
+							has_attitude = {
+								who = scope:actor
+								attitude = belligerent
+							}
+						}
+					}
+					value = -75
+				}
+				else = {
+					value = -30
+				}
+			}
+
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_RELATIONS"
+				if = {
+					limit = {
+						"relations(scope:actor)" >= relations_threshold:genial
+					}
+					value = 40
+				}
+				else_if = {
+					limit = {
+						"relations(scope:actor)" >= relations_threshold:friendly
+					}
+					value = 25
+				}
+				else_if = {
+					limit = {
+						"relations(scope:actor)" >= relations_threshold:amicable
+					}
+					value = 10
+				}
+				else = {
+					value = 0
+				}
+			}
+
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_INFAMY"
+				if = {
+					limit = {
+						"scope:actor.infamy" >= infamy_threshold:infamous
+						"scope:actor.infamy" < infamy_threshold:notorious
+					}
+					value = -15
+				}
+				if = {
+					limit = {
+						"scope:actor.infamy" >= infamy_threshold:notorious
+						"scope:actor.infamy" < infamy_threshold:pariah
+					}
+					value = -35
+				}
+				if = {
+					limit = {
+						"scope:actor.infamy" >= infamy_threshold:pariah
+					}
+					value = -75
+				}
+			}
+		}
+
+		will_propose = {
+			would_accept_diplomatic_action = {
+				actor = scope:target_country
+				type = smd_diplomatic_unification
+			}
+		}
+
+		propose_score = {
+			value = 20
+		}
+
+		use_obligation_chance = {
+			value = 90
+		}
+
+		owe_obligation_chance = {
+			value = 0
+
+			if = {
+				limit = {
+					scope:target_country = {
+						country_rank >= rank_value:major_power
+					}
+				}
+
+				add = 75
+			}
+		}
+
+		will_propose_even_if_not_accepted = {
+			OR = {
+				has_attitude = {
+					who = scope:target_country
+					attitude = domineering
+				}
+				"leverage(scope:target_country)" >= 750
+			}
+		}
+
+		will_break = {
+			always = no
+		}
+	}
+}

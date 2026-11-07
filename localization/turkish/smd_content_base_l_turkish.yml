@@ -1,0 +1,426 @@
+﻿l_turkish:
+
+ # modifiers
+ nato_modifier:0 "NATO NATO NATO"
+ je_group_international:0 "Uluslararası Uluslararası Enternasyonal"
+ # je groups
+ 
+ je_group_foreign_policy:0 "Dış Politika"
+ je_group_domestic_policy:0 "Yurtiçi Politika"
+ je_group_space_exploration:0 "Space Exploration"
+ je_group_dilemmas:0 "Dilemmas"
+ je_group_advancements:0 "Hedefler"
+ je_group_objectives:0 "Hedefler Hedef Hedef Hedef Hedefler Hedef Hedef Hedef Hedefler Hedef Hedef Hedefler Hedef Hedef Hedefler Hedef Hedef Hedef Hedefler Hedef Hedef Hedef Hedefler Hedef Hedef Hedef Hedefler Hedef Hedef Hedef Hedefler Hedef Hedef Hedef Hedef Hedef Hedefler Hedef Hedef Hedef Hedef Hedefler Hedef Hedef Hedef Hedef Hedefler Hedef Hedef Hedef Hedef Hedef Hedefler Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedefler Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedefler Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef Hedef"
+ asian_economy_boost:0 "Ekonomik Liberalleşme"
+ 
+ # transit rights
+ 
+ je_transit_rights: "Landlocked!"
+ je_transit_rights_reason: "[ROOT.GetCountry.GetName] hiçbir kıyı şeridi yoktur. Uluslararası pazarlara erişim tamamen komşu ülkelerin iyi niyetine bağlıdır. En az bir tanesi ile transit haklar anlaşmasının yapılması ticaret ve stratejik esneklik için önemlidir."
+ secure_transit_rights_treaty:0 "Herhangi bir komşu olmayan ülke ile transit haklar anlaşması imzalayın."
+ # ==========================================
+ # JOURNAL ENTRY
+ # ==========================================
+ 
+ je_covid_pandemic: "1956-19 Pandemik"
+ je_covid_pandemic_reason: "Yeni bir solunum koro virüsü [ROOT.GetCountry.GetName] ile ortaya çıktı ve dünya çapında hızla yayılıyor. Amman-19, canlı hafızadaki herhangi bir patojenden daha hızlı yayılır, birlikte modern dünyayı birbirine bağlayan yoğun ticaret ve seyahat ağlarını kullanın. Ölüm yaşlılar ve immünkompromasyonlar arasında yoğunlaşır - ancak oer her ülkede aşırı sağlık sistemlerini ele almak için tehdit eder.\n\n #bold AutoCAD-19< Responsex id=4/> Lockdowns ekonomiyi yavaşlatır ama çekiç eder. Maskeler ve distancing daha az etkili ama daha sürdürülebilir. Hiçbir şey yapmamak da bir seçimdir – bir seçmenler ve ölüler hatırlayacaktır."
+ 
+ # ==========================================
+ # covid.1 — PANDEMIC ARRIVES
+ # ==========================================
+ 
+ covid.1.t: "Bir Roman Coronavirüs"
+ covid.1.d: "Sıra dışı zat vakalarının bir kümesi [SCOPE.sState('plague_origin_state').GetName], [ROOT.GetCountry.GetName] rapor edilmiştir. [ROOT.GetCountry.GetAdjective] sağlık yetkilileri daha önce bilinmeyen bir koronavirüs öneriyor - insan-insanı yaymak, taşıyıcıların hasta olduklarını bilmeden önce bulaşıcı olduğunu yeterince uzun süre.\n Dünya Sağlık Örgütü bilgilendirildi. Bu yerel bir salgın olarak kalır veya bir şey daha önümüzdeki haftalarda yapılan kararlara bağlıdır."
+ covid.1.f: "Yeni bir patojen. Yine."
+ covid.1.a: "WHO'yu değil ve temasa geçmeye başlar"
+ 
+ # ==========================================
+ # covid.2 — SPREAD
+ # ==========================================
+ 
+ covid.2.t: "AutoCAD-19 [ROOT.GetCountry.GetName]"
+ covid.2.d: "İlk olarak [SCOPE.sCountry('plague_originator_country').GetName]'de tespit edilen roman koronavirüs vakaları [SCOPE.sCountry('plague_originator_country').GetName] [ROOT.GetCountry.GetName] ile doğrulandı. Virüs geldi - bir gezgin, bir ticaret rotası veya sadece bağlantılı bir dünyanın görünmez akımları.\n\n[ROOT.GetCountry.GetAdjective] sağlık yetkilileri salgın yanıt protokolleri uyguluyor. #bold Amman-19 Cevap#! politikayı belirleme kararı."
+ covid.2.f: "Sadece zaman meselesiydi."
+ covid.2.a: "Activate salgın protokolleri"
+ 
+ # ==========================================
+ # covid.3 — SUBSEQUENT WAVES
+ # ==========================================
+ 
+ covid.3.t: "Omicron Variant"
+ covid.3.d: "Yeni bir değişken, yeni bir ultrason-19 enfeksiyonları dalgasına neden oldu. Sağlık yetkilileri kapsayıcı protokolleri yeniden değerlendiriyor."
+ covid.3.f: "Virüs hala bizimle."
+ 
+ # ==========================================
+ # covid.4 — NOTIFICATION TO OTHER PLAYERS
+ # ==========================================
+ 
+ covid.4.t: "Wuhan'dan Yeni Virüs, Çin"
+ covid.4.a: "Durumu yakından takip edin"
+ 
+ # ==========================================
+ # covid.5 — RESPONSE CHOICE
+ # ==========================================
+ 
+ covid.5.t: "Helsing-19 Yanıt Politikası"
+ covid.5.d: "[ROOT.GetCountry.GetName] salgına nasıl cevap vermeli? Seçim önümüzdeki yıllarda ekonomik ve sosyal peyzajı tanımlayacaktır."
+ covid.5.f: "İyi seçenekler yoktur. Sadece ticaret."
+ covid.5.a: "Full Lockdown – yakın işletmeler, hareketi kısıtlar"
+ covid.5.b: "Maske görevleri ve sosyal ayrışma yönergeleri"
+ covid.5.c: "Ekonomiyi açık tutun – kurtarmaya öncelik verin"
+ 
+ # ==========================================
+ # covid.7 — WAR SUPPORT
+ # ==========================================
+ 
+ covid.7.t: "The Pandemic Undermines the War Effort"
+ covid.7.d: "Amman-19 ravaging [ROOT.GetCountry.GetName] nüfusu ile [SCOPE.gsInterestGroup('pacifist_ig').GetName] - [SCOPE.sCharacter('pacifist_leader').GetFullName] tarafından yönetilen - bir ülke bir salgınla savaş aynı anda devam edebilir mi sorgulanır. Nüfus tükenmiştir. Alan hastaneleri kaynaklar için ön-line lojistik ile yarışıyor."
+ covid.7.f: "Virüsle savaşmak veya düşmanla savaşmak. Her ikisi de zor."
+ covid.7.a: "Savaş devam ediyor - virüs bunu değiştirmiyor"
+ covid.7.b: "Ahlaki korumak için halk sağlığı mesajlaşmasını kullanın"
+ covid.7.c: "Suppress the yenilgiist anlatı"
+ 
+ # ==========================================
+ # covid.8 — POVERTY AND EVICTIONS
+ # ==========================================
+ 
+ covid.8.t: "Pandemik Toll"
+ covid.8.d: "pandeminin binlerce [ROOT.GetCountry.GetAdjective] işine mal oldu ve [SCOPE.sState('plague_poverty_state').GetName] işsizlik %20 aştı. Aileler kiralayamaz. Landlords - [SCOPE.gsInterestGroup('landowner_ig').GetName] tarafından desteklenen - ev sağına itiliyor. Yoksulluk zaten virüs tarafından en zor olan alanlarda yoğunlaşıyor."
+ covid.8.f: "salgın içinde bir salgın."
+ covid.8.a: "Bir kirayı dondurdu ve moratorium"
+ covid.8.b: "Sosyal güvenlik ve işsizlik yararları"
+ covid.8.c: "Pazar bunu sıralayacak"
+ 
+ # ==========================================
+ # covid.9 — ANTI-MASK RESISTANCE
+ # ==========================================
+ 
+ covid.9.t: "Anti-Lockdown Protestoları"
+ covid.9.d: "[SCOPE.gsInterestGroup('anti_mask_ig').GetName], [SCOPE.sCharacter('anti_mask_ig_leader').GetFullName] tarafından yönetilen, [ROOT.GetCountry.GetName]'nin salgın kısıtlamalarına karşı kitlesel protestolar düzenledi. Onların pozisyonu: kilitler ve maske görevleri hükümete aşırı erişim, ekonomik hasar sağlık riskinden daha büyüktür ve vatandaşlar kendi seçimlerini yapma hakkına sahiptir.\n\n Protestolar büyüyor. [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] yanıtlar bir önceki ayarlanacaktır."
+ covid.9.f: "Maskeler. seçtikleri tepe."
+ covid.9.a: "Keep firm - kısıtlamalar kalır"
+ covid.9.b: "Ayağa kalk - kısıtlamaları kaldırın"
+ covid.9.c: "Komisyon bilimsel rebuttals ve halk sağlığı kampanyaları"
+ 
+ # ==========================================
+ # DECISION
+ # ==========================================
+ 
+ covid_response: "Helsing-19 Response"
+ covid_response_desc: "[ROOT.GetCountry.GetName]'Nük-19 pandemiyi yönetmek için politika. Bu karar, durum geliştikçe politikayı ayarlamak için her altı ay sürebilir."
+ 
+ ### second american civil war 
+ 
+ ALK:0 "Alaska Alaska Alaska"
+ ALK_ADJ:0 "Alaskan"
+ REA:0 "Red America"
+ REA_ADJ:0 "Red American"
+ BAM:0 "Blue America"
+ BAM_ADJ:0 "Blue American"
+ je_the_great_polarization:0 "Büyük Polarizasyon"
+ je_the_great_polarization_reason:0 "Amerikan politikası, kutuplaşmanın bir dönemine girdi. \n\n \n Polarizasyon: #v #! \n Kurumsal güven: #v [Country.MakeScope.Var('great_polarization_institutional_trust').GetValue]#! \n Sol basınç: #v [Country.MakeScope.Var('great_polarization_intensity').GetValue]#! \n Doğru baskı: \n #v [Country.MakeScope.Var('great_polarization_right_pressure').GetValue]<x = x = x = x = x x x = x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x"
+ great_polarization_status_right_president:0 "Doğru başkanlık liberal, sosyal-demokratik, sosyalist, komünist ve azınlık-sağlık hareketlerini enerjilendiriyor."
+ great_polarization_status_left_president:0 "Bir sol başkanlık muhafazakar, libertarian, gelenekselist, faşist ve dini-majorite hareketlerini enerjilendirir."
+ great_polarization_status_unstable_center:0 "Polarizasyon içeren kırılgan bir merkez mücadeleleri."
+ great_polarization_depolarized_tt:0 "#v 15#! veya daha düşük ve kurumsal güven #v 80#! veya 2035'ten sonra daha yüksek #v [Country.MakeScope.Var('great_polarization_intensity').GetValue]#!"
+ great_polarization_civil_war_tt:0 "İkinci Amerikan İç Savaşı başladı."
+ je_second_american_civil_war:0 "İkinci Amerikan İç Savaşı"
+ je_second_american_civil_war_reason:0 "Amerika Birleşik Devletleri rakip hükümetlere kırıldı. Red America ve Blue America ana savaşçılardır, kırılan devletler diplomatik öneriler aracılığıyla mahkemelenebilir."
+ second_american_civil_war_status:0 "Sendika kırıldı."
+ second_american_civil_war_blue_status:0 "Blue America, kırılmış devletler kazandıklarında liberal-sosyal demokratik bir düzen korumayı hedefliyor."
+ second_american_civil_war_red_status:0 "Red America, kırılmış devletler kazandıklarında muhafazakar Amerika'yı birleştirmeye çalışıyor."
+ second_american_civil_war_complete_header:0 "İç savaş, ya Red America ya da Blue America'nın yok edildiği zaman sona erer, ya da ast."
+ second_american_civil_war_blue_defeated_tt:0 "Blue America artık yok."
+ second_american_civil_war_red_defeated_tt:0 "Red America artık yok."
+ second_american_civil_war_blue_annexed_tt:0 "Blue America Red America'ya asıldı."
+ second_american_civil_war_red_annexed_tt:0 "Red America, Blue America'ya bağlıydı."
+ great_polarization.1.t:0 "Büyük Polarizasyon"
+ great_polarization.1.d:0 "Amerika Birleşik Devletleri yeni bir siyasi kutuplaşma çağına giriyor, medya parçalanması, kültür savaş politikası ve ideolojik bloklar arasındaki karşılıklı korku."
+ great_polarization.1.f:0 "Her seçim varoluşsal hale gelir. Her skandal kanıt olur. Her trajedi bir silah haline gelir."
+ great_polarization.1.a:0 "Merkez çatmaya başlar."
+ great_polarization.30.t:0 "George Floyd'un öldürülmesi"
+ great_polarization.30.d:0 "George Floyd'un polis tarafından öldürülmesi, hesap verilebilirlik, polislik reformu ve ırk adaleti talepleriyle ülke çapında bir protesto dalgası tetikledi."
+ great_polarization.30.f:0 "Video yerel kalmamaktadır. Ulusal bir iddianame haline gelir."
+ great_polarization.30.a:0 "Sokaklar erupt."
+ great_polarization.30.b:0 "Ciddi reform söz konusu."
+ great_polarization.31.t:0 "CHOP / CHAZ"
+ great_polarization.31.d:0 "Seattle'da işgal edilmiş bir protesto bölgesi kuruldu, hem anti-politika aktivizmi hem de devlet geri çekilme korkularının ulusal bir sembolü haline geldi."
+ great_polarization.31.f:0 "Onun destekçilerine göre, toplum kendi kendine ait. Rakiplerine göre, minyatürde çöküyor."
+ great_polarization.31.a:0 "Hadi standoff oynasın."
+ great_polarization.31.b:0 "Bölgeyi temizle."
+ great_polarization.32.t:0 "Amaler'de suikast girişiminde bulundu"
+ great_polarization.32.d:0 "Donald Trump'ın Butler'deki bir toplantıda suikast girişiminde bulunmaya çalıştı, Pennsylvania politik şiddet ve intikam korkularını dile getirdi."
+ great_polarization.32.f:0 "Görüntü gerçeklerden daha hızlı seyahat eder."
+ great_polarization.32.a:0 "Öfkedeki doğru gösteriler."
+ great_polarization.32.b:0 "Ulusal sakinliğe saygı gösterin."
+ great_polarization.33.t:0 "No Kings"
+ great_polarization.33.d:0 "“Hiçbir Kings” sloganı altında kitlesel gösteriler, ülke genelinde sokaklar doldurdu, demokrasinin savunması ve rakipler tarafından istikrarsızlaştırma direnişi olarak çerçevelendi."
+ great_polarization.33.f:0 "Bir cumhuriyetteki monarşiye karşı kalabalık, farkı unutmuş olduğundan korkar."
+ great_polarization.33.a:0 "Hareket yayılıyor."
+ great_polarization.33.b:0 "çatışmayı bozmak."
+ great_polarization.34.t:0 "Minnesota Lawmakers Hedeflendi"
+ great_polarization.34.d:0 "Minnesota eyalet kanun yapıcılarını hedef alan atışlar, siyasi anlaşmazlıkların organize şiddete sürüklendiği ulusal korkuyu derinleştirdi."
+ great_polarization.34.f:0 "Bir kapı ön bir çizgi haline gelir."
+ great_polarization.34.a:0 "Güvenlik siyaset haline gelir."
+ great_polarization.34.b:0 "spektrumdaki politik şiddet."
+ great_polarization.35.t:0 "Charlie Kirk Assassinated"
+ great_polarization.35.d:0 "Charlie Kirk'in suikastı, bir kamu toplantısında konuşurken Amerika'nın istikrarsız siyasi krizinde bir flaş noktası haline geldi."
+ great_polarization.35.f:0 "Bir mikrofon sessiz kalır; bir hareket yüksek sesle büyür."
+ great_polarization.35.a:0 "Doğru radikalleşmeler."
+ great_polarization.35.b:0 "Öldürülen ve sıcaklığı azaltır."
+ great_polarization.36.t:0 "ICE Shootings"
+ great_polarization.36.d:0 "Federal göçmen ajanlarının dahil edilmesi, anti-ICE protestolarını, ulusal öfkeyi ve federal güç üzerindeki şiddetli argümanları tetikledi."
+ great_polarization.36.f:0 "Kötülük tartışma haline gelir."
+ great_polarization.36.a:0 "Protestolar yayıldı."
+ great_polarization.36.b:0 "Suspend operasyonları ve araştırma."
+ great_polarization.37.t:0 "Hakları Yasası Gutted"
+ great_polarization.37.d:0 "Yüksek Mahkeme kararı, Voting Rights Act'ı keskin bir şekilde zayıflatır, azınlık oylama gücünün 2026 seçimlerinden önce ortadan kaldırıldığı suçlamaları zayıflatır."
+ great_polarization.37.f:0 "Mahkeme doktrinde konuşur. Ülke güç duyuyor."
+ great_polarization.37.a:0 "Güven çöküyor."
+ great_polarization.37.b:0 "Acil oylama hakkı mevzuatı uyarınca."
+ great_polarization.100.t:0 "İkinci Amerikan İç Savaşı"
+ great_polarization.100.d:0 "Bir devrimci kriz Amerika Birleşik Devletleri'ni kırdı. Federal otorite karşılanıyor ve silahlı gruplar ülkeyi rakip hükümetlere taşımaya başlıyor."
+ great_polarization.100.f:0 "İlk sivil savaş, sendikanın hayatta kalabileceğini sordu. İkincisi, sendikanın bile ne olduğunu sorar."
+ great_polarization.100.a:0 "Sendika kırıkları."
+ great_polarization.120.t:0 "Blue America'dan bir teklif"
+ great_polarization.120.d:0 "Blue America, sivil savaşta kendisine katılmak için değişim, koruma ve savaş zamanı işbirliğini sunuyor."
+ great_polarization.120.f:0 "Neutrality harita yakıldığında tutmak zordur."
+ great_polarization.120.a:0 "Blue America'ya katılın."
+ great_polarization.120.b:0 "Ayrı kal."
+ great_polarization.121.t:0 "Red America'dan bir teklif"
+ great_polarization.121.d:0 "Red America, sivil savaşta kendisine katılmak için değişim, koruma ve savaş zamanı işbirliğini sunuyor."
+ great_polarization.121.f:0 "Soru artık savaşmakla ilgili değil, bayrağı altında."
+ great_polarization.121.a:0 "Red America'ya katılın."
+ great_polarization.121.b:0 "Ayrı kal."
+ 2acw_offer_new_africa_blue_tt:0 "Yeni Afrika tanıma, sivil hakları garanti eder ve Blue America'ya katılmak için değişim içinde savaş süresi koruma sağlar."
+ 2acw_offer_new_africa_red_tt:0 "Red America'ya katılmak için Yeni Afrika'nın özerkliği ve savaş zamanı korumasını sağlayın."
+ 2acw_offer_navajo_blue_tt:0 "Navajo tanıma ve Blue America'ya katılmak için değişim içinde bağımsızlığı korumak."
+ 2acw_offer_navajo_red_tt:0 "Navajo tanıma ve Red America'ya katılmak için değişim içinde bağımsızlığı korumak."
+ 2acw_offer_california_blue_tt:0 "Kaliforniya, Blue koalisyonuna resmen katılmak için yalvardı."
+ 2acw_offer_texas_red_tt:0 "Invite Texas Red koalisyonuna resmen katılmak için."
+ 2acw_offer_hawaii_blue_tt:0 "Blue America'ya katılmak için Hawaii koruması sağlayın."
+ 2acw_offer_hawaii_red_tt:0 "Red America'ya katılmak için Hawaii koruması sağlayın."
+ 2acw_offer_alaska_blue_tt:0 "Alaska'yı Blue America'ya katılmak için karşılığında koruma sağlayın."
+ 2acw_offer_alaska_red_tt:0 "Alaska'yı Red America'ya katılmak için karşılığında koruma sağlayın."
+ great_polarization_baseline:0 "Büyük Polarizasyon"
+ great_polarization_right_wing_president:0 "Doğru-Wing Başkanlığı"
+ great_polarization_left_wing_president:0 "Left-Wing Presidential"
+ great_polarization_event_violence:0 "Siyasi Şiddet"
+ great_polarization_reform_concessions:0 "Reform Tartışmaları"
+ great_polarization_minorities_targeted:0 "Azınlıklar Hedeflendi"
+ great_polarization_online_radicalization:0 "Online Radikalizasyon"
+ second_american_civil_war_outbreak:0 "İkinci Amerikan İç Savaşı"
+ Blue_American_Federal_Forces:0 "Mavi Amerikan Federal Kuvvetleri"
+ Red_American_State_Guards:0 "Red American State Guards"
+ California_State_Defense_Forces:0 "Kaliforniya Devlet Savunma Kuvvetleri"
+ Texas_State_Guard:0 "Texas State Guard"
+ New_African_Liberation_Forces:0 "Yeni Afrika Kurtuluş Kuvvetleri"
+ Navajo_Defense_Forces:0 "Navajo Savunma Kuvvetleri"
+ Hawaii_Defense_Forces:0 "Hawaii Savunma Kuvvetleri"
+ Alaska_Defense_Forces:0 "Alaska Savunma Kuvvetleri"
+ 2acw_blue_alignment_treaty:0 "Blue America Adaptasyon"
+ 2acw_red_alignment_treaty:0 "Red America,"
+ second_american_civil_war:0 "İkinci Amerikan İç Savaşı"
+ je_the_great_polarization:0 "Büyük Polarizasyon"
+ je_the_great_polarization_reason:0 "Amerikan politikası, kutuplaşmanın bir dönemine girdi. \n Polarizasyon: #v [Country.MakeScope.Var('great_polarization_intensity').GetValue]#! Kurumsal güven: #v [Country.MakeScope.Var('great_polarization_institutional_trust').GetValue]#! \n Sol baskı: #v [Country.MakeScope.Var('great_polarization_left_pressure').GetValue]#! \n Doğru basınç: #v<x id=>#v#!"
+
+ great_polarization_status_right_president:0 "Doğru başkanlık liberal, sosyal-demokratik, sosyalist, komünist ve azınlık-sağlık hareketlerini enerjilendiriyor."
+ great_polarization_status_left_president:0 "Bir sol başkanlık muhafazakar, libertarian, gelenekselist, faşist ve dini-majorite hareketlerini enerjilendirir."
+ great_polarization_status_unstable_center:0 "Polarizasyon içeren kırılgan bir merkez mücadeleleri."
+
+ great_polarization_complete_header:0 "Büyük Polarizasyon, kriz bozulursa veya Amerika Birleşik Devletleri sivil savaşa girerse sona erer."
+ great_polarization_depolarized_tt:0 "#v 15#! veya daha düşük ve kurumsal güven #v 80#! veya daha yüksek. Current polarizasyon: #v [Country.MakeScope.Var('great_polarization_intensity').GetValue]#!"
+ great_polarization_civil_war_tt:0 "İkinci Amerikan İç Savaşı başladı."
+
+ je_second_american_civil_war:0 "İkinci Amerikan İç Savaşı"
+ je_second_american_civil_war_reason:0 "Amerika Birleşik Devletleri yeni bir sivil savaşa girdi. Bu dergi girişi, bir sonraki tasarım geçişi için şüphelidir, bölgesel Amerikan breakaway ülkelerinin yaratıldığı ve birbirleriyle savaşmak için yapılır."
+ second_american_civil_war_status:0 "Sendika kırıldı."
+ second_american_civil_war_placeholder_tt:0 "Placeholder: bir sonraki uygulama geçişinde kırılmış Amerikan ülkeleri, ordular ve savaşlar yaratır."
+
+ great_polarization.1.t:0 "Büyük Polarizasyon"
+ great_polarization.1.d:0 "Amerika Birleşik Devletleri yeni bir siyasi kutuplaşma çağına giriyor, medya parçalanması, kültür savaş politikası ve ideolojik bloklar arasındaki karşılıklı korku."
+ great_polarization.1.f:0 "Her seçim varoluşsal hale gelir. Her skandal kanıt olur. Her trajedi bir silah haline gelir."
+ great_polarization.1.a:0 "Merkez çatmaya başlar."
+
+ great_polarization.2.t:0 "Siyasi olarak Motivated Mass Shooting"
+ great_polarization.2.d:0 "Aşırı politik retoriye bağlı bir kitlesel atış ülkeyi şok etti. Rakip gruplar derhal suç, güvenlik, sivil özgürlükler ve ideolojiyi tartışırlar."
+ great_polarization.2.f:0 "Ölüler yatırılır. Hikaye cenazelerin başlamasından önce sona erdi."
+ great_polarization.2.a:0 "Outrage bölmeyi besliyor."
+ great_polarization.2.b:0 "Ciddi bir iki partili yanıt gör."
+
+ great_polarization.3.t:0 "Araştırmacı"
+ great_polarization.3.d:0 "Bir siyasi figüre yapılan bir suikast, siyasi şiddetin normalleştiğinden korkuyor."
+ great_polarization.3.f:0 "atış hedefini kaçırdı, ancak cumhuriyeti vurdu."
+ great_polarization.3.a:0 "Ülke Geri Döndü."
+ great_polarization.3.b:0 "Koruyucu güvenliği genişletin."
+
+ great_polarization.4.t:0 "Algoritma"
+ great_polarization.4.d:0 "Sosyal medya platformları, milyonlarca radikal içeriğe, komplo ağlarına ve kimlik odaklı bir karşı-mobilizasyona maruz kalıyor."
+ great_polarization.4.f:0 "Beslenme ikna edici değildir. Büyüyor."
+ great_polarization.4.a:0 "Outrage makinesi hızlanıyor."
+ great_polarization.4.b:0 "Baskı platformları ılımlı."
+
+ great_polarization.5.t:0 "A Wave of Exposure"
+ great_polarization.5.d:0 "Güçlü rakamlara karşı kamu iddialarının dalgası, istismar, cinsiyet ve kurumsal ikiyüzlülüğün ulusal bir hesabını tetikledi."
+ great_polarization.5.f:0 "Ne fısıldandı şimdi aramalanabilir."
+ great_polarization.5.a:0 "Hesap yayıyor."
+ great_polarization.5.b:0 "Sorumluluk için kurumsal kanallar oluşturun."
+
+ great_polarization.6.t:0 "Azınlıklar Hedeflendi"
+ great_polarization.6.d:0 "Azınlık topluluklarına karşı düşmanlık artışı protestoları, karşı-protestleri ve ırkçılık, kimlik ve ulusal aidiyet üzerine yeni bir tartışma başlattı."
+ great_polarization.6.f:0 "Bazıları için, geri döndü. Başkaları için, hayatta kalmaktır."
+ great_polarization.6.a:0 "Sokaklar tekrar dolduruyor."
+ great_polarization.6.b:0 "Gerici ve sıcaklığı daha düşük."
+
+ great_polarization.20.t:0 "Sıcaklık Falls"
+ great_polarization.20.d:0 "Polarizasyon ortadan kayboldu, ancak en tehlikeli spiral kesildi. Siyasi kurumlar bazı meşruiyeti geri kazandılar."
+ great_polarization.20.f:0 "Bir cumhuriyet değil, çünkü vatandaşları aynı fikirde, ancak yeterlileri kaybetmeyi kabul ederler."
+ great_polarization.20.a:0 "Sendika katlandı."
+
+ great_polarization.21.t:0 "Bölünmüş"
+ great_polarization.21.d:0 "Acil kriz sivil savaşa yol açmadı, ancak kutuplaşma Amerikan siyasi yaşamında gömülü hale geldi."
+ great_polarization.21.f:0 "Ateş kırılmadı. Kronik oldu."
+ great_polarization.21.a:0 "Yeni normal."
+
+ great_polarization.100.t:0 "İkinci Amerikan İç Savaşı"
+ great_polarization.100.d:0 "Bir devrimci kriz Amerika Birleşik Devletleri'ni kırdı. Federal otorite karşılanıyor ve silahlı gruplar ülkeyi rakip hükümetlere taşımaya başlıyor."
+ great_polarization.100.f:0 "İlk sivil savaş, sendikanın hayatta kalabileceğini sordu. İkincisi, sendikanın bile ne olduğunu sorar."
+ great_polarization.100.a:0 "Sendika kırıkları."
+
+ great_polarization_baseline:0 "Büyük Polarizasyon"
+ great_polarization_baseline_desc:0 "Siyasi atmosfer giderek radikalleşmiş ve reaktifdir."
+
+ great_polarization_right_wing_president:0 "Doğru-Wing Başkanlığı"
+ great_polarization_right_wing_president_desc:0 "Doğru bir başkan liberal, sosyal-demokratik, sosyalist, komünist ve azınlık-sağlık muhalefet hareketlerini enerjilendirdi."
+
+ great_polarization_left_wing_president:0 "Left-Wing Presidential"
+ great_polarization_left_wing_president_desc:0 "Sol başkan, muhafazakar, libertarian, gelenekselist, faşist ve dini-toplumsal muhalefet hareketlerine sahiptir."
+
+ great_polarization_divided_media:0 "Entrencial Polarizasyon"
+ great_polarization_divided_media_desc:0 "Medya ortamı, bir başkasından izole edilmiş siyasi kampları tutar."
+
+ great_polarization_attempted_assassination:0 "Araştırmacı"
+ great_polarization_attempted_assassination_desc:0 "Siyasi şiddet halk güvenini sarsmıştır."
+
+ great_polarization_mass_shooting_aftermath:0 "Siyasi olarak Motivated Mass Shooting"
+ great_polarization_mass_shooting_aftermath_desc:0 "Siyasi olarak motive edilmiş bir katliam sosyal çatışmayı derinleştirdi."
+
+ great_polarization_reform_concessions:0 "Reform Tartışmaları"
+ great_polarization_reform_concessions_desc:0 "Ciddi bir reform cevabı siyasi gerilimleri düşürdü."
+
+ great_polarization_security_crackdown:0 "Güvenlik Crackdowndown"
+ great_polarization_security_crackdown_desc:0 "Genişlenen güvenlik önlemleri, relash riski altındayken devlet baskısını artırdı."
+
+ great_polarization_online_radicalization:0 "Online Radikalizasyon"
+ great_polarization_online_radicalization_desc:0 "Sosyal platformlar politik seferberlik ve öfkeyi hızlandırıyor."
+
+ great_polarization_minorities_targeted:0 "Azınlıklar Hedeflendi"
+ great_polarization_minorities_targeted_desc:0 "Azınlık toplulukları daha fazla düşmanlıkla karşı karşıya ve yanıt olarak örgütlenmektedir."
+
+ great_polarization_metoo_mobilization:0 "Public Reckoning"
+ great_polarization_metoo_mobilization_desc:0 "Halkın maruz kalma dalgası liberal ve radikal hareketleri seferber etti."
+
+ second_american_civil_war_outbreak:0 "İkinci Amerikan İç Savaşı"
+ second_american_civil_war_outbreak_desc:0 "Amerika Birleşik Devletleri devrimci çatışmaya çöktü."
+ 
+ state_pop_support_movement_centrist_add:0 "Centrist Hareket Pop"
+ state_pop_support_movement_conservative_add:0 "Muhafazakar Hareket Pop"
+ state_pop_support_movement_cultural_majority_add:0 "Kültür Binliği Hareketi Pop"
+ state_pop_support_movement_fascist_add:0 "Fascist Hareket Pop"
+ state_pop_support_movement_liberal_add:0 "Liberal Hareket Pop"
+ state_pop_support_movement_liberal_conservative_add:0 "Liberal Muhafazakar Hareket Pop"
+ state_pop_support_movement_libertarian_add:0 "Libertarian Hareketi Pop çekiciion"
+ state_pop_support_movement_social_democratic_add:0 "Sosyal Demokratik Hareket Pop"
+ state_pop_support_movement_traditionalist_add:0 "Geleneksel Hareketi Pop"
+ state_pop_support_movement_centrist_add_desc:0 "Centrist harekete doğru pop çekimini değiştirir."
+ state_pop_support_movement_conservative_add_desc:0 "Muhafazakar harekete doğru pop çekimini değiştirir."
+ state_pop_support_movement_cultural_majority_add_desc:0 "Kültürel Büyüklük hareketine yönelik pop çekimlerini değiştirir."
+ state_pop_support_movement_fascist_add_desc:0 "Fascist harekete doğru pop çekimini değiştirir."
+ state_pop_support_movement_liberal_add_desc:0 "Liberal harekete doğru pop çekimini değiştirir."
+ state_pop_support_movement_liberal_conservative_add_desc:0 "Liberal Muhafazakar harekete doğru pop çekimini değiştirir."
+ state_pop_support_movement_libertarian_add_desc:0 "Libertarian hareketine yönelik pop çekimlerini değiştirir."
+ state_pop_support_movement_social_democratic_add_desc:0 "Sosyal Demokratik harekete doğru pop çekimini değiştirir."
+ state_pop_support_movement_traditionalist_add_desc:0 "Geleneksel harekete doğru pop cazibe."
+ 
+ great_polarization.130.t:0 "Blue America'yı mı arıyorsunuz?"
+ great_polarization.130.d:0 "Amerika Birleşik Devletleri kırıldı, yönetimin liberal veya merkezi sol karakteri, Blue America'ya en yakın yerde duruyor. Mavi Amerika olarak savaşa devam edebilir veya Amerika Birleşik Devletleri'nin kalıntılarıyla kalabilirsiniz."
+ great_polarization.130.f:0 "Bir hükümet sürekliliği iddia edebilir, ancak güç hala itaat eden kurumları takip eder."
+ great_polarization.130.a:0 "Blue America'ya geçiş."
+ great_polarization.130.b:0 "Amerika Birleşik Devletleri olarak kal."
+
+ great_polarization.131.t:0 "Red America'yı mı arıyorsunuz?"
+ great_polarization.131.d:0 "Amerika Birleşik Devletleri kırıldı, yönetim sağ kanat Kırmızı Amerika'ya en yakın yerlerdir. Savaş Red America olarak devam edebilir veya Amerika Birleşik Devletleri'nin kalıntılarıyla kalabilirsiniz."
+ great_polarization.131.f:0 "Bayrak aynı şekilde, ancak altındaki ülke değişti."
+ great_polarization.131.a:0 "Red America'ya geçiş."
+ great_polarization.131.b:0 "Amerika Birleşik Devletleri olarak kal."
+
+ great_polarization_switch_blue_tt:0 "Ülkeyi #bold Blue America#! olarak değiştireceksiniz."
+ great_polarization_switch_red_tt:0 "Ülkeyi #bold Red America#! olarak değiştireceksiniz."
+ great_polarization_stay_usa_tt:0 "Amerika Birleşik Devletleri olarak kalacaktır."
+
+ great_polarization_complete_header:0 "Büyük Polarizasyon, kriz bozulursa veya Amerika Birleşik Devletleri sivil savaşa girerse sona erer."
+ 
+ great_polarization.38.t:0 "U.S Capitol Besieged"
+ great_polarization.38.d:0 "Bir kalabalık, Amerika Birleşik Devletleri'ne acı bir seçimden sonra fırtına açtı, ülkeyi şok etti ve siyasi çatışmanın anayasal kısıtlamalarla kırıldığı korkuları derinleştirdi."
+ great_polarization.38.f:0 "Zounda bir simge alanı haline gelir."
+ great_polarization.38.a:0 "Cumhuriyet titriyor."
+ great_polarization.38.b:0 "Saldırıyı Condemn ve güven yeniden inşa edin."
+ 
+ ## other western countries
+ 
+ je_rise_of_the_right:0 "Sağın Yükselişi"
+ je_rise_of_the_right_reason:0 "Batı'da, sağ popülist hareketler medya parçalanması, göç backlash, kültür savaş politikası ve anti-fikreasyonla güç kazanıyor. 2035'e kadar, sağ kanat hareketleri daha güçlü ve sağ popülist liderler ortaya çıkma olasılığı daha yüksektir."
+
+ rise_of_the_right_status_baseline:0 "Doğru hareketler güç kazanıyor."
+ rise_of_the_right_status_strong:0 "Sağ popülist bir dalgalanma, ulusal siyaseti yeniden şekillendiriyor."
+ rise_of_the_right_completion_header:0 "Bu dalga 2035'ten sonra azalır."
+ rise_of_the_right_ends_2035_tt:0 "The Rise of the Right end after #bold 1 Ocak 2035#!"
+ rise_of_the_right_spawnrate_tt:0 "Sağ popülist lider spawn oranı arttı. Tam spawn ağırlıkları ideoloji/karacter spawn dosyalarında elle ele alınır."
+
+ rise_of_the_right.1.t:0 "Sağın Yükselişi"
+ rise_of_the_right.1.d:0 "Yeni bir sağ popülist akım ulusal politikaya girdi. Bu, kurumların güvensizliklerinden, elitlerdeki öfkeden, kültürel arkadanştan ve parçalanmış bir medya ortamından güç alır."
+ rise_of_the_right.1.f:0 "Eski partiler hala ofisleri tutuyor. Yeni politika kalabalığın nasıl tutulmasını öğreniyor."
+ rise_of_the_right.1.a:0 "Siyasi merkez artık güvenli değil."
+
+ rise_of_the_right.10.t:0 "Algoritma"
+ rise_of_the_right.10.d:0 "Online siyasi ağlar, geleneksel partiler dışında organize etmenin doğru soluklu popülist hareketler vermek için geliştirilmiş bir anti-fikre sahiptir."
+ rise_of_the_right.10.f:0 "Bir yem bir ralli olur. Bir şikayetler bir platform haline gelir."
+ rise_of_the_right.10.a:0 "Outrage yayılıyor."
+ rise_of_the_right.10.b:0 "Sivil kurumlar aracılığıyla geri dönün."
+
+ rise_of_the_right.11.t:0 "Migration Backlash"
+ rise_of_the_right.11.d:0 "Göçmen, entegrasyon ve ulusal kimlik üzerindeki öfke artışı sağ kanatlarını güçlendirdi."
+ rise_of_the_right.11.f:0 "Sınır, eski düzenin cevap veremeyeceği her korku için bir sembolü haline gelir."
+ rise_of_the_right.11.a:0 "Arkalash büyür."
+ rise_of_the_right.11.b:0 "Tartışmayı genişletin."
+
+ rise_of_the_right.12.t:0 "Populists Break Through"
+ rise_of_the_right.12.d:0 "Sağ popülist bir gerçekleme eski parti sistemi aracılığıyla kırıldı, ana partileri diline ve gündemine yanıt vermeye zorladı."
+ rise_of_the_right.12.f:0 "Bir zamanlar odanın dışındaydılar. Şimdi oda etraflarında inşa edilmiştir."
+ rise_of_the_right.12.a:0 "Doğru dalgalanmalar."
+ rise_of_the_right.12.b:0 "Merkezi yeniden inşa edin."
+
+ rise_of_the_right.13.t:0 "Street Politika"
+ rise_of_the_right.13.d:0 "Şeytanlar, karşı mücadeleler ve viral çatışmalar, politikanın parlamentodan ve sokaklara geçtiği hissi derinleştirdi."
+ rise_of_the_right.13.f:0 "chant, Larl formunda politikadır."
+ rise_of_the_right.13.a:0 "Sokaklar radikalleşti."
+ rise_of_the_right.13.b:0 "Cool the temperature."
+
+ rise_of_the_right_baseline:0 "Sağın Yükselişi"
+ rise_of_the_right_baseline_desc:0 "Doğru hareketler ulusal politikada güç kazanıyor."
+
+ rise_of_the_right_populist_surge:0 "Sağlayıcı Popülist Cerrah"
+ rise_of_the_right_populist_surge_desc:0 "Doğru popülistler siyasi manzarayı yeniden şekillendiriyorlar."
+
+ rise_of_the_right_migration_backlash:0 "Migration Backlash"
+ rise_of_the_right_migration_backlash_desc:0 "Göçmenlik ve ulusal kimlik politik seferberlik merkezi sürücüleri haline geldi."
+
+ rise_of_the_right_online_radicalization:0 "Algoritma"
+ rise_of_the_right_online_radicalization_desc:0 "Online outrage haklı siyasi seferberlik hızlanıyor."
+
+ rise_of_the_right_establishment_response:0 "Kuruluş Yanıtı"
+ rise_of_the_right_establishment_response_desc:0 "Anastream kurumları popülist dalgalanmaları absorbe etmeye veya bozmaya çalışıyor."
+
+ rise_of_the_right_populist_leader_spawn_tooltip_modifier:0 "Doğru Populist Açılış"
+ rise_of_the_right_populist_leader_spawn_tooltip_modifier_desc:0 "Sağ popülist lider spawn oranı arttı. Gerçek ideoloji el ele alınmaktadır."
+ 

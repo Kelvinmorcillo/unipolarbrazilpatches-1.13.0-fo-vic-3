@@ -1,0 +1,185 @@
+﻿### USA character template file ###
+# USA - United States of America
+
+# United States - USA
+
+REPLACE_OR_CREATE:usa_george_bush_character_template = {
+    first_name = george
+    last_name = w_bush
+    historical = yes
+    culture = cu:yankee
+    female = no
+    religion = rel:protestant
+    ideology = ideology_neocon_leader
+    interest_group = ig_petty_bourgeoisie
+    birth_date = 1946.7.06
+    dna = dna_george_w_bush
+    traits = {
+        experienced_political_operator
+        tactful
+    }
+    interest_group_leader_usage = {
+        country_trigger = {
+            exists = c:USA
+            this = c:USA
+        }
+        interest_group_trigger = {
+            is_marginal = no
+            is_interest_group_type = ig_petty_bourgeoisie
+        }
+        earliest_usage_date = 1997.2.12
+        latest_usage_date = 2005.1.1
+        chance = 100
+    }
+}
+
+REPLACE_OR_CREATE:usa_trump_character_template = {
+    first_name = donald
+    last_name = trump
+    historical = yes
+    culture = cu:yankee
+    female = no
+    religion = rel:protestant
+    ideology = ideology_right_wing_populist_leader
+    interest_group = ig_professionals
+    birth_date = 1946.9.06
+    dna = dna_trump
+    traits = {
+        experienced_political_operator
+		direct
+		arrogant
+		bigoted
+		charismatic
+        tactful
+    }
+    interest_group_leader_usage = {
+        country_trigger = {
+            exists = c:USA
+            this = c:USA
+        }
+        interest_group_trigger = {
+            is_marginal = no
+            is_interest_group_type = ig_professionals
+        }
+        earliest_usage_date = 2012.2.12
+        latest_usage_date = 2028.1.1
+        chance = 100
+    }
+}
+
+REPLACE_OR_CREATE:usa_obama_character_template = {
+    first_name = barack_hussein
+    last_name = obama
+    historical = yes
+    culture = cu:afro_american
+    female = no
+    religion = rel:protestant
+    ideology = ideology_social_liberal_leader
+    interest_group = ig_petty_bourgeoisie
+    birth_date = 1964.8.04
+    dna = dna_obama
+    traits = {
+        experienced_political_operator
+        inspirational_orator
+        tactful
+		charismatic
+    }
+    interest_group_leader_usage = {
+        country_trigger = {
+            exists = c:USA
+            this = c:USA
+        }
+        interest_group_trigger = {
+            is_marginal = no
+            is_interest_group_type = ig_petty_bourgeoisie
+        }
+        earliest_usage_date = 2005.2.12
+        latest_usage_date = 2016.1.1
+        chance = 100
+    }
+}
+
+USA_colin_powell = {
+	first_name = Colin
+	last_name = Powell
+	historical = yes
+	culture = cu:afro_american
+	role = admiral
+	birth_date = 1937.4.5
+	dna = dna_colin_powell
+	ig_leader = yes
+	interest_group = ig_armed_forces
+	ideology = ideology_neocon_leader
+	traits = {
+		experienced_political_operator
+		cautious
+		meticulous
+	}
+}
+ 
+USA_lane_kirkland = {
+	first_name = Lane
+	last_name = Kirkland
+	historical = yes
+	culture = cu:dixie
+	birth_date = 1922.3.12
+	dna = dna_lane_kirkland
+	ig_leader = yes
+	interest_group = ig_trade_unions
+	ideology = ideology_progressive_leader
+	traits = {
+		experienced_political_operator
+		basic_political_operator
+		charismatic
+	}
+}
+ 
+USA_sam_walton = {
+	first_name = Sam
+	last_name = Walton
+	historical = yes
+	culture = cu:yankee
+	birth_date = 1918.3.29
+	dna = dna_sam_walton
+	ig_leader = yes
+	interest_group = ig_industrialists
+	ideology = ideology_conservative_leader
+	traits = {
+		experienced_political_operator
+		innovative
+	}
+}
+ 
+USA_pat_buchanan = {
+	first_name = Pat
+	last_name = Buchanan
+	historical = yes
+	culture = cu:yankee
+	birth_date = 1938.11.2
+	dna = dna_pat_buchanan
+	ig_leader = yes
+	interest_group = ig_landowners
+	ideology = ideology_authoritarian_capitalist_leader
+	traits = {
+		demagogue
+		experienced_political_operator
+		bigoted
+	}
+}
+ 
+USA_noam_chomsky = {
+	first_name = Noam
+	last_name = Chomsky
+	historical = yes
+	culture = cu:yankee
+	birth_date = 1928.12.7
+	dna = dna_noam_chomsky
+	ig_leader = yes
+	interest_group = ig_intelligentsia
+	ideology = ideology_anarchist_leader
+	traits = {
+		erudite
+		charismatic
+		basic_political_operator
+	}
+}

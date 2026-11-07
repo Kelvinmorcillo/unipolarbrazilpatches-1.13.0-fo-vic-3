@@ -1,0 +1,37 @@
+# ==========================================
+# IMF SCRIPTED BUTTON
+# Pay off great power obligations early
+# ==========================================
+
+imf_button_pay_obligations = {
+	name = imf_button_pay_obligations_name
+	desc = imf_button_pay_obligations_desc
+
+	visible = {
+		has_modifier = imf_great_power_obligations
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = imf_pay_obligations_cost_tt
+			scaled_debt < 0.01
+		}
+	}
+
+	effect = {
+		remove_modifier = imf_great_power_obligations
+		add_treasury = -500
+		every_country = {
+			limit = { is_great_power = yes }
+			change_relations = {
+				country = root
+				value = 10
+			}
+		}
+		custom_tooltip = imf_obligations_paid_tt
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}

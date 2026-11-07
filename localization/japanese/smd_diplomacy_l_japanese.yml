@@ -1,0 +1,108 @@
+﻿l_japanese:
+#################### JE ####################
+# The Internet
+
+economic_union:0 "経済連合"
+economic_union_pact_desc:0 "2つの州間の統一された市場そして通貨があるdiplomatic pact。"
+subject_type_economic_union:0 "経済連合"
+subject_type_economic_union:0 "経済連合"
+subject_type_economic_union_desc:0 "2つの州間の統一された市場そして通貨があるdiplomatic pact。"
+concept_economic_union:0 "経済連合"
+concept_subject_type_economic_union:0 "経済連合"
+subject_type_economic_union_no_icon:0 "経済連合"
+concept_economic_union_desc:0 "2つの州間の統一された市場そして通貨があるdiplomatic pact。"
+
+economic_union2:0 "経済連合"
+economic_union2_pact_desc:0 "2つの州間の統一された市場そして通貨があるdiplomatic pact。"
+
+eu_events.400:0 "欧州連合"
+
+support_revolution:0 "サポート革命"
+support_revolution_action_propose_name:0 "サポート革命"
+support_revolution_action_break_name:0 "ハルトサポート"
+
+impose_sanctions:0 "インポーズの制裁"
+impose_sanctions_desc: "この国の金融資産を調達します。 ゲーム用語では、これは、2つの国間のGDPの違いに基づいて、ターゲットの財務から直接送金されるリバースバンクロールを作成します。"
+impose_sanctions_action_propose_name:0 "金融制裁"
+impose_sanctions_action_break_name:0 "リフト制裁"
+impose_sanctions_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName] は私たちに対して制裁を課しました!"
+impose_sanctions_notification_name: "[INITIATOR_COUNTRY.GetName] は私たちに対して制裁を課しました!"
+impose_sanctions_notification_desc: "金融制裁に当たる!"
+
+humanitarian_aid:0 "人道援助を送る"
+humanitarian_aid_desc: "この国に住んでいるポップスに金融援助を提供します。 この国に住んでいるポップスのポケットに、直接私たちの宝庫からお金を転送します。"
+humanitarian_aid_action_propose_name:0 "人道援助"
+humanitarian_aid_action_break_name:0 "ハルト人道援助"
+humanitarian_aid_pact_desc:0 "この国に住んでいるポップスに金融援助を提供します。 この国に住んでいるポップスのポケットに、直接私たちの宝庫からお金を転送します。"
+humanitarian_aid_notification_name: "[INITIATOR_COUNTRY.GetName] は、人道支援をお送りします!"
+humanitarian_aid_notification_desc: "私たちは、人道支援を認めています。"
+humanitarian_aid_proposal_accepted_name: "人道援助の受け入れ"
+humanitarian_aid_proposal_accepted_desc: "私たちは今、人道支援を提供しています。"
+
+
+host_military_bases_desc: ""
+host_military_bases_effects_desc: "•2つの [Concept('concept_country', '$concept_countries$')] 間の軍事協定を 1 つ $concept_country$ が $concept_missile$ を他の $concept_country$ のエアベースで起動できるようにしました。"
+host_military_bases_article_short_desc: "[TARGET_COUNTRY.GetNameNoFormatting] は [SOURCE_COUNTRY.GetNameNoFormatting] でミサイルを起動できます。"
+
+ smd_create_economic_union:0 "プロポーズ経済連合"
+ smd_create_economic_union_action_name:0 "プロポーズ経済連合"
+ smd_create_economic_union_action_propose_name:0 "プロポーズ経済連合"
+ smd_create_economic_union_desc:0 "貿易の特権と相互取引権の周りに構築された経済組合を調達します。"
+ smd_create_economic_union_action_notification_name:0 "経済連合は提案しました"
+ smd_create_economic_union_action_notification_desc:0 "[INITIATOR_COUNTRY.GetName] は [TARGET_COUNTRY.GetName] で経済組合を提案しました。"
+ smd_create_economic_union_action_notification_third_party_name:0 "経済連合は提案しました"
+ smd_create_economic_union_action_notification_third_party_desc:0 "[INITIATOR_COUNTRY.GetName] は [TARGET_COUNTRY.GetName] で経済組合を提案しました。"
+
+ smd_diplomatic_unification:0 "外交統一"
+ smd_diplomatic_unification_action_name:0 "外交統一"
+ smd_diplomatic_unification_action_propose_name:0 "プロポーズの統一"
+ smd_diplomatic_unification_desc:0 "経済統合と文化的アライメント後の平和な政治統一を提唱する。"
+ smd_diplomatic_unification_action_notification_name:0 "分科会の統一の提案"
+ smd_diplomatic_unification_action_notification_desc:0 "[INITIATOR_COUNTRY.GetName] は、[TARGET_COUNTRY.GetName] でディプロマティック統一を提案しました。"
+ smd_diplomatic_unification_action_notification_third_party_name:0 "分科会の統一の提案"
+ smd_diplomatic_unification_action_notification_third_party_desc:0 "[INITIATOR_COUNTRY.GetName] は、[TARGET_COUNTRY.GetName] でディプロマティック統一を提案しました。"
+
+ smd_diplomatic_unification_annexation_effect_tt:0 "受取国は、イニシエータが満員となる。"
+ smd_create_economic_union_proposal_accepted_name:0 "受け入れられる経済連合"
+ smd_create_economic_union_proposal_accepted_desc:0 "[TARGET_COUNTRY.GetName] は [INITIATOR_COUNTRY.GetName] の提案を受け入れ、経済連合を作成します。"
+ smd_create_economic_union_proposal_declined_name:0 "経済連合は注入しました"
+ smd_create_economic_union_proposal_declined_desc:0 "[TARGET_COUNTRY.GetName] は [INITIATOR_COUNTRY.GetName] の提案を拒絶し、経済連合を作成します。"
+ smd_diplomatic_unification_proposal_accepted_name:0 "受け入れられる統一"
+ smd_diplomatic_unification_proposal_accepted_desc:0 "[TARGET_COUNTRY.GetName] は [INITIATOR_COUNTRY.GetName] の提案を diplomatic の統一のために受け入れ、附属します。"
+ smd_diplomatic_unification_proposal_declined_name:0 "統一の拒否"
+ smd_diplomatic_unification_proposal_declined_desc:0 "[TARGET_COUNTRY.GetName] は [INITIATOR_COUNTRY.GetName] のディプロマム統一のための提案を拒否しました。"
+ smd_economic_union_base_resistance_tt:0 "国は、経済組合に入るための基底的な合意を持っています。"
+ smd_unification_base_resistance_tt:0 "国は、外交統一による附属書の受入を認める強力な基底消失を持っています。"
+ 
+ treaty_name_smd_economic_union:0 "経済連合"
+ treaty_name_smd_diplomatic_unification:0 "外交統一条約"
+
+ smd_economic_union_requires_independence_tt:0 "両国は十分に独立しなければなりません。"
+ smd_economic_union_requires_peace_tt:0 "両国は、互いに平和でなければならず、外交的なプレーにコミットしていない。"
+ smd_economic_union_requires_no_subject_relation_tt:0 "ネイザーの国は、すでに他の被写体または上司であることができます。"
+ smd_economic_union_requires_no_isolationism_tt:0 "イラクサの国は、イソリシスト経済政策を持つことができます。"
+ smd_economic_union_requires_no_duplicate_tt:0 "既に経済組合がなければいけません。"
+
+ smd_unification_requires_independence_tt:0 "両国は十分に独立しなければなりません。"
+ smd_unification_requires_peace_tt:0 "両国は、互いに平和でなければならず、外交的なプレーにコミットしていない。"
+ smd_unification_requires_no_subject_relation_tt:0 "ネイザーの国は、すでに他の被写体または上司であることができます。"
+ smd_unification_requires_economic_union_tt:0 "国はすでに経済組合を持っている必要があります。"
+ smd_unification_requires_culture_tt:0 "国は、主要な文化を共有し、第一次文化、伝統グループ、言語グループ、または伝統と言語特性を有する必要があります。"
+ smd_unification_requires_good_relations_tt:0 "関係は、少なくとも非動性である必要があります。"
+ smd_diplomatic_unification_effect_tt:0 "受取国はイニシエータの支配人になります。"
+ 
+ threaten_nuclear_hostilities:0 "核兵器を脅かす"
+ threaten_nuclear_hostilities_action_name:0 "核兵器を脅かす"
+ threaten_nuclear_hostilities_action_propose_name:0 "核兵器を脅かす"
+ threaten_nuclear_hostilities_desc:0 "別の国に対する核的な脅威を発行する。 核のbrinkmanshipは一時的に私たちの外交的評判を高め、他の国は私たちから条約を受け入れる可能性が高くなります。"
+ threaten_nuclear_hostilities_action_notification_name:0 "核兵器が脅迫"
+ threaten_nuclear_hostilities_action_notification_desc:0 "[INITIATOR_COUNTRY.GetName] は、[TARGET_COUNTRY.GetName] に対する原発性を脅かしている。"
+ threaten_nuclear_hostilities_action_notification_third_party_name:0 "核兵器が脅迫"
+ threaten_nuclear_hostilities_action_notification_third_party_desc:0 "[INITIATOR_COUNTRY.GetName] は、[TARGET_COUNTRY.GetName] に対する原発性を脅かしている。"
+
+ threaten_nuclear_hostilities_requires_nuclear_capable_tt:0 "私たちの国は、原子力能力を持つ必要があります。"
+ threaten_nuclear_hostilities_cooldown_tt:0 "最近、核兵器を脅かしてはならない。"
+ threaten_nuclear_hostilities_target_valid_tt:0 "ターゲットは、非分散型国である必要があります。"
+
+ threatened_nuclear_hostilities_diplomatic_reputation:0 "脅威を受けた核兵器"
+ threatened_nuclear_hostilities_diplomatic_reputation_desc:0 "核のbrinkmanshipは、この国の外交的評判を一時的に増加させ、他の国はそれから条約を受け入れる可能性が高くなります。"

@@ -1,0 +1,38 @@
+# Srpska
+
+namespace = srpskas
+
+srpskas.1 = {
+	type = country_event
+	placement = ROOT
+	title = srpskas.1.t
+	desc = srpskas.1.d
+	icon = "gfx/interface/icons/event_icons/event_war.dds"
+	event_image = { video = "yugoslav_war" }
+	duration = 2
+
+	trigger = {
+		this ?= c:SRP
+		NOT = { has_variable = bosnian_war_started }
+	}
+
+	immediate = {
+		save_scope_as = srpska_war_trigger_scope
+	}
+
+	option = {
+		name = srpskas.1.a
+		default_option = yes
+		s:STATE_BOSNIA = { add_claim = c:SRP }
+		yugo_launch_bosnian_war = yes
+		custom_tooltip = srpska_war_launched_tt
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = srpskas.1.b
+		custom_tooltip = srpska_accepts_autonomy_tt
+		add_modifier = { name = dayton_peace_framework days = 1095 }
+		ai_chance = { base = 0 }
+	}
+}

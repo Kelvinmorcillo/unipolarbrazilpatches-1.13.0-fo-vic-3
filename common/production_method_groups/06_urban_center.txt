@@ -1,0 +1,140 @@
+﻿pmg_amenities = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_market_stalls
+		pm_market_squares
+		pm_covered_markets
+		pm_arcades
+	}
+}
+
+pmg_street_lighting = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_no_street_lighting
+		pm_gas_streetlights
+		pm_electric_streetlights
+	}
+}
+
+pmg_public_transport = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_no_public_transport
+		pm_public_trams
+		pm_public_motor_carriages
+		pm_mass_transit_system
+	}
+}
+
+pmg_urban_clergy = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_ownership.dds"
+	production_methods = {
+		pm_state_urban_clergy
+		pm_free_urban_clergy
+		pm_no_urban_clergy
+	}
+}
+
+pmg_public_housing = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_ownership.dds"
+	production_methods = {
+		pm_no_public_housing 
+		pm_the_projects
+		pm_affordable_construction
+		pm_housing_for_all 
+	}
+}
+
+pmg_base_building_arts_academy = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_traditional_art
+		pm_realist_art
+		pm_photographic_art
+		pm_film_art
+	}
+}
+
+pmg_principle_freedom_of_movement_3 = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_principle_freedom_of_movement_3
+		pm_freedom_of_movement_no_effect
+	}
+}
+
+pmg_ownership_building_arts_academy = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_ownership.dds"
+	production_methods = {
+		pm_traditional_patronage
+		pm_bourgeoisie_patronage
+		pm_independent_artists
+	}
+}
+
+pmg_base_building_power_plant = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_hydroelectric_plant
+		pm_coal-fired_plant
+		pm_oil-fired_plant
+	}
+}
+
+##### SMD
+
+pmg_base_building_nuclear_plant = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_fission_plant
+		pm_fusion_plant
+	}
+}
+
+pmg_base_building_green_plant = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_windmill_field
+		pm_solar_field
+	}
+}
+
+pmg_base_building_airport = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_base_airport
+	}
+}
+
+pmg_base_building_airport_prioritization = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_cargo_plane_prioritization
+		pm_regional_port
+		pm_passenger_port
+	}
+}
+
+pmg_base_building_spaceport = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_launchpads
+		pm_space_shuttle
+		pm_reusable_rocket
+		pm_starship
+	}
+}
+
+pmg_base_building_mission_control = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_mission_control
+		pm_satellite_assisted_control
+		pm_autonomous_mission_control
+	}
+}

@@ -1,0 +1,68 @@
+﻿namespace = wtc_bombing
+
+wtc_bombing.1 = {
+    type = country_event
+    title = wtc_bombing.1.t
+    desc = wtc_bombing.1.d
+    picture = "gfx/event_pictures/terrorist_attack.dds"
+
+    trigger = {
+        c:USA ?= this
+        game_date = 1993.2.26
+        NOT = { has_variable = wtc_1993_bombing_happened }
+    }
+
+    immediate = {
+        set_variable = wtc_1993_bombing_happened
+        add_modifier = {
+            name = heightened_security_measures
+            months = 6
+        }
+    }
+
+    option = {
+        name = wtc_bombing.1.a
+		s:STATE_OKLAHOMA = {
+			add_modifier = {
+				name = oklahoma_city_aftermath
+				days = 365
+				multiplier = 1
+			}
+		}
+        add_radicals = {
+            value = 0.05
+            pop_type = machinists
+        }
+        add_radicals = {
+            value = 0.05
+            pop_type = clerks
+        }
+        add_loyalists = {
+            value = 0.03
+            pop_type = officers
+        }
+    }
+
+    option = {
+        name = wtc_bombing.1.b
+		s:STATE_OKLAHOMA = {
+			add_modifier = {
+				name = oklahoma_city_aftermath
+				days = 365
+				multiplier = 1
+			}
+		}
+        add_radicals = {
+            value = 0.02
+            pop_type = laborers
+        }
+        add_loyalists = {
+            value = 0.05
+            pop_type = officers
+        }
+        add_loyalists = {
+            value = 0.02
+            pop_type = capitalists
+        }
+    }
+}

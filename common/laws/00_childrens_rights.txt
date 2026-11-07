@@ -1,0 +1,153 @@
+﻿# group = this is the law_group a law belongs to
+# icon = graphical icon shown in-game
+# modifier = {} modifier on country for having adopted this law
+
+law_child_labor_allowed = {
+	group = lawgroup_childrens_rights
+	
+	icon = "gfx/interface/icons/law_icons/child_labor_allowed.dds"
+	
+	progressiveness = -50
+
+	modifier = {
+		state_laborers_mortality_mult = 0.05
+		state_machinists_mortality_mult = 0.05
+		state_farmers_mortality_mult = 0.05
+		state_peasants_mortality_mult = 0.05
+		
+		state_dependent_wage_mult = 0.30
+	}
+	
+	possible_political_movements = {
+		law_restricted_child_labor
+	}
+	
+	ai_will_do = {
+		exists = ruler
+		ruler = {
+			has_ideology = ideology_populist_leader
+		}
+	}
+}
+
+REPLACE_OR_CREATE:law_restricted_child_labor = {
+	group = lawgroup_childrens_rights
+	
+	icon = "gfx/interface/icons/law_icons/restricted_child_labor.dds"
+	
+	progressiveness = 0
+	
+	modifier = {
+		state_laborers_mortality_mult = 0.02
+		state_farmers_mortality_mult = 0.02
+		state_peasants_mortality_mult = 0.02
+		
+		state_dependent_wage_mult = 0.15
+		
+		country_institution_schools_max_investment_add = 1
+	}
+	
+	possible_political_movements = {
+		law_compulsory_primary_school
+	}
+	
+	ai_will_do = {
+		OR = {
+			has_law = law_type:law_child_labor_allowed
+			AND = {
+				exists = ruler
+				ruler = {
+					has_ideology = ideology_liberal_leader
+				}			
+			}
+		}
+	}
+}
+
+REPLACE_OR_CREATE:law_compulsory_primary_school = {
+	group = lawgroup_childrens_rights
+	
+	icon = "gfx/interface/icons/law_icons/compulsory_primary_school.dds"
+	
+	progressiveness = 50
+
+	modifier = {
+		country_institution_schools_max_investment_add = 1
+		# Informational: adds to national education expenses.
+		# Actual cost applied monthly via country_expenses_add.
+		smd_institution_education_expense_mult = 0.4
+	}
+}
+
+law_privatized_preschool_education = {
+	group = lawgroup_childrens_rights
+	
+	icon = "gfx/interface/icons/law_icons/smd/privatized_preschool.dds"
+	
+	progressiveness = 75
+
+	modifier = {
+		state_dependent_wage_mult = -0.05
+		state_birth_rate_mult = 0.05
+		state_mortality_mult = -0.02
+		country_institution_schools_max_investment_add = 2
+		interest_group_ig_industrialists_pol_str_mult = 0.10
+		# Informational: adds to national education expenses (lighter
+		# public burden, subsidies only). Cost applied monthly.
+		smd_institution_education_expense_mult = 0.2
+	}
+	
+	possible_political_movements = {
+		law_universal_childcare
+	}
+	
+	ai_will_do = {
+		OR = {
+			has_law = law_type:law_compulsory_primary_school
+			AND = {
+				exists = ruler
+				ruler = {
+					OR = {
+						has_ideology = ideology_liberal_leader
+						has_ideology = ideology_progressive_leader
+					}
+				}
+			}
+		}
+	}
+}
+
+law_universal_childcare = {
+	group = lawgroup_childrens_rights
+	
+	icon = "gfx/interface/icons/law_icons/smd/universal_childcare.dds"
+	
+	progressiveness = 100
+
+	modifier = {
+		state_dependent_wage_mult = 0.10
+		state_birth_rate_mult = 0.10
+		state_mortality_mult = -0.05
+		state_dependent_political_participation_add = 0.05
+		country_institution_schools_max_investment_add = 2
+		# Informational: adds to national education expenses (fully
+		# state-funded, the heaviest add). Cost applied monthly.
+		smd_institution_education_expense_mult = 0.8
+	}
+	
+	ai_will_do = {
+		OR = {
+			has_law = law_type:law_privatized_preschool_education
+			AND = {
+				exists = ruler
+				ruler = {
+					OR = {
+						has_ideology = ideology_progressive_leader
+						has_ideology = ideology_socialist_leader
+						has_ideology = ideology_communist_leader
+					}
+				}
+			}
+		}
+	}
+}

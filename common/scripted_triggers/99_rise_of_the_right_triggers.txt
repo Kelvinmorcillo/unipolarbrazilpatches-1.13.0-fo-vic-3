@@ -1,0 +1,65 @@
+# The Rise of the Right scripted triggers
+# This is intended for Western / developed liberal-democratic countries outside the USA.
+# USA keeps the stronger Great Polarization system instead.
+
+rise_of_the_right_is_western_country = {
+	OR = {
+		# North America / Oceania
+		c:CAN ?= this
+		c:AST ?= this
+		c:NZL ?= this
+
+		# Western / Northern Europe
+		c:GBR ?= this
+		c:IRE ?= this
+		c:FRA ?= this
+		c:GER ?= this
+		c:ITA ?= this
+		c:SPA ?= this
+		c:XPO ?= this
+		c:NTH ?= this
+		c:BEL ?= this
+		c:LUX ?= this
+		c:SWI ?= this
+		c:AUS ?= this
+		c:XDE ?= this
+		c:SWD ?= this
+		c:NRW ?= this
+		c:FIN ?= this
+		c:ICE ?= this
+
+		# Central / Eastern EU and NATO-adjacent democracies
+		c:POL ?= this
+		c:CZH ?= this
+		c:SLO ?= this
+		c:HUN ?= this
+		c:ROM ?= this
+		c:BUL ?= this
+		c:CRO ?= this
+		c:SLV ?= this
+		c:EST ?= this
+		c:LAT ?= this
+		c:LIT ?= this
+
+		# Eastern Mediterranean / democratic US-aligned West-ish bloc
+		c:GRE ?= this
+		c:CYP ?= this
+		c:ISR ?= this
+	}
+}
+
+rise_of_the_right_can_start = {
+	rise_of_the_right_is_western_country = yes
+	NOT = { c:USA ?= this }
+	game_date >= 2015.1.1
+	game_date < 2035.1.1
+	NOT = { has_variable = rise_of_the_right_resolved }
+	NOT = { has_journal_entry = je_rise_of_the_right }
+}
+
+rise_of_the_right_active_country = {
+	rise_of_the_right_is_western_country = yes
+	NOT = { c:USA ?= this }
+	has_journal_entry = je_rise_of_the_right
+	game_date < 2035.1.1
+}

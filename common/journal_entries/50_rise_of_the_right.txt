@@ -1,0 +1,65 @@
+# The Rise of the Right journal entry
+
+je_rise_of_the_right = {
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+	group = je_group_dilemmas
+
+	is_shown_when_inactive = {
+		rise_of_the_right_can_start = yes
+	}
+
+	possible = {
+		rise_of_the_right_can_start = yes
+	}
+
+	immediate = {
+		rise_of_the_right_initialize = yes
+		trigger_event = { id = rise_of_the_right.1 popup = yes }
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = rise_of_the_right_status_strong
+				trigger = {
+					has_modifier = rise_of_the_right_populist_surge
+				}
+			}
+			triggered_desc = {
+				desc = rise_of_the_right_status_baseline
+				trigger = { always = yes }
+			}
+		}
+	}
+
+	custom_completion_header = rise_of_the_right_completion_header
+
+	complete = {
+		custom_tooltip = {
+			text = rise_of_the_right_ends_2035_tt
+			game_date >= 2035.1.1
+		}
+	}
+
+	on_complete = {
+		rise_of_the_right_cleanup = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			rise_of_the_right_monthly_tick = yes
+		}
+	}
+
+	on_yearly_pulse = {
+		effect = {
+			rise_of_the_right_yearly_tick = yes
+		}
+	}
+
+	weight = 10000
+	should_be_pinned_by_default_involved = yes
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	transferable = no
+	can_revolution_inherit = no
+}

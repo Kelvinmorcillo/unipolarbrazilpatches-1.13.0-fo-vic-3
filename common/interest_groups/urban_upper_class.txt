@@ -1,0 +1,416 @@
+REPLACE_OR_CREATE:ig_industrialists = {
+	color = hsv{ 0.06 0.60 0.89 }
+	texture = "gfx/interface/icons/ig_icons/industrialists.dds"
+	layer = "revolution_dynamic_industrialists"
+	index = 2
+	
+	ideologies = {
+	
+		#Economic Ideologies
+		ideology_far_right_economy 			#General Economic Beliefs 
+		ideology_globalist 					#Foreign Economic Policy
+		
+		#Political Ideologies
+		ideology_authoritarian				#General Political Beliefs
+		ideology_republican					#Government Types 
+		
+		#Dynamic Ideologies
+		#ideology_neutral_spending
+		#ideology_neutral_population
+		
+	}
+	
+	character_ideologies = {
+		ideology_moderate_leader
+		ideology_neoliberal_leader
+		ideology_classical_liberal_leader
+		ideology_right_wing_libertarian_leader
+		ideology_conservative_leader
+		ideology_corporatist_leader
+		ideology_authoritarian_capitalist_leader
+		ideology_state_capitalist_leader
+		ideology_technocrat_leader
+	}
+	
+	enable = {
+		always = yes
+	}
+	
+	# Deprecated; use on_enable effect to assign traits instead
+	traits = {
+		ig_trait_engines_of_progress
+		ig_trait_job_creators
+		ig_trait_tax_avoidance
+	}	
+	
+	on_enable = {
+		ig:ig_industrialists = {
+			set_ig_trait = ig_trait:ig_trait_tax_avoidance
+			set_ig_trait = ig_trait:ig_trait_engines_of_progress
+			set_ig_trait = ig_trait:ig_trait_job_creators
+			if = {
+				limit = {
+					owner = { c:USA ?= this}
+				}
+				set_interest_group_name = ig_wallstreet
+			}
+		}
+	}
+	on_disable = {}
+	on_character_ig_membership = {}
+	
+	pop_potential = {
+	
+		#Only Accepted Pops can organise into IGs
+		#pop_acceptance >= acceptance_status_3
+		
+		#Correct pop type
+		OR = { 
+			is_pop_type = capitalists
+			is_pop_type = engineers 			#Technologists
+			is_pop_type = professionals
+			is_pop_type = shopkeepers
+			is_pop_type = academics
+		}
+		
+		#Private Sector Only
+		NOT = { pop_employment_building_group = bg_government }
+		
+	}
+	
+	pop_weight = {
+		value = 0
+
+		add = {
+			desc = "POP_CAPITALISTS"
+			if = {
+				limit = {
+					is_pop_type = capitalists
+				}
+				value = 250
+				add = this.standard_of_living
+			}
+		}
+
+		add = {
+			desc = "POP_ENGINEERS"
+			if = {
+				limit = {
+					is_pop_type = engineers
+				}
+				value = 50
+				add = {
+					value = this.standard_of_living
+					multiply = 2
+				}
+			}
+		}
+
+		add = {
+			desc = "POP_SHOPKEEPERS"
+			if = {
+				limit = {
+					is_pop_type = shopkeepers
+				}
+				value = 50
+				add = {
+					value = this.standard_of_living
+					multiply = 2
+				}
+			}
+		}
+
+		multiply = {
+			desc = "LEADER_POPULARITY"
+			scope:interest_group = {
+				leader ?= {
+					value = popularity
+					multiply = 0.0025
+					add = 1
+					max = 1.25
+					min = 0.75
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				scope:interest_group = {
+					is_in_government = yes
+				}
+			}
+			multiply = {
+				desc = "IN_GOVERNMENT_ATTRACTION"
+				value = 1
+				add = scope:interest_group.modifier:interest_group_in_government_attraction_mult
+				min = 0
+			}
+		}
+		
+		if = {
+			limit = {
+				scope:interest_group = {
+					is_in_government = yes
+				}
+			}
+			multiply = { # Multiplied by 1.25x max
+				desc = "POP_LOYALISTS"
+				value = pop_loyalist_fraction
+				divide = 4
+				add = 1
+			}
+		}
+		if = {
+			limit = {
+				scope:interest_group = {
+					is_in_government = no
+				}
+			}
+			multiply = { # Multiplied by 1.25x max
+				desc = "POP_RADICALS"
+				value = pop_radical_fraction
+				divide = 4
+				add = 1
+			}
+		}
+		
+	}
+	
+	monarch_weight = {
+		value = 0
+	}	
+	
+	agitator_weight = {
+		# Agitators more likely to come from populist IG's rather than elitist
+		value = 0.25
+		# Agitators will never be part of a marginalized IG
+		if = {
+			limit = {
+				owner.ig:ig_industrialists = {
+					is_marginal = yes
+				}
+			}
+			multiply = {
+				value = 0
+			}
+		}
+	}
+	
+	commander_weight = {
+		value = 0.5
+	}	
+	
+	executive_weight = {
+		value = 5.0
+	}
+	
+	noble_chance = {
+		value = 0.3
+	}
+	
+	female_commander_chance = {	
+		value = 0.0
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+				}
+
+			}
+			add = {
+				value = 0.05
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_legal_protections
+				}
+
+			}
+			add = {
+				value = 0.15
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_structural_egalitarianism
+				}
+
+			}
+			add = {
+				value = 0.25
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_matriarchy
+				}
+
+			}
+			add = {
+				value = 5.0
+			}
+		}
+	}
+	
+	female_executive_chance = {
+		value = 0.0
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+				}
+
+			}
+			add = {
+				value = 0.15
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_legal_protections
+				}
+
+			}
+			add = {
+				value = 0.25
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_structural_egalitarianism
+				}
+
+			}
+			add = {
+				value = 0.35
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_matriarchy
+				}
+
+			}
+			add = {
+				value = 5.0
+			}
+		}
+	}
+	
+	female_politician_chance = {
+		value = 0.0
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+				}
+
+			}
+			add = {
+				value = 0.15
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_legal_protections
+				}
+
+			}
+			add = {
+				value = 0.25
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_structural_egalitarianism
+				}
+
+			}
+			add = {
+				value = 0.35
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_matriarchy
+				}
+
+			}
+			add = {
+				value = 5.0
+			}
+		}
+	}
+	
+	female_agitator_chance = {
+		value = 0.01
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+				}
+
+			}
+			add = {
+				value = 0.15
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_legal_protections
+				}
+
+			}
+			add = {
+				value = 0.25
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_structural_egalitarianism
+				}
+
+			}
+			add = {
+				value = 0.35
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_matriarchy
+				}
+
+			}
+			add = {
+				value = 5.0
+			}
+		}
+		
+	}
+	
+	# The chance that a commander belonging to this IG takes over leadership when it changes
+	# scope:character is the most popular commander in the IG
+	commander_leader_chance = {
+		value = 0.25
+		multiply = ig_commander_leader_chance_mult
+	}
+	
+	# The chance that a executive belonging to this IG takes over leadership when it changes
+	# scope:character is the most popular executive in the IG
+	executive_leader_chance = {
+		value = 0.75
+	}
+}

@@ -1,0 +1,99 @@
+﻿l_japanese:
+
+ # ==========================================
+ # OLYMPICS — MODIFIERS
+ # ==========================================
+
+ olympics_hosting: "オリンピックのホストの国家"
+ olympics_hosting_desc: "[ROOT.GetCountry.GetName] に世界が来ています。 オリンピック競技は、世界最大級のスポーツイベントをステージングする、かなりのコストとロジスティックな要求と共に、世界的な注目、観光、そして威信をもたらします。"
+
+ olympics_hosting_prestige: "オリンピックホストプレステージ"
+ olympics_hosting_prestige_desc: "オリンピックの開催は、世界の注目の中心に [ROOT.GetCountry.GetName] を置きました。 ダイプロマチックでソフトなパワーメリットがかなりあります。"
+
+ olympics_recently_hosted: "最近のオリンピックホスト"
+ olympics_recently_hosted_desc: "[ROOT.GetCountry.GetName] は、最近オリンピックを主催し、数年間再びホストする資格はありません。"
+
+ olympics_boycott_modifier: "オリンピック・ボイコット"
+ olympics_boycott_modifier_desc: "オリンピックが国際的に認められているのは、その決定です。 一部のパートナーは、原則スタンドとして表示します。 他の人は、必要のない挑発としてそれを参照してください。"
+
+ olympics_result_terrible: "オリンピック・パフォーマンス"
+ olympics_result_terrible_desc: "[ROOT.GetCountry.GetName] の選手は、ゲームから少しずつ返して、それを表示するようにしました。 国民の気分は失望の1つです。"
+
+ olympics_result_modest: "固体オリンピック性能"
+ olympics_result_modest_desc: "[ROOT.GetCountry.GetName] の選手は、世界舞台に敬意を表しています。"
+
+ olympics_result_well: "強いオリンピック性能"
+ olympics_result_well_desc: "[ROOT.GetCountry.GetName] の選手は試合でよく演奏し、ホームメダルと全国の誇りをもたらします。"
+
+ olympics_result_gold: "ドミナントオリンピック公演"
+ olympics_result_gold_desc: "[ROOT.GetCountry.GetName] オリンピックを支配しました。 メダルは、巨大な国の誇りの源であり、世界の国の威信を強化しています。"
+
+ olympics_doping_caught: "オリンピックドーピングスキャンダル"
+ olympics_doping_caught_desc: "[ROOT.GetCountry.GetName] の選手は性能高める薬剤を使用して引かれました。 メダルが剥奪され、公式が辞任され、国は国際オボリウムに直面しています。 国民の威信への損傷は厳しいです。"
+
+ # ==========================================
+ # EVENTS
+ # ==========================================
+
+ you_do_not_dope_athletes:0 "かなり遊びます"
+ you_dope_your_athletes:0 "あなたは、あなたの選手のパフォーマンス向上薬を与える, キャッチ取得の可能性を危険に."
+ # olympics.1 — Host selection
+ olympics.1.t: "オリンピックを主催するオファー"
+ olympics.1.d: "国際オリンピック委員会は、次のオリンピックを主催する提案で[ROOT.GetCountry.GetName]に近づいてきました。 国際的な地位の安定した民主主義として、[ROOT.GetCountry.GetName]はホスティングの基準を満たし、それに来る威信そして注意はかなりである。 そこで、世界最大級のスポーツイベントを企画・運営するコストやニーズが高まっています。"
+ olympics.1.f: "世界は舞台が必要です。 [ROOT.GetCountry.GetName] は 1 つビルドしますか?"
+ olympics.1.a: "受け入れる — 私たちはホストに敬意を表しています"
+ olympics.1.b: "Decline — この時点ではコミットできません"
+
+ # olympics.3 — Participation offer
+ olympics.3.t: "オリンピック競技は終了しました"
+ olympics.3.d: "次のオリンピックは[SCOPE.sCountry('olympics_host_scope').GetName]で開催される。 世界一の国は、競技者を競うために招待されます。 このゲームは、[ROOT.GetCountry.GetName] の強さを発揮し、その人々を祝い、世界舞台でその場所を取る機会です。 または、離れて滞在することにより、政治声明を作成する。"
+ olympics.3.f: "4年ごとに世界時計。"
+ olympics.3.a: "アスリートを応援します。"
+ olympics.3.b: "Boycott - 私たちの不在は、私たちの選手よりも大声を話します"
+
+ # olympics.3b — Doping choice
+ olympics.11.t: "選手は準備しています"
+ olympics.11.d: "オリンピックは数週間で楽しめます。 [ROOT.GetCountry.GetName] の選手はハードトレーニングを続けてきましたが、競技は激しいでしょう。 一部のスポーツプログラムでは、きれいな競争が十分ではないかもしれないことを静かに示唆しています。 性能高める薬剤は、慎重に管理しました、彼らが必要とする端を運動選手に与えることができます。\n\n 検出の危険性は本物です。 巻き込まれている結果は重度です。 しかし、帰宅の空手の結果は、いくつか悪いかもしれません。"
+ olympics.11.f: "ビクトリーは多くの父親を持っています。 Defeatはどれも持っていません。"
+ olympics.11.a: "競争をきれいに — 私たちの選手は正直に最善を尽くします"
+ olympics.11.b: "準備を強化 — 勝つために再生"
+
+ # olympics.4 — Caught doping
+ olympics.4.t: "ドッピング スキャンダル ロック オリンピック チーム"
+ olympics.4.d: "国際オリンピック委員会は、[ROOT.GetCountry.GetName]の選手が禁止された性能向上物質に対して正当なテストをしたことを発表しました。 メダルは除去されています。 公式は中断されています。 ストーリーは、世界のあらゆるスポーツチャンネルでリードアイテムです。\n\n 政府の拒否は信じられません。 評判のダメージは重度で、回復に何年もかかります。"
+ olympics.4.f: "ゴールドは輝きよりも速く輝きます。"
+ olympics.4.a: "この不幸な状況を深く後悔する"
+
+ # olympics.5 — Terrible
+ olympics.5.t: "オリンピックを失望させる"
+ olympics.5.d: "[ROOT.GetCountry.GetName] の選手が出場しました。 メダルの背が高くなるのは、 パフォーマンスは、他の場所で尊敬されていました。 バックホーム、スポーツプレスは、資金調達、準備、および選定基準に関するハード質問をしています。 誰が希望したかは見せませんでした。"
+ olympics.5.d_doping: "[ROOT.GetCountry.GetName] の薬剤の援助と競合する選手は、まだほとんど手ぶらで家を出しました。 ドーピングプログラムは、かなりのリスクに対して悪い値を提供してきました。"
+ olympics.5.f: "次のゲームは常にあります。"
+ olympics.5.a: "チームが最善を尽くした"
+
+ # olympics.6 — Modest
+ olympics.6.t: "オリンピック・パフォーマンス"
+ olympics.6.d: "[ROOT.GetCountry.GetName] の選手は、控えめで実際の成果でゲームから戻りました。 メダル、強力な個々のパフォーマンス、そして国が最高水準で競争できる知識が豊富です。 トリムフではありませんが、それは失望ではありません。"
+ olympics.6.d_doping: "[ROOT.GetCountry.GetName] の選手は、いくつかの薬剤の援助によって、敬意を表しています。 ドーピングは検出されていないように見えます。"
+ olympics.6.f: "見晴らしさがなければ、一貫した。"
+ olympics.6.a: "私達の選手のための固体提示"
+
+ # olympics.7 — Well
+ olympics.7.t: "強いオリンピック性能"
+ olympics.7.d: "[ROOT.GetCountry.GetName]の選手は、英雄の歓迎に帰ってきた。 メダルカウントは印象的で、思い出に残るパフォーマンスであり、国民の気分は至高です。 何人かの選手は世帯の名前になりました。 国やその運動プログラムによく反映される本物的に強い結果です。"
+ olympics.7.d_doping: "[ROOT.GetCountry.GetName] の選手は強く演じました。しかし、一般には控えめな製薬プログラムによって、それを知りません。 メダルは本物です。 それらを生成した方法は、賞賛できません。"
+ olympics.7.f: "全国は、今日は少し背の高い国です。"
+ olympics.7.a: "私達の選手は私達を誇りに思っていました"
+
+ # olympics.8 — Gold
+ olympics.8.t: "オリンピックトリムフ — [ROOT.GetCountry.GetName] ゲームを支配する"
+ olympics.8.d: "結果は、- と [ROOT.GetCountry.GetName] オリンピックゲームを支配している。 メダルテーブルは、他のほとんどの国よりもより多くの金、より多くの銀、より多くの青銅を語っています。 選手は、期待を超えて行われ、国は祝います。 世界のステージでは、[ROOT.GetCountry.GetName] はマークを作った。"
+ olympics.8.d_doping: "[ROOT.GetCountry.GetName] はオリンピックゲームを支配しているので、これまでのところ、システム的なドーピングプログラムによって支援され、検出されていない。 メダルは本物です。 お祝いは本物です。 そして秘密は、今、安全です。"
+ olympics.8.f: "歴史はこれを覚えます。"
+ olympics.8.a: "私たちの選手は世界で最高のです"
+
+ # olympics.9 — Closing ceremony
+ olympics.9.t: "オリンピックの炎は消滅します"
+ olympics.9.d: "[SCOPE.sState('capital_scope').GetCityHubName] のオリンピック競技は閉幕しました。 選手は家を出しました。 スタジアムは静かです。 [ROOT.GetCountry.GetName] では、要求、高価、そして最終的には価値のある特別な経験でした。 このゲームは、[ROOT.GetCountry.GetName]'s ドアに世界をもたらし、国は機会に上昇しました。"
+ olympics.9.f: "次回まで。"
+ olympics.9.a: "世界を舞台に、"

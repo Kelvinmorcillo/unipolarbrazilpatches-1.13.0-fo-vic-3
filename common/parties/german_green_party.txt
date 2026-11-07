@@ -1,0 +1,213 @@
+# Fallback party for Rural Folk
+# Occasionally used for an anti-serfdom alliance
+# More popular in Nordic countries
+
+REPLACE_OR_CREATE:german_green_party = {
+	color = { 70 160 80 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = party_german_greens
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/ger_green.dds"
+	}
+
+	
+	# THIS IS RUN ONLY ONCE AT GAME START
+	valid_for_country = {
+	THIS = c:GER
+	}
+
+	available_for_interest_group = {
+		is_marginal = no
+		owner = {
+			any_interest_group = {
+				is_marginal = no
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_green_leader
+						has_ideology = ideology:ideology_left_wing_populist_leader
+						has_ideology = ideology:ideology_right_wing_populist_leader
+						has_ideology = ideology:ideology_conservative_leader
+						has_ideology = ideology:ideology_moderate_leader
+						has_ideology = ideology:ideology_democratic_socialist_leader
+					}
+				}
+			}
+		}
+		leader = {
+			OR = {
+				has_ideology = ideology:ideology_green_leader
+				has_ideology = ideology:ideology_left_wing_populist_leader
+				has_ideology = ideology:ideology_right_wing_populist_leader
+				has_ideology = ideology:ideology_conservative_leader
+				has_ideology = ideology:ideology_moderate_leader
+				has_ideology = ideology:ideology_democratic_socialist_leader
+			}
+		}
+		OR = {
+			is_interest_group_type = ig_rural_folk
+			leader = { has_ideology = ideology:ideology_green_leader }
+			leader = { has_ideology = ideology:ideology_left_wing_populist_leader }
+			leader = { has_ideology = ideology:ideology_right_wing_populist_leader }
+		}
+	}
+
+	# Root - IG considering joining
+	# scope:number - the number of IGs that would join this party before the root IG
+	join_weight = {
+		value = {
+			value = -5
+			desc = "base_value"
+		}
+
+		# Country-specific party-system bonus for icon-specific replacement party.
+
+		# Big-tent correction: non-powerful IGs are less likely to create/maintain small bloc parties.
+		if = {
+			limit = {
+				is_powerful = no
+				is_marginal = no
+				owner = { NOT = { has_law = law_type:law_single_party_state } }
+			}
+			add = {
+				value = -20
+				desc = "non_powerful_ig_prefers_big_tent_party"
+			}
+		}
+		if = {
+			limit = {
+				is_powerful = no
+				is_marginal = no
+				owner = { NOT = { has_law = law_type:law_single_party_state } }
+				OR = {
+					AND = {
+						exists = owner.py:conservative_party
+						owner = {
+							any_interest_group = {
+								is_powerful = yes
+								is_member_of_party = owner.py:conservative_party
+							}
+						}
+					}
+					AND = {
+						exists = owner.py:liberal_party
+						owner = {
+							any_interest_group = {
+								is_powerful = yes
+								is_member_of_party = owner.py:liberal_party
+							}
+						}
+					}
+				}
+			}
+			add = {
+				value = -25
+				desc = "major_big_tent_party_already_exists"
+			}
+		}
+
+		# Single-party state: all IGs are heavily pushed into the ruler IG's legal party.
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_single_party_state
+					ruler = {
+						interest_group = {
+							is_member_of_party = owner.py:agrarian_party
+						}
+					}
+				}
+			}
+			add = {
+				value = 10000
+				desc = "single_party_state_ruler_party"
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_single_party_state
+					ruler = {
+						interest_group = {
+							NOT = { is_member_of_party = owner.py:agrarian_party }
+						}
+					}
+				}
+			}
+			add = {
+				value = -10000
+				desc = "single_party_state_not_ruler_party"
+			}
+		}
+		if = {
+			limit = {
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_green_leader
+						has_ideology = ideology:ideology_left_wing_populist_leader
+						has_ideology = ideology:ideology_right_wing_populist_leader
+					}
+				}
+			}
+			add = { value = 45 desc = "ideological_compatibility" }
+		}
+		if = {
+			limit = {
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_conservative_leader
+						has_ideology = ideology:ideology_moderate_leader
+						has_ideology = ideology:ideology_democratic_socialist_leader
+					}
+				}
+			}
+			add = { value = 20 desc = "ideological_compatibility" }
+		}
+		if = {
+			limit = {
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_neoliberal_leader
+						has_ideology = ideology:ideology_authoritarian_capitalist_leader
+						has_ideology = ideology:ideology_fascist_leader
+						has_ideology = ideology:ideology_technocrat_leader
+					}
+				}
+			}
+			add = { value = -50 desc = "ideological_incompatibility" }
+		}
+		if = {
+			limit = {
+				is_powerful = yes
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_green_leader
+						has_ideology = ideology:ideology_left_wing_populist_leader
+						has_ideology = ideology:ideology_right_wing_populist_leader
+					}
+				}
+			}
+			add = { value = 20 desc = "powerful_ig" }
+		}
+		if = { limit = { is_interest_group_type = ig_rural_folk } add = { value = 20 desc = "from_archetype_party" } }
+		if = {
+			limit = {
+				scope:number = 1
+				is_powerful = no
+				is_marginal = no
+			}
+			multiply = { value = 2 desc = "from_influential_supporting_member" }
+		}
+		else_if = {
+			limit = { scope:number = 2 }
+			multiply = { value = 0.75 desc = "from_two_prior_members" }
+		}
+	}
+}

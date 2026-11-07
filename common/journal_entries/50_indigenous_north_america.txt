@@ -1,0 +1,58 @@
+﻿je_indigenous_rights = {
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	group = je_group_domestic_policy
+
+	is_shown_when_inactive = {
+		OR = {
+			c:USA ?= this
+			c:CAN ?= this
+			c:NZL ?= this
+			c:AST ?= this
+		}
+	}
+
+	possible = {
+		OR = {
+			c:USA ?= this
+			c:CAN ?= this
+			c:NZL ?= this
+			c:AST ?= this
+		}
+	}
+
+	# Status description varies by country
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = indigenous_je_status_usa_tt
+				trigger = { c:USA ?= this }
+			}
+			triggered_desc = {
+				desc = indigenous_je_status_can_tt
+				trigger = { c:CAN ?= this }
+			}
+			triggered_desc = {
+				desc = indigenous_je_status_nzl_tt
+				trigger = { c:NZL ?= this }
+			}
+			triggered_desc = {
+				desc = indigenous_je_status_ast_tt
+				trigger = { c:AST ?= this }
+			}
+		}
+	}
+
+	complete = {
+		has_law = law_type:law_affirmative_action
+	}
+
+	on_complete = {
+		trigger_event = { id = indigenous.10 popup = yes }
+	}
+
+	transferable = no
+	can_revolution_inherit = yes
+	weight = 3000
+	should_be_pinned_by_default_uninvolved_or_context = no
+}

@@ -1,0 +1,43 @@
+﻿COUNTRIES = {
+	c:VAT = {
+		
+		 
+
+		set_tax_level = high
+		
+		# Laws
+		activate_law = law_type:law_mass_conscription
+		activate_law = law_type:law_appointed_bureaucrats
+		activate_law = law_type:law_compulsory_primary_school
+		activate_law = law_type:law_state_religion
+		activate_law = law_type:law_cultural_exclusion
+		activate_law = law_type:law_resettlement_enticement
+		activate_law = law_type:law_census_voting
+		activate_law = law_type:law_agrarianism
+		activate_law = law_type:law_religious_schools
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_theocracy
+		activate_law = law_type:law_public_health_insurance
+		activate_law = law_type:law_secret_police
+		activate_law = law_type:law_serfdom
+		activate_law = law_type:law_closed_borders
+		activate_law = law_type:law_no_police
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_debt_slavery
+		activate_law = law_type:law_consumption_based_taxation
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_no_minority_rights
+		activate_law = law_type:law_useless_unions
+		activate_law = law_type:law_political_lobbying
+
+			
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 1		}
+
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 2
+		}
+	}
+}

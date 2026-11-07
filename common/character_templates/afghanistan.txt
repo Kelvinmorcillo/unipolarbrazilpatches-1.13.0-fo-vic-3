@@ -1,0 +1,200 @@
+# Afghan conflict character templates
+# Traits restricted to traits seen in the provided Japan file.
+# AFG receives IG leaders only; this file does not overwrite AFG's existing ruler.
+
+### Afghan Northern Alliance
+
+ANA_burhanuddin_rabbani = {
+	first_name = Burhanuddin
+	last_name = Rabbani
+	historical = yes
+	ruler = yes
+	culture = cu:tajik
+	birth_date = 1940.9.20
+	ig_leader = yes
+	interest_group = ig_devout
+	ideology = ideology_theocrat_leader
+	traits = {
+		experienced_political_operator
+		charismatic
+		cautious
+	}
+}
+
+ANA_ahmad_shah_massoud = {
+	first_name = Ahmad_Shah
+	last_name = Massoud
+	historical = yes
+	culture = cu:tajik
+	birth_date = 1953.9.2
+	ig_leader = yes
+	interest_group = ig_armed_forces
+	ideology = ideology_jihadist_leader
+	traits = {
+		charismatic
+		experienced_political_operator
+		meticulous
+	}
+}
+
+ANA_abdul_rashid_dostum = {
+	first_name = Abdul_Rashid
+	last_name = Dostum
+	historical = yes
+	culture = cu:uzbek
+	birth_date = 1954.3.25
+	ig_leader = yes
+	interest_group = ig_petty_bourgeoisie
+	ideology = ideology_authoritarian_capitalist_leader
+	traits = {
+		experienced_political_operator
+		demagogue
+		arrogant
+	}
+}
+
+### Taliban Afghanistan — AFG interest group leaders only
+
+AFG_jalaluddin_haqqani = {
+	first_name = Jalaluddin
+	last_name = Haqqani
+	historical = yes
+	culture = cu:pashtun
+	birth_date = 1939.1.1
+	ig_leader = yes
+	interest_group = ig_armed_forces
+	ideology = ideology_jihadist_leader
+	traits = {
+		charismatic
+		demagogue
+		experienced_political_operator
+	}
+}
+
+AFG_mohammad_rabbani = {
+	first_name = Mohammad
+	last_name = Rabbani
+	historical = yes
+	culture = cu:pashtun
+	birth_date = 1955.1.1
+	ig_leader = yes
+	interest_group = ig_devout
+	ideology = ideology_jihadist_leader
+	traits = {
+		experienced_political_operator
+		cautious
+		basic_political_operator
+	}
+}
+
+AFG_mohammad_hassan_akhund = {
+	first_name = Mohammad_Hassan
+	last_name = Akhund
+	historical = yes
+	culture = cu:pashtun
+	birth_date = 1945.1.1
+	ig_leader = yes
+	interest_group = ig_landowners
+	ideology = ideology_theocrat_leader
+	traits = {
+		cautious
+		experienced_political_operator
+		meticulous
+	}
+}
+
+AFG_abdul_ghani_baradar = {
+	first_name = Abdul_Ghani
+	last_name = Baradar
+	historical = yes
+	culture = cu:pashtun
+	birth_date = 1963.9.29
+	ig_leader = yes
+	interest_group = ig_petty_bourgeoisie
+	ideology = ideology_jihadist_leader
+	traits = {
+		cautious
+		meticulous
+		experienced_political_operator
+	}
+}
+
+AFG_wakil_ahmad_muttawakil = {
+	first_name = Wakil_Ahmad
+	last_name = Muttawakil
+	historical = yes
+	culture = cu:pashtun
+	birth_date = 1971.1.1
+	ig_leader = yes
+	interest_group = ig_intelligentsia
+	ideology = ideology_theocrat_leader
+	traits = {
+		basic_political_operator
+		cautious
+		meticulous
+	}
+}
+
+AFG_mullah_dadullah = {
+	first_name = Mullah
+	last_name = Dadullah
+	historical = yes
+	culture = cu:pashtun
+	birth_date = 1966.1.1
+	ig_leader = yes
+	interest_group = ig_rural_folk
+	ideology = ideology_jihadist_leader
+	traits = {
+		demagogue
+		arrogant
+		basic_political_operator
+	}
+}
+
+AFG_akhtar_mohammad_mansour = {
+	first_name = Akhtar_Mohammad
+	last_name = Mansour
+	historical = yes
+	culture = cu:pashtun
+	birth_date = 1968.1.1
+	ig_leader = yes
+	interest_group = ig_industrialists
+	ideology = ideology_authoritarian_capitalist_leader
+	traits = {
+		meticulous
+		cautious
+		experienced_political_operator
+	}
+}
+
+AFG_abdul_salam_hanafi = {
+	first_name = Abdul_Salam
+	last_name = Hanafi
+	historical = yes
+	culture = cu:uzbek
+	birth_date = 1968.1.1
+	ig_leader = yes
+	interest_group = ig_trade_unions
+	ideology = ideology_theocrat_leader
+	traits = {
+		cautious
+		basic_political_operator
+		meticulous
+	}
+}
+
+AFG_amir_khan_muttaqi = {
+	first_name = Amir_Khan
+	last_name = Muttaqi
+	historical = yes
+	culture = cu:pashtun
+	birth_date = 1971.1.1
+	ig_leader = yes
+	interest_group = ig_professionals
+	ideology = ideology_theocrat_leader
+	traits = {
+		basic_political_operator
+		cautious
+		charismatic
+	}
+}

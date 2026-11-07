@@ -1,0 +1,488 @@
+﻿# ==========================================
+# THE ARAB SPRING
+# ==========================================
+
+je_arab_spring = {
+	icon = "gfx/interface/icons/event_icons/arab_spring.dds"
+
+	group = je_group_international
+
+	should_be_involved = {
+		is_in_geographic_region = geographic_region_middle_east
+		NOT = {
+			OR = {
+				has_law = law:law_census_voting
+				has_law = law:law_universal_suffrage
+				c:ISR ?= this
+			}
+			has_law = law:law_elected_bureaucrats
+		}
+		NOT = { has_variable = completed_arab_spring }
+	}
+
+	modifiers_while_active = {
+		modifier_arab_spring
+	}
+
+	should_show_when_not_involved = {
+			country_has_interest_marker_in_middle_east = yes
+	}
+
+	is_shown_when_inactive = {
+		NOT = {
+			has_global_variable = arab_spring_happened
+		}
+		any_country = {
+			is_in_geographic_region = geographic_region_middle_east
+		}
+	}
+
+	possible = {
+		# At least one MENA country must be in the modern communication age
+		any_country = {
+			is_in_geographic_region = geographic_region_middle_east
+		}
+		# Triggered by starting event setting this global variable
+		custom_tooltip = {
+			text = arab_spring_underway_tt
+			has_global_variable = arab_spring_happening
+		}
+	}
+
+	immediate_all_involved = {
+		# Create the primary protest movement (liberal/secular)
+		if = {
+			limit = {
+				NOT = {
+					any_political_movement = {
+						OR = {
+							is_political_movement_type = movement_liberal
+							is_political_movement_type = movement_progressive
+						}
+					}
+				}
+			}
+			create_political_movement = { type = movement_liberal }
+		}
+		random_political_movement = {
+			limit = {
+				OR = {
+					is_political_movement_type = movement_liberal
+					is_political_movement_type = movement_progressive
+				}
+			}
+			save_scope_as = protest_movement_scope
+		}
+
+		# Create the Islamist movement (Muslim Brotherhood / traditionalist opposition)
+		if = {
+			limit = {
+				NOT = {
+					any_political_movement = {
+						is_political_movement_type = movement_traditionalist
+					}
+				}
+				OR = {
+					country_has_accepted_religion = sunni
+					country_has_accepted_religion = shiite
+				}
+			}
+			create_political_movement = { type = movement_traditionalist }
+		}
+		random_political_movement = {
+			limit = {
+				is_political_movement_type = movement_traditionalist
+			}
+			save_scope_as = islamist_movement_scope
+		}
+
+		set_variable = { name = arab_spring_timer_var value = 0 }
+		trigger_event = { id = 2011_protests.1 popup = yes }
+
+		arab_spring_save_authoritarian_laws = yes
+	}
+
+	custom_completion_header = je_arab_spring_complete_header
+
+	complete = {
+		AND = {
+			OR = {
+				custom_tooltip = {
+					text = had_arab_spring_revolution_tt_no_scope
+					scope:journal_entry = {
+						any_scope_je_involved = {
+							is_player = yes
+							has_variable = had_arab_spring_revolution
+						}
+					}
+				}
+				custom_tooltip = {
+					text = has_liberal_or_progressive_in_government_tt
+					scope:journal_entry = {
+						any_scope_je_involved = {
+							is_player = yes
+							any_interest_group = {
+								is_in_government = yes
+								OR = {
+									has_ideology = ideology:ideology_liberal_movement
+									leader = {
+										OR = {
+											has_ideology = ideology:ideology_liberal_leader
+											has_ideology = ideology:ideology_progressive_leader
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				text = has_census_voting_or_universal_suffrage_tt
+				scope:journal_entry = {
+					any_scope_je_involved = {
+						is_player = yes
+						OR = {
+							has_law_or_variant = law_type:law_census_voting
+							has_law_or_variant = law_type:law_universal_suffrage
+						}
+					}
+				}
+			}
+		}
+		hidden_trigger = {
+			always = no
+		}
+	}
+
+
+
+	on_complete = {
+				trigger_event = { id = arab_spring.10 }
+		}
+
+	event_outcome_completed_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = event_effects_arab_spring.10_tt
+			}
+		}
+	}
+
+	custom_failure_header = je_arab_spring_fail_header
+
+	fail = {
+		custom_tooltip = {
+			text = no_protest_leaders_tt
+			scope:journal_entry = {
+				any_scope_je_involved = {
+					is_player = yes
+					NOT = {
+						any_scope_character = {
+							OR = {
+								has_role = politician
+								has_role = agitator
+							}
+							OR = {
+								has_ideology = ideology:ideology_liberal_leader
+								has_ideology = ideology:ideology_progressive_leader
+							}
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			text = all_protest_movements_crushed_tt
+			scope:journal_entry = {
+				any_scope_je_involved = {
+					is_player = yes
+					any_political_movement = {
+						OR = {
+							is_political_movement_type = movement_liberal
+							is_political_movement_type = movement_progressive
+						}
+						political_movement_support <= 0.05
+						is_being_suppressed = yes
+					}
+				}
+			}
+		}
+		hidden_trigger = {
+			always = no
+		}
+	}
+
+	custom_on_failure_header = je_arab_spring_on_fail_header
+
+	on_fail = {
+		scope:journal_entry = {
+			random_scope_je_involved = {
+				limit = {
+					is_player = yes
+				}
+				show_as_tooltip = {
+					trigger_event = { id = arab_spring.8 }
+				}
+			}
+		}
+	}
+
+	event_outcome_failed_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = event_effects_arab_spring.8_tt
+			}
+		}
+	}
+
+	on_timeout = {
+		trigger_event = { id = arab_spring.8 }
+	}
+
+	event_outcome_timeout_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = event_effects_arab_spring.8_tt
+			}
+		}
+	}
+
+	on_weekly_pulse = {
+		effect = {
+			scope:journal_entry = {
+				every_scope_je_involved = {
+					trigger_event = { id = arab_spring.8 }
+					trigger_event = { id = arab_spring.9 }
+					trigger_event = { id = arab_spring.10 }
+				}
+			}
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			scope:journal_entry = {
+				every_scope_je_involved = {
+					if = {
+						limit = {
+							AND = {
+								scope:protest_movement_scope ?= {
+									political_movement_support <= 0.10
+									is_being_suppressed = yes
+								}
+								NOT = {
+									any_interest_group = {
+										leader = {
+											OR = {
+												has_ideology = ideology:ideology_liberal_leader
+												has_ideology = ideology:ideology_progressive_leader
+											}
+										}
+										ig_counts_as_marginal = no
+									}
+									any_scope_character = {
+										OR = {
+											has_ideology = ideology:ideology_liberal_leader
+											has_ideology = ideology:ideology_progressive_leader
+										}
+										has_role = agitator
+									}
+								}
+							}
+						}
+						change_variable = { name = arab_spring_timer_var add = 1 }
+					}
+					else = {
+						set_variable = { name = arab_spring_timer_var value = 0 }
+					}
+
+					### Monthly Event Pulse — protest escalation, crackdowns, foreign pressure
+					random_list = {
+						100 = { }
+						10 = { trigger_event = arab_spring.3 }
+						10 = { trigger_event = arab_spring.4 }
+						10 = { trigger_event = arab_spring.5 }
+						10 = { trigger_event = 2011_protests.2 }
+					}
+				}
+			}
+		}
+	}
+
+	invalid = {
+		has_global_variable = arab_spring_happened
+	}
+
+	weight = 10000
+	should_be_pinned_by_default_involved = yes
+
+	transferable = no
+	can_revolution_inherit = no
+
+	timeout = 1395
+}
+
+# ==========================================
+# THE ARAB WINTER
+# The counter-revolution / crackdown arc
+# Analogous to je_red_summer
+# ==========================================
+
+je_arab_winter = {
+	icon = "gfx/interface/icons/event_icons/arab_winter.dds"
+
+	group = je_group_domestic_policy
+
+	scripted_progress_bar = arab_spring_progress_bar
+	scripted_progress_bar = arab_winter_crackdown_progress_bar
+
+	immediate = {
+		random_primary_culture = {
+			save_scope_as = primary_culture_scope
+		}
+	}
+
+	possible = {
+		has_variable = arab_winter
+		NOT = { has_variable = survived_arab_winter }
+	}
+	
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = blank_tt
+				trigger = {
+					NOT = {
+						has_journal_entry = je_arab_winter
+					}
+				}
+			}
+			triggered_desc = {
+				desc = reformists_in_government_tt
+				trigger = {
+					any_interest_group = {
+						is_in_government = yes
+						OR = {
+							has_ideology = ideology:ideology_liberal_movement
+							has_ideology = ideology:ideology_progressive_movement
+							leader = {
+								OR = {
+									has_ideology = ideology:ideology_liberal_leader
+									has_ideology = ideology:ideology_progressive_leader
+									has_ideology = ideology:ideology_socialist_leader
+								}
+							}
+						}
+					}
+				}
+			}
+			triggered_desc = {
+				desc = reformists_out_of_government_tt
+				trigger = {
+					NOT = {
+						any_interest_group = {
+							is_in_government = yes
+							OR = {
+								has_ideology = ideology:ideology_liberal_movement
+								leader = {
+									OR = {
+										has_ideology = ideology:ideology_liberal_leader
+										has_ideology = ideology:ideology_progressive_leader
+										has_ideology = ideology:ideology_socialist_leader
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	custom_completion_header = je_arab_spring_complete_header
+
+	complete = {
+		OR = {
+			custom_tooltip = {
+				text = arab_spring_liberal_victory_tt
+				arab_spring_liberal_victory_trigger = yes
+			}
+			arab_spring_liberal_victory_trigger = yes
+			custom_tooltip = {
+				text = arab_spring_islamist_victory_tt
+				arab_spring_islamist_victory_trigger = yes
+			}
+			arab_spring_islamist_victory_trigger = yes
+		}
+	}
+
+	custom_on_completion_header = je_arab_spring_on_complete_header
+
+	on_complete = {
+		custom_tooltip = {
+			text = on_reformist_victory_tt
+			if = {
+				limit = {
+					arab_spring_liberal_victory_trigger = yes
+				}
+				trigger_event = { id = arab_spring.71 popup = yes }
+			}
+		}
+		custom_tooltip = {
+			text = on_islamist_victory_tt
+			if = {
+				limit = {
+					arab_spring_islamist_victory_trigger = yes
+				}
+				trigger_event = { id = arab_spring.7 popup = yes }
+			}
+		}
+	}
+
+	event_outcome_completed_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = arab_winter_on_complete_tt
+			}
+		}
+	}
+
+	custom_failure_header = je_arab_spring_fail_header
+
+	fail = {
+		custom_tooltip = {
+			text = arab_winter_fail_tt
+			scope:journal_entry = { "scripted_bar_progress(arab_winter_crackdown_progress_bar)" >= 100 }
+		}
+	}
+
+	custom_on_failure_header = je_arab_spring_on_fail_header
+
+	on_fail = {
+		set_variable = arab_winter_revolution_crushed
+		trigger_event = { id = arab_spring.8 popup = yes }
+	}
+
+	event_outcome_failed_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = event_effects_arab_spring.8_tt
+			}
+		}
+	}
+
+	on_monthly_pulse = {
+
+	}
+
+	invalid = {
+		has_global_variable = arab_spring_happened
+	}
+
+	weight = 9000
+	should_be_pinned_by_default_uninvolved_or_context = yes
+
+	transferable = no
+	can_revolution_inherit = no
+}

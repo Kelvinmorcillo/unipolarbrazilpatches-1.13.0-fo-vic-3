@@ -1,0 +1,165 @@
+namespace = opec_events
+
+### ══════════════════════════════════════════
+### VOTE NOTIFICATION — sent to all OPEC members when a vote begins
+### ══════════════════════════════════════════
+
+opec_events.1 = {
+	type = country_event
+	placement = ROOT
+	title = opec_events.1.t
+	desc = opec_events.1.d
+	icon = "gfx/interface/icons/event_icons/event_opec.dds"
+	event_image = { video = "middleeast_diplomats_negotiating" }
+	duration = 3
+
+	trigger = {
+		is_target_in_global_variable_list = { name = io_opec_members target = this }
+	}
+
+	option = {
+		name = opec_events.1.a
+		default_option = yes
+		# Player uses the journal entry buttons to vote
+	}
+}
+
+### ══════════════════════════════════════════
+### VOTE RESULT — fires 30 days after vote proposal
+### Checks the progress bar and applies the result
+### ══════════════════════════════════════════
+
+opec_events.10 = {
+	type = country_event
+	placement = ROOT
+	title = opec_events.10.t
+	desc = opec_events.10.d
+	icon = "gfx/interface/icons/event_icons/event_opec.dds"
+	event_image = { video = "unspecific_politicians_arguing" }
+	duration = 3
+	hidden = yes
+
+	trigger = {
+		has_global_variable = opec_vote_active
+	}
+
+	immediate = {
+		# Check if vote passed (progress > 0 means more yays than nays)
+		# Production Increase
+		if = {
+			limit = {
+				global_var:opec_vote_type = flag:opec_increase
+			}
+			# Vote passed — apply increased production to all members
+			every_country = {
+				limit = { is_target_in_global_variable_list = { name = io_opec_members target = this } }
+				# Remove opposite modifier if present
+				if = {
+					limit = { has_modifier = opec_decreased_production }
+					remove_modifier = opec_decreased_production
+				}
+				add_modifier = { name = opec_increased_production months = 12 }
+				trigger_event = { id = opec_events.11 days = 0 popup = yes }
+			}
+		}
+
+		# Production Decrease
+		if = {
+			limit = {
+				global_var:opec_vote_type = flag:opec_decrease
+			}
+			every_country = {
+				limit = { is_target_in_global_variable_list = { name = io_opec_members target = this } }
+				if = {
+					limit = { has_modifier = opec_increased_production }
+					remove_modifier = opec_increased_production
+				}
+				add_modifier = { name = opec_decreased_production months = 12 }
+				trigger_event = { id = opec_events.12 days = 0 popup = yes }
+			}
+		}
+
+		# Oil Embargo
+		if = {
+			limit = {
+				global_var:opec_vote_type = flag:opec_embargo
+				has_global_variable = opec_embargo_target
+			}
+			# Apply embargo modifier to the target country
+			global_var:opec_embargo_target = {
+				add_modifier = { name = opec_oil_embargo_target months = 24 }
+			}
+			# Notify all countries (not just OPEC) since embargoes are major world events
+			every_country = {
+				trigger_event = { id = opec_events.13 days = 0 popup = yes }
+			}
+		}
+
+		# Clean up vote state
+		remove_global_variable = opec_vote_active
+		remove_global_variable = opec_vote_type
+		remove_global_variable = opec_yes_votes
+		remove_global_variable = opec_no_votes
+		every_country = {
+			limit = { has_variable = opec_voted }
+			remove_variable = opec_voted
+		}
+	}
+
+	option = {
+	}
+}
+
+### ══════════════════════════════════════════
+### RESULT NOTIFICATIONS
+### ══════════════════════════════════════════
+
+# Production Increase Passed
+opec_events.11 = {
+	type = country_event
+	placement = ROOT
+	title = opec_events.11.t
+	desc = opec_events.11.d
+	icon = "gfx/interface/icons/event_icons/event_opec.dds"
+	event_image = { video = "unspecific_politicians_arguing" }
+	duration = 3
+
+	option = {
+		name = opec_events.11.a
+		every_country = { post_notification = io_opec_increased_production }
+		default_option = yes
+	}
+}
+
+# Production Decrease Passed
+opec_events.12 = {
+	type = country_event
+	placement = ROOT
+	title = opec_events.12.t
+	desc = opec_events.12.d
+	icon = "gfx/interface/icons/event_icons/event_opec.dds"
+	event_image = { video = "unspecific_politicians_arguing" }
+	duration = 3
+
+	option = {
+		name = opec_events.12.a
+		every_country = { post_notification = io_opec_decreased_production }
+		default_option = yes
+	}
+}
+
+# Oil Embargo Imposed — fires on ALL countries as notification
+opec_events.13 = {
+	type = country_event
+	placement = ROOT
+	title = opec_events.13.t
+	desc = opec_events.13.d
+	icon = "gfx/interface/icons/event_icons/event_opec.dds"
+	event_image = { video = "unspecific_politicians_arguing" }
+	duration = 3
+
+	option = {
+		name = opec_events.13.a
+		default_option = yes
+	}
+}

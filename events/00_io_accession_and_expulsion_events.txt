@@ -1,0 +1,155 @@
+namespace = io_accession_events
+
+io_accession_events.1 = {
+	type = country_event
+	placement = ROOT
+	title = io_accession_events.1.t
+	desc = io_accession_events.1.d
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	event_image = { video = "africa_diplomats_negotiating" }
+	duration = 3
+
+	option = {
+		name = io_accession_events.1.a
+		default_option = yes
+		post_notification = io_accepted_notification
+		add_loyalists = { pop_type = capitalists value = 0.03 }
+	}
+}
+
+io_accession_events.2 = {
+	type = country_event
+	placement = ROOT
+	title = io_accession_events.2.t
+	desc = io_accession_events.2.d
+	icon = "gfx/interface/icons/event_icons/event_european_union.dds"
+	event_image = { video = "africa_diplomats_negotiating" }
+	duration = 3
+
+	option = {
+		name = io_accession_events.2.a
+		default_option = yes
+		post_notification = io_accepted_notification
+		add_loyalists = { pop_type = shopkeepers value = 0.05 }
+	}
+}
+
+io_accession_events.3 = {
+	type = country_event
+	placement = ROOT
+	title = io_accession_events.3.t
+	desc = io_accession_events.3.d
+	icon = "gfx/interface/icons/event_icons/event_unrest.dds"
+	event_image = { video = "africa_diplomats_negotiating" }
+	duration = 3
+
+	option = {
+		name = io_accession_events.3.a
+		default_option = yes
+		post_notification = io_rejected_notification
+	}
+}
+
+io_accession_events.4 = {
+	type = country_event
+	placement = ROOT
+	title = io_accession_events.4.t
+	desc = io_accession_events.4.d
+	icon = "gfx/interface/icons/event_icons/event_unrest.dds"
+	event_image = { video = "africa_diplomats_negotiating" }
+	duration = 3
+
+	option = {
+		name = io_accession_events.4.a
+		default_option = yes
+		post_notification = io_rejected_notification
+	}
+}
+
+io_accession_events.10 = {
+	type = country_event
+	placement = ROOT
+	title = io_accession_events.10.t
+	desc = io_accession_events.10.d
+	icon = "gfx/interface/icons/event_icons/event_unrest.dds"
+	event_image = { video = "unspecific_politicians_arguing" }
+	duration = 3
+	option = { name = io_accession_events.10.a default_option = yes remove_variable = eu_membership_process_started }
+}
+
+io_accession_events.11 = {
+	type = country_event
+	placement = ROOT
+	title = io_accession_events.11.t
+	desc = io_accession_events.11.d
+	icon = "gfx/interface/icons/event_icons/event_unrest.dds"
+	event_image = { video = "unspecific_politicians_arguing" }
+	duration = 3
+	option = { name = io_accession_events.11.a default_option = yes remove_variable = eu_membership_process_started }
+}
+
+io_accession_events.12 = {
+	type = country_event
+	placement = ROOT
+	title = io_accession_events.12.t
+	desc = io_accession_events.12.d
+	icon = "gfx/interface/icons/event_icons/event_unrest.dds"
+	event_image = { video = "unspecific_politicians_arguing" }
+	duration = 3
+	option = { name = io_accession_events.12.a default_option = yes remove_variable = eu_membership_process_started }
+}
+
+io_accession_events.13 = {
+	type = country_event
+	placement = ROOT
+	title = io_accession_events.13.t
+	desc = io_accession_events.13.d
+	icon = "gfx/interface/icons/event_icons/event_unrest.dds"
+	event_image = { video = "unspecific_politicians_arguing" }
+	duration = 3
+	option = { name = io_accession_events.13.a default_option = yes }
+}
+
+io_accession_events.20 = {
+	type = country_event
+	placement = ROOT
+	title = io_accession_events.20.t
+	desc = io_accession_events.20.d
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	event_image = { video = "unspecific_politicians_arguing" }
+	duration = 3
+	option = { name = io_accession_events.20.a default_option = yes }
+}
+
+io_accession_events.21 = {
+	type = country_event
+	placement = ROOT
+	title = io_accession_events.21.t
+	desc = io_accession_events.21.d
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	event_image = { video = "unspecific_politicians_arguing" }
+	duration = 3
+	option = { name = io_accession_events.21.a default_option = yes }
+}
+
+io_accession_events.22 = {
+	type = country_event
+	placement = ROOT
+	title = io_accession_events.22.t
+	desc = io_accession_events.22.d
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	event_image = { video = "unspecific_politicians_arguing" }
+	duration = 3
+	option = { name = io_accession_events.22.a default_option = yes }
+}
+
+io_accession_events.23 = {
+	type = country_event
+	placement = ROOT
+	title = io_accession_events.23.t
+	desc = io_accession_events.23.d
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	event_image = { video = "unspecific_politicians_arguing" }
+	duration = 3
+	option = { name = io_accession_events.23.a default_option = yes }
+}

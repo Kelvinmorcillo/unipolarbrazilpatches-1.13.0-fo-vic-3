@@ -1,0 +1,65 @@
+﻿REPLACE_OR_CREATE:DNK = {
+	color = { 30 62 115 }
+	
+	country_type = unrecognized
+
+	tier = principality
+	
+	cultures = { ukrainian russian }
+	capital = STATE_LUHANSK
+}
+
+REPLACE_OR_CREATE:LUH = {
+	color = { 82 154 211 }
+	
+	country_type = unrecognized
+
+	tier = principality
+	
+	cultures = { ukrainian russian }
+	capital = STATE_LUHANSK
+}
+
+REPLACE_OR_CREATE:ANA = {
+	color = { 42 105 65 }
+	
+	country_type = recognized
+
+	tier = principality
+	
+	cultures = { tajik uzbek pashtun }
+	capital = STATE_KABUL
+}
+
+REPLACE_OR_CREATE:FSY = {
+	color = { 20 135 80 }
+	
+	country_type = unrecognized
+
+	tier = principality
+	
+	cultures = { mashriqi }
+	capital = STATE_ALEPPO
+}
+
+REPLACE_OR_CREATE:HTH = {
+	color = { 45 155 70 }
+	
+	country_type = unrecognized
+
+	tier = principality
+	
+	cultures = { mashriqi }
+	capital = STATE_YEMEN
+}
+
+REPLACE_OR_CREATE:HMS = { # Hamas
+	color = { 18 120 55 }
+	
+	country_type = unrecognized
+
+	tier = principality
+	
+	cultures = { mashriqi }
+	capital = STATE_PALESTINE
+}

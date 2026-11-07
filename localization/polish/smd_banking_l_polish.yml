@@ -1,0 +1,49 @@
+﻿l_polish:
+ # ── TAB RENAME ────────────────────────────
+ BUDGET_TAB_ASSETS: "System finansowy"
+ BUDGET_TAB_FINANCE: "Aktywa"
+ # ── CENTRAL BANKING PANEL ─────────────────
+ BUDGET_CENTRAL_BANKING_HEADER: "Bankowość centralna"
+ BUDGET_CENTRAL_BANK_LAW_LABEL: "Obecna polityka:"
+ BUDGET_FISCAL_POLICY_LABEL: "Stan polityki pieniężnej"
+
+ # Scripted loc keys
+ cb_policy_loc_1: "#R Większość umów umownych #!"
+ cb_policy_loc_2: "#r Kursywa #!"
+ cb_policy_loc_3: "#Y Neutral #!"
+ cb_policy_loc_4: "#g Rozszerzenie #!"
+ cb_policy_loc_5: "#G Większość rozszerzeń #!"
+
+ # ── BUTTON TOOLTIPS — FRACTIONAL RESERVE ──
+ CB_POLICY_1_TOOLTIP: "#bold Większość rezerw umownych #! \n #tooltip_separator! \n #header Fractional Reserve: #! \n @red_cross! Commercial Bank Throubput: #green + 10% #! \n @red_cross! Financial District Throubput: #red -10% #! \n > \n #header Full Reserve: #! < x id = 19% > @green_checkmark! Procent = x = 21 / > -2% #! \n \n < x id = @green_checkmark! @green_checkmark! Budynek = Maksymalna = Maksymalna = Maksymalna: < x"
+ CB_POLICY_2_TOOLTIP: "#bold Rezerwa Fractional #! \n #tooltip_separator! \n #header Rezerwa Fractional Reserve: #! \n @red_cross! Bank komercyjny Throubput: #green + 5% #! \n @red_cross! Financial District Throubput: #red -5% #! \n > \n #header Full Reserve: #! \n < x id = 20 / id = procent = < x = x = x = 21 / > -1% Building Maximum Cash Reserves: #red -12,5% #!"
+ CB_POLICY_3_TOOLTIP: "#bold Stabilny #! \n #tooltip_separator! \n Bank Centralny nie zajmuje aktywnej pozycji. Nie stosuje się modyfikatorów."
+ CB_POLICY_4_TOOLTIP: "#bold #! \n #tooltip_separator! \n #header #header Frakcjonalny rezerwa: #! \n @red_cross! Commercial Bank Throubput: #red -5% #! \n @red_cross! Financial District Throubput: #green 5% #! \n > \n #header Full Reserve: #! < x id = 19% > < x id = 20% > Procent = x = 21 / > 1% < x = x = 22 / > x = x = x = x = 23 / > x = x / > x id = 23 / > x id = @green_checkmark! x id = Building = Maksymalna"
+ CB_POLICY_5_TOOLTIP: "#bold Największa część rezerwy: #! \n #tooltip_separator! \n #header #! \n @red_cross! Commercial Bank Throubput: #red -10% #! \n @red_cross! Financial District Throubput: #green 10% #! \n > \n #header Full Reserve: #! < x id = 19% > @green_checkmark! Probe = 21 / > + 2% #! < x = x = x = x = x = x = x = 23 / > x = x = x = = x = x = x x = x id = 24 / > x id = = = x id = Maximaximum"
+
+ # Fractional Reserve variants
+ CB_POLICY_1_FRAC: "#bold Większość rezerw techniczno-ubezpieczeniowych #! \n #tooltip_separator! \n Bank centralny znacznie zaostrza warunki kredytowe. \n \n @red_cross! Bank Throubput #b + 10% #! \n @red_cross! Financial District Throubput #b -10% #!"
+ CB_POLICY_2_FRAC: "#bold Rezerwa umowna - Rezerwa frakcyjna #! \n #tooltip_separator! \n Bank centralny stosuje łagodne zaostrzenie warunków kredytowych. \n \n @red_cross! Bank Throubput #b + 5% #! \n @red_cross! Financial District Throubput #b -5% #!"
+ CB_POLICY_3_FRAC: "#bold Neutralny - Rezerwa frakcyjna #! \n #tooltip_separator! \n Bank Centralny nie zajmuje aktywnej pozycji. Nie stosuje się modyfikatorów."
+ CB_POLICY_4_FRAC: "#bold Expansionary - Fractional Reserve #! \n #tooltip_separator! \n Bank centralny ułatwia warunki udzielania kredytów. \n \n @green_checkmark! Bank Throubput #b -5% #! \n @green_checkmark! Financial District Throubput #b 5% #!"
+ CB_POLICY_5_FRAC: "#bold Większość rozszerzeń - Rezerwa frakcyjna #! \n #tooltip_separator! \n Bank centralny agresywnie stymuluje sektor finansowy. \n \n @green_checkmark! Bank Through Put #b -25% #! \n @green_checkmark! Financial District Thtrouput #b + 25% #!"
+
+ # Full Reserve variants
+ CB_POLICY_1_FULL: "#bold Większość umów - Pełna rezerwa #! \n #tooltip_separator! \n Wymogi dotyczące rezerw są maksymalizowane, znacznie zmniejszając dostępność kredytów. \n \n @green_checkmark! Stopa oprocentowania pożyczek #b -1% #! \n @green_checkmark! Rezerwy gotówkowe #b + 25% #!"
+ CB_POLICY_2_FULL: "#bold Contractionary - Full Reserve #! \n #tooltip_separator! \n Reserve requirements are increated squeestly."
+ CB_POLICY_3_FULL: "#bold Neutral - Pełna rezerwa #! \n #tooltip_separator! \n Wymogi dotyczące rezerw utrzymują się na poziomie minimum ustawowego. Nie stosuje się dodatkowych modyfikatorów."
+ CB_POLICY_4_FULL: "#bold Rozszerzenie - Pełna rezerwa #! \n #tooltip_separator! \n Wymogi dotyczące rezerw są zrelaksowane, aby umożliwić większe udzielanie kredytów. \n \n @red_cross! Stopa oprocentowania pożyczek #b + 0,5% #! \n @red_cross! Rezerwy gotówkowe #b -12,5% #!"
+ CB_POLICY_5_FULL: "#bold Większość rezerw - Pełna rezerwa #! \n #tooltip_separator! \n Wymagania dotyczące rezerw są minimalizowane w celu maksymalizacji zdolności kredytowej. \n \n @red_cross! Stopa oprocentowania pożyczek #b + 1% #! \n @red_cross! Rezerwy gotówkowe #b -25% #!"
+
+ # ── MODIFIER NAMES ────────────────────────
+ cb_policy_fractional_1: "Większość kontraktowej polityki pieniężnej"
+ cb_policy_fractional_2: "Kontraktywna polityka pieniężna"
+ cb_policy_fractional_4: "Rozszerzona polityka pieniężna"
+ cb_policy_fractional_5: "Najbardziej ekspansywna polityka pieniężna"
+ cb_policy_full_1: "Większość polityki rezerw kontraktowych"
+ cb_policy_full_2: "Polityka rezerw umownych"
+ cb_policy_full_4: "Polityka rezerw rozszerzających"
+ cb_policy_full_5: "Większość polityki rezerw ekspansji"
+ 
+ building_group_bg_banking_throughput_add_desc:0 "Zmodyfikujący przepustowość banków komercyjnych"
+ building_financial_district_throughput_add_desc:0 "Wzmacniacz przepustowości działów finansowych"

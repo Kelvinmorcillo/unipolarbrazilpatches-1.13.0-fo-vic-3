@@ -1,0 +1,31 @@
+﻿building_world_trade_center = {
+	building_group = bg_monuments
+	icon = "gfx/interface/icons/building_icons/world_trade_center.dds"
+	expandable = no
+	unique = yes
+
+	entity_not_constructed = { }
+	entity_under_construction = { "building_construction_skyscraper_entity" }
+	entity_constructed = { "world_trade_center_entity"}
+	centerpiece_mesh_weight = 999
+	locator = "world_trade_center_locator"
+	
+	production_method_groups = {
+		pmg_base_building_skyscraper
+	}
+	
+	city_gfx_interactions = {
+		clear_size_area = yes
+		size = 3
+	}
+	
+	required_construction = construction_cost_monument
+
+	potential = {
+		state_region = s:STATE_NEW_YORK
+	}
+
+	ai_value = 10000
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_monuments.dds"
+}

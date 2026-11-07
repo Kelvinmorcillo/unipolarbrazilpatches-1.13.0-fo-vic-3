@@ -1,0 +1,13 @@
+# The Rise of the Right on-actions
+# Starts the JE for Western countries after 2015. The USA is excluded.
+
+on_yearly_pulse = {
+	effect = {
+		every_country = {
+			limit = {
+				rise_of_the_right_can_start = yes
+			}
+			add_journal_entry = { type = je_rise_of_the_right }
+		}
+	}
+}

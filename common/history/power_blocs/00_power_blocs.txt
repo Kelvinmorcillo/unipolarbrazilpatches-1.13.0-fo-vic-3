@@ -1,0 +1,26 @@
+POWER_BLOCS = {
+	c:EUR ?= {
+		create_power_bloc = {
+			name = io_eu_power_bloc_name
+			map_color = { 0 51 153 }
+			founding_date = 1957.3.25
+			identity = identity_european_community
+			principle = principle_internal_trade_3
+			principle = principle_market_unification_3
+			principle = principle_transport_3
+			principle = principle_freedom_of_movement_3
+			member = c:FRA
+			member = c:GER
+			member = c:ITA
+			member = c:XBE
+			member = c:NDL
+			member = c:XLU
+			member = c:GBR
+			member = c:IRE
+			member = c:XDE
+			member = c:GRK
+			member = c:SPA
+			member = c:XPO
+		}
+	}
+}

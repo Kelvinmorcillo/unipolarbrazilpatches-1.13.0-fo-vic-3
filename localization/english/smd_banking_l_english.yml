@@ -1,0 +1,49 @@
+﻿l_english:
+ # ── TAB RENAME ────────────────────────────
+ BUDGET_TAB_ASSETS: "Financial System"
+ BUDGET_TAB_FINANCE: "Assets"
+ # ── CENTRAL BANKING PANEL ─────────────────
+ BUDGET_CENTRAL_BANKING_HEADER: "Central Banking"
+ BUDGET_CENTRAL_BANK_LAW_LABEL: "Current Policy:"
+ BUDGET_FISCAL_POLICY_LABEL: "Monetary Policy Stance"
+
+ # Scripted loc keys
+ cb_policy_loc_1: "#R Most Contractionary#!"
+ cb_policy_loc_2: "#r Contractionary#!"
+ cb_policy_loc_3: "#Y Neutral#!"
+ cb_policy_loc_4: "#g Expansionary#!"
+ cb_policy_loc_5: "#G Most Expansionary#!"
+
+ # ── BUTTON TOOLTIPS — FRACTIONAL RESERVE ──
+ CB_POLICY_1_TOOLTIP: "#bold Most Contractionary#!\n#tooltip_separator!\n #header Fractional Reserve:#!\n@red_cross! Commercial Bank Throughput: #green +10% #!\n@red_cross! Financial District Throughput: #red -10% #! \n\n#header Full Reserve:#!\n@green_checkmark! Interest Rate: #green -2% #!\n@green_checkmark! Building Maximum Cash Reserves: #red -25% #!"
+ CB_POLICY_2_TOOLTIP: "#bold Contractionary#!\n#tooltip_separator!\n #header Fractional Reserve:#!\n@red_cross! Commercial Bank Throughput: #green +5% #!\n@red_cross! Financial District Throughput: #red -5% #! \n\n#header Full Reserve:#!\n@green_checkmark! Interest Rate: #green -1% #!\n@green_checkmark! Building Maximum Cash Reserves: #red -12.5% #!"
+ CB_POLICY_3_TOOLTIP: "#bold Stable #!\n#tooltip_separator!\nThe central bank takes no active stance. No modifiers applied."
+ CB_POLICY_4_TOOLTIP: "#bold Expansionary #!\n#tooltip_separator!\n #header Fractional Reserve:#!\n@red_cross! Commercial Bank Throughput: #red -5% #!\n@red_cross! Financial District Throughput: #green 5% #! \n\n#header Full Reserve:#!\n@green_checkmark! Interest Rate: #red +1% #!\n@green_checkmark! Building Maximum Cash Reserves: #green +12.5% #!"
+ CB_POLICY_5_TOOLTIP: "#bold Most Expansionary #!\n#tooltip_separator!\n #header Fractional Reserve:#!\n@red_cross! Commercial Bank Throughput: #red -10% #!\n@red_cross! Financial District Throughput: #green 10% #! \n\n#header Full Reserve:#!\n@green_checkmark! Interest Rate: #red +2% #!\n@green_checkmark! Building Maximum Cash Reserves: #green +25% #!"
+
+ # Fractional Reserve variants
+ CB_POLICY_1_FRAC: "#bold Most Contractionary — Fractional Reserve#!\n#tooltip_separator!\nThe central bank tightens credit conditions significantly.\n\n@red_cross! Bank Throughput #b+10%#!\n @red_cross! Financial District Throughput #b-10%#!"
+ CB_POLICY_2_FRAC: "#bold Contractionary — Fractional Reserve#!\n#tooltip_separator!\nThe central bank applies mild tightening to credit conditions.\n\n@red_cross! Bank Throughput #b+5%#!\n@red_cross! Financial District Throughput #b-5%#!"
+ CB_POLICY_3_FRAC: "#bold Neutral — Fractional Reserve#!\n#tooltip_separator!\nThe central bank takes no active stance. No modifiers applied."
+ CB_POLICY_4_FRAC: "#bold Expansionary — Fractional Reserve#!\n#tooltip_separator!\nThe central bank eases credit conditions to stimulate lending.\n\n@green_checkmark! Bank Throughput #b-5%#!\n@green_checkmark! Financial District Throughput #b+5%#!"
+ CB_POLICY_5_FRAC: "#bold Most Expansionary — Fractional Reserve#!\n#tooltip_separator!\nThe central bank aggressively stimulates the financial sector.\n\n@green_checkmark! Bank Throughput #b-25%#!\n@green_checkmark! Financial District Throughput #b+25%#!"
+
+ # Full Reserve variants
+ CB_POLICY_1_FULL: "#bold Most Contractionary — Full Reserve#!\n#tooltip_separator!\nReserve requirements are maximised, dramatically reducing credit availability.\n\n@green_checkmark! Loan Interest Rate #b-1%#!\n@green_checkmark! Cash Reserves #b+25%#!"
+ CB_POLICY_2_FULL: "#bold Contractionary — Full Reserve#!\n#tooltip_separator!\nReserve requirements are tightened modestly.\n\n@green_checkmark! Loan Interest Rate #b-0.5%#!\n@green_checkmark! Cash Reserves #b+12.5%#!"
+ CB_POLICY_3_FULL: "#bold Neutral — Full Reserve#!\n#tooltip_separator!\nReserve requirements remain at the statutory minimum. No additional modifiers applied."
+ CB_POLICY_4_FULL: "#bold Expansionary — Full Reserve#!\n#tooltip_separator!\nReserve requirements are relaxed to allow greater lending.\n\n@red_cross! Loan Interest Rate #b+0.5%#!\n@red_cross! Cash Reserves #b-12.5%#!"
+ CB_POLICY_5_FULL: "#bold Most Expansionary — Full Reserve#!\n#tooltip_separator!\nReserve requirements are minimised to maximise lending capacity.\n\n@red_cross! Loan Interest Rate #b+1%#!\n@red_cross! Cash Reserves #b-25%#!"
+
+ # ── MODIFIER NAMES ────────────────────────
+ cb_policy_fractional_1: "Most Contractionary Monetary Policy"
+ cb_policy_fractional_2: "Contractionary Monetary Policy"
+ cb_policy_fractional_4: "Expansionary Monetary Policy"
+ cb_policy_fractional_5: "Most Expansionary Monetary Policy"
+ cb_policy_full_1: "Most Contractionary Reserve Policy"
+ cb_policy_full_2: "Contractionary Reserve Policy"
+ cb_policy_full_4: "Expansionary Reserve Policy"
+ cb_policy_full_5: "Most Expansionary Reserve Policy"
+ 
+ building_group_bg_banking_throughput_add_desc:0 "A modifier to the throughput of Commercial Banks"
+ building_financial_district_throughput_add_desc:0 "A modofier to the throughput of Financial Districts"

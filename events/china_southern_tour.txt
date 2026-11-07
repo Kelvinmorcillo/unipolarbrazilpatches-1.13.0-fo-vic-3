@@ -1,0 +1,86 @@
+﻿namespace = china_southern_tour
+
+# Deng Begins Tour
+china_southern_tour.1 = {
+    type = country_event
+    placement = ROOT
+    title = china_southern_tour.1.t
+    desc = china_southern_tour.1.d
+    event_image = { video = "parliament" }
+
+    trigger = {
+        c:PRC ?= this
+        game_date >= 1992.01.01
+        NOT = { has_variable = southern_tour_started }
+    }
+
+    immediate = {
+        set_variable = southern_tour_started
+    }
+
+    option = {
+        name = china_southern_tour.1.a
+        add_loyalists = { value = 0.05 }
+    }
+}
+
+# Calls for Market Reform
+china_southern_tour.2 = {
+    type = country_event
+    placement = ROOT
+    title = china_southern_tour.2.t
+    desc = china_southern_tour.2.d
+    event_image = { video = "asia_farmers_market" }
+
+    trigger = {
+        has_variable = southern_tour_started
+        NOT = { has_variable = southern_tour_completed }
+		NOT = { has_variable = southern_tour_2 }
+        game_date >= 1992.04.01
+    }
+
+	immediate = { set_variable = southern_tour_2 }
+    option = {
+        name = china_southern_tour.2.a
+        add_modifier = {
+            name = southern_tour_market_push
+            duration = 730
+        }
+        set_variable = southern_tour_2
+    }
+    option = {
+        name = china_southern_tour.2.b
+        add_radicals = { value = 0.05 }
+		set_variable = southern_tour_2
+    }
+}
+
+# Internal Party Resistance
+china_southern_tour.3 = {
+    type = country_event
+    placement = ROOT
+    title = china_southern_tour.3.t
+    desc = china_southern_tour.3.d
+    event_image = { video = "unspecific_ruler_speaking_to_people" }
+
+    trigger = {
+        has_variable = southern_tour_started
+        NOT = { has_variable = southern_tour_completed }
+		NOT = { has_variable = southern_tour_3 }
+        game_date >= 1992.08.01
+    }
+
+	immediate = { set_variable = southern_tour_3 }
+    option = {
+        name = china_southern_tour.3.a
+        add_radicals = { value = 0.02 }
+		set_variable = southern_tour_3
+		set_variable = southern_tour_completed
+    }
+    option = {
+        name = china_southern_tour.3.b
+        add_loyalists = { value = 0.01 }
+        set_variable = southern_tour_3
+		set_variable = southern_tour_completed
+    }
+}

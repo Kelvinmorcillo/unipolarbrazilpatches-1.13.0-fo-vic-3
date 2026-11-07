@@ -1,0 +1,49 @@
+﻿l_russian:
+ # ── TAB RENAME ────────────────────────────
+ BUDGET_TAB_ASSETS: "Финансовая система"
+ BUDGET_TAB_FINANCE: "Активы"
+ # ── CENTRAL BANKING PANEL ─────────────────
+ BUDGET_CENTRAL_BANKING_HEADER: "Центральный банк"
+ BUDGET_CENTRAL_BANK_LAW_LABEL: "Текущая политика:"
+ BUDGET_FISCAL_POLICY_LABEL: "Стационар денежно-кредитной политики"
+
+ # Scripted loc keys
+ cb_policy_loc_1: "#R Наибольшее сокращение #!"
+ cb_policy_loc_2: "#r Сокращение #!"
+ cb_policy_loc_3: "#Y Нейтральный#!"
+ cb_policy_loc_4: "#g Расширенный #!"
+ cb_policy_loc_5: "#G Самый расширенный #!"
+
+ # ── BUTTON TOOLTIPS — FRACTIONAL RESERVE ──
+ CB_POLICY_1_TOOLTIP: "#bold Самый сокращающийся #! \n #tooltip_separator! \n #header #! \n @red_cross! Пропускная способность коммерческого банка: #green +10% #! @red_cross! Финансовый район Пропускная способность: #red #! \n #header Полный резерв: #! \n @green_checkmark! #green #! @green_checkmark! Создание максимальных денежных резервов: #red -25% #!"
+ CB_POLICY_2_TOOLTIP: "#bold Сокращение #! \n #tooltip_separator! \n #header #! \n @red_cross! Пропускная способность коммерческого банка: #green +5% #! @red_cross! Пропускная способность финансового района: #red -5% #! \n #header #! \n @green_checkmark! Процентная ставка: #green -1% #! @green_checkmark! Максимальные денежные резервы: #red -12,5% #!"
+ CB_POLICY_3_TOOLTIP: "#bold Стабильный #!\n#tooltip_separator!\n Центральный банк не занимает активной позиции. Модификаторы не применяются."
+ CB_POLICY_4_TOOLTIP: "#bold Расширенный #!\n#tooltip_separator! \n #header #!@red_cross! Пропускная способность коммерческого банка: #red -5% #! @red_cross! Финансовый район Пропускная способность: #green 5% #! \n #header Полный резерв:#!\n @green_checkmark! Процентная ставка: #red +1% #! @green_checkmark! Создание максимальных денежных резервов: #green +12,5% #!"
+ CB_POLICY_5_TOOLTIP: "#bold Наиболее экспансионистский #!\n#tooltip_separator! \n #header #!@red_cross! Пропускная способность коммерческого банка: #red -10% #! @red_cross! Финансовый район Пропускная способность: #green 10% #! \n #header Полный резерв:#! \n @green_checkmark! #red +2% #! @green_checkmark! Создание максимальных денежных резервов: #green +25% #!"
+
+ # Fractional Reserve variants
+ CB_POLICY_1_FRAC: "#bold Центральный банк значительно ужесточает условия кредитования.\n\n@red_cross! Банковская пропускная способность #b+10%#! \n @red_cross! Финансовый район Пропускная способность #b-10%#!"
+ CB_POLICY_2_FRAC: "#bold Сокращение — Дробный резерв#!\n#tooltip_separator!\n Центральный банк применяет умеренное ужесточение условий кредитования.\n\n@red_cross! Пропускная способность банка #b+5%#!\n@red_cross! Пропускная способность финансового района #b-5%#!"
+ CB_POLICY_3_FRAC: "#bold Нейтральный — фракционный резерв#!\n#tooltip_separator!\n Центральный банк не занимает активной позиции. Модификаторы не применяются."
+ CB_POLICY_4_FRAC: "#bold Экспансионное — Дробный резерв#!\n#tooltip_separator!\n Центральный банк облегчает условия кредитования для стимулирования кредитования.\n\n@green_checkmark! Пропускная способность банка #b-5%#!\n@green_checkmark! Пропускная способность финансового района #b+5%#!"
+ CB_POLICY_5_FRAC: "#bold Наиболее экспансионистский — Дробный резерв#!\n#tooltip_separator!\n Центральный банк агрессивно стимулирует финансовый сектор.\n\n@green_checkmark! Пропускная способность банка #b-25%#!\n@green_checkmark! Пропускная способность финансового округа #b+25%#!"
+
+ # Full Reserve variants
+ CB_POLICY_1_FULL: "#bold Наибольшее сокращение — Полный резерв #!\n#tooltip_separator!\n Резервные требования максимизируются, резко снижая доступность кредитов.\n\n@green_checkmark! Кредитная процентная ставка #b-1%#!\n@green_checkmark! Денежные резервы #b+25%#!"
+ CB_POLICY_2_FULL: "#bold Сокращение — Полный резерв#!\n#tooltip_separator!\n Требования к резервам ужесточаются умеренно.\n\n@green_checkmark! Кредитная процентная ставка #b-0,5%#!\n@green_checkmark! Денежные резервы #b+12,5%#!"
+ CB_POLICY_3_FULL: "#bold Нейтральный — Полный резерв #!\n#tooltip_separator!\n Резервные требования остаются на минимальном уровне. Никаких дополнительных модификаторов не применялось."
+ CB_POLICY_4_FULL: "#bold Расширение — Полный резерв #!\n#tooltip_separator!\n Резервные требования смягчаются, чтобы позволить большее кредитование.\n\n@red_cross! Кредитная процентная ставка #b+0,5%#!\n@red_cross! Денежные резервы #b-12,5%#!"
+ CB_POLICY_5_FULL: "#bold Наибольшее расширение — Полный резерв #!\n#tooltip_separator!\n Требования к резервам сведены к минимуму для максимизации кредитоспособности.\n\n@red_cross! Кредитная процентная ставка #b+1%#!\n@red_cross! Cash Reserves #b-25%#!"
+
+ # ── MODIFIER NAMES ────────────────────────
+ cb_policy_fractional_1: "Самая сдержанная монетарная политика"
+ cb_policy_fractional_2: "Сокращение денежно-кредитной политики"
+ cb_policy_fractional_4: "Экспансионистская денежно-кредитная политика"
+ cb_policy_fractional_5: "Самая экспансионистская монетарная политика"
+ cb_policy_full_1: "Большинство политики сокращения резервов"
+ cb_policy_full_2: "Политика сокращения резервов"
+ cb_policy_full_4: "Экспансионистская резервная политика"
+ cb_policy_full_5: "Наиболее экспансионистская резервная политика"
+ 
+ building_group_bg_banking_throughput_add_desc:0 "Модификатор пропускной способности коммерческих банков"
+ building_financial_district_throughput_add_desc:0 "Модификатор пропускной способности финансовых районов"

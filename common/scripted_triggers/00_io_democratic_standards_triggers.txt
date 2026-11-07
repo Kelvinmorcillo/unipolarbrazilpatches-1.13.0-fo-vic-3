@@ -1,0 +1,69 @@
+
+io_has_democratic_government_laws = {
+	OR = {
+		has_law = law_type:law_presidential_republic
+		has_law = law_type:law_parliamentary_republic
+		AND = {
+			has_law = law_type:law_monarchy
+			OR = {
+				has_law = law_type:law_universal_suffrage
+				has_law = law_type:law_census_voting
+			}
+		}
+	}
+}
+
+io_has_authoritarian_government_laws = {
+	OR = {
+		has_law = law_type:law_autocracy
+		has_law = law_type:law_oligarchy
+		has_law = law_type:law_single_party_state
+		has_law = law_type:law_no_voting
+		has_law = law_type:law_landed_voting
+		has_law = law_type:law_appointed_bureaucrats
+		has_law = law_type:law_outlawed_dissent
+	}
+}
+
+io_meets_basic_european_democracy_standard = {
+	io_has_democratic_government_laws = yes
+	NOT = { io_has_authoritarian_government_laws = yes }
+	OR = {
+		has_law = law_type:law_universal_suffrage
+		has_law = law_type:law_census_voting
+	}
+	OR = {
+		has_law = law_type:law_right_of_assembly
+		has_law = law_type:law_protected_speech
+	}
+	has_law = law_type:law_elected_bureaucrats
+}
+
+io_meets_eec_accession_criteria = {
+	capital = { is_in_geographic_region = geographic_region_europe }
+	is_subject = no
+	io_meets_basic_european_democracy_standard = yes
+	OR = {
+		has_law = law_type:law_free_trade
+		has_law = law_type:law_protectionism
+	}
+}
+
+io_meets_eu_accession_criteria = {
+	capital = { is_in_geographic_region = geographic_region_europe }
+	is_subject = no
+	io_meets_basic_european_democracy_standard = yes
+	has_law = law_type:law_free_trade
+	OR = {
+		has_law = law_type:law_multicultural
+		has_law = law_type:law_cultural_exclusion
+	}
+	OR = {
+		has_law = law_type:law_no_migration_controls
+		has_law = law_type:law_migration_controls
+	}
+}
+
+io_member_should_face_democratic_suspension = {
+	io_has_authoritarian_government_laws = yes
+}

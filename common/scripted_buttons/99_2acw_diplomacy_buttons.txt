@@ -1,0 +1,233 @@
+# Second American Civil War JE diplomacy buttons
+
+2acw_offer_new_africa_blue_button = {
+	scope = country
+
+	is_shown = {
+		c:BLA ?= ROOT
+		has_global_variable = second_american_civil_war_started
+		exists = c:NAF
+	}
+
+	is_valid = {
+		c:NAF ?= {
+			NOT = { has_variable = 2acw_blue_aligned }
+			NOT = { has_variable = 2acw_declined_blue_offer }
+		}
+	}
+
+	effect = {
+		custom_tooltip = { text = 2acw_offer_new_africa_blue_tt }
+		c:NAF ?= {
+			trigger_event = { id = great_polarization.120 popup = yes }
+		}
+	}
+}
+
+2acw_offer_new_africa_red_button = {
+	scope = country
+
+	is_shown = {
+		c:REA ?= ROOT
+		has_global_variable = second_american_civil_war_started
+		exists = c:NAF
+	}
+
+	is_valid = {
+		c:NAF ?= {
+			NOT = { has_variable = 2acw_red_aligned }
+			NOT = { has_variable = 2acw_declined_red_offer }
+		}
+	}
+
+	effect = {
+		custom_tooltip = { text = 2acw_offer_new_africa_red_tt }
+		c:NAF ?= {
+			trigger_event = { id = great_polarization.121 popup = yes }
+		}
+	}
+}
+
+2acw_offer_navajo_blue_button = {
+	scope = country
+
+	is_shown = {
+		c:BLA ?= ROOT
+		has_global_variable = second_american_civil_war_started
+		exists = c:NVO
+	}
+
+	is_valid = {
+		c:NVO ?= {
+			NOT = { has_variable = 2acw_blue_aligned }
+		}
+	}
+
+	effect = {
+		custom_tooltip = { text = 2acw_offer_navajo_blue_tt }
+		c:NVO ?= {
+			trigger_event = { id = great_polarization.120 popup = yes }
+		}
+	}
+}
+
+2acw_offer_navajo_red_button = {
+	scope = country
+
+	is_shown = {
+		c:REA ?= ROOT
+		has_global_variable = second_american_civil_war_started
+		exists = c:NVO
+	}
+
+	is_valid = {
+		c:NVO ?= {
+			NOT = { has_variable = 2acw_red_aligned }
+		}
+	}
+
+	effect = {
+		custom_tooltip = { text = 2acw_offer_navajo_red_tt }
+		c:NVO ?= {
+			trigger_event = { id = great_polarization.121 popup = yes }
+		}
+	}
+}
+
+2acw_offer_california_blue_button = {
+	scope = country
+
+	is_shown = {
+		c:BLA ?= ROOT
+		has_global_variable = second_american_civil_war_started
+		exists = c:CAL
+	}
+
+	is_valid = {
+		c:CAL ?= {
+			NOT = { has_variable = 2acw_blue_aligned }
+		}
+	}
+
+	effect = {
+		custom_tooltip = { text = 2acw_offer_california_blue_tt }
+		c:CAL ?= {
+			trigger_event = { id = great_polarization.120 popup = yes }
+		}
+	}
+}
+
+2acw_offer_texas_red_button = {
+	scope = country
+
+	is_shown = {
+		c:REA ?= ROOT
+		has_global_variable = second_american_civil_war_started
+		exists = c:TXS
+	}
+
+	is_valid = {
+		c:TXS ?= {
+			NOT = { has_variable = 2acw_red_aligned }
+		}
+	}
+
+	effect = {
+		custom_tooltip = { text = 2acw_offer_texas_red_tt }
+		c:TXS ?= {
+			trigger_event = { id = great_polarization.121 popup = yes }
+		}
+	}
+}
+
+2acw_offer_hawaii_blue_button = {
+	scope = country
+
+	is_shown = {
+		c:BLA ?= ROOT
+		has_global_variable = second_american_civil_war_started
+		exists = c:HWI
+	}
+
+	is_valid = {
+		c:HWI ?= {
+			NOT = { has_variable = 2acw_blue_aligned }
+		}
+	}
+
+	effect = {
+		custom_tooltip = { text = 2acw_offer_hawaii_blue_tt }
+		c:HWI ?= {
+			trigger_event = { id = great_polarization.120 popup = yes }
+		}
+	}
+}
+
+2acw_offer_hawaii_red_button = {
+	scope = country
+
+	is_shown = {
+		c:REA ?= ROOT
+		has_global_variable = second_american_civil_war_started
+		exists = c:HWI
+	}
+
+	is_valid = {
+		c:HWI ?= {
+			NOT = { has_variable = 2acw_red_aligned }
+		}
+	}
+
+	effect = {
+		custom_tooltip = { text = 2acw_offer_hawaii_red_tt }
+		c:HWI ?= {
+			trigger_event = { id = great_polarization.121 popup = yes }
+		}
+	}
+}
+
+2acw_offer_alaska_blue_button = {
+	scope = country
+
+	is_shown = {
+		c:BLA ?= ROOT
+		has_global_variable = second_american_civil_war_started
+		exists = c:ALK
+	}
+
+	is_valid = {
+		c:ALK ?= {
+			NOT = { has_variable = 2acw_blue_aligned }
+		}
+	}
+
+	effect = {
+		custom_tooltip = { text = 2acw_offer_alaska_blue_tt }
+		c:ALK ?= {
+			trigger_event = { id = great_polarization.120 popup = yes }
+		}
+	}
+}
+
+2acw_offer_alaska_red_button = {
+	scope = country
+
+	is_shown = {
+		c:REA ?= ROOT
+		has_global_variable = second_american_civil_war_started
+		exists = c:ALK
+	}
+
+	is_valid = {
+		c:ALK ?= {
+			NOT = { has_variable = 2acw_red_aligned }
+		}
+	}
+
+	effect = {
+		custom_tooltip = { text = 2acw_offer_alaska_red_tt }
+		c:ALK ?= {
+			trigger_event = { id = great_polarization.121 popup = yes }
+		}
+	}
+}

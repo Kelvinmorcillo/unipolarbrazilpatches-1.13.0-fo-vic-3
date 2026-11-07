@@ -1,0 +1,258 @@
+﻿
+je_west_open_trade = {
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	icon = "gfx/interface/icons/objectives/the_west.dds"
+ 
+	group = je_group_objectives
+ 
+	complete = {
+		market_capital.market = {
+			market_exports = {
+				goods = credit
+				value > 750
+			}
+		}
+	}
+ 
+	is_progressing = {
+		market_capital.market = {
+			market_exports = {
+				goods = credit
+				value > 500
+			}
+		}
+	}
+ 
+	weight = 2000
+	transferable = yes
+}
+ 
+# ── SG 2: ALLIANCES ───────────────────────
+# Build the network of security partnerships
+# that defines the Western bloc.
+ 
+je_west_alliances = {
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	icon = "gfx/interface/icons/objectives/the_west.dds"
+ 
+	group = je_group_objectives
+ 
+	complete = {
+		any_scope_treaty = {
+				binds = root
+				any_scope_article = {
+				has_type = military_assistance
+			}
+		}
+	}
+ 
+	is_progressing = {
+		any_scope_treaty = {
+				binds = root
+				any_scope_article = {
+				has_type = military_assistance
+			}
+		}
+	}
+ 
+	weight = 2001
+	transferable = yes
+}
+ 
+# ── SG 3: HUMAN RIGHTS FRAMEWORK ─────────
+# The Western order rests on a baseline
+# of liberal democratic rights.
+ 
+je_west_human_rights = {
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	icon = "gfx/interface/icons/objectives/the_west.dds"
+ 
+	group = je_group_objectives
+ 
+	complete = {
+		has_law = law_type:law_universal_suffrage
+		has_law = law_type:law_worker_protections
+		has_law = law_type:law_right_of_assembly
+	}
+ 
+	is_progressing = {
+		OR = {
+			has_law = law_type:law_universal_suffrage
+			has_law = law_type:law_worker_protections
+		}
+	}
+ 
+	weight = 2002
+	transferable = yes
+}
+ 
+# ── SG 4: EDUCATED POPULATION ─────────────
+# An educated citizenry is the foundation
+# of democratic participation and
+# economic dynamism.
+ 
+je_west_education = {
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	icon = "gfx/interface/icons/objectives/the_west.dds"
+ 
+	group = je_group_objectives
+ 
+	complete = {
+		institution_investment_level = {
+			institution = institution_schools
+			value >= 5
+		}
+		literacy_rate >= 0.50
+	}
+ 
+	is_progressing = {
+		institution_investment_level = {
+			institution = institution_schools
+			value >= 3
+		}
+	}
+ 
+	weight = 2003
+	transferable = yes
+}
+ 
+# ── SG 5: ECONOMIC LEADERSHIP ─────────────
+# The Western order is underwritten by
+# overwhelming economic weight.
+ 
+je_west_gdp = {
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	icon = "gfx/interface/icons/objectives/the_west.dds"
+ 
+	group = je_group_objectives
+ 
+	complete = {
+		gdp > {
+			value = global_gdp
+			multiply = 0.10
+		}
+	}
+ 
+	is_progressing = {
+		gdp > {
+			value = global_gdp
+			multiply = 0.05
+		}
+	}
+ 
+	weight = 2004
+	transferable = yes
+}
+ 
+# ── SG 6: THE UNIPOLAR MOMENT ─────────────
+# The final goal. China and Russia must
+# either embrace democracy and align with
+# the West, or be reduced below great
+# power status.
+ 
+je_west_endgame = {
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	icon = "gfx/interface/icons/objectives/the_west.dds"
+ 
+	group = je_group_objectives
+ 
+	complete = {
+		# Russia condition
+		OR = {
+			# Russia democratized and friendly
+			AND = {
+				exists = c:RUS
+				NOT = { any_rival_country = { c:RUS ?= this } }
+				c:RUS = {
+					OR = {
+						has_law = law_type:law_presidential_republic
+						has_law = law_type:law_parliamentary_republic
+						has_law = law_type:law_council_republic
+					}
+					has_law = law_type:law_universal_suffrage
+				}
+			}
+			# Russia no longer a great power
+			AND = {
+				exists = c:RUS
+				c:RUS = {
+					country_rank < rank_value:great_power
+				}
+			}
+			AND = {
+				exists = c:RUS
+				c:RUS = {
+					"relations(root.owner)" >= relations_threshold:cordial
+				}
+			}
+			# Russia does not exist
+			NOT = { exists = c:RUS }
+		}
+		# China condition
+		OR = {
+			# China democratized and friendly
+			AND = {
+				exists = c:PRC
+				NOT = { any_rival_country = { c:PRC ?= this } }
+				c:PRC = {
+					OR = {
+						has_law = law_type:law_presidential_republic
+						has_law = law_type:law_parliamentary_republic
+						has_law = law_type:law_council_republic
+					}
+					has_law = law_type:law_universal_suffrage
+				}
+			}
+			# China no longer a great power
+			AND = {
+				exists = c:PRC
+				c:PRC = {
+					country_rank < rank_value:great_power
+				}
+			}
+			AND = {
+				exists = c:PRC
+				c:PRC = {
+					"relations(root.owner)" >= relations_threshold:cordial
+				}
+			}
+			# China does not exist
+			NOT = { exists = c:PRC }
+		}
+	}
+ 
+	is_progressing = {
+		OR = {
+			# Either rival is already resolved
+			AND = {
+				exists = c:RUS
+				c:RUS = { country_rank < rank_value:major_power }
+			}
+			AND = {
+				exists = c:PRC
+				c:PRC = { country_rank < rank_value:major_power }
+			}
+			AND = {
+				exists = c:RUS
+				c:RUS = {
+					OR = {
+						has_law = law_type:law_presidential_republic
+						has_law = law_type:law_parliamentary_republic
+					}
+				}
+			}
+			AND = {
+				exists = c:PRC
+				c:PRC = {
+					OR = {
+						has_law = law_type:law_presidential_republic
+						has_law = law_type:law_parliamentary_republic
+					}
+				}
+			}
+		}
+	}
+ 
+	weight = 2005
+	transferable = yes
+}

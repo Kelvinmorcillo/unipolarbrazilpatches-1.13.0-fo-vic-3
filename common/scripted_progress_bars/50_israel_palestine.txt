@@ -1,0 +1,24 @@
+# Place in: common/scripted_progress_bars/
+
+je_israel_palestine_tension_bar = {
+	name = "je_israel_palestine_tension_bar"
+	desc = "je_israel_palestine_tension_bar_desc"
+	second_desc = "je_israel_palestine_tension_bar_second_desc"
+	default_bad = yes
+	
+	start_value = 35
+	min_value = 0
+	max_value = 100
+}
+
+je_intifada_score_bar = {
+	name = "je_intifada_score_bar"
+	desc = "je_intifada_score_bar_desc"
+	second_desc = "je_intifada_score_bar_second_desc"
+
+	double_sided_two_spains = yes
+
+	start_value = 0
+	min_value = -10
+	max_value = 10
+}

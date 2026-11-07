@@ -1,0 +1,21 @@
+﻿l_braz_por:
+#
+dp_leadership_china:0 "Chumbo na China"
+
+ je_one_china_prc:0 "A única política da China"
+ je_one_china_prc_reason:0 "Há uma China. [ROOT.GetCountry.GetName] manteve esta posição desde 1949 — que a República Popular é o único governo legítimo de todo o território chinês, e que a alegação de Taipei chinês para governar do estado de Formosa é uma aberração temporária que a história irá corrigir.\n\n A reunificação de Formosa com o continente não é apenas um objectivo estratégico. É a resolução da guerra civil inacabada — o ato final da restauração nacional [ROOT.GetCountry.GetAdjective]. Quando Formosa está sob controle [ROOT.GetCountry.GetAdjective], o século da humilhação realmente termina."
+ 
+ one_china_prc_owns_formosa_tt:0 "#bold Formosa está sob controlo [ROOT.GetCountry.GetAdjective].#! A única política da China foi vindicada. [ROOT.GetCountry.GetName] é inteiro."
+ one_china_prc_formosa_uncontrolled_tt:0 "[SCOPE.sState('STATE_FORMOSA').GetName] permanece fora [ROOT.GetCountry.GetAdjective] controle. [SCOPE.sCountry('c:ROC').GetName] continua a reivindicar soberania sobre o continente de sua ilha reduto. A reunificação da China está inacabada."
+ 
+ je_one_china_roc:0 "A única política da China"
+ je_one_china_roc_reason:0 "Há uma China. [ROOT.GetCountry.GetName] mantém esta posição desde 1949 — que a República da China é o governo legítimo de todo o território chinês, e que a ocupação do continente pelo Partido Comunista Chinês é uma aberração temporária que a história corrigirá.\n\n A República Popular deve ser inserida na ordem constitucional [ROOT.GetCountry.GetAdjective]. Quando a República Popular da China se torna um assunto de [ROOT.GetCountry.GetName], a tarefa de integração começa — absorvendo a vasta população e território do continente em um estado chinês unificado sob [ROOT.GetCountry.GetAdjective] liderança."
+ 
+ one_china_roc_has_subject_tt:0 "#bold [SCOPE.sCountry('c:CHI').GetName] é um assunto de [ROOT.GetCountry.GetName].#! O continente foi introduzido na ordem constitucional [ROOT.GetCountry.GetAdjective]. A integração do vasto território [SCOPE.sCountry('c:CHI').GetAdjective] está em curso."
+ one_china_roc_no_subject_tt:0 "[SCOPE.sCountry('c:CHI').GetName] permanece independente sob o governo do Partido Comunista. [ROOT.GetCountry.GetName] controla apenas [SCOPE.sState('STATE_FORMOSA').GetName] e seus territórios periféricos. A reunificação da China sob a liderança [ROOT.GetCountry.GetAdjective] está inacabada."
+
+ one_china_reunification_bonus:0 "China Reunificada"
+ one_china_reunification_bonus_desc:0 "A reunificação de Formosa com o continente resolveu a guerra civil inacabada e curou a ferida centenária na consciência nacional [ROOT.GetCountry.GetAdjective]. Autoridade, legitimidade e prestígio são drasticamente melhorados. Movimentos separatistas são suprimidos. O estado está inteiro."
+ 
+ one_china_roc_integration_bonus:0 "Integração continental"
+ one_china_roc_integration_bonus_desc:0 "[ROOT.GetCountry.GetName] trouxe a antiga República Popular da China dentro de sua ordem constitucional. Começou a tarefa imensa de integrar o território e a população do continente. A velocidade de incorporação é drasticamente acelerada à medida que o estado [ROOT.GetCountry.GetAdjective] estende suas instituições por todo o continente."

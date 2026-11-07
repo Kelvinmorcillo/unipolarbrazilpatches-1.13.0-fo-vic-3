@@ -1,0 +1,1067 @@
+﻿l_polish:
+ # United Nations
+ je_united_nations: "ONZ"
+ je_united_nations_reason: "\n \n Organizacja Narodów Zjednoczonych służy jako międzynarodowy organ do spraw dyplomacji, utrzymania pokoju i wysiłków humanitarnych. \n \n Stała Rada Bezpieczeństwa: \n - [GetGlobalVariable('permanent_members_1').GetCountry.GetName] \n - [GetGlobalVariable('permanent_members_2').GetCountry.GetName] \n - [GetGlobalVariable('permanent_members_3').GetCountry.GetName] \n [GetGlobalVariable('permanent_members_4').GetCountry.GetName] \n [GetGlobalVariable('permanent_members_5').GetCountry.GetName] \n \n > \n Organizacja Narodów Zjednoczonych pełni rolę międzynarodowego organu ds. dyplomacji, utrzymania pokoju i działań humanitarnych. Decyzje ONZ - zwłaszcza Rady Bezpieczeństwa - mogą mieć bezpośredni wpływ na przyszłe wydarzenia w waszym kraju."
+
+ # ── PROPOSE BUTTON ────────────────────────
+ 
+ un_propose_motion_button: "Zaproponowanie uchwały"
+ un_propose_motion_button_desc: "Zaproponowanie rezolucji ONZ dla wszystkich państw członkowskich do głosowania. Jeżeli rezolucja przejdzie, wszystkie kraje otrzymają skutki na okres pięciu lat. Można zaproponować tylko raz w roku."
+ un_no_motion_active_tt: "Żadna rezolucja nie jest obecnie przedmiotem debaty."
+ 
+ # ── VOTE BUTTONS ─────────────────────────
+ 
+ un_vote_yay_button: "Głosowanie w favour"
+ un_vote_yay_button_desc: "Obsada [ROOT.GetCountry.GetName] Głosowanie za przyjęciem obecnej rezolucji. Stała Rada Bezpieczeństwa głosowała dwukrotnie."
+ 
+ un_vote_nay_button: "Głosowanie przeciwko"
+ un_vote_nay_button_desc: "Obsada [ROOT.GetCountry.GetName] przeciwko obecnej rezolucji. Stała Rada Bezpieczeństwa głosowała dwukrotnie."
+ 
+ # ── MOTION EVENTS ────────────────────────
+ 
+ un_events.100.t: "ONZ - Przedstawienie rezolucji"
+ un_events.100.d: "Jako członek Organizacji Narodów Zjednoczonych [ROOT.GetCountry.GetName] może zaproponować Zgromadzeniu Ogólnemu uchwałę do głosowania. Wybierz rezolucję do przedłożenia do debaty. Wszystkie państwa członkowskie zostaną powiadomione i mogą głosować przy użyciu przycisków w dzienniku ONZ."
+ un_events.100.a: "Rezolucja w sprawie ochrony środowiska"
+ un_events.100.b: "Rezolucja w sprawie światowego pokoju"
+ un_events.100.c: "Rezolucja w sprawie rozwoju gospodarczego"
+ un_events.100.e: "Rezolucja w sprawie technologii UNESCO"
+ 
+ un_events.101.t: "Organizacja Narodów Zjednoczonych - rezolucja w ramach debaty"
+ un_events.101.d: "Na forum Zgromadzenia Ogólnego Narodów Zjednoczonych zaproponowano rezolucję. [ROOT.GetCountry.GetName] może oddać głos używając przycisków Yay lub Nay w dzienniku ONZ. Stała Rada Bezpieczeństwa głosowała dwukrotnie. Wynik zostanie ogłoszony w ciągu 120 dni."
+ un_events.101.a: "Zrozumiałem - będziemy rozważać"
+ 
+ # ── NOTIFICATIONS ─────────────────────────
+ 
+ un_motion_passed: "Rezolucja ONZ minęła"
+ un_motion_passed_desc: "Przyjęto rezolucję ONZ. [ROOT.GetCountry.GetName] będzie otrzymywać efekty przez następne pięć lat."
+ 
+ un_motion_failed: "Uchwała ONZ nie powiodła się"
+ un_motion_failed_desc: "Rezolucja ONZ nie przeszła. Wniosek nie uzyskał wystarczającego poparcia."
+ 
+ # ── PROGRESS BAR ─────────────────────────
+ 
+ un_je_no_motion_tt: "Żadna rezolucja nie jest obecnie przedmiotem debaty. Użyj #bold Zaproponować przycisk Rozdzielczość #!, aby wnieść wniosek do Zgromadzenia Ogólnego."
+ 
+ un_je_voting_environment_tt: "#bold Rezolucja w sprawie ochrony środowiska - głosowanie w toku. #! Państwa członkowskie oddają swoje głosy. Użyj przycisków Yay lub Nay poniżej, aby oddać swój głos. Wynik zostanie ogłoszony po zamknięciu okresu głosowania."
+ 
+ un_je_voting_peace_tt: "#bold Rezolucja w sprawie pokoju na świecie - głosowanie w toku. #! Państwa członkowskie oddają swoje głosy. Użyj przycisków Yay lub Nay poniżej, aby oddać swój głos. Wynik zostanie ogłoszony po zamknięciu okresu głosowania."
+ 
+ un_je_voting_economy_tt: "#bold Rezolucja w sprawie rozwoju gospodarczego - głosowanie w toku. #! Państwa członkowskie oddają swoje głosy. Użyj przycisków Yay lub Nay poniżej, aby oddać swój głos. Wynik zostanie ogłoszony po zamknięciu okresu głosowania."
+ 
+ un_je_voting_technology_tt: "#bold Rezolucja w sprawie technologii UNESCO - głosowanie w toku. #! Państwa członkowskie oddają swoje głosy. Użyj przycisków Yay lub Nay poniżej, aby oddać swój głos. Wynik zostanie ogłoszony po zamknięciu okresu głosowania."
+ 
+ un_motion_progress_bar: "Wsparcie restrukturyzacji i uporządkowanej likwidacji"
+ un_motion_progress_bar_desc: "Uprzywilejowany udział głosów: #v [JournalEntry.GetCurrentBarProgress(ScriptedProgressBar.Self)|%1] #! Głosy w favour: ([JournalEntry.GetCurrentBarValue(ScriptedProgressBar.Self)|0])"
+ un_motion_progress_bar_second_desc: ""
+ un_motion_progress_from_yes_votes: ""
+ 
+ # ── RESOLUTION MODIFIERS ─────────────────
+ 
+ un_resolution_environment: "Rezolucja ONZ - Ochrona środowiska"
+ un_resolution_environment_desc: "Organizacja Narodów Zjednoczonych przyjęła rezolucję w sprawie ochrony środowiska. [ROOT.GetCountry.GetName] zobowiązał się do ograniczenia wytwarzania zanieczyszczeń i poprawy norm środowiskowych w ciągu najbliższych pięciu lat."
+ 
+ un_resolution_peace: "Rezolucja ONZ - pokój na świecie"
+ un_resolution_peace_desc: "Organizacja Narodów Zjednoczonych przyjęła rezolucję w sprawie światowego pokoju. [ROOT.GetCountry.GetName] korzysta ze zmniejszonego pokolenia niesławy i poprawy pozycji dyplomatycznej przez następne pięć lat."
+ 
+ un_resolution_economy: "Rezolucja ONZ w sprawie rozwoju gospodarczego"
+ un_resolution_economy_desc: "Organizacja Narodów Zjednoczonych przyjęła rezolucję w sprawie rozwoju gospodarczego. [ROOT.GetCountry.GetName] otrzymuje premie budowlane i inwestycyjne odzwierciedlające międzynarodową współpracę gospodarczą na najbliższe pięć lat."
+ 
+ un_resolution_technology: "Rezolucja ONZ - technologia UNESCO"
+ un_resolution_technology_desc: "Organizacja Narodów Zjednoczonych przyjęła rezolucję w sprawie technologii i edukacji. [ROOT.GetCountry.GetName] korzysta z lepszego dostępu do edukacji i kwalifikacji pop przez następne pięć lat."
+ 
+ sb_request_peacekeepers: "Wniosek o rozjemców ONZ"
+ sb_request_peacekeepers_desc: "Wzywać ONZ do rozmieszczenia sił pokojowych w celu pomocy w rozwiązywaniu konfliktów."
+
+ un_events.1.t: "Wniosek o rozjemców ONZ"
+ un_events.1.d: "Możemy zaapelować do ONZ o wysłanie sił pokojowych, by pomogły nam zakończyć nasz konflikt."
+ un_events.1.a: "Złóż wniosek."
+ un_events.1.b: "Nie angażuj ONZ."
+
+ un_events.2.t: "Głosowanie Rady Bezpieczeństwa ONZ"
+ un_events.2.d: "Rada Bezpieczeństwa musi głosować nad wysłaniem sił pokojowych do [GetGlobalVariable('peacekeeper_requestor').GetCountry.GetName]"
+ un_events.2.a: "Yay"
+ un_events.2.b: "Wstrzymać się od głosu"
+ un_events.2.c: "Nie."
+ un_events.2.e: "Veto [GetGlobalVariable('peacekeeper_requestor').GetCountry.GetName] 's Request for Peacekeeping"
+
+ un_events.3.t: "Zatwierdzone Rozjemcy"
+ un_events.3.d: "Rada Bezpieczeństwa ONZ głosowała za wysłaniem sił pokojowych."
+ un_events.3.a: "Wejdź!"
+
+ un_events.4.t: "Rozjemcy odrzuceni"
+ un_events.4.d: "Rada Bezpieczeństwa ONZ głosowała przeciwko wysłaniu nam sił pokojowych."
+ un_events.4.a: "Jesteśmy zdani na siebie."
+
+ un_events.10.t: "Wybór członka Rady Bezpieczeństwa"
+ un_events.10.d: "Zgromadzenie Ogólne Narodów Zjednoczonych wybrało nowego rotacyjnego członka do Rady Bezpieczeństwa: [un_rotating_member.GetName]."
+ un_events.10.a: "Przyjąłem."
+ 
+ unsc_member: "Członek Rady Bezpieczeństwa ONZ"
+ permanent_unsc_member: "Stały członek Rady Bezpieczeństwa ONZ"
+ un_peacekeepers_vetoed: "Rozjemcy odrzuceni"
+ un_peacekeepers_deployed: "Utrzymanie pokoju ONZ"
+ un_already_voting_on_peacekeeping: "Proszę poczekać, aż ONZ zakończy głosowanie nad obecną misją pokojową."
+ 
+ un_events.5.t: "Uczestniczyć w misji pokojowej [GetGlobalVariable('peacekeeper_requestor').GetCountry.GetName]?"
+ un_events.5.d: "Rada Bezpieczeństwa ONZ głosowała za wysłaniem misji pokojowej do [GetGlobalVariable('peacekeeper_requestor').GetCountry.GetName]. Członkowie walnego zgromadzenia zebrali się, aby omówić, które kraje są gotowe wysłać swoich ludzi na wojnę w interesie światowego pokoju."
+ un_events.5.a: "Wyślemy [SCOPE.sCharacter('peacekeeper_general_1').GetFullName]"
+ un_events.5.b: "Nie bierz w tym udziału."
+ 
+ you_vote_yes: "Głosujesz w przychylności."
+ you_abstain: "Jesteś ABSTAIN swój głos"
+ you_vote_no: "Głosujesz za AGAINST"
+ you_veto: "Ty weterujesz proces."
+ 
+ # ==========================================
+# LOCALIZATION
+# ==========================================
+ 
+ # ── TREATY ARTICLES ──────────────────────
+ 
+ defense_attache: "Wyślij attaché obrony"
+ defense_attache_desc: "Zamieść doradców wojskowych i oficerów łącznikowych z siłami zbrojnymi kraju docelowego. Cel zyskuje doświadczenie i zmniejsza koszty wojskowe; źródło zyskuje wpływ i pozycję dyplomatyczną. Kraj źródłowy musi utrzymywać większą projekcję mocy niż cel."
+ 
+ cultural_exchange: "Wymiana kulturalna"
+ cultural_exchange_desc: "Ustanowienie formalnego programu wymiany kulturalnej - wspólne wystawy, programy akademickie i kontakty międzyludzkie. Oba kraje zyskują prestiż, wpływy i stają się bardziej atrakcyjne dla migrantów."
+ 
+ research_partnership: "Partnerstwo w zakresie badań naukowych"
+ research_partnership_desc: "Formalne porozumienie w sprawie dzielenia się programami badawczymi i instytucjami akademickimi. Oba kraje korzystają z poprawy szybkości badań i rozpowszechniania technologii. Wymaga, aby obie strony były co najmniej uznanymi uprawnieniami."
+ 
+ human_development_collaboration: "Współpraca na rzecz rozwoju ludzkiego"
+ human_development_collaboration_desc: "Bogaty kraj finansuje programy rozwoju w celu - opieka zdrowotna, edukacja, opieka społeczna. Źródło pokrywa bieżące koszty w zamian za wpływy i prestiż. Umowa złamie się, jeśli gospodarka kraju pochodzenia spadnie poniżej poziomu docelowego."
+ 
+ research_partnership_rank_tt: "Oba kraje muszą być co najmniej uznanymi kompetencjami do nawiązania partnerstwa badawczego"
+ 
+ # ── DIPLOMATIC ACTIONS ───────────────────
+ 
+ financial_sanctions: "Sankcje finansowe"
+ financial_sanctions_desc: "Odcinanie relacji finansowych [ROOT.GetCountry.GetName] z celem - blokowanie dostępu do rynków kredytowych i ograniczanie obrotu papierami wartościowymi. Sektor bankowy i finansowy docelowy ucierpi znacznie."
+ 
+ condemn: "Wyrok skazujący"
+ condemn_desc: "Wydanie formalnego publicznego potępienia działań państwa docelowego. Cel cierpi na trwałe uderzenie w prestiż, legitymację i reputację dyplomatyczną. Wymaga, aby cel miał znaczną niesławę."
+ condemn_action_notification_name: "[INITIATOR_COUNTRY.GetName] potępił nas!"
+ condemn_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName] jest potępiony [SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName]!"
+ condemn_action_notification_desc: "Zostaliśmy potępieni przez [INITIATOR_COUNTRY.GetName]!"
+ condemn_break_name:0 "Ponowne potępienie"
+ condemn_pact_desc:0 "Potępić działania tego kraju."
+ 
+ propose_un_sanctions: "Zaproponowanie sankcji ONZ"
+ propose_un_sanctions_desc: "Jako stały członek Rady Bezpieczeństwa możemy zaproponować, aby Organizacja Narodów Zjednoczonych formalnie sankcjonowała ten cel. Jeśli głosowanie się uda, cel będzie musiał zostać poddany surowym karom ekonomicznym przez pięć lat."
+ propose_un_sanctions_action_notification_name: "[INITIATOR_COUNTRY.GetName] zaproponował ONZ sankcje przeciwko nam!"
+ propose_un_sanctions_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName] wystąpił o międzynarodowe sankcje przeciwko [SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName]!"
+ propose_un_sanctions_action_notification_desc:1 "[INITIATOR_COUNTRY.GetName] skierował się w ONZ do zaproponowania międzynarodowych sankcji przeciwko nam!"
+ 
+ propose_un_condemnation: "Propozycja kondeminacji ONZ"
+ propose_un_condemnation_desc: "Zaproponować, by Organizacja Narodów Zjednoczonych formalnie potępiła cel. Jeśli głosowanie się uda, cel ucierpi na trwałym prestiżu i uszkodzeniu legitymacji. Mniej surowe niż sankcje."
+ propose_un_condemnation__action_notification_name:0 "[INITIATOR_COUNTRY.GetName] zaproponował ONZ Demonstration gateus!"
+ propose_un_condemnation_pact_desc:0 "[SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName] wystąpił o międzynarodowe potępienie przeciwko [SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName]!"
+ propose_un_condemnation_action_notification_desc:0 "[INITIATOR_COUNTRY.GetName] zaapelował w ONZ o międzynarodowe potępienie przeciwko nam!"
+ 
+ condemn_requires_infamy_tt: "Cel musi mieć niesławę."
+ propose_un_sanctions_perm_member_tt: "Jedynie stali członkowie Rady Bezpieczeństwa mogą proponować sankcje lub potępienie ONZ"
+ 
+ # ── UN EVENTS ────────────────────────────
+ 
+ un_events.102.t: "ONZ - Głosowanie w sprawie sankcji"
+ un_events.102.d: "Stały członek Rady Bezpieczeństwa zaproponował rezolucję przeciwko państwu członkowskiemu. [ROOT.GetCountry.GetName] może oddać głos używając przycisków Yay lub Nay w dzienniku ONZ. Wynik zostanie ogłoszony w ciągu 120 dni."
+ un_events.102.a: "Będziemy rozważać ostrożnie."
+ 
+ # ── NOTIFICATIONS ─────────────────────────
+ 
+ un_sanctions_passed: "Sankcje ONZ"
+ un_sanctions_passed_desc: "Organizacja Narodów Zjednoczonych głosowała za nałożeniem sankcji przeciwko [ROOT.GetCountry.GetName]. Ciężkie kary gospodarcze będą obowiązywały przez pięć lat."
+ 
+ un_condemnation_passed: "Wydane przez ONZ skazanie"
+ un_condemnation_passed_desc: "Organizacja Narodów Zjednoczonych oficjalnie potępiła [ROOT.GetCountry.GetName]. [ROOT.GetCountry.GetName] pozycja międzynarodowa została znacząco uszkodzona."
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ financial_sanctions_target: "W ramach sankcji finansowych"
+ financial_sanctions_target_desc: "Obca władza nałożyła sankcje finansowe na [ROOT.GetCountry.GetName], blokując dostęp do międzynarodowych kredytów i ograniczając sektor finansowy."
+ 
+ condemned_modifier: "Dopuszczone na szczeblu międzynarodowym"
+ condemned_modifier_desc: "Obca władza oficjalnie potępiła [ROOT.GetCountry.GetName]. Prestige i legitymacja są zmniejszane na czas trwania potępienia."
+ 
+ un_sanctions_target: "Sankcje ONZ"
+ un_sanctions_target_desc: "ONZ głosowała za nałożeniem sankcji na [ROOT.GetCountry.GetName]. Międzynarodowy system finansowy jest skutecznie zamknięty. Od pięciu lat obowiązują surowe kary ekonomiczne."
+ 
+ un_condemnation_target: "Demonstracja ONZ"
+ un_condemnation_target_desc: "Organizacja Narodów Zjednoczonych oficjalnie potępiła [ROOT.GetCountry.GetName]. Prestige, legitymacja i reputacja dyplomatyczna ucierpiały. Potępienie trwa pięć lat."
+ 
+ un_je_voting_sanctions_tt: "#bold Sankcje ONZ Głosowanie - głosowanie w toku. #! Stały członek Rady Bezpieczeństwa zaproponował sankcje wobec [GetGlobalVariable('un_sanction_target').GetCountry.GetName]. Użyj przycisków Yay lub Nay poniżej, aby oddać swój głos. Jeżeli wniosek przejdzie, cel będzie musiał zostać poddany surowym karom ekonomicznym na okres pięciu lat."
+ 
+ un_je_voting_condemnation_tt: "#bold Głosowanie ONZ w trakcie głosowania. #! Stały członek Rady Bezpieczeństwa zaproponował formalne potępienie [GetGlobalVariable('un_sanction_target').GetCountry.GetName]. Użyj przycisków Yay lub Nay poniżej, aby oddać swój głos. Jeśli wniosek przejdzie, cel ucierpi na trwałym uszkodzeniu jego prestiżu i legitymacji."
+ 
+ un_je_under_sanctions_tt: "@warning! #bold [ROOT.GetCountry.GetName] jest obecnie objęty sankcjami ONZ. #! Społeczność międzynarodowa głosowała za nałożeniem sankcji ekonomicznych na [ROOT.GetCountry.GetName]. Przepustowość bankowa, inwestycje i budownictwo są poważnie ograniczone. Sankcje pozostaną w mocy do czasu ich wygaśnięcia."
+ 
+ un_je_under_condemnation_tt: "@warning! #bold [ROOT.GetCountry.GetName] został oficjalnie potępiony przez ONZ. #! Społeczność międzynarodowa głosowała za potępieniem zachowania [ROOT.GetCountry.GetName]. Prestige, legitymacja i reputacja dyplomatyczna są ograniczone. Potępienie pozostaje w aktach do czasu jego wygaśnięcia."
+ 
+ condemn_action_propose_name:0 "Wyrok skazujący"
+ condemn_action_break_name:0 "Wycofaj potępienie"
+ un_not_sanctioned:0 "Nie podlega już sankcjom ONZ."
+ un_not_condemned:0 "Nie jest już pod potępieniem ONZ."
+ # Propose Motion
+ un_propose_motion_button: "Propozycja rezolucji ONZ"
+ un_propose_motion_button_desc: "Resolutions have been disabled currently." # Propose a motion to the United Nations for a vote. Only one motion may be active at a time.
+
+ # Progress On Motion
+ un_motion_progress_bar: "Wsparcie rezolucji ONZ"
+ un_motion_progress_bar_desc: "Śledzi poziom wsparcia dla obecnego projektu ONZ"
+ un_motion_progress_bar_second_desc: "Wyższe wartości wskazują na silniejsze wsparcie."
+
+ un_motion_progress_from_yes_votes: "Tak głosy"
+
+ un_events.100.t: "Propozycja projektu ONZ"
+ un_events.100.d: "Wybierz rezolucję, którą chcesz przedstawić Radzie Bezpieczeństwa."
+
+ un_events.100.a: "Propozycja rezolucji w sprawie ochrony środowiska"
+ un_events.100.b: "Propozycja rezolucji w sprawie światowego pokoju"
+ un_events.100.c: "Przedstawienie rezolucji w sprawie rozwoju gospodarczego"
+ un_events.100.e: "Propozycja rezolucji w sprawie technologii UNESCO"
+
+ un_events.101.t: "Głosowanie Rady Bezpieczeństwa ONZ"
+ un_events.101.d: "[GetGlobalVariable('un_current_motion_name')] jest przedmiotem głosowania Rady Bezpieczeństwa ONZ. Każdy członek odda swój głos. Stali członkowie mogą zawetować wniosek w głosowaniu NIE."
+
+ un_events.101.a: "Głosuj na TAK"
+ un_events.101.b: "Głosowanie NIE"
+
+ un_events.202_veto.t: "Zatwierdzona rezolucja ONZ"
+ un_events.202_veto.d: "Ruch '[GetGlobalVariable('un_current_motion_name')]' został zawetowany przez [GetGlobalVariable('un_motion_veto').GetCountry.GetName]."
+
+ un_events.203_pass.t: "Zatwierdzona rezolucja ONZ"
+ un_events.203_pass.d: "Wniosek "[GetGlobalVariable('un_current_motion_name')]" przeszedł głosowanie Rady Bezpieczeństwa."
+
+ un_events.204_fail.t: "Rezolucja ONZ odrzucona"
+ un_events.204_fail.d: "Wniosek "[GetGlobalVariable('un_current_motion_name')]" nie osiągnął większości w głosowaniu Rady Bezpieczeństwa."
+ 
+ # Resolution Notification
+ 
+ un_passed: "Rozdzielczość minęła"
+ un_passed_desc: "Wniosek "[GetGlobalVariable('un_current_motion_name')]" przeszedł głosowanie Rady Bezpieczeństwa ONZ"
+ 
+ un_fail: "Rozdzielczość nie powiodła się"
+ un_fail_desc: "Wniosek "[GetGlobalVariable('un_current_motion_name')]" nie osiągnął większości w głosowaniu Rady Bezpieczeństwa."
+
+ un_vetoed: "Zatwierdzona rezolucja"
+ un_vetoed_desc: "Ruch '[GetGlobalVariable('un_current_motion_name')]' został zawetowany przez [GetGlobalVariable('un_motion_veto').GetCountry.GetName]."
+ 
+ # European Union
+ 
+ je_european_union: "Unia Europejska"
+ je_european_union_reason: "Unia Europejska stanowi jeden z najbardziej ambitnych projektów politycznych i gospodarczych współczesnego wieku. W oparciu o zasady integracji gospodarczej, wspólnego zarządzania i bezpieczeństwa zbiorowego UE zapewnia swoim członkom wspólny rynek, skoordynowaną politykę handlową oraz miejsce przy stole w kształtowaniu przyszłości kontynentu. Członkostwo przynosi obietnicę swobodnego przepływu towarów, usług, kapitału i ludzi - bezprecedensową szansę na dobrobyt. \n \n Unia nie jest jednak bez wyzwań. Członkowie muszą kierować się złożonymi negocjacjami, przestrzegać przepisów ponadnarodowych oraz kompromisem w sprawie elementów suwerenności narodowej. Im głębsza integracja rośnie, tym bardziej los każdego członka jest związany z losem kolektywu. \n \n Niezależnie od tego, czy kraj rozwija się lub walczy w obrębie UE, zależy od jego zdolności do wyważenia interesów krajowych ze wspólnym dobrem, tworząc ścieżkę w ramach unii, która ma być czymś więcej niż sumą jego części."
+
+ eu_events.1.t: "Zaproszenie do Unii Europejskiej"
+ eu_events.1.d: "Unia Europejska rozszerzyła zaproszenie naszego kraju do przystąpienia jako pełnoprawny członek."
+ eu_events.1.a: "Przyjmujemy ofertę"
+ eu_events.1.b: "Musimy upaść."
+
+ eu_events.2.t: "Debata nad członkostwem w UE"
+ eu_events.2.d: "Frakcje polityczne wzywają do podjęcia decyzji, czy pozostać w UE."
+ eu_events.2.a: "Opuść Unię"
+ eu_events.2.b: "Pozostać w Unii"
+
+ modifier_eu_member_state: "Państwo członkowskie UE"
+ eu_membership_accept_tt: "Zostaniesz członkiem Unii Europejskiej, uzyskując korzyści gospodarcze i dyplomatyczne."
+ eu_member_state: "Państwo członkowskie UE"
+ is_eu_member_state: "Państwo członkowskie UE"
+ 
+ eu_call_summit_button: "Zwołanie szczytu UE"
+ eu_call_summit_button_desc: "Wzywać państwa członkowskie do dyskusji na temat handlu, sankcji i współpracy."
+
+ eu_events.3.t: "Szczyt Unii Europejskiej"
+ eu_events.3.d: "Przedstawiciele wszystkich państw członkowskich UE zbierają się, aby omówić wspólne cele i wyzwania."
+ eu_events.3.a: "Deepen Trade Ties"
+ eu_events.3.b: "Sankcje koordynujące"
+ eu_events.3.c: "Promowanie wymiany kulturalnej"
+
+ eu_sanctions_ready: "Przygotowane do sankcji"
+ 
+ leave_eu: "Wyjazd z Unii Europejskiej"
+ leave_eu_desc: "Wycofanie się z Unii Europejskiej, co jest ważniejsze od korzyści gospodarczych i integracji politycznej."
+ 
+ eu_member_state_is: "Państwo członkowskie UE"
+ eu_member_state_is_no_longer: "Nie jest już państwem członkowskim UE"
+ eu_deeper_trade_ties: "UE - głębsze powiązania handlowe"
+ eu_deeper_trade_ties_desc: "Rozszerzona integracja gospodarcza w Unii Europejskiej zwiększyła wielkość handlu i poprawiła dostęp do rynku między państwami członkowskimi."
+
+ eu_cultural_exchange: "Wymiana kulturalna UE"
+ eu_cultural_exchange_desc: "Członkostwo w Unii Europejskiej wspierało zrozumienie kulturowe, migrację oraz rozpowszechnianie nowych pomysłów i technologii."
+ je_eu_membership_request: "Wniosek o członkostwo w UE"
+ je_eu_membership_request_reason: "Państwa rząd złożył formalny wniosek o przystąpienie do Unii Europejskiej. \n \n Proces ten obejmuje długie negocjacje, reformy polityki oraz dostosowanie do przepisów i standardów UE. W ciągu najbliższych lat, Twój kraj będzie oceniany na temat swojej stabilności gospodarczej, zarządzania, praw człowieka i przestrzegania zasad demokratycznych. \n \n Pomyślne przystąpienie zapewni Ci: \n - Dostęp do jednolitego rynku UE \n - Swobodny przepływ towarów, usług, kapitału i osób z innych państw członkowskich \n - Udział w organach decyzyjnych UE \n \n Proces ten jest jednak politycznie wrażliwy i może napotkać opór zarówno na szczeblu krajowym, jak i na szczeblu istniejących członków UE."
+ eu_membership_process: "Rozpoczęcie procesu członkostwa w UE"
+ request_to_join_eu_decision: "Wniosek o przystąpienie do UE"
+ request_to_join_eu_decision_desc: "Formalnie ubiegać się o przystąpienie do Unii Europejskiej."
+ 
+ eu_events.0.t: "Wstąpienie do Unii Europejskiej"
+ eu_events.0.d: "Zostaliśmy oficjalnie przyjęci do Unii Europejskiej"
+ 
+ # NATO
+ 
+ allow_leave_nato: "Pozwala ci opuścić Nato w ciągu najbliższych miesięcy"
+ left_nato: "Opuszczenie NATO"
+ leave_nato: "Opuść NATO"
+ leave_nato_desc: "Cofnąć nasze członkostwo w NATO, pozwalając wojsku działać jako niezależna siła, wolna od amerykańskich wpływów."
+
+ # imf
+
+ je_imf_loan: "Program pożyczek MFW"
+ je_imf_loan_reason: "Pożyczka Międzynarodowego Funduszu Walutowego została rozszerzona na [ROOT.GetCountry.GetName]. W zamian za finansowanie awaryjne kraj przyjął znaczące warunki: wysokie stopy procentowe, obowiązkowy wolny handel oraz zobowiązania wobec wielkich władz, które ubezpieczają fundusz."
+
+ imf_je_obligations_active_tt: "Wielkie obowiązki energetyczne nadal obowiązują. Zagraniczni wierzyciele utrzymują dźwignię nad kluczowymi decyzjami dotyczącymi polityki gospodarczej."
+ imf_je_obligations_met_tt: "Wypisano wielkie obowiązki energetyczne. Kraj ten zachowuje pełną suwerenność gospodarczą - mimo że warunki pożyczki pozostają w mocy."
+
+ decision_leave_imf: "Opuść MFW"
+ decision_leave_imf_desc: "Wycofanie z Międzynarodowego Funduszu Walutowego. Kraj ten nie będzie już kwalifikował się do wsparcia kredytowego MFW w przypadku upadłości, ale będzie wolny od zobowiązań wierzycieli i ingerencji. Decyzji tej nie można odwrócić. \n \n Uwaga: Nie możesz odejść, trzymając aktywną pożyczkę MFW."
+ imf_cannot_leave_while_indebted_tt: "Nie można opuścić MFW, gdy uruchomiona jest aktywna pożyczka"
+
+
+ imf_button_pay_obligations_name: "Wypłać zobowiązania"
+ imf_button_pay_obligations_desc: "Spłać pozostałe wielkie zobowiązania energetyczne wcześniej. Kosztuje 500 złota i wymaga zadłużenia poniżej 50%, ale natychmiast przywraca pełną suwerenność gospodarczą i poprawia stosunki ze wszystkimi wielkimi mocami."
+ imf_pay_obligations_cost_tt: "Wymagana skala zadłużenia poniżej 50% i 500 złota"
+ imf_obligations_paid_tt: "Obowiązki opłaciły się wcześniej. Znakomite stosunki władzy poprawiły się."
+
+ # imf_events.1 — Loan offer
+ imf_events.1.t: "Interwencja MFW"
+ imf_events.1.d: "Skarbiec [ROOT.GetCountry.GetName] znajduje się w kryzysie. Dług osiągnął poziom, który czyni rynki nerwowymi i wierzycielami ostrożnymi. Międzynarodowy Fundusz Walutowy zwrócił uwagę i wysłał delegację w celu zaoferowania finansowania w sytuacjach nadzwyczajnych. \n \n Warunki nie są hojne. Stopy procentowe zostaną ustalone na poziomie kar. Państwo to będzie musiało przyjąć wolny handel, niezależnie od istniejącej polityki gospodarczej. A wielkie władze, które zasilają fundusz, będą oczekiwać spełnienia pewnych zobowiązań. Ale alternatywa - zbliżająca się do bankructwa bez siatki bezpieczeństwa - może być gorsza."
+ imf_events.1.f: "Niezależność i wypłacalność są rzadko dostępne w tym samym czasie."
+ imf_events.1.a: "Zaakceptuj pożyczkę - potrzebujemy finansowania"
+ imf_events.1.b: "Odmowa - będziemy zarządzać własnymi sprawami"
+
+ # imf_events.2 — Great power notification
+ imf_events.2.t: "Rozszerzony kredyt MFW"
+ imf_events.2.d: "[SCOPE.sCountry('imf_debtor_scope').GetName] zaakceptował pakiet pożyczek MFW. Jako jedna z wielkich uprawnień gwarantowanych funduszu, [ROOT.GetCountry.GetName] posiada obecnie zobowiązania od kraju dłużnika. Porozumienie to wiąże się ze strategicznymi i finansowymi konsekwencjami."
+ imf_events.2.f: "Dług jest formą dyplomacji."
+ imf_events.2.a: "Dobrze - to daje nam przewagę"
+ imf_events.2.b: "Niefortunne - narzucone warunki są zbyt surowe"
+
+ # imf_events.3 — Loan complete
+ imf_events.3.t: "Zakończenie programu MFW"
+ imf_events.3.d: "Po upływie pięciu lat od przyjęcia pożyczki MFW, [ROOT.GetCountry.GetName] wypełniła zobowiązania związane z programem. Odsetki zostały wypłacone, warunki zostały spełnione, a wielcy wierzyciele mocy spełnione. Kraj ten wyłania się z doświadczeń związanych z przywróconą suwerennością - i ma nadzieję, że jego finanse będą lepiej uporządkowane niż wtedy, kiedy się zaczęły."
+ imf_events.3.f: "Rejestr jest zrównoważony. Lekcje są trudniejsze do zmierzenia."
+ imf_events.3.a: "Przeszliśmy przez to."
+
+ # imf_events.4 — Leaving
+ imf_events.4.t: "Wycofanie z MFW"
+ imf_events.4.d: "[ROOT.GetCountry.GetName] wycofuje się z Międzynarodowego Funduszu Walutowego. Decyzja odzwierciedla przekonanie, że koszty członkostwa - warunki, zobowiązania, utrata suwerenności gospodarczej w czasie kryzysu - przeważają nad korzyściami płynącymi z dostępu do finansowania nadzwyczajnego. \n \n Wielkie moce nie będą zadowolone. I powinien [ROOT.GetCountry.GetName] ponownie podejść do bankructwa, nie będzie siatki bezpieczeństwa."
+ imf_events.4.f: "Niezależność ma swoją cenę. Tak jak zależność."
+ imf_events.4.a: "Stoimy sami - tak jak powinniśmy"
+
+ # imf_events.5 — Great power notification of leaving
+ imf_events.5.t: "Kraj opuścił MFW"
+ imf_events.5.d: "[SCOPE.sCountry('imf_leaver_scope').GetName] wycofał się z Międzynarodowego Funduszu Walutowego. Decyzja jest rebuke do międzynarodowego porządku finansowego - i sygnały, że [SCOPE.sCountry('imf_leaver_scope').GetName] zamierza zaplanować swój własny kurs gospodarczy na lepsze lub gorsze."
+ imf_events.5.f: "Jeden dłużnik mniej. Jedna dźwignia mniej."
+ imf_events.5.a: "Zanotowane"
+
+ # imf_events.10 — War bonds
+ imf_events.10.t: "Obligacje wojenne"
+ imf_events.10.d: "Ministerstwo Finansów zaproponowało środek nadzwyczajny: emisję obligacji wojennych. Obywatele i inwestorzy byliby proszeni o pożyczenie pieniędzy państwu w zamian za przyszłe spłatę wraz z odsetkami, zapewniając natychmiastowy zastrzyk pieniężny w celu sfinansowania działań wojennych. \n \n Obligacje będą działać - ale są to długi, a dług w związkach wojennych szybko. Zużycie dostaw wzrośnie wraz z przepływem pieniędzy do maszyny wojskowej."
+ imf_events.10.f: "Naród pożycza od swojej przyszłości, by bronić swojej teraźniejszości."
+ imf_events.10.a: "Wydaj obligacje - potrzebujemy pieniędzy teraz"
+ imf_events.10.b: "Decline - nie będziemy hipoteki naszej przyszłości"
+
+ imf_loan_modifier: "Warunki pożyczki MFW"
+ imf_loan_modifier_desc: "Pożyczka MFW została udzielona. Stopy procentowe są bardzo wysokie, a wolny handel jest obowiązkowy. Inwestycje zagraniczne napływają, ale suwerenność gospodarcza jest ograniczona i ucierpiała legitymacja."
+
+ imf_great_power_obligations: "Wielkie zobowiązania mocy"
+ imf_great_power_obligations_desc: "Wielka władza, która wspiera MFW, posiada zobowiązania z tego kraju jako warunek pożyczki. Ich wpływ na politykę gospodarczą jest prawdziwy."
+
+ imf_refused_loan_modifier: "Odrzucone pożyczki MFW"
+ imf_refused_loan_modifier_desc: "Kraj ten odmówił udzielenia pomocy MFW i będzie sam zarządzać swoim długiem. W rezultacie warunki kredytowe uległy pogorszeniu."
+
+ imf_post_loan_stability: "Po odzyskaniu programu"
+ imf_post_loan_stability_desc: "Program MFW zakończył się. Po wypełnieniu swoich zobowiązań rząd zyskał pewną wiarygodność - a finanse tego kraju są w lepszym stanie."
+
+ imf_left_modifier: "Poza MFW"
+ imf_left_modifier_desc: "Ten kraj wycofał się z MFW. Jest ona wolna od zobowiązań wierzycieli, ale wyłączona z międzynarodowego finansowania nadzwyczajnego. Przepływy inwestycyjne są zmniejszone."
+
+ war_bonds_modifier: "Obligacje wojenne wyemitowane"
+ war_bonds_modifier_desc: "W celu sfinansowania działań wojennych wyemitowano obligacje wojenne. Dochody rosną, ale zadłużenie rośnie, a konsumpcja podaży wzrosła."
+
+ war_bonds_refused_modifier: "Obligacje wojenne"
+ war_bonds_refused_modifier_desc: "Rząd odmówił emisji obligacji wojennych. Dyscyplina fiskalna jest utrzymana, ale armia czuje szczyptę."
+
+ un_events.6.t: "Nasze siły wracają z misji ONZ"
+ un_events.6.d: "[ROOT.GetCountry.GetAdjective] siły zakończyły służbę w misji pokojowej ONZ i wracają do domu. Wkład ten był skromny pod względem wojskowym, ale znaczący dyplomatycznie - [ROOT.GetCountry.GetName] był obecny, gdy miało to znaczenie. Generał wrócił."
+ un_events.6.a: "Witaj w domu."
+ 
+ un_peacekeeping_contribution: "Wkład ONZ na rzecz pokoju"
+ un_peacekeeping_contribution_desc: "[ROOT.GetCountry.GetName] przyczynił się do misji pokojowej ONZ. Społeczność międzynarodowa przyjęła do wiadomości."
+ 
+  # ── EVENT 300: RESOLUTION PASSED ─────────────────────────────────
+ 
+ un_events.300.t: "Rezolucja ONZ minęła"
+ un_events.300.d: "Zgromadzenie Ogólne uzgodniło rezolucję w sprawie rozwiązania problemów na całym świecie i koordynacji globalnej współpracy w danym temacie"
+ un_events.300.f: "Rezolucja niesie ze sobą ciężar międzynarodowego konsensusu - jeśli to coś warte."
+ un_events.300.a: "Zanotowane"
+ 
+ UN_RES_DESC_ENVIRONMENT: "#bold Resolution on Environmental Protection #! \n Państwa członkowskie zobowiązują się do przestrzegania skoordynowanych norm środowiskowych i zrównoważonego zarządzania zasobami. \n \n #tooltip_separator! \n @green_checkmark! Wszystkie kraje otrzymują #bold UN Environmental Resolution #! modyfikator przez 12 miesięcy."
+ UN_RES_DESC_PEACE: "#bold Resolution on World Peace #! \n Zgromadzenie Ogólne potwierdza zaangażowanie w pokojowe rozwiązywanie sporów i zmniejszenie konfliktu międzystanowego. \n \n #tooltip_separator! \n @green_checkmark! Wszystkie kraje otrzymują #bold UN Peace Resolution #! modyfikator przez 12 miesięcy."
+ UN_RES_DESC_ECONOMY: "#bold Rezolucja w sprawie rozwoju gospodarczego #! \n Państwa Członkowskie popierają skoordynowane inwestycje w gospodarkach rozwijających się i obniżenie barier handlowych. \n \n #tooltip_separator! \n @green_checkmark! Wszystkie kraje otrzymują #bold UN Economic Development Resolution #! modyfikator przez 12 miesięcy."
+ UN_RES_DESC_TECHNOLOGY: "#bold Rezolucja Technologiczna UNESCO #! \n Zgromadzenie Ogólne ustanawia ramy podziału technologii i wspólnych badań naukowych między państwami członkowskimi. \n \n #tooltip_separator! \n @green_checkmark! Wszystkie kraje otrzymują #bold Rozdzielczość technologii ONZ #! modyfikator przez 12 miesięcy."
+ 
+ # ── EVENT 301: RESOLUTION FAILED ─────────────────────────────────
+ 
+ un_events.301.t: "Uchwała ONZ nie przejdzie."
+ un_events.301.d: "Wniosek przed Zgromadzeniem Ogólnym Narodów Zjednoczonych nie zapewnił niezbędnej większości. Rezolucja została odrzucona, a sesja odroczona bez rezultatu. \n \n Nie zostaną wdrożone żadne środki. Delegacja sponsorująca wyraziła swoje rozczarowanie. Inni nie."
+ un_events.301.f: "ONZ robi to, co robi najlepiej."
+ un_events.301.a: "Nic dziwnego."
+ 
+ # ── EVENT 302: SANCTIONS (TARGET) ────────────────────────────────
+ 
+ un_events.302.t: "[ROOT.GetCountry.GetName] Usankcjonowane przez ONZ"
+ un_events.302.d: "Rada Bezpieczeństwa ONZ przyjęła rezolucję nakładającą sankcje ekonomiczne na [ROOT.GetCountry.GetName]. Resolution was supposed by the requirement most and gets effect impossible. \n \n Obecnie obowiązują ograniczenia handlowe. Dyplomatyczna izolacja pogłębia się. Oczekuje się, że państwa członkowskie - choć nie są zmuszone - będą przestrzegać systemu sankcji. \n \n Sankcje pozostaną w mocy przez pięć lat, chyba że Rada Bezpieczeństwa zwoła ich przegląd."
+ un_events.302.f: "Władza nie oddziela kraju od opinii świata."
+ un_events.302.a: "Odrzucamy tę rezolucję"
+ 
+ # ── EVENT 303: CONDEMNATION (TARGET) ─────────────────────────────
+ 
+ un_events.303.t: "[ROOT.GetCountry.GetName] Skazany przez ONZ"
+ un_events.303.d: "Zgromadzenie Ogólne Narodów Zjednoczonych przyjęło formalną rezolucję potępiającą [ROOT.GetCountry.GetName]. Potępienie zostało zatwierdzone większością głosów w wyniku debaty na głos. \n \n Potępienie nie ma wiążącego mechanizmu egzekwowania, ale stanowi formalne oświadczenie o międzynarodowej dezaprobaty i będzie miało wpływ na [ROOT.GetCountry.GetAdjective] pozostawanie w społeczności dyplomatycznej przez najbliższe lata."
+ un_events.303.f: "Słowa to nie broń. Ale zostawiają ślady."
+ un_events.303.a: "Nie będziemy pouczać."
+ 
+ # ── EVENT 304: SANCTIONS/CONDEMNATION (OBSERVERS) ────────────────
+ 
+ un_events.304.t: "Uzupełniona rezolucja ONZ w sprawie sankcji"
+ un_events.304.d: "Rada Bezpieczeństwa ONZ przyjęła rezolucję nakładającą sankcje na inne państwo. Zmierzą się one z surowymi sankcjami, ponieważ świat koordynuje ekonomiczne obciążenie."
+ un_events.304.f: "Maszyna międzynarodowej cenzury obraca się powoli, ale obraca się."
+ un_events.304.a: "Zanotowane"
+ 
+ UN_304_DESC_SANCTIONS: "Rada Bezpieczeństwa ONZ głosowała za nałożeniem sankcji gospodarczych na [global_var:un_sanction_target.GetName]. Rezolucja przekazywana przez wymagany margines. \n \n [global_var:un_sanction_target.GetName] będą podlegać ograniczeniom handlowym, izolacji dyplomatycznej i znaczącym karom ekonomicznym na okres obowiązywania sankcji. Oczekuje się, że państwa członkowskie będą przestrzegać tych ograniczeń."
+ UN_304_DESC_CONDEMNATION: "Zgromadzenie Ogólne Narodów Zjednoczonych formalnie potępiło [global_var:un_sanction_target.GetName] większością głosów. Uchwała reprezentuje oficjalne oświadczenie o międzynarodowej dezaprobaty. \n \n Podczas gdy potępienie nie wiąże się z egzekwowaniem przepisów, umieszcza ono [global_var:un_sanction_target.GetAdjective] na płycie i wpływa na ich pozycję międzynarodową."
+ 
+ ###### International Organizations — Full Localization
+ ####  IMPORTANT: This file must be saved with UTF-8 BOM encoding
+ ####  Place in: localization/english/
+
+ ### ═══════════════════════════════════════
+ ### PANEL & TABS
+ ### ═══════════════════════════════════════
+ io_panel_title: "Organizacje międzynarodowe"
+ io_tab_igos_label: "Organizacje"
+ io_tab_treaties_label: "Traktaty"
+ io_tab_ngos_label: "Organizacje pozarządowe"
+
+ ### ═══════════════════════════════════════
+ ### ORGANIZATION TYPES
+ ### ═══════════════════════════════════════
+ io_type_free_trade: "[concept_free_trade_agreement]"
+ io_type_financial: "[concept_financial_agreement]"
+ io_type_military_defense: "[concept_military_defense_agreement]"
+ io_type_cultural_pact: "[concept_cultural_pact]"
+ io_type_cooperative: "[concept_cooperative_agreement]"
+ io_type_unknown: "[concept_international_organization]"
+
+ ### ═══════════════════════════════════════
+ ### ORGANIZATIONS — Names & Descriptions
+ ### ═══════════════════════════════════════
+
+ ### United Nations
+ io_un_name: "ONZ"
+ io_un_abbreviation: "ONZ"
+ io_un_desc: "[concept_united_nations] jest [concept_cooperative_agreement] założonym w celu utrzymania międzynarodowego pokoju i bezpieczeństwa, rozwijania przyjaznych stosunków między narodami i promowania postępu społecznego. W przeciwieństwie do innych [concept_intergovernmental_organization] s, ONZ nie dostarcza bezpośrednio modyfikatorów swoim członkom. Jego wpływ wykorzystuje się w rezolucjach dyplomatycznych, mandatach pokojowych i globalnych inicjatywach."
+ io_un_tooltip: "[concept_united_nations] jest [concept_cooperative_agreement] z narodów świata. \n Kliknij, aby zobaczyć szczegóły."
+
+ ### NATO
+ io_nato_name: "Organizacja Traktatu Północnoatlantyckiego"
+ io_nato_abbreviation: "NATO"
+ io_nato_desc: "[concept_nato] to [concept_military_defense_agreement] ustanowiony w 1949 roku, wiążący kraje Ameryki Północnej i Europy w obronie zbiorowej. Uzbrojony atak na jednego członka jest uważany za atak na wszystkich. NATO koordynuje wspólne ćwiczenia wojskowe, standaryzuje sprzęt i utrzymuje zintegrowane struktury dowodzenia."
+
+ ### G7
+ io_g7_name: "Grupa Siedem"
+ io_g7_abbreviation: "G7"
+ io_g7_desc: "[concept_g7] to [concept_financial_agreement] obejmujący największe na świecie zaawansowane gospodarki. Członkowie koordynują politykę fiskalną, politykę pieniężną i zarządzanie gospodarcze. Członkostwo daje znaczący wpływ dyplomatyczny i wiarygodność finansową."
+
+ ### OPEC
+ io_opec_name: "Organizacja krajów wywozu ropy naftowej"
+ io_opec_abbreviation: "OPEC"
+ io_opec_desc: "[concept_opec] jest [concept_free_trade_agreement] głównych krajów produkujących ropę naftową, które koordynują politykę ropopochodną pomiędzy państwami członkowskimi. Celem OPEC jest zapewnienie stabilizacji rynków ropy naftowej i sprawiedliwego zwrotu dla krajów produkujących."
+
+ ### EEC
+ io_eec_name: "Europejska Wspólnota Gospodarcza"
+ io_eec_abbreviation: "EWG"
+ io_eec_desc: "[concept_eec] jest [concept_free_trade_agreement] ustanawiającym wspólny rynek wśród europejskich państw członkowskich. Zmniejsza bariery handlowe, harmonizuje regulacje ekonomiczne i promuje swobodny przepływ towarów, usług, kapitału i pracy w krajach członkowskich."
+ 
+ ### Arab League
+ io_arab_league_name: "Liga Arabska"
+ io_arab_league_abbreviation: "LAS"
+ io_arab_league_desc: "[concept_arab_league] jest [concept_cultural_pact] krajów arabskojęzycznych, które promują współpracę polityczną, gospodarczą, kulturalną i społeczną wśród swoich członków. Liga koordynuje politykę w sprawach będących przedmiotem wspólnego zainteresowania i pośredniczy w sporach między państwami arabskimi."
+
+ ### IMF
+ io_imf_name: "Międzynarodowy Fundusz Walutowy"
+ io_imf_abbreviation: "MFW"
+ io_imf_desc: "[concept_imf] jest [concept_financial_agreement], który promuje międzynarodową współpracę monetarną, stabilność kursu walutowego i uporządkowane uzgodnienia walutowe. Zapewnia pomoc finansową i doradztwo polityczne państwom członkowskim borykającym się z problemami bilansu płatniczego."
+
+ ### ESA
+ io_esa_name: "Europejska Agencja Kosmiczna"
+ io_esa_abbreviation: "PZE"
+ io_esa_desc: "[concept_esa] jest [concept_cooperative_agreement] dedykowany do eksploracji i wykorzystania przestrzeni kosmicznej. Państwa członkowskie gromadzą środki na rozwój pojazdów nośnych, satelitów i misji naukowych, których żaden pojedynczy naród europejski nie mógłby osiągnąć samodzielnie."
+
+ ### ASEAN
+ io_asean_name: "Stowarzyszenie Narodów Azji Południowo-Wschodniej"
+ io_asean_abbreviation: "ASEAN"
+ io_asean_desc: "[concept_asean] jest [concept_cooperative_agreement] krajów Azji Południowo-Wschodniej promujących wzrost gospodarczy, postęp społeczny i rozwój kulturalny. ASEAN ułatwia stabilność regionalną i zapewnia ramy wielostronnego dialogu w regionie Azji i Pacyfiku."
+
+ ### WHO
+ io_saarc_name: "Południowoazjatyckie Stowarzyszenie Współpracy Regionalnej"
+ io_saarc_desc: "[concept_saarc] jest [concept_cooperative_agreement] wśród krajów Azji Południowej, których celem jest współpraca regionalna, koordynacja rozwoju i dialog wielostronny."
+
+ io_cis_name: "Wspólnota Niepodległych Państw"
+ io_cis_desc: "[concept_cis] jest [concept_cooperative_agreement] wśród krajów postsowieckich skupionych na konsultacjach regionalnych, koordynacji gospodarczej i praktycznej współpracy międzyrządowej."
+
+ io_who_name: "Światowa Organizacja Zdrowia"
+ io_who_abbreviation: "WHO"
+ io_who_desc: "[concept_who] to [concept_cooperative_agreement] kierujący i koordynujący międzynarodową politykę zdrowotną. Zapewnia on przywództwo w światowych sprawach zdrowotnych, określa normy i standardy, monitoruje tendencje zdrowotne oraz koordynuje reakcje na międzynarodowe sytuacje kryzysowe w dziedzinie zdrowia."
+
+ ### ═══════════════════════════════════════
+ ### TREATIES — Names & Descriptions
+ ### ═══════════════════════════════════════
+
+ io_treaty_geneva_name: "Konwencje genewskie"
+ io_treaty_geneva_desc: "Seria traktatów znanych jako konwencje genewskie jest odpowiedzialna za ustanowienie norm prawa międzynarodowego w zakresie traktowania humanitarnego podczas konfliktu zbrojnego. Sygnatariusze [concept_international_treaty] zgadzają się chronić rannych żołnierzy, jeńców wojennych i cywilów w czasie wojny."
+
+ io_treaty_cwc_name: "Konwencja o broni chemicznej"
+ io_treaty_cwc_desc: "Konwencja o broni chemicznej jest programem [concept_international_treaty], który zakazuje rozwoju, produkcji, nabywania, przechowywania, zatrzymywania, przekazywania i używania broni chemicznej. Sygnatariusze zgadzają się zniszczyć istniejące zapasy w ramach międzynarodowej weryfikacji."
+
+ io_treaty_npt_name: "Traktat o nierozprzestrzenianiu broni masowego rażenia"
+ io_treaty_npt_desc: "Traktat o nierozprzestrzenianiu broni jądrowej ma na celu zapobieganie rozprzestrzenianiu broni jądrowej, promowanie rozbrojenia oraz ułatwienie pokojowego wykorzystania energii jądrowej w ramach międzynarodowych zabezpieczeń."
+
+ io_treaty_bwc_name: "Konwencja o broni biologicznej"
+ io_treaty_bwc_desc: "Konwencja o broni biologicznej jest programem [concept_international_treaty] zakazującym rozwoju, produkcji i składowania broni biologicznej i toksycznej. Była to pierwsza wielostronna umowa o rozbrojeniu, która zakazała całej kategorii broni."
+
+ io_treaty_cat_name: "Konwencja przeciwko torturom"
+ io_treaty_cat_desc: "Konwencja przeciwko torturom jest programem [concept_international_treaty] zakazującym wszelkich form tortur i okrutnego, nieludzkiego lub poniżającego traktowania lub karania. Sygnatariusze zobowiązują się do podjęcia skutecznych środków zapobiegających torturom w ramach ich jurysdykcji."
+
+ ### ═══════════════════════════════════════
+ ### NGOs — Names & Descriptions
+ ### ═══════════════════════════════════════
+
+ io_iaea_name: "Międzynarodowa Agencja Energii Atomowej"
+ io_iaea_abbreviation: "MAEA"
+ io_iaea_desc: "MAEA promuje pokojowe wykorzystanie energii jądrowej i działa na rzecz zapobiegania jej wykorzystywaniu do celów wojskowych. Przeprowadza inspekcje, zapewnia pomoc techniczną oraz ustanawia międzynarodowe normy bezpieczeństwa obiektów jądrowych."
+
+ io_redcross_name: "Międzynarodowy Czerwony Krzyż"
+ io_redcross_abbreviation: "ICRC"
+ io_redcross_desc: "Międzynarodowy Czerwony Krzyż zapewnia pomoc humanitarną w czasie konfliktów zbrojnych i klęsk żywiołowych. Monitoruje zgodność z konwencjami genewskimi, odwiedza jeńców wojennych i ułatwia komunikację między oddzielonymi członkami rodziny."
+
+ io_amnesty_name: "Amnesty International"
+ io_amnesty_abbreviation: "AI"
+ io_amnesty_desc: "Amnesty International bada i ujawnia łamanie praw człowieka na całym świecie. Kampanie na rzecz uwolnienia więźniów politycznych, zniesienia tortur i kary śmierci oraz ochrony uchodźców i migrantów."
+
+ ### ═══════════════════════════════════════
+ ### BUTTONS
+ ### ═══════════════════════════════════════
+ io_request_join_button: "Wniosek o przyłączenie"
+ io_leave_button: "Opuść organizację"
+ io_ban_button: "Zakaz"
+ io_unban_button: "Unban"
+ io_subsidize_button: "Subwencja"
+ io_back_button: "Wróć do listy"
+ io_treaty_sign_button: "Zostań sygnatariuszem"
+ io_treaty_withdraw_button: "Wycofywanie"
+
+ ### ═══════════════════════════════════════
+ ### TOOLTIPS & STATUS
+ ### ═══════════════════════════════════════
+ io_ngo_opinion_label: "Opinia nas"
+ io_ngo_status_active: "Aktywne"
+ io_ngo_status_banned: "Zakazane"
+ io_ngo_status_subsidized: "Subsydia"
+ io_member_indicator_tt: "Twój kraj jest członkiem tej organizacji."
+ io_treaty_signed_tt: "Twój kraj jest sygnatariuszem tego traktatu."
+
+ ### ═══════════════════════════════════════
+ ### NOTIFICATIONS
+ ### ═══════════════════════════════════════
+ notification_io_join_request_sent_notification_name: "Wniosek złożony"
+ notification_io_join_request_sent_notification_desc: "Złożyliśmy wniosek o dołączenie do organizacji."
+ notification_io_join_request_sent_notification_tooltip: "#header $notification_io_join_request_sent_notification_name$#!\n$TOOLTIP_DELIMITER$\n$notification_io_join_request_sent_notification_desc$"
+
+ notification_io_left_org_notification_name: "Lewa organizacja"
+ notification_io_left_org_notification_desc: "Wycofaliśmy się z organizacji. Nasze stosunki z byłymi członkami uległy pogorszeniu."
+ notification_io_left_org_notification_tooltip: "#header $notification_io_left_org_notification_name$#!\n$TOOLTIP_DELIMITER$\n$notification_io_left_org_notification_desc$"
+
+ notification_io_accepted_notification_name: "Program zaakceptowany"
+ notification_io_accepted_notification_desc: "Nasza prośba o przystąpienie do organizacji została zatwierdzona przez jej członków."
+ notification_io_accepted_notification_tooltip: "#header $notification_io_accepted_notification_name$#!\n$TOOLTIP_DELIMITER$\n$notification_io_accepted_notification_desc$"
+
+ notification_io_rejected_notification_name: "Odrzucony wniosek"
+ notification_io_rejected_notification_desc: "Nasza prośba o przystąpienie do organizacji została odrzucona przez jej członków."
+ notification_io_rejected_notification_tooltip: "#header $notification_io_rejected_notification_name$#!\n$TOOLTIP_DELIMITER$\n$notification_io_rejected_notification_desc$"
+
+ ### ═══════════════════════════════════════
+ ### TAB DESCRIPTIONS
+ ### ═══════════════════════════════════════
+ io_igos_tab_desc: "Organizacje międzynarodowe są instytucjami wielostronnymi, które koordynują politykę między państwami członkowskimi. Kliknij na organizację, aby zobaczyć jej szczegóły, członków i dostępne działania."
+ io_treaties_tab_desc: "Traktaty międzynarodowe są wiążącymi umowami między narodami. Państwa kraj może stać się sygnatariuszem w celu uzyskania świadczeń lub wycofania się kosztem pozycji dyplomatycznej."
+ io_ngos_tab_desc: "[concept_nongovernmental_organization] s działają niezależnie ponad granicami. Wszystkie narody są domyślnie powiązane. Możesz zdecydować się na zakaz lub subwencjonowanie ich, wpływając na ich opinię o Twoim kraju."
+
+ ### ═══════════════════════════════════════
+ ### GAME CONCEPTS
+ ### ═══════════════════════════════════════
+
+ concept_international_organization: "Organizacja międzynarodowa"
+ concept_international_organization_desc: "Organizacje międzynarodowe są instytucjami działającymi ponad granicami państw w celu koordynowania polityki, promowania handlu, zapewnienia bezpieczeństwa zbiorowego lub wspierania wymiany kulturalnej między ich państwami członkowskimi. Występują w kilku formach: [concept_free_trade_agreement] s, [concept_financial_agreement] s, [concept_military_defense_agreement] s, [concept_cultural_pact] s i [concept_cooperative_agreement] s."
+
+ concept_intergovernmental_organization: "Organizacja międzyrządowa"
+ concept_intergovernmental_organization_desc: "Organizacja międzyrządowa to id < x = 0 / >, którego członkami są suwerenne narody. W przeciwieństwie do [concept_nongovernmental_organization] s, IGO wymagają formalnego członkostwa i mogą zapewnić znaczące korzyści dyplomatyczne, ekonomiczne lub wojskowe."
+
+ concept_nongovernmental_organization: "Organizacja pozarządowa"
+ concept_nongovernmental_organization_desc: "Organizacje pozarządowe są niezależnymi instytucjami, które działają na arenie międzynarodowej bez kontroli rządu. Wszystkie kraje są domyślnie powiązane z organizacjami pozarządowymi. Rządy mogą podjąć decyzję o zakazie, tolerowaniu lub subsydiowaniu ich, co wpływa na opinię organizacji pozarządowych i korzyści, jakie zapewniają."
+
+ concept_international_treaty: "Traktat międzynarodowy"
+ concept_international_treaty_desc: "Traktat międzynarodowy jest formalnym wiążącym porozumieniem między suwerennymi narodami. W przeciwieństwie do [concept_intergovernmental_organization] s, traktaty nie wymagają stałego członkostwa organizacyjnego - naród jest albo sygnatariuszem, albo nie. Sygnatariusze otrzymują świadczenia dyplomatyczne, podczas gdy odstąpienie od umowy powoduje szkody w stosunkach z innymi sygnatariuszami."
+
+ international_treaty_type:0 "[concept_international_treaty]
+ concept_free_trade_agreement: "Umowa o wolnym handlu"
+ concept_free_trade_agreement_desc: "Umowa o wolnym handlu jest programem [concept_international_organization], który zmniejsza bariery handlowe między państwami członkowskimi, promując wymianę towarów i wzrost gospodarczy."
+
+ concept_financial_agreement: "Umowa finansowa"
+ concept_financial_agreement_desc: "Umowa finansowa jest [concept_international_organization] skoncentrowana na współpracy pieniężnej, finansowaniu rozwoju i stabilności finansowej wśród jej członków. Członkowie otrzymują + 5% wpływów i + 1 reputacji dyplomatycznej."
+
+ concept_military_defense_agreement: "Umowa w sprawie obrony wojskowej"
+ concept_military_defense_agreement_desc: "Wojskowa Umowa Obronna jest [concept_international_organization] zbudowany na zasadzie bezpieczeństwa zbiorowego. Atak na jednego członka jest uważany za atak na wszystkich."
+
+ concept_cultural_pact: "Pakt kulturalny"
+ concept_cultural_pact_desc: "Pakt kulturalny jest programem [concept_international_organization], który promuje wspólne dziedzictwo, język i wymianę kulturalną między swoimi członkami."
+
+ concept_cooperative_agreement: "Umowa o współpracy"
+ concept_cooperative_agreement_desc: "Umowa o współpracy to id < x = 0 / > skupiony na szeroko zakrojonej wielostronnej dyplomacji. W przeciwieństwie do innych rodzajów organizacji, Umowy Spółdzielcze nie zapewniają bezpośrednio modyfikatorów. Ich wpływ jest realizowany poprzez rezolucje i inicjatywy."
+
+ concept_united_nations: "ONZ"
+ concept_united_nations_desc: "Narodów Zjednoczonych jest [concept_cooperative_agreement] narodów świata, poświęconych utrzymaniu międzynarodowego pokoju, bezpieczeństwa i współpracy."
+
+ concept_nato: "NATO"
+ concept_nato_desc: "Organizacja Traktatu Północnoatlantyckiego jest [concept_military_defense_agreement] wiążąca kraje Ameryki Północnej i Europy w obronie zbiorowej."
+
+ concept_g7: "G7"
+ concept_g7_desc: "Grupa Siedem jest [concept_financial_agreement] największych na świecie rozwiniętych gospodarek, koordynując politykę fiskalną i pieniężną."
+
+ concept_opec: "OPEC"
+ concept_opec_desc: "Organizacja krajów wywozu ropy naftowej jest [concept_free_trade_agreement], który koordynuje politykę naftową wśród głównych krajów produkujących ropę naftową."
+
+ concept_eec: "EWG"
+ concept_eec_desc: "Europejska Wspólnota Gospodarcza jest programem [concept_free_trade_agreement] ustanawiającym wspólny rynek między europejskimi państwami członkowskimi."
+
+ concept_arab_league: "Liga Arabska"
+ concept_arab_league_desc: "Liga Arabska jest programem [concept_cultural_pact] promującym współpracę między narodami arabskimi."
+
+ concept_imf: "MFW"
+ concept_imf_desc: "Międzynarodowy Fundusz Walutowy jest programem [concept_financial_agreement] wspierającym międzynarodową współpracę monetarną i stabilność finansową."
+
+ concept_esa: "PZE"
+ concept_esa_desc: "Europejska Agencja Kosmiczna jest programem [concept_cooperative_agreement] poświęconym eksploracji i wykorzystaniu przestrzeni kosmicznej."
+
+ concept_asean: "ASEAN"
+ concept_asean_desc: "Stowarzyszenie Narodów Azji Południowo-Wschodniej jest [concept_cooperative_agreement] promowanie wzrostu gospodarczego i stabilności regionalnej w Azji Południowo-Wschodniej."
+
+ concept_saarc: "SAARC"
+ concept_saarc_desc: "South Asian Association for Regional Cooperation is a [concept_cooperative_agreement] promoting regional cooperation among South Asian States."
+
+ concept_cis: "WNP"
+ concept_cis_desc: "Wspólnota Niepodległych Państw jest [concept_cooperative_agreement] dla koordynacji między kilkoma państwami postsowieckimi."
+
+ concept_who: "WHO"
+ concept_who_desc: "Światowa Organizacja Zdrowia jest programem [concept_cooperative_agreement] kierującym i koordynującym międzynarodową politykę zdrowotną."
+
+ concept_iaea: "MAEA"
+ concept_iaea_desc: "Międzynarodowa Agencja Energii Atomowej jest programem [concept_nongovernmental_organization], który promuje pokojowe wykorzystanie energii jądrowej i działa na rzecz zapobiegania rozprzestrzenianiu broni jądrowej."
+
+ ### ═══════════════════════════════════════
+ ### MODIFIER LOCALIZATION
+ ### ═══════════════════════════════════════
+ io_financial_agreement_member: "Członek umowy finansowej"
+ io_financial_agreement_member_desc: "Członkostwo w międzynarodowej umowie finansowej zapewnia większy wpływ dyplomatyczny i renomę."
+
+ io_free_trade_agreement_member: "Członek Umowy o wolnym handlu"
+ io_free_trade_agreement_member_desc: "Członkostwo w umowie o wolnym handlu zmniejsza bariery handlowe z innymi członkami."
+
+ io_military_defense_agreement_member: "Wojskowy pakt obronny"
+ io_military_defense_agreement_member_desc: "Członkostwo w wojskowej umowie obronnej zapewnia zbiorowe gwarancje bezpieczeństwa."
+
+ io_cultural_pact_member: "Członek Paktu Kulturowego"
+ io_cultural_pact_member_desc: "Członkostwo w pakcie kulturalnym promuje wspólne dziedzictwo i wymianę kulturalną."
+
+ io_ngo_subsidized_bonus: "NGO Subwencjonowane"
+ io_ngo_subsidized_bonus_desc: "Dotacje rządowe dla organizacji pozarządowej poprawiły naszą międzynarodową pozycję."
+
+ io_ngo_banned_penalty: "NGO Banned"
+ io_ngo_banned_penalty_desc: "Zakaz organizacji pozarządowej zniszczył naszą międzynarodową pozycję."
+
+ io_treaty_geneva_signatory: "Sygnatariusz Konwencji Genewskiej"
+ io_treaty_geneva_signatory_desc: "Jako sygnatariusz konwencji genewskiej nasze zaangażowanie na rzecz prawa humanitarnego zmniejsza międzynarodową wrogość."
+
+ io_treaty_cwc_signatory: "Sygnatariusz CWC"
+ io_treaty_cwc_signatory_desc: "Jako sygnatariusz Konwencji o zakazie broni chemicznej, nasza reputacja dyplomatyczna została wzmocniona."
+
+ io_treaty_npt_signatory: "NPT sygnatariusz"
+ io_treaty_npt_signatory_desc: "Jako sygnatariusz traktatu o nierozprzestrzenianiu broni jądrowej, nasze zaangażowanie na rzecz ograniczenia rozprzestrzeniania broni jądrowej jest uznawane na arenie międzynarodowej."
+
+ io_treaty_bwc_signatory: "Sygnatariusz BWC"
+ io_treaty_bwc_signatory_desc: "Jako sygnatariusz Konwencji o zakazie broni biologicznej, nasza reputacja dyplomatyczna została wzmocniona."
+
+ io_treaty_cat_signatory: "CAT Sygnatariusz"
+ io_treaty_cat_signatory_desc: "Jako sygnatariusz Konwencji przeciwko torturom nasze zaangażowanie na rzecz praw człowieka zwiększa nasz prestiż."
+
+ ### ═══════════════════════════════════════
+ ### SIDEBAR BUTTON (Community Framework)
+ ### ═══════════════════════════════════════
+ io_sidebar_button: "io _ sidebar _ button"
+ io_sidebar_button_desc: "Organizacje int 'l"
+ io_sidebar_button_tooltip: "Widok [concept_international_organization] s działa na całym świecie."
+
+ ### Additional headers
+ io_modifiers_header: "Modyfikatory"
+ io_signatory_effects_header: "Efekty sygnalizacyjne"
+ io_members_header: "Wykaz członków"
+ 
+ io_eu_power_bloc_name: "Europejska Wspólnota Gospodarcza"
+ io_eec_join_dissolve_bloc_warning: "Przystąpienie do EEC usunie cię z obecnego bloku mocy."
+ io_dissolve_eu_no_members_tt: "W EWG nie istnieją żadne narody."
+ io_dissolve_eu_effect_tt: "Unia Europejska zostanie rozwiązana, a jej terytoria zostaną wchłonięte."
+ io_cooldown_tt: "Niedawno dołączył lub opuścił tę organizację. Musi poczekać, zanim znów zagra."
+
+ identity_european_community: "Wspólnota Europejska"
+ identity_european_community_desc: "Wspólnota Europejska jest unią celną narodów europejskich promującą wolny handel, wspólną politykę rolną i harmonizację regulacyjną w państwach członkowskich. Członkowie mają wspólny rynek ze standaryzowanymi przepisami dotyczącymi produktów."
+
+ dissolve_european_union: "Rozwiązywanie Unii Europejskiej"
+ dissolve_european_union_desc: "Unia Europejska, bez pozostających członków Europejskiej Wspólnoty Gospodarczej, straciła swój cel. Możemy formalnie rozwiązać instytucję i wchłonąć pozostałe terytoria."
+ 
+  ### Financial Agreement (G7, IMF)
+ io_mod_influence_5pct: "@influence! #p + 5% #! Wpływ"
+ io_mod_diplo_rep_1: "@diplomatic_reputation! #p + 1 #! Reputacja dyplomatyczna"
+ 
+ ### Military Defense Agreement (NATO)
+ io_mod_military_defense_pact: "@alliance_icon! #v Pakty wzajemnej obrony #! ze wszystkimi członkami"
+ io_mod_prestige_2pct: "@prestige! #p + 2% #! Prestige"
+ 
+ io_mod_generated_pollution_250: "Generowane zanieczyszczenia: #g -250% #!"
+ io_mod_state_infrastructure_5: "Infrastruktura państwowa: #r -3% #!"
+ # imf
+ io_mod_imf_aid: "@trade_routes! #v Pomoc w zakresie zadłużenia w sytuacjach nadzwyczajnych"
+ 
+ ### OPEC
+ io_mod_opec_trade_advantage: "@trade_advantage! #p + 25% #! Korzyść dla handlu ropą naftową"
+ io_mod_opec_throughput: "@building_bg_oil_extraction! #p + 25% #! Próg ekstrakcji oleju"
+ io_mod_opec_customs: "@trade_routes! #v Koordynacja kartelu naftowego #! wśród członków"
+ 
+ ### EEC / Free Trade
+ io_mod_eec_customs: "@market_access! #v Unia celna #! utworzona pomiędzy wszystkimi członkami"
+ io_mod_free_trade_convoys: "Wpływ na ceny rynkowe: #g + 5% #!"
+ io_mod_free_trade_expedition: ""
+ 
+ ### Cultural Pact (Arab League)
+ io_mod_cultural_tech_spread: "@research! #p + 0,10 #! Rozprzestrzenianie technologii"
+ io_mod_cultural_revolution_suppress: "@turmoil! #g - 5% #! Postępy w rewolucji"
+ 
+ ### Treaties
+ io_mod_infamy_minus5: "@infamy! #g - 5% #! Pokolenie zniesławienia"
+ io_mod_infamy_minus3: "@infamy! #g -3% #! Pokolenie zniesławienia"
+ io_mod_prestige_3pct: "@prestige! #p + 3% #! Prestige"
+ io_mod_mobe_options_chem: "Zakaz używania broni chemicznej"
+ 
+ ### ══════════════════════════════════════════
+ ### MODIFIER DEFINITIONS (localization for modifier tooltips)
+ ### ══════════════════════════════════════════
+ 
+ io_financial_agreement_member: "Członek umowy finansowej"
+ io_financial_agreement_member_desc: "Członkostwo w międzynarodowej umowie finansowej zapewnia większy wpływ dyplomatyczny i pozycję wśród największych gospodarek świata."
+ 
+ io_free_trade_agreement_member: "Członek Umowy o wolnym handlu"
+ io_free_trade_agreement_member_desc: "Ten naród jest stroną unii celnej z innymi członkami, zmniejszając bariery handlowe i harmonizując regulacje gospodarcze."
+ 
+ io_opec_member: "Członek OPEC"
+ io_opec_member_desc: "Członkostwo w organizacji krajów wywozu ropy naftowej zapewnia skoordynowaną siłę cenową i zwiększoną zdolność produkcyjną ropy naftowej."
+ 
+ io_military_defense_agreement_member: "Członek Wojskowej Umowy Obronnej"
+ io_military_defense_agreement_member_desc: "Ten naród jest związany zbiorowymi zobowiązaniami bezpieczeństwa. Atak na każdego członka jest uważany za atak na wszystkich."
+ 
+ io_cultural_pact_member: "Członek Paktu Kulturowego"
+ io_cultural_pact_member_desc: "Wspólne dziedzictwo i współpraca kulturalna między państwami członkowskimi przyspiesza rozprzestrzenianie się nowych technologii i łagodzi rewolucyjne odczucia."
+ 
+ ### ══════════════════════════════════════════
+ ### NATO DEFENSIVE PACT TREATY NAME
+ ### ══════════════════════════════════════════
+ 
+ io_nato_defensive_pact_name: "Zobowiązanie NATO do wzajemnej obrony"
+ 
+ ### ══════════════════════════════════════════
+ ### UPDATED ORG DESCRIPTIONS reflecting mechanics
+ ### ══════════════════════════════════════════
+ 
+ io_nato_desc: "[concept_nato] jest [concept_military_defense_agreement] wiążące narody Ameryki Północnej i Europy w obronie zbiorowej. Uzbrojony atak na jednego członka jest uważany za atak na wszystkich. Przystąpienie do NATO automatycznie tworzy umowy o wzajemnym pakcie obronnym z każdym istniejącym państwem członkowskim."
+ 
+ io_opec_desc: "[concept_opec] jest organizacją głównych krajów wywozu petroleum, które koordynują politykę produkcji ropy naftowej. Państwa członkowskie korzystają z siły cenowej kartelu, uzyskując znaczną przewagę handlową w eksporcie ropy naftowej i zwiększając wydajność wydobycia z skoordynowanych inwestycji."
+ 
+ io_eec_desc: "[concept_eec] jest [concept_free_trade_agreement] ustanowienie unii celnej między europejskimi państwami członkowskimi. Członkowie mają wspólny rynek ze znormalizowanymi regulacjami produktowymi i skoordynowaną polityką handlową, zmniejszając bariery w handlu transgranicznym."
+ 
+ io_arab_league_desc: "[concept_arab_league] jest [concept_cultural_pact] krajów arabskojęzycznych, które promują współpracę polityczną, gospodarczą, kulturalną i społeczną. Wspólne dziedzictwo przyspiesza wymianę technologii i pomysłów, podczas gdy solidarność państw członkowskich pomaga w tłumieniu wewnętrznych nacisków rewolucyjnych."
+ 
+  ### ══════════════════════════════════════════
+ ### MEMBERSHIP VOTING EVENTS
+ ### ══════════════════════════════════════════
+ 
+ io_events.1.t: "Wniosek o członkostwo"
+ io_events.1.d: "[scope:io_applicant.GetName] złożył formalny wniosek o dołączenie do naszej organizacji. Jako obecny członek Rady zostaliśmy poproszeni o głosowanie nad ich przyjęciem."
+ io_events.1.a: "Zatwierdzenie ich członkostwa"
+ io_events.1.b: "Odrzuć ich podanie"
+ 
+ io_events.2.t: "Program zaakceptowany"
+ io_events.2.d: "Nasz wniosek o przystąpienie do organizacji został poddany przeglądowi przez wszystkich członków. Nie zgłoszono żadnych zastrzeżeń i zostaliśmy oficjalnie przyjęci."
+ io_events.2.a: "Doskonałe wieści"
+ 
+ io_events.3.t: "Odrzucony wniosek"
+ io_events.3.d: "Nasz wniosek o przyłączenie się do organizacji został odrzucony. Przynajmniej jedno państwo członkowskie głosowało przeciwko naszemu przyjęciu."
+ io_events.3.a: "Rozczarowanie"
+ 
+ ### ══════════════════════════════════════════
+ ### EU FORMATION EVENTS
+ ### ══════════════════════════════════════════
+ 
+ io_events.10.t: "Traktat z Maastricht"
+ io_events.10.d: "Państwa członkowskie Europejskiej Wspólnoty Gospodarczej zgodziły się pogłębić swoją integrację poprzez Traktat o Unii Europejskiej. EEC zostanie formalnie przekształcona w Unię Europejską, unię polityczną i gospodarczą z rozszerzonymi kompetencjami w dziedzinie polityki zagranicznej, sprawiedliwości i spraw monetarnych."
+ io_events.10.a: "Nowa era dla Europy"
+ 
+ io_events.11.t: "Unia Europejska rodzi się"
+ io_events.11.d: "Europejska Wspólnota Gospodarcza została formalnie przekształcona w Unię Europejską. Jako państwo członkowskie, nasz naród jest teraz częścią bezprecedensowego eksperymentu w ponadnarodowym zarządzaniu."
+ io_events.11.a: "Zaczyna się nowy rozdział"
+ 
+ ### ══════════════════════════════════════════
+ ### EU ORGANIZATION
+ ### ══════════════════════════════════════════
+ 
+ io_eu_name: "Unia Europejska"
+ io_eu_abbreviation: "UE"
+ io_eu_desc: "Unia Europejska jest unią polityczną i gospodarczą państw europejskich, które zastąpiły [concept_eec]. Ustanawia jednolity rynek, koordynuje politykę zagraniczną i bezpieczeństwa oraz promuje wspólne zarządzanie za pośrednictwem swoich instytucji w Brukseli. Członkowie korzystają z unii celnej i harmonizacji regulacyjnej."
+ 
+ ### ══════════════════════════════════════════
+ ### NGO HIGH SUPPORT BONUSES
+ ### ══════════════════════════════════════════
+ 
+ io_ngo_iaea_high_support: "Partnerstwo MAEA"
+ io_ngo_iaea_high_support_desc: "Nasze silne poparcie dla Międzynarodowej Agencji Energii Atomowej dało nam dostęp do ich wiedzy technicznej i programów bezpieczeństwa jądrowego, co przyspieszyło rozprzestrzenianie zaawansowanych technologii."
+ 
+ io_ngo_redcross_high_support: "Partnerstwo Czerwonego Krzyża"
+ io_ngo_redcross_high_support_desc: "Nasze hojne poparcie dla Międzynarodowego Czerwonego Krzyża zostało uznane na arenie międzynarodowej, wzmacniając prestiż i pozycję humanitarną naszego narodu."
+ 
+ io_ngo_amnesty_high_support: "Amnesty International Partnership"
+ io_ngo_amnesty_high_support_desc: "Nasze silne poparcie dla Amnesty International wzmocniło nasze kwalifikacje w zakresie praw człowieka, wzmacniając postrzeganą legitymację naszego rządu."
+ 
+ ### ══════════════════════════════════════════
+ ### GUI CHANGES — BUTTON RENAME
+ ### ══════════════════════════════════════════
+ 
+ io_support_button: "Wsparcie"
+ io_ngo_status_supported: "Obsługiwane"
+ 
+ ### ══════════════════════════════════════════
+ ### EEC/EU TRANSITION
+ ### ══════════════════════════════════════════
+ 
+ io_eec_dissolved_notice: "Europejska Wspólnota Gospodarcza została rozwiązana i zastąpiona przez Unię Europejską."
+ 
+ # G7
+ 
+ io_g7_name_4: "Grupa czterech"
+ io_g7_name_5: "Grupa Pięciu"
+ io_g7_name_6: "Grupa sześciu"
+ io_g7_name_7: "Grupa Siedem"
+ io_g7_name_8: "Grupa ośmiu"
+ io_g7_name_9: "Grupa 9"
+ io_g7_name_10: "Grupa 10"
+ 
+ io_treaty_paris_name: "Porozumienie paryskie"
+ io_treaty_paris_desc: "Porozumienie paryskie stanowi [concept_international_treaty] w ramach Ramowej konwencji Narodów Zjednoczonych w sprawie zmian klimatu. Sygnatariusze zobowiązują się do określonych na szczeblu krajowym wkładów na rzecz zmniejszenia emisji gazów cieplarnianych i ograniczenia światowego wzrostu temperatury."
+
+ io_treaty_paris_signatory: "Sygnatura porozumienia paryskiego"
+ io_treaty_paris_signatory_desc: "Jako sygnatariusz porozumienia paryskiego nasze zaangażowanie w międzynarodową współpracę w dziedzinie klimatu zwiększa naszą reputację dyplomatyczną i prestiż."
+ 
+ ### OPEC
+
+ opec_je_voting_increase_tt: "OPEC głosuje nad propozycją #bold zwiększenia #! kwot produkcji ropy. Użyj poniższych przycisków, aby oddać swój głos."
+ opec_je_voting_decrease_tt: "OPEC głosuje nad propozycją zmniejszenia #bold #! kwot produkcji ropy. Użyj poniższych przycisków, aby oddać swój głos."
+ opec_je_voting_embargo_tt: "OPEC głosuje nad propozycją nałożenia embarga na olej #!. Użyj poniższych przycisków, aby oddać swój głos."
+ opec_je_increased_production_tt: "OPEC zagłosował na #bold wzrost #! kwoty produkcyjne. Kraje członkowskie produkują więcej ropy na następny rok."
+ opec_je_decreased_production_tt: "OPEC zagłosował na #bold zmniejszenie #! kwot produkcyjnych. Kraje członkowskie ograniczają produkcję ropy naftowej na następny rok."
+ opec_je_idle_tt: "Brak aktywnego głosu OPEC. Członkowie mogą zaproponować zmiany w produkcji lub embargo na ropę naftową za pomocą przycisków wejścia do dziennika."
+
+ ### ══════════════════════════════════════════
+ ### SCRIPTED BUTTONS
+ ### ══════════════════════════════════════════
+
+ opec_propose_increase_button: "Propozycja zwiększenia produkcji"
+ opec_propose_increase_button_desc: "Zaproponować, aby członkowie OPEC zwiększyli swoje kwoty produkcji ropy naftowej. Jeśli przejdzie, wszyscy członkowie otrzymują zwiększoną wydobycie ropy przez rok."
+ opec_propose_decrease_button: "Propozycja zmniejszenia produkcji"
+ opec_propose_decrease_button_desc: "Zaproponować, aby członkowie OPEC obniżyli swoje kwoty produkcyjne w celu ograniczenia dostaw i podniesienia cen. Jeśli zdamy, wszyscy członkowie zmniejszą wydobycie ropy o rok."
+ opec_vote_yay_button: "Głosowanie w favor"
+ opec_vote_yay_button_desc: "Głosuj za przyjęciem obecnego wniosku OPEC."
+ opec_vote_nay_button: "Głosowanie przeciwko"
+ opec_vote_nay_button_desc: "Głosuj przeciwko obecnemu wnioskowi OPEC."
+
+ opec_no_vote_active_tt: "Obecnie nie trwa głosowanie w OPEC."
+ opec_not_already_embargoed_tt: "Kraj ten nie jest obecnie objęty embargiem OPEC na ropę naftową."
+ opec_cannot_embargo_member_tt: "Nie można nałożyć embarga na członka OPEC."
+
+ je_opec:0 "OPEC"
+ je_opec_reason:0 "Organizacja krajów wywozu ropy naftowej jest [concept_international_organization], który koordynuje politykę naftową wśród głównych krajów produkujących ropę naftową."
+ ### ══════════════════════════════════════════
+ ### EVENTS
+ ### ══════════════════════════════════════════
+
+ opec_events.1.t: "Zainicjowane głosowanie OPEC"
+ opec_events.1.d: "Państwo członkowskie wezwało do głosowania w ramach organizacji krajów wywozu ropy naftowej. Wszyscy członkowie proszeni są o oddanie głosów za pośrednictwem wpisu do dziennika OPEC."
+ opec_events.1.a: "Rozważymy nasze stanowisko."
+
+ opec_events.10.t: "Głosowanie OPEC zakończone"
+ opec_events.10.d: "Głosowanie OPEC dobiegło końca, a wyniki są porównywane."
+
+ opec_events.11.t: "OPEC zwiększa produkcję"
+ opec_events.11.d: "Państwa członkowskie OPEC głosowały za zwiększeniem kwot produkcji ropy. W następnym roku wszystkie państwa członkowskie skorzystają na wyższej przepustowości wydobycia i lepszej pozycji handlowej dla eksportu ropy naftowej."
+ opec_events.11.a: "Krany są otwarte."
+
+ opec_events.12.t: "Produkcja cięć OPEC"
+ opec_events.12.d: "Państwa członkowskie OPEC głosowały za obniżeniem kwot produkcji ropy. W przyszłym roku wszystkie państwa członkowskie ograniczą produkcję ropy naftowej, aby zaostrzyć światową podaż i wesprzeć ceny."
+ opec_events.12.a: "Będziemy przestrzegać"
+
+ opec_events.13.t: "Embargo oleju OPEC"
+ opec_events.13.d: "Organizacja krajów wywozu ropy naftowej głosowała za nałożeniem embarga na ropę naftową. Państwa członkowskie OPEC zbiorowo ograniczą eksport ropy naftowej do kraju docelowego, poważnie zakłócając ich gospodarkę."
+ opec_events.13.a: "To zmieni globalny handel"
+
+ ### ══════════════════════════════════════════
+ ### DIPLOMATIC ACTION
+ ### ══════════════════════════════════════════
+
+ propose_opec_embargo: "OPEC Oil Embargo"
+ propose_opec_embargo_desc: "Zaproponować, by OPEC nałożyła na ten kraj zbiorowe embargo na ropę naftową, ograniczając eksport ropy naftowej i niszcząc ich dostawy energii. Wymaga, aby cel miał znaczną niesławę."
+ propose_opec_embargo_action_name: "Proponować embargo olejowe"
+ 
+ propose_opec_embargo_propose_name:0 "OPEC Embargo"
+ propose_opec_embargo_pact_desc: "OPEC nałożył na nas embargo na ropę!"
+ propose_opec_embargo_notification_name: "OPEC głosuje za nałożeniem na nas embarga!"
+ propose_opec_embargo_notification_desc: "OPEC głosuje obecnie nad nałożeniem na nas embarga na ropę naftową. Jeśli zagłosują za, drastycznie zredukują ilość ropy sprzedanej z nami."
+ 
+ ### ══════════════════════════════════════════
+ ### MODIFIERS
+ ### ══════════════════════════════════════════
+
+ opec_increased_production: "Wzrost produkcji OPEC"
+ opec_increased_production_desc: "OPEC głosowała za zwiększeniem kwot produkcyjnych. Kraje członkowskie wydobywają więcej ropy i cieszą się lepszym pozycjonowaniem handlowym."
+
+ opec_decreased_production: "Cięcie produkcji OPEC"
+ opec_decreased_production_desc: "OPEC głosowała za obniżeniem kwot produkcyjnych. Państwa członkowskie ograniczyły produkcję ropy naftowej do wspierania cen światowych."
+
+ opec_oil_embargo_target: "OPEC Oil Embargo"
+ opec_oil_embargo_target_desc: "Ten naród jest pod embargiem OPEC. Przywóz ropy naftowej jest poważnie ograniczony, co szkodzi gospodarce i pozycji międzynarodowej."
+
+ ### ══════════════════════════════════════════
+ ### NOTIFICATIONS
+ ### ══════════════════════════════════════════
+
+ notification_opec_embargo_imposed_name: "OPEC Oil Embargo"
+ notification_opec_embargo_imposed_desc: "OPEC nałożyła embargo na ropę naftową."
+ notification_opec_embargo_imposed_tooltip: "#header $notification_opec_embargo_imposed_name$#!\n$TOOLTIP_DELIMITER$\n$notification_opec_embargo_imposed_desc$"
+
+ ### ══════════════════════════════════════════
+ ### AMNESTY INTERNATIONAL
+ ### ══════════════════════════════════════════
+
+ ngo_amnesty_opinion_minus_15_tt: "#negative Amnesty International opinion: - 15 #!"
+ ngo_amnesty_opinion_minus_10_tt: "#negative Amnesty International opinion: -10 #!"
+ ngo_amnesty_opinion_minus_5_tt: "#negative Amnesty International opinion: -5 #!"
+ ngo_amnesty_opinion_plus_5_tt: "#positive Amnesty International opinion: + 5 #!"
+ ngo_amnesty_opinion_plus_10_tt: "#positive Amnesty International opinion: + 10 #!"
+
+ ### ══════════════════════════════════════════
+ ### RED CROSS
+ ### ══════════════════════════════════════════
+
+ ngo_redcross_opinion_minus_20_tt: "#negative Opinia Czerwonego Krzyża: -20 #!"
+ ngo_redcross_opinion_minus_15_tt: "#negative Opinia Czerwonego Krzyża: -15 #!"
+ ngo_redcross_opinion_minus_5_tt: "#negative Opinia Czerwonego Krzyża: -5 #!"
+ ngo_redcross_opinion_plus_5_tt: "#positive Opinia Czerwonego Krzyża: + 5 #!"
+ ngo_redcross_opinion_plus_10_tt: "#positive Opinia Czerwonego Krzyża: + 10 #!"
+
+ ### ══════════════════════════════════════════
+ ### IAEA
+ ### ══════════════════════════════════════════
+
+ ngo_iaea_opinion_minus_25_tt: "#negative Opinia MAEA: -25 #!"
+ ngo_iaea_opinion_minus_20_tt: "#negative Opinia MAEA: -20 #!"
+ ngo_iaea_opinion_plus_10_tt: "#positive Opinia MAEA: + 10 #!"
+ 
+  ### ══════════════════════════════════════════
+ ### AMNESTY INTERNATIONAL
+ ### ══════════════════════════════════════════
+
+ ngo_events.1.t: "Amnesty International potępia naszą politykę"
+ ngo_events.1.d: "Amnesty International opublikowała obciążający raport na temat praw człowieka w naszym kraju, powołując nasze obecne prawa jako systematyczne pogwałcenie podstawowych wolności. Społeczność międzynarodowa zauważyła, a nasz rząd stoi w obliczu rosnącej presji, by rozwiązać te problemy."
+ ngo_events.1.a: "Ich krytyka nic nie zmienia."
+ ngo_events.1.b: "Przejrzymy ich obawy."
+
+ ngo_events.2.t: "Reforma Amnesty International Chwali"
+ ngo_events.2.d: "Nasze ostatnie reformy legislacyjne zostały uznane przez Amnesty International za znaczący krok naprzód w zakresie praw człowieka. Ich sprawozdanie roczne podkreśla nasze postępy, zwiększając międzynarodową reputację naszego kraju."
+ ngo_events.2.a: "Jesteśmy dumni z naszych postępów"
+
+ ngo_events.3.t: "Raporty o amnestii w sprawie niepokojów obywatelskich"
+ ngo_events.3.d: "Amnesty International opublikowała specjalny raport dokumentujący powszechne niepokoje społeczne chwytające nasz naród. Wzywają nasz rząd do zajęcia się podstawowymi przyczynami niezadowolenia, zamiast represji."
+ ngo_events.3.a: "Rozważmy reformy"
+ ngo_events.3.b: "Nasze wewnętrzne sprawy nie są ich zmartwieniem."
+
+ ### ══════════════════════════════════════════
+ ### RED CROSS
+ ### ══════════════════════════════════════════
+
+ ngo_events.10.t: "Czerwony Krzyż oferuje pomoc humanitarną"
+ ngo_events.10.d: "Międzynarodowy Czerwony Krzyż zaproponował oddelegowanie pracowników humanitarnych do pomocy ludności cywilnej dotkniętej trwającym konfliktem. Ich zespoły pomocy są gotowe do zapewnienia opieki medycznej, schronienia i żywności przesiedleńcom w naszych rozdartych regionach."
+ ngo_events.10.a: "Z zadowoleniem przyjmujemy ich pomoc."
+ ngo_events.10.b: "Nie możemy pozwolić zagranicznym pracownikom w strefie wojny"
+
+ ngo_events.11.t: "Czerwony Krzyż krytykuje przebieg wojny"
+ ngo_events.11.d: "Międzynarodowy Czerwony Krzyż wydał publiczne oświadczenie wyrażające głębokie zaniepokojenie postępowaniem naszych sił zbrojnych. Raporty o rozległych ofiarach śmiertelnych i zniszczeniu infrastruktury w strefach konfliktu przyciągnęły uwagę międzynarodową. Wzywają wszystkie strony do poszanowania konwencji genewskich."
+ ngo_events.11.a: "Będziemy współpracować z ich śledczymi."
+ ngo_events.11.b: "Zaprzeczamy tym zarzutom."
+
+ ngo_events.12.t: "Czerwony Krzyż oferuje pomoc kryzysową"
+ ngo_events.12.d: "Pomimo braku otwartej wojny, Międzynarodowy Czerwony Krzyż zidentyfikował rosnący kryzys humanitarny w naszych granicach. Powszechne niepokoje społeczne i zakłócenia gospodarcze stworzyły warunki wymagające pomocy międzynarodowej. Oferują one koordynację działań pomocowych dla dotkniętych ludności."
+ ngo_events.12.a: "Przyjmujemy ich pomoc."
+ ngo_events.12.b: "Poradzimy sobie sami."
+
+ ### ══════════════════════════════════════════
+ ### IAEA
+ ### ══════════════════════════════════════════
+
+ ngo_events.20.t: "MAEA wnioskuje o inspekcję jądrową"
+ ngo_events.20.d: "Międzynarodowa Agencja Energii Atomowej oficjalnie zwróciła się o dostęp do naszych obiektów jądrowych w celu przeprowadzenia kompleksowej inspekcji bezpieczeństwa i zgodności. Jako niesygnatariusz traktatu o nierozprzestrzenianiu broni jądrowej, nasz program jądrowy przyciągnął większą kontrolę międzynarodową. MAEA zapewnia nas, że inspekcja jest rutynowa, ale odmowa byłaby wyraźnym sygnałem dla społeczności międzynarodowej."
+ ngo_events.20.a: "Nasze obiekty są otwarte do inspekcji"
+ ngo_events.20.b: "Nasz program nuklearny jest suwerenny."
+
+ ngo_events.21.t: "MAEA rozpoczyna rejestr bezpieczeństwa jądrowego"
+ ngo_events.21.d: "Po przeglądzie naszego programu jądrowego, Międzynarodowa Agencja Energii Atomowej oficjalnie pochwaliła nasze zaangażowanie na rzecz norm bezpieczeństwa i nieproliferacji. Nasze przestrzeganie NPT i współpraca z międzynarodowymi inspektorami wzmocniły naszą pozycję w globalnej społeczności jądrowej."
+ ngo_events.21.a: "Nadal jesteśmy zaangażowani w pokojową energię jądrową."
+
+ ngo_events.22.t: "MAEA podnosi obawy o rozprzestrzenianie"
+ ngo_events.22.d: "Międzynarodowa Agencja Energii Atomowej wzbudziła niepokój co do kierunku naszego programu nuklearnego. Bez członkostwa w NPT i z naszą ciągłą odmową współpracy z inspektorami, MAEA wydała formalne oświadczenie wyrażające zaniepokojenie ewentualnym rozwojem broni. Społeczność międzynarodowa uważnie obserwuje."
+ ngo_events.22.a: "Jesteśmy otwarci na dialog"
+ ngo_events.22.b: "Potwierdzamy nasze suwerenne prawo do technologii jądrowej"
+
+ ### ══════════════════════════════════════════
+ ### MODIFIERS
+ ### ══════════════════════════════════════════
+
+ ngo_amnesty_scrutiny: "Pod Amnesty Scrutiny"
+ ngo_amnesty_scrutiny_desc: "Amnesty International ściśle monitoruje nasze dane dotyczące praw człowieka w następstwie niedawnej krytyki. Legalność rządu jest pod presją."
+
+ ngo_amnesty_reform_pressure: "Presja reformująca"
+ ngo_amnesty_reform_pressure_desc: "Sprawozdanie Amnesty International w sprawie niepokojów obywatelskich wywołało wewnętrzną i międzynarodową presję na reformy, ale pomogło stłumić rewolucyjne uczucia."
+
+ ngo_redcross_aid: "Pomoc humanitarna dla Czerwonego Krzyża"
+ ngo_redcross_aid_desc: "Pracownicy Czerwonego Krzyża udzielają pomocy humanitarnej cywilom w strefach konfliktu, zmniejszając śmiertelność i zwiększając naszą międzynarodową reputację."
+
+ ngo_redcross_cooperation: "Współpraca Czerwonego Krzyża"
+ ngo_redcross_cooperation_desc: "Nasza współpraca z Czerwonym Krzyżem w sprawie działań wojennych poprawiła naszą międzynarodową pozycję i zmniejszyła niesławę wywołaną naszymi działaniami wojskowymi."
+
+ ngo_redcross_relief: "Pomoc kryzysowa dla Czerwonego Krzyża"
+ ngo_redcross_relief_desc: "Czerwony Krzyż zapewnia pomoc humanitarną w tym okresie kryzysu cywilnego, pomagając ustabilizować dotknięte społeczeństwo."
+
+ ngo_iaea_inspectors: "Obecni inspektorzy MAEA"
+ ngo_iaea_inspectors_desc: "Inspektorzy MAEA działają w naszych obiektach jądrowych, dzieląc się wiedzą techniczną i wiedzą na temat bezpieczeństwa. Ich obecność przyspiesza transfer technologii i zwiększa naszą reputację dyplomatyczną."

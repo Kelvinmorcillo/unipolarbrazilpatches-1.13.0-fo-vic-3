@@ -1,0 +1,26 @@
+﻿CHARACTERS = {
+	c:SWD ?= {
+	create_character = {
+			template = SWD_king_carl_gustaf
+		}
+	create_character = {
+			template = SWD_anna_lindh
+		}
+	create_character = {
+			first_name = "carl"
+			last_name = "bildt"
+			historical = yes
+			ruler = no
+			culture = cu:swedish
+			birth_date = 1949.02.03
+			dna = dna_carl_bildt
+			ig_leader = yes
+			interest_group = ig_petty_bourgeoisie
+			ideology = ideology_liberal_leader
+			traits = {
+				experienced_political_operator
+				brave
+			}
+		}
+	}
+}

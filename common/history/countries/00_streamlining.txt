@@ -1,0 +1,130 @@
+﻿COUNTRIES = {
+	smd_apply_public_service_expenses_start = yes
+	every_country = {
+		activate_law = law_type:law_mass_conscription
+		add_journal_entry = { type = je_united_nations }
+		add_journal_entry = { type = je_national_development }
+		add_journal_entry = { type = je_financial_system }
+		c:VZL = { add_journal_entry = { type = je_drug_trafficking } }
+		c:MEX = { add_journal_entry = { type = je_drug_trafficking } }
+		c:CLM = { add_journal_entry = { type = je_drug_trafficking } }
+		c:GUA = { add_journal_entry = { type = je_drug_trafficking } }
+		c:HON = { add_journal_entry = { type = je_drug_trafficking } }
+		c:DCR = { add_journal_entry = { type = je_drug_trafficking } }
+		c:ECU = { add_journal_entry = { type = je_drug_trafficking } }
+		c:USA = { add_journal_entry = { type = je_war_on_drugs } }
+
+		if = { limit = { NOT = { any_scope_state = {
+				is_coastal = yes
+			} } }
+			add_journal_entry = { type = je_transit_rights }
+		}
+		smd_low_tech_effect = yes
+		fake_population_effect = yes
+		fake_gdp_effect = yes
+		every_scope_state = {
+			force_resource_discovery = bg_oil_extraction
+		}
+		activate_law = law_type:law_professional_army
+		activate_law = law_type:law_fractional_reserve_banking
+	# high tech:
+	
+	c:CAN = {
+		smd_high_tech_effect = yes
+	}
+	c:JPN = {
+		smd_high_tech_effect = yes
+	}
+	c:STK = {
+		smd_high_tech_effect = yes
+	}
+	c:ROC = {
+		smd_high_tech_effect = yes
+	}
+	c:HKN = {
+		smd_high_tech_effect = yes
+	}
+	c:AUZ = {
+		smd_high_tech_effect = yes
+	}
+	c:OST = {
+		smd_high_tech_effect = yes
+	}
+	c:NZL = {
+		smd_high_tech_effect = yes
+	}
+	c:XPO = {
+		smd_high_tech_effect = yes
+	}
+	c:UAE = {
+		smd_high_tech_effect = yes
+	}
+	c:TRK = {
+		smd_high_tech_effect = yes
+	}
+	c:GRK = {
+		smd_high_tech_effect = yes
+	}
+	#### too lazy to separate. these r medium
+	c:BUL = {
+		smd_medium_tech_effect = yes
+	}
+	c:ROM = {
+		smd_medium_tech_effect = yes
+	}
+	c:HUN = {
+		smd_medium_tech_effect = yes
+	}
+	c:SAF = {
+		smd_medium_tech_effect = yes
+	}
+	####
+	c:GER = {
+		smd_high_tech_effect = yes
+	}
+	c:SWS = {
+		smd_high_tech_effect = yes
+	}
+	c:SWD = {
+		smd_high_tech_effect = yes
+	}
+	c:FNL = {
+		smd_high_tech_effect = yes
+	}
+	c:NRW = {
+		smd_high_tech_effect = yes
+	}
+	c:XDE = {
+		smd_high_tech_effect = yes
+	}
+	c:DEN = {
+		smd_high_tech_effect = yes
+	}
+	c:GBR = {
+		smd_high_tech_effect = yes
+	}
+	c:IRE = {
+		smd_high_tech_effect = yes
+	}
+	c:NIR = {
+		smd_high_tech_effect = yes
+	}
+	c:FRA = {
+		smd_high_tech_effect = yes
+	}
+	c:SPA = {
+		smd_high_tech_effect = yes
+	}
+	c:ITA = {
+		smd_high_tech_effect = yes
+	}
+	c:ICE = {
+		smd_high_tech_effect = yes
+	}
+	
+	c:USA = {
+		smd_usa_tech_effect = yes
+	}
+	
+	}
+}

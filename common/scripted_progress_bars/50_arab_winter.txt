@@ -1,0 +1,360 @@
+﻿arab_spring_progress_bar = {
+	name = "arab_spring_progress_bar"
+	desc = "arab_spring_progress_bar_desc"
+	default_bad = no
+	is_inverted = no
+ 
+	monthly_progress = {
+ 
+		# ── ADVANCE ──────────────────────────────────
+ 
+		# Liberal/progressive IGs in government
+		if = {
+			limit = {
+				any_interest_group = {
+					is_in_government = yes
+					OR = {
+						has_ideology = ideology:ideology_liberal_movement
+						leader = {
+							OR = {
+								has_ideology = ideology:ideology_liberal_leader
+								has_ideology = ideology:ideology_progressive_leader
+							}
+						}
+					}
+				}
+			}
+			add = {
+				desc = "arab_spring_reformists_in_govt_tt"
+				every_interest_group = {
+					limit = {
+						is_in_government = yes
+						OR = {
+							has_ideology = ideology:ideology_liberal_movement
+							leader = {
+								OR = {
+									has_ideology = ideology:ideology_liberal_leader
+									has_ideology = ideology:ideology_progressive_leader
+								}
+							}
+						}
+					}
+					add = 2
+				}
+			}
+		}
+ 
+		# Universal suffrage enacted
+		if = {
+			limit = {
+				has_law_or_variant = law_type:law_universal_suffrage
+			}
+			add = {
+				desc = "arab_spring_universal_suffrage_tt"
+				value = 3
+			}
+		}
+		else_if = {
+			limit = {
+				has_law_or_variant = law_type:law_census_voting
+			}
+			add = {
+				desc = "arab_spring_census_voting_tt"
+				value = 1
+			}
+		}
+ 
+		# Free press
+		if = {
+			limit = {
+				has_law = law_type:law_protected_speech
+			}
+			add = {
+				desc = "arab_spring_free_press_tt"
+				value = 2
+			}
+		}
+		else_if = {
+			limit = {
+				has_law = law_type:law_right_of_assembly
+			}
+			add = {
+				desc = "arab_spring_right_of_assembly_tt"
+				value = 1
+			}
+		}
+ 
+		# High literacy
+		if = {
+			limit = {
+				literacy_rate >= 0.50
+			}
+			add = {
+				desc = "arab_spring_high_literacy_tt"
+				value = 1
+			}
+		}
+ 
+		# ── DEPLETE ───────────────────────────────────
+ 
+		# Islamist/nationalist IGs in government
+		if = {
+			limit = {
+				any_interest_group = {
+					is_in_government = yes
+					OR = {
+						has_ideology = ideology:ideology_jihadist_movement
+						leader = {
+							OR = {
+								has_ideology = ideology:ideology_jihadist_leader
+								has_ideology = ideology:ideology_nationalist_leader
+								has_ideology = ideology:ideology_traditionalist_leader
+							}
+						}
+					}
+				}
+			}
+			add = {
+				desc = "arab_spring_islamists_in_govt_tt"
+				every_interest_group = {
+					limit = {
+						is_in_government = yes
+						OR = {
+							has_ideology = ideology:ideology_jihadist_movement
+							leader = {
+								OR = {
+									has_ideology = ideology:ideology_jihadist_leader
+									has_ideology = ideology:ideology_nationalist_leader
+									has_ideology = ideology:ideology_traditionalist_leader
+								}
+							}
+						}
+					}
+					add = -2
+				}
+			}
+		}
+ 
+		# Turmoil — stepped thresholds
+		if = {
+			limit = {
+				country_turmoil >= 0.10
+			}
+			add = {
+				desc = "arab_spring_turmoil_tt"
+				value = -2
+			}
+		}
+		if = {
+			limit = {
+				country_turmoil >= 0.20
+			}
+			add = {
+				desc = "arab_spring_turmoil_tt"
+				value = -2
+			}
+		}
+		if = {
+			limit = {
+				country_turmoil >= 0.30
+			}
+			add = {
+				desc = "arab_spring_turmoil_tt"
+				value = -1
+			}
+		}
+ 
+		# Repressive laws still in place
+		if = {
+			limit = {
+				OR = {
+					has_law = law_type:law_autocracy
+					has_law = law_type:law_oligarchy
+					has_law = law_type:law_single_party_state
+				}
+			}
+			add = {
+				desc = "arab_spring_authoritarian_laws_tt"
+				value = -3
+			}
+		}
+ 
+		# At war
+		if = {
+			limit = {
+				is_at_war = yes
+			}
+			add = {
+				desc = "arab_spring_at_war_tt"
+				value = -2
+			}
+		}
+	}
+ 
+	start_value = 25
+	min_value = 0
+	max_value = 100
+}
+ 
+# ──────────────────────────────────────────
+# REGIME CRACKDOWN
+# High = crackdown succeeding.
+# Reaches 100 = je_arab_winter fails.
+# ──────────────────────────────────────────
+ 
+arab_winter_crackdown_progress_bar = {
+	name = "arab_winter_crackdown_progress_bar"
+	desc = "arab_winter_crackdown_progress_bar_desc"
+	default_bad = yes
+	is_inverted = no
+ 
+	monthly_progress = {
+ 
+		# ── ADVANCE ──────────────────────────────────
+ 
+		# Jihadist/nationalist movements gaining support
+		if = {
+			limit = {
+				any_political_movement = {
+					OR = {
+						is_political_movement_type = movement_jihadist
+						is_political_movement_type = movement_fascist
+						is_political_movement_type = movement_traditionalist
+					}
+					political_movement_support >= 0.15
+				}
+			}
+			add = {
+				desc = "arab_winter_radical_movements_tt"
+				every_political_movement = {
+					limit = {
+						OR = {
+							is_political_movement_type = movement_jihadist
+							is_political_movement_type = movement_fascist
+							is_political_movement_type = movement_traditionalist
+						}
+						political_movement_support >= 0.15
+					}
+					add = 2
+				}
+			}
+		}
+ 
+		# Armed forces in opposition and powerful
+		if = {
+			limit = {
+				any_interest_group = {
+					is_interest_group_type = ig_armed_forces
+					is_in_government = no
+					is_powerful = yes
+				}
+			}
+			add = {
+				desc = "arab_winter_military_opposition_tt"
+				value = 3
+			}
+		}
+ 
+		# Repressive security laws
+		if = {
+			limit = {
+				has_law = law_type:law_secret_police
+			}
+			add = {
+				desc = "arab_winter_security_laws_tt"
+				value = 2
+			}
+		}
+		else_if = {
+			limit = {
+				has_law = law_type:law_outlawed_dissent
+			}
+			add = {
+				desc = "arab_winter_security_laws_tt"
+				value = 1
+			}
+		}
+ 
+		# At war
+		if = {
+			limit = {
+				is_at_war = yes
+			}
+			add = {
+				desc = "arab_winter_civil_war_tt"
+				value = 3
+			}
+		}
+ 
+		# High turmoil
+		if = {
+			limit = {
+				any_scope_state = {
+					is_incorporated = yes
+					turmoil >= 0.15
+				}
+			}
+			add = {
+				desc = "arab_winter_high_turmoil_tt"
+				value = 2
+			}
+		}
+ 
+		# ── DEPLETE ───────────────────────────────────
+ 
+		# Strong reformist movements
+		if = {
+			limit = {
+				any_political_movement = {
+					OR = {
+						is_political_movement_type = movement_liberal
+						is_political_movement_type = movement_progressive
+						is_political_movement_type = movement_social_democratic
+					}
+					political_movement_support >= 0.20
+				}
+			}
+			add = {
+				desc = "arab_winter_strong_liberal_movements_tt"
+				value = -3
+			}
+		}
+ 
+		# Universal suffrage entrenched
+		if = {
+			limit = {
+				has_law_or_variant = law_type:law_universal_suffrage
+			}
+			add = {
+				desc = "arab_winter_universal_suffrage_entrenched_tt"
+				value = -2
+			}
+		}
+ 
+		# Elected bureaucracy resists coups
+		if = {
+			limit = {
+				has_law = law_type:law_elected_bureaucrats
+			}
+			add = {
+				desc = "arab_winter_elected_bureaucrats_tt"
+				value = -2
+			}
+		}
+ 
+		# Defensive preparations from arab_spring.10 option B
+		if = {
+			limit = {
+				has_variable = var_counter_revolution_bonus
+			}
+			add = {
+				desc = "arab_winter_prepared_defence_tt"
+				value = -2
+			}
+		}
+	}
+ 
+	start_value = 10
+	min_value = 0
+	max_value = 100
+}

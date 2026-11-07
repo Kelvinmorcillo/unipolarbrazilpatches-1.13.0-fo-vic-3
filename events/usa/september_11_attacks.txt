@@ -1,0 +1,388 @@
+﻿namespace = usa_wot
+
+# hidden event ensures 9/11 fires on the 11th of september, 2001.
+usa_wot.0 = {
+    type = country_event
+    placement = ROOT
+    title = usa_wot.1.t
+    desc = usa_wot.1.d
+    event_image = { video = "9_11" }
+	hidden = yes
+	
+    trigger = {
+        c:USA ?= this
+        game_date >= 2001.08.30
+        NOT = { has_variable = 911_happened }
+    }
+
+    immediate = {
+        trigger_event = { id = usa_wot.1 days = 10 }
+    }
+}
+
+# 1) Main US 9/11 event
+usa_wot.1 = {
+    type = country_event
+    placement = ROOT
+    title = usa_wot.1.t
+    desc = usa_wot.1.d
+    event_image = { video = "9_11" }
+	duration = 2
+    trigger = {
+        c:USA ?= this
+        game_date >= 2001.08.30
+        NOT = { has_variable = 911_happened }
+		exists = c:AFG
+    }
+
+    immediate = {
+        # mark the War on Terror active for the USA
+		set_variable = 911_happened
+		set_global_variable = { name = 911_usa value = yes }
+        add_modifier = {
+            name = attacked_on_home_soil
+            days = 1825
+        }
+        # notify the rest of the world (fires global notification for every other country)
+        every_country = { limit = { NOT = { tag = USA } }
+            trigger_event = { id = global_wot.1 popup = yes }
+        }
+		random_scope_state = {
+			limit = { state_region = s:STATE_NEW_YORK } 
+			remove_building = building_world_trade_center 
+		}
+    }
+
+    option = {
+        name = usa_wot.1.a
+        trigger_event = { id = usa_wot.2 days = 7 }
+        add_radicals = { value = 0.25 }
+        add_loyalists = { value = 0.25 }
+		s:STATE_NEW_YORK.region_state:USA = {
+        add_modifier = {
+                name = ground_zero
+                months = 36
+            }
+		}
+    }
+}
+
+# 2) US formal declaration / first major national response
+usa_wot.2 = {
+    type = country_event
+    placement = ROOT
+    title = usa_wot.2.t
+    desc = usa_wot.2.d
+    event_image = { video = "waronterror" }
+	duration = 2
+    trigger = {
+        c:USA ?= this
+        has_variable = 911_happened
+        NOT = { has_variable = war_on_terror_campaign_started }
+    }
+
+    immediate = {
+        set_variable = war_on_terror_campaign_started
+        add_modifier = {
+            name = war_on_terror_campaign
+            days = 3650
+        }
+        # broadcast the declaration to all countries (global notice)
+        every_country = {
+            trigger_event = { id = global_wot.2 popup = yes }
+        }
+    }
+
+    option = {
+        name = usa_wot.2.a
+        add_loyalists = { value = 0.25 }
+		active_law:lawgroup_army_model = {
+			add_amendment = {
+					type = amendment_authorization_military_force
+					sponsor = PREV.ig:ig_armed_forces
+				}
+		}
+    }
+}
+
+#usa_wot.3 = {
+#    type = country_event
+#   placement = ROOT
+#    hidden = yes
+#
+#    trigger = {
+#      tag = USA
+#        has_variable = war_on_terror_campaign_started
+#    }
+#
+#    immediate = {
+#        remove_variable = war_on_terror_active
+#        remove_variable = war_on_terror_campaign_started
+#        remove_modifier = attacked_on_home_soil
+#        remove_modifier = war_on_terror_campaign
+#    }
+#
+#    option = { name = usa_wot.3.a }
+#}
+
+# 2001 Anthrax Attack
+usa_wot.3 = {
+    type = country_event
+    placement = ROOT
+    title = usa_wot.3.t
+    desc = usa_wot.3.d
+    event_image = { video = "helicopter" }
+    icon = event_crisis
+	duration = 2
+    trigger = {
+        c:USA ?= this
+        game_date > 2001.09.18
+        NOT = { has_variable = anthrax_attacks_occurred }
+    }
+
+    immediate = {
+        set_variable = { name = anthrax_attacks_occurred }
+    }
+
+    option = {
+        name = usa_wot.3.a
+        add_modifier = {
+            name = heightened_security_measures
+            days = 365
+        }
+		active_law:lawgroup_internal_security = {
+			add_amendment = {
+					type = amendment_patriot_act
+					sponsor = PREV.ig:ig_armed_forces
+				}
+		}
+    }
+
+    option = {
+        name = usa_wot.3.b
+        add_modifier = {
+            name = limited_response
+            days = 180
+        }
+    }
+}
+
+# Afghanistan Accepts Extradition
+usa_wot.5 = {
+    type = country_event
+    placement = ROOT
+    title = usa_wot.5.t
+    desc = usa_wot.5.d
+    event_image = { video = "middleeast_battlefield_trenches" }
+	duration = 2
+    trigger = {
+        c:USA ?= this
+    }
+
+    immediate = { set_variable = osama_extradited }
+
+    option = {
+        name = usa_wot.5.a
+        add_modifier = {
+            name = bin_laden_extradition_accepted_country
+            days = 365
+        }
+        ig:ig_armed_forces = {
+            add_modifier = {
+                name = bin_laden_extradition_accepted_ig_armed_forces
+                days = 365
+            }
+        }
+    }
+}
+
+# Afghanistan Rejects Extradition
+usa_wot.6 = {
+    type = country_event
+    placement = ROOT
+    title = usa_wot.6.t
+    desc = usa_wot.6.d
+    event_image = { video = "middleeast_battlefield_trenches" }
+	duration = 2
+    trigger = {
+        c:USA ?= this
+    }
+
+    immediate = { }
+
+    option = {
+        name = usa_wot.6.a
+		default_option = yes
+		ai_chance = { base = 100 }
+        add_modifier = {
+            name = bin_laden_extradition_rejected_country
+            days = 365
+        }
+        ig:ig_armed_forces = {
+            add_modifier = {
+                name = bin_laden_extradition_rejected_ig_armed_forces
+                days = 365
+            }
+        }
+		every_country = { 
+			trigger_event = { id = global_wot.3 days = 3 }
+		}
+		every_country = {
+			trigger_event = { id = wot_coalition.1 }
+		}
+		c:USA = {
+		create_diplomatic_play = {
+			name = operation_enduring_freedom
+			type = dp_regime_change
+			target_country = c:AFG
+			war = yes
+			add_escalation = 80
+			add_war_goal = {
+				holder = c:AFG
+				type = humiliation
+				target_country = c:USA
+			}
+		}
+	}
+		wot_activate_northern_alliance_for_afghanistan_war = yes
+
+   }
+	
+	option = {
+        name = usa_wot.6.b
+        add_modifier = {
+            name = bin_laden_extradition_rejected_country
+            days = 365
+        }
+        ig:ig_armed_forces = {
+            add_modifier = {
+                name = bin_laden_extradition_rejected_ig_armed_forces_2
+                days = 365
+            }
+        }
+    }
+	
+}
+
+usa_wot.10 = {
+    type = country_event
+    title = usa_wot.10.t
+    desc = usa_wot.10.d
+    event_image = { video = "fighterjets" }
+	duration = 2
+    trigger = {
+        c:USA = this
+		has_variable = 911_happened
+		NOT = { has_variable = hunt_for_bin_laden }
+		game_date > 2001.09.18
+    }
+
+    immediate = {
+        set_variable = { name = hunt_for_bin_laden }
+    }
+
+    option = {
+        name = usa_wot.10.a
+        add_modifier = {
+            name = intensified_intelligence_operations
+            months = 36
+        }
+    }
+}
+
+usa_wot.11 = {
+    type = country_event
+    placement = ROOT
+    title = usa_wot.11.t
+    desc = usa_wot.11.d
+    event_image = { video = "middleeast_battlefield_trenches" }
+    duration = 3
+
+    trigger = {
+        c:USA ?= this
+    }
+
+    option = {
+        name = usa_wot.11.a
+        set_variable = bin_laden_captured
+        custom_tooltip = usa_wot.11.success_tt
+        add_loyalists = {
+		value = 0.25
+		}
+    }
+}
+
+# 1. Intelligence Breakthrough
+usa_wot.20 = {
+    type = country_event
+    placement = ROOT
+    title = usa_wot.20.t
+    desc = usa_wot.20.d
+    event_image = { video = "middleeast_battlefield_trenches" }
+    duration = 3
+
+    trigger = {
+        c:USA ?= this
+    }
+
+    option = {
+        name = usa_wot.20.a
+        custom_tooltip = usa_wot.20.a.tt
+        je:je_hunt_for_bin_laden = {
+			add_progress = {
+				value = 8
+				name = hunt_bin_laden_progress_bar
+			}
+		}
+    }
+}
+
+# 2. False Lead
+usa_wot.21 = {
+    type = country_event
+    placement = ROOT
+    title = usa_wot.21.t
+    desc = usa_wot.21.d
+    event_image = { video = "unspecific_ruler_speaking_to_people" }
+    duration = 3
+
+    trigger = {
+        c:USA ?= this
+    }
+
+    option = {
+        name = usa_wot.21.a
+        custom_tooltip = usa_wot.21.a.tt
+        je:je_hunt_for_bin_laden = {
+			add_progress = {
+				value = -4
+				name = hunt_bin_laden_progress_bar
+			}
+		}
+    }
+}
+
+# 3. Regional Cooperation
+usa_wot.22 = {
+    type = country_event
+    placement = ROOT
+    title = usa_wot.22.t
+    desc = usa_wot.22.d
+    event_image = { video = "unspecific_politicians_arguing" }
+    duration = 3
+
+    trigger = {
+        c:USA ?= this
+    }
+
+    option = {
+        name = usa_wot.22.a
+        custom_tooltip = usa_wot.22.a.tt
+        je:je_hunt_for_bin_laden = {
+			add_progress = {
+				value = 8
+				name = hunt_bin_laden_progress_bar
+			}
+		}
+    }
+}

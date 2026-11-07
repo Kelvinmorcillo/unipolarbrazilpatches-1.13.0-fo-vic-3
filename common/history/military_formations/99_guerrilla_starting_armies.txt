@@ -1,0 +1,169 @@
+MILITARY_FORMATIONS = {
+
+	### AFGHAN NORTHERN ALLIANCE ###
+	# Mostly militia/irregular anti-Taliban formations in northern Afghanistan.
+	# If your map has more detailed Afghan state regions, useful alternatives are:
+	# STATE_BADAKHSHAN, STATE_AFGHAN_TURKESTAN, STATE_KABUL, STATE_HERAT.
+	c:ANA ?= {
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_greater_persia
+			name = "United_Islamic_Front"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_BALKH
+				count = 12
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_BALKH
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_BALKH
+				count = 8
+			}
+		}
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_greater_persia
+			name = "Panjshir_Forces"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_BALKH
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_BALKH
+				count = 6
+			}
+		}
+	}
+
+	### KURDISTAN ###
+	# Guerrilla-oriented Kurdish formations. Adjust state regions depending on whether KDS starts in Turkey, Iraq, Syria, or a broader Kurdistan setup.
+	# Useful alternatives may include STATE_KURDISTAN, STATE_MOSUL, STATE_ERBIL, STATE_DIYARBAKIR, STATE_VAN.
+	c:KDS ?= {
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_near_east
+			name = "Kurdish_Peshmerga"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_ERZURUM
+				count = 12
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_ERZURUM
+				count = 8
+			}
+		}
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_near_east
+			name = "Kurdish_Guerrilla_Forces"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_DIYARBAKIR
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_DIYARBAKIR
+				count = 6
+			}
+		}
+	}
+
+	### CHECHNYA ###
+	# Small, high-mobilization irregular force.
+	# If your map uses a broader North Caucasus state, replace STATE_CHECHNYA with that state region.
+	c:CCH ?= {
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_russia
+			name = "Chechen_National_Guard"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_NORTH_CAUCASUS
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_NORTH_CAUCASUS
+				count = 6
+			}
+		}
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_russia
+			name = "Ichkerian_Field_Commanders"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_NORTH_CAUCASUS
+				count = 8
+			}
+		}
+	}
+	### PALESTINE ###
+	# Lightly armed security forces and militia-style formations.
+
+	c:PAL ?= {
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_middle_east
+			name = "Palestinian_Security_Forces"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_GAZA
+				count = 6
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_PALESTINE
+				count = 6
+			}
+		}
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_middle_east
+			name = "West_Bank_Local_Forces"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_PALESTINE
+				count = 8
+			}
+		}
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_middle_east
+			name = "Gaza_Local_Forces"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_GAZA
+				count = 8
+			}
+		}
+	}
+}

@@ -1,0 +1,95 @@
+﻿namespace = iraq_events
+
+iraq_events.1 = {
+    type = country_event
+    placement = ROOT
+    title = iraq_events.10.t
+    desc = iraq_events.10.d
+    event_image = { video = "fighterjets" }
+	duration = 3
+    trigger = {
+        c:IRQ ?= this
+        game_date >= 1993.1.1
+        NOT = { has_variable = iraq_fly_happened }
+    }
+
+    immediate = { }
+
+    option = {
+        name = iraq_events.10.a
+		default_option = yes
+        set_variable = unscom_aircraft_rejected
+		set_variable = iraq_fly_happened 
+        change_relations = {
+            country = c:USA
+            value = -25
+        }
+    }
+
+    option = {
+        name = iraq_events.10.b
+		set_variable = iraq_fly_happened 
+        change_relations = {
+            country = c:USA
+            value = 10
+        }
+    }
+}
+
+iraq_events.2 = {
+    type = country_event
+    placement = ROOT
+    title = us_events.10.t
+    desc = us_events.10.d
+    event_image = { video = "fighterjets" }
+	duration = 3
+	
+    trigger = {
+        c:USA ?= this
+        exists = c:IRQ
+        c:IRQ = { has_variable = unscom_aircraft_rejected }
+        game_date >= 1993.1.29
+		NOT = { has_variable = iraq_rejection_happened }
+    }
+
+    immediate = { set_variable = iraq_rejection_happened  }
+
+    option = {
+        name = us_events.10.a
+		c:IRQ = {
+		change_relations = {
+            country = c:USA
+            value = -25
+        }
+	}
+}
+
+    option = {
+        name = us_events.10.b
+		set_variable = iraq_rejection_happened
+		c:IRQ = {
+        change_relations = {
+            country = c:USA
+            value = -5
+        }
+	}
+    }
+}
+
+iraq_events.3 = {
+    type = country_event
+    placement = ROOT
+    title = iraq_events.3.t
+    desc = iraq_events.3.d
+    event_image = { video = "fighterjets" }
+    duration = 3
+
+    trigger = { c:IRQ ?= this }
+
+    option = {
+        name = iraq_events.3.a
+		c:USA = {
+			trigger_event = { id = iraq_war.1 days = 1 }
+		}
+    }
+}

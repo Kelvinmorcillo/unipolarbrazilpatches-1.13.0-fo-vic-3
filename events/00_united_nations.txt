@@ -1,0 +1,854 @@
+﻿namespace = un_events
+
+# Assigns UNSC
+
+un_events.99 = {
+    type = country_event
+    placement = ROOT
+    title = "" # hidden, no localization needed
+    desc = ""  # hidden, no localization needed
+	event_image = { video = "africa_diplomats_negotiating" }
+    hidden = yes
+	duration = 1
+	trigger = {	
+		NOT = { any_country = { has_modifier = permanent_unsc_member } }
+	}
+		
+    immediate = {
+		set_global_variable = { name = un_peacekeeping_votes value = 0 }
+		set_global_variable = { name = un_peacekeeping_num_votes value = 0 }
+        every_country = {
+			limit = {
+				c:USA ?= this
+			}
+			save_scope_as = country_ranking_1
+			add_modifier = {
+				name = permanent_unsc_member
+				days = -1
+			}
+		}
+		set_global_variable = {
+			name = permanent_members_1
+			value = scope:country_ranking_1
+		}
+		every_country = {
+			limit = {
+				c:FRA ?= this
+			}
+			save_scope_as = country_ranking_2
+			add_modifier = {
+				name = permanent_unsc_member
+				days = -1
+			}
+		}
+		set_global_variable = {
+			name = permanent_members_2
+			value = scope:country_ranking_2
+		}
+		every_country = {
+			limit = {
+				c:GBR ?= this
+			}
+			add_modifier = {
+				name = permanent_unsc_member
+				days = -1
+			}
+			save_scope_as = country_ranking_3
+		}
+		set_global_variable = {
+			name = permanent_members_3
+			value = scope:country_ranking_3
+		}
+		every_country = {
+			limit = {
+				c:PRC ?= this
+			}
+			add_modifier = {
+				name = permanent_unsc_member
+				days = -1
+			}
+			save_scope_as = country_ranking_4
+		}
+		set_global_variable = {
+			name = permanent_members_4
+			value = scope:country_ranking_4
+		}
+		
+		every_country = {
+			limit = {
+				c:RUS ?= this
+			}
+			add_modifier = {
+				name = permanent_unsc_member
+				days = -1
+			}
+			save_scope_as = country_ranking_5
+		}
+		set_global_variable = {
+			name = permanent_members_5
+			value = scope:country_ranking_5
+		}
+    }
+}
+
+# Motion selection UI (only the proposer sees the popup)
+un_events.100 = {
+	type = country_event
+	placement = ROOT
+	title = un_events.100.t
+	desc = un_events.100.d
+	event_image = { video = "africa_diplomats_negotiating" }
+ 
+	# Option A: Resolution on Environmental Protection
+	option = {
+		name = un_events.100.a
+		set_global_variable = { name = un_motion_active value = yes }
+		set_global_variable = { name = un_current_motion_type value = flag:motion_environment }
+		set_global_variable = { name = un_motion_yes_votes value = 0 }
+		set_global_variable = { name = un_motion_no_votes value = 0 }
+		# Clear any leftover vote flags from prior motion
+		every_country = {
+			limit = { has_variable = un_voted_on_motion }
+			remove_variable = un_voted_on_motion
+		}
+		# Notify all countries that a vote is open
+		every_country = {
+			trigger_event = { id = un_events.101 days = 7 }
+		}
+		# Schedule result processor
+		trigger_event = { id = un_events.201 days = 45 }
+		trigger_event = { id = un_events.400 days = 65 }
+	}
+ 
+	# Option B: Resolution on World Peace
+	option = {
+		name = un_events.100.b
+		set_global_variable = { name = un_motion_active value = yes }
+		set_global_variable = { name = un_current_motion_type value = flag:motion_peace }
+		set_global_variable = { name = un_motion_yes_votes value = 0 }
+		set_global_variable = { name = un_motion_no_votes value = 0 }
+		every_country = {
+			limit = { has_variable = un_voted_on_motion }
+			remove_variable = un_voted_on_motion
+		}
+		every_country = {
+			trigger_event = { id = un_events.101 days = 7 }
+		}
+		trigger_event = { id = un_events.201 days = 45 }
+		trigger_event = { id = un_events.400 days = 65 }
+	}
+ 
+	# Option C: Resolution on Economic Development
+	option = {
+		name = un_events.100.c
+		set_global_variable = { name = un_motion_active value = yes }
+		set_global_variable = { name = un_current_motion_type value = flag:motion_economy }
+		set_global_variable = { name = un_motion_yes_votes value = 0 }
+		set_global_variable = { name = un_motion_no_votes value = 0 }
+		every_country = {
+			limit = { has_variable = un_voted_on_motion }
+			remove_variable = un_voted_on_motion
+		}
+		every_country = {
+			trigger_event = { id = un_events.101 days = 7 }
+		}
+		trigger_event = { id = un_events.201 days = 45 }
+		trigger_event = { id = un_events.400 days = 65 }
+	}
+ 
+	# Option D: Resolution on UNESCO Technology
+	option = {
+		name = un_events.100.e
+		set_global_variable = { name = un_motion_active value = yes }
+		set_global_variable = { name = un_current_motion_type value = flag:motion_technology }
+		set_global_variable = { name = un_motion_yes_votes value = 0 }
+		set_global_variable = { name = un_motion_no_votes value = 0 }
+		every_country = {
+			limit = { has_variable = un_voted_on_motion }
+			remove_variable = un_voted_on_motion
+		}
+		every_country = {
+			trigger_event = { id = un_events.101 days = 7 }
+		}
+		trigger_event = { id = un_events.201 days = 45 }
+		trigger_event = { id = un_events.400 days = 65 }
+	}
+}
+ 
+# ==========================================
+# un_events.101 — Vote Notification
+# Fires for every country when a motion
+# opens. Informs them a vote is in progress.
+# Actual voting happens via JE buttons.
+# ==========================================
+ 
+un_events.101 = {
+	type = country_event
+	placement = ROOT
+	title = un_events.101.t
+	desc = un_events.101.d
+	event_image = { video = "africa_diplomats_negotiating" }
+	duration = 1
+	# Acknowledged — will vote via journal entry buttons
+	option = {
+		name = un_events.101.a
+	}
+}
+ 
+# ==========================================
+# un_events.201 — Hidden Result Processor
+# Fires once, 120 days after proposal.
+# Checks votes, notifies, applies modifier,
+# cleans up all global and per-country vars.
+# ==========================================
+ 
+un_events.201 = {
+	type = country_event
+	hidden = yes
+	placement = ROOT
+ 
+	immediate = {
+		if = {
+			limit = {
+				scripted_bar_progress = {
+				 name = progress_bar_tag
+				 value > 0.50
+				}
+			}
+			# Save motion type locally on each country before cleanup destroys it
+			every_country = {
+				set_variable = { name = un_last_motion_type value = global_var:un_current_motion_type }
+			}
+			# Motion passed — notify and apply modifier to all countries
+			every_country = {
+				trigger_event = { id = un_events.300 days = 1 }
+			}
+		}
+		else = {
+			# Motion failed
+			every_country = {
+				trigger_event = { id = un_events.301 days = 1 }
+			}
+		}
+ 
+		# ── CLEANUP ──────────────────────────────
+		# Remove per-country vote flags
+		every_country = {
+			limit = { has_variable = un_voted_on_motion }
+			remove_variable = un_voted_on_motion
+			remove_variable = un_last_motion_type
+			je:je_united_nations = { 
+				set_bar_progress = {
+				 value = 0
+				 name = un_motion_progress_bar
+				}
+			}
+		}
+		# Reset global motion state
+		remove_global_variable = un_motion_active
+		set_global_variable = { name = un_motion_yes_votes value = 0 }
+		set_global_variable = { name = un_motion_no_votes value = 0 }
+	}
+}
+
+un_events.102 = {
+	type = country_event
+	placement = ROOT
+	title = un_events.102.t
+	desc = un_events.102.d
+	event_image = { video = "africa_diplomats_negotiating" }
+
+	option = {
+		name = un_events.102.a
+		
+	}
+}
+ 
+un_events.202 = {
+	type = country_event
+	hidden = yes
+	placement = ROOT
+ 
+	immediate = {
+		if = {
+			limit = {
+				global_var:un_motion_yes_votes >= global_var:un_motion_no_votes
+			}
+			if = {
+				limit = {
+					global_var:un_current_motion_type = flag:motion_sanctions
+					exists = global_var:un_sanction_target
+				}
+				# Save motion type locally before cleanup
+				every_country = {
+					set_variable = { name = un_last_motion_type value = global_var:un_current_motion_type }
+				}
+				global_var:un_sanction_target = {
+					add_modifier = { name = un_sanctions_target months = 60 }
+					trigger_event = { id = un_events.302 days = 1 }
+				}
+				every_country = {
+					limit = { NOT = { this = global_var:un_sanction_target } }
+					trigger_event = { id = un_events.304 days = 1 }
+				}
+			}
+			else_if = {
+				limit = {
+					global_var:un_current_motion_type = flag:motion_condemnation
+					exists = global_var:un_sanction_target
+				}
+				# Save motion type locally before cleanup
+				every_country = {
+					set_variable = { name = un_last_motion_type value = global_var:un_current_motion_type }
+				}
+				global_var:un_sanction_target = {
+					add_modifier = { name = un_condemnation_target months = 60 }
+					trigger_event = { id = un_events.303 days = 1 }
+				}
+				every_country = {
+					limit = { NOT = { this = global_var:un_sanction_target } }
+					trigger_event = { id = un_events.304 days = 1 }
+				}
+			}
+		}
+		else = {
+			every_country = { trigger_event = { id = un_events.301 days = 1 } }
+		}
+ 
+		# Cleanup
+		every_country = {
+			limit = { has_variable = un_voted_on_motion }
+			remove_variable = un_voted_on_motion
+			remove_variable = un_last_motion_type
+			je:je_united_nations = { 
+				set_bar_progress = {
+				 value = 0
+				 name = un_motion_progress_bar
+				}
+			}
+		}
+		remove_global_variable = un_motion_active
+		remove_global_variable = un_sanction_target
+		set_global_variable = { name = un_motion_yes_votes value = 0 }
+		set_global_variable = { name = un_motion_no_votes value = 0 }
+	}
+}
+
+# Request Peacekeepers
+un_events.1 = {
+	type = country_event
+	title = un_events.1.t
+	desc = un_events.1.d
+	icon = "gfx/interface/icons/event_icons/event_united_nations.dds"
+	event_image = { video = "africa_diplomats_negotiating" }
+	immediate = { }
+	
+	option = {
+		name = un_events.1.a
+		set_global_variable = {
+					name = peacekeeper_requestor
+					value = ROOT
+					}
+		if = { limit = { has_variable = already_got_peacekeep }
+			remove_variable = already_got_peacekeep
+		}
+		# Count actual P5 members before sending vote events
+		set_global_variable = { name = un_p5_count value = 0 }
+		every_country = {
+			limit = { has_modifier = permanent_unsc_member }
+			change_global_variable = { name = un_p5_count add = 1 }
+		}
+		every_country = {
+			limit = { has_modifier = permanent_unsc_member }
+			trigger_event = { id = un_events.2 }
+		}
+		every_country = {
+		limit = { has_variable = already_got_participation_trophy }
+		remove_variable = already_got_participation_trophy
+		}
+	}
+}
+# Peacekeeper Vote
+un_events.2 = {
+	type = country_event
+	title = un_events.2.t
+	desc = un_events.2.d
+	icon = "gfx/interface/icons/event_icons/event_united_nations.dds"
+	event_image = { video = "africa_diplomats_negotiating" }
+	duration = 1
+	cooldown = { days = normal_modifier_time }
+	option = {
+		name = un_events.2.a
+		is_default_option = yes
+		custom_tooltip = you_vote_yes
+		change_global_variable = { name = un_peacekeeping_votes add = 1 }
+		change_global_variable = { name = un_peacekeeping_num_votes add = 1 }
+		hidden_effect = { 
+			global_var:peacekeeper_requestor = {
+				trigger_event = { id = un_events.3 days = 35 } 
+				trigger_event = { id = un_events.4 days = 35 }
+				}
+		}
+	}
+	
+	option = {
+		name = un_events.2.b
+		custom_tooltip = you_abstain
+		change_global_variable = { name = un_peacekeeping_num_votes add = 1 }
+		hidden_effect = { 
+			global_var:peacekeeper_requestor = {
+				trigger_event = { id = un_events.3 days = 35 } 
+				trigger_event = { id = un_events.4 days = 35 }
+				}
+		}
+	}
+	
+	option = {
+		name = un_events.2.c
+		custom_tooltip = you_vote_no
+		change_global_variable = { name = un_peacekeeping_votes subtract = -1 }
+		change_global_variable = { name = un_peacekeeping_num_votes add = 1 }
+		hidden_effect = { 
+			global_var:peacekeeper_requestor = {
+				trigger_event = { id = un_events.3 days = 35 } 
+				trigger_event = { id = un_events.4 days = 35 }
+				}
+		}
+	}
+	
+	option = {
+		name = un_events.2.e
+		custom_tooltip = you_veto
+		change_global_variable = { name = un_peacekeeping_votes subtract = -5 }
+		change_global_variable = { name = un_peacekeeping_num_votes add = 1 }
+		hidden_effect = { 
+			global_var:peacekeeper_requestor = {
+				trigger_event = { id = un_events.3 days = 35 } 
+				trigger_event = { id = un_events.4 days = 35 }
+				}
+		}
+	}
+}
+
+
+# Peacekeepers are on their way
+un_events.3 = {
+	type = country_event
+	title = un_events.3.t
+	desc = un_events.3.d
+	icon = "gfx/interface/icons/event_icons/event_united_nations.dds"
+	event_image = { video = "africa_diplomats_negotiating" }
+	
+	trigger = { 
+		global_var:un_peacekeeping_votes >= 2.5
+		global_var:un_peacekeeping_num_votes >= global_var:un_p5_count
+		NOT = { has_variable = already_got_peacekeep }
+	}
+	
+	
+	immediate = { add_modifier = {
+			name = un_peacekeepers_deployed
+			days = 730
+		}
+		set_global_variable = { name = un_peacekeeping_votes value = 0 }
+		set_variable = already_got_peacekeep
+		every_country = {
+			trigger_event = { id = un_events.5 }
+			}
+		set_global_variable = { name = un_peacekeeping_votes value = 0 }
+		set_global_variable = { name = un_peacekeeping_num_votes value = 0 }
+		}
+		
+	option = {
+		name = un_events.3.a
+	}
+}
+
+# Peacekeeping Veto'd
+un_events.4 = {
+	type = country_event
+	title = un_events.4.t
+	desc = un_events.4.d
+	icon = "gfx/interface/icons/event_icons/event_united_nations.dds"
+	event_image = { video = "africa_diplomats_negotiating" }
+	
+	trigger = {
+		global_var:un_peacekeeping_votes <= 2.5
+		global_var:un_peacekeeping_num_votes >= global_var:un_p5_count
+		has_variable = already_got_peacekeep
+	}
+	
+	immediate = {
+		set_global_variable = { name = un_peacekeeping_votes value = 0 }
+		set_global_variable = { name = un_peacekeeping_num_votes value = 0 }
+		set_variable = already_got_peacekeep
+	}
+	
+	option = {
+		name = un_events.4.a
+		remove_modifier = un_peacekeepers_deployed
+		 add_modifier = {
+			name = un_peacekeepers_vetoed
+			days = 730
+		}
+	}
+}
+
+un_events.5 = {
+	type = country_event
+	title = un_events.5.t
+	desc = un_events.5.d
+	icon = "gfx/interface/icons/event_icons/event_united_nations.dds"
+	event_image = { video = "europenorthamerica_before_the_battle" }
+	duration = 1
+ 
+	trigger = {
+		NOT = { has_variable = already_got_participation_trophy }
+		NOT = { has_war_with = scope:peacekeeper_requestor }
+		NOT = { scope:peacekeeper_requestor ?= this }
+		any_scope_character = {
+				is_busy = no
+				is_ruler = no
+				has_role = general
+			}
+	}
+ 
+	immediate = {
+		set_variable = already_got_participation_trophy
+		# Pre-save generals for options
+		random_scope_character = {
+			limit = {
+				is_busy = no
+				is_ruler = no
+				has_role = general
+			}
+			save_scope_as = peacekeeper_general_1
+		}
+		random_scope_character = {
+			limit = {
+				is_busy = no
+				is_ruler = no
+				has_role = general
+				NOT = { this = scope:peacekeeper_general_1 }
+			}
+			save_scope_as = peacekeeper_general_2
+		}
+	}
+ 
+	# ── OPTION A: PARTICIPATE ─────────────
+	# Send a general. Larger relations boost.
+	# General is deployed for 60 days then
+	# returns via un_events.5b.
+ 
+	option = {
+		name = un_events.5.a
+		trigger = {
+			any_scope_character = {
+				is_busy = no
+				is_ruler = no
+				has_role = general
+			}
+		}
+ 
+		# Choose first available general
+		if = {
+			limit = { exists = scope:peacekeeper_general_1 }
+			scope:peacekeeper_general_1 = {
+				set_variable = peacekeeper_general_var
+				set_character_busy_and_immortal = yes
+				ROOT = {
+					set_variable = {
+						name = peacekeeper_general_storage
+						value = prev
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { exists = scope:peacekeeper_general_2 }
+			scope:peacekeeper_general_2 = {
+				set_variable = peacekeeper_general_var
+				set_character_busy_and_immortal = yes
+				ROOT = {
+					set_variable = {
+						name = peacekeeper_general_storage
+						value = prev
+					}
+				}
+			}
+		}
+ 
+		# Larger relations boost for full participation
+		change_relations = {
+			country = global_var:peacekeeper_requestor
+			value = 25
+		}
+ 
+		# Also improve relations with other UNSC members
+		every_country = {
+			limit = {
+				has_modifier = permanent_unsc_member
+				NOT = { this = ROOT }
+				NOT = { this = global_var:peacekeeper_requestor }
+			}
+			change_relations = {
+				country = ROOT
+				value = 5
+			}
+		}
+ 
+		# Schedule return event in 60 days
+		trigger_event = { id = un_events.6 days = 60 }
+ 
+		ai_chance = {
+			value = 25
+			modifier = {
+				trigger = {
+					NOT = {
+						any_scope_character = {
+							is_busy = no
+							is_ruler = no
+							has_role = general
+						}
+					}
+				}
+				add = -60
+			}
+		}
+	}
+ 
+	# ── OPTION B: DECLINE ─────────────────
+	# Do not participate. Relations hit.
+ 
+	option = {
+		name = un_events.5.b
+		change_relations = {
+			country = global_var:peacekeeper_requestor
+			value = -5
+		}
+ 
+		ai_chance = { value = 75 }
+	}
+}
+ 
+# ==========================================
+# un_events.6 — GENERAL RETURNS
+# Fires 60 days after option A in un_events.5.
+# Frees the general. Small prestige bonus
+# for the contribution.
+# ==========================================
+ 
+un_events.6 = {
+	type = country_event
+	title = un_events.6.t
+	desc = un_events.6.d
+	icon = "gfx/interface/icons/event_icons/event_united_nations.dds"
+	event_image = { video = "unspecific_military_parade" }
+	duration = 3
+ 
+	trigger = {
+		# triggered by un_events.5 option A
+	}
+ 
+	immediate = {
+		# Free the general
+		every_scope_character = {
+			limit = { has_variable = peacekeeper_general_var }
+			set_character_busy_and_immortal = no
+			remove_variable = peacekeeper_general_var
+		}
+		remove_variable = peacekeeper_general_storage
+	}
+ 
+	option = {
+		name = un_events.6.a
+		default_option = yes
+		# Prestige from a successful peacekeeping contribution
+		add_modifier = {
+			name = un_peacekeeping_contribution
+			months = 24
+		}
+	}
+}
+
+# ── UN_EVENTS.300 — RESOLUTION PASSED ────────────
+# Fires for every country when a general resolution
+# passes (environment, peace, economy, technology).
+# Describes the resolution type and its modifier.
+ 
+un_events.300 = {
+	type = country_event
+	placement = ROOT
+	title = un_events.300.t
+	desc = un_events.300.d
+	flavor = un_events.300.f
+ 
+	icon = "gfx/interface/icons/event_icons/event_united_nations.dds"
+	event_image = { video = "africa_diplomats_negotiating" }
+ 
+	duration = 3
+ 
+	trigger = {}
+ 
+	immediate = { set_variable = cannot_propose_un_motions }
+	
+	option = {
+		name = un_events.300.a
+		default_option = yes
+		remove_variable = cannot_propose_un_motions
+		ai_chance = { base = 100 }
+		# Environmental Protection modifier
+				if = {
+					limit = {
+						global_var:un_current_motion_type = flag:motion_environment
+					}
+					add_modifier = {
+						name = un_resolution_environment
+						months = 12
+					}
+				}
+				# World Peace modifier
+				if = {
+					limit = {
+						global_var:un_current_motion_type = flag:motion_peace
+					}
+					add_modifier = {
+						name = un_resolution_peace
+						months = 12
+					}
+				}
+				# Economic Development modifier
+				if = {
+					limit = {
+						global_var:un_current_motion_type = flag:motion_economy
+					}
+					add_modifier = {
+						name = un_resolution_economy
+						months = 12
+					}
+				}
+				# UNESCO Technology modifier
+				if = {
+					limit = {
+						global_var:un_current_motion_type = flag:motion_technology
+					}
+					add_modifier = {
+						name = un_resolution_technology
+						months = 12
+					}
+				}
+	}
+}
+ 
+# ── UN_EVENTS.301 — RESOLUTION FAILED ────────────
+# Fires for every country when a motion fails to
+# reach majority.
+ 
+un_events.301 = {
+	type = country_event
+	placement = ROOT
+	title = un_events.301.t
+	desc = un_events.301.d
+	flavor = un_events.301.f
+ 
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	event_image = { video = "africa_diplomats_negotiating" }
+ 
+	duration = 3
+ 
+	trigger = {}
+ 
+	option = {
+		name = un_events.301.a
+		default_option = yes
+		ai_chance = { base = 100 }
+	}
+}
+ 
+# ── UN_EVENTS.302 — SANCTIONS PASSED (TARGET) ────
+# Fires specifically for the sanctioned country.
+# ROOT = the sanctioned country.
+ 
+un_events.302 = {
+	type = country_event
+	placement = ROOT
+	title = un_events.302.t
+	desc = un_events.302.d
+	flavor = un_events.302.f
+ 
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	event_image = { video = "europenorthamerica_political_extremism" }
+ 
+	duration = 3
+ 
+	trigger = {}
+ 
+	option = {
+		name = un_events.302.a
+		default_option = yes
+		ai_chance = { base = 100 }
+	}
+}
+ 
+# ── UN_EVENTS.303 — CONDEMNATION PASSED (TARGET) ─
+# Fires specifically for the condemned country.
+# ROOT = the condemned country.
+ 
+un_events.303 = {
+	type = country_event
+	placement = ROOT
+	title = un_events.303.t
+	desc = un_events.303.d
+	flavor = un_events.303.f
+ 
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	event_image = { video = "europenorthamerica_political_extremism" }
+ 
+	duration = 3
+ 
+	trigger = {}
+ 
+	option = {
+		name = un_events.303.a
+		default_option = yes
+		ai_chance = { base = 100 }
+	}
+}
+ 
+# ── UN_EVENTS.304 — SANCTIONS/CONDEMNATION (OTHERS)
+# Fires for all countries EXCEPT the target,
+# informing them that a punitive resolution passed.
+# Uses global_var:un_sanction_target to name the target.
+# Shared for both sanctions and condemnation —
+# the desc distinguishes them via motion type flag.
+ 
+un_events.304 = {
+	type = country_event
+	placement = ROOT
+	title = un_events.304.t
+	desc = un_events.304.d
+	flavor = un_events.304.f
+ 
+	icon = "gfx/interface/icons/event_icons/event_united_nations.dds"
+	event_image = { video = "africa_diplomats_negotiating" }
+ 
+	duration = 3
+ 
+	trigger = {}
+ 
+	option = {
+		name = un_events.304.a
+		default_option = yes
+		ai_chance = { base = 100 }
+	}
+}
+
+un_events.400 = {
+	type = country_event
+	hidden = yes
+	placement = ROOT
+ 
+	immediate = {
+		remove_global_variable = un_current_motion_type
+	}
+}

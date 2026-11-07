@@ -1,0 +1,168 @@
+wot_invoke_article_5_and_pakistan = {
+	if = {
+		limit = {
+			exists = c:USA
+			exists = c:AFG
+			NOT = { has_global_variable = wot_article_5_invoked_global }
+		}
+		c:USA ?= {
+			trigger_event = { id = wot_coalition.1 }
+		}
+	}
+}
+
+wot_join_us_afghanistan_war = {
+	save_scope_as = wot_joining_country
+
+	c:USA ?= {
+		random_scope_war = {
+			limit = {
+				is_war_participant = c:USA
+				is_war_participant = c:AFG
+				NOT = { is_war_participant = scope:wot_joining_country }
+			}
+
+			join_war = {
+				target = scope:wot_joining_country
+				side = c:USA
+			}
+		}
+	}
+
+	set_variable = wot_joined_afghanistan_war
+}
+
+wot_create_pakistan_coalition_access_treaties = {
+		
+	every_country = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_nato_members target = this }
+			NOT = { c:PAK ?= this }
+		}
+		trigger_event = { id = wot_coalition.11 popup = yes }
+	}
+}
+
+
+# Northern Alliance integration for Operation Enduring Freedom.
+# Called immediately after the USA creates the Afghanistan diplomatic play in usa_wot.6.
+wot_activate_northern_alliance_for_afghanistan_war = {
+	if = {
+		limit = {
+			exists = c:ANA
+			exists = c:AFG
+			exists = c:USA
+			NOT = { c:ANA ?= { has_variable = wot_northern_alliance_activated } }
+		}
+
+		add_to_global_variable_list = { name = wot_afghanistan_coalition_partners target = c:ANA }
+
+		c:ANA ?= {
+			set_variable = wot_northern_alliance_activated
+		}
+
+		wot_transfer_kabul_to_northern_alliance = yes
+		wot_create_northern_alliance_war_army = yes
+		wot_northern_alliance_join_afghanistan_play_or_war = yes
+
+		c:ANA ?= {
+			trigger_event = { id = wot_coalition.20 popup = yes }
+		}
+	}
+}
+
+wot_transfer_kabul_to_northern_alliance = {
+	if = {
+		limit = {
+			exists = c:ANA
+			exists = c:AFG
+		}
+
+		# STATE_KABUL starts owned by Afghanistan/Taliban in the bookmark.
+		# This uses the state-region -> region_state country-specific state pattern used elsewhere in the mod.
+		s:STATE_KABUL.region_state:AFG = {
+			set_state_owner = c:ANA
+		}
+	}
+}
+
+wot_create_northern_alliance_war_army = {
+	c:ANA ?= {
+		if = {
+			limit = {
+				NOT = { has_variable = wot_northern_alliance_war_army_created }
+			}
+			set_variable = wot_northern_alliance_war_army_created
+
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_central_asia
+				name = "Northern_Alliance_Kabul_Forces"
+
+				combat_unit = {
+					type = unit_type:combat_unit_type_irregular_infantry
+					state_region = s:STATE_KABUL
+					count = 12
+				}
+				combat_unit = {
+					type = unit_type:combat_unit_type_irregular_infantry
+					state_region = s:STATE_BADAKHSHAN
+					count = 6
+				}
+			}
+
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_central_asia
+				name = "Anti_Taliban_Field_Commanders"
+
+				combat_unit = {
+					type = unit_type:combat_unit_type_irregular_infantry
+					state_region = s:STATE_KABUL
+					count = 8
+				}
+			}
+		}
+	}
+}
+
+wot_northern_alliance_join_afghanistan_play_or_war = {
+	if = {
+		limit = {
+			exists = c:ANA
+			exists = c:USA
+			exists = c:AFG
+		}
+
+		# If the USA-AFG conflict is still a diplomatic play, ANA backs the US/initiator side.
+		random_diplomatic_play = {
+			limit = {
+				is_war = no
+				initiator_is = c:USA
+				target_is = c:AFG
+				NOT = { any_scope_play_involved = { THIS = c:ANA } }
+			}
+			add_initiator_backers = { c:ANA }
+		}
+
+		# If the play has already become a war, ANA joins the US side.
+		c:USA ?= {
+			random_scope_war = {
+				limit = {
+					is_war_participant = c:USA
+					is_war_participant = c:AFG
+					NOT = { is_war_participant = c:ANA }
+				}
+				join_war = {
+					target = c:ANA
+					side = c:USA
+				}
+				add_war_goal = { holder = c:ANA type = annex_country target_country = c:AFG }
+			}
+		}
+
+		c:ANA ?= {
+			set_variable = wot_joined_afghanistan_war
+		}
+	}
+}

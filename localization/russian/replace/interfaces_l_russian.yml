@@ -1,0 +1,16 @@
+﻿l_russian:
+
+ GDP_TOOLTIP:1 "#header [Country.GetAdjective] [concept_gdp]#!\n@money![Country.MakeScope.ScriptValue('cwp_gdp')|Dv] (#u #tooltippable #tooltip:,COUNTRY GDP OWNERSHIP TOOLTIP [Country.GetDomesticallyOwnedGDPFraction|%1b]#!#!) $concept_gdp_short$ ([Country.GetGDPRanking])\n@money! [Concept('concept_gdp_per_capita', '$concept_gdp_per_capita_short$')] ([Country.GetGDPPerCapitaRanking])"
+ COUNTRY_GDP_OWNERSHIP_TOOLTIP: "#header [concept_gdp_ownership] в [Country.GetName]#!\n#u [Country.GetDomesticallyOwnedGDPFraction|%1b] #! (@money![Country.GetGDP|Dv]) $concept_gdp_short$\n$TOOLTIP_DELIMITER$\n[SelectLocalization(IsZero_CFixedPoint(Country.GetForeignOwnedGDPFraction), 'NO_FOREIGNLY_OWNED_PERCENTAGE', 'COUNTRY_FOREIGNLY_OWNED_PERCENTAGE')]\n\n[SelectLocalization(IsZero_CFixedPoint(Country.GetGDPOwnedInForeignCountries), 'NO_OWNED_FOREIGN_GDP_BY_COUNTRY', 'OWNED_FOREIGN_GDP_BY_COUNTRY')]"
+
+ COUNTRY_ALL_GDP: "@money!#v [Country.GetGDPWithOwnershipsInForeignCountries|D]#!"
+ DOMESTIC_COUNTRY_GDP: "@money!#v [Country.GetGDP|D]#!"
+ FOREIGN_COUNTRY_GDP: "@money!#u [Country.GetGDPOwnedInForeignCountries|Db]#!"
+ COUNTRY_ALL_OWNERSHIP: "#u [Country.GetDomesticallyOwnedGDPFraction|%1b]#![ConcatIfNeitherEmpty(' + ', AddLocalizationIf(NotZero_CFixedPoint(Country.GetGDPOwnedInForeignCountries), 'FOREIGN_COUNTRY_GDP'))]"
+ 
+ ERROR_DEER_TOOLTIP:0 "#header Dangnabit!#!\n#instruction Left-Click#! открыть Лог ошибки\n#instruction Нажмите правой кнопкой мыши #!, чтобы удалить его (пока вы не расстроите его снова)."
+ ERROR_MANUL_TOOLTIP: "#header Обмани меня однажды, позор тебе. Вы обманываете меня - вы не можете обмануть снова!#!\n#instruction Левый клик#!, чтобы открыть Лог ошибки\n#instruction Нажмите правой кнопкой мыши #!, чтобы удалить его (пока вы не расстроите его снова)."
+ 
+ OH_DEER:0 ""#italic Позор вам? #! #bold [ErrorDeer.NumberOrErrors|v] #! #italic ошибка(ы)!#!"
+ ERROR_MANUL: "#italic #! #bold [ErrorDeer.NumberOrErrors|v] #! #italic выполненных миссий."
+ ERROR_DEER_SLOW_TICK_OPERATIONS:0 "#header Slow Tick Operations#!"

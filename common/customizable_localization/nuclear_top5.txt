@@ -1,0 +1,49 @@
+﻿# ==========================================
+# Top 5 nuclear powers display.
+# Reads pre-computed global vars set by nuclear_recompute_top_5
+# (runs monthly in 99_nuclear_on_actions.txt and once at game start).
+# Falls back to a "no nuclear powers" message when none exist.
+# ==========================================
+
+GetNuclearTop5Display = {
+	type = country
+
+	text = {
+		localization_key = nuclear_top_block_5
+		trigger = {
+			has_global_variable = nuclear_top_5
+		}
+	}
+
+	text = {
+		localization_key = nuclear_top_block_4
+		trigger = {
+			has_global_variable = nuclear_top_4
+		}
+	}
+
+	text = {
+		localization_key = nuclear_top_block_3
+		trigger = {
+			has_global_variable = nuclear_top_3
+		}
+	}
+
+	text = {
+		localization_key = nuclear_top_block_2
+		trigger = {
+			has_global_variable = nuclear_top_2
+		}
+	}
+
+	text = {
+		localization_key = nuclear_top_block_1
+		trigger = {
+			has_global_variable = nuclear_top_1
+		}
+	}
+
+	text = {
+		localization_key = nuclear_top_none
+	}
+}

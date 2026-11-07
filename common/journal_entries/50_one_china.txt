@@ -1,0 +1,86 @@
+﻿# ==========================================
+# ONE CHINA POLICY
+#
+# je_one_china_prc
+#   For c:PRC (PRC). Completes when China
+#   owns STATE_FORMOSA entirely.
+#   On complete: massive reunification bonus.
+#
+# je_one_china_roc
+#   For c:ROC (Taiwan). Completes when
+#   ROC has c:PRC as a subject.
+#   On complete: integration speed bonus
+#   to absorb the mainland.
+# ==========================================
+
+je_one_china_prc = {
+	icon = "gfx/interface/icons/event_icons/one_china.dds"
+
+	group = je_group_foreign_policy
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+
+	is_shown_when_inactive = {
+		c:PRC ?= this
+	}
+
+	possible = {
+		c:PRC ?= this
+	}
+
+	complete = {
+		owns_entire_state_region = STATE_FORMOSA
+	}
+
+	on_complete = {
+		add_modifier = {
+			name = one_china_reunification_bonus
+			months = -1
+		}
+	}
+
+	transferable = no
+	can_revolution_inherit = no
+	weight = 9000
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+je_one_china_roc = {
+	icon = "gfx/interface/icons/event_icons/taiwan.dds"
+
+	group = je_group_foreign_policy
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+
+	is_shown_when_inactive = {
+		c:ROC ?= this
+	}
+
+	possible = {
+		c:ROC ?= this
+	}
+
+	complete = {
+		OR = {
+		any_subject_country = {
+			c:PRC ?= this
+		}
+		AND = {
+			owns_entire_state_region = STATE_BEIJING
+			owns_entire_state_region = STATE_SHENGJING
+			}
+		}
+	}
+
+	on_complete = {
+		add_modifier = {
+			name = one_china_roc_integration_bonus
+			months = -1
+		}
+	}
+
+	transferable = no
+	can_revolution_inherit = no
+	weight = 9000
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

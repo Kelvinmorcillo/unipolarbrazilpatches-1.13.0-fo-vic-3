@@ -1,0 +1,242 @@
+﻿cartel_suppression_bar = {
+	name = "cartel_suppression_bar"
+	desc = "cartel_suppression_bar_desc"
+	default_bad = yes
+	is_inverted = yes
+
+	monthly_progress = {
+
+		# Advances while a general is deployed
+		if = {
+			limit = {
+				any_scope_character = {
+					has_variable = cartel_general_var
+				}
+			}
+			add = {
+				desc = "cartel_bar_general_active_tt"
+				value = 2
+			}
+		}
+
+		# High turmoil slows progress
+		if = {
+			limit = {
+				any_scope_state = {
+					is_incorporated = yes
+					turmoil >= 0.20
+				}
+			}
+			add = {
+				desc = "cartel_bar_turmoil_tt"
+				value = -1
+			}
+		}
+
+		# At war stretches the military
+		if = {
+			limit = { is_at_war = yes }
+			add = {
+				desc = "cartel_bar_at_war_tt"
+				value = -1
+			}
+		}
+	}
+
+	start_value = 0
+	min_value = 0
+	max_value = 100
+}
+
+mdw_suppression_bar = {
+	name = "mdw_suppression_bar"
+	desc = "mdw_suppression_bar_desc"
+	default_bad = yes
+	is_inverted = yes
+
+	monthly_progress = {
+
+		# Only advances after declaration + commander deployed
+		if = {
+			limit = {
+				has_variable = mdw_war_declared
+				any_scope_character = {
+					has_variable = mdw_commander_var
+				}
+			}
+			add = {
+				desc = "mdw_bar_commander_active_tt"
+				value = 2
+			}
+		}
+
+		# More states = slower progress
+		#if = {
+		#	limit = { var:mdw_state_count >= 3 }
+		#	add = {
+		#		desc = "mdw_bar_multiple_states_tt"
+		#		value = -0.5
+		#	}
+		#}
+		#if = {
+		#	limit = { var:mdw_state_count >= 5 }
+	#		add = {
+		#		desc = "mdw_bar_multiple_states_tt"
+		#		value = -0.5
+		#	}
+		#}
+	#	if = {
+	#		limit = { var:mdw_state_count >= 7 }
+	#		add = {
+	#			desc = "mdw_bar_multiple_states_tt"
+	#			value = -0.5
+		#	}
+		#}
+
+		# US military assistance pact
+		if = {
+			limit = {
+				any_scope_treaty = {
+				binds = c:USA
+				any_scope_article = {
+					has_type = military_assistance
+					}
+				}
+			}
+			add = {
+				desc = "mdw_bar_us_aid_tt"
+				value = 1
+			}
+		}
+
+		# Excess authority — state capacity drives the campaign
+		if = {
+			limit = { authority >= 200 }
+			add = {
+				desc = "mdw_bar_excess_authority_tt"
+				value = 0.5
+			}
+		}
+		if = {
+			limit = { authority >= 400 }
+			add = {
+				desc = "mdw_bar_excess_authority_tt"
+				value = 0.5
+			}
+		}
+
+		# High legitimacy means public support for the war
+		if = {
+			limit = { country_legitimacy >= 70 }
+			add = {
+				desc = "mdw_bar_legitimacy_tt"
+				value = 0.5
+			}
+		}
+
+		# Experienced commander trait bonus
+		if = {
+			limit = {
+				any_scope_character = {
+					has_variable = mdw_commander_var
+					OR = {
+						has_trait = trait_tactician
+						has_trait = trait_aggressive_attacker
+					}
+				}
+			}
+			add = {
+				desc = "mdw_bar_good_commander_tt"
+				value = 1
+			}
+		}
+
+		# At war elsewhere drains resources
+		if = {
+			limit = { is_at_war = yes }
+			add = {
+				desc = "mdw_bar_at_war_tt"
+				value = -1
+			}
+		}
+
+		# High national turmoil slows progress
+		if = {
+			limit = { country_turmoil >= 0.20 }
+			add = {
+				desc = "mdw_bar_turmoil_tt"
+				value = -1
+			}
+		}
+	}
+
+	start_value = 0
+	min_value = 0
+	max_value = 100
+}
+
+mdw_peril_bar = {
+	name = "mdw_peril_bar"
+	desc = "mdw_peril_bar_desc"
+	default_bad = yes
+	is_inverted = no
+
+	monthly_progress = {
+
+		if = {
+			limit = {
+				has_variable = mdw_war_declared
+				any_scope_character = {
+					has_variable = mdw_commander_var
+				}
+			}
+			add = {
+				desc = "mdw_peril_base_tt"
+				value = 0.5
+			}
+		}
+
+		# More cartel states = more exposure
+		#if = {
+		#	limit = { var:mdw_state_count >= 5 }
+		#	add = {
+		#		desc = "mdw_peril_multiple_states_tt"
+		#		value = 0.25
+		#	}
+		#}
+
+		# US aid reduces cartel capability
+		if = {
+			limit = {
+				any_scope_treaty = {
+				binds = c:USA
+				any_scope_article = {
+					has_type = military_assistance
+					}
+				}
+			}
+			add = {
+				desc = "mdw_peril_us_aid_tt"
+				value = -0.25
+			}
+		}
+
+		# Cautious commander reduces personal risk
+		if = {
+			limit = {
+				any_scope_character = {
+					has_variable = mdw_commander_var
+					has_trait = trait_cautious
+				}
+			}
+			add = {
+				desc = "mdw_peril_cautious_tt"
+				value = -0.25
+			}
+		}
+	}
+
+	start_value = 0
+	min_value = 0
+	max_value = 100
+}

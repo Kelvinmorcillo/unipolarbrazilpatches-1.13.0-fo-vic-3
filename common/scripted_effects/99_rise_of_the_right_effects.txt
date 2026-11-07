@@ -1,0 +1,62 @@
+# The Rise of the Right scripted effects
+
+rise_of_the_right_initialize = {
+	if = {
+		limit = { NOT = { has_variable = rise_of_the_right_years_active } }
+		set_variable = { name = rise_of_the_right_years_active value = 0 }
+	}
+
+	add_modifier = {
+		name = rise_of_the_right_baseline
+		days = -1
+	}
+
+	add_modifier = {
+		name = rise_of_the_right_populist_leader_spawn_tooltip_modifier
+		days = -1
+	}
+}
+
+rise_of_the_right_monthly_tick = {
+	if = {
+		limit = {
+			rise_of_the_right_active_country = yes
+		}
+
+		random_list = {
+			130 = { }
+			10 = { trigger_event = { id = rise_of_the_right.10 popup = yes } }
+			10 = { trigger_event = { id = rise_of_the_right.11 popup = yes } }
+			10 = { trigger_event = { id = rise_of_the_right.12 popup = yes } }
+			8 = { trigger_event = { id = rise_of_the_right.13 popup = yes } }
+		}
+	}
+}
+
+rise_of_the_right_yearly_tick = {
+	if = {
+		limit = {
+			rise_of_the_right_active_country = yes
+		}
+
+		change_variable = { name = rise_of_the_right_years_active add = 1 }
+
+		if = {
+			limit = {
+				game_date >= 2035.1.1
+			}
+			set_variable = rise_of_the_right_resolved
+		}
+	}
+}
+
+rise_of_the_right_cleanup = {
+	remove_modifier = rise_of_the_right_baseline
+	remove_modifier = rise_of_the_right_populist_surge
+	remove_modifier = rise_of_the_right_migration_backlash
+	remove_modifier = rise_of_the_right_online_radicalization
+	remove_modifier = rise_of_the_right_establishment_response
+	remove_modifier = rise_of_the_right_populist_leader_spawn_tooltip_modifier
+
+	set_variable = rise_of_the_right_resolved
+}

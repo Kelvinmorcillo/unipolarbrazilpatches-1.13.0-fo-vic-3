@@ -1,0 +1,610 @@
+﻿namespace = womens_rights_laws
+
+
+# ==========================================
+# womens_rights_laws.1
+# "The Letter of the Law"
+# Fires when enacting legal protections.
+# Lawyers and reformers argue over how
+# far the legislation should reach.
+# checkpoint_advance
+# ==========================================
+
+womens_rights_laws.1 = {
+	type = country_event
+	placement = ROOT
+
+	title = womens_rights_laws.1.t
+	desc = womens_rights_laws.1.d
+	flavor = womens_rights_laws.1.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_legal_protections
+		NOT = { has_modifier = womens_rights_legal_scope }
+		any_interest_group = {
+			is_interest_group_type = ig_intelligentsia
+			ig_counts_as_marginal = no
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = womens_rights_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				is_interest_group_type = ig_intelligentsia
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = intelligentsia_ig
+			leader = {
+				save_scope_as = intelligentsia_leader
+			}
+		}
+	}
+
+	# Option A: Broad protections — write them into every institution
+	option = {
+		name = womens_rights_laws.1.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = womens_rights_legal_scope
+		}
+		scope:intelligentsia_ig = {
+			add_modifier = {
+				name = womens_rights_intelligentsia_engaged
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				trigger = {
+					exists = ruler
+					ruler = {
+						OR = {
+							has_ideology = ideology_progressive_leader
+							has_ideology = ideology_liberal_leader
+						}
+					}
+				}
+				add = 20
+			}
+		}
+	}
+
+	# Option B: Narrow protections — limit scope to avoid a constitutional fight
+	option = {
+		name = womens_rights_laws.1.b
+		add_enactment_modifier = {
+			name = womens_rights_legal_scope
+		}
+		add_enactment_modifier = {
+			name = womens_rights_narrow_scope
+		}
+		scope:intelligentsia_ig = {
+			add_modifier = {
+				name = womens_rights_intelligentsia_disappointed
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 40 }
+	}
+}
+
+
+# ==========================================
+# womens_rights_laws.2
+# "The Traditionalist Objection"
+# Fires when enacting legal protections.
+# Conservative IGs warn that the law
+# undermines the natural social order.
+# checkpoint_debate
+# ==========================================
+
+womens_rights_laws.2 = {
+	type = country_event
+	placement = ROOT
+
+	title = womens_rights_laws.2.t
+	desc = womens_rights_laws.2.d
+	flavor = womens_rights_laws.2.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_legal_protections
+		NOT = { has_modifier = womens_rights_traditionalist_debate }
+		any_interest_group = {
+			OR = {
+				is_interest_group_type = ig_landowners
+				is_interest_group_type = ig_devout
+			}
+			ig_counts_as_marginal = no
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = womens_rights_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				OR = {
+					is_interest_group_type = ig_landowners
+					is_interest_group_type = ig_devout
+				}
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = conservative_ig
+			leader = {
+				save_scope_as = conservative_leader
+			}
+		}
+	}
+
+	# Option A: Meet them publicly — rebut their case in open debate
+	option = {
+		name = womens_rights_laws.2.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = womens_rights_traditionalist_debate
+		}
+		scope:conservative_ig = {
+			add_modifier = {
+				name = womens_rights_conservatives_rebuked
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = {
+			base = 55
+			modifier = {
+				trigger = {
+					exists = ruler
+					ruler = {
+						OR = {
+							has_ideology = ideology_progressive_leader
+							has_ideology = ideology_liberal_leader
+						}
+					}
+				}
+				add = 20
+			}
+		}
+	}
+
+	# Option B: Let the opposition air its grievances — avoid escalating
+	option = {
+		name = womens_rights_laws.2.b
+		add_enactment_modifier = {
+			name = womens_rights_traditionalist_debate
+		}
+		scope:conservative_ig = {
+			add_modifier = {
+				name = womens_rights_conservatives_placated
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 45 }
+	}
+}
+
+
+# ==========================================
+# womens_rights_laws.3
+# "The Employers Push Back"
+# Fires when enacting structural egalitarianism.
+# Business interests resist mandated
+# representation as an interference in
+# private hiring.
+# checkpoint_stall
+# ==========================================
+
+womens_rights_laws.3 = {
+	type = country_event
+	placement = ROOT
+
+	title = womens_rights_laws.3.t
+	desc = womens_rights_laws.3.d
+	flavor = womens_rights_laws.3.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_structural_egalitarianism
+		NOT = { has_modifier = womens_rights_employer_resistance }
+		any_interest_group = {
+			is_interest_group_type = ig_petty_bourgeoisie
+			ig_counts_as_marginal = no
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = womens_rights_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				is_interest_group_type = ig_petty_bourgeoisie
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = employer_ig
+			leader = {
+				save_scope_as = employer_leader
+			}
+		}
+	}
+
+	# Option A: Hold firm — mandate compliance with no exceptions
+	option = {
+		name = womens_rights_laws.3.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = womens_rights_employer_resistance
+		}
+		scope:employer_ig = {
+			add_modifier = {
+				name = womens_rights_employers_overruled
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				trigger = {
+					exists = ruler
+					ruler = {
+						OR = {
+							has_ideology = ideology_progressive_leader
+							has_ideology = ideology_socialist_leader
+							has_ideology = ideology_communist_leader
+						}
+					}
+				}
+				add = 25
+			}
+		}
+	}
+
+	# Option B: Offer a phased transition — give employers time to adjust
+	option = {
+		name = womens_rights_laws.3.b
+		add_enactment_modifier = {
+			name = womens_rights_employer_resistance
+		}
+		scope:employer_ig = {
+			add_modifier = {
+				name = womens_rights_employers_appeased
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 50 }
+	}
+}
+
+
+# ==========================================
+# womens_rights_laws.4
+# "Women in Public Life"
+# Fires when enacting structural egalitarianism.
+# The trade unions rally — working women
+# are the backbone of the movement.
+# checkpoint_advance
+# ==========================================
+
+womens_rights_laws.4 = {
+	type = country_event
+	placement = ROOT
+
+	title = womens_rights_laws.4.t
+	desc = womens_rights_laws.4.d
+	flavor = womens_rights_laws.4.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_structural_egalitarianism
+		NOT = { has_modifier = womens_rights_union_mobilization }
+		any_interest_group = {
+			is_interest_group_type = ig_trade_unions
+			ig_counts_as_marginal = no
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = womens_rights_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				is_interest_group_type = ig_trade_unions
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = union_ig
+			leader = {
+				save_scope_as = union_leader
+			}
+		}
+	}
+
+	# Option A: Make it a joint cause — working women and organised labour together
+	option = {
+		name = womens_rights_laws.4.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = womens_rights_union_mobilization
+		}
+		scope:union_ig = {
+			add_modifier = {
+				name = womens_rights_unions_allied
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				trigger = {
+					exists = ruler
+					ruler = {
+						OR = {
+							has_ideology = ideology_socialist_leader
+							has_ideology = ideology_communist_leader
+						}
+					}
+				}
+				add = 20
+			}
+		}
+	}
+
+	# Option B: Keep the movements distinct — the law stands on its own merits
+	option = {
+		name = womens_rights_laws.4.b
+		add_enactment_modifier = {
+			name = womens_rights_union_mobilization
+		}
+		scope:union_ig = {
+			add_modifier = {
+				name = womens_rights_unions_neutral
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 40 }
+	}
+}
+
+
+# ==========================================
+# womens_rights_laws.5
+# "A Society Transformed"
+# Fires when enacting matriarchy.
+# The scale of the change provokes a
+# fierce reaction from entrenched interests.
+# checkpoint_debate
+# ==========================================
+
+womens_rights_laws.5 = {
+	type = country_event
+	placement = ROOT
+
+	title = womens_rights_laws.5.t
+	desc = womens_rights_laws.5.d
+	flavor = womens_rights_laws.5.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_matriarchy
+		NOT = { has_modifier = womens_rights_societal_backlash }
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = womens_rights_law_scope
+		}
+	}
+
+	# Option A: Confront the backlash head-on — the arc of history bends forward
+	option = {
+		name = womens_rights_laws.5.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = womens_rights_societal_backlash
+		}
+		add_enactment_modifier = {
+			name = womens_rights_vanguard_push
+		}
+		ai_chance = {
+			base = 55
+			modifier = {
+				trigger = {
+					exists = ruler
+					ruler = {
+						OR = {
+							has_ideology = ideology_progressive_leader
+							has_ideology = ideology_socialist_leader
+							has_ideology = ideology_communist_leader
+						}
+					}
+				}
+				add = 25
+			}
+		}
+	}
+
+	# Option B: Weather the storm quietly — let the law speak for itself
+	option = {
+		name = womens_rights_laws.5.b
+		add_enactment_modifier = {
+			name = womens_rights_societal_backlash
+		}
+		ai_chance = { base = 45 }
+	}
+}
+
+
+# ==========================================
+# womens_rights_laws.6
+# "The Old Guard Resists"
+# Fires when enacting matriarchy.
+# Landowners and the devout mount an
+# organised opposition to the radical
+# restructuring of society.
+# checkpoint_stall
+# ==========================================
+
+womens_rights_laws.6 = {
+	type = country_event
+	placement = ROOT
+
+	title = womens_rights_laws.6.t
+	desc = womens_rights_laws.6.d
+	flavor = womens_rights_laws.6.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_matriarchy
+		NOT = { has_modifier = womens_rights_old_guard_opposition }
+		any_interest_group = {
+			OR = {
+				is_interest_group_type = ig_landowners
+				is_interest_group_type = ig_devout
+			}
+			ig_counts_as_marginal = no
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = womens_rights_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				OR = {
+					is_interest_group_type = ig_landowners
+					is_interest_group_type = ig_devout
+				}
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = old_guard_ig
+			leader = {
+				save_scope_as = old_guard_leader
+			}
+		}
+	}
+
+	# Option A: Crush the opposition — this government will not be held hostage
+	option = {
+		name = womens_rights_laws.6.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = womens_rights_old_guard_opposition
+		}
+		scope:old_guard_ig = {
+			add_modifier = {
+				name = womens_rights_old_guard_suppressed
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				trigger = {
+					exists = ruler
+					ruler = {
+						OR = {
+							has_ideology = ideology_progressive_leader
+							has_ideology = ideology_socialist_leader
+							has_ideology = ideology_communist_leader
+						}
+					}
+				}
+				add = 20
+			}
+		}
+	}
+
+	# Option B: Negotiate — offer cultural concessions to reduce friction
+	option = {
+		name = womens_rights_laws.6.b
+		add_enactment_modifier = {
+			name = womens_rights_old_guard_opposition
+		}
+		scope:old_guard_ig = {
+			add_modifier = {
+				name = womens_rights_old_guard_negotiated
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 50 }
+	}
+}

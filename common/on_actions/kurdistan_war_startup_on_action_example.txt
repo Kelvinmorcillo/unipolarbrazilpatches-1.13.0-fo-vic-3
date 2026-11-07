@@ -1,0 +1,78 @@
+
+on_game_started_after_lobby = {
+	effect = {
+		start_kurdistan_war_journal_entry_system = yes
+		every_country = {
+	# ---------------- Healthcare ----------------
+	set_variable = {
+		name = smd_healthcare_expense_tmp
+		value = smd_healthcare_expense_value
+	}
+	if = {
+		limit = { var:smd_healthcare_expense_tmp > 0 }
+		if = {
+			limit = { has_modifier = smd_healthcare_expense_modifier }
+			remove_modifier = smd_healthcare_expense_modifier
+		}
+		add_modifier = {
+			name = smd_healthcare_expense_modifier
+			multiplier = var:smd_healthcare_expense_tmp
+			is_hidden = yes
+		}
+	}
+	else_if = {
+		limit = { has_modifier = smd_healthcare_expense_modifier }
+		remove_modifier = smd_healthcare_expense_modifier
+	}
+	remove_variable = smd_healthcare_expense_tmp
+
+	# ---------------- Education ----------------
+	set_variable = {
+		name = smd_education_expense_tmp
+		value = smd_education_expense_value
+	}
+	if = {
+		limit = { var:smd_education_expense_tmp > 0 }
+		if = {
+			limit = { has_modifier = smd_education_expense_modifier }
+			remove_modifier = smd_education_expense_modifier
+		}
+		add_modifier = {
+			name = smd_education_expense_modifier
+			multiplier = var:smd_education_expense_tmp
+			is_hidden = yes
+		}
+	}
+	else_if = {
+		limit = { has_modifier = smd_education_expense_modifier }
+		remove_modifier = smd_education_expense_modifier
+	}
+	remove_variable = smd_education_expense_tmp
+
+	# ---------------- Police ----------------
+	set_variable = {
+		name = smd_police_expense_tmp
+		value = smd_police_expense_value
+	}
+	if = {
+		limit = { var:smd_police_expense_tmp > 0 }
+		if = {
+			limit = { has_modifier = smd_police_expense_modifier }
+			remove_modifier = smd_police_expense_modifier
+		}
+		add_modifier = {
+			name = smd_police_expense_modifier
+			multiplier = var:smd_police_expense_tmp
+			is_hidden = yes
+		}
+	}
+	else_if = {
+		limit = { has_modifier = smd_police_expense_modifier }
+		remove_modifier = smd_police_expense_modifier
+	}
+	remove_variable = smd_police_expense_tmp
+	smd_apply_public_service_expenses = yes
+	}
+	
+	}
+}

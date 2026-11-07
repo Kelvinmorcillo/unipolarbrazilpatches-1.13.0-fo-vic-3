@@ -1,0 +1,102 @@
+﻿namespace = rwandan_genocide
+
+# Genocide Begins
+rwandan_genocide.1 = {
+    type = country_event
+    placement = ROOT
+    title = rwandan_genocide.1.t
+    desc = rwandan_genocide.1.d
+    event_image = { video = "safari" }
+
+    trigger = {
+		c:RWA ?= this
+        game_date >= 1994.04.01
+        game_date <= 1994.12.31
+		NOT = { has_variable = genocide_started }
+        NOT = { has_variable = genocide_ended }
+    }
+
+    immediate = {
+        set_variable = genocide_started
+        set_variable = { genocide_progress value = 0 }
+    }
+
+    option = {
+        name = rwandan_genocide.1.a
+        add_radicals = { value = 0.05 }
+		custom_tooltip = {
+			text = the_genocide_progresses_by_15
+			change_variable = { name = genocide_progress add = 15 }
+		}
+		add_modifier = {
+            name = rwandan_genocide
+            days = 200
+        }
+		hidden_effect = { 
+			trigger_event = { id = rwandan_genocide.2 days = 30 }
+		}
+    }
+}
+
+# Massacres Continue
+rwandan_genocide.2 = {
+    type = country_event
+    placement = ROOT
+    title = rwandan_genocide.2.t
+    desc = rwandan_genocide.2.d
+    event_image = { video = "africa_animism" }
+
+    trigger = {
+        has_variable = genocide_started
+		NOT = { has_variable = massacres_continued }
+        NOT = { has_variable = genocide_ended }
+        c:RWA ?= this
+        game_date >= 1994.04.01
+        game_date <= 1994.12.31
+    }
+
+    option = {
+        name = rwandan_genocide.2.a
+        add_radicals = { value = 0.03 }
+        custom_tooltip = {
+			text = the_genocide_progresses_by_20
+			change_variable = { name = genocide_progress add = 20 }
+		}
+		trigger_event = { id = rwandan_genocide.3 days = 30 }
+		set_variable = massacres_continued
+    }
+}
+
+# International Outcry
+rwandan_genocide.3 = {
+    type = country_event
+    placement = ROOT
+    title = rwandan_genocide.3.t
+    desc = rwandan_genocide.3.d
+    event_image = { video = "parliament" }
+
+    option = {
+        name = rwandan_genocide.3.a
+        custom_tooltip = rwandan_genocide_request_peacekeepers_tt
+        every_country = {
+			limit = { has_modifier = permanent_unsc_member }
+			trigger_event = { id = un_events.2 days = 1 }
+		}
+		set_global_variable = {
+			name = peacekeeper_requestor
+			value = ROOT
+		}
+    }
+    option = {
+        name = rwandan_genocide.3.b
+        add_radicals = { value = 0.02 }
+		custom_tooltip = rwandan_genocide_community_angry
+        every_country = {
+			limit = { has_modifier = permanent_unsc_member }
+			change_relations = {
+				country = c:RWA
+				value = -30
+				}
+		}
+    }
+}

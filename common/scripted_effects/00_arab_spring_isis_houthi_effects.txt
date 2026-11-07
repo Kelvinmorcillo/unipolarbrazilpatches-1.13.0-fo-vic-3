@@ -1,0 +1,509 @@
+
+# Core idea:
+# - If SYR or IRQ undergo a revolution during the Arab Spring, ISIS forms.
+
+
+arab_spring_check_isis_houthi_breakaways = {
+	if = {
+		limit = {
+			has_global_variable = arab_spring_happening
+			NOT = { has_global_variable = arab_spring_happened }
+			NOT = { has_variable = arab_spring_breakaway_checked }
+			OR = {
+				has_journal_entry = je_arab_spring
+				has_variable = had_arab_spring_revolution
+				capital = { is_in_revolt = yes }
+				any_political_movement = { is_insurrectionary = yes }
+				is_at_war = yes
+			}
+		}
+		set_variable = arab_spring_breakaway_checked
+
+		if = {
+			limit = {
+				OR = {
+					c:SYR ?= this
+					c:IRQ ?= this
+				}
+			}
+			arab_spring_form_isis_core = yes
+		}
+
+		if = {
+			limit = {
+				OR = {
+					c:YEM ?= this
+					c:SML ?= this
+					c:AFG ?= this
+				}
+			}
+			arab_spring_spawn_isis_random_provinces = yes
+		}
+
+		if = {
+			limit = {
+				c:YEM ?= this
+			}
+			arab_spring_spawn_houthis_random_provinces = yes
+		}
+	}
+}
+
+arab_spring_form_isis_core = {
+	save_scope_as = arab_spring_parent_country
+
+	create_country = { tag = DIS origin = c:AFG province = p:xBD22F1 }
+	
+	if = {
+		limit = {
+			exists = c:DIS
+			NOT = { c:DIS = { has_variable = arab_spring_isis_formed } }
+		}
+		c:DIS = {
+			set_variable = arab_spring_isis_formed
+			set_variable = { name = arab_spring_isis_parent_country value = scope:arab_spring_parent_country }
+		}
+
+		if = {
+			limit = { c:SYR ?= scope:arab_spring_parent_country }
+			s:STATE_BAGHDAD ={
+				set_owner_of_provinces = {
+				 country = c:DIS
+				 provinces = { x281DD3 x281DD3 }
+				}
+			}
+			s:STATE_MOSUL ={
+				set_owner_of_provinces = {
+				 country = c:DIS
+				 provinces = { xE67DB6 x1F78F4 x6F55BA xF98995 }
+				}
+			}
+			s:STATE_DEIR_EZ_ZOR ={
+				set_owner_of_provinces = {
+				 country = c:DIS
+				 provinces = { xA6B14C x519F26 xF5D646 x479916 x1B437C x24B968 }
+				}
+			}
+		}
+		
+		c:DIS = {
+			arab_spring_create_isis_military_formations = yes
+			trigger_event = { id = arab_spring_jihadist_breakaways.1 popup = yes }
+		}
+
+		arab_spring_make_isis_join_parent_conflicts = yes
+	}
+}
+
+arab_spring_spawn_isis_random_provinces = {
+	save_scope_as = arab_spring_parent_country
+
+	if = {
+		limit = {
+			exists = c:DIS
+			NOT = { c:DIS = { has_variable = arab_spring_isis_spawned_from_periphery } }
+		}
+		c:DIS = {
+			set_variable = arab_spring_isis_spawned_from_periphery
+			set_variable = { name = arab_spring_isis_parent_country value = scope:arab_spring_parent_country }
+		}
+
+		random_scope_state = {
+			limit = {
+				is_incorporated = yes
+				owner = scope:arab_spring_parent_country
+			}
+			random_province = {
+				limit = { owner = scope:arab_spring_parent_country }
+				set_owner = c:DIS
+			}
+			random_province = {
+				limit = { owner = scope:arab_spring_parent_country }
+				set_owner = c:DIS
+			}
+		}
+
+		random_scope_state = {
+			limit = {
+				is_incorporated = yes
+				owner = scope:arab_spring_parent_country
+			}
+			random_province = {
+				limit = { owner = scope:arab_spring_parent_country }
+				set_owner = c:DIS
+			}
+			random_province = {
+				limit = { owner = scope:arab_spring_parent_country }
+				set_owner = c:DIS
+			}
+		}
+
+		random_scope_state = {
+			limit = {
+				is_incorporated = yes
+				owner = scope:arab_spring_parent_country
+				is_capital = no
+			}
+			random_province = {
+				limit = { owner = scope:arab_spring_parent_country }
+				set_owner = c:DIS
+			}
+		}
+
+		c:DIS = {
+			arab_spring_create_isis_military_formations = yes
+			trigger_event = { id = arab_spring_jihadist_breakaways.2 popup = yes }
+		}
+
+		arab_spring_make_isis_join_parent_conflicts = yes
+	}
+}
+
+arab_spring_spawn_houthis_random_provinces = {
+	save_scope_as = arab_spring_parent_country
+
+	if = {
+		limit = {
+			exists = c:HOU
+			NOT = { c:HOU = { has_variable = arab_spring_houthis_spawned } }
+		}
+		c:HOU = {
+			set_variable = arab_spring_houthis_spawned
+			set_variable = { name = arab_spring_houthi_parent_country value = scope:arab_spring_parent_country }
+		}
+
+		# Yemen-specific Houthi province grab.
+		# Replace these with northern Yemen state keys if desired.
+		random_scope_state = {
+			limit = {
+				is_incorporated = yes
+				owner = scope:arab_spring_parent_country
+				is_capital = no
+			}
+			random_province = {
+				limit = { owner = scope:arab_spring_parent_country }
+				set_owner = c:HOU
+			}
+			random_province = {
+				limit = { owner = scope:arab_spring_parent_country }
+				set_owner = c:HOU
+			}
+		}
+
+		random_scope_state = {
+			limit = {
+				is_incorporated = yes
+				owner = scope:arab_spring_parent_country
+				is_capital = no
+			}
+			random_province = {
+				limit = { owner = scope:arab_spring_parent_country }
+				set_owner = c:HOU
+			}
+			random_province = {
+				limit = { owner = scope:arab_spring_parent_country }
+				set_owner = c:HOU
+			}
+		}
+
+		c:HOU = {
+			arab_spring_create_houthi_military_formations = yes
+			trigger_event = { id = arab_spring_jihadist_breakaways.3 popup = yes }
+		}
+
+		arab_spring_make_houthis_join_parent_conflicts = yes
+	}
+}
+
+arab_spring_create_isis_military_formations = {
+	if = {
+		limit = { NOT = { has_variable = arab_spring_isis_forces_created } }
+		set_variable = arab_spring_isis_forces_created
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_middle_east
+			name = "Islamic_State_Forces"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = capital.state_region
+				count = 12
+			}
+		}
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_middle_east
+			name = "Jihadist_Field_Columns"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = capital.state_region
+				count = 8
+			}
+		}
+	}
+}
+
+arab_spring_create_houthi_military_formations = {
+	if = {
+		limit = { NOT = { has_variable = arab_spring_houthi_forces_created } }
+		set_variable = arab_spring_houthi_forces_created
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_middle_east
+			name = "Houthi_Movement_Forces"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = capital.state_region
+				count = 10
+			}
+		}
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_middle_east
+			name = "Ansar_Allah_Field_Forces"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = capital.state_region
+				count = 6
+			}
+		}
+	}
+}
+
+# Breakaway conflict hook.
+
+arab_spring_make_isis_join_parent_conflicts = {
+	save_scope_as = arab_spring_parent_country_for_war
+
+	if = {
+		limit = { exists = c:DIS }
+		c:DIS = { save_scope_as = arab_spring_breakaway_country_for_war }
+
+		# Join active wars against the parent.
+		random_scope_war = {
+			limit = {
+				is_war_participant = scope:arab_spring_parent_country_for_war
+				NOT = { is_war_participant = c:DIS }
+			}
+
+			if = {
+				limit = {
+					scope:arab_spring_parent_country_for_war = {
+						is_in_war_together = attacker_warleader
+					}
+				}
+				join_war = {
+					target = c:DIS
+					side = defender_warleader
+				}
+			}
+			else_if = {
+				limit = {
+					scope:arab_spring_parent_country_for_war = {
+						is_in_war_together = defender_warleader
+					}
+				}
+				join_war = {
+					target = c:DIS
+					side = attacker_warleader
+				}
+			}
+		}
+
+		# Join active diplomatic plays against the parent where parent side is obvious.
+		random_diplomatic_play = {
+			limit = {
+				is_war = no
+				any_scope_play_involved = { THIS = scope:arab_spring_parent_country_for_war }
+				NOT = { any_scope_play_involved = { THIS = c:DIS } }
+			}
+
+			if = {
+				limit = {
+					initiator_is = scope:arab_spring_parent_country_for_war
+				}
+				add_target_backers = { c:DIS }
+			}
+			else_if = {
+				limit = {
+					target_is = scope:arab_spring_parent_country_for_war
+				}
+				add_initiator_backers = { c:DIS }
+			}
+		}
+
+		# Make sure there is at least a direct conflict if no suitable war/play join was possible.
+		if = {
+			limit = {
+				NOT = { c:DIS = { has_war_with = scope:arab_spring_parent_country_for_war } }
+			}
+			c:DIS = {
+				create_diplomatic_play = {
+					name = arab_spring_isis_insurgency_play
+					type = dp_conquer_state
+					initiator = c:DIS
+					target = scope:arab_spring_parent_country_for_war
+					war = yes
+					escalation = 90
+					add_war_goal = {
+						holder = c:DIS
+						type = conquer_state
+						target_country = scope:arab_spring_parent_country_for_war
+						primary_demand = yes
+					}
+				}
+			}
+		}
+
+		# If DIS is now in a war with the parent, add a containment/humiliation style goal
+		# against the parent so the war has a clean anti-insurgency demand.
+		c:DIS = {
+			random_diplomatic_play = {
+				limit = {
+					is_war = yes
+					any_scope_play_involved = { THIS = c:DIS }
+					any_scope_play_involved = { THIS = scope:arab_spring_parent_country_for_war }
+				}
+				if = {
+					limit = {
+						NOT = {
+							c:DIS = {
+								war_participant_has_war_goal_of_type_against = {
+									type = humiliation
+									target = scope:arab_spring_parent_country_for_war
+								}
+							}
+						}
+					}
+					add_war_goal = {
+						holder = c:DIS
+						type = humiliation
+						primary_demand = no
+						target_country = scope:arab_spring_parent_country_for_war
+					}
+				}
+			}
+		}
+	}
+}
+
+arab_spring_make_houthis_join_parent_conflicts = {
+	save_scope_as = arab_spring_parent_country_for_war
+
+	if = {
+		limit = { exists = c:HOU }
+		c:HOU = { save_scope_as = arab_spring_breakaway_country_for_war }
+
+		# Join active wars against the parent.
+		random_scope_war = {
+			limit = {
+				is_war_participant = scope:arab_spring_parent_country_for_war
+				NOT = { is_war_participant = c:HOU }
+			}
+
+			if = {
+				limit = {
+					scope:arab_spring_parent_country_for_war = {
+						is_in_war_together = attacker_warleader
+					}
+				}
+				join_war = {
+					target = c:HOU
+					side = defender_warleader
+				}
+			}
+			else_if = {
+				limit = {
+					scope:arab_spring_parent_country_for_war = {
+						is_in_war_together = defender_warleader
+					}
+				}
+				join_war = {
+					target = c:HOU
+					side = attacker_warleader
+				}
+			}
+		}
+
+		# Join active diplomatic plays against the parent where parent side is obvious.
+		random_diplomatic_play = {
+			limit = {
+				is_war = no
+				any_scope_play_involved = { THIS = scope:arab_spring_parent_country_for_war }
+				NOT = { any_scope_play_involved = { THIS = c:HOU } }
+			}
+
+			if = {
+				limit = {
+					initiator_is = scope:arab_spring_parent_country_for_war
+				}
+				add_target_backers = { c:HOU }
+			}
+			else_if = {
+				limit = {
+					target_is = scope:arab_spring_parent_country_for_war
+				}
+				add_initiator_backers = { c:HOU }
+			}
+		}
+
+		# Make sure there is at least a direct conflict if no suitable war/play join was possible.
+		if = {
+			limit = {
+				NOT = { c:HOU = { has_war_with = scope:arab_spring_parent_country_for_war } }
+			}
+			c:HOU = {
+				create_diplomatic_play = {
+					name = arab_spring_houthi_insurgency_play
+					type = dp_conquer_state
+					initiator = c:HOU
+					target = scope:arab_spring_parent_country_for_war
+					war = yes
+					escalation = 90
+					add_war_goal = {
+						holder = c:HOU
+						type = conquer_state
+						target_country = scope:arab_spring_parent_country_for_war
+						primary_demand = yes
+					}
+				}
+			}
+		}
+
+		# Add a wargoal against Yemen/parent in the active conflict.
+		c:HOU = {
+			random_diplomatic_play = {
+				limit = {
+					is_war = yes
+					any_scope_play_involved = { THIS = c:HOU }
+					any_scope_play_involved = { THIS = scope:arab_spring_parent_country_for_war }
+				}
+				if = {
+					limit = {
+						NOT = {
+							c:HOU = {
+								war_participant_has_war_goal_of_type_against = {
+									type = humiliation
+									target = scope:arab_spring_parent_country_for_war
+								}
+							}
+						}
+					}
+					add_war_goal = {
+						holder = c:HOU
+						type = humiliation
+						primary_demand = no
+						target_country = scope:arab_spring_parent_country_for_war
+					}
+				}
+			}
+		}
+	}
+}

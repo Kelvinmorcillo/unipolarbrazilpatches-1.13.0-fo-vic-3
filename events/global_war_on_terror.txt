@@ -1,0 +1,46 @@
+﻿namespace = global_wot
+
+# World notification of the attacks (fires for every non-USA country when USA has the variable)
+global_wot.1 = {
+    type = country_event
+    placement = ROOT
+    title = global_wot.1.t
+    desc = global_wot.1.d
+    event_image = { video = "9_11" }
+	duration = 2
+    option = { name = global_wot.1.a }
+}
+
+# World notification of the US declaration of the War on Terror (fires for every non-USA country)
+global_wot.2 = {
+    type = country_event
+    placement = ROOT
+    title = global_wot.2.t
+    desc = global_wot.2.d
+    event_image = { video = "waronterror" }
+	duration = 2
+    trigger = {
+         NOT = { c:USA ?= this }
+        c:USA = { has_variable = war_on_terror_campaign }
+    }
+
+    option = { name = global_wot.2.a }
+}
+
+global_wot.3 = {
+    type = country_event
+    placement = ROOT
+    title = global_wot.3.t
+    desc = global_wot.3.d
+    event_image = { video = "waronterror" }
+
+    trigger = {
+        NOT = { c:USA ?= this }
+    }
+
+    immediate = { }
+
+    option = {
+        name = global_wot.3.a
+    }
+}

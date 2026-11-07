@@ -1,0 +1,7 @@
+﻿l_simp_chinese:
+
+# replace folder is the best thing to happen to me since december 11
+ concept_literacy:0 "高等教育率"
+ concept_literate:0 "受过高等教育"
+ concept_literacy_desc:2 "从高等院校毕业的 " x id=0 " 个人的百分比或绝对人数。 某些[Concept('concept_profession', '$concept_professions$')]要求的$concept_literacy$高于其他要求,将[concept_pop_qualifications]的$concept_pops$限制在其他$concept_professions$中,除非它们的$concept_literacy$足够高. 您可以在[SelectLocalization(GetPlayer.IsValid,'concept_literacy_desc_added','Education')]中投资,以便在你的$concept_population$中开发出更高的$concept_literacy$。<x id=10×××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××"
+ concept_literacy_desc_added:0 "[GetInstitutionType('institution_schools').GetName]"

@@ -1,0 +1,7 @@
+﻿l_russian:
+
+# replace folder is the best thing to happen to me since december 11
+ concept_literacy:0 "Уровень высшего образования"
+ concept_literate:0 "Образованный колледж"
+ concept_literacy_desc:2 "Процент или абсолютное число лиц в [concept_pop], окончивших высшее учебное заведение. Некоторые [Concept('concept_profession', '$concept_professions$')] требуют более высокого $concept_literacy$, чем другие, ограничивая [concept_pop_qualifications] для $concept_pops$ в других $concept_professions$, если их $concept_literacy$ недостаточно высок. Вы можете инвестировать в свой [SelectLocalization(GetPlayer.IsValid,'concept_literacy_desc_added','Education')], чтобы развить более высокий $concept_literacy$ в вашем $concept_population$ с течением времени.\n\n$concept_pops$ столкнется с увеличением штрафа до $concept_pop_growth_birthrate$ пропорционально их $concept_literacy$, до следующего:\n[GetStaticModifier('literacy_penalty').GetDesc]#!"
+ concept_literacy_desc_added:0 "[GetInstitutionType('institution_schools').GetName]"

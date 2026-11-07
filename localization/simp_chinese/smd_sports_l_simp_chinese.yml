@@ -1,0 +1,99 @@
+﻿l_simp_chinese:
+
+ # ==========================================
+ # OLYMPICS — MODIFIERS
+ # ==========================================
+
+ olympics_hosting: "奥林匹克主办国"
+ olympics_hosting_desc: "世界即将到来。 奥林匹克运动会正在进行之中,这引起了全球的注意、旅游业和声望,以及举办世界最大型体育赛事的巨大费用和后勤需求。"
+
+ olympics_hosting_prestige: "奥运会主办者"
+ olympics_hosting_prestige_desc: "主办奥运会将"x id=0"置于世界关注的中心. 外交和软实力的好处是巨大的。"
+
+ olympics_recently_hosted: "最近的奥运东道主"
+ olympics_recently_hosted_desc: "[ROOT.GetCountry.GetName]最近承办了奥运会,几年内无资格再次主办."
+
+ olympics_boycott_modifier: "奥林匹克抵制"
+ olympics_boycott_modifier_desc: "抵制奥运会的决定已在国际上得到注意。 一些伙伴认为这是原则立场;另一些伙伴则认为这是不必要的挑衅。"
+
+ olympics_result_terrible: "奥运成绩不佳"
+ olympics_result_terrible_desc: "[ROOT.GetCountry.GetName] 的运动员从比赛中回来,很少能表现出来. 国家情绪令人感到失望。"
+
+ olympics_result_modest: "固体奥林匹克表现"
+ olympics_result_modest_desc: "[ROOT.GetCountry.GetName]的运动员在世界舞台上体面地宣告自己无罪."
+
+ olympics_result_well: "强大的奥林匹克表现"
+ olympics_result_well_desc: "[ROOT.GetCountry.GetName]的运动员在比赛中表现优异,带回了家乡的奖牌和民族自豪."
+
+ olympics_result_gold: "主要奥林匹克表现"
+ olympics_result_gold_desc: "[ROOT.GetCountry.GetName] 主导了奥运会. 奖章的领取使国家感到非常自豪,并提高了该国在全世界的威望。"
+
+ olympics_doping_caught: "奥林匹克兴奋剂扫描"
+ olympics_doping_caught_desc: "[ROOT.GetCountry.GetName] 的运动员使用增强性能的药物被抓到. 勋章被剥去,官员辞职,国家面临国际对抗. 对民族声望的破坏是严重的."
+
+ # ==========================================
+ # EVENTS
+ # ==========================================
+
+ you_do_not_dope_athletes:0 "你会公平行事的"
+ you_dope_your_athletes:0 "你给运动员加固性能的药 冒着被抓的风险"
+ # olympics.1 — Host selection
+ olympics.1.t: "主办奥运会的提议"
+ olympics.1.d: "国际奥林匹克委员会已经与[ROOT.GetCountry.GetName]接触,提出了一项提案:主办下一届奥林匹克运动会。 作为具有国际地位的稳定民主国家, " x id=1/ " 符合东道主的标准,随之而来的声望和关注相当大。 组织世界最大体育赛事的成本和要求也是如此。"
+ olympics.1.f: "世界需要一个舞台。 [ROOT.GetCountry.GetName] 将建一个吗 ?"
+ olympics.1.a: "接受——我们荣幸地担任东道国。"
+ olympics.1.b: "衰落——我们现在不能对此作出承诺"
+
+ # olympics.3 — Participation offer
+ olympics.3.t: "奥林匹克运动会来了"
+ olympics.3.d: "下届奥运会以[SCOPE.sCountry('olympics_host_scope').GetName]举行. 世界各国被邀请派出运动员参赛. 游戏是[ROOT.GetCountry.GetName]展示出力量,庆祝其人民,并在世界舞台上取而代之的机会——或者通过不在场发表政治声明的机会."
+ olympics.3.f: "每四年,天下相视."
+ olympics.3.a: "派我们的运动员来参加比赛"
+ olympics.3.b: "抵制——我们的缺席会比我们的运动员大声得多."
+
+ # olympics.3b — Doping choice
+ olympics.11.t: "运动员正在准备"
+ olympics.11.d: "奥运会离比赛还有几周时间. [ROOT.GetCountry.GetName] 的运动员们一直在努力训练——但比赛会很激烈. 体育项目内部有些人悄悄地暗示,干净的竞争可能还不够. 提高性能的药物,小心使用,可以给运动员带来所需的边缘. \n\n 被发现的风险是真实的。 被抓起来的后果是严重的。 但空手回家的后果对一些人来说可能更糟。"
+ olympics.11.f: "胜利有许多父亲. 失败是没有的。"
+ olympics.11.a: "争先恐后——我们的运动员将尽心尽力"
+ olympics.11.b: "加强他们的准备——我们打赢"
+
+ # olympics.4 — Caught doping
+ olympics.4.t: "兴奋剂 斯坎道尔 摇滚奥林匹克队"
+ olympics.4.d: "国际奥林匹克委员会宣布,来自"x id=0"的运动员检测出被禁性能增强物质呈阳性. 勋章被剥夺。 官员被停职。 故事是世界每个体育频道的主打项目. \n\n 政府的否认是不被相信的. 声誉受损严重,需要数年才能恢复."
+ olympics.4.f: "黄金玷去快于出光."
+ olympics.4.a: "我们对此深感遗憾"
+
+ # olympics.5 — Terrible
+ olympics.5.t: "令人沮丧的奥林匹克运动会"
+ olympics.5.d: "[ROOT.GetCountry.GetName]的运动员参赛——并基本被淘汰. 奖牌的得分很低 演出在地上受人尊敬,在地上则尴尬. 回国后,体育媒体对经费,准备,选拔标准提出严苛的问题. 这不是人们希望的展示。"
+ olympics.5.d_doping: "[ROOT.GetCountry.GetName]的运动员在药用援助下竞争——仍然几乎空手而归. 兴奋剂方案给其相当大的风险带来了低价值。"
+ olympics.5.f: "下一场比赛总是有的"
+ olympics.5.a: "团队尽力了"
+
+ # olympics.6 — Modest
+ olympics.6.t: "一出受尊重的奥林匹克表演"
+ olympics.6.d: "[ROOT.GetCountry.GetName] 的运动员从比赛中以微小而真实的成绩回归. 少数奖牌,一些强力的个人表演,以及国家可以在最高级别竞争的知识. 这不是胜利,但也不是失望。"
+ olympics.6.d_doping: "在一些药用辅助下,[ROOT.GetCountry.GetName]的运动员管理着可敬的表演. 兴奋剂似乎没有被发现——这次。"
+ olympics.6.f: "一致,如果不是壮观。"
+ olympics.6.a: "给我们的运动员们一个很好的展示"
+
+ # olympics.7 — Well
+ olympics.7.t: "强大的奥林匹克表现"
+ olympics.7.d: "[ROOT.GetCountry.GetName]的运动员们回到了家乡迎接英雄. 奖牌计分令人印象深刻,表演令人难忘,而民族情绪也令人振奋. 几位运动员成为了家庭姓氏. 这是一个真正强有力的结果,很好地反映了国家及其体育方案。"
+ olympics.7.d_doping: "[ROOT.GetCountry.GetName]的运动员表现很出色——虽然公众并不知情,但通过谨慎的药物方案得到了帮助。 奖章为真. 产生它们的方法不那么令人钦佩."
+ olympics.7.f: "国家今天站得更高一点。"
+ olympics.7.a: "我们的运动员让我们感到骄傲"
+
+ # olympics.8 — Gold
+ olympics.8.t: "奥运会胜利-[ROOT.GetCountry.GetName] 支配游戏"
+ olympics.8.d: "比赛结果为-而"x id=0"则主导了奥运会. 奖牌桌上讲述的故事是:比起其他几乎任何国家,更多的金子,更多的银子,更多的青铜. 运动员的表现超越了一切预期,该国正在庆祝. 在世界舞台上,"x id=1/"已经打出分数."
+ olympics.8.d_doping: "[ROOT.GetCountry.GetName]在奥林匹克运动会中占据了主导地位——得到了一个系统兴奋剂方案的援助,到目前为止,这个方案还没有被发现. 奖章为真. 庆祝活动是真实的。 而秘密,现在,是安全的。"
+ olympics.8.f: "历史将记住这一点。"
+ olympics.8.a: "我们的运动员是世上最好的"
+
+ # olympics.9 — Closing ceremony
+ olympics.9.t: "奥运会的火焰正在熄灭"
+ olympics.9.d: "以[SCOPE.sState('capital_scope').GetCityHubName]的奥林匹克运动会闭幕. 运动员们都回家了 体育场很安静 对于[ROOT.GetCountry.GetName]来说,这是一个非同寻常的经验——要求高,费用高,并最终值得。 游戏将世界带到了"x id=2/"的入门口,而国家也迎来了这个机会."
+ olympics.9.f: "至下回会."
+ olympics.9.a: "很荣幸能成为世界的东道国"

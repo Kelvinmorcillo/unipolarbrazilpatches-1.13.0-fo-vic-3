@@ -1,0 +1,19 @@
+﻿CHARACTERS = {
+	c:STK ?= {
+	create_character = {
+			first_name = "roh_tae"
+			last_name = "woo"
+			historical = yes
+			ruler = yes
+			culture = cu:korean
+			birth_date = 1932.02.03
+			dna = dna_roh_tae_woo
+			ig_leader = yes
+			interest_group = ig_armed_forces
+			ideology = ideology_liberal_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+}

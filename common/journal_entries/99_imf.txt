@@ -1,0 +1,47 @@
+﻿je_imf_loan = {
+	icon = "gfx/interface/icons/event_icons/event_imf.dds"
+
+	group = je_group_domestic_policy
+
+	is_shown_when_inactive = {
+		has_variable = imf_loan_active
+	}
+
+	possible = {
+		has_variable = imf_loan_active
+	}
+	
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = imf_je_obligations_active_tt
+				trigger = {
+					has_modifier = imf_great_power_obligations
+				}
+			}
+			triggered_desc = {
+				desc = imf_je_obligations_met_tt
+				trigger = {
+					NOT = { has_modifier = imf_great_power_obligations }
+				}
+			}
+		}
+	}
+
+	# Button to pay off great power obligations early
+	scripted_button = imf_button_pay_obligations
+
+	# Invalid (auto-closes) when loan variable is cleared
+	invalid = {
+		NOT = { has_variable = imf_loan_active }
+	}
+
+	on_invalid = {
+		trigger_event = { id = imf_events.3 popup = yes }
+	}
+
+	transferable = no
+	can_revolution_inherit = no
+	weight = 8000
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

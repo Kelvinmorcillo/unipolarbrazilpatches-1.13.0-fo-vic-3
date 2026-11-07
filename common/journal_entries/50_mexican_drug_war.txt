@@ -1,0 +1,283 @@
+﻿je_mexican_drug_war = {
+	icon = "gfx/interface/icons/event_icons/mexican_drug_war.dds"
+
+	group = je_group_dilemmas
+
+	scripted_progress_bar = mdw_suppression_bar
+	scripted_progress_bar = mdw_peril_bar
+
+	is_shown_when_inactive = {
+		c:MEX ?= this
+	}
+
+	possible = {
+		has_variable = mexican_drug_war_active
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = mdw_je_not_declared_tt
+				trigger = {
+					NOT = { has_variable = mdw_war_declared }
+				}
+			}
+			triggered_desc = {
+				desc = mdw_je_commander_needed_tt
+				trigger = {
+					has_variable = mdw_war_declared
+					NOT = {
+						any_scope_character = {
+							has_variable = mdw_commander_var
+						}
+					}
+				}
+			}
+			triggered_desc = {
+				desc = mdw_je_active_tt
+				trigger = {
+					has_variable = mdw_war_declared
+					any_scope_character = {
+						has_variable = mdw_commander_var
+					}
+				}
+			}
+		}
+	}
+
+	scripted_button = mdw_button_declare_war
+	scripted_button = mdw_button_deploy_commander
+
+	immediate = {
+		set_variable = { name = mdw_state_count value = 0 }
+		every_scope_state = {
+			limit = {
+				owner = c:MEX
+				OR = {
+					has_modifier = cartel_cjng_controlled
+					has_modifier = cartel_gulf_controlled
+					has_modifier = cartel_sinaloa_controlled
+					has_modifier = cartel_northeast_controlled
+				}
+			}
+			change_variable = { name = mdw_state_count add = 1 }
+		}
+		if = {
+			limit = { exists = c:USA }
+			c:USA = {
+				add_journal_entry = { type = je_us_mexico_drug_war_support }
+			}
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+					set_variable = { name = mdw_state_count value = 0 }
+					every_scope_state = {
+						limit = {
+							owner = c:MEX
+							OR = {
+								has_modifier = cartel_cjng_controlled
+								has_modifier = cartel_gulf_controlled
+								has_modifier = cartel_sinaloa_controlled
+								has_modifier = cartel_northeast_controlled
+							}
+						}
+						change_variable = { name = mdw_state_count add = 1 }
+					}
+					change_variable = { name = mdw_expansion_counter add = 1 }
+					if = {
+						limit = {
+							var:mdw_expansion_counter >= 12
+							# Only expands if there are uncontrolled states left
+							any_scope_state = {
+								owner = c:MEX
+								is_incorporated = yes
+								NOR = {
+									has_modifier = cartel_cjng_controlled
+									has_modifier = cartel_gulf_controlled
+									has_modifier = cartel_sinaloa_controlled
+									has_modifier = cartel_northeast_controlled
+									has_modifier = state_military_occupation
+								}
+							}
+						}
+						# Reset counter
+						set_variable = { name = mdw_expansion_counter value = 0 }
+						# Expand to one random uncontrolled state
+						random_scope_state = {
+							limit = {
+								owner = c:MEX
+								is_incorporated = yes
+								NOR = {
+									has_modifier = cartel_cjng_controlled
+									has_modifier = cartel_gulf_controlled
+									has_modifier = cartel_sinaloa_controlled
+									has_modifier = cartel_northeast_controlled
+									has_modifier = state_military_occupation
+								}
+							}
+							random_list = {
+								25 = {
+									add_modifier = {
+										name = cartel_cjng_controlled
+										months = 60
+									}
+								}
+								25 = {
+									add_modifier = {
+										name = cartel_gulf_controlled
+										months = 60
+									}
+								}
+								25 = {
+									add_modifier = {
+										name = cartel_sinaloa_controlled
+										months = 60
+									}
+								}
+								25 = {
+									add_modifier = {
+										name = cartel_northeast_controlled
+										months = 60
+									}
+								}
+							}
+						}
+					}
+ 
+					# ── Combat events (war declared only) ────
+					if = {
+						limit = {
+							has_variable = mdw_war_declared
+							any_scope_character = {
+								has_variable = mdw_commander_var
+							}
+						}
+						random_list = {
+							100 = { }
+							12 = { trigger_event = { id = mdw_events.3 } }
+							10 = { trigger_event = { id = mdw_events.4 } }
+							8  = { trigger_event = { id = mdw_events.5 } }
+							8  = { trigger_event = { id = mdw_events.6 } }
+						}
+			}
+		}
+	}
+
+	complete = {
+		NOT = {
+			any_scope_state = {
+				owner = c:MEX
+				OR = {
+					has_modifier = cartel_cjng_controlled
+					has_modifier = cartel_gulf_controlled
+					has_modifier = cartel_sinaloa_controlled
+					has_modifier = cartel_northeast_controlled
+				}
+			}
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = mdw_events.10 popup = yes }
+	}
+
+	fail = {
+		scripted_bar_progress = {
+			name = mdw_peril_bar
+			value > 0.98
+		}
+	}
+
+	on_fail = {
+		trigger_event = { id = mdw_events.11 popup = yes }
+	}
+
+	transferable = no
+	can_revolution_inherit = no
+	weight = 9500
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+# ==========================================
+# US MEXICO DRUG WAR SUPPORT JE
+# ==========================================
+
+je_us_mexico_drug_war_support = {
+	icon = "gfx/interface/icons/event_icons/mexican_drug_war.dds"
+
+	group = je_group_foreign_policy
+
+	is_shown_when_inactive = {
+		c:USA ?= this
+		exists = c:MEX
+		c:MEX = { has_journal_entry = je_mexican_drug_war }
+	}
+
+	possible = {
+		c:USA ?= this
+		exists = c:MEX
+		c:MEX = { has_journal_entry = je_mexican_drug_war }
+	}
+
+	should_be_involved = {
+		c:USA ?= this
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = us_mdw_je_no_pact_tt
+				trigger = {
+					NOT = {
+						any_scope_treaty = {
+							binds = c:USA
+							any_scope_article = {
+							has_type = military_assistance
+							}
+						}
+					}
+				}
+			}
+			triggered_desc = {
+				desc = us_mdw_je_pact_active_tt
+				trigger = {
+					any_scope_treaty = {
+					binds = c:USA
+					any_scope_article = {
+					has_type = military_assistance
+					}
+				}
+				}
+			}
+		}
+	}
+
+	complete = {
+		any_scope_treaty = {
+				binds = c:USA
+				any_scope_article = {
+					has_type = military_assistance
+					}
+				}
+		}
+
+	on_complete = {
+		c:MEX = {
+			trigger_event = { id = mdw_events.20 popup = yes }
+		}
+	}
+
+	invalid = {
+		OR = {
+			NOT = { exists = c:MEX }
+			NOT = { c:MEX = { has_journal_entry = je_mexican_drug_war } }
+		}
+	}
+
+	transferable = no
+	can_revolution_inherit = no
+	weight = 6000
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

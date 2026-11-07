@@ -1,0 +1,325 @@
+﻿l_turkish:
+
+
+ # BUILDINGS
+ 
+ building_bank:0 "Ticari Banka"
+ building_bank_desc:0 "depozitoları kabul eden bir finansal kurum krediyi yönetir ve ekonomi boyunca sermaye akışını kolaylaştırır. Dijital ağları kazımak için mütevazı kredilerden, bankalar modern ticaretin arka kemiğidir."
+
+ building_food_service:0 "Gıda Hizmetleri"
+ building_food_service_desc:0 "Müşteri ve yemek kuruluşları, gıdayı genel nüfusuna hazır ve paketlenmiş. Her şeyi köşe marketten küresel fast-food zincirlerine kadar yönetin, vatandaşların beslenmesi ve memnun kalması."
+
+ building_retail_services:0 "Perakende Hizmetleri"
+ building_retail_services_desc:0 "Bir ticari kuruluş mobilya, giyim ve araçlar doğrudan tüketicilere satıyor. Perakende mağazaları tedarik zincirindeki son bağlantıdır, endüstriyel çıktıyı günlük ev eşyalarına çevirmektedir."
+
+ building_advertising_agency:0 "Reklam Hizmetleri"
+ building_advertising_agency_desc:0 "Promosyon içeriğinin yaratılması ve dağıtımında özel bir firma. Reklam ajansları tüketici davranışını şekillendiriyor ve talep ediyor, her şeyi algoritmaya dayalı olarak hedeflenen dijital kampanyalara dağıtıyor."
+
+ building_warehouse:0 "Depo Depo"
+ building_warehouse_desc:0 "Malların depolama ve dağıtımı için büyük bir tesis. Depolar ekonominin lojistik merkezi olarak hizmet eder, tedarik ve talep eder ve ülkedeki ürünlerin verimli hareketini sağlar."
+
+ building_pharmaceutical_services:0 "İlaç Hizmetleri"
+ building_pharmaceutical_services_desc:0 "Tıbbi bileşiklerin dispensing, araştırma ve dağıtımı ile ilgili bir kuruluş. Apothecary, biyoteknoloji laboratuvarlarını kesmeye karşı çıkıyor, farmasötik hizmetler ham kimyasal girdileri halk sağlığını koruyan tedavilere dönüştürüyor."
+
+ ####################
+ # PRODUCTION METHOD GROUPS
+ ####################
+
+ ### BANKING
+
+ pmg_base_banking:0 "Bankacılık Operasyonları"
+ pmg_base_banking_desc:0 "Bankanın yatakları, sorunları kredi aldığı ve müşterileri ve işletmelerle finansal işlemleri gerçekleştireceği temel yöntemler."
+
+ pmg_securities_trading:0 "Securities Trading"
+ pmg_securities_trading_desc:0 "Bankanın finansal menkul kıymetlerin ticaret ve brokerajına sahip olup olmadığını, yatırım sermayesinin genişletilmiş krediye dönüştürülmesini belirler."
+
+ pmg_automation_banking:0 "Bankacılık Otomasyonu"
+ pmg_automation_banking_desc:0 "Bankanın otomatik sistemleri kullandığı derece - mekanik sözcülerden yapay zekaya - işlem işlemlerine ve iş maliyetlerini azaltmak."
+
+ ### FOOD SERVICES
+
+ pmg_base_food_services:0 "Operasyonlar"
+ pmg_base_food_services_desc:0 "Hangi marketler tüketicilere satılıyor, küçük mahalle dükkanlarından büyük online platformlara kadar."
+
+ pmg_restaurant_type:0 "Restoran Türü"
+ pmg_restaurant_type_desc:0 "Kuruluşun ayrıca yemek tesisleri işletmediğini ve ne tür bir şekilde çalıştığını belirleyin - rahat yerel yiyeceklerden endüstriyel fast food franchise'lara."
+
+ pmg_food_service_logistics:0 "Gıda Hizmeti Lojistik"
+ pmg_food_service_logistics_desc:0 "Gıda hizmeti kuruluşları tarafından kullanılan kontrol ve yerine getirilmesi, iş kontrol sistemleri ve teslimat altyapısı da dahil olmak üzere."
+
+ ### RETAIL
+
+ pmg_base_retail:0 "Perakende Biçimi"
+ pmg_base_retail_desc:0 "Perakende operasyonunun ölçeği ve formatı, küçük bağımsız dükkanlardan muazzam büyük kutu mağazalarına ve çıkış merkezlerine kadar."
+
+ pmg_retail_specialization:0 "Perakende Özelleştirme"
+ pmg_retail_specialization_desc:0 "Perakende mağazasının ev mobilyaları, elektronik veya lüks eşyalar gibi belirli bir mal kategorisine odaklandığını belirler."
+
+ pmg_retail_logistics:0 "Perakende Lojistik Lojistik"
+ pmg_retail_logistics_desc:0 "Perakende kuruluşları, kendi kontrol terminalleri, e-ticaret platformları ve özerk teslimat dahil olmak üzere kullanılan kontrol ve uygulama yöntemleri."
+
+ ### ADVERTISING
+
+ pmg_base_advertising:0 "Reklam Medium"
+ pmg_base_advertising_desc:0 "Reklam ajansının kampanyalarını dağıtdığı birincil kanal - baskı, yayın, doğrudan posta veya dış işaret."
+
+ pmg_digital_advertising:0 "Dijital Reklam"
+ pmg_digital_advertising_desc:0 "Ajansın dijital reklam yöntemlerini kabul edip, basit web pankartlarından AI tarafından üretilen hiper hedeflenen kampanyalara karar verir."
+
+ pmg_advertising_research:0 "Market Research"
+ pmg_advertising_research_desc:0 "Araştırma yöntemleri tüketici davranışını anlamak ve etkilemek için çalıştı, geleneksel odak gruplardan makine odaklı analitiklere."
+
+ ### WAREHOUSING
+
+ pmg_base_warehousing:0 "Savaş"
+ pmg_base_warehousing_desc:0 "Deponun temel depolama ve dağıtım yöntemleri, temel manuel depolamadan tamamen otomatik yerleştirme merkezlerine kadar."
+
+ pmg_warehousing_logistics:0 "Inventory Management"
+ pmg_warehousing_logistics_desc:0 "Depodaki envanteri takip etmek ve yönetmek için kullanılan sistemler, el yazılmamış gerçek zamanlı varlık yönetimine yol açtı."
+
+ ### PHARMACEUTICAL SERVICES
+
+ pmg_base_pharmaceutical_services:0 "Operasyonlar"
+ pmg_base_pharmaceutical_services_desc:0 "Hangi farmasötik bileşiklerin işlendiği ve hastalara dağıtıldığı birincil yöntem, geleneksel apothecary işlerinden posta sipariş dağılımına kadar."
+
+ pmg_pharmaceutical_research:0 "Uyuşturucu Araştırması"
+ pmg_pharmaceutical_research_desc:0 "Kuruluşun farmasötik araştırmaya yatırım olup olmadığını belirler, yeni tedavilerin gelişimini hızlandırır ve tıbbi çıktıyı arttırır."
+
+ pmg_pharmaceutical_automation:0 "Eczane Otomasyonu"
+ pmg_pharmaceutical_automation_desc:0 "Kombinasyon ve dispensing sürecinde kullanılan otomasyon derecesi, elle hazırlanmış formülasyonlardan tamamen robotik eczane sistemlere kadar."
+
+ ####################
+ # PRODUCTION METHODS
+ ####################
+
+ ### BANKING - BASE
+
+ pm_basic_banking:0 "Standard Lending"
+ pm_basic_banking_desc:0 "Temel depozito hesapları ve kişisel krediler sunan basit bir finansal operasyon, öncelikle kağıt liderlik edenleri yönetmekle görevliydi."
+
+ pm_commercial_banking:0 "Ticari Bankacılık"
+ pm_commercial_banking_desc:0 "Tamamen bir ticari banka, işletmelere ve tüketicilere bir dizi finansal ürün sunuyor, geniş kredi oluşturma kapasitesi ile."
+
+ pm_electronic_transfers:0 "Payday Loans"
+ pm_electronic_transfers_desc:0 "Elektronik ödeme sistemlerinin ve tel transferlerinin benimsenmesi, sermayenin hareketini dramatik bir şekilde hızlandırıyor, fiziksel kağıt işlemeye olan bağımlılığı azaltır."
+
+ pm_online_banking:0 "Şimdi Satın Al, Pay Daha sonra"
+ pm_online_banking_desc:0 "bankacılık operasyonlarının tam dijitalleştirilmesi, müşterilerin hesaplarını yönetmesine ve işlemleri uzaktan yönetmelerine izin verir, şube yükünü büyük ölçüde genişleyen bir şekilde azaltır."
+
+ ### BANKING - SECURITIES
+
+ pm_no_securities_trading:0 "Hayır Securities Trading"
+ pm_no_securities_trading_desc:0 "Banka sadece döviz ve kredi operasyonlarına odaklanır, finansal piyasalarda veya menkul kıymetlere katılmaz."
+
+ pm_securities_brokerage:0 "Securities Brokerage"
+ pm_securities_brokerage_desc:0 "Banka bir broker masası oluşturuyor, müşterilerin finansal menkul kıymet satın alma ve satmalarına izin veriyor. Sınırlı menkul kıymetler genişletilmiş kredi nesline kanallanır."
+
+ pm_derivatives_trading:0 "Hedge-Funds"
+ pm_derivatives_trading_desc:0 "Banka alt varlıklardan elde edilen karmaşık finansal araçlardaki ticaretler. Yüksek riskli, yüksek seviyeli operasyonlar, kredi çıktısını büyük ölçüde menkul kıymetlerden yükseltti."
+
+ pm_algorithmic_trading:0 "Quant Trading"
+ pm_algorithmic_trading_desc:0 "Makine-öğrenme algoritmaları süper insan hızlarında ticaret uygular, minimum insan müdahalesi ile tahvil portföylerinde geri döndürür."
+
+ ### BANKING - AUTOMATION
+
+ pm_manual_tellers:0 "Manual Tellers"
+ pm_manual_tellers_desc:0 "İşlemler tamamen karşıdaki insanlar tarafından ele alınır, önemli clerical personel gerektiren."
+
+ pm_atm_network:0 "ATM Ağı"
+ pm_atm_network_desc:0 "Otomatik teller makineleri ağı, müşterilerin personel olmadan temel işlemleri yapmasına izin verir, servis kullanılabilirliği uzatırken clerical headcount azaltır."
+
+ pm_automated_banking_systems:0 "Otomatik Bankacılık Sistemleri"
+ pm_automated_banking_systems_desc:0 "Back-office işlemleri bilgisayarlı, manuel veri girişi ve işlem işleme clerks ihtiyacını dramatik bir şekilde azaltır."
+
+ pm_ai_financial_advisors:0 "AI Financial Advisors"
+ pm_ai_financial_advisors_desc:0 "Robo-advisors ve AI odaklı finansal planlama araçları, müşterilerin çoğunluğu için insan danışmanlarının yerini alır, kredi çıktısını artırırken iş maliyetlerini azaltır."
+
+ ### FOOD SERVICES - BASE
+
+ pm_corner_grocery:0 "Corner Grocery"
+ pm_corner_grocery_desc:0 "Küçük, mahalle düzeyinde market alışverişleri, sınırlı bir temel mal seçimi sunuyor. İşçi yoğun ama düşük ve güçlü topluluk bağları ile."
+
+ pm_supermarket:0 "Supermarket"
+ pm_supermarket_desc:0 "Büyük self-servy mağazaları, bir çatı altında çok çeşitli ürünler sunuyor, verimli tedarik zincirleri daha yüksek bağlantı sağlar."
+
+ pm_hypermarket:0 "Superstore"
+ pm_hypermarket_desc:0 "Enormous birleşik market ve genel mal mağazaları, geniş yakalama bölgelerinden müşterileri çizim ve büyük ölçekli çalışır."
+
+ pm_online_grocery:0 "Online Grocery"
+ pm_online_grocery_desc:0 "Grocerler dijital olarak sipariş edilir ve merkezi dağıtım merkezlerinden yerine getirilir, yalın bir fiziksel ayak izi sağlar ve geniş bir müşteri ulaşır."
+
+ ### FOOD SERVICES - RESTAURANT
+
+ pm_no_restaurants:0 "Yemek Hizmetleri yok"
+ pm_no_restaurants_desc:0 "Kuruluş sadece market perakendesine odaklanır, hazır gıda veya yemek seçenekleri olmadan."
+
+ pm_local_restaurants:0 "Yerel Restoranlar"
+ pm_local_restaurants_desc:0 "Yerel müşterilere hazır yemekler servis eden bağımsız yemek kuruluşu, market operasyonlarının üst kısmında mütevazı gıda hizmeti çıktısını ekliyor."
+
+ pm_fast_food_chains:0 "Fast Food Chains"
+ pm_fast_food_chains_desc:0 "Standartlaştırılmış, birden çok yerde çalışan yüksek hizmet restoranları, endüstriyel hazırlık yöntemleri aracılığıyla gıda servis çıktısını önemli ölçüde ölçeklendirmek."
+
+ pm_fine_dining:0 "Güzel Yemek Yemek"
+ pm_fine_dining_desc:0 "Geniş ölçekli restoran işlemleri zengin müşteri için catering, yetenekli iş ve yüksek kaliteli malzemeler aracılığıyla premium gıda hizmeti üretimi."
+
+ ### FOOD SERVICES - LOGISTICS
+
+ pm_manual_food_checkout:0 "Manual Checkoutout"
+ pm_manual_food_checkout_desc:0 "Tüm müşteri işlemleri, personel tarafından kontrol edilen tezgahlarda nakitler tarafından işlenir, önemli bir işin üst talep etmesi gerekir."
+
+ pm_self_checkout_food:0 "Self-Checkout Terminals"
+ pm_self_checkout_food_desc:0 "Otomatik self-servis checkout kiosks, nakit personel ihtiyacını azaltır, iş maliyetlerini azaltır ve yoğun dönemlerde artan bir kesintiye yol açar."
+
+ pm_food_delivery_services:0 "Gıda Teslimat Hizmetleri"
+ pm_food_delivery_services_desc:0 "Bir teslimat ağı kuruldu, müşterilere marketlerde market almak ve yemek hazırlamak için izin veriyor. Sahne siparişlerine verimli bir şekilde depolama kapasitesi."
+
+ pm_drone_food_delivery:0 "Drone Delivery"
+ pm_drone_food_delivery_desc:0 "Özerk drone filosu insan teslim sürücülerinin yerini alır, hizmet alanlarında yakın süreli teslimata izin verirken dramatik bir şekilde iş maliyetlerini azaltır."
+
+ ### RETAIL - BASE
+
+ pm_small_shops:0 "Küçük Dükkanlar"
+ pm_small_shops_desc:0 "Bağımsız perakende dükkanları, yerel müşterilere mütevazı bir mobilya, giyim ve araçlar satıyor. Düşük yük ile basit işlemler."
+
+ pm_department_stores_retail:0 "Bölüm Stores"
+ pm_department_stores_retail_desc:0 "Bir çatı altında kapsamlı bir tüketici malları sunan bölümlere organize edilen çok katlı perakende kuruluşları."
+
+ pm_big_box_retail:0 "Big-Box Perakende"
+ pm_big_box_retail_desc:0 "Depo ölçekli perakende satış noktaları, yüksek hacimli satın alma gücüne ve verimli lojistiklere dayanan yüksek miktarda ürün sunuyor."
+
+ pm_outlet_retail:0 "Outlet Centers"
+ pm_outlet_retail_desc:0 "Markaların aşırı ve indirimli hisseleri doğrudan tüketicilere sattığı özel perakende kompleksleri, amaçlanmış yerlerde yüksek alışveriş trafiğini yoğunlaştırır."
+
+ ### RETAIL - SPECIALIZATION
+
+ pm_no_retail_specialization:0 "General Retail"
+ pm_no_retail_specialization_desc:0 "Mağaza, belirli kategoriye odaklanmayan malların geniş, farklı olmayan bir karışımını taşır."
+
+ pm_home_goods_retail:0 "Home Goods Retail"
+ pm_home_goods_retail_desc:0 "Mağaza, lüks hatlar da dahil olmak üzere mobilya ve ev mobilyalarında uzmanlaşır, arzu ev satın alımlarında daha yüksek marjlar yakalar."
+
+ pm_electronics_retail:0 "Elektronik Pazarlama"
+ pm_electronics_retail_desc:0 "Mağaza araç ve tüketici elektroniklerinde uzmanlaşmıştır, bilgili zemin personeli gerektirir ve teknik olarak sofistike bir müşteriyi çekiyor."
+
+ pm_luxury_retail:0 "Lüks Perakende"
+ pm_luxury_retail_desc:0 "Lüks kıyafetler ve mobilya ile ilgili butik bir operasyon, zengin tüketicilerden prim fiyatları komuta etmek ve satılan birim için güçlü perakende gelir elde etmek."
+
+ ### RETAIL - LOGISTICS
+
+ pm_manual_retail_checkout:0 "Manual Checkoutout"
+ pm_manual_retail_checkout_desc:0 "Tüm satış işlemleri personel kayıtlarında işlenir, nakit personelinin tam bir tamamlayıcısını gerektirir."
+
+ pm_self_checkout_retail:0 "Self-Checkout Terminals"
+ pm_self_checkout_retail_desc:0 "Self-servis ödeme kiosks, müşterilerin kendi işlemlerini işlemelerine izin verir, nakit kafa hesaplarını azaltır ve mağazayı konsolide edin."
+
+ pm_ecommerce_retail:0 "E-Ticaret"
+ pm_ecommerce_retail_desc:0 "Online bir mağaza cephesi, fiziksel ayaklanmanın ötesinde, depolama altyapısının sahnelenmesi ve dijital siparişler yerine getirilmesini gerektirir."
+
+ pm_drone_retail_delivery:0 "Drone Delivery"
+ pm_drone_retail_delivery_desc:0 "Özerk drone teslimatı son mil kuryelerini değiştirir, online siparişler için zamanları hızlandırırken keskin bir şekilde teslimat iş maliyetlerini azaltır."
+
+ ### ADVERTISING - BASE
+
+ pm_print_advertising:0 "Obnoxious Billboards"
+ pm_print_advertising_desc:0 "Kampanyalar gazete, dergiler ve basılı materyaller aracılığıyla dağıtıldı. Kağıt yoğun ama litre kitle izleyicilere ulaşmada etkili."
+
+ pm_broadcast_advertising:0 "Yayın Reklam"
+ pm_broadcast_advertising_desc:0 "Radyo ve televizyon reklamları aynı anda büyük izleyicilere ulaşır, entelektüel mülk ve teknik üretim yeteneğine yatırım gerektirir."
+
+ pm_direct_mail_advertising:0 "Doğrudan Mail"
+ pm_direct_mail_advertising_desc:0 "Hedeflenen promosyon malzemeleri doğrudan tüketici adreslerine gönderilir. Yüksek kağıt tüketimi ancak yayın medyası ile mümkün olmayan demografik hedeflemeye izin verir."
+
+ pm_outdoor_advertising:0 "Electronic Billboards"
+ pm_outdoor_advertising_desc:0 "Billboardlar, posterler ve marka farkındalığını ölçeklendirmek için yüksek-traffic alanlara işaret ediyor. Geniş alanlarda fiziksel yükleme işi gerektirir."
+
+ ### ADVERTISING - DIGITAL
+
+ pm_no_digital_advertising:0 "Hiçbir Dijital Reklam"
+ pm_no_digital_advertising_desc:0 "Ajans sadece geleneksel medya kanalları aracılığıyla çalışır ve dijital reklam yöntemlerini kabul etmedi."
+
+ pm_banner_advertising:0 "Web Banner Reklam"
+ pm_banner_advertising_desc:0 "Web sitelerinde yerleştirilen statik ve animasyonlu afiş reklamları, ajansın ilk adımlarını dijital reklam ekosistemine işaret ediyor."
+
+ pm_social_media_advertising:0 "Sosyal Medya Reklam Reklam"
+ pm_social_media_advertising_desc:0 "Sosyal medya platformlarında dağıtılan kampanyalar muazzam ve son derece meşgul izleyicilere ulaşır, entelektüel mülk kağıt üzerinde birincil maliyet sürücüsü haline gelir."
+
+ pm_algorithmic_targeted_ads:0 "Data Harvestinginginging"
+ pm_algorithmic_targeted_ads_desc:0 "Makine öğrenme algoritmaları, bireysel olarak tasarlanmış reklamlara hizmet etmek için tüketici verilerini analiz eder, büyük ölçekli dönüşüm oranları ve kampanya etkinliği maksimize eder."
+
+ ### ADVERTISING - RESEARCH
+
+ pm_focus_groups:0 "Focus Grupları"
+ pm_focus_groups_desc:0 "Temsil tüketicilerin küçük panelleri mesajlaşma ve ölçüm reaksiyonlarını test etmek için toplandılar, kampanya geliştirmesine rehberlik etmek için nitel bilgi sağlar."
+
+ pm_consumer_analytics:0 "Tüketici Analytics"
+ pm_consumer_analytics_desc:0 "Sistematik veri toplama ve tüketici davranışının istatistiksel analizi tahmin işlerini değiştirir, kampanyaların maksimum etki için rafine edilmesine izin verir."
+
+ pm_ai_ad_generation:0 "AI-Generated Content"
+ pm_ai_ad_generation_desc:0 "Yapay zeka reklam kopyasını, görüntüyü yaratır ve parametreleri otomatik olarak hedef alır, yaratıcı işgücünü güçlendirirken ihtiyaç duyulan şekilde azaltır."
+
+ ### WAREHOUSING - BASE
+
+ pm_basic_warehousing:0 "Temel Depolama"
+ pm_basic_warehousing_desc:0 "Basit helved depolama tesisleri manuel işçiler tarafından personele alındı, ulaşım kapasitelerini almak ve mallar göndermek."
+
+ pm_climate_controlled_storage:0 "İklim Kontrolü"
+ pm_climate_controlled_storage_desc:0 "Sıcaklık ve nem-bölgesel depolama hassas ürünlerin korunması için izin verir, depolanabilir ve artırılabilir ürün yelpazesini genişletir."
+
+ pm_automated_warehouse:0 "Otomatik Depo"
+ pm_automated_warehouse_desc:0 "Robotik toplama sistemleri ve otomatik konveyörler, depolama ve retrieval operasyonları için el işçiliğini değiştirir, çalışan başına depolama çıktısını keskin bir şekilde artırır."
+
+ pm_fulfillment_center:0 "Fulfillment Center"
+ pm_fulfillment_center_desc:0 "Hızlı sipariş işleme ve gönderi için optimize edilmiş yüksek kodlu bir lojistik merkezi, depolama, sorting, paketleme ve tek sorunsuz bir operasyona nakliye."
+
+ ### WAREHOUSING - LOGISTICS
+
+ pm_manual_inventory:0 "Manual Inventory"
+ pm_manual_inventory_desc:0 "Borsa kağıt kayıtlarını ve fiziksel sayılarını takip ediyor, doğruyu korumak için özel clerical personeli gerektiren."
+
+ pm_barcode_tracking:0 "Barko Takip"
+ pm_barcode_tracking_desc:0 "barkod tarama sistemleri, stok hareketlerinin hızlı, doğru kaydı sağlar, envanter hatalarını azaltır ve kayıtları korumak için gerekli olan clerical iş."
+
+ pm_rfid_tracking:0 "RFID"
+ pm_rfid_tracking_desc:0 "Radyo-fret kimlik etiketleri gerçek zamanlı, manuel tarama olmadan depodaki her öğenin otomatik izlemesine izin verir, dramatik bir şekilde envanter doğruluğunu ve yönlendirmesini geliştirir."
+
+ pm_ai_inventory_management:0 "AI Inventory Management"
+ pm_ai_inventory_management_desc:0 "Yapay zeka sürekli olarak stok seviyelerini optimize eder, talep tahmin eder ve atıkları tekrar sipariş eder ve çoğu envanter yönetimi personeli için ihtiyacı ortadan kaldırır."
+
+ ### PHARMACEUTICAL SERVICES - BASE
+
+ pm_apothecary:0 "Drugmart"
+ pm_apothecary_desc:0 "Geleneksel bir apothecary manuel olarak ham botanical ve kimyasal girdilerden elde edilen tıbbi bileşikleri hazırlamaktadır, opium-derived preparatları da dahil."
+
+ pm_pharmacy_dispensing:0 "Eczane"
+ pm_pharmacy_dispensing_desc:0 "Tıbbi düzenlemeler altında faaliyet gösteren modern bir eczane, reçeteli hastalar için standartlaştırılmış farmasötik ürünler."
+
+ pm_hospital_pharmacy:0 "Hastane Eczanesi"
+ pm_hospital_pharmacy_desc:0 "Hastane veya klinik ağına hizmet eden entegre bir eczane operasyonu, karmaşık reçetelerin yüksek hacimlerini ve özel formülasyonları ele almaktadır."
+
+ pm_mail_order_pharmacy:0 "Mail-Order Eczanesi"
+ pm_mail_order_pharmacy_desc:0 "Prescriptions merkezi olarak yerine getirilir ve doğrudan hastalara posta yoluyla gönderilir, geniş coğrafi erişim ve yüksek sipariş hacimlerini yalın fiziksel ayak izi ile sağlar."
+
+ ### PHARMACEUTICAL SERVICES - RESEARCH
+
+ pm_no_drug_research:0 "Hiçbir Araştırma Programı"
+ pm_no_drug_research_desc:0 "Kuruluş sadece mevcut bileşikleri bozmaya odaklanır ve farmasötik araştırma veya geliştirmeye yatırım yapmaz."
+
+ pm_clinical_trials:0 "tRNA"
+ pm_clinical_trials_desc:0 "Kuruluş, yeni farmasötik bileşiklerin kontrollü klinik incelemelerini, ilaç gelişimine katkıda bulunur ve verimli çıktısını genişletir."
+
+ pm_biotech_research:0 "mRNA"
+ pm_biotech_research_desc:0 "Gelişmiş biyoteknolojik araştırma yöntemleri ilaç keşfini hızlandırıyor, yeni tedavilerin geliştirilmesine ve önemli ölçüde artan farmasötik çıktıya olanak sağlıyor."
+
+ pm_gene_therapy:0 "Gen Editing"
+ pm_gene_therapy_desc:0 "Kesme gen düzenleme araştırması, farmasötik bilimin sınırlarını temsil eden hastalığın kök genetik nedenlerini hedef alan tedavilerin gelişimini sağlar."
+
+ ### PHARMACEUTICAL SERVICES - AUTOMATION
+
+ pm_manual_compounding:0 "Kılavuz"
+ pm_manual_compounding_desc:0 "Pharmacists elle her reçeteyi el ile hazırlar, yetenekli ama zaman alıcı bir süreç önemli personel gerektiren."
+
+ pm_automated_dispensing:0 "Otomatik Automated"
+ pm_automated_dispensing_desc:0 "Otomatik dispensing makineleri rutin reçete yerine getirmek, karmaşık vakalara odaklanmak ve iş maliyetlerini azaltmak için serbest eczacı personel idare eder."
+
+ pm_robotic_pharmacy:0 "Robotik Eczane"
+ pm_robotic_pharmacy_desc:0 "Tamamen robotik dispensing sistemleri, en az insan müdahalesi olan reçetelerin büyük çoğunluğunu, maksimum çıktıyı maksimize ederken önemli ölçüde kesme ihtiyacına sahiptir."

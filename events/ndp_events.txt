@@ -1,0 +1,751 @@
+﻿namespace = ndp_events
+
+ndp_events.0 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "unspecific_politicians_arguing" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	title = ndp_events.0.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = ndp_events.0.d_industrial
+				trigger = { has_variable = ndp_industrial }
+			}
+			triggered_desc = {
+				desc = ndp_events.0.d_military
+				trigger = { has_variable = ndp_military }
+			}
+			triggered_desc = {
+				desc = ndp_events.0.d_resource
+				trigger = { has_variable = ndp_resource }
+			}
+			triggered_desc = {
+				desc = ndp_events.0.d_service
+				trigger = { has_variable = ndp_service }
+			}
+		}
+	}
+	flavor = ndp_events.0.f
+	trigger = { OR = { has_variable = ndp_industrial has_variable = ndp_military has_variable = ndp_resource has_variable = ndp_service } NOT = { has_variable = ndpe0 } }
+	duration = 3
+	immediate = { set_variable = ndpe0 }
+	option = {
+		name = ndp_events.0.a
+		default_option = yes
+	}
+}
+
+# ==========================================
+# INDUSTRIAL PATH EVENTS
+# ==========================================
+
+# ── ndp_events.1 — Year 2: Choose focus ──
+ndp_events.1 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "unspecific_factory_closed" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	title = ndp_events.1.t
+	desc = ndp_events.1.d
+	flavor = ndp_events.1.f
+
+	trigger = { has_variable = ndp_industrial NOT = { has_variable = ndpe1 } }
+	immediate = { set_variable = ndpe1 }
+	duration = 3
+
+	# Option A: Heavy industry — iron, steel, coal
+	option = {
+		name = ndp_events.1.a
+		set_variable = ndp_industrial_sub_choice
+		add_modifier = {
+			name = ndp_modifier_industrial_heavy
+			months = 96
+		}
+		every_scope_state = {
+			limit = {
+				is_incorporated = yes
+				any_scope_building = {
+					is_building_type = building_iron_mine
+					level >= 1
+				}
+			}
+			add_modifier = {
+				name = ndp_modifier_state_heavy_industry
+				months = 96
+			}
+		}
+		ai_chance = { base = 50 }
+	}
+
+	# Option B: Light manufacturing — textiles, consumer goods
+	option = {
+		name = ndp_events.1.b
+		default_option = yes
+		set_variable = ndp_industrial_sub_choice
+		add_modifier = {
+			name = ndp_modifier_industrial_light
+			months = 96
+		}
+		every_scope_state = {
+			limit = {
+				is_incorporated = yes
+				state_urbanization_rate >= 0.20
+			}
+			add_modifier = {
+				name = ndp_modifier_state_light_industry
+				months = 96
+			}
+		}
+		ai_chance = { base = 50 }
+	}
+}
+
+# ── ndp_events.2 — Year 5: Investment drive ──
+ndp_events.2 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "africa_city_center" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	title = ndp_events.2.t
+	desc = ndp_events.2.d
+	flavor = ndp_events.2.f
+
+	trigger = { has_variable = ndp_industrial NOT = { has_variable = ndpe2 } }
+	immediate = { set_variable = ndpe2 }
+	duration = 3
+
+	# Option A: State-directed investment — government builds
+	option = {
+		name = ndp_events.2.a
+		add_modifier = {
+			name = ndp_modifier_industrial_state_investment
+			months = 60
+		}
+		add_modifier = {
+			name = ndp_modifier_industrial_state_investment_cost
+			months = 60
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				trigger = {
+					OR = {
+						has_law = law_type:law_command_economy
+						has_law = law_type:law_interventionism
+					}
+				}
+				add = 25
+			}
+		}
+	}
+
+	# Option B: Private enterprise — attract investors
+	option = {
+		name = ndp_events.2.b
+		default_option = yes
+		add_modifier = {
+			name = ndp_modifier_industrial_private_investment
+			months = 60
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				trigger = { has_law = law_type:law_laissez_faire }
+				add = 25
+			}
+		}
+	}
+}
+
+# ── ndp_events.3 — Year 8: Labour question ──
+ndp_events.3 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "unspecific_factory_closed" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	title = ndp_events.3.t
+	desc = ndp_events.3.d
+	flavor = ndp_events.3.f
+
+	trigger = { has_variable = ndp_industrial NOT = { has_variable = ndpe3 } }
+	immediate = { set_variable = ndpe3 }
+	duration = 3
+
+	# Option A: Push workers hard — productivity gains
+	option = {
+		name = ndp_events.3.a
+		add_modifier = {
+			name = ndp_modifier_industrial_labour_push
+			months = 24
+		}
+		add_radicals = { value = medium_radicals strata = lower }
+		ai_chance = { base = 40 }
+	}
+
+	# Option B: Invest in worker welfare — stable growth
+	option = {
+		name = ndp_events.3.b
+		default_option = yes
+		add_modifier = {
+			name = ndp_modifier_industrial_labour_welfare
+			months = 24
+		}
+		add_loyalists = { value = small_radicals strata = lower }
+		ai_chance = { base = 60 }
+	}
+}
+
+# ── ndp_events.4 — Year 10: Path complete ──
+ndp_events.4 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "burnt_building" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	title = ndp_events.4.t
+	desc = ndp_events.4.d
+	flavor = ndp_events.4.f
+
+	trigger = { has_variable = ndp_industrial NOT = { has_variable = ndpe4 } }
+	immediate = { set_variable ndpe4 }
+	duration = 3
+
+	option = {
+		name = ndp_events.4.a
+		default_option = yes
+	}
+}
+
+# ==========================================
+# MILITARY PATH EVENTS
+# ==========================================
+
+# ── ndp_events.11 — Year 2: Doctrine choice ──
+ndp_events.11 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "unspecific_military_parade" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	title = ndp_events.11.t
+	desc = ndp_events.11.d
+	flavor = ndp_events.11.f
+
+	trigger = { has_variable = ndp_military NOT = { has_variable = ndpe5 } }
+	immediate = { set_variable = ndpe5 }
+	duration = 3
+
+	# Option A: Land doctrine — mass army focus
+	option = {
+		name = ndp_events.11.a
+		set_variable = ndp_military_sub_choice
+		add_modifier = {
+			name = ndp_modifier_military_army
+			months = 96
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				trigger = { NOT = { has_coastline = yes } }
+				add = 30
+			}
+		}
+	}
+
+	# Option B: Naval doctrine — power projection
+	option = {
+		name = ndp_events.11.b
+		default_option = yes
+		trigger = { has_coastline = yes }
+		set_variable = ndp_military_sub_choice
+		add_modifier = {
+			name = ndp_modifier_military_navy
+			months = 96
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				trigger = { has_coastline = yes }
+				add = 20
+			}
+		}
+	}
+}
+
+# ── ndp_events.12 — Year 5: Procurement ──
+ndp_events.12 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "middleeast_battlefield_trenches" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	title = ndp_events.12.t
+	desc = ndp_events.12.d
+	flavor = ndp_events.12.f
+
+	trigger = { has_variable = ndp_military NOT = { has_variable = ndpe6 } }
+	immediate = { set_variable = ndpe6 }
+	duration = 3
+
+	# Option A: Domestic arms industry
+	option = {
+		name = ndp_events.12.a
+		add_modifier = {
+			name = ndp_modifier_military_domestic_arms
+			months = 60
+		}
+		ai_chance = { base = 50 }
+	}
+
+	# Option B: Foreign procurement — faster but costly
+	option = {
+		name = ndp_events.12.b
+		default_option = yes
+		add_modifier = {
+			name = ndp_modifier_military_foreign_arms
+			months = 60
+		}
+		add_modifier = {
+			name = ndp_modifier_military_foreign_arms_cost
+			months = 60
+		}
+		ai_chance = { base = 50 }
+	}
+}
+
+# ── ndp_events.13 — Year 8: Morale campaign ──
+ndp_events.13 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "fighterjets" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	title = ndp_events.13.t
+	desc = ndp_events.13.d
+	flavor = ndp_events.13.f
+
+	trigger = { has_variable = ndp_military NOT = { has_variable = ndpe7 } }
+	immediate = { set_variable = ndpe7 }
+	duration = 3
+
+	# Option A: Nationalist morale campaign
+	option = {
+		name = ndp_events.13.a
+		add_modifier = {
+			name = ndp_modifier_military_nationalist_morale
+			months = 24
+		}
+		add_loyalists = { value = small_radicals strata = lower }
+		ai_chance = { base = 50 }
+	}
+
+	# Option B: Professional officer corps
+	option = {
+		name = ndp_events.13.b
+		default_option = yes
+		add_modifier = {
+			name = ndp_modifier_military_professional_officers
+			months = 24
+		}
+		ai_chance = { base = 50 }
+	}
+}
+
+# ── ndp_events.14 — Year 10: Path complete ──
+ndp_events.14 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "helicopter" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	title = ndp_events.14.t
+	desc = ndp_events.14.d
+	flavor = ndp_events.14.f
+
+	trigger = { has_variable = ndp_military NOT = { has_variable = ndpe8 } }
+	immediate = { set_variable = ndpe8 }
+	duration = 3
+
+	option = {
+		name = ndp_events.14.a
+		default_option = yes
+	}
+}
+
+# ==========================================
+# RESOURCE ECONOMY PATH EVENTS
+# ==========================================
+
+# ── ndp_events.21 — Year 2: Resource focus ──
+ndp_events.21 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "windmills" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	title = ndp_events.21.t
+	desc = ndp_events.21.d
+	flavor = ndp_events.21.f
+
+	trigger = { has_variable = ndp_resource NOT = { has_variable = ndpe9 } }
+	immediate = { set_variable = ndpe9 }
+	duration = 3
+
+	# Option A: Agriculture — feed the nation, grow export crops
+	option = {
+		name = ndp_events.21.a
+		set_variable = ndp_resource_sub_choice
+		add_modifier = {
+			name = ndp_modifier_resource_agriculture
+			months = 96
+		}
+		every_scope_state = {
+			limit = {
+				is_incorporated = yes
+				any_scope_building = {
+					is_building_type = building_wheat_farm
+					level >= 1
+				}
+			}
+			add_modifier = {
+				name = ndp_modifier_state_agriculture
+				months = 96
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				trigger = { has_law = law_type:law_agrarianism }
+				add = 30
+			}
+		}
+	}
+
+	# Option B: Raw material extraction — mining, logging, drilling
+	option = {
+		name = ndp_events.21.b
+		default_option = yes
+		set_variable = ndp_resource_sub_choice
+		add_modifier = {
+			name = ndp_modifier_resource_extraction
+			months = 96
+		}
+		every_scope_state = {
+			limit = {
+				is_incorporated = yes
+				OR = {
+					any_scope_building = {
+						is_building_type = building_coal_mine
+						level >= 1
+					}
+					any_scope_building = {
+						is_building_type = building_iron_mine
+						level >= 1
+					}
+				}
+			}
+			add_modifier = {
+				name = ndp_modifier_state_extraction
+				months = 96
+			}
+		}
+		ai_chance = { base = 50 }
+	}
+}
+
+# ── ndp_events.22 — Year 5: Land policy ──
+ndp_events.22 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "middleeast_engineer_blueprint" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	title = ndp_events.22.t
+	desc = ndp_events.22.d
+	flavor = ndp_events.22.f
+
+	trigger = { has_variable = ndp_resource NOT = { has_variable = ndpe10 } }
+	immediate = { set_variable = ndpe10 }
+	duration = 3
+
+	# Option A: Expand into unclaimed land — homesteading
+	option = {
+		name = ndp_events.22.a
+		add_modifier = {
+			name = ndp_modifier_resource_land_expansion
+			months = 60
+		}
+		ai_chance = { base = 50 }
+	}
+
+	# Option B: Intensify existing production
+	option = {
+		name = ndp_events.22.b
+		default_option = yes
+		add_modifier = {
+			name = ndp_modifier_resource_intensification
+			months = 60
+		}
+		ai_chance = { base = 50 }
+	}
+}
+
+# ── ndp_events.23 — Year 8: Export markets ──
+ndp_events.23 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "asia_farmers_market" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	title = ndp_events.23.t
+	desc = ndp_events.23.d
+	flavor = ndp_events.23.f
+
+	trigger = { has_variable = ndp_resource NOT = { has_variable = ndpe11 } }
+	immediate = { set_variable = ndpe11 }
+	duration = 3
+
+	# Option A: Seek export agreements — free trade orientation
+	option = {
+		name = ndp_events.23.a
+		add_modifier = {
+			name = ndp_modifier_resource_export_markets
+			months = 24
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				trigger = { has_law = law_type:law_free_trade }
+				add = 25
+			}
+		}
+	}
+
+	# Option B: Protect domestic supply — food security first
+	option = {
+		name = ndp_events.23.b
+		default_option = yes
+		add_modifier = {
+			name = ndp_modifier_resource_domestic_supply
+			months = 24
+		}
+		ai_chance = { base = 50 }
+	}
+}
+
+# ── ndp_events.24 — Year 10: Path complete ──
+ndp_events.24 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "europenorthamerica_capitalists_meeting" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	title = ndp_events.24.t
+	desc = ndp_events.24.d
+	flavor = ndp_events.24.f
+
+	trigger = { has_variable = ndp_resource NOT = { has_variable = ndpe12 } }
+	immediate = { set_variable = ndpe12 }
+	duration = 3
+
+	option = {
+		name = ndp_events.24.a
+		default_option = yes
+	}
+}
+
+# ==========================================
+# SERVICE ECONOMY PATH EVENTS
+# ==========================================
+
+# ── ndp_events.31 — Year 2: Service focus ──
+ndp_events.31 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "southamerica_election" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	title = ndp_events.31.t
+	desc = ndp_events.31.d
+	flavor = ndp_events.31.f
+
+	trigger = { has_variable = ndp_service NOT = { has_variable = ndpe13 } }
+	immediate = { set_variable = ndpe13 }
+	duration = 3
+
+	# Option A: Financial sector — banking, insurance, trade
+	option = {
+		name = ndp_events.31.a
+		set_variable = ndp_service_sub_choice
+		add_modifier = {
+			name = ndp_modifier_service_finance
+			months = 96
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				trigger = { has_law = law_type:law_laissez_faire }
+				add = 25
+			}
+		}
+	}
+
+	# Option B: Education and bureaucracy — state capacity
+	option = {
+		name = ndp_events.31.b
+		default_option = yes
+		set_variable = ndp_service_sub_choice
+		add_modifier = {
+			name = ndp_modifier_service_education
+			months = 96
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				trigger = { has_law = law_type:law_elected_bureaucrats }
+				add = 25
+			}
+		}
+	}
+}
+
+# ── ndp_events.32 — Year 5: Talent policy ──
+ndp_events.32 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "unspecific_airplane" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	title = ndp_events.32.t
+	desc = ndp_events.32.d
+	flavor = ndp_events.32.f
+
+	trigger = { has_variable = ndp_service NOT = { has_variable = ndpe14 } }
+	immediate = { set_variable = ndpe14 }
+	duration = 3
+
+	# Option A: Attract foreign talent — open immigration
+	option = {
+		name = ndp_events.32.a
+		add_modifier = {
+			name = ndp_modifier_service_foreign_talent
+			months = 60
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				trigger = { has_law = law_type:law_no_migration_controls }
+				add = 25
+			}
+		}
+	}
+
+	# Option B: Invest in domestic education
+	option = {
+		name = ndp_events.32.b
+		default_option = yes
+		add_modifier = {
+			name = ndp_modifier_service_domestic_talent
+			months = 60
+		}
+		ai_chance = { base = 50 }
+	}
+}
+
+# ── ndp_events.33 — Year 8: Institutional reform ──
+ndp_events.33 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "middleeast_middleclass_cafe" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	title = ndp_events.33.t
+	desc = ndp_events.33.d
+	flavor = ndp_events.33.f
+
+	trigger = { has_variable = ndp_service NOT = { has_variable = ndpe15 } }
+	immediate = { set_variable = ndpe15 }
+	duration = 3
+
+	# Option A: Liberalize markets — deregulation
+	option = {
+		name = ndp_events.33.a
+		add_modifier = {
+			name = ndp_modifier_service_liberalize
+			months = 24
+		}
+		ai_chance = { base = 50 }
+	}
+
+	# Option B: Strengthen institutions — rule of law
+	option = {
+		name = ndp_events.33.b
+		default_option = yes
+		add_modifier = {
+			name = ndp_modifier_service_institutions
+			months = 24
+		}
+		add_loyalists = { value = small_radicals strata = middle }
+		ai_chance = { base = 50 }
+	}
+}
+
+# ── ndp_events.34 — Year 10: Path complete ──
+ndp_events.34 = {
+	type = country_event
+	placement = root
+
+	event_image = { video = "africa_construction_colony" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	title = ndp_events.34.t
+	desc = ndp_events.34.d
+	flavor = ndp_events.34.f
+
+	trigger = { has_variable = ndp_service NOT = { has_variable = ndpe16 } }
+	immediate = { set_variable = ndpe16 }
+	duration = 3
+
+	option = {
+		name = ndp_events.34.a
+		default_option = yes
+	}
+}

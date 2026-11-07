@@ -1,0 +1,1154 @@
+﻿﻿530 = 530
+@panel_width = 540
+@panel_width_half = 270
+@panel_width_plus_10 = 550
+@panel_width_plus_14 = 554
+@panel_width_plus_14_half = 277
+@panel_width_plus_20 = 560
+@panel_width_plus_30 = 570
+
+types io_panel_types {
+
+	type io_panel = default_block_window {
+		name = "io_panel"
+		datacontext = "[GetMetaPlayer.GetPlayedOrObservedCountry]"
+		visible = "[GetVariableSystem.HasValue('com_open_window', 'io_sidebar_button')]"
+		using = hud_visibility
+		# Community Mod Framework panels do not inherit the vanilla InformationPanelBar placement,
+		# so keep explicit sidebar geometry while still using default_block_window internals.
+		parentanchor = top|left
+		position = { 0 80 }
+		size = { @panel_width_plus_20 100% }
+		allow_outside = yes
+		alwaystransparent = no
+
+		blockoverride "animation_state_block" {
+			state = {
+				name = _show
+			}
+			state = {
+				name = _hide
+			}
+		}
+
+		blockoverride "window_header_name" {
+			text = "io_panel_title"
+		}
+
+		blockoverride "header_close_button" {
+			onclick = "[GetVariableSystem.Clear('com_open_window')]"
+			shortcut = "close_window"
+		}
+
+		blockoverride "entire_back_button" {
+			back_button_large = {
+				position = { 8 30 }
+				onclick = "[GetVariableSystem.Clear('io_viewing_org')]"
+				visible = "[GetVariableSystem.Exists('io_viewing_org')]"
+				input_action = "back"
+			}
+
+			back_button_large = {
+				position = { 8 30 }
+				onclick = "[GetVariableSystem.Clear('com_open_window')]"
+				visible = "[Not(GetVariableSystem.Exists('io_viewing_org'))]"
+				input_action = "back"
+			}
+		}
+
+		blockoverride "fixed_top" {
+			# Default tab on create
+			widget = {
+				size = { 0 0 }
+				state = {
+					trigger_on_create = yes
+					on_finish = "[GetVariableSystem.Set('io_tab', 'igos')]"
+				}
+			}
+
+			top_illu = {
+				blockoverride "illu" {
+					texture = "gfx/interface/illustrations/top_illus/top_illu_budget.dds"
+				}
+
+				textbox = {
+					parentanchor = center
+					using = fontsize_xl
+					autoresize = yes
+					align = hcenter|nobaseline
+					text = "io_panel_title"
+				}
+			}
+
+			tab_buttons = {
+				blockoverride "first_button" { text = "io_tab_igos_label" }
+				blockoverride "first_button_tooltip" { tooltip = "io_tab_igos_label" }
+				blockoverride "first_button_click" {
+					onclick = "[GetVariableSystem.Set('io_tab', 'igos')]"
+					onclick = "[GetVariableSystem.Clear('io_viewing_org')]"
+				}
+				blockoverride "first_button_visibility" { visible = "[Or(GetVariableSystem.HasValue('io_tab', 'igos'), Or(Not(GetVariableSystem.Exists('io_tab')), And(Not(GetVariableSystem.HasValue('io_tab', 'treaties')), Not(GetVariableSystem.HasValue('io_tab', 'ngos')))))]" }
+				blockoverride "first_button_visibility_checked" { visible = "[And(Not(GetVariableSystem.HasValue('io_tab', 'igos')), GetVariableSystem.Exists('io_tab'))]" }
+				blockoverride "first_button_selected" { text = "io_tab_igos_label" }
+
+				blockoverride "second_button" { text = "io_tab_treaties_label" }
+				blockoverride "second_button_tooltip" { tooltip = "io_tab_treaties_label" }
+				blockoverride "second_button_click" {
+					onclick = "[GetVariableSystem.Set('io_tab', 'treaties')]"
+					onclick = "[GetVariableSystem.Clear('io_viewing_org')]"
+				}
+				blockoverride "second_button_visibility" { visible = "[GetVariableSystem.HasValue('io_tab', 'treaties')]" }
+				blockoverride "second_button_visibility_checked" { visible = "[Not(GetVariableSystem.HasValue('io_tab', 'treaties'))]" }
+				blockoverride "second_button_selected" { text = "io_tab_treaties_label" }
+
+				blockoverride "third_button" { text = "io_tab_ngos_label" }
+				blockoverride "third_button_tooltip" { tooltip = "io_tab_ngos_label" }
+				blockoverride "third_button_click" {
+					onclick = "[GetVariableSystem.Set('io_tab', 'ngos')]"
+					onclick = "[GetVariableSystem.Clear('io_viewing_org')]"
+				}
+				blockoverride "third_button_visibility" { visible = "[GetVariableSystem.HasValue('io_tab', 'ngos')]" }
+				blockoverride "third_button_visibility_checked" { visible = "[Not(GetVariableSystem.HasValue('io_tab', 'ngos'))]" }
+				blockoverride "third_button_selected" { text = "io_tab_ngos_label" }
+			}
+
+			widget = { size = { 1 10 } }
+		}
+
+		blockoverride "scrollarea_content" {
+			flowcontainer = {
+				direction = vertical
+				using = default_list_position
+				using = default_content_fade
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				minimumsize = { @panel_width_plus_14 -1 }
+				maximumsize = { @panel_width_plus_14 -1 }
+				margin_bottom = 15
+
+				### SCROLLAREA WIDTH/HEIGHT WRAPPER
+			### ══════════════════════════════════
+			###  ORGANIZATIONS TAB
+			### ══════════════════════════════════
+			flowcontainer = {
+				visible = "[Or(GetVariableSystem.HasValue('io_tab', 'igos'), Or(Not(GetVariableSystem.Exists('io_tab')), And(Not(GetVariableSystem.HasValue('io_tab', 'treaties')), Not(GetVariableSystem.HasValue('io_tab', 'ngos')))))]"
+				direction = vertical
+				using = default_list_position
+				margin_top = 5
+				margin_bottom = 15
+
+				### ── LIST VIEW ──
+				flowcontainer = {
+					visible = "[Not(GetVariableSystem.Exists('io_viewing_org'))]"
+					direction = vertical
+					using = default_list_position
+
+					default_header_2texts = {
+						blockoverride "text1" {
+			text = "io_tab_igos_label"
+						}
+					}
+
+					widget = {
+						size = { @panel_width_plus_14 50 }
+						parentanchor = hcenter
+						textbox = {
+			text = "io_igos_tab_desc"
+			position = { 15 0 }
+			parentanchor = vcenter
+			size = { 530 50 }
+			multiline = yes
+			align = left|nobaseline
+			using = fontsize_small
+						}
+					}
+
+					widget = { size = { 5 5 } }
+					divider_decorative = {}
+					widget = { size = { 5 5 } }
+
+					io_org_list_item = {
+						blockoverride "io_entry_name" { text = "io_un_name" }
+						blockoverride "io_entry_type" { text = "io_type_cooperative" }
+						blockoverride "io_entry_click" { onclick = "[GetVariableSystem.Set('io_viewing_org', 'un')]" }
+						blockoverride "io_entry_icon" { texture = "gfx/interface/icons/organization_icons/united_nations.dds" }
+						blockoverride "io_entry_member" { visible = "[GetScriptedGui('io_leave_un').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					}
+					io_org_list_item = {
+						blockoverride "io_entry_name" { text = "io_nato_name" }
+						blockoverride "io_entry_type" { text = "io_type_military_defense" }
+						blockoverride "io_entry_click" { onclick = "[GetVariableSystem.Set('io_viewing_org', 'nato')]" }
+						blockoverride "io_entry_icon" { texture = "gfx/interface/icons/organization_icons/nato.dds" }
+						blockoverride "io_entry_member" { visible = "[GetScriptedGui('io_leave_nato').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					}
+					io_org_list_item = {
+						blockoverride "io_entry_name" { text = "io_g7_name" }
+						blockoverride "io_entry_type" { text = "io_type_financial" }
+						blockoverride "io_entry_click" { onclick = "[GetVariableSystem.Set('io_viewing_org', 'g7')]" }
+						blockoverride "io_entry_icon" { texture = "gfx/interface/icons/organization_icons/g7.dds" }
+						blockoverride "io_entry_member" { visible = "[GetScriptedGui('io_leave_g7').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					}
+					io_org_list_item = {
+						blockoverride "io_entry_name" { text = "io_opec_name" }
+						blockoverride "io_entry_type" { text = "io_type_free_trade" }
+						blockoverride "io_entry_click" { onclick = "[GetVariableSystem.Set('io_viewing_org', 'opec')]" }
+						blockoverride "io_entry_icon" { texture = "gfx/interface/icons/organization_icons/opec.dds" }
+						blockoverride "io_entry_member" { visible = "[GetScriptedGui('io_leave_opec').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					}
+					io_org_list_item = {
+						visible = "[GetScriptedGui('io_join_eec').IsShown(GuiScope.SetRoot(Country.MakeScope).End)]"
+						blockoverride "io_entry_name" { text = "io_eec_name" }
+						blockoverride "io_entry_type" { text = "io_type_free_trade" }
+						blockoverride "io_entry_click" { onclick = "[GetVariableSystem.Set('io_viewing_org', 'eec')]" }
+						blockoverride "io_entry_icon" { texture = "gfx/interface/icons/organization_icons/european.dds" }
+						blockoverride "io_entry_member" { visible = "[GetScriptedGui('io_leave_eec').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					}
+					io_org_list_item = {
+						visible = "[GetScriptedGui('io_join_eu').IsShown(GuiScope.SetRoot(Country.MakeScope).End)]"
+						blockoverride "io_entry_name" { text = "io_eu_name" }
+						blockoverride "io_entry_type" { text = "io_type_free_trade" }
+						blockoverride "io_entry_click" { onclick = "[GetVariableSystem.Set('io_viewing_org', 'eu')]" }
+						blockoverride "io_entry_icon" { texture = "gfx/interface/icons/organization_icons/european.dds" }
+						blockoverride "io_entry_member" { visible = "[GetScriptedGui('io_leave_eu').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					}
+					io_org_list_item = {
+						blockoverride "io_entry_name" { text = "io_arab_league_name" }
+						blockoverride "io_entry_type" { text = "io_type_cultural_pact" }
+						blockoverride "io_entry_click" { onclick = "[GetVariableSystem.Set('io_viewing_org', 'arab_league')]" }
+						blockoverride "io_entry_icon" { texture = "gfx/interface/icons/organization_icons/arab_league.dds" }
+						blockoverride "io_entry_member" { visible = "[GetScriptedGui('io_leave_arab_league').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					}
+					io_org_list_item = {
+						blockoverride "io_entry_name" { text = "io_imf_name" }
+						blockoverride "io_entry_type" { text = "io_type_financial" }
+						blockoverride "io_entry_click" { onclick = "[GetVariableSystem.Set('io_viewing_org', 'imf')]" }
+						blockoverride "io_entry_icon" { texture = "gfx/interface/icons/organization_icons/imf.dds" }
+						blockoverride "io_entry_member" { visible = "[GetScriptedGui('io_leave_imf').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					}
+				#	io_org_list_item = {
+				#		blockoverride "io_entry_name" { text = "io_esa_name" }
+				#		blockoverride "io_entry_type" { text = "io_type_cooperative" }
+				#		blockoverride "io_entry_click" { onclick = "[GetVariableSystem.Set('io_viewing_org', 'esa')]" }
+				#		blockoverride "io_entry_icon" { texture = "gfx/interface/icons/organization_icons/esa.dds" }
+					#	blockoverride "io_entry_member" { visible = "[GetScriptedGui('io_leave_esa').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					#}
+					io_org_list_item = {
+						blockoverride "io_entry_name" { text = "io_asean_name" }
+						blockoverride "io_entry_type" { text = "io_type_cooperative" }
+						blockoverride "io_entry_click" { onclick = "[GetVariableSystem.Set('io_viewing_org', 'asean')]" }
+						blockoverride "io_entry_icon" { texture ="gfx/interface/icons/organization_icons/asean.dds" }
+						blockoverride "io_entry_member" { visible = "[GetScriptedGui('io_leave_asean').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					}
+					io_org_list_item = {
+						blockoverride "io_entry_name" { text = "io_saarc_name" }
+						blockoverride "io_entry_type" { text = "io_type_cooperative" }
+						blockoverride "io_entry_click" { onclick = "[GetVariableSystem.Set('io_viewing_org', 'saarc')]" }
+						blockoverride "io_entry_icon" { texture = "gfx/interface/icons/organization_icons/saarc.dds" }
+						blockoverride "io_entry_member" { visible = "[GetScriptedGui('io_leave_saarc').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					}
+					io_org_list_item = {
+						blockoverride "io_entry_name" { text = "io_cis_name" }
+						blockoverride "io_entry_type" { text = "io_type_cooperative" }
+						blockoverride "io_entry_click" { onclick = "[GetVariableSystem.Set('io_viewing_org', 'cis')]" }
+						blockoverride "io_entry_icon" { texture = "gfx/interface/icons/organization_icons/cis.dds" }
+						blockoverride "io_entry_member" { visible = "[GetScriptedGui('io_leave_cis').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					}
+					io_org_list_item = {
+						blockoverride "io_entry_name" { text = "io_who_name" }
+						blockoverride "io_entry_type" { text = "io_type_cooperative" }
+						blockoverride "io_entry_click" { onclick = "[GetVariableSystem.Set('io_viewing_org', 'who')]" }
+						blockoverride "io_entry_icon" { texture = "gfx/interface/icons/organization_icons/who.dds" }
+						blockoverride "io_entry_member" { visible = "[GetScriptedGui('io_leave_who').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					}
+				}
+
+				### ── DETAIL VIEWS ──
+				io_org_detail = {
+					visible = "[GetVariableSystem.HasValue('io_viewing_org', 'un')]"
+					blockoverride "detail_name" { text = "io_un_name" }
+					blockoverride "detail_type_text" { text = "io_type_cooperative" }
+					blockoverride "detail_type_tooltip" { tooltip = "concept_cooperative_agreement" }
+					blockoverride "detail_desc" { text = "io_un_desc" }
+					blockoverride "detail_icon" { texture = "gfx/interface/icons/organization_icons/united_nations.dds" }
+					blockoverride "detail_modifier_content" {
+						textbox = { raw_text = "#italic No direct modifiers. Influence exercised through resolutions.#!" parentanchor = hcenter autoresize = yes align = left|nobaseline using = fontsize_small margin = { 10 8 } }
+					}
+					blockoverride "detail_member_list" { datamodel = "[GetGlobalList('io_un_members')]" }
+					blockoverride "detail_join" { onclick = "[GetScriptedGui('io_join_un').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_join_un').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_join_un').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+					blockoverride "detail_leave" { onclick = "[GetScriptedGui('io_leave_un').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_leave_un').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_leave_un').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+				}
+				io_org_detail = {
+					visible = "[GetVariableSystem.HasValue('io_viewing_org', 'nato')]"
+					blockoverride "detail_name" { text = "io_nato_name" }
+					blockoverride "detail_type_text" { text = "io_type_military_defense" }
+					blockoverride "detail_type_tooltip" { tooltip = "concept_military_defense_agreement" }
+					blockoverride "detail_desc" { text = "io_nato_desc" }
+					blockoverride "detail_icon" { texture = "gfx/interface/icons/organization_icons/nato.dds" }
+					blockoverride "detail_modifier_content" {
+									io_modifier_entry = { blockoverride "mod_text" { text = "io_mod_military_defense_pact" } }
+									io_modifier_entry = { blockoverride "mod_text" { text = "io_mod_prestige_2pct" } }
+								}
+					blockoverride "detail_member_list" { datamodel = "[GetGlobalList('io_nato_members')]" }
+					blockoverride "detail_join" { onclick = "[GetScriptedGui('io_join_nato').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_join_nato').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_join_nato').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+					blockoverride "detail_leave" { onclick = "[GetScriptedGui('io_leave_nato').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_leave_nato').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_leave_nato').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+				}
+				io_org_detail = {
+					visible = "[GetVariableSystem.HasValue('io_viewing_org', 'g7')]"
+					blockoverride "detail_name" { text = "io_g7_name" }
+					blockoverride "detail_type_text" { text = "io_type_financial" }
+					blockoverride "detail_type_tooltip" { tooltip = "concept_financial_agreement" }
+					blockoverride "detail_desc" { text = "io_g7_desc" }
+					blockoverride "detail_icon" { texture = "gfx/interface/icons/organization_icons/g7.dds" }
+					blockoverride "detail_modifier_content" {
+									io_modifier_entry = { blockoverride "mod_text" { text = "io_mod_influence_5pct" } }
+									io_modifier_entry = { blockoverride "mod_text" { text = "io_mod_diplo_rep_1" } }
+								}
+					blockoverride "detail_member_list" { datamodel = "[GetGlobalList('io_g7_members')]" }
+					blockoverride "detail_join" { onclick = "[GetScriptedGui('io_join_g7').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_join_g7').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_join_g7').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+					blockoverride "detail_leave" { onclick = "[GetScriptedGui('io_leave_g7').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_leave_g7').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_leave_g7').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+				}
+				io_org_detail = {
+					visible = "[GetVariableSystem.HasValue('io_viewing_org', 'opec')]"
+					blockoverride "detail_name" { text = "io_opec_name" }
+					blockoverride "detail_type_text" { text = "io_type_free_trade" }
+					blockoverride "detail_type_tooltip" { tooltip = "concept_free_trade_agreement" }
+					blockoverride "detail_desc" { text = "io_opec_desc" }
+					blockoverride "detail_icon" { texture = "gfx/interface/icons/organization_icons/opec.dds" }
+					blockoverride "detail_modifier_content" {
+									io_modifier_entry = { blockoverride "mod_text" { text = "io_mod_opec_trade_advantage" } }
+									io_modifier_entry = { blockoverride "mod_text" { text = "io_mod_opec_throughput" } }
+									io_modifier_entry = { blockoverride "mod_text" { text = "io_mod_opec_customs" } }
+								}
+					blockoverride "detail_member_list" { datamodel = "[GetGlobalList('io_opec_members')]" }
+					blockoverride "detail_join" { onclick = "[GetScriptedGui('io_join_opec').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_join_opec').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_join_opec').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+					blockoverride "detail_leave" { onclick = "[GetScriptedGui('io_leave_opec').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_leave_opec').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_leave_opec').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+				}
+				io_org_detail = {
+					visible = "[And(GetVariableSystem.HasValue('io_viewing_org', 'eec'), GetScriptedGui('io_join_eec').IsShown(GuiScope.SetRoot(Country.MakeScope).End))]"
+					blockoverride "detail_name" { text = "io_eec_name" }
+					blockoverride "detail_type_text" { text = "io_type_financial" }
+					blockoverride "detail_type_tooltip" { tooltip = "concept_free_trade_agreement" }
+					blockoverride "detail_desc" { text = "io_eec_desc" }
+					blockoverride "detail_icon" { texture = "gfx/interface/icons/organization_icons/european.dds" }
+					blockoverride "detail_modifier_content" {
+									io_modifier_entry = { blockoverride "mod_text" { text = "io_mod_eec_customs" } }
+									io_modifier_entry = { blockoverride "mod_text" { text = "io_mod_free_trade_convoys" } }
+									io_modifier_entry = { blockoverride "mod_text" { text = "io_mod_free_trade_expedition" } }
+								}
+					blockoverride "detail_member_list" { datamodel = "[GetGlobalList('io_eec_members')]" }
+					blockoverride "detail_join" { onclick = "[GetScriptedGui('io_join_eec').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_join_eec').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_join_eec').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+					blockoverride "detail_leave" { onclick = "[GetScriptedGui('io_leave_eec').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_leave_eec').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_leave_eec').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+				}
+				io_org_detail = {
+					visible = "[And(GetVariableSystem.HasValue('io_viewing_org', 'eu'), GetScriptedGui('io_join_eu').IsShown(GuiScope.SetRoot(Country.MakeScope).End))]"
+					blockoverride "detail_name" { text = "io_eu_name" }
+					blockoverride "detail_type_text" { text = "io_type_free_trade" }
+					blockoverride "detail_type_tooltip" { tooltip = "concept_free_trade_agreement" }
+					blockoverride "detail_desc" { text = "io_eu_desc" }
+					blockoverride "detail_icon" { texture = "gfx/interface/icons/organization_icons/european.dds" }
+					blockoverride "detail_modifier_content" {
+									io_modifier_entry = { blockoverride "mod_text" { text = "io_mod_eec_customs" } }
+									io_modifier_entry = { blockoverride "mod_text" { text = "io_mod_free_trade_convoys" } }
+									io_modifier_entry = { blockoverride "mod_text" { text = "io_mod_free_trade_expedition" } }
+								}
+					blockoverride "detail_member_list" { datamodel = "[GetGlobalList('io_eu_members')]" }
+					blockoverride "detail_join" { onclick = "[GetScriptedGui('io_join_eu').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_join_eu').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_join_eu').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+					blockoverride "detail_leave" { onclick = "[GetScriptedGui('io_leave_eu').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_leave_eu').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_leave_eu').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+				}
+				io_org_detail = {
+					visible = "[GetVariableSystem.HasValue('io_viewing_org', 'arab_league')]"
+					blockoverride "detail_name" { text = "io_arab_league_name" }
+					blockoverride "detail_type_text" { text = "io_type_cultural_pact" }
+					blockoverride "detail_type_tooltip" { tooltip = "concept_cultural_pact" }
+					blockoverride "detail_desc" { text = "io_arab_league_desc" }
+					blockoverride "detail_icon" { texture = "gfx/interface/icons/organization_icons/arab_league.dds" }
+					blockoverride "detail_modifier_content" {
+									io_modifier_entry = { blockoverride "mod_text" { text = "io_mod_cultural_tech_spread" } }
+									io_modifier_entry = { blockoverride "mod_text" { text = "io_mod_cultural_revolution_suppress" } }
+								}
+					blockoverride "detail_member_list" { datamodel = "[GetGlobalList('io_arab_league_members')]" }
+					blockoverride "detail_join" { onclick = "[GetScriptedGui('io_join_arab_league').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_join_arab_league').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_join_arab_league').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+					blockoverride "detail_leave" { onclick = "[GetScriptedGui('io_leave_arab_league').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_leave_arab_league').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_leave_arab_league').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+				}
+				io_org_detail = {
+					visible = "[GetVariableSystem.HasValue('io_viewing_org', 'imf')]"
+					blockoverride "detail_name" { text = "io_imf_name" }
+					blockoverride "detail_type_text" { text = "io_type_financial" }
+					blockoverride "detail_type_tooltip" { tooltip = "concept_financial_agreement" }
+					blockoverride "detail_desc" { text = "io_imf_desc" }
+					blockoverride "detail_icon" { texture = "gfx/interface/icons/organization_icons/imf.dds" }
+					blockoverride "detail_modifier_content" {
+									io_modifier_entry = { blockoverride "mod_text" { text = "io_mod_imf_aid" } }
+									io_modifier_entry = { blockoverride "mod_text" { text = "io_mod_diplo_rep_1" } }
+								}
+					blockoverride "detail_member_list" { datamodel = "[GetGlobalList('io_imf_members')]" }
+					blockoverride "detail_join" { onclick = "[GetScriptedGui('io_join_imf').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_join_imf').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_join_imf').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+					blockoverride "detail_leave" { onclick = "[GetScriptedGui('io_leave_imf').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_leave_imf').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_leave_imf').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+				}
+				#io_org_detail = {
+				#	visible = "[GetVariableSystem.HasValue('io_viewing_org', 'esa')]"
+				#	blockoverride "detail_name" { text = "io_esa_name" }
+				#	blockoverride "detail_type_text" { text = "io_type_cooperative" }
+				#	blockoverride "detail_type_tooltip" { tooltip = "concept_cooperative_agreement" }
+				#	blockoverride "detail_desc" { text = "io_esa_desc" }
+				#	blockoverride "detail_icon" { texture = "gfx/interface/icons/organization_icons/esa.dds" }
+				#	blockoverride "detail_modifier_content" {
+				#		textbox = { raw_text = "#italic No direct modifiers.#!" parentanchor = hcenter autoresize = yes align = left|nobaseline using = fontsize_small margin = { 10 8 } }
+				#	}
+				#	blockoverride "detail_member_list" { datamodel = "[GetGlobalList('io_esa_members')]" }
+				#	blockoverride "detail_join" { onclick = "[GetScriptedGui('io_join_esa').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_join_esa').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+				#	blockoverride "detail_leave" { onclick = "[GetScriptedGui('io_leave_esa').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_leave_esa').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_leave_esa').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+				#}
+				io_org_detail = {
+					visible = "[GetVariableSystem.HasValue('io_viewing_org', 'asean')]"
+					blockoverride "detail_name" { text = "io_asean_name" }
+					blockoverride "detail_type_text" { text = "io_type_cooperative" }
+					blockoverride "detail_type_tooltip" { tooltip = "concept_cooperative_agreement" }
+					blockoverride "detail_desc" { text = "io_asean_desc" }
+					blockoverride "detail_icon" { texture = "gfx/interface/icons/organization_icons/asean.dds" }
+					blockoverride "detail_modifier_content" {
+						textbox = { raw_text = "#italic No direct modifiers.#!" parentanchor = hcenter autoresize = yes align = left|nobaseline using = fontsize_small margin = { 10 8 } }
+					}
+					blockoverride "detail_member_list" { datamodel = "[GetGlobalList('io_asean_members')]" }
+					blockoverride "detail_join" { onclick = "[GetScriptedGui('io_join_asean').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_join_asean').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_join_asean').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+					blockoverride "detail_leave" { onclick = "[GetScriptedGui('io_leave_asean').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_leave_asean').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_leave_asean').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+				}
+				io_org_detail = {
+					visible = "[GetVariableSystem.HasValue('io_viewing_org', 'saarc')]"
+					blockoverride "detail_name" { text = "io_saarc_name" }
+					blockoverride "detail_type_text" { text = "io_type_cooperative" }
+					blockoverride "detail_type_tooltip" { tooltip = "concept_cooperative_agreement" }
+					blockoverride "detail_desc" { text = "io_saarc_desc" }
+					blockoverride "detail_icon" { texture = "gfx/interface/icons/organization_icons/saarc.dds" }
+					blockoverride "detail_modifier_content" {
+						textbox = { raw_text = "#italic No direct modifiers.#!" parentanchor = hcenter autoresize = yes align = left|nobaseline using = fontsize_small margin = { 10 8 } }
+					}
+					blockoverride "detail_member_list" { datamodel = "[GetGlobalList('io_saarc_members')]" }
+					blockoverride "detail_join" { onclick = "[GetScriptedGui('io_join_saarc').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_join_saarc').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_join_saarc').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+					blockoverride "detail_leave" { onclick = "[GetScriptedGui('io_leave_saarc').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_leave_saarc').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_leave_saarc').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+				}
+				io_org_detail = {
+					visible = "[GetVariableSystem.HasValue('io_viewing_org', 'cis')]"
+					blockoverride "detail_name" { text = "io_cis_name" }
+					blockoverride "detail_type_text" { text = "io_type_cooperative" }
+					blockoverride "detail_type_tooltip" { tooltip = "concept_cooperative_agreement" }
+					blockoverride "detail_desc" { text = "io_cis_desc" }
+					blockoverride "detail_icon" { texture = "gfx/interface/icons/organization_icons/cis.dds" }
+					blockoverride "detail_modifier_content" {
+						textbox = { raw_text = "#italic No direct modifiers.#!" parentanchor = hcenter autoresize = yes align = left|nobaseline using = fontsize_small margin = { 10 8 } }
+					}
+					blockoverride "detail_member_list" { datamodel = "[GetGlobalList('io_cis_members')]" }
+					blockoverride "detail_join" { onclick = "[GetScriptedGui('io_join_cis').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_join_cis').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_join_cis').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"}
+					blockoverride "detail_leave" { onclick = "[GetScriptedGui('io_leave_cis').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_leave_cis').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_leave_cis').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+				}
+				io_org_detail = {
+					visible = "[GetVariableSystem.HasValue('io_viewing_org', 'who')]"
+					blockoverride "detail_name" { text = "io_who_name" }
+					blockoverride "detail_type_text" { text = "io_type_cooperative" }
+					blockoverride "detail_type_tooltip" { tooltip = "concept_cooperative_agreement" }
+					blockoverride "detail_desc" { text = "io_who_desc" }
+					blockoverride "detail_icon" { texture = "gfx/interface/icons/organization_icons/who.dds" }
+					blockoverride "detail_modifier_content" {
+						textbox = { raw_text = "#italic No direct modifiers.#!" parentanchor = hcenter autoresize = yes align = left|nobaseline using = fontsize_small margin = { 10 8 } }
+					}
+					blockoverride "detail_member_list" { datamodel = "[GetGlobalList('io_who_members')]" }
+					blockoverride "detail_join" { onclick = "[GetScriptedGui('io_join_who').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_join_who').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_join_who').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+					blockoverride "detail_leave" { onclick = "[GetScriptedGui('io_leave_who').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_leave_who').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" tooltip = "[GetScriptedGui('io_leave_who').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+				}
+			}
+
+
+
+			### ══════════════════════════════════
+			###  TREATIES TAB
+			### ══════════════════════════════════
+			flowcontainer = {
+				visible = "[GetVariableSystem.HasValue('io_tab', 'treaties')]"
+				direction = vertical
+				using = default_list_position
+				margin_top = 5
+				margin_bottom = 15
+
+				flowcontainer = {
+					visible = "[Not(GetVariableSystem.Exists('io_viewing_org'))]"
+					direction = vertical
+					using = default_list_position
+
+					default_header_2texts = {
+						blockoverride "text1" { text = "io_tab_treaties_label" }
+					}
+
+					widget = {
+						size = { @panel_width_plus_14 50 }
+						parentanchor = hcenter
+						textbox = { text = "io_treaties_tab_desc" position = { 15 0 } parentanchor = vcenter size = { 530 50 } multiline = yes align = left|nobaseline using = fontsize_small }
+					}
+
+					widget = { size = { 5 5 } }
+					divider_decorative = {}
+					widget = { size = { 5 5 } }
+
+					io_treaty_list_item = {
+						blockoverride "treaty_name" { text = "io_treaty_geneva_name" }
+						blockoverride "treaty_click" { onclick = "[GetVariableSystem.Set('io_viewing_org', 'treaty_geneva')]" }
+						blockoverride "treaty_signed" { visible = "[GetPlayer.MakeScope.Var('io_treaty_geneva_signed').IsSet]" }
+					}
+					io_treaty_list_item = {
+						blockoverride "treaty_name" { text = "io_treaty_cwc_name" }
+						blockoverride "treaty_click" { onclick = "[GetVariableSystem.Set('io_viewing_org', 'treaty_cwc')]" }
+						blockoverride "treaty_signed" { visible = "[GetPlayer.MakeScope.Var('io_treaty_cwc_signed').IsSet]" }
+					}
+					io_treaty_list_item = {
+						blockoverride "treaty_name" { text = "io_treaty_npt_name" }
+						blockoverride "treaty_click" { onclick = "[GetVariableSystem.Set('io_viewing_org', 'treaty_npt')]" }
+						blockoverride "treaty_signed" { visible = "[GetPlayer.MakeScope.Var('io_treaty_npt_signed').IsSet]" }
+					}
+					io_treaty_list_item = {
+						blockoverride "treaty_name" { text = "io_treaty_bwc_name" }
+						blockoverride "treaty_click" { onclick = "[GetVariableSystem.Set('io_viewing_org', 'treaty_bwc')]" }
+						blockoverride "treaty_signed" { visible = "[GetPlayer.MakeScope.Var('io_treaty_bwc_signed').IsSet]" }
+					}
+					io_treaty_list_item = {
+						blockoverride "treaty_name" { text = "io_treaty_cat_name" }
+						blockoverride "treaty_click" { onclick = "[GetVariableSystem.Set('io_viewing_org', 'treaty_cat')]" }
+						blockoverride "treaty_signed" { visible = "[GetPlayer.MakeScope.Var('io_treaty_cat_signed').IsSet]" }
+					}
+				}
+
+				io_treaty_detail = {
+					visible = "[GetVariableSystem.HasValue('io_viewing_org', 'treaty_geneva')]"
+					blockoverride "treaty_detail_name" { text = "io_treaty_geneva_name" }
+					blockoverride "treaty_detail_desc" { text = "io_treaty_geneva_desc" }
+					blockoverride "treaty_mod_content" { io_modifier_entry = { blockoverride "mod_text" { text = "io_mod_infamy_minus5" } } }
+					blockoverride "treaty_sign" { onclick = "[GetScriptedGui('io_sign_geneva').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_sign_geneva').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					blockoverride "treaty_withdraw" { onclick = "[GetScriptedGui('io_withdraw_geneva').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_withdraw_geneva').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+				}
+				io_treaty_detail = {
+					visible = "[GetVariableSystem.HasValue('io_viewing_org', 'treaty_cwc')]"
+					blockoverride "treaty_detail_name" { text = "io_treaty_cwc_name" }
+					blockoverride "treaty_detail_desc" { text = "io_treaty_cwc_desc" }
+					blockoverride "treaty_mod_content" { io_modifier_entry = { blockoverride "mod_text" { text = "io_mod_mobe_options_chem" } } }
+					blockoverride "treaty_sign" { onclick = "[GetScriptedGui('io_sign_cwc').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_sign_cwc').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					blockoverride "treaty_withdraw" { onclick = "[GetScriptedGui('io_withdraw_cwc').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_withdraw_cwc').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+				}
+				io_treaty_detail = {
+					visible = "[GetVariableSystem.HasValue('io_viewing_org', 'treaty_npt')]"
+					blockoverride "treaty_detail_name" { text = "io_treaty_npt_name" }
+					blockoverride "treaty_detail_desc" { text = "io_treaty_npt_desc" }
+					blockoverride "treaty_mod_content" {
+						io_modifier_entry = { blockoverride "mod_text" { text = "io_mod_infamy_minus3" } }
+						io_modifier_entry = { blockoverride "mod_text" { text = "io_mod_prestige_2pct" } }
+					}
+					blockoverride "treaty_sign" { onclick = "[GetScriptedGui('io_sign_npt').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_sign_npt').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					blockoverride "treaty_withdraw" { onclick = "[GetScriptedGui('io_withdraw_npt').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_withdraw_npt').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+				}
+				io_treaty_detail = {
+					visible = "[GetVariableSystem.HasValue('io_viewing_org', 'treaty_bwc')]"
+					blockoverride "treaty_detail_name" { text = "io_treaty_bwc_name" }
+					blockoverride "treaty_detail_desc" { text = "io_treaty_bwc_desc" }
+					blockoverride "treaty_mod_content" { io_modifier_entry = { blockoverride "mod_text" { text = "io_mod_diplo_rep_1" } } }
+					blockoverride "treaty_sign" { onclick = "[GetScriptedGui('io_sign_bwc').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_sign_bwc').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					blockoverride "treaty_withdraw" { onclick = "[GetScriptedGui('io_withdraw_bwc').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_withdraw_bwc').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+				}
+				io_treaty_detail = {
+					visible = "[GetVariableSystem.HasValue('io_viewing_org', 'treaty_cat')]"
+					blockoverride "treaty_detail_name" { text = "io_treaty_cat_name" }
+					blockoverride "treaty_detail_desc" { text = "io_treaty_cat_desc" }
+					blockoverride "treaty_mod_content" { io_modifier_entry = { blockoverride "mod_text" { text = "io_mod_prestige_3pct" } } }
+					blockoverride "treaty_sign" { onclick = "[GetScriptedGui('io_sign_cat').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_sign_cat').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					blockoverride "treaty_withdraw" { onclick = "[GetScriptedGui('io_withdraw_cat').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_withdraw_cat').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+				}
+			}
+
+
+
+			### ══════════════════════════════════
+			###  NGOs TAB
+			### ══════════════════════════════════
+			flowcontainer = {
+				visible = "[GetVariableSystem.HasValue('io_tab', 'ngos')]"
+				direction = vertical
+				using = default_list_position
+				margin_top = 5
+				margin_bottom = 15
+
+				default_header_2texts = {
+					blockoverride "text1" { text = "io_tab_ngos_label" }
+				}
+
+				widget = {
+					size = { @panel_width_plus_14 50 }
+					parentanchor = hcenter
+					textbox = { text = "io_ngos_tab_desc" position = { 15 0 } parentanchor = vcenter size = { 530 50 } multiline = yes align = left|nobaseline using = fontsize_small }
+				}
+
+				widget = { size = { 5 5 } }
+				divider_decorative = {}
+				widget = { size = { 5 5 } }
+
+				io_ngo_card = {
+					blockoverride "ngo_icon" { texture = "gfx/interface/icons/organization_icons/nongovernmental/iaea.dds" }
+					blockoverride "ngo_name" { text = "io_iaea_name" }
+					blockoverride "ngo_desc" { text = "io_iaea_desc" }
+					blockoverride "ngo_opinion_val" { raw_text = "[GetPlayer.MakeScope.Var('io_ngo_iaea_opinion').GetValue|0]" }
+					blockoverride "ngo_status_content" {
+						textbox = { visible = "[GetPlayer.MakeScope.Var('io_ngo_iaea_banned').IsSet]" raw_text = "#n Banned#!" autoresize = yes using = fontsize_small }
+						textbox = { visible = "[GetPlayer.MakeScope.Var('io_ngo_iaea_supported').IsSet]" raw_text = "#p Supported#!" autoresize = yes using = fontsize_small }
+						textbox = { visible = "[And(Not(GetPlayer.MakeScope.Var('io_ngo_iaea_banned').IsSet), Not(GetPlayer.MakeScope.Var('io_ngo_iaea_supported').IsSet))]" raw_text = "#v Active#!" autoresize = yes using = fontsize_small }
+					}
+					blockoverride "ngo_ban" { onclick = "[GetScriptedGui('io_ngo_ban_iaea').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_ngo_ban_iaea').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					blockoverride "ngo_unban" { onclick = "[GetScriptedGui('io_ngo_unban_iaea').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_ngo_unban_iaea').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					blockoverride "ngo_support" { onclick = "[GetScriptedGui('io_ngo_support_iaea').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_ngo_support_iaea').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+				}
+				io_ngo_card = {
+					blockoverride "ngo_icon" { texture = "gfx/interface/icons/organization_icons/nongovernmental/red_cross.dds" }
+					blockoverride "ngo_name" { text = "io_redcross_name" }
+					blockoverride "ngo_desc" { text = "io_redcross_desc" }
+					blockoverride "ngo_opinion_val" { raw_text = "[GetPlayer.MakeScope.Var('io_ngo_redcross_opinion').GetValue|0]" }
+					blockoverride "ngo_status_content" {
+						textbox = { visible = "[GetPlayer.MakeScope.Var('io_ngo_redcross_banned').IsSet]" raw_text = "#n Banned#!" autoresize = yes using = fontsize_small }
+						textbox = { visible = "[GetPlayer.MakeScope.Var('io_ngo_redcross_supported').IsSet]" raw_text = "#p Supported#!" autoresize = yes using = fontsize_small }
+						textbox = { visible = "[And(Not(GetPlayer.MakeScope.Var('io_ngo_redcross_banned').IsSet), Not(GetPlayer.MakeScope.Var('io_ngo_redcross_supported').IsSet))]" raw_text = "#v Active#!" autoresize = yes using = fontsize_small }
+					}
+					blockoverride "ngo_ban" { onclick = "[GetScriptedGui('io_ngo_ban_redcross').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_ngo_ban_redcross').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					blockoverride "ngo_unban" { onclick = "[GetScriptedGui('io_ngo_unban_redcross').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_ngo_unban_redcross').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					blockoverride "ngo_support" { onclick = "[GetScriptedGui('io_ngo_support_redcross').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_ngo_support_redcross').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+				}
+				io_ngo_card = {
+					blockoverride "ngo_icon" { texture = "gfx/interface/icons/organization_icons/nongovernmental/amnesty.dds" }
+					blockoverride "ngo_name" { text = "io_amnesty_name" }
+					blockoverride "ngo_desc" { text = "io_amnesty_desc" }
+					blockoverride "ngo_opinion_val" { raw_text = "[GetPlayer.MakeScope.Var('io_ngo_amnesty_opinion').GetValue|0]" }
+					blockoverride "ngo_status_content" {
+						textbox = { visible = "[GetPlayer.MakeScope.Var('io_ngo_amnesty_banned').IsSet]" raw_text = "#n Banned#!" autoresize = yes using = fontsize_small }
+						textbox = { visible = "[GetPlayer.MakeScope.Var('io_ngo_amnesty_supported').IsSet]" raw_text = "#p Supported#!" autoresize = yes using = fontsize_small }
+						textbox = { visible = "[And(Not(GetPlayer.MakeScope.Var('io_ngo_amnesty_banned').IsSet), Not(GetPlayer.MakeScope.Var('io_ngo_amnesty_supported').IsSet))]" raw_text = "#v Active#!" autoresize = yes using = fontsize_small }
+					}
+					blockoverride "ngo_ban" { onclick = "[GetScriptedGui('io_ngo_ban_amnesty').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_ngo_ban_amnesty').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					blockoverride "ngo_unban" { onclick = "[GetScriptedGui('io_ngo_unban_amnesty').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_ngo_unban_amnesty').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+					blockoverride "ngo_support" { onclick = "[GetScriptedGui('io_ngo_support_amnesty').Execute(GuiScope.SetRoot(Country.MakeScope).End)]" enabled = "[GetScriptedGui('io_ngo_support_amnesty').IsValid(GuiScope.SetRoot(Country.MakeScope).End)]" }
+				}
+			}
+		
+			}
+}
+	}
+
+
+	### ══════════════════════════════════════
+	### TEMPLATE: Organization List Item
+	### ══════════════════════════════════════
+	type io_org_list_item = widget {
+		size = { @panel_width_plus_14 50 }
+		parentanchor = hcenter
+
+		button = {
+			using = default_button
+			size = { 100% 100% }
+			block "io_entry_click" {}
+
+			hbox = {
+				margin = { 10 5 }
+				spacing = 10
+
+				icon = {
+					size = { 36 36 }
+					block "io_entry_icon" { texture = "gfx/interface/icons/generic_icons/truce.dds" }
+				}
+
+				vbox = {
+					layoutpolicy_horizontal = expanding
+					spacing = 2
+
+					textbox = {
+						block "io_entry_name" { text = "" }
+						layoutpolicy_horizontal = expanding
+						autoresize = yes
+						align = left|nobaseline
+						using = fontsize_large
+						default_format = "#header"
+					}
+					textbox = {
+						block "io_entry_type" { text = "" }
+						layoutpolicy_horizontal = expanding
+						autoresize = yes
+						align = left|nobaseline
+						using = fontsize_small
+					}
+				}
+
+				icon = {
+					size = { 36 36 }
+					texture = "gfx/interface/icons/generic_icons/leading_interest_group_icon.dds"
+					block "io_entry_member" { visible = no }
+					tooltip = "io_member_indicator_tt"
+				}
+			}
+		}
+	}
+
+	### ══════════════════════════════════════
+	### TEMPLATE: Organization Detail View
+	### ══════════════════════════════════════
+	type io_org_detail = flowcontainer {
+		direction = vertical
+		using = default_list_position
+		margin_bottom = 10
+
+		# Back button
+		flowcontainer = {
+			margin_bottom = 5
+			parentanchor = hcenter
+			minimumsize = { @panel_width -1 }
+			button = {
+				using = default_button
+				size = { 120 30 }
+				text = "io_back_button"
+				onclick = "[GetVariableSystem.Clear('io_viewing_org')]"
+			}
+		}
+
+		# Header with icon
+		widget = {
+			size = { @panel_width_plus_14 100 }
+			parentanchor = hcenter
+			background = { using = entry_bg_simple }
+
+			hbox = {
+				layoutpolicy_horizontal = expanding
+				margin = { 15 10 }
+				spacing = 15
+
+				icon = {
+					size = { 56 56 }
+					block "detail_icon" { texture = "gfx/interface/icons/generic_icons/diplomatic_action.dds" }
+				}
+
+				vbox = {
+					layoutpolicy_horizontal = expanding
+					minimumsize = { 420 -1 }
+					maximumsize = { 420 -1 }
+					spacing = 4
+
+					textbox = {
+						minimumsize = { 420 -1 }
+						maximumsize = { 420 -1 }
+						block "detail_name" { text = "" }
+						layoutpolicy_horizontal = expanding
+						autoresize = yes
+						multiline = yes
+						align = left|nobaseline
+						using = header_font
+						using = fontsize_xl
+						default_format = "#header"
+					}
+
+					textbox = {
+						minimumsize = { 420 -1 }
+						maximumsize = { 420 -1 }
+						block "detail_type_text" { text = "" }
+						block "detail_type_tooltip" {}
+						autoresize = yes
+						align = left|nobaseline
+						using = fontsize_small
+					}
+				}
+			}
+		}
+
+		widget = { size = { 5 5 } }
+
+		# Description
+		widget = {
+			size = { @panel_width_plus_14 -1 }
+			parentanchor = hcenter
+			flowcontainer = {
+				direction = vertical
+				minimumsize = { @panel_width -1 }
+				margin = { 15 10 }
+				resizeparent = yes
+				textbox = {
+					block "detail_desc" { text = "" }
+					minimumsize = { 530 -1 }
+					maximumsize = { 530 -1 }
+					autoresize = yes
+					multiline = yes
+					align = left|nobaseline
+				}
+			}
+		}
+
+		widget = { size = { 5 3 } }
+		divider_decorative = {}
+		widget = { size = { 5 3 } }
+
+		# Modifiers section
+		flowcontainer = {
+			direction = vertical
+			parentanchor = hcenter
+			default_header_2texts = {
+				blockoverride "text1" { text = "io_modifiers_header" }
+			}
+			flowcontainer = {
+				direction = vertical
+				parentanchor = hcenter
+				minimumsize = { @panel_width -1 }
+				margin = { 5 0 }
+				block "detail_modifier_content" {}
+			}
+		}
+
+		widget = { size = { 5 3 } }
+		divider_decorative = {}
+		widget = { size = { 5 3 } }
+
+		# Action buttons
+		flowcontainer = {
+			parentanchor = hcenter
+			spacing = 10
+			margin = { 10 5 }
+
+			button = {
+				using = default_button
+				text = "io_request_join_button"
+				size = { 245 35 }
+				block "detail_join" {}
+			}
+			button = {
+				using = default_button
+				text = "io_leave_button"
+				size = { 245 35 }
+				block "detail_leave" {}
+			}
+		}
+
+		widget = { size = { 5 3 } }
+		divider_decorative = {}
+		widget = { size = { 5 3 } }
+
+		# Member Countries List (like nuclear state targeting list)
+		flowcontainer = {
+			direction = vertical
+			parentanchor = hcenter
+
+			default_header_2texts = {
+				blockoverride "text1" { text = "io_members_header" }
+			}
+
+			scrollbox = {
+				parentanchor = hcenter
+				size = { @panel_width_plus_14 250 }
+
+				blockoverride "scrollbox_content" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 1
+						datamodel_wrap = 1
+						block "detail_member_list" {
+							datamodel = "[GetGlobalList('io_un_members')]"
+						}
+						item = {
+							widget = {
+								layoutpolicy_horizontal = expanding
+								size = { 0 26 }
+								datacontext = "[Scope.AccessCountry]"
+
+								background = {
+									using = entry_bg
+								}
+
+								hbox = {
+									layoutpolicy_horizontal = expanding
+									margin = { 8 2 }
+									spacing = 8
+
+									icon = {
+										size = { 24 16 }
+										texture = "[Country.GetFlag]"
+										parentanchor = vcenter
+									}
+
+									textbox = {
+										layoutpolicy_horizontal = expanding
+										autoresize = yes
+										align = left|nobaseline
+										raw_text = "[Country.GetName]"
+										using = fontsize_small
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	### ══════════════════════════════════════
+	### TEMPLATE: Treaty List Item
+	### ══════════════════════════════════════
+	type io_treaty_list_item = widget {
+		size = { @panel_width_plus_14 42 }
+		parentanchor = hcenter
+
+		button = {
+			using = default_button
+			size = { 100% 100% }
+			block "treaty_click" {}
+
+			hbox = {
+				layoutpolicy_horizontal = expanding
+				margin = { 10 5 }
+				spacing = 100
+
+				icon = {
+					size = { 36 36 }
+					texture = "gfx/interface/icons/organization_icons/treaty.dds"
+				}
+
+				textbox = {
+					minimumsize = { 450 -1 }
+					maximumsize = { 450 -1 }
+					block "treaty_name" { text = "" }
+					layoutpolicy_horizontal = expanding
+					autoresize = yes
+					align = left|nobaseline
+					using = fontsize_large
+					default_format = "#header"
+				}
+
+				icon = {
+					size = { 28 28 }
+					texture = "gfx/interface/icons/generic_icons/legitimacy.dds"
+					block "treaty_signed" { visible = no }
+					tooltip = "io_treaty_signed_tt"
+				}
+			}
+		}
+	}
+
+	### ══════════════════════════════════════
+	### TEMPLATE: Treaty Detail View
+	### ══════════════════════════════════════
+	type io_treaty_detail = flowcontainer {
+		direction = vertical
+		using = default_list_position
+		margin_bottom = 10
+
+		flowcontainer = {
+			margin_bottom = 5
+			parentanchor = hcenter
+			minimumsize = { @panel_width -1 }
+			button = {
+				using = default_button
+				size = { 120 30 }
+				text = "io_back_button"
+				onclick = "[GetVariableSystem.Clear('io_viewing_org')]"
+			}
+		}
+
+		widget = {
+			size = { @panel_width_plus_14 70 }
+			parentanchor = hcenter
+			background = { using = entry_bg_simple }
+
+			hbox = {
+				layoutpolicy_horizontal = expanding
+				margin = { 15 10 }
+				spacing = 15
+
+				icon = {
+					size = { 48 48 }
+					texture = "gfx/interface/icons/organization_icons/treaty.dds"
+				}
+
+				vbox = {
+					layoutpolicy_horizontal = expanding
+					minimumsize = { 420 -1 }
+					maximumsize = { 420 -1 }
+					spacing = 4
+
+					textbox = {
+						minimumsize = { 420 -1 }
+						maximumsize = { 420 -1 }
+						block "treaty_detail_name" { text = "" }
+						layoutpolicy_horizontal = expanding
+						autoresize = yes
+						align = left|nobaseline
+						using = header_font
+						using = fontsize_xl
+						default_format = "#header"
+					}
+					textbox = {
+						raw_text = "international_treaty_type"
+						autoresize = yes
+						align = left|nobaseline
+						using = fontsize_small
+					}
+				}
+			}
+		}
+
+		widget = { size = { 5 5 } }
+
+		widget = {
+			size = { @panel_width_plus_14 -1 }
+			parentanchor = hcenter
+			flowcontainer = {
+				direction = vertical
+				minimumsize = { @panel_width -1 }
+				margin = { 15 10 }
+				resizeparent = yes
+				textbox = {
+					block "treaty_detail_desc" { text = "" }
+					minimumsize = { 530 -1 }
+					maximumsize = { 530 -1 }
+					autoresize = yes
+					multiline = yes
+					align = left|nobaseline
+				}
+			}
+		}
+
+		widget = { size = { 5 3 } }
+		divider_decorative = {}
+		widget = { size = { 5 3 } }
+
+		flowcontainer = {
+			direction = vertical
+			parentanchor = hcenter
+			default_header_2texts = {
+				blockoverride "text1" { text = "io_signatory_effects_header" }
+			}
+			flowcontainer = {
+				direction = vertical
+				parentanchor = hcenter
+				minimumsize = { @panel_width -1 }
+				margin = { 5 0 }
+				block "treaty_mod_content" {}
+			}
+		}
+
+		widget = { size = { 5 3 } }
+		divider_decorative = {}
+		widget = { size = { 5 3 } }
+
+		flowcontainer = {
+			parentanchor = hcenter
+			spacing = 10
+			margin = { 10 5 }
+			button = {
+				using = default_button
+				text = "io_treaty_sign_button"
+				size = { 245 35 }
+				block "treaty_sign" {}
+			}
+			button = {
+				using = default_button
+				text = "io_treaty_withdraw_button"
+				size = { 245 35 }
+				block "treaty_withdraw" {}
+			}
+		}
+	}
+
+	### ══════════════════════════════════════
+	### TEMPLATE: NGO Card
+	### ══════════════════════════════════════
+	type io_ngo_card = flowcontainer {
+		direction = vertical
+		parentanchor = hcenter
+		minimumsize = { @panel_width_plus_14 -1 }
+		margin_bottom = 8
+
+		widget = {
+			size = { @panel_width_plus_14 -1 }
+			parentanchor = hcenter
+			background = { using = entry_bg_simple }
+
+			flowcontainer = {
+				direction = vertical
+				minimumsize = { @panel_width -1 }
+				margin = { 12 10 }
+				spacing = 8
+				resizeparent = yes
+
+				# Header row
+				flowcontainer = {
+					layoutpolicy_horizontal = expanding
+					spacing = 10
+
+					icon = {
+						size = { 40 40 }
+						block "ngo_icon" { texture = "gfx/interface/icons/generic_icons/diplomatic_action.dds" }
+					}
+
+					flowcontainer = {
+						direction = vertical
+						parentanchor = vcenter
+						minimumsize = { 310 -1 }
+						maximumsize = { 310 -1 }
+						textbox = {
+							minimumsize = { 310 -1 }
+							maximumsize = { 310 -1 }
+							block "ngo_name" { text = "" }
+							autoresize = yes
+							multiline = yes
+							align = left|nobaseline
+							using = fontsize_large
+							default_format = "#header"
+						}
+					}
+
+					flowcontainer = {
+						direction = vertical
+						parentanchor = vcenter
+						textbox = { text = "io_ngo_opinion_label" autoresize = yes align = right|nobaseline using = fontsize_small }
+						textbox = { block "ngo_opinion_val" { raw_text = "50" } autoresize = yes align = right|nobaseline using = fontsize_large default_format = "#v" }
+					}
+				}
+
+				flowcontainer = {
+					block "ngo_status_content" {}
+				}
+
+				divider_clean = { minimumsize = { 530 2 } }
+
+				textbox = {
+					block "ngo_desc" { text = "" }
+					minimumsize = { 530 -1 }
+					maximumsize = { 530 -1 }
+					autoresize = yes
+					multiline = yes
+					align = left|nobaseline
+					using = fontsize_small
+				}
+
+				flowcontainer = {
+					spacing = 5
+					button = { using = default_button text = "io_ban_button" size = { 165 30 } block "ngo_ban" {} }
+					button = { using = default_button text = "io_unban_button" size = { 165 30 } block "ngo_unban" {} }
+					button = { using = default_button text = "io_support_button" size = { 165 30 } block "ngo_support" {} }
+				}
+			}
+		}
+	}
+
+	### ══════════════════════════════════════
+	### TEMPLATE: Modifier Entry
+	### ══════════════════════════════════════
+	type io_modifier_entry = widget {
+		size = { @panel_width_plus_14 25 }
+		parentanchor = hcenter
+		background = { using = entry_bg }
+		textbox = {
+			size = { 530 25 }
+			block "mod_text" { raw_text = "" }
+			position = { 15 0 }
+			parentanchor = vcenter
+			autoresize = yes
+			align = left|nobaseline
+			using = fontsize_small
+		}
+	}
+}

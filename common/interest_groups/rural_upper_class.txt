@@ -1,0 +1,417 @@
+REPLACE_OR_CREATE:ig_landowners = {
+	color = hsv{ 0.63 0.40 0.69 }
+	texture = "gfx/interface/icons/ig_icons/landowners.dds"
+	layer = "revolution_dynamic_landowners"
+	index = 4
+	
+	ideologies = {
+	
+		#Economic Ideologies
+		ideology_right_economy 				#General Economic Beliefs 
+		ideology_nationalist 				#Foreign Economic Policy
+		
+		#Political Ideologies
+		ideology_authoritarian				#General Political Beliefs
+		ideology_traditionalist				#Specific Political Beliefs
+		ideology_monarchist					#Government Types 
+		
+		#Dynamic Ideologies
+		#ideology_neutral_spending
+		#ideology_neutral_population
+		
+	}
+	
+	character_ideologies = {
+		ideology_moderate_leader
+		ideology_conservative_leader
+		ideology_monarchist_leader
+		ideology_theocrat_leader
+		ideology_corporatist_leader
+		ideology_authoritarian_capitalist_leader
+		ideology_right_wing_populist_leader
+		ideology_fascist_leader
+	}
+	
+	enable = {
+		always = yes
+	}
+	
+	# Deprecated; use on_enable effect to assign traits instead
+	traits = {
+		ig_trait_noblesse_oblige
+		ig_trait_family_ties
+		ig_trait_noble_privileges
+	}
+	
+	on_enable = {
+		ig:ig_landowners = {
+			set_ig_trait = ig_trait:ig_trait_noble_privileges
+			set_ig_trait = ig_trait:ig_trait_family_ties
+			set_ig_trait = ig_trait:ig_trait_noblesse_oblige
+		}
+	}
+	on_disable = {}
+	on_character_ig_membership = {}
+	
+	pop_potential = {
+	
+		#Only Accepted Pops can organise into IGs
+		#pop_acceptance >= acceptance_status_3
+		
+		#Only Landowners
+		OR = {
+			is_pop_type = aristocrats
+			is_pop_type = officers
+			is_pop_type = farmers
+		}
+		
+		#Private Sector Only
+		NOT = { pop_employment_building_group = bg_government }
+		
+	}
+	
+	pop_weight = {
+		value = 0
+
+		add = {
+			desc = "POP_ARISTOCRATS"
+			if = {
+				limit = {
+					is_pop_type = aristocrats
+				}
+				value = 250
+			}
+		}
+
+		add = {
+			desc = "POP_OFFICERS"
+			if = {
+				limit = {
+					is_pop_type = officers
+				}
+				value = 25
+			}
+		}
+
+		add = {
+			desc = "POP_FARMERS"
+			if = {
+				limit = {
+					is_pop_type = farmers
+				}
+				value = 25
+				add = this.standard_of_living
+				
+				if = {
+					limit = { owner = { has_law = law_type:law_full_private_land_ownership } }
+					multiply = 1.25
+				}
+
+				if = {
+					limit = {
+						state = {
+							is_slave_state = yes
+						}
+					}
+					multiply = 4
+				}
+			}
+		}
+
+		multiply = {
+			desc = "LEADER_POPULARITY"
+			scope:interest_group = {
+				leader ?= {
+					value = popularity
+					multiply = 0.0025
+					add = 1
+					max = 1.25
+					min = 0.75
+				}
+			}
+		}
+		if = {
+			limit = {
+				scope:interest_group = {
+					is_in_government = yes
+				}
+			}
+			multiply = {
+				desc = "IN_GOVERNMENT_ATTRACTION"
+				value = 1
+				add = scope:interest_group.modifier:interest_group_in_government_attraction_mult
+				min = 0
+			}
+		}
+		
+		if = {
+			limit = {
+				scope:interest_group = {
+					is_in_government = yes
+				}
+			}
+			multiply = { # Multiplied by 1.25x max
+				desc = "POP_LOYALISTS"
+				value = pop_loyalist_fraction
+				divide = 4
+				add = 1
+			}
+		}
+		if = {
+			limit = {
+				scope:interest_group = {
+					is_in_government = no
+				}
+			}
+			multiply = { # Multiplied by 1.25x max
+				desc = "POP_RADICALS"
+				value = pop_radical_fraction
+				divide = 4
+				add = 1
+			}
+		}
+		
+	}
+	
+	monarch_weight = {
+		value = 2.0
+	}
+	
+	agitator_weight = {
+		# Agitators more likely to come from populist IG's rather than elitist
+		value = 0.25
+		# Agitators will never be part of a marginalized IG
+		if = {
+			limit = {
+				owner.ig:ig_landowners = {
+					is_marginal = yes
+				}
+			}
+			multiply = {
+				value = 0
+			}
+		}
+	}
+	
+	commander_weight = {
+		value = 2.0
+	}
+
+	executive_weight = {
+		value = 0.25
+	}
+	
+	noble_chance = {
+		value = 1.0
+	}
+	
+	female_commander_chance = {	
+		value = 0.0
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+				}
+
+			}
+			add = {
+				value = 0.05
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_legal_protections
+				}
+
+			}
+			add = {
+				value = 0.15
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_structural_egalitarianism
+				}
+
+			}
+			add = {
+				value = 0.25
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_matriarchy
+				}
+
+			}
+			add = {
+				value = 5.0
+			}
+		}
+	}
+	
+	female_executive_chance = {
+		value = 0.0
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+				}
+
+			}
+			add = {
+				value = 0.15
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_legal_protections
+				}
+
+			}
+			add = {
+				value = 0.25
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_structural_egalitarianism
+				}
+
+			}
+			add = {
+				value = 0.35
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_matriarchy
+				}
+
+			}
+			add = {
+				value = 5.0
+			}
+		}
+	}
+	
+	female_politician_chance = {
+		value = 0.0
+
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+				}
+
+			}
+			add = {
+				value = 0.15
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_legal_protections
+				}
+
+			}
+			add = {
+				value = 0.25
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_structural_egalitarianism
+				}
+
+			}
+			add = {
+				value = 0.35
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_matriarchy
+				}
+
+			}
+			add = {
+				value = 5.0
+			}
+		}
+		
+	}
+	
+	female_agitator_chance = {
+		value = 0.01
+
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+				}
+
+			}
+			add = {
+				value = 0.15
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_legal_protections
+				}
+
+			}
+			add = {
+				value = 0.25
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_structural_egalitarianism
+				}
+
+			}
+			add = {
+				value = 0.35
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_matriarchy
+				}
+
+			}
+			add = {
+				value = 5.0
+			}
+		}
+		
+	}
+	
+	# The chance that a commander belonging to this IG takes over leadership when it changes
+	# scope:character is the most popular commander in the IG
+	commander_leader_chance = {
+		value = 0.25
+		multiply = ig_commander_leader_chance_mult
+	}
+	
+	# The chance that a executive belonging to this IG takes over leadership when it changes
+	# scope:character is the most popular executive in the IG
+	executive_leader_chance = {
+		value = 0.1
+	}
+	
+}

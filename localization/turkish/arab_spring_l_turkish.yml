@@ -1,0 +1,434 @@
+﻿l_turkish:
+
+ # ==========================================
+ # JOURNAL ENTRY NAMES & HEADERS
+ # ==========================================
+
+ je_arab_spring: "Arap Baharı"
+ je_arab_spring_reason: "Arap dünyasında, otoriter yönetim, yolsuzluk ve ekonomik durgunluk kitlesel protestoya yol açtı. Tunus'ta başlayan, huzursuzluk dalgası yayılıyor - ve bölgedeki rejim tamamen güvende hissedebilir."
+
+ je_arab_winter: "Arap Kışı"
+ je_arab_winter_reason: "Arap Baharı'nın iyimserliği, devrimin ruhu için acı bir mücadeleye yol açtı. İslamcı hareketler, askeri gruplar ve yabancı güçler, düşmüş veya zayıf rejimler tarafından bırakılan boşluğu doldurmak için canlanıyorlar. Bölgenin kaderi dengede asılıdır."
+
+ # Completion headers
+ je_arab_spring_complete_header: "Demokratik Geçiş"
+ je_arab_spring_on_complete_header: "Yeni bir Şafak"
+ je_arab_spring_fail_header: "Devrim Suped"
+ je_arab_spring_on_fail_header: "The Crackdowndowndown"
+
+ # ==========================================
+ # MODIFIER
+ # ==========================================
+
+ modifier_arab_spring: "Arap Baharı"
+ modifier_arab_spring_desc: "Popüler ayaklanmalar Arap dünyasını süpürüyor. Hükümetler demokratik reform, ekonomik adalet talep eden protesto hareketlerinden yoğun baskıyla karşı karşıyalar ve otoriter bir kurala son verirler."
+
+ # ==========================================
+ # TOOLTIPS
+ # ==========================================
+
+ # Possible condition
+ arab_spring_underway_tt: "Arap Baharı devam ediyor"
+
+ # Completion conditions
+ had_arab_spring_revolution_tt_no_scope: "Arap Baharı sırasında bir devrim yaşadı"
+ has_liberal_or_progressive_in_government_tt: "Liberal veya ilerici bir ilgi grubu hükümet içinde"
+ has_census_voting_or_universal_suffrage_tt: "Sayım oylaması veya evrensel öfkelendi"
+
+ # Failure conditions
+ no_protest_leaders_tt: "Liberal veya ilerici politikacılar veya saldırganlar kalmamaktadır"
+ arab_spring_timer_dummy_tt: "Protesto hareketi [GetMonthsText(12)] için bastırıldı."
+ all_protest_movements_crushed_tt: "Bütün protesto hareketleri ezildi ve bastırıldı"
+
+ # je_arab_winter status
+ reformists_in_government_tt: "Reformist gruplar hükümette koltuklar tutuyor - devrim siyasi bir ayak izi var."
+ reformists_out_of_government_tt: "Reformistler hükümetten kovuldu - devrim zemin kaybediyor."
+
+ # je_arab_winter completion
+ arab_spring_liberal_victory_tt: "Liberal ve laik muhalefet ortaya çıktı"
+ arab_spring_islamist_victory_tt: "İslamcı veya milliyetçi güçler güç ele geçirdi"
+ arab_winter_on_complete_tt: "Siyasi mücadele çözüldü - daha iyi veya daha kötüsü için."
+
+ # je_arab_winter failure
+ arab_winter_fail_tt: "Karşı devrim ayaklanmayı tamamen ezdi"
+
+ # on_complete tooltips
+ on_reformist_victory_tt: "Reformist koalisyon galip geldi - demokratik geçiş başlar."
+ on_islamist_victory_tt: "İslamcı veya askeri güçler konsolide edilmiş güce sahiptir - devrim sona erdi."
+
+ # ==========================================
+ # EVENT OUTCOME DESCRIPTIONS
+ # ==========================================
+
+ event_effects_arab_spring.8_tt: "İsyan aşağı inmiştir. rejime sadık güvenlik güçleri protestocuları dağıtmış, tutuklanmış muhalefet liderlerini ve otoriter kontrolü yeniden ortaya çıkardı. Reform için pencere kapalı - şimdilik."
+
+ event_effects_arab_spring.10_tt: "Tüm oranlara karşı, protesto hareketi başarılı oldu. Eski rejim düştü veya önemli tavizler verdi. kırılgan bir demokratik geçiş başlar, ancak yol önceden belirsiz kalır."
+
+ # ==========================================
+ # SCRIPTED PROGRESS BARS
+ # ==========================================
+
+ arab_spring_progress_bar: "Devrimci Momentum"
+ arab_spring_progress_bar_desc: "Protesto hareketi hedeflerine doğru nasıl ilerledi."
+
+ arab_winter_crackdown_progress_bar: "Regime Crackdown"
+ arab_winter_crackdown_progress_bar_desc: "Hükümet ayaklanmayı nasıl etkili bir şekilde bastırır. Eğer bu% 100 ulaşırsa, devrim ezilir."
+
+ # ==========================================
+ # SCRIPTED TRIGGER NAMES (for tooltips)
+ # ==========================================
+
+ arab_spring_liberal_victory_trigger: "Reformist Zafer Koşulları"
+ arab_spring_islamist_victory_trigger: "İslamcı/Ulusal Zafer Koşulları"
+
+ # ==========================================
+ # VARIABLES
+ # ==========================================
+
+ had_arab_spring_revolution: "Deneyimli Arap Baharı Devrimi"
+ arab_winter_revolution_crushed: "Devrim Kırıldı"
+
+ # ==========================================
+ # TUNISIA SPARK EVENT (arab_spring.1)
+ # ==========================================
+
+ arab_spring.1.t: "Sokaklar Yükseliyor"
+ arab_spring.1.d: "[ROOT.GetCountry.GetName], insanlar sokaklara götürüldü. Yolsuzluk ve işsizlik karşısında dağınık protestolar olarak başlayan şey, [SCOPE.GetRootScope.GetCountry.GetRuler.GetLastName] kuralına son verilmesini talep eden bir kitlesel hareket haline geldi. Güvenlik güçleri gösteriler dahil etmek için mücadele ediyor ve Arap dünyasının gözleri izliyor.\n\n Hükümet bu erken günlerde nasıl yanıt verir, sadece bu ülkenin kaderi değil, tüm bölgenin yörüngesini şekillendirecektir."
+ arab_spring.1.a: "Protestocu güvenlik güçleri protestocuları dağıtmak için"
+ arab_spring.1.b: "Muhalefet liderleri ile açık diyalog"
+ arab_spring.1.c: "Zaman satın almak için sınırlı reformlar"
+
+ # ==========================================
+ # MONTHLY PULSE — SPREAD EVENT (arab_spring.2)
+ # ==========================================
+
+ arab_spring.2.t: "Dalga Yayıyor"
+ arab_spring.2.d: "Komşu ülkelerdeki ayaklanmaların haberleri uydu televizyonu ve sosyal medya yoluyla yayıldı. [ROOT.GetCountry.GetName], aktivistler emboldened ve rejim giderek gergindir. Protesto organizatörleri gerçek zamanlı sınırlarda taktikler paylaşıyor - önceki muhaliflerin nesli yapabileceği bir şey."
+
+ # ==========================================
+ # RANDOM MONTHLY EVENTS (3–5)
+ # ==========================================
+
+ arab_spring.3.t: "Sosyal Medya Mobilizasyon"
+ arab_spring.3.d: "[ROOT.GetCountry.GetName] organizatörler, [ROOT.GetCapital.GetName] büyük bir gösteri koordine etmek için sosyal medya platformlarını kullandılar. Binlerce kişi ortaya çıktı ve protestolar görüntüleri uluslararası yayılıyor. Hükümet baskıya maruz kalıyor - hem içeriden hem de olmadan."
+ arab_spring.3.a: "Bu yönetilebilir"
+ arab_spring.3.b: "İnterneti kapat"
+
+ arab_spring.4.t: "Güvenlik Kuvvetleri Waver"
+ arab_spring.4.d: "Raporlar başkentteki güvenlik kuvvetlerinin birimlerinin protestoculara ateş etmeyi reddettiği sermayeye ulaştı. Memurlar göstericilere sempati duyuyorlar kalabalıklarla alay ediyorlar. Askerin sadakati artık kesin değildir."
+ arab_spring.4.a: "Daha güvenilir birimlerde bulun"
+ arab_spring.4.b: "Protesto liderleriyle müzakere hemen"
+
+ arab_spring.5.t: "Yabancı Basınç Dağı"
+ arab_spring.5.d: "Batı hükümetleri ve uluslararası organlar [ROOT.GetCountry.GetName] protestocuların haklarına saygı göstermek için çağrıda bulundular. Bazıları çatlaklar devam ederse yaptırımlar tehdit etti. Bu arada, bölgesel güçler yakından izliyor - bazıları huzursuzlukların yayıldığını umut ediyor, diğerleri onu kapsamak için çaresiz."
+ arab_spring.5.a: "Uluslararası topluluğu görmezden gelin"
+ arab_spring.5.b: "diplomatik olarak yanıt"
+
+ # ==========================================
+ # FAILURE EVENTS
+ # ==========================================
+
+ arab_spring.8.t: "The Crackdowndowndown"
+ arab_spring.8.d: "[ROOT.GetCountry.GetName]'deki ayaklanma bozuldu. Güvenlik güçleri – sadık milisler tarafından gerekli olan yeri takviye etti – son protesto kamplarını dağıtmış, en belirgin muhalefet figürlerini tutuklamış ve komşulara karşı sınırları mühürlemiştir. Devlet medyası zaten anlatıyı yeniden yazmaktadır.\n\n Arap Baharı geldi ve [ROOT.GetCountry.GetName], sadece yeni şikayetlerin ardındakiler fester."
+ arab_spring.8.a: "Sipariş restore edilmiştir."
+
+ # ==========================================
+ # SUCCESS EVENTS
+ # ==========================================
+
+ arab_spring.9.t: "Regime Concedes"
+ arab_spring.9.d: "Tartışmanın işareti olmayan protestolarla yüz yüze, [SCOPE.GetRootScope.GetCountry.GetRuler.GetLastName] ücretsiz seçimler ve yeni bir anayasa sözlüğü de dahil olmak üzere süpürülen imtiyazları açıkladı. Bu vaatler görülmeye devam edecek olsa da, protesto hareketi tarihi bir zafer iddia etti."
+ arab_spring.9.a: "Yeni bir bölüm başlar"
+
+ arab_spring.10.t: "Devrim başarılı oldu"
+ arab_spring.10.d: "Eski sipariş [ROOT.GetCountry.GetName]'de düştü. Haftalar süren kitlesel protestolardan sonra rejim çöktü - yöneticinin uçuşu, askerin kusuru veya müzakere edilmiş geçiş. Bir nesilde ilk kez, [ROOT.GetCountry.GetName] sıradan insanlar farklı bir şey için umut ediyor.\n\n Yeni bir siyasi düzen inşa etmenin zor çalışması şimdi başlıyor."
+ arab_spring.10.a: "Halk konuştu"
+
+ # ==========================================
+ # ARAB WINTER EVENTS
+ # ==========================================
+
+ arab_spring.7.t: "İslamcı Güçler Güncel Gücü"
+ arab_spring.7.d: "Devrim yakalandı. [ROOT.GetCountry.GetName], İslamcı hareketler - daha iyi organize, daha iyi finanse edildi ve toplum içinde laik protesto hareketinden daha derin bir şekilde köklendi - Arap Baharı'nın zaferlerini kendi avantajlarına dönüştürdü. Oylama kutusu, protestocuların en büyük umudu bir kez, liberal muhalefetin asla beklemediği bir karar verdi.\n\n Arap Baharı Arap Kışı haline geldi."
+ arab_spring.7.a: "Acı bir sonuç"
+
+ arab_spring.71.t: "Demokratik Geçiş"
+ arab_spring.71.d: "[ROOT.GetCountry.GetName], Arap Baharı en azından bazı vaatlerini teslim etti. Gerçek bir güç transferi gerçekleşti ve yeni hükümet – ancak mükemmel ve kırılgan – otoriter geçmişle gerçek bir molayı temsil ediyor. Bu tür geçişlerin çoğu zaman tersine çevrildiği bir bölgede nadir bir parlak noktadır.\n\n>\n [ROOT.GetCountry.GetName]'de demokrasiyi konsolide etme çalışması, vigilance, uzlaşma gerektirecek ve küçük miktarda şans gerektirecektir."
+ arab_spring.71.a: "Tarih izliyor"
+
+ # ==========================================
+ # MODIFIER NAMES (referenced in events)
+ # ==========================================
+
+ arab_spring_popular_dissident: "Sesin Sesi"
+ arab_spring_popular_dissident_desc: "Bu lider protesto hareketinin sembolü haline geldi. Sözleri sokaklarda ağırlık taşıyor - ve yabancı hükümetler yakından izliyor."
+
+ suppressing_protests: "Protestoları bastırmak"
+ suppressing_protests_desc: "Güvenlik güçleri aktif olarak gösterilerden yoksundur ve muhalefet figürlerini tutuklamaktadır. Bu, kısa vadede huzursuzluğu içerebilir, ancak popüler öfkeyi derinleştirir."
+
+ arab_spring_reactionary_enactment: "Acil Güvenlik Push"
+ arab_spring_reactionary_enactment_desc: "Hükümet, çatışmaya yanıt olarak hızla güvenlik yasalarını takip ediyor."
+
+ arab_spring_institution_speed: "Güvenlik Apparatusunu Hareket Etmek"
+ arab_spring_institution_speed_desc: "Kaynaklar, protestoları içerecek iç güvenlik kurumlarına dökülüyor."
+
+ arab_spring_democratic_transition: "Demokratik Geçiş"
+ arab_spring_democratic_transition_desc: "Eski rejim düştü ve yeni bir siyasi düzen inşa ediliyor. Optimizm yüksektir, ancak bu nedenle istikrarsızdır - demokratik kazanımlar konsolide etmenin zor işi sadece yeni başladı."
+
+ arab_winter_revolution_crushed: "Devrim Kırıldı"
+ arab_winter_revolution_crushed_desc: "Ayaklanma kuvvetle bastırıldı. rejim hayatta kaldı, ancak insanları sokaklara götüren şikayetler çözülmedi. Yüzeyin altındaki hoşnutsuzluklar."
+
+ arab_winter_islamist_consolidation: "İslamcı Konsolidasyon"
+ arab_winter_islamist_consolidation_desc: "İslamcı hareketler Arap Baharı'ndan baskın siyasi güç olarak ortaya çıktı. Devrimin laik hedefleri yandı - dini otoriteye dayanan yeni bir düzen tarafından değiştirildi."
+
+ arab_spring_regional_contagion: "Bölgesel Unrest"
+ arab_spring_regional_contagion_desc: "Arap Baharı yayılıyor. Komşu ülkelerdeki protesto hareketleri, yerli muhalefeti embolden ediyor ve rejim giderek daha da bulaşıcı."
+
+ # ==========================================
+ # arab_spring.1 — The Streets Are Rising
+ # ==========================================
+
+ arab_spring.1.t: "Ülke çapında"
+ arab_spring.1.d: "[ROOT.GetCountry.GetName], insanlar sokaklara götürüldü. Yolsuzluk ve işsizlik karşısında dağınık protestolar olarak başlayan şey, [ROOT.GetRuler.GetFirstName] kuralına son verilmesini talep eden bir kitlesel hareket haline geldi. Güvenlik güçleri gösteriler dahil etmek için mücadele ediyor ve Arap dünyasının gözleri izliyor.\n\n Hükümet bu erken günlerde nasıl yanıt verir, sadece bu ülkenin kaderi değil, tüm bölgenin yörüngesini şekillendirecektir."
+ arab_spring.1.d_no_leader: "[ROOT.GetCountry.GetName] sokakta protestocularla doludur. Protestolar tek bir rakamdan yoksundur, ancak şikayetler onları sürüyor - yolsuzluk, işsizlik, otoriter kuralın taşlama ağırlığı - gerçek ve yaygın olarak paylaşılıyor. rejim, durumu kontrolünün ötesinde nasıl yanıt vereceğini karar vermelidir."
+ arab_spring.1.f: "Hükümet, mirasını tanımlayacak bir seçimle karşı karşıyadır."
+ arab_spring.1.a: "Gösterileri kuvvetle düşürün"
+ arab_spring.1.b: "muhalefetle bir diyalog açın"
+
+ # ==========================================
+ # arab_spring.2 — The Security Apparatus Responds
+ # ==========================================
+
+ arab_spring.2.t: "Güvenlik Apparatus Yanıtları"
+ arab_spring.2.d: "Protestolar [ROOT.GetCountry.GetName] arasında simmer devam ederken, güvenlik hizmetleri hükümete kararlı davranmaya baskı yapıyor. Geneller ve istihbarat şefleri tereddütün zayıflığı olarak okunacağını uyarır - ve etkili barındırma için pencere kapanıyor. Soru, devletin koercive gücünü dağıtmak değil, nasıl."
+ arab_spring.2.f: "rejim, araçlarını dikkatle seçmeli."
+ arab_spring.2.a: "Gizli polisi genişletin – gözetim ve tutuklama"
+ arab_spring.2.b: "Orduyu işe almak - sokakları kuvvetle tutmak"
+ arab_spring.2.c: "Bekle ve izle - overreact"
+
+ # ==========================================
+ # ADDITIONAL MODIFIERS (referenced in events)
+ # ==========================================
+
+ modifier_arab_spring_momentum: "Devrimci Momentum"
+ modifier_arab_spring_momentum_desc: "Protesto hareketi enerji ve popüler destek kazanıyor. Radikal duygular toplumun alt ve orta tabakaları ile yayılıyor."
+
+ arab_spring_regime_collaborator: "Regime Collaborator"
+ arab_spring_regime_collaborator_desc: "Bu lider yetkililere ev sahipliği yaptığı gibi görülüyor. Protesto hareketi arasındaki güvenilirliği acı çekti."
+
+ arab_spring_dissidents_within: "İç Dissent"
+ arab_spring_dissidents_within_desc: "Bu ilgi grubu içeriden baskı yaşıyor - daha genç ve daha idealist üyeler rejime karşı daha zor bir çizgi için itiliyor."
+
+ arab_spring_spread_the_spring: "Devrime Geçin"
+ arab_spring_spread_the_spring_desc: "Bu grup, komşu ülkelerdeki muhalefet hareketlerine aktif olarak ulaşmıştı, evde olaylar tarafından embolden edildi."
+
+ arab_spring_contained_movement: "Contained Movement"
+ arab_spring_contained_movement_desc: "Lider, enerjisini yerli olarak dış tekellerle rejime teşvik etmek yerine yoğunlaştırmayı seçti."
+
+ modifier_arab_spring_transition_cabinet: "Geçiş Hükümeti"
+ modifier_arab_spring_transition_cabinet_desc: "Yeni bir hükümet devrimin uyanmasında kuruldu. Eski sipariş çözülüyor - ama ne değiştirir."
+
+ modifier_arab_spring_kick_out_of_insurrection: "Barricades'i geri almak"
+ modifier_arab_spring_kick_out_of_insurrection_desc: "Devrim, derhal hedeflerine ulaştı. Hareket sigortalı duruşlarından aşağı duruyor ve siyasi süreçten geçiyor."
+
+ modifier_arab_spring_regime_ig_defeated: "Devrim Tarafından Tanımlandı"
+ modifier_arab_spring_regime_ig_defeated_desc: "Bu grubun eski rejimle olan ilişkisi, sevgiliye mal oldu. Yeni siyasi düzende marjinalleştirilmiştir."
+
+ # ==========================================
+ # EVENTS 1–6 (additional keys)
+ # ==========================================
+
+ arab_spring.1.d_tunisia: "[ROOT.GetCapital.GetName] bir sokak satıcısının kendi kendini korkutmasıyla başlayan şey bir öngörülemeyen bir şey haline geldi - bu ülke çapındaki isyan [ROOT.GetCountry.GetName] temellerine salladı. [SCOPE.GetRootScope.GetCountry.GetRuler.GetLastName] rejim makaralıdır. Güvenlik güçleri başkentten her büyük şehre yayılan gösterilerle mücadele ediyor.\n\n Dünya izliyor. Ve Arap dünyasında, diğer hükümetler de izliyor - umutla ya da korku ile."
+ arab_spring.1.f: "İlk domino düştü."
+ arab_spring.1.a: "Harekete geçin"
+ arab_spring.1.b: "Tanıklıklar - ama sakin çağrı"
+
+ arab_spring.2.t: "Contagion Geliyor"
+ arab_spring.2.d: "[ROOT.GetCountry.GetName]'den Haberler çarpıcı bir güçle geldi. Uydu kanalları, [ROOT.GetCapital.GetName]'ten bölgedeki oturma odalarından sahneleri yayınladı ve insanların gördükleri bir şeyi karıştırdı. [ROOT.GetCountry.GetName]'teki bir IG lideri, protestocularla sempati ifade ediyor - ve rejim bu ev bolluğuna yabancı bir ilkbaharın nasıl cevap vereceğine karar vermelidir."
+ arab_spring.2.f: "Fikirler sınırlarına saygı duymaz."
+ arab_spring.2.a: "İlham özgürce yayalım"
+ arab_spring.2.b: "Yabancı müdahaleyi kınayan yabancı müdahale"
+
+ arab_spring.3.t: "Yeni Voices of Dissent"
+ arab_spring.3.d: "Protestolar daha önce sessiz olan sesler için cesaret verdi. [scope:inspired_ig.GetName], bir zamanlar reformist sempatilerini özel tutan rakamlar şimdi açıkça konuşuyor - üniversitelerde, camilerde, sosyal medyada. rejim onları, şehitler yapmadan kolayca susturamaz."
+ arab_spring.3.f: "Deoud'u bir kez konuşmadan, yanlış anlaşılmamak zor."
+ arab_spring.3.a: "Bir reformist doğrudan liderlik içine"
+ arab_spring.3.b: "Saldırganlar faaliyet gösterelim – ancak liderlikleri izole etmeye devam edin"
+ arab_spring.3.a.tt: "Yeni bir liberal lider [scope:inspired_ig.GetName] ile ortaya çıkacak."
+
+ arab_spring.4.t: "Dalga Yayıyor"
+ arab_spring.4.d: "[ROOT.GetCountry.GetName] protesto hareketi sınırdaki muhalefet ağları ile temasa geçti. Genç aktivistler taktikler, sloganlar ve organizasyon modelleri gerçek zamanlı olarak sosyal medya aracılığıyla paylaşıyorlar. Soru, [ROOT.GetCountry.GetName]'nin bu yayılmayı aktif olarak teşvik edecek olup olmadığıdır - veya sessizce hareketin kendi yolunu bulmasına izin verir."
+ arab_spring.4.f: "Her isyan bir sonrakine ilham verir."
+ arab_spring.4.a: "Aktif olarak komşu muhalefetlere ulaştı"
+ arab_spring.4.b: "Odaklı kalın - komşu rejimleri yenmek için"
+
+ arab_spring.5.t: "Yeraltı Ağları"
+ arab_spring.5.d: "Protesto hareketi güvenlik çatlakları karşısında açık gösteriler devam edemezken, organizatörler yeraltına gitti. Hücre tabanlı ağlar pamphlets dağıtıyor, eşgüdüm grevleri ve sadık altyapı haritalıyor. Kriz yayılıyor - yavaş ama acımasızca - başkentten uzak."
+ arab_spring.5.f: "Ateş, görülemediği yerde yakılır."
+ arab_spring.5.a: "Kısıtlıklar şehirlerde"
+ arab_spring.5.b: "Unrest başkente ulaşıyor"
+
+ arab_spring.6.t: "Bir Çağ Sonu"
+ arab_spring.6.d: "Arap Baharı - popüler isyanların bu olağanüstü sezonu - [ROOT.GetCountry.GetName]'de dersini çalıştırıyor. İster başarılı olsun ya da bastırılmış olsaydı, vaatlerinde teslim olsun ya da ihanete uğradıysa, geride bıraktığı dünya bulunamadı. İnsanları sokaklara götüren şikayetler çözülmedi. Sadece cevaplandılar - şimdilik."
+ arab_spring.6.f: "Tarih çözülmemiş soruları affetmez."
+ arab_spring.6.a: "Bir bölüm yakınlar"
+ arab_spring.6.a.tt: "Arap Baharı sona erdi. Tüm dahil ülkeler bilgilendirilecektir."
+
+ # ==========================================
+ # EVENTS 7–10 (additional keys)
+ # ==========================================
+
+ arab_spring.7.f: "Devrim çalındı."
+ arab_spring.7.a: "Yeni sipariş inança hizmet eder - onu kucaklayın"
+ arab_spring.7.b: "Her şeyden önce Stability – sonucu kabul et"
+
+ arab_spring.71.f: "En zor devrim, yönetmek zorundasınız."
+ arab_spring.71.a: "Şimdi tam demokratik reform için baskı yapın"
+ arab_spring.71.b: "Tarih dikkatle - kutlar, sonra yönetim"
+
+ arab_spring.8.t: "Sipariş geri yükleme"
+ arab_spring.8.d: "[ROOT.GetCountry.GetName]'deki ayaklanma bozuldu. Güvenlik güçleri – sadık paramiliterler ve düz ekran istihbarat birimleri tarafından gerekli olan yeri takviye etti – son protesto kamplarını dağıtmıştı. Prominent muhalefet rakamları tutuklandı ya da sürgüne kaçtı. Devlet medyası zaten anlatıyı yeniden yazıyor, protestoları yabancı ilham verici iddia ediliyor.\n\n Arap Baharı geldi ve [ROOT.GetCountry.GetName]'den gitti. Arkasında ne kaldı - acı içinde, hafızada, çözülmemiş üzüntü içinde - uzun süre önemli olacaktır."
+ arab_spring.8.f: "Sessizlik barışla aynı değildir."
+ arab_spring.8.a: "Sipariş restore edilmiştir - kutlama"
+ arab_spring.8.b: "Sessiz rahatlama - zafersiz hareket"
+
+ arab_spring.9.t: "Sokakların Konuşması Var"
+ arab_spring.9.d: "Başkent isyan içindedir. Protestocular [scope:relevant_state.GetName]'nin kontrolünü ele geçirdiler ve güvenlik güçleri parçalanıyor - birimler siparişleri reddediyor, memurlar hata yapıyor ve rejimin tuzağı saatte kayıyor. [scope:ruler_scope.GetName] imkansız bir seçimle karşı karşıya: 🙂 ya da insanlarla tam bir çatışmaya tırmanın.\n\n Devrim burada. Şimdi soru, hangi şekli alır."
+ arab_spring.9.f: "Sokak konuştu. Kim cevap verecek?"
+ arab_spring.9.a: "Devrimi kabul et – tam demokratik geçiş"
+ arab_spring.9.b: "Kısmi bir geçiş için negotiate - bir uzlaşma olarak oylama"
+ arab_spring.9.c: "Savaş - sivil savaşı it"
+
+ arab_spring.10.t: "Arap Winter Looms"
+ arab_spring.10.d: "Devrim başarılı oldu - en azından ilk aşamasında. [ROOT.GetCountry.GetName] yeni bir hükümet, yeni yasalar ve kırılgan bir yeni umut vardır. Ama daha zor mücadele sadece başlıyor. Rejim, gelenek ve din güçleri yenilmedi - izliyorlar ve bekliyorlar.\n\n Arap Kışı geliyor. Devrimi yerinde donduracak ya da otobüsle tamamen bir sonraki olanlara bağlı olacaktır."
+ arab_spring.10.f: "Her bahar kışınla yüzleşmelidir."
+ arab_spring.10.a: "Face the counter-revolution head-on"
+ arab_spring.10.b: "Savunma pozisyonları hazırlayın - backlash için"
+
+ # Tooltip keys for arab_spring.10
+ arab_winter_tt: "Arap Kışı başlıyor - reformistler ve karşı-devrimci güçler arasındaki mücadeleyi takip eden yeni bir dergi girişi."
+ arab_winter_counter_revolution_bonus_tt: "Yeni hükümet savunma hazırlıklarını aldı. Devrimci kuvvetler daha organize bir direnişle karşılaşacaktır."
+
+ # ==========================================
+ # SCRIPTED TRIGGERS (tooltip names)
+ # ==========================================
+
+ arab_spring_liberal_victory_trigger: "Reformist Zafer Koşulları Met"
+ arab_spring_islamist_victory_trigger: "İslamcı/Ulusal Zafer Koşulları Met"
+ arab_spring_valid_country_trigger: "Geçerli Arap Baharı Hedefi"
+ tunisia_arab_spring_spark_trigger: "Tunus: Bahar Koşulları Met"
+
+ # ==========================================
+ # SCRIPTED PROGRESS BAR TOOLTIPS
+ # ==========================================
+
+ arab_spring_reformists_in_govt_tt: "Reformist ilgi grupları hükümet içinde"
+ arab_spring_universal_suffrage_tt: "Universal suffrage kaldırıldı"
+ arab_spring_census_voting_tt: "Census oylaması kaldırıldı"
+ arab_spring_free_press_tt: "Korumalı konuşma demokratik konsolidasyon destekliyor"
+ arab_spring_right_of_assembly_tt: "Montaj hakkı geçişi destekler"
+ arab_spring_high_literacy_tt: "Yüksek okuryazarlık demokratik konsolidasyonları hızlandırıyor"
+ arab_spring_islamists_in_govt_tt: "İslamcı veya milliyetçi gruplar hükümet koltuklarını tutuyor"
+ arab_spring_turmoil_tt: "Yüksek karışıklık yeni hükümetin istikrarsızlaşmasıdır"
+ arab_spring_authoritarian_laws_tt: "Authoritarian yasaları hala yerinde"
+ arab_spring_at_war_tt: "Ülke savaşta"
+ arab_winter_radical_movements_tt: "İslamcı veya milliyetçi hareketler güç kazanıyor"
+ arab_winter_military_opposition_tt: "Silahlı kuvvetler muhalefette ve güçlü büyüyor"
+ arab_winter_security_laws_tt: "Etkileyici güvenlik yasaları çatlakları hızlandırıyor"
+ arab_winter_civil_war_tt: "Sivil savaş, reaksiyon kuvvetlerine fayda sağlayan kaos yaratıyor"
+ arab_winter_high_turmoil_tt: "Yüksek karışıklık, karşı-devrimci duygulardır"
+ arab_winter_strong_liberal_movements_tt: "Güçlü reformist hareketler çatlaklara karşı direniyor"
+ arab_winter_universal_suffrage_entrenched_tt: "Universal suffrage entrenated - tersine çevirmek daha zor"
+ arab_winter_elected_bureaucrats_tt: "Elected bürokrasi darbe girişimlerine direniyor"
+ arab_winter_prepared_defence_tt: "Yeni hükümet savunma pozisyonları hazırladı"
+
+ # ==========================================
+ # SPARK EVENTS
+ # ==========================================
+
+ 2011_protests.1.t: "A Street Vendor kendini Alight"
+ 2011_protests.1.d: "Sidi Bouzid'in il kasabasında, Muhammed Bouazizi adında genç bir sokak satıcısı kendisini polis arabasından sonra yerel hükümet ofislerinin önünde ateş açtı ve onu açıkça aşağıladı.\n\n Desperasyon eylemi bir yıldırım çubuğu haline geldi. Saatler içinde protestolarının görüntüleri sosyal medyada yayıldı. Kalabalıklar sadece Sidi Bouzid'de değil, [ROOT.GetCountry.GetName] arasında bir araya geldiler. Bir nesilin birikti - yolsuzluk, işsizlik ve otoriter kuralın taşlama ağırlığı - sembolünü buldu.\n\n [SCOPE.GetRootScope.GetCountry.GetRuler.GetLastName] rejim nasıl cevap vereceğine karar vermelidir. Ne yaparsa, dünya izliyor."
+ 2011_protests.1.f: "Bir erkeğin çaresizliği bir ulus haline geldi."
+ 2011_protests.1.a: "Crack down - yayılmadan önce gösteriler dağıtın"
+ 2011_protests.1.b: "Teklif imtiyazları - polis davranışlarına bir soruşturma ilan"
+
+ 2011_protests.2.t: "Tunus Tremor"
+ 2011_protests.2.d: "Tunus'taki huzursuzluk Arap dünyasında şok dalgası gönderdi. Uydu kanalları saat boyunca Tunis'ten sahneleri yayınlıyor - ve [ROOT.GetCountry.GetName] sıradan insanlar izliyor. Kahve dükkanlarında ve sosyal medyada fısıldanan soru şu anda bölgedeki her otoriter rejimin kendisini soruyor:\n\n Burada olabilir mi?"
+ 2011_protests.2.f: "Her rejim izliyor. Her dissident not alıyor."
+ 2011_protests.2.a: "Tunus farklıdır - bu [ROOT.GetCountry.GetName]"
+ 2011_protests.2.b: "önlemler alın – bu işten çıkmadan önce sıkı güvenlik"
+
+ # ==========================================
+ # MISSING STRUCTURAL MODIFIERS
+ # ==========================================
+
+ modifier_arab_spring_transition_cabinet: "Geçiş Hükümeti"
+ modifier_arab_spring_transition_cabinet_desc: "Yeni bir hükümet devrimin uyanmasında kuruldu. Legitimacy bu erken günlerde yüksektir - ancak karşı-revrimin ayak bulduğundan önce konsolide edilmesi gerekir."
+
+ modifier_arab_spring_kick_out_of_insurrection: "Barricades'ten aşağı"
+ modifier_arab_spring_kick_out_of_insurrection_desc: "Devrim, derhal hedeflerine ulaştı. Bu grup, sigortacı duruşunu terk ediyor ve resmi siyasi hayata giriyor - şu an iyi niyetle yola çıktı."
+
+ modifier_arab_spring_regime_ig_defeated: "Devrim Tarafından Tanımlandı"
+ modifier_arab_spring_regime_ig_defeated_desc: "Bu grubun eski rejimle olan ilişkisi, sevgiliye mal oldu. Hükümetten kovuldu ve siyasi gücü azaldı. Ayılardan yeniden inşa edilebilir olsun görülmek için kalır."
+
+# ==========================================
+ # ARAB SPRING INTERNATIONAL EVENTS
+ # ==========================================
+
+ # ── arab_spring_intl.1 ───────────────────
+
+ arab_spring_intl.1.t: "Arap Dünyası Yanıyor"
+ arab_spring_intl.1.d: "Protestolar, Tunus'ta başlayan Arap dünyasında patlak verdi. On yıl otoriter kuralı, ekonomik durgunluk ve siyasi baskı milyonlarca sokaklara yol açtı."
+ arab_spring_intl.1.f: "Tarih tarihi izleyenleri izliyor."
+ arab_spring_intl.1.a: "Protestocularla ayağa kalkın – demokrasi ve insan hakları bunu talep ediyor"
+ arab_spring_intl.1.b: "İncumbent rejimleri geri dönün - istikrar ve ilgilerimiz ilk önce gelir"
+ arab_spring_intl.1.c: "Tüm taraflarda kısıtlamalar için çağrı - barışçıl bir çözüm çağrısı"
+
+ # ── arab_spring_intl.2 ───────────────────
+
+ arab_spring_intl.2.t: "Intervention Sorusu"
+ arab_spring_intl.2.d: "[scope:civil_war_country_scope.GetName] durumundaki durum açık sivil savaşa yol açtı. [scope:civil_war_country_scope.GetRuler.GetName]'nin güçleri sivil topluluklara saldırıyor ve katliamın güvenilir raporları var. Uluslararası topluluk bir yanıt arıyor.\n\n[ROOT.GetName] Daha önce protesto hareketleri için destek ifade etti. Şimdi soru, bu desteğin harekete geçip ne pahasına olursa olsun."
+ arab_spring_intl.2.f: "Kelimeler ve işler farklı para birimleridir."
+ arab_spring_intl.2.a: "No-fly bir bölgeyi zorlamak - hava grevlerinden sivilleri korumak"
+ arab_spring_intl.2.b: "Ordu ve muhalefet güçlerini zeminde destekliyor"
+ arab_spring_intl.2.c: "Bu bizim savaşımız değil - bunun dışında kalmak"
+
+ # ── arab_spring_intl.3 ───────────────────
+
+ arab_spring_intl.3.t: "Arap Baharı: Bir Reckoning"
+ arab_spring_intl.3.d_success: "Arap Baharı en az bir gerçek demokratik geçiş yaptı. Bu kırılgan bir başarıdır, kolayca terslenir - ama gerçek. [ROOT.GetName] Bu olayları uzaktan izleyen, tarihin yayının bazen adalete doğru eğilebileceğini görmekte sessiz bir tatmin vardır. Şimdi soru, ne kazandığını nasıl destekleyecektir."
+ arab_spring_intl.3.d_islamist: "Arap Baharı sona erdi - ve mimarları umduğu gibi değil. Bölgede, İslamcı hareketler isyanlara başlayan laik protesto koalisyonlarından daha iyi organize etmişlerdir. [ROOT.GetName] için, sonuç rahatsız: şampiyonu olan demokrasi, kendi değerlerinden farklı olan hükümetler üretti. Yeni Arap düzeni ile olan ilişki dikkatli bir navigasyon gerektirecektir."
+ arab_spring_intl.3.d_failure: "Arap Baharı söndü. Affetmek gibi görünen rejimler, güvenlik hizmetleri yeniden kuruldu, sürgündeki veya cezaevindeki rakipleri. [ROOT.GetName] için, bölüm ahlaki açıklıkların ahlaki aktiviteden daha kolay olduğuna dair bir hatırlatmadır. Ayaklanmaları uyandıran şikayetler çözülmedi. Onlar sadece ertelendi."
+ arab_spring_intl.3.f: "Dünya hareket eder. Bölge unutmaz."
+ arab_spring_intl.3.a: "Ne olduğunu stoklayın"
+
+ # ==========================================
+ # INTERNATIONAL MODIFIER NAMES
+ # ==========================================
+
+ arab_spring_intl_pro_democracy_stance: "Pro-Demokracy Stance"
+ arab_spring_intl_pro_democracy_stance_desc: "Bu ülke, Arap Baharı'nın protesto hareketleriyle kendini halka açık bir şekilde karşılamıştır. Demokratik uluslar arasındaki prestiji yükseldi - ancak Arap rejimleri ile ilişkiler serinledi."
+
+ arab_spring_intl_stability_first_stance: "Stability First"
+ arab_spring_intl_stability_first_stance_desc: "Bu ülke, protesto hareketlerinin üzerinden Arap rejimlerine geri dönmek için seçildi. Bölgedeki stratejik ilişkiler daha güçlüdür - ancak uluslararası itibarına maliyetle."
+
+ arab_spring_intl_neutral_stance: "Cautious Restraint"
+ arab_spring_intl_neutral_stance_desc: "Bu ülke, her iki tarafa geri dönmeden barışçıl bir karar için çağrıda bulunuyor. Diplomasi esnekliğini korudu - ancak sonucun üzerindeki etkisini feda etti."
+
+ arab_spring_intl_western_backing: "Western Backing"
+ arab_spring_intl_western_backing_desc: "Bu hareket batı hükümetlerinden halk desteği aldı. Uluslararası dikkat, momentumuna ekleniyor ve rejim için daha pahalı baskı yapıyor."
+
+ arab_spring_intl_regime_backing: "Western Regime Support"
+ arab_spring_intl_regime_backing_desc: "Batı hükümetleri, protestoculardan ziyade bu hükümetin ağırlığını attılar. Dış doğrulama, rejimin otoritesini ve meşruiyetini güçlendiriyor."
+
+ arab_spring_intl_no_fly_zone: "No-Fly Zone"
+ arab_spring_intl_no_fly_zone_desc: "Askeri varlıklar çatışma bölgesinde hiçbir fly bölgesi uygulamak için dağıtılıyor. Müdahale sivilleri koruyor - ancak pahalı ve uluslararası scrutiny çekiyor."
+
+ arab_spring_intl_arming_rebels: "Opposition Güçleri"
+ arab_spring_intl_arming_rebels_desc: "Silahlar ve ekipman çatışmadaki muhalif kuvvetlere kanallanıyor. Politika gizleniyor ama sır değil – ve bu desteği alan uzun vadeli sonuçlar belirsiz kalıyor."
+
+ arab_spring_intl_intervention_costs: "Intervention Maliyetleri"
+ arab_spring_intl_intervention_costs_desc: "Yurtdışındaki askeri müdahale kaynakları güçlendiriyor ve yerli siyasi tartışma yaratıyor. Hazine ve siyasi başkentteki maliyetler gerçek."
+
+ arab_spring_intl_non_interventionist: "Non-Interventionist"
+ arab_spring_intl_non_interventionist_desc: "Bu ülke Arap sivil savaşa müdahale etmeyi seçmedi. Karar, maruziyetini azalttı ve yerli siyasi başkenti korudu - eleştirmenler bunun belirtilen değerleri terk ettiğini iddia etti."

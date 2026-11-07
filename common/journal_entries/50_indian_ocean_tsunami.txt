@@ -1,0 +1,67 @@
+je_indian_ocean_tsunami = {
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	group = je_group_dilemmas
+
+	is_shown_when_inactive = {
+		always = yes
+	}
+
+	possible = {
+		OR = {
+		has_modifier = tsunami_disaster_struck
+		}
+	}
+
+	scripted_button = je_request_iosa_aid_button
+	
+	complete = {
+		custom_tooltip = {
+			text = tsunami_recovery_success_tt
+			has_variable = tsunami_recovered
+		}
+	}
+
+	on_complete = {
+		add_modifier = {
+			name = tsunami_reconstruction_complete
+			days = 365
+			multiplier = 1
+		}
+		add_loyalists = {
+			value = 0.05
+			pop_type = laborers
+		}
+		every_state = {
+			limit = {
+				is_coastal = yes
+				owner = ROOT
+			}
+			remove_modifier = tsunami_local_destruction
+		}
+		custom_tooltip = tsunami_recovery_success_tt
+	}
+
+	invalid = {
+		NOT = { has_modifier = tsunami_disaster_struck }
+	}
+
+	on_monthly_pulse = {
+		if = {
+			limit = {
+				AND = {
+					OR = {
+                    has_law = law_old_age_pension
+					has_law = law_wage_subsidies
+					has_law = law_poor_laws
+					}
+					date > 2005.12.26
+					treasury > 150000
+				}
+			}
+			set_variable = tsunami_recovered
+		}
+	}
+
+	weight = 200
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

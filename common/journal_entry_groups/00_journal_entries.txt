@@ -1,0 +1,49 @@
+﻿##Define journal entry groups here: 
+
+# journalentrygroup_mygroup = {
+
+# }
+
+# journalentrygroup_mygroup = {
+# context = none/country
+# }
+
+je_group_global_test = {
+	context = none
+}
+
+#je_group_global_international_situations = {
+#	context = none
+#}
+
+je_group_foreign_policy = {
+	context = country
+}
+
+je_group_domestic_policy = {
+	context = country
+}
+
+je_group_space_exploration = {
+	context = country
+}
+
+je_group_dilemmas = {
+	context = country
+}
+
+je_group_advancements = {
+	context = country
+}
+
+je_group_objectives = {
+	context = country
+}
+
+je_group_tutorial = {
+	context = none
+}
+
+je_group_international = {
+	context = none
+}

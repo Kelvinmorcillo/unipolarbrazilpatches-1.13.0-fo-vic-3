@@ -1,0 +1,25 @@
+﻿CHARACTERS = {
+	c:AUZ ?= {
+	create_character = {
+			template = AUZ_john_hewson
+		}
+	create_character = {
+			template = AUZ_tim_fischer
+		}
+	create_character = {
+			first_name = "paul"
+			last_name = "keating"
+			historical = yes
+			ruler = yes
+			culture = cu:british
+			birth_date = 1944.02.03
+			dna = dna_paul_keating
+			ig_leader = yes
+			interest_group = ig_trade_unions
+			ideology = ideology_progressive_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+}

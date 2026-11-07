@@ -1,0 +1,61 @@
+﻿# ==========================================
+# LANDLOCKED — TRANSIT RIGHTS
+# je_transit_rights
+#
+# Appears for countries with no coastal
+# states. Completes when a transit rights
+# agreement is signed with any country.
+# No events, no modifiers — purely a
+# reminder and completion tracker.
+# ==========================================
+
+je_transit_rights = {
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+
+	group = je_group_domestic_policy
+
+	is_shown_when_inactive = {
+		# Only shown to landlocked countries
+		NOT = {
+			any_scope_state = {
+				is_coastal = yes
+			}
+		}
+	}
+
+	possible = {
+		# Only active while landlocked
+		NOT = {
+			any_scope_state = {
+				is_coastal = yes
+			}
+		}
+	}
+
+	complete = {
+		custom_tooltip = {
+			text = secure_transit_rights_treaty
+		any_country = {
+			any_scope_treaty = {
+						binds = root
+						any_scope_article = {
+							has_type = transit_rights
+						}
+					}
+				}
+			}
+	}
+
+	# Becomes invalid if the country gains a coast
+	# (conquest, formation, etc.)
+	invalid = {
+		any_scope_state = {
+			is_coastal = yes
+		}
+	}
+
+	transferable = no
+	can_revolution_inherit = yes
+	weight = 2000
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

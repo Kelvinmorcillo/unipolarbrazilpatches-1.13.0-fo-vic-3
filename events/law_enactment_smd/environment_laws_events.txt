@@ -1,0 +1,540 @@
+﻿namespace = environment_laws
+
+# ==========================================
+# environment_laws.1
+# "Industry Offers Voluntary Compliance"
+# Advance event. Fires for any progressive
+# environmental law. Industrialists propose
+# self-regulation to pre-empt enforcement.
+# ==========================================
+
+environment_laws.1 = {
+	type = country_event
+	placement = ROOT
+
+	title = environment_laws.1.t
+	desc = environment_laws.1.d
+	flavor = environment_laws.1.f
+
+	category = enactment
+
+	event_image = {
+		video = "asia_factory_accident"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		OR = {
+			is_enacting_law = law_type:law_game_law
+			is_enacting_law = law_type:law_national_recycling
+			is_enacting_law = law_type:law_protection_agency
+			is_enacting_law = law_type:law_guaranteed_rights_of_nature
+		}
+		NOT = { has_modifier = env_voluntary_compliance }
+		any_interest_group = {
+			is_interest_group_type = ig_industrialists
+			ig_counts_as_marginal = no
+		}
+	}
+
+	cooldown = { days = long_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = env_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				is_interest_group_type = ig_industrialists
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = industry_ig
+			leader = {
+				save_scope_as = industry_leader
+			}
+		}
+	}
+
+	# Option A: Accept — build voluntary compliance into the framework
+	option = {
+		name = environment_laws.1.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = env_voluntary_compliance
+			# = 2
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				trigger = { has_law = law_type:law_laissez_faire }
+				add = 25
+			}
+		}
+	}
+
+	# Option B: Reject — mandatory enforcement only
+	option = {
+		name = environment_laws.1.b
+		add_enactment_modifier = {
+			name = env_voluntary_compliance
+		}
+		add_enactment_modifier = {
+			name = env_mandatory_enforcement
+			# = 2
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				trigger = { has_law = law_type:law_interventionism }
+				add = 25
+			}
+		}
+	}
+}
+
+# ==========================================
+# environment_laws.2
+# "Scientists Back the Legislation"
+# Advance event. Fires for recycling and
+# above. The intelligentsia publishes
+# evidence supporting environmental law.
+# ==========================================
+
+environment_laws.2 = {
+	type = country_event
+	placement = ROOT
+
+	title = environment_laws.2.t
+	desc = environment_laws.2.d
+	flavor = environment_laws.2.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_ruler_speaking_to_people"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		OR = {
+			is_enacting_law = law_type:law_national_recycling
+			is_enacting_law = law_type:law_protection_agency
+			is_enacting_law = law_type:law_guaranteed_rights_of_nature
+		}
+		NOT = { has_modifier = env_scientific_backing }
+		any_interest_group = {
+			is_interest_group_type = ig_intelligentsia
+			ig_counts_as_marginal = no
+			law_stance = {
+				law = law_type:law_national_recycling
+				value >= neutral
+			}
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = env_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				is_interest_group_type = ig_intelligentsia
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = science_ig
+			leader = {
+				save_scope_as = science_leader
+			}
+		}
+	}
+
+	# Option A: Commission and publish the findings officially
+	option = {
+		name = environment_laws.2.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = env_scientific_backing
+			# = 3
+		}
+		ai_chance = {
+			base = 70
+			modifier = {
+				trigger = { literacy_rate >= 0.50 }
+				add = 15
+			}
+		}
+	}
+
+	# Option B: Acknowledge quietly — don't amplify
+	option = {
+		name = environment_laws.2.b
+		add_enactment_modifier = {
+			name = env_scientific_backing
+		}
+		ai_chance = { base = 30 }
+	}
+}
+
+# ==========================================
+# environment_laws.3
+# "International Praise for Environmental
+#  Leadership"
+# Advance event. Fires for protection
+# agency and guaranteed rights of nature.
+# ==========================================
+
+environment_laws.3 = {
+	type = country_event
+	placement = ROOT
+
+	title = environment_laws.3.t
+	desc = environment_laws.3.d
+	flavor = environment_laws.3.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_world_fair"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		OR = {
+			is_enacting_law = law_type:law_protection_agency
+			is_enacting_law = law_type:law_guaranteed_rights_of_nature
+		}
+		NOT = { has_modifier = env_international_praise }
+	}
+
+	cooldown = { days = long_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = env_law_scope
+		}
+	}
+
+	# Option A: Leverage the moment — host international talks
+	option = {
+		name = environment_laws.3.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = env_international_praise
+			# = 2
+		}
+		add_enactment_modifier = {
+			name = env_diplomatic_push
+		}
+		ai_chance = {
+			base = 65
+			modifier = {
+				trigger = {
+					OR = {
+						is_great_power = yes
+						is_major_power = yes
+					}
+				}
+				add = 20
+			}
+		}
+	}
+
+	# Option B: Keep it domestic — avoid overcommitting internationally
+	option = {
+		name = environment_laws.3.b
+		add_enactment_modifier = {
+			name = env_international_praise
+		}
+		ai_chance = { base = 35 }
+	}
+}
+
+# ==========================================
+# environment_laws.4
+# "Who Bears the Compliance Cost?"
+# Debate event. Fires for protection
+# agency and above. A funding and
+# responsibility dispute.
+# ==========================================
+
+environment_laws.4 = {
+	type = country_event
+	placement = ROOT
+
+	title = environment_laws.4.t
+	desc = environment_laws.4.d
+	flavor = environment_laws.4.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		OR = {
+			is_enacting_law = law_type:law_protection_agency
+			is_enacting_law = law_type:law_guaranteed_rights_of_nature
+		}
+		NOT = { has_modifier = env_compliance_cost_debate }
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = env_law_scope
+		}
+	}
+
+	# Option A: Industry pays — polluter principle
+	option = {
+		name = environment_laws.4.a
+		add_enactment_modifier = {
+			name = env_compliance_cost_debate
+			# = 2
+		}
+		add_enactment_modifier = {
+			name = env_polluter_pays
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				trigger = { has_law = law_type:law_interventionism }
+				add = 20
+			}
+		}
+	}
+
+	# Option B: State subsidises compliance — shared burden
+	option = {
+		name = environment_laws.4.b
+		default_option = yes
+		add_enactment_modifier = {
+			name = env_compliance_cost_debate
+		}
+		add_enactment_modifier = {
+			name = env_state_subsidy
+			# = money_amount_#_small
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				trigger = { has_law = law_type:law_laissez_faire }
+				add = 20
+			}
+		}
+	}
+}
+
+# ==========================================
+# environment_laws.5
+# "Industry Claims Nature Rights Are
+#  Unconstitutional"
+# Debate event. Fires only when enacting
+# guaranteed rights of nature.
+# ==========================================
+
+environment_laws.5 = {
+	type = country_event
+	placement = ROOT
+
+	title = environment_laws.5.t
+	desc = environment_laws.5.d
+	flavor = environment_laws.5.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_guaranteed_rights_of_nature
+		NOT = { has_modifier = env_constitutional_challenge }
+		any_interest_group = {
+			OR = {
+				is_interest_group_type = ig_industrialists
+				is_interest_group_type = ig_landowners
+			}
+			ig_counts_as_marginal = no
+			law_stance = {
+				law = law_type:law_guaranteed_rights_of_nature
+				value < neutral
+			}
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = env_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				OR = {
+					is_interest_group_type = ig_industrialists
+					is_interest_group_type = ig_landowners
+				}
+				ig_counts_as_marginal = no
+				law_stance = {
+					law = law_type:law_guaranteed_rights_of_nature
+					value < neutral
+				}
+			}
+			save_scope_as = industry_opposition_ig
+			leader = {
+				save_scope_as = industry_opposition_leader
+			}
+		}
+	}
+
+	# Option A: Defend the legal framework — let courts decide
+	option = {
+		name = environment_laws.5.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = env_constitutional_challenge
+		}
+		add_enactment_modifier = {
+			name = env_legal_defence
+			# = 2
+		}
+		ai_chance = { base = 60 }
+	}
+
+	# Option B: Compromise — limit scope to avoid legal battle
+	option = {
+		name = environment_laws.5.b
+		add_enactment_modifier = {
+			name = env_constitutional_challenge
+			# = 2
+		}
+		ai_chance = { base = 40 }
+	}
+}
+
+# ==========================================
+# environment_laws.6
+# "Environmental Disaster Mid-Enactment"
+# Stall event. Fires for any law.
+# A pollution event or ecological collapse
+# either galvanises support or
+# reveals the state's inability to act.
+# ==========================================
+
+environment_laws.6 = {
+	type = country_event
+	placement = scope:disaster_state_scope
+
+	title = environment_laws.6.t
+	desc = environment_laws.6.d
+	flavor = environment_laws.6.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_devastation"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	duration = 3
+
+	trigger = {
+		OR = {
+			is_enacting_law = law_type:law_game_law
+			is_enacting_law = law_type:law_national_recycling
+			is_enacting_law = law_type:law_protection_agency
+			is_enacting_law = law_type:law_guaranteed_rights_of_nature
+		}
+		NOT = { has_modifier = env_disaster_response }
+		any_scope_state = {
+			is_incorporated = yes
+			pollution_amount >= 1000
+		}
+	}
+
+	cooldown = { days = long_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = env_law_scope
+		}
+		random_scope_state = {
+			limit = {
+				is_incorporated = yes
+				pollution_amount >= 1000
+			}
+			save_scope_as = disaster_state_scope
+		}
+	}
+
+	# Option A: Use the disaster to accelerate — demand urgent passage
+	option = {
+		name = environment_laws.6.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = env_disaster_response
+			# = 2
+		}
+		scope:disaster_state_scope = {
+			add_modifier = {
+				name = env_disaster_state_modifier
+				months = 24
+			}
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				trigger = { has_law = law_type:law_universal_suffrage }
+				add = 20
+			}
+		}
+	}
+
+	# Option B: Contain the story — don't let a disaster become a crisis
+	option = {
+		name = environment_laws.6.b
+		add_enactment_modifier = {
+			name = env_disaster_response
+		}
+		add_enactment_modifier = {
+			name = env_disaster_suppressed
+			# = -1
+		}
+		scope:disaster_state_scope = {
+			add_modifier = {
+				name = env_disaster_state_modifier
+				months = 36
+			}
+		}
+		ai_chance = { base = 40 }
+	}
+}

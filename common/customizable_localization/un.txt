@@ -1,0 +1,37 @@
+﻿un_304_motion_desc = {
+	type = country
+
+	text = {
+		localization_key = UN_304_DESC_SANCTIONS
+		trigger = {
+			var:un_last_motion_type = flag:motion_sanctions
+		}
+	}
+
+	text = {
+		localization_key = UN_304_DESC_CONDEMNATION
+		trigger = {
+		}
+	}
+}
+
+un_300_resolution_desc = {
+	type = country
+
+	text = {
+		localization_key = UN_RES_DESC_ENVIRONMENT
+		trigger = { var:un_last_motion_type = flag:motion_environment }
+	}
+	text = {
+		localization_key = UN_RES_DESC_PEACE
+		trigger = { var:un_last_motion_type = flag:motion_peace }
+	}
+	text = {
+		localization_key = UN_RES_DESC_ECONOMY
+		trigger = { var:un_last_motion_type = flag:motion_economy }
+	}
+	text = {
+		localization_key = UN_RES_DESC_TECHNOLOGY
+		trigger = { }
+	}
+}

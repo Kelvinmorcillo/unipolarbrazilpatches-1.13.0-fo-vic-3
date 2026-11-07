@@ -1,0 +1,253 @@
+namespace = afghan_civil_war
+
+afghan_civil_war.1 = {
+    type = country_event
+    placement = ROOT
+
+    duration = 3
+
+	title = afghan_civil_war.1.t
+	desc = afghan_civil_war.1.d
+	flavor = afghan_civil_war.1.f
+
+    event_image = {
+		video = "europenorthamerica_before_the_battle"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+    trigger = {
+		# triggered in JE buttons
+	}
+
+    immediate = {
+		if = {
+			limit = {
+				c:ANA ?= this
+			}
+			show_as_tooltip = {
+				add_modifier = {
+					name = acw_northern_alliance_mountain_resistance
+					multiplier = {
+						value = global_var:ana_afghan_civil_war_score
+						min = 1
+					}
+					years = 2
+					is_decaying = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				c:AFG ?= this
+			}
+			show_as_tooltip = {
+				add_modifier = {
+					name = acw_taliban_security_push
+					multiplier = {
+						value = global_var:afg_afghan_civil_war_score
+						min = 1
+					}
+					years = 2
+					is_decaying = yes
+				}
+			}
+		}
+	}
+
+	option = {
+		name = {
+			trigger = { c:AFG ?= this }
+			text = afghan_civil_war.1.a
+		}
+		name = {
+			trigger = { c:ANA ?= this }
+			text = afghan_civil_war.1.a.ana
+		}
+        default_option = yes
+
+		show_as_tooltip = {
+			c:ANA ?= {
+				add_modifier = {
+					name = acw_northern_alliance_mountain_resistance
+					multiplier = {
+						value = global_var:ana_afghan_civil_war_score
+						min = 1
+					}
+					years = 2
+					is_decaying = yes
+				}
+			}
+			c:AFG ?= {
+				add_modifier = {
+					name = acw_taliban_security_push
+					multiplier = {
+						value = global_var:afg_afghan_civil_war_score
+						min = 1
+					}
+					years = 2
+					is_decaying = yes
+				}
+			}
+		}
+	}
+}
+
+# Victory
+
+afghan_civil_war.2 = {
+    type = country_event
+    placement = ROOT
+
+    duration = 3
+
+	title = {
+		first_valid = {
+			triggered_desc = {
+				desc = afghan_civil_war.2.t_afg
+				trigger = { c:AFG ?= this }
+			}
+			triggered_desc = {
+				desc = afghan_civil_war.2.t_ana
+				trigger = { c:ANA ?= this }
+			}
+		}
+	}
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = afghan_civil_war.2.d_afg
+				trigger = { c:AFG ?= this }
+			}
+			triggered_desc = {
+				desc = afghan_civil_war.2.d_ana
+				trigger = { c:ANA ?= this }
+			}
+		}
+	}
+	flavor = afghan_civil_war.2.f
+
+	event_image = {
+		video = "unspecific_military_parade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+    trigger = {
+		# triggered in JE
+	}
+
+	option = {
+		name = afghan_civil_war.2.a
+        default_option = yes
+		if = {
+			limit = { c:ANA ?= this }
+			show_as_tooltip = {
+				add_modifier = {
+					name = acw_ana_reward
+					years = 20
+					is_decaying = yes
+				}
+			}
+		}
+		else = {
+			show_as_tooltip = {
+				add_modifier = {
+					name = acw_afg_reward
+					years = 20
+					is_decaying = yes
+				}
+			}
+		}
+	}
+}
+
+# Taliban pressure
+
+afghan_civil_war.5 = {
+    type = country_event
+    placement = ROOT
+
+    duration = 3
+
+	title = afghan_civil_war.5.t
+	desc = afghan_civil_war.5.d
+	flavor = afghan_civil_war.5.f
+
+    event_image = {
+		video = "europenorthamerica_before_the_battle"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+    trigger = {
+		c:AFG ?= this
+		is_involved_in_journal_entry = je_afghan_civil_war
+		has_global_variable = afghan_civil_war_skirmish_phase
+	}
+
+	option = {
+		name = afghan_civil_war.5.a
+        default_option = yes
+		add_modifier = {
+			name = acw_taliban_supply_strain
+			years = 2
+			is_decaying = yes
+		}
+		change_global_variable = {
+			name = afg_afghan_civil_war_score
+			add = 1
+		}
+		je:je_afghan_civil_war ?= {
+			add_progress = { value = 1 name = je_afghan_civil_war_score_bar }
+		}
+	}
+}
+
+# Northern Alliance activity
+
+afghan_civil_war.6 = {
+    type = country_event
+    placement = ROOT
+
+    duration = 3
+
+	title = afghan_civil_war.6.t
+	desc = afghan_civil_war.6.d
+	flavor = afghan_civil_war.6.f
+
+    event_image = {
+		video = "europenorthamerica_before_the_battle"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+    trigger = {
+		c:ANA ?= this
+		is_involved_in_journal_entry = je_afghan_civil_war
+		has_global_variable = afghan_civil_war_skirmish_phase
+	}
+
+	option = {
+		name = afghan_civil_war.6.a
+        default_option = yes
+		add_modifier = {
+			name = acw_northern_alliance_supply_networks
+			years = 2
+			is_decaying = yes
+		}
+		change_global_variable = {
+			name = ana_afghan_civil_war_score
+			add = 1
+		}
+		je:je_afghan_civil_war ?= {
+			add_progress = { value = -1 name = je_afghan_civil_war_score_bar }
+		}
+	}
+}

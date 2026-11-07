@@ -1,0 +1,43 @@
+﻿CHARACTERS = {
+	c:CAN ?= {
+	create_character = {
+			template = CAN_jean_chretien
+		}
+	create_character = {
+			template = CAN_preston_manning
+		}
+	create_character = {
+			template = CAN_bob_white
+		}
+	create_character = {
+			template = CAN_conrad_black
+		}
+	create_character = {
+			template = CAN_paul_desmarais
+		}
+	create_character = {
+			template = CAN_john_de_chastelain
+		}
+	create_character = {
+			template = CAN_jean_claude_turcotte
+		}
+	create_character = {
+			template = CAN_john_polanyi
+		}
+	create_character = {
+			first_name = "brian"
+			last_name = "mulroney"
+			historical = yes
+			ruler = yes
+			culture = cu:anglo_canadian
+			birth_date = 1939.3.31
+			dna = dna_mulroney
+			ig_leader = yes
+			interest_group = ig_petty_bourgeoisie
+			ideology = ideology_neoliberal_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+}

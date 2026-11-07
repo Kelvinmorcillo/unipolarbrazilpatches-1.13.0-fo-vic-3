@@ -1,0 +1,70 @@
+﻿### SMD ALERTS
+
+country_un_vote_active = {
+ 	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/un_vote.dds"
+
+	valid = {
+		has_global_variable = un_motion_active
+	}
+
+	open_panel = journal
+	type = alert
+	color = green
+}
+
+facing_un_sanctions = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/un_sanctions.dds"
+
+	valid = {
+		has_modifier = un_sanctions_target
+	}
+
+	type = alert
+	color = red
+}
+
+
+facing_un_condemnation = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/un_condemnation.dds"
+
+	valid = {
+		has_modifier = un_condemnation_target
+	}
+
+	type = alert
+	color = red
+}
+
+#international_crisis_active = {
+#}
+
+#space_mission_ready = {
+#
+#}
+
+can_produce_nuclear_missile = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/nuclear_weapon.dds"
+
+	valid = {
+		has_variable = nuclear_capable
+		any_scope_state = {
+			is_incorporated = yes
+			has_building = building_nuclear_plant
+			count >= 3
+		}
+		any_scope_state = {
+			is_incorporated = yes
+			has_building = building_nuclear_silo
+			count >= 1
+		}
+		NOT = { has_variable = nuclear_production_active }
+	}
+
+	open_panel = military_formation
+	type = alert
+	color = green
+}

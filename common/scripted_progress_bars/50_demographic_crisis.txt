@@ -1,0 +1,60 @@
+﻿demographic_crisis_progress_bar = {
+	name = "demographic_crisis_progress_bar"
+	desc = "demographic_crisis_progress_bar_desc"
+
+	default = yes
+
+	monthly_progress = {
+		if = {
+			limit = {
+				# Pro-natalist conditions met
+				OR = {
+					has_law = law_type:law_universal_childcare
+					has_law = law_type:law_privatized_preschool_education
+				}
+				OR = {
+					has_law = law_type:law_public_health_insurance
+					has_law = law_type:law_private_health_insurance
+				}
+				OR = {
+					has_law = law_type:law_old_age_pension
+					has_law = law_type:law_wage_subsidies
+					has_law = law_type:law_universal_basic_income
+					has_law = law_type:law_student_coverage
+				}
+				OR = {
+					has_law = law_type:law_housing_projects
+					has_law = law_type:law_public_housing_program
+					has_law = law_type:law_universal_housing
+				}
+				average_sol >= 12
+			}
+			add = {
+				value = 3
+				desc = "demographic_bar_progressing_desc"
+			}
+		}
+		else = {
+			subtract = {
+				value = 2
+				desc = "demographic_bar_decaying_desc"
+			}
+		}
+		
+		if = {
+			limit = {
+				active_law:lawgroup_health_system ?= {
+				has_amendment = amendment_type:amendment_one_child_policy
+				}
+			}
+			subtract = {
+				value = 1
+				desc = "one_child_policy_desc"
+			}
+		}
+	}
+
+	start_value = 0
+	min_value = 0
+	max_value = 120 # 10 years of sustained policy
+}

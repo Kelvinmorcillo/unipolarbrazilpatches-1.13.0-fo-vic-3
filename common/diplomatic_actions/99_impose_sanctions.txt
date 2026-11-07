@@ -1,0 +1,233 @@
+﻿impose_sanctions = {
+	groups= { general } requires_approval = no
+	should_notify_third_parties = no
+	show_effect_in_tooltip = yes
+
+
+	potential = {
+	
+		#THIS is not decentralized
+		NOT = { is_country_type = decentralized }
+		scope:target_country = { NOT = { is_country_type = decentralized } }
+		
+		#THIS and Target are not revolutionary
+		is_revolutionary = no is_secessionist = no
+		scope:target_country = { is_revolutionary = no is_secessionist = no } 
+		
+		#THIS and Target are not subjects
+		is_sufficiently_independent = yes
+		scope:target_country = { is_sufficiently_independent = yes }
+		
+		#THIS is not at war with TARGET
+		NOT = { has_war_with = scope:target_country }
+		
+		#Subjects cannot sanction Overlord and vice-versa
+		NOT = { has_subject_relation_with = scope:target_country }
+		NOT = { scope:target_country = { is_subject_of = scope:actor } }
+		
+	}
+	
+	possible = {
+	
+		#THIS is interested in Target
+		has_diplomatic_relevance = scope:target_country
+		
+		#THIS is not friendly with Target in anyway
+		NOR = { 
+			has_diplomatic_pact = { who = scope:target_country type = increase_relations }
+			any_scope_treaty = { binds = scope:target_country any_scope_article = { has_type = alliance } }
+			any_scope_treaty = { binds = scope:target_country any_scope_article = { has_type = defensive_pact } }
+			any_scope_treaty = { binds = scope:target_country any_scope_article = { has_type = guarantee_independence } }
+			scope:target_country = { is_subject_of = scope:actor }
+		}
+		
+		#THIS has poor or less relations with Target
+		custom_tooltip = {
+			text = DIPLO_ACTION_RELATIONS_POOR_OR_LESS
+			scope:target_country.relations:root <= relations_threshold:poor
+		}
+		
+		#THIS is not broke
+		in_default = no
+		
+		#Autarkic countries cannot sanction or be sanctioned
+		NOR = {
+			has_law_or_variant = law_type:law_isolationism
+			scope:target_country = { has_law_or_variant = law_type:law_isolationism }
+		}
+		
+	}
+	
+	is_hostile = yes
+	
+	pact = {
+		cost = 50
+		is_two_sided_pact = no
+		infamy_affects_maintenance = yes
+		
+		max_target_involvement = 1000
+		target_involvement_applies_to = mutual
+		
+		#Sanctions punish TARGET by diverting money to THIS
+		income_transfer = 0.05
+		max_paying_country_income_to_transfer = 0.10
+		second_country_gets_income_transfer = no
+		income_transfer_based_on_second_country = no
+		
+		### Validation requirements ###
+		
+		requirement_to_maintain = { 
+		
+			trigger = {
+				
+				#THIS is not decentralized
+				NOT = { is_country_type = decentralized }
+				scope:target_country = { NOT = { is_country_type = decentralized } }
+				
+				#THIS and Target are not revolutionary
+				is_revolutionary = no is_secessionist = no
+				scope:target_country = { is_revolutionary = no is_secessionist = no } 
+				
+				#THIS and Target are not subjects
+				is_sufficiently_independent = yes
+				scope:target_country = { is_sufficiently_independent = yes }
+				
+				#THIS is not at war with TARGET
+				NOT = { has_war_with = scope:target_country }
+				
+				#Subjects cannot sanction Overlord and vice-versa
+				NOT = { has_subject_relation_with = scope:target_country }
+				NOT = { scope:target_country = { is_subject_of = scope:actor } }
+				
+				#THIS is not friendly with Target in anyway
+				NOR = { 
+					has_diplomatic_pact = { who = scope:target_country type = increase_relations }
+					any_scope_treaty = { binds = scope:target_country any_scope_article = { has_type = alliance } }
+					any_scope_treaty = { binds = scope:target_country any_scope_article = { has_type = defensive_pact } } 
+					any_scope_treaty = { binds = scope:target_country any_scope_article = { has_type = guarantee_independence } }
+					scope:target_country = { is_subject_of = scope:actor }
+				}
+				
+				#THIS has poor or less relations with Target
+				custom_tooltip = {
+					text = DIPLO_ACTION_RELATIONS_POOR_OR_LESS
+					scope:target_country.relations:root <= relations_threshold:poor
+				}
+
+				#THIS is not broke
+				in_default = no
+				
+				#Autarkic countries cannot sanction or be sanctioned
+				NOR = {
+					has_law_or_variant = law_type:law_isolationism
+					scope:target_country = { has_law_or_variant = law_type:law_isolationism }
+				}
+			
+			}
+			
+		}
+		
+	}
+	
+	accept_effect = {
+		
+		#Unprovoked sanctions hurt relations with the world
+		if = { 
+			limit = { 
+				scope:target_country.infamy < infamy_threshold:infamous
+				NOT = { scope:target_country = { has_diplomatic_pact = { who = scope:actor type = sanction_country is_initiator = yes } } }
+			} 
+			change_infamy = 15
+		}
+		
+		#THIS loses relations with TARGET
+		change_relations = { country = scope:target_country value = -50 } 
+		
+		#Lobby
+		add_lobby_appeasement_from_diplomacy_unidirectional = { 
+			FIRST = root
+			SECOND = scope:target_country 
+			PRO_AMOUNT = -5
+			ANTI_AMOUNT = 5
+			FACTOR = appeasement_embargo_declared
+		}
+		
+	}
+	
+	ai = {
+	
+		evaluation_chance = {
+			value = 0.25		
+		}
+	
+		propose_score = {
+			value = 10
+		}
+		
+		will_propose = {
+			
+			#AI will not sanction if notorious
+			scope:actor.infamy < infamy_threshold:notorious
+			
+			#AI only sanctions based on infamy and to protect allies
+			OR = {
+			
+				any_country = { 
+					has_war_with = scope:target_country
+					OR = {
+						any_scope_treaty = { binds = ROOT any_scope_article = { has_type = alliance } }
+						any_scope_treaty = { binds = ROOT any_scope_article = { has_type = defensive_pact } }
+					}
+					relations:root >= relations_threshold:friendly
+				}
+				
+				AND = { 
+					ruler ?= {
+						OR = {
+							has_ideology = ideology:ideology_democratic
+							has_ideology = ideology:ideology_liberal
+						}
+					}
+					scope:target_country.infamy >= infamy_threshold:infamous
+				}
+				
+				AND = { 
+					ruler ?= {
+						has_ideology = ideology:ideology_liberal
+					}
+					scope:target_country.infamy = infamy_threshold:notorious
+				}
+				
+			}
+			
+		}
+		
+		will_break = {
+		
+			#AI only sanctions based on infamy and to protect allies
+			NOR = {
+			
+				any_country = { 
+					has_war_with = scope:target_country
+					OR = {
+						any_scope_treaty = { binds = ROOT any_scope_article = { has_type = alliance } }
+						any_scope_treaty = { binds = ROOT any_scope_article = { has_type = defensive_pact } }
+					}
+					relations:root >= relations_threshold:friendly
+				}
+				
+				AND = { 
+					scope:target_country.infamy >= infamy_threshold:infamous
+				}
+				
+				AND = {
+					scope:target_country.infamy = infamy_threshold:notorious
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}

@@ -1,0 +1,584 @@
+namespace = oslo_accords
+
+# Oslo I Accord / Declaration of Principles
+# Step 1: Israel proposes the agreement.
+oslo_accords.1 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = oslo_accords.1.t
+	desc = oslo_accords.1.d
+	flavor = oslo_accords.1.f
+
+	event_image = {
+		video = "africa_diplomats_negotiating"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+
+	trigger = {
+		game_date >= 1993.8.30
+		c:ISR ?= this
+		exists = c:PAL
+		NOT = { has_variable = op1_p }
+		NOT = { has_global_variable = oslo_i_signed }
+		NOT = { has_global_variable = oslo_i_rejected }
+	}
+
+	immediate = { set_variable = op1_p }
+	
+	option = {
+		name = oslo_accords.1.a
+		default_option = yes
+
+		custom_tooltip = { text = oslo_i_proposal_sent_tt }
+
+		set_global_variable = oslo_i_proposed
+
+		c:PAL ?= {
+			trigger_event = {
+				id = oslo_accords.10
+				popup = yes
+				days = 1
+			}
+		}
+	}
+
+	option = {
+		name = oslo_accords.1.b
+
+		custom_tooltip = { text = oslo_i_israel_delay_tt }
+
+		set_global_variable = oslo_i_israel_declined
+
+		add_modifier = {
+			name = oslo_talks_delayed
+			years = 1
+		}
+		c:PAL ?= {
+			add_modifier = {
+				name = oslo_talks_delayed
+				years = 1
+			}
+		}
+
+		custom_tooltip = { text = ip_temperature_increase_10_tt }
+		ip_temperature_add_10 = yes
+	}
+}
+
+# Oslo I Accord
+# Step 2: Palestine accepts or rejects.
+oslo_accords.10 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = oslo_accords.10.t
+	desc = oslo_accords.10.d
+	flavor = oslo_accords.10.f
+
+	event_image = {
+		video = "africa_diplomats_negotiating"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+
+	trigger = {
+		c:PAL ?= this
+		exists = c:ISR
+		has_global_variable = oslo_i_proposed
+		NOT = { has_global_variable = oslo_i_signed }
+		NOT = { has_global_variable = oslo_i_rejected }
+	}
+
+	option = {
+		name = oslo_accords.10.a
+		default_option = yes
+
+		custom_tooltip = { text = oslo_i_palestine_accept_tt }
+		custom_tooltip = { text = ip_temperature_decrease_25_tt }
+		custom_tooltip = { text = ip_negotiations_increase_35_tt }
+		custom_tooltip = { text = ip_international_pressure_decrease_10_tt }
+
+		oslo_i_acceptance_effect = yes
+		ai_chance = { base = 100 }
+		c:ISR ?= {
+			trigger_event = {
+				id = oslo_accords.11
+				popup = yes
+				days = 1
+			}
+		}
+
+		c:USA ?= {
+			trigger_event = {
+				id = oslo_accords.30
+				popup = yes
+				days = 1
+			}
+		}
+		c:NRW ?= {
+			trigger_event = {
+				id = oslo_accords.30
+				popup = yes
+				days = 1
+			}
+		}
+	}
+
+	option = {
+		name = oslo_accords.10.b
+
+		custom_tooltip = { text = oslo_i_palestine_reject_tt }
+		custom_tooltip = { text = ip_temperature_increase_20_tt }
+		custom_tooltip = { text = ip_negotiations_decrease_20_tt }
+
+		set_global_variable = oslo_i_rejected
+		remove_global_variable = oslo_i_proposed
+
+		add_modifier = {
+			name = oslo_talks_delayed
+			years = 2
+		}
+		c:ISR ?= {
+			add_modifier = {
+				name = oslo_talks_delayed
+				years = 2
+			}
+			trigger_event = {
+				id = oslo_accords.12
+				popup = yes
+				days = 1
+			}
+		}
+
+		c:USA ?= {
+			trigger_event = {
+				id = oslo_accords.31
+				popup = yes
+				days = 1
+			}
+		}
+		c:NRW ?= {
+			trigger_event = {
+				id = oslo_accords.31
+				popup = yes
+				days = 1
+			}
+		}
+
+		ip_temperature_add_20 = yes
+		if = {
+			limit = { has_global_variable = ip_peacetime_negotiations }
+			change_global_variable = { name = ip_peacetime_negotiations add = -20 }
+		}
+	}
+}
+
+# Oslo I accepted — Israeli notification
+oslo_accords.11 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = oslo_accords.11.t
+	desc = oslo_accords.11.d
+	flavor = oslo_accords.11.f
+
+	event_image = {
+		video = "africa_diplomats_negotiating"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+
+	trigger = {
+		c:ISR ?= this
+		has_global_variable = oslo_i_signed
+	}
+
+	option = {
+		name = oslo_accords.11.a
+		default_option = yes
+	}
+}
+
+# Oslo I rejected — Israeli notification
+oslo_accords.12 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = oslo_accords.12.t
+	desc = oslo_accords.12.d
+	flavor = oslo_accords.12.f
+
+	event_image = {
+		video = "africa_diplomats_negotiating"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+
+	trigger = {
+		c:ISR ?= this
+		has_global_variable = oslo_i_rejected
+	}
+
+	option = {
+		name = oslo_accords.12.a
+		default_option = yes
+	}
+}
+
+# Oslo II / Interim Agreement
+# Step 1: Israel proposes the agreement, 720 days after Oslo I acceptance.
+oslo_accords.2 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = oslo_accords.2.t
+	desc = oslo_accords.2.d
+	flavor = oslo_accords.2.f
+
+	event_image = {
+		video = "africa_diplomats_negotiating"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+
+	trigger = {
+		c:ISR ?= this
+		exists = c:PAL
+		has_global_variable = oslo_i_signed
+		NOT = { has_global_variable = oslo_ii_signed }
+		NOT = { has_global_variable = oslo_ii_rejected }
+	}
+
+	option = {
+		name = oslo_accords.2.a
+		default_option = yes
+
+		custom_tooltip = { text = oslo_ii_proposal_sent_tt }
+
+		set_global_variable = oslo_ii_proposed
+
+		c:PAL ?= {
+			trigger_event = {
+				id = oslo_accords.20
+				popup = yes
+			}
+		}
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = oslo_accords.2.b
+
+		custom_tooltip = { text = oslo_ii_israel_delay_tt }
+		custom_tooltip = { text = ip_temperature_increase_10_tt }
+		custom_tooltip = { text = ip_negotiations_decrease_10_tt }
+
+		set_global_variable = oslo_ii_israel_declined
+
+		add_modifier = {
+			name = oslo_ii_delayed_redeployment
+			years = 2
+		}
+		c:PAL ?= {
+			add_modifier = {
+				name = oslo_ii_delayed_redeployment
+				years = 2
+			}
+		}
+
+		ip_temperature_add_10 = yes
+		if = {
+			limit = { has_global_variable = ip_peacetime_negotiations }
+			change_global_variable = { name = ip_peacetime_negotiations add = -10 }
+		}
+	}
+}
+
+# Oslo II
+# Step 2: Palestine accepts or rejects.
+oslo_accords.20 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = oslo_accords.20.t
+	desc = oslo_accords.20.d
+	flavor = oslo_accords.20.f
+
+	event_image = {
+		video = "africa_diplomats_negotiating"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+
+	trigger = {
+		c:PAL ?= this
+		exists = c:ISR
+		has_global_variable = oslo_ii_proposed
+		has_global_variable = oslo_i_signed
+		NOT = { has_global_variable = oslo_ii_signed }
+		NOT = { has_global_variable = oslo_ii_rejected }
+	}
+
+	option = {
+		name = oslo_accords.20.a
+		default_option = yes
+
+		custom_tooltip = { text = oslo_ii_palestine_accept_tt }
+		custom_tooltip = { text = ip_temperature_decrease_15_tt }
+		custom_tooltip = { text = ip_negotiations_increase_25_tt }
+		custom_tooltip = { text = ip_security_coordination_increase_20_tt }
+
+		oslo_ii_acceptance_effect = yes
+
+		c:ISR ?= {
+			trigger_event = {
+				id = oslo_accords.21
+				popup = yes
+			}
+		}
+
+		c:USA ?= {
+			trigger_event = {
+				id = oslo_accords.32
+				popup = yes
+			}
+		}
+	}
+
+	option = {
+		name = oslo_accords.20.b
+
+		custom_tooltip = { text = oslo_ii_palestine_reject_tt }
+		custom_tooltip = { text = ip_temperature_increase_20_tt }
+		custom_tooltip = { text = ip_negotiations_decrease_20_tt }
+
+		set_global_variable = oslo_ii_rejected
+		remove_global_variable = oslo_ii_proposed
+
+		add_modifier = {
+			name = oslo_ii_delayed_redeployment
+			years = 2
+		}
+		c:ISR ?= {
+			add_modifier = {
+				name = oslo_ii_delayed_redeployment
+				years = 2
+			}
+			trigger_event = {
+				id = oslo_accords.22
+				popup = yes
+			}
+		}
+
+		c:USA ?= {
+			trigger_event = {
+				id = oslo_accords.33
+				popup = yes
+			}
+		}
+
+		ip_temperature_add_20 = yes
+		if = {
+			limit = { has_global_variable = ip_peacetime_negotiations }
+			change_global_variable = { name = ip_peacetime_negotiations add = -20 }
+		}
+	}
+}
+
+# Oslo II accepted — Israeli notification
+oslo_accords.21 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = oslo_accords.21.t
+	desc = oslo_accords.21.d
+	flavor = oslo_accords.21.f
+
+	event_image = {
+		video = "africa_diplomats_negotiating"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+
+	trigger = {
+		c:ISR ?= this
+		has_global_variable = oslo_ii_signed
+	}
+
+	option = {
+		name = oslo_accords.21.a
+		default_option = yes
+	}
+}
+
+# Oslo II rejected — Israeli notification
+oslo_accords.22 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = oslo_accords.22.t
+	desc = oslo_accords.22.d
+	flavor = oslo_accords.22.f
+
+	event_image = {
+		video = "africa_diplomats_negotiating"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+
+	trigger = {
+		c:ISR ?= this
+		has_global_variable = oslo_ii_rejected
+	}
+
+	option = {
+		name = oslo_accords.22.a
+		default_option = yes
+	}
+}
+
+# USA notification — Oslo I accepted
+oslo_accords.30 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = oslo_accords.30.t
+	desc = oslo_accords.30.d
+	flavor = oslo_accords.30.f
+
+	event_image = {
+		video = "africa_diplomats_negotiating"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+
+	trigger = {
+		has_global_variable = oslo_i_signed
+	}
+
+	option = {
+		name = oslo_accords.30.a
+		default_option = yes
+		custom_tooltip = { text = oslo_usa_oslo_i_accepted_tt }
+		add_modifier = {
+			name = oslo_us_broker
+			years = 2
+			is_decaying = yes
+		}
+	}
+}
+
+# USA notification — Oslo I rejected
+oslo_accords.31 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = oslo_accords.31.t
+	desc = oslo_accords.31.d
+	flavor = oslo_accords.31.f
+
+	event_image = {
+		video = "africa_diplomats_negotiating"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+
+	trigger = {
+		has_global_variable = oslo_i_rejected
+	}
+
+	option = {
+		name = oslo_accords.31.a
+		default_option = yes
+		custom_tooltip = { text = oslo_usa_oslo_i_rejected_tt }
+		add_modifier = {
+			name = oslo_us_failed_mediation
+			years = 2
+			is_decaying = yes
+		}
+	}
+}
+
+# USA notification — Oslo II accepted
+oslo_accords.32 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = oslo_accords.32.t
+	desc = oslo_accords.32.d
+	flavor = oslo_accords.32.f
+
+	event_image = {
+		video = "africa_diplomats_negotiating"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+
+	trigger = {
+		has_global_variable = oslo_ii_signed
+	}
+
+	option = {
+		name = oslo_accords.32.a
+		default_option = yes
+		custom_tooltip = { text = oslo_usa_oslo_ii_accepted_tt }
+		add_modifier = {
+			name = oslo_us_broker
+			years = 3
+			is_decaying = yes
+		}
+	}
+}
+
+# USA notification — Oslo II rejected
+oslo_accords.33 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = oslo_accords.33.t
+	desc = oslo_accords.33.d
+	flavor = oslo_accords.33.f
+
+	event_image = {
+		video = "africa_diplomats_negotiating"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+
+	trigger = {
+		has_global_variable = oslo_ii_rejected
+	}
+
+	option = {
+		name = oslo_accords.33.a
+		default_option = yes
+		custom_tooltip = { text = oslo_usa_oslo_ii_rejected_tt }
+		add_modifier = {
+			name = oslo_us_failed_mediation
+			years = 2
+			is_decaying = yes
+		}
+	}
+}

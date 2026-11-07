@@ -1,0 +1,308 @@
+﻿# ==========================================
+# THE ARAB SPRING — EVENTS
+# Converted from peoples_springtime.txt
+# ==========================================
+
+namespace = arab_spring
+
+# ==========================================
+# 2011_protests.1
+# "The Streets Are Rising"
+# Fires on JE start for all involved countries
+# Analogous to 1848.4 — Rise of Radicalism
+# ==========================================
+
+2011_protests.1 = {
+	type = country_event
+	placement = root
+	title = 2011_protests.1.t
+	desc = 2011_protests.1.d
+	flavor = 2011_protests.1.f
+
+	duration = 3
+
+	event_image = {
+		video = "arab_spring"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	trigger = {
+		# Triggered by journal entry start
+	}
+
+	immediate = {
+		# Save the most prominent liberal/progressive leader as the protest figurehead
+		random_interest_group = {
+			limit = {
+				OR = {
+					is_powerful = yes
+					is_insurrectionary = yes
+				}
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_liberal_leader
+						has_ideology = ideology:ideology_progressive_leader
+					}
+				}
+			}
+			leader = {
+				save_scope_as = protest_leader_scope
+			}
+		}
+	}
+
+	# Option A: Crackdown — suppress the protests by force
+	option = {
+		name = 2011_protests.1.a
+		default_option = yes
+
+		scope:protest_leader_scope ?= {
+			add_modifier = {
+				name = arab_spring_popular_dissident
+			}
+		}
+		show_as_tooltip = {
+			if = {
+				limit = {
+					NOT = {
+						any_political_movement = {
+							OR = {
+								is_political_movement_type = movement_liberal
+								is_political_movement_type = movement_progressive
+							}
+						}
+					}
+				}
+				create_political_movement = { type = movement_liberal }
+			}
+		}
+		# Regime loyalists are reassured; middle and lower classes radicalize
+		add_modifier = {
+			name = suppressing_protests
+			days = short_modifier_time
+		}
+		add_loyalists = {
+			strata = upper
+			value = very_large_radicals
+		}
+		add_radicals = {
+			value = medium_radicals
+			strata = middle
+		}
+		add_radicals = {
+			value = medium_radicals
+			strata = lower
+		}
+		ai_chance = {
+			base = 66
+		}
+	}
+
+	# Option B: Concede — open dialogue and accept the movement has legitimacy
+	option = {
+		name = 2011_protests.1.b
+
+		scope:protest_leader_scope ?= {
+			add_modifier = {
+				name = arab_spring_popular_dissident
+			}
+		}
+		# Elevate a liberal/progressive leader in an opposition IG
+		if = {
+			limit = {
+				any_interest_group = {
+					ig_counts_as_marginal = no
+					is_in_government = no
+					leader = {
+						OR = {
+							has_ideology = ideology:ideology_moderate_leader
+							has_ideology = ideology:ideology_liberal_leader
+							has_ideology = ideology:ideology_progressive_leader
+						}
+					}
+				}
+			}
+			random_interest_group = {
+				limit = {
+					ig_counts_as_marginal = no
+					is_in_government = no
+					leader = {
+						OR = {
+							has_ideology = ideology:ideology_moderate_leader
+							has_ideology = ideology:ideology_liberal_leader
+							has_ideology = ideology:ideology_progressive_leader
+						}
+					}
+				}
+				leader = {
+					set_ideology = ideology:ideology_liberal_leader
+					add_modifier = {
+						name = arab_spring_popular_dissident
+					}
+				}
+			}
+		}
+		show_as_tooltip = {
+			if = {
+				limit = {
+					NOT = {
+						any_political_movement = {
+							OR = {
+								is_political_movement_type = movement_liberal
+								is_political_movement_type = movement_progressive
+							}
+						}
+					}
+				}
+				create_political_movement = { type = movement_liberal }
+			}
+		}
+		add_radicals = {
+			value = medium_radicals
+		}
+		ai_chance = {
+			base = 33
+		}
+	}
+}
+
+# ==========================================
+# 2011_protests.2
+# "The Security Apparatus Responds"
+# Monthly pulse — regime counter-measures
+# Analogous to 1848.5 — Radicals at the Gates
+# ==========================================
+
+2011_protests.2 = {
+	type = country_event
+	placement = root
+	title = 2011_protests.2.t
+	desc = 2011_protests.2.d
+	flavor = 2011_protests.2.f
+
+	duration = 3
+
+	cooldown = { days = normal_modifier_time }
+
+	event_image = {
+		video = "libyan_society"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	trigger = {
+		# Triggered by arab_spring JE monthly pulse
+		# Only fires when protests are gaining ground but not yet in government
+		NOT = {
+			any_interest_group = {
+				is_in_government = yes
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_liberal_leader
+						has_ideology = ideology:ideology_progressive_leader
+					}
+				}
+			}
+		}
+		any_interest_group = {
+			OR = {
+				is_powerful = yes
+				is_insurrectionary = yes
+			}
+			leader = {
+				OR = {
+					has_ideology = ideology:ideology_liberal_leader
+					has_ideology = ideology:ideology_progressive_leader
+				}
+			}
+		}
+		# Only fires if the regime has internal security infrastructure to lean on
+		trigger_if = {
+			limit = {
+				OR = {
+					has_law_or_variant = law_type:law_secret_police
+					has_law_or_variant = law_type:law_national_guard
+				}
+			}
+			institution_investment_level = {
+				institution = institution_home_affairs
+				value >= 3
+			}
+		}
+	}
+
+	# Option A: Expand the secret police — invest in surveillance and detention
+	option = {
+		name = 2011_protests.2.a
+		if = {
+			limit = {
+				is_enacting_law = law_type:law_secret_police
+			}
+			add_enactment_modifier = {
+				name = arab_spring_reactionary_enactment
+			}
+		}
+		if = {
+			limit = {
+				has_law_or_variant = law_type:law_secret_police
+			}
+			add_modifier = {
+				name = arab_spring_institution_speed
+				days = short_modifier_time
+			}
+		}
+		add_journal_entry = {
+			type = je_secret_police
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+
+	# Option B: Deploy the military — use armed force to hold the streets
+	option = {
+		name = 2011_protests.2.b
+		if = {
+			limit = {
+				is_enacting_law = law_type:law_national_guard
+			}
+			add_enactment_modifier = {
+				name = arab_spring_reactionary_enactment
+			}
+		}
+		if = {
+			limit = {
+				has_law_or_variant = law_type:law_national_guard
+			}
+			add_modifier = {
+				name = arab_spring_institution_speed
+				days = short_modifier_time
+			}
+		}
+		add_journal_entry = {
+			type = je_secret_police
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+
+	# Option C: Do nothing — let the protests exhaust themselves
+	option = {
+		name = 2011_protests.2.c
+		default_option = yes
+		capital = {
+			add_radicals_in_state = {
+				value = medium_radicals
+			}
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+}

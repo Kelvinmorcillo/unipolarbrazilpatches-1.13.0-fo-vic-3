@@ -1,0 +1,133 @@
+# Threaten Nuclear Hostilities
+# A diplomatic action for nuclear-capable countries.
+
+REPLACE_OR_CREATE:threaten_nuclear_hostilities = {
+	groups = { general }
+
+	requires_approval = no
+	should_notify_third_parties = yes
+	show_effect_in_tooltip = yes
+	can_use_obligations = no
+
+	selectable = {
+		has_variable = nuclear_capable
+	}
+
+	potential = {
+		scope:target_country = {
+			NOT = { THIS = ROOT }
+			NOT = { is_country_type = decentralized }
+			is_revolutionary = no
+			is_secessionist = no
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = threaten_nuclear_hostilities_requires_nuclear_capable_tt
+			has_variable = nuclear_capable
+		}
+
+		custom_tooltip = {
+			text = threaten_nuclear_hostilities_cooldown_tt
+			NOT = { has_variable = threaten_nuclear_hostilities_cooldown }
+		}
+
+		#THIS is not friendly with Target in anyway
+		NOR = { 
+			has_diplomatic_pact = { who = scope:target_country type = increase_relations }
+			any_scope_treaty = { binds = scope:target_country any_scope_article = { has_type = alliance } }
+			any_scope_treaty = { binds = scope:target_country any_scope_article = { has_type = defensive_pact } }
+			any_scope_treaty = { binds = scope:target_country any_scope_article = { has_type = guarantee_independence } }
+			scope:target_country = { is_subject_of = scope:actor }
+		}
+		
+		#THIS has poor or less relations with Target
+		custom_tooltip = {
+			text = DIPLO_ACTION_RELATIONS_POOR_OR_LESS
+			scope:target_country.relations:root <= relations_threshold:poor
+		}
+		
+		custom_tooltip = {
+			text = threaten_nuclear_hostilities_target_valid_tt
+			scope:target_country = {
+				NOT = { THIS = ROOT }
+				NOT = { is_country_type = decentralized }
+				is_revolutionary = no
+				is_secessionist = no
+			}
+		}
+	}
+
+	accept_effect = {
+		set_variable = {
+			name = threaten_nuclear_hostilities_cooldown
+			days = 180
+		}
+
+		add_modifier = {
+			name = threatened_nuclear_hostilities_diplomatic_reputation
+			days = 180
+			is_decaying = yes
+		}
+
+		scope:target_country = {
+			change_relations = {
+				country = ROOT
+				value = -20
+			}
+		}
+	}
+
+	ai = {
+		evaluation_chance = {
+			value = 0.01
+		}
+
+		propose_score = {
+			value = 0
+
+			if = {
+				limit = {
+					has_variable = nuclear_capable
+					NOT = { has_variable = threaten_nuclear_hostilities_cooldown }
+				}
+				add = 5
+			}
+
+			if = {
+				limit = {
+					scope:target_country = {
+						has_rivalry = ROOT
+					}
+				}
+				add = 10
+			}
+
+			if = {
+				limit = {
+					infamy >= 25
+				}
+				add = 5
+			}
+		}
+
+		will_propose = {
+			has_variable = nuclear_capable
+			NOT = { has_variable = threaten_nuclear_hostilities_cooldown }
+
+			scope:target_country = {
+				NOT = { is_country_type = decentralized }
+				is_revolutionary = no
+				is_secessionist = no
+			}
+
+			OR = {
+				scope:target_country = {
+					has_rivalry = ROOT
+				}
+				infamy >= 25
+			}
+		}
+	}
+}

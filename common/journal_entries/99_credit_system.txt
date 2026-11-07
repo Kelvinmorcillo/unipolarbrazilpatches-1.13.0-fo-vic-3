@@ -1,0 +1,243 @@
+﻿# for the US. might make one for the yuan
+je_the_dollar = {
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	group = je_group_domestic_policy
+
+	is_shown_when_inactive = {
+		c:USA ?= this
+		market_capital.market = {
+			market_exports = {
+				goods = credit
+				value > 1000
+			}
+		}
+	}
+
+	possible = {
+		c:USA ?= this
+		market_capital.market = {
+			market_exports = {
+				goods = credit
+				value > 1000
+			}
+		}
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_dollar_status_hegemonic_tt
+				trigger = {
+					market_capital.market = {
+						market_exports = {
+							goods = credit
+							value > 20000
+						}
+					}
+				}
+			}
+			triggered_desc = {
+				desc = je_dollar_status_stronger_tt
+				trigger = {
+					market_capital.market = {
+						market_exports = {
+							goods = credit
+							value > 10000
+						}
+					}
+					market_capital.market = {
+						market_exports = {
+							goods = credit
+							value < 20000
+						}
+					}
+				}
+			}
+			triggered_desc = {
+				desc = je_dollar_status_strong_tt
+				trigger = {
+					market_capital.market = {
+						market_exports = {
+							goods = credit
+							value > 5000
+						}
+					}
+					market_capital.market = {
+						market_exports = {
+							goods = credit
+							value < 10000
+						}
+					}
+				}
+			}
+			triggered_desc = {
+				desc = je_dollar_status_moderate_tt
+				trigger = {
+					market_capital.market = {
+						market_exports = {
+							goods = credit
+							value > 2500
+						}
+					}
+					market_capital.market = {
+						market_exports = {
+							goods = credit
+							value < 5000
+						}
+					}
+				}
+			}
+			triggered_desc = {
+				desc = je_dollar_status_marginal_tt
+			}
+		}
+	}
+
+	invalid = {
+		NOT = {
+			market_capital.market = {
+				market_exports = {
+					goods = credit
+					value > 1000
+				}
+			}
+		}
+	}
+
+	transferable = no
+	can_revolution_inherit = no
+	weight = 4000
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+# ==========================================
+# THE RESERVE CURRENCY
+# For any non-US country exporting >1000
+# units of credit.
+# ==========================================
+
+je_reserve_currency = {
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	group = je_group_domestic_policy
+
+	is_shown_when_inactive = {
+		NOT = { c:USA ?= this }
+		market_capital.market = {
+			market_exports = {
+				goods = credit
+				value > 1000
+			}
+		}
+	}
+
+	possible = {
+		NOT = { c:USA ?= this }
+		market_capital.market = {
+			market_exports = {
+				goods = credit
+				value > 1000
+			}
+		}
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_reserve_status_strong_tt
+				trigger = {
+					market_capital.market = {
+						market_exports = {
+							goods = credit
+							value > 5000
+						}
+					}
+				}
+			}
+			triggered_desc = {
+				desc = je_reserve_status_moderate_tt
+				trigger = {
+					market_capital.market = {
+						market_exports = {
+							goods = credit
+							value > 2500
+						}
+					}
+				}
+			}
+			triggered_desc = {
+				desc = je_reserve_status_marginal_tt
+			}
+		}
+	}
+
+	invalid = {
+		OR = {
+			c:USA ?= this
+			NOT = {
+				market_capital.market = {
+					market_exports = {
+						goods = credit
+						value > 1000
+					}
+				}
+			}
+		}
+	}
+
+	transferable = no
+	can_revolution_inherit = no
+	weight = 3500
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+je_financial_system = {
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	group = je_group_domestic_policy
+
+	is_shown_when_inactive = {
+		always = yes
+	}
+
+	possible = {
+		always = yes
+	}
+
+	status_desc = {
+		first_valid = {
+			# Credit is expensive — banks profitable, construction costly
+			triggered_desc = {
+				desc = je_financial_credit_expensive_tt
+				trigger = {
+					market_capital.market = {
+						mg:credit = {
+							market_goods_pricier > 0.10
+						}
+					}
+				}
+			}
+			# Securities expensive — investors squeezed, construction slower
+			triggered_desc = {
+				desc = je_financial_securities_expensive_tt
+				trigger = {
+					market_capital.market = {
+						mg:securities = {
+							market_goods_pricier > 0.10
+						}
+					}
+				}
+			}
+			# Balanced
+			triggered_desc = {
+				desc = je_financial_balanced_tt
+			}
+		}
+	}
+
+	transferable = yes
+	can_revolution_inherit = yes
+	weight = 1000
+	should_be_pinned_by_default_uninvolved_or_context = no
+}

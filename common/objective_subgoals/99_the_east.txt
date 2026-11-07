@@ -1,0 +1,97 @@
+﻿# ==========================================
+# THE EAST — SUBGOALS
+# ==========================================
+ 
+sg_east_state_industry = {
+	category = sgcat_the_east
+	is_repeatable = no
+
+	trigger = {
+		exists = yes
+	}
+
+	on_start = {
+		add_journal_entry = {
+			type = je_east_state_industry
+			objective_subgoal = sg_east_state_industry
+		}
+	}
+}
+
+sg_east_great_power = {
+	category = sgcat_the_east
+	is_repeatable = no
+
+	trigger = {
+		exists = yes
+	}
+
+	on_start = {
+		add_journal_entry = {
+			type = je_east_great_power
+			objective_subgoal = sg_east_great_power
+		}
+	}
+}
+
+sg_east_sphere = {
+	category = sgcat_the_east
+	is_repeatable = no
+
+	unlocking_subgoals_all = {
+		sg_east_great_power
+	}
+
+	trigger = {
+		
+	}
+
+	on_start = {
+		add_journal_entry = {
+			type = je_east_sphere
+			objective_subgoal = sg_east_sphere
+		}
+	}
+}
+
+sg_east_currency = {
+	category = sgcat_the_east
+	is_repeatable = no
+
+	unlocking_subgoals_all = {
+		sg_east_state_industry
+		sg_east_great_power
+	}
+
+	trigger = {
+		
+	}
+
+	on_start = {
+		add_journal_entry = {
+			type = je_east_currency
+			objective_subgoal = sg_east_currency
+		}
+	}
+}
+
+sg_east_endgame = {
+	category = sgcat_the_east
+	is_repeatable = no
+
+	unlocking_subgoals_all = {
+		sg_east_sphere
+		sg_east_currency
+	}
+
+	trigger = {
+		
+	}
+
+	on_start = {
+		add_journal_entry = {
+			type = je_east_endgame
+			objective_subgoal = sg_east_endgame
+		}
+	}
+}

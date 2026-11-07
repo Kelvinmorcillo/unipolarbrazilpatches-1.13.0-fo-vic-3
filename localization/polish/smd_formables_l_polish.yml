@@ -1,0 +1,21 @@
+﻿l_polish:
+#
+dp_leadership_china:0 "Chiny wiodące"
+
+ je_one_china_prc:0 "Jedna polityka chińska"
+ je_one_china_prc_reason:0 "Jest jeden Chiny. Od 1949 r. Zjednoczenie Formosy z kontynentem nie jest jedynie celem strategicznym. Jest to rozwiązanie niedokończonej wojny domowej - ostateczny akt [ROOT.GetCountry.GetAdjective] odbudowa narodowa. Kiedy Formosa jest pod kontrolą [ROOT.GetCountry.GetAdjective], stulecie upokorzenia naprawdę się kończy."
+ 
+ one_china_prc_owns_formosa_tt:0 "#bold Formosa jest pod [ROOT.GetCountry.GetAdjective] kontrola. #! Polityka jednego Chin została unieważniona. [ROOT.GetCountry.GetName] jest w całości."
+ one_china_prc_formosa_uncontrolled_tt:0 "[SCOPE.sState('STATE_FORMOSA').GetName] pozostaje na zewnątrz [ROOT.GetCountry.GetAdjective] kontrola. [SCOPE.sCountry('c:ROC').GetName] nadal rości sobie prawo do suwerenności nad kontynentem z jego wyspy wątpliwości. Zjednoczenie Chin jest niedokończone."
+ 
+ je_one_china_roc:0 "Jedna polityka chińska"
+ je_one_china_roc_reason:0 "Jest jeden Chiny. [ROOT.GetCountry.GetName] utrzymuje to stanowisko od 1949 r. - że Republika Chińska jest legalnym rządem całego chińskiego terytorium i że okupacja przez Chińską Partię Komunistyczną kontynentu jest tymczasową aberracją, którą historia naprawi. \n \n Republika Ludowa musi zostać wprowadzona do porządku konstytucyjnego [ROOT.GetCountry.GetAdjective]. Kiedy Chińska Republika Ludowa staje się przedmiotem [ROOT.GetCountry.GetName], zaczyna się zadanie integracji - wchłonięcie ogromnej populacji i terytorium kontynentu do zjednoczonego państwa chińskiego pod [ROOT.GetCountry.GetAdjective] przywództwo."
+ 
+ one_china_roc_has_subject_tt:0 "#bold [SCOPE.sCountry('c:CHI').GetName] jest przedmiotem [ROOT.GetCountry.GetName]. #! Kontynent został wprowadzony do porządku konstytucyjnego [ROOT.GetCountry.GetAdjective]. Obecnie trwa integracja rozległego terytorium [SCOPE.sCountry('c:CHI').GetAdjective]."
+ one_china_roc_no_subject_tt:0 "[SCOPE.sCountry('c:CHI').GetName] pozostaje niezależny zgodnie z regułą Partii Komunistycznej. [ROOT.GetCountry.GetName] kontroluje tylko [SCOPE.sState('STATE_FORMOSA').GetName] i jego peryferyjne terytoria. Ponowne zjednoczenie Chin pod [ROOT.GetCountry.GetAdjective] przywództwo jest niedokończone."
+
+ one_china_reunification_bonus:0 "Chiny zjednoczone"
+ one_china_reunification_bonus_desc:0 "Zjednoczenie Formosy z kontynentem rozwiązało niedokończoną wojnę domową i uzdrowiło stuletnią ranę w [ROOT.GetCountry.GetAdjective] świadomości narodowej. Władza, legitymacja i prestiż ulegają dramatycznej poprawie. Ruch Separatystów jest stłumiony. Stan jest cały."
+ 
+ one_china_roc_integration_bonus:0 "Integracja lądowa"
+ one_china_roc_integration_bonus_desc:0 "[ROOT.GetCountry.GetName] wprowadziło dawną Chińską Republikę Ludową do porządku konstytucyjnego. Rozpoczęło się ogromne zadanie integracji terytorium i ludności kontynentu. Prędkość włączenia jest dramatycznie przyspieszana, ponieważ stan [ROOT.GetCountry.GetAdjective] rozszerza swoje instytucje na kontynent."

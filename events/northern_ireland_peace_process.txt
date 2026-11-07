@@ -1,0 +1,128 @@
+﻿namespace = ni_peace_events
+
+# Downing Street Declaration
+ni_peace_events.1 = {
+	type = country_event
+	placement = ROOT
+	title = ni_peace_events.1.t
+	desc = ni_peace_events.1.d
+	event_image = { video = "parliament" }
+	duration = 2
+	trigger = {
+		c:GBR ?= this
+		NOT = { has_variable = ni_peace_downing_decl }
+		je:je_troubles_in_northern_ireland = {
+                "scripted_bar_progress(troubles_troop_strength_bar)" >= 85
+				}
+            }
+
+	immediate = {
+		set_variable = ni_peace_downing_decl
+	}
+
+	option = {
+		name = ni_peace_events.1.a
+		add_loyalists = {
+			value = 0.10
+			pop_type = clerks
+		}
+	}
+}
+
+# Multi-party talks
+ni_peace_events.2 = {
+	type = country_event
+	placement = ROOT
+	title = ni_peace_events.2.t
+	desc = ni_peace_events.2.d
+	event_image = { video = "middleeast_upperclass_party" }
+	duration = 2
+	trigger = {
+		has_variable = ni_peace_downing_decl
+	}
+
+	option = {
+		name = ni_peace_events.2.a
+		add_loyalists = {
+			value = 0.10
+			pop_type = academics
+		}
+	}
+}
+
+# Good Friday Agreement
+ni_peace_events.3 = {
+	type = country_event
+	placement = ROOT
+	title = ni_peace_events.3.t
+	desc = ni_peace_events.3.d
+	event_image = { video = "unspecific_politicians_arguing" }
+	duration = 2
+	trigger = {
+		has_journal_entry = je_northern_ireland_peace_process
+		NOT = { has_variable = good_friday_agreement }
+	}
+
+	immediate = {
+		set_variable = good_friday_agreement
+	}
+
+	option = {
+		name = ni_peace_events.3.a
+		add_loyalists = {
+			value = 0.20
+			pop_type = shopkeepers
+		}
+	}
+}
+
+# British Withdrawal and Irish Unification
+ni_peace_events.5 = {
+    type = country_event
+    placement = ROOT
+    title = ni_peace_events.5.t
+    desc = ni_peace_events.5.d
+    event_image = { video = "unspecific_signed_contract" }
+	duration = 3
+    trigger = {
+        je:je_troubles_in_northern_ireland = {
+                "scripted_bar_progress(troubles_troop_strength_bar)" <= 5
+            }
+        c:GBR ?= this
+    }
+
+    immediate = {
+       s:STATE_ULSTER.region_state:GBR = { set_state_owner = c:IRE }
+    }
+
+    option = {
+        name = ni_peace_events.5.a
+		custom_tooltip = ni_peace_events.5.a.tt
+		c:IRE = { trigger_event = { id = ni_peace_events.6 days = 2 } }
+    }
+}
+
+# Irish Celebration after Reunification
+ni_peace_events.6 = {
+    type = country_event
+    placement = ROOT
+    title = ni_peace_events.6.t
+    desc = ni_peace_events.6.d
+    event_image = { video = "crowd_celebrating" }
+	duration = 2
+    trigger = {
+        c:IRE ?= this
+		country_or_subject_owns_entire_state_region = s:STATE_ULSTER
+    }
+
+    option = {
+        name = ni_peace_events.6.a
+        add_loyalists = {
+            value = 0.25
+        }
+        add_modifier = {
+            name = reunification_pride
+            months = 18
+        }
+    }
+}

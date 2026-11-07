@@ -1,0 +1,164 @@
+
+je_first_chechen_war = {
+	group = je_group_international
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	is_shown_in_lobby = {
+		OR = {
+			c:RUS ?= this
+			c:CCH ?= this
+		}
+	}
+
+	modifiers_while_active = {
+		chechen_war_guerilla_warfare
+	}
+
+	scripted_progress_bar = je_chechen_war_score_bar
+	scripted_button = je_chechen_war_storm_grozny_button
+	scripted_button = je_chechen_war_mountain_offensive_button
+
+	should_be_involved = {
+		OR = {
+			c:RUS ?= this
+			c:CCH ?= this
+		}
+	}
+
+	should_show_when_not_involved = {
+		always = no
+	}
+
+	immediate = {
+		if = {
+			limit = { NOT = { has_global_variable = rus_chechen_war_score } }
+			set_global_variable = { name = rus_chechen_war_score value = 0 }
+		}
+		if = {
+			limit = { NOT = { has_global_variable = che_chechen_war_score } }
+			set_global_variable = { name = che_chechen_war_score value = 0 }
+		}
+		if = {
+			limit = { NOT = { has_global_variable = chechen_war_guerilla_phase } }
+			set_global_variable = chechen_war_guerilla_phase
+		}
+	}
+
+	immediate_all_involved = {
+		set_variable = coup_immunity
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_chechen_war_status_guerilla
+				trigger = {
+					has_global_variable = chechen_war_guerilla_phase
+				}
+			}
+			triggered_desc = {
+				desc = je_chechen_war_status_offensive
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			# Random Chechen guerrilla events
+			c:CCH ?= {
+				random_list = {
+					8 = {}
+					1 = { trigger_event = chechen_war.5 }
+					1 = { trigger_event = chechen_war.6 }
+				}
+			}
+		}
+	}
+
+	complete = {
+		custom_tooltip = {
+			text = je_chechen_war_complete_tt
+			NAND = {
+				exists = c:CCH
+				exists = c:RUS
+			}
+		}
+	}
+
+	invalid = {
+		# Works in contextless scope — checks if RUS and CHE are no longer at war
+		NOT = {
+			any_country = {
+				c:RUS ?= this
+				has_war_with = c:CCH
+			}
+		}
+	}
+ 
+	on_invalid = {
+		trigger_event = chechen_war.2
+		hidden_effect = {
+			remove_global_variable = rus_chechen_war_score
+			remove_global_variable = che_chechen_war_score
+			remove_global_variable = chechen_war_started
+			remove_variable = coup_immunity
+ 
+			every_scope_state = {
+				limit = { has_modifier = chechen_war_devastation }
+				remove_modifier = chechen_war_devastation
+			}
+		}
+	}
+	
+	on_complete_all_involved = {
+		if = {
+			limit = {
+				c:CCH ?= this
+			}
+			# Chechen victory — independence secured
+			add_modifier = {
+				name = chechen_war_che_reward
+				years = 20
+				is_decaying = yes
+			}
+			set_variable = chechen_independence_secured
+		}
+		else_if = {
+			limit = {
+				c:RUS ?= this
+			}
+			# Russian victory — territorial integrity
+			add_modifier = {
+				name = chechen_war_rus_reward
+				years = 20
+				is_decaying = yes
+			}
+		}
+		trigger_event = chechen_war.2
+		hidden_effect = {
+			remove_global_variable = rus_chechen_war_score
+			remove_global_variable = che_chechen_war_score
+			remove_modifier = chechen_storm_grozny
+			remove_modifier = chechen_mountain_resistance
+			remove_modifier = chechen_ambush_tactics
+			remove_modifier = chechen_war_rus_morale
+			set_immune_to_revolutions = no
+			remove_variable = coup_immunity
+
+			every_scope_state = {
+				limit = { has_modifier = chechen_war_devastation }
+				remove_modifier = chechen_war_devastation
+			}
+		}
+	}
+
+	weight = 10000
+
+	should_be_pinned_by_default_involved = yes
+	should_be_pinned_by_default_uninvolved_or_context = no
+
+	can_revolution_inherit = yes
+}

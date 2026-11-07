@@ -1,0 +1,77 @@
+# ==========================================
+# ARAB SPRING — INTERNATIONAL MODIFIERS
+# Applied to western countries based on
+# their foreign policy choices.
+# ==========================================
+
+# ── STANCE MODIFIERS (country scope) ─────
+
+# Option A: Support the protesters
+arab_spring_intl_pro_democracy_stance = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_mult               = 0.05
+	country_influence_mult              = 0.05
+	country_infamy_decay_mult           = 0.10
+}
+
+# Option B: Back the regime
+arab_spring_intl_stability_first_stance = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_prestige_mult               = -0.05
+	country_infamy_decay_mult           = -0.10
+	country_leverage_mult               = 0.10
+}
+
+# Option C: Call for restraint
+arab_spring_intl_neutral_stance = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_influence_mult              = -0.05
+	country_infamy_decay_mult           = 0.05
+}
+
+# ── APPLIED TO ARAB SPRING COUNTRIES ─────
+
+# Western backing boosts protest movements
+arab_spring_intl_western_backing = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	political_movement_radicalism_add   = 0.10
+	political_movement_pop_attraction_mult = 0.15
+}
+
+# Western regime backing boosts crackdown
+arab_spring_intl_regime_backing = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_authority_mult              = 0.10
+	country_legitimacy_base_add         = 5
+}
+
+# ── INTERVENTION MODIFIERS ────────────────
+
+# No-fly zone / limited military intervention
+arab_spring_intl_no_fly_zone = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_military.dds
+	country_infamy_decay_mult           = -0.15
+	country_prestige_mult               = 0.05
+	country_expenses_mult               = 0.05
+}
+
+# Arming rebel forces
+arab_spring_intl_arming_rebels = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_military.dds
+	country_infamy_decay_mult           = -0.10
+	country_expenses_mult               = 0.03
+}
+
+# Costs of intervention — domestic blowback
+arab_spring_intl_intervention_costs = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_infamy_decay_mult           = -0.20
+	country_turmoil_effects_mult        = 0.10
+}
+
+# Non-interventionist — domestic relief
+arab_spring_intl_non_interventionist = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_authority_mult              = 0.05
+	country_infamy_decay_mult           = 0.10
+}

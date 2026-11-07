@@ -1,0 +1,19 @@
+﻿CHARACTERS = {
+	c:HRV ?= {
+	create_character = {
+			first_name = "franjo"
+			last_name = "tudman"
+			historical = yes
+			ruler = yes
+			culture = cu:croat
+			birth_date = 1922.3.31
+			dna = dna_franjo_tudman
+			ig_leader = yes
+			interest_group = ig_petty_bourgeoisie
+			ideology = ideology_theocrat_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+}

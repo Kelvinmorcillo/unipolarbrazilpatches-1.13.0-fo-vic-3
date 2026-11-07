@@ -1,0 +1,43 @@
+﻿# faked GDP values
+cwp_gdp = {
+	value = gdp
+	multiply = 64
+}
+
+cwp_gdp_per_capita = {
+	value = cwp_gdp
+	divide = total_population
+}
+
+cwp_market_gdp_value = {
+	every_scope_country = {
+		add = gdp
+	}
+	multiply = 3500
+}
+
+cwp_gdp_div = {
+	value = cwp_gdp
+	divide = 1000000000000
+}
+
+smd_population = {
+		value = total_population 
+		multiply = 3.17
+}
+
+country_count = {
+	value = 0
+	every_country = {
+		limit = { exists = yes }
+		add = 1
+	}
+}
+
+num_opec_members = {
+	value = 0
+	every_country = {
+		limit = { has_global_variable_list = io_opec_members }
+		add = 1
+	}
+}

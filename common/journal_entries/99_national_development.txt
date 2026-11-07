@@ -1,0 +1,323 @@
+﻿# ==========================================
+# NATIONAL DEVELOPMENT PATH
+# je_national_development
+#
+# A universal JE open to all countries
+# at game start. Player picks 1 of 4
+# development paths, locked for 10 years.
+# After completion, resets and player
+# can pick again.
+# ==========================================
+
+je_national_development = {
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	group = je_group_domestic_policy
+
+	# Visible and available to all countries always
+	is_shown_when_inactive = {
+		always = yes
+	}
+
+	possible = {
+		always = yes
+	}
+
+	# Show progress bar once a path is chosen
+	scripted_progress_bar = national_development_progress_bar
+
+	# Status description — shows current path or prompts selection
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = ndp_status_industrial_tt
+				trigger = { has_variable = ndp_industrial }
+			}
+			triggered_desc = {
+				desc = ndp_status_military_tt
+				trigger = { has_variable = ndp_military }
+			}
+			triggered_desc = {
+				desc = ndp_status_resource_tt
+				trigger = { has_variable = ndp_resource }
+			}
+			triggered_desc = {
+				desc = ndp_status_service_tt
+				trigger = { has_variable = ndp_service }
+			}
+			triggered_desc = {
+				desc = ndp_status_none_tt
+				trigger = {
+					NOT = { has_variable = ndp_industrial }
+					NOT = { has_variable = ndp_military }
+					NOT = { has_variable = ndp_resource }
+					NOT = { has_variable = ndp_service }
+				}
+			}
+		}
+	}
+
+	immediate = {
+		# Reset the development timer
+		set_variable = { name = ndp_progress value = 0 }
+	}
+
+	# ── SCRIPTED BUTTONS ─────────────────────────────
+
+	# INDUSTRIAL EXPANSION
+	scripted_button = ndp_button_industrial
+
+	# MILITARY EXPANSION
+	scripted_button = ndp_button_military
+
+	# RESOURCE ECONOMY
+	scripted_button = ndp_button_resource
+
+	# SERVICE ECONOMY
+	scripted_button = ndp_button_service
+
+	# ABANDON PATH (available once a path is chosen)
+	scripted_button = ndp_button_abandon
+
+	# ── PULSES ───────────────────────────────────────
+
+	on_monthly_pulse = {
+		effect = {
+			scope:journal_entry = {
+				every_scope_je_involved = {
+					# Increment timer if a path is active
+					if = {
+						limit = {
+							OR = {
+								has_variable = ndp_industrial
+								has_variable = ndp_military
+								has_variable = ndp_resource
+								has_variable = ndp_service
+							}
+						}
+						change_variable = { name = ndp_progress add = 1 }
+					}
+
+					# Fire path-specific events periodically
+					# at ~2 year, ~5 year, and ~8 year marks
+					if = {
+						limit = { je:je_national_development = {
+                "scripted_bar_progress(national_development_progress_bar)" >= 24
+				} }
+						if = {
+							limit = { has_variable = ndp_industrial }
+							trigger_event = { id = ndp_events.1 popup = yes }
+						}
+						else_if = {
+							limit = { has_variable = ndp_military }
+							trigger_event = { id = ndp_events.11 popup = yes }
+						}
+						else_if = {
+							limit = { has_variable = ndp_resource }
+							trigger_event = { id = ndp_events.21 popup = yes }
+						}
+						else_if = {
+							limit = { has_variable = ndp_service }
+							trigger_event = { id = ndp_events.31 popup = yes }
+						}
+					}
+					if = {
+						limit = { je:je_national_development = {
+                "scripted_bar_progress(national_development_progress_bar)" >= 60
+				} }
+						if = {
+							limit = { has_variable = ndp_industrial }
+							trigger_event = { id = ndp_events.2 popup = yes }
+						}
+						else_if = {
+							limit = { has_variable = ndp_military }
+							trigger_event = { id = ndp_events.12 popup = yes }
+						}
+						else_if = {
+							limit = { has_variable = ndp_resource }
+							trigger_event = { id = ndp_events.22 popup = yes }
+						}
+						else_if = {
+							limit = { has_variable = ndp_service }
+							trigger_event = { id = ndp_events.32 popup = yes }
+						}
+					}
+					if = {
+						limit = { je:je_national_development = {
+                "scripted_bar_progress(national_development_progress_bar)" >= 96
+				} }
+						if = {
+							limit = { has_variable = ndp_industrial }
+							trigger_event = { id = ndp_events.3 popup = yes }
+						}
+						else_if = {
+							limit = { has_variable = ndp_military }
+							trigger_event = { id = ndp_events.13 popup = yes }
+						}
+						else_if = {
+							limit = { has_variable = ndp_resource }
+							trigger_event = { id = ndp_events.23 popup = yes }
+						}
+						else_if = {
+							limit = { has_variable = ndp_service }
+							trigger_event = { id = ndp_events.33 popup = yes }
+						}
+					}
+				}
+			}
+		}
+	}
+
+	# ── COMPLETION ───────────────────────────────────
+	# Completes when the 10-year timer (120 months) is reached
+
+	complete = {
+		custom_tooltip = {
+			text = ten_year_programme_concluded
+		AND = {
+		je:je_national_development = { "scripted_bar_progress(national_development_progress_bar)" >= 120 }
+			OR = {
+				has_variable = ndp_industrial
+				has_variable = ndp_military
+				has_variable = ndp_resource
+				has_variable = ndp_service
+				}
+			}
+		}
+	}
+
+	on_complete = {
+		# Fire the completion event for the active path
+		if = {
+			limit = { has_variable = ndp_industrial }
+			trigger_event = { id = ndp_events.4 popup = yes }
+		}
+		else_if = {
+			limit = { has_variable = ndp_military }
+			trigger_event = { id = ndp_events.14 popup = yes }
+		}
+		else_if = {
+			limit = { has_variable = ndp_resource }
+			trigger_event = { id = ndp_events.24 popup = yes }
+		}
+		else_if = {
+			limit = { has_variable = ndp_service }
+			trigger_event = { id = ndp_events.34 popup = yes }
+		}
+		# Clear the path and reset — player can now pick again
+		ndp_clear_path_effect = yes
+	}
+
+	# JE never truly fails or times out — it resets
+	transferable = no
+	can_revolution_inherit = yes
+	weight = 5000
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+# ==========================================
+# FOREIGN INVESTMENT JE
+# je_foreign_investment
+#
+# Available to non-great powers.
+# Completed by signing a foreign investment
+# treaty with a great power.
+# Has a rejection button.
+# No events — purely UI/reminder.
+# ==========================================
+
+je_foreign_investment = {
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	group = je_group_domestic_policy
+
+	is_shown_when_inactive = {
+		country_rank < rank_value:great_power
+	}
+
+	possible = {
+		country_rank < rank_value:great_power
+		NOT = { has_variable = ndp_rejected_foreign_investment }
+	}
+
+	scripted_button = fi_button_reject
+
+	complete = {
+		custom_tooltip = {
+			text = has_foreign_investment_or_trade_agreement_with_west_tt
+		OR = {
+			AND = {
+					any_scope_treaty = {
+						binds = c:USA
+						any_scope_article = {
+							has_type = foreign_investment_rights
+							source_country = ROOT
+						}
+					}
+					any_scope_treaty = {
+						binds = c:USA
+						any_scope_article = {
+							has_type = trade_privilege
+							source_country = ROOT
+						}
+					}
+			}
+			AND = {
+					any_scope_treaty = {
+						binds = c:GBR
+						any_scope_article = {
+							has_type = foreign_investment_rights
+							source_country = ROOT
+						}
+					}
+					any_scope_treaty = {
+						binds = c:GBR
+						any_scope_article = {
+							has_type = trade_privilege
+							source_country = ROOT
+						}
+					}
+			}
+			AND = {
+					any_scope_treaty = {
+						binds = c:FRA
+						any_scope_article = {
+							has_type = foreign_investment_rights
+							source_country = ROOT
+						}
+					}
+					any_scope_treaty = {
+						binds = c:FRA
+						any_scope_article = {
+							has_type = trade_privilege
+							source_country = ROOT
+						}
+					}
+				}  
+			}
+		}
+	}
+
+	on_complete = {
+		add_modifier = {
+			name = ndp_foreign_investment_secured
+			months = 60
+		}
+	}
+
+	fail = {
+		has_variable = ndp_rejected_foreign_investment
+	}
+
+	on_fail = {
+		add_modifier = {
+			name = ndp_foreign_investment_rejected
+			months = 120
+		}
+	}
+
+	transferable = no
+	can_revolution_inherit = yes
+	weight = 3000
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

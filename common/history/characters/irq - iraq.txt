@@ -1,0 +1,20 @@
+﻿CHARACTERS = {
+	c:IRQ ?= {
+	create_character = {
+			first_name = "saddam"
+			last_name = "hussein"
+			historical = yes
+			ruler = yes
+			culture = cu:mashriqi
+			birth_date = 1937.02.03
+			dna = dna_saddam
+			ig_leader = yes
+			interest_group = ig_armed_forces
+			ideology = ideology_authoritarian_capitalist_leader
+			traits = {
+				experienced_political_operator
+				hedonist
+			}
+		}
+	}
+}

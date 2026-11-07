@@ -1,0 +1,197 @@
+
+nuclear_plant_count_sv = {
+	value = 0
+	every_scope_state = {
+		limit = {
+			is_incorporated = yes
+			has_building = building_nuclear_plant
+		}
+		add = 1
+	}
+}
+
+nuclear_warheads_to_use_sv = {
+	value = 0
+	if = {
+		limit = {
+			has_variable = nukes
+			has_variable = nuclear_deployment_percentage
+		}
+		add = var:nukes
+		multiply = var:nuclear_deployment_percentage
+		divide = 100
+		# how did he know????
+		round = yes 
+		min = 1
+	}
+}
+ 
+# Estimated casualties per targeted state.
+# Formula: warheads_spread_across_targets * base_kill_rate
+# Base: each warhead kills ~5% of a state's population.
+# Warheads per state = total_warheads_to_use / number_of_targeted_states
+# Capped at 75% (ouch!)
+#
+# This is called with the state in scope so the GUI
+# can display per-state estimates.
+nuclear_estimated_casualties_per_state_sv = {
+	value = 0
+		# Start from warheads_to_use
+		add = nuclear_warheads_to_use_sv
+		# Divide across all targeted states
+		divide = {
+			value = 0
+			every_in_list = {
+				variable = wmd_target_list
+				add = 1
+			}
+		}
+		# Each warhead = 5% population kill per state
+		multiply = 0.05
+		# Cap at 0.90 (90% kill ceiling)
+		max = 0.75
+}
+
+nuclear_estimated_casualties_per_state_full_percent_sv = {
+	value = nuclear_estimated_casualties_per_state_sv
+	multiply = 100
+	max = 0.75
+}
+
+# Total estimated casualties across all targeted states
+# Sum of (state_population * kill_rate) per state.
+# Used for the headline "Estimated Deaths:" display.
+# Called with ROOT = firing country.
+nuclear_estimated_total_casualties_sv = {
+	value = 0
+	every_in_list = {
+		variable = wmd_target_list
+		add = {
+			# This state's population × the per-state kill rate
+			value = state_population
+		}
+	}
+	multiply = nuclear_estimated_casualties_per_state_sv
+}
+ 
+# Number of states currently in target list
+nuclear_target_count_sv = {
+	value = 0
+	every_in_list = {
+		variable = wmd_target_list
+		add = 1
+	}
+}
+
+# ==========================================
+# CONVENTIONAL MISSILES + STRATEGIC BOMBING
+# SCRIPTED VALUES
+# Place in common/script_values/
+# ==========================================
+ 
+# Count of own military formations with ≥25% aircraft
+# Used for strategic bombing devastation calculation
+aircraft_formation_count_sv = {
+	value = 0
+	every_military_formation = {
+		limit = {
+			is_army = yes
+			any_combat_unit = {
+				OR = {
+					has_unit_type = unit_type:combat_unit_type_fixed_wing_aircraft
+					has_unit_type = unit_type:combat_unit_type_multirole_aircraft
+					has_unit_type = unit_type:combat_unit_type_stealth_aircraft
+					has_unit_type = unit_type:combat_unit_type_uav
+					has_unit_type = unit_type:combat_unit_type_autonomous_aircraft
+				}
+				percent >= 0.25
+			}
+		}
+		add = 1
+	}
+}
+ 
+# Devastation per bombing run per state:
+# Base 2 + 1 per qualifying formation, capped at 15
+bombing_devastation_per_run_sv = {
+	value = 5
+	add = aircraft_formation_count_sv
+	max = 45
+}
+ 
+# Whether ICBM capability is unlocked
+# Requires nuclear_capable + the icbm_programme_complete variable
+# (set by je_icbm_programme on completion)
+icbm_capable_sv = {
+	value = 0
+	if = {
+		limit = {
+			has_variable = nuclear_capable
+			has_variable = icbm_programme_complete
+		}
+		add = 1
+	}
+}
+ 
+# Count of states in the conventional missile target list
+conventional_target_count_sv = {
+	value = 0
+	every_in_list = {
+		variable = conventional_target_list
+		add = 1
+	}
+}
+ 
+# Count of states in the bombing target list
+bombing_target_count_sv = {
+	value = 0
+	every_in_list = {
+		variable = bombing_target_list
+		add = 1
+	}
+}
+ 
+conventional_missiles_to_use_sv = {
+	value = 0
+	if = {
+		limit = {
+			has_variable = conventional_missiles
+			has_variable = conv_deployment_percentage
+			var:conventional_missiles >= 1
+		}
+		add = var:conventional_missiles
+		multiply = var:conv_deployment_percentage
+		divide = 100
+		round = yes
+		min = 1
+	}
+}
+
+# Returns the country's nuke count, or 0 if no variable.
+# Used to order countries when computing the global top-5 list.
+country_nukes_count_sv = {
+	value = 0
+	if = {
+		limit = { has_variable = nukes }
+		add = var:nukes
+	}
+}
+
+# Buffed conventional missile devastation — 3x the raw salvo size,
+# so each strike does substantially more damage to a state.
+conventional_missile_devastation_sv = {
+	value = 0
+	if = {
+		limit = {
+			has_variable = conventional_missiles
+			has_variable = conv_deployment_percentage
+			var:conventional_missiles >= 1
+		}
+		add = var:conventional_missiles
+		multiply = var:conv_deployment_percentage
+		divide = 100
+		multiply = 3
+		round = yes
+		min = 3
+	}
+}

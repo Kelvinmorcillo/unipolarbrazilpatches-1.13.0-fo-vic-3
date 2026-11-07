@@ -1,0 +1,387 @@
+﻿l_polish:
+
+ l_polish:
+
+ je_drug_trafficking:0 "Handel narkotykami"
+ je_drug_trafficking_reason:0 "Sieci handlu narkotykami głęboko zakorzeniły się w życiu politycznym i gospodarczym [ROOT.GetCountry.GetName]. Kartele przemieszczają się miliardy przez kraj - skorumpowani urzędnicy, finansujący prywatne armie i wypełniający próżnię pozostawioną przez państwo. Rząd [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] stoi przed wielkim wyborem: pracować z sieciami, które stały się prawie tak potężne jak sam stan, lub wydać co władza pozostaje próbuje je zniszczyć. Można to osiągnąć poprzez spowolnienie przepływu narkotyków i opanowanie uzbrojenia od syndykatów przestępczych."
+
+ je_fighting_cartels:0 "Walka z kartelami"
+ je_fighting_cartels_reason:0 "Sieci przemytnicze się zakopały. Po latach nieudanej polityki rząd [ROOT.GetCountry.GetName] postanowił podjąć bezpośrednie działania wojskowe przeciwko kartelom. Generał musi zostać oddelegowany w celu prowadzenia operacji w ramach kontrkartelu. To nie będzie łatwe - i nie będzie szybkie."
+
+ cartel_je_working_with_tt:0 "Rząd [ROOT.GetCountry.GetName] zawarł porozumienie robocze z kartelami. Władza i legitymacja wzrosły - ale związek niesie ze sobą ogromne ryzyko reputacji."
+ cartel_je_cracking_down_tt:0 "Rząd aktywnie zwalcza handel narkotykami. Kampania odwadnia władzę, ale poprawia pozycję międzynarodową [ROOT.GetCountry.GetName]."
+ cartel_je_no_policy_tt:0 "Nie ustalono żadnej polityki. Użyj poniższych przycisków, aby wybrać, jak [ROOT.GetCountry.GetName] będzie obsługiwać kartele."
+ cartel_fight_je_commander_needed_tt:0 "Nie wysłano żadnego dowódcy. Użyj poniższego przycisku, aby wysłać generała w pole."
+ cartel_fight_je_commander_active_tt:0 "[SCOPE.sCharacter('cartel_general_storage').GetFullName] prowadzi operacje kontrkartelowe w [ROOT.GetCountry.GetName]."
+
+ mdw_events.7:0 "Badanie testowe"
+ 
+ cartel_button_cooperate_name:0 "Praca z Kartelami"
+ cartel_button_cooperate_desc:0 "Ustanowienie porozumienia roboczego z sieciami antynarkotykowymi. Potężne wzmocnienie autorytetu, legitymacji i obrony - ale znaczne zniesławienie i napięte relacje z [SCOPE.sCountry('c:USA').GetName]."
+
+ cartel_button_crackdown_name:0 "Crack Down na handlu"
+ cartel_button_crackdown_desc:0 "Uruchomić aktywną kampanię przeciwko sieciom przemytu narkotyków. Koszty 200 autorytetów i zakaz handlu opium, ale poprawia [ROOT.GetCountry.GetName] międzynarodowej pozycji i prestiżu."
+ cartel_crackdown_authority_cost_tt:0 "Wymaga 200 organów"
+
+ cartel_button_stop_crackdown_name:0 "Stop Crackdown"
+ cartel_button_stop_crackdown_desc:0 "Zakończ kampanię przeciwko handlowi ludźmi, by zachować władzę. Zakaz palenia opium zostanie zniesiony, a międzynarodowa dobroć ucierpi."
+
+ cartel_button_deploy_general_name:0 "Wyślij dowódcę."
+ cartel_button_deploy_general_desc:0 "Wybierz generała, który poprowadzi operacje kontrkartelu w [ROOT.GetCountry.GetName]."
+ cartel_need_general_tt:0 "Wymaga co najmniej jednego dostępnego generała"
+
+ cartel_suppression_bar:0 "Tłumienie kartelu"
+ cartel_suppression_bar_desc:0 "Postęp w tłumieniu: #v [JournalEntry.GetCurrentBarProgress(ScriptedProgressBar.Self)|%] #! ([JournalEntry.GetCurrentBarValue(ScriptedProgressBar.Self)|1] / 100)"
+ cartel_bar_general_active_tt:0 "Aktywne operacje wojskowe przeciwko kartelom"
+ cartel_bar_turmoil_tt:0 "Wysokie zawirowania utrudniają operacje kontrkartelu w [ROOT.GetCountry.GetName]"
+ cartel_bar_at_war_tt:0 "Zasoby wojskowe są przenoszone na aktywną wojnę."
+
+ # ==========================================
+ # EVENTS
+ # ==========================================
+
+ # cartel.1 — Escobar Captured
+ cartel.1.t:0 "Pablo Escobar nie żyje."
+ cartel.1.d:0 "Po latach obławy i narastającej przemocy założyciel i przywódca kartelu Medellín został śledzony do kryjówki w Medellín i zabity przez [ROOT.GetCountry.GetAdjective] siły bezpieczeństwa. Śmierć Pablo Escobar jest najbardziej znaczącym uderzeniem w handel narkotykami [ROOT.GetCountry.GetAdjective] - koniec jednej ery i niepewny początek innej. \n \n Kartel Medellín jest rozbity. Ale kartel Cali i inni pójdą wypełnić próżnię. Wojna jeszcze się nie skończyła. Ale ta bitwa została wygrana."
+ cartel.1.f:0 "Najbardziej poszukiwany człowiek na świecie nie żyje."
+ cartel.1.a:0 "[ROOT.GetCountry.GetName] zadał historyczny cios przeciwko narkoterroryzmowi"
+
+ # cartel.2 — El Chapo Captured
+ cartel.2.t:0 "El Chapo jest schwytany"
+ cartel.2.d:0 "W dramatycznym ataku koordynowanym pomiędzy [ROOT.GetCountry.GetAdjective] siłami bezpieczeństwa a wywiadem międzynarodowym, Joaquín 'El Chapo' Guzmán - szef kartelu Sinaloa i najpotężniejszy lord narkotykowy na świecie - został schwytany. Aresztowanie jest największym zwycięstwem dla [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] < x id = kampania antykartelowa 2 / > i znaczący cios w działalność kartelu Sinaloa. \n \n El Chapo jest teraz w zakładzie o zaostrzonym rygorze. Czy on tam zostanie, jest inna sprawa."
+ cartel.2.f:0 "Najbardziej poszukiwany człowiek w Ameryce jest za kratkami."
+ cartel.2.a:0 "Sprawiedliwości stało się zadość - na razie"
+
+ # cartel.3 — El Chapo Escapes
+ cartel.3.t:0 "El Chapo uciekł."
+ cartel.3.d:0 "Stało się coś niemożliwego. Joaquín 'El Chapo' Guzmán uciekł z więzienia o zaostrzonym rygorze Altiplano przez tunel wykopany bezpośrednio do jego celi - wyczyn inżynieryjny, który trwał miesiące, aby zakończyć i zaangażował udział strażników, wykonawców i urzędników na wielu poziomach. \n \n Ucieczka to międzynarodowe upokorzenie. [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] rząd podjął katastrofalny cios do jego wiarygodności. I gdzieś na terytorium [ROOT.GetCountry.GetAdjective], najpotężniejszy na świecie lord narkotykowy jest wolny."
+ cartel.3.f:0 "Zawsze chciał uciec. Jedynym pytaniem było kiedy."
+ cartel.3.a:0 "To oburzające."
+
+ # cartel.4 — Mexico Turf Division
+ cartel.4.t:0 "Dzielenie karteli [ROOT.GetCountry.GetName]"
+ cartel.4.d:0 "Lata nieudanej lub nieistniejącej polityki państwowej pozostawiły próżnię. Główne organizacje kartelowe - poprzez przemoc, negocjacje i selektywną korupcję władz lokalnych - ustanowiły uznane obszary terytorialne wpływów na całym terytorium [ROOT.GetCountry.GetAdjective]. \n \n CING kontroluje środek i zachód. Kartel Gulf posiada północno-wschodnie wybrzeże. Kartel Sinaloa dominuje na północnym zachodzie. Północno-wschodni Kartel wyrzeźbił własne terytorium w Coahuila i Zacatecas. Państwo [ROOT.GetCountry.GetAdjective] ma w rzeczywistości cedowaną suwerenność nad częściami swojego kraju. To nie może trwać."
+ cartel.4.f:0 "Państwo, które nie może chronić swojego terytorium, nie jest państwem."
+ cartel.4.a:0 "Musimy odzyskać to, co straciliśmy."
+
+ # cartel.5 — Assassination
+ cartel.5.t:0 "Zabójstwo kartelu"
+ cartel.5.d_crackdown:0 "Zamordowano starszą policję lub urzędnika wojskowego, prowadzącego kampanię antykartelową [ROOT.GetCountry.GetName] - ukierunkowane zabójstwo miało zastraszyć państwo i dać sygnał, że kartele mogą dotrzeć do każdego. Pogrzeb jest jutro. Śledztwo już zidentyfikowało podejrzanych. Pytanie brzmi, czy [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] rząd ma wolę ich ścigania."
+ cartel.5.d_cooperation:0 "Rywalizujący kartel zamordował jednego z kluczowych poruczników twoich partnerów, a to odbicie ląduje na rządzie [ROOT.GetCountry.GetName]. Zabójstwa dokonano w biały dzień w dużym mieście. Nie można udawać, że państwo nie ma nic wspólnego z ludźmi, którzy to zrobili."
+ cartel.5.d_default:0 "Znacząca postać - polityk, dziennikarz lub sędzia - została zamordowana przez uzbrojonych strzelców związanych z kartelą w [ROOT.GetCountry.GetName]. Zabójstwo jest bezczelne. Przesłanie jest jasne: kartele działają bez obawy przed państwem."
+ cartel.5.f:0 "Bezkarność jest największą bronią kartelu."
+ cartel.5.a:0 "Znajdziemy odpowiedzialnych."
+
+ # cartel.6 — Money Laundering
+ cartel.6.t:0 "Kartel Pieniądze Pranie ujawnione"
+ cartel.6.d_crackdown:0 "A [ROOT.GetCountry.GetAdjective] Jednostka wywiadu finansowego odkryła dowody na to, że pieniądze kartelu płyną przez legalne firmy - firmy budowlane, restauracje, samochody dealerships - w [ROOT.GetCountry.GetCapital.GetCityHubName]. Skala prania sugeruje głęboką penetrację formalnej gospodarki. Podążanie śladem będzie kosztowne, politycznie niebezpieczne i może prowadzić do niewygodnych miejsc."
+ cartel.6.d_cooperation:0 "Międzynarodowe badania finansowe oznaczyły podejrzane transakcje, które przepływają przez instytucje o znanych powiązaniach z rządem [ROOT.GetCountry.GetName]. Powiązania pomiędzy [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] Finansowanie kartelu staje się coraz trudniejsze do ukrycia. To może być poważny incydent dyplomatyczny."
+ cartel.6.d_default:0 "Dziennikarze śledczy opublikowali dowody na pranie pieniędzy na dużą skalę przez sektor bankowy [ROOT.GetCountry.GetName] - podejrzewany o dochód z kartelu jest czyszczony poprzez inwestycje w nieruchomości i przedsiębiorstwa. Bank centralny wzywa do śledztwa."
+ cartel.6.f:0 "Brudne pieniądze są wszędzie, jeśli wiesz, gdzie szukać."
+ cartel.6.a:0 "Prowadzenie dochodzenia wszędzie tam, gdzie prowadzi"
+ cartel.6.b:0 "Stabilność sektora bankowego musi być chroniona - zostaw ją"
+
+ # cartel.7 — US Pressure
+ cartel.7.t:0 "Waszyngton Ogląda"
+ cartel.7.d:0 "[SCOPE.sCountry('c:USA').GetName] Departament Stanu oficjalnie poprosił o spotkanie z [ROOT.GetCountry.GetName] ministrem spraw zagranicznych. Agenda, przekazywana prywatnie, dotyczy handlu narkotykami - w szczególności oceny rządu [SCOPE.sCountry('c:USA').GetAdjective], że [ROOT.GetCountry.GetName] nie robi wystarczająco dużo, aby zakłócić przepływ narkotyków na północ. Istnieje sugestia, że [SCOPE.sCountry('c:USA').GetAdjective] pomoc - finansowa, wywiadowcza i być może wojskowa - może pojawić się, jeśli [ROOT.GetCountry.GetName] współpracuje bardziej aktywnie."
+ cartel.7.f:0 "[SCOPE.sCountry('c:USA').GetName] posiada dźwignię. Pytanie brzmi, czy pozwolić na jego wykorzystanie."
+ cartel.7.a:0 "Akceptuj [SCOPE.sCountry('c:USA').GetAdjective] współpraca - potrzebujemy wsparcia"
+ cartel.7.b:0 "Spadek - [ROOT.GetCountry.GetName] zajmie się własnymi sprawami"
+
+ # cartel.8 — Cartel Retaliation
+ cartel.8.t:0 "The Cartels Retaliate"
+ cartel.8.d:0 "Krążenie przylgnęło krwią - a teraz kartele czerpią swoje własne. Skoordynowana seria ataków w obrębie [ROOT.GetCountry.GetName] była ukierunkowana na posterunki policji, wojskowe punkty kontrolne oraz obszary cywilne w społecznościach, o których wiadomo, że wspierają [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] < x id = kampania 2 / >. Ataki są wiadomością: karteli nie można zniszczyć bez ceny. [ROOT.GetCountry.GetName] musi zdecydować, jak odpowiedzieć."
+ cartel.8.f:0 "Każdy cios to cios zachęcający do powrotu."
+ cartel.8.a:0 "Eskalate - nie będziemy zastraszeni"
+ cartel.8.b:0 "Wycofaj się na razie - chroń ludność cywilną"
+
+ # cartel.9 — Completion
+ cartel.9.t:0 "Handel narkotykami uruchomił kurs"
+ cartel.9.d_crackdown:0 "Kampania antyterrorystyczna osiągnęła swoje bezpośrednie cele. Rynek opium znacznie się zaostrzył - jest to bezpośrednia konsekwencja utrzymującej się presji [ROOT.GetCountry.GetName] na sieci handlu ludźmi. Kartele są osłabione. Poprawiła się międzynarodowa pozycja [ROOT.GetCountry.GetName]. Walka jeszcze się nie skończyła, ale ta runda należy do państwa."
+ cartel.9.d_cooperation:0 "Umowa przyniosła to, co obiecano. Władza jest nienaruszona, funkcje państwowe, a kartele - głównie - trzymają się swojej strony umowy. Niezależnie od tego, czy jest to zarządzanie czy kapitalizacja, historycy będą debatować. Rynek opium opowiada swoją historię."
+ cartel.9.d_default:0 "Handel narkotykami ewoluował - czy na dobre czy na złe pozostaje niejasny. Rynek opium znacznie odstąpił od ceny bazowej. Wybór dokonany przez [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] w tym okresie kształtuje to, co będzie następne."
+ cartel.9.f:0 "Każda polityka się kończy. Każdy wybór ma konsekwencje."
+ cartel.9.a:0 "Rozdział zamyka się"
+
+ # cartel.100 — Timeout
+ cartel.100.t:0 "Okno zostało zamknięte"
+ cartel.100.d:0 "Lata nierozstrzygającej polityki w zakresie handlu narkotykami w [ROOT.GetCountry.GetName] nie przyniosły ani znaczącego stłumienia, ani stabilnego porozumienia z sieciami narkotykowymi. Kartele dobrze wykorzystały czas. Potrzebne będzie bardziej bezpośrednie podejście."
+ cartel.100.f:0 "Bezczynność jest wyborem - i kartele o tym wiedzą."
+ cartel.100.a:0 "Musimy podjąć bezpośrednie działania."
+
+ # cartel.10 — Escobar news for Americas
+ cartel.10.t:0 "Pablo Escobar nie żyje."
+ cartel.10.d:0 "Wiadomości z [SCOPE.sCountry('c:CLM').GetName]: Pablo Escobar, założyciel kartelu Medellín i człowiek, który określił wiek narkotykowego terroryzmu w Ameryce Łacińskiej, został zabity przez [SCOPE.sCountry('c:CLM').GetAdjective] siły bezpieczeństwa. Najbardziej poszukiwany człowiek na zachodniej półkuli nie żyje. Efekty szerzenia się handlu narkotykami w regionie będą odczuwane przez lata."
+ cartel.10.f:0 "Wiek wielkiego narkotykowego się skończył. Co następuje może być gorsze."
+ cartel.10.a:0 "Zaczyna się nowa era"
+
+ # ==========================================
+ # CARTEL FIGHT EVENTS
+ # ==========================================
+
+ cartel_fight.0.t:0 "Kto poprowadzi kampanię przeciw kartelom?"
+ cartel_fight.0.d:0 "Rząd [ROOT.GetCountry.GetName] postanowił podjąć bezpośrednie działania przeciwko sieciom kartelowym. Generał musi być wybrany i rozmieszczony - taki z kompetencjami i wolą ścigania wroga, który walczy nieczysto, ukrywa się wśród cywilów i kupuje urzędników tak łatwo, jak kupuje kule."
+ cartel_fight.0.f:0 "Właściwy generał zmienia wszystko."
+ cartel_fight.0.a:0 "Uruchom [SCOPE.sCharacter('cartel_general_1').GetFullName]"
+ cartel_fight.0.b:0 "Uruchom [SCOPE.sCharacter('cartel_general_2').GetFullName]"
+ cartel_fight.0.c:0 "Uruchom [SCOPE.sCharacter('cartel_general_3').GetFullName]"
+
+ cartel_fight.1.t:0 "A Major Kartel Bust"
+ cartel_fight.1.d:0 "[SCOPE.sCharacter('cartel_general').GetFullName] donosi o udanej operacji: rozmontowano dużą sieć dystrybucji kartelu, skonfiskowano znaczne ilości narkotyków oraz zatrzymano szereg karteli średniego szczebla. To dobry tydzień pracy. Pęd jest z [ROOT.GetCountry.GetName] 's rządu."
+ cartel_fight.1.f:0 "Poczyniono postępy."
+ cartel_fight.1.a:0 "Trzymaj ciśnienie."
+
+ cartel_fight.2.t:0 "Oddziały w zasadzce"
+ cartel_fight.2.d:0 "Jednostka pod dowództwem [SCOPE.sCharacter('cartel_general').GetFullName] została napadnięta przez bandytów kartelu na obszarach wiejskich. Atak był dobrze skoordynowany i sugeruje kartele mają inteligencję [ROOT.GetCountry.GetAdjective] ruchy wojskowe. Są ofiary. Morale jest wstrząśnięte."
+ cartel_fight.2.f:0 "Kartele walczą jak armia, kiedy chcą."
+ cartel_fight.2.a:0 "Przegrupowanie i kontynuowanie"
+
+ cartel_fight.3.t:0 "Informator dostarcza kluczowe informacje"
+ cartel_fight.3.d:0 "Informator - zmotywowany pieniędzmi, osobistym żalem lub strachem - dostarczył [SCOPE.sCharacter('cartel_general').GetFullName] szczegółowych informacji na temat kryjówek kartelu, tras dostaw i personelu. Informacje te umożliwiają szereg operacji precyzyjnych, które znacznie obniżają zdolność operacyjną karteli w regionie."
+ cartel_fight.3.f:0 "Kartele są najbardziej podatne na siebie."
+ cartel_fight.3.a:0 "Atak na wywiad natychmiast"
+
+ cartel_fight.10.t:0 "Kartele zostały złamane."
+ cartel_fight.10.d:0 "Kampania się skończyła. [SCOPE.sCharacter('cartel_general').GetFullName] raporty, że zorganizowana działalność kartelu w [ROOT.GetCountry.GetName] została zdemontowana do punktu operacyjnego nieistotne. Kluczowe dane są martwe lub w areszcie. Sieci są rozdrobnione. Państwo odzyskało swoje terytorium. \n \n To była paskudna walka. Ale wygraliśmy."
+ cartel_fight.10.f:0 "Stan pokazał, co może zrobić, kiedy się zobowiązuje."
+ cartel_fight.10.a:0 "Zapracowane zwycięstwo"
+
+ # ==========================================
+ # MODIFIERS
+ # ==========================================
+
+ cartel_cooperation_modifier:0 "Układ karteli"
+ cartel_cooperation_modifier_desc:0 "Dorozumiane porozumienie z sieciami narkotykowymi przyniosło znaczne zasoby i stabilność do [ROOT.GetCountry.GetName] - przy wysokich kosztach legalności i międzynarodowej reputacji."
+
+ cartel_crackdown_modifier:0 "Kampania przeciwko handlowi"
+ cartel_crackdown_modifier_desc:0 "[ROOT.GetCountry.GetName] aktywnie realizuje sieci kartelowe. Urząd jest konsumowany, ale pozycja międzynarodowa poprawia się i handel opium jest tłumiony."
+
+ cartel_crackdown_abandoned:0 "Opuszczony"
+ cartel_crackdown_abandoned_desc:0 "[ROOT.GetCountry.GetName] Kampania antyprzemytu została zatrzymana. Społeczność międzynarodowa odnotowała odwrócenie."
+
+ cartel_escobar_captured:0 "Escobar nie żyje."
+ cartel_escobar_captured_desc:0 "Śmierć Pablo Escobar zniszczyła kartel Medellín i przekształca [ROOT.GetCountry.GetAdjective] handel narkotykami. Stopień międzynarodowy [ROOT.GetCountry.GetName] uległ dramatycznej poprawie."
+
+ cartel_el_chapo_captured:0 "El Chapo schwytany"
+ cartel_el_chapo_captured_desc:0 "Złapanie Joaquína Guzmána spowodowało znaczne uderzenie w kartel Sinaloa i poprawiło pozycję [ROOT.GetCountry.GetName] na arenie międzynarodowej."
+
+ cartel_el_chapo_escaped:0 "El Chapo uciekł."
+ cartel_el_chapo_escaped_desc:0 "Ucieczka najbardziej poszukiwanego na świecie barona narkotykowego z więzienia o zaostrzonym rygorze jest katastrofalnym wstydem dla tego, co się dzieje. [ROOT.GetCountry.GetRuler.GetLastName] rząd."
+
+ cartel_narco_state:0 "Stan Narco"
+ cartel_narco_state_desc:0 "Organizacje kartelowe ustanowiły skuteczną kontrolę terytorialną nad znaczącymi porcjami [ROOT.GetCountry.GetName]. Państwo [ROOT.GetCountry.GetAdjective] straciło monopol na przemoc w tych obszarach."
+
+ cartel_cjng_controlled:0 "Terytorium CJNG"
+ cartel_cjng_controlled_desc:0 "Agenci kartelu Jalisco New Generation kontrolują przestępczą gospodarkę tego państwa. Przemoc, wymuszenia i zarządzanie kartelem wyparły [ROOT.GetCountry.GetAdjective] władze państwowe."
+
+ cartel_gulf_controlled:0 "Terytorium Kartelu Zatokowego"
+ cartel_gulf_controlled_desc:0 "Kartel Zatoki Perskiej ustanowił tu dominację terytorialną. [ROOT.GetCountry.GetAdjective] organ państwowy jest nominalny."
+
+ cartel_sinaloa_controlled:0 "Terytorium kartelu Sinaloa"
+ cartel_sinaloa_controlled_desc:0 "Kartel Sinaloa ustanowił tu dominację terytorialną. Jego wpływ na lokalną gospodarkę i [ROOT.GetCountry.GetAdjective] rząd jest wszechobecny."
+
+ cartel_northeast_controlled:0 "Północno-wschodnie terytorium kartelu"
+ cartel_northeast_controlled_desc:0 "Kartel del Noreste ustanowił tu dominację, usuwając [ROOT.GetCountry.GetAdjective] władze państwowe z własnym brutalnym zarządzaniem."
+
+ cartel_crackdown_success:0 "Kontrowersyjny sukces narkotykowy"
+ cartel_crackdown_success_desc:0 "Znaczący sukces w kampanii zwalczania handlu ludźmi [ROOT.GetCountry.GetName] zwiększył legitymację i prestiż rządu."
+
+ cartel_assassination_aftermath:0 "Zabójstwo kartelu"
+ cartel_assassination_aftermath_desc:0 "Zamach na dużą skalę wstrząsnął publicznym zaufaniem do [ROOT.GetCountry.GetName] i nasilił zawirowania."
+
+ cartel_laundering_investigation:0 "Dochodzenie w sprawie prania pieniędzy"
+ cartel_laundering_investigation_desc:0 "Aktywne dochodzenie w sprawie prania pieniędzy przez kartel poprawia [ROOT.GetCountry.GetName] 's anti-corruption references."
+
+ cartel_laundering_ignored:0 "Pranie pieniędzy Przeoczone"
+ cartel_laundering_ignored_desc:0 "Decyzja o zaprzestaniu dochodzenia w sprawie prania podniosła brwi na arenie międzynarodowej."
+
+ cartel_us_cooperation_bonus:0 "Amerykańska współpraca antynarkotykowa"
+ cartel_us_cooperation_bonus_desc:0 "Aktywna współpraca z programami antynarkotykowymi [SCOPE.sCountry('c:USA').GetAdjective] przyniosła wsparcie wywiadowcze i korzyści dyplomatyczne dla [ROOT.GetCountry.GetName]."
+
+ cartel_us_rejection:0 "USA ciśnienie odrzucone"
+ cartel_us_rejection_desc:0 "[ROOT.GetCountry.GetName] zmniejszyła się [SCOPE.sCountry('c:USA').GetAdjective] współpraca antynarkotykowa. Władza krajowa jest zachowana, ale stosunki z [SCOPE.sCountry('c:USA').GetName] ostygły."
+
+ cartel_retaliation_escalate:0 "Eskalowane przeciwko kartelom"
+ cartel_retaliation_escalate_desc:0 "Decyzja o eskalacji w następstwie odwetu kartelowego zwiększyła zawirowania w [ROOT.GetCountry.GetName], ale sygnalizuje rozwiązanie rządu."
+
+ cartel_retaliation_pullback:0 "Odpowiedź cofnięta"
+ cartel_retaliation_pullback_desc:0 "Rząd [ROOT.GetCountry.GetName] wycofał się, by chronić cywilów w wyniku odwetu kartelowego."
+
+ cartel_fight_ambush:0 "Oddziały w zasadzce"
+ cartel_fight_ambush_desc:0 "Strzelcy z kartelu napadli na oddział wojskowy [ROOT.GetCountry.GetAdjective], powodując straty i chwilowo spowalniając kampanię przeciw kartelowi."
+
+ cartel_fight_victory:0 "Kartele złamane"
+ cartel_fight_victory_desc:0 "Sukces kampanii wojskowej [ROOT.GetCountry.GetAdjective] przeciwko kartelom. Sieci są rozdrobnione i władze państwowe zostały przywrócone."
+ 
+ # ==========================================
+ # JOURNAL ENTRIES
+ # ==========================================
+ 
+ je_mexican_drug_war:0 "Meksykańska wojna narkotykowa"
+ je_mexican_drug_war_reason:0 "Kartele podzieliły [ROOT.GetCountry.GetName] między sobą. CING, kartel Zatoki Perskiej, kartel Synaloa i kartel del Noreste, każde terytorium kontroli, na którym rząd jest słaby lub nieobecny. Przemysł zwolnił. Ludzie odchodzą. Przemoc jest endemiczna. Ale sytuacja nie może być zaostrzona na czas nieokreślony - terytorium kartelu wciąż się rozszerza, a każdy miesiąc bezczynności sprawia, że ewentualne rozliczenie staje się trudniejsze."
+ 
+ je_us_mexico_drug_war_support:0 "Wsparcie dla Meksyku"
+ je_us_mexico_drug_war_support_desc:0 "[SCOPE.sCountry('c:MEX').GetName] jest zaangażowany w egzystencjalną walkę z sieciami kartelu narkotykowego, które przejęły kontrolę nad znaczącymi częściami kraju. [ROOT.GetCountry.GetName] ma bezpośredni interes w wyniku: przepływ narkotyków na północ, stabilność południowej granicy oraz integralność stanu [SCOPE.sCountry('c:MEX').GetAdjective]. \n \n Podpisanie umowy o pomocy wojskowej z [SCOPE.sCountry('c:MEX').GetName] zapewniłoby zasoby, inteligencję i legitymację do [SCOPE.sCountry('c:MEX').GetRuler.GetPrimaryRoleTitle] [SCOPE.sCountry('c:MEX').GetRuler.GetLastName] 's rząd - i pogłębić stosunki dwustronne w sposób, który wykracza daleko poza wojny narkotykowej."
+ 
+ # Status descriptions
+ mdw_je_not_declared_tt:0 "Rząd [ROOT.GetCountry.GetName] nie wypowiedział jeszcze wojny kartelom. Sytuacja się pogarsza - sieci kartelowe aktywnie rozszerzają swoją kontrolę terytorialną. Użyj poniższego przycisku, aby włączyć [ROOT.GetCountry.GetAdjective] militarne do kampanii."
+ mdw_je_commander_needed_tt:0 "Wojna została ogłoszona. [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] musi teraz wysłać dowódcę do prowadzenia operacji na terytorium kartelu."
+ mdw_je_active_tt:0 "[SCOPE.sCharacter('mdw_commander_storage').GetFullName] prowadzi [ROOT.GetCountry.GetAdjective] operacje przeciwko kartelom. Terytorium kartelu nadal jest kwestionowane - wszystkie kontrolowane państwa muszą zostać oczyszczone zanim wojna zostanie ogłoszona wygrana."
+ 
+ us_mdw_je_no_pact_tt:0 "Nie podpisano umowy o pomocy wojskowej z [SCOPE.sCountry('c:MEX').GetName]. Przejdź do ekranu dyplomacji, aby zaproponować traktat o pomocy wojskowej z [SCOPE.sCountry('c:MEX').GetRuler.GetPrimaryRoleTitle] [SCOPE.sCountry('c:MEX').GetRuler.GetLastName] rząd."
+ us_mdw_je_pact_active_tt:0 "Umowa o pomocy wojskowej jest w mocy z [SCOPE.sCountry('c:MEX').GetName]. [ROOT.GetCountry.GetAdjective] wsparcie pomaga utrzymać [SCOPE.sCountry('c:MEX').GetRuler.GetPrimaryRoleTitle] [SCOPE.sCountry('c:MEX').GetRuler.GetLastName] kampanii kontrkartelowej."
+ 
+ # ==========================================
+ # SCRIPTED BUTTONS
+ # ==========================================
+ 
+ mdw_button_declare_war_name:0 "Declare War on the Cartels"
+ mdw_button_declare_war_desc:0 "Przekazać [ROOT.GetCountry.GetAdjective] wojskowy do bezpośredniej kampanii przeciwko sieci kartelowych. Kosztuje 100 autorytetów i rozpoczyna kampanię antykartelową na poważnie. Sztaby nie będą się poruszać, dopóki nie zostanie sporządzona ta deklaracja."
+ 
+ mdw_button_deploy_commander_name:0 "Wyślij dowódcę."
+ mdw_button_deploy_commander_desc:0 "Wybierz generała do prowadzenia operacji kontrkartelowych na terytorium [ROOT.GetCountry.GetAdjective]."
+ mdw_need_general_tt:0 "Wymaga co najmniej jednego dostępnego generała"
+ 
+ # ==========================================
+ # PROGRESS BARS
+ # ==========================================
+ 
+ mdw_suppression_bar:0 "Postęp w kampanii"
+ mdw_suppression_bar_desc:0 "Postęp operacji: #v [JournalEntry.GetCurrentBarProgress(ScriptedProgressBar.Self)|%] #! ([JournalEntry.GetCurrentBarValue(ScriptedProgressBar.Self)|1] / 100)"
+ 
+ mdw_peril_bar:0 "Dowódca Peril"
+ mdw_peril_bar_desc:0 "Operacja Peril: #v [JournalEntry.GetCurrentBarProgress(ScriptedProgressBar.Self)|%] #!"
+ 
+ mdw_bar_commander_active_tt:0 "Aktywne [ROOT.GetCountry.GetAdjective] operacje wojskowe"
+ mdw_bar_multiple_states_tt:0 "Wiele stanów w kartelach - [ROOT.GetCountry.GetAdjective] operacje są rozproszone cienkie"
+ mdw_bar_us_aid_tt:0 "[SCOPE.sCountry('c:USA').GetAdjective] pomoc wojskowa zapewnia wywiad i wsparcie logistyczne"
+ mdw_bar_excess_authority_tt:0 "Silna zdolność państwa przyspiesza kampanię"
+ mdw_bar_legitimacy_tt:0 "Wysokie wsparcie publiczne utrzymuje [ROOT.GetCountry.GetAdjective] morale wojskowe"
+ mdw_bar_good_commander_tt:0 "Umiejętność taktyczna dowódcy przyspiesza operacje."
+ mdw_bar_at_war_tt:0 "Zasoby wojskowe są przenoszone na aktywną wojnę."
+ mdw_bar_turmoil_tt:0 "Wysokie zawirowania krajowe utrudniają [ROOT.GetCountry.GetAdjective] kampania"
+ mdw_peril_base_tt:0 "Trwałe operacje na terytorium kartelu niosą ze sobą stałe ryzyko"
+ mdw_peril_multiple_states_tt:0 "Praca na wielu frontach zwiększa ekspozycję dowódcy"
+ mdw_peril_us_aid_tt:0 "[SCOPE.sCountry('c:USA').GetAdjective] inteligencja zmniejsza zdolność karteli do celowania w dowódcę"
+ mdw_peril_cautious_tt:0 "Uważne podejście dowódcy ogranicza osobiste ryzyko."
+ 
+ # ==========================================
+ # EVENTS
+ # ==========================================
+ 
+ # mdw_events.1 — War Declared
+ mdw_events.1.t:0 "[ROOT.GetCountry.GetName] Declares War on the Cartels"
+ mdw_events.1.d:0 "Po latach pełzającej ekspansji kartelu i nieudane połowy środków, [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] rząd oficjalnie zobowiązał [ROOT.GetCountry.GetAdjective] wojsko do kampanii przeciwko sieciom narkotykowym. Deklaracja jest znacząca - nie tylko operacyjnie, ale symbolicznie. Stan [ROOT.GetCountry.GetAdjective] twierdzi, że nie zaakceptuje status quo. \n \n Kartele odpowiedzą. Wojsko musi być gotowe."
+ mdw_events.1.f:0 "Stan wyznaczył granicę."
+ mdw_events.1.a:0 "[ROOT.GetCountry.GetName] odzyska to, co do niego należy"
+ 
+ # mdw_events.2 — Commander Selection
+ mdw_events.2.t:0 "Kto poprowadzi kampanię?"
+ mdw_events.2.d:0 "Oświadczenie zostało złożone. Teraz musi być wybrany dowódca - gotów podjąć walkę na terytorium kartelowym, gdzie wróg zna ziemię, ma lokalnych informatorów, i jest gotów zrobić rzeczy, których armia nie może. To będzie brudna walka."
+ mdw_events.2.f:0 "Właściwy generał zmienia wszystko."
+ mdw_events.2.a:0 "Uruchom [SCOPE.sCharacter('mdw_commander_1').GetFullName]"
+ mdw_events.2.b:0 "Uruchom [SCOPE.sCharacter('mdw_commander_2').GetFullName]"
+ mdw_events.2.c:0 "Uruchom [SCOPE.sCharacter('mdw_commander_3').GetFullName]"
+ 
+ # mdw_events.3 — Combat Patrol
+ mdw_events.3.t:0 "Kontakt w [SCOPE.sState('mdw_active_state').GetName]"
+ mdw_events.3.d:0 "[SCOPE.sCharacter('mdw_commander').GetFullName] zgłasza serię zobowiązań z siłami kartelu w [SCOPE.sState('mdw_active_state').GetName]. Kartele walczą o utrzymanie swojego terytorium - przy użyciu blokad drogowych, snajperów i IED na podejściu do znanych twierdz. Poczyniono postępy, ale koszt czasu i zasobów jest znaczny."
+ mdw_events.3.f:0 "Każdy kilometr drogi oczyszczonej jest kilometrem, którego kartele nie mogą używać."
+ mdw_events.3.a:0 "Przyj mocno - weź terytorium szybko"
+ mdw_events.3.b:0 "Postępuj metodycznie - zabezpiecz każdą pozycję przed przejściem dalej"
+ 
+ # mdw_events.4 — State Cleared
+ mdw_events.4.t:0 "[SCOPE.sState('mdw_active_state').GetName] został oczyszczony"
+ mdw_events.4.d:0 "Znaczący sukces operacyjny: [SCOPE.sCharacter('mdw_commander').GetFullName] informuje, że siły kartelu w [SCOPE.sState('mdw_active_state').GetName] zostały złamane. Ich struktura dowodzenia została zdemontowana, ich logistyka cięcia, i ich kluczowe dane są martwe lub w areszcie. [ROOT.GetCountry.GetAdjective] wojskowe siły okupacyjne przemieszczają się w celu utrzymania ziemi. \n \n Jeden stan jest znów pod kontrolą rządu. Więcej zostaje."
+ mdw_events.4.f:0 "Mapa się zmienia."
+ mdw_events.4.a:0 "Przejdź do następnego - utrzymać tempo"
+ 
+ # mdw_events.5 — Ambush
+ mdw_events.5.t:0 "Zasadzka - [SCOPE.sCharacter('mdw_commander').GetFullName] Kolumna jest pod atakiem"
+ mdw_events.5.d:0 "Strzelcy z kartelu wpadli w zasadzkę a [ROOT.GetCountry.GetAdjective] kolumna wojskowa w [SCOPE.sState('mdw_active_state').GetName]. Atak był koordynowany - wiele pozycji odpalających, wcześniej zaplanowane drogi wycofania oraz wiedza o ruchach kolumny, które sugerują informatora wewnątrz [ROOT.GetCountry.GetAdjective] wojskowego łańcucha dowodzenia. Są ofiary. [SCOPE.sCharacter('mdw_commander').GetFullName] zarządza zaręczynami."
+ mdw_events.5.f:0 "Kartele walczą jak armia, kiedy chcą."
+ mdw_events.5.a:0 "Walcz - ścigaj i niszcz ich"
+ mdw_events.5.b:0 "Przerwać kontakt - przegrupować i przeszukać później"
+ 
+ # mdw_events.6 — Commander Under Fire
+ mdw_events.6.t:0 "[SCOPE.sCharacter('mdw_commander').GetFullName] Jest w niebezpieczeństwie."
+ mdw_events.6.d:0 "Wywiad potwierdził, co sugerują raporty polowe: kartele zidentyfikowały [SCOPE.sCharacter('mdw_commander').GetFullName] jako cel priorytetowy. Zawodowy zespół został skierowany przeciwko nim. Zagrożenie jest wiarygodne. Przywrócenie dowódcy do poziomu [ROOT.GetCountry.GetCapital.GetCityHubName] zmniejszyłoby ryzyko - ale zatrzymałoby tempo kampanii w krytycznym momencie."
+ mdw_events.6.f:0 "Kartele badają swoich wrogów."
+ mdw_events.6.a:0 "Wyciągnij [SCOPE.sCharacter('mdw_commander').GetFullName] z powrotem - kampania może poczekać"
+ mdw_events.6.b:0 "Naciśnij - [SCOPE.sCharacter('mdw_commander').GetFullName] akceptuje ryzyko"
+ 
+ # mdw_events.10 — Victory
+ mdw_events.10.t:0 "Wojna narkotykowa jest wygrana"
+ mdw_events.10.d:0 "[SCOPE.sCharacter('mdw_commander').GetFullName] przesyła końcowe sprawozdanie operacyjne: kontrola terytorialna kartelu została podzielona na [ROOT.GetCountry.GetName]. Ostatnia twierdza została oczyszczona. Okupacja wojskowa jest na miejscu. Sieci kartelowe nadal istnieją - będą one odtworzyć się przez lata w osłabionej formie - ale stan [ROOT.GetCountry.GetAdjective] umocnił suwerenność na swoim terytorium. \n \n To nie było nieuniknione. Wymagała woli politycznej, zaangażowania wojskowego i na wiele sposobów szczęścia. Co wygrał [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] to czas - czas, aby sprostać warunkom, które w pierwszej kolejności umożliwiły kartele."
+ mdw_events.10.f:0 "[ROOT.GetCountry.GetName] odzyskała to, co jest jej."
+ mdw_events.10.a:0 "Trudne zwycięstwo - i początek"
+ 
+ # mdw_events.11 — Commander Killed
+ mdw_events.11.t:0 "[SCOPE.sCharacter('mdw_commander').GetFullName] Został zabity"
+ mdw_events.11.d:0 "Stało się najgorsze. Operacja zamachu na kartel się powiodła. [SCOPE.sCharacter('mdw_commander').GetFullName] nie żyje - zginął w ataku, któremu nie zapobiegły służby bezpieczeństwa [ROOT.GetCountry.GetAdjective] pomimo wiarygodnych ostrzeżeń. Wiadomości są publiczne w ciągu kilku godzin. Kartele otwarcie świętują na ulicach miast, które kontrolują. \n \n Kampania się nie skończyła. Ale doznał ciosu, który zajmie miesiące, by wyzdrowieć. Trzeba znaleźć nowego dowódcę, a kartele wykorzystają czas na konsolidację."
+ mdw_events.11.f:0 "Kartele uderzyły jeszcze w najważniejszy cios."
+ mdw_events.11.a:0 "To nas nie złamie - walka trwa"
+ 
+ # mdw_events.20 — US Aid
+ mdw_events.20.t:0 "[SCOPE.sCountry('c:USA').GetName] Podpisała umowę o pomocy wojskowej"
+ mdw_events.20.d:0 "[SCOPE.sCountry('c:USA').GetCapital.GetCityHubName] został przeniesiony. [SCOPE.sCountry('c:USA').GetName] formalnie podpisał umowę o pomocy wojskowej z [ROOT.GetCountry.GetName] - angażując zasoby wywiadowcze, personel doradczy, sprzęt i wsparcie logistyczne w kampanii przeciw kartelowi. Umowa jest znaczącym rozwojem politycznym: oznacza, że [SCOPE.sCountry('c:USA').GetRuler.GetPrimaryRoleTitle] [SCOPE.sCountry('c:USA').GetRuler.GetLastName] w odniesieniu do stabilności [ROOT.GetCountry.GetName] w bezpośrednim interesie narodowym. \n \n Dla [ROOT.GetCountry.GetName] praktyczne korzyści są natychmiastowe: władza jest przywrócona, sprzęt płynie, a kartele stają teraz przed wrogiem z pełnym aparatem wywiadowczym [SCOPE.sCountry('c:USA').GetName] działa przeciwko nim."
+ mdw_events.20.f:0 "Kiedy [SCOPE.sCountry('c:USA').GetName] commits, saldo się zmienia."
+ mdw_events.20.a:0 "To całkowicie zmienia kampanię."
+ 
+ # ==========================================
+ # MODIFIERS
+ # ==========================================
+ 
+ mdw_war_declared_modifier:0 "Meksykańska wojna narkotykowa - aktywna kampania"
+ mdw_war_declared_modifier_desc:0 "[ROOT.GetCountry.GetName] zobowiązała swoje wojsko do bezpośredniej kampanii przeciwko kartelom narkotykowym. Władza jest konsumowana i wojsko jest zaangażowane, ale stan [ROOT.GetCountry.GetAdjective] utrzymuje się."
+ 
+ mdw_us_aid_modifier:0 "Amerykańska pomoc wojskowa"
+ mdw_us_aid_modifier_desc:0 "Aktywna umowa o pomocy wojskowej z [SCOPE.sCountry('c:USA').GetName] dostarcza wywiadu, logistyki i sprzętu do [ROOT.GetCountry.GetName] kampanii kontrkartelu."
+ 
+ mdw_victory_modifier:0 "Won wojny narkotykowej"
+ mdw_victory_modifier_desc:0 "[ROOT.GetCountry.GetName] wygrał wojnę narkotykową. Kontrola terytorialna kartelu została złamana, a państwo [ROOT.GetCountry.GetAdjective] umocniło suwerenność. Pozostają warunki, które produkowały kartele - ale ta bitwa została wygrana."
+ 
+ mdw_commander_killed_modifier:0 "Dowódca zabity w akcji"
+ mdw_commander_killed_modifier_desc:0 "Zamach na dowódcę kontrkartelu wstrząsnął publicznym zaufaniem do [ROOT.GetCountry.GetName] i stłumił kartele."
+ 
+ mdw_troops_ambushed:0 "Oddziały w zasadzce"
+ mdw_troops_ambushed_desc:0 "A [ROOT.GetCountry.GetAdjective] kolumna wojskowa została zaatakowana przez siły kartelu, powodując straty i czasowo zmniejszając zdolności ofensywne."
+ 
+ # Cartel territory modifier descriptions (MDW context)
+ cartel_cjng_controlled:0 "Terytorium CJNG"
+ cartel_cjng_controlled_desc:0 "Agenci kartelu Jalisco New Generation kontrolują przestępczą gospodarkę tego państwa. Działalność przemysłowa jest zakłócona, infrastruktura się pogarsza, a ludzie wyjeżdżają [ROOT.GetCountry.GetAdjective] terytorium."
+ 
+ cartel_gulf_controlled:0 "Terytorium Kartelu Zatokowego"
+ cartel_gulf_controlled_desc:0 "Kartel Zatoki Perskiej ustanowił tu dominację terytorialną. Aktywność ekonomiczna jest hamowana, a [ROOT.GetCountry.GetAdjective] władza państwowa jest nominalna."
+ 
+ cartel_sinaloa_controlled:0 "Terytorium kartelu Sinaloa"
+ cartel_sinaloa_controlled_desc:0 "Kartel Sinaloa kontroluje ten stan. Produkcja rolna została zakłócona, a lokalna gospodarka działa pod nadzorem kartelu."
+ 
+ cartel_northeast_controlled:0 "Północno-wschodnie terytorium kartelu"
+ cartel_northeast_controlled_desc:0 "Kartel del Noreste ustanowił tu dominację. Infrastruktura i wydajność budynku w [ROOT.GetCountry.GetName] cierpią."
+ 
+ # usa war on drugs
+
+ je_war_on_drugs:0 "Wojna z narkotykami"
+ je_war_on_drugs_reason:0 "Przepływ narkotyków do [ROOT.GetCountry.GetName] jest kryzysem krajowym. Kokaina, heroina i inne substancje - produkowane głównie w Ameryce Łacińskiej i przemycane przez granice [ROOT.GetCountry.GetAdjective] - to niszczące społeczności, zasilające brutalną przestępczość i niszczące instytucje publiczne. \n \n [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetLastName] administracja zaangażowała się w kompleksową kampanię: międzynarodowe partnerstwa na rzecz duszenia podaży u źródła, krajowe egzekwowanie w celu zamknięcia granic oraz inwestycje społeczne na rzecz zaspokojenia popytu. Kampania nie jest bez kosztów - potrzebne zasoby ważą szerszą gospodarkę - ale alternatywą jest kraj coraz bardziej na łasce zagranicznych sieci przestępczych. \n \n @information! Terytorium kartelu może się rozszerzać w Meksyku. Umowa o pomocy wojskowej z rządem Meksyku jest podstawą międzynarodowej części tej kampanii."
+
+ narco_economy_plantation_bonus:0 "Gospodarka narkotykowa"
+ narco_economy_plantation_bonus_desc:0 "Handel narkotykami osadził się w gospodarce rolnej o wartości [ROOT.GetCountry.GetName]. Produkcja plantacji - zwłaszcza opium - przebiega powyżej normalnych poziomów, podtrzymywanych przez popyt kartelowy i korupcyjny przepływ środków odurzających do społeczności wiejskich."
+
+ war_on_drugs_active_modifier:0 "Wojna z narkotykami"
+ war_on_drugs_active_modifier_desc:0 "Rząd [ROOT.GetCountry.GetAdjective] zaangażował się w kompleksową kampanię przeciwko handlowi narkotykami. Wysiłki związane z egzekwowaniem prawa - polityka krajowa, interwencje interwencyjne i współpraca międzynarodowa - czerpią zasoby z całej gospodarki i nakładają skromne, ale rzeczywiste koszty na wydajność krajową."
+
+ war_on_drugs_victory_modifier:0 "Wojna z narkotykami - wygrana"
+ war_on_drugs_victory_modifier_desc:0 "[ROOT.GetCountry.GetAdjective] Wojna z narkotykami osiągnęła wyznaczone cele. Dostawy zostały stłumione, granice są egzekwowane, a ramy instytucjonalne już istnieją. Kampania wzmocniła [ROOT.GetCountry.GetName] autorytet i prestiż - choć podstawowe warunki, które powodują popyt na narkotyki nie zostały rozwiązane."
+
+ wod_je_status_active:0 "Kampania trwa."
+ wod_je_status_ready:0 "Kampania jest gotowa do zakończenia."
+
+ wod_completion_mexico_tt:0 "Posiadaj #bold Pomoc wojskowa #! pakt z Meksykiem."
+ wod_completion_enforcement_tt:0 "Przyjmij albo #bold Gwardia Narodowa #! lub #bold Tajna policja #!."
+ wod_completion_opium_price_tt:0 "Ograniczenie międzynarodowego zaopatrzenia w narkotyki do czasu, gdy lek będzie co najmniej #bold 65% droższy #! na rynku amerykańskim."
+ wod_completion_schools_tt:0 "Podnieść wartość #bold Szkoły #! Instytucja do poziomu #bold 5 #! lub wyższego."
+ wod_completion_border_tt:0 "Przyjmij albo #bold Kontrola migracji #! lub #bold Zamknięte granice #!."
+ wod_completion_no_safe_injection_tt:0 "Nie należy stosować #bold Bezpieczne miejsca wstrzyknięcia #!."
+ wod_completion_no_trafficking_allowed_tt:0 "Nie należy stosować #bold Handel dopuszczony #!."
+ wod_completion_no_hard_drugs_decriminalized_tt:0 "Nie należy stosować #bold Leki twarde zmniejszone #!."

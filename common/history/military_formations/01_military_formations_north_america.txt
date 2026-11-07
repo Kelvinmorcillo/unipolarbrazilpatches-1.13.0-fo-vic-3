@@ -1,0 +1,1121 @@
+MILITARY_FORMATIONS = {
+
+	### USA ###
+	# ~750k Army, ~540k Navy/Marines, ~470k Air Force active in 1992.
+	# 1 unit = 1,000 troops. Scaled for gameplay while reflecting real force ratios.
+
+	c:USA ?= {
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_great_plains
+			name = "III_Corps"
+
+			# 1st Cavalry Division (Fort Hood TX)
+			combat_unit = {
+				type = unit_type:combat_unit_type_armored_infantry
+				state_region = s:STATE_TEXAS
+				count = 15
+			}
+			# 2nd Armored Division (Fort Hood TX)
+			combat_unit = {
+				type = unit_type:combat_unit_type_armored_infantry
+				state_region = s:STATE_TEXAS
+				count = 12
+			}
+			# 4th Infantry Division (Fort Carson CO)
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_COLORADO
+				count = 14
+			}
+			save_scope_as = usa_iii_corps_formation
+		}
+
+		create_character = {
+			template = USA_iii_corps_commander
+			save_scope_as = USA_iii_corps_commander_scope
+		}
+
+		scope:USA_iii_corps_commander_scope = {
+			transfer_to_formation = scope:usa_iii_corps_formation
+		}
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_atlantic_coast
+			name = "XVIII_Airborne_Corps"
+
+			# 82nd Airborne Division (Fort Bragg NC)
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_NORTH_CAROLINA
+				count = 14
+			}
+			# 101st Airborne Division (Fort Campbell KY)
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_KENTUCKY
+				count = 14
+			}
+			# 24th Infantry Division - Mechanized (Fort Stewart GA)
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_GEORGIA
+				count = 14
+			}
+			# 10th Mountain Division (Fort Drum NY)
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_NEW_YORK
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_howitzer_artillery
+				state_region = s:STATE_NORTH_CAROLINA
+				count = 6
+			}
+
+			save_scope_as = usa_xviii_airborne_corps_formation
+		}
+
+		create_character = {
+			template = USA_xviii_airborne_corps_commander
+			save_scope_as = USA_xviii_airborne_corps_commander_scope
+		}
+
+		scope:USA_xviii_airborne_corps_commander_scope = {
+			transfer_to_formation = scope:usa_xviii_airborne_corps_formation
+		}
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_great_plains
+			name = "FORSCOM_Reserve"
+
+			# 1st Infantry Division (Fort Riley KS)
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_KANSAS
+				count = 14
+			}
+			# 3rd Armored Cavalry Regiment (Fort Bliss TX)
+			combat_unit = {
+				type = unit_type:combat_unit_type_armored_infantry
+				state_region = s:STATE_TEXAS
+				count = 5
+			}
+			# National Guard brigades
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_OHIO
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_PENNSYLVANIA
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_VIRGINIA
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_howitzer_artillery
+				state_region = s:STATE_KANSAS
+				count = 4
+			}
+
+			save_scope_as = usa_forscom_reserve_formation
+		}
+
+		create_character = {
+			template = USA_forscom_reserve_commander
+			save_scope_as = USA_forscom_reserve_commander_scope
+		}
+
+		scope:USA_forscom_reserve_commander_scope = {
+			transfer_to_formation = scope:usa_forscom_reserve_formation
+		}
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_pacific_coast
+			name = "I_Corps"
+
+			# 25th Infantry Division (Schofield Barracks HI)
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_HAWAII
+				count = 14
+			}
+			# 7th Infantry Division (Fort Ord CA)
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_CALIFORNIA
+				count = 12
+			}
+			# 9th Infantry Regiment (Fort Lewis WA)
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_WASHINGTON
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_field_artillery
+				state_region = s:STATE_CALIFORNIA
+				count = 4
+			}
+
+			save_scope_as = usa_i_corps_formation
+		}
+
+		create_character = {
+			template = USA_i_corps_commander
+			save_scope_as = USA_i_corps_commander_scope
+		}
+
+		scope:USA_i_corps_commander_scope = {
+			transfer_to_formation = scope:usa_i_corps_formation
+		}
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_atlantic_coast
+			name = "Air_Combat_Command"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_multirole_aircraft
+				state_region = s:STATE_VIRGINIA
+				count = 6
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_multirole_aircraft
+				state_region = s:STATE_NORTH_CAROLINA
+				count = 4
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_multirole_aircraft
+				state_region = s:STATE_LOUISIANA
+				count = 4
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_multirole_aircraft
+				state_region = s:STATE_TEXAS
+				count = 4
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_multirole_aircraft
+				state_region = s:STATE_CALIFORNIA
+				count = 4
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_stealth_aircraft
+				state_region = s:STATE_NEVADA
+				count = 2
+			}
+
+			save_scope_as = usa_air_combat_command_formation
+		}
+
+		create_character = {
+			template = USA_air_combat_command_commander
+			save_scope_as = USA_air_combat_command_commander_scope
+		}
+
+		scope:USA_air_combat_command_commander_scope = {
+			transfer_to_formation = scope:usa_air_combat_command_formation
+		}
+
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_great_plains
+			name = "US_Atlantic_Fleet"
+
+			ship = {
+				type = ship_type:ship_type_supercarrier
+				count = 2
+			}
+			ship = {
+				type = ship_type:ship_type_supercarrier
+				count = 1
+			}
+			ship = {
+				type = ship_type:ship_type_armored_cruiser
+				count = 4
+			}
+			ship = {
+				type = ship_type:ship_type_stealth_destroyer
+				count = 5
+			}
+			ship = {
+				type = ship_type:ship_type_destroyer
+				count = 6
+			}
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 5
+			}
+			ship = {
+				type = ship_type:ship_type_submarine
+				count = 8
+			}
+			ship = {
+				type = ship_type:ship_type_troop_ship
+				count = 6
+			}
+			ship = {
+				type = ship_type:ship_type_battleship
+				count = 3
+			}
+
+			save_scope_as = usa_us_atlantic_fleet_formation
+		}
+
+		create_character = {
+			template = USA_us_atlantic_fleet_commander
+			save_scope_as = USA_us_atlantic_fleet_commander_scope
+		}
+
+		scope:USA_us_atlantic_fleet_commander_scope = {
+			transfer_to_formation = scope:usa_us_atlantic_fleet_formation
+		}
+
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_pacific_coast
+			name = "US_Pacific_Fleet"
+
+			ship = {
+				type = ship_type:ship_type_supercarrier
+				count = 1
+			}
+			ship = {
+				type = ship_type:ship_type_supercarrier
+				count = 1
+			}
+			ship = {
+				type = ship_type:ship_type_aircraft_carrier
+				count = 1
+			}
+			ship = {
+				type = ship_type:ship_type_aircraft_carrier
+				count = 1
+			}
+			ship = {
+				type = ship_type:ship_type_armored_cruiser
+				count = 4
+			}
+			ship = {
+				type = ship_type:ship_type_stealth_destroyer
+				count = 4
+			}
+			ship = {
+				type = ship_type:ship_type_destroyer
+				count = 6
+			}
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 5
+			}
+			ship = {
+				type = ship_type:ship_type_submarine
+				count = 8
+			}
+			ship = {
+				type = ship_type:ship_type_troop_ship
+				count = 6
+			}
+			ship = {
+				type = ship_type:ship_type_battleship
+				count = 3
+			}
+
+			save_scope_as = usa_us_pacific_fleet_formation
+		}
+
+		random_character = {
+		  limit = { has_template = USA_colin_powell }
+		  save_scope_as = USA_us_pacific_fleet_commander_scope
+		  add_character_role = general
+		}
+
+		scope:USA_us_pacific_fleet_commander_scope = {
+			transfer_to_formation = scope:usa_us_pacific_fleet_formation
+		}
+	}
+
+	### CANADA ###
+	# ~75,000 active personnel in 1992.
+
+	c:CAN ?= {
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_canada
+			name = "Land_Force_Command"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_ONTARIO
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_QUEBEC
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_ALBERTA
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_ONTARIO
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_field_artillery
+				state_region = s:STATE_ONTARIO
+				count = 3
+			}
+
+			save_scope_as = can_land_force_command_formation
+		}
+
+		create_character = {
+			template = CAN_land_force_command_commander
+			save_scope_as = CAN_land_force_command_commander_scope
+		}
+
+		scope:CAN_land_force_command_commander_scope = {
+			transfer_to_formation = scope:can_land_force_command_formation
+		}
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_canada
+			name = "Air_Command"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_multirole_aircraft
+				state_region = s:STATE_ONTARIO
+				count = 4
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_multirole_aircraft
+				state_region = s:STATE_ALBERTA
+				count = 2
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_multirole_aircraft
+				state_region = s:STATE_QUEBEC
+				count = 2
+			}
+
+			save_scope_as = can_air_command_formation
+		}
+
+		create_character = {
+			template = CAN_air_command_commander
+			save_scope_as = CAN_air_command_commander_scope
+		}
+
+		scope:CAN_air_command_commander_scope = {
+			transfer_to_formation = scope:can_air_command_formation
+		}
+
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_atlantic_coast
+			name = "Maritime_Command_Atlantic"
+
+			ship = {
+				type = ship_type:ship_type_destroyer
+				count = 3
+			}
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 3
+			}
+			ship = {
+				type = ship_type:ship_type_submarine
+				count = 2
+			}
+			ship = {
+				type = ship_type:ship_type_battleship
+				count = 1
+			}
+
+			save_scope_as = can_maritime_command_atlantic_formation
+		}
+
+		create_character = {
+			template = CAN_maritime_command_atlantic_commander
+			save_scope_as = CAN_maritime_command_atlantic_commander_scope
+		}
+
+		scope:CAN_maritime_command_atlantic_commander_scope = {
+			transfer_to_formation = scope:can_maritime_command_atlantic_formation
+		}
+
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_pacific_coast
+			name = "Maritime_Command_Pacific"
+
+			ship = {
+				type = ship_type:ship_type_destroyer
+				count = 2
+			}
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+
+			save_scope_as = can_maritime_command_pacific_formation
+		}
+
+		create_character = {
+			template = CAN_maritime_command_pacific_commander
+			save_scope_as = CAN_maritime_command_pacific_commander_scope
+		}
+
+		scope:CAN_maritime_command_pacific_commander_scope = {
+			transfer_to_formation = scope:can_maritime_command_pacific_formation
+		}
+	}
+
+	### MEXICO ###
+	# ~175,000 active in 1992.
+
+	c:MEX ?= {
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_america
+			name = "I_III_Military_Regions"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_MEXICO
+				count = 25
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_MEXICO
+				count = 15
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_armored_infantry
+				state_region = s:STATE_MEXICO
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_field_artillery
+				state_region = s:STATE_MEXICO
+				count = 5
+			}
+
+			save_scope_as = mex_i_iii_military_regions_formation
+		}
+
+		create_character = {
+			template = MEX_i_iii_military_regions_commander
+			save_scope_as = MEX_i_iii_military_regions_commander_scope
+		}
+
+		scope:MEX_i_iii_military_regions_commander_scope = {
+			transfer_to_formation = scope:mex_i_iii_military_regions_formation
+		}
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_america
+			name = "Border_Military_Regions"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_CHIHUAHUA
+				count = 12
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_TAMAULIPAS
+				count = 12
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_VERACRUZ
+				count = 12
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_GUERRERO
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_OAXACA
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_YUCATAN
+				count = 6
+			}
+
+			save_scope_as = mex_border_military_regions_formation
+		}
+
+		create_character = {
+			template = MEX_border_military_regions_commander
+			save_scope_as = MEX_border_military_regions_commander_scope
+		}
+
+		scope:MEX_border_military_regions_commander_scope = {
+			transfer_to_formation = scope:mex_border_military_regions_formation
+		}
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_america
+			name = "Mexican_Air_Force"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_fixed_wing_aircraft
+				state_region = s:STATE_MEXICO
+				count = 4
+			}
+
+			save_scope_as = mex_mexican_air_force_formation
+		}
+
+		create_character = {
+			template = MEX_mexican_air_force_commander
+			save_scope_as = MEX_mexican_air_force_commander_scope
+		}
+
+		scope:MEX_mexican_air_force_commander_scope = {
+			transfer_to_formation = scope:mex_mexican_air_force_formation
+		}
+
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_central_america
+			name = "Armada_de_Mexico_Gulf"
+
+			ship = {
+				type = ship_type:ship_type_destroyer
+				count = 3
+			}
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 3
+			}
+
+			save_scope_as = mex_armada_de_mexico_gulf_formation
+		}
+
+		create_character = {
+			template = MEX_armada_de_mexico_gulf_commander
+			save_scope_as = MEX_armada_de_mexico_gulf_commander_scope
+		}
+
+		scope:MEX_armada_de_mexico_gulf_commander_scope = {
+			transfer_to_formation = scope:mex_armada_de_mexico_gulf_formation
+		}
+
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_central_america
+			name = "Armada_de_Mexico_Pacific"
+
+			ship = {
+				type = ship_type:ship_type_destroyer
+				count = 2
+			}
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 3
+			}
+
+			save_scope_as = mex_armada_de_mexico_pacific_formation
+		}
+
+		create_character = {
+			template = MEX_armada_de_mexico_pacific_commander
+			save_scope_as = MEX_armada_de_mexico_pacific_commander_scope
+		}
+
+		scope:MEX_armada_de_mexico_pacific_commander_scope = {
+			transfer_to_formation = scope:mex_armada_de_mexico_pacific_formation
+		}
+	}
+
+	### CUBA ###
+	# ~235,000 active in 1992, rapidly demobilizing post-Soviet aid cutoff.
+
+	c:CUB ?= {
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_america
+			name = "Ejercito_Occidental"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_armored_infantry
+				state_region = s:STATE_WESTERN_CUBA
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_WESTERN_CUBA
+				count = 25
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_WESTERN_CUBA
+				count = 30
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_field_artillery
+				state_region = s:STATE_WESTERN_CUBA
+				count = 8
+			}
+
+			save_scope_as = cub_ejercito_occidental_formation
+		}
+
+		create_character = {
+			template = CUB_ejercito_occidental_commander
+			save_scope_as = CUB_ejercito_occidental_commander_scope
+		}
+
+		scope:CUB_ejercito_occidental_commander_scope = {
+			transfer_to_formation = scope:cub_ejercito_occidental_formation
+		}
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_america
+			name = "Ejercito_Central_Oriental"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_CENTRAL_CUBA
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_CENTRAL_CUBA
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_EASTERN_CUBA
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_EASTERN_CUBA
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_field_artillery
+				state_region = s:STATE_EASTERN_CUBA
+				count = 5
+			}
+
+			save_scope_as = cub_ejercito_central_oriental_formation
+		}
+
+		create_character = {
+			template = CUB_ejercito_central_oriental_commander
+			save_scope_as = CUB_ejercito_central_oriental_commander_scope
+		}
+
+		scope:CUB_ejercito_central_oriental_commander_scope = {
+			transfer_to_formation = scope:cub_ejercito_central_oriental_formation
+		}
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_america
+			name = "Fuerza_Aerea_Revolucionaria"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_fixed_wing_aircraft
+				state_region = s:STATE_WESTERN_CUBA
+				count = 4
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_fixed_wing_aircraft
+				state_region = s:STATE_EASTERN_CUBA
+				count = 2
+			}
+
+			save_scope_as = cub_fuerza_aerea_revolucionaria_formation
+		}
+
+		create_character = {
+			template = CUB_fuerza_aerea_revolucionaria_commander
+			save_scope_as = CUB_fuerza_aerea_revolucionaria_commander_scope
+		}
+
+		scope:CUB_fuerza_aerea_revolucionaria_commander_scope = {
+			transfer_to_formation = scope:cub_fuerza_aerea_revolucionaria_formation
+		}
+
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_central_america
+			name = "Marina_de_Guerra_Revolucionaria"
+
+			ship = {
+				type = ship_type:ship_type_submarine
+				count = 2
+			}
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 3
+			}
+			ship = {
+				type = ship_type:ship_type_destroyer
+				count = 3
+			}
+
+			save_scope_as = cub_marina_de_guerra_revolucionaria_formation
+		}
+
+		create_character = {
+			template = CUB_marina_de_guerra_revolucionaria_commander
+			save_scope_as = CUB_marina_de_guerra_revolucionaria_commander_scope
+		}
+
+		scope:CUB_marina_de_guerra_revolucionaria_commander_scope = {
+			transfer_to_formation = scope:cub_marina_de_guerra_revolucionaria_formation
+		}
+	}
+
+	### HAITI ###
+	# ~7,500 personnel. Forces des Armées d'Haïti.
+
+	c:HAI ?= {
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_america
+			name = "Forces_Armees_dHaiti"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_HAITI
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_HAITI
+				count = 2
+			}
+
+			save_scope_as = hai_forces_armees_dhaiti_formation
+		}
+
+		create_character = {
+			template = HAI_forces_armees_dhaiti_commander
+			save_scope_as = HAI_forces_armees_dhaiti_commander_scope
+		}
+
+		scope:HAI_forces_armees_dhaiti_commander_scope = {
+			transfer_to_formation = scope:hai_forces_armees_dhaiti_formation
+		}
+	}
+
+	### DOMINICAN REPUBLIC ###
+	# ~24,000 active.
+
+	c:DCR ?= {
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_america
+			name = "Fuerzas_Armadas_Dominicanas"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_SANTO_DOMINGO
+				count = 15
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_SANTO_DOMINGO
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_fixed_wing_aircraft
+				state_region = s:STATE_SANTO_DOMINGO
+				count = 2
+			}
+
+			save_scope_as = dcr_fuerzas_armadas_dominicanas_formation
+		}
+
+		create_character = {
+			template = DCR_fuerzas_armadas_dominicanas_commander
+			save_scope_as = DCR_fuerzas_armadas_dominicanas_commander_scope
+		}
+
+		scope:DCR_fuerzas_armadas_dominicanas_commander_scope = {
+			transfer_to_formation = scope:dcr_fuerzas_armadas_dominicanas_formation
+		}
+
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_central_america
+			name = "Armada_Dominicana"
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 3
+			}
+
+			save_scope_as = dcr_armada_dominicana_formation
+		}
+
+		create_character = {
+			template = DCR_armada_dominicana_commander
+			save_scope_as = DCR_armada_dominicana_commander_scope
+		}
+
+		scope:DCR_armada_dominicana_commander_scope = {
+			transfer_to_formation = scope:dcr_armada_dominicana_formation
+		}
+	}
+
+	### PANAMA ###
+	# ~15,000. Rebuilt from scratch after 1989 US invasion.
+
+	c:PNM ?= {
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_america
+			name = "Fuerzas_Publicas_Panama"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_PANAMA
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_PANAMA
+				count = 4
+			}
+
+			save_scope_as = pnm_fuerzas_publicas_panama_formation
+		}
+
+		create_character = {
+			template = PNM_fuerzas_publicas_panama_commander
+			save_scope_as = PNM_fuerzas_publicas_panama_commander_scope
+		}
+
+		scope:PNM_fuerzas_publicas_panama_commander_scope = {
+			transfer_to_formation = scope:pnm_fuerzas_publicas_panama_formation
+		}
+	}
+
+	### HONDURAS ###
+	# ~16,000 active.
+
+	c:HON ?= {
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_america
+			name = "Fuerzas_Armadas_de_Honduras"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_HONDURAS
+				count = 11
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_HONDURAS
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_fixed_wing_aircraft
+				state_region = s:STATE_HONDURAS
+				count = 2
+			}
+
+			save_scope_as = hon_fuerzas_armadas_de_honduras_formation
+		}
+
+		create_character = {
+			template = HON_fuerzas_armadas_de_honduras_commander
+			save_scope_as = HON_fuerzas_armadas_de_honduras_commander_scope
+		}
+
+		scope:HON_fuerzas_armadas_de_honduras_commander_scope = {
+			transfer_to_formation = scope:hon_fuerzas_armadas_de_honduras_formation
+		}
+	}
+
+	### GUATEMALA ###
+	# ~44,000 active. Ongoing civil war.
+
+	c:GUT ?= {
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_america
+			name = "Ejercito_de_Guatemala"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_GUATEMALA
+				count = 28
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_GUATEMALA
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_field_artillery
+				state_region = s:STATE_GUATEMALA
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_fixed_wing_aircraft
+				state_region = s:STATE_GUATEMALA
+				count = 2
+			}
+
+			save_scope_as = gut_ejercito_de_guatemala_formation
+		}
+
+		create_character = {
+			template = GUT_ejercito_de_guatemala_commander
+			save_scope_as = GUT_ejercito_de_guatemala_commander_scope
+		}
+
+		scope:GUT_ejercito_de_guatemala_commander_scope = {
+			transfer_to_formation = scope:gut_ejercito_de_guatemala_formation
+		}
+	}
+
+	### EL SALVADOR ###
+	# ~63,000 active. Peace Accords signed January 1992.
+
+	c:ELS ?= {
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_america
+			name = "Fuerza_Armada_de_El_Salvador"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_SAN_SALVADOR
+				count = 42
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_SAN_SALVADOR
+				count = 14
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_field_artillery
+				state_region = s:STATE_SAN_SALVADOR
+				count = 4
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_fixed_wing_aircraft
+				state_region = s:STATE_SAN_SALVADOR
+				count = 2
+			}
+
+			save_scope_as = els_fuerza_armada_de_el_salvador_formation
+		}
+
+		create_character = {
+			template = ELS_fuerza_armada_de_el_salvador_commander
+			save_scope_as = ELS_fuerza_armada_de_el_salvador_commander_scope
+		}
+
+		scope:ELS_fuerza_armada_de_el_salvador_commander_scope = {
+			transfer_to_formation = scope:els_fuerza_armada_de_el_salvador_formation
+		}
+	}
+
+	### NICARAGUA ###
+	# ~15,000 active. Massively reduced from Sandinista-era 100k+.
+
+	c:NIC ?= {
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_america
+			name = "Ejercito_de_Nicaragua"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_NICARAGUA
+				count = 11
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_NICARAGUA
+				count = 3
+			}
+
+			save_scope_as = nic_ejercito_de_nicaragua_formation
+		}
+
+		create_character = {
+			template = NIC_ejercito_de_nicaragua_commander
+			save_scope_as = NIC_ejercito_de_nicaragua_commander_scope
+		}
+
+		scope:NIC_ejercito_de_nicaragua_commander_scope = {
+			transfer_to_formation = scope:nic_ejercito_de_nicaragua_formation
+		}
+	}
+
+	### COSTA RICA ###
+	# No military. Border Police and Civil Guard only (~8,000).
+
+	c:COS ?= {
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_america
+			name = "Fuerza_Publica_Costa_Rica"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_COSTA_RICA
+				count = 8
+			}
+
+			save_scope_as = cos_fuerza_publica_costa_rica_formation
+		}
+
+		create_character = {
+			template = COS_fuerza_publica_costa_rica_commander
+			save_scope_as = COS_fuerza_publica_costa_rica_commander_scope
+		}
+
+		scope:COS_fuerza_publica_costa_rica_commander_scope = {
+			transfer_to_formation = scope:cos_fuerza_publica_costa_rica_formation
+		}
+	}
+}

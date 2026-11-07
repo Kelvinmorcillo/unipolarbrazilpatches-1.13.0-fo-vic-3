@@ -1,0 +1,46 @@
+texticon = {
+  icon = servants
+  iconsize = {
+    offset = { 0 7 }
+    texture = "gfx/interface/icons/ig_icons/servants_30.dds"
+    fontsize = 22
+  }
+}
+
+texticon = {
+  icon = professionals
+  iconsize = {
+    offset = { 0 7 }
+    texture = "gfx/interface/icons/ig_icons/professionals_30.dds"
+    fontsize = 22
+  }
+}
+
+# experiment rq
+
+texticon = {
+  icon = democratic_party
+  iconsize = {
+    offset = { 32 32 }
+    texture = "gfx/interface/icons/political_parties/democrats.dds"
+    fontsize = 54
+  }
+}
+
+texticon = {
+  icon = republican_party
+  iconsize = {
+    offset = { 32 32 }
+    texture = "gfx/interface/icons/political_parties/republicans.dds"
+    fontsize = 64
+  }
+}
+
+texticon = {
+  icon = nukes
+  iconsize = {
+    offset = { 32 32 }
+    texture = "gfx/interface/icons/generic_icons/00_nuclear_warheads.dds"
+    fontsize = 84
+  }
+}

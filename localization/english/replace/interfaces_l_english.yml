@@ -1,0 +1,31 @@
+﻿l_english:
+
+ GDP_TOOLTIP:1 "#header [Country.GetAdjective] [concept_gdp]#!\n@money![Country.MakeScope.ScriptValue('cwp_gdp')|Dv] (#u #tooltippable #tooltip:[Country.GetTooltipTag],COUNTRY_GDP_OWNERSHIP_TOOLTIP [Country.GetDomesticallyOwnedGDPFraction|%1b]#!#!#!) domestically owned $concept_gdp_short$ ([Country.GetGDPRanking])\n@money![Country.MakeScope.ScriptValue('cwp_gdp_per_capita')|2*v] [Concept('concept_gdp_per_capita', '$concept_gdp_per_capita_short$')] ([Country.GetGDPPerCapitaRanking])"
+ COUNTRY_GDP_OWNERSHIP_TOOLTIP: "#header [concept_gdp_ownership] in [Country.GetName]#!\n#u [Country.GetDomesticallyOwnedGDPFraction|%1b]#! (@money![Country.GetGDP|Dv]) domestically owned $concept_gdp_short$\n$TOOLTIP_DELIMITER$\n[SelectLocalization(IsZero_CFixedPoint(Country.GetForeignOwnedGDPFraction), 'NO_FOREIGNLY_OWNED_PERCENTAGE', 'COUNTRY_FOREIGNLY_OWNED_PERCENTAGE')]\n\n[SelectLocalization(IsZero_CFixedPoint(Country.GetGDPOwnedInForeignCountries), 'NO_OWNED_FOREIGN_GDP_BY_COUNTRY', 'OWNED_FOREIGN_GDP_BY_COUNTRY')]"
+
+ COUNTRY_ALL_GDP: "@money!#v [Country.GetGDPWithOwnershipsInForeignCountries|D]#!"
+ DOMESTIC_COUNTRY_GDP: "@money!#v [Country.GetGDP|D]#!"
+ FOREIGN_COUNTRY_GDP: "@money!#u [Country.GetGDPOwnedInForeignCountries|Db]#!"
+ COUNTRY_ALL_OWNERSHIP: "#u [Country.GetDomesticallyOwnedGDPFraction|%1b]#![ConcatIfNeitherEmpty(' + ', AddLocalizationIf(NotZero_CFixedPoint(Country.GetGDPOwnedInForeignCountries), 'FOREIGN_COUNTRY_GDP'))]"
+ 
+ COUNTRY_POPULATION:1 "#title [Concept('concept_pop','$concept_population$')]#!:\n [Country.MakeScope.ScriptValue('smd_population')|Dv]"
+ COUNTRY_GDP:0 "#title $GDP_SHORT$#!:\n[Country.MakeScope.ScriptValue('cwp_gdp')|Dv]"
+
+ ERROR_DEER_TOOLTIP:0 "#header Dangnabit!#!\n#instruction Left-Click#! to open Error Log\n#instruction Right-Click#! to make it go away (until you upset it again)"
+ ERROR_MANUL_TOOLTIP: "#header Fool me once, shame on— shame on you. You fool me—you can’t get fooled again!#!\n#instruction Left-Click#! to open Error Log\n#instruction Right-Click#! to make it go away (until you upset it again)"
+ 
+ OH_DEER:0 ""#italic Shame on, shame on you? #! #bold [ErrorDeer.NumberOrErrors|v]#! #italic error(s)!#!""
+ ERROR_MANUL: "#italic #! #bold [ErrorDeer.NumberOrErrors|v]#! #italic Missions Accomplished."
+ ERROR_DEER_SLOW_TICK_OPERATIONS:0 "#header Slow Tick Operations#!"
+ 
+ LITERACY_UNINCORPORATED_TOOLTIP:2 "\n$TOOLTIP_DELIMITER$\nWhen also factoring in [Concept('concept_unincorporated_state','$concept_unincorporated_states$')], #variable [Country.GetNumTotalLiteratePops|*]#! out of #variable [Country.GetTotalPopulation|*]#! ([Country.GetTotalLiteracyRate|%v]) [Concept('concept_pop','$concept_pops$')] in #variable [Country.GetName]#! are literate ([Country.GetTotalLiteracyRanking])"
+ 
+ POP_TOOLTIP:2 "#tooltip_header [Concept('concept_pop','$concept_population$')]#!\nCurrent: [Country.MakeScope.ScriptValue('smd_population')|Dv] ([Country.GetPopulationRanking])\n[Country.GetPopGrowthDesc]$POP_TOOLTIP_DELAYED$"
+ 
+ EXPENSES_GOVERNMENT_BUILDING_GOODS:0 "$TAB$#tooltippable #tooltip:[GetPlayer.GetTooltipTag],GOVERNMENT_BUILDINGS_EXPENSES_BREAKDOWN,GovernmentGoodsExpenseTooltip #N @money!-[GetPlayer.GetGovernmentGoodsExpenses|D-]#!#!#! [concept_budget_goods_for_government_buildings]\n$TAB$#tooltippable;tooltip:SMD_HEALTHCARE_EXPENSE_TOOLTIP #N @money!-[GetPlayer.MakeScope.ScriptValue('smd_healthcare_expense_value')|D-]#!#!#! [concept_smd_healthcare]\n$TAB$#tooltippable;tooltip:SMD_EDUCATION_EXPENSE_TOOLTIP #N @money!-[GetPlayer.MakeScope.ScriptValue('smd_education_expense_value')|D-]#!#!#! [concept_smd_education]\n$TAB$#tooltippable;tooltip:SMD_POLICE_EXPENSE_TOOLTIP #N @money!-[GetPlayer.MakeScope.ScriptValue('smd_police_expense_value')|D-]#!#!#! [concept_smd_police]"
+
+ SMD_HEALTHCARE_EXPENSE_TOOLTIP:0 "#header [concept_smd_healthcare] Expenses#!\nThe running cost of the state health system. Scales primarily with the number of Government Administrations you run ([concept_bureaucracy]), plus the [concept_institution]'s investment level and your population.\nCurrent monthly cost: @money!-[GetPlayer.MakeScope.ScriptValue('smd_healthcare_expense_value')|D-]#!"
+
+ SMD_EDUCATION_EXPENSE_TOOLTIP:0 "#header [concept_smd_education] Expenses#!\nThe running cost of public [concept_smd_education|l]. Scales primarily with the number of Government Administrations you run ([concept_bureaucracy]), plus the [concept_institution]'s investment level and your population.\nCurrent monthly cost: @money!-[GetPlayer.MakeScope.ScriptValue('smd_education_expense_value')|D-]#!"
+
+ SMD_POLICE_EXPENSE_TOOLTIP:0 "#header [concept_smd_police] Expenses#!\nThe running cost of law enforcement. Scales primarily with the number of Government Administrations you run ([concept_bureaucracy]), plus the [concept_institution]'s investment level and your population.\nCurrent monthly cost: @money!-[GetPlayer.MakeScope.ScriptValue('smd_police_expense_value')|D-]#!"

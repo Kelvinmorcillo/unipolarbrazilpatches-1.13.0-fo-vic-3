@@ -1,0 +1,147 @@
+je_afghan_civil_war = {
+	group = je_group_international
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+    is_shown_in_lobby = {
+        OR = {
+        	c:AFG ?= this
+        	c:ANA ?= this
+        }
+    }
+
+	modifiers_while_active = {
+		acw_guerrilla_warfare
+	}
+
+	scripted_progress_bar = je_afghan_civil_war_score_bar
+	scripted_button = je_afghan_civil_war_northern_offensive_button
+	scripted_button = je_afghan_civil_war_taliban_campaign_button
+
+	should_be_involved = {
+		OR = {
+			c:AFG ?= this
+			c:ANA ?= this
+		}
+	}
+
+	should_show_when_not_involved = {
+		always = no
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_global_variable = afg_afghan_civil_war_score }
+			}
+			set_global_variable = {
+				name = afg_afghan_civil_war_score
+				value = 0
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_global_variable = ana_afghan_civil_war_score }
+			}
+			set_global_variable = {
+				name = ana_afghan_civil_war_score
+				value = 0
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_global_variable = afghan_civil_war_skirmish_phase }
+			}
+			set_global_variable = afghan_civil_war_skirmish_phase
+		}
+	}
+
+	immediate_all_involved = {
+		set_variable = coup_immunity
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_afghan_civil_war_status
+				trigger = {
+					has_global_variable = afghan_civil_war_skirmish_phase
+				}
+			}
+			triggered_desc = {
+				desc = je_afghan_civil_war_status_final_phase
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			c:ANA ?= {
+				random_list = {
+					17 = {}
+					1 = { trigger_event = afghan_civil_war.6 }
+				}
+			}
+			c:AFG ?= {
+				random_list = {
+					17 = {}
+					1 = { trigger_event = afghan_civil_war.5 }
+				}
+			}
+		}
+	}
+
+	complete = {
+		custom_tooltip = {
+			text = je_afghan_civil_war_complete
+			NAND = {
+				exists = c:ANA
+				exists = c:AFG
+			}
+		}
+	}
+
+	on_complete_all_involved = {
+		if = {
+			limit = {
+				c:ANA ?= this
+			}
+			add_modifier = {
+				name = acw_ana_reward
+				years = 20
+				is_decaying = yes
+			}
+		}
+		else_if = {
+			limit = {
+				c:AFG ?= this
+			}
+			add_modifier = {
+				name = acw_afg_reward
+				years = 20
+				is_decaying = yes
+			}
+		}
+		trigger_event = afghan_civil_war.2
+		hidden_effect = {
+			remove_global_variable = afg_afghan_civil_war_score
+			remove_global_variable = ana_afghan_civil_war_score
+			remove_global_variable = afghan_civil_war_skirmish_phase
+			remove_global_variable = afghan_civil_war_final_phase
+			remove_global_variable = afghan_civil_war_started
+			remove_modifier = acw_taliban_security_push
+			remove_modifier = acw_northern_alliance_mountain_resistance
+			remove_modifier = acw_taliban_supply_strain
+			remove_modifier = acw_northern_alliance_supply_networks
+			set_immune_to_revolutions = no
+			remove_variable = coup_immunity
+		}
+	}
+
+	weight = 10000
+
+	should_be_pinned_by_default_involved = yes
+	should_be_pinned_by_default_uninvolved_or_ineligible = no
+}

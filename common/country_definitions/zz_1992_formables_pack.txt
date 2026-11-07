@@ -1,0 +1,201 @@
+REPLACE_OR_CREATE:USE = {
+	color = { 0 51 153 }
+	country_type = recognized
+	tier = hegemony
+	cultures = {armenian aromanian british bulgarian croat cypriot danish finnish french georgian greek hungarian kashubian lithuanian macedonian north_german north_italian norwegian polish romani romanian sami serb south_german south_italian spanish swedish ukrainian albanian alemannic aragonese asturian basque bosniak breton catalan dutch english estonian flemish galician icelandic irish occitan portuguese scottish slovenian wallonian welsh}
+	capital = STATE_FLANDERS
+}
+
+REPLACE_OR_CREATE:AFU = {
+	color = { 0 90 30 }
+	country_type = recognized
+	tier = hegemony
+	cultures = { bambara beja berber boer caper equatorial_bantu fluvian_bantu fulbe fur hausa kavango_bantu khoisan lacustrine_bantu lunda maghrebi mande maures misri nguni oromo sephardic somali sotho sudanese swahili tuareg }
+	capital = STATE_AMHARA
+}
+
+REPLACE_OR_CREATE:ASN = {
+	color = { 0 51 153 }
+	country_type = recognized
+	tier = hegemony
+	cultures = {
+		balinese batak bornean burmese dayak filipino
+		hakka han javan kachin khmer khmu
+		lao malay moluccan moro shan sumatran
+		thai vietnamese
+	}
+	capital = STATE_WEST_JAVA
+}
+
+REPLACE_OR_CREATE:EAF = {
+	color = { 0 120 170 }
+	country_type = recognized
+	tier = empire
+	cultures = {
+		afar amhara baganda kikuyu lacustrine_bantu luo
+		maasai oromo somali sudanese sukuma swahili
+		tigray
+	}
+	capital = STATE_KENYA
+}
+
+REPLACE_OR_CREATE:WAF = {
+	color = { 0 130 70 }
+	country_type = recognized
+	tier = empire
+	cultures = { akan bambara dyula equatorial_bantu ewe fon fulbe hausa ibo kissi mande maures mossi senufo songhai tiv tuareg wolof yoruba }
+	capital = STATE_NIGERIA
+}
+
+REPLACE_OR_CREATE:CAA = {
+	color = { 70 70 140 }
+	country_type = recognized
+	tier = empire
+	cultures = {
+		azande bakongo equatorial_bantu fang fluvian_bantu fulbe
+		fur kanuri kavango_bantu luba lunda ovimbundu
+		portuguese tuareg
+	}
+	capital = STATE_CONGO
+}
+
+REPLACE_OR_CREATE:SFA = {
+	color = { 0 100 60 }
+	country_type = recognized
+	tier = empire
+	cultures = { bakongo boer caper chewa herero kavango_bantu khoisan lunda nguni ovimbundu portuguese sotho tswana xhosa zulu }
+	capital = STATE_TRANSVAAL
+}
+
+REPLACE_OR_CREATE:HAF = {
+	color = { 70 160 210 }
+	country_type = recognized
+	tier = empire
+	cultures = {
+		afar amhara kikuyu oromo somali sudanese
+		swahili tigray
+	}
+	capital = STATE_SOMALILAND
+}
+
+REPLACE_OR_CREATE:LEV = {
+	color = { 0 150 140 }
+	country_type = recognized
+	tier = empire
+	cultures = { armenian bedouin greek israelite lacustrine_bantu mashriqi north_caucasian sephardic }
+	capital = STATE_PALESTINE
+}
+
+REPLACE_OR_CREATE:IBU = {
+	color = { 170 30 45 }
+	country_type = recognized
+	tier = empire
+	cultures = { aragonese basque catalan galician portuguese spanish }
+	capital = STATE_CASTILE
+}
+
+REPLACE_OR_CREATE:BNL = {
+	color = { 15 60 170 }
+	country_type = recognized
+	tier = empire
+	cultures = {
+		dutch flemish frisian wallonian
+	}
+	capital = STATE_HOLLAND
+}
+
+REPLACE_OR_CREATE:NBU = {
+	color = { 10 40 120 }
+	country_type = recognized
+	tier = empire
+	cultures = {
+		danish estonian finnish icelandic latvian lithuanian
+		norwegian sami swedish
+	}
+	capital = STATE_SVEALAND
+}
+
+REPLACE_OR_CREATE:BTU = {
+	color = { 120 20 40 }
+	country_type = recognized
+	tier = empire
+	cultures = { ashkenazi estonian finnish latvian lithuanian north_german polish russian swedish ugrian }
+	capital = STATE_ESTONIA
+}
+
+REPLACE_OR_CREATE:CAU = {
+	color = { 0 120 80 }
+	country_type = recognized
+	tier = empire
+	cultures = { armenian azerbaijani georgian kurdish north_caucasian sephardic }
+	capital = STATE_GEORGIA
+}
+
+REPLACE_OR_CREATE:CCA = {
+	color = { 70 160 210 }
+	country_type = recognized
+	tier = empire
+	cultures = { kazak kirgiz mashriqi pashtun persian russian tajik turkmen uighur uzbek }
+	capital = STATE_AKMOLINSK
+}
+
+
+
+REPLACE_OR_CREATE:UNS = {
+	color = { 30 100 180 }
+	country_type = recognized
+	tier = hegemony
+	cultures = { afro_antillean afro_caribbean afro_caribeno aimara amazonian brazilian guajiro guarani muisca north_andean patagonian platinean quechua south_andean tupinamba }
+	capital = STATE_BRASILIA
+}
+
+REPLACE_OR_CREATE:GUF = {
+	color = { 0 120 80 }
+	country_type = recognized
+	tier = empire
+	cultures = { afro_antillean afro_caribbean amazonian }
+	capital = STATE_GUAYANA
+}
+
+REPLACE_OR_CREATE:XMA = {
+	color = { 0 110 60 }
+	country_type = recognized
+	tier = empire
+	cultures = { afro_caribbean afro_caribeno central_american mayan mexican miskito mixtec nahua north_andean zapotec }
+	capital = STATE_MEXICO
+}
+
+REPLACE_OR_CREATE:ARU = {
+	color = { 20 20 20 }
+	country_type = recognized
+	tier = hegemony
+	cultures = { armenian assyrian baluchi bambara bedouin berber greek israelite kurdish lacustrine_bantu maghrebi mashriqi misri north_caucasian persian sephardic sudanese tuareg yemenite }
+	capital = STATE_LOWER_EGYPT
+}
+
+REPLACE_OR_CREATE:TUC = {
+	color = { 170 0 0 }
+	country_type = recognized
+	tier = hegemony
+	cultures = {
+		azerbaijani kazak kirgiz kurdish north_caucasian sephardic
+		tajik tatar turkish turkmen uighur uzbek
+	}
+	capital = STATE_ANKARA
+}
+
+REPLACE_OR_CREATE:NAU = {
+	color = { 20 40 100 }
+	country_type = recognized
+	tier = hegemony
+	cultures = { afro_american afro_antillean afro_caribbean afro_caribeno algonquian amish anglo_canadian apache athabaskan british caddoan cajun central_american cherokee cree dakota dixie franco_canadian frisian han hawaiian hokan inuit irish iroquoian mayan metis mexican mixtec muskogean nahua navajo nez_perce oodham paiute pueblo russian salish siouan tarascan yankee zapotec }
+	capital = STATE_DISTRICT_OF_COLUMBIA
+}
+
+REPLACE_OR_CREATE:KOU = {
+	color = { 240 240 240 }
+	country_type = recognized
+	tier = empire
+	cultures = { korean }
+	capital = STATE_SEOUL
+}

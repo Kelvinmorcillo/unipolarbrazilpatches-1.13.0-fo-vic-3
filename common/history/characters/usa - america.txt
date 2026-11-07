@@ -1,0 +1,84 @@
+﻿CHARACTERS = {
+	c:USA ?= {
+	create_character = {
+			template = USA_colin_powell
+		}
+	create_character = {
+			template = USA_lane_kirkland
+		}
+	create_character = {
+			template = USA_sam_walton
+		}
+	create_character = {
+			template = USA_pat_buchanan
+		}
+	create_character = {
+			template = USA_noam_chomsky
+		}
+	create_character = {
+			first_name = "george"
+			last_name = "h_w_bush"
+			historical = yes
+			ruler = yes
+			culture = cu:yankee
+			birth_date = 1924.3.18
+			dna = dna_george_h_w_bush
+			ig_leader = yes
+			interest_group = ig_rural_folk
+			ideology = ideology_neoliberal_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+
+		create_character = {
+			first_name = "william_jefferson"
+			last_name = "clinton"
+			historical = yes
+			culture = cu:dixie
+			birth_date = 1946.4.12
+			dna = dna_bill_clinton
+			ig_leader = yes
+			interest_group = ig_petty_bourgeoisie
+			ideology = ideology_moderate_leader
+			traits = {
+				meticulous
+				experienced_political_operator
+			}
+		}
+
+		create_character = {
+			first_name = "albert_arnold"
+			last_name = "gore_jr"
+			historical = yes
+			culture = cu:yankee
+			birth_date = 1948.3.31
+			dna = dna_al_gore
+			ig_leader = yes
+			interest_group = ig_professionals
+			ideology = ideology_green_leader
+			traits = {
+				meticulous
+				experienced_political_operator
+			}
+		}
+		
+		create_character = {
+			
+			first_name = "henry_ross"
+			last_name = "perot"
+			historical = yes
+			culture = cu:yankee
+			birth_date = 1930.1.18
+			dna = dna_ross_perot
+			ig_leader = yes
+			interest_group = ig_devout
+			ideology = ideology_right_wing_populist_leader
+			traits = {
+				arrogant
+				inspirational_orator
+				experienced_political_operator
+			}
+		}
+	}
+}

@@ -1,0 +1,49 @@
+﻿l_turkish:
+ # ── TAB RENAME ────────────────────────────
+ BUDGET_TAB_ASSETS: "Finansal Sistem"
+ BUDGET_TAB_FINANCE: "Varlıklar"
+ # ── CENTRAL BANKING PANEL ─────────────────
+ BUDGET_CENTRAL_BANKING_HEADER: "Merkez Bankacılık Merkezi"
+ BUDGET_CENTRAL_BANK_LAW_LABEL: "Mevcut Politika:"
+ BUDGET_FISCAL_POLICY_LABEL: "Para Politikası Stance"
+
+ # Scripted loc keys
+ cb_policy_loc_1: "#R Çoğu Contractionary#!"
+ cb_policy_loc_2: "#r Contractionary#!"
+ cb_policy_loc_3: "#Y Neutral#!"
+ cb_policy_loc_4: "#g Genişleme#!"
+ cb_policy_loc_5: "#G En Genişleme#!"
+
+ # ── BUTTON TOOLTIPS — FRACTIONAL RESERVE ──
+ CB_POLICY_1_TOOLTIP: "#bold Çoğu Contractionary#!\n\n #header Fractional Reserve:#!\n@red_cross! Ticarileştirme: <x=15=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><=><=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><=><x=><x=><x=><=><x=><x=><x=><x=><x="
+ CB_POLICY_2_TOOLTIP: "#bold Contractionary#!\n#tooltip_separator! #header Fractional Reserve:#!\n< id=8/> Ticari Ofis: #bold <x><x><x><x><x><x><><><x id=><0/>#bold#red<=><x id=><x id=><><><><x=><><><x=><><><><><><><><><x><><x=><><><><><><=><><x=><x=><x=><x=><><><><><><><x id=><><>><><><><><><x id=><x=><><><x=><>< Maksimum Nakit Rezervleri: #red -12.5% #!"
+ CB_POLICY_3_TOOLTIP: "#bold Stable #!\n#tooltip_separator!\n Merkez bankası aktif bir duruş gerektirmez. Hiçbir modifier uygulanmadı."
+ CB_POLICY_4_TOOLTIP: "#bold Genişleme #!\n#tooltip_separator! #header Fractional Reserve:#!\n@red_cross! Ticari Banka: <x=0/><x><x><x><x><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=><x=>><x=><x=><x=><x=><x=><x=><=><0=><x=><x=><x=><x=><x=><x=><=><x=><x=><x=><x=><x=><x=><x><x=>><x=>>>><x=>>>><x=><x=><x=><x=><x=>"
+ CB_POLICY_5_TOOLTIP: "#bold En Genişlemesel #!\n#tooltip_separator! #header Fractional Reserve:#!\n @red_cross! Ticarileştirme: <x=0/> <x> <x><x><x><x><x><>#!#bold#bold<x id=><x=><x id=><x=>< >< ><x=>< ><x=>< >< ><x=>< >< >< ><x=><x=><x=>< >< >< >< >< >< ><x=><x id=>< ><x id=>< >< >< ><x id=>< >< ><x id=>< >< ><=><x=><x="
+
+ # Fractional Reserve variants
+ CB_POLICY_1_FRAC: "#bold Çoğu Contractionary – Fractional Reserve#!\n\n Merkez Bankası, kredi koşullarını önemli ölçüde sıkılaştırıyor.\n\n@red_cross! Bankaput #b#!\n @red_cross!"
+ CB_POLICY_2_FRAC: "#bold Contractionary – Fractional Reserve#!\n#tooltip_separator!\n Merkez bankası kredi koşullarını hafife alır.\n\n@red_cross! Banka Throughput #b+5%#!\n@red_cross! Finansal District Throughput #b#!<x id=>"
+ CB_POLICY_3_FRAC: "#bold Neutral - Fractional Reserve#!\n#tooltip_separator!\n Merkez bankası aktif bir duruş gerektirmez. Hiçbir modifier uygulanmadı."
+ CB_POLICY_4_FRAC: "#bold Genişleme - Fractional Reserve#!\n#tooltip_separator!\n Merkez banka kredi koşullarını teşvik etmek için kolaylaştırır.\n\n@green_checkmark! Banka Throughput #b%#!\n@green_checkmark! Finansal District Throughput #b+#!"
+ CB_POLICY_5_FRAC: "#bold En Genişleme - Fractional Reserve#!\n#tooltip_separator! Merkez Bankası agresif olarak finansal sektörü teşvik eder.\n\n@green_checkmark! Bank Through #b%#!\n@green_checkmark!@green_checkmark! Financial Districtput=0/>\n#b"
+
+ # Full Reserve variants
+ CB_POLICY_1_FULL: "#bold Çoğu Contractionary – Full Reserve#!\n#tooltip_separator!\n Rezerv gereksinimleri, kredi kullanılabilirliğini önemli ölçüde azaltır.\n\n@green_checkmark! Kredi İlgisi Oranı #b%#!\n@green_checkmark! Nakit Rezervler #b"
+ CB_POLICY_2_FULL: "#bold Contractionary - Full Reserve#!#tooltip_separator!\nReserve gereksinimleri mütevazi olarak sıkılanır.\n\n#!@green_checkmark!"
+ CB_POLICY_3_FULL: "#bold Neutral - Full Reserve#!\n#tooltip_separator!\n Rezerv gereksinimleri minimumda kalır. Uygulanan ek modifier yok."
+ CB_POLICY_4_FULL: "#bold Genişleme - Full Reserve#!\n#tooltip_separator!\n Rezerv gereksinimleri daha fazla ödünç alma izin vermek için rahattır.\n\n@red_cross! Kredi İlgisi #b+0.5%#!\n@red_cross! Nakit Rezervler #b-12.#!#!"
+ CB_POLICY_5_FULL: "#bold En Genişleme - Full Reserve#!#tooltip_separator!\nReserve gereksinimleri maksimum kredi kapasitesi için minimize edilir.\n\n@red_cross! Kredi İlgisi #b#bold#!\n\n@red_cross! Para Rezervleri #b"
+
+ # ── MODIFIER NAMES ────────────────────────
+ cb_policy_fractional_1: "Çoğu Anlaşmaz Para Politikası"
+ cb_policy_fractional_2: "Anlaşmazlık Para Politikası"
+ cb_policy_fractional_4: "Genişlemeli Para Politikası"
+ cb_policy_fractional_5: "Çoğu Genişleme Para Politikası"
+ cb_policy_full_1: "Çoğu Contractionary Reserve Policy"
+ cb_policy_full_2: "Contractionary Reserve Policy"
+ cb_policy_full_4: "Genişleme Rezerv Politikası"
+ cb_policy_full_5: "En Genişleme Rezerv Politikası"
+ 
+ building_group_bg_banking_throughput_add_desc:0 "Ticari Bankaların Yoluna Bir modifier"
+ building_financial_district_throughput_add_desc:0 "Financial Districts'in yönlendirmesine bir modofier"

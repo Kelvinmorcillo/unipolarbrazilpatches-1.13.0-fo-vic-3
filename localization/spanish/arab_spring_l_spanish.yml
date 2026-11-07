@@ -1,0 +1,434 @@
+﻿l_spanish:
+
+ # ==========================================
+ # JOURNAL ENTRY NAMES & HEADERS
+ # ==========================================
+
+ je_arab_spring: "La primavera árabe"
+ je_arab_spring_reason: "En todo el mundo árabe, han surgido frustraciones prolongadas con el dominio autoritario, la corrupción y el estancamiento económico en protesta masiva. A partir de Túnez, la ola de disturbios se está extendiendo, y ningún régimen en la región puede sentirse totalmente seguro."
+
+ je_arab_winter: "El invierno árabe"
+ je_arab_winter_reason: "El optimismo de la Primavera Árabe ha dado paso a una amarga lucha por el alma de la revolución. Los movimientos islamistas, las facciones militares y las potencias extranjeras se ven obligados a llenar el vacío dejado por regímenes caídos o debilitados. El destino de la región cuelga en el equilibrio."
+
+ # Completion headers
+ je_arab_spring_complete_header: "Transición democrática"
+ je_arab_spring_on_complete_header: "Un nuevo amanecer"
+ je_arab_spring_fail_header: "Revolución impresionada"
+ je_arab_spring_on_fail_header: "El Crackdown"
+
+ # ==========================================
+ # MODIFIER
+ # ==========================================
+
+ modifier_arab_spring: "Primavera Árabe"
+ modifier_arab_spring_desc: "Los levantamientos populares están barriendo el mundo árabe. Los gobiernos enfrentan una intensa presión de los movimientos de protesta que exigen la reforma democrática, la justicia económica y el fin del gobierno autoritario."
+
+ # ==========================================
+ # TOOLTIPS
+ # ==========================================
+
+ # Possible condition
+ arab_spring_underway_tt: "La primavera árabe está en marcha"
+
+ # Completion conditions
+ had_arab_spring_revolution_tt_no_scope: "Ha experimentado una revolución durante la primavera árabe"
+ has_liberal_or_progressive_in_government_tt: "Un grupo de interés liberal o progresista está en el gobierno"
+ has_census_voting_or_universal_suffrage_tt: "Ha promulgado votación censal o sufragio universal"
+
+ # Failure conditions
+ no_protest_leaders_tt: "No quedan políticos o agitadores liberales o progresistas"
+ arab_spring_timer_dummy_tt: "El movimiento de protesta ha sido suprimido por id=0/"
+ all_protest_movements_crushed_tt: "Todos los movimientos de protesta han sido aplastados y suprimidos"
+
+ # je_arab_winter status
+ reformists_in_government_tt: "Las facciones reformistas tienen escaños en el gobierno: la revolución tiene una posición política."
+ reformists_out_of_government_tt: "Los reformistas han sido expulsados del gobierno: la revolución está perdiendo terreno."
+
+ # je_arab_winter completion
+ arab_spring_liberal_victory_tt: "La oposición liberal y secular ha ganado"
+ arab_spring_islamist_victory_tt: "Las fuerzas islamistas o nacionalistas han tomado el poder"
+ arab_winter_on_complete_tt: "La lucha política ha resuelto, para bien o para mal."
+
+ # je_arab_winter failure
+ arab_winter_fail_tt: "La contrarrevolución ha aplastado el levantamiento por completo"
+
+ # on_complete tooltips
+ on_reformist_victory_tt: "La coalición reformista ha prevalecido: comienza la transición democrática."
+ on_islamist_victory_tt: "Las fuerzas islamistas o militares han consolidado el poder — la revolución ha terminado."
+
+ # ==========================================
+ # EVENT OUTCOME DESCRIPTIONS
+ # ==========================================
+
+ event_effects_arab_spring.8_tt: "El levantamiento ha sido derribado. Las fuerzas de seguridad leales al régimen han dispersado a los manifestantes, arrestado a los líderes de la oposición y reimpuesto control autoritario. La ventana para la reforma ha cerrado, por ahora."
+
+ event_effects_arab_spring.10_tt: "En contra de todo, el movimiento de protesta ha tenido éxito. El viejo régimen ha caído o hecho concesiones significativas. Comienza una frágil transición democrática, aunque el camino por delante sigue siendo incierto."
+
+ # ==========================================
+ # SCRIPTED PROGRESS BARS
+ # ==========================================
+
+ arab_spring_progress_bar: "Movimiento Revolucionario"
+ arab_spring_progress_bar_desc: "Hasta dónde ha avanzado el movimiento de protesta hacia sus objetivos."
+
+ arab_winter_crackdown_progress_bar: "Regime Crackdown"
+ arab_winter_crackdown_progress_bar_desc: "Cuán eficazmente el gobierno está suprimiendo el levantamiento. Si esto llega al 100%, la revolución está aplastada."
+
+ # ==========================================
+ # SCRIPTED TRIGGER NAMES (for tooltips)
+ # ==========================================
+
+ arab_spring_liberal_victory_trigger: "Condiciones de Victoria reformista"
+ arab_spring_islamist_victory_trigger: "Condiciones islamistas/nacionalistas de la victoria"
+
+ # ==========================================
+ # VARIABLES
+ # ==========================================
+
+ had_arab_spring_revolution: "Revolución Árabe de Primavera Experimentada"
+ arab_winter_revolution_crushed: "Revolución aplastada"
+
+ # ==========================================
+ # TUNISIA SPARK EVENT (arab_spring.1)
+ # ==========================================
+
+ arab_spring.1.t: "Las calles están creciendo"
+ arab_spring.1.d: "En idx id=0/año, la gente ha tomado las calles. Lo que comenzó como protestas dispersas contra la corrupción y el desempleo se ha hinchado en un movimiento de masas demandando un fin a la regla de id=1/año. Las fuerzas de seguridad luchan por contener las manifestaciones, y los ojos del mundo árabe están observando. La forma en que el gobierno responde en estos primeros días no sólo dará forma al destino de este país, sino a la trayectoria de toda la región."
+ arab_spring.1.a: "Despliegue las fuerzas de seguridad a los manifestantes"
+ arab_spring.1.b: "Diálogo abierto con líderes de oposición"
+ arab_spring.1.c: "Anuncio reformas limitadas para comprar tiempo"
+
+ # ==========================================
+ # MONTHLY PULSE — SPREAD EVENT (arab_spring.2)
+ # ==========================================
+
+ arab_spring.2.t: "La ola se propaga"
+ arab_spring.2.d: "La noticia de los levantamientos en los países vecinos se ha difundido a través de la televisión por satélite y las redes sociales. En idx id=0/ título, los activistas están envalentonados y el régimen está cada vez más nervioso. Los organizadores de protestas están compartiendo tácticas a través de las fronteras en tiempo real — algo que ninguna generación anterior de disidentes podría hacer."
+
+ # ==========================================
+ # RANDOM MONTHLY EVENTS (3–5)
+ # ==========================================
+
+ arab_spring.3.t: "Movilización de redes sociales"
+ arab_spring.3.d: "Los organizadores en idx id=0/año han utilizado plataformas de redes sociales para coordinar una demostración importante en <x id=1/conferencia. Miles de personas han resultado, y el vídeo de las protestas se está propagando internacionalmente. El gobierno enfrenta una creciente presión, tanto desde dentro como fuera."
+ arab_spring.3.a: "Esto es manejable"
+ arab_spring.3.b: "Apaga el Internet"
+
+ arab_spring.4.t: "Fuerzas de seguridad Waver"
+ arab_spring.4.d: "Reports have reached the capital that units of the security forces in the capital have refused orders to fire on protesters. Los oficiales simpatizantes de los manifestantes han sido vistos fraternizando con las multitudes. La lealtad de los militares ya no es segura."
+ arab_spring.4.a: "Trae unidades más fiables"
+ arab_spring.4.b: "Negociar con los líderes de protesta inmediatamente"
+
+ arab_spring.5.t: "Extranjeros de presión"
+ arab_spring.5.d: "Los gobiernos occidentales y los órganos internacionales han emitido declaraciones en las que se pide que se actúe con moderación y se respeten los derechos de los manifestantes. Algunos han amenazado las sanciones si la represión continúa. Mientras tanto, los poderes regionales están observando de cerca — algunos que esperan que los disturbios se difundan, otros desesperados por contenerlo."
+ arab_spring.5.a: "Ignorar a la comunidad internacional"
+ arab_spring.5.b: "Responder diplomáticamente"
+
+ # ==========================================
+ # FAILURE EVENTS
+ # ==========================================
+
+ arab_spring.8.t: "El Crackdown"
+ arab_spring.8.d: "El levantamiento en id=0/año se ha roto. Las fuerzas de seguridad, complementadas en caso necesario por milicias leales, han dispersado los últimos campamentos de protesta, arrestado a las figuras de oposición más prominentes y sellado las fronteras contra los agitadores externos. Los medios de comunicación estatales ya están reescribiendo la narrativa.Seguido id=1/ título indicax id=2/ títuloLa primavera árabe ha venido y se ha ido de idx id=3/año, dejando atrás sólo nuevas quejas para fester."
+ arab_spring.8.a: "Orden ha sido restaurada"
+
+ # ==========================================
+ # SUCCESS EVENTS
+ # ==========================================
+
+ arab_spring.9.t: "El Régimen Concede"
+ arab_spring.9.d: "Frente a protestas que no muestran señales de abatir, id=0/cero ha anunciado concesiones radicales, incluyendo la promesa de elecciones libres y una nueva constitución. Si estas promesas se mantendrán queda por ver, pero el movimiento de protesta ha conseguido una victoria histórica."
+ arab_spring.9.a: "Un nuevo capítulo comienza"
+
+ arab_spring.10.t: "El éxito de la revolución"
+ arab_spring.10.d: "El viejo orden se ha caído en id=0/año. Después de semanas de protestas masivas, el régimen ha colapsado, ya sea a través de la huida del gobernante, la deserción de los militares o la transición negociada. Por primera vez en una generación, las personas comunes en id=1/ título se atreven a esperar algo diferente. El duro trabajo de construir un nuevo orden político comienza ahora."
+ arab_spring.10.a: "El pueblo ha hablado"
+
+ # ==========================================
+ # ARAB WINTER EVENTS
+ # ==========================================
+
+ arab_spring.7.t: "Fuerzas islamistas consolidan el poder"
+ arab_spring.7.d: "La revolución ha sido capturada. En <x id=0/ título, los movimientos islamistas — mejor organizados, mejor financiados y más profundamente arraigados en la sociedad que el movimiento de protesta secular— han convertido las victorias de la Primavera Árabe a su propia ventaja. La urna, una vez que la mayor esperanza de los manifestantes, ha emitido un veredicto que la oposición liberal nunca había anticipado."
+ arab_spring.7.a: "Un resultado amargo"
+
+ arab_spring.71.t: "Una transición democrática"
+ arab_spring.71.d: "En idx id=0/tio, la Primavera Árabe ha entregado al menos algunas de sus promesas. Se ha producido una verdadera transferencia de poder, y el nuevo gobierno, por imperfecto y frágil, representa una verdadera ruptura con el pasado autoritario. Es un punto brillante raro en una región donde tales transiciones han sido revertidas con tanta frecuencia. El trabajo de consolidación de la democracia en <x id=3/ título requerirá vigilancia, compromiso y ninguna pequeña cantidad de suerte."
+ arab_spring.71.a: "La historia está viendo"
+
+ # ==========================================
+ # MODIFIER NAMES (referenced in events)
+ # ==========================================
+
+ arab_spring_popular_dissident: "Voz del levantamiento"
+ arab_spring_popular_dissident_desc: "Este líder se ha convertido en un símbolo del movimiento de protesta. Sus palabras llevan peso en las calles, y con gobiernos extranjeros mirando de cerca."
+
+ suppressing_protests: "Suppressing the Protests"
+ suppressing_protests_desc: "Las fuerzas de seguridad están dispersando activamente las manifestaciones y arrestando a figuras de la oposición. Esto puede contener el malestar a corto plazo, pero los riesgos de profundización de la ira popular."
+
+ arab_spring_reactionary_enactment: "Emergency Security Push"
+ arab_spring_reactionary_enactment_desc: "El gobierno está acelerando la legislación de seguridad en respuesta a los disturbios."
+
+ arab_spring_institution_speed: "Movilización del aparato de seguridad"
+ arab_spring_institution_speed_desc: "Se están vertidos recursos en instituciones de seguridad interna para contener las protestas."
+
+ arab_spring_democratic_transition: "Transición democrática"
+ arab_spring_democratic_transition_desc: "El viejo régimen ha caído y se está construyendo un nuevo orden político. El optimismo es alto, pero también la inestabilidad, el duro trabajo de consolidar los logros democráticos sólo ha comenzado."
+
+ arab_winter_revolution_crushed: "Revolución aplastada"
+ arab_winter_revolution_crushed_desc: "El levantamiento ha sido derribado por la fuerza. El régimen ha sobrevivido, pero las quejas que llevaron a la gente a las calles siguen sin resolverse. Festers descontentos debajo de la superficie."
+
+ arab_winter_islamist_consolidation: "Consolidación islamista"
+ arab_winter_islamist_consolidation_desc: "Los movimientos islamistas han surgido de la Primavera Árabe como la fuerza política dominante. Los objetivos seculares de la revolución han sido delineados, reemplazados por un nuevo orden arraigado en la autoridad religiosa."
+
+ arab_spring_regional_contagion: "Detenciones regionales"
+ arab_spring_regional_contagion_desc: "La Primavera Árabe se está extendiendo. Los movimientos de protesta en los países vecinos están ensanchando la oposición interna, y el régimen está cada vez más nervioso por el contagio."
+
+ # ==========================================
+ # arab_spring.1 — The Streets Are Rising
+ # ==========================================
+
+ arab_spring.1.t: "Levantamientos a nivel nacional"
+ arab_spring.1.d: "En idx id=0/año, la gente ha tomado las calles. Lo que comenzó como protestas dispersas contra la corrupción y el desempleo se ha hinchado en un movimiento de masas demandando un fin a la regla de id=1/año. Las fuerzas de seguridad luchan por contener las manifestaciones, y los ojos del mundo árabe están observando. La forma en que el gobierno responde en estos primeros días no sólo dará forma al destino de este país, sino a la trayectoria de toda la región."
+ arab_spring.1.d_no_leader: "En las calles se llenan con manifestantes. Las manifestaciones carecen de una única figura unificadora, pero las quejas que las impulsan — corrupción, desempleo, peso de la regla autoritaria— son reales y ampliamente compartidas. El régimen debe decidir cómo responder antes de que la situación vaya más allá de su control."
+ arab_spring.1.f: "El gobierno se enfrenta a una elección que definirá su legado."
+ arab_spring.1.a: "Dispersión de las manifestaciones por la fuerza"
+ arab_spring.1.b: "Abrir un diálogo con la oposición"
+
+ # ==========================================
+ # arab_spring.2 — The Security Apparatus Responds
+ # ==========================================
+
+ arab_spring.2.t: "Responde el aparato de seguridad"
+ arab_spring.2.d: "Con las protestas continuando a través de id=0/año, los servicios de seguridad están presionando al gobierno para que actúe con decisión. Generales y jefes de inteligencia advierten que la vacilación será leída como debilidad, y que la ventana para la contención efectiva está cerrando. La pregunta no es si desplegar el poder coercitivo del estado, sino cómo."
+ arab_spring.2.f: "El régimen debe elegir cuidadosamente sus herramientas."
+ arab_spring.2.a: "Ampliar la policía secreta: vigilancia y detención"
+ arab_spring.2.b: "Despliegue a los militares — mantenga las calles por la fuerza"
+ arab_spring.2.c: "Espera y mira - no exagerar"
+
+ # ==========================================
+ # ADDITIONAL MODIFIERS (referenced in events)
+ # ==========================================
+
+ modifier_arab_spring_momentum: "Movimiento Revolucionario"
+ modifier_arab_spring_momentum_desc: "El movimiento de protesta está ganando energía y apoyo popular. El sentimiento radical se extiende por los estratos inferiores y medianos de la sociedad."
+
+ arab_spring_regime_collaborator: "Regime Collaborator"
+ arab_spring_regime_collaborator_desc: "Se considera que este líder ha acogido a las autoridades. Su credibilidad entre el movimiento de protesta ha sufrido."
+
+ arab_spring_dissidents_within: "Dissentimiento interno"
+ arab_spring_dissidents_within_desc: "Este grupo de interés está experimentando presión desde dentro — los miembros más jóvenes e idealistas están empujando hacia una línea más dura contra el régimen."
+
+ arab_spring_spread_the_spring: "Exportando la revolución"
+ arab_spring_spread_the_spring_desc: "Este grupo ha estado tratando activamente de llegar a los movimientos de oposición en los países vecinos, amparados por acontecimientos en casa."
+
+ arab_spring_contained_movement: "Movimiento Contenido"
+ arab_spring_contained_movement_desc: "El liderazgo ha optado por centrar su energía internamente en lugar de arriesgarse a provocar el régimen con enredos extranjeros."
+
+ modifier_arab_spring_transition_cabinet: "Gobierno de Transición"
+ modifier_arab_spring_transition_cabinet_desc: "Se está formando un nuevo gobierno tras la revolución. El viejo orden se disuelve, pero lo que reemplaza sigue siendo incierto."
+
+ modifier_arab_spring_kick_out_of_insurrection: "Abandonando los Barricados"
+ modifier_arab_spring_kick_out_of_insurrection_desc: "La revolución ha alcanzado sus objetivos inmediatos. El movimiento está de pie desde su postura insurreccionaria y entrando en el proceso político."
+
+ modifier_arab_spring_regime_ig_defeated: "Derrotada por la revolución"
+ modifier_arab_spring_regime_ig_defeated_desc: "La asociación de este grupo con el viejo régimen le ha costado caro. Está marginada en el nuevo orden político."
+
+ # ==========================================
+ # EVENTS 1–6 (additional keys)
+ # ==========================================
+
+ arab_spring.1.d_tunisia: "Lo que comenzó en idx id=0/año con la auto-inmolación de un vendedor de la calle se ha convertido en algo que nadie predijo - un levantamiento nacional que ha sacudido idx id=1/año a sus fundaciones. El régimen de id=2/año es de carrete. Las fuerzas de seguridad luchan por contener manifestaciones que se han propagado de la capital a cada ciudad importante. El mundo está mirando. Y en todo el mundo árabe, otros gobiernos también están observando con esperanza o con temor."
+ arab_spring.1.f: "El primer domino ha caído."
+ arab_spring.1.a: "Párese con el movimiento"
+ arab_spring.1.b: "Reconocimiento de las quejas — pero llame a la calma"
+
+ arab_spring.2.t: "El Contagión llega"
+ arab_spring.2.d: "Las noticias de id=0/año han llegado con fuerza llamativa. Los canales de satélite han transmitido las escenas de id=1/año en salones de toda la región, y lo que la gente vio ha revuelto algo. Un líder de IG en <x id=2/ título está expresando públicamente simpatía con los manifestantes, y el régimen debe decidir cómo responder a este eco casero de una primavera extranjera."
+ arab_spring.2.f: "Las ideas no respetan las fronteras."
+ arab_spring.2.a: "Que la inspiración se difunda libremente"
+ arab_spring.2.b: "Denunciar interferencia extranjera"
+
+ arab_spring.3.t: "Nuevas voces de disenso"
+ arab_spring.3.d: "Las protestas han dado valor a las voces que antes eran silenciosas. En יx id=0/año, las figuras que una vez mantenían sus simpatías reformistas privadas ahora hablan abiertamente en las universidades, en las mezquitas, en las redes sociales. El régimen no puede silenciarlos fácilmente sin hacer mártires."
+ arab_spring.3.f: "El disentimiento, una vez hablado en voz alta, es difícil de hablar."
+ arab_spring.3.a: "Elevar a un reformista directamente en el liderazgo"
+ arab_spring.3.b: "Que los agitadores operen, pero mantengan el liderazgo aislado"
+ arab_spring.3.a.tt: "Un nuevo líder liberal emergerá en idx id=0/año."
+
+ arab_spring.4.t: "La ola se propaga"
+ arab_spring.4.d: "El movimiento de protesta en idx id=0/año ha hecho contacto con redes de oposición a través de la frontera. Los jóvenes activistas están compartiendo tácticas, consignas y modelos organizativos a través de las redes sociales en tiempo real. La pregunta es si idx id=1/ título fomentará activamente esta difusión, o dejar que el movimiento encuentre su propia manera."
+ arab_spring.4.f: "Cada levantamiento inspira al siguiente."
+ arab_spring.4.a: "Alcance activo hacia las oposiciones vecinas"
+ arab_spring.4.b: "Mantenerse concentrado - no antagonizar regímenes vecinos"
+
+ arab_spring.5.t: "Redes subterráneas"
+ arab_spring.5.d: "Con el movimiento de protestas incapaces de sostener manifestaciones abiertas ante la represión de la seguridad, los organizadores han pasado bajo tierra. Las redes de base celular están distribuyendo folletos, coordinando huelgas y mapeando infraestructura leal. La turbulencia se está extendiendo, lentamente pero sin descanso, lejos de la capital."
+ arab_spring.5.f: "El fuego quema donde no se puede ver."
+ arab_spring.5.a: "Erupción de disturbios en las provincias"
+ arab_spring.5.b: "El descontento llega a la capital."
+
+ arab_spring.6.t: "Una era termina"
+ arab_spring.6.d: "La Primavera Árabe, esa extraordinaria temporada de levantamientos populares, ha llevado a cabo su curso en idx id=0/año. Ya sea que logró o fue suprimido, ya sea entregado en sus promesas o fue traicionado, el mundo que deja atrás no es el mundo que encontró. Las quejas que llevaron a la gente a las calles no se han resuelto. Sólo han sido contestadas, por ahora."
+ arab_spring.6.f: "La historia no perdona preguntas sin resolver."
+ arab_spring.6.a: "Un capítulo cierra"
+ arab_spring.6.a.tt: "La Primavera Árabe ha terminado. Se notificará a todos los países involucrados."
+
+ # ==========================================
+ # EVENTS 7–10 (additional keys)
+ # ==========================================
+
+ arab_spring.7.f: "La revolución ha sido robada."
+ arab_spring.7.a: "El nuevo orden sirve a la fe - abrazarla"
+ arab_spring.7.b: "Estabilidad sobre todo: aceptar el resultado"
+
+ arab_spring.71.f: "La revolución más dura es la que tienes que gobernar."
+ arab_spring.71.a: "Ahora empuje la reforma democrática plena"
+ arab_spring.71.b: "Consolidar cuidadosamente — celebrar, luego gobernar"
+
+ arab_spring.8.t: "Orden Restablecida"
+ arab_spring.8.d: "El levantamiento en id=0/año se ha roto. Las fuerzas de seguridad, complementadas cuando es necesario por paramilitares leales y unidades de inteligencia de paisano, han dispersado los últimos campamentos de protesta. Las figuras de oposición prominentes han sido arrestadas o han huido al exilio. Los medios de comunicación estatales ya están reescribiendo la narrativa, emitiendo las protestas como sedición inspirada en el extranjero.Seguido id=1/ título seleccionadox id=2/ títuloLa primavera árabe ha venido y ha salido de <x id=3/año. Lo que ha dejado atrás —en amargura, en memoria, en incomodidad sin resolver— importará durante mucho tiempo."
+ arab_spring.8.f: "El silencio no es lo mismo que la paz."
+ arab_spring.8.a: "Orden ha sido restaurada, celebra"
+ arab_spring.8.b: "Alivio silencioso: avance sin triunfalismo"
+
+ arab_spring.9.t: "Las calles han hablado"
+ arab_spring.9.d: "La capital está en revuelta. Los manifestantes han tomado el control de id=0/año y las fuerzas de seguridad están fragmentando: las unidades están negando órdenes, los oficiales están desertando, y el control del régimen se está deslizando por hora. id=1/ título se enfrenta a una opción imposible: conceder, o escalar en una confrontación completa con la gente. La revolución está aquí. La pregunta ahora es qué forma toma."
+ arab_spring.9.f: "La calle ha hablado. ¿Quién responderá?"
+ arab_spring.9.a: "Aceptar la revolución: transición democrática plena"
+ arab_spring.9.b: "Negociar una transición parcial: la votación del censo como compromiso"
+ arab_spring.9.c: "Luchar, empujar la guerra civil"
+
+ arab_spring.10.t: "The Arab Winter Looms"
+ arab_spring.10.d: "La revolución ha tenido éxito, al menos en su primera fase. id=0/año tiene un nuevo gobierno, nuevas leyes y una frágil nueva esperanza. Pero la lucha más dura está empezando. Las fuerzas de la reacción, la tradición y la religión no han sido derrotadas — han estado observando, organizando y esperando.Seguido: id=1/ fieltrox id=2/ títuloEl invierno árabe está llegando. Ya sea que congele la revolución en su lugar o entierros, dependerá completamente de lo que ocurra después."
+ arab_spring.10.f: "Cada primavera debe enfrentar su invierno."
+ arab_spring.10.a: "Frente a la contrarrevolución"
+ arab_spring.10.b: "Preparar posiciones defensivas — brazalete para la reacción posterior"
+
+ # Tooltip keys for arab_spring.10
+ arab_winter_tt: "El Invierno Árabe comienza —una nueva entrada de la revista que rastrea la lucha entre reformistas y fuerzas contrarrevolucionarias."
+ arab_winter_counter_revolution_bonus_tt: "El nuevo gobierno ha tomado preparativos defensivos. Las fuerzas contrarrevolucionarias enfrentarán una resistencia más organizada."
+
+ # ==========================================
+ # SCRIPTED TRIGGERS (tooltip names)
+ # ==========================================
+
+ arab_spring_liberal_victory_trigger: "Condiciones de la victoria reformista"
+ arab_spring_islamist_victory_trigger: "Islamist/Nationalist Victory Conditions Met"
+ arab_spring_valid_country_trigger: "Objetivo de primavera árabe válido"
+ tunisia_arab_spring_spark_trigger: "Túnez: Met de condiciones de primavera"
+
+ # ==========================================
+ # SCRIPTED PROGRESS BAR TOOLTIPS
+ # ==========================================
+
+ arab_spring_reformists_in_govt_tt: "Los grupos de interés reformistas están en el gobierno"
+ arab_spring_universal_suffrage_tt: "Se ha promulgado el sufragio universal"
+ arab_spring_census_voting_tt: "Se ha promulgado la votación del censo"
+ arab_spring_free_press_tt: "El discurso protegido apoya la consolidación democrática"
+ arab_spring_right_of_assembly_tt: "Derecho de reunión apoya la transición"
+ arab_spring_high_literacy_tt: "La alta alfabetización acelera la consolidación democrática"
+ arab_spring_islamists_in_govt_tt: "Los grupos islamistas o nacionalistas ocupan puestos gubernamentales"
+ arab_spring_turmoil_tt: "La gran agitación está desestabilizando el nuevo gobierno"
+ arab_spring_authoritarian_laws_tt: "Las leyes autoritarias siguen vigentes"
+ arab_spring_at_war_tt: "El país está en guerra."
+ arab_winter_radical_movements_tt: "Movimientos islamistas o nacionalistas están ganando fuerza"
+ arab_winter_military_opposition_tt: "Las fuerzas armadas están en oposición y están creciendo"
+ arab_winter_security_laws_tt: "Las leyes de seguridad represivas están acelerando la represión"
+ arab_winter_civil_war_tt: "La guerra civil está creando caos que beneficia a las fuerzas reaccionarias"
+ arab_winter_high_turmoil_tt: "La alta turbulencia alimenta el sentimiento contrarrevolucionario"
+ arab_winter_strong_liberal_movements_tt: "Fuertes movimientos reformistas resisten la represión"
+ arab_winter_universal_suffrage_entrenched_tt: "Sufragio universal está arraigado — más difícil de revertir"
+ arab_winter_elected_bureaucrats_tt: "La burocracia electa resiste los intentos de golpe"
+ arab_winter_prepared_defence_tt: "El nuevo gobierno preparó posiciones defensivas"
+
+ # ==========================================
+ # SPARK EVENTS
+ # ==========================================
+
+ 2011_protests.1.t: "Un vendedor de la calle se pone a la luz"
+ 2011_protests.1.d: "En la ciudad provincial de Sidi Bouzid, un joven vendedor callejero llamado Mohamed Bouazizi se ha incendiado frente a las oficinas del gobierno local después de que la policía confiscara su carrito y lo humillara públicamente. El acto de desesperación se ha convertido en una barra de relámpago. Dentro de horas, las imágenes de su protesta se han propagado por las redes sociales. Los cuervos se han reunido no sólo en Sidi Bouzid sino a través de idx id=2/conejo. La furia acumulada de una generación, sobre la corrupción, el desempleo y el peso de la regla autoritaria, ha encontrado su símbolo. El régimen de ierex id=5/año debe decidir cómo responder. Lo que sea que haga, el mundo está mirando."
+ 2011_protests.1.f: "La desesperación de un hombre se ha convertido en una nación."
+ 2011_protests.1.a: "Desgarrar — dispersar las manifestaciones antes de que se extendieran"
+ 2011_protests.1.b: "Ofrecer concesiones - anunciar una investigación sobre conducta policial"
+
+ 2011_protests.2.t: "The Tunisian Tremor"
+ 2011_protests.2.d: "Los disturbios en Túnez han enviado una onda de choque en todo el mundo árabe. Los canales de satélite están emitiendo las escenas de Túnez durante todo el día, y la gente común en idx id=0/año están viendo. La pregunta que se está susurrando en las cafeterías y en las redes sociales es la misma que se hace ahora todo régimen autoritario en la región: ¿Podría pasar aquí?"
+ 2011_protests.2.f: "Cada régimen está mirando. Cada disidente toma nota."
+ 2011_protests.2.a: "Túnez es diferente: esto no se extenderá a id=0/"
+ 2011_protests.2.b: "Tomar precauciones — reforzar la seguridad antes de que esto salga de la mano"
+
+ # ==========================================
+ # MISSING STRUCTURAL MODIFIERS
+ # ==========================================
+
+ modifier_arab_spring_transition_cabinet: "Gobierno de Transición"
+ modifier_arab_spring_transition_cabinet_desc: "Se está formando un nuevo gobierno tras la revolución. La legitimidad es alta en estos primeros días, pero tendrá que consolidarse antes de que la contrarrevolución encuentre su pie."
+
+ modifier_arab_spring_kick_out_of_insurrection: "De pie de los Barricados"
+ modifier_arab_spring_kick_out_of_insurrection_desc: "La revolución ha alcanzado sus objetivos inmediatos. Este grupo está abandonando su postura insurreccionaria y entrando en la vida política formal, agitada por la buena voluntad del momento."
+
+ modifier_arab_spring_regime_ig_defeated: "Derrotada por la revolución"
+ modifier_arab_spring_regime_ig_defeated_desc: "La asociación de este grupo con el viejo régimen le ha costado caro. Ha sido expulsado del gobierno y su fuerza política se disminuye. Queda por ver si puede reconstruirse desde los márgenes."
+
+# ==========================================
+ # ARAB SPRING INTERNATIONAL EVENTS
+ # ==========================================
+
+ # ── arab_spring_intl.1 ───────────────────
+
+ arab_spring_intl.1.t: "El mundo árabe está quemando"
+ arab_spring_intl.1.d: "Las protestas han surgido en todo el mundo árabe, comenzando en Túnez. Décadas de gobierno autoritario, estancamiento económico y represión política han llevado a millones a las calles."
+ arab_spring_intl.1.f: "La historia mira a los que ven la historia."
+ arab_spring_intl.1.a: "Manténganse con los manifestantes —la democracia y los derechos humanos lo exigen"
+ arab_spring_intl.1.b: "Retrocedan los regímenes titulares: la estabilidad y nuestros intereses son los primeros"
+ arab_spring_intl.1.c: "Llamar a la moderación de todas las partes — instar a una resolución pacífica"
+
+ # ── arab_spring_intl.2 ───────────────────
+
+ arab_spring_intl.2.t: "La cuestión de la intervención"
+ arab_spring_intl.2.d: "La situación en idx id=0/año se ha deteriorado en una guerra civil abierta. Las fuerzas de id=1/año están atacando poblaciones civiles, y hay reportes creíbles de masacres. La comunidad internacional está pidiendo una respuesta. La cuestión ahora es si ese apoyo se extiende a la acción y a qué costo."
+ arab_spring_intl.2.f: "Las palabras y hechos son monedas diferentes."
+ arab_spring_intl.2.a: "Forzar una zona de exclusión aérea: proteger a los civiles de los ataques aéreos"
+ arab_spring_intl.2.b: "Arm and support opposition forces on the ground"
+ arab_spring_intl.2.c: "Esta no es nuestra guerra: no te metas."
+
+ # ── arab_spring_intl.3 ───────────────────
+
+ arab_spring_intl.3.t: "La Primavera Árabe: Un Reckoning"
+ arab_spring_intl.3.d_success: "La Primavera Árabe ha producido al menos una auténtica transición democrática. Es un logro frágil, fácilmente revertido — pero es real. Para id=0/año, que vio que estos eventos se desarrollaban a distancia, hay una satisfacción tranquila al ver que el arco de la historia puede, a veces, doblarse hacia la justicia. La pregunta ahora es cómo apoyar lo que se ha ganado."
+ arab_spring_intl.3.d_islamist: "La Primavera Árabe ha terminado, y no como esperaban sus arquitectos. En toda la región, los movimientos islamistas han sido mejor organizados que las coaliciones de protesta secular que iniciaron los levantamientos. Para id=0/año, el resultado es incómodo: la democracia que defendió ha producido gobiernos cuyos valores difieren marcadamente de los suyos. La relación con el nuevo orden árabe requerirá una navegación cuidadosa."
+ arab_spring_intl.3.d_failure: "La Primavera Árabe ha sido extinguida. Los regímenes que parecían temblar se han estabilizado, se reconstituyeron sus servicios de seguridad, sus opositores en el exilio o en la cárcel. Para id=0/año, el episodio es un recordatorio de que la claridad moral es más fácil que la eficacia moral. Las quejas que provocaron los levantamientos no se han resuelto. Sólo han sido pospuestos."
+ arab_spring_intl.3.f: "El mundo sigue adelante. La región no olvida."
+ arab_spring_intl.3.a: "Haz balance de lo que ha pasado."
+
+ # ==========================================
+ # INTERNATIONAL MODIFIER NAMES
+ # ==========================================
+
+ arab_spring_intl_pro_democracy_stance: "Pro-Democracy Stance"
+ arab_spring_intl_pro_democracy_stance_desc: "Este país se ha alineado públicamente con los movimientos de protesta de la Primavera Árabe. Su prestigio entre las naciones democráticas ha aumentado, pero las relaciones con los actuales regímenes árabes se han enfriado."
+
+ arab_spring_intl_stability_first_stance: "Primera etapa"
+ arab_spring_intl_stability_first_stance_desc: "Este país ha optado por respaldar a los actuales regímenes árabes sobre los movimientos de protesta. Las relaciones estratégicas en la región son más fuertes, pero a un costo para su reputación internacional."
+
+ arab_spring_intl_neutral_stance: "Cautious Restraint"
+ arab_spring_intl_neutral_stance_desc: "Este país ha pedido una resolución pacífica sin apoyar a ninguna de las dos partes. Ha preservado su flexibilidad diplomática, pero ha sacrificado su influencia sobre el resultado."
+
+ arab_spring_intl_western_backing: "Western Backing"
+ arab_spring_intl_western_backing_desc: "Este movimiento ha recibido apoyo público de gobiernos occidentales. La atención internacional está añadiendo su impulso y haciendo que la represión sea más costosa para el régimen."
+
+ arab_spring_intl_regime_backing: "Western Regime Support"
+ arab_spring_intl_regime_backing_desc: "Los gobiernos occidentales han arrojado su peso detrás de este gobierno en lugar de los manifestantes. La validación externa está fortaleciendo la autoridad y legitimidad del régimen."
+
+ arab_spring_intl_no_fly_zone: "Realización de una zona de exclusión aérea"
+ arab_spring_intl_no_fly_zone_desc: "Se están desplegando activos militares para hacer cumplir una zona de exclusión aérea en la zona de conflicto. La intervención está protegiendo a los civiles, pero es costosa y atrae el escrutinio internacional."
+
+ arab_spring_intl_arming_rebels: "Fuerzas de la Oposición Armadora"
+ arab_spring_intl_arming_rebels_desc: "Se están canalizando armas y equipo a las fuerzas de oposición en el conflicto. La política es encubierta pero no secreta, y las consecuencias a largo plazo de quién recibe este apoyo siguen siendo poco claras."
+
+ arab_spring_intl_intervention_costs: "Costos de la intervención"
+ arab_spring_intl_intervention_costs_desc: "La intervención militar en el extranjero está agotando los recursos y generando un debate político nacional. Los costos en el tesoro y el capital político son reales."
+
+ arab_spring_intl_non_interventionist: "Non-Interventionist"
+ arab_spring_intl_non_interventionist_desc: "Este país ha optado por no intervenir en la guerra civil árabe. La decisión ha reducido su exposición y preservado el capital político nacional, aunque los críticos argumentan que ha abandonado sus valores declarados."

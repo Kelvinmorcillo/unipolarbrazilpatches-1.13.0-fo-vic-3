@@ -1,0 +1,261 @@
+﻿# basic for streamlining events
+
+stronger_authority = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_authority_add = 100
+}
+
+more_prestige = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_prestige_mult =  0.25
+}
+
+great_recession_credit_crunch = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	building_group_bg_banking_throughput_add    = -0.85
+	building_financial_district_throughput_add  = -0.15
+}
+
+government_run_wifi_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_authority_add = 150
+}
+
+cancer_eradication_prestige = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_prestige_mult =  0.35
+}
+
+los_angeles_riots = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	state_infrastructure_from_population_mult = -0.25
+	state_afro_american_standard_of_living_add = -3
+	state_han_standard_of_living_add = -5
+	state_korean_standard_of_living_add = -5
+	state_japanese_standard_of_living_add = -5
+	state_infrastructure_mult = -0.25
+	state_mortality_turmoil_mult = 0.5
+	state_turmoil_effects_mult = 1.5
+	state_radicals_from_political_movements_mult = 2.5
+}
+
+tsunami_local_destruction = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	 
+    state_infrastructure_mult = -0.30
+    state_turmoil_effects_mult = 0.5
+	state_standard_of_living_add = -2
+	state_mortality_mult = 1.25
+}
+
+tsunami_reconstruction_complete = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+    state_standard_of_living_add = 1
+}
+
+tsunami_disaster_struck = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_bureaucracy_mult = -0.15
+}
+
+tsunami_reconstruction_complete = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_bureaucracy_mult = 0.10
+	pop_standard_of_living_add = 1
+}
+
+tsunami_foreign_aid_sent = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	diplomatic_pact_cost_mult = -0.1
+	relations_gain_mult = 0.25
+}
+
+north_hollywood_police_response = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_military_positive.dds
+	interest_group_ig_armed_forces_pop_attraction_mult = 0.25
+}
+
+post_yugoslav_turmoil = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	country_legitimacy_base_add = -10
+	country_radicals_from_conquest_mult = 0.10
+}
+
+un_peacekeeping_forces = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_legitimacy_base_add = 10
+	country_war_exhaustion_casualties_mult = -0.1
+}
+
+yugoslav_restoration_success = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_authority_mult = 0.15
+	country_loyalists_from_legitimacy_mult = 0.10
+	country_legitimacy_add = 25
+}
+
+yugoslavia_unified_nationalism = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	interest_group_ig_armed_forces_pop_attraction_mult = 0.10
+}
+
+anti_serbian_sentiment = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_ig_armed_forces_pop_attraction_mult = 0.10
+}
+
+heightened_security_measures = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_authority_add = 125
+}
+
+oklahoma_city_aftermath = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+    construction_speed_mult = -0.15
+    state_infrastructure_mult = -0.25
+}
+
+fukushima_nuclear_disaster = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+    state_infrastructure_mult = -0.15
+    state_mortality_mult = 0.05
+    country_construction_goods_cost_mult = 0.15
+}
+
+korea_reunification_bonus = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_authority_mult                      = 0.15
+	country_legitimacy_base_add                 = 20
+	country_prestige_mult                       = 0.12
+	state_turmoil_effects_mult                  = -0.12
+	country_revolution_progress_mult            = -0.12
+	country_secession_progress_mult             = -0.15
+	state_incorporation_speed_mult              = 0.15
+	state_contiguous_incorporation_speed_mult   = 0.25
+	country_construction_add                    = 3
+}
+
+oil_titans_bonus = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_minting_mult                        = 0.15
+	# Extraction efficiency
+	building_group_bg_oil_extraction_throughput_add = 0.15
+	# Investment pool benefits from oil revenues
+	country_investment_pool_efficiency_mult     = 0.10
+	# Prestige and influence from being an energy titan
+	country_prestige_mult                       = 0.10
+	country_influence_mult                      = 0.10
+}
+
+patriot_act_rejected_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_legitimacy_base_add                 = -3
+	state_turmoil_effects_mult                  = 0.03
+}
+ 
+china_tax_reform_rejected_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_authority_mult                      = -0.05
+}
+
+# Domestic terror attack
+he_terror_attack_domestic = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	country_legitimacy_base_add                 = -8
+	state_turmoil_effects_mult                  = 0.08
+	state_radicals_from_political_movements_mult = 0.10
+	country_authority_mult                      = -0.05
+}
+ 
+# Foreign/overseas terror attack affecting US
+he_terror_attack_foreign = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	country_legitimacy_base_add                 = -5
+	country_prestige_mult                       = -0.04
+	country_diplomatic_reputation_add           = -1
+	state_radicals_from_political_movements_mult = 0.05
+}
+ 
+# Counterterrorism policy response
+he_counterterrorism_push = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	country_authority_mult                      = 0.08
+	country_legitimacy_base_add                 = 5
+	country_infamy_generation_mult              = 0.05
+	country_infamy_decay_mult                   = -0.05
+	state_radicals_from_political_movements_mult = -0.05
+}
+ 
+# Natural disaster — national emergency response
+he_natural_disaster_emergency = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add                        = 30
+	country_construction_add                    = -1
+	country_authority_mult                      = -0.03
+	country_legitimacy_base_add                 = -3
+}
+ 
+# State-level disaster zone modifier
+he_disaster_zone = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	state_mortality_mult                        = 0.05
+	state_migration_pull_mult                   = -0.20
+	state_infrastructure_mult                   = -0.10
+}
+ 
+# OKC-style domestic extremism response
+he_domestic_extremism_response = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	country_authority_mult                      = 0.05
+	country_law_enactment_success_add           = 0.05
+	state_radicals_from_political_movements_mult = -0.08
+	state_loyalists_from_political_movements_mult = 0.05
+}
+ 
+# Military shock (USS Cole — attack on warship)
+he_military_shock = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	country_legitimacy_base_add                 = -5
+	country_prestige_mult                       = -0.03
+}
+ 
+# Mass shooting
+he_mass_shooting = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	country_legitimacy_base_add                 = -5
+	state_radicals_from_political_movements_mult = 0.08
+	country_law_enactment_success_add           = -0.03
+}
+ 
+# Severe mass shooting (Sandy Hook, Dunblane — children killed)
+he_mass_shooting_severe = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	country_legitimacy_base_add                 = -10
+	state_radicals_from_political_movements_mult = 0.15
+	country_law_enactment_success_add           = -0.05
+	country_authority_mult                      = -0.05
+}
+ 
+# Hate crime shock (Sikh Temple — targeted minority attack)
+he_hate_crime_shock = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	state_radicals_from_political_movements_mult = 0.10
+	country_diplomatic_reputation_add           = -1
+	country_legitimacy_base_add                 = -3
+}
+ 
+# Dunblane-specific: public mandate for gun reform
+he_gun_reform_mandate = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_law_enactment_success_add           = 0.10
+	# Strong public support for firearms restrictions
+}
+ 
+# Russia apartment bombings — security state surge
+he_security_state_response = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	country_authority_mult                      = 0.12
+	country_legitimacy_base_add                 = 8
+	state_turmoil_effects_mult                  = -0.05
+	country_infamy_generation_mult              = 0.08
+}

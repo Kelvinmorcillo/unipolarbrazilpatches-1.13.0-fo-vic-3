@@ -1,0 +1,92 @@
+namespace = intifada_2005
+
+# 2005 White Peace / End of the Second Intifada
+# Fires from the yearly check if Israel and Palestine are still at war in 2005.
+intifada_2005.1 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = intifada_2005.1.t
+	desc = intifada_2005.1.d
+	flavor = intifada_2005.1.f
+
+	event_image = {
+		video = "africa_diplomats_negotiating"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+
+	trigger = {
+		c:ISR ?= this
+		exists = c:PAL
+		has_war_with = c:PAL
+		game_date >= 2005.1.1
+		NOT = { has_global_variable = intifada_2005_white_peace_fired }
+	}
+
+	option = {
+		name = intifada_2005.1.a
+		default_option = yes
+
+		set_global_variable = intifada_2005_white_peace_fired
+
+		# End the war in a white peace.
+		# If your build uses a different peace effect, replace this block.
+		c:ISR ?= {
+			create_truce = {
+				country = c:PAL
+				years = 5
+			}
+		}
+		c:PAL ?= {
+			create_truce = {
+				country = c:ISR
+				years = 5
+			}
+		}
+
+		random_diplomatic_play = { 
+				limit = {
+					is_war = yes
+					any_scope_play_involved = c:ISR
+					any_scope_play_involved = c:PAL
+				}
+				end_play = yes
+			}
+
+		intifada_2005_cleanup_effect = yes
+
+		c:PAL ?= {
+			trigger_event = { id = intifada_2005.2 popup = yes }
+		}
+	}
+}
+
+# Palestinian matching notification
+intifada_2005.2 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = intifada_2005.2.t
+	desc = intifada_2005.2.d
+	flavor = intifada_2005.2.f
+
+	event_image = {
+		video = "africa_diplomats_negotiating"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+
+	trigger = {
+		c:PAL ?= this
+	}
+
+	option = {
+		name = intifada_2005.2.a
+		default_option = yes
+	}
+}

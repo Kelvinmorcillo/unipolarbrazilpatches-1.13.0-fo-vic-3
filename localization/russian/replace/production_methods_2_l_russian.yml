@@ -1,0 +1,89 @@
+﻿l_russian:
+  # DELETE:
+    # pm_disabled_gin
+    # pm_disabled_elastics
+    # pm_masticators
+    # pm_rubber_bands
+    # pm_luxury_clothes
+
+  # Agriculture Buildings
+ pm_primary:0 "первичный"
+ pmg_secondary_building_rye_farm:0 "вторичный"
+ pmg_secondary_building_wheat_farm:0 "вторичный"
+ pmg_secondary_building_rice_farm:0 "вторичный"
+ pmg_secondary_building_maize_farm:0 "вторичный"
+ pmg_secondary_building_millet_farm:0 "вторичный"
+ pm_no_secondary:0 "Сохранение Single Crop"
+ pm_potatoes:0 "Картофель"
+ pm_vineyards:0 "Виноградники"
+ pm_vineyards_building_maize_farm:0 "Виноградники"
+ pm_apple_orchards:0 "Яблочные сады"
+ pm_citrus_orchards:0 "Ситрус Орчардс"
+ pm_fig_orchards:0 "Фиговые сады"
+ pm_fig_orchards_building_rice_farm:0 "Фиговые сады"
+ pm_mulberry_groves:0 "Малберри Гроувс"
+
+ pmg_train_automation_building_vineyard_plantation:0 "Транспорт"
+ pmg_base_building_vineyard_plantation:0 "Производство"
+ default_building_vineyard_plantation:0 "Базовое производство"
+ automatic_irrigation_building_vineyard_plantation:0 "ГМО"
+ 
+ pmg_automation:0 "автоматизация"
+ pmg_automation_building_food_industry:0 "автоматизация"
+ pmg_automation_building_textile_mills:0 "автоматизация"
+ pmg_automation_building_furniture_manufactory:0 "автоматизация"
+ pmg_automation_building_tooling_workshops:0 "автоматизация"
+ pmg_automation_building_paper_mills:0 "автоматизация"
+ pmg_automation_building_steel_mills:0 "автоматизация"
+ pmg_automation_building_motor_industry:0 "автоматизация"
+ pm_civilian_priority:0 "Гражданский приоритет"
+ pm_military_priority:0 "Военный приоритет"
+
+  # Textile Mills
+ pm_craftsman_sewing:0 "Роскошное производство"
+ pm_sewing_machines:0 "Автоматическое шитье"
+ pm_electric_sewing_machines:0 "3D-печатная одежда"
+ pm_traditional_looms:0 "Механизированные станки"
+ pm_mechanized_looms:0 "Роботизированные ткацкие станки"
+ pm_automatic_power_looms:0 "грузоотправители"
+
+  # Glassworks
+ pm_leaded_glass:0 "Стекло Fusion"
+ pm_manual_glassblowing:0 "Экструзионное литье"
+
+  # Chemical Plants
+ pm_leblanc_process:0 "Электролиз рассола"
+ pm_no_explosives_production:0 "Приоритетное значение имеет химическое производство"
+ pm_ammonia-soda_process:0 "Smart Bombs"
+ pm_vacuum_evaporation:0 "Лазерные бомбы"
+ pm_brine_electrolysis:0 "Бомба из антиматерии"
+ pmg_fertilizer_production:0 "Химическое производство"
+ pm_no_artificial_fertilizers:0 "Нет искусственных удобрений"
+ pm_artificial_fertilizers:0 "Фиксация азота"
+ pm_improved_fertilizer:0 "Процесс Хабера-Боша"
+ pm_nitrogen_fixation:0 "Синтез аммиака"
+ pm_dyes_production:0 "Производство DYES"
+ pm_no_synthetic_dyes:0 "Нет синтетических красителей"
+ pmg_synthetic_dyes:0 "Синтетические красители"
+ pm_silk_production:0 "Шелковое производство"
+ pm_no_artificial_fibers:0 "Приоритетное производство красителей"
+ pm_rayon:0 "Луна"
+
+  # Foundries
+ pm_steamworks:0 "Steamworks"
+ pm_no_artillery_production:0 "Приоритетное производство стрелкового оружия"
+ pm_artillery_production:0 "Артиллерийское производство"
+
+  # Motor Industries
+ pmg_automobile_production:0 "Массовое производство"
+ pm_mass_automobile_production:0 "Моторные заводы"
+ pm_automobile_production:0 "Автомобильное производство"
+
+## SMD
+
+pm_no_chip_production:0 "Линия сборки чипов"
+pm_robotic_assembly:0 "Роботизированная сборка чипов"
+pm_nanobot_assembly:0 "Нанобот чип сборки"
+pm_3d_printed_chips:0 "3D-печатные чипы"
+
+pm_synthetic_rubber:0 "Синтетическая резина"

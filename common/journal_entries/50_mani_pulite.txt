@@ -1,0 +1,200 @@
+﻿# ==========================================
+# TANGENTOPOLI
+# ==========================================
+
+je_tangentopoli = {
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+	group = je_group_dilemmas
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+
+	is_shown_when_inactive = {
+		c:ITA ?= this
+		current_game_date >= 1992.2.1
+		NOT = { has_variable = tangentopoli_collapsed }
+	}
+
+	possible = {
+		c:ITA ?= this
+		current_game_date >= 1992.2.1
+		NOT = { has_variable = tangentopoli_collapsed }
+	}
+
+	immediate = {
+		set_variable = { name = tangentopoli_exposure value = 0 }
+		# The kickback system is entrenched from the start
+		add_modifier = {
+			name = tangentopoli_systemic_corruption
+			months = -1
+		}
+	}
+
+	scripted_progress_bar = tangentopoli_exposure_bar
+
+	on_monthly_pulse = {
+		effect = {
+			# Exposure grows organically each month
+			# Slowed by authority and accelerated by radicalism
+			change_variable = { name = tangentopoli_exposure add = 2 }
+			if = {
+				limit = {
+					country_legitimacy >= 60
+				}
+				change_variable = { name = tangentopoli_exposure add = -1 }
+			}
+			if = {
+				limit = {
+					any_scope_state = {
+						turmoil >= 0.15
+					}
+				}
+				change_variable = { name = tangentopoli_exposure add = 1 }
+			}
+		}
+
+		random_events = {
+			10 = 0
+			3 = mani_pulite.1
+			2 = mani_pulite.2
+		}
+	}
+
+	complete = {
+		je:je_tangentopoli = {
+                "scripted_bar_progress(tangentopoli_exposure_bar)" >= 96
+				}
+	}
+
+	on_complete = {
+		set_variable = tangentopoli_collapsed
+		remove_modifier = tangentopoli_systemic_corruption
+		add_journal_entry = { type = je_mani_pulite }
+		trigger_event = { id = mani_pulite.5 popup = yes }
+	}
+
+	invalid = {
+		NOT = { c:ITA ?= this }
+	}
+
+	weight = 5000
+	transferable = no
+	can_revolution_inherit = no
+}
+
+# ==========================================
+# MANI PULITE
+
+je_mani_pulite = {
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	group = je_group_dilemmas
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+
+	is_shown_when_inactive = {
+		c:ITA ?= this
+		has_variable = tangentopoli_collapsed
+		NOT = { has_variable = mani_pulite_resolved }
+	}
+
+	possible = {
+		c:ITA ?= this
+		has_variable = tangentopoli_collapsed
+	}
+
+	immediate = {
+		set_variable = { name = investigation_progress value = 0 }
+		set_variable = { name = political_resistance value = 0 }
+	}
+
+	scripted_progress_bar = investigation_progress_bar
+	scripted_progress_bar = political_resistance_bar
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_mani_pulite_winning_tt
+				trigger = {
+					var:investigation_progress >= 60
+					var:investigation_progress > var:political_resistance
+				}
+			}
+			triggered_desc = {
+				desc = je_mani_pulite_stalemate_tt
+				trigger = {
+					var:political_resistance >= 40
+					var:investigation_progress >= 40
+				}
+			}
+			triggered_desc = {
+				desc = je_mani_pulite_suppressed_tt
+				trigger = {
+					var:political_resistance >= 60
+					var:political_resistance > var:investigation_progress
+				}
+			}
+			triggered_desc = {
+				desc = je_mani_pulite_early_tt
+			}
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			# Investigation advances each month
+			change_variable = { name = investigation_progress add = 3 }
+			# Political resistance builds if authority is high
+			if = {
+				limit = { country_authority_add >= 100 }
+				change_variable = { name = political_resistance add = 2 }
+			}
+			else = {
+				change_variable = { name = political_resistance add = 1 }
+			}
+		}
+
+		random_events = {
+			10 = 0
+			3 = mani_pulite.6
+			3 = mani_pulite.7
+			2 = mani_pulite.8
+			2 = mani_pulite.9
+		}
+	}
+
+	# Investigation wins — First Republic falls
+	complete = {
+		scripted_bar_progress = {
+			name = investigation_progress_bar
+			value > 0.98
+		}
+		var:investigation_progress > var:political_resistance
+	}
+
+	on_complete = {
+		set_variable = mani_pulite_resolved
+		trigger_event = { id = mani_pulite.10 popup = yes }
+	}
+
+	# Investigation suppressed — scandal buried
+	fail = {
+		je:je_mani_pulite = {
+                "scripted_bar_progress(political_resistance_bar)" >= "scripted_bar_progress(investigation_progress_bar)"
+				}
+		je:je_mani_pulite = {
+                "scripted_bar_progress(political_resistance_bar)" >= 99
+				}
+	}
+
+	on_fail = {
+		set_variable = mani_pulite_resolved
+		trigger_event = { id = mani_pulite.15 popup = yes }
+	}
+
+	invalid = {
+		NOT = { c:ITA ?= this }
+	}
+
+	weight = 5001
+	transferable = no
+	can_revolution_inherit = no
+}

@@ -1,0 +1,940 @@
+﻿REPLACE_OR_CREATE:GBR = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.75	
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:ENG = {
+	states = {
+		STATE_HOME_COUNTIES
+		STATE_MIDLANDS
+		STATE_EAST_ANGLIA
+		STATE_WEST_COUNTRY
+		STATE_YORKSHIRE
+		STATE_LANCASHIRE
+	}
+
+	required_states_fraction = 0.75	
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:UCA = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.5
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:RUS = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.75
+	
+	ai_will_do = { always = yes }
+}
+
+
+REPLACE_OR_CREATE:IRE = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.75
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:FRA = {
+	states = { 
+		STATE_ILE_DE_FRANCE 
+		STATE_PROVENCE 
+		STATE_NORMANDY 
+		STATE_LANGUEDOC
+		STATE_RHONE
+		STATE_FRENCH_LOW_COUNTRIES
+		STATE_PICARDY
+		STATE_ALSACE_LORRAINE
+		STATE_POITOU
+		STATE_GUYENNE
+		STATE_AUVERGNE_LIMOUSIN
+		STATE_BRITTANY
+		STATE_BURGUNDY
+		STATE_CHAMPAGNE
+		STATE_FRANCHE_COMTE
+		STATE_LORRAINE
+		STATE_AQUITAINE
+		STATE_ORLEANS
+	}
+
+	required_states_fraction = 0.75
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:SWE = {
+	states = { 
+		STATE_SVEALAND 
+		STATE_GOTALAND 
+		STATE_SCANIA 
+		STATE_NORRLAND 
+	}
+	
+	required_states_fraction = 0.75
+
+	ai_will_do = { always = no }
+}
+
+REPLACE_OR_CREATE:LAO = {
+	states = {
+		STATE_LAOS
+	}
+
+	required_states_fraction = 1.0
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:UBD = {
+	use_culture_states = yes
+
+	required_states_fraction = 1
+	
+	ai_will_do = { always = yes }
+
+	possible = {
+	#	has_technology_researched = pan-nationalism
+	}
+}
+
+REPLACE_OR_CREATE:BYZ = {
+	states = { 
+		STATE_EASTERN_THRACE 
+		STATE_ATTICA 
+		STATE_THESSALIA 
+		STATE_MACEDONIA 
+		STATE_SKOPIA
+		STATE_WESTERN_THRACE
+		STATE_NORTHERN_THRACE
+		STATE_HUDAVENDIGAR
+		STATE_AYDIN
+		STATE_WEST_AEGEAN_ISLANDS
+		STATE_EAST_AEGEAN_ISLANDS
+		STATE_ALBANIA
+	}
+
+	required_states_fraction = 1.0
+	
+	ai_will_do = { always = yes }
+
+	possible = {
+		has_law = law_type:law_monarchy
+		NOT = { has_game_rule = plausible_formable_nations }
+	}
+}
+
+REPLACE_OR_CREATE:PLC = {
+	states = {
+		STATE_BREST
+		STATE_EAST_GALICIA
+		STATE_GREATER_POLAND
+		STATE_LESSER_POLAND
+		STATE_KAUNAS
+		STATE_VILNIUS
+		STATE_MAZOVIA
+		STATE_POSEN
+		STATE_VOLHYNIA
+		STATE_WEST_GALICIA
+		STATE_WEST_PRUSSIA
+	}
+
+	required_states_fraction = 1
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:KOR = {
+	states = {
+		STATE_YANGHO
+		STATE_SARIWON
+		STATE_PYONGYANG
+		STATE_BUSAN
+		STATE_SEOUL
+	}
+
+	required_states_fraction = 1
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:PRU = {
+	states = { 
+		STATE_BRANDENBURG
+		STATE_POMERANIA
+		STATE_WEST_PRUSSIA
+		STATE_EAST_PRUSSIA
+		STATE_SILESIA
+		STATE_POSEN
+	}
+
+	required_states_fraction = 0.8
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:CHI = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.6
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:ETH = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.50
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:AOT = {
+	use_culture_states = yes
+
+	required_states_fraction = 1.0
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:WIN = {
+	STATES = {
+		STATE_WEST_INDIES
+		STATE_JAMAICA
+	}
+
+	required_states_fraction = 1
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:IBE = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.9
+	
+	ai_will_do = { always = yes }
+
+	possible = {
+	#	has_technology_researched = pan-nationalism
+	}
+}
+
+REPLACE_OR_CREATE:CLM = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.8
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:BRZ = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.8
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:SPA = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.75	
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:MEX = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.75	
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:KUK = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.9
+	
+	ai_will_do = { always = yes }
+
+	possible = {
+	#	has_technology_researched = pan-nationalism
+		has_law = law_type:law_multicultural
+	}
+}
+
+USA = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.75	
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:FSA = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.75	
+	
+	ai_will_do = { always = yes }
+
+	possible = {
+		has_law = law_type:law_slavery_banned
+	}
+}
+
+REPLACE_OR_CREATE:CZH = {
+	use_culture_states = yes
+
+	required_states_fraction = 1
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:CAN = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.75	
+	
+	ai_will_do = { always = yes }
+
+	possible = {
+	#	has_technology_researched = nationalism
+	}
+}
+
+REPLACE_OR_CREATE:AST = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.75	
+	
+	ai_will_do = { always = yes }
+
+	possible = {
+	#	has_technology_researched = nationalism
+	}
+}
+
+REPLACE_OR_CREATE:POL = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.55
+
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:ROM = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.375 # Romania has 8 possible homeland states total, 3 are required.
+
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:ARA = {
+	states = {
+		STATE_YEMEN
+		STATE_OMAN
+		STATE_ABU_DHABI
+		STATE_NEJD
+		STATE_HEDJAZ
+		STATE_HAIL
+		STATE_BAGHDAD
+		STATE_TRANSJORDAN
+		STATE_PALESTINE
+		STATE_LEBANON
+		STATE_SYRIA
+		STATE_ALEPPO
+		STATE_MOSUL
+		STATE_DEIR_EZ_ZOR
+		STATE_BASRA
+		STATE_SINAI
+		STATE_LOWER_EGYPT
+		STATE_MIDDLE_EGYPT
+		STATE_MATRUH
+		STATE_EGYPTIAN_DESERT
+		STATE_UPPER_EGYPT
+	}
+
+	required_states_fraction = 0.75	
+
+	ai_will_do = { always = yes }
+
+	possible = {
+	#	has_technology_researched = pan-nationalism
+	}
+}
+
+REPLACE_OR_CREATE:GCO = {
+	states = {
+		STATE_CUNDINAMARCA
+		STATE_ECUADOR
+		STATE_MIRANDA
+		STATE_ANTIOQUIA
+		STATE_GUAVIARE
+		STATE_BOLIVAR
+		STATE_ZULIA
+		STATE_CAUCA
+	}
+
+	required_states_fraction = 0.85
+
+	ai_will_do = { always = yes }
+
+	possible = {
+	#	has_technology_researched = nationalism
+	}
+}
+
+
+REPLACE_OR_CREATE:ZIM = {
+	states = {
+		STATE_ZAMBEZI
+	}
+	required_states_fraction = 0.75
+
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:BLH = {
+	states = {
+		STATE_BALUCHISTAN
+	}
+
+	required_states_fraction = 0.75
+	ai_will_do = { always = yes }
+	
+	possible = {
+	#	has_technology_researched = nationalism
+	}
+}
+
+REPLACE_OR_CREATE:SYR = {
+	states = {
+		STATE_DEIR_EZ_ZOR
+		STATE_SYRIA
+		STATE_ALEPPO
+	}
+
+	required_states_fraction = 0.90
+
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:SGF = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.75
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:MAL = {
+	states = {
+		STATE_TIMBUKTU
+		STATE_WESTERN_MALI
+		STATE_EASTERN_MALI
+		STATE_SENEGAL
+		STATE_GUINEA
+		STATE_GAMBIA
+		STATE_VOLTA
+	}
+
+	required_states_fraction = 0.5
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:YUG = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.75
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:SAF = {
+	states = {
+		STATE_NORTHERN_CAPE
+		STATE_EASTERN_CAPE
+		STATE_CAPE_COLONY 
+	}
+
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:TRH = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.5
+	
+	ai_will_do = { always = yes }
+
+	possible = {
+	#	has_technology_researched = pan-nationalism
+	}
+}
+
+REPLACE_OR_CREATE:IDN = {
+	states = {
+		STATE_ACEH
+		STATE_CENTRAL_JAVA
+		STATE_EAST_BORNEO
+		STATE_EAST_JAVA
+		STATE_MALAYA
+		STATE_MOLUCCAS
+		STATE_CELEBES
+		STATE_NORTH_BORNEO
+		STATE_NORTH_SUMATRA
+		STATE_SOUTH_SUMATRA
+		STATE_SUNDA_ISLANDS
+		STATE_WEST_BORNEO
+		STATE_WESTERN_NEW_GUINEA
+		STATE_WEST_JAVA
+	}
+
+	required_states_fraction = 0.65
+	
+	ai_will_do = { always = yes }
+
+	possible = {
+	#	has_technology_researched = pan-nationalism
+
+	}
+}
+
+REPLACE_OR_CREATE:BHT = {
+	states = {
+		STATE_ASSAM 
+		STATE_AWADH 
+		STATE_BALUCHISTAN
+		STATE_BIHAR 
+		STATE_BOMBAY 
+		STATE_MALWA 
+		STATE_CEYLON 
+		STATE_CIRCARS
+		STATE_DELHI 
+		STATE_GUJARAT 
+		STATE_HYDERABAD 
+		STATE_KASHMIR 
+		STATE_MADRAS 
+		STATE_MYSORE 
+		STATE_CENTRAL_PROVINCES 
+		STATE_WEST_BENGAL 
+		STATE_ORISSA 
+		STATE_PASHTUNISTAN
+		STATE_PUNJAB 
+		STATE_RAJPUTANA 
+		STATE_SINDH 
+		STATE_EAST_BENGAL 
+		STATE_TRAVANCORE
+		STATE_KURNOOL
+		STATE_BUNDELKHAND
+		STATE_AGRA
+		STATE_HILL_PUNJAB
+		STATE_QUETTA
+	}
+
+	required_states_fraction = 0.75
+	
+	ai_will_do = { always = yes }
+
+	possible = {
+	#	has_technology_researched = pan-nationalism
+
+	}
+}
+
+REPLACE_OR_CREATE:YEM = {
+	states = {
+		STATE_YEMEN
+	}
+
+	required_states_fraction = 1
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:CAU = {
+	states = {
+		STATE_GREATER_CAUCASUS
+		STATE_ARMENIA
+		STATE_AZERBAIJAN
+		STATE_KARS
+		STATE_ELIZAVETPOL
+	}
+
+	required_states_fraction = 0.75	
+	
+	ai_will_do = { always = yes }
+
+	possible = {
+	#	has_technology_researched = pan-nationalism
+	}
+}
+
+REPLACE_OR_CREATE:PNS = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.7 # Basically as long as you've colonized
+
+	possible = {
+	#	has_technology_researched = pan-nationalism
+	}
+}
+
+REPLACE_OR_CREATE:KAZ = {
+	states = {
+		STATE_SEMIRECHE
+		STATE_AKMOLINSK
+		STATE_JETISY
+		STATE_URALSK
+		STATE_AKTOBE
+		STATE_SYRDARYA
+	}
+
+	required_states_fraction = 0.5
+	
+	ai_will_do = { always = yes }
+
+	possible = {
+	#	has_technology_researched = nationalism
+	}
+}
+
+REPLACE_OR_CREATE:ALD = {
+	states = {
+		STATE_ALGIERS
+		STATE_ORAN
+		STATE_CONSTANTINE
+	}
+
+	required_states_fraction = 1
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:PEU = {
+	states = {
+		STATE_LIMA
+		STATE_CAJAMARCA
+		STATE_ICA
+		STATE_AREQUIPA
+		STATE_TARAPACA
+	}
+
+	required_states_fraction = 0.8
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:UNL = {
+	states = {
+		STATE_HOLLAND
+		STATE_FLANDERS
+		STATE_WALLONIA
+		STATE_FRIESLAND
+		STATE_GELRE
+	}
+
+	required_states_fraction = 1
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:RHN = {
+	states = {
+		STATE_HESSE
+		STATE_SAXONY
+		STATE_SCHLESWIG_HOLSTEIN
+		STATE_ANHALT
+		STATE_FRANCONIA
+		STATE_BAVARIA
+		STATE_BRUNSWICK
+		STATE_HANNOVER
+		STATE_BADEN
+		STATE_WURTTEMBERG
+		STATE_RUHR
+		STATE_WESTPHALIA
+		STATE_ELBE
+		STATE_MECKLENBURG
+	}
+
+	required_states_fraction = 0.75
+	
+	ai_will_do = { always = yes }
+	
+	possible = {
+	#	has_technology_researched = nationalism
+		NOR = {
+			c:PRU ?= this
+			c:AUS ?= this
+			c:NGF ?= this
+			c:SGF ?= this
+		}
+	}
+}
+
+REPLACE_OR_CREATE:HRE = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.75
+	
+	ai_will_do = { always = no }
+	
+	possible = {
+		NOT = { has_game_rule = plausible_formable_nations }
+		country_is_in_europe = yes
+	}
+}
+
+REPLACE_OR_CREATE:CLI = {
+	states = {
+		STATE_NORTH_CAROLINA
+		STATE_SOUTH_CAROLINA
+	}
+
+	required_states_fraction = 1
+	
+	ai_will_do = { always = yes }
+
+	possible = {
+		OR = {
+			c:NCR ?= this
+			c:SCR ?= this
+		}
+		NOT = { has_game_rule = plausible_formable_nations }
+	}
+}
+
+REPLACE_OR_CREATE:AFG = {
+	states = {
+		STATE_HERAT
+		STATE_KANDAHAR
+		STATE_KABUL 
+		STATE_CENTRAL_HIGHLANDS
+	}
+	
+	required_states_fraction = 1
+
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:TWT = {
+	use_culture_states = yes
+	
+	required_states_fraction = 0.5
+
+	ai_will_do = { always = no }
+
+	possible = {
+	#	has_technology_researched = nationalism
+	}
+}
+
+REPLACE_OR_CREATE:PLT = {
+	states = {
+		STATE_BUENOS_AIRES
+		STATE_CHACO
+		STATE_PATAGONIA
+		STATE_SANTA_FE
+		STATE_URUGUAY
+		STATE_BAJO_PARAGUAY
+		STATE_ALTO_PARAGUAY
+		STATE_RIO_NEGRO
+		STATE_LA_PAMPA
+		STATE_TUCUMAN
+		STATE_JUJUY
+		STATE_CORRIENTES
+	}
+
+	required_states_fraction = 0.85
+	
+	ai_will_do = { always = yes }
+	
+	possible = {
+	#	has_technology_researched = nationalism
+	}
+}
+
+REPLACE_OR_CREATE:PAK = {
+	states = {
+		STATE_BALUCHISTAN
+		STATE_PASHTUNISTAN
+		STATE_KASHMIR
+		STATE_PUNJAB
+		STATE_SINDH
+		STATE_QUETTA
+	}
+
+	required_states_fraction = 0.80 # 5/6 states needed
+	
+	ai_will_do = { always = yes }
+
+	possible = {
+	#	has_technology_researched = pan-nationalism
+		country_has_state_religion = rel:sunni
+	}
+}
+
+REPLACE_OR_CREATE:MGB = {
+	use_culture_states = yes
+	
+	required_states_fraction = 0.5
+
+	ai_will_do = { always = no }
+
+	possible = {
+	#	has_technology_researched = pan-nationalism
+	}
+}
+
+REPLACE_OR_CREATE:ORI = {
+	use_culture_states = yes
+
+	required_states_fraction = 1
+	
+	ai_will_do = { always = yes }
+
+	possible = {
+	#	has_technology_researched = nationalism
+	}
+}
+
+REPLACE_OR_CREATE:RAJ = {
+	use_culture_states = yes
+
+	required_states_fraction = 1
+	
+	ai_will_do = { always = yes }
+
+	possible = {
+	#	has_technology_researched = nationalism
+	}
+}
+
+REPLACE_OR_CREATE:GUJ = {
+	use_culture_states = yes
+
+	required_states_fraction = 1
+	
+	ai_will_do = { always = yes }
+
+	possible = {
+	#	has_technology_researched = nationalism
+	}
+}
+
+REPLACE_OR_CREATE:MHR = {
+	use_culture_states = yes
+
+	required_states_fraction = 1
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:PAN = {
+	use_culture_states = yes
+
+	required_states_fraction = 1
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:MUG = {
+	use_culture_states = yes
+
+	required_states_fraction = 1
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:DRA = {
+	use_culture_states = yes
+	
+	required_states_fraction = 0.75
+
+	ai_will_do = { always = yes }
+
+	possible = {
+	#	has_technology_researched = pan-nationalism
+	}
+}
+
+REPLACE_OR_CREATE:CAR = {
+	use_culture_states = yes
+	
+	required_states_fraction = 0.75
+
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:BGL = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.5
+	
+	ai_will_do = { always = yes }
+}
+
+### smd
+
+REPLACE_OR_CREATE:CZH = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.80	
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:HRE = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.75	
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:HRE = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.80	
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:ASS = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.99	
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:ASS = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.99	
+	
+	ai_will_do = { always = yes }
+}
+
+REPLACE_OR_CREATE:SCA = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.85	
+	
+	ai_will_do = { always = yes }
+}

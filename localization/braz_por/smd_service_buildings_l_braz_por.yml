@@ -1,0 +1,325 @@
+﻿l_braz_por:
+
+
+ # BUILDINGS
+ 
+ building_bank:0 "Banco Comercial"
+ building_bank_desc:0 "Uma instituição financeira que aceita depósitos, gerencia crédito e facilita o fluxo de capital em toda a economia. Desde humildes casas de empréstimo até redes digitais em expansão, os bancos são a espinha dorsal do comércio moderno."
+
+ building_food_service:0 "Serviços alimentares"
+ building_food_service_desc:0 "Retalho e restaurantes que fornecem alimentos preparados e embalados para a população em geral. Acompanha tudo, desde compras de canto a cadeias de fast-food globais, mantendo os cidadãos alimentados e satisfeitos."
+
+ building_retail_services:0 "Serviços de retalho"
+ building_retail_services_desc:0 "Um estabelecimento comercial que vende móveis, roupas e ferramentas diretamente aos consumidores. Os retalhistas são o elo final da cadeia de abastecimento, traduzindo a produção industrial em bens domésticos diários."
+
+ building_advertising_agency:0 "Serviços de publicidade"
+ building_advertising_agency_desc:0 "Uma empresa especializada na criação e distribuição de conteúdo promocional. Agências de publicidade moldam o comportamento do consumidor e impulsionam a demanda, implantando tudo, desde planilhas impressas até campanhas digitais orientadas para algoritmos."
+
+ building_warehouse:0 "Armazém"
+ building_warehouse_desc:0 "Uma grande instalação para o armazenamento e distribuição de mercadorias. Armazéns servem como polos logísticos da economia, amortecendo a oferta e a demanda e permitindo a circulação eficiente de produtos em todo o país."
+
+ building_pharmaceutical_services:0 "Serviços farmacêuticos"
+ building_pharmaceutical_services_desc:0 "Um estabelecimento envolvido na distribuição, pesquisa e distribuição de compostos medicinais. Desde balcões farmacêuticos até laboratórios de biotecnologia de ponta, os serviços farmacêuticos traduzem insumos químicos brutos em tratamentos que sustentam a saúde pública."
+
+ ####################
+ # PRODUCTION METHOD GROUPS
+ ####################
+
+ ### BANKING
+
+ pmg_base_banking:0 "Operações bancárias"
+ pmg_base_banking_desc:0 "Os principais métodos pelos quais o banco aceita depósitos, emite crédito e realiza transações financeiras com clientes e empresas."
+
+ pmg_securities_trading:0 "Comércio de títulos"
+ pmg_securities_trading_desc:0 "Determina se o banco se envolve na negociação e corretagem de títulos financeiros, transformando o capital investido em crédito expandido."
+
+ pmg_automation_banking:0 "Automação Bancária"
+ pmg_automation_banking_desc:0 "O grau em que o banco emprega sistemas automatizados — desde caixas mecânicas até inteligência artificial — para processar transações e reduzir custos trabalhistas."
+
+ ### FOOD SERVICES
+
+ pmg_base_food_services:0 "Operações de Mercearia"
+ pmg_base_food_services_desc:0 "O formato de varejo primário através do qual as compras são vendidas aos consumidores, variando de pequenas lojas de bairro para plataformas on-line maciças."
+
+ pmg_restaurant_type:0 "Tipo de Restaurante"
+ pmg_restaurant_type_desc:0 "Determina se o estabelecimento também opera instalações gastronômicas, e de que tipo — desde restaurantes locais casuais a franquias industriais de fast food."
+
+ pmg_food_service_logistics:0 "Logística do Serviço Alimentar"
+ pmg_food_service_logistics_desc:0 "Os métodos de checkout e cumprimento utilizados pelos estabelecimentos de serviços alimentares, incluindo sistemas de auto-checkout de economia de trabalho e infraestrutura de entrega."
+
+ ### RETAIL
+
+ pmg_base_retail:0 "Formato de Varejo"
+ pmg_base_retail_desc:0 "A escala e o formato da operação de varejo, desde pequenas lojas independentes até enormes lojas big-box e centros de venda."
+
+ pmg_retail_specialization:0 "Especialização de retalho"
+ pmg_retail_specialization_desc:0 "Determina se a loja de varejo se concentra em uma determinada categoria de bens, tais como mobiliário doméstico, eletrônicos ou itens de luxo."
+
+ pmg_retail_logistics:0 "Logística do Varejo"
+ pmg_retail_logistics_desc:0 "Os métodos de checkout e cumprimento utilizados pelos estabelecimentos de varejo, incluindo terminais de auto-checkout, plataformas de comércio eletrônico e entrega autônoma."
+
+ ### ADVERTISING
+
+ pmg_base_advertising:0 "Meio publicitário"
+ pmg_base_advertising_desc:0 "O principal canal através do qual a agência de publicidade distribui suas campanhas — impressão, transmissão, correio direto ou sinalização ao ar livre."
+
+ pmg_digital_advertising:0 "Publicidade Digital"
+ pmg_digital_advertising_desc:0 "Determina se a agência adotou métodos de publicidade digital, desde banners web simples a campanhas hiper-alvo geradas por IA."
+
+ pmg_advertising_research:0 "Investigação de mercado"
+ pmg_advertising_research_desc:0 "Os métodos de pesquisa empregados para entender e influenciar o comportamento do consumidor, desde grupos focais tradicionais até análises orientadas para o aprendizado de máquina."
+
+ ### WAREHOUSING
+
+ pmg_base_warehousing:0 "Operações de armazenamento"
+ pmg_base_warehousing_desc:0 "Os principais métodos de armazenamento e distribuição do armazém, desde armazenamento manual básico até centros de realização totalmente automatizados."
+
+ pmg_warehousing_logistics:0 "Gestão de Inventário"
+ pmg_warehousing_logistics_desc:0 "Os sistemas usados para rastrear e gerenciar o inventário dentro do armazém, desde livros escritos à mão até a gestão de ativos em tempo real."
+
+ ### PHARMACEUTICAL SERVICES
+
+ pmg_base_pharmaceutical_services:0 "Operações de Dispensação"
+ pmg_base_pharmaceutical_services_desc:0 "O principal método pelo qual os compostos farmacêuticos são processados e dispensados aos pacientes, desde o trabalho farmacêutico tradicional até a distribuição por correspondência."
+
+ pmg_pharmaceutical_research:0 "Pesquisa sobre drogas"
+ pmg_pharmaceutical_research_desc:0 "Determina se o estabelecimento investe na investigação farmacêutica, acelerando o desenvolvimento de novos tratamentos e aumentando a produção médica."
+
+ pmg_pharmaceutical_automation:0 "Automação de Farmácia"
+ pmg_pharmaceutical_automation_desc:0 "O grau de automação empregado no processo de composição e dispensação, desde formulações preparadas à mão até sistemas de farmácia totalmente robótica."
+
+ ####################
+ # PRODUCTION METHODS
+ ####################
+
+ ### BANKING - BASE
+
+ pm_basic_banking:0 "Empréstimos Padrão"
+ pm_basic_banking_desc:0 "Uma operação financeira simples que oferece contas básicas de depósito e empréstimos pessoais, com pessoal principalmente por funcionários que gerenciam livros de papel."
+
+ pm_commercial_banking:0 "Bancos comerciais"
+ pm_commercial_banking_desc:0 "Um banco comercial totalmente fretado oferecendo uma gama de produtos financeiros para empresas e consumidores, com capacidade de criação de crédito ampliada."
+
+ pm_electronic_transfers:0 "Empréstimos para dias de pagamento"
+ pm_electronic_transfers_desc:0 "A adoção de sistemas de pagamentos eletrônicos e transferências bancárias acelera drasticamente o movimento do capital, reduzindo a dependência de documentos físicos."
+
+ pm_online_banking:0 "Compre Agora, Pague Mais Tarde"
+ pm_online_banking_desc:0 "A digitalização completa das operações bancárias permite que os clientes gerenciem contas e realizem transações remotamente, reduzindo a sobrecarga da filial enquanto ampliam o alcance."
+
+ ### BANKING - SECURITIES
+
+ pm_no_securities_trading:0 "Sem negociação de títulos"
+ pm_no_securities_trading_desc:0 "O banco concentra-se exclusivamente em operações de depósito e crédito, sem envolvimento em mercados financeiros ou títulos."
+
+ pm_securities_brokerage:0 "Corretor de títulos"
+ pm_securities_brokerage_desc:0 "O banco estabelece uma mesa de corretagem, permitindo aos clientes comprar e vender títulos financeiros. Títulos consumidos são canalizados para a geração de crédito expandido."
+
+ pm_derivatives_trading:0 "Fundos de cobertura"
+ pm_derivatives_trading_desc:0 "O banco comercializa instrumentos financeiros complexos derivados de activos subjacentes. Operações de alto risco e de alta recompensa que amplificam drasticamente a saída de crédito de títulos."
+
+ pm_algorithmic_trading:0 "Comércio de Quantidades"
+ pm_algorithmic_trading_desc:0 "Algoritmos de aprendizado de máquina executam transações em velocidade sobre-humana, maximizando retornos em carteiras de títulos com intervenção humana mínima."
+
+ ### BANKING - AUTOMATION
+
+ pm_manual_tellers:0 "Caixas manuais"
+ pm_manual_tellers_desc:0 "As transações são tratadas inteiramente por caixas humanas no balcão, requerendo significativa equipe clerical."
+
+ pm_atm_network:0 "Rede ATM"
+ pm_atm_network_desc:0 "Uma rede de caixas automáticas permite que os clientes realizem transações básicas sem pessoal, reduzindo a contagem de cabeça clerical enquanto amplia a disponibilidade de serviço."
+
+ pm_automated_banking_systems:0 "Sistemas bancários automatizados"
+ pm_automated_banking_systems_desc:0 "As operações de back-office são computadorizadas, reduzindo drasticamente a necessidade de entrada manual de dados e de processamento de transações."
+
+ pm_ai_financial_advisors:0 "AI Consultores Financeiros"
+ pm_ai_financial_advisors_desc:0 "Os conselheiros de Robo e as ferramentas de planejamento financeiro orientadas por IA substituem os conselheiros humanos para a maioria dos clientes, reduzindo os custos de mão-de-obra e aumentando a produção de crédito."
+
+ ### FOOD SERVICES - BASE
+
+ pm_corner_grocery:0 "Grocery canto"
+ pm_corner_grocery_desc:0 "Pequenas mercearias de nível de vizinhança que oferecem uma seleção limitada de produtos básicos. Trabalho intensivo, mas com baixo custo e fortes laços comunitários."
+
+ pm_supermarket:0 "Supermercado"
+ pm_supermarket_desc:0 "Grandes mercearias de autoatendimento que oferecem uma grande variedade de produtos sob o mesmo teto, com cadeias de suprimentos eficientes que permitem maior rendimento."
+
+ pm_hypermarket:0 "Superstore"
+ pm_hypermarket_desc:0 "Enormes mercearias combinadas e lojas de mercadorias em geral, atraindo clientes de amplas áreas de captação e operando em grande escala."
+
+ pm_online_grocery:0 "Mercearia Online"
+ pm_online_grocery_desc:0 "Mercearias são ordenadas digitalmente e cumpridas a partir de centros de distribuição centralizados, permitindo uma pegada física mais magra e alcance expandido do cliente."
+
+ ### FOOD SERVICES - RESTAURANT
+
+ pm_no_restaurants:0 "Sem Serviços de Jantar"
+ pm_no_restaurants_desc:0 "O estabelecimento concentra-se exclusivamente no comércio de mercearia, sem opções de comida ou de refeições preparadas."
+
+ pm_local_restaurants:0 "Restaurantes locais"
+ pm_local_restaurants_desc:0 "Restaurantes independentes que servem refeições preparadas para clientes locais, adicionando modesta produção de serviço alimentar em cima de operações de mercearia."
+
+ pm_fast_food_chains:0 "Correntes alimentares rápidas"
+ pm_fast_food_chains_desc:0 "Restaurantes padronizados e de alta produtividade que operam em vários locais, escalando drasticamente a produção de serviços alimentares através de métodos de preparação industrial."
+
+ pm_fine_dining:0 "Jantar Fino"
+ pm_fine_dining_desc:0 "Operações de restaurantes de luxo que atendem clientes mais ricos, gerando produção de serviços alimentares premium através de mão de obra qualificada e ingredientes de alta qualidade."
+
+ ### FOOD SERVICES - LOGISTICS
+
+ pm_manual_food_checkout:0 "Obtenção Manual"
+ pm_manual_food_checkout_desc:0 "Todas as transações do cliente são processadas por caixas em contadores de checkout com pessoal, exigindo trabalho significativo para atender a demanda máxima."
+
+ pm_self_checkout_food:0 "Terminais de Auto- Verificação"
+ pm_self_checkout_food_desc:0 "Quiosques automáticos de auto-serviço de check-out reduzem a necessidade de pessoal de caixa, reduzindo os custos de mão-de-obra e aumentando o rendimento durante períodos de ocupado."
+
+ pm_food_delivery_services:0 "Serviços de entrega de alimentos"
+ pm_food_delivery_services_desc:0 "Uma rede de entrega é estabelecida, permitindo aos clientes receber mantimentos e alimentos preparados em casa. Consome capacidade de armazenamento para encenar encomendas de forma eficiente."
+
+ pm_drone_food_delivery:0 "Entrega de drones"
+ pm_drone_food_delivery_desc:0 "As frotas de drones autônomos substituem os motoristas de entrega humana, reduzindo drasticamente os custos de mão-de-obra, permitindo uma entrega quase instantânea em áreas de serviço."
+
+ ### RETAIL - BASE
+
+ pm_small_shops:0 "Pequenas Lojas"
+ pm_small_shops_desc:0 "Lojas de varejo independentes que vendem uma gama modesta de móveis, roupas e ferramentas para os clientes locais. Operações simples com baixas despesas gerais."
+
+ pm_department_stores_retail:0 "Lojas de Departamentos"
+ pm_department_stores_retail_desc:0 "Grandes estabelecimentos de varejo multi-chão organizados em departamentos, oferecendo uma ampla gama de bens de consumo sob o mesmo teto."
+
+ pm_big_box_retail:0 "Grande Caixa Varejo"
+ pm_big_box_retail_desc:0 "Lojas de varejo em escala de armazém oferecendo elevados volumes de bens a preços competitivos, contando com o poder de compra a granel e logística eficiente."
+
+ pm_outlet_retail:0 "Centros de Saída"
+ pm_outlet_retail_desc:0 "Complexos de varejo dedicados onde as marcas vendem estoques em excesso e com desconto diretamente para os consumidores, concentrando alto tráfego comercial em destinos projetados."
+
+ ### RETAIL - SPECIALIZATION
+
+ pm_no_retail_specialization:0 "Retalho Geral"
+ pm_no_retail_specialization_desc:0 "A loja carrega uma ampla, indiferenciada mistura de bens sem foco de categoria particular."
+
+ pm_home_goods_retail:0 "Home Bens Varejo"
+ pm_home_goods_retail_desc:0 "A loja é especializada em móveis e mobiliário doméstico, incluindo linhas de luxo, capturando margens mais elevadas em compras domésticas aspiracionais."
+
+ pm_electronics_retail:0 "Retalho electrónico"
+ pm_electronics_retail_desc:0 "A loja é especializada em ferramentas e eletrônicos de consumo, exigindo pessoal experiente e atraindo uma clientela tecnicamente sofisticada."
+
+ pm_luxury_retail:0 "Varejo de Luxo"
+ pm_luxury_retail_desc:0 "Uma operação boutique que lida com roupas de luxo e móveis, comandando preços premium de consumidores ricos e gerando forte receita de varejo por unidade vendida."
+
+ ### RETAIL - LOGISTICS
+
+ pm_manual_retail_checkout:0 "Obtenção Manual"
+ pm_manual_retail_checkout_desc:0 "Todas as transações de vendas são processadas nos registros de pessoal, exigindo um complemento completo do pessoal do caixa."
+
+ pm_self_checkout_retail:0 "Terminais de Auto- Verificação"
+ pm_self_checkout_retail_desc:0 "Quiosques de pagamento de autoatendimento permitem que os clientes processem suas próprias transações, reduzindo a contagem de caixa e melhorando o rendimento da loja."
+
+ pm_ecommerce_retail:0 "E-Commerce"
+ pm_ecommerce_retail_desc:0 "Uma loja on-line estende o alcance da operação de varejo além da queda física, exigindo infraestrutura de armazenamento para encenar e cumprir ordens digitais."
+
+ pm_drone_retail_delivery:0 "Entrega de drones"
+ pm_drone_retail_delivery_desc:0 "Entrega de drones autônomos substitui correios de última milha, cortando custos de entrega de mão-de-obra, acelerando os tempos de realização para pedidos on-line."
+
+ ### ADVERTISING - BASE
+
+ pm_print_advertising:0 "Billboards detestáveis"
+ pm_print_advertising_desc:0 "Campanhas distribuídas por jornais, revistas e materiais impressos. Intensivos em papel, mas eficazes em alcançar audiências de massa alfabetizadas."
+
+ pm_broadcast_advertising:0 "Publicidade de Radiodifusão"
+ pm_broadcast_advertising_desc:0 "Os anúncios de rádio e televisão alcançam vastos públicos simultaneamente, exigindo investimento em propriedade intelectual e talento técnico de produção."
+
+ pm_direct_mail_advertising:0 "Correio Directo"
+ pm_direct_mail_advertising_desc:0 "Materiais promocionais direcionados enviados diretamente para endereços de consumo. Alto consumo de papel, mas permite que o alvo demográfico não é possível com meios de transmissão."
+
+ pm_outdoor_advertising:0 "Billboards eletrônicas"
+ pm_outdoor_advertising_desc:0 "Billboards, cartazes e sinais colocados em áreas de alto tráfego para construir a consciência da marca em escala. Requer trabalho de instalação física em amplas áreas."
+
+ ### ADVERTISING - DIGITAL
+
+ pm_no_digital_advertising:0 "Sem publicidade digital"
+ pm_no_digital_advertising_desc:0 "A agência opera exclusivamente através de canais de mídia tradicionais e não adotou métodos de publicidade digital."
+
+ pm_banner_advertising:0 "Publicidade Web Banner"
+ pm_banner_advertising_desc:0 "Anúncios de banners estáticos e animados colocados em sites, marcando os primeiros passos da agência no ecossistema de publicidade digital."
+
+ pm_social_media_advertising:0 "Publicidade nas Mídias Sociais"
+ pm_social_media_advertising_desc:0 "Campanhas implantadas em plataformas de mídia social alcançam audiências enormes e altamente engajadas, com a propriedade intelectual se tornando o principal fator de custo sobre papel."
+
+ pm_algorithmic_targeted_ads:0 "Colheita de Dados"
+ pm_algorithmic_targeted_ads_desc:0 "Algoritmos de aprendizado de máquina analisam dados de consumo para servir anúncios personalizados individualmente, maximizando as taxas de conversão e a eficácia da campanha em escala maciça."
+
+ ### ADVERTISING - RESEARCH
+
+ pm_focus_groups:0 "Grupos de Foco"
+ pm_focus_groups_desc:0 "Pequenos painéis de consumidores representativos são convocados para testar mensagens e avaliar reações, fornecendo visão qualitativa para orientar o desenvolvimento da campanha."
+
+ pm_consumer_analytics:0 "Análise do Consumidor"
+ pm_consumer_analytics_desc:0 "A coleta sistemática de dados e a análise estatística do comportamento do consumidor substitui a adivinhação, permitindo que campanhas sejam refinadas para o máximo impacto."
+
+ pm_ai_ad_generation:0 "Conteúdo gerado por IA"
+ pm_ai_ad_generation_desc:0 "A inteligência artificial gera e otimiza a cópia de publicidade, imagens e parâmetros de direcionamento de forma autônoma, reduzindo drasticamente a força de trabalho criativa necessária ao impulsionar a saída."
+
+ ### WAREHOUSING - BASE
+
+ pm_basic_warehousing:0 "Armazenamento Básico"
+ pm_basic_warehousing_desc:0 "Instalações de armazenamento de prateleira simples com pessoal manual, consumindo capacidade de transporte para receber e enviar mercadorias."
+
+ pm_climate_controlled_storage:0 "Armazenamento controlado pelo clima"
+ pm_climate_controlled_storage_desc:0 "O armazenamento regulado pela temperatura e umidade permite a preservação de bens sensíveis, ampliando a gama de produtos que podem ser armazenados e aumentando o rendimento."
+
+ pm_automated_warehouse:0 "Armazém automatizado"
+ pm_automated_warehouse_desc:0 "Sistemas de coleta robótica e transportadores automatizados substituem o trabalho manual para a maior parte das operações de armazenamento e recuperação, aumentando drasticamente a saída de armazenamento por trabalhador."
+
+ pm_fulfillment_center:0 "Centro de Cumprimento"
+ pm_fulfillment_center_desc:0 "Um hub logístico de alto desempenho otimizado para processamento e expedição de pedidos rápidos, integrando armazenamento, triagem, embalagem e transporte em uma única operação sem costura."
+
+ ### WAREHOUSING - LOGISTICS
+
+ pm_manual_inventory:0 "Inventário Manual"
+ pm_manual_inventory_desc:0 "O estoque é rastreado usando registros de papel e contagens físicas, exigindo pessoal clerical dedicado para manter a precisão."
+
+ pm_barcode_tracking:0 "Rastreamento de código de barras"
+ pm_barcode_tracking_desc:0 "Sistemas de digitalização de código de barras permitem registro rápido e preciso de movimentos de estoque, reduzindo erros de inventário e o trabalho clerical necessário para manter registros."
+
+ pm_rfid_tracking:0 "Rastreamento RFID"
+ pm_rfid_tracking_desc:0 "As etiquetas de identificação de radiofrequências permitem o rastreamento automatizado em tempo real de cada item do armazém sem digitalização manual, melhorando drasticamente a precisão do inventário e o rendimento."
+
+ pm_ai_inventory_management:0 "Gestão do Inventário de IA"
+ pm_ai_inventory_management_desc:0 "A inteligência artificial otimiza continuamente os níveis de estoque, prevê a demanda e automatiza a reordenação, reduzindo o desperdício e eliminando a necessidade da maioria da equipe de gerenciamento de estoque."
+
+ ### PHARMACEUTICAL SERVICES - BASE
+
+ pm_apothecary:0 "Drugmart"
+ pm_apothecary_desc:0 "Um farmacêutico tradicional prepara manualmente e dispensa compostos medicinais derivados de insumos botânicos e químicos brutos, incluindo preparações derivadas de ópio."
+
+ pm_pharmacy_dispensing:0 "Dispensação de Farmácia"
+ pm_pharmacy_dispensing_desc:0 "Uma farmácia moderna operando sob regulamentação médica, dispensando produtos farmacêuticos padronizados para pacientes sob prescrição."
+
+ pm_hospital_pharmacy:0 "Farmácia Hospitalar"
+ pm_hospital_pharmacy_desc:0 "Uma operação de farmácia integrada que atende uma rede hospitalar ou clínica, lidando com altos volumes de prescrições complexas e formulações especializadas."
+
+ pm_mail_order_pharmacy:0 "Farmácia de Pedido de Correio"
+ pm_mail_order_pharmacy_desc:0 "As prescrições são cumpridas centralmente e enviadas diretamente para os pacientes por correio, possibilitando amplo alcance geográfico e volumes de alta ordem com pegada física magra."
+
+ ### PHARMACEUTICAL SERVICES - RESEARCH
+
+ pm_no_drug_research:0 "Nenhum programa de pesquisa"
+ pm_no_drug_research_desc:0 "O estabelecimento centra-se exclusivamente na distribuição de compostos existentes e não investe em investigação ou desenvolvimento farmacêutico."
+
+ pm_clinical_trials:0 "tRNA"
+ pm_clinical_trials_desc:0 "O estabelecimento realiza ensaios clínicos controlados de novos compostos farmacêuticos, contribuindo para o desenvolvimento de medicamentos e ampliando sua produção produtiva."
+
+ pm_biotech_research:0 "mRNA"
+ pm_biotech_research_desc:0 "Métodos avançados de pesquisa biotecnológica aceleram a descoberta de medicamentos, permitindo o desenvolvimento de novos tratamentos e aumentando significativamente a produção farmacêutica."
+
+ pm_gene_therapy:0 "Edição do Gene"
+ pm_gene_therapy_desc:0 "A pesquisa de edição de genes de ponta permite o desenvolvimento de tratamentos voltados para as causas genéticas da raiz da doença, representando a fronteira da ciência farmacêutica."
+
+ ### PHARMACEUTICAL SERVICES - AUTOMATION
+
+ pm_manual_compounding:0 "Composto manual"
+ pm_manual_compounding_desc:0 "Os farmacêuticos preparam e medem manualmente cada prescrição à mão, um processo hábil, mas demorado, que requer pessoal significativo."
+
+ pm_automated_dispensing:0 "Dispensa automática"
+ pm_automated_dispensing_desc:0 "Máquinas automáticas de dispensação lidar com o cumprimento da prescrição de rotina, libertando pessoal farmacêutico para focar em casos complexos e reduzir os custos do trabalho."
+
+ pm_robotic_pharmacy:0 "Farmácia Robótica"
+ pm_robotic_pharmacy_desc:0 "Sistemas de dosagem totalmente robóticos processam a grande maioria das prescrições com intervenção humana mínima, reduzindo drasticamente as necessidades de pessoal enquanto maximizam a saída."

@@ -1,0 +1,225 @@
+﻿# ==========================================
+# HOST MILITARY BASES — TREATY ARTICLE
+# Place in common/diplomatic_actions/ or
+# common/treaty_articles/ depending on
+# your mod structure.
+#
+# Allows the source country (the host) to
+# station military forces in the target
+# country's territory. Used by the missile
+# system to extend targeting range:
+# states bordering countries with this
+# pact active become valid missile targets.
+# ==========================================
+
+REPLACE_OR_CREATE:host_military_bases = {
+	kind = directed
+	cost = 75
+
+	relations_progress_per_day = 0.5
+	relations_improvement_max = 25
+
+	icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/transit_rights_treaties.dds"
+
+	flags = {
+		is_host_military_bases
+		
+		can_be_renegotiated
+		friendly
+	}
+
+	maintenance_paid_by = source_country
+	usage_limit = once_per_side
+
+	unlocked_by_technologies = {
+		international_relations
+	}
+
+	visible = {
+		is_at_war = no
+	}
+
+	possible = {
+		is_at_war = no
+		scope:other_country ?= {
+			is_at_war = no
+			NOT = { this = ROOT }
+		}
+	}
+
+	can_ratify = {
+		custom_tooltip = {
+			text = DUPLICATE_ARTICLE_SAME_INPUTS_TREATY
+			NOT = {
+				scope:source_country = {
+					any_scope_treaty = {
+						binds = scope:target_country
+						hidden_trigger = {
+							OR = {
+								scope:treaty = { is_renegotiation = no }
+								scope:treaty.amended_treaty != this
+							}
+						}
+						any_scope_article = {
+							has_type = host_military_bases
+							source_country = scope:source_country
+						}
+					}
+				}
+			}
+		}
+	}
+
+	on_entry_into_force = {
+		# Modifier applied to the host country while agreement is active
+		scope:target_country = {
+			add_modifier = {
+				name = military_base_host_modifier
+				months = -1  # Indefinite — removed on withdrawal/break
+			}
+		}
+		scope:source_country = {
+			add_modifier = {
+				name = military_base_projector_modifier
+				months = -1
+			}
+		}
+	}
+
+	on_withdrawal = {
+		scope:target_country = {
+			remove_modifier = military_base_host_modifier
+		}
+		scope:withdrawing_country = {
+			remove_modifier = military_base_projector_modifier
+			change_relations = {
+				country = scope:non_withdrawing_country
+				value = -15
+			}
+		}
+	}
+
+	on_break = {
+		scope:target_country = {
+			remove_modifier = military_base_host_modifier
+		}
+		scope:source_country = {
+			remove_modifier = military_base_projector_modifier
+		}
+		scope:withdrawing_country = {
+			change_relations = {
+				country = scope:non_withdrawing_country
+				value = -20
+			}
+		}
+	}
+
+	ai = {
+		treaty_categories = {
+			military
+		}
+
+		evaluation_chance = {
+			value = 0
+
+			if = {
+				limit = { country_rank >= rank_value:major_power }
+				add = 0.5
+			}
+		}
+
+		article_ai_usage = {
+			request
+		}
+
+		inherent_accept_score = {
+			value = 0
+
+			if = {
+				limit = { scope:target_country ?= this }
+
+				add = {
+					desc = "DIPLOMATIC_ACCEPTANCE_BASE"
+					value = -20
+				}
+
+				add = {
+					desc = "DIPLOMATIC_ACCEPTANCE_ATTITUDE"
+					if = {
+						limit = {
+							OR = {
+								has_attitude = { who = scope:source_country attitude = antagonistic }
+								has_attitude = { who = scope:source_country attitude = belligerent }
+								has_attitude = { who = scope:source_country attitude = domineering }
+							}
+						}
+						add = -200
+					}
+				}
+
+				add = {
+					desc = "DIPLOMATIC_ACCEPTANCE_RELATIONS_BONUS"
+					if = {
+						limit = {
+							relations:scope:source_country >= 30
+						}
+						add = 20
+					}
+				}
+
+				add = {
+					desc = "DIPLOMATIC_ACCEPTANCE_RELATIONS_BONUS"
+					if = {
+						limit = {
+							relations:scope:source_country >= 60
+						}
+						add = 30
+					}
+				}
+			}
+			else_if = {
+				limit = { NOT = { exists = scope:is_treaty_active } }
+				add = {
+					desc = "DIPLOMATIC_ACCEPTANCE_DOES_NOT_WANT_ARTICLE"
+					value = -300
+				}
+			}
+		}
+	}
+
+	wargoal = {
+		execution_priority = 18
+
+		contestion_type = control_any_target_country_state
+
+		maneuvers = {
+			value = 0
+			add = { desc = "MANEUVERS_BASE_VALUE" value = 2 }
+
+			scope:target_country = {
+				multiply = {
+					desc = "MANEUVERS_TARGET_COUNTRY_POPULATION_FACTOR"
+					value = total_population
+					divide = define:NDiplomacy|SWAY_OFFER_WARGOAL_MANEUVERS_COST_POPULATION_SCALING_FACTOR
+					multiply = define:NDiplomacy|SWAY_OFFER_WARGOAL_MANEUVERS_COST_POPULATION_SCALING_MULTIPLIER
+					max = define:NDiplomacy|SWAY_OFFER_WARGOAL_MANEUVERS_COST_POPULATION_SCALING_MULTIPLIER_MAX_TOTAL
+				}
+			}
+		}
+
+		infamy = {
+			value = 0
+			add = { desc = "INFAMY_BASE_VALUE" value = 0.2 }
+
+			scope:target_country = {
+				multiply = {
+					desc = "INFAMY_TARGET_COUNTRY_POPULATION_FACTOR"
+					value = total_population
+					divide = define:NDiplomacy|WAR_GOAL_INFAMY_POPULATION_SCALING_FACTOR
+					multiply = define:NDiplomacy|WAR_GOAL_INFAMY_POPULATION_SCALING_MULTIPLIER
+					max = define:NDiplomacy|WAR_GOAL_INFAMY_POPULATION_SCALING_MULTIPLIER_MAX_TOTAL
+				}
+			}
+		}
+	}
+}

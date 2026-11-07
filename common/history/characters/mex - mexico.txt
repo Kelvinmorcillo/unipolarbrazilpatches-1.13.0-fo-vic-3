@@ -1,0 +1,25 @@
+﻿CHARACTERS = {
+	c:MEX ?= {
+	create_character = {
+			template = MEX_cuauhtemoc_cardenas
+		}
+	create_character = {
+			template = MEX_ernesto_zedillo
+		}
+	create_character = {
+			first_name = "carlos_salinas"
+			last_name = "de_gortari"
+			historical = yes
+			ruler = yes
+			culture = cu:mexican
+			birth_date = 1948.4.18
+			dna = dna_carlos_salinas
+			ig_leader = yes
+			interest_group = ig_rural_folk
+			ideology = ideology_progressive_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+}

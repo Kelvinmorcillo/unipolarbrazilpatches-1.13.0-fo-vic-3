@@ -1,0 +1,143 @@
+REPLACE_OR_CREATE:german_pds_party = {
+	color = { 150 40 120 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = party_german_pds
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/pds.dds"
+	}
+	
+	# THIS IS RUN ONLY ONCE AT GAME START
+	valid_for_country = {
+	THIS = c:GER
+	}
+
+		available_for_interest_group = {
+		is_marginal = no
+		OR = {
+			leader = { has_ideology = ideology:ideology_marxist_leader }
+			leader = { has_ideology = ideology:ideology_state_socialist_leader }
+			leader = { has_ideology = ideology:ideology_anarchist_leader }
+			leader = { has_ideology = ideology:ideology_market_socialist_leader }
+			leader = { has_ideology = ideology:ideology_democratic_socialist_leader }
+			leader = { has_ideology = ideology:ideology_left_wing_populist_leader }
+			has_ideology = ideology:ideology_far_left_economy
+			has_ideology = ideology:ideology_communist
+			has_ideology = ideology:ideology_left_economy
+			has_ideology = ideology:ideology_communitarian
+			has_ideology = ideology:ideology_totalitarian
+		}
+	}
+
+	# Root - IG considering joining
+	# scope:number - the number of IGs that would join this party before the root IG
+	join_weight = {
+		value = {
+			value = -5
+			desc = "base_value"
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_marxist_leader }
+				leader = { has_ideology = ideology:ideology_state_socialist_leader }
+				leader = { has_ideology = ideology:ideology_anarchist_leader }
+			}
+			}
+			add = { value = 45 desc = "leader_ideological_compatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_market_socialist_leader }
+				leader = { has_ideology = ideology:ideology_democratic_socialist_leader }
+				leader = { has_ideology = ideology:ideology_left_wing_populist_leader }
+			}
+			}
+			add = { value = 20 desc = "leader_adjacent_ideology" }
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_fascist_leader }
+				leader = { has_ideology = ideology:ideology_authoritarian_capitalist_leader }
+				leader = { has_ideology = ideology:ideology_neoliberal_leader }
+				leader = { has_ideology = ideology:ideology_right_wing_libertarian_leader }
+				leader = { has_ideology = ideology:ideology_classical_liberal_leader }
+				leader = { has_ideology = ideology:ideology_minarchist_leader }
+			}
+			}
+			add = { value = -50 desc = "leader_ideological_incompatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_far_left_economy
+				has_ideology = ideology:ideology_communist
+			}
+			}
+			add = { value = 35 desc = "interest_group_ideological_compatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_left_economy
+				has_ideology = ideology:ideology_communitarian
+				has_ideology = ideology:ideology_totalitarian
+			}
+			}
+			add = { value = 15 desc = "interest_group_adjacent_ideology" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_far_right_economy
+				has_ideology = ideology:ideology_right_economy
+				has_ideology = ideology:ideology_individualist
+				has_ideology = ideology:ideology_monarchist
+				has_ideology = ideology:ideology_theocrat
+			}
+			}
+			add = { value = -35 desc = "interest_group_ideological_incompatibility" }
+		}
+		if = {
+			limit = {
+				owner = { OR = { has_law = law_type:law_council_republic has_law = law_type:law_command_economy has_law = law_type:law_cooperative_ownership } }
+			}
+			add = { value = 15 desc = "socialist_laws" }
+		}
+		if = {
+			limit = {
+				is_powerful = yes
+				OR = {
+					leader = { has_ideology = ideology:ideology_marxist_leader }
+					leader = { has_ideology = ideology:ideology_state_socialist_leader }
+					leader = { has_ideology = ideology:ideology_anarchist_leader }
+					has_ideology = ideology:ideology_far_left_economy
+					has_ideology = ideology:ideology_communist
+				}
+			}
+			add = { value = 20 desc = "powerful_ig" }
+		}
+		if = {
+			limit = {
+				scope:number = 1
+				is_powerful = no
+				is_marginal = no
+			}
+			multiply = { value = 2 desc = "from_influential_supporting_member" }
+		}
+		else_if = {
+			limit = { scope:number = 2 }
+			multiply = { value = 0.75 desc = "from_two_prior_members" }
+		}
+	}
+
+}

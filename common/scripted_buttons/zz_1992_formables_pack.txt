@@ -1,0 +1,310 @@
+﻿# 1992 Formables Pack - Scripted Buttons
+
+je_forming_AFU_button_form = {
+	name = "je_forming_AFU_button_form"
+	desc = "je_forming_AFU_button_form_desc"
+	visible = { always = yes }
+	possible = {
+		can_form_country = AFU
+	}
+	effect = {
+		change_tag = AFU
+		trigger_event = modern_formables_AFU.1
+	}
+	ai_chance = { base = 1 }
+}
+
+je_forming_ARU_button_form = {
+	name = "je_forming_ARU_button_form"
+	desc = "je_forming_ARU_button_form_desc"
+	visible = { always = yes }
+	possible = {
+		can_form_country = ARU
+	}
+	effect = {
+		change_tag = ARU
+		trigger_event = modern_formables_ARU.1
+	}
+	ai_chance = { base = 1 }
+}
+
+je_forming_ASN_button_form = {
+	name = "je_forming_ASN_button_form"
+	desc = "je_forming_ASN_button_form_desc"
+	visible = { always = yes }
+	possible = {
+		can_form_country = ASN
+	}
+	effect = {
+		change_tag = ASN
+		trigger_event = modern_formables_ASN.1
+	}
+	ai_chance = { base = 1 }
+}
+
+je_forming_BNL_button_form = {
+	name = "je_forming_BNL_button_form"
+	desc = "je_forming_BNL_button_form_desc"
+	visible = { always = yes }
+	possible = {
+		can_form_country = BNL
+	}
+	effect = {
+		change_tag = BNL
+		trigger_event = modern_formables_BNL.1
+	}
+	ai_chance = { base = 1 }
+}
+
+je_forming_BTU_button_form = {
+	name = "je_forming_BTU_button_form"
+	desc = "je_forming_BTU_button_form_desc"
+	visible = { always = yes }
+	possible = {
+		can_form_country = BTU
+	}
+	effect = {
+		change_tag = BTU
+		trigger_event = modern_formables_BTU.1
+	}
+	ai_chance = { base = 1 }
+}
+
+je_forming_CAA_button_form = {
+	name = "je_forming_CAA_button_form"
+	desc = "je_forming_CAA_button_form_desc"
+	visible = { always = yes }
+	possible = {
+		can_form_country = CAA
+	}
+	effect = {
+		change_tag = CAA
+		trigger_event = modern_formables_CAA.1
+	}
+	ai_chance = { base = 1 }
+}
+
+je_forming_CAU_button_form = {
+	name = "je_forming_CAU_button_form"
+	desc = "je_forming_CAU_button_form_desc"
+	visible = { always = yes }
+	possible = {
+		can_form_country = CAU
+	}
+	effect = {
+		change_tag = CAU
+		trigger_event = modern_formables_CAU.1
+	}
+	ai_chance = { base = 1 }
+}
+
+je_forming_CCA_button_form = {
+	name = "je_forming_CCA_button_form"
+	desc = "je_forming_CCA_button_form_desc"
+	visible = { always = yes }
+	possible = {
+		can_form_country = CCA
+	}
+	effect = {
+		change_tag = CCA
+		trigger_event = modern_formables_CCA.1
+	}
+	ai_chance = { base = 1 }
+}
+
+je_forming_EAF_button_form = {
+	name = "je_forming_EAF_button_form"
+	desc = "je_forming_EAF_button_form_desc"
+	visible = { always = yes }
+	possible = {
+		can_form_country = EAF
+	}
+	effect = {
+		change_tag = EAF
+		trigger_event = modern_formables_EAF.1
+	}
+	ai_chance = { base = 1 }
+}
+
+je_forming_GUF_button_form = {
+	name = "je_forming_GUF_button_form"
+	desc = "je_forming_GUF_button_form_desc"
+	visible = { always = yes }
+	possible = {
+		can_form_country = GUF
+	}
+	effect = {
+		change_tag = GUF
+		trigger_event = modern_formables_GUF.1
+	}
+	ai_chance = { base = 1 }
+}
+
+je_forming_HAF_button_form = {
+	name = "je_forming_HAF_button_form"
+	desc = "je_forming_HAF_button_form_desc"
+	visible = { always = yes }
+	possible = {
+		can_form_country = HAF
+	}
+	effect = {
+		change_tag = HAF
+		trigger_event = modern_formables_HAF.1
+	}
+	ai_chance = { base = 1 }
+}
+
+je_forming_IBU_button_form = {
+	name = "je_forming_IBU_button_form"
+	desc = "je_forming_IBU_button_form_desc"
+	visible = { always = yes }
+	possible = {
+		can_form_country = IBU
+	}
+	effect = {
+		change_tag = IBU
+		trigger_event = modern_formables_IBU.1
+	}
+	ai_chance = { base = 1 }
+}
+
+je_forming_KOU_button_form = {
+	name = "je_forming_KOU_button_form"
+	desc = "je_forming_KOU_button_form_desc"
+	visible = { always = yes }
+	possible = {
+		can_form_country = KOU
+	}
+	effect = {
+		change_tag = KOU
+		trigger_event = modern_formables_KOU.1
+	}
+	ai_chance = { base = 1 }
+}
+
+je_forming_LEV_button_form = {
+	name = "je_forming_LEV_button_form"
+	desc = "je_forming_LEV_button_form_desc"
+	visible = { always = yes }
+	possible = {
+		can_form_country = LEV
+	}
+	effect = {
+		change_tag = LEV
+		trigger_event = modern_formables_LEV.1
+	}
+	ai_chance = { base = 1 }
+}
+
+je_forming_NAU_button_form = {
+	name = "je_forming_NAU_button_form"
+	desc = "je_forming_NAU_button_form_desc"
+	visible = { always = yes }
+	possible = {
+		can_form_country = NAU
+	}
+	effect = {
+		change_tag = NAU
+		trigger_event = modern_formables_NAU.1
+	}
+	ai_chance = { base = 1 }
+}
+
+je_forming_NBU_button_form = {
+	name = "je_forming_NBU_button_form"
+	desc = "je_forming_NBU_button_form_desc"
+	visible = { always = yes }
+	possible = {
+		can_form_country = NBU
+	}
+	effect = {
+		change_tag = NBU
+		trigger_event = modern_formables_NBU.1
+	}
+	ai_chance = { base = 1 }
+}
+
+je_forming_SFA_button_form = {
+	name = "je_forming_SFA_button_form"
+	desc = "je_forming_SFA_button_form_desc"
+	visible = { always = yes }
+	possible = {
+		can_form_country = SFA
+	}
+	effect = {
+		change_tag = SFA
+		trigger_event = modern_formables_SFA.1
+	}
+	ai_chance = { base = 1 }
+}
+
+je_forming_TUC_button_form = {
+	name = "je_forming_TUC_button_form"
+	desc = "je_forming_TUC_button_form_desc"
+	visible = { always = yes }
+	possible = {
+		can_form_country = TUC
+	}
+	effect = {
+		change_tag = TUC
+		trigger_event = modern_formables_TUC.1
+	}
+	ai_chance = { base = 1 }
+}
+
+je_forming_UNS_button_form = {
+	name = "je_forming_UNS_button_form"
+	desc = "je_forming_UNS_button_form_desc"
+	visible = { always = yes }
+	possible = {
+		can_form_country = UNS
+	}
+	effect = {
+		change_tag = UNS
+		trigger_event = modern_formables_UNS.1
+	}
+	ai_chance = { base = 1 }
+}
+
+je_forming_USE_button_form = {
+	name = "je_forming_USE_button_form"
+	desc = "je_forming_USE_button_form_desc"
+	visible = { always = yes }
+	possible = {
+		can_form_country = USE
+	}
+	effect = {
+		change_tag = USE
+		trigger_event = modern_formables_USE.1
+	}
+	ai_chance = { base = 1 }
+}
+
+je_forming_WAF_button_form = {
+	name = "je_forming_WAF_button_form"
+	desc = "je_forming_WAF_button_form_desc"
+	visible = { always = yes }
+	possible = {
+		can_form_country = WAF
+	}
+	effect = {
+		change_tag = WAF
+		trigger_event = modern_formables_WAF.1
+	}
+	ai_chance = { base = 1 }
+}
+
+je_forming_XMA_button_form = {
+	name = "je_forming_XMA_button_form"
+	desc = "je_forming_XMA_button_form_desc"
+	visible = { always = yes }
+	possible = {
+		can_form_country = XMA
+	}
+	effect = {
+		change_tag = XMA
+		trigger_event = modern_formables_XMA.1
+	}
+	ai_chance = { base = 1 }
+}
+

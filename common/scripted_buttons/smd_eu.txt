@@ -1,0 +1,34 @@
+﻿eu_call_summit_button = {
+    name = "eu_call_summit_button"
+    desc = "eu_call_summit_button_desc"
+	cooldown = { days = 365 }
+    visible = {
+        has_variable = eu_member_state
+    }
+
+    ai_chance = {
+        value = 5
+    }
+
+    possible = {
+		NOT = { 
+		OR = {
+			has_modifier = eu_deeper_trade_ties 
+			has_modifier = eu_sanctions_ready 
+			has_modifier = eu_cultural_exchange 
+			}
+		}
+		custom_tooltip = {
+			text = is_eu_member_state
+			has_variable = eu_member_state
+		}
+        NOT = { has_war = yes }
+    }
+
+    effect = {
+        every_country = {
+            limit = { has_variable = eu_member_state }
+            trigger_event = { id = eu_events.3 popup = yes }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+﻿COUNTRIES = {
+	c:IRQ = {
+		
+		 
+		smd_medium_tech_effect = yes
+		set_tax_level = medium
+		
+		# Laws
+		activate_law = law_type:law_mass_conscription
+		activate_law = law_type:law_appointed_bureaucrats
+		activate_law = law_type:law_compulsory_primary_school
+		activate_law = law_type:law_state_religion
+		activate_law = law_type:law_cultural_exclusion
+		activate_law = law_type:law_autocracy
+		activate_law = law_type:law_command_economy
+		activate_law = law_type:law_religious_schools
+		activate_law = law_type:law_outlawed_dissent
+		activate_law = law_type:law_parliamentary_republic
+		activate_law = law_type:law_charitable_health_system
+		activate_law = law_type:law_secret_police
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_combination_acts
+		activate_law = law_type:law_commercialized_agriculture
+		activate_law = law_type:law_closed_borders
+		activate_law = law_type:law_militarized_police
+		activate_law = law_type:law_women_in_the_workplace
+		activate_law = law_type:law_legal_protections
+		activate_law = law_type:law_slavery_banned
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_protectionism
+		activate_law = law_type:law_poor_laws
+		activate_law = law_type:law_restricted_abortion
+		activate_law = law_type:law_no_central_bank
+		activate_law = law_type:law_minimal_recognition
+		activate_law = law_type:law_total_prohibition
+		activate_law = law_type:law_no_environmental_regulations
+		activate_law = law_type:law_banned_firearms
+		activate_law = law_type:law_active_oppression
+		activate_law = law_type:law_inquisitive_judiciary
+		activate_law = law_type:law_government_content_moderators
+		activate_law = law_type:law_no_public_housing
+
+			
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 1		}
+
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 2
+		}
+	}
+}

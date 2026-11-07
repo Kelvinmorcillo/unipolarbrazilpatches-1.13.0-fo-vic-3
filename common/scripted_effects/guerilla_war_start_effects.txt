@@ -1,0 +1,69 @@
+# Kurdistan War Startup Effects
+# This initializes the journal-entry system. It intentionally does not include
+# an invented diplomatic-play/war creation effect because the provided Carlist
+# files do not contain the syntax for forcing a war. If your mod already has a
+# working create_diplomatic_play/create_war pattern, call it from this effect.
+
+start_kurdistan_war_journal_entry_system = {
+	if = {
+		limit = {
+			exists = c:TRK
+			exists = c:KDS
+			NOT = { has_global_variable = kurdistan_war_initialized }
+		}
+		c:TRK = { add_contextless_journal_entry  = je_kurdistan_war }
+		c:KDS = { add_contextless_journal_entry  = je_kurdistan_war }
+		set_global_variable = kurdistan_war_initialized
+		set_global_variable = {
+			name = trk_kurdistan_war_score
+			value = 0
+		}
+		set_global_variable = {
+			name = kur_kurdistan_war_score
+			value = 0
+		}
+		set_global_variable = kurdistan_war_skirmish_phase
+	}
+}
+
+start_afghan_civil_war_journal_entry_system = {
+	if = {
+		limit = {
+			exists = c:AFG
+			exists = c:ANA
+			NOT = { has_global_variable = afghan_civil_war_started }
+		}
+
+		set_global_variable = afghan_civil_war_started
+
+		if = {
+			limit = {
+				NOT = { has_global_variable = afg_afghan_civil_war_score }
+			}
+			set_global_variable = {
+				name = afg_afghan_civil_war_score
+				value = 0
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_global_variable = ana_afghan_civil_war_score }
+			}
+			set_global_variable = {
+				name = ana_afghan_civil_war_score
+				value = 0
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_global_variable = afghan_civil_war_skirmish_phase }
+			}
+			set_global_variable = afghan_civil_war_skirmish_phase
+		}
+
+		# Insert your existing war-start/diplomatic-play syntax here if AFG and ANA are not already at war from history setup.
+		# The Carlist reference files supplied for conversion do not contain a generic create-war command.
+
+		add_contextless_journal_entry = je_afghan_civil_war
+	}
+}

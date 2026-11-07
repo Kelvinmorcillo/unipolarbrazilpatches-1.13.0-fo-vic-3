@@ -1,0 +1,298 @@
+﻿namespace = ubi
+
+
+# ==========================================
+# ubi.1
+# "The Cost of Unconditional"
+# Fires when enacting UBI.
+# Fiscal conservatives raise the alarm
+# on what an unconditional payment
+# will do to public finances.
+# checkpoint_stall
+# ==========================================
+
+ubi.1 = {
+	type = country_event
+	placement = ROOT
+
+	title = ubi.1.t
+	desc = ubi.1.d
+	flavor = ubi.1.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_universal_basic_income
+		NOT = { has_modifier = welfare_ubi_fiscal_alarm }
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = welfare_law_scope
+		}
+	}
+
+	# Option A: Commit to full funding — absorb the cost and press forward
+	option = {
+		name = ubi.1.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = welfare_ubi_fiscal_alarm
+		}
+		add_enactment_modifier = {
+			name = welfare_ubi_funded_commitment
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				trigger = {
+					exists = ruler
+					ruler = {
+						OR = {
+							has_ideology = ideology_progressive_leader
+							has_ideology = ideology_socialist_leader
+							has_ideology = ideology_communist_leader
+						}
+					}
+				}
+				add = 25
+			}
+		}
+	}
+
+	# Option B: Phase in payments — delay full implementation to manage costs
+	option = {
+		name = ubi.1.b
+		add_enactment_modifier = {
+			name = welfare_ubi_fiscal_alarm
+		}
+		ai_chance = { base = 50 }
+	}
+}
+
+
+# ==========================================
+# ubi.2
+# "Will Anyone Work?"
+# Fires when enacting UBI.
+# Employers and landowners warn that
+# unconditional income will destroy
+# the incentive to labour.
+# checkpoint_debate
+# ==========================================
+
+ubi.2 = {
+	type = country_event
+	placement = ROOT
+
+	title = ubi.2.t
+	desc = ubi.2.d
+	flavor = ubi.2.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_universal_basic_income
+		NOT = { has_modifier = welfare_ubi_labour_disincentive_debate }
+		any_interest_group = {
+			OR = {
+				is_interest_group_type = ig_landowners
+				is_interest_group_type = ig_petty_bourgeoisie
+			}
+			ig_counts_as_marginal = no
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = welfare_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				OR = {
+					is_interest_group_type = ig_landowners
+					is_interest_group_type = ig_petty_bourgeoisie
+				}
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = employer_ig
+			leader = {
+				save_scope_as = employer_leader
+			}
+		}
+	}
+
+	# Option A: Make the economic case — security enables productivity, not idleness
+	option = {
+		name = ubi.2.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = welfare_ubi_labour_disincentive_debate
+		}
+		scope:employer_ig = {
+			add_modifier = {
+				name = welfare_ubi_employers_unconvinced
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = {
+			base = 55
+			modifier = {
+				trigger = {
+					exists = ruler
+					ruler = {
+						OR = {
+							has_ideology = ideology_progressive_leader
+							has_ideology = ideology_socialist_leader
+							has_ideology = ideology_communist_leader
+						}
+					}
+				}
+				add = 20
+			}
+		}
+	}
+
+	# Option B: Concede the concern — attach minimum work requirements
+	option = {
+		name = ubi.2.b
+		add_enactment_modifier = {
+			name = welfare_ubi_labour_disincentive_debate
+		}
+		add_enactment_modifier = {
+			name = welfare_ubi_work_requirements
+		}
+		scope:employer_ig = {
+			add_modifier = {
+				name = welfare_ubi_employers_appeased
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 45 }
+	}
+}
+
+
+# ==========================================
+# ubi.3
+# "Freedom From Want"
+# Fires when enacting UBI.
+# The trade unions and intelligentsia
+# frame UBI as the culmination of the
+# labour movement's long struggle.
+# checkpoint_advance
+# ==========================================
+
+ubi.3 = {
+	type = country_event
+	placement = ROOT
+
+	title = ubi.3.t
+	desc = ubi.3.d
+	flavor = ubi.3.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_universal_basic_income
+		NOT = { has_modifier = welfare_ubi_popular_mandate }
+		any_interest_group = {
+			is_interest_group_type = ig_trade_unions
+			ig_counts_as_marginal = no
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = welfare_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				is_interest_group_type = ig_trade_unions
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = union_ig
+			leader = {
+				save_scope_as = union_leader
+			}
+		}
+	}
+
+	# Option A: Embrace the mandate — let the unions lead the public campaign
+	option = {
+		name = ubi.3.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = welfare_ubi_popular_mandate
+		}
+		scope:union_ig = {
+			add_modifier = {
+				name = welfare_ubi_unions_mobilized
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = {
+			base = 65
+			modifier = {
+				trigger = {
+					exists = ruler
+					ruler = {
+						OR = {
+							has_ideology = ideology_socialist_leader
+							has_ideology = ideology_communist_leader
+						}
+					}
+				}
+				add = 20
+			}
+		}
+	}
+
+	# Option B: Keep it a government initiative — avoid over-politicizing the rollout
+	option = {
+		name = ubi.3.b
+		add_enactment_modifier = {
+			name = welfare_ubi_popular_mandate
+		}
+		scope:union_ig = {
+			add_modifier = {
+				name = welfare_ubi_unions_sidelined
+				days = normal_modifier_time
+			}
+		}
+		ai_chance = { base = 35 }
+	}
+}

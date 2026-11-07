@@ -1,0 +1,77 @@
+﻿# ==========================================
+# FIGHTING THE CARTELS
+# je_fighting_cartels
+
+je_fighting_cartels = {
+	icon = "gfx/interface/icons/event_icons/cocaine.dds"
+
+	group = je_group_dilemmas
+
+	scripted_progress_bar = cartel_suppression_bar
+
+	is_shown_when_inactive = {
+		OR = {
+			c:VNZ ?= this
+			c:GUA ?= this
+			c:HON ?= this
+			c:DCR ?= this
+			c:XEC ?= this
+		}
+	}
+
+	possible = {
+		has_variable = drug_war_begins
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = cartel_fight_je_commander_needed_tt
+				trigger = {
+					NOT = {
+						any_scope_character = {
+							has_variable = cartel_general_var
+						}
+					}
+				}
+			}
+			triggered_desc = {
+				desc = cartel_fight_je_commander_active_tt
+				trigger = {
+					any_scope_character = {
+						has_variable = cartel_general_var
+					}
+				}
+			}
+		}
+	}
+
+	scripted_button = cartel_button_deploy_general
+
+	on_monthly_pulse = {
+		effect = {
+				random_list = {
+						100 = { }
+						12 = { trigger_event = { id = cartel_fight.1 } }
+						10 = { trigger_event = { id = cartel_fight.2 } }
+						8  = { trigger_event = { id = cartel_fight.3 } }
+					}
+			}
+		}
+
+	complete = {
+		scripted_bar_progress = {
+			name = cartel_suppression_bar
+			value > 0.98
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = cartel_fight.10 popup = yes }
+	}
+
+	transferable = no
+	can_revolution_inherit = no
+	weight = 7500
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

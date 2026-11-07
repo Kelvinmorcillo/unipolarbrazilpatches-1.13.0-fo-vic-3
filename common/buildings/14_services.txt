@@ -1,0 +1,229 @@
+﻿# SERVICES
+
+# building_retailer = { # buy processed or raw foods n sell for marked-up price
+#	building_group = bg_light_industry
+#	icon = "gfx/interface/icons/building_icons/retailer.dds"
+#	city_type = city
+#	levels_per_mesh = 5
+#	
+#	ai_nationalization_desire = -0.25 # AI is generally fine with privatizing consumer goods industries
+#	
+#	unlocking_technologies = {
+#	international_trade
+#	}
+#
+#	production_method_groups = {
+#		pmg_base_retailer
+#		pmg_base_delivery
+#	}
+#
+#	required_construction = construction_cost_high
+#	ownership_type = self
+#
+#	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_light_industry.dds"
+# }
+
+REPLACE_OR_CREATE:building_professional_service = { #food processing, buy all foods, turn into procressed, which sell more. give skyscraper model
+	building_group = bg_services
+	icon = "gfx/interface/icons/building_icons/professional_service.dds"
+	city_type = city
+	levels_per_mesh = 1
+	entity_not_constructed = { }
+	entity_under_construction = { "building_construction_skyscraper_entity" }
+	entity_constructed = { "world_trade_center_entity"}
+	centerpiece_mesh_weight = 1
+	
+	ai_nationalization_desire = -0.25 # AI is generally fine with privatizing consumer goods industries
+
+	production_method_groups = {
+		pmg_base_profser
+		pmg_base_profser_type
+		pmg_casino
+	}
+
+	required_construction = construction_cost_high
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_light_industry.dds"
+}
+
+building_bank = {
+	building_group = bg_banking
+	icon = "gfx/interface/icons/building_icons/commercial_bank.dds"
+	city_type = city
+	levels_per_mesh = 5
+
+	ai_nationalization_desire = 0.25
+
+	production_method_groups = {
+		pmg_base_banking
+		pmg_securities_trading
+		pmg_automation_banking
+	}
+
+	required_construction = construction_cost_high
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_light_industry.dds"
+}
+
+building_food_service = {
+	building_group = bg_services
+	icon = "gfx/interface/icons/building_icons/food_retailer.dds"
+	city_type = city
+	levels_per_mesh = 5
+
+	ai_nationalization_desire = -0.25
+
+	production_method_groups = {
+		pmg_base_food_services
+		pmg_restaurant_type
+		pmg_food_service_logistics
+	}
+
+	required_construction = construction_cost_medium
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_light_industry.dds"
+}
+
+building_retail_services = {
+	building_group = bg_services
+	icon = "gfx/interface/icons/building_icons/hardware_retailer.dds"
+	city_type = city
+	levels_per_mesh = 5
+
+	ai_nationalization_desire = -0.25
+
+	production_method_groups = {
+		pmg_base_retail
+		pmg_retail_specialization
+		pmg_retail_logistics
+	}
+
+	required_construction = construction_cost_medium
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_light_industry.dds"
+}
+
+building_advertising_agency = {
+	building_group = bg_services
+	icon = "gfx/interface/icons/building_icons/building_advertising.dds"
+	city_type = city
+	levels_per_mesh = 5
+
+	ai_nationalization_desire = -0.5
+
+	production_method_groups = {
+		pmg_base_advertising
+		pmg_digital_advertising
+		pmg_advertising_research
+	}
+
+	required_construction = construction_cost_medium
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_light_industry.dds"
+}
+
+building_warehouse = {
+	building_group = bg_services
+	icon = "gfx/interface/icons/building_icons/warehouse.dds"
+	city_type = city
+	levels_per_mesh = 5
+
+	ai_nationalization_desire = 0.0
+
+	production_method_groups = {
+		pmg_base_warehousing
+		pmg_warehousing_logistics
+	}
+
+	required_construction = construction_cost_medium
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_light_industry.dds"
+}
+
+building_pharmaceutical_services = {
+	building_group = bg_services
+	icon = "gfx/interface/icons/building_icons/healthcare_services.dds"
+	city_type = city
+	levels_per_mesh = 5
+
+	ai_nationalization_desire = 0.25
+
+	production_method_groups = {
+		pmg_base_pharmaceutical_services
+		pmg_pharmaceutical_research
+		pmg_pharmaceutical_automation
+	}
+
+	required_construction = construction_cost_high
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_light_industry.dds"
+}
+
+building_software_industry = {
+	building_group = bg_services
+	city_type = city
+	levels_per_mesh = 5
+	icon = "gfx/interface/icons/building_icons/software_industry.dds"
+
+	unlocking_technologies = {
+		empiricism
+	}
+
+	ai_nationalization_desire = 0.25
+	
+	production_method_groups = {
+		pmg_software_production
+		pmg_software_automation
+	}
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_light_industry.dds"
+	required_construction = construction_cost_high
+	ownership_type = self
+}
+
+### missile silo
+
+building_nuclear_silo = {
+	building_group = bg_missile_silo
+	icon = "gfx/interface/icons/building_icons/nuclear_silo.dds"
+	city_type = city
+	required_construction = construction_cost_monument
+
+	unique = yes
+	expandable = no
+	downsizeable = yes
+	max_level = 1
+	
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_military.dds"
+	
+	production_method_groups = {
+		pmg_base_building_nuclear_silo
+	}
+ 
+	# Requires enrichment complete — checked via scripted trigger
+	potential = {
+			owner = {
+				has_variable = nuclear_capable
+			}
+	}
+ 
+	can_build_private = {
+		always = no
+	}	
+	ai_value = 600
+	can_build_government = {
+		custom_tooltip = {
+			text = "SMD_SILO_REQUIRES_ENRICHMENT_TT"
+			owner = {
+				has_variable = nuclear_capable
+			}
+		}
+	}
+}

@@ -1,0 +1,239 @@
+namespace = chechen_war
+
+# Major Offensive Launched
+chechen_war.1 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = chechen_war.1.t
+	desc = chechen_war.1.d
+
+	event_image = { video = "europenorthamerica_before_the_battle" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	trigger = {
+	}
+
+	immediate = {
+		if = {
+			limit = { c:CCH ?= this }
+			show_as_tooltip = {
+				add_modifier = {
+					name = chechen_mountain_resistance
+					multiplier = {
+						value = global_var:che_chechen_war_score
+						min = 1
+					}
+					years = 1
+					is_decaying = yes
+				}
+			}
+		}
+		if = {
+			limit = { c:RUS ?= this }
+			show_as_tooltip = {
+				add_modifier = {
+					name = chechen_war_rus_morale
+					multiplier = {
+						value = global_var:rus_chechen_war_score
+						min = 1
+					}
+					years = 2
+					is_decaying = yes
+				}
+			}
+		}
+	}
+
+	option = {
+		name = {
+			trigger = { c:RUS ?= this }
+			text = chechen_war.1.a
+		}
+		name = {
+			trigger = { c:CCH ?= this }
+			text = chechen_war.1.a.che
+		}
+		default_option = yes
+	}
+}
+
+# War Victory
+chechen_war.2 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = {
+		first_valid = {
+			triggered_desc = {
+				desc = chechen_war.2.t_rus
+				trigger = { NOT = { has_variable = chechen_independence_secured } }
+			}
+			triggered_desc = {
+				desc = chechen_war.2.t_che
+				trigger = { has_variable = chechen_independence_secured }
+			}
+		}
+	}
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = chechen_war.2.d_rus
+				trigger = { NOT = { has_variable = chechen_independence_secured } }
+			}
+			triggered_desc = {
+				desc = chechen_war.2.d_che
+				trigger = { has_variable = chechen_independence_secured }
+			}
+		}
+	}
+
+	event_image = { video = "unspecific_military_parade" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	trigger = {
+	}
+
+	immediate = {
+		ruler ?= { save_scope_as = country_ruler }
+	}
+
+	option = {
+		name = chechen_war.2.a
+		default_option = yes
+	}
+}
+
+# Chechen Ambush — random guerrilla event for Chechnya
+chechen_war.5 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+	cooldown = { months = 6 }
+
+	title = chechen_war.5.t
+	desc = chechen_war.5.d
+
+	event_image = { video = "helicopter_attack" }
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	trigger = {
+		c:CCH ?= this
+		is_at_war = yes
+	}
+
+	option = {
+		name = chechen_war.5.a # Strike from the mountains
+		default_option = yes
+
+		c:RUS ?= {
+			random_scope_state = {
+				limit = {
+					OR = {
+						state_region = s:STATE_NORTH_CAUCASUS
+						state_region = s:STATE_DAGESTAN
+					}
+				}
+				add_modifier = { name = chechen_war_devastation months = 12 }
+				add_devastation = 3
+			}
+		}
+		add_modifier = {
+			name = chechen_ambush_tactics
+			months = 6
+		}
+
+		ai_chance = { base = 8 }
+	}
+
+	option = {
+		name = chechen_war.5.b # Hold our positions
+		ai_chance = { base = 2 }
+	}
+}
+
+# Mountain Raid — Chechen raid on Russian supply lines
+chechen_war.6 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+	cooldown = { months = 6 }
+
+	title = chechen_war.6.t
+	desc = chechen_war.6.d
+
+	event_image = { video = "yugoslav_war" }
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	trigger = {
+		c:CCH ?= this
+		is_at_war = yes
+	}
+
+	option = {
+		name = chechen_war.6.a # Raid their supply lines
+		default_option = yes
+
+		add_modifier = {
+			name = chechen_war_raid_expenses
+			months = 6
+			multiplier = money_amount_multiplier_medium
+		}
+		c:RUS ?= {
+			random_scope_state = {
+				limit = {
+					OR = {
+						state_region = s:STATE_NORTH_CAUCASUS
+						state_region = s:STATE_DAGESTAN
+						state_region = s:STATE_GREATER_CAUCASUS
+					}
+				}
+				add_devastation = 5
+			}
+		}
+		c:RUS ?= {
+			post_notification = chechen_war_guerilla_raid
+		}
+
+		ai_chance = { base = 6 }
+	}
+
+	option = {
+		name = chechen_war.6.b # Too risky
+		ai_chance = { base = 4 }
+	}
+}
+
+# War Start Event — notification
+chechen_war.7 = {
+	type = country_event
+	placement = ROOT
+	duration = 3
+
+	title = chechen_war.7.t
+	desc = chechen_war.7.d
+
+	event_image = { video = "yugoslav_war" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	trigger = {
+	}
+
+	immediate = {
+		c:RUS ?= { ruler ?= { save_scope_as = rus_ruler } }
+		c:CCH ?= { ruler ?= { save_scope_as = che_ruler } }
+	}
+
+	option = {
+		name = chechen_war.7.a
+		add_contextless_journal_entry = je_first_chechen_war
+		show_as_tooltip = {
+			custom_tooltip = chechen_war_startup_tt
+		}
+	}
+}

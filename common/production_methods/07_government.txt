@@ -1,0 +1,364 @@
+
+REPLACE_OR_CREATE:pm_simple_organization = {
+	texture = "gfx/interface/icons/production_method_icons/simple_organization.dds"
+	
+	country_modifiers = {
+		workforce_scaled = {
+			country_bureaucracy_add = 300
+
+		}
+	}	
+	
+	state_modifiers = {
+		workforce_scaled = {
+			state_tax_capacity_add = 100
+		}		
+	}
+
+	building_modifiers = {	
+		level_scaled = {
+			building_employment_clerks_add = 4000
+			goods_input_paper_add = 22
+			goods_input_professional_services_add = 1.5
+			goods_input_telecommunications_add = 0.8
+		}
+	}		
+}		
+
+REPLACE_OR_CREATE:pm_horizontal_drawer_cabinets = {
+	texture = "gfx/interface/icons/production_method_icons/horizontal_drawer_cabinets.dds"
+	
+	unlocking_technologies = {
+		chemical_bleaching
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			country_bureaucracy_add = 450
+		}
+	}
+	
+	state_modifiers = {
+		workforce_scaled = {
+			state_tax_capacity_add = 125
+		}		
+	}	
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 50
+			goods_input_telephones_add = 5
+			goods_input_professional_services_add = 2.75
+			goods_input_telecommunications_add = 3.25
+		}			
+	
+		level_scaled = {
+			building_employment_clerks_add = 4000
+		}
+	}		
+}
+
+REPLACE_OR_CREATE:pm_vertical_filing_cabinets = {
+	texture = "gfx/interface/icons/production_method_icons/vertical_filing_cabinets.dds"
+	unlocking_technologies = {
+		shift_work
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			country_bureaucracy_add = 600
+		}
+	}	
+	
+	state_modifiers = {
+		workforce_scaled = {
+			state_tax_capacity_add = 150
+		}		
+	}	
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 73
+			goods_input_telephones_add = 7
+			goods_input_professional_services_add = 4
+			goods_input_telecommunications_add = 4.5
+		}	
+	
+		level_scaled = {
+			building_employment_clerks_add = 4000
+		}
+	}	
+}
+
+REPLACE_OR_CREATE:pm_switch_boards = {
+	texture = "gfx/interface/icons/production_method_icons/telephone_switchboards.dds"
+	unlocking_technologies = {
+		corporate_management
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			country_bureaucracy_add = 750
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_tax_capacity_add = 175
+		}		
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 89
+			goods_input_telephones_add = 9
+			goods_input_professional_services_add = 5.5
+			goods_input_telecommunications_add = 6.5
+		}
+
+		level_scaled = {
+			building_employment_clerks_add = 2500
+			building_employment_bureaucrats_add = 2500
+		}
+	}	
+}
+
+REPLACE_OR_CREATE:pm_hereditary_bureaucrats = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_aristocrats.dds"
+	
+	unlocking_laws = {
+		law_hereditary_bureaucrats
+	}
+	
+	building_modifiers = {
+		level_scaled = {
+			building_employment_aristocrats_add = 250
+			building_employment_bureaucrats_add = 250
+		}
+	}			
+}
+
+REPLACE_OR_CREATE:pm_professional_bureaucrats = {
+	texture = "gfx/interface/icons/production_method_icons/professional_bureaucrats.dds"
+	
+	disallowing_laws = {
+		law_hereditary_bureaucrats
+	}	
+	
+	building_modifiers = {
+		level_scaled = {
+			building_employment_bureaucrats_add = 500
+		}
+	}			
+}	
+
+REPLACE_OR_CREATE:pm_secular_bureaucrats = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_bureacrats.dds"
+	
+	disallowing_laws = {
+		law_state_religion
+	}
+	
+	building_modifiers = {
+		level_scaled = {
+			building_employment_bureaucrats_add = 500
+		}
+	}			
+}
+
+REPLACE_OR_CREATE:pm_religious_bureaucrats = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_clergy.dds"
+	
+	disallowing_laws = {
+		law_total_separation
+		law_state_atheism
+	}	
+	
+	building_modifiers = {
+		level_scaled = {
+			building_employment_clergymen_add = 250
+			building_employment_bureaucrats_add = 250
+		}
+	}			
+}					
+
+REPLACE_OR_CREATE:pm_scholastic_education = {
+	texture = "gfx/interface/icons/production_method_icons/scholastic_education.dds"
+	
+	country_modifiers = {
+		workforce_scaled = { 
+			country_weekly_innovation_add = 2
+		}
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 6
+		}	
+	
+		level_scaled = {
+			building_employment_clerks_add = 1500
+			building_employment_laborers_add = 1500
+		}
+	}
+	
+	state_modifiers = {
+		workforce_scaled = { 
+			state_pop_qualifications_mult = 0.1
+		}	
+	}
+}
+
+REPLACE_OR_CREATE:pm_philosophy_department = {
+	texture = "gfx/interface/icons/production_method_icons/philosophy_dept.dds"
+	
+	unlocking_technologies = {
+		romanticism
+	}
+	
+	country_modifiers = {
+		workforce_scaled = { 
+			country_weekly_innovation_add = 0.5
+		}
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 11
+		}
+		
+		level_scaled = {
+			building_employment_clerks_add = 1750
+			building_employment_laborers_add = 1250
+		}					
+	}
+	
+	state_modifiers = {
+		workforce_scaled = { 
+			state_pop_qualifications_mult = 0.25
+		}	
+	}
+}
+
+REPLACE_OR_CREATE:pm_analytical_philosophy_department = {
+	texture = "gfx/interface/icons/production_method_icons/analytical_philosophy_department.dds"
+	
+	unlocking_technologies = {
+		electrical_generation
+	}
+	
+	country_modifiers = {
+		workforce_scaled = { 
+			country_weekly_innovation_add = 1.0
+		}
+	}
+	
+	building_modifiers = {
+		workforce_scaled = { 
+			goods_input_paper_add = 16
+		}
+		
+		level_scaled = {
+			building_employment_clerks_add = 2000
+			building_employment_laborers_add = 1000
+		}					
+	}
+	
+	state_modifiers = {
+		workforce_scaled = { 
+			state_pop_qualifications_mult = 0.35
+		}	
+	}
+}	
+
+REPLACE_OR_CREATE:pm_secular_academia = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_academics.dds"
+	
+	disallowing_laws = {
+		law_state_religion
+	}
+	
+	building_modifiers = {
+		level_scaled = {
+			building_employment_academics_add = 2000
+		}
+	}			
+}
+
+REPLACE_OR_CREATE:pm_religious_academia = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_clergy.dds"
+	
+	disallowing_laws = {
+		law_total_separation
+		law_state_atheism
+	}	
+	
+	building_modifiers = {
+		level_scaled = {
+			building_employment_clergymen_add = 1000
+			building_employment_academics_add = 1000
+		}
+	}			
+}			
+
+REPLACE_OR_CREATE:pm_skyscraper_bureaucratic_nexus = {
+	texture = "gfx/interface/icons/production_method_icons/skyscraper_bureaucratic_nexus.dds"
+	
+	state_modifiers = {
+		workforce_scaled = {
+			building_government_administration_throughput_add = 0.25
+		}
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 28
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 1000
+			building_employment_clerks_add = 2500
+			building_employment_bureaucrats_add = 1500
+		}
+	}
+}
+		
+REPLACE_OR_CREATE:pm_skyscraper_trade_nexus = {
+	texture = "gfx/interface/icons/production_method_icons/skyscraper_trade_nexus.dds"
+	
+	country_modifiers = {
+		workforce_scaled = {
+			country_trade_route_quantity_mult = 0.25
+		}
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 28
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 1000
+			building_employment_clerks_add = 2500
+			building_employment_bureaucrats_add = 1500
+		}
+	}
+}
+		
+REPLACE_OR_CREATE:pm_no_airships = {
+	texture = "gfx/interface/icons/production_method_icons/no_airships.dds"
+}
+
+REPLACE_OR_CREATE:pm_airship_mooring_post = {
+	texture = "gfx/interface/icons/production_method_icons/airship_mooring_post.dds"
+	
+	unlocking_technologies = {
+		zeppelins
+	}
+	
+	country_modifiers = {
+		workforce_scaled = { 
+			country_prestige_add = 10
+		}
+	}
+}

@@ -1,0 +1,190 @@
+﻿l_turkish:
+
+  # Base IGs
+ ig_rural_folk:0 "Kırsal Halk"
+ ig_rural_folk_only_icon:0 "@rural_folk!"
+ ig_rural_folk_desc:0 "Siyasal çıkarların çoğunlukla agrarian geçimleriyle uyumlu olduğu kırsaldaki insanlar."
+ ig_devout:0 "Dini Konular"
+ ig_devout_only_icon:0 "@devout!"
+ ig_devout_desc:0 "Çoğu dinin en özel takipçileri, onu ahlaki ve politik bilgeliğin en iyi kaynağı olarak görürler."
+ ig_industrialists:0 "Şirketler"
+ ig_industrialists_only_icon:0 "@industrialists!"
+ ig_industrialists_desc:0 "Yatırımcılar ve hissedarlar teknolojik ilerleme ve endüstriyel büyüme konusunda ilgi duyuyorlar."
+ ig_landowners:0 "Toprak sahipleri"
+ ig_landowners_only_icon:0 "@landowners!"
+ ig_landowners_desc:0 "Büyük mülklerin ve geniş fabrikaların sahipleri, toprak sahipleri geleneği ve eski paraları odaklıyor."
+ ig_intelligentsia:0 "Academia"
+ ig_intelligentsia_only_icon:0 "@intelligentsia!"
+ ig_intelligentsia_desc:0 "Ulusun edebiyat, sanat, müzik ve tiyatrodaki trendlerine liderlik eden entelektüeller. Ayrıca ortak yönetici sınıf / sınıf içerir"
+ ig_petty_bourgeoisie:0 "Kentliler"
+ ig_petty_bourgeoisie_only_icon:0 "@petty_bourgeoisie!"
+ ig_petty_bourgeoisie_desc:0 "Küçük işletmeler, ofis clerks, muhasebeciler ve zengin ve fakir strata arasında kabul edilen diğer bireyler."
+ ig_armed_forces:0 "Silahlı Kuvvetler"
+ ig_armed_forces_only_icon:0 "@armed_forces!"
+ ig_armed_forces_desc:0 "Profesyonel askerler ve ilgileri ülkenin ordusuna güçlü bir şekilde bağlı."
+ ig_trade_unions:0 "İşçi Sendikaları"
+ ig_trade_unions_only_icon:0 "@trade_unions!"
+ ig_trade_unions_desc:0 "Madenlerde, fabrikalarda ve alanlarda işçileri organize etmek isteyen iş organize etti ve bu yüzden tek bir sese karşılıksız çıkarların güçlülerini havuzda tuttu."
+
+  # Religious IGs
+ ig_catholic_church:0 "Katolik Kilisesi"
+ ig_catholic_church_desc:0 "Katoliklik Hristiyanlığın en büyük gizliliğidir. İnananlar Roma’nın Archbishop’unu tutuyorlar, Papa, Aziz Peter aracılığıyla İsa Mesih’in otoritesine kesintisiz bir hale geliyor. Diğer önemli inançlar azizlerin ve Virgin Mary'in birleştirilmesini içerir."
+ ig_orthodox_church:0 "Ortodoks Kilisesi"
+ ig_orthodox_church_desc:0 "Ortodoks kiliseler, Papa ile uzlaşmaz Doğu kiliseleri olma eğilimindedir."
+ ig_oriental_orthodox_church:1 "Doğu Ortodoks Kilisesi"
+ ig_oriental_orthodox_church_desc:1 "Doğu Ortodoks kiliseleri Papa ile uzlaşmaz Orta Doğu kiliseleri olma eğilimindedir."
+ ig_anglican_church:0 "Anglican Kilisesi"
+ ig_anglican_church_desc:0 "Anglican Kilisesi, Protestan Reformasyon sırasında Kral Henry VIII tarafından yaratıldı. Anglicans İncil'in Hristiyan dogması üzerine ana otorite olduğuna inanıyor, Papa'yı diğer evrilmiş kiliselerden daha az radikalken reddediyor."
+ ig_evangelical_church:0 "Evangelical Church"
+ ig_evangelical_church_desc:0 "Evangelical kiliseleri çoğunlukla Protestan Reformasyon sırasında Kuzey Avrupa'da yaratıldı. Evangelicals İncil'in Hristiyan dogmaları üzerindeki tek otoritesi olduğuna inanıyor, Papa'yı reddediyor ve azizlerin Katolikliğini idolatry'de sınırlayan olarak görüyor."
+ ig_rabbinical_council:0 "Şerefli Konsey"
+ ig_rabbinical_council_desc:0 "Bir ülkenin Yahudi populace liderliği, tartışma ve bursun güçlü geleneklerine sahip iyi eğitimli Rabbi olma eğilimindedir."
+ ig_sunni_madrasahs:1 "Sunni Ulema"
+ ig_sunni_madrasahs_desc:1 "Sunnism İslam'ın en büyük gizlisidir. İnananlar, Muhammed'in amcası Abu Bakr tarafından İslam'ın Caliph olarak başarılı olduğunu, Shi'a karşı olduğu gibi, oğlu Ali'nin meşru bir halef olduğunu görüyorlardı."
+ ig_shia_madrasahs:1 "Shi'a Ulema"
+ ig_shia_madrasahs_desc:1 "Shi'ism İslam'ın en büyük ikinci sırrıdır. İnananlar, Muhammed'in oğlu Ali tarafından İslam'ın Caliph olarak başarılı olduğunu, Ali'nin amcası Abu Bakr'ın meşru bir hale geldiği görüşüne karşı olduğunu iddia ediyorlar."
+ ig_hindu_priesthood:0 "Hindu papazlığı"
+ ig_hindu_priesthood_desc:0 "Muhtemelen en eski organize din hala varlığını sürdürüyor, Hinduizm, Hindular tarafından ibadet edilen birçok tanrının farklı rollere hizmet ettiği bir yığın sistemine bağlılık gerektirir."
+ ig_vajrayana_monks:0 "Vajrayana Monks"
+ ig_vajrayana_monks_desc:0 "Vajrayana Budizm Tibet ve Moğolistan'da en güçlü. Meditasyon ve kendi kendine özgü kullanımı vurgulamaktadır."
+ ig_mahayana_monks:0 "Mahayana Monks"
+ ig_mahayana_monks_desc:0 "Mahayana Budizm Çin, Vietnam ve Kore'de en güçlü. Toplumdaki herkesin mükemmeliyet yoluyla aydınlanmayı aramaya teşvik edilmesi gerektiğini vurgulamaktadır. Mahayana Buda'yı Tanrı gibi bir rakam olarak görüyor."
+ ig_theravada_monks:0 "Theravada Monks"
+ ig_theravada_monks_desc:0 "Theravada Budizm Burma, Siam, Kamboçya ve Ceylon'da en güçlü olanıdır. Nirvana'yı geri çağırmak isteyen bireylere büyük önem veriyor. Theravada Buda'yı Tanrı olarak görmüyor, ancak insanlığın geri kalanını mükemmelliğe gösteren aydınlanmış bir adam olarak görüyor."
+ ig_shinto_monks:0 "Shinto Monks"
+ ig_shinto_monks_desc:0 "Shintoism bir senkronizasyon inançtır, Budist karma kavramlarını birleştirin ve kami'nin ibadeti ve doğa ve ölü atalarının ruhları ile yeniden canlandırın."
+ ig_pagan_shamans:0 "Pagan Shamans"
+ ig_pagan_shamans_desc:0 "Animizm doğal ruhların ibadeti ve plastijidir. Animistler tarafından yapılan Rituals, gıda ve hayvancılık kurbanları ve introspection ruhsal yolculukları için salonucinojenik ilaçların tüketimi içerir."
+
+  # Taiping IGs
+ ig_taiping_god_worshippers:0 "God-Worshipping Society"
+ ig_taiping_god_worshippers_desc:0 "Tanrı-Worshipping, ya da İmparator-Worshipping Topluluğu, Cennet Krallığı arasında öne çıkan bir senkronizasyon Hristiyan inancıdır, bütün inananların Tanrı'nın oğulları ve kızları olarak yorum yapmasını destekler."
+
+  # British IGs
+ ig_landed_gentry:0 "Landed Gentry"
+ ig_landed_gentry_desc:0 "Büyük mülklerin ve geniş mülklerin sahipleri, inmiş gencilik geleneği ve eski paraların odaklarıdır."
+
+  # Prussian IGs
+ ig_junkers:0 "Junkers"
+ ig_junkers_desc:0 "Teutonik Krallığın Prusya topraklarına yerleşmek için Teutonic fethinin ardından takip eden ’jung herrs'ın (young Lords) ́dan Descended from the Highlandn land, Junkers are Prusya'nın soyluları değildir. Demokrasiye karşı elit kuralı tehdit olarak hareket etmeye eğilimlidirler."
+
+  # USA IGs
+ ig_southern_planters:0 "Ev sahipleri"
+ ig_southern_planters_desc:0 "Konut son zamanlarda daha az hale gelirken, ev sahipleri dernekleri olarak satın almak ve satış yapmak için gayrimenkul satmakta ve satmakta olan kişilerin grupları, yaşam maliyetine yapay olarak zarar verdiler."
+ ig_evangelicals:0 "Hıristiyanlar"
+ ig_evangelicals_desc:0 "Hıristiyanları şaşırtıcı derecede çeşitli Protestan mezheplerden uzaklaştırmak, Hristiyan bütün ulusun kendisini ulus çapındaki laiklikten kurtarmak için kendi ruhsal uyanışını bulmaları gerektiğini kabul eder."
+ ig_yeoman_farmers:0 "Kırsal Güneyliler"
+ ig_yeoman_farmers_desc:1 "Amerikan kırsal sınıfını korumak, birçok Peder tarafından ulusun yatağı olarak kabul edildi. Youoman sınıfı, Amerikan kırsal popülizminin vanguardı olarak uzun süredir kendini kurdu."
+ ig_wallstreet:0 "Wall Street"
+ ig_wallstreet_desc:0 "New York'taki Wall Street'teki yatırım bankaları Amerikan finansal sisteminin arka kemiğidir, tüm ekonomide aşırı etkiye sahiptir."
+ ig_silicon_valley:0 "Silikon Vadisi"
+ ig_silicon_valley_desc:0 "Programcılar ve işlerden, internetteki günlük hayatı yöneten bilgisayar wizzes."
+ ig_american_middle_class:0 "Orta Amerika"
+ ig_american_middle_class_desc:0 "Amerikan Orta Sınıfı, ülkenin tüketici tabanının çoğunu, livable maaşları veren çalışma işlerini yapıyor."
+ ig_digital_activists:0 "Digital Activists"
+ ig_digital_activists_desc:0 "Çeşitli online influencerlar populace üzerinde güç kullanıyor."
+  # Ottoman IGs
+ ig_local_governors:0 "Yerel Valiler"
+ ig_local_governors_desc:0 "illerin yöneticileri yerel patronaj ağları inşa ederek büyük etki elde edebilir. Dynaslar o kadar güçlü olabilirler ki, etkili bir şekilde bağımsız devletler sadece imparatorluğun nominal olarak bağlı."
+
+  # Chinese IGs
+ ig_literati:0 "Literati"
+ ig_literati_desc:0 "Çin'deki akademisyenler, hem hükümetin destekçileri hem de eleştirmenleri olarak önemli bir rol oynamaktadır."
+ ig_scholar_officials:0 "Scholar-Officials"
+ ig_scholar_officials_desc:0 "Çin'deki iniş gerçekten Çin'in güçsüzlüğü değil. Zenginlerini satın alma özellikleri aracılığıyla koruyorlar, ancak hükümetteki pozisyonlarına güç borçlular."
+ ig_confucian:0 "Confucian Scholars"
+ ig_confucian_desc:0 "Sosyal bir geleneğin daha fazlası, Confucianism birçok inançla rahat bir şekilde bir araya gelir, ancak yine de sosyal uyum ve güçlü ahlakları takip edenlerden talep eder."
+
+  # Papal IGs
+ ig_roman_landowners:1 "Civic Nobility"
+ ig_roman_landowners_desc:1 "Asil ailelerin ve toprak sahipleri Papa tarafından verilen başlıklara karşı çıkıyorlar, Romalılar sivil soyluluk zenginlik, etki ve Kutsal See'in bölgelerindeki zamansal güç olarak hizmet ediyor."
+ ig_roman_curia:0 "Roman Curia"
+ ig_roman_curia_desc:0 "Roma Curia ya da bazen bilindiği gibi “ Roma’nın sloganı”, Kutsal See'nin idari kurumudur, hem ekclesiastical hem de zamansal güçleri de kullanır."
+
+  # Japanese IGs
+ ig_samurai:0 "samuray"
+ ig_samurai_desc:0 "Samurai, Japonya'nın kalıtsal askeri soyluluğudur ve Daimyo'ya ayrıcalıklı korumacılar olarak hizmet eder ve onların feodal ustalarının uygulayıcıları olarak kalacaktır."
+ ig_shogunate:0 "Shogunate"
+ ig_shogunate_desc:0 "Shogunate, 12. yüzyıldan beri Japonya'yı yöneten askeri hükümete atıfta bulunuyor. Güçlü feodal lordların desteğiyle, Daimyo, insitution Japonya'nın geleneksel düzenine adanmıştır."
+ ig_peasants:1 "Hemin"
+ ig_peasants_desc:0 "Hemin, herhangi bir sosyal ayrıcalık olmadan doğan Japon ortak sınıfını ve öncelikle kırsal çiftçileri yansıtan siyasi çıkarlarla ifade ediyor."
+ ig_buddhist_monks:0 "Budist Monks"
+ ig_buddhist_monks_desc:0 "Buna ek olarak, 19. yüzyılda Budizm'in Japonya'da bir bin yıldan fazla bir süredir var olduğu için kami'deki yerli Japon inancıyla karşı karşıyadır. Edo dönemi boyunca devlet tarafından korunan Budist okullar, kami ve buddhas arasındaki senkronizasyon ilişkisini vurgulamaktadır."
+
+  # Hawaiian IGs
+ ig_christian_missionaries:0 "Christian Missionaries"
+ ig_christian_missionaries_desc:0 "Hıristiyan Misyonlar, Hawai’nin sadece birkaç on yıl önce gelmesiyle birlikte, Kahuna’yı Hawai’nin baskın clerical sınıfı olarak dikti. Batı güçleriyle ticaret yapmayı, Batı'dan göçmenleri çekmek ve yerli Hawaiilerin Hristiyanlığa dönüştürülmesini savunuyorlar."
+ ig_alii:0 "Ali'i"
+ ig_alii_desc:0 "Ali’i, hükümran monarşinin hizmetinde Hawai’nin daha az soylularını temsil ediyor. Geleneksel değerleri savunuyorlar ve monarşinin kuralını koruyorlar."
+ ig_maka_ainana:0 "Maka'āinana"
+ ig_maka_ainana_desc:0 "Maka'āinana, Hawai'nin kırsal sınıfını temsil ediyor, sık sık bitki ve balıkçılıkta çalışıyor. Geleneksel değerlere ve Hawai’nin tarım sektöründe ekonomik bağımlılık devam etti."
+ ig_hawaiian_democrats:0 "Demokratlar Demokratlar"
+ ig_hawaiian_democrats_desc:0 "Demokratlar, Hawai’nin liberal reformcularını temsil ediyor. monarşinin mutlak gücünü demokratik bir rejime ve Batı güçleriyle devam eden ticaret ilişkilerini ortadan kaldırmak için savunuyorlar."
+
+  # Swedish IGs
+ ig_church_of_sweden:0 "İsveç Kilisesi"
+ ig_church_of_sweden_desc:0 "İsveç Kilisesi 16. yüzyılda Kral Gustav Vasa tarafından ikna edildi ve İsveç resmi Devlet Kilisesi. Bir Lutheran kurumu olmak, Kilise İncil'in Hristiyanlık konusundaki tek otoritesi olduğunu, böylece Papa'nın otoritesini ve azizlerin yok edilmesi gibi geleneklerini reddediyor."
+
+  # Finnish IGs
+ ig_church_of_finland: "Finlandiya Kilisesi"
+ ig_church_of_finland_desc: "Finlandiya'nın 1809 yılında İsveç'ten ayrılmasından doğdu, Finlandiya Kilisesi ülke resmi devlet kilisesi olarak kuruldu. Bir Lutheran kurumu olmak, Kilise İncil'in Hristiyanlık konusundaki tek otoritesi olduğunu, böylece Papa'nın otoritesini ve azizlerin yok edilmesi gibi geleneklerini reddediyor."
+
+# Danish IGs
+ ig_church_of_denmark: "Danimarka Kilisesi"
+ ig_church_of_denmark_desc: "16. yüzyılda Kral Christian III tarafından kuruldu, Danimarka Kilisesi Danimarka'nın resmi devlet kilisesidir. Bir Lutheran kurumu olmak, Kilise İncil'in Hristiyanlık konusundaki tek otoritesi olduğunu, böylece Papa'nın otoritesini ve azizlerin yok edilmesi gibi geleneklerini reddediyor."
+
+# Norwegian IGs
+ ig_aristocracy_of_officials: "Resmin tarafsızlığı"
+ ig_aristocracy_of_officials_desc: "Herhangi bir önemli tarihi fark etme ve kurumla resmi olarak 1821'de kaldırıldıktan sonra, Norveç'in üst sınıfı bunun yerine sivil hizmetkârlardan, avukatlardan, rahiplerden ve doktorlar geleneksel bir soylunun pozisyonlarına işgal ediyor."
+ ig_church_of_norway: "Norveç Kilisesi"
+ ig_church_of_norway_desc: "Norveç Kilisesi Roma Katolik Kilisesi'nden ayrı bir vücut olarak kuruldu ve 16. yüzyılda Protestan Reformasyon sonucu olarak Norveçli devletle entegre edildi. Bir Lutheran kurumu olmak, Kilise İncil'in Hristiyanlık konusundaki tek otoritesi olduğunu, böylece Papa'nın otoritesini ve azizlerin yok edilmesi gibi geleneklerini reddediyor."
+
+  # Korean IGs
+ ig_yangban:0 "Yangban Resmi"
+ ig_yangban_desc:0 "Yangban, Kore'nin indini ve keşfedilmemiş gentry'sini temsil ediyor, bu da onların başlıklarını ve ülkenin bürokratik aygıtı içindeki konumlardan etki ediyor. The Confucian ideals of the Scholar-Official, onlar Kore'nin geleneksel düzeninin sol savunucularıdır."
+
+  # Russian IGs
+ ig_gentry_assembly:0 "Gentry Assembly"
+ ig_gentry_assembly_desc:0 "Gentry Assembly, Rus Aristocracy'yi temsil eden kendini yöneten bedendir. 1785'te resmi statü, Meclis, asillerin geleneksel güçlerin ve ayrıcalıkların tutulması veya genişletilmesi için her zaman savunmuştur."
+
+  # Australian IGs
+ ig_squattocracy: "Squattocracy"
+ ig_squattocracy_desc: "'Squattocracy', küçük veya yasal bir iddiaya sahip büyük arazileri işgal eden beyaz Avustralyalı yerleşimcilerin sınıfını temsil ediyor. Çoğu zaman belirli bir alana varacak ilk yerleşimciler, squattokrasi öncelikle kendi bölgelerinde hayvan yetiştirmek için muazzam bir zenginlik ve sosyal etki kazandı."
+
+  # Austrian IGs
+ austrian_aristocracy:0 "Avusturya"
+ austrian_aristocracy_desc: "Avusturya Aristocracy, Avusturya'nın kurucu soylu sınıfını temsil ediyor, tarihsel olarak Avusturya'nın Habsburg Kutsal Roman İmparatorları ve Archdukes tarafından asil başlıklarla ödüllendirildi ve emperyal mahkemede büyük etkiye sahip oldu."
+
+  # Misc Igs
+ ig_red_army:0 "Kızıl Ordu"
+ ig_red_army_desc:0 "Kızıl Ordu, Devrim'in savunmasına ve yayılmasına adanmış bir kurumdur, proletaryanın ve Komünist ideoloji ile geleneksel silahlı güçlerin eşiğinde doğan."
+ ig_fellahin: "Fellahin"
+ ig_fellahin_desc: "Onların isimlerini plows'tan elde etmek ve onlara kadar çalıştıkları alanlardan kazanmak, ezahin Mısır'ın çiftçiler ve köylüleridir."
+
+  # Indian IGs
+  ig_zamindars: "Zamindars"
+  ig_zamindars_desc: "Zamindarlar genellikle büyük mülklerin kalıtsal sahipleridir. Genellikle Mughal-era aristokrasisinin kalıntılarını temsil ediyorlar, yöneticileri adına toprak gelirlerini toplamak için hakkı verdiler."
+
+  ig_east_india_company: "Doğu Hindistan Şirketi"
+  ig_east_india_company_desc: "Doğu Hindistan Şirketi, İngiliz Parlamentosu'nun gözetimi altında Hindistan'ı yöneten özel şirkettir. 1833'te ticari görevinin geri alınmasından sonra, tamamen idari bir beden haline geldi."
+
+  ig_presidency_armies: "Başkan Armies"
+  ig_presidency_armies_desc: "Başkan Armies sömürge Hindistan'ın silahlı güçleridir, genellikle Avrupalı subayların komutasındaki yerli Hint ayrılıklarından oluşur."
+
+  ig_indian_army: "Hint Ordusu"
+  ig_indian_army_desc: "Hint Ordusu sömürge Hindistan'ın birincil silahlı gücüdür, Başkan Armies'i tekil bir bedene dönüştürerek kuruldu. Büyük ölçüde Avrupalı subayların komutasındaki yerli Hint askerlerinden oluşur."
+
+  ig_ryots: "Ryots"
+  ig_ryots_desc: "Ryots, Hindistan'ın geleneksel çiftçileri ve köylüleridir, tipik olarak kendi toprakları olmadan. Onların ilgileri büyük ölçüde doğada agrariandır."
+
+  ig_civil_servants: "Sivil Servants"
+  ig_civil_servants_desc: "Sivil Hizmetçiler, öncelikle Hint sömürge bürokrasisinin çeşitli organlarından gelişmiş olan yerli Hint zekiliğini kapsar. Genellikle clerks veya diğer düşük seviyeli yöneticiler olarak rolleri tuttular."
+
+  ig_government_of_india: "Hindistan Hükümeti"
+  ig_government_of_india_desc: "Hindistan Hükümeti, Hindistan'daki İngiliz taçlarının çıkarlarını geliştirmekle görevli Avrupa sömürge yönetimine atıfta bulunuyor."
+
+  ig_bhadralok: "Bhadraloks"
+  ig_bhadralok_desc: "Bhadralok ya da "akıllı" Hint toplumunun paralı orta sınıflarını kapsar. Şu anki formdaki bu grup Bengal'de, yerli Bengalli tüccarlar, sanayiciler ve Hindistan'ın fethesi sırasında Doğu Hindistan Şirketi ile uyumlu olan finansçılar arasında ortaya çıktı."
+
+  ig_kisanharu: "Kisanharu"
+  ig_kisanharu_desc: "Kisanharu, Nepal'in geleneksel çiftçileri ve köylülüğüdür, genellikle kendi toprakları olmadan. Onların ilgileri büyük ölçüde doğada agrariandır."

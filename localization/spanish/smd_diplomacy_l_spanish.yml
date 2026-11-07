@@ -1,0 +1,108 @@
+﻿l_spanish:
+#################### JE ####################
+# The Internet
+
+economic_union:0 "Unión Económica"
+economic_union_pact_desc:0 "Un pacto diplomático en el que hay un mercado unificado y una moneda entre dos estados."
+subject_type_economic_union:0 "Unión Económica"
+subject_type_economic_union:0 "Unión Económica"
+subject_type_economic_union_desc:0 "Un pacto diplomático en el que hay un mercado unificado y una moneda entre dos estados."
+concept_economic_union:0 "Unión Económica"
+concept_subject_type_economic_union:0 "Unión Económica"
+subject_type_economic_union_no_icon:0 "Unión Económica"
+concept_economic_union_desc:0 "Un pacto diplomático en el que hay un mercado unificado y una moneda entre dos estados."
+
+economic_union2:0 "Unión Económica"
+economic_union2_pact_desc:0 "Un pacto diplomático en el que hay un mercado unificado y una moneda entre dos estados."
+
+eu_events.400:0 "Unión Europea"
+
+support_revolution:0 "Apoyar la revolución"
+support_revolution_action_propose_name:0 "Apoyar la revolución"
+support_revolution_action_break_name:0 "Halt Support"
+
+impose_sanctions:0 "Sanciones impose"
+impose_sanctions_desc: "Aprovechar los activos financieros de este país. En términos de juego, esto crea una inversión bancaria en la que el dinero se transfiere directamente del tesoro del objetivo basado en la diferencia en el PIB entre los dos países."
+impose_sanctions_action_propose_name:0 "Sanciones financieras"
+impose_sanctions_action_break_name:0 "Sanciones de elevación"
+impose_sanctions_pact_desc: "¡Nos han impuesto sanciones!"
+impose_sanctions_notification_name: "¡Nos han impuesto sanciones!"
+impose_sanctions_notification_desc: "¡Nos han dado sanciones financieras!"
+
+humanitarian_aid:0 "Enviar ayuda humanitaria"
+humanitarian_aid_desc: "Prestar asistencia financiera a los ciudadanos que viven en este país. Transfiere dinero de nuestro tesoro directamente en los bolsillos de los pops que viven en este país."
+humanitarian_aid_action_propose_name:0 "Ayuda humanitaria"
+humanitarian_aid_action_break_name:0 "Halt Humanitarian Aid"
+humanitarian_aid_pact_desc:0 "Prestar asistencia financiera a los ciudadanos que viven en este país. Transfiere dinero de nuestro tesoro directamente en los bolsillos de los pops que viven en este país."
+humanitarian_aid_notification_name: "¡Nos está enviando ayuda humanitaria!"
+humanitarian_aid_notification_desc: "Estamos recibiendo ayuda humanitaria."
+humanitarian_aid_proposal_accepted_name: "Asistencia humanitaria aceptada"
+humanitarian_aid_proposal_accepted_desc: "Ahora estamos proporcionando ayuda humanitaria."
+
+
+host_military_bases_desc: ""
+host_military_bases_effects_desc: "• Establece un acuerdo militar entre dos id=0/año en el que se permite la puesta en marcha de uno id=1/(s) mediante las bases aéreas del otro id=3/ título"
+host_military_bases_article_short_desc: "id=0/año puede lanzar misiles a través de id=1⁄4"
+
+ smd_create_economic_union:0 "Proponer la Unión Económica"
+ smd_create_economic_union_action_name:0 "Proponer la Unión Económica"
+ smd_create_economic_union_action_propose_name:0 "Proponer la Unión Económica"
+ smd_create_economic_union_desc:0 "Proponer una unión económica construida alrededor de privilegios comerciales y derechos de tránsito recíprocos."
+ smd_create_economic_union_action_notification_name:0 "Unión Económica propuesta"
+ smd_create_economic_union_action_notification_desc:0 "id=0/año ha propuesto una unión económica con id=1/año."
+ smd_create_economic_union_action_notification_third_party_name:0 "Unión Económica propuesta"
+ smd_create_economic_union_action_notification_third_party_desc:0 "id=0/año ha propuesto una unión económica con id=1/año."
+
+ smd_diplomatic_unification:0 "Unificación diplomática"
+ smd_diplomatic_unification_action_name:0 "Unificación diplomática"
+ smd_diplomatic_unification_action_propose_name:0 "Proponer la unificación"
+ smd_diplomatic_unification_desc:0 "Proponer una unificación política pacífica después de la integración económica y la alineación cultural."
+ smd_diplomatic_unification_action_notification_name:0 "Unificación diplomática propuesta"
+ smd_diplomatic_unification_action_notification_desc:0 "id=0/año ha propuesto la unificación diplomática con id=1/año."
+ smd_diplomatic_unification_action_notification_third_party_name:0 "Unificación diplomática propuesta"
+ smd_diplomatic_unification_action_notification_third_party_desc:0 "id=0/año ha propuesto la unificación diplomática con id=1/año."
+
+ smd_diplomatic_unification_annexation_effect_tt:0 "El país receptor será plenamente anexado por el iniciador."
+ smd_create_economic_union_proposal_accepted_name:0 "Unión Económica aceptada"
+ smd_create_economic_union_proposal_accepted_desc:0 "id=0/año ha aceptado la propuesta de crear una unión económica."
+ smd_create_economic_union_proposal_declined_name:0 "Rechazada por la Unión Económica"
+ smd_create_economic_union_proposal_declined_desc:0 "id=0/año ha rechazado la propuesta de crear una unión económica."
+ smd_diplomatic_unification_proposal_accepted_name:0 "Unificación aceptada"
+ smd_diplomatic_unification_proposal_accepted_desc:0 "id=0/año ha aceptado la propuesta de unificación diplomática de id=1/ título y será anexada."
+ smd_diplomatic_unification_proposal_declined_name:0 "Unificación rechazada"
+ smd_diplomatic_unification_proposal_declined_desc:0 "id=0/año ha rechazado la propuesta de unificación diplomática de id=1/año."
+ smd_economic_union_base_resistance_tt:0 "Los países tienen una renuencia básica a fundar sindicatos económicos."
+ smd_unification_base_resistance_tt:0 "Los países tienen una fuerte renuencia a aceptar la anexión mediante la unificación diplomática."
+ 
+ treaty_name_smd_economic_union:0 "Unión Económica"
+ treaty_name_smd_diplomatic_unification:0 "Tratado de Unificación Diplomática"
+
+ smd_economic_union_requires_independence_tt:0 "Ambos países deben ser suficientemente independientes."
+ smd_economic_union_requires_peace_tt:0 "Ambos países deben estar en paz entre sí y no estar comprometidos con un juego diplomático."
+ smd_economic_union_requires_no_subject_relation_tt:0 "Ningún país ya puede ser el sujeto o el señor del otro."
+ smd_economic_union_requires_no_isolationism_tt:0 "Ningún país puede tener una política económica aislacionista."
+ smd_economic_union_requires_no_duplicate_tt:0 "Los países no deben tener ya una unión económica."
+
+ smd_unification_requires_independence_tt:0 "Ambos países deben ser suficientemente independientes."
+ smd_unification_requires_peace_tt:0 "Ambos países deben estar en paz entre sí y no estar comprometidos con un juego diplomático."
+ smd_unification_requires_no_subject_relation_tt:0 "Ningún país ya puede ser el sujeto o el señor del otro."
+ smd_unification_requires_economic_union_tt:0 "Los países ya deben tener una unión económica."
+ smd_unification_requires_culture_tt:0 "Los países deben tener culturas primarias similares, compartiendo una cultura primaria, un grupo patrimonial y un grupo lingüístico, o rasgos patrimoniales y lingüísticos."
+ smd_unification_requires_good_relations_tt:0 "Las relaciones deben ser al menos amistosas."
+ smd_diplomatic_unification_effect_tt:0 "El país que acepta se convierte en un dominio del iniciador."
+ 
+ threaten_nuclear_hostilities:0 "Amenazar a las hostilidades nucleares"
+ threaten_nuclear_hostilities_action_name:0 "Amenazar a las hostilidades nucleares"
+ threaten_nuclear_hostilities_action_propose_name:0 "Amenazar a las hostilidades nucleares"
+ threaten_nuclear_hostilities_desc:0 "Emitir una amenaza nuclear contra otro país. La berbería nuclear aumenta temporalmente nuestra reputación diplomática, lo que hace que otros países puedan aceptar tratados de nosotros."
+ threaten_nuclear_hostilities_action_notification_name:0 "Armas nucleares amenazadas"
+ threaten_nuclear_hostilities_action_notification_desc:0 "id=0/año amenaza las hostilidades nucleares contra idx id=1/año."
+ threaten_nuclear_hostilities_action_notification_third_party_name:0 "Armas nucleares amenazadas"
+ threaten_nuclear_hostilities_action_notification_third_party_desc:0 "id=0/año amenaza las hostilidades nucleares contra idx id=1/año."
+
+ threaten_nuclear_hostilities_requires_nuclear_capable_tt:0 "Nuestro país debe ser capaz de ser nuclear."
+ threaten_nuclear_hostilities_cooldown_tt:0 "No debemos haber amenazado recientemente las hostilidades nucleares."
+ threaten_nuclear_hostilities_target_valid_tt:0 "El objetivo debe ser un país válido y no descentralizado."
+
+ threatened_nuclear_hostilities_diplomatic_reputation:0 "Hostilidades nucleares amenazadas"
+ threatened_nuclear_hostilities_diplomatic_reputation_desc:0 "La brinkmanship nuclear ha aumentado temporalmente la reputación diplomática de este país, lo que hace que otros países acepten más tratados de él."

@@ -1,0 +1,43 @@
+﻿CHARACTERS = {
+	c:FRA ?= {
+	create_character = {
+			template = FRA_jacques_lanxade
+		}
+	create_character = {
+			template = FRA_marc_blondel
+		}
+	create_character = {
+			template = FRA_bernard_arnault
+		}
+	create_character = {
+			template = FRA_jean_marie_le_pen
+		}
+	create_character = {
+			template = FRA_simone_veil
+		}
+	create_character = {
+			template = FRA_jean_marie_lustiger
+		}
+	create_character = {
+			template = FRA_pierre_beregovoy
+		}
+	create_character = {
+			template = FRA_jacques_chirac
+		}
+	create_character = {
+			first_name = "francois"
+			last_name = "mitterand"
+			historical = yes
+			ruler = yes
+			culture = cu:french
+			birth_date = 1916.11.03
+			dna = dna_mitterand
+			ig_leader = yes
+			interest_group = ig_rural_folk
+			ideology = ideology_progressive_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+}

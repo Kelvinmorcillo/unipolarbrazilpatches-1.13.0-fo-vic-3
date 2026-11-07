@@ -1,0 +1,49 @@
+﻿l_japanese:
+ # ── TAB RENAME ────────────────────────────
+ BUDGET_TAB_ASSETS: "金融システム"
+ BUDGET_TAB_FINANCE: "アセット"
+ # ── CENTRAL BANKING PANEL ─────────────────
+ BUDGET_CENTRAL_BANKING_HEADER: "中央銀行"
+ BUDGET_CENTRAL_BANK_LAW_LABEL: "現在の方針:"
+ BUDGET_FISCAL_POLICY_LABEL: "金融政策のスタンス"
+
+ # Scripted loc keys
+ cb_policy_loc_1: "#R ほとんどの契約#!"
+ cb_policy_loc_2: "#r 受託#!"
+ cb_policy_loc_3: "#Y ニュートラル#!"
+ cb_policy_loc_4: "#g 拡張#!"
+ cb_policy_loc_5: "#G ほとんどの拡張#!"
+
+ # ── BUTTON TOOLTIPS — FRACTIONAL RESERVE ──
+ CB_POLICY_1_TOOLTIP: "#bold ほとんどの契約#!\n#tooltip_separator!\n #header 僅かな予約:#!\n@red_cross! 商用銀行のスループット:#green +10% #! 僅かな予約:@green_checkmark!@green_checkmark! @green_checkmark! <x 25% @green_checkmark! <x 25% @green_checkmark!"
+ CB_POLICY_2_TOOLTIP: "#bold コントラクト#!\n#tooltip_separator!\n #header 僅かな予約:#!\n@red_cross! 商用銀行のスループット:#green +5% <x id=10/@red_cross! @green_checkmark!@green_checkmark!@green_checkmark!@green_checkmark! @green_checkmark!</> 最大キャッシュリザーブの構築: #red -12.5% #!"
+ CB_POLICY_3_TOOLTIP: "#bold 安定 #!\n#tooltip_separator!\n 中央銀行は、アクティブなスタンスを必要としません。 修飾子は適用されません。"
+ CB_POLICY_4_TOOLTIP: "#bold 拡張 #!\n#tooltip_separator!\n #header 僅かな予約:#!\n@red_cross! 商用銀行のスループット:#red -5% #! @red_cross! @green_checkmark! @green_checkmark!@green_checkmark!@green_checkmark!<x @green_checkmark!</> <x "><x "><x ">@green_checkmark! <x @green_checkmark!</> <x "></></> <x "><x "> <x "><x "><x ">@green_checkmark! <x "> <x "><x "><x 商用銀行の id=20> <x id="
+ CB_POLICY_5_TOOLTIP: "#bold ほとんどの拡張#!\n#tooltip_separator!\n #header 僅かな予約:#!\n@red_cross! 商用銀行のスループット:#red -10% <x id=10/@red_cross! @green_checkmark! @green_checkmark! @green_checkmark! @green_checkmark! @green_checkmark! <x @green_checkmark!</>"
+
+ # Fractional Reserve variants
+ CB_POLICY_1_FRAC: "#bold ほとんどの契約 — 僅かな予約#!\n#tooltip_separator!\n中央銀行は信用条件をかなりきつく締めます。\n\n@red_cross! 銀行のスループット #b+10%#!\n\n\n\n@red_cross!"
+ CB_POLICY_2_FRAC: "#bold 契約 — 僅かな予約#!\n#tooltip_separator!\n 中央銀行は、クレジット条件に軽度の締付を適用します。\n\n@red_cross! 銀行のスループット #b+5%#!\n@red_cross! 金融地区のスループット #b-5%#!"
+ CB_POLICY_3_FRAC: "#bold 中立 — 僅かな Reserve#!\n#tooltip_separator!\n 中央銀行は、アクティブなスタンスを必要としません。 修飾子は適用されません。"
+ CB_POLICY_4_FRAC: "#bold 拡張 — 僅かな Reserve#!\n#tooltip_separator!\n 中央銀行は、融資を刺激するクレジット条件を緩和します。\n\n@green_checkmark! 銀行スループット #b-5%#!\n@green_checkmark! 金融地区スループット #b+5%#!"
+ CB_POLICY_5_FRAC: "#bold ほとんどの拡張 — フラクショナル・リザーブ#!\n#tooltip_separator!\n中央銀行は積極的に金融セクターを刺激します。\n\n@green_checkmark! 銀行のスループット #b-25%#!\n\n\n@green_checkmark! <x 25% <x 25% @green_checkmark!<x 25% <x "><x 25% @green_checkmark! <x 25% @green_checkmark!"
+
+ # Full Reserve variants
+ CB_POLICY_1_FULL: "#bold ほとんどの契約 — フルリザーブ#!\n#tooltip_separator!\n 予約要件は、クレジットの可用性を大幅に削減します。\n\n@green_checkmark! 融資金利 #b-1%#!\n@green_checkmark! キャッシュリザーブ #b+25%#!"
+ CB_POLICY_2_FULL: "#bold 契約 — フルリザーブ#!\n#tooltip_separator!\nリザーブの要件を堅くします。\n\n@green_checkmark! Loan 金利 #b-0.5%#!\n\n\n\n@green_checkmark! @green_checkmark!"
+ CB_POLICY_3_FULL: "#bold 中立 — フルリザーブ#!\n#tooltip_separator!\n 予備条件は、法定最低でも残っています。 追加の修飾子は適用されません。"
+ CB_POLICY_4_FULL: "#bold 拡張 — フルリザーブ#!\n#tooltip_separator!\n リザーブの要件は、より大きなレンディングを可能にするためにリラックスしています。\n\n@red_cross! 融資金利 #b+0.5%#!\n@red_cross! キャッシュリザーブ #b-12.5%#!"
+ CB_POLICY_5_FULL: "#bold ほとんどの拡張 — フルリザーブ#!\n#tooltip_separator!\nリザーブの要件は、最大貸し容量に最小化されます。\n\n@red_cross! 融資金利 #b<x 1%+ #!\n<x 25% #b#b\n<x 25% \n<x 25%><x 25% <x 25%>#! #!<x 25%>"
+
+ # ── MODIFIER NAMES ────────────────────────
+ cb_policy_fractional_1: "ほとんどの契約上の政策"
+ cb_policy_fractional_2: "契約上の方針"
+ cb_policy_fractional_4: "拡張モジュール"
+ cb_policy_fractional_5: "ほとんどの拡張モジュールポリシー"
+ cb_policy_full_1: "ほとんどの契約準備ポリシー"
+ cb_policy_full_2: "契約準備ポリシー"
+ cb_policy_full_4: "拡張リザーブポリシー"
+ cb_policy_full_5: "ほとんどの拡張準備ポリシー"
+ 
+ building_group_bg_banking_throughput_add_desc:0 "商業銀行のスループットへの修飾子"
+ building_financial_district_throughput_add_desc:0 "金融地区のスループットに対するモフィエ"

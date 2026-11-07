@@ -1,0 +1,434 @@
+﻿l_japanese:
+
+ # ==========================================
+ # JOURNAL ENTRY NAMES & HEADERS
+ # ==========================================
+
+ je_arab_spring: "アラブ春"
+ je_arab_spring_reason: "アラブの世界全体で、権威主義的なルール、腐敗、経済の停滞による長押しの不満が大量に起きています。 チュニジアで始まり、アンレストの波が広がり、地域の政権は完全に安全を感じることはできません。"
+
+ je_arab_winter: "アラビアの冬"
+ je_arab_winter_reason: "アラブ春の楽観主義者は、革命の魂のために苦闘する方法を与えました。 イスラム教徒の動き、軍事的事実、および外国の力は、堕落または弱められたレジムによって残された真空を埋めるためにビーします。 地域の運命はバランスをとります。"
+
+ # Completion headers
+ je_arab_spring_complete_header: "民主的移行"
+ je_arab_spring_on_complete_header: "新しい夜明け"
+ je_arab_spring_fail_header: "革命抑制"
+ je_arab_spring_on_fail_header: "クラックダウン"
+
+ # ==========================================
+ # MODIFIER
+ # ==========================================
+
+ modifier_arab_spring: "アラブ春"
+ modifier_arab_spring_desc: "人気上昇は、アラブの世界が広がります。 政府は、民主的な改革、経済正義、および権威主義的な規則に対する終端を要求する抗議運動から激しい圧力に直面しています。"
+
+ # ==========================================
+ # TOOLTIPS
+ # ==========================================
+
+ # Possible condition
+ arab_spring_underway_tt: "アラブの春は途中"
+
+ # Completion conditions
+ had_arab_spring_revolution_tt_no_scope: "アラブ春に革命を経験しました"
+ has_liberal_or_progressive_in_government_tt: "宗教的または進歩的な関心グループが政府に"
+ has_census_voting_or_universal_suffrage_tt: "符号化された census の投票か普遍的なsuffrage を持って下さい"
+
+ # Failure conditions
+ no_protest_leaders_tt: "審美的または進歩的な政治家や動揺者は残らない"
+ arab_spring_timer_dummy_tt: "[GetMonthsText(12)] に抗議運動を抑制しました"
+ all_protest_movements_crushed_tt: "すべての抗議運動が破砕され、抑制されています"
+
+ # je_arab_winter status
+ reformists_in_government_tt: "改革主義の事実は政府の席を保持する — 革命は政治の足場を持っています。"
+ reformists_out_of_government_tt: "改革者たちは政府から押し出してきた — 革命は失われている。"
+
+ # je_arab_winter completion
+ arab_spring_liberal_victory_tt: "審美的および世俗的な反対は勝ちました"
+ arab_spring_islamist_victory_tt: "イスラム主義者または国民主義の力は動力を与えました"
+ arab_winter_on_complete_tt: "政治の闘争は、より良く、または悪化するために解決しました。"
+
+ # je_arab_winter failure
+ arab_winter_fail_tt: "カウンターレボリューションは完全に上昇を粉砕しました"
+
+ # on_complete tooltips
+ on_reformist_victory_tt: "リフォームリストの調合は、民主的移行が始まります。"
+ on_islamist_victory_tt: "イスラム主義者または軍事力は、統合力を持っている - 革命は終わっています。"
+
+ # ==========================================
+ # EVENT OUTCOME DESCRIPTIONS
+ # ==========================================
+
+ event_effects_arab_spring.8_tt: "アップリシングは下がりました。 政権に対するセキュリティ部隊の忠義は、分散されたプロテッサ、逮捕された反対の指導者、および償還権者制御を持っています。 リフォームのウィンドウは閉じました。"
+
+ event_effects_arab_spring.10_tt: "すべてのオッズに対して、抗議運動が成功しました。 古い政権は、大幅な譲歩を下落または下落しました。 道路が残っているが、壊れやすい民主的移行が始まります。"
+
+ # ==========================================
+ # SCRIPTED PROGRESS BARS
+ # ==========================================
+
+ arab_spring_progress_bar: "革命的な瞬間"
+ arab_spring_progress_bar_desc: "どの位の抗議運動が目標に向かって進んでいるか。"
+
+ arab_winter_crackdown_progress_bar: "政権のクラックダウン"
+ arab_winter_crackdown_progress_bar_desc: "政府が上昇を抑制する方法。 100%に達すると、革命が破砕されます。"
+
+ # ==========================================
+ # SCRIPTED TRIGGER NAMES (for tooltips)
+ # ==========================================
+
+ arab_spring_liberal_victory_trigger: "Reformistの勝利条件"
+ arab_spring_islamist_victory_trigger: "イスラム教徒/国家主義者の勝利条件"
+
+ # ==========================================
+ # VARIABLES
+ # ==========================================
+
+ had_arab_spring_revolution: "経験豊かなアラブスプリング革命"
+ arab_winter_revolution_crushed: "革命クラッシュ"
+
+ # ==========================================
+ # TUNISIA SPARK EVENT (arab_spring.1)
+ # ==========================================
+
+ arab_spring.1.t: "ストリートはライジングしています"
+ arab_spring.1.d: "[ROOT.GetCountry.GetName] では、通りに撮った人がいます。 腐敗および失業に対する散乱された抗議として始まったものは、[SCOPE.GetRootScope.GetCountry.GetRuler.GetLastName]の規則に終端を要求する質量運動に腫れました。 セキュリティ力は、デモンストレーションを含むように苦労しており、アラブ界の目は見ています。\n\n 政府は、この国の運命だけでなく、地域全体の軌跡を形作ります。"
+ arab_spring.1.a: "専門家を分散させるためにセキュリティ力を配備"
+ arab_spring.1.b: "反対側のリーダーとの対話を開く"
+ arab_spring.1.c: "期間限定のリフォームを発売し、時間購入"
+
+ # ==========================================
+ # MONTHLY PULSE — SPREAD EVENT (arab_spring.2)
+ # ==========================================
+
+ arab_spring.2.t: "波スプレッド"
+ arab_spring.2.d: "近隣諸国の危機に瀕しているニュースは、衛星放送やソーシャルメディアで普及しています。 [ROOT.GetCountry.GetName] では、活動家は埋め込まれ、政権はますます緊張しています。 プロテストオーガナイザーは、国境を越えた戦術をリアルタイムで共有しています。以前の世代の障害が起こらないものはありません。"
+
+ # ==========================================
+ # RANDOM MONTHLY EVENTS (3–5)
+ # ==========================================
+
+ arab_spring.3.t: "ソーシャルメディアの収益化"
+ arab_spring.3.d: "[ROOT.GetCountry.GetName] の主催者は、[ROOT.GetCapital.GetName] で主要なデモンストレーションを調整するために、ソーシャルメディアプラットフォームを利用しました。 Thousandsが判明し、プロテスの映像は国際的に普及しています。 政府は、内部となしの両方から成長する圧力に直面しています。"
+ arab_spring.3.a: "これは管理可能です"
+ arab_spring.3.b: "インターネットをシャットダウン"
+
+ arab_spring.4.t: "セキュリティフォースウォーカー"
+ arab_spring.4.d: "報告書は、首都のセキュリティ部隊のユニットがプロテスタで火災する注文を拒否した資本に達しました。 役員は、群衆と交代していると見なされています。 軍の忠誠はもはや確かではありません。"
+ arab_spring.4.a: "より信頼できる単位を持って下さい"
+ arab_spring.4.b: "すぐにプロのリーダーと交渉"
+
+ arab_spring.5.t: "外圧マウント"
+ arab_spring.5.d: "西洋政府と国際機関は、 [ROOT.GetCountry.GetName] で呼び出された声明を発行し、拘束力を発揮し、プロテスタの権利を尊重しています。 亀裂が続くと脅迫された制裁があります。 一方、地方の力は密接に見ています - 不快なスプレッド、それを含むために必死なもの。"
+ arab_spring.5.a: "国際コミュニティを無視"
+ arab_spring.5.b: "糖尿病対応"
+
+ # ==========================================
+ # FAILURE EVENTS
+ # ==========================================
+
+ arab_spring.8.t: "クラックダウン"
+ arab_spring.8.d: "[ROOT.GetCountry.GetName] の uprising が壊れています。 セキュリティ力 — ロイヤリストのミリタスが必要とするところを補う — 最後のプロテストのキャンプを分散させ、最も著名な反対の数字を逮捕し、外のアジテーターに対して境界を密封しました。 ステートメディアはすでに物語を書き換えています。\n\nアラブスプリングは[ROOT.GetCountry.GetName]から来て、フェスターに新しい悲嘆だけを残しています。"
+ arab_spring.8.a: "注文が復元されました"
+
+ # ==========================================
+ # SUCCESS EVENTS
+ # ==========================================
+
+ arab_spring.9.t: "政権争議"
+ arab_spring.9.d: "[SCOPE.GetRootScope.GetCountry.GetRuler.GetLastName] は、行動の兆候を示す抗議で直面し、自由選挙と新しい憲法の約束を含む、断続的な譲歩を発表しました。 これらの約束が残っているかどうかを観察するが、抗議運動は歴史的な勝利を主張しています。"
+ arab_spring.9.a: "新しい章が始まります"
+
+ arab_spring.10.t: "革命の成功"
+ arab_spring.10.d: "古い順序は [ROOT.GetCountry.GetName] で落ちました。 大量の抗議の週が経つと、政令は崩壊しました。規則の飛行を通して、軍の逸脱、または交渉された遷移。 [ROOT.GetCountry.GetName] の普通の人々 は世代の最初の時間のために、何かを異なって希望するダーリングです。\n\n 新たな政治的秩序を築き上げるのは難しい作業です。"
+ arab_spring.10.a: "人が話している"
+
+ # ==========================================
+ # ARAB WINTER EVENTS
+ # ==========================================
+
+ arab_spring.7.t: "イスラム教の力は力を統合します"
+ arab_spring.7.d: "革命を捉えてきた。 [ROOT.GetCountry.GetName] では、イスラム教徒の動き — 組織的、より良い資金を調達し、より深く社会で根ざしたようにして、アラブ・スプリングの勝利を自分の利点に変えました。 投票箱は、プロテスターの最大の希望が一度、解放された反対論は予想されるべきではありません。\n\nアラブスプリングはアラブウィンターになりました。"
+ arab_spring.7.a: "苦い結果"
+
+ arab_spring.71.t: "民主的移行"
+ arab_spring.71.d: "[ROOT.GetCountry.GetName] では、アラブスプリングは約束の少なくとも一部を配信しました。 権力の真正な転送が行われ、新しい政府は、しかし、不完全で壊れやすい - 権威主義者の過去と実質の休憩を表しています。 このようなトランジションが逆転している領域では珍しい明るいスポットです。\n\n [ROOT.GetCountry.GetName] で民主主義を集約する作業は、警戒、妥協、そして少額の運を必要としません。"
+ arab_spring.71.a: "歴史は見ている"
+
+ # ==========================================
+ # MODIFIER NAMES (referenced in events)
+ # ==========================================
+
+ arab_spring_popular_dissident: "アップリスニングの声"
+ arab_spring_popular_dissident_desc: "このリーダーは、抗議運動の象徴となっています。 通りに重みを運ぶ言葉は、外国政府が密接に見ている。"
+
+ suppressing_protests: "抗議を抑制する"
+ suppressing_protests_desc: "保安部隊は、実証を積極的に分散させ、反対の姿を阻止する。 これは、短期的に不快なものを含んでいるかもしれませんが、一般的な怒りを深める危険があります。"
+
+ arab_spring_reactionary_enactment: "緊急保安のプッシュ"
+ arab_spring_reactionary_enactment_desc: "政府は、不規則に応答して高速追跡セキュリティ法です。"
+
+ arab_spring_institution_speed: "セキュリティ機器の安定化"
+ arab_spring_institution_speed_desc: "リソースは、試験を含む内部のセキュリティ機関に注がれています。"
+
+ arab_spring_democratic_transition: "民主的移行"
+ arab_spring_democratic_transition_desc: "古い政令は落ち、新しい政治的秩序が建てられています。 Optimismは高いですが、そうは不安定性です - 民主的な利益を連結するハードワークは始まったばかりです。"
+
+ arab_winter_revolution_crushed: "革命クラッシュ"
+ arab_winter_revolution_crushed_desc: "強烈な力で上る。 政権は生き残っていますが、人々を通りに運転する悲しみは未解決のままです。 表面の下に散布のフェッシャ。"
+
+ arab_winter_islamist_consolidation: "イスラム教徒の統合"
+ arab_winter_islamist_consolidation_desc: "イスラム教徒の動きは、優勢な政治力としてアラブスプリングから出現しました。 革命の世俗的な目標は、宗教的な権威に根ざした新しい秩序に置き換えられました。"
+
+ arab_spring_regional_contagion: "地域非休憩"
+ arab_spring_regional_contagion_desc: "アラブ春が広がります。 近隣諸国における抗議運動は、国内の異議を埋め込んでおり、政令は伝染性がますます緊張しています。"
+
+ # ==========================================
+ # arab_spring.1 — The Streets Are Rising
+ # ==========================================
+
+ arab_spring.1.t: "アップリスニング全国"
+ arab_spring.1.d: "[ROOT.GetCountry.GetName] では、通りに撮った人がいます。 腐敗および失業に対する散乱された抗議として始まったものは、[ROOT.GetRuler.GetFirstName]の規則に終端を要求する質量運動に腫れました。 セキュリティ力は、デモンストレーションを含むように苦労しており、アラブ界の目は見ています。\n\n 政府は、この国の運命だけでなく、地域全体の軌跡を形作ります。"
+ arab_spring.1.d_no_leader: "[ROOT.GetCountry.GetName] では、通りはプロテスタで満ちています。 デモは、単一の統一された図を欠いていますが、それらを運転する悲しみ - 腐敗、失業、権威主義者のルールの粉砕重量 - 実質的かつ広く共有されています。 政令は、その制御を超えて状況スパイラルの前にどのように反応するかを決定する必要があります。"
+ arab_spring.1.f: "政府は、その遺産を定義する選択肢に直面しています。"
+ arab_spring.1.a: "力でデモンストレーションを分散"
+ arab_spring.1.b: "反対論との対話を開く"
+
+ # ==========================================
+ # arab_spring.2 — The Security Apparatus Responds
+ # ==========================================
+
+ arab_spring.2.t: "セキュリティ機器の対応"
+ arab_spring.2.d: "[ROOT.GetCountry.GetName] を渡るsimmer を続行する protests によって、セキュリティサービスは政府が決定的に行動するように押しています。 概要と知能のチーフは、躊躇が弱点として読み込まれることを警告し、効果的な封入のためのウィンドウが閉じられます。 問題は、国家の協調電力をデプロイするかどうかではありませんが、どのように。"
+ arab_spring.2.f: "政権は、その道具を慎重に選ぶ必要があります。"
+ arab_spring.2.a: "秘密の警察を拡大 — 監視と拘留"
+ arab_spring.2.b: "軍の配置 — 力によって通りを握る"
+ arab_spring.2.c: "待ち時間と時計 — 過度ではありません"
+
+ # ==========================================
+ # ADDITIONAL MODIFIERS (referenced in events)
+ # ==========================================
+
+ modifier_arab_spring_momentum: "革命的な瞬間"
+ modifier_arab_spring_momentum_desc: "運動は、エネルギーと一般的なサポートを得る。 放射状感情は、社会の下部と中層を貫く。"
+
+ arab_spring_regime_collaborator: "Regime コラボレーター"
+ arab_spring_regime_collaborator_desc: "このリーダーは、当局を収容していると見なされます。 抗議運動の信頼性は苦しんでいる。"
+
+ arab_spring_dissidents_within: "内部流入"
+ arab_spring_dissidents_within_desc: "この関心グループは、内から圧力を経験しています。より若い、より理想的なメンバーは、政令に対するハードラインをプッシュしています。"
+
+ arab_spring_spread_the_spring: "革命のエクスポート"
+ arab_spring_spread_the_spring_desc: "このグループでは、近隣諸国の異動に積極的に取り組んでおり、家庭でイベントを盛り込んだ。"
+
+ arab_spring_contained_movement: "達成された動き"
+ arab_spring_contained_movement_desc: "リーダーシップは、外国のエンアングルメントと政権を誘発するリスクではなく、国内でエネルギーを集中するために選ばれました。"
+
+ modifier_arab_spring_transition_cabinet: "政府機関"
+ modifier_arab_spring_transition_cabinet_desc: "新たな政府が革命のきっかけに形成されています。 古い注文は解散しますが、それが不確実なままに置き換えるもの。"
+
+ modifier_arab_spring_kick_out_of_insurrection: "バリケードを放棄する"
+ modifier_arab_spring_kick_out_of_insurrection_desc: "革命は、すぐにゴールを達成しました。 動きは、その不法な姿勢から立ち、政治的なプロセスに入ります。"
+
+ modifier_arab_spring_regime_ig_defeated: "革命によって敗退"
+ modifier_arab_spring_regime_ig_defeated_desc: "旧政権と同団体の関連付けは、それによって明らかに費用がかかります。 新たな政治的秩序においてマージされます。"
+
+ # ==========================================
+ # EVENTS 1–6 (additional keys)
+ # ==========================================
+
+ arab_spring.1.d_tunisia: "[ROOT.GetCapital.GetName] でストリートベンダーの自己immolation が予測されていないものになったのは、全国に [ROOT.GetCountry.GetName] を土台に揺さぶっていることです。 [SCOPE.GetRootScope.GetCountry.GetRuler.GetLastName] のregime は、reeling です。 セキュリティ力は、首都から各主要都市に広がるデモンストレーションを含むように苦労しています。\n\n 世界が観ている。 そして、アラブの世界へと、他の政府も見守っています。"
+ arab_spring.1.f: "最初のドミノが落ちています。"
+ arab_spring.1.a: "動きで立ちます"
+ arab_spring.1.b: "Acknowledge grievances — しかし、落ち着きを求める"
+
+ arab_spring.2.t: "伝道到着"
+ arab_spring.2.d: "[ROOT.GetCountry.GetName] からのニュースは、圧迫力で到着しました。 衛星チャンネルは、地域を横断するリビングルームに[ROOT.GetCapital.GetName]からシーンを放送しています。 [ROOT.GetCountry.GetName] の IG リーダーは、プロテスタとの共感を一般に表現しています。そして、政権は、外国の春のこの成長したエコーにどのように反応するかを決めなければなりません。"
+ arab_spring.2.f: "アイデアは境界を尊重しません。"
+ arab_spring.2.a: "インスピレーションが自由に広がりましょう"
+ arab_spring.2.b: "外国の干渉を消す"
+
+ arab_spring.3.t: "ディスセントの新しいボイス"
+ arab_spring.3.d: "以前はサイレントだった声に勇気をあげました。 [scope:inspired_ig.GetName] では、リフォームの共感を守った人物は、大学、モスク、ソーシャルメディアでオープンに話しています。 政権は、殉教者を作らずに、それらを簡単に消毒することはできません。"
+ arab_spring.3.f: "突然、声を掛けられたら、話すことは困難です。"
+ arab_spring.3.a: "変革者をリーダーシップに直接強化"
+ arab_spring.3.b: "アジテーターの操作をしましょう。しかし、リーダーシップの絶縁を維持しましょう"
+ arab_spring.3.a.tt: "[scope:inspired_ig.GetName] に新しいリベラルリーダーが登場します。"
+
+ arab_spring.4.t: "波スプレッド"
+ arab_spring.4.d: "[ROOT.GetCountry.GetName] の protest の動きは境界線を渡る反対ネットワークと連絡しました。 若い活動家は、ソーシャルメディアを通じて戦術、スローガン、組織モデルをリアルタイムで共有しています。 質問は、[ROOT.GetCountry.GetName] がこのスプレッドを積極的に奨励するか、動きが独自の方法を見つけるように静かにするかどうかです。"
+ arab_spring.4.f: "常に新しい発想を創り出す。"
+ arab_spring.4.a: "積極的にオポジショニングに近づく"
+ arab_spring.4.b: "集中する滞在 — 拮抗するレジムを怠らない"
+
+ arab_spring.5.t: "地下ネットワーク"
+ arab_spring.5.d: "セキュリティの亀裂の面で開演を持続できない抗議運動では、オーガナイザーは地下になくなった。 セルベースのネットワークは、パフレット、協調ストライキを配布し、ロワリストインフラストラクチャをマッピングしています。 ツルマイユは、首都から離れて - ゆっくりとしかし、無縁に広がる。"
+ arab_spring.5.f: "見えない火が燃える。"
+ arab_spring.5.a: "州のアンレスト噴火"
+ arab_spring.5.b: "Unrestは資本自体に達します"
+
+ arab_spring.6.t: "エラエンド"
+ arab_spring.6.d: "アラブスプリング — 人気上昇の異常な季節 — [ROOT.GetCountry.GetName] でコースを実行しています。 それが成功するか、または抑制されたかにかかわらず、その約束や裏打ちされたものであっても、その背後にある世界は、それが発見された世界ではありません。 道路に人々を連れて行った悲しみは解決されていない。 彼らは今だけ答えてきました。"
+ arab_spring.6.f: "歴史は許されない質問をしません。"
+ arab_spring.6.a: "章が閉じる"
+ arab_spring.6.a.tt: "アラブスプリングは終了いたしました。 関連する全ての国が通知されます。"
+
+ # ==========================================
+ # EVENTS 7–10 (additional keys)
+ # ==========================================
+
+ arab_spring.7.f: "革命は盗まれています。"
+ arab_spring.7.a: "新しい注文は、信仰に役立っています。"
+ arab_spring.7.b: "上記の安定性 — 結果を受け入れる"
+
+ arab_spring.71.f: "最も難しい革命は、あなたが支配しなければならないものです。"
+ arab_spring.71.a: "完全な民主的な改革のための押し"
+ arab_spring.71.b: "慎重に統合 — 祝い、その後、管理"
+
+ arab_spring.8.t: "注文復元"
+ arab_spring.8.d: "[ROOT.GetCountry.GetName] の uprising が壊れています。 セキュリティ力 — ロイヤリストのパラミリタリーと普通のクロスインテリジェンスユニットで必要なところを補う — 最後のプロテクションを分散させました。 著名な反対の数字が逮捕されたり、亡命に逃げた。 ステートメディアはすでに物語を書き換えています。, 外国に触発されたsedition.\n\nアラブスプリングは、[ROOT.GetCountry.GetName]から来、行ってきました。 後ろに残っているもの - 苦味、記憶、未解決の悲嘆 - 長い間問題します。"
+ arab_spring.8.f: "沈黙は平和と同じではありません。"
+ arab_spring.8.a: "注文が復元されました。"
+ arab_spring.8.b: "静かで安心 — トリムファリズムなしで移動"
+
+ arab_spring.9.t: "ストリートはスポーケンを持っています"
+ arab_spring.9.d: "資本金を振り返ります。 プロテスタは [scope:relevant_state.GetName] の制御を取られたし、保安部隊は断片的である — 単位は refusing 順序、役員は欠陥であり、政権のグリップは時間によって滑ります。 [scope:ruler_scope.GetName] は不可能な選択に直面します: 隠蔽、または escalate は人々との完全な対立に。\n\n 革命はここにあります。 今の質問は、それが取るフォームです。"
+ arab_spring.9.f: "通りは話しました。 誰が答えますか?"
+ arab_spring.9.a: "革命を受け入れる — 完全な民主的移行"
+ arab_spring.9.b: "部分的なトランジションをネゴティエート — 検閲を妥協する"
+ arab_spring.9.c: "戦いに - 市民戦争を押します"
+
+ arab_spring.10.t: "アラブ・ウィンター・ロームズ"
+ arab_spring.10.d: "革命は成功しました — 少なくとも最初のフェーズで。 [ROOT.GetCountry.GetName] は新しい政府、新しい法律、および壊れやすい新しい希望を持っています。 しかし、苦難は始まります。 反応、伝統、そして宗教の力は敗北していません。彼らは見ている、組織化し、待っています。\n\nアラブウィンターが来ています。 そこに革命を凍結するか、それを埋めるかどうかは、次のいずれかに依存します。"
+ arab_spring.10.f: "冬は、春は冬に向き合います。"
+ arab_spring.10.a: "カウンターの進化のヘッドオンに直面して下さい"
+ arab_spring.10.b: "防御的な位置の準備 — バックラッシュの支柱"
+
+ # Tooltip keys for arab_spring.10
+ arab_winter_tt: "アラブ・ウィンターが始まり、改革家と反省力との闘争を追跡する新しいジャーナルエントリーが始まります。"
+ arab_winter_counter_revolution_bonus_tt: "新しい政府は、防御的な準備を取っています。 反発力はより整理された抵抗に直面します。"
+
+ # ==========================================
+ # SCRIPTED TRIGGERS (tooltip names)
+ # ==========================================
+
+ arab_spring_liberal_victory_trigger: "Reformist Victory 条件 Met"
+ arab_spring_islamist_victory_trigger: "イスラム教徒/国家主義者の勝利条件メット"
+ arab_spring_valid_country_trigger: "有効なアラブスプリングターゲット"
+ tunisia_arab_spring_spark_trigger: "チュニジア:春のコンディションメット"
+
+ # ==========================================
+ # SCRIPTED PROGRESS BAR TOOLTIPS
+ # ==========================================
+
+ arab_spring_reformists_in_govt_tt: "改革派の関心グループは政府にいます"
+ arab_spring_universal_suffrage_tt: "ユニバーサル・サッフルが制定されました"
+ arab_spring_census_voting_tt: "Censusの投票は制定されました"
+ arab_spring_free_press_tt: "保護されたスピーチは民主的な統合をサポートしています"
+ arab_spring_right_of_assembly_tt: "アセンブリの権利は転移を支えます"
+ arab_spring_high_literacy_tt: "高リテラシーが民主的統合を加速"
+ arab_spring_islamists_in_govt_tt: "イスラム教徒または国民主義のグループが政府の席を保持する"
+ arab_spring_turmoil_tt: "新たな政府を解明する高いターモイル"
+ arab_spring_authoritarian_laws_tt: "権威ある法律は依然として所定の場所にある"
+ arab_spring_at_war_tt: "国は戦争にあります"
+ arab_winter_radical_movements_tt: "イスラム教徒または民族主義の運動は強さを得ています"
+ arab_winter_military_opposition_tt: "武装した力は反対であり、強力に成長しています"
+ arab_winter_security_laws_tt: "抑圧セキュリティ法は、亀裂を加速する"
+ arab_winter_civil_war_tt: "市民戦争は、反作用力に利益をもたらす混乱を生む"
+ arab_winter_high_turmoil_tt: "高いターモイルは燃料カウンターの弾力性感情です"
+ arab_winter_strong_liberal_movements_tt: "強い改良主義の動きはひび割れに抵抗しています"
+ arab_winter_universal_suffrage_entrenched_tt: "普遍的なsuffrageはentrenched - 逆に困難です"
+ arab_winter_elected_bureaucrats_tt: "選択された官僚的レジストカップリングの試み"
+ arab_winter_prepared_defence_tt: "新しい政府は、防御的な立場を準備しました"
+
+ # ==========================================
+ # SPARK EVENTS
+ # ==========================================
+
+ 2011_protests.1.t: "通りのベンダーは、自分自身の光を置きます"
+ 2011_protests.1.d: "シディ・ブズィッドの地方の町では、モハメド・ブズィジという名前の若いストリート・ベンダーは、警察が彼のカートを非難し、彼を公に屈辱めた後、地方政府の事務所の前で火をつけて置きました。\n\n 絶望の行為は落雷棒になりました。 数時間以内に、彼の抗議の映像はソーシャルメディアで普及しています。 Sidi Bouzid だけでなく、[ROOT.GetCountry.GetName] を越えたクラウドが集まりました。 相続、失業、および権威主義者の規則の粉砕重量の上に、世代の蓄積された流星は、そのシンボルを見つけました。\n\n [SCOPE.GetRootScope.GetCountry.GetRuler.GetLastName] の政権は、どのように反応するかを決定する必要があります。 どんなことでも、世界は見ている。"
+ 2011_protests.1.f: "一人の男の絶望は、国の人になりました。"
+ 2011_protests.1.a: "亀裂 - 彼らが広がる前に実証を分散させる"
+ 2011_protests.1.b: "損害賠償の申し出 — 警察への調査を発表"
+
+ 2011_protests.2.t: "チュニジアの振戦"
+ 2011_protests.2.d: "チュニジアのアンレストは、アラブの世界に衝撃波を送りました。 衛星チャンネルは、時計の周りのチュニスからシーンを放送しています — そして、通常の人々 [ROOT.GetCountry.GetName] 見ている. コーヒーショップやソーシャルメディアで困っている質問は、地域のすべての権威ある政権が今それ自体を尋ねているのと同じです:\n\n お問い合わせ"
+ 2011_protests.2.f: "あらゆる政権を見守っています。 あらゆる事態はメモをとっています。"
+ 2011_protests.2.a: "チュニジアは異なる — これは [ROOT.GetCountry.GetName] に普及しません"
+ 2011_protests.2.b: "注意を払ってください。これは手元から抜け出す前にセキュリティを強化します"
+
+ # ==========================================
+ # MISSING STRUCTURAL MODIFIERS
+ # ==========================================
+
+ modifier_arab_spring_transition_cabinet: "政府機関"
+ modifier_arab_spring_transition_cabinet_desc: "新たな政府が革命のきっかけに形成されています。 レギュティマシーは、これらの初期に高まっていますが、反発が足を見つける前に連結する必要があります。"
+
+ modifier_arab_spring_kick_out_of_insurrection: "バリケードから立ち下る"
+ modifier_arab_spring_kick_out_of_insurrection_desc: "革命は、すぐにゴールを達成しました。 このグループは、その不法な姿勢を放棄し、正式な政治生活に入ることです。その瞬間の善意によって浮上しました。"
+
+ modifier_arab_spring_regime_ig_defeated: "革命によって敗退"
+ modifier_arab_spring_regime_ig_defeated_desc: "旧政権と同団体の関連付けは、それによって明らかに費用がかかります。 政府の力と政治の力から押し出されてきました。 証拠金から再建できるかどうかは見つかります。"
+
+# ==========================================
+ # ARAB SPRING INTERNATIONAL EVENTS
+ # ==========================================
+
+ # ── arab_spring_intl.1 ───────────────────
+
+ arab_spring_intl.1.t: "アラブの世界は燃えている"
+ arab_spring_intl.1.d: "試験は、チュニジアで始まり、アラブの世界を駆け抜けています。 権威主義的なルールのデカデス, 経済の停滞, 政治的抑圧は、通りに百万を駆動しました."
+ arab_spring_intl.1.f: "歴史を見守る人を見守る歴史"
+ arab_spring_intl.1.a: "抗議者 - 民主主義と人権はそれを要求する"
+ arab_spring_intl.1.b: "負のレジムを戻す - 安定性と私たちの利益は最初に来ます"
+ arab_spring_intl.1.c: "すべての側面に拘束のための電話 - 平和な解像度を促す"
+
+ # ── arab_spring_intl.2 ───────────────────
+
+ arab_spring_intl.2.t: "介入の質問"
+ arab_spring_intl.2.d: "[scope:civil_war_country_scope.GetName] の状況は、開いた市民戦争に悪化しています。 [scope:civil_war_country_scope.GetRuler.GetName] の力は市民の人口を攻撃し、虐殺の信頼できるレポートがあります。 国際的なコミュニティは、以前は、protest の動きのサポートを表明した response.\n\n[ROOT.GetName] を呼び出します。 質問は、そのサポートが行動に及ぶかどうかです。"
+ arab_spring_intl.2.f: "単語とデドは異なる通貨です。"
+ arab_spring_intl.2.a: "ノフライゾーンを強化 — エアストライキから市民を守る"
+ arab_spring_intl.2.b: "地面の腕および支持の反対の力"
+ arab_spring_intl.2.c: "これは私たちの戦争ではありません。"
+
+ # ── arab_spring_intl.3 ───────────────────
+
+ arab_spring_intl.3.t: "アラビアの春: 驚くべき"
+ arab_spring_intl.3.d_success: "アラブスプリングは、少なくとも1つの本物の民主的移行を生成しました。 脆弱な業績で、簡単に逆転するが、それは本物です。 [ROOT.GetName] では、これらのイベントが距離から展開されていないと見なすと、歴史のアークが正反対に曲がることができるように、静かな満足感があります。 今、質問は、勝つものをサポートする方法です。"
+ arab_spring_intl.3.d_islamist: "アラブ春は終わりました。そして、その建築家は期待していません。 地域全体で、イスラム教徒の動きは、上昇を開始した世俗的な抗議の調合よりも優れた組織を実証しました。 [ROOT.GetName] の場合、結果は不快です: 主演の民主性は、その値が自分のものとは異なる政府を生成しました。 新しいアラビアの注文との関係は、注意深いナビゲーションが必要になります。"
+ arab_spring_intl.3.d_failure: "春はアラブの春がやってきました。 反発すると思われるレジメスは、安定化し、セキュリティサービスを再構成し、敵全体または刑務所で対戦しています。 [ROOT.GetName] では、道徳的な明快さが道徳的な効果よりも容易であることをエピソードは思い出させる。 アップリッスを塗ったグリーバンスは解決されていない。 彼らはただ延期されました。"
+ arab_spring_intl.3.f: "世界へ。 地域は忘れません。"
+ arab_spring_intl.3.a: "何が起こったのかの株式を取る"
+
+ # ==========================================
+ # INTERNATIONAL MODIFIER NAMES
+ # ==========================================
+
+ arab_spring_intl_pro_democracy_stance: "プロデモクラシー・スタンス"
+ arab_spring_intl_pro_democracy_stance_desc: "この国は、アラブスプリングの抗議運動で公に整列しています。 民主主義国家のその威信は上昇しています - しかし、親密なアラブのレジムとの関係は冷却されています。"
+
+ arab_spring_intl_stability_first_stance: "安定性ファースト"
+ arab_spring_intl_stability_first_stance_desc: "この国は、抗議運動を上回るアラビアのレジメスを支持するために選ばれました。 地域における戦略的関係はより強く、国際的な評判へのコストで。"
+
+ arab_spring_intl_neutral_stance: "慎重な拘束"
+ arab_spring_intl_neutral_stance_desc: "この国は、両側を裏返さずに平和な決断を求めています。 それは、その外交的柔軟性を維持しました。しかし、結果に対する犠牲的な影響。"
+
+ arab_spring_intl_western_backing: "西洋裏面"
+ arab_spring_intl_western_backing_desc: "西洋政府から公共支援を受けました。 国際的注目は、その勢いに加わって、政令のためにより高価な抑圧を作ることです。"
+
+ arab_spring_intl_regime_backing: "西洋政権サポート"
+ arab_spring_intl_regime_backing_desc: "西洋政府は、プロテスターではなく、この政府の背後にある体重を投げました。 外部の検証は、政権の権限と正当性を強化しています。"
+
+ arab_spring_intl_no_fly_zone: "ノーフライゾーンへの挑戦"
+ arab_spring_intl_no_fly_zone_desc: "軍事的資産は、競合ゾーンのノーフライゾーンを強化するために展開されています。 介入は民間人を保護していますが、それは高価であり、国際スルティニーを描画します。"
+
+ arab_spring_intl_arming_rebels: "武装の反対の力"
+ arab_spring_intl_arming_rebels_desc: "武器と装置は、競合の反対の力にチャネル化されています。 本方針は隠されていませんが、秘密ではありません。このサポートを受けている長期的な結果は不明です。"
+
+ arab_spring_intl_intervention_costs: "介入コスト"
+ arab_spring_intl_intervention_costs_desc: "海外の軍事介入は、資源を緊張し、国内の政治議論を生成しています。 宝と政治資本のコストは本物です。"
+
+ arab_spring_intl_non_interventionist: "非発明者"
+ arab_spring_intl_non_interventionist_desc: "この国は、アラブの市民戦争に介入しないように選ばれた。 決定は、その暴露を削減し、国内の政治資本を維持しましたが、批評家は、その記述された値を放棄しました。"

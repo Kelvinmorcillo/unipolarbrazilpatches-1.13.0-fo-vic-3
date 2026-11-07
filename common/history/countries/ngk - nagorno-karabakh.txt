@@ -1,0 +1,43 @@
+﻿COUNTRIES = {
+	c:NGK = {
+		
+		 
+
+		set_tax_level = low
+		
+		# Laws
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_compulsory_primary_school
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_national_supremacy
+		activate_law = law_type:law_resettlement_enticement
+		activate_law = law_type:law_census_voting
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_public_health_insurance
+		activate_law = law_type:law_national_guard
+		activate_law = law_type:law_serfdom_banned
+		activate_law = law_type:law_migration_controls
+		activate_law = law_type:law_local_police
+		activate_law = law_type:law_womens_suffrage
+		activate_law = law_type:law_slavery_banned
+		activate_law = law_type:law_graduated_taxation
+		activate_law = law_type:law_protectionism
+		activate_law = law_type:law_unfulfilled_protections
+		activate_law = law_type:law_unions_outlawed
+		activate_law = law_type:law_completely_unregulated
+
+			
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 1		}
+
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 2
+		}
+	}
+}

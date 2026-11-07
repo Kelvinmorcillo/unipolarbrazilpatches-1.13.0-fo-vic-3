@@ -1,0 +1,423 @@
+REPLACE_OR_CREATE:fascist_party = {
+	color = { 50 60 198 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = party_fatherland_front
+				trigger = {
+					exists = c:AUS
+					THIS = c:AUS
+				}
+			}
+			triggered_desc = {
+				desc = party_british_union_of_fascists
+				trigger = {
+					exists = c:GBR
+					THIS = c:GBR
+				}
+			}
+			triggered_desc = {
+				desc = party_mouvement_franciste
+				trigger = {
+					exists = c:FRA
+					THIS = c:FRA
+				}
+			}
+			triggered_desc = {
+				desc = party_national_front
+				trigger = {
+					exists = c:SWI
+					THIS = c:SWI
+				}
+			}
+			triggered_desc = {
+				desc = party_nasjonal_samling
+				trigger = {
+					exists = c:NOR
+					THIS = c:NOR
+				}
+			}
+			triggered_desc = {
+				desc = party_dnsap
+				trigger = {
+					exists = c:DEN
+					THIS = c:DEN
+				}
+			}
+			triggered_desc = {
+				desc = party_lapua_movement
+				trigger = {
+					exists = c:FIN
+					THIS = c:FIN
+				}
+			}
+			triggered_desc = {
+				desc = party_national_league_of_sweden
+				trigger = {
+					exists = c:SWE
+					THIS = c:SWE
+				}
+			}
+			triggered_desc = {
+				desc = party_national_union
+				trigger = {
+					exists = c:NET
+					THIS = c:NET
+				}
+			}
+			triggered_desc = {
+				desc = party_rexist_party
+				trigger = {
+					exists = c:BEL
+					THIS = c:BEL
+				}
+			}
+			triggered_desc = {
+				desc = party_volksdeutsche_bewegung
+				trigger = {
+					exists = c:LUX
+					THIS = c:LUX
+				}
+			}
+			triggered_desc = {
+				desc = party_national_socialist_movement
+				trigger = {
+					exists = c:CHL
+					THIS = c:CHL
+				}
+			}
+			triggered_desc = {
+				desc = party_ratnik_party
+				trigger = {
+					exists = c:BUL
+					THIS = c:BUL
+				}
+			}
+			triggered_desc = {
+				desc = party_ustasha
+				trigger = {
+					exists = c:CRO
+					THIS = c:CRO
+				}
+			}
+			triggered_desc = {
+				desc = party_zbor
+				trigger = {
+					exists = c:SER
+					THIS = c:SER
+				}
+			}
+			triggered_desc = {
+				desc = party_all_russian_fascist_party
+				trigger = {
+					exists = c:RUS
+					THIS = c:RUS
+				}
+			}
+			triggered_desc = {
+				desc = party_argentine_patriotic_league
+				trigger = {
+					exists = c:ARG
+					THIS = c:ARG
+				}
+			}
+			triggered_desc = {
+				desc = party_silver_legion
+				trigger = {
+					exists = c:USA
+					THIS = c:USA
+				}
+			}
+			triggered_desc = {
+				desc = party_freedom_party
+				trigger = {
+					exists = c:CSA
+					THIS = c:CSA
+				}
+			}
+			triggered_desc = {
+				desc = party_national_union_of_greece
+				trigger = {
+					exists = c:GRE
+					THIS = c:GRE
+				}
+			}
+			triggered_desc = {
+				desc = party_nazis
+				trigger = {
+					OR = {
+						country_has_primary_culture = cu:north_german
+						country_has_primary_culture = cu:south_german
+					}
+					any_interest_group = {
+						leader = {
+							OR = {
+								has_ideology = ideology:ideology_fascist_leader
+								has_ideology = ideology:ideology_fascist_leader
+							}
+						}
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_german_social_party
+				trigger = {
+					OR = {
+						country_has_primary_culture = cu:north_german
+						country_has_primary_culture = cu:south_german
+					}
+					NOT = {
+						any_interest_group = {
+							leader = {
+								OR = {
+									has_ideology = ideology:ideology_fascist_leader
+									has_ideology = ideology:ideology_fascist_leader
+								}
+							}
+						}
+					}
+				}
+			}
+			triggered_desc = {
+				desc = integralist_party
+				trigger = {
+					country_has_primary_culture = cu:portuguese
+				}
+			}
+			triggered_desc = {
+				desc = integralist_action
+				trigger = {
+					country_has_primary_culture = cu:brazilian
+				}
+			}
+			triggered_desc = {
+				desc = party_national_social_christian_party
+				trigger = {
+					country_has_primary_culture = cu:anglo_canadian
+				}
+			}
+			triggered_desc = {
+				desc = party_iran_e_no_party
+				trigger = {
+					country_has_primary_culture = cu:persian
+				}
+			}
+			triggered_desc = {
+				desc = integralist_action_party
+				trigger = {
+					country_has_primary_culture = cu:brazilian
+				}
+			}
+			triggered_desc = {
+				desc = falangist_party
+				trigger = {
+					country_has_primary_culture = cu:spanish
+				}
+			}
+			triggered_desc = {
+				desc = party_iron_guard
+				trigger = {
+					country_has_primary_culture = cu:romanian
+				}
+			}
+			triggered_desc = {
+				desc = party_arrow_cross_party
+				trigger = {
+					country_has_primary_culture = cu:hungarian
+				}
+			}
+			triggered_desc = {
+				desc = party_national_citizens_alliance
+				trigger = {
+					country_has_primary_culture = cu:japanese
+				}
+			}
+			triggered_desc = {
+				desc = party_national_fascist_party
+				trigger = {
+					OR = {
+						country_has_primary_culture = cu:north_italian
+						country_has_primary_culture = cu:south_italian
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_blue_shirts_society
+				trigger = {
+					OR = {
+						country_has_primary_culture = cu:han
+						country_has_primary_culture = cu:hakka
+						country_has_primary_culture = cu:miao
+						country_has_primary_culture = cu:min
+						country_has_primary_culture = cu:zhuang
+						country_has_primary_culture = cu:yi
+						country_has_primary_culture = cu:yue
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_fascist
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+
+	icon = {
+		default = "/gfx/interface/icons/political_parties/fascists.dds"
+	}
+	
+	
+	# THIS IS RUN ONLY ONCE AT GAME START
+	valid_for_country = {
+	NOT = {
+		OR = {
+			AND = {
+				exists = c:FRA
+				THIS = c:FRA
+			}
+		}
+	}
+	}
+
+		available_for_interest_group = {
+		is_marginal = no
+		OR = {
+			leader = { has_ideology = ideology:ideology_fascist_leader }
+			leader = { has_ideology = ideology:ideology_authoritarian_capitalist_leader }
+			leader = { has_ideology = ideology:ideology_right_wing_populist_leader }
+			leader = { has_ideology = ideology:ideology_neocon_leader }
+			leader = { has_ideology = ideology:ideology_corporatist_leader }
+			leader = { has_ideology = ideology:ideology_state_capitalist_leader }
+			has_ideology = ideology:ideology_totalitarian
+			has_ideology = ideology:ideology_nationalist
+			has_ideology = ideology:ideology_militarist
+			has_ideology = ideology:ideology_authoritarian
+			has_ideology = ideology:ideology_traditionalist
+			has_ideology = ideology:ideology_far_right_economy
+			is_interest_group_type = ig_armed_forces
+			is_interest_group_type = ig_petty_bourgeoisie
+		}
+	}
+
+	# Root - IG considering joining
+	# scope:number - the number of IGs that would join this party before the root IG
+	join_weight = {
+		value = {
+			value = -5
+			desc = "base_value"
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_fascist_leader }
+				leader = { has_ideology = ideology:ideology_authoritarian_capitalist_leader }
+				leader = { has_ideology = ideology:ideology_right_wing_populist_leader }
+			}
+			}
+			add = { value = 45 desc = "leader_ideological_compatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_neocon_leader }
+				leader = { has_ideology = ideology:ideology_corporatist_leader }
+				leader = { has_ideology = ideology:ideology_state_capitalist_leader }
+			}
+			}
+			add = { value = 20 desc = "leader_adjacent_ideology" }
+		}
+		if = {
+			limit = {
+				OR = {
+				leader = { has_ideology = ideology:ideology_anarchist_leader }
+				leader = { has_ideology = ideology:ideology_marxist_leader }
+				leader = { has_ideology = ideology:ideology_social_liberal_leader }
+				leader = { has_ideology = ideology:ideology_progressive_leader }
+				leader = { has_ideology = ideology:ideology_green_leader }
+			}
+			}
+			add = { value = -50 desc = "leader_ideological_incompatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_totalitarian
+				has_ideology = ideology:ideology_nationalist
+				has_ideology = ideology:ideology_militarist
+			}
+			}
+			add = { value = 35 desc = "interest_group_ideological_compatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_authoritarian
+				has_ideology = ideology:ideology_traditionalist
+				has_ideology = ideology:ideology_far_right_economy
+			}
+			}
+			add = { value = 15 desc = "interest_group_adjacent_ideology" }
+		}
+		if = {
+			limit = {
+				OR = {
+				has_ideology = ideology:ideology_progressive
+				has_ideology = ideology:ideology_individualist
+				has_ideology = ideology:ideology_communist
+				has_ideology = ideology:ideology_globalist
+			}
+			}
+			add = { value = -35 desc = "interest_group_ideological_incompatibility" }
+		}
+		if = {
+			limit = {
+				OR = {
+				is_interest_group_type = ig_armed_forces
+				is_interest_group_type = ig_petty_bourgeoisie
+			}
+			}
+			add = { value = 20 desc = "from_archetype_party" }
+		}
+		if = {
+			limit = {
+				owner.radical_fraction > 0.10
+			}
+			add = { value = 25 desc = "radicalism" }
+		}
+		if = {
+			limit = {
+				owner = { is_at_war = yes }
+			}
+			add = { value = 15 desc = "war" }
+		}
+		if = {
+			limit = {
+				is_powerful = yes
+				OR = {
+					leader = { has_ideology = ideology:ideology_fascist_leader }
+					leader = { has_ideology = ideology:ideology_authoritarian_capitalist_leader }
+					leader = { has_ideology = ideology:ideology_right_wing_populist_leader }
+					has_ideology = ideology:ideology_totalitarian
+					has_ideology = ideology:ideology_nationalist
+					has_ideology = ideology:ideology_militarist
+				}
+			}
+			add = { value = 20 desc = "powerful_ig" }
+		}
+		if = {
+			limit = {
+				scope:number = 1
+				is_powerful = no
+				is_marginal = no
+			}
+			multiply = { value = 2 desc = "from_influential_supporting_member" }
+		}
+		else_if = {
+			limit = { scope:number = 2 }
+			multiply = { value = 0.75 desc = "from_two_prior_members" }
+		}
+	}
+
+}

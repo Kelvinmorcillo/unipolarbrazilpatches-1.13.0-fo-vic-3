@@ -1,0 +1,104 @@
+﻿l_simp_chinese:
+
+# groups
+
+combat_unit_group_aircraft:0 "飞机"
+
+# SMD units
+
+combat_unit_type_irregular_infantry:0 "非正规营"
+combat_unit_type_foot_infantry:0 "步兵营"
+combat_unit_type_foot_infantry:0 "脚步兵是防守的理想."
+combat_unit_type_light_infantry:0 "轻型营"
+combat_unit_type_light_infantry:0 "轻步兵全副武装"
+combat_unit_type_mechanized_infantry:0 "机械化营"
+combat_unit_type_mechanized_infantry:0 "机械化步兵是攻击的理想."
+combat_unit_type_armored_infantry:0 "坦克营"
+combat_unit_type_armored_infantry:0 "装甲步兵师包括理想用于攻击的坦克."
+combat_unit_type_cybernetic_infantry:0 "网络营"
+combat_unit_type_cybernetic_infantry:0 "Cybernetic步兵在类固醇上与脚步兵相类似——对防守非常出色."
+combat_unit_type_mech_infantry:0 "马查"
+combat_unit_type_mech_infantry:0 "梅查是造成严重破坏的强大武器."
+
+combat_unit_type_mortar_artillery:0 "迫击炮"
+combat_unit_type_mortar_artillery:0 "迫击炮能防守"
+combat_unit_type_field_artillery:0 "战地枪"
+combat_unit_type_field_artillery:0 "野战炮是圆形炮口."
+combat_unit_type_howitzer_artillery:0 "榴弹炮"
+combat_unit_type_howitzer_artillery:0 "榴弹炮是强大的防御武器."
+combat_unit_type_missile_artillery:0 "导弹炮"
+combat_unit_type_missile_artillery:0 "导弹电池很擅长防御"
+combat_unit_type_orbital_strike:0 "轨道炮"
+combat_unit_type_orbital_strike:0 "轨道打击在防御方面非常出色。"
+
+combat_unit_type_fixed_wing_aircraft:0 "固定翼飞机"
+combat_unit_type_fixed_wing_aircraft:0 "固定翼飞机解锁了强大的动员选项."
+combat_unit_type_multirole_aircraft:0 "多功能飞机"
+combat_unit_type_multirole_aircraft:0 "多功能飞机解锁了强大的动员选项."
+combat_unit_type_stealth_aircraft:0 "隐形飞机"
+combat_unit_type_stealth_aircraft:0 "隐形飞机解锁 强大的动员选项。"
+combat_unit_type_uav:0 "无人驾驶飞行器"
+combat_unit_type_uav:0 "无人驾驶航空器造成了额外的破坏。"
+combat_unit_type_autonomous_aircraft:0 "自主工艺"
+combat_unit_type_autonomous_aircraft:0 "自主飞机解锁了强大的动员选项."
+
+# ships
+
+combat_unit_type_frigate:0 "护卫舰"
+combat_unit_type_frigate:0 "护卫舰是小型护卫舰."
+combat_unit_type_destroyer:0 "破坏者"
+combat_unit_type_destroyer:0 "破坏者是护送车队的好手"
+combat_unit_type_stealth_destroyer:0 "隐形破坏器"
+combat_unit_type_stealth_destroyer:0 "隐形驱逐舰是驱逐舰的直接升级."
+combat_unit_type_littoral_combat_ship:0 "沿岸战舰"
+combat_unit_type_littoral_combat_ship:0 "沿岸战舰是更便宜的驱逐舰."
+combat_unit_type_cruiser:0 "十字军导弹"
+combat_unit_type_cruiser:0 "导弹十字架是强大的舰只,类似于现代战列舰."
+combat_unit_type_battleship:0 "战舰"
+combat_unit_type_battleship:0 "战列舰是游戏中最强大的舰只."
+combat_unit_type_carrier:0 "飞机运载机"
+combat_unit_type_carrier:0 "航空母舰比战列舰弱,除非与航空母舰的飞行命令配对。"
+combat_unit_type_supercarrier:0 "超级货车"
+combat_unit_type_supercarrier:0 "超级载人飞船是游戏中一旦与载人飞行命令对接后最强的飞船."
+combat_unit_type_attack_submarine:0 "攻击潜艇"
+combat_unit_type_attack_submarine:0 "攻击潜艇是车队突袭的最佳选择."
+combat_unit_type_nuclear_submarine:0 "核潜艇"
+combat_unit_type_nuclear_submarine:0 "核潜艇对海战有利."
+combat_unit_type_helicopter_carrier:0 "直升机运载机"
+combat_unit_type_helicopter_carrier:0 "直升机运输车对护送车队很有用。"
+combat_unit_type_awacs:0 "空降预警"
+combat_unit_type_awacs:0 "预警可以让我们快速探测 与我们相同的节点上的舰队"
+
+## marines
+combat_unit_type_marines:0 "海军陆战队"
+combat_unit_type_marines_desc:0 "专门从事两栖行动的步兵部队"
+
+combat_unit_type_spec_ops:0 "特种部队"
+combat_unit_type_spec_ops_desc:0 "专门从事秘密行动的步兵部队"
+
+combat_unit_type_space_marines:0 "航天陆战队"
+combat_unit_type_space_marines:0 "能够同时在地球和空间运行的一种步兵部队,随时可以部署在全球各地。"
+
+# mobe options:
+
+aircraft_types:0 "飞机类型"
+aircraft_types_desc:0 "这支军队使用的飞机类型。"
+
+mobilization_option_fighters:0 "战斗机"
+mobilization_option_fighters:0 "战斗机与其他飞机作战"
+mobilization_option_cas:0 "关闭空中支持"
+mobilization_option_cas_desc:0 "近距离空中支援飞机为我地部队提供直接支援."
+mobilization_option_bombers:0 "战略轰炸机"
+mobilization_option_bombers:0 "战略轰炸机在敌后进行破坏"
+
+mobilization_option_attack_helicopter:0 "炮舰"
+mobilization_option_attack_helicopter_desc:0 "攻击直升机对给我们的敌人带来强大的火力很有用."
+
+mobilization_option_fpv_drone:0 "FPV 无人机"
+mobilization_option_fpv_drone_desc:0 "FPV无人机被用来破坏敌方战斗人员的士气."
+
+mobilization_option_medevac:0 "直升机撤离"
+mobilization_option_medevac_desc:0 "直升机后撤使我们能够迅速从战区取出伤亡人员."
+
+mobilization_option_robotic_dog:0 "机器人狗"
+mobilization_option_robotic_dog_desc:0 "用于探测地雷而不会造成人或动物死亡的机器人犬"

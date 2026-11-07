@@ -1,0 +1,459 @@
+﻿# 1992 Formables Pack - Dynamic Country Names
+
+USE = {
+	dynamic_country_name = {
+		name = USE_dyn_monarchy_name
+		adjective = USE_dyn_monarchy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_monarchy }
+	}
+	dynamic_country_name = {
+		name = USE_dyn_council_name
+		adjective = USE_dyn_council_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_council_republic }
+	}
+	dynamic_country_name = {
+		name = USE_dyn_theocracy_name
+		adjective = USE_dyn_theocracy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_theocracy }
+	}
+}
+
+AFU = {
+	dynamic_country_name = {
+		name = AFU_dyn_monarchy_name
+		adjective = AFU_dyn_monarchy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_monarchy }
+	}
+	dynamic_country_name = {
+		name = AFU_dyn_council_name
+		adjective = AFU_dyn_council_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_council_republic }
+	}
+	dynamic_country_name = {
+		name = AFU_dyn_theocracy_name
+		adjective = AFU_dyn_theocracy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_theocracy }
+	}
+}
+
+ASN = {
+	dynamic_country_name = {
+		name = ASN_dyn_monarchy_name
+		adjective = ASN_dyn_monarchy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_monarchy }
+	}
+	dynamic_country_name = {
+		name = ASN_dyn_council_name
+		adjective = ASN_dyn_council_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_council_republic }
+	}
+	dynamic_country_name = {
+		name = ASN_dyn_theocracy_name
+		adjective = ASN_dyn_theocracy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_theocracy }
+	}
+}
+
+EAF = {
+	dynamic_country_name = {
+		name = EAF_dyn_monarchy_name
+		adjective = EAF_dyn_monarchy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_monarchy }
+	}
+	dynamic_country_name = {
+		name = EAF_dyn_council_name
+		adjective = EAF_dyn_council_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_council_republic }
+	}
+	dynamic_country_name = {
+		name = EAF_dyn_theocracy_name
+		adjective = EAF_dyn_theocracy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_theocracy }
+	}
+}
+
+WAF = {
+	dynamic_country_name = {
+		name = WAF_dyn_monarchy_name
+		adjective = WAF_dyn_monarchy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_monarchy }
+	}
+	dynamic_country_name = {
+		name = WAF_dyn_council_name
+		adjective = WAF_dyn_council_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_council_republic }
+	}
+	dynamic_country_name = {
+		name = WAF_dyn_theocracy_name
+		adjective = WAF_dyn_theocracy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_theocracy }
+	}
+}
+
+CAA = {
+	dynamic_country_name = {
+		name = CAA_dyn_monarchy_name
+		adjective = CAA_dyn_monarchy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_monarchy }
+	}
+	dynamic_country_name = {
+		name = CAA_dyn_council_name
+		adjective = CAA_dyn_council_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_council_republic }
+	}
+	dynamic_country_name = {
+		name = CAA_dyn_theocracy_name
+		adjective = CAA_dyn_theocracy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_theocracy }
+	}
+}
+
+SFA = {
+	dynamic_country_name = {
+		name = SFA_dyn_monarchy_name
+		adjective = SFA_dyn_monarchy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_monarchy }
+	}
+	dynamic_country_name = {
+		name = SFA_dyn_council_name
+		adjective = SFA_dyn_council_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_council_republic }
+	}
+	dynamic_country_name = {
+		name = SFA_dyn_theocracy_name
+		adjective = SFA_dyn_theocracy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_theocracy }
+	}
+}
+
+HAF = {
+	dynamic_country_name = {
+		name = HAF_dyn_monarchy_name
+		adjective = HAF_dyn_monarchy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_monarchy }
+	}
+	dynamic_country_name = {
+		name = HAF_dyn_council_name
+		adjective = HAF_dyn_council_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_council_republic }
+	}
+	dynamic_country_name = {
+		name = HAF_dyn_theocracy_name
+		adjective = HAF_dyn_theocracy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_theocracy }
+	}
+}
+
+LEV = {
+	dynamic_country_name = {
+		name = LEV_dyn_monarchy_name
+		adjective = LEV_dyn_monarchy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_monarchy }
+	}
+	dynamic_country_name = {
+		name = LEV_dyn_council_name
+		adjective = LEV_dyn_council_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_council_republic }
+	}
+	dynamic_country_name = {
+		name = LEV_dyn_theocracy_name
+		adjective = LEV_dyn_theocracy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_theocracy }
+	}
+}
+
+IBU = {
+	dynamic_country_name = {
+		name = IBU_dyn_monarchy_name
+		adjective = IBU_dyn_monarchy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_monarchy }
+	}
+	dynamic_country_name = {
+		name = IBU_dyn_council_name
+		adjective = IBU_dyn_council_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_council_republic }
+	}
+	dynamic_country_name = {
+		name = IBU_dyn_theocracy_name
+		adjective = IBU_dyn_theocracy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_theocracy }
+	}
+}
+
+BNL = {
+	dynamic_country_name = {
+		name = BNL_dyn_monarchy_name
+		adjective = BNL_dyn_monarchy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_monarchy }
+	}
+	dynamic_country_name = {
+		name = BNL_dyn_council_name
+		adjective = BNL_dyn_council_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_council_republic }
+	}
+	dynamic_country_name = {
+		name = BNL_dyn_theocracy_name
+		adjective = BNL_dyn_theocracy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_theocracy }
+	}
+}
+
+NBU = {
+	dynamic_country_name = {
+		name = NBU_dyn_monarchy_name
+		adjective = NBU_dyn_monarchy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_monarchy }
+	}
+	dynamic_country_name = {
+		name = NBU_dyn_council_name
+		adjective = NBU_dyn_council_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_council_republic }
+	}
+	dynamic_country_name = {
+		name = NBU_dyn_theocracy_name
+		adjective = NBU_dyn_theocracy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_theocracy }
+	}
+}
+
+BTU = {
+	dynamic_country_name = {
+		name = BTU_dyn_monarchy_name
+		adjective = BTU_dyn_monarchy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_monarchy }
+	}
+	dynamic_country_name = {
+		name = BTU_dyn_council_name
+		adjective = BTU_dyn_council_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_council_republic }
+	}
+	dynamic_country_name = {
+		name = BTU_dyn_theocracy_name
+		adjective = BTU_dyn_theocracy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_theocracy }
+	}
+}
+
+CAU = {
+	dynamic_country_name = {
+		name = CAU_dyn_monarchy_name
+		adjective = CAU_dyn_monarchy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_monarchy }
+	}
+	dynamic_country_name = {
+		name = CAU_dyn_council_name
+		adjective = CAU_dyn_council_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_council_republic }
+	}
+	dynamic_country_name = {
+		name = CAU_dyn_theocracy_name
+		adjective = CAU_dyn_theocracy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_theocracy }
+	}
+}
+
+CCA = {
+	dynamic_country_name = {
+		name = CCA_dyn_monarchy_name
+		adjective = CCA_dyn_monarchy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_monarchy }
+	}
+	dynamic_country_name = {
+		name = CCA_dyn_council_name
+		adjective = CCA_dyn_council_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_council_republic }
+	}
+	dynamic_country_name = {
+		name = CCA_dyn_theocracy_name
+		adjective = CCA_dyn_theocracy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_theocracy }
+	}
+}
+
+
+
+UNS = {
+	dynamic_country_name = {
+		name = UNS_dyn_monarchy_name
+		adjective = UNS_dyn_monarchy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_monarchy }
+	}
+	dynamic_country_name = {
+		name = UNS_dyn_council_name
+		adjective = UNS_dyn_council_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_council_republic }
+	}
+	dynamic_country_name = {
+		name = UNS_dyn_theocracy_name
+		adjective = UNS_dyn_theocracy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_theocracy }
+	}
+}
+
+GUF = {
+	dynamic_country_name = {
+		name = GUF_dyn_monarchy_name
+		adjective = GUF_dyn_monarchy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_monarchy }
+	}
+	dynamic_country_name = {
+		name = GUF_dyn_council_name
+		adjective = GUF_dyn_council_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_council_republic }
+	}
+	dynamic_country_name = {
+		name = GUF_dyn_theocracy_name
+		adjective = GUF_dyn_theocracy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_theocracy }
+	}
+}
+
+XMA = {
+	dynamic_country_name = {
+		name = XMA_dyn_monarchy_name
+		adjective = XMA_dyn_monarchy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_monarchy }
+	}
+	dynamic_country_name = {
+		name = XMA_dyn_council_name
+		adjective = XMA_dyn_council_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_council_republic }
+	}
+	dynamic_country_name = {
+		name = XMA_dyn_theocracy_name
+		adjective = XMA_dyn_theocracy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_theocracy }
+	}
+}
+
+ARU = {
+	dynamic_country_name = {
+		name = ARU_dyn_monarchy_name
+		adjective = ARU_dyn_monarchy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_monarchy }
+	}
+	dynamic_country_name = {
+		name = ARU_dyn_council_name
+		adjective = ARU_dyn_council_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_council_republic }
+	}
+	dynamic_country_name = {
+		name = ARU_dyn_theocracy_name
+		adjective = ARU_dyn_theocracy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_theocracy }
+	}
+}
+
+TUC = {
+	dynamic_country_name = {
+		name = TUC_dyn_monarchy_name
+		adjective = TUC_dyn_monarchy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_monarchy }
+	}
+	dynamic_country_name = {
+		name = TUC_dyn_council_name
+		adjective = TUC_dyn_council_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_council_republic }
+	}
+	dynamic_country_name = {
+		name = TUC_dyn_theocracy_name
+		adjective = TUC_dyn_theocracy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_theocracy }
+	}
+}
+
+NAU = {
+	dynamic_country_name = {
+		name = NAU_dyn_monarchy_name
+		adjective = NAU_dyn_monarchy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_monarchy }
+	}
+	dynamic_country_name = {
+		name = NAU_dyn_council_name
+		adjective = NAU_dyn_council_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_council_republic }
+	}
+	dynamic_country_name = {
+		name = NAU_dyn_theocracy_name
+		adjective = NAU_dyn_theocracy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type:law_theocracy }
+	}
+}
+
+KOU = {
+	dynamic_country_name = {
+		name = KOU_dyn_monarchy_name
+		adjective = KOU_dyn_monarchy_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type_monarchy }
+	}
+	dynamic_country_name = {
+		name = KOU_dyn_council_name
+		adjective = KOU_dyn_council_adj
+		is_main_tag_only = yes
+		trigger = { has_law = law_type_council_republic }
+	}
+}

@@ -1,0 +1,160 @@
+﻿l_turkish:
+# ==========================================
+ # OBJECTIVE
+ # ==========================================
+ 
+ objective_the_west: "Batı Batı"
+ objective_the_west_desc: "Liberal uluslararası düzen – demokrasi, özgür ticaret, kolektif güvenlik ve insan hakları – devam etmeli ve genişletilmelidir. [ROOT.GetCountry.GetName] onu inşa eden sistemin merkezinde duruyor. Görev sadece var olanı korumak değildir, ancak yüzyılın sona erdiği zaman, dünyanın büyük güçleri ya da buna meydan okumaz."
+ 
+ # ==========================================
+ # SUBGOAL NAMES AND DESCRIPTIONS
+ # ==========================================
+ 
+ sg_west_open_trade: "Para Durumu"
+ sg_west_open_trade_desc: "Batı finansal sistemi [ROOT.GetCountry.GetAdjective] kredi üzerinde çalışır. [ROOT.GetCountry.GetName] Kredinin baskın ihracatçısı olarak - 1.000'den fazla birim - küresel ekonominin arka kemiği olarak [ROOT.GetCountry.GetAdjective] finansal sistemi çimentolayın."
+ 
+ sg_west_alliances: "Alliances Network of Alliances"
+ sg_west_alliances_desc: "Batı düzeni kolektif bir güvenlik projesidir. En az dört ülke ile askeri yardım anlaşmaları kurmak, saldırganlığı ve projeleri [ROOT.GetCountry.GetAdjective] iş birliği yoluyla iş birliği yoluyla güç inşa etmek."
+ 
+ sg_west_human_rights: "Liberal Demokratik Çerçeve"
+ sg_west_human_rights_desc: "Batı sadece serveti tarafından değil değerleri ile tanımlanır. Evrensel öfke, işçi korumaları, köleliğin kaldırılması ve konuşma koruması – liberal bir demokratik toplumun kurumsal temelleri. [ROOT.GetCountry.GetName] sipariş, bina savunmaya değer olmalıdır."
+ 
+ sg_west_education: "Educated Citizenry"
+ sg_west_education_desc: "Demokratik katılım ve ekonomik. aynı zamanda eğitimli bir nüfusuna bağlıdır. Okul sisteminde 5 seviyesine yatırım yapın ve en az% 75 okuryazarlık oranı elde edin. Bilgilendirilmiş bir vatandaş, liberal düzenin en dayanıklı temelidir."
+ 
+ sg_west_gdp: "Ekonomik Liderlik Ekonomik Liderlik"
+ sg_west_gdp_desc: "Batı düzeni ekonomik ağırlıkla yazılır. [ROOT.GetCountry.GetName] küresel GSYİH'nin en az% 25'ini hesaba katmalıdır - [ROOT.GetCountry.GetAdjective] Ekonomi çok büyük ve küresel sisteme inanılmaz bir meydan okuma için çok merkezi."
+ 
+ sg_west_endgame: "Unipolar Moment"
+ sg_west_endgame_desc: "Son meydan okuma. [SCOPE.sCountry('c:RUS').GetName] ve [SCOPE.sCountry('c:CHI').GetName] sipariş içinde getirilir veya tehdit edilemez olarak verilmelidir. Her biri için: ya demokratikleşirler, evrensel bir öfkeyi kabul ederler ve [ROOT.GetCountry.GetName] ile bir savunmayı imzalarlar - ya da onların gücü büyük bir güç rütbesinin altında kalır. Siparişi koruyan üçüncü bir seçenek yoktur."
+ 
+ # ==========================================
+ # JOURNAL ENTRY NAMES AND DESCRIPTIONS
+ # ==========================================
+ 
+ je_west_open_trade: "Finansal Hakimiyet"
+ je_west_open_trade_reason: "[ROOT.GetCountry.GetAdjective] dolar - ya da [ROOT.GetCountry.GetName] para birimini çağırır - dünyanın rezerv para birimidir. Diğer uluslar bunu tutar, içinde ticaret yapın ve etrafındaki finansal sistemlerini inşa edin. Uluslararası pazarlara 1000'den fazla kredi birimi ithal etmek bu pozisyona gider ve [ROOT.GetCountry.GetName] Askeri güç çoğaltmadığı küresel finansal sistem üzerinde yapısal avantaj sağlar."
+ 
+ je_west_alliances: "Kollektif Güvenlik"
+ je_west_alliances_reason: "NATO. ANZUS. Batı bloğu tanımlayan güvenlik ortaklıkları sadece askeri düzenlemeler değildir - siyasi taahhütlerdir. Askeri yardım anlaşmaları en az dört ülke ile inşa edin. Her ortaklık [ROOT.GetCountry.GetAdjective] ulaşır ve siparişi sürdürme maliyetini azaltır."
+ 
+ je_west_human_rights: "Kurumsal Vakıf Vakfı"
+ je_west_human_rights_reason: "Evrensel öfke. İşer korumaları. Köleliğin kaldırılması. Korumalı konuşma. Bunlar Batı modeline opsiyonel eklemeler değildir - bunlar modeldir. Onlar olmadan, [ROOT.GetCountry.GetName] savunma sadece güç değildir, prensip değildir. Liberal siparişin gerektirdiği kurumsal temeli oluşturmak için tüm dördü etkinleştirin."
+ 
+ je_west_education: "Tüm Eğitim için Eğitim"
+ je_west_education_reason: "Batı modeli, okuyabilen vatandaşlara ve katılmalarına bağlıdır. Okullarda 5 seviyesine yatırım yapın ve ulusal bir okuryazarlık oranı %75. Doğru yasalara sahip olmak yeterli değildir - nüfus onları kullanmak için yeterince eğitimli olmalıdır."
+ 
+ je_west_gdp: "Global GDP'nin% 5'i"
+ je_west_gdp_reason: "Boyut önemlidir. [ROOT.GetCountry.GetName], küresel ekonomik çıktının en az dörtte biri için dikkate almalıdır. Bu ölçekde, [ROOT.GetCountry.GetAdjective] Ekonomi sadece büyük değil - vazgeçilmez. Dünya [ROOT.GetCountry.GetName] ile ticaret, [ROOT.GetCountry.GetName]'den ödünç alır ve [ROOT.GetCountry.GetName] bir düşman yapmak için karşılayamaz."
+ 
+ je_west_endgame: "Tarihin Sonu"
+ je_west_endgame_reason: "Yaşın sorusu: [SCOPE.sCountry('c:RUS').GetName] ve [SCOPE.sCountry('c:CHI').GetName] Batı düzenine sistemik rakipler olarak tarafsızlaştırılabilir mi?\n\n Her ülke için, aşağıdakilerden biri doğru olmalıdır:\n• Demokratik bir cumhuriyet, evrensel bir öfke kabul ettiler ve [ROOT.GetCountry.GetName]\n• Onların güç rütbesi, büyük bir güçten aşağıda düştü\n\n Her iki koşul karşılandığında, unipolar anı tamamlandı."
+ 
+ # ==========================================
+ # PROGRESS TOOLTIPS
+ # ==========================================
+ 
+ je_west_open_trade_progressing_tt: "Kredi ihracatı büyüyor - [ROOT.GetCountry.GetAdjective] finansal sistem uluslararası genişliyor"
+ je_west_alliances_progressing_tt: "ittifak ağı şekilleniyor - daha fazla ortak gereklidir"
+ je_west_human_rights_progressing_tt: "Bazı haklar çerçeveleri yerindedir - tam set henüz uygulanmadı"
+ je_west_education_progressing_tt: "Okul sistemi gelişiyor - seviye 5 yatırım ve %75 okuryazarlık hedefleri"
+ je_west_gdp_progressing_tt: "[ROOT.GetCountry.GetName] küresel GSYİH'nin% 15'inden fazlası için hesaplar - hedef %25'tir"
+ je_west_endgame_progressing_tt: "Bir rakip zayıf ya da demokratikleşmiştir - diğer bir sistem meydan okuması"
+ 
+ # ==========================================
+ # OBJECTIVE
+ # ==========================================
+
+ objective_the_east: "Doğu Doğu"
+ objective_the_east_desc: "Batı liberal düzeni tek olası dünya değildir. [ROOT.GetCountry.GetName] farklı bir modele sahiptir - devlet yönlerinden biri, kolektif güç ve egemenlik gelişimi. Görev, bu modelin Batı'yı ekonomik güç ve küresel erişimde eşleştirebileceğini ve [ROOT.GetCountry.GetName]'nin hangi [ROOT.GetCountry.GetName] olduğunu göstermektir."
+
+ # ==========================================
+ # SUBGOAL NAMES AND DESCRIPTIONS
+ # ==========================================
+
+ sg_east_state_industry: "Yönetmen Industrial Base"
+ sg_east_state_industry_desc: "Doğu modeli, devletin ağır endüstriye doğrudan yatırım yapma kapasitesine geri dönüyor. Bir müdahaleci veya komuta ekonomisini korumak, en az 10'a inşaat kapasitesi inşa etmek ve demir madenciliği en az 5'e güçlü ccupancy ile geliştirmek. Bu, diğer her şeyin ekonomik temelidir."
+
+ sg_east_great_power: "Büyük Güç Durumu"
+ sg_east_great_power_desc: "Batı hegemonyasına Doğu meydan okuması sadece gerçek bir büyük güç tarafından monte edilebilir. Büyük güç rütbesine ulaşmak - [SCOPE.sCountry('c:USA').GetName] bir zayıflık pozisyonundan eşit olarak pazarlık yoktur."
+
+ sg_east_sphere: "Doğu Bloc"
+ sg_east_sphere_desc: "[ROOT.GetCountry.GetName] etki alanını oluşturan müttefik devletlerin ağı inşa edin. En az dört ülke ile askeri yardım anlaşmaları kurmak. İttifaklar hayır değildir - onlar güç projeksiyonunun altyapısıdır."
+
+ sg_east_currency: "Doğu Deposu"
+ sg_east_currency_desc: "Dolar egemenliği Batı'nın en dayanıklı avantajıdır - ABD'nin küresel ekonominin pahasına hegemonyasını finanse etmesine izin verir. Zorluk. Uluslararası pazarlara 1000'den fazla kredi birimi ihracat yapın ve yabancı yatırımcıları çekmek için rekabetçi bir şekilde satış yapın. Doğu rezervi para sadece ekonomik değildir - jeopolitiktir."
+
+ sg_east_endgame: "Çokpolar World"
+ sg_east_endgame_desc: "Son meydan okuma. Amerika Birleşik Devletleri, Büyük Britanya ve Fransa - Batı düzeninin üç sütunu - her biri tarafsız olmalıdır. Her biri için: ya onların güç rütbesi büyük bir güç altında düşer ya da [ROOT.GetCountry.GetName] ile bir savunma anlaşması imzalar. Her üç koşul karşılandığında dünya düzeni değişti."
+
+ je_east_state_industry: "Endüstri Vakfı"
+ je_east_state_industry_reason: "Devlet ağır endüstriye doğrudan yatırım yapmalı - onu pazarlara bırakmamalıdır. Bir müdahaleci veya komuta ekonomisini korumak, en az 10 inşaat kapasitesi inşa etmek ve %75 ccupancy veya daha iyi büyük demir madenciliği kapasitelerini geliştirmek. Bu endüstri üssü olmadan, [ROOT.GetCountry.GetName] Doğu meydan okumasının askeri ve ekonomik ağırlığını sürdüremez."
+
+ je_east_great_power: "Büyük Güçe Yükselişi"
+ je_east_great_power_reason: "Büyük gücün rütbesine ulaşmak. Şu anda [ROOT.GetCountry.GetName] dünyadaki en güçlü uluslar arasında olabilir – ancak büyük güç durumu, [ROOT.GetCountry.GetName] küresel düzenle ilgili kararların yapıldığı odaya aittir. Takip eden her şeyin ön koşuludur."
+
+ je_east_sphere: "Dört Askeri Ortak"
+ je_east_sphere_reason: "Askeri yardım anlaşmaları en az dört ülke ile inşa edin. [ROOT.GetCountry.GetName] Batı ittifak sistemini tek başına meydan okumaz. Doğu alanı gerçek bir kolektif olmalıdır - [ROOT.GetCountry.GetName] ve hangi [ROOT.GetCountry.GetName] geri dönüşe bağlı olduğunu belirtir."
+
+ je_east_currency: "Challenge Dolar Dominance"
+ je_east_currency_reason: "[SCOPE.sCountry('c:USA').GetAdjective] doların rezerv para durumu, Batı'nın on yıllardır ağırlığını yumruklamasına izin veren yapısal avantajdır. Uluslararası pazarlara 1000'den fazla kredi ihraç etmek ve [ROOT.GetCountry.GetAdjective] hisse senedi değerinin %25'i altında tutmak gerekir, böylece yabancı yatırımcılar onları çekici bulur.<x id=><x id=3 Başkalarının istekli bir şekilde kullandığı Doğu finansal sistemi sadece ekonomik bir başarı değildir. Bu, dolarların tek seçenek olmadığının bir açıklamasıdır."
+
+ je_east_endgame: "Batı Powers Neutralized"
+ je_east_endgame_reason: "Dünya düzeni, koruyucularının artık onu koruyamayacağında değişir. Üçü çözülmeli:\n\n• [SCOPE.sCountry('c:USA').GetName]: Büyük güç rütbesi altında, veya [SCOPE.sCountry('c:FRA').GetName]: [SCOPE.sCountry('c:GBR').GetName] [SCOPE.sCountry('c:GBR').GetName][ROOT.GetCountry.GetName][ROOT.GetCountry.GetName]\n\n|||||||||||||||||||||||||>|||||||||||||||||||||||||||||||=>||=>[ROOT.GetCountry.GetName]<x id=>[ROOT.GetCountry.GetName]<x id=><x id=>[ROOT.GetCountry.GetName]<x id= Her üç koşulu memnun olduğunda, [ROOT.GetCountry.GetName] sadece Batı düzeni hayatta kalmamıştır. Onu değiştirdi."
+
+ je_east_state_industry_progressing_tt: "Endüstri üssü gelişiyor - inşaat kapasitesi ve demir madenciliği henüz hedefsiz değil"
+ je_east_great_power_progressing_tt: "[ROOT.GetCountry.GetName] büyük bir güçtir - büyük güç durumu erişim içinde"
+ je_east_sphere_progressing_tt: "ittifak ağı büyüyor - dört askeri yardım anlaşması gereklidir"
+ je_east_currency_progressing_tt: "Kredi ihracatı büyüyor - rezerv para durumu oluşturmak için 1.000 birim gerekiyor"
+ je_east_endgame_progressing_tt: "En azından bir Batı gücü tarafsız oldu - diğerleri kalır"
+ 
+ # ==========================================
+ # OBJECTIVE
+ # ==========================================
+
+ objective_rising_powers: "Yükselen Güçler"
+ objective_rising_powers_desc: "Dünya iki blok arasında bölünmüş olmak zorunda değildir. [ROOT.GetCountry.GetName] seçim yapmayı reddediyor - Washington ve Moskova arasında bir sonraki dolar ve her şey geliyor, bir İmparatorluk ve başka bir şey arasında. Üçüncü yol da alternatiflerden daha zor. Gerçek ekonomik ağırlık, güvenilir askeri güç ve ortak bir şeyi olan bir devlet koalisyonunu bir araya getirmek için diplomatik beceri gerektirir: Ayrıca seçim yapmayı reddediyorlar."
+
+ # ==========================================
+ # SUBGOAL NAMES AND DESCRIPTIONS
+ # ==========================================
+
+ sg_rising_economy: "Ekonomik Vakıflar"
+ sg_rising_economy_desc: "Küresel GSYİH'nın en az% 10'unu hesaplayan bir ekonomi inşa edin - üçüncü bir blok demirlemek için yeterince önemli -% 40'ın altındaki herhangi bir ortaka ticaret maruz kalırken. Egemenlik ekonomik bağımsızlıkla başlar."
+
+ sg_rising_sovereignty: "Tam Egemen Bağımsızlık"
+ sg_rising_sovereignty_desc: "Yükselen bir güç bir müşteri devleti olamaz. Achieve büyük güç rütbesi, en az 50'nin prestijine ulaşır ve [ROOT.GetCountry.GetName] herhangi bir gücün konusu ne de [SCOPE.sCountry('c:USA').GetName] veya [SCOPE.sCountry('c:RUS').GetName] Üçüncü yol onu seçme özgürlüğü ile başlar."
+
+ sg_rising_military: "Askeri Sorumluluk"
+ sg_rising_military_desc: "Üçüncü yol sadece kendini savunabilirse güvenilirdir. Büyük güç rütbesine ve en az 100 birim bir ordu alanına ulaşın. Kendi kendini koruyamayan bir devlet uzun süre kalmayacak."
+
+ sg_rising_prestige: "Uluslararası Tanıklık"
+ sg_rising_prestige_desc: "En az 150 prestij ile 5 veya daha iyi bir dünya sıralamasına ulaşmak. [ROOT.GetCountry.GetName] görmezden gelmek imkansız olmalıdır - sadece bölgesel bir güç değil, büyük güçlerin her hesaplamada dikkate alması gerekir."
+
+ sg_rising_endgame: "Üçüncü Bloc"
+ sg_rising_endgame_desc: "Büyük bir güç olarak sekiz veya daha fazla üyesin bir güç blokuna liderlik edin. Bu, kavramın kanıtıdır - dünya siyasetinde üçüncü bir kutup, Batı ne de Doğu'nun onu absorbe edebileceği veya reddetmesi için yeterince güvenilirdir. [ROOT.GetCountry.GetName] sekiz ulusa liderlik ettiğinde, dünya çok kutuplu."
+
+ je_rising_economy: "Global GDP'nin% 5'i"
+ je_rising_economy_reason: "[ROOT.GetCountry.GetName] ekonomisini küresel çıktının% 10'undan fazlasını inşa edin - ve ekonomik olarak herhangi bir tek güce bağımlı olmadan yapın. Hedef, herhangi bir tek ambargo tarafından dikilecek ve çok geniş olan bir ekonomidir.\n\n@information! Herhangi bir ortaka güven, toplam piyasa aktivitesinin% 40'ının altında kalmalıdır."
+
+ je_rising_sovereignty: "Egemen ve Bağımsız"
+ je_rising_sovereignty_reason: "Büyük güç rütbesine ve 50 veya daha iyi bir prestijye ulaşırken, tamamen bağımsız kalırken - herhangi bir ülkenin konusu değil, herhangi bir yabancı gücün kuklası değil. Tam egemenlik bağımsızlığı, yolculuğun sonu değildir. Bu başlangıç."
+
+ je_rising_military: "Credible Force"
+ je_rising_military_reason: "Büyük güç rütbesine ve en az 100 birim bir ordu alanına ulaşın. [ROOT.GetCountry.GetName] kendi seçimlerini savunma yeteneğine sahip olmalıdır. Kendi kendini savunamayan bir ülke, diğerleriyle karar verdiği hizasını bulacak."
+
+ je_rising_prestige: "Top 5 – Undeniable"
+ je_rising_prestige_reason: "5 veya daha iyi ve en az 150 prestijli bir ülke sıralamasına ulaşır. Bu seviyede, [ROOT.GetCountry.GetName] bölgesel bir merak değildir - pozisyonları görmezden gelinen bir dünya gücüdür, ki bu uyum gerçekten karşılanır ve ciroya değer."
+
+ je_rising_endgame: "Üçüncü Bloc"
+ je_rising_endgame_reason: "Büyük bir güç olarak sekiz veya daha fazla üyesin bir güç blokuna liderlik edin. [ROOT.GetCountry.GetName] etrafında organize etmeyi tercih eden sekiz ülke, [SCOPE.sCountry('c:USA').GetName] veya [SCOPE.sCountry('c:RUS').GetName] sadece bir diplomatik başarı değildir - uluslararası politikanın yapısal bir gerçeğidir. Üçüncü yol var. Üyeleri var. Bir lideri var. Güçler bunun için dikkate almak zorunda kalacak."
+
+ # ==========================================
+ # PROGRESS TOOLTIPS
+ # ==========================================
+
+ je_rising_economy_progressing_tt: "[ROOT.GetCountry.GetName] küresel GSYİH'nin% 2'sinden fazlası için hesaplar -% 5 hedef hedef"
+ je_rising_sovereignty_progressing_tt: "[ROOT.GetCountry.GetName] tanınır ve bağımsızdır - büyük güç rütbesi ve prestiji 50 gereklidir"
+ je_rising_military_progressing_tt: "Askeri kapasite büyüyor - büyük güç rütbesi ve ordu büyüklüğü 100 hedefler"
+ je_rising_prestige_progressing_tt: "[ROOT.GetCountry.GetName] en üst 5'e yaklaşıyor - prestij 150 ve küresel sıralama 5'e ihtiyaç duyuluyor"
+ je_rising_endgame_progressing_tt: "Blok oluşur - 8 üye hedefi tamamlamak için gereklidir"

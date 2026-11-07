@@ -1,0 +1,58 @@
+﻿l_german:
+
+ # ==========================================
+ # THE DOLLAR 
+ # ==========================================
+
+ je_the_dollar:0 "Der Dollar"
+ je_the_dollar_reason:0 "Der US-Dollar ist die Weltreservewährung. <x id======================================================== Wenn die Finanzbezirke anderer Länder Kredite benötigen, um ihre Geschäfte zu halten, suchen sie nach [ROOT.GetCountry.GetAdjective] Banken, um sie zu liefern. Solange der Dollar fließt, können die Kapitalisten dieser Länder bauen, investieren und profitieren. Sollte [ROOT.GetCountry.GetName] diesen Fluss — durch Sanktionen, Embargo oder vorsätzliche Kontraktion — einschränken, wären die Folgen für die ausländischen Finanzmärkte unmittelbar und schwer.<x id=>5/\nx id=7/> Der Export von Krediten ist nicht einfach Handel. Es handelt sich um die Ausübung der monetären Souveränität gegenüber Ländern, die von der Finanzinfrastruktur [ROOT.GetCountry.GetAdjective] abhängen. Ihre Finanzbezirke benötigen Kredit. Steigt der Kreditpreis über dem Wertpapierpreis, verlieren ihre Investoren Geld. Wenn die Kredite nicht mehr vollständig fließen, müssen ihre Banken verstopfen, um genug inländische zu produzieren — ein Prozess, der Zeit braucht, die sie möglicherweise nicht haben."
+
+ je_dollar_status_hegemonic_tt:0 "#bold Der Dollar ist hegemonic.#! [ROOT.GetCountry.GetName] exportiert mehr als #v 20.000#! Krediteinheiten. Die ausländischen Finanzmärkte sind tief integriert mit [ROOT.GetCountry.GetAdjective] Bankinfrastruktur. Die Hebelwirkung ist beträchtlich."
+ je_dollar_status_stronger_tt:0 "#bold Der Dollar ist leistungsfähig.#! [ROOT.GetCountry.GetName] exportiert mehr als #v 10.000#!-Einheiten des Kredits. Die ausländischen Finanzmärkte sind tief integriert mit [ROOT.GetCountry.GetAdjective] Bankinfrastruktur. Die Hebelwirkung ist beträchtlich."
+ je_dollar_status_strong_tt:0 "#bold Der Dollar ist einflussreich.#! [ROOT.GetCountry.GetName] exportiert mehr als #v 5,000x id=4/> Krediteinheiten. Die ausländischen Finanzmärkte sind tief integriert mit [ROOT.GetCountry.GetAdjective] Bankinfrastruktur. Die Hebelwirkung ist beträchtlich."
+ je_dollar_status_moderate_tt:0 "#bold Der Dollar ist gut etabliert.#! <x id=>2/ exportiert mehr als #v 2.500#! Krediteinheiten. Ausländische Abhängigkeit von [ROOT.GetCountry.GetAdjective] ist real und wächst."
+ je_dollar_status_marginal_tt:0 "#bold Der Dollar steigt.#! [ROOT.GetCountry.GetName] ist Exportkredit international. Die Rolle des Dollars als Reservewährung ist in seinen frühen Phasen — aber die Grundlage wird gelegt."
+
+ # ==========================================
+ # THE RESERVE CURRENCY
+ # ==========================================
+
+ je_reserve_currency:0 "Währung"
+ je_reserve_currency_reason:0 "<x id======================================================== Wenn die Finanzbezirke anderer Länder Kredite benötigen, um ihre Geschäfte zu halten, ziehen sie von [ROOT.GetCountry.GetAdjective] Banken. Dies schafft eine Form der strukturellen Verschuldung: Länder, die Kredite von <x id=>5/ einführen, werden in einem Maße von dem fortgesetzten Fluss dieser Kredite für die Gesundheit ihrer Finanzbranche abhängig.\nx id=7/>x id=8/> Finanzbezirke in den Importländern verlangen einen effizienten Betrieb. Wenn der Kreditpreis über dem Preis von Wertpapieren steigt, verlieren ihre Investoren Geld auf Bau und Entwicklung. Eine plötzliche Kontraktion von Krediten — durch Sanktionen oder Embargo — würde diese Länder dazu zwingen, Kredite im Inland, einen langsameren und teureren Prozess zu produzieren."
+
+ je_reserve_status_strong_tt:0 "#bold [ROOT.GetCountry.GetAdjective] credit is wide traded.#! Exporte mehr als #v 5.000#! units. Ausländische Finanzmärkte haben eine erhebliche Abhängigkeit von [ROOT.GetCountry.GetAdjective] Bankenangebot entwickelt."
+ je_reserve_status_moderate_tt:0 "#bold [ROOT.GetCountry.GetAdjective] credit is international active.#! Exporte über #v 2500#! units. Ein aussagekräftiger Teil der ausländischen Finanztätigkeit ist von [ROOT.GetCountry.GetAdjective] Angebot abhängig."
+ je_reserve_status_marginal_tt:0 "#bold [ROOT.GetCountry.GetAdjective] credit is into international market.#! Exporte mehr als #v 1.000#! units. Die Rolle ist bescheiden, aber wächst."
+
+ # ==========================================
+ # THE FINANCIAL SYSTEM — je_financial_system
+ # ==========================================
+
+ je_financial_system:0 "Das Finanzsystem"
+ je_financial_system_reason:0 "Dieser Journaleintrag ist völlig optional — Sie müssen sich nicht mit dem Kredit- und Wertpapiersystem beschäftigen, um das Spiel zu spielen. Es ist hier als Referenz für diejenigen, die es verstehen wollen.\nx id=1/>>x id=2/> Wie das System funktioniert: Finanzbezirke erwerben Kredite und verkaufen auf der öffentlich gehandelten Produktionsmethode #bold Wertpapiere #!. Wertpapiere geben den Anlegern zusätzliche Gewinne bei der Neuinvestitionen in den Neubau — aber nur dann, wenn der Preis für Wertpapiere höher ist als der Preis für Kredite. Dies bedeutet, dass der Markt ein natürliches Gleichgewicht sucht:\nx id=11/>• Wenn #bold Kredit ist cheap#! relativ zu Wertpapieren, Finanzbezirken Gewinn und Investoren bauen aggressiver. Der Bau beschleunigt über die gesamte Wirtschaft.\nx id=1>5/• Wenn #bold Wertpapiere in Bezug auf Kredite billig#! sind, verlieren Finanzbezirke Geldkaufkredite, die sie nicht gewinnbringend umrechnen können. Banken finden ihr Produkt weniger wertvoll. Bauslows.\nx id=19/>x id=20/> Die Preisbeziehung zwischen Kredit und Wertpapieren ist daher das Schlüsselsignal zu beobachten. Eine gesunde Spread — Wertpapiere über Kredit — bedeutet, dass Ihr Finanzsektor wie beabsichtigt funktioniert und Ihre Kapitalisten Erträge auf Bauinvestitionen erhalten.\nx id=22/>x id=23/> Wenn Kredit über Wertpapiere steigt, werden Ihre Finanzbezirke bei einem Verlust an jeder Einheit, die sie verarbeiten, tätig. Banken werden profitabel, aber Investoren verlangsamen ihre Aktivität und Ihre Wirtschaft wächst weniger dynamisch.\nx id=25/>x id=26/> Die Zentralbank#!x id=28/>x id=29/> Sie können die #bold Zentralbank#! Institution verwenden, um die Produktion von Wertpapieren direkt zu beeinflussen. Die Investition in die Zentralbank erhöht das Angebot an Wertpapieren auf Ihrem Markt – was ihren Preis gegenüber Krediten herabsetzt. Dies wird #bold Ihre Geschäftsbanken #!, die ihre Kredite weniger rentabel zu produzieren finden, aber es wird #bold expandieren industrielle Investitionen#!, indem die Kredit-Securities für Ihre Kapitalisten günstig verbreiten.\nx id=37/> Dies ist ein bewusster Abschlag: Die Investitionen der Zentralbanken begünstigen das industrielle Wachstum auf Kosten der Bankenrentabilität. Ob das Trade-off wert ist, hängt von Ihrer Wirtschaftsstrategie ab."
+
+ je_financial_credit_expensive_tt:0 "#bold Der Kredit ist über seinem Basispreis gehandelt.#! Geschäftsbanken sind profitabel. Finanzbezirke zahlen eine Prämie für Kredite, die ihre Margen bei der Wertpapierproduktion festlegt. Investoren können ihre Bautätigkeit verlangsamen, wenn die Verbreitung ungünstig wird."
+ je_financial_securities_expensive_tt:0 "#bold Wertpapiere handeln über ihren Basispreis.#! Finanzbezirke sind rentabel – sie werden Kredite in Wertpapiere mit einer gesunden Marge umwandeln. Investoren erhalten gute Renditen beim Bau. Die Banken haben einen bescheidenen Druck, da ihr Produkt unter den Waren, die sie ernähren,preiset wird."
+ je_financial_balanced_tt:0 "Kredite und Wertpapiere handeln in der Nähe ihrer Basispreise. Das Finanzsystem ist im Gleichgewicht – Banken sind marginal rentabel und Investoren erhalten moderate Renditen."
+
+ ### Great Recession
+
+ je_subprime_mortgage_crisis:0 "Subprime Mortgage Krise"
+ je_subprime_mortgage_crisis_reason:0 "[ROOT.GetCountry.GetAdjective] Finanzinstitute emittieren und verpacken mortgage-backed Wertpapiere im Maßstab — Bündelung subprime-Home-Darlehen in Instrumente, die über das globale Finanzsystem verkauft werden. Die Wertpapiere werden als sicher eingestuft. Sie sind nicht sicher. Wenn die zugrunde liegenden Hypotheken beginnen, werden alle Institute, die diese Instrumente halten, gleichzeitig feststellen, dass ihre Bilanzen auf wertlosem Papier gebaut werden.\nx id=2/>x id=3/>x Wenn der Wert der Wertpapiere vor der Ausreifung der Krise nicht wesentlich korrigiert wird, wird das [ROOT.GetCountry.GetAdjective]-Banking-System einfrieren - und der Schock wird von jeder Wirtschaft mit erheblichen Verbindungen zu [ROOT.GetCountry.GetName] gefühlt."
+
+ je_great_recession:0 "Die große Rezession"
+ je_great_recession_reason:0 "Das Finanzsystem der Vereinigten Staaten ist zusammengebrochen. Mortgage-Backed Securities, die von Banken auf der ganzen Welt gehalten werden, wurden als nahewertlos offenbart. Die Kreditmärkte sind eingefroren. Die Banken werden sich nicht leihen, geschweige denn den Unternehmen. Die Investitionen sind ausgetrocknet. Der Bau hat sich verlangsamt. Die Rezession ist global.\nx id=1/> Der Markt wird korrigieren. Das tut es immer. Die Frage ist, wie viel Schaden vor sich geht."
+
+ # Status descriptions
+ subprime_je_danger_tt:0 "Der Preis der Wertpapiere ist nicht ausreichend gefallen. [ROOT.GetCountry.GetAdjective] Hypotheken-Backed Securities werden noch überbewertet — der Markt hat noch nicht im Risikopreis. Je länger dies andauert, desto katastrophaler ist die eventuelle Korrektur."
+ subprime_je_safe_tt:0 "#bold Wertpapiere sind mehr als 35% unter dem Basispreis gefallen.#! Der Markt korrigiert. Wenn dies hält, kann der Crash abgewendet werden - oder zumindest erweicht."
+
+ great_recession_je_usa_tt:0 "Das [ROOT.GetCountry.GetAdjective] Banksystem ist in der Krise. Der Kredit-Crunch reduziert den Bankendurchsatz stark, Einfrieren von Investitionen und Bau. Die Rezession wird dauern, bis der Markt korrigiert — etwa zehn Monate."
+ great_recession_je_global_tt:0 "[ROOT.GetCountry.GetName]'s erhebliche Handelsbeziehungen mit [SCOPE.sCountry('c:USA').GetName] haben den Finanzschock übertragen. [ROOT.GetCountry.GetAdjective] Banken sind den Finanzinstrumenten [SCOPE.sCountry('c:USA').GetAdjective] ausgesetzt. Die Kredite sind enger, die Investitionen haben sich verlangsamt und die Rezession ist angekommen."
+
+ # ==========================================
+ # MODIFIERS
+ # ==========================================
+
+ great_recession_credit_crunch:0 "Credit Crunch"
+ great_recession_credit_crunch_desc:0 "Das Bankensystem ist beschlagnahmt. Die Banken weigern sich, den Geschäften gegenüber jedem zu leihen. Der Kredit ist verdampft. Die Investitionen sind zusammengebrochen. Der Bau hat sich verlangsamt. Die Wirtschaft wird sich erst wieder erholen, wenn das Vertrauen in das Finanzsystem zurückkehrt."

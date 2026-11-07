@@ -1,0 +1,78 @@
+﻿je_korea_reunification_nrk = {
+	icon = "gfx/interface/icons/event_icons/korea.dds"
+ 
+	group = je_group_foreign_policy
+ 
+	should_be_pinned_by_default_uninvolved_or_context = yes
+ 
+	is_shown_when_inactive = {
+		c:NRK ?= this
+	}
+ 
+	possible = {
+		c:NRK ?= this
+	}
+
+	complete = {
+		OR = {
+			AND = {
+				owns_entire_state_region = STATE_SEOUL
+				owns_entire_state_region = STATE_BUSAN
+				owns_entire_state_region = STATE_YANGHO
+			}
+			any_subject_country = {
+				c:STK ?= this
+			}
+		}
+	}
+ 
+	on_complete = {
+		add_modifier = {
+			name = korea_reunification_bonus
+			months = -1
+		}
+	}
+ 
+	transferable = no
+	can_revolution_inherit = no
+	weight = 9000
+}
+ 
+je_korea_reunification_stk = {
+	icon = "gfx/interface/icons/event_icons/korea.dds"
+ 
+	group = je_group_foreign_policy
+ 
+	should_be_pinned_by_default_uninvolved_or_context = yes
+ 
+	is_shown_when_inactive = {
+		c:STK ?= this
+	}
+ 
+	possible = {
+		c:STK ?= this
+	}
+ 
+	complete = {
+		OR = {
+			AND = {
+				owns_entire_state_region = STATE_PYONGYANG
+				owns_entire_state_region = STATE_SARIWON
+			}
+			any_subject_country = {
+				c:NRK ?= this
+			}
+		}
+	}
+ 
+	on_complete = {
+		add_modifier = {
+			name = korea_reunification_bonus
+			months = -1
+		}
+	}
+ 
+	transferable = no
+	can_revolution_inherit = no
+	weight = 9000
+}

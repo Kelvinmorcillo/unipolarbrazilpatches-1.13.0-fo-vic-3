@@ -1,0 +1,136 @@
+# ==========================================
+# INDIGENOUS RIGHTS — MODIFIERS
+# ==========================================
+
+# ── LAND RIGHTS ───────────────────────────
+
+indigenous_land_settlement = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_legitimacy_base_add                 = 5
+	country_law_enactment_success_add           = -0.05
+}
+
+indigenous_land_contested = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	state_turmoil_effects_mult                = -0.05
+	country_legitimacy_base_add                 = -5
+}
+
+# ── TREATY ────────────────────────────────
+
+indigenous_treaty_honoured = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_legitimacy_base_add                 = 8
+	country_prestige_mult                       = 0.03
+	country_law_enactment_success_add           = 0.05
+}
+
+indigenous_treaty_partial = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_turmoil_effects_mult                = 0.03
+}
+
+# ── CULTURAL ──────────────────────────────
+
+indigenous_cultural_investment = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	country_legitimacy_base_add                 = 5
+	country_prestige_mult                       = 0.02
+}
+
+# ── HEALTH ────────────────────────────────
+
+indigenous_health_investment = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	state_mortality_mult                        = -0.03
+	country_legitimacy_base_add                 = 3
+}
+
+indigenous_health_cost = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add                       = 0.25
+}
+
+indigenous_health_neglect = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	country_turmoil_effects_mult                = 0.05
+}
+
+# ── RESERVATIONS ──────────────────────────
+
+indigenous_reservation_investment = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_legitimacy_base_add                 = 5
+	state_mortality_mult                        = -0.02
+}
+
+indigenous_reservation_cost = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add                       = 0.15
+}
+
+indigenous_reservation_neglect = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	country_turmoil_effects_mult                = 0.05
+	country_legitimacy_base_add                 = -3
+}
+
+indigenous_economic_development = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_legitimacy_base_add                 = 5
+	country_investment_pool_efficiency_mult     = 0.03
+}
+
+indigenous_economic_blocked = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
+	country_turmoil_effects_mult                = 0.05
+}
+
+# ── CANADA SPECIFIC ───────────────────────
+
+ipperwash_crackdown = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	country_prestige_mult                       = -0.05
+	country_legitimacy_base_add                 = -8
+	country_turmoil_effects_mult                = 0.10
+}
+
+ipperwash_negotiation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_legitimacy_base_add                 = 5
+	country_prestige_mult                       = 0.02
+}
+
+indigenous_residential_school_closed = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_legitimacy_base_add                 = 5
+	country_prestige_mult                       = 0.02
+	country_law_enactment_success_add           = 0.05
+}
+
+trc_accepted = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_legitimacy_base_add                 = 10
+	country_prestige_mult                       = 0.05
+}
+
+trc_enactment_bonus = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_law_enactment_success_add           = 0.10
+	country_law_enactment_time_mult             = -0.10
+}
+
+trc_partial = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_legitimacy_base_add                 = 3
+	country_turmoil_effects_mult                = 0.05
+}
+
+# ── COMPLETION ────────────────────────────
+
+indigenous_rights_progress = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_mult                       = 0.05
+	country_legitimacy_base_add                 = 10
+	country_turmoil_effects_mult                = -0.10
+}

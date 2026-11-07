@@ -1,0 +1,201 @@
+# Great Polarization / Second American Civil War journal entries
+
+je_the_great_polarization = {
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+	group = je_group_dilemmas
+
+	is_shown_when_inactive = {
+		great_polarization_can_start_for_usa = yes
+	}
+
+	possible = {
+		great_polarization_can_start_for_usa = yes
+	}
+
+	immediate = {
+		great_polarization_initialize = yes
+		trigger_event = { id = great_polarization.1 popup = yes }
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = great_polarization_status_right_president
+				trigger = { great_polarization_ruler_is_right_wing = yes }
+			}
+			triggered_desc = {
+				desc = great_polarization_status_left_president
+				trigger = { great_polarization_ruler_is_left_wing = yes }
+			}
+			triggered_desc = {
+				desc = great_polarization_status_unstable_center
+				trigger = { always = yes }
+			}
+		}
+	}
+
+	custom_completion_header = great_polarization_complete_header
+
+	complete = {
+		OR = {
+			custom_tooltip = {
+				text = great_polarization_depolarized_tt
+				AND = {
+					var:great_polarization_intensity <= 15
+					var:great_polarization_institutional_trust >= 80
+				}
+			}
+			custom_tooltip = {
+				text = great_polarization_civil_war_tt
+				has_global_variable = second_american_civil_war_started
+			}
+		}
+	}
+
+	on_complete = {
+		if = {
+			limit = {
+				NOT = { has_global_variable = second_american_civil_war_started }
+			}
+
+			remove_modifier = great_polarization_baseline
+			remove_modifier = great_polarization_right_wing_president
+			remove_modifier = great_polarization_left_wing_president
+
+			add_modifier = {
+				name = great_polarization_reform_concessions
+				days = 1825
+			}
+		}
+	}
+
+	fail = {
+		has_global_variable = second_american_civil_war_started
+	}
+
+	on_fail = {
+		trigger_event = { id = great_polarization.100 popup = yes }
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			great_polarization_update_presidential_modifiers = yes
+			great_polarization_check_for_second_civil_war = yes
+
+			trigger_event = { id = great_polarization.30 popup = yes }
+			trigger_event = { id = great_polarization.31 popup = yes }
+			trigger_event = { id = great_polarization.38 popup = yes }
+			trigger_event = { id = great_polarization.32 popup = yes }
+			trigger_event = { id = great_polarization.33 popup = yes }
+			trigger_event = { id = great_polarization.34 popup = yes }
+			trigger_event = { id = great_polarization.35 popup = yes }
+			trigger_event = { id = great_polarization.36 popup = yes }
+			trigger_event = { id = great_polarization.37 popup = yes }
+
+			random_list = {
+				120 = { }
+				10 = { trigger_event = { id = great_polarization.2 popup = yes } }
+				10 = { trigger_event = { id = great_polarization.3 popup = yes } }
+				10 = { trigger_event = { id = great_polarization.4 popup = yes } }
+				10 = { trigger_event = { id = great_polarization.5 popup = yes } }
+				10 = { trigger_event = { id = great_polarization.6 popup = yes } }
+			}
+		}
+	}
+
+	timeout = 3650
+
+	on_timeout = {
+		if = {
+			limit = { var:great_polarization_intensity >= 70 }
+			trigger_event = { id = great_polarization.21 popup = yes }
+		}
+		else = {
+			trigger_event = { id = great_polarization.20 popup = yes }
+		}
+	}
+
+	weight = 10000
+	should_be_pinned_by_default_involved = yes
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	transferable = no
+	can_revolution_inherit = no
+}
+
+je_second_american_civil_war = {
+	icon = "gfx/interface/icons/event_icons/event_war.dds"
+	group = je_group_dilemmas
+
+	is_shown_when_inactive = {
+		OR = {
+			c:USA ?= this
+			c:BLA ?= this
+			c:REA ?= this
+		}
+		has_global_variable = second_american_civil_war_started
+		NOT = { has_global_variable = second_american_civil_war_ended }
+	}
+
+	possible = {
+		OR = {
+			c:USA ?= this
+			c:BLA ?= this
+			c:REA ?= this
+		}
+		has_global_variable = second_american_civil_war_started
+		NOT = { has_global_variable = second_american_civil_war_ended }
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = second_american_civil_war_blue_status
+				trigger = { c:BLA ?= this }
+			}
+			triggered_desc = {
+				desc = second_american_civil_war_red_status
+				trigger = { c:REA ?= this }
+			}
+			triggered_desc = {
+				desc = second_american_civil_war_status
+				trigger = { always = yes }
+			}
+		}
+	}
+
+	custom_completion_header = second_american_civil_war_complete_header
+
+	complete = {
+		OR = {
+			custom_tooltip = {
+				text = second_american_civil_war_blue_defeated_tt
+				NOT = { exists = c:BLA }
+			}
+			custom_tooltip = {
+				text = second_american_civil_war_red_defeated_tt
+				NOT = { exists = c:REA }
+			}
+		}
+	}
+
+	on_complete = {
+		set_global_variable = second_american_civil_war_ended
+	}
+
+#	scripted_button = 2acw_offer_new_africa_blue_button
+#	scripted_button = 2acw_offer_new_africa_red_button
+	scripted_button = 2acw_offer_navajo_blue_button
+	scripted_button = 2acw_offer_navajo_red_button
+#	scripted_button = 2acw_offer_california_blue_button
+#	scripted_button = 2acw_offer_texas_red_button
+	scripted_button = 2acw_offer_hawaii_blue_button
+	scripted_button = 2acw_offer_hawaii_red_button
+	scripted_button = 2acw_offer_alaska_blue_button
+	scripted_button = 2acw_offer_alaska_red_button
+
+	weight = 10000
+	should_be_pinned_by_default_involved = yes
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	transferable = no
+	can_revolution_inherit = no
+}

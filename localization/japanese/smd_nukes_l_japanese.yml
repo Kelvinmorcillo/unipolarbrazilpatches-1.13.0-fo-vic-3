@@ -1,0 +1,293 @@
+﻿l_japanese:
+
+ MILITARY_PANEL_TITLE_NUCLEAR:0 "戦略的戦利"
+ NUCLEAR_WARHEADS_LABEL: "核兵器"
+ NUCLEAR_PROGRAMME_STATUS_LABEL: "プログラムのステータス"
+ NUCLEAR_PLANTS_HEADER: "原子力インフラ"
+ URANIUM_ENRICHMENT_HEADER: "ウランヌ・エンリッチメント"
+ NUCLEAR_PRODUCTION_HEADER: "源泉の生産"
+ NUCLEAR_ARSENAL_HEADER: "アーセンシャル"
+ MILITARY_PANEL_TAB_NUCLEAR_TOOLTIP: "核兵器プログラム"
+ 
+ NUCLEAR_BEGIN_ENRICHMENT_TOOLTIP: "尿素濃縮プログラムを開始 少なくとも #bold 3 核植物#! を領土および主要な電力状態に要求します。 プログラムは、数年かけて完了し、国際的注意を引き付けます。 \n #r #b の署名者 非拡散条約#!は尿素を濃くすることはできません。 #!"
+ NUCLEAR_BEGIN_PRODUCTION_TOOLTIP: "核兵器の製造 少なくとも #bold 1 核サイロ#! が必要です。 濃縮よりも速くなります。 各完成した生産実行は、あなたのarsenalに1つの警戒を追加します。"
+ NUCLEAR_ENRICHMENT_PROGRESS_TOOLTIP: "ウラニウムの豊かさの進歩。 濃縮が完了し、核能力が達成されると100を回復させます。"
+ NUCLEAR_PRODUCTION_PROGRESS_TOOLTIP: "源泉の生産の進歩。 警告ヘッドが完成したら100を回復し、あなたのarsenalに追加します。"
+ NUCLEAR_PLANTS_INFO: "あなたの国の核植物: [GetPlayer.MakeScope.ScriptValue('nuclear_plant_count_sv')|v0] \n 強化を開始する必要があります: #bold 3#!"
+ NUCLEAR_WEAPONS:0 "[concept_nuclear_weapon]"
+ NUCLEAR_WEAPONS_TOOLTIP:0 "活動的な核兵頭:[Country.MakeScope.Var('nukes').GetValue]"
+ 
+ building_nuclear_silo:0 "核サイロ"
+ 
+ # ── JOURNAL ENTRIES ───────────────────────
+ 
+ je_uranium_enrichment: "Uranium Enrichmentプログラム"
+ je_uranium_enrichment_reason: "[ROOT.GetCountry.GetName] は uranium の濃縮プログラムを開始しました。 遠心分離機が稼働しています。 科学者たちは働いています。 そして、それが見つければ、世界は答えを望みます。\n\n 毎月プログラムが進行します。 追加の原子力プラントは進行を加速します。 戦争はそれを混乱させます。 完了すると、[ROOT.GetCountry.GetName]は核能力を持ち、武器グレードの材料を生成する能力を有する。"
+ 
+ je_enrichment_early_tt: "プログラムは初期段階です。 Centrifuge のカスケードはテストされています。 満了前の年となります。"
+ je_enrichment_mid_tt: "#bold 拡張が進んでいます。#! カスケードはキャパシティで稼働しています。 科学チームは追跡しています。"
+ je_enrichment_late_tt: "@warning! #bold エンリッチメントは完了に近づいています。#! 武器グレードのウランはほぼ準備が整っています。"
+ 
+ nuclear_enrichment_progress_bar: "充実の進歩"
+ nuclear_enrichment_progress_bar_desc: "充実の進歩"
+ nuclear_enrichment_progress_bar_tt: "月次強化の進捗"
+ 
+ je_nuclear_production: "核兵頭の生産"
+ je_nuclear_production_reason: "[ROOT.GetCountry.GetName] は最初の核兵頭を製造しています。 硬い材料は準備が整います。 エンジニアリングチームは、デバイスを組み立てています。 生産は、より高速で濃縮され、ハードワークは既に完了しています。"
+ 
+ je_production_early_tt: "頭が早いアセンブリにあります。 工学チームはスケジュール通りです。"
+ je_production_late_tt: "#bold 生産はほぼ完了します。#! 最終的なアセンブリおよび装甲点検は進行中です。"
+ 
+ nuclear_production_progress_bar: "生産進捗"
+ nuclear_production_progress_bar_desc: "生産進捗"
+ nuclear_production_progress_bar_tt: "月次生産進捗状況"
+ 
+ # ── EVENTS ───────────────────────────────
+ 
+ nuclear_events.1.t: "Uranium Enrichmentの完了"
+ nuclear_events.1.d: "[ROOT.GetCountry.GetName] は、武器の等級の純度にウランをうまく強化しました。 このプログラムは、目的のために構築された施設で数年以上にわたり実施され、技術的目的を達成しました。\n\n 現在は、原子力兵器を製造する科学的および産業能力を持っています。 生産を進めるかどうかは別々の決定ですが、しきい値が交差しています。 [ROOT.GetCountry.GetName] は、原子力閾値の状態です。"
+ nuclear_events.1.f: "硬い部分が行われます。"
+ nuclear_events.1.a: "源泉の生産の準備を始めて下さい"
+ 
+ nuclear_events.2.t: "インテリジェンスサービス:プログラムが公開されました"
+ nuclear_events.2.d: "外部知能機関 — 衛星画像、欠陥報告、シグナルインテリジェンスの描画 — [ROOT.GetCountry.GetName] が clandestine 核兵器プログラムを運用しているという高い信頼を結んだ。\n\n 調査結果は、同盟政府間で循環しています。 セキュリティ協議会は、正式に説明会を行いました。 [ROOT.GetCountry.GetName] は拒否、説明、または所有できます。 各パスは結果を持っています。"
+ nuclear_events.2.f: "決して秘密を永遠に残さない。"
+ nuclear_events.2.a: "Deny — 純粋に市民のエネルギーインフラ"
+ nuclear_events.2.b: "Acknowledge — [ROOT.GetCountry.GetName] は、deterrent に正しい"
+ 
+ nuclear_events.3.t: "ファースト・ウォーヘッドは作り出しました"
+ nuclear_events.3.d: "[ROOT.GetCountry.GetName] は最初の核兵頭を生成しました。 装置は組み立てられ、テストされ、貯えられます。 それをデプロイする場所の決定 — と doctrine の下にある — は後続になります。\n\n 今のところ:[ROOT.GetCountry.GetName]は原子力クラブに入りました。 今朝は、世界が違う場所。"
+ nuclear_events.3.f: "warheadは一種の引数です。 最も影響力のある種類。"
+ nuclear_events.3.a: "退役が成立"
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ nuclear_capable_modifier: "核の境界状態"
+ nuclear_capable_modifier_desc: "[ROOT.GetCountry.GetName] は、核能力を発揮し、武器グレードの硬質材料を生成します。 プレステージとディプロマティックスタンドが強化されています。 戦頭の生産が始まります。"
+ 
+ nuclear_programme_denied: "プログラム 拒否"
+ nuclear_programme_denied_desc: "[ROOT.GetCountry.GetName] は、原子力プログラムの運用を正式に拒否しました。 否定は普遍的に信じられません。 Infamyの生成が増加しました。"
+ 
+ nuclear_programme_acknowledged: "プログラム承認済み"
+ nuclear_programme_acknowledged_desc: "[ROOT.GetCountry.GetName] は、その核プログラムを認め、決定者の権利を主張しています。 主力との関係は著しく苦しんでいる。"
+ 
+ nuclear_warhead_produced_modifier: "原子力発電"
+ nuclear_warhead_produced_modifier_desc: "[ROOT.GetCountry.GetName] は最初の核兵頭を生成しました。 国の戦略的デトレントが現実的です。"
+ 
+ NUCLEAR_TARGETING_HEADER: "核ターゲット"
+ 
+ NUCLEAR_DEPLOY_10_TOOLTIP: "原発の 10% の展開。 最小限の実用的なストライキ — 手術とスコープに限られます。"
+ NUCLEAR_DEPLOY_25_TOOLTIP: "arsenalの25%をデプロイします。 限られた原子力交換。"
+ NUCLEAR_DEPLOY_50_TOOLTIP: "半分のarsenalをデプロイします。 主要な原子力ストライキ。"
+ NUCLEAR_DEPLOY_75_TOOLTIP: "arsenalの75%をデプロイします。 ファーストストライキを壊す。"
+ NUCLEAR_DEPLOY_100_TOOLTIP: "arsenal全体をデプロイします。 全核戦争。"
+ 
+ NUCLEAR_ADD_TARGET_TOOLTIP: "この状態を核ターゲットリストに追加します。"
+ NUCLEAR_REMOVE_TARGET_TOOLTIP: "核ターゲットリストからこの状態を削除します。"
+ NUCLEAR_CLEAR_TARGETLIST_TOOLTIP: "対象となるすべての状態をクリアします。"
+ NUCLEAR_CASUALTIES_TOOLTIP: "対象となるすべての州を横断した民間人の死を推定し、ワーヘッドの配備と州の人口に基づいて。 実際のカジュアル性は異なります。"
+ 
+ NUCLEAR_FIRE_BUTTON_TOOLTIP: "すべての標的状態に対して原子力ストライキを起動します。 少なくとも1つの目標、少なくとも1つの警戒、および活動的な戦争が必要です。 ストライキが実行される前に確認をお願いします。"
+ 
+ NUCLEAR_STATE_TARGETED_TOOLTIP: "現在、原子力標的リストに表示されている状態です。"
+ 
+ # ── EVENTS ───────────────────────────────
+ 
+ nuclear_events.4.t: "原子力ストライクを起動しますか?"
+ nuclear_events.4.d: "ターゲティングソリューションはロックされています。 [GetPlayer.MakeScope.ScriptValue('nuclear_warheads_to_use_sv')|v0] warhead(s) は [GetPlayer.MakeScope.ScriptValue('nuclear_target_count_sv')|v0] state(s) に割り当てられました。\n\nEstimated Civilian Casualties: #R ~[GetPlayer.MakeScope.ScriptValue('nuclear_estimated_total_casualties_sv')|vD]#!\n\n このアクションは不可逆です。 警戒が期待されます。 状態は破壊されます。 この世界は誰がこのことをしたかを知っています。\n\n"
+ nuclear_events.4.f: "持ち帰りは出来ません。"
+ nuclear_events.4.a: "#R 確認 — 起動#!"
+ nuclear_events.4.b: "Abort — スタンドダウン"
+ 
+ nuclear_events.5.t: "核攻撃"
+ nuclear_events.5.d: "[ROOT.GetCountry.GetName] は、核兵器によってスタックされています。\n\n [ROOT.GetCountry.GetAdjective] の領域で区切られた複数の警戒。 都市は燃えています。 影響を受けた地域で通信が崩壊しました。 偶然のスケールはまだ知られていません — 初期の推定では、死の通行料が壊滅的であることを示唆しています。\n\n 警告なしに攻撃が行われました。 宣言はありません。 立方ない。 何もなかった。"
+ nuclear_events.5.f: "左から言うまでもありません。"
+ nuclear_events.5.a: "緊急対応開始"
+ 
+ 
+ # ── EVENT 6: IAEA REQUEST ─────────────────
+ 
+ nuclear_events.6.t: "IAEA 要求の点検アクセス"
+ nuclear_events.6.d: "国際原子エネルギー機関は、正式に[ROOT.GetCountry.GetAdjective]原子力施設へのアクセスを要求しました。 インテリジェンスリクエストは、メンバーの州間で広く循環し、武器レベルの濃縮プログラムの存在を示唆しています。\n\n IAEAの立場は非曖昧です:[ROOT.GetCountry.GetName]は非拡散の約束への署名です。 検査アクセスを拒否すると、材料の侵害が発生します。 これにより、施設を国際監視に開く必要があります。そして、ほぼ確実に武器プログラムを終了します。\n\n 検査員が回答をお待ちしています。"
+ nuclear_events.6.f: "検査員は丁寧です。 リクエストはありません。"
+ nuclear_events.6.a: "助成金アクセス - IAEAが施設を検査できるようにする"
+ nuclear_events.6.b: "拒否 — [ROOT.GetCountry.GetName] は外部検査に提出しません"
+ 
+ # ── EVENT 7: UN ULTIMATUM (via IAEA refusal) ──
+ 
+ nuclear_events.7.t: "国連安全保障委員会:Cease Enrichment"
+ nuclear_events.7.d: "UN Security Council は、[ROOT.GetCountry.GetName] が尿素の濃縮プログラムを直ちに停止し、IAEA の検証に提出するという要求の解決を通過しました。\n\n 投票は終了していませんでした。 [ROOT.GetCountry.GetName] が遵守を拒否した場合、解像度は30日以内にフルな必要を要求し、調整された制裁を脅迫します。\n\n リクエストではありません。 立方体です。"
+ nuclear_events.7.f: "セキュリティ評議会は話しました。 [ROOT.GetCountry.GetName] は、世界中にその場所を定義します。"
+ nuclear_events.7.a: "Comply — ハルトの豊かさと監視に提出"
+ nuclear_events.7.b: "参照 — [ROOT.GetCountry.GetName] は結果に関係なく継続します"
+ 
+ # ── EVENT 8: UN ULTIMATUM (via acknowledgement) ──
+ 
+ nuclear_events.8.t: "国連安全保障協議会: 武装または顔の結果"
+ nuclear_events.8.d: "核兵器プログラムを認めた、[ROOT.GetCountry.GetName] は、労働を許さないセキュリティ協議会を離れました。 決議は、強化活動の即時の必要性と、武器関連インフラの解体に直面しました。\n\n 決議は、第VII章で受け継がれていました。つまり、軍事執行が除外されていないということです。 [ROOT.GetCountry.GetName] は、30 日を守っています。"
+ nuclear_events.8.f: "正直は報われていませんでした。 ultimatumはどちらかのやり方です。"
+ nuclear_events.8.a: "Comply — プログラムを中断し、検証に提出する"
+ nuclear_events.8.b: "注意 — [ROOT.GetCountry.GetName] は圧力下で武装しません"
+ 
+ # ── EVENT 9: GREAT POWER RESPONSE ─────────
+ 
+ nuclear_events.9.t: "[SCOPE.sCountry('nuclear_state').GetName]の核欠損への対応"
+ nuclear_events.9.d: "[SCOPE.sCountry('nuclear_state').GetName] は、国連保安評議会の有限を拒絶し、武器の等級の純度に対するウランを豊かにし続けています。 sanctions の regime が配置されています。\n\n[ROOT.GetCountry.GetName] の 位置が明確になさなければなりません。 戦略的圏の国は、国際秩序の欠損で核兵器を開発しています。 質問は、私たちがどのように強く反応するかです。"
+ nuclear_events.9.f: "ワードを試しました。 今後何が起こるかを決定する瞬間です。"
+ nuclear_events.9.a: "インターベニー - 難聴を強制するためにdiplomatic遊びを起動"
+ nuclear_events.9.b: "Threaten — 強制をコミットせずに結果を明確にする"
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ nuclear_iaea_cooperation: "IAEA 協力協定"
+ nuclear_iaea_cooperation_desc: "[ROOT.GetCountry.GetName] は、原子力施設をIAEAモニタリングに開設しました。 市民が利用する際の交換において、原子力インフラの国際的サポートが拡大しました。"
+ 
+ nuclear_iaea_defiance: "IAEAアクセス拒否"
+ nuclear_iaea_defiance_desc: "[ROOT.GetCountry.GetName] は、原子力施設の国際検査を拒否しました。 外交の地位は大幅に悪化しました。"
+ 
+ nuclear_un_compliance: "国連の損害の遵守"
+ nuclear_un_compliance_desc: "[ROOT.GetCountry.GetName] は UN の ultimatum を受け入れ、その核プログラムを中止しました。 決断は家で政治的に高価でした。"
+ 
+ nuclear_un_sanctions: "国連核制裁"
+ nuclear_un_sanctions_desc: "国連安全保障委員会は、核プログラムをハットするために、[ROOT.GetCountry.GetName]の拒絶反応で制裁を課しました。 貿易は破壊され、外交の分離は深まっています。"
+ 
+ nuclear_military_ultimatum: "軍事Uultimatumが発行"
+ nuclear_military_ultimatum_desc: "偉大な力は、正式な外交演劇の要求を始めた [ROOT.GetCountry.GetName] その核プログラムを解体. 軍事的行為は可能性を残します。."
+ 
+ nuclear_great_power_pressure: "大きい力の外交圧力"
+ nuclear_great_power_pressure_desc: "[ROOT.GetCountry.GetName] の核プログラムに対する正式な警告を発しました。 プレステージとレシマシーは苦しんでいる。"
+ 
+ nuclear_non_proliferation_war: "非拡散の介入"
+ nuclear_non_proliferation_desc: "[ROOT.GetCountry.GetName] は、核増殖を防止するための外交介入を開始しました。 国際社会から広く歓迎されています。"
+ 
+ nuclear_non_intervention_caution: "介入に対する雑草"
+ nuclear_non_intervention_caution_desc: "[ROOT.GetCountry.GetName] は、核兵器の状態に対して militarily を介入し、代わりに外交圧力を選択します。 一部の同盟は解決を疑った。"
+ 
+ # ── DIPLOMATIC PLAY LOC ──────────────────
+ nuclear_non_proliferation_play: "核障害者Ultimatum"
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ nuclear_strike_aftermath: "核突撃の後馬"
+ nuclear_strike_aftermath_desc: "この状態は核兵器に襲われています。 インフラは破壊され、人口は崩壊し、放射線は土地を汚染しています。"
+ 
+ nuclear_strike_launched_modifier: "核パリア"
+ nuclear_strike_launched_modifier_desc: "[ROOT.GetCountry.GetName] は、怒りに核兵器を使用しました。 国際的なコミュニティはホラーと反応しています。 精巧な地位および威信は厳しく苦しんでいる。"
+ 
+ nuclear_strike_victim_modifier: "核被害"
+ nuclear_strike_victim_modifier_desc: "[ROOT.GetCountry.GetName] は核攻撃に苦しんでいる。 国民の外傷は長持ちし、長持ちします。 復興は世代を取り巻く。"
+ 
+ nuclear_disarmament: "WMDのセーズ"
+ nuclear_disarmament_desc: "標的国は、核兵器プログラムを完全に解体し、その既存の武器を監視するという要求。 強制されると、すべてのエンリッチメント機能、ワーヘッドストックパイル、およびプログラム変数は除去されます。この国はゼロから始める必要があります。"
+ 
+ # ── EVENT ────────────────────────────────
+ 
+ nuclear_events.10.t: "プログラムはガネです"
+ nuclear_events.10.d: "平和の観点から、 国際的な検査官は[ROOT.GetCountry.GetAdjective]の設備に入り、遠心分離機のカスケードを分解し、貯蔵管を取除き、そしてsilos.\n\nを密封しました 科学的な仕事、政治的リスク、および国家投資の年は週に消去されました。 プログラムは存在しません。 知識は残っていますが、インフラ、材料、およびそれを追求する法的地位はなくなっています。\n\n[ROOT.GetCountry.GetName]は、それが選択した場合、再び開始することができます。 それは異なる状況で作られた別の決定になります。"
+ nuclear_events.10.f: "再建が可能です。 忘れずに。"
+ nuclear_events.10.a: "規約を承認する"
+ 
+ # ── MODIFIERS ────────────────────────────
+ 
+ nuclear_disarmament_enforced: "強制的な障害"
+ nuclear_disarmament_enforced_desc: "[ROOT.GetCountry.GetName] の核プログラムは、軍の敗北に強制的に分解されています。 政治的および科学的な結果は厳しいです。 公共の怒りは激しいです。"
+ 
+ nuclear_disarmament_enforcer: "非拡散勝利"
+ nuclear_disarmament_enforcer_desc: "[ROOT.GetCountry.GetName] は、有望な状態に原子力の障害を強制的に実施しました。 国際的な威信およびdiplomaticの地位はかなり高められます。"
+ 
+  # ── TREATY ARTICLE ───────────────────────
+ 
+ host_military_bases: "ホストの軍の基盤"
+ host_military_bases_desc: "[scope:source_country.GetName] を [scope:target_country.GetAdjective] 領域内の軍事力と機器をステーション化します。 [scope:source_country.GetAdjective] 従来のミサイル範囲を拡張し、ホスト国を境界する状態にします。"
+ 
+ military_base_host_modifier: "外部軍事基地のホスティング"
+ military_base_host_modifier_desc: "外国の軍隊は、バッシング協定の下で国の領土に置かれます。 一部の国内の緊張は、外国の軍事的存在から生じる。"
+ 
+ military_base_projector_modifier: "軍事基地の海外"
+ military_base_projector_modifier_desc: "この国は、その戦略的到達範囲を拡張し、同盟国に駐在する軍部隊を持っています。"
+ 
+ # ── ICBM ─────────────────────────────────
+ 
+ je_icbm_programme: "ICBM開発プログラム"
+ je_icbm_programme_reason: "[ROOT.GetCountry.GetName] は核能力を達成しました。 次のフロンティアは配達です:警告なしで地球上の任意のポイントに達することができる大陸間弾道ミサイル。 プログラムは長い - ロケットの研究の年, ガイダンスシステムの開発, 範囲のテスト — しかし、戦略的なペイオフは絶対. ICBM対応状態は地理的に劣化することができません。"
+ 
+ je_icbm_early_tt: "ICBMプログラムは、初期開発中です。 ガイダンスシステムのテスト 有利な大陸間配送車両が存在するのは何年も前です。"
+ je_icbm_late_tt: "#bold ICBMの開発は完了に近づいています。#! 最終的な範囲および正確さテストは進行中です。"
+ 
+ icbm_progress_bar: "ICBM開発"
+ icbm_progress_bar_desc: "大陸間弾道ミサイル配送能力の進歩。 核兵器は、近距離を問わず、世界中をターゲットにすることができます。"
+ icbm_progress_bar_tt: "毎月のICBM開発進捗"
+ 
+ icbm_capable_modifier: "利用できるICBM"
+ icbm_capable_modifier_desc: "[ROOT.GetCountry.GetName] は、相互コンチネンタルの弾道ミサイルを開発しました。 核兵器は、範囲に関係なく、世界のあらゆる州でターゲットにすることができます。"
+ 
+ nuclear_events.11.t: "ICBMプログラム完了"
+ nuclear_events.11.d: "[ROOT.GetCountry.GetName] は、相互コンチネンタルの弾道ミサイルを正常にテストしました。 装置はフル レンジを細くしましたり、受諾可能な変数内のターミナル ガイダンスの正確さを実証し、指定の地帯でスプラッシュしました。\n\n 戦略的インプリケーションは即時です。 [ROOT.GetCountry.GetName]の核変性は地理によって禁忌ではありません。 惑星上の任意の状態は、原則として、潜在的なターゲットです。\n\n 国際的なコミュニティはテストを指摘しました。 常にやる。"
+ nuclear_events.11.f: "範囲外に残っている場所はありません。"
+ nuclear_events.11.a: "現時点では真のグローバル"
+ 
+ # ── CONVENTIONAL MISSILES ─────────────────
+ 
+ CONV_MISSILES_HEADER: "慣習的なミサイル"
+ CONV_TARGET_AIRPORT_TOOLTIP: "選択した州のターゲット空港。 各ミサイルは空港ビルを破壊する3%のチャンスを持っています。"
+ CONV_TARGET_BARRACKS_TOOLTIP: "ターゲット・バーラック。 各ミサイルには、各ターゲットの状態にバラクを破壊する3%のチャンスがあります。"
+ CONV_TARGET_NAVAL_TOOLTIP: "ターゲット海軍基地。 各ミサイルには、海軍インフラを破壊する3%のチャンスがあります。"
+ CONV_TARGET_NUCLEAR_PLANT_TOOLTIP: "原子力発電所を標的。 各ミサイルは、施設を破壊する3%のチャンスを持っています。"
+ CONV_TARGET_SILO_TOOLTIP: "原子力サイロを標的。 各ミサイルは、サイロを破壊する3%のチャンスを持っています。"
+ CONV_TARGET_GOVERNMENT_TOOLTIP: "政府管理棟を標的。 各ミサイルは、それらを破壊する3%のチャンスを持っています。"
+ CONV_TARGET_RAILWAY_TOOLTIP: "ターゲット鉄道インフラ。 各ミサイルは、鉄道を破壊する3%のチャンスを持っています。"
+ CONV_ADD_TARGET_TOOLTIP: "この状態を従来のミサイルストリストに追加します。"
+ CONV_REMOVE_TARGET_TOOLTIP: "従来のミサイルストリストからこの状態を削除します。"
+ CONV_FIRE_TOOLTIP: "ターゲットを絞った状態に対して従来のミサイルストを発射します。 対象となる状態につき1つのミサイルを消費します。 60日間のクールダウンが適用されます。"
+ 
+ # ── STRATEGIC BOMBING ─────────────────────
+ 
+ STRAT_BOMBING_HEADER: "戦略的な爆弾"
+ BOMBING_ADD_TARGET_TOOLTIP: "次の実行の爆弾リストに追加します。"
+ BOMBING_REMOVE_TARGET_TOOLTIP: "爆撃リストからこの状態を削除します。"
+ BOMBING_EXECUTE_TOOLTIP: "対象となるすべての状態に対して戦略的な爆弾を実行します。 空気の形成の数に基づいて破壊が加えられます。 30日間のクールダウンが適用されます。"
+ 
+ NUCLEAR_ICBM_PROGRESS_TOOLTIP: "ICBMの開発の進歩。 100%では、核兵器は世界中どの国をターゲットにすることができます。"
+ NUCLEAR_ICBM_TOOLTIP: "大陸間弾道ミサイルの開発を開始 原子力能力が必要です。 数年かかる 完了すると、核兵器は世界のどんな状態をターゲットにすることができます。"
+ 
+ CONV_PRODUCE_MISSILES_TOOLTIP: "5つの従来のミサイルのサルボを製造。 小規模な生産コスト。 ミサイルは、対象となる状態の1つであるフィリングに消費されます。"
+ 
+ missile_production_cost:0 "ミサイル生産"
+ state_buy_orders_missiles_add:0 "ミサイル消費量"
+ 
+ CONV_DEPLOY_10_TOOLTIP: "対象となる状態に対するミサイルの10%を火災します。"
+ CONV_DEPLOY_25_TOOLTIP: "対象となる状態に対するミサイルの25%を火災します。"
+ CONV_DEPLOY_50_TOOLTIP: "対象となる状態に対するミサイルの50%を火災します。"
+ CONV_DEPLOY_75_TOOLTIP: "対象となる状態に対するミサイルの75%を発射します。"
+ CONV_DEPLOY_100_TOOLTIP: "対象となる状態に対して、ミサイルのストックパイル全体を発射します。"
+ 
+ CONV_BUILDING_CHANCE_TOOLTIP: "各ミサイルは、対象となる州の次の建物の1つを破壊する3%のチャンスを巻きます。\n\n•空港\n• バラックス\n• 海軍基地\n• 原子力発電所\n• 核Silo\n• 政府行政\n• id=8/>• 鉄道\n すべての建物タイプは独立して転がされます。 単一のミサイルサルボは、十分な大きさであれば、同じ状態で複数の建物を破壊することができます。"
+ 
+ nuclear_events.12.t: "[ROOT.GetName] のミサイル ストライク"
+ nuclear_events.12.d: "[SCOPE.sCountry('missile_attacker').GetName] は、[ROOT.GetAdjective] 領域に対する従来のミサイルストを発足しました。 レポートは、[ROOT.GetAdjective] の状態に影響を及ぼすため、インフラの損傷が評価されます。\n\n ミサイルは核ではなく、メッセージはクリアです。 [SCOPE.sCountry('missile_attacker').GetName] は、弊社に対して長距離兵器を使用する意思です。"
+ nuclear_events.12.f: "すでにクレーターがいます。 質問は、次のことを行います。"
+ nuclear_events.12.a: "ダメージを評価し、それに応じて対応"
+
+ missile_strike_victim_modifier: "慣習的なミサイルの殴打"
+ missile_strike_victim_modifier_desc: "従来のミサイルのストライキを狙った領土。 インフラの損傷や公共の不安が高まっています。"
+
+ # ── EVENT 13: RETALIATION CHOICE ───────────
+
+ nuclear_events.13.t: "核再帰 - 決定が必要"
+ nuclear_events.13.d: "[SCOPE.sCountry('nuclear_attacker').GetName] は [ROOT.GetName] に対する核兵器を発売しました。 わたしたちの警戒は武装しています。 起動コードは準備が整います。\n\n[SCOPE.sCountry('nuclear_attacker').GetAdjective] 領域に対するレタリトリートストライキは、アセンシャルの25%を消費し、すべての [SCOPE.sCountry('nuclear_attacker').GetAdjective] 状態をストライキさせます。 ストライキは不敬を運ぶだろう — 世界は理解します。\n\n 代替は攻撃を吸収することです。 生存に不名誉はありません。"
+ nuclear_events.13.f: "注文は一度だけ必要です。"
+ nuclear_events.13.a: "Retaliate — [SCOPE.sCountry('nuclear_attacker').GetName] に対する arsenal の 25% を起動"
+ nuclear_events.13.b: "スタンドダウン — ストライキを吸収し、アセンシャルを維持"
+
+ nuclear_first_strike_response: "核再帰(第一ストライク応答)"
+ nuclear_first_strike_response_desc: "[ROOT.GetName] は、その領土に未曾有の核攻撃に反応して核対抗者を発足しました。 国際的なコミュニティは、再帰の権利を認識する - 親愛なる利益は大幅に削減されます。"
+
+ nuclear_absorbed_first_strike: "核殴打吸収"
+ nuclear_absorbed_first_strike_desc: "[ROOT.GetName] は、再配布せずに原子力ストライキを保証しました。 拘束は国際的に認められています。 精巧な地位および威信はかなり高められます。"
+
+ # ── EVENT 14: RETALIATION NOTIFICATION ─────
+
+ nuclear_events.14.t: "核再帰化インバウンド"
+ nuclear_events.14.d: "原子力ストライキは答えています。 [ROOT.GetName] は、リタリタリストを立ち上げました。警告は、inbound.\n\n で確認されています。 結果は、私たちの負担です。"
+ nuclear_events.14.f: "それぞれのストライキが次のいずれかを招待します。"
+ nuclear_events.14.a: "衝撃のための支柱"

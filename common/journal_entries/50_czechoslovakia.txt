@@ -1,0 +1,104 @@
+﻿je_velvet_divorce = {
+	icon = "gfx/interface/icons/event_icons/czechoslovakia.dds"
+	group = je_group_dilemmas
+ 
+	should_be_pinned_by_default_uninvolved_or_context = yes
+ 
+	is_shown_when_inactive = {
+		c:CZH ?= this
+		current_game_date >= 1992.1.1
+		NOT = { has_variable = velvet_divorce_resolved }
+	}
+ 
+	possible = {
+		c:CZH ?= this
+		current_game_date >= 1992.1.1
+		NOT = { has_variable = velvet_divorce_resolved }
+	}
+ 
+	immediate = {
+		set_variable = { name = separatist_pressure value = 6 }
+	}
+ 
+	scripted_progress_bar = federal_cohesion_bar
+	scripted_progress_bar = separatist_pressure_bar
+ 
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_velvet_divorce_critical_tt
+				trigger = { var:separatist_pressure >= 75 }
+			}
+			triggered_desc = {
+				desc = je_velvet_divorce_tense_tt
+				trigger = { var:separatist_pressure >= 50 }
+			}
+			triggered_desc = {
+				desc = je_velvet_divorce_stable_tt
+			}
+		}
+	}
+ 
+	on_monthly_pulse = {
+		effect = {
+			# Separatist pressure grows automatically each month
+			change_variable = { name = separatist_pressure add = 3 }
+ 
+			# Cohesion drains slowly — holding a country together takes work
+			change_variable = { name = federal_cohesion add = -1 }
+ 
+			# High legitimacy slows pressure growth
+			if = {
+				limit = { country_legitimacy >= 70 }
+				change_variable = { name = separatist_pressure add = -1 }
+			}
+ 
+			# Low authority accelerates pressure
+			if = {
+				limit = {
+					NOT = { country_authority_add >= 100 }
+				}
+				change_variable = { name = separatist_pressure add = 1 }
+			}
+		}
+ 
+		random_events = {
+			3 = velvet_divorce.2
+			3 = velvet_divorce.3
+			2 = velvet_divorce.4
+			2 = velvet_divorce.5
+		}
+	}
+ 
+	# Player wins — Czechoslovakia survives
+	complete = {
+		je:je_velvet_divorce = {
+                "scripted_bar_progress(federal_cohesion_bar)" >= 96
+				}
+	}
+ 
+	on_complete = {
+		set_variable = velvet_divorce_resolved
+		trigger_event = { id = velvet_divorce.10 popup = yes }
+	}
+ 
+	# Dissolution — pressure reaches critical mass
+	fail = {
+		je:je_velvet_divorce = {
+                "scripted_bar_progress(separatist_pressure_bar)" >= 96
+				}
+	}
+ 
+	on_fail = {
+		set_variable = velvet_divorce_resolved
+		trigger_event = { id = velvet_divorce.15 popup = yes }
+	}
+ 
+	invalid = {
+		NOT = { c:CZH ?= this }
+	}
+ 
+	weight = 5000
+	transferable = no
+	can_revolution_inherit = no
+}

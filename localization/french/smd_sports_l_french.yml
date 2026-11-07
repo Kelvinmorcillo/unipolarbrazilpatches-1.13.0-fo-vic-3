@@ -1,0 +1,99 @@
+﻿l_french:
+
+ # ==========================================
+ # OLYMPICS — MODIFIERS
+ # ==========================================
+
+ olympics_hosting: "Nation hôte olympique"
+ olympics_hosting_desc: "Le monde vient à [ROOT.GetCountry.GetName]. Les Jeux olympiques sont en cours, attirant l'attention mondiale, le tourisme et le prestige, ainsi que les coûts considérables et les exigences logistiques de l'organisation du plus grand événement sportif au monde."
+
+ olympics_hosting_prestige: "Prestige hôte olympique"
+ olympics_hosting_prestige_desc: "L'accueil des Jeux Olympiques a placé [ROOT.GetCountry.GetName] au centre de l'attention mondiale. Les avantages diplomatiques et soft power sont considérables."
+
+ olympics_recently_hosted: "Hôte olympique récent"
+ olympics_recently_hosted_desc: "[ROOT.GetCountry.GetName] a récemment accueilli les Jeux Olympiques et n'est pas admissible à accueillir de nouveau pendant plusieurs années."
+
+ olympics_boycott_modifier: "Garçon olympique"
+ olympics_boycott_modifier_desc: "La décision de boycotter les Jeux Olympiques a été prise au niveau international. Certains partenaires le considèrent comme une position de principe, d'autres comme une provocation inutile."
+
+ olympics_result_terrible: "Mauvaise performance olympique"
+ olympics_result_terrible_desc: "Les athlètes de [ROOT.GetCountry.GetName] sont revenus des matchs avec peu à montrer. L'ambiance nationale est décevante."
+
+ olympics_result_modest: "Performance olympique solide"
+ olympics_result_modest_desc: "Les athlètes de [ROOT.GetCountry.GetName] se sont acquittés respectueusement sur la scène mondiale."
+
+ olympics_result_well: "Forte performance olympique"
+ olympics_result_well_desc: "Les athlètes de [ROOT.GetCountry.GetName] se sont bien comportés aux matchs, remportant des médailles et une fierté nationale."
+
+ olympics_result_gold: "Performance olympique dominante"
+ olympics_result_gold_desc: "[ROOT.GetCountry.GetName] domine les Jeux Olympiques. Le médaillon est une source d'immense fierté nationale et a renforcé le prestige du pays dans le monde entier."
+
+ olympics_doping_caught: "Scandale olympique du dopage"
+ olympics_doping_caught_desc: "Les athlètes de [ROOT.GetCountry.GetName] ont été pris à l'aide de drogues améliorant la performance. Des médailles ont été retirées, des fonctionnaires ont démissionné et le pays fait face à l'opprobre international. Les dommages au prestige national sont graves."
+
+ # ==========================================
+ # EVENTS
+ # ==========================================
+
+ you_do_not_dope_athletes:0 "Vous jouerez équitablement"
+ you_dope_your_athletes:0 "Vous donnez à vos athlètes des médicaments qui améliorent la performance, en risquant de se faire prendre."
+ # olympics.1 — Host selection
+ olympics.1.t: "Une offre pour accueillir les Jeux Olympiques"
+ olympics.1.d: "Le Comité international olympique a abordé [ROOT.GetCountry.GetName] avec une proposition : accueillir les prochains Jeux Olympiques. En tant que démocratie stable de réputation internationale, [ROOT.GetCountry.GetName] répond aux critères d'accueil — et le prestige et l'attention qui en découlent sont considérables. Il en va de même pour les coûts et les exigences liés à l'organisation du plus grand événement sportif au monde."
+ olympics.1.f: "Le monde a besoin d'une scène. Est-ce que [ROOT.GetCountry.GetName] va en construire un?"
+ olympics.1.a: "Acceptez - nous sommes honorés d'accueillir"
+ olympics.1.b: "Déclin — nous ne pouvons pas nous y engager actuellement"
+
+ # olympics.3 — Participation offer
+ olympics.3.t: "Les Jeux Olympiques arrivent"
+ olympics.3.d: "Les prochains Jeux Olympiques auront lieu à [SCOPE.sCountry('olympics_host_scope').GetName]. Chaque nation dans le monde est invitée à envoyer ses athlètes pour la compétition. Les jeux sont une occasion pour [ROOT.GetCountry.GetName] de démontrer sa force, de célébrer son peuple et de prendre sa place sur la scène mondiale — ou de faire une déclaration politique en restant loin."
+ olympics.3.f: "Tous les quatre ans, le monde regarde."
+ olympics.3.a: "Envoyez nos athlètes — nous allons participer"
+ olympics.3.b: "Boycott — notre absence parlera plus fort que nos athlètes"
+
+ # olympics.3b — Doping choice
+ olympics.11.t: "Les athlètes se préparent"
+ olympics.11.d: "Les Jeux Olympiques sont à quelques semaines. Les athlètes de [ROOT.GetCountry.GetName] se sont bien entraînés, mais la compétition sera féroce. Certains membres du programme sportif suggèrent discrètement que la compétition propre peut ne pas suffire. Les médicaments qui améliorent la performance, administrés avec soin, pourraient donner aux athlètes le bord dont ils ont besoin.\n\n Le risque de détection est réel. Les conséquences de la capture seraient graves. Mais les conséquences d'un retour à la maison les mains vides peuvent être pires pour certains."
+ olympics.11.f: "La victoire a beaucoup de pères. La défaite n'en a pas."
+ olympics.11.a: "Combattre propre — nos athlètes feront de leur mieux honnêtement"
+ olympics.11.b: "Améliorer leur préparation — nous jouons pour gagner"
+
+ # olympics.4 — Caught doping
+ olympics.4.t: "Doping Scandal Rocks l'équipe olympique"
+ olympics.4.d: "Le Comité international olympique a annoncé que les athlètes de [ROOT.GetCountry.GetName] ont testé des substances qui améliorent les performances interdites. Les médailles sont enlevées. Les fonctionnaires sont suspendus. L'histoire est l'élément principal de chaque chaîne sportive dans le monde.\n\n On ne croit pas aux démentis du gouvernement. Les dommages de réputation sont graves et prendront des années pour se remettre."
+ olympics.4.f: "L'or terne plus vite qu'il ne brille."
+ olympics.4.a: "Nous regrettons profondément cette situation regrettable"
+
+ # olympics.5 — Terrible
+ olympics.5.t: "Des Jeux Olympiques décevants"
+ olympics.5.d: "Les athlètes de [ROOT.GetCountry.GetName] ont participé et ont été largement surclassés. La médaille est maigre. Les performances étaient respectables dans les endroits, embarrassantes dans les autres. De retour à la maison, la presse sportive pose des questions difficiles sur le financement, la préparation et les critères de sélection. Ce n'était pas la démonstration que personne espérait."
+ olympics.5.d_doping: "Les athlètes de [ROOT.GetCountry.GetName] ont participé à l'aide pharmaceutique — et sont toujours rentrés presque les mains vides. Le programme de dopage a donné une faible valeur à son risque considérable."
+ olympics.5.f: "Il y a toujours les prochains jeux."
+ olympics.5.a: "L'équipe a fait de son mieux"
+
+ # olympics.6 — Modest
+ olympics.6.t: "Une performance olympique respectable"
+ olympics.6.d: "Les athlètes de [ROOT.GetCountry.GetName] sont revenus des matchs avec des réalisations modestes mais réelles. Une poignée de médailles, de solides performances individuelles et la connaissance que le pays peut rivaliser au plus haut niveau. Ce n'est pas un triomphe, mais ce n'est pas une déception non plus."
+ olympics.6.d_doping: "Avec une certaine assistance pharmaceutique, les athlètes de [ROOT.GetCountry.GetName] ont géré un spectacle respectable. Le dopage semble être passé inaperçu — cette fois - ci."
+ olympics.6.f: "C'est cohérent, sinon spectaculaire."
+ olympics.6.a: "Une démonstration solide pour nos athlètes"
+
+ # olympics.7 — Well
+ olympics.7.t: "Une performance olympique forte"
+ olympics.7.d: "Les athlètes de [ROOT.GetCountry.GetName] sont rentrés chez eux pour un accueil de héros. Le nombre de médailles est impressionnant, les performances mémorables, et l'humeur nationale est dynamique. Plusieurs athlètes sont devenus des noms de famille. C'est un résultat véritablement fort qui reflète bien le pays et son programme sportif."
+ olympics.7.d_doping: "Les athlètes de [ROOT.GetCountry.GetName] se sont bien comportés — aidés, bien que le public ne le sache pas, par un programme pharmaceutique discret. Les médailles sont réelles. Les méthodes qui les ont produites sont moins admirables."
+ olympics.7.f: "La nation est un peu plus grande aujourd'hui."
+ olympics.7.a: "Nos athlètes nous ont rendus fiers"
+
+ # olympics.8 — Gold
+ olympics.8.t: "Triomphe olympique — [ROOT.GetCountry.GetName] Domine les Jeux"
+ olympics.8.d: "Les résultats sont dans — et [ROOT.GetCountry.GetName] a dominé les Jeux Olympiques. La table des médailles raconte l'histoire : plus d'or, plus d'argent, plus de bronze que presque n'importe quelle autre nation. Les athlètes ont joué au-delà de toutes les attentes, et le pays célèbre. Sur la scène mondiale, [ROOT.GetCountry.GetName] a fait sa marque."
+ olympics.8.d_doping: "[ROOT.GetCountry.GetName] a dominé les Jeux Olympiques — aidé par un programme de dopage systématique qui, jusqu'à présent, n'a pas été détecté. Les médailles sont réelles. La célébration est authentique. Et le secret, pour l'instant, est sûr."
+ olympics.8.f: "L'histoire s'en souviendra."
+ olympics.8.a: "Nos athlètes sont les meilleurs au monde"
+
+ # olympics.9 — Closing ceremony
+ olympics.9.t: "La flamme olympique est éteinte"
+ olympics.9.d: "Les Jeux Olympiques de [SCOPE.sState('capital_scope').GetCityHubName] se sont terminés. Les athlètes sont rentrés chez eux. Les stades sont calmes. Pour [ROOT.GetCountry.GetName], il s'agit d'une expérience extraordinaire, exigeante, coûteuse et finalement utile. Les jeux ont amené le monde à [ROOT.GetCountry.GetName] la porte, et le pays est monté à l'occasion."
+ olympics.9.f: "Jusqu'à la prochaine."
+ olympics.9.a: "C'était un honneur d'accueillir le monde"

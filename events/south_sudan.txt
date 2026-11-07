@@ -1,0 +1,64 @@
+﻿namespace = southsudan
+
+southsudan.1 = {
+    type = country_event
+    title = southsudan.1.t
+    desc = southsudan.1.d
+    event_image = { video = "safari" }
+
+    trigger = {
+        c:SDN = this
+        game_date >= 2011.7.1
+        NOT = { exists = c:SSD }
+		owns_entire_state_region = s:STATE_EQUATORIA
+    }
+
+    immediate = {
+		create_country = {
+                        tag = SSD
+                        origin = this # TODO, ADD LAWS
+                        province = p:xE4BC4E
+						
+                        on_created = {
+								s:STATE_KORDOFAN = {
+								set_owner_of_provinces = {
+                                                country = c:SSD
+                                                provinces = { x8060D0 x0C8466 x68ED3B }
+                                        }
+								}
+                                s:STATE_BLUE_NILE = {
+									set_owner_of_provinces = {
+										country = c:SSD
+										provinces = { xD07ADF x6A5420 xC0D1A9 xF7B5CB xEF7C3C x225C9E xE0A090 x51CD3D xC356F5 xFAD09B x4AB4A0 xEE4B02 x16A922 x8CA984 xD42E9B }
+									}
+                                }
+								 s:STATE_EQUATORIA = {
+									set_owner_of_provinces = {
+										country = c:SSD
+										provinces = { x3EBCE9 x87F523 x052C31 xD13168 xE14193 xE53199 x387C9A xCAF1C3 x77E0D1 xE9B9DA x07EC0A x01E0D0 x76BED4 x2B99DD xFF0E29 xFCECBC xD4BDA3 xC3E885 xF39844 x117111 x49DC0E xA479C2 x6512D9 x178C0B x93FD41 xD57816 x597CAA x65AAF8 xDC6D9E xF9F832 xFD9BB6 x70B4C9 xBADB79 x1D57FB x3A7DC2 x4D69FC xCC55B4 x6BC8A3
+										xB39074 xA414BD x992042 xA3790C x97BCA5 x806050 xB5B4CA xBE1B0B xC10150 x95DC14 xC890D8 x3173A5 x7E841A x42AAF1 x997E00 x81EF4E x01C6DC x1EDEEF x1DA390 x8D0D42 xC8E467 x5C007E x458A9A x13B0BB x191199 x5556B9 x169409 xF2A9C3 xEA9F9F x512903 xF73FA3 xE39A37 xE8D379 xB0F9B2 x26B47D xAC2570 xECC166 x836E96 x3864B4 x90C4B5 x405DD1 x409D75 x0B3FB6 x281B17 x40A050 x06F011 x68CEAC x87F764 x025267 xB1C8B3 x5852E5 xA2D4A1 x287FA3 x6808DA x2F3E88 x4FFD57 xE63DDF x6875E7 x4B02C7 xBFB2D2 xA02111 xE310D0 x749BFD x19094A xEB0C25 xC6CE6C }
+									}
+                                }
+                        }
+                }
+    }
+
+    option = {
+        name = southsudan.1.a
+        add_relations = {
+            country = c:SSD
+            value = -100
+        }
+		s:STATE_EQUATORIA = {
+			add_claim = c:SDN
+		}
+    }
+
+    option = {
+        name = southsudan.1.b
+        add_relations = {
+            country = c:SSD
+            value = -25
+        }
+    }
+}

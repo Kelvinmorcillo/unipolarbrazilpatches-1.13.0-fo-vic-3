@@ -1,0 +1,108 @@
+﻿l_turkish:
+#################### JE ####################
+# The Internet
+
+economic_union:0 "Ekonomik Birlik"
+economic_union_pact_desc:0 "İki devlet arasında birleşik bir pazar ve para var olan bir diplomatik anlaşma."
+subject_type_economic_union:0 "Ekonomik Birlik"
+subject_type_economic_union:0 "Ekonomik Birlik"
+subject_type_economic_union_desc:0 "İki devlet arasında birleşik bir pazar ve para var olan bir diplomatik anlaşma."
+concept_economic_union:0 "Ekonomik Birlik"
+concept_subject_type_economic_union:0 "Ekonomik Birlik"
+subject_type_economic_union_no_icon:0 "Ekonomik Birlik"
+concept_economic_union_desc:0 "İki devlet arasında birleşik bir pazar ve para var olan bir diplomatik anlaşma."
+
+economic_union2:0 "Ekonomik Birlik"
+economic_union2_pact_desc:0 "İki devlet arasında birleşik bir pazar ve para var olan bir diplomatik anlaşma."
+
+eu_events.400:0 "Avrupa Birliği"
+
+support_revolution:0 "Devrim Destek Desteği"
+support_revolution_action_propose_name:0 "Devrim Destek Desteği"
+support_revolution_action_break_name:0 "Halt Support Support Support"
+
+impose_sanctions:0 "Impose Sanctions"
+impose_sanctions_desc: "Bu ülkenin finansal varlıklarını inceleyin. Oyun açısından, bu, paranın doğrudan iki ülke arasında GSYİH'daki farka dayanan hedefin hazinesinden aktarıldığı bir ters banka kaydı oluşturur."
+impose_sanctions_action_propose_name:0 "Finansal Sanctions"
+impose_sanctions_action_break_name:0 "Asansör Sanctions"
+impose_sanctions_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName] bize karşı yaptırımlar uyguladı!"
+impose_sanctions_notification_name: "[INITIATOR_COUNTRY.GetName] bize karşı yaptırımlar uyguladı!"
+impose_sanctions_notification_desc: "Finansal yaptırımlarla vurulduk!"
+
+humanitarian_aid:0 "İnsani Yardım Gönder"
+humanitarian_aid_desc: "Bu ülkede yaşayan popslara finansal yardım sağlayın. Parayı doğrudan bu ülkede yaşayan popların ceplerine transfer edin."
+humanitarian_aid_action_propose_name:0 "İnsani Yardım"
+humanitarian_aid_action_break_name:0 "Halt Humanitarian Aid"
+humanitarian_aid_pact_desc:0 "Bu ülkede yaşayan popslara finansal yardım sağlayın. Parayı doğrudan bu ülkede yaşayan popların ceplerine transfer edin."
+humanitarian_aid_notification_name: "[INITIATOR_COUNTRY.GetName] bize insani yardım gönderiyor!"
+humanitarian_aid_notification_desc: "Biz insani yardımları yeniden değerlendiriyoruz."
+humanitarian_aid_proposal_accepted_name: "İnsani yardım kabul edilen kabul edilen"
+humanitarian_aid_proposal_accepted_desc: "Şimdi insani yardım sağlıyoruz."
+
+
+host_military_bases_desc: ""
+host_military_bases_effects_desc: "• İki [Concept('concept_country', '$concept_countries$')] arasında bir askeri anlaşma kurmak için bir $concept_country$ $concept_country$ diğer <x id=3 kullanarak $concept_country$"
+host_military_bases_article_short_desc: "[TARGET_COUNTRY.GetNameNoFormatting] füzeleri [SOURCE_COUNTRY.GetNameNoFormatting] aracılığıyla başlatabilir"
+
+ smd_create_economic_union:0 "Ekonomik Birlik"
+ smd_create_economic_union_action_name:0 "Ekonomik Birlik"
+ smd_create_economic_union_action_propose_name:0 "Ekonomik Birlik"
+ smd_create_economic_union_desc:0 "Ticaret ayrıcalıkları ve karşılıklı geçiş hakları etrafında inşa edilmiş bir ekonomik birlik."
+ smd_create_economic_union_action_notification_name:0 "Ekonomik Union Proposed"
+ smd_create_economic_union_action_notification_desc:0 "[INITIATOR_COUNTRY.GetName] [TARGET_COUNTRY.GetName] ile ekonomik bir birliği önerdi."
+ smd_create_economic_union_action_notification_third_party_name:0 "Ekonomik Union Proposed"
+ smd_create_economic_union_action_notification_third_party_desc:0 "[INITIATOR_COUNTRY.GetName] [TARGET_COUNTRY.GetName] ile ekonomik bir birliği önerdi."
+
+ smd_diplomatic_unification:0 "Diplomatik Unification"
+ smd_diplomatic_unification_action_name:0 "Diplomatik Unification"
+ smd_diplomatic_unification_action_propose_name:0 "Perose Unification"
+ smd_diplomatic_unification_desc:0 "Ekonomik entegrasyon ve kültürel hizalamadan sonra huzurlu bir siyasi birleşme."
+ smd_diplomatic_unification_action_notification_name:0 "Diplomatik Unification Proposed"
+ smd_diplomatic_unification_action_notification_desc:0 "[INITIATOR_COUNTRY.GetName], [TARGET_COUNTRY.GetName] ile diplomatik birleşme önermiştir."
+ smd_diplomatic_unification_action_notification_third_party_name:0 "Diplomatik Unification Proposed"
+ smd_diplomatic_unification_action_notification_third_party_desc:0 "[INITIATOR_COUNTRY.GetName], [TARGET_COUNTRY.GetName] ile diplomatik birleşme önermiştir."
+
+ smd_diplomatic_unification_annexation_effect_tt:0 "Kabul ülke, initiator tarafından tamamen eklenecektir."
+ smd_create_economic_union_proposal_accepted_name:0 "Ekonomik Birlik Kabul Edildi"
+ smd_create_economic_union_proposal_accepted_desc:0 "[TARGET_COUNTRY.GetName] [INITIATOR_COUNTRY.GetName] Ekonomik bir sendika yaratma önerisini kabul etti."
+ smd_create_economic_union_proposal_declined_name:0 "Ekonomik Union Rejected"
+ smd_create_economic_union_proposal_declined_desc:0 "[TARGET_COUNTRY.GetName] [INITIATOR_COUNTRY.GetName] Ekonomik bir sendika yaratma önerisini reddetti."
+ smd_diplomatic_unification_proposal_accepted_name:0 "Kabul edilemez"
+ smd_diplomatic_unification_proposal_accepted_desc:0 "[TARGET_COUNTRY.GetName] [INITIATOR_COUNTRY.GetName] Diplomatik birleşme önerisini kabul etti ve eklenecek."
+ smd_diplomatic_unification_proposal_declined_name:0 "Unification Rejected"
+ smd_diplomatic_unification_proposal_declined_desc:0 "[TARGET_COUNTRY.GetName] [INITIATOR_COUNTRY.GetName] Diplomatik birleşme önerisini reddetti."
+ smd_economic_union_base_resistance_tt:0 "Ülkelerin ekonomik sendikalara girmek için temel bir geri dönüşleri var."
+ smd_unification_base_resistance_tt:0 "Ülkeler diplomatik birleşme yoluyla eksilmeyi kabul etmek için güçlü bir temele sahiptir."
+ 
+ treaty_name_smd_economic_union:0 "Ekonomik Birlik"
+ treaty_name_smd_diplomatic_unification:0 "Diplomatik Doğrulama Antlaşması"
+
+ smd_economic_union_requires_independence_tt:0 "Her iki ülke de yeterince bağımsız olmalıdır."
+ smd_economic_union_requires_peace_tt:0 "Her iki ülke de birbirleriyle barış içinde olmalı ve diplomatik bir oyuna karar vermemelidir."
+ smd_economic_union_requires_no_subject_relation_tt:0 "Ne ülke zaten başkanın konusu ya da overlord olabilir."
+ smd_economic_union_requires_no_isolationism_tt:0 "Ne ülke bir izolasyonist ekonomik politikaya sahip olabilir."
+ smd_economic_union_requires_no_duplicate_tt:0 "Ülkeler zaten ekonomik birliğe sahip olmamalıdır."
+
+ smd_unification_requires_independence_tt:0 "Her iki ülke de yeterince bağımsız olmalıdır."
+ smd_unification_requires_peace_tt:0 "Her iki ülke de birbirleriyle barış içinde olmalı ve diplomatik bir oyuna karar vermemelidir."
+ smd_unification_requires_no_subject_relation_tt:0 "Ne ülke zaten başkanın konusu ya da overlord olabilir."
+ smd_unification_requires_economic_union_tt:0 "Ülkeler zaten ekonomik bir birliği olmalıdır."
+ smd_unification_requires_culture_tt:0 "Ülkelerin benzer birincil kültürlere sahip olması, birincil bir kültür, miras grubu ve dil grubu veya miras ve dil özellikleri paylaşması gerekir."
+ smd_unification_requires_good_relations_tt:0 "İlişkiler en azından dostça olmalıdır."
+ smd_diplomatic_unification_effect_tt:0 "Kabul edilen ülke, initiatorun bir parçası haline gelir."
+ 
+ threaten_nuclear_hostilities:0 "Tehdit Nükleer Evsizlikler"
+ threaten_nuclear_hostilities_action_name:0 "Tehdit Nükleer Evsizlikler"
+ threaten_nuclear_hostilities_action_propose_name:0 "Tehdit Nükleer Evsizlikler"
+ threaten_nuclear_hostilities_desc:0 "Başka bir ülkeye karşı bir nükleer tehdit. Nükleer eşlilik geçici olarak diplomatik itibarımızı artırır, diğer ülkeleri bizden anlaşmalar kabul etmek daha olasıdır."
+ threaten_nuclear_hostilities_action_notification_name:0 "Nükleer düşmanlıklar Tehdit Ediyor"
+ threaten_nuclear_hostilities_action_notification_desc:0 "[INITIATOR_COUNTRY.GetName] [TARGET_COUNTRY.GetName] karşı nükleer hostiliteleri tehdit etti."
+ threaten_nuclear_hostilities_action_notification_third_party_name:0 "Nükleer düşmanlıklar Tehdit Ediyor"
+ threaten_nuclear_hostilities_action_notification_third_party_desc:0 "[INITIATOR_COUNTRY.GetName] [TARGET_COUNTRY.GetName] karşı nükleer hostiliteleri tehdit etti."
+
+ threaten_nuclear_hostilities_requires_nuclear_capable_tt:0 "Ülkemiz nükleer yetenekli olmalıdır."
+ threaten_nuclear_hostilities_cooldown_tt:0 "Son zamanlarda nükleer hostiliteleri tehdit etmemeliyiz."
+ threaten_nuclear_hostilities_target_valid_tt:0 "Hedef geçerli, merkezi olmayan bir ülke olmalıdır."
+
+ threatened_nuclear_hostilities_diplomatic_reputation:0 "Nükleer Hostility Tehdit Ediyor"
+ threatened_nuclear_hostilities_diplomatic_reputation_desc:0 "Nükleer eşlilik bu ülkenin diplomatik şöhretini geçici olarak artırdı, diğer ülkeleri ondan anlaşmalar kabul etmek daha muhtemel hale getirdi."

@@ -1,0 +1,888 @@
+# ==========================================
+# DRUG REGULATION — ENACTMENT MODIFIERS
+#
+# These are used as add_enactment_modifier
+# targets during drug law enactment events.
+# They affect law enactment success/failure.
+# ==========================================
+
+# ── PROHIBITION ───────────────────────────
+
+# Strong enforcement campaign — boosts success
+drug_law_prohibition_enforcement = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_law_enactment_success_add           = 0.10
+}
+
+# Enforcement is expensive
+drug_law_enforcement_cost = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add                        = 12500
+}
+
+# ── RELIGIOUS BACKING ─────────────────────
+
+# Devout IG publicly supports the law
+drug_law_religious_backing = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_law_enactment_success_add           = 0.08
+}
+
+# Devout IG gains influence from association with the law
+drug_law_devout_empowered = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_pol_str_mult                 = 0.10
+	interest_group_approval_add                 = 2
+}
+
+# ── INTELLIGENTSIA ────────────────────────
+
+# Academic evidence campaign aids enactment
+drug_law_academic_push = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	country_law_enactment_success_add           = 0.08
+}
+
+# Intelligentsia engaged — pol strength up during debate
+drug_law_intelligentsia_engaged = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	interest_group_pol_str_mult                 = 0.08
+	interest_group_approval_add                 = 2
+}
+
+# Intelligentsia sidelined — upset but quieter
+drug_law_intelligentsia_ignored = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
+	interest_group_approval_add                 = -2
+}
+
+# ── MEDICAL ESTABLISHMENT ─────────────────
+
+# Medical community publicly backs harm reduction
+drug_law_medical_backing = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	country_law_enactment_success_add           = 0.10
+}
+
+# Moral framing hurts the law's perceived legitimacy
+drug_law_moral_framing = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_law_enactment_success_add           = -0.05
+}
+
+# ── INTERNATIONAL PRESSURE ────────────────
+
+# International condemnation stalls enactment
+drug_law_international_pressure = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_diplomacy_negative.dds
+	country_law_enactment_stall_add             = 0.1
+	country_infamy_decay_mult                   = -0.10
+}
+
+# Defying international opinion — sovereignty boost
+drug_law_sovereignty_declared = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_law_enactment_success_add           = 0.05
+	country_authority_mult                      = 0.03
+}
+
+# ── CRIMINAL NETWORKS ─────────────────────
+
+# Organised crime actively resisting — setback
+drug_law_criminal_pushback = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	country_law_enactment_stall_add             = 0.1
+	country_law_enactment_success_add           = -0.05
+	country_turmoil_effects_mult                = 0.05
+}
+
+# ── EMPLOYER PRESSURE (disability_laws.1) ─
+ 
+# Holding firm against employer resistance
+disability_employer_pressure = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_law_enactment_success_add           = 0.08
+}
+ 
+# Transition period offered to employers — slows passage
+disability_compliance_delay = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_law_enactment_stall_add             = 0.1
+}
+ 
+# ── CONSTRUCTION LOBBY (disability_laws.2) ─
+ 
+# Construction lobby applying pressure
+disability_construction_lobby = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
+	country_law_enactment_success_add           = 0.06
+}
+ 
+# Strict standards enforced — higher success
+disability_strict_standards = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_law_enactment_success_add           = 0.08
+}
+ 
+# Phased compliance — stalls but reduces opposition
+disability_phased_compliance = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_law_enactment_stall_add             = 0.1
+}
+ 
+# ── FUNDING DEBATE (disability_laws.3) ────
+ 
+# Funding debate resolved
+disability_funding_debate = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_law_enactment_success_add           = 0.06
+}
+ 
+# State absorbs retrofit costs — expedites passage
+disability_state_subsidy = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_law_enactment_success_add           = 0.10
+	country_expenses_add                        = 20000
+}
+ 
+# ── MEDICAL ENDORSEMENT (disability_laws.4) ─
+ 
+# Medical establishment publicly backs the law
+disability_medical_endorsement = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	country_law_enactment_success_add           = 0.10
+}
+ 
+# ── FISCAL RESISTANCE (disability_laws.5) ─
+ 
+# Fiscal conservatives pushing back
+disability_fiscal_resistance = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_law_enactment_success_add           = 0.05
+}
+ 
+# Staged spending implementation — stalls but reduces opposition
+disability_phased_spending = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_law_enactment_stall_add             = 0.1
+}
+ 
+# ── ADVOCATE PUSH (disability_laws.6) ────
+ 
+# Disability advocates rallying public support
+disability_advocate_push = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	country_law_enactment_success_add           = 0.10
+}
+ 
+# ── CONSERVATIVE OPPOSITION (disability_laws.7) ─
+ 
+# Conservative opposition mobilized
+disability_conservative_opposition = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_law_enactment_success_add           = 0.04
+}
+ 
+# Government publicly rebuts opposition — turns tide
+disability_public_rebuttal = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_law_enactment_success_add           = 0.08
+}
+
+# ── INDUSTRY COMPLIANCE ───────────────────
+ 
+env_voluntary_compliance = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_law_enactment_success_add           = 0.06
+}
+ 
+env_mandatory_enforcement = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_law_enactment_success_add           = 0.10
+}
+ 
+# ── SCIENTIFIC BACKING ────────────────────
+ 
+env_scientific_backing = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	country_law_enactment_success_add           = 0.10
+}
+ 
+# ── INTERNATIONAL PRAISE ──────────────────
+ 
+env_international_praise = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_law_enactment_success_add           = 0.08
+}
+ 
+env_diplomatic_push = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_diplomacy_positive.dds
+	country_law_enactment_success_add           = 0.05
+	country_prestige_mult                       = 0.02
+}
+ 
+# ── COMPLIANCE COST DEBATE ────────────────
+ 
+env_compliance_cost_debate = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_law_enactment_success_add           = 0.06
+}
+ 
+env_polluter_pays = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_law_enactment_success_add           = 0.08
+}
+ 
+env_state_subsidy = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_law_enactment_success_add           = 0.06
+	country_expenses_add                        = 25000
+}
+ 
+# ── CONSTITUTIONAL CHALLENGE ──────────────
+ 
+env_constitutional_challenge = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_law_enactment_stall_add             = 0.1
+}
+ 
+env_legal_defence = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_law_enactment_success_add           = 0.10
+}
+ 
+# ── DISASTER ─────────────────────────────
+ 
+# Disaster leveraged to accelerate passage
+env_disaster_response = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	country_law_enactment_success_add           = 0.12
+}
+ 
+# Disaster suppressed — slows momentum
+env_disaster_suppressed = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_law_enactment_stall_add             = 0.1
+}
+ 
+# Applied to the disaster state — lasts beyond enactment
+env_disaster_state_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	state_pollution_generation_add              = 2500
+	state_mortality_mult                        = 0.02
+}
+
+# ── PRIVATIZED PRESCHOOL ──────────────────
+
+# Business community backs the private model — boosts success
+childrens_rights_market_preschool_framing = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_law_enactment_success_add           = 0.08
+}
+
+# Access mandate imposed — regulated private market slows passage
+childrens_rights_access_mandate = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_law_enactment_stall_add             = 0.1
+}
+
+# Conservative/devout IG reassured — reduces resistance
+childrens_rights_family_values_debate = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_law_enactment_success_add           = 0.06
+}
+
+# ── UNIVERSAL CHILDCARE ───────────────────
+
+# Fiscal conservatives pushing back — stalls enactment
+childrens_rights_fiscal_resistance = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_law_enactment_stall_add             = 0.1
+	country_law_enactment_success_add           = -0.05
+}
+
+# Government absorbs the cost — spending boosts success, costs authority
+childrens_rights_funded_mandate = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_law_enactment_success_add           = 0.10
+	country_expenses_add                        = 25000
+}
+
+# Labour movement mobilized behind the law
+childrens_rights_labour_framing = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	country_law_enactment_success_add           = 0.08
+}
+
+# Academic research publicly endorsed — evidence campaign aids passage
+childrens_rights_academic_endorsement = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	country_law_enactment_success_add           = 0.08
+}
+
+# ── IG TIMED MODIFIERS ────────────────────
+# Applied to interest_group scope via
+# scope:X = { add_modifier = { name = ... } }
+
+# Petty bourgeoisie engaged — profits from private sector expansion
+childrens_rights_business_engaged = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_pol_str_mult                 = 0.08
+	interest_group_approval_add                 = 3
+}
+
+# Devout IG reassured — family primacy acknowledged
+childrens_rights_devout_reassured = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_approval_add                 = 2
+}
+
+# Devout IG alienated — framing dismissed as secular overreach
+childrens_rights_devout_alienated = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add                 = -2
+}
+
+# Trade unions mobilized — childcare framed as workers' issue
+childrens_rights_unions_mobilized = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	interest_group_pol_str_mult                 = 0.08
+	interest_group_approval_add                 = 2
+}
+
+# Trade unions skeptical — wages-first faction holds back support
+childrens_rights_unions_skeptical = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	interest_group_approval_add                 = -3
+}
+
+# Intelligentsia engaged — evidence campaign publicly endorsed
+childrens_rights_intelligentsia_engaged = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	interest_group_pol_str_mult                 = 0.08
+	interest_group_approval_add                 = 2
+}
+
+# Intelligentsia sidelined — academic consensus ignored
+childrens_rights_intelligentsia_sidelined = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
+	interest_group_approval_add                 = -4
+}
+
+# Intelligentsia pushes for broad statutory scope
+womens_rights_legal_scope = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_law_enactment_success_add           = 0.08
+}
+
+# Narrow scope chosen — faster passage, less resistance
+womens_rights_narrow_scope = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_law_enactment_stall_add             = 0.1
+}
+
+# Traditionalist opposition enters the debate
+womens_rights_traditionalist_debate = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_law_enactment_success_add           = 0.06
+}
+
+# ── STRUCTURAL EGALITARIANISM ─────────────
+
+# Employer lobby actively resisting mandated representation
+womens_rights_employer_resistance = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
+	country_law_enactment_stall_add             = 0.1
+	country_law_enactment_success_add           = -0.05
+}
+
+# Trade unions mobilized in support
+womens_rights_union_mobilization = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	country_law_enactment_success_add           = 0.08
+}
+
+# ── MATRIARCHY ────────────────────────────
+
+# Broad societal backlash against radical restructuring
+womens_rights_societal_backlash = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	country_law_enactment_stall_add             = 0.1
+	country_law_enactment_success_add           = -0.06
+}
+
+# Government presses forward as a vanguard of change
+womens_rights_vanguard_push = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	country_law_enactment_success_add           = 0.10
+}
+
+# Old guard landowners and devout mounting organised opposition
+womens_rights_old_guard_opposition = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_law_enactment_stall_add             = 0.1
+	country_law_enactment_success_add           = -0.05
+}
+
+# ── IG TIMED MODIFIERS ────────────────────
+
+# Intelligentsia engaged — broad legal scope endorsed
+womens_rights_intelligentsia_engaged = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	interest_group_pol_str_mult                 = 0.08
+	interest_group_approval_add                 = 4
+}
+
+# Intelligentsia disappointed — narrow scope a compromise too far
+womens_rights_intelligentsia_disappointed = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
+	interest_group_approval_add                 = -3
+}
+
+# Conservatives publicly rebuked — embarrassed but energized
+womens_rights_conservatives_rebuked = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add                 = -4
+}
+
+# Conservatives placated — grievances heard, opposition softened
+womens_rights_conservatives_placated = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_approval_add                 = 2
+}
+
+# Employers overruled — compliance mandated, resentment grows
+womens_rights_employers_overruled = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
+	interest_group_approval_add                 = -4
+}
+
+# Employers appeased — phased transition reduces hostility
+womens_rights_employers_appeased = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	interest_group_approval_add                 = 2
+}
+
+# Trade unions allied — joint cause declared
+womens_rights_unions_allied = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	interest_group_pol_str_mult                 = 0.08
+	interest_group_approval_add                 = 4
+}
+
+# Trade unions neutral — movement kept separate
+womens_rights_unions_neutral = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	interest_group_approval_add                 = 1
+}
+
+# Old guard suppressed — opposition crushed but radicalized
+womens_rights_old_guard_suppressed = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_pol_str_mult                 = -0.10
+	interest_group_approval_add                 = -5
+}
+
+# Old guard negotiated — concessions reduce but don't eliminate friction
+womens_rights_old_guard_negotiated = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	interest_group_approval_add                 = -2
+}
+
+# Fiscal conservatives raising the alarm — stalls passage
+welfare_ubi_fiscal_alarm = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_law_enactment_stall_add             = 0.1
+	country_law_enactment_success_add           = -0.05
+}
+
+# Government commits to full funding — expensive but decisive
+welfare_ubi_funded_commitment = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_law_enactment_success_add           = 0.10
+	country_expenses_add                        = 25
+}
+
+# Labour disincentive debate engaged — rebutted publicly
+welfare_ubi_labour_disincentive_debate = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_law_enactment_success_add           = 0.06
+}
+
+# Work requirements attached — slows passage, reduces employer opposition
+welfare_ubi_work_requirements = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_law_enactment_stall_add             = 0.1
+}
+
+# Trade unions and intelligentsia rally public support
+welfare_ubi_popular_mandate = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	country_law_enactment_success_add           = 0.08
+}
+
+# Employers unconvinced — economic case made but not accepted
+welfare_ubi_employers_unconvinced = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
+	interest_group_approval_add                 = -3
+}
+
+# Employers appeased — work requirements soften opposition
+welfare_ubi_employers_appeased = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	interest_group_approval_add                 = 2
+}
+
+# Unions mobilized — UBI framed as culmination of labour struggle
+welfare_ubi_unions_mobilized = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	interest_group_pol_str_mult                 = 0.08
+	interest_group_approval_add                 = 4
+}
+
+# Unions sidelined — kept out of the public rollout
+welfare_ubi_unions_sidelined = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	interest_group_approval_add                 = -3
+}
+
+# Fiscal conservatives resisting full public funding
+education_college_fiscal_resistance = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_law_enactment_stall_add             = 0.1
+	country_law_enactment_success_add           = -0.05
+}
+
+# Government commits to full public funding
+education_college_public_funded = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_law_enactment_success_add           = 0.10
+	country_expenses_add                        = 20
+}
+
+# Meritocracy debate engaged — universal access defended publicly
+education_college_meritocracy_debate = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_law_enactment_success_add           = 0.06
+}
+
+# Elite institutions preserved alongside universal access — slows passage
+education_college_elite_carveout = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_law_enactment_stall_add             = 0.1
+}
+
+# Intelligentsia publicly endorses universal college
+education_college_academic_endorsement = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	country_law_enactment_success_add           = 0.08
+}
+
+# Elite IGs rebuked — embarrassed but energized in opposition
+education_college_elites_rebuked = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add                 = -4
+}
+
+# Elite IGs appeased — carveout for private institutions softens resistance
+education_college_elites_appeased = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_approval_add                 = 2
+}
+
+# Intelligentsia engaged — academic community rallying behind the law
+education_college_intelligentsia_engaged = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	interest_group_pol_str_mult                 = 0.08
+	interest_group_approval_add                 = 4
+}
+
+# Intelligentsia sidelined — kept out of the legislative process
+education_college_intelligentsia_sidelined = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
+	interest_group_approval_add                 = -3
+}
+
+# Public health framing adopted — intelligentsia lending credibility
+gun_law_safety_argument = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_law_enactment_success_add           = 0.08
+}
+
+# Military publicly backs civilian disarmament
+gun_law_military_position = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_law_enactment_success_add           = 0.08
+}
+
+# ── BANNED / LICENSED FIREARMS ────────────
+
+# Rural communities actively resisting restrictions
+gun_law_rural_resistance = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	country_law_enactment_stall_add             = 0.1
+	country_law_enactment_success_add           = -0.05
+}
+
+# ── UNRESTRICTED FIREARMS ─────────────────
+
+# Liberty framing embraced — gun ownership as a fundamental right
+gun_law_rights_framing = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_law_enactment_success_add           = 0.08
+}
+
+# Practical framing — self-defence and conscription readiness
+gun_law_practical_framing = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_law_enactment_success_add           = 0.05
+}
+
+# Safety lobby mounting organised opposition
+gun_law_safety_lobby_opposition = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_law_enactment_stall_add             = 0.1
+	country_law_enactment_success_add           = -0.05
+}
+
+# Both flanks resisting the compromise position
+gun_law_compromise_resistance = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	country_law_enactment_stall_add             = 0.1
+	country_law_enactment_success_add           = -0.04
+}
+
+# Government defends the middle ground publicly
+gun_law_compromise_defended = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_law_enactment_success_add           = 0.08
+}
+
+# Intelligentsia engaged — public health case publicly endorsed
+gun_law_intelligentsia_engaged = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	interest_group_pol_str_mult                 = 0.08
+	interest_group_approval_add                 = 4
+}
+
+# Intelligentsia sidelined — kept out of the framing
+gun_law_intelligentsia_sidelined = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
+	interest_group_approval_add                 = -3
+}
+
+# Intelligentsia rebuked — publicly challenged on safety arguments
+gun_law_intelligentsia_rebuked = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
+	interest_group_approval_add                 = -4
+}
+
+# Intelligentsia ignored — opposition not dignified with a response
+gun_law_intelligentsia_ignored = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
+	interest_group_approval_add                 = -5
+}
+
+# Military backing civilian disarmament publicly
+gun_law_military_backing = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	interest_group_pol_str_mult                 = 0.08
+	interest_group_approval_add                 = 4
+}
+
+# Military kept out of domestic law debate
+gun_law_military_sidelined = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	interest_group_approval_add                 = -2
+}
+
+# Rural folk alienated — uniform enforcement ignores their way of life
+gun_law_rural_folk_alienated = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_pol_str_mult                 = 0.05
+	interest_group_approval_add                 = -4
+}
+
+# Rural folk appeased — exemptions acknowledge legitimate rural uses
+gun_law_rural_folk_appeased = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_approval_add                 = 2
+}
+
+# Rural folk energized — liberty framing resonates strongly
+gun_law_rural_folk_energized = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	interest_group_pol_str_mult                 = 0.10
+	interest_group_approval_add                 = 5
+}
+
+# ==========================================
+# LGBTQ LAWS — ENACTMENT MODIFIERS
+# ==========================================
+
+# Devout IG publicly frames oppression as moral duty
+lgbtq_law_religious_mandate = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_law_enactment_success_add           = 0.08
+}
+
+# Active enforcement campaign — expensive but decisive
+lgbtq_law_enforcement_scope = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_law_enactment_success_add           = 0.08
+}
+
+# Enforcement costs absorbed
+lgbtq_law_enforcement_cost = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add                        = 20
+}
+
+# Decriminalization framed carefully — not endorsement, merely removal of punishment
+lgbtq_law_decrim_framing = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_law_enactment_success_add           = 0.06
+}
+
+# Quiet passage — reform enacted without public debate
+lgbtq_law_quiet_passage = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_law_enactment_stall_add             = 0.1
+}
+
+# Intelligentsia makes the liberty argument publicly
+lgbtq_law_liberty_argument = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	country_law_enactment_success_add           = 0.08
+}
+
+# Marriage equality framed as institutional redefinition
+lgbtq_law_institution_debate = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_law_enactment_success_add           = 0.06
+}
+
+# Religious exemptions offered to soften conservative opposition
+lgbtq_law_religious_exemptions = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_law_enactment_stall_add             = 0.1
+}
+
+# Equality mandate declared — marriage equality as civil rights landmark
+lgbtq_law_equality_mandate = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	country_law_enactment_success_add           = 0.10
+}
+
+lgbtq_law_devout_empowered = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_pol_str_mult                 = 0.10
+	interest_group_approval_add                 = 5
+}
+
+lgbtq_law_devout_sidelined = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add                 = -3
+}
+
+lgbtq_law_conservatives_unconvinced = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add                 = -3
+}
+
+lgbtq_law_conservatives_rebuked = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add                 = -4
+}
+
+lgbtq_law_conservatives_placated = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_approval_add                 = 2
+}
+
+lgbtq_law_intelligentsia_engaged = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	interest_group_pol_str_mult                 = 0.08
+	interest_group_approval_add                 = 4
+}
+
+lgbtq_law_intelligentsia_sidelined = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
+	interest_group_approval_add                 = -3
+}
+
+# Devout frames the ban as moral absolute — life begins at conception
+abortion_law_moral_absolute = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_law_enactment_success_add           = 0.08
+}
+
+# Demographic framing adopted — birth rate argument for the ban
+abortion_law_demographic_framing = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_law_enactment_success_add           = 0.04
+}
+
+# No exceptions — absolute ban defended in full
+abortion_law_exceptions_debate = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_law_enactment_success_add           = 0.06
+}
+
+# Narrow medical exceptions allowed — softens opposition
+abortion_law_medical_exceptions = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_law_enactment_stall_add             = 0.1
+}
+
+# Bodily autonomy argument made publicly — intelligentsia leading
+abortion_law_autonomy_argument = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	country_law_enactment_success_add           = 0.08
+}
+
+# Healthcare framing adopted — abortion as medical, not philosophical
+abortion_law_healthcare_framing = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_law_enactment_success_add           = 0.05
+}
+
+# Devout IG mounting organised opposition to liberalization
+abortion_law_religious_opposition = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	country_law_enactment_stall_add             = 0.1
+	country_law_enactment_success_add           = -0.05
+}
+
+abortion_law_devout_empowered = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_pol_str_mult                 = 0.10
+	interest_group_approval_add                 = 5
+}
+
+abortion_law_devout_sidelined = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add                 = -3
+}
+
+abortion_law_devout_rebuked = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_pol_str_mult                 = -0.05
+	interest_group_approval_add                 = -5
+}
+
+abortion_law_devout_appeased = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_approval_add                 = 2
+}
+
+abortion_law_intelligentsia_engaged = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	interest_group_pol_str_mult                 = 0.08
+	interest_group_approval_add                 = 4
+}
+
+abortion_law_intelligentsia_sidelined = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
+	interest_group_approval_add                 = -3
+}

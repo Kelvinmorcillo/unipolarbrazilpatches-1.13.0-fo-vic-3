@@ -1,0 +1,49 @@
+﻿l_braz_por:
+ # ── TAB RENAME ────────────────────────────
+ BUDGET_TAB_ASSETS: "Sistema Financeiro"
+ BUDGET_TAB_FINANCE: "Activo"
+ # ── CENTRAL BANKING PANEL ─────────────────
+ BUDGET_CENTRAL_BANKING_HEADER: "Banco Central"
+ BUDGET_CENTRAL_BANK_LAW_LABEL: "Política atual:"
+ BUDGET_FISCAL_POLICY_LABEL: "Estância da política monetária"
+
+ # Scripted loc keys
+ cb_policy_loc_1: "#R A maioria Contraccional#!"
+ cb_policy_loc_2: "#r Contraccional#!"
+ cb_policy_loc_3: "#Y Neutra #!"
+ cb_policy_loc_4: "#g Expansivo#!"
+ cb_policy_loc_5: "#G A maioria Expansivo#!"
+
+ # ── BUTTON TOOLTIPS — FRACTIONAL RESERVE ──
+ CB_POLICY_1_TOOLTIP: "#bold Maioria Contraccional #!\n#tooltip_separator!\n #header Reserva Fraccional:#!\n@red_cross! Transferência Bancária Comercial: #green +10% #!\n@red_cross! Transferência Distrital Financeira: #red -10% #! \n\n#header Reserva Total:#!\n@green_checkmark! Taxa de Juros: #green -2% #!\n@green_checkmark! Reserva Máxima de Dinheiro: #red -25% #!"
+ CB_POLICY_2_TOOLTIP: "#bold Contraccional#!\n#tooltip_separator!\n #header Reserva Fraccional:#!\n@red_cross! Transferência Bancária Comercial: #green +5% #!\n@red_cross! Transferência Distrital Financeira: #red -5% #! \n\n#header Reserva Completa:#!\n@green_checkmark! Taxa de Interesse: #green -1% #!\n@green_checkmark! Reserva em numerário máxima para a construção: #red -12,5% #!"
+ CB_POLICY_3_TOOLTIP: "#bold Estável #!\n#tooltip_separator!\n O banco central não assume uma posição activa. Nenhum modificador aplicado."
+ CB_POLICY_4_TOOLTIP: "#bold Expansivo #!\n#tooltip_separator!\n #header Reserva Fraccional:#!\n@red_cross! Transferência Bancária Comercial: #red -5% #!\n@red_cross! Transferência Distrital Financeira: #green 5% #! \n\n#header Reserva Total:#!\n@green_checkmark! Taxa de Interesse: #red +1% #!\n@green_checkmark! Reserva Máxima de Caixa: #green +12,5% #!"
+ CB_POLICY_5_TOOLTIP: "#bold Maioria Expansiva #!\n#tooltip_separator!\n #header Reserva Fraccional:#!\n@red_cross! Transferência Bancária Comercial: #red -10% #!\n@red_cross! Transferência Distrital Financeira: #green 10% #! \n\n#header Reserva Total:#!\n@green_checkmark! Taxa de Interesse: #red +2% #!\n@green_checkmark! Reserva Máxima de Caixa: #green +25% #!"
+
+ # Fractional Reserve variants
+ CB_POLICY_1_FRAC: "#bold Maioria Contraccional — Reserva Fraccional#!\n#tooltip_separator!\nO banco central reforça significativamente as condições de crédito.\n\n@red_cross!"
+ CB_POLICY_2_FRAC: "#bold Contraccional — Reserva Fraccional#!\n#tooltip_separator!\n O banco central aplica um ligeiro rigor às condições de crédito.\n\n@red_cross! Transferência Bancária #b+5%#!\n@red_cross! Transferência Distrital Financeira #b-5%#!"
+ CB_POLICY_3_FRAC: "#bold Neutro — Reserva Fraccional#!\n#tooltip_separator!\n O banco central não assume uma posição activa. Nenhum modificador aplicado."
+ CB_POLICY_4_FRAC: "#bold Expansivo — Reserva Fraccional#!\n#tooltip_separator!\n O banco central facilita as condições de crédito para estimular os empréstimos.\n\n@green_checkmark! Transferência Bancária #b-5%#!\n@green_checkmark! Transferência Distrital Financeira #b+5%#!"
+ CB_POLICY_5_FRAC: "#bold A maioria Expansionary — Fractional Reserve#!\n#tooltip_separator!\nO banco central estimula agressivamente o setor financeiro.\n\n@green_checkmark!"
+
+ # Full Reserve variants
+ CB_POLICY_1_FULL: "#bold A maioria dos contratantes — Reserva completa#!\n#tooltip_separator!\n Os requisitos de reservas são maximizados, reduzindo drasticamente a disponibilidade de crédito.\n\n@green_checkmark! Taxa de Juros de Empréstimos #b-1%#!\n@green_checkmark! Reservas de numerário #b+25%#!"
+ CB_POLICY_2_FULL: "#bold Contraccional — Reserva completa#!\n#tooltip_separator!\n Os requisitos de reserva são reduzidos modestamente.\n\n@green_checkmark! Taxa de Juros de Empréstimo #b-0,5%#!\n@green_checkmark! Reservas de numerário #b+12,5%#!"
+ CB_POLICY_3_FULL: "#bold Neutro — Reserva completa#!\n#tooltip_separator!\n Os requisitos de reserva permanecem no mínimo legal. Nenhum modificador adicional aplicado."
+ CB_POLICY_4_FULL: "#bold Expansivo — Reserva completa#!\n#tooltip_separator!\n Os requisitos de reserva são relaxados para permitir uma maior concessão de empréstimos.\n\n@red_cross! Taxa de Juros de Empréstimos #b+0,5%#!\n@red_cross! Reservas de numerário #b-12,5%#!"
+ CB_POLICY_5_FULL: "#bold A maioria Expansionary — Full Reserve#!\n#tooltip_separator!\n Os requisitos de reserva são minimizados para maximizar a capacidade de crédito.\n\n@red_cross! Taxa de Juros de Empréstimo #b+1%#!\n@red_cross! Cash Reserves #b-25%#!"
+
+ # ── MODIFIER NAMES ────────────────────────
+ cb_policy_fractional_1: "A maioria da política monetária contratual"
+ cb_policy_fractional_2: "Política monetária contratual"
+ cb_policy_fractional_4: "Política Monetária Expansiva"
+ cb_policy_fractional_5: "A maioria da política monetária expansionista"
+ cb_policy_full_1: "A maioria da política de reserva contratual"
+ cb_policy_full_2: "Política de reserva contratual"
+ cb_policy_full_4: "Política de Reserva Expansiva"
+ cb_policy_full_5: "Política de Reserva Expansiva"
+ 
+ building_group_bg_banking_throughput_add_desc:0 "Um modificador para o rendimento dos bancos comerciais"
+ building_financial_district_throughput_add_desc:0 "Um modofier para o rendimento dos Distritos Financeiros"

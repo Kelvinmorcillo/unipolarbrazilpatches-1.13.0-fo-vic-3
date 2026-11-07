@@ -1,0 +1,50 @@
+﻿CHARACTERS = {
+	c:VNZ ?= {
+		create_character = {
+			template = VNZ_carlos_andres_perez
+		}
+
+		### Interest Group Leaders
+		# Armed Forces
+		create_character = {
+			# Páez
+			template = VNZ_rafael_caldera
+		}
+
+		# Intelligentsia
+		create_character = {
+			template = VNZ_teodoro_petkoff
+		}
+
+		# Landowners
+		create_character = {
+			template = VNZ_pedro_tinoco_jr
+		}
+		
+		# Rural Folk
+		create_character = {
+			template = VNZ_ivan_dario_jimenez
+		}
+
+		# Petty Bourgeoisie
+		create_character = {
+			template = VNZ_radames_munoz_leon
+		}
+
+		# Petty Bourgeoisie
+		create_character = {
+			template = VNZ_eduardo_fernandez
+		}
+		
+		# Petty Bourgeoisie
+		create_character = {
+			template = VNZ_luis_alfaro_ucero
+		}
+		
+		### Military leaders
+		# Land
+		create_character = {
+			template = VNZ_octavio_lepage
+		}
+	}
+}

@@ -1,0 +1,164 @@
+﻿# ==========================================
+# SUBSIDIZED HOUSING
+
+# ── NO PUBLIC HOUSING ─────────────────────
+# The state provides no housing support.
+# Shelter is entirely a private market
+# matter.
+
+law_no_public_housing = {
+	group = lawgroup_subsidized_housing
+	icon = "gfx/interface/icons/law_icons/smd/no_housing.dds"
+
+	progressiveness = 0
+
+	modifier = {
+	}
+
+	ai_will_do = {
+		always = yes
+	}
+
+	ai_enact_weight_modifier = {
+		value = 0
+
+		if = {
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
+			add = 750
+		}
+	}
+}
+
+# ── HOUSING PROJECTS ──────────────────────
+# The state builds basic high-density
+# public housing in urban areas.
+# Welfare costs rise modestly.
+# Unlocks pm_the_projects on urban center.
+
+law_housing_projects = {
+	group = lawgroup_subsidized_housing
+	icon = "gfx/interface/icons/law_icons/smd/housing_projects.dds"
+
+	progressiveness = 33
+
+	modifier = {
+		# State must maintain and subsidise the housing stock
+		state_welfare_payments_mult                 = 0.10
+	}
+
+	ai_will_do = {
+		NOR = {
+			has_law = law_type:law_public_housing_program
+			has_law = law_type:law_universal_housing
+		}
+	}
+
+	ai_enact_weight_modifier = {
+		value = 0
+
+		if = {
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
+			add = 750
+		}
+		if = {
+			limit = {
+				OR = {
+					has_law = law_type:law_wage_subsidies
+					has_law = law_type:law_poor_laws
+				}
+				literacy_rate >= 0.30
+			}
+			add = 75
+		}
+	}
+}
+
+# ── PUBLIC HOUSING PROGRAM ────────────────
+# A comprehensive state housing programme
+# with quality standards, mixed-use
+# development, and urban planning.
+# Welfare costs increase further.
+# Unlocks pm_affordable_construction.
+
+law_public_housing_program = {
+	group = lawgroup_subsidized_housing
+	icon = "gfx/interface/icons/law_icons/smd/public_housing.dds"
+
+	progressiveness = 66
+
+	modifier = {
+		state_welfare_payments_mult                 = 0.25
+		# Urban planning improves infrastructure
+		state_infrastructure_mult                   = 0.05
+	}
+
+	ai_will_do = {
+		NOT = { has_law = law_type:law_universal_housing }
+		has_law_or_variant = law_type:law_housing_projects
+	}
+
+	ai_enact_weight_modifier = {
+		value = 0
+
+		if = {
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
+			add = 750
+		}
+		if = {
+			limit = {
+				has_law = law_type:law_housing_projects
+				has_law = law_type:law_elected_bureaucrats
+				literacy_rate >= 0.50
+			}
+			add = 75
+		}
+	}
+}
+
+# ── UNIVERSAL HOUSING ─────────────────────
+# Housing is a guaranteed right. The state
+# funds, builds, and maintains shelter for
+# every citizen. The highest welfare costs
+# but maximum real estate output from
+# urban centers.
+# Unlocks pm_housing_for_all.
+
+law_universal_housing = {
+	group = lawgroup_subsidized_housing
+	icon = "gfx/interface/icons/law_icons/smd/universal_housing.dds"
+
+	progressiveness = 100
+
+	modifier = {
+		state_welfare_payments_mult                 = 0.50
+		# Better-planned cities improve infrastructure
+		state_infrastructure_mult                   = 0.10
+		# Migration pull — people move to where housing is guaranteed
+		state_migration_pull_mult                   = 0.10
+	}
+
+	ai_will_do = {
+		has_law_or_variant = law_type:law_public_housing_program
+		OR = {
+			has_law = law_type:law_universal_suffrage
+			has_law = law_type:law_census_voting
+		}
+	}
+
+	ai_enact_weight_modifier = {
+		value = 0
+
+		if = {
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
+			add = 750
+		}
+		if = {
+			limit = {
+				has_law = law_type:law_public_housing_program
+				has_law = law_type:law_universal_suffrage
+				literacy_rate >= 0.65
+			}
+			add = 75
+		}
+	}
+}

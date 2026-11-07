@@ -1,0 +1,64 @@
+﻿CHARACTERS = {
+	c:PRC ?= {
+	create_character = {
+			template = PRC_liu_huaqing
+		}
+	create_character = {
+			template = PRC_li_peng
+		}
+	create_character = {
+			template = PRC_li_ruihuan
+		}
+	create_character = {
+			template = PRC_zhu_rongji
+		}
+	create_character = {
+			template = PRC_fang_lizhi
+		}
+	create_character = {
+			first_name = "yang"
+			last_name = "shangkun"
+			historical = yes
+			ruler = yes
+			culture = cu:han
+			birth_date = 1907.3.31
+			dna = dna_yang_shangkun
+			ig_leader = yes
+			interest_group = ig_rural_folk
+			ideology = ideology_marxist_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+	create_character = {
+			first_name = "jiang"
+			last_name = "zemin"
+			historical = yes
+			ruler = no
+			culture = cu:han
+			birth_date = 1926.3.31
+			dna = dna_jiang_zemin
+			ig_leader = yes
+			interest_group = ig_industrialists
+			ideology = ideology_state_capitalist_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+	create_character = {
+			first_name = "deng"
+			last_name = "xiaoping"
+			historical = yes
+			ruler = no
+			culture = cu:han
+			birth_date = 1904.3.31
+			dna = dna_deng_xiaoping
+			ig_leader = yes
+			interest_group = ig_trade_unions
+			ideology = ideology_state_socialist_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+}

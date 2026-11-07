@@ -1,0 +1,108 @@
+﻿l_polish:
+#################### JE ####################
+# The Internet
+
+economic_union:0 "Unia Gospodarcza"
+economic_union_pact_desc:0 "Pakt dyplomatyczny, w którym istnieje jednolity rynek i waluta między dwoma państwami."
+subject_type_economic_union:0 "Unia Gospodarcza"
+subject_type_economic_union:0 "Unia Gospodarcza"
+subject_type_economic_union_desc:0 "Pakt dyplomatyczny, w którym istnieje jednolity rynek i waluta między dwoma państwami."
+concept_economic_union:0 "Unia Gospodarcza"
+concept_subject_type_economic_union:0 "Unia Gospodarcza"
+subject_type_economic_union_no_icon:0 "Unia Gospodarcza"
+concept_economic_union_desc:0 "Pakt dyplomatyczny, w którym istnieje jednolity rynek i waluta między dwoma państwami."
+
+economic_union2:0 "Unia Gospodarcza"
+economic_union2_pact_desc:0 "Pakt dyplomatyczny, w którym istnieje jednolity rynek i waluta między dwoma państwami."
+
+eu_events.400:0 "Unia Europejska"
+
+support_revolution:0 "Wsparcie rewolucji"
+support_revolution_action_propose_name:0 "Wsparcie rewolucji"
+support_revolution_action_break_name:0 "Zatrzymać wsparcie"
+
+impose_sanctions:0 "Sankcje nakładane"
+impose_sanctions_desc: "Przejmij aktywa finansowe tego kraju. Jeśli chodzi o grę, tworzy to odwrotny bank-roll, w którym pieniądze są bezpośrednio przekazywane ze skarbca celu w oparciu o różnicę w PKB między dwoma krajami."
+impose_sanctions_action_propose_name:0 "Sankcje finansowe"
+impose_sanctions_action_break_name:0 "Sankcje podnoszone"
+impose_sanctions_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName] nałożył na nas sankcje!"
+impose_sanctions_notification_name: "[INITIATOR_COUNTRY.GetName] nałożył na nas sankcje!"
+impose_sanctions_notification_desc: "Dostaliśmy sankcje finansowe!"
+
+humanitarian_aid:0 "Wyślij pomoc humanitarną"
+humanitarian_aid_desc: "Zapewnić pomoc finansową ojczulkom mieszkającym w tym kraju. Przenosi pieniądze z naszego skarbu prosto do kieszeni ojca mieszkającego w tym kraju."
+humanitarian_aid_action_propose_name:0 "Pomoc humanitarna"
+humanitarian_aid_action_break_name:0 "USTALENIE POMOCY Humanitarnej"
+humanitarian_aid_pact_desc:0 "Zapewnić pomoc finansową ojczulkom mieszkającym w tym kraju. Przenosi pieniądze z naszego skarbu prosto do kieszeni ojca mieszkającego w tym kraju."
+humanitarian_aid_notification_name: "[INITIATOR_COUNTRY.GetName] wysyła nam pomoc humanitarną!"
+humanitarian_aid_notification_desc: "Odbieramy pomoc humanitarną."
+humanitarian_aid_proposal_accepted_name: "Przyjęta pomoc humanitarna"
+humanitarian_aid_proposal_accepted_desc: "Zapewniamy teraz pomoc humanitarną."
+
+
+host_military_bases_desc: ""
+host_military_bases_effects_desc: "• Ustanawia umowę wojskową między dwoma [Concept('concept_country', '$concept_countries$')], gdzie jeden $concept_country$ może uruchomić $concept_missile$ przy użyciu baz lotniczych innego $concept_country$"
+host_military_bases_article_short_desc: "[TARGET_COUNTRY.GetNameNoFormatting] może wystrzelić pociski przez [SOURCE_COUNTRY.GetNameNoFormatting]"
+
+ smd_create_economic_union:0 "Propozycja unii gospodarczej"
+ smd_create_economic_union_action_name:0 "Propozycja unii gospodarczej"
+ smd_create_economic_union_action_propose_name:0 "Propozycja unii gospodarczej"
+ smd_create_economic_union_desc:0 "Zaproponowanie unii gospodarczej zbudowanej wokół przywilejów handlowych i wzajemnych praw tranzytowych."
+ smd_create_economic_union_action_notification_name:0 "Proponowana Unia Gospodarcza"
+ smd_create_economic_union_action_notification_desc:0 "[INITIATOR_COUNTRY.GetName] zaproponowała unię gospodarczą z [TARGET_COUNTRY.GetName]."
+ smd_create_economic_union_action_notification_third_party_name:0 "Proponowana Unia Gospodarcza"
+ smd_create_economic_union_action_notification_third_party_desc:0 "[INITIATOR_COUNTRY.GetName] zaproponowała unię gospodarczą z [TARGET_COUNTRY.GetName]."
+
+ smd_diplomatic_unification:0 "Unifikacja dyplomatyczna"
+ smd_diplomatic_unification_action_name:0 "Unifikacja dyplomatyczna"
+ smd_diplomatic_unification_action_propose_name:0 "Propozycja ujednolicenia"
+ smd_diplomatic_unification_desc:0 "Zaproponowanie pokojowego zjednoczenia politycznego po integracji gospodarczej i dostosowaniu kulturalnym."
+ smd_diplomatic_unification_action_notification_name:0 "Proponowana unifikacja dyplomatyczna"
+ smd_diplomatic_unification_action_notification_desc:0 "[INITIATOR_COUNTRY.GetName] zaproponował zjednoczenie dyplomatyczne z [TARGET_COUNTRY.GetName]."
+ smd_diplomatic_unification_action_notification_third_party_name:0 "Proponowana unifikacja dyplomatyczna"
+ smd_diplomatic_unification_action_notification_third_party_desc:0 "[INITIATOR_COUNTRY.GetName] zaproponował zjednoczenie dyplomatyczne z [TARGET_COUNTRY.GetName]."
+
+ smd_diplomatic_unification_annexation_effect_tt:0 "Państwo przyjmujące zostanie w pełni włączone przez inicjatora."
+ smd_create_economic_union_proposal_accepted_name:0 "Unia Gospodarcza przyjęta"
+ smd_create_economic_union_proposal_accepted_desc:0 "[TARGET_COUNTRY.GetName] zaakceptował [INITIATOR_COUNTRY.GetName] propozycję utworzenia unii gospodarczej."
+ smd_create_economic_union_proposal_declined_name:0 "Odrzucona Unia Gospodarcza"
+ smd_create_economic_union_proposal_declined_desc:0 "[TARGET_COUNTRY.GetName] odrzucił [INITIATOR_COUNTRY.GetName] propozycję utworzenia unii gospodarczej."
+ smd_diplomatic_unification_proposal_accepted_name:0 "Akceptowane ujednolicenie"
+ smd_diplomatic_unification_proposal_accepted_desc:0 "[TARGET_COUNTRY.GetName] zaakceptował [INITIATOR_COUNTRY.GetName] propozycję zjednoczenia dyplomatycznego i zostanie załączona."
+ smd_diplomatic_unification_proposal_declined_name:0 "Unifikacja odrzucona"
+ smd_diplomatic_unification_proposal_declined_desc:0 "[TARGET_COUNTRY.GetName] odrzucił [INITIATOR_COUNTRY.GetName] propozycję zjednoczenia dyplomatycznego."
+ smd_economic_union_base_resistance_tt:0 "Kraje mają podstawową niechęć do przystępowania do związków gospodarczych."
+ smd_unification_base_resistance_tt:0 "Kraje mają silną niechęć do zaakceptowania aneksji poprzez zjednoczenie dyplomatyczne."
+ 
+ treaty_name_smd_economic_union:0 "Unia Gospodarcza"
+ treaty_name_smd_diplomatic_unification:0 "Traktat o unii dyplomatycznej"
+
+ smd_economic_union_requires_independence_tt:0 "Oba kraje muszą być wystarczająco niezależne."
+ smd_economic_union_requires_peace_tt:0 "Oba kraje muszą być ze sobą w pokoju i nie angażować się w sztukę dyplomatyczną."
+ smd_economic_union_requires_no_subject_relation_tt:0 "Żaden kraj nie może już być obiektem lub władcą drugiego."
+ smd_economic_union_requires_no_isolationism_tt:0 "Żadne państwo nie może prowadzić izolowanej polityki gospodarczej."
+ smd_economic_union_requires_no_duplicate_tt:0 "Kraje nie mogą już mieć unii gospodarczej."
+
+ smd_unification_requires_independence_tt:0 "Oba kraje muszą być wystarczająco niezależne."
+ smd_unification_requires_peace_tt:0 "Oba kraje muszą być ze sobą w pokoju i nie angażować się w sztukę dyplomatyczną."
+ smd_unification_requires_no_subject_relation_tt:0 "Żaden kraj nie może już być obiektem lub władcą drugiego."
+ smd_unification_requires_economic_union_tt:0 "Kraje te muszą już mieć unię gospodarczą."
+ smd_unification_requires_culture_tt:0 "Kraje te muszą posiadać podobne kultury pierwotne, dzieląc się kulturą podstawową, grupą dziedzictwa i grupą językową lub dziedzictwem i cechami językowymi."
+ smd_unification_requires_good_relations_tt:0 "Stosunki muszą być przynajmniej polubowne."
+ smd_diplomatic_unification_effect_tt:0 "Kraj przyjmujący staje się panowaniem inicjatora."
+ 
+ threaten_nuclear_hostilities:0 "Groźby nuklearne"
+ threaten_nuclear_hostilities_action_name:0 "Groźby nuklearne"
+ threaten_nuclear_hostilities_action_propose_name:0 "Groźby nuklearne"
+ threaten_nuclear_hostilities_desc:0 "Wydanie zagrożenia nuklearnego innemu krajowi. Brinkmance nuklearne tymczasowo zwiększa naszą reputację dyplomatyczną, co sprawia, że inne kraje są bardziej narażone na przyjęcie od nas traktatów."
+ threaten_nuclear_hostilities_action_notification_name:0 "Zagrożenia dla obiektów jądrowych"
+ threaten_nuclear_hostilities_action_notification_desc:0 "[INITIATOR_COUNTRY.GetName] zagroził atakom nuklearnym przeciwko [TARGET_COUNTRY.GetName]."
+ threaten_nuclear_hostilities_action_notification_third_party_name:0 "Zagrożenia dla obiektów jądrowych"
+ threaten_nuclear_hostilities_action_notification_third_party_desc:0 "[INITIATOR_COUNTRY.GetName] zagroził atakom nuklearnym przeciwko [TARGET_COUNTRY.GetName]."
+
+ threaten_nuclear_hostilities_requires_nuclear_capable_tt:0 "Nasz kraj musi być do tego zdolny."
+ threaten_nuclear_hostilities_cooldown_tt:0 "Nie mogliśmy ostatnio zagrozić atakom nuklearnym."
+ threaten_nuclear_hostilities_target_valid_tt:0 "Cel musi być ważnym, niezdecentralizowanym krajem."
+
+ threatened_nuclear_hostilities_diplomatic_reputation:0 "Zagrożone wrogość jądrowa"
+ threatened_nuclear_hostilities_diplomatic_reputation_desc:0 "Murarstwo jądrowe tymczasowo zwiększyło reputację dyplomatyczną tego kraju, co zwiększa prawdopodobieństwo przyjęcia traktatów przez inne kraje."

@@ -1,0 +1,1056 @@
+MILITARY_FORMATIONS = {
+ 
+	### BRAZIL ###
+	# ~296,000 active in 1992. Largest military in South America.
+	# Organized into three Army Commands (East, South, Amazon/West).
+	# Equipped with Leopard 1 tanks, EE-9 Cascavel APCs, domestic arms industry.
+	# Navy is largest in Latin America; modest air force with AMX and F-5s.
+ 
+	c:BRZ ?= {
+ 
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_brazil
+			name = "Comando_Leste"
+ 
+			# Eastern Army Command — Rio de Janeiro, Minas Gerais, Bahia
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_RIO_DE_JANEIRO
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_armored_infantry
+				state_region = s:STATE_RIO_DE_JANEIRO
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_MINAS_GERAIS
+				count = 12
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_BAHIA
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_field_artillery
+				state_region = s:STATE_RIO_DE_JANEIRO
+				count = 5
+			}
+
+			save_scope_as = brz_comando_leste_formation
+		}
+
+		create_character = {
+			template = BRZ_comando_leste_commander
+			save_scope_as = BRZ_comando_leste_commander_scope
+		}
+
+		scope:BRZ_comando_leste_commander_scope = {
+			transfer_to_formation = scope:brz_comando_leste_formation
+		}
+ 
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_brazil
+			name = "Comando_Sul"
+ 
+			# Southern Army Command — São Paulo, Paraná, Rio Grande do Sul
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_SAO_PAULO
+				count = 18
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_armored_infantry
+				state_region = s:STATE_RIO_GRANDE_DO_SUL
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_PARANA
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_SANTA_CATARINA
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_howitzer_artillery
+				state_region = s:STATE_RIO_GRANDE_DO_SUL
+				count = 5
+			}
+
+			save_scope_as = brz_comando_sul_formation
+		}
+
+		create_character = {
+			template = BRZ_comando_sul_commander
+			save_scope_as = BRZ_comando_sul_commander_scope
+		}
+
+		scope:BRZ_comando_sul_commander_scope = {
+			transfer_to_formation = scope:brz_comando_sul_formation
+		}
+ 
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_brazil
+			name = "Comando_Amazonia"
+ 
+			# Amazon/Western Command — Manaus, Pará, border garrisons
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_AMAZONAS
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_PARA
+				count = 12
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_MATO_GROSSO
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_field_artillery
+				state_region = s:STATE_AMAZONAS
+				count = 3
+			}
+
+			save_scope_as = brz_comando_amazonia_formation
+		}
+
+		create_character = {
+			template = BRZ_comando_amazonia_commander
+			save_scope_as = BRZ_comando_amazonia_commander_scope
+		}
+
+		scope:BRZ_comando_amazonia_commander_scope = {
+			transfer_to_formation = scope:brz_comando_amazonia_formation
+		}
+ 
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_brazil
+			name = "Forca_Aerea_Brasileira"
+ 
+			# AMX A-1, F-5E Tiger II, Mirage IIIEBR
+			combat_unit = {
+				type = unit_type:combat_unit_type_multirole_aircraft
+				state_region = s:STATE_SAO_PAULO
+				count = 6
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_multirole_aircraft
+				state_region = s:STATE_RIO_DE_JANEIRO
+				count = 4
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_fixed_wing_aircraft
+				state_region = s:STATE_BRASILIA
+				count = 4
+			}
+
+			save_scope_as = brz_forca_aerea_brasileira_formation
+		}
+
+		create_character = {
+			template = BRZ_forca_aerea_brasileira_commander
+			save_scope_as = BRZ_forca_aerea_brasileira_commander_scope
+		}
+
+		scope:BRZ_forca_aerea_brasileira_commander_scope = {
+			transfer_to_formation = scope:brz_forca_aerea_brasileira_formation
+		}
+ 
+		# Brazilian Navy — largest in Latin America
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_brazil
+			name = "Marinha_do_Brasil"
+ 
+			# NAeL Minas Gerais (ex-HMS Vengeance) — conventional carrier
+			ship = {
+				type = ship_type:ship_type_aircraft_carrier
+				count = 1
+			}
+			# Niterói-class frigates and Garcia-class frigates
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 6
+			}
+			# Inhaúma-class corvettes
+			ship = {
+				type = ship_type:ship_type_destroyer
+				count = 4
+			}
+			# Tupi-class (Type 209) submarines
+			ship = {
+				type = ship_type:ship_type_submarine
+				count = 4
+			}
+			ship = {
+				type = ship_type:ship_type_battleship
+				count = 2
+			}
+
+			save_scope_as = brz_marinha_do_brasil_formation
+		}
+
+		create_character = {
+			template = BRZ_marinha_do_brasil_commander
+			save_scope_as = BRZ_marinha_do_brasil_commander_scope
+		}
+
+		scope:BRZ_marinha_do_brasil_commander_scope = {
+			transfer_to_formation = scope:brz_marinha_do_brasil_formation
+		}
+	}
+ 
+	### COLOMBIA ###
+	# ~139,000 active in 1992. Ongoing conflict with FARC, ELN, drug cartels.
+	# US-backed counter-narcotics and counter-insurgency focus.
+	# Army is largest component; air force has Kfir C2 and A-37s.
+ 
+	c:CLM ?= {
+ 
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_gran_colombia
+			name = "Ejercito_Nacional_Colombia"
+ 
+			# Bogotá/Cundinamarca garrison and central commands
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_CUNDINAMARCA
+				count = 25
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_CUNDINAMARCA
+				count = 10
+			}
+			# Antioquia — Medellín, heavy counterinsurgency ops
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_ANTIOQUIA
+				count = 20
+			}
+			# Valle del Cauca / Cauca — southern operations
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_CAUCA
+				count = 15
+			}
+			# Guaviare / llanos — jungle operations vs FARC
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_GUAVIARE
+				count = 15
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_field_artillery
+				state_region = s:STATE_CUNDINAMARCA
+				count = 5
+			}
+
+			save_scope_as = clm_ejercito_nacional_colombia_formation
+		}
+
+		create_character = {
+			template = CLM_ejercito_nacional_colombia_commander
+			save_scope_as = CLM_ejercito_nacional_colombia_commander_scope
+		}
+
+		scope:CLM_ejercito_nacional_colombia_commander_scope = {
+			transfer_to_formation = scope:clm_ejercito_nacional_colombia_formation
+		}
+ 
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_gran_colombia
+			name = "Fuerza_Aerea_Colombiana"
+ 
+			# Kfir C2, A-37 Dragonfly, AT-27 Tucano
+			combat_unit = {
+				type = unit_type:combat_unit_type_multirole_aircraft
+				state_region = s:STATE_CUNDINAMARCA
+				count = 4
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_fixed_wing_aircraft
+				state_region = s:STATE_ANTIOQUIA
+				count = 3
+			}
+
+			save_scope_as = clm_fuerza_aerea_colombiana_formation
+		}
+
+		create_character = {
+			template = CLM_fuerza_aerea_colombiana_commander
+			save_scope_as = CLM_fuerza_aerea_colombiana_commander_scope
+		}
+
+		scope:CLM_fuerza_aerea_colombiana_commander_scope = {
+			transfer_to_formation = scope:clm_fuerza_aerea_colombiana_formation
+		}
+ 
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_central_america
+			name = "Armada_Republica_Colombia"
+ 
+			# FS Padilla-class frigates (ex-German Köln-class)
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 4
+			}
+			# Type 209 submarines
+			ship = {
+				type = ship_type:ship_type_submarine
+				count = 2
+			}
+
+			save_scope_as = clm_armada_republica_colombia_formation
+		}
+
+		create_character = {
+			template = CLM_armada_republica_colombia_commander
+			save_scope_as = CLM_armada_republica_colombia_commander_scope
+		}
+
+		scope:CLM_armada_republica_colombia_commander_scope = {
+			transfer_to_formation = scope:clm_armada_republica_colombia_formation
+		}
+	}
+ 
+	### VENEZUELA ###
+	# ~75,000 active in 1992. Oil-wealthy but institutionally weakened.
+	# February 1992 coup attempt by Chávez had just occurred.
+	# F-16 fighters; OPV frigates; Type 209 submarines.
+ 
+	c:VNZ ?= {
+ 
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_gran_colombia
+			name = "Ejercito_Venezolano"
+ 
+			# Caracas/Miranda — main garrison, post-coup security
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_MIRANDA
+				count = 15
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_armored_infantry
+				state_region = s:STATE_MIRANDA
+				count = 8
+			}
+			# Zulia / Maracaibo — oil-field protection
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_ZULIA
+				count = 12
+			}
+			# Bolívar / Orinoco — jungle border garrisons
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_BOLIVAR
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_field_artillery
+				state_region = s:STATE_MIRANDA
+				count = 4
+			}
+
+			save_scope_as = vnz_ejercito_venezolano_formation
+		}
+
+		create_character = {
+			template = VNZ_ejercito_venezolano_commander
+			save_scope_as = VNZ_ejercito_venezolano_commander_scope
+		}
+
+		scope:VNZ_ejercito_venezolano_commander_scope = {
+			transfer_to_formation = scope:vnz_ejercito_venezolano_formation
+		}
+ 
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_gran_colombia
+			name = "Fuerza_Aerea_Venezolana"
+ 
+			# F-16A/B Fighting Falcon — one of few F-16 operators in South America
+			combat_unit = {
+				type = unit_type:combat_unit_type_multirole_aircraft
+				state_region = s:STATE_MIRANDA
+				count = 4
+			}
+			# CF-5A/D, Mirage IIIEV/5V
+			combat_unit = {
+				type = unit_type:combat_unit_type_fixed_wing_aircraft
+				state_region = s:STATE_ZULIA
+				count = 3
+			}
+
+			save_scope_as = vnz_fuerza_aerea_venezolana_formation
+		}
+
+		create_character = {
+			template = VNZ_fuerza_aerea_venezolana_commander
+			save_scope_as = VNZ_fuerza_aerea_venezolana_commander_scope
+		}
+
+		scope:VNZ_fuerza_aerea_venezolana_commander_scope = {
+			transfer_to_formation = scope:vnz_fuerza_aerea_venezolana_formation
+		}
+ 
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_central_america
+			name = "Armada_Venezolana"
+ 
+			# Mariscal Sucre-class frigates (ex-Lupo-class Italian)
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 4
+			}
+			# Type 209 submarines
+			ship = {
+				type = ship_type:ship_type_submarine
+				count = 2
+			}
+
+			save_scope_as = vnz_armada_venezolana_formation
+		}
+
+		create_character = {
+			template = VNZ_armada_venezolana_commander
+			save_scope_as = VNZ_armada_venezolana_commander_scope
+		}
+
+		scope:VNZ_armada_venezolana_commander_scope = {
+			transfer_to_formation = scope:vnz_armada_venezolana_formation
+		}
+	}
+ 
+	### ECUADOR ###
+	# ~57,000 active in 1992. Ongoing border tension with Peru (Cenepa War upcoming 1995).
+	# Mostly light infantry; Jaguar jets; small navy.
+ 
+	c:XEC ?= {
+ 
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_andes
+			name = "Ejercito_Ecuatoriano"
+ 
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_ECUADOR
+				count = 30
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_ECUADOR
+				count = 12
+			}
+			# Pastaza — jungle border troops facing Peru
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_PASTAZA
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_field_artillery
+				state_region = s:STATE_ECUADOR
+				count = 3
+			}
+
+			save_scope_as = xec_ejercito_ecuatoriano_formation
+		}
+
+		create_character = {
+			template = XEC_ejercito_ecuatoriano_commander
+			save_scope_as = XEC_ejercito_ecuatoriano_commander_scope
+		}
+
+		scope:XEC_ejercito_ecuatoriano_commander_scope = {
+			transfer_to_formation = scope:xec_ejercito_ecuatoriano_formation
+		}
+ 
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_andes
+			name = "Fuerza_Aerea_Ecuatoriana"
+ 
+			# SEPECAT Jaguar, Kfir C2, A-37B
+			combat_unit = {
+				type = unit_type:combat_unit_type_multirole_aircraft
+				state_region = s:STATE_ECUADOR
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_fixed_wing_aircraft
+				state_region = s:STATE_ECUADOR
+				count = 2
+			}
+
+			save_scope_as = xec_fuerza_aerea_ecuatoriana_formation
+		}
+
+		create_character = {
+			template = XEC_fuerza_aerea_ecuatoriana_commander
+			save_scope_as = XEC_fuerza_aerea_ecuatoriana_commander_scope
+		}
+
+		scope:XEC_fuerza_aerea_ecuatoriana_commander_scope = {
+			transfer_to_formation = scope:xec_fuerza_aerea_ecuatoriana_formation
+		}
+ 
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_andes
+			name = "Armada_del_Ecuador"
+ 
+			# Leander-class frigates and Type 209 submarines
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 3
+			}
+			ship = {
+				type = ship_type:ship_type_submarine
+				count = 2
+			}
+
+			save_scope_as = xec_armada_del_ecuador_formation
+		}
+
+		create_character = {
+			template = XEC_armada_del_ecuador_commander
+			save_scope_as = XEC_armada_del_ecuador_commander_scope
+		}
+
+		scope:XEC_armada_del_ecuador_commander_scope = {
+			transfer_to_formation = scope:xec_armada_del_ecuador_formation
+		}
+	}
+ 
+	### PERU ###
+	# ~115,000 active in 1992. Counterinsurgency vs Sendero Luminoso and MRTA.
+	# Soviet and US mixed equipment: T-55 tanks, Mi-24 helicopters, Mirages, Su-22s.
+ 
+	c:PEU ?= {
+ 
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_andes
+			name = "Ejercito_del_Peru"
+ 
+			# Lima — capital garrison and strategic reserve
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_LIMA
+				count = 18
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_armored_infantry
+				state_region = s:STATE_LIMA
+				count = 8
+			}
+			# Cajamarca / Andean highlands — anti-Sendero operations
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_CAJAMARCA
+				count = 18
+			}
+			# Arequipa — southern military region
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_AREQUIPA
+				count = 12
+			}
+			# ICA / coast
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_ICA
+				count = 8
+			}
+			# Pastaza — Amazon/jungle border
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_PASTAZA
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_field_artillery
+				state_region = s:STATE_LIMA
+				count = 5
+			}
+
+			save_scope_as = peu_ejercito_del_peru_formation
+		}
+
+		create_character = {
+			template = PEU_ejercito_del_peru_commander
+			save_scope_as = PEU_ejercito_del_peru_commander_scope
+		}
+
+		scope:PEU_ejercito_del_peru_commander_scope = {
+			transfer_to_formation = scope:peu_ejercito_del_peru_formation
+		}
+ 
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_andes
+			name = "Fuerza_Aerea_del_Peru"
+ 
+			# Mirage 2000P, Su-22, A-37 Dragonfly
+			combat_unit = {
+				type = unit_type:combat_unit_type_multirole_aircraft
+				state_region = s:STATE_LIMA
+				count = 4
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_fixed_wing_aircraft
+				state_region = s:STATE_AREQUIPA
+				count = 3
+			}
+
+			save_scope_as = peu_fuerza_aerea_del_peru_formation
+		}
+
+		create_character = {
+			template = PEU_fuerza_aerea_del_peru_commander
+			save_scope_as = PEU_fuerza_aerea_del_peru_commander_scope
+		}
+
+		scope:PEU_fuerza_aerea_del_peru_commander_scope = {
+			transfer_to_formation = scope:peu_fuerza_aerea_del_peru_formation
+		}
+ 
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_andes
+			name = "Marina_de_Guerra_del_Peru"
+ 
+			# Lupo-class frigates and Carvajal-class frigates
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 5
+			}
+			# Type 209 submarines
+			ship = {
+				type = ship_type:ship_type_submarine
+				count = 4
+			}
+
+			save_scope_as = peu_marina_de_guerra_del_peru_formation
+		}
+
+		create_character = {
+			template = PEU_marina_de_guerra_del_peru_commander
+			save_scope_as = PEU_marina_de_guerra_del_peru_commander_scope
+		}
+
+		scope:PEU_marina_de_guerra_del_peru_commander_scope = {
+			transfer_to_formation = scope:peu_marina_de_guerra_del_peru_formation
+		}
+	}
+ 
+	### BOLIVIA ###
+	# ~33,000 active in 1992. Landlocked; no navy (only lake/river forces).
+	# Light infantry dominant; small air force with AT-33s and PC-7s.
+ 
+	c:BOL ?= {
+ 
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_andes
+			name = "Ejercito_Boliviano"
+ 
+			# La Paz — seat of government and military command
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_LA_PAZ
+				count = 14
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_LA_PAZ
+				count = 5
+			}
+			# Santa Cruz — lowland region, coca eradication ops
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_SANTA_CRUZ
+				count = 8
+			}
+			# Potosí — highland garrison
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_POTOSI
+				count = 4
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_field_artillery
+				state_region = s:STATE_LA_PAZ
+				count = 2
+			}
+
+			save_scope_as = bol_ejercito_boliviano_formation
+		}
+
+		create_character = {
+			template = BOL_ejercito_boliviano_commander
+			save_scope_as = BOL_ejercito_boliviano_commander_scope
+		}
+
+		scope:BOL_ejercito_boliviano_commander_scope = {
+			transfer_to_formation = scope:bol_ejercito_boliviano_formation
+		}
+ 
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_andes
+			name = "Fuerza_Aerea_Boliviana"
+ 
+			# AT-33A Shooting Star, PC-7, T-33
+			combat_unit = {
+				type = unit_type:combat_unit_type_fixed_wing_aircraft
+				state_region = s:STATE_LA_PAZ
+				count = 2
+			}
+
+			save_scope_as = bol_fuerza_aerea_boliviana_formation
+		}
+
+		create_character = {
+			template = BOL_fuerza_aerea_boliviana_commander
+			save_scope_as = BOL_fuerza_aerea_boliviana_commander_scope
+		}
+
+		scope:BOL_fuerza_aerea_boliviana_commander_scope = {
+			transfer_to_formation = scope:bol_fuerza_aerea_boliviana_formation
+		}
+	}
+ 
+	### ARGENTINA ###
+	# ~65,000 active in 1992 (massively reduced post-Malvinas and democratization).
+	# Menem government cutting defence spending sharply.
+	# Still has capable force: TAM tanks, A-4 Skyhawks, Type 209 subs, destroyers.
+ 
+	c:XAR ?= {
+ 
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_la_plata
+			name = "Ejercito_Argentino"
+ 
+			# Buenos Aires — I Corps and capital garrison
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_BUENOS_AIRES
+				count = 12
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_armored_infantry
+				state_region = s:STATE_BUENOS_AIRES
+				count = 8
+			}
+			# Córdoba / Santa Fe — II Corps
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_SANTA_FE
+				count = 8
+			}
+			# Tucumán / Jujuy — III Corps, northern border
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_TUCUMAN
+				count = 6
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_JUJUY
+				count = 5
+			}
+			# Patagonia / Neuquén — V Corps, southern border
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_NEUQUEN
+				count = 4
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_howitzer_artillery
+				state_region = s:STATE_BUENOS_AIRES
+				count = 4
+			}
+
+			save_scope_as = xar_ejercito_argentino_formation
+		}
+
+		create_character = {
+			template = XAR_ejercito_argentino_commander
+			save_scope_as = XAR_ejercito_argentino_commander_scope
+		}
+
+		scope:XAR_ejercito_argentino_commander_scope = {
+			transfer_to_formation = scope:xar_ejercito_argentino_formation
+		}
+ 
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_la_plata
+			name = "Fuerza_Aerea_Argentina"
+ 
+			# A-4 Skyhawk, Mirage IIIEA, IA-63 Pampa
+			combat_unit = {
+				type = unit_type:combat_unit_type_multirole_aircraft
+				state_region = s:STATE_BUENOS_AIRES
+				count = 4
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_fixed_wing_aircraft
+				state_region = s:STATE_CORDOBA
+				count = 3
+			}
+
+			save_scope_as = xar_fuerza_aerea_argentina_formation
+		}
+
+		create_character = {
+			template = XAR_fuerza_aerea_argentina_commander
+			save_scope_as = XAR_fuerza_aerea_argentina_commander_scope
+		}
+
+		scope:XAR_fuerza_aerea_argentina_commander_scope = {
+			transfer_to_formation = scope:xar_fuerza_aerea_argentina_formation
+		}
+ 
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_la_plata
+			name = "Armada_Argentina"
+ 
+			# Meko 360 and Meko 140 destroyers/frigates
+			ship = {
+				type = ship_type:ship_type_destroyer
+				count = 3
+			}
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 4
+			}
+			# TR-1700 and Type 209 submarines
+			ship = {
+				type = ship_type:ship_type_submarine
+				count = 3
+			}
+			ship = {
+				type = ship_type:ship_type_battleship
+				count = 1
+			}
+
+			save_scope_as = xar_armada_argentina_formation
+		}
+
+		create_character = {
+			template = XAR_armada_argentina_commander
+			save_scope_as = XAR_armada_argentina_commander_scope
+		}
+
+		scope:XAR_armada_argentina_commander_scope = {
+			transfer_to_formation = scope:xar_armada_argentina_formation
+		}
+	}
+ 
+	### URUGUAY ###
+	# ~25,000 active in 1992. Small, professional force.
+	# Light infantry dominant; small navy and air force.
+ 
+	c:XUR ?= {
+ 
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_brazil
+			name = "Ejercito_Nacional_Uruguay"
+ 
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_URUGUAY
+				count = 14
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_URUGUAY
+				count = 6
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_field_artillery
+				state_region = s:STATE_URUGUAY
+				count = 2
+			}
+
+			save_scope_as = xur_ejercito_nacional_uruguay_formation
+		}
+
+		create_character = {
+			template = XUR_ejercito_nacional_uruguay_commander
+			save_scope_as = XUR_ejercito_nacional_uruguay_commander_scope
+		}
+
+		scope:XUR_ejercito_nacional_uruguay_commander_scope = {
+			transfer_to_formation = scope:xur_ejercito_nacional_uruguay_formation
+		}
+ 
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_brazil
+			name = "Fuerza_Aerea_Uruguaya"
+ 
+			# A-37B Dragonfly, T-33
+			combat_unit = {
+				type = unit_type:combat_unit_type_fixed_wing_aircraft
+				state_region = s:STATE_URUGUAY
+				count = 2
+			}
+
+			save_scope_as = xur_fuerza_aerea_uruguaya_formation
+		}
+
+		create_character = {
+			template = XUR_fuerza_aerea_uruguaya_commander
+			save_scope_as = XUR_fuerza_aerea_uruguaya_commander_scope
+		}
+
+		scope:XUR_fuerza_aerea_uruguaya_commander_scope = {
+			transfer_to_formation = scope:xur_fuerza_aerea_uruguaya_formation
+		}
+ 
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_la_plata
+			name = "Armada_Nacional_Uruguay"
+ 
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 3
+			}
+
+			save_scope_as = xur_armada_nacional_uruguay_formation
+		}
+
+		create_character = {
+			template = XUR_armada_nacional_uruguay_commander
+			save_scope_as = XUR_armada_nacional_uruguay_commander_scope
+		}
+
+		scope:XUR_armada_nacional_uruguay_commander_scope = {
+			transfer_to_formation = scope:xur_armada_nacional_uruguay_formation
+		}
+	}
+ 
+	### PARAGUAY ###
+	# ~16,000 active in 1992. Weakly equipped light infantry force.
+	# Landlocked; river navy (cañoneras) on the Paraguay/Paraná rivers.
+	# Transitioning post-Stroessner (ousted 1989); modest modernization underway.
+ 
+	c:XPR ?= {
+ 
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_la_plata
+			name = "Ejercito_Paraguayo"
+ 
+			# Alto Paraguay — northern Chaco garrison
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_ALTO_PARAGUAY
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mechanized_infantry
+				state_region = s:STATE_ALTO_PARAGUAY
+				count = 3
+			}
+			# Bajo Paraguay — Asunción and eastern population centers
+			combat_unit = {
+				type = unit_type:combat_unit_type_light_infantry
+				state_region = s:STATE_BAJO_PARAGUAY
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_field_artillery
+				state_region = s:STATE_BAJO_PARAGUAY
+				count = 2
+			}
+
+			save_scope_as = xpr_ejercito_paraguayo_formation
+		}
+
+		create_character = {
+			template = XPR_ejercito_paraguayo_commander
+			save_scope_as = XPR_ejercito_paraguayo_commander_scope
+		}
+
+		scope:XPR_ejercito_paraguayo_commander_scope = {
+			transfer_to_formation = scope:xpr_ejercito_paraguayo_formation
+		}
+ 
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_la_plata
+			name = "Fuerza_Aerea_Paraguaya"
+ 
+			# AT-6 Texan, EMB-326 Xavante, small transport fleet
+			combat_unit = {
+				type = unit_type:combat_unit_type_fixed_wing_aircraft
+				state_region = s:STATE_BAJO_PARAGUAY
+				count = 2
+			}
+
+			save_scope_as = xpr_fuerza_aerea_paraguaya_formation
+		}
+
+		create_character = {
+			template = XPR_fuerza_aerea_paraguaya_commander
+			save_scope_as = XPR_fuerza_aerea_paraguaya_commander_scope
+		}
+
+		scope:XPR_fuerza_aerea_paraguaya_commander_scope = {
+			transfer_to_formation = scope:xpr_fuerza_aerea_paraguaya_formation
+		}
+ 
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_la_plata
+			name = "Armada_Paraguay"
+ 
+			# River gunboats and patrol vessels on Paraguay/Paraná rivers
+			ship = {
+				type = ship_type:ship_type_destroyer
+				count = 3
+			}
+
+			save_scope_as = xpr_armada_paraguay_formation
+		}
+
+		create_character = {
+			template = XPR_armada_paraguay_commander
+			save_scope_as = XPR_armada_paraguay_commander_scope
+		}
+
+		scope:XPR_armada_paraguay_commander_scope = {
+			transfer_to_formation = scope:xpr_armada_paraguay_formation
+		}
+	}
+}

@@ -1,0 +1,86 @@
+﻿namespace = columbine
+
+columbine.1 = {
+    type = country_event
+    placement = ROOT
+    title = columbine.1.t
+    desc = columbine.1.d
+    event_image = { video = "columbine" }
+
+	duration = 3
+	
+    trigger = {
+        c:USA ?= this
+        game_date >= 1999.3.29
+		NOT = { has_variable = columbine_already_happened }
+		has_law = law_type:law_unrestricted_firearms
+    }
+
+	immediate = { set_variable = columbine_already_happened }
+	
+    option = {
+        name = columbine.1.a
+        add_modifier = {
+                name = national_mourning_school_shooting
+                months = 6
+        }
+		ig:ig_petty_bourgeoisie = {
+			add_modifier = {
+				name = better_school_security
+				months = 6
+			}
+		}
+		ig:ig_intelligentsia = {
+			add_modifier = {
+				name = recent_mass_shooting
+				months = 6
+			}
+		}
+		ig:ig_trade_unions = {
+			add_modifier = {
+				name = recent_mass_shooting
+				months = 6
+			}
+		}
+		add_radicals = {
+			value = 0.15
+		}
+   }
+    option = {
+        name = columbine.1.b
+        add_modifier = {
+            name = school_security_measures
+            months = 6
+            }
+		ig:ig_intelligentsia = {
+			add_modifier = {
+				name = recent_mass_shooting
+				months = 6
+			}
+		}
+		ig:ig_trade_unions = {
+			add_modifier = {
+				name = recent_mass_shooting
+				months = 6
+			}
+		}
+		ig:ig_rural_folk = {
+			add_modifier = {
+				name = thoughts_and_prayers
+				months = 6
+			}
+		}
+		ig:ig_devout = {
+			add_modifier = {
+				name = thoughts_and_prayers
+				months = 6
+			}
+		}
+		ig:ig_industrialists = {
+			add_modifier = {
+				name = thoughts_and_prayers
+				months = 6
+			}
+		}
+     }
+}

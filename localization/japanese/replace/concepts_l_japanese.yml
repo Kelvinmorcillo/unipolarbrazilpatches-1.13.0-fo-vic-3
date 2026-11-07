@@ -1,0 +1,7 @@
+﻿l_japanese:
+
+# replace folder is the best thing to happen to me since december 11
+ concept_literacy:0 "地域教育率"
+ concept_literate:0 "大学教育"
+ concept_literacy_desc:2 "[concept_pop] のパーセンテージまたは絶対数の個人は、学習のtertiary機関から卒業しました。 特定の [Concept('concept_profession', '$concept_professions$')] は $concept_literacy$ よりも高い $concept_literacy$ を他の $concept_pops$ に対して [concept_pop_qualifications] を $concept_professions$ に制限し、 $concept_literacy$ が十分に高い場合。 [SelectLocalization(GetPlayer.IsValid,'concept_literacy_desc_added','Education')] を $concept_literacy$ を $concept_population$ に増加させるため、\n\n$concept_pops$ に投資することで、$concept_pop_growth_birthrate$ に増加するペナルティを $concept_literacy$ に直面し、以下まで:\n[GetStaticModifier('literacy_penalty').GetDesc] は [GetStaticModifier('literacy_penalty').GetDesc] に $concept_literacy$ を出力します。"
+ concept_literacy_desc_added:0 "[GetInstitutionType('institution_schools').GetName]"

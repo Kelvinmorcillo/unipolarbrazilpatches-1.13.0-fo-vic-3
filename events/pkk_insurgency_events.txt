@@ -1,0 +1,251 @@
+namespace = kurdistan_war
+
+# Final offensive / security operation
+kurdistan_war.1 = {
+    type = country_event
+    placement = ROOT
+
+    duration = 3
+
+	title = kurdistan_war.1.t
+	desc = kurdistan_war.1.d
+	flavor = kurdistan_war.1.f
+
+    event_image = {
+		video = "europenorthamerica_before_the_battle"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+    trigger = {
+		# triggered in JE buttons
+	}
+
+    immediate = {
+		if = {
+			limit = {
+				c:KDS ?= this
+			}
+			show_as_tooltip = {
+				add_modifier = {
+					name = kur_mountain_resistance
+					multiplier = {
+						value = global_var:kur_kurdistan_war_score
+						min = 1
+					}
+					years = 1
+					is_decaying = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				c:TRK ?= this
+			}
+			show_as_tooltip = {
+				add_modifier = {
+					name = trk_security_operation
+					multiplier = {
+						value = global_var:trk_kurdistan_war_score
+						min = 1
+					}
+					years = 2
+					is_decaying = yes
+				}
+			}
+		}
+	}
+
+	option = {
+		name = {
+			trigger = { c:TRK ?= this }
+			text = kurdistan_war.1.a
+		}
+		name = {
+			trigger = { c:KDS ?= this }
+			text = kurdistan_war.1.a.kur
+		}
+        default_option = yes
+
+		show_as_tooltip = {
+			c:KDS ?= {
+				add_modifier = {
+					name = kur_mountain_resistance
+					multiplier = {
+						value = global_var:kur_kurdistan_war_score
+						min = 1
+					}
+					years = 1
+					is_decaying = yes
+				}
+			}
+			c:TRK ?= {
+				add_modifier = {
+					name = trk_security_operation
+					multiplier = {
+						value = global_var:trk_kurdistan_war_score
+						min = 1
+					}
+					years = 2
+					is_decaying = yes
+				}
+			}
+		}
+	}
+}
+
+# Kurdistan War Victory
+kurdistan_war.2 = {
+    type = country_event
+    placement = ROOT
+
+    duration = 3
+
+	title = {
+		first_valid = {
+			triggered_desc = {
+				desc = kurdistan_war.2.t_trk
+				trigger = { c:TRK ?= this }
+			}
+			triggered_desc = {
+				desc = kurdistan_war.2.t_kur
+				trigger = { c:KDS ?= this }
+			}
+		}
+	}
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = kurdistan_war.2.d_trk
+				trigger = { c:TRK ?= this }
+			}
+			triggered_desc = {
+				desc = kurdistan_war.2.d_kur
+				trigger = { c:KDS ?= this }
+			}
+		}
+	}
+	flavor = kurdistan_war.2.f
+
+	event_image = {
+		video = "unspecific_military_parade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+    trigger = {
+		# triggered in JE
+	}
+
+	option = {
+		name = kurdistan_war.2.a
+        default_option = yes
+		if = {
+			limit = { c:KDS ?= this }
+			show_as_tooltip = {
+				add_modifier = {
+					name = kurdistan_war_kur_reward
+					years = 20
+					is_decaying = yes
+				}
+			}
+		}
+		else = {
+			show_as_tooltip = {
+				add_modifier = {
+					name = kurdistan_war_trk_reward
+					years = 20
+					is_decaying = yes
+				}
+			}
+		}
+	}
+}
+
+# Turkish security escalation
+kurdistan_war.5 = {
+    type = country_event
+    placement = ROOT
+
+    duration = 3
+
+	title = kurdistan_war.5.t
+	desc = kurdistan_war.5.d
+	flavor = kurdistan_war.5.f
+
+    event_image = {
+		video = "europenorthamerica_before_the_battle"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+    trigger = {
+		c:TRK ?= this
+		is_involved_in_journal_entry = je_kurdistan_war
+		has_global_variable = kurdistan_war_skirmish_phase
+	}
+
+	option = {
+		name = kurdistan_war.5.a
+        default_option = yes
+		add_modifier = {
+			name = trk_counterinsurgency_expenses
+			years = 2
+			is_decaying = yes
+		}
+		change_global_variable = {
+			name = trk_kurdistan_war_score
+			add = 1
+		}
+		je:je_kurdistan_war ?= {
+			add_progress = { value = 1 name = je_kurdistan_war_score_bar }
+		}
+	}
+}
+
+# Kurdish guerrilla activity
+kurdistan_war.6 = {
+    type = country_event
+    placement = ROOT
+
+    duration = 3
+
+	title = kurdistan_war.6.t
+	desc = kurdistan_war.6.d
+	flavor = kurdistan_war.6.f
+
+    event_image = {
+		video = "europenorthamerica_before_the_battle"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+    trigger = {
+		c:KDS ?= this
+		is_involved_in_journal_entry = je_kurdistan_war
+		has_global_variable = kurdistan_war_skirmish_phase
+	}
+
+	option = {
+		name = kurdistan_war.6.a
+        default_option = yes
+		add_modifier = {
+			name = kur_guerrilla_networks
+			years = 2
+			is_decaying = yes
+		}
+		change_global_variable = {
+			name = kur_kurdistan_war_score
+			add = 1
+		}
+		je:je_kurdistan_war ?= {
+			add_progress = { value = -1 name = je_kurdistan_war_score_bar }
+		}
+	}
+}

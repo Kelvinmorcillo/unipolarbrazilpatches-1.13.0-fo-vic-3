@@ -1,0 +1,749 @@
+﻿l_spanish:
+
+ # ==========================================
+ # ENACTMENT EVENT LOCALIZATION
+ # ==========================================
+
+ # drug_laws.1 — Cost of Prohibition
+ drug_laws.1.t:0 "El costo de la prohibición"
+ drug_laws.1.d:0 "La campaña para prohibir todas las sustancias intoxicantes en неx id=0/año ha comenzado, pero la ejecución está demostrando costosa. La policía y los fiscales necesitan recursos. Hay que vigilar las fronteras. La alternativa —declarando la prohibición y esperando que el cumplimiento siga— no ha funcionado en ningún lugar que haya sido probado.Seguido id=1/ título indicax id=2/ titulax id=3/ título id=4/ título El gobierno debe decidir lo seriamente que está dispuesto a tomar esto."
+ drug_laws.1.f:0 "Una ley sin cumplimiento es una sugerencia."
+ drug_laws.1.a:0 "Ejecución plena - no escatimar gastos"
+ drug_laws.1.b:0 "Ejecución de medidas; aumento del cumplimiento con el tiempo"
+
+ # drug_laws.2 — The Church Speaks
+ drug_laws.2.t:0 "El id=0/ Habla"
+ drug_laws.2.d:0 "id=0/año, líder de la id=1/propia, ha emitido una declaración pública que hace suyo el movimiento del gobierno hacia una regulación más estricta de la sustancia. El encuadre es explícitamente moral —la intoxicación como corrupción espiritual, la prohibición como obra justa del estado. La cuestión es si se debe adoptar esta definición o mantener una base secular para la legislación."
+ drug_laws.2.f:0 "La autoridad moral y la autoridad legal no son lo mismo, pero pueden trabajar juntos."
+ drug_laws.2.a:0 "Bienvenido a su apoyo: un frente unido fortalece la ley"
+ drug_laws.2.b:0 "Mantener esto un asunto secular — declinar su encuadre"
+
+ # drug_laws.3 — The Intelligentsia Makes Its Case
+ drug_laws.3.t:0 "id=0/ Hace el caso para la evidencia"
+ drug_laws.3.d:0 "id=0/año, representando el id=1/ título, ha publicado un análisis detallado de la política de despenalización de drogas de países que ya lo han promulgado. Las conclusiones son inequívocas: las tasas de encarcelamiento disminuyen, las muertes por sobredosis disminuyen, los costos de ejecución disminuyen. El informe está siendo leído ampliamente, y ampliamente atacado por intereses conservadores que argumentan que las pruebas están al margen del punto."
+ drug_laws.3.f:0 "Los datos no se preocupan por el debate."
+ drug_laws.3.a:0 "Volver a la investigación — publicarla y dejar que la evidencia lidera"
+ drug_laws.3.b:0 "Mantener los académicos fuera de la política"
+
+ # drug_laws.4 — Medical Establishment
+ drug_laws.4.t:0 "Los médicos apoyan la reducción de daños"
+ drug_laws.4.d:0 "El establecimiento médico id=0/ &quot; liderado por funcionarios de salud pública y especialistas en adicción &quot; , ha respaldado formalmente la legislación propuesta sobre el lugar de la inyección segura. Su argumento es directo: el consumo supervisado reduce las muertes por sobredosis, conecta a los usuarios con el tratamiento y no aumenta las tasas de consumo de drogas. Las pruebas de otros países son convincentes. La oposición política de grupos religiosos y conservadores es igualmente predecible."
+ drug_laws.4.f:0 "La medicina no es moral. Pero las vidas son vidas."
+ drug_laws.4.a:0 "Retroceder el consenso médico — la evidencia es clara"
+ drug_laws.4.b:0 "Frame esto como una pregunta moral — la medicina no tiene todas las respuestas"
+
+ # drug_laws.5 — International Condemnation
+ drug_laws.5.t:0 "El mundo está mirando"
+ drug_laws.5.d:0 "La perspectiva de id=0/propiedad legalizar el comercio de drogas ha atraído atención internacional inmediata. id=1/año ha emitido una nota diplomática formal que expresa preocupación. Muchos otros gobiernos han hecho conocer su disgusto. El consenso internacional sobre la prohibición de las drogas, por imperfecta que sea aplicada, es claro, y <x id=2/año está a punto de salir de él."
+ drug_laws.5.f:0 "La soberanía es fácil de declarar. Sus consecuencias tardan más en llegar."
+ drug_laws.5.a:0 "Defy international opinion — ierex id=0/ título hace sus propias leyes"
+ drug_laws.5.b:0 "Proceder en silencio — no hacer declaraciones, no invitar a ninguna confrontación"
+
+ # drug_laws.6 — Criminal Networks Resist
+ drug_laws.6.t:0 "Los carretes están luchando contra la ley"
+ drug_laws.6.d:0 "La legislación sobre drogas propuesta amenaza la economía penal existente. Las redes que se benefician de la actual zona gris entre tolerancia y prohibición han comenzado a trabajar activamente contra el pasaje de la ley, corrompiendo a los funcionarios locales, difundiendo desinformación y, en algunos casos, intimidando a los legisladores. El retroceso está organizado, bien financiado, y eficaz.Seguido id=0/Consejo identificadox id=1/Consejo recomendadox id=2/Consejo id=3/ título debe decidir cómo responder."
+ drug_laws.6.f:0 "Los cárteles prefieren las leyes que les dan espacio para operar."
+ drug_laws.6.a:0 "Aceptar el revés — mover más cuidadosamente"
+ drug_laws.6.b:0 "Escalada de aplicación - arraigar las redes que resisten a la ley"
+
+ # ==========================================
+ # ENACTMENT MODIFIER NAMES
+ # ==========================================
+
+ drug_law_prohibition_enforcement:0 "Prohibición de la Campaña"
+ drug_law_prohibition_enforcement_desc:0 "Una campaña de aplicación bien financiada está mejorando las posibilidades de que se promulgue y observe la prohibición."
+
+ drug_law_enforcement_cost:0 "Gastos de ejecución"
+ drug_law_enforcement_cost_desc:0 "Los costos de la campaña de represión de las drogas imponen nuevas demandas al presupuesto estatal."
+
+ drug_law_religious_backing:0 "Religious Endorsement"
+ drug_law_religious_backing_desc:0 "El apoyo del establecimiento religioso está otorgando autoridad moral a la legislación y mejorando sus posibilidades de paso."
+
+ drug_law_devout_empowered:0 "Empoderado por el debate sobre drogas"
+ drug_law_devout_empowered_desc:0 "La asociación pública con la legislación de prohibición de drogas ha fortalecido la posición política de este grupo."
+
+ drug_law_academic_push:0 "Academic Evidence Campaign"
+ drug_law_academic_push_desc:0 "La investigación publicada que apoya la despenalización está cambiando los términos del debate a favor de la legislación."
+
+ drug_law_intelligentsia_engaged:0 "Intelligentsia Engaged"
+ drug_law_intelligentsia_engaged_desc:0 "La intelectualidad participa activamente en el debate sobre la política de drogas, fomentando la credibilidad de la campaña legislativa."
+
+ drug_law_intelligentsia_ignored:0 "Intelligentsia Sidelined"
+ drug_law_intelligentsia_ignored_desc:0 "La decisión de excluir las voces académicas del debate sobre la política de drogas ha frustrado la intelectualidad."
+
+ drug_law_medical_backing:0 "Consenso médico detrás de la ley"
+ drug_law_medical_backing_desc:0 "La aprobación del establecimiento médico proporciona credibilidad científica a la legislación sobre reducción de daños."
+
+ drug_law_moral_framing:0 "Moral Más que en el marco médico"
+ drug_law_moral_framing_desc:0 "Framing drug policy as a moral question rather than a medical one is complicating the evidence-based case for safe-injection sites."
+
+ drug_law_international_pressure:0 "Condena internacional"
+ drug_law_international_pressure_desc:0 "La presión internacional contra la legislación propuesta complica su paso y daña la reputación de id=0/año."
+
+ drug_law_sovereignty_declared:0 "Soberanía Asertada"
+ drug_law_sovereignty_declared_desc:0 "id=0/año ha afirmado públicamente su derecho a establecer su propia política de drogas independientemente de la opinión internacional."
+
+ drug_law_criminal_pushback:0 "Redes criminales que resisten"
+ drug_law_criminal_pushback_desc:0 "La delincuencia organizada trabaja activamente para prevenir la aprobación de legislación sobre drogas que amenazaría sus operaciones."
+
+ # disability_laws.1 — Employer Resistance
+ disability_laws.1.t:0 "Empleadores empujan atrás contra alojamientos en el lugar de trabajo"
+ disability_laws.1.d:0 "La legislación propuesta sobre alojamiento en el lugar de trabajo ha elaborado una respuesta organizada de los empleadores id=0/propiedad. id=1/ título, hablando por el id=2/ título, ha argumentado que los costes de cumplimiento no son viables, que las pequeñas empresas en particular no pueden absorber los gastos de modificación del equipo, ajuste de los derechos y reestructuración de los lugares de trabajo para acomodar a los empleados discapacitados. El gobierno debe decidir cómo responder."
+ disability_laws.1.f:0 "Toda política incluyente tiene a alguien que argumenta que los costos son demasiado altos."
+ disability_laws.1.a:0 "Firma: el cumplimiento de la ley no es opcional"
+ disability_laws.1.b:0 "Ofrezca un período de transición: cumplimiento gradual durante varios años"
+ 
+ # disability_laws.2 — Construction Lobby
+ disability_laws.2.t:0 "Los objetos de la industria de la construcción"
+ disability_laws.2.d:0 "La legislación de infraestructura accesible propuesta ha planteado una objeción formal de la industria de construcción id=0/propios. Su argumento: el requisito de reacondicionar los edificios existentes para cumplir con las normas de accesibilidad es técnicamente complejo y prohibitivamente caro para muchos propietarios. Están pidiendo una cláusula del abuelo para las estructuras existentes o un plazo de aplicación mucho más largo."
+ disability_laws.2.f:0 "Cada edificio construido sin rampa es ahora un problema político."
+ disability_laws.2.a:0 "Cumplimiento de normas estrictas, cumplimiento completo según lo previsto, sin excepciones"
+ disability_laws.2.b:0 "Cumplimiento de fase — estructuras existentes de abuelo, nuevas normas para nuevas construcciones"
+ 
+ # disability_laws.3 — Who Pays
+ disability_laws.3.t:0 "¿Quién paga por la infraestructura accesible?"
+ disability_laws.3.d:0 "La legislación de infraestructura accesible plantea una pregunta que los redactores del proyecto de ley han evitado hasta ahora: ¿quién paga realmente la adaptación? Si la obligación recae enteramente en los propietarios privados, los propietarios más pequeños y las empresas serán desproporcionadamente cargados. Si el Estado subvenciona el trabajo, el presupuesto público toma el éxito. La legislatura está estancada en la cuestión."
+ disability_laws.3.f:0 "La inclusión tiene un precio. El argumento es sobre quién lo paga."
+ disability_laws.3.a:0 "Subvención del Estado: el gobierno absorbe los costos de reacondicionamiento para acelerar el cumplimiento"
+ disability_laws.3.b:0 "Obligación privada: los propietarios soportan el costo del cumplimiento"
+ 
+ # disability_laws.4 — Medical Endorsement
+ disability_laws.4.t:0 "id=0/(conferencia) Tratamientos públicos"
+ disability_laws.4.d:0 "id=0/año del id=1/ título ha publicado un aval formal de la legislación de tratamientos públicos, citando evidencia de que el tratamiento de discapacidad financiado por el Estado produce beneficios mensurables en la participación laboral, reduce los costos de atención médica a largo plazo, y mejora los resultados en toda la población. El respaldo está siendo utilizado por los partidarios para argumentar que esto no es caridad — es inversión."
+ disability_laws.4.f:0 "La medicina no distingue entre el bien y el enfermo inservible."
+ disability_laws.4.a:0 "Comisión de un informe de salud pública - que las pruebas hagan el caso"
+ disability_laws.4.b:0 "Mantener el encuadre político — este es un problema de derechos, no un médico"
+ 
+ # disability_laws.5 — Fiscal Resistance
+ disability_laws.5.t:0 "id=0/ Dice que el Estado no puede pagar esto"
+ disability_laws.5.d:0 "id=0/año, representando el id=1/ título, ha realizado una evaluación inestable: el costo continuo del tratamiento integral de la discapacidad pública es insostenible. El estado ya está extendido. Esta legislación, si se promulga en su totalidad, exigirá aumentos o recortes fiscales en otros lugares. La pregunta no es si idx id=2/ título quiere cuidar a sus ciudadanos discapacitados, es si puede."
+ disability_laws.5.f:0 "Un presupuesto es un documento moral."
+ disability_laws.5.a:0 "Mantenga la línea — el gasto es una obligación moral, no una elección"
+ disability_laws.5.b:0 "Fase del gasto: puesta en marcha a lo largo de varios años"
+ 
+ # disability_laws.6 — Advocates Rally
+ disability_laws.6.t:0 "Los defensores de la discapacidad hacen su caso"
+ disability_laws.6.d:0 "Una coalición de organizaciones de derechos de discapacidad ha iniciado una campaña pública en apoyo de la legislación propuesta. Su mensaje es directo: id=0 / título La sociedad ha excluido a las personas discapacitadas de la plena participación durante demasiado tiempo. La legislación que se debate no es un favor, sino una corrección de una injusticia de larga data. La campaña ha atraído una cobertura simpática y está cambiando la opinión pública."
+ disability_laws.6.f:0 "Nada de nosotros sin nosotros."
+ disability_laws.6.a:0 "Recibir formalmente a su delegación — dar el respaldo oficial de la campaña"
+ disability_laws.6.b:0 "Reconocer la campaña sin amplificarla"
+ 
+ # disability_laws.7 — Conservative Opposition
+ disability_laws.7.t:0 "id=0/ Dirige la oposición"
+ disability_laws.7.d:0 "id=0/ título de la id=1/ título ha organizado una campaña de oposición pública contra la legislación sobre discapacidad. El argumento es familiar: que la dependencia estatal socava el carácter individual, que no se puede esperar que la población productiva lleve una carga creciente de apoyo, y que la caridad privada existente es suficiente. El encuadre está sacando críticas de grupos de derechos de discapacidad, pero está resonando con partes del electorado."
+ disability_laws.7.f:0 "El argumento contra la inclusión es siempre sobre la carga de alguien más."
+ disability_laws.7.a:0 "refutar públicamente - hacer el caso moral de la legislación directamente"
+ disability_laws.7.b:0 "No dignify it with a response — press forward"
+ 
+ # ==========================================
+ # ENACTMENT MODIFIER NAMES
+ # ==========================================
+ 
+ disability_employer_pressure:0 "Employer Compliance Campaign"
+ disability_employer_pressure_desc:0 "El gobierno se ha mantenido firme contra la resistencia del empleador. La legislación procederá según lo previsto."
+ 
+ disability_compliance_delay:0 "Período de transición del empleador"
+ disability_compliance_delay_desc:0 "Se ha dado tiempo adicional a los empleadores para cumplir con los requisitos de alojamiento en el lugar de trabajo, lo que reduce el paso de la ley."
+ 
+ disability_construction_lobby:0 "Construction Industry Engaged"
+ disability_construction_lobby_desc:0 "Se han abordado las objeciones de la industria de la construcción, reduciendo la oposición activa a la legislación de infraestructura accesible."
+ 
+ disability_strict_standards:0 "Normas estrictas de cumplimiento"
+ disability_strict_standards_desc:0 "Se han establecido normas firmes de accesibilidad sin cláusulas de abuelo. El cumplimiento estará completo y a tiempo."
+ 
+ disability_phased_compliance:0 "Cumplimiento gradual de la infraestructura"
+ disability_phased_compliance_desc:0 "Las estructuras existentes han sido abarrotadas. Los nuevos estándares sólo se aplican a la construcción nueva, reduciendo el impacto más amplio de la ley."
+ 
+ disability_funding_debate:0 "Marco de financiación establecido"
+ disability_funding_debate_desc:0 "Se ha resuelto la cuestión de quién paga la infraestructura accesible, eliminando un obstáculo importante al paso de la ley."
+ 
+ disability_state_subsidy:0 "State Infrastructure Subsidy"
+ disability_state_subsidy_desc:0 "El estado está absorbiendo los costes de reacondicionamiento directamente. El cumplimiento será más rápido, pero el presupuesto está bajo presión adicional."
+ 
+ disability_medical_endorsement:0 "Establecimiento médico apoya los tratamientos"
+ disability_medical_endorsement_desc:0 "El respaldo público de la profesión médica al tratamiento de la discapacidad pública está dando credibilidad científica a la legislación."
+ 
+ disability_fiscal_resistance:0 "Fiscal Conservatives Engaged"
+ disability_fiscal_resistance_desc:0 "Se ha abordado la resistencia fiscal al tratamiento de la discapacidad pública. La ley avanza."
+ 
+ disability_phased_spending:0 "Tratamiento de la discapacidad en estadios"
+ disability_phased_spending_desc:0 "El tratamiento de la discapacidad pública se eliminará gradualmente, reduciendo la presión presupuestaria inmediata al costo de una reducción más lenta."
+ 
+ disability_advocate_push:0 "Disability Advocates Mobilized"
+ disability_advocate_push_desc:0 "Una campaña pública de organizaciones de derechos de discapacidad está impulsando la legislación."
+ 
+ disability_conservative_opposition:0 "Oposición conservadora"
+ disability_conservative_opposition_desc:0 "Se ha comprometido y neutralizado parcialmente la oposición conservadora a la legislación sobre discapacidad."
+ 
+ disability_public_rebuttal:0 "Public Rebuttal of Conservative Opposition"
+ disability_public_rebuttal_desc:0 "La refutación directa del gobierno de la estructura conservadora ha cambiado los términos del debate a favor de la legislación."
+ 
+  # environment_laws.1 — Industry Voluntary Compliance
+ environment_laws.1.t:0 "id=0/año Ofertas Cumplimiento voluntario"
+ environment_laws.1.d:0 "id=0/año, hablando por el id=1/ título, ha hecho una oferta pública: si el gobierno está de acuerdo en crear mecanismos de cumplimiento voluntario en el marco ambiental en lugar de imponer la ejecución, la industria cooperará. La oferta se presenta como una asociación pragmática. Los críticos argumentan que es un intento de neutralizar la legislación antes de que pase."
+ environment_laws.1.f:0 "El cumplimiento voluntario es el tipo favorito de la industria del combustible fósil."
+ environment_laws.1.a:0 "Aceptar: fomentar el cumplimiento voluntario en el marco"
+ environment_laws.1.b:0 "Rechazo: cumplimiento obligatorio solamente, no carve-outs"
+ 
+ # environment_laws.2 — Scientific Backing
+ environment_laws.2.t:0 "id=0/ís Publishes Environmental Report"
+ environment_laws.2.d:0 "id=0/ título de la id=1/ título ha publicado un estudio completo que documenta los costes de salud ambiental y pública de la trayectoria actual de id=2/año. Los resultados son inequívocos: los niveles de contaminación están aumentando, la mortalidad se ve afectada y los ecosistemas están bajo estrés. La legislación propuesta, concluye el informe, no es sólo deseable, es necesario."
+ environment_laws.2.f:0 "Los datos no esperan la conveniencia política."
+ environment_laws.2.a:0 "Comisión una respuesta oficial - publicar las conclusiones con respaldo del gobierno"
+ environment_laws.2.b:0 "Reconocer el informe sin amplificarlo"
+ 
+ # environment_laws.3 — International Praise
+ environment_laws.3.t:0 "La Comunidad Internacional Alaba el liderazgo ambiental de id=0/año"
+ environment_laws.3.d:0 "Palabra de id=0/año La legislación ambiental propuesta ha llegado a la comunidad internacional, y la respuesta ha sido inesperadamente cálida. Varias naciones han emitido declaraciones alabando al gobierno de id=1/año por su ambición. Los grupos de defensa ambiental están llamando a un modelo para que otros sigan."
+ environment_laws.3.f:0 "El liderazgo es más fácil de reclamar que sostener."
+ environment_laws.3.a:0 "Aprovechar el momento: organizar conversaciones ambientales internacionales"
+ environment_laws.3.b:0 "Mantener esto en el plano nacional: evitar la sobrecomposición a las obligaciones internacionales"
+ 
+ # environment_laws.4 — Compliance Cost Debate
+ environment_laws.4.t:0 "¿Quién es el Costo del Cumplimiento Ambiental?"
+ environment_laws.4.d:0 "La legislación ambiental ha abierto un intenso debate sobre la responsabilidad. La industria argumenta que los costos de cumplimiento —reconfiguración de fábricas, cambio de cadenas de suministro, actualización de la gestión de desechos— caerán desproporcionadamente en los productores y, en última instancia, en los consumidores. Los grupos ambientales contradicen que estos costos representan el verdadero precio de la contaminación que ha sido sufragado silenciosamente por el público durante décadas."
+ environment_laws.4.f:0 "La contaminación siempre ha tenido un costo. La pregunta es quién lo paga."
+ environment_laws.4.a:0 "El contaminador paga — la industria soporta el costo de su propio cumplimiento"
+ environment_laws.4.b:0 "Subvención del Estado: el Gobierno comparte la carga de cumplimiento para acelerar la adopción"
+ 
+ # environment_laws.5 — Constitutional Challenge
+ environment_laws.5.t:0 "id=0/ Desafíos de la legalidad de los derechos de la naturaleza"
+ environment_laws.5.d:0 "id=0/ título de la idx id=1/ título ha anunciado un desafío legal formal a los derechos garantizados propuestos de la legislación de la naturaleza. El argumento: la concesión de la condición jurídica a los ríos, bosques y ecosistemas constituye una injerencia inconstitucional en los derechos de propiedad y la libertad económica. El desafío ha recibido un apoyo significativo de los intereses de la terrateniente e industrial."
+ environment_laws.5.f:0 "La naturaleza no tiene abogados. Tiene que pedir prestado el nuestro."
+ environment_laws.5.a:0 "Defender el marco - dejar que los tribunales gobiernen sus méritos"
+ environment_laws.5.b:0 "Limitar el alcance — negociar para evitar una prolongada batalla legal"
+ 
+ # environment_laws.6 — Environmental Disaster
+ environment_laws.6.t:0 "Desastre ambiental en"
+ environment_laws.6.d:0 "Mientras se debate la legislación ambiental, se ha visto afectada por una crisis ambiental: un derrame de fábrica, una contaminación de ríos o un incidente de contaminación de escala suficiente que ha llegado a las noticias nacionales. El tiempo es significativo. Los partidarios argumentan que demuestra que la legislación es urgentemente necesaria. El gobierno debe decidir cómo responder."
+ environment_laws.6.f:0 "Cada desastre es también un argumento."
+ environment_laws.6.a:0 "Utilice el momento - exigir el paso urgente de la ley ambiental"
+ environment_laws.6.b:0 "Contener la historia — gestionar la reacción pública sin escalar"
+ 
+ env_voluntary_compliance:0 "Cumplimiento voluntario de la industria"
+ env_voluntary_compliance_desc:0 "La industria ha acordado el cumplimiento voluntario del marco ambiental, reduciendo la oposición activa y mejorando las posibilidades de aprobación de la ley."
+ 
+ env_mandatory_enforcement:0 "Marco de aplicación obligatoria"
+ env_mandatory_enforcement_desc:0 "The government has rejected voluntary compliance in favour of mandatory enforcement. La ley es más fuerte, y la oposición industrial más decidida."
+ 
+ env_scientific_backing:0 "Scientific Community Endorsement"
+ env_scientific_backing_desc:0 "Un informe científico publicado que respalda la legislación ambiental está cambiando la opinión pública y legislativa a su favor."
+ 
+ env_international_praise:0 "International Environmental Praise"
+ env_international_praise_desc:0 "El reconocimiento internacional de la dirección ambiental de id=0/año está impulsando la legislación nacional."
+ 
+ env_diplomatic_push:0 "Environmental Diplomatic Initiative"
+ env_diplomatic_push_desc:0 "id=0/año es el anfitrión de conversaciones ambientales internacionales, agregando prestigio diplomático al impulso legislativo."
+ 
+ env_compliance_cost_debate:0 "Marco de costos de cumplimiento"
+ env_compliance_cost_debate_desc:0 "Se ha resuelto el debate sobre quién soporta los costos de cumplimiento ambiental, eliminando un obstáculo importante de la vía legislativa."
+ 
+ env_polluter_pays:0 "Polluter Pays Principle"
+ env_polluter_pays_desc:0 "La industria ha sido responsable de sus propios costos de cumplimiento. La ley es más fuerte; la oposición es más fuerte."
+ 
+ env_state_subsidy:0 "State Environmental Compliance Subsidy"
+ env_state_subsidy_desc:0 "El Estado está subvencionando el cumplimiento ambiental para reducir la resistencia de la industria y acelerar la adopción."
+ 
+ env_constitutional_challenge:0 "Desafío constitucional"
+ env_constitutional_challenge_desc:0 "Un reto jurídico a los derechos garantizados de la legislación sobre la naturaleza ha frenado su aprobación por la legislatura."
+ 
+ env_legal_defence:0 "Legal Defence of Nature Rights"
+ env_legal_defence_desc:0 "La defensa legal del marco de derechos de la naturaleza del gobierno ha reforzado la confianza en su validez constitucional."
+ 
+ env_disaster_response:0 "Desastres recaudados para legislación"
+ env_disaster_response_desc:0 "El gobierno ha utilizado un desastre ambiental para construir apoyo público y legislativo urgente para la ley ambiental."
+ 
+ env_disaster_suppressed:0 "Historia de Desastres Contenido"
+ env_disaster_suppressed_desc:0 "El desastre ambiental se ha gestionado en silencio. La presión pública no ha generado, ni tiene impulso legislativo."
+ 
+ env_disaster_state_modifier:0 "Desastres ambientales"
+ env_disaster_state_modifier_desc:0 "Este estado ha sufrido un desastre ambiental —un derrame, contaminación o colapso ecológico— que está generando contaminación adicional y elevando la mortalidad."
+ 
+ childrens_childcare.1.t:0 "El mercado sabe lo mejor"
+ childrens_childcare.1.d:0 "Con el debate sobre la educación preescolar privatizada en curso, las asociaciones empresariales han surgido como entusiastas patrocinadores. Los proveedores privados, argumentan, competirán por la calidad, impulsando la innovación que un monopolio estatal nunca pudo. Los críticos, sin embargo, advierten que sin una regulación significativa, sólo las familias que pueden pagar los honorarios se beneficiarán."
+ childrens_childcare.1.f:0 "El mercado tiene una respuesta para todo. Si tiene el derecho aquí queda por ver."
+ childrens_childcare.1.a:0 "Dejar que el mercado lidera — la competencia impulsará la calidad hacia arriba."
+ childrens_childcare.1.b:0 "Regular los precios — los proveedores privados deben garantizar el acceso."
+
+ childrens_childcare.2.t:0 "¿Quién eleva al Niño?"
+ childrens_childcare.2.d:0 "Las voces religiosas y tradicionales se han vuelto incómodas con la expansión de la educación escolar en la primera infancia. La familia, insisten, es la cuna adecuada del desarrollo moral, y cualquier institución, sin embargo bien intencionada, que suplanta a los padres corre el riesgo de erosionar las bases de la sociedad civil."
+ childrens_childcare.2.f:0 "Detrás de cada pregunta política sobre los niños se encuentra una más profunda: ¿a quién pertenecen?"
+ childrens_childcare.2.a:0 "Reasegurarlos — esto apoya a las familias, no las reemplaza."
+ childrens_childcare.2.b:0 "Desestimar la preocupación: la educación temprana no es una cuestión moral."
+
+ childrens_childcare.3.t:0 "El Reckoning Fiscal"
+ childrens_childcare.3.d:0 "El cuidado universal de los niños es un compromiso ambicioso y costoso. Los conservadores fiscales se han apoderado de los costos previstos, advirtiendo que el Estado no puede simplemente absorber un derecho de esta escala sin consecuencias. El gobierno debe decidir: absorber el costo y presionar hacia adelante, o frenar el despliegue y comprar tiempo."
+ childrens_childcare.3.f:0 "Cada gran programa social finalmente se reúne con su contador."
+ childrens_childcare.3.a:0 "Financiarlo: absorber el costo y avanzar."
+ childrens_childcare.3.b:0 "Fase de ello: retrasar la plena aplicación para gestionar la carga."
+
+ childrens_childcare.4.t:0 "Liberación o dependencia de los trabajadores?"
+ childrens_childcare.4.d:0 "El movimiento obrero se encuentra dividido. Para muchos trabajadores, el cuidado universal de los hijos es una liberación: liberar a los padres, especialmente a las madres, para que entren en la fuerza laboral en igualdad de condiciones. Pero una facción escéptica argumenta que los beneficios proporcionados por el Estado son un pobre sustituto de las ganancias salariales genuinas, y que abrazar los riesgos de cuidado de los niños asumiendo presión sobre los empleadores para pagar realmente un salario vital."
+ childrens_childcare.4.f:0 "No toda reforma que ayude a los trabajadores es una reforma obrera."
+ childrens_childcare.4.a:0 "El cuidado de niños es un problema laboral, que lo abarca como política obrera."
+ childrens_childcare.4.b:0 "Salarios primero - mantener los movimientos separados."
+
+ childrens_childcare.5.t:0 "La investigación habla"
+ childrens_childcare.5.d:0 "Los economistas y los investigadores del desarrollo infantil han entrado en el debate con un argumento directo: la inversión en la primera infancia produce los mayores beneficios a largo plazo de cualquier gasto público. Los datos, dicen, son inequívocos. La cuestión es si el gobierno desea hacer pública ese caso, o si prefiere mantener el debate en términos políticos, en vez de evidentes."
+ childrens_childcare.5.f:0 "La evidencia rara vez gana debates por su cuenta. Pero ayuda."
+ childrens_childcare.5.a:0 "Comisión de un informe público, permita que las pruebas dirijan."
+ childrens_childcare.5.b:0 "Mantener a los académicos fuera del proceso legislativo."
+ 
+ childrens_rights_market_preschool_framing:0 "Sector privado"
+ childrens_rights_market_preschool_framing_desc:0 "Los intereses empresariales han puesto su peso detrás del modelo de preescolar privatizado, dando impulso al proceso de promulgación."
+
+ childrens_rights_access_mandate:0 "Mandato de Acceso Imposido"
+ childrens_rights_access_mandate_desc:0 "Las normas relativas a los precios se han adherido a la ley y exigen a los proveedores privados que cumplan las normas de acceso. Las negociaciones de cumplimiento están retrasando el paso."
+
+ childrens_rights_family_values_debate:0 "Familia primacía reconocida"
+ childrens_rights_family_values_debate_desc:0 "El gobierno ha enmarcado la expansión preescolar como apoyo a las familias en lugar de un reemplazo, lo que ha reducido la resistencia conservadora a la ley."
+
+ childrens_rights_fiscal_resistance:0 "Resistencia conservadora fiscal"
+ childrens_rights_fiscal_resistance_desc:0 "La oposición a los costos proyectados del cuidado universal de los niños está retrasando el proceso legislativo y socavando la posición de promulgación del gobierno."
+
+ childrens_rights_funded_mandate:0 "Compromiso Estado financiado"
+ childrens_rights_funded_mandate_desc:0 "El Gobierno se ha comprometido a absorber el costo total del cuidado universal de los niños, fortaleciendo el caso para su promulgación a expensas del ámbito público."
+
+ childrens_rights_labour_framing:0 "Movimiento Laboral Movilizado"
+ childrens_rights_labour_framing_desc:0 "Los sindicatos han respaldado el cuidado universal de los niños como cuestión de los trabajadores, agregando peso político organizado al esfuerzo de promulgación."
+
+ childrens_rights_academic_endorsement:0 "Academic Endorsement"
+ childrens_rights_academic_endorsement_desc:0 "Los investigadores y economistas han respaldado públicamente el cuidado universal de los niños, dando credibilidad evidente al impulso legislativo del gobierno."
+
+ childrens_rights_business_engaged:0 "Private Sector Engaged"
+ childrens_rights_business_engaged_desc:0 "Los propietarios de empresas ven la oportunidad en un mercado privatizado de educación temprana y están prestando activamente su influencia para ver la ley aprobada."
+
+ childrens_rights_devout_reassured:0 "Devout Reassured"
+ childrens_rights_devout_reassured_desc:0 "Las voces religiosas han sido aplaudidas por el reconocimiento del gobierno de que la familia sigue siendo la principal institución moral, no el estado."
+
+ childrens_rights_devout_alienated:0 "Devout Alienated"
+ childrens_rights_devout_alienated_desc:0 "El despido de las preocupaciones familiares tradicionales ha dejado el desvío profundamente incómodo acerca de la dirección de la política social del gobierno."
+
+ childrens_rights_unions_mobilized:0 "Uniones Mobilizadas"
+ childrens_rights_unions_mobilized_desc:0 "Los sindicatos se han unido detrás del cuidado universal de los niños, enmarcandolo como una extensión de la lucha de los trabajadores por la dignidad económica."
+
+ childrens_rights_unions_skeptical:0 "Uniones Skeptical"
+ childrens_rights_unions_skeptical_desc:0 "Una facción significativa dentro del movimiento laboral cree que los beneficios estatales no son sustitutos de ganancias salariales genuinas, y está reteniendo su pleno apoyo."
+
+ childrens_rights_intelligentsia_engaged:0 "Intelligentsia Engaged"
+ childrens_rights_intelligentsia_engaged_desc:0 "Los académicos e investigadores están haciendo el caso público para el cuidado universal de los niños, citando evidencia de que la inversión temprana produce los mayores rendimientos sociales a largo plazo."
+
+ childrens_rights_intelligentsia_sidelined:0 "Intelligentsia Sidelined"
+ childrens_rights_intelligentsia_sidelined_desc:0 "La comunidad académica ha sido excluida del debate legislativo, dejando la intelectualidad frustrada y desenganchada de la agenda del gobierno."
+ 
+ womens_rights_laws.1.t:0 "La Carta de la Ley"
+ womens_rights_laws.1.d:0 "A medida que la legislación sobre las protecciones legales toma forma, se ha abierto un debate sobre su alcance. Los reformadores de la intelectualidad argumentan que una ley estrecha será eludida dentro de una generación: las protecciones deben ser escritas en cada institución, o no significarán nada. Sus oponentes advierten que la extensión ahora invitará una crisis constitucional que entierra todo el esfuerzo."
+ womens_rights_laws.1.f:0 "Cada ley es tan fuerte como la voluntad de imponerla, y el coraje de escribirla lo suficientemente ampliamente como para importar."
+ womens_rights_laws.1.a:0 "Escríbalo ampliamente: las protecciones deben llegar a cada institución."
+ womens_rights_laws.1.b:0 "Mantener el alcance estrecho — asegurar el pasaje primero."
+
+ womens_rights_laws.2.t:0 "La objeción tradicionalista"
+ womens_rights_laws.2.d:0 "Las voces conservadoras, terratenientes, clérigos y sus aliados, se han organizado contra la ley de protecciones legales, llamándola afrenta al orden natural de la sociedad. Su caso está arraigado menos en la objeción práctica que en un profundo malestar con lo que representa la ley. El gobierno debe decidir si enfrentar este desafío en debate abierto o dejar que la oposición se agote."
+ womens_rights_laws.2.f:0 "Cuando la tradición habla, rara vez ofrece un argumento — sólo un sentimiento."
+ womens_rights_laws.2.a:0 "Nos vemos en debate abierto — refutar su caso públicamente."
+ womens_rights_laws.2.b:0 "Dejen que sus reclamos — no les den una plataforma de mártir."
+
+ womens_rights_laws.3.t:0 "Los empleadores empujan atrás"
+ womens_rights_laws.3.d:0 "El igualitarismo estructural no es simplemente una cuestión de derechos, sino una cuestión de cómo se ejecuta el negocio. La clase empleadora ha planteado una objeción coordinada, argumentando que la representación encomendada equivale a interferencia estatal en las decisiones de contratación privada. No se oponen a las mujeres en el lugar de trabajo, insisten, sólo a que se les diga exactamente cuántos y en qué roles."
+ womens_rights_laws.3.f:0 "Cada generación de reformadores se ha dicho que el tiempo es incorrecto. El tiempo nunca es incorrecto para aquellos que se benefician de la demora."
+ womens_rights_laws.3.a:0 "Mandato: sin excepciones ni fase de entrada."
+ womens_rights_laws.3.b:0 "Ofrezca un período de transición — dé tiempo a los empleadores para ajustarse."
+
+ womens_rights_laws.4.t:0 "Mujeres en la vida pública"
+ womens_rights_laws.4.d:0 "Los sindicatos han tenido un gran interés en el proyecto de ley de igualitarismo estructural. Según ellos, las mujeres trabajadoras siempre han estado en el centro del trabajo organizado, insuficientemente remunerado, insuficientemente representado y esencial. La cuestión es si el gobierno reconocerá formalmente esta alianza, haciendo de la ley una causa conjunta, o mantener la reforma en sus propios términos."
+ womens_rights_laws.4.f:0 "La planta de fábrica siempre ha sabido lo que el parlamento está empezando a admitir."
+ womens_rights_laws.4.a:0 "Haz que sea una causa conjunta: las mujeres trabajadoras y el trabajo juntos."
+ womens_rights_laws.4.b:0 "Mantener los movimientos distintos — la ley se basa en sus propios méritos."
+
+ womens_rights_laws.5.t:0 "Una sociedad transformada"
+ womens_rights_laws.5.d:0 "El proyecto de ley matriarquía ha provocado una reacción a diferencia de cualquier cosa que se haya visto en la memoria legislativa reciente. Sus opositores no se oponen simplemente a una política, sino que se oponen a lo que indica sobre la dirección de esta sociedad. El backlash es feroz y organizado. El gobierno debe decidir si enfrentarlo directamente, o presionar en silencio y dejar que la ley haga su propio caso una vez promulgado."
+ womens_rights_laws.5.f:0 "No hay revolución que no sienta, a los desplazados, como un final."
+ womens_rights_laws.5.a:0 "Frente a la reacción posterior — el arco de la historia se inclina hacia adelante."
+ womens_rights_laws.5.b:0 "El tiempo de la tormenta en silencio — que la ley hable por sí misma."
+
+ womens_rights_laws.6.t:0 "Resiste la vieja guardia"
+ womens_rights_laws.6.d:0 "Los terratenientes y el devoto se han unido en su oposición al proyecto de ley de matriarquía con un fervor que va más allá de la resistencia legislativa normal. Esto es, para ellos, un desafío existencial al tejido social. Sus redes están siendo movilizadas, sus púlpitos y lours convertidos en sitios de oposición. El gobierno debe decidir con qué firmeza responder."
+ womens_rights_laws.6.f:0 "El viejo guardia siempre ha sido más fuerte en sus últimas horas."
+ womens_rights_laws.6.a:0 "Crush the opposition — this government will not be held hostage."
+ womens_rights_laws.6.b:0 "Negociar — ofrecer concesiones culturales para reducir la fricción."
+
+ womens_rights_legal_scope:0 "Mandato jurídico amplio"
+ womens_rights_legal_scope_desc:0 "La intelectualidad ha impulsado con éxito las protecciones estatutarias de amplio alcance, dando impulso y credibilidad al esfuerzo de promulgación."
+
+ womens_rights_narrow_scope:0 "Alcance estrecho Imposido"
+ womens_rights_narrow_scope_desc:0 "La decisión de limitar el alcance de la ley ha complicado el proceso de promulgación, ya que los defensores y opositores recalibran sus posiciones."
+
+ womens_rights_traditionalist_debate:0 "Reto Tradicionalista Comprometido"
+ womens_rights_traditionalist_debate_desc:0 "El gobierno ha entrado en debate público con oposición conservadora, cambiando los términos de la lucha por la ley."
+
+ womens_rights_employer_resistance:0 "Resistencia al vestíbulo"
+ womens_rights_employer_resistance_desc:0 "La oposición empresarial organizada a la representación encomendada está estancando activamente el proceso legislativo."
+
+ womens_rights_union_mobilization:0 "Movimiento Laboral Movilizado"
+ womens_rights_union_mobilization_desc:0 "Los sindicatos han arrojado su peso organizado detrás del igualitarismo estructural, impulsando el esfuerzo de promulgación."
+
+ womens_rights_societal_backlash:0 "Societal Backlash"
+ womens_rights_societal_backlash_desc:0 "La escala de cambio propuesta por el proyecto de ley matriarchy ha desencadenado una resistencia amplia y organizada que está frenando el proceso legislativo."
+
+ womens_rights_vanguard_push:0 "Vanguard Push"
+ womens_rights_vanguard_push_desc:0 "El gobierno se ha comprometido a confrontar directamente a la oposición, situándose como la vanguardia de la transformación social."
+
+ womens_rights_old_guard_opposition:0 "Oposición de la vieja guardia"
+ womens_rights_old_guard_opposition_desc:0 "Los terratenientes y el devoto se han unido en la resistencia organizada, estancando la ley de matriarquía y probando la resolución del gobierno."
+
+ womens_rights_intelligentsia_engaged:0 "Intelligentsia Engaged"
+ womens_rights_intelligentsia_engaged_desc:0 "Los académicos y reformadores están prestando activamente su autoridad pública al caso de amplias protecciones jurídicas."
+
+ womens_rights_intelligentsia_disappointed:0 "Intelligentsia Desappointed"
+ womens_rights_intelligentsia_disappointed_desc:0 "La decisión de estrechar el alcance de la ley ha frustrado a los intelectuales reformistas que temen una media medida será deshecha dentro de una generación."
+
+ womens_rights_conservatives_rebuked:0 "Conservadores reprendidos"
+ womens_rights_conservatives_rebuked_desc:0 "La refutación pública del gobierno ha avergonzado a la oposición tradicionalista, aunque también ha agudizado su resolución."
+
+ womens_rights_conservatives_placated:0 "Conservadores colocados"
+ womens_rights_conservatives_placated_desc:0 "Al permitir que la oposición emita sus reclamos sin confrontación directa, el gobierno ha reducido la fricción inmediata."
+
+ womens_rights_employers_overruled:0 "Employers Overruled"
+ womens_rights_employers_overruled_desc:0 "Se ha dicho a la clase empleadora que el cumplimiento es obligatorio y no negociable, resentimiento de cría pero aclarando el camino hacia adelante."
+
+ womens_rights_employers_appeased:0 "Employers Appeased"
+ womens_rights_employers_appeased_desc:0 "Una transición gradual ha suavizado la oposición empresarial, reduciendo la resistencia al costo de una aplicación más lenta."
+
+ womens_rights_unions_allied:0 "Uniones aliadas"
+ womens_rights_unions_allied_desc:0 "Los sindicatos se han aliado formalmente con el movimiento del igualitarismo, agregando músculo político organizado al esfuerzo de promulgación."
+
+ womens_rights_unions_neutral:0 "Uniones Neutral"
+ womens_rights_unions_neutral_desc:0 "El movimiento obrero ha optado por mantener su distancia del proyecto de ley del igualitarismo, sin ofrecer apoyo activo ni oposición."
+
+ womens_rights_old_guard_suppressed:0 "Old Guard Suppressed"
+ womens_rights_old_guard_suppressed_desc:0 "El gobierno se ha movido decididamente contra la oposición de la vieja guardia, debilitando su posición política pero radicalizando su base."
+
+ womens_rights_old_guard_negotiated:0 "Old Guard Negotiated"
+ womens_rights_old_guard_negotiated_desc:0 "Las concesiones a la vieja guardia han puesto de manifiesto lo peor de su oposición, aunque su desacuerdo fundamental con la ley sigue siendo."
+ 
+ ubi.1.t:0 "El costo de la condición"
+ ubi.1.d:0 "El precio de los ingresos básicos universales se ha vuelto imposible de ignorar. Los conservadores fiscales se han apoderado de los gastos previstos, advirtiendo que un pago incondicional a todos los ciudadanos — empleados o no, ricos o pobres— constituirá una carga insostenible para las finanzas públicas. El gobierno debe decidir si comprometerse con la financiación completa ahora o comprar tiempo con un enfoque gradual."
+ ubi.1.f:0 "Cada promesa de disposición universal finalmente cumple la misma pregunta: ¿quién paga, y cuánto?"
+ ubi.1.a:0 "Comprometerse con la financiación completa — absorber el costo y la prensa."
+ ubi.1.b:0 "Fase de los pagos: demorar la plena ejecución para gestionar los costos."
+
+ ubi.2.t:0 "¿Alguien trabajará?"
+ ubi.2.d:0 "Los empleadores y terratenientes han encontrado su clamor en contra de los ingresos básicos universales: si el Estado garantiza un ingreso independientemente del esfuerzo, ¿por qué alguien elegiría trabajar? El argumento es intuitivo y políticamente potente, incluso si la evidencia es más ambigua. El gobierno debe elegir entre hacer el caso económico para la UBI en sus méritos, o concediendo la preocupación al adjuntar requisitos mínimos de trabajo a los pagos."
+ ubi.2.f:0 "El temor de que la gente deje de trabajar si dada la oportunidad ha superado todas las políticas que lo probaron mal."
+ ubi.2.a:0 "Hacer el caso económico: la seguridad permite la productividad, no la ociosidad."
+ ubi.2.b:0 "Adjuntar los requisitos de trabajo — reconocer la preocupación de reducir la resistencia."
+
+ ubi.3.t:0 "Libertad de querer"
+ ubi.3.d:0 "Para los sindicatos, el ingreso básico universal no es simplemente una política de bienestar, es el cumplimiento de la demanda más antigua del movimiento sindical: la libertad de la compulsión de la pobreza. Con la legislación en curso, los líderes sindicales están ansiosos de reclamar el momento como propio, prestando músculo político organizado al esfuerzo de promulgación. El gobierno debe decidir si aceptar esa alianza o mantener el despliegue como un asunto administrativo silencioso."
+ ubi.3.f:0 "El derecho a decir que no al mal trabajo siempre ha sido la verdadera demanda detrás de cada disputa salarial."
+ ubi.3.a:0 "Abrazar el mandato - dejar que los sindicatos dirijan la campaña pública."
+ ubi.3.b:0 "Mantenerlo como una iniciativa gubernamental, evitar la politización excesiva de la marcha."
+
+ welfare_ubi_fiscal_alarm:0 "Alarma fiscal"
+ welfare_ubi_fiscal_alarm_desc:0 "Los conservadores fiscales se han movilizado contra el costo proyectado de los ingresos básicos universales, estancando el proceso de promulgación y forzando al gobierno a la defensiva."
+
+ welfare_ubi_funded_commitment:0 "Compromiso Estado financiado"
+ welfare_ubi_funded_commitment_desc:0 "El gobierno se ha comprometido a absorber el costo total de la UBI, fortaleciendo su posición de promulgación a un costo significativo para el ámbito público."
+
+ welfare_ubi_labour_disincentive_debate:0 "Rebatir el desincentivo laboral"
+ welfare_ubi_labour_disincentive_desc:0 "El Gobierno ha expresado públicamente su preocupación por los incentivos laborales, lo que hace que la seguridad financiera permita en lugar de socavar la participación laboral."
+
+ welfare_ubi_work_requirements:0 "Requisitos de trabajo adjuntos"
+ welfare_ubi_work_requirements_desc:0 "Se han establecido condiciones de trabajo mínimas para los pagos de la UBI, lo que reduce la aplicación, pero reduce la oposición del empleador a la ley."
+
+ welfare_ubi_popular_mandate:0 "Mandato Popular declarado"
+ welfare_ubi_popular_mandate_desc:0 "Los sindicatos han declarado públicamente a UBI la culminación de la lucha del movimiento obrero, añadiendo un impulso político organizado al esfuerzo de promulgación."
+
+ welfare_ubi_employers_unconvinced:0 "Employers Unconvinced"
+ welfare_ubi_employers_unconvinced_desc:0 "A pesar de los argumentos económicos del gobierno, la clase empleadora sigue siendo escéptica que los ingresos incondicionales no reducirán la oferta laboral."
+
+ welfare_ubi_employers_appeased:0 "Employers Appeased"
+ welfare_ubi_employers_appeased_desc:0 "Los requisitos laborales han suavizado la oposición del empleador a la UBI, reduciendo su resistencia activa al paso de la ley."
+
+ welfare_ubi_unions_mobilized:0 "Uniones Mobilizadas"
+ welfare_ubi_unions_mobilized_desc:0 "Los sindicatos están luchando activamente por el ingreso básico universal, enmarcandolo como la victoria definitiva en la larga lucha por la libertad económica de los trabajadores."
+
+ welfare_ubi_unions_sidelined:0 "Unions Sidelined"
+ welfare_ubi_unions_sidelined_desc:0 "La decisión del gobierno de mantener a UBI como un silencioso despliegue administrativo ha dejado a los sindicatos frustrados y desenganchados del esfuerzo de promulgación."
+
+ gun_laws.1.t:0 "El argumento de seguridad"
+ gun_laws.1.d:0 "Los reformadores y defensores de la salud pública han incautado la prohibición de las armas de fuego como un momento para hacer el caso basado en pruebas: menos armas en circulación significa menos muertes. Los datos, argumentan, son inequívocos. El gobierno debe decidir si abrazar formalmente esta definición, prestar la credibilidad intelectual de la prohibición, o mantener el debate sobre los términos de derecho y orden y alinear las voces de salud pública."
+ gun_laws.1.f:0 "Las sociedades más seguras no son siempre las más armadas."
+ gun_laws.1.a:0 "Abrazar el encuadre de salud pública — los datos están de nuestro lado."
+ gun_laws.1.b:0 "Enmarcarlo como ley y orden: mantener a los defensores de la salud pública fuera."
+
+ # ==========================================
+ # gun_laws.2 — The Armed Forces Weigh In
+ # ==========================================
+ gun_laws.2.t:0 "Las fuerzas armadas pesan"
+ gun_laws.2.d:0 "El liderazgo militar tiene interés en la prohibición de las armas de fuego que va más allá de la política. Una población civil desarmada es más difícil de organizar contra el Estado, más fácil de reclutar en términos estatales, y menos probable de mantener una insurgencia. Su respaldo podría ser decisivo, pero llevar a los militares a un debate legislativo nacional conlleva sus propias complicaciones."
+ gun_laws.2.f:0 "El ejército siempre ha sabido que el arma más peligrosa es la que no está bajo su mando."
+ gun_laws.2.a:0 "Bienvenido a su respaldo: una población desarmada es ordenada."
+ gun_laws.2.b:0 "Mantener a los militares fuera del derecho interno, es un asunto civil."
+
+ # ==========================================
+ # gun_laws.3 — Rural Resistance
+ # ==========================================
+ gun_laws.3.t:0 "Resistencia rural"
+ gun_laws.3.d:0 "El campo no escucha el argumento que se hace en la capital. Para las comunidades rurales, las armas de fuego no son una declaración política: son herramientas, heredadas junto con la tierra, utilizadas para la caza, la protección ganadera y la seguridad básica de los asentamientos aislados. Restricting them is not a policy question but affront. El gobierno debe decidir con qué firmeza mantener la línea."
+ gun_laws.3.f:0 "La gente que escribió la ley nunca tuvo que esperar tres horas para un constable."
+ gun_laws.3.a:0 "Firma: las leyes urbanas se aplican en todas partes por igual."
+ gun_laws.3.b:0 "Ofrecer exenciones rurales: la caza y la protección ganadera son usos legítimos."
+
+ # ==========================================
+ # gun_laws.4 — A Right, Not a Privilege
+ # ==========================================
+ gun_laws.4.t:0 "Un derecho, no un privilegio"
+ gun_laws.4.d:0 "Los defensores de las armas de fuego no limitadas han encontrado su argumento y no lo están dejando ir: la propiedad es un derecho, no un privilegio que debe conceder el Estado. Cualquier sistema de licencias, cualquier requisito de registro, cualquier restricción en absoluto es el primer paso en el camino a la tiranía. El gobierno debe decidir si abrazar este encuadre y la energía política que genera, o hacer que el caso sea más práctico."
+ gun_laws.4.f:0 "Hay un tipo particular de libertad que sólo se puede mantener a punta de pistola."
+ gun_laws.4.a:0 "Abrazar el argumento de la libertad: una ciudadanía armada es libre."
+ gun_laws.4.b:0 "Enmarcarlo prácticamente, concéntrese en la defensa propia y la preparación para la conscripción."
+
+ # ==========================================
+ # gun_laws.5 — The Safety Lobby Fights Back
+ # ==========================================
+ gun_laws.5.t:0 "El vestíbulo de seguridad lucha atrás"
+ gun_laws.5.d:0 "Las voces inteligentes y de salud pública que se opusieron a la prohibición de las armas de fuego no se han callado — han redirigido su energía hacia la oposición a la propiedad sin restricciones. Sus argumentos son familiares: la evidencia no apoya la afirmación de que más armas producen sociedades más seguras. El gobierno debe decidir si participar en el debate público o negarles la plataforma."
+ gun_laws.5.f:0 "Todo argumento para las armas de fuego sin restricciones tiene que responder a los cuerpos."
+ gun_laws.5.a:0 "Los refuta públicamente: la libertad conlleva sus propios riesgos."
+ gun_laws.5.b:0 "Ignóralos — no dignifique a la oposición con una respuesta."
+
+ # ==========================================
+ # gun_laws.6 — Licensing Is Not Freedom
+ # ==========================================
+ gun_laws.6.t:0 "La licencia no es libertad"
+ gun_laws.6.d:0 "El proyecto de ley de armas de fuego autorizado ha gestionado la rara hazaña de unir ambos lados del debate en oposición. Los defensores de los derechos de las armas consideran que cualquier requisito de licencia es una violación de una libertad fundamental. Los defensores de la seguridad lo ven como una media medida que no tiene nada significativo para reducir el daño. El gobierno se encuentra defendiendo un terreno medio que ni flanco quiere ocupar."
+ gun_laws.6.f:0 "Un compromiso que satisface a nadie puede ser la respuesta correcta."
+ gun_laws.6.a:0 "Defender el terreno medio: la concesión de licencias es razonable y proporcional."
+ gun_laws.6.b:0 "Reconocer la tensión — prometer una revisión una vez que la ley se acuestre."
+
+ gun_law_safety_argument:0 "Caso de salud pública"
+ gun_law_safety_argument_desc:0 "El Gobierno ha adoptado un marco de salud pública para la prohibición de las armas de fuego, otorgando credibilidad intelectual a la legislación y ampliando su apelación."
+
+ gun_law_military_position:0 "Military Endorsement"
+ gun_law_military_position_desc:0 "El liderazgo militar ha respaldado públicamente el desarme civil, añadiendo autoridad institucional al esfuerzo de promulgación."
+
+ gun_law_rural_resistance:0 "Resistencia rural"
+ gun_law_rural_resistance_desc:0 "Las comunidades rurales resisten activamente las restricciones de las armas de fuego, estancan el proceso legislativo y obligan al gobierno a justificar la ley a sus ciudadanos más afectados."
+
+ gun_law_rights_framing:0 "Liberty Framing Adopted"
+ gun_law_rights_framing_desc:0 "El gobierno ha aceptado el argumento de que la propiedad de armas es un derecho fundamental, energizando a los partidarios y dando a la ley una base de principios."
+
+ gun_law_practical_framing:0 "Marco práctico adoptado"
+ gun_law_practical_framing_desc:0 "El caso de las armas de fuego no restringidas se ha hecho por motivos prácticos, la defensa propia y la preparación para la conscripción, en lugar de los ideológicos."
+
+ gun_law_safety_lobby_opposition:0 "Oposición del vestíbulo de seguridad"
+ gun_law_safety_lobby_opposition_desc:0 "Los defensores de la salud pública y la intelectualidad están intensificando la oposición organizada a las armas de fuego sin restricciones, que estancan el proceso de promulgación."
+
+ gun_law_compromise_resistance:0 "Compromiso bajo fuego"
+ gun_law_compromise_resistance_desc:0 "El proyecto de ley de armas de fuego está siendo resistido de ambas direcciones: los defensores de los derechos de las armas lo ven como una violación, los defensores de la seguridad lo consideran insuficiente."
+
+ gun_law_compromise_defended:0 "Compromiso defendido"
+ gun_law_compromise_defended_desc:0 "El gobierno ha hecho un caso público para el centro de armas de fuego autorizado, empujando hacia atrás contra la oposición de ambos flancos."
+
+ gun_law_intelligentsia_engaged:0 "Intelligentsia Engaged"
+ gun_law_intelligentsia_engaged_desc:0 "Los investigadores y reformadores de salud pública están prestando activamente su autoridad al caso de restricciones de armas de fuego."
+
+ gun_law_intelligentsia_sidelined:0 "Intelligentsia Sidelined"
+ gun_law_intelligentsia_sidelined_desc:0 "El Gobierno ha optado por incriminar la prohibición de las armas de fuego como asunto de orden público, manteniendo las voces de salud pública fuera del debate."
+
+ gun_law_intelligentsia_rebuked:0 "Intelligentsia Rebuked"
+ gun_law_intelligentsia_rebuked_desc:0 "El lobby de seguridad ha sido desafiado públicamente y sus argumentos desestimados, aunque esto ha agudizado su oposición."
+
+ gun_law_intelligentsia_ignored:0 "Intelligentsia Ignorada"
+ gun_law_intelligentsia_ignored_desc:0 "El gobierno se ha negado a colaborar con la oposición del lobby de seguridad, negándoles una plataforma a costa de profundizar su frustración."
+
+ gun_law_military_backing:0 "Military Backing"
+ gun_law_military_backing_desc:0 "Las fuerzas armadas han respaldado públicamente el desarme civil, otorgando un peso institucional decisivo a la labor de promulgación."
+
+ gun_law_military_sidelined:0 "Military Sidelined"
+ gun_law_military_sidelined_desc:0 "El gobierno ha mantenido al liderazgo militar fuera del debate nacional sobre armas de fuego, dejando a las fuerzas armadas desvinculadas del proceso legislativo."
+
+ gun_law_rural_folk_alienated:0 "Rural Folk Alienated"
+ gun_law_rural_folk_alienated_desc:0 "La aplicación uniforme de las restricciones a las armas de fuego ha dejado a las comunidades rurales sintiéndose dirigidas por un gobierno que no entiende su forma de vida."
+
+ gun_law_rural_folk_appeased:0 "Rural Folk Appeased"
+ gun_law_rural_folk_appeased_desc:0 "Las exenciones para la caza y la protección ganadera han suavizado la oposición rural a las restricciones sin abandonar la intención fundamental de la ley."
+
+ gun_law_rural_folk_energized:0 "Rural Folk Energized"
+ gun_law_rural_folk_energized_desc:0 "The liberty framing of unrestricted firearms has resonated powerfully with rural communities, generating strong grassroots support for the law."
+ 
+  # ==========================================
+ # lgbtq_laws.1 — The Church Demands Action
+ # ==========================================
+ lgbtq_laws.1.t:0 "La Iglesia exige acción"
+ lgbtq_laws.1.d:0 "El devoto ha dejado clara su posición: la supresión activa de la homosexualidad no es simplemente una preferencia política sino una obligación moral. Los líderes religiosos están exigiendo que el gobierno enmarca la legislación en términos teológicos explícitamente, prestando el peso de la autoridad divina a la ley. El gobierno debe decidir si aceptar ese encuadre o mantener la justificación por motivos seculares."
+ lgbtq_laws.1.f:0 "Las leyes más peligrosas son las que creen que responden a una autoridad superior."
+ lgbtq_laws.1.a:0 "Abrazar el encuadre moral — esto es una cuestión de ley divina."
+ lgbtq_laws.1.b:0 "Enmarcarlo como orden social: mantener la religión fuera de la justificación."
+
+ # ==========================================
+ # lgbtq_laws.2 — The Cost of Enforcement
+ # ==========================================
+ lgbtq_laws.2.t:0 "El costo de la ejecución"
+ lgbtq_laws.2.d:0 "Una ley contra la homosexualidad es tan eficaz como su aplicación. La cuestión ante el gobierno no es si restringir — ese debate se resuelve— sino cuán agresivamente el aparato estatal perseguirá las violaciones. La aplicación completa es cara e invasiva. La aplicación pasiva se basa en la presión social y la denuncia. Cada enfoque conlleva sus propios costos."
+ lgbtq_laws.2.f:0 "El estado que legisla el comportamiento privado debe decidir cuán profundamente en la vida privada está dispuesto a alcanzar."
+ lgbtq_laws.2.a:0 "Completo cumplimiento, sin gastos."
+ lgbtq_laws.2.b:0 "Ejecución pasiva — permita que la presión social haga el trabajo."
+
+ # ==========================================
+ # lgbtq_laws.3 — Decriminalization Is Not Endorsement
+ # ==========================================
+ lgbtq_laws.3.t:0 "La despenalización no es la adoración"
+ lgbtq_laws.3.d:0 "Las voces conservadoras han saludado el proyecto de ley de despenalización con alarma predecible. El argumento preferido del gobierno —que la eliminación de las sanciones penales no constituye un respaldo moral— no las ha satisfecho. La cuestión es si se debe hacer ese caso en forma pública y directa, o si se procede en silencio y se evita la atención que generaría un debate público."
+ lgbtq_laws.3.f:0 "La distancia entre tolerancia y aprobación nunca se ha sentido tan disputada."
+ lgbtq_laws.3.a:0 "Haga el caso con claridad: la despenalización elimina el castigo, no la aprobación."
+ lgbtq_laws.3.b:0 "Mantenlo en silencio — pase la reforma sin llamar la atención sobre ella."
+
+ # ==========================================
+ # lgbtq_laws.4 — The Intelligentsia Makes Its Case
+ # ==========================================
+ lgbtq_laws.4.t:0 "La Inteligentesia lo hace su caso"
+ lgbtq_laws.4.d:0 "Los reformadores y académicos legales han entrado en el debate con un argumento directo: el Estado no tiene ningún interés legítimo en la conducta privada de los adultos consentidos, y la criminalización de la homosexualidad es una violación de los principios más básicos de la libertad personal. El gobierno debe decidir si alinearse formalmente con este argumento o mantener la reforma en términos puramente legislativos."
+ lgbtq_laws.4.f:0 "La libertad que requiere permiso del estado no es la libertad en absoluto."
+ lgbtq_laws.4.a:0 "Que dirijan el argumento: la libertad personal es inalienable."
+ lgbtq_laws.4.b:0 "Mantenerlo legislativo — evitar el debate filosófico."
+
+ # ==========================================
+ # lgbtq_laws.5 — Marriage Is a Social Institution
+ # ==========================================
+ lgbtq_laws.5.t:0 "El matrimonio es una institución social"
+ lgbtq_laws.5.d:0 "Los conservadores han encontrado su argumento más potente contra la igualdad matrimonial: el matrimonio no es simplemente un arreglo legal sino una institución social con raíces mayores que el propio Estado. Redefinir es desentrañar algo que no puede ser puesto de nuevo juntos. El gobierno debe elegir entre hacer frente a este argumento o intentar suavizar la oposición mediante exenciones religiosas."
+ lgbtq_laws.5.f:0 "Cada institución era nueva una vez."
+ lgbtq_laws.5.a:0 "Rechazarlo: el matrimonio civil pertenece al estado, no a la iglesia."
+ lgbtq_laws.5.b:0 "Ofrecer exenciones religiosas — las iglesias pueden negarse a realizar ceremonias."
+
+ # ==========================================
+ # lgbtq_laws.6 — Equal Before the Law
+ # ==========================================
+ lgbtq_laws.6.t:0 "Igualdad ante la ley"
+ lgbtq_laws.6.d:0 "La intelectualidad ha enmarcado la igualdad matrimonial como conclusión lógica de los derechos civiles: una sociedad que otorga a algunos ciudadanos derechos que niega a otros sobre la base de lo que aman es una sociedad que aún no ha hecho bien por sus propias promesas. El gobierno debe decidir si tratar este momento como un hito o extender los derechos en silencio sin el peso de la declaración."
+ lgbtq_laws.6.f:0 "La igualdad que tiene que mantenerse en silencio nunca fue absolutamente igual."
+ lgbtq_laws.6.a:0 "Hacerlo un hito: la igualdad ante la ley no admite excepciones."
+ lgbtq_laws.6.b:0 "Mantenerlo administrativo — extender los derechos en silencio sin una declaración."
+
+ # ==========================================
+ # abortion_laws.1 — Life Begins at Conception
+ # ==========================================
+ abortion_laws.1.t:0 "La vida comienza en la concepción"
+ abortion_laws.1.d:0 "El devoto ha llegado al debate sobre el aborto con una posición que no admite compromiso: la vida comienza en la concepción, y el estado está moralmente obligado a protegerla desde ese momento. Su demanda no es simplemente prohibir el aborto, sino que la prohibición se enmarca en términos que reflejan su gravedad moral. El gobierno debe decidir si aceptar esa definición o justificar la ley por motivos demográficos y políticos."
+ abortion_laws.1.f:0 "Las posiciones morales más absolutas son las que no dejan espacio para los casos más difíciles."
+ abortion_laws.1.a:0 "Abrazar el encuadre moral — la vida es sagrada y el estado debe protegerla."
+ abortion_laws.1.b:0 "Enmarcarlo como política demográfica: mantener la religión fuera de la justificación."
+
+ # ==========================================
+ # abortion_laws.2 — The Exceptions Question
+ # ==========================================
+ abortion_laws.2.t:0 "La cuestión de las excepciones"
+ abortion_laws.2.d:0 "No antes el proyecto de ley entró en el proceso de promulgación que sus oponentes han encontrado el terreno más difícil en el que oponerse: los casos de violación, incesto y necesidad médica. Estos son los casos que convierten las posiciones morales abstractas en realidades vividas. El gobierno debe decidir si mantener la línea con una prohibición absoluta o evitar excepciones médicas estrechas que reconozcan las circunstancias más difíciles."
+ abortion_laws.2.f:0 "Los principios abstractos tienen una manera de llegar a ser muy concretos cuando son la vida de otra persona."
+ abortion_laws.2.a:0 "Sin excepciones: la ley debe ser absoluta para significar cualquier cosa."
+ abortion_laws.2.b:0 "Permitir excepciones médicas limitadas - los casos más difíciles deben ser abordados."
+
+ # ==========================================
+ # abortion_laws.3 — The State Has No Place in This Decision
+ # ==========================================
+ abortion_laws.3.t:0 "El Estado no tiene lugar en esta decisión"
+ abortion_laws.3.d:0 "El caso del aborto sin restricciones ha encontrado su formulación más poderosa en el lenguaje de la autonomía corporal: ningún Estado tiene derecho a obligar a una persona a continuar un embarazo contra su voluntad. La intelectualidad está haciendo este argumento públicamente y con considerable fuerza. El gobierno debe decidir si adoptarlo como centro de la reforma o presentar el cambio como cuestión directa del acceso a la salud."
+ abortion_laws.3.f:0 "El derecho al propio cuerpo es universal o no es un derecho en absoluto."
+ abortion_laws.3.a:0 "Hacer de la autonomía corporal la pieza central — ningún Estado tiene derecho a obligar el embarazo."
+ abortion_laws.3.b:0 "Enmarcarlo como sanidad — mantener fuera el argumento filosófico."
+
+ # ==========================================
+ # abortion_laws.4 — The Devout Will Not Yield
+ # ==========================================
+ abortion_laws.4.t:0 "El Devout no se rendirá"
+ abortion_laws.4.d:0 "Cualquier movimiento hacia la liberalización de la ley del aborto se ha encontrado con la oposición religiosa organizada que no muestra señales de suavidad. El devoto considera esto como una cuestión en la que no es posible llegar a un compromiso, y están dispuestos a utilizar todos los instrumentos políticos disponibles para poner fin a la legislación. El gobierno debe decidir si enfrentarlos directamente o ofrecer protecciones de conciencia que suavicen su resistencia sin satisfacer sus demandas."
+ abortion_laws.4.f:0 "La oposición que cree que está respondiendo a Dios es la oposición más difícil de negociar."
+ abortion_laws.4.a:0 "Enfrentarlos directamente — el estado gobierna, no la iglesia."
+ abortion_laws.4.b:0 "Ofrecer protección de conciencia: el personal médico puede declinar por motivos morales."
+
+ # ==========================================
+ # LGBTQ Enactment Modifier Localization
+ # ==========================================
+ lgbtq_law_religious_mandate:0 "Mandato religioso declarado"
+ lgbtq_law_religious_mandate_desc:0 "The devout have publicly framed thepresion law as a moral and religious obligation, lending theological authority to the enactment effort."
+
+ lgbtq_law_enforcement_scope:0 "Conjunto de medidas de aplicación"
+ lgbtq_law_enforcement_scope_desc:0 "El gobierno se ha comprometido a aplicar activamente las restricciones, fortaleciendo el impulso legislativo de la ley."
+
+ lgbtq_law_enforcement_cost:0 "Gastos de ejecución Absorbed"
+ lgbtq_law_enforcement_cost_desc:0 "Se está financiando la plena aplicación de las restricciones, lo que supone una carga adicional para el gasto público."
+
+ lgbtq_law_decrim_framing:0 "Decriminalization Framed"
+ lgbtq_law_decrim_framing_desc:0 "El gobierno ha enmarcado cuidadosamente la despenalización como la eliminación del castigo en lugar de un aval, aliviando el camino a través del debate."
+
+ lgbtq_law_quiet_passage:0 "Pasaje silencioso intento"
+ lgbtq_law_quiet_passage_desc:0 "La decisión de evitar el debate público ha frenado el proceso de promulgación a medida que avanza la reforma sin un apoyo público organizado."
+
+ lgbtq_law_liberty_argument:0 "Liberty Argument Made"
+ lgbtq_law_liberty_argument_desc:0 "La intelectualidad ha enmarcado públicamente la despenalización como cuestión de libertad personal, otorgando credibilidad filosófica a la reforma."
+
+ lgbtq_law_institution_debate:0 "Institución Debate"
+ lgbtq_law_institution_debate_desc:0 "El Gobierno ha iniciado un debate público sobre la naturaleza del matrimonio como institución civil, cambiando los términos de la lucha por la promulgación."
+
+ lgbtq_law_religious_exemptions:0 "Exenciones religiosas ofrecidas"
+ lgbtq_law_religious_exemptions_desc:0 "Se han ofrecido exenciones a las instituciones religiosas de realizar ceremonias del mismo sexo, desacelerando la aplicación pero suavizando la oposición conservadora."
+
+ lgbtq_law_equality_mandate:0 "Mandato de igualdad declarado"
+ lgbtq_law_equality_mandate_desc:0 "El Gobierno ha declarado oficialmente que la igualdad de los matrimonios es un hito en los derechos civiles, generando un fuerte impulso político para la promulgación."
+
+ lgbtq_law_devout_empowered:0 "Devout Empowered"
+ lgbtq_law_devout_empowered_desc:0 "The religious community has been formally brought into the legislative framing, strengthening their political position and deepening their engagement."
+
+ lgbtq_law_devout_sidelined:0 "Devout Sidelined"
+ lgbtq_law_devout_sidelined_desc:0 "El gobierno ha mantenido el encuadre religioso fuera de la justificación, dejando al devoto desenganchado y frustrado silenciosamente."
+
+ lgbtq_law_conservatives_unconvinced:0 "Conservadores sin contacto"
+ lgbtq_law_conservatives_unconvinced_desc:0 "La oposición conservadora ha escuchado la franqueza del gobierno y sigue sin estar convencida, manteniendo su resistencia a la reforma."
+
+ lgbtq_law_conservatives_rebuked:0 "Conservadores reprendidos"
+ lgbtq_law_conservatives_rebuked_desc:0 "El gobierno ha desafiado públicamente a la oposición conservadora a la igualdad matrimonial, avergonzando su posición pero agudizando su determinación."
+
+ lgbtq_law_conservatives_placated:0 "Conservadores colocados"
+ lgbtq_law_conservatives_placated_desc:0 "Las exenciones religiosas han reducido la intensidad inmediata de la oposición conservadora sin resolver el desacuerdo subyacente."
+
+ lgbtq_law_intelligentsia_engaged:0 "Intelligentsia Engaged"
+ lgbtq_law_intelligentsia_engaged_desc:0 "Los reformadores y académicos legales están haciendo el caso público por los derechos LGBTQ, otorgando autoridad intelectual al esfuerzo de promulgación."
+
+ lgbtq_law_intelligentsia_sidelined:0 "Intelligentsia Sidelined"
+ lgbtq_law_intelligentsia_sidelined_desc:0 "El gobierno ha optado por mantener la reforma en términos legislativos y no filosóficos, dejando la intelectualidad sin un papel formal en el debate."
+
+ abortion_law_moral_absolute:0 "Absoluto moral declarado"
+ abortion_law_moral_absolute_desc:0 "The devout have successfully framed the abortion ban as a moral absolute, lending theological authority to the enactment effort."
+
+ abortion_law_demographic_framing:0 "Marco demográfico adoptado"
+ abortion_law_demographic_framing_desc:0 "El gobierno ha justificado la prohibición del aborto por motivos demográficos y políticos, manteniendo el lenguaje religioso fuera de la justificación oficial."
+
+ abortion_law_exceptions_debate:0 "Excepciones Debate resuelto"
+ abortion_law_exceptions_debate_desc:0 "El Gobierno ha adoptado una posición clara sobre la cuestión de las excepciones, que constituye una base firme para que continúe el proceso de promulgación."
+
+ abortion_law_medical_exceptions:0 "Salvos médicos permitidos"
+ abortion_law_medical_exceptions_desc:0 "Las excepciones médicas limitadas han sido escritas en la legislación, desacelerando el paso pero reduciendo la oposición de los moderados."
+
+ abortion_law_autonomy_argument:0 "Bodily Autonomy Arguida"
+ abortion_law_autonomy_argument_desc:0 "La intelectualidad ha hecho de la autonomía corporal la pieza central del caso para el aborto sin restricciones, generando un fuerte apoyo entre los IG reformistas."
+
+ abortion_law_healthcare_framing:0 "Marco de atención de salud adoptado"
+ abortion_law_healthcare_framing_desc:0 "El gobierno ha enmarcado el aborto irrestricto como un asunto de salud, ampliando su apelación evitando al mismo tiempo el debate filosófico más profundo."
+
+ abortion_law_religious_opposition:0 "Oposición religiosa montada"
+ abortion_law_religious_opposition_desc:0 "El devoto está estancando activamente la liberalización de la ley del aborto, creando una oposición organizada que está probando la resolución del gobierno."
+
+ abortion_law_devout_empowered:0 "Devout Empowered"
+ abortion_law_devout_empowered_desc:0 "La comunidad religiosa se ha situado en el centro de la justificación de la prohibición del aborto, fortaleciendo su posición política considerablemente."
+
+ abortion_law_devout_sidelined:0 "Devout Sidelined"
+ abortion_law_devout_sidelined_desc:0 "El gobierno ha mantenido la franqueza religiosa de la prohibición del aborto, dejando presente al devoto pero sin un papel formal en la justificación."
+
+ abortion_law_devout_rebuked:0 "Devout Rebuked"
+ abortion_law_devout_rebuked_desc:0 "El gobierno ha enfrentado directamente la oposición religiosa a la liberalización del aborto, debilitando la posición política del devoto pero radicalizando su base."
+
+ abortion_law_devout_appeased:0 "Devout Appeased"
+ abortion_law_devout_appeased_desc:0 "Las protecciones de conciencia para el personal médico han suavizado la oposición religiosa a la liberalización del aborto sin satisfacer las exigencias fundamentales del devoto."
+
+ abortion_law_intelligentsia_engaged:0 "Intelligentsia Engaged"
+ abortion_law_intelligentsia_engaged_desc:0 "Los académicos y reformadores jurídicos están preparando activamente el caso público de los derechos al aborto, otorgando credibilidad intelectual y moral al esfuerzo de promulgación."
+
+ abortion_law_intelligentsia_sidelined:0 "Intelligentsia Sidelined"
+ abortion_law_intelligentsia_sidelined_desc:0 "La decisión de enmarcar el acceso al aborto como asunto de salud ha mantenido la intelectualidad fuera del debate filosófico que querían liderar."

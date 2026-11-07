@@ -1,0 +1,7 @@
+﻿l_polish:
+
+# replace folder is the best thing to happen to me since december 11
+ concept_literacy:0 "Wskaźnik wykształcenia"
+ concept_literate:0 "Uczniowie"
+ concept_literacy_desc:2 "Procentowa lub bezwzględna liczba osób w [concept_pop], które ukończyły uczelnie wyższe. Pewne wartości [Concept('concept_profession', '$concept_professions$')] wymagają wyższych wartości $concept_literacy$ niż inne, co ogranicza wartość [concept_pop_qualifications] dla $concept_pops$ w innych wartościach $concept_professions$, chyba że ich wartość $concept_literacy$ jest wystarczająco wysoka. Można inwestować w swój [SelectLocalization(GetPlayer.IsValid,'concept_literacy_desc_added','Education')] w celu uzyskania wyższego poziomu $concept_literacy$ w swój $concept_population$ z upływem czasu. \n \n $concept_pops$ spotka się z rosnącą karą do $concept_pop_growth_birthrate$ proporcjonalną do ich $concept_literacy$, aż do: \n [GetStaticModifier('literacy_penalty').GetDesc] #!"
+ concept_literacy_desc_added:0 "[GetInstitutionType('institution_schools').GetName]"

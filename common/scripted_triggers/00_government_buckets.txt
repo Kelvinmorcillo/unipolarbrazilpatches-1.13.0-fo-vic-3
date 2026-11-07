@@ -1,0 +1,310 @@
+﻿# Modern Day Government Classification Triggers — v5 government-type based (used from owner scope in ideology triggers)
+# Uses has_government_type instead of overlapping law checks.
+# Priority is implicit because each government type is only listed in one bucket.
+# Parliamentary democratic forms mostly classify as left-democratic; presidential democratic forms mostly classify as right-democratic.
+
+# Theocracies and religious-state government types.
+smd_is_theocratic_government_trigger = {
+	OR = {
+		has_government_type = gov_heavenly_kingdom_theocracy
+		has_government_type = gov_papacy
+		has_government_type = gov_bhutanese_dual_system_dharma
+		has_government_type = gov_prince_bishopric
+		has_government_type = gov_zaidi_imamate
+		has_government_type = gov_contechne
+		has_government_type = gov_catholic_theocracy
+		has_government_type = gov_american_theocracy_democratic
+		has_government_type = gov_american_theocracy_dictatorial
+		has_government_type = gov_protestant_theocracy
+		has_government_type = gov_oriental_orthodox_theocracy
+		has_government_type = gov_sunni_theocracy
+		has_government_type = gov_shiite_theocracy
+		has_government_type = gov_jewish_theocracy
+		has_government_type = gov_theocratic_oligarchy
+		has_government_type = gov_theocracy
+		has_government_type = gov_theocratic_democracy
+		has_government_type = gov_theocratic_single_party_state
+		has_government_type = gov_theocratic_dictatorship
+	}
+}
+
+# Council/soviet/technocratic authoritarian or state-directed forms.
+smd_is_left_authoritarian_government_trigger = {
+	OR = {
+		has_government_type = gov_soviet_dictatorship
+		has_government_type = gov_soviet_single_party_state
+		has_government_type = gov_council_dictatorship
+		has_government_type = gov_council_single_party_state
+		has_government_type = gov_phalanstere
+		has_government_type = gov_cybernetic_state
+		has_government_type = gov_technate_parliamentary
+		has_government_type = gov_technate_presidential
+		has_government_type = gov_technate_corporate
+		has_government_type = gov_danubian_federation_technocratic_parliamentary_republic
+		has_government_type = gov_danubian_federation_technocratic_presidential_republic
+		has_government_type = gov_danubian_federation_technocratic_corporate_state
+		has_government_type = gov_danubian_federation_technocratic
+		has_government_type = gov_regency_enlightened_despotate
+		has_government_type = gov_enlightened_despotate
+	}
+}
+
+# Parliamentary democracies, constitutional parliamentary monarchies, and democratic council forms.
+smd_is_left_democratic_government_trigger = {
+	OR = {
+		has_government_type = gov_french_3rd_republic_parliamentary
+		has_government_type = gov_french_4th_republic_parliamentary
+		has_government_type = gov_danubian_federation_parliamentary_republic
+		has_government_type = gov_circassian_federation
+		has_government_type = gov_american_parliamentary
+		has_government_type = gov_anglo_parliamentary
+		has_government_type = gov_anglo_parliamentary_provincial
+		has_government_type = gov_parliamentary_democracy
+		has_government_type = gov_soviet_republic
+		has_government_type = gov_council_republic
+		has_government_type = gov_anarchist_commune
+		has_government_type = gov_folkhemmet
+		has_government_type = gov_dominion_india_parliamentary
+		has_government_type = gov_dominion_elected
+		has_government_type = gov_hm_gov
+		has_government_type = gov_hm_gov_empire
+		has_government_type = gov_danubian_federation
+		has_government_type = gov_triple_monarchy
+		has_government_type = gov_dual_monarchy
+		has_government_type = gov_constitutional_empire
+		has_government_type = gov_constitutional_kingdom
+		has_government_type = gov_constitutional_county
+		has_government_type = gov_constitutional_duchy
+		has_government_type = gov_constitutional_principality
+		has_government_type = gov_constitutional_grand_duchy
+		has_government_type = gov_constitutional_grand_principality
+		has_government_type = gov_fra_constitutional_monarchy_orleanist
+		has_government_type = gov_fra_constitutional_monarchy_legitimist
+		has_government_type = gov_regency_empire_constitutional
+		has_government_type = gov_regency_kingdom_constitutional
+		has_government_type = gov_regency_grand_principality_constitutional
+		has_government_type = gov_regency_grand_duchy_constitutional
+		has_government_type = gov_regency_principality_constitutional
+		has_government_type = gov_regency_duchy_constitutional
+		has_government_type = gov_regency_city_state_constitutional
+	}
+}
+
+# Presidential democracies and market/corporate democratic forms.
+smd_is_right_democratic_government_trigger = {
+	OR = {
+		has_government_type = gov_peru_bolivia_confederal_state_bolivia
+		has_government_type = gov_peru_bolivia_confederal_state
+		has_government_type = gov_peru_bolivia_confederal_autonomy
+		has_government_type = gov_danubian_federation_presidential_republic
+		has_government_type = gov_brazil_oligarchic_republic_presidential
+		has_government_type = gov_french_2nd_republic_presidential
+		has_government_type = gov_french_3rd_republic_presidential
+		has_government_type = gov_french_4th_republic_presidential
+		has_government_type = gov_banana_republic
+		has_government_type = gov_bhutanese_dual_system_temporal
+		has_government_type = gov_indian_territory_elected_term
+		has_government_type = gov_free_city
+		has_government_type = gov_presidential_democracy
+		has_government_type = gov_danubian_federation_corporate_state
+	}
+}
+
+# All remaining monarchies, dictatorships, colonies, chiefdoms, juntas, oligarchies, and corporate-authoritarian forms.
+smd_is_right_authoritarian_government_trigger = {
+	OR = {
+		has_government_type = gov_french_2nd_republic_parliamentary_dictator
+		has_government_type = gov_french_3rd_republic_parliamentary_dictator
+		has_government_type = gov_french_4th_republic_parliamentary_dictator
+		has_government_type = gov_danubian_federation_parliamentary_republic_dictatorship
+		has_government_type = gov_american_parliamentary_dictator
+		has_government_type = gov_parliamentary_dictatorship
+		has_government_type = gov_parliamentary_oligarchy
+		has_government_type = gov_parliamentary_single_party_state
+		has_government_type = gov_francocracia_presidential
+		has_government_type = gov_peru_bolivia_confederal_state_bolivia_dictatorship
+		has_government_type = gov_peru_bolivia_confederal_state_dictatorship
+		has_government_type = gov_peru_bolivia_confederal_autonomy_dictatorship
+		has_government_type = gov_danubian_federation_presidential_republic_dictatorship
+		has_government_type = gov_french_2nd_republic_presidential_dictator
+		has_government_type = gov_french_3rd_republic_presidential_dictator
+		has_government_type = gov_french_4th_republic_presidential_dictator
+		has_government_type = gov_indian_territory_life_term
+		has_government_type = gov_warlord_state
+		has_government_type = gov_fascist_state
+		has_government_type = gov_military_dictatorship
+		has_government_type = gov_presidential_dictatorship
+		has_government_type = gov_junta
+		has_government_type = gov_presidential_oligarchy
+		has_government_type = gov_presidential_single_party_state
+		has_government_type = gov_falangist_state
+		has_government_type = gov_fascist_corporate_state
+		has_government_type = gov_corporate_state
+		has_government_type = gov_corporate_state_austrofascist
+		has_government_type = gov_chiefdom
+		has_government_type = gov_colonial_administration
+		has_government_type = gov_colonial_administration_spa
+		has_government_type = gov_crown_colony_india
+		has_government_type = gov_crown_colony
+		has_government_type = gov_chartered_company
+		has_government_type = gov_dominion_dictatorial
+		has_government_type = gov_colonial_administration_fallback
+		has_government_type = gov_united_kingdom_braz_por
+		has_government_type = gov_united_kingdom_braz_por_kingdom
+		has_government_type = gov_united_kingdom_por_spa
+		has_government_type = gov_united_kingdom_braz_por_spa
+		has_government_type = gov_united_kingdom_braz_por_spa_kingdom
+		has_government_type = gov_voivodeship
+		has_government_type = gov_crown_land_voivode
+		has_government_type = gov_crown_land_palatine
+		has_government_type = gov_crown_land_ban
+		has_government_type = gov_crown_land_governor_generic
+		has_government_type = gov_guberniya
+		has_government_type = gov_danubian_federation_absolutist
+		has_government_type = gov_ethiopia_empire
+		has_government_type = gov_ethiopia_ras
+		has_government_type = gov_ethiopia_kingdom
+		has_government_type = gov_griqua_captaincy
+		has_government_type = gov_princely_state_rawalate
+		has_government_type = gov_princely_state_maharaja
+		has_government_type = gov_princely_state_diwanate
+		has_government_type = gov_princely_state_khanate
+		has_government_type = gov_princely_state_nizamate
+		has_government_type = gov_princely_state_nawabate
+		has_government_type = gov_princely_state_maratha_raja
+		has_government_type = gov_princely_state_raja
+		has_government_type = gov_princely_state_sultan
+		has_government_type = gov_shogunate
+		has_government_type = gov_massina_empire
+		has_government_type = gov_hawaiian_monarchy_recognised
+		has_government_type = gov_hawaiian_monarchy
+		has_government_type = gov_malikdom
+		has_government_type = gov_khalsa_state
+		has_government_type = gov_maratha_rajya
+		has_government_type = gov_maharaja
+		has_government_type = gov_rawalate
+		has_government_type = gov_rajya
+		has_government_type = gov_tsardom
+		has_government_type = gov_dey
+		has_government_type = gov_wilayah
+		has_government_type = gov_swahili_sultanate
+		has_government_type = gov_sultanate
+		has_government_type = gov_hakimate
+		has_government_type = gov_chitrali_monarchy
+		has_government_type = gov_sheikhdom
+		has_government_type = gov_kongolese_kingdom
+		has_government_type = gov_sunanate
+		has_government_type = gov_balinese_monarchy
+		has_government_type = gov_sikkimese_monarchy
+		has_government_type = gov_bhutanese_monarchy
+		has_government_type = gov_mughal_empire
+		has_government_type = gov_caliphate
+		has_government_type = gov_khedive
+		has_government_type = gov_vilayet
+		has_government_type = gov_shah
+		has_government_type = gov_prince
+		has_government_type = gov_bey
+		has_government_type = gov_sharif
+		has_government_type = gov_kaiser
+		has_government_type = gov_confederation_of_the_rhine
+		has_government_type = gov_decentralized_realm
+		has_government_type = gov_fra_absolute_monarchy_orleanist
+		has_government_type = gov_fra_absolute_monarchy_legitimist
+		has_government_type = gov_nawabate
+		has_government_type = gov_nizamate
+		has_government_type = gov_diwanate
+		has_government_type = gov_tibetan_kingdom
+		has_government_type = gov_khanate
+		has_government_type = gov_ilkhanate
+		has_government_type = gov_zhuz
+		has_government_type = gov_absolute_principality_muslim
+		has_government_type = gov_absolute_empire
+		has_government_type = gov_feudal_empire
+		has_government_type = gov_empire
+		has_government_type = gov_absolute_kingdom
+		has_government_type = gov_feudal_kingdom
+		has_government_type = gov_kingdom
+		has_government_type = gov_absolute_county
+		has_government_type = gov_county
+		has_government_type = gov_absolute_duchy
+		has_government_type = gov_duchy
+		has_government_type = gov_absolute_principality
+		has_government_type = gov_principality
+		has_government_type = gov_absolute_grand_duchy
+		has_government_type = gov_grand_duchy
+		has_government_type = gov_absolute_grand_principality
+		has_government_type = gov_grand_principality
+		has_government_type = gov_regency_ethiopia_ras
+		has_government_type = gov_regency_princely_state_rawalate
+		has_government_type = gov_regency_princely_state_maharaja
+		has_government_type = gov_regency_princely_state_diwanate
+		has_government_type = gov_regency_princely_state_khanate
+		has_government_type = gov_regency_princely_state_nizamate
+		has_government_type = gov_regency_princely_state_nawabate
+		has_government_type = gov_regency_princely_state_maratha_raja
+		has_government_type = gov_regency_princely_state_raja
+		has_government_type = gov_regency_princely_state_sultan
+		has_government_type = gov_regency_shogunate
+		has_government_type = gov_regency_massina_empire
+		has_government_type = gov_regency_hawaiian_monarchy_recognised
+		has_government_type = gov_regency_hawaiian_monarchy
+		has_government_type = gov_regency_malikdom
+		has_government_type = gov_regency_maratha_rajya
+		has_government_type = gov_regency_maharaja
+		has_government_type = gov_regency_rawalate
+		has_government_type = gov_regency_rajya
+		has_government_type = gov_regency_tsardom
+		has_government_type = gov_regency_dey
+		has_government_type = gov_regency_wilayah
+		has_government_type = gov_regency_swahili_sultanate
+		has_government_type = gov_regency_sultanate
+		has_government_type = gov_regency_hakimate
+		has_government_type = gov_regency_chitrali_monarchy
+		has_government_type = gov_regency_sheikhdom
+		has_government_type = gov_regency_kongolese_kingdom
+		has_government_type = gov_regency_sunanate
+		has_government_type = gov_regency_balinese_monarchy
+		has_government_type = gov_regency_sikkimese_monarchy
+		has_government_type = gov_regency_bhutanese_monarchy
+		has_government_type = gov_regency_mughal_empire
+		has_government_type = gov_regency_caliphate
+		has_government_type = gov_regency_khedive
+		has_government_type = gov_regency_shah
+		has_government_type = gov_regency_bey
+		has_government_type = gov_regency_sharif
+		has_government_type = gov_regency_kaiser
+		has_government_type = gov_regency_confederation_of_the_rhine
+		has_government_type = gov_regency_nawabate
+		has_government_type = gov_regency_nizamate
+		has_government_type = gov_regency_diwanate
+		has_government_type = gov_regency_tibetan_kingdom
+		has_government_type = gov_regency_khanate
+		has_government_type = gov_regency_ilkhanate
+		has_government_type = gov_regency_zhuz
+		has_government_type = gov_regency_absolute_principality_muslim
+		has_government_type = gov_regency_empire
+		has_government_type = gov_regency_kingdom
+		has_government_type = gov_regency_grand_principality
+		has_government_type = gov_regency_grand_duchy
+		has_government_type = gov_regency_principality
+		has_government_type = gov_regency_duchy
+		has_government_type = gov_regency_city_state
+		has_government_type = gov_provisional_government_spain
+	}
+}
+
+smd_has_any_government_classification_trigger = {
+	OR = {
+		smd_is_theocratic_government_trigger = yes
+		smd_is_left_authoritarian_government_trigger = yes
+		smd_is_right_authoritarian_government_trigger = yes
+		smd_is_left_democratic_government_trigger = yes
+		smd_is_right_democratic_government_trigger = yes
+	}
+}
+
+# Safety/debug helper: if this returns yes, the country is using a government type not listed above.
+# Moderates remain always-valid in the ideology file, so even an unknown government type will not block all ideology spawning.
+smd_has_unknown_government_classification_trigger = {
+	NOT = { smd_has_any_government_classification_trigger = yes }
+}

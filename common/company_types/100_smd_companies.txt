@@ -1,0 +1,1873 @@
+﻿######################################## USA ########################################
+
+# Amazon.com
+company_amazon = {
+	icon = "gfx/interface/icons/company_icons/usa/american_amazon.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+
+	flavored_company = yes
+
+	preferred_headquarters = { STATE_WASHINGTON }
+
+	building_types = {
+		building_trade_center
+		building_port
+		building_warehouse
+	}
+
+	extension_building_types = {
+		building_railway
+		building_software_industry
+	}
+
+	possible_prestige_goods = {
+		prestige_good_prime_shipping
+	}
+
+	potential = {
+		has_interest_marker_in_region = geographic_region_the_midwest_old
+	}
+
+	attainable = {
+		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
+			any_scope_state = {
+				state_region = s:STATE_WASHINGTON
+			}
+		}
+	}
+
+	possible = {
+		has_technology_researched = currency_standards
+		any_scope_state = {
+			state_region = s:STATE_WASHINGTON
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_trade_center
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		market_land_trade_capacity_add = 15
+		country_trade_route_cost_mult = -0.15
+		country_trade_route_competitiveness_mult = 0.15
+	}
+
+	ai_will_do = {
+		has_technology_researched = currency_standards
+		any_scope_state = {
+			state_region = s:STATE_WASHINGTON
+			is_incorporated = yes
+		}
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# Apple Inc.
+company_amazon = {
+	icon = "gfx/interface/icons/company_icons/usa/american_amazon.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+
+	flavored_company = yes
+
+	preferred_headquarters = { STATE_WASHINGTON }
+
+	building_types = {
+		building_trade_center
+		building_port
+	}
+
+	extension_building_types = {
+		building_railway
+		building_software_industry
+	}
+
+	possible_prestige_goods = {
+		prestige_good_prime_shipping
+	}
+
+	potential = {
+		has_interest_marker_in_region = geographic_region_the_midwest_old
+	}
+
+	attainable = {
+		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
+			any_scope_state = {
+				state_region = s:STATE_WASHINGTON
+			}
+		}
+	}
+
+	possible = {
+		has_technology_researched = currency_standards
+		any_scope_state = {
+			state_region = s:STATE_WASHINGTON
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_trade_center
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		market_land_trade_capacity_add = 15
+		country_trade_route_cost_mult = -0.15
+		country_trade_route_competitiveness_mult = 0.15
+	}
+
+	ai_will_do = {
+		has_technology_researched = currency_standards
+		any_scope_state = {
+			state_region = s:STATE_WASHINGTON
+			is_incorporated = yes
+		}
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# apple
+company_apple = {
+	icon = "gfx/interface/icons/company_icons/usa/american_apple.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_CALIFORNIA }
+
+	building_types = {
+		building_electrics_industry
+	}
+
+	extension_building_types = {
+		building_computer_industry
+		building_software_industry
+	}
+	
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+
+	possible_prestige_goods = {
+		prestige_good_iphones
+	}
+
+	possible = {
+		has_technology_researched = labor_movement
+		any_scope_state = {
+			state_region = s:STATE_CALIFORNIA
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_electrics_industry
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		country_tech_spread_mult = 0.15
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# monsanto
+company_monsanto = {
+	icon = "gfx/interface/icons/company_icons/usa/american_monsanto.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_CALIFORNIA }
+
+	building_types = {
+		building_chemical_plant
+	}
+
+	extension_building_types = {
+		building_wheat_farm
+		building_maize_farm
+	}
+	
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+
+	possible = {
+		has_technology_researched = labor_movement
+		any_scope_state = {
+			state_region = s:STATE_CALIFORNIA
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_chemical_plant
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_chemical_plant_throughput_add = 0.1
+		building_livestock_ranch_throughput_add = 0.1
+		country_prestige_mult = 0.1
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# at&t
+company_atandt = {
+	icon = "gfx/interface/icons/company_icons/usa/american_atandt.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	
+	building_types = {
+		building_telecommunications
+	}
+	
+	extension_building_types = {
+		building_professional_service
+	}
+	
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+
+	
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NEW_YORK
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_railway
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_railway_throughput_add = 0.2
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+# bank of america
+company_bank_of_america = {
+	icon = "gfx/interface/icons/company_icons/usa/american_bank.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_bank
+	}
+
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+
+	
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NEW_YORK
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_professional_service
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_professional_service_throughput_add = 0.10
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# blackrock
+company_blackrock = {
+	icon = "gfx/interface/icons/company_icons/usa/american_blackrock.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_professional_service
+		building_bank
+	}
+
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+
+	
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NEW_YORK
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_professional_service
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		country_radicals_from_legitimacy_mult = 0.50
+		country_forbid_monopoly_bool = no
+		country_free_charters_add = 2
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# jpm
+company_jp_morgan = {
+	icon = "gfx/interface/icons/company_icons/usa/american_jpm.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_bank
+	}
+
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+
+	
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NEW_YORK
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_professional_service
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_professional_service_throughput_add = 0.10
+		country_decree_cost_mult = -0.15
+		interest_group_ig_industrialists_approval_add = 2
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+# boeing
+company_boeing = {
+	icon = "gfx/interface/icons/company_icons/usa/american_boeing.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_aeronautics_industry
+	}
+	
+	extension_building_types = {
+		building_spaceport
+	}
+	
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+
+	
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_WASHINGTON
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_aeronautics_industry
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		unit_army_offense_mult = 0.15
+		unit_navy_defense_mult = 0.15
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+# coca cola
+company_coke = {
+	icon = "gfx/interface/icons/company_icons/usa/american_cocacola.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_sugar_plantation
+		building_tea_plantation
+	}
+	
+	extension_building_types = {
+		building_food_industry
+		building_retail_services
+	}
+
+	possible_prestige_goods = {
+		prestige_good_coca_cola
+	}
+	
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_FLORIDA
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_sugar_plantation
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		country_influence_mult = 0.15
+		country_authority_add = 100
+		
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# nestle
+company_nestle = {
+	icon = "gfx/interface/icons/company_icons/usa/nestle.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_food_industry
+		building_sugar_plantation
+	}
+	
+	extension_building_types = {
+		building_tea_plantation
+		building_retail_services
+	}
+
+	possible_prestige_goods = {
+		prestige_good_generic_groceries
+	}
+	
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_FLORIDA
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_sugar_plantation
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		country_resource_depletion_chance_mult = 0.15
+		state_standard_of_living_add = 2.0
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# caterpillar
+company_caterpillar = {
+	icon = "gfx/interface/icons/company_icons/usa/caterpillar.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+
+	building_types = {
+		building_motor_industry
+		building_tooling_workshop
+	}
+
+	extension_building_types = {
+		building_lead_mine
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_TEXAS
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_tooling_workshop
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_construction_sector_throughput_add = 0.2
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			any_scope_building = {
+				OR = {
+					is_building_type = building_steel_mill
+					is_building_type = building_tooling_workshop
+					is_building_type = building_glassworks
+				}
+				level >= 5
+			}
+		}
+	}
+}
+
+
+# Cargill
+company_cargill = {
+	icon = "gfx/interface/icons/company_icons/usa/cargill.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+
+	building_types = {
+		building_chemical_plant
+		building_railway
+		building_maize_farm
+		building_livestock_ranch
+	}
+
+	extension_building_types = {
+		building_wheat_farm
+		building_food_industry
+	}
+
+	possible_prestige_goods = {
+		prestige_good_generic_groceries
+	}
+	
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_MINNESOTA
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_railway
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		state_market_access_price_impact = 0.25
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			any_scope_building = {
+				OR = {
+					is_building_type = building_steel_mill
+					is_building_type = building_tooling_workshop
+					is_building_type = building_glassworks
+				}
+				level >= 5
+			}
+		}
+	}
+}
+
+# comcast
+company_comcast = {
+	icon = "gfx/interface/icons/company_icons/usa/american_comcast.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_art_academy
+	}
+	
+	extension_building_types = {
+		building_telecommunications
+	}
+
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+
+	
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NEW_YORK
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_art_academy
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		country_loyalists_from_legitimacy_mult = 0.35
+		interest_group_ig_intelligensia_approval_add = 2
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# disney
+company_disney = {
+	icon = "gfx/interface/icons/company_icons/usa/american_walt_disney.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_art_academy
+	}
+
+	extension_building_types = {
+		building_telecommunications
+	}
+	
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_CALIFORNIA
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_art_academy
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		country_authority_add = 250
+		country_infamy_decay_mult = 0.25
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# general motor
+company_general_motor = {
+	icon = "gfx/interface/icons/company_icons/usa/american_general_motors.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+	
+	flavored_company = yes
+	
+	building_types = {  
+		building_motor_industry
+		building_automotive_industry
+	}
+	
+	extension_building_types = {
+		building_telecommunications
+	}
+	
+	potential = {
+		has_interest_marker_in_region = geographic_region_the_midwest_old
+	}
+	
+	attainable = {
+		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
+			any_scope_state = {
+				state_region = s:STATE_MICHIGAN
+			}
+		}
+	}	
+	
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_MICHIGAN
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_motor_industry
+				level >= 3
+			}
+		}
+		has_technology_researched = combustion_engine
+	}
+	
+	prosperity_modifier = {
+		building_motor_industry_throughput_add = 0.25
+	}	
+	
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# northrup grumman
+company_northrop_grumman = {
+	icon = "gfx/interface/icons/company_icons/usa/american_grumman.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_war_machine_industry
+	}
+	
+	extension_building_types = {
+		building_aeronautics_industry
+		building_spaceport
+	}
+	
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+
+	
+	
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_VIRGINIA
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_war_machine_industry
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		unit_navy_attack_mult = 0.18
+		unit_navy_defense_mult = 0.18
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# lockheed martin
+
+company_lockheed_martin = {
+	icon = "gfx/interface/icons/company_icons/usa/american_lockheed_martin.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_war_machine_industry
+	}
+	
+	extension_building_types = {
+		building_aeronautics_industry
+		building_spaceport
+	}
+	
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+
+	possible_prestige_goods = {
+		prestige_good_f35s
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_TEXAS
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_war_machine_industry
+				level >= 1
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		unit_army_attack_mult = 0.10
+		unit_army_defense_mult = 0.10
+		interest_group_ig_armed_forces_approval_add = 2
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# mcdonalds
+company_mcdonalds = {
+	icon = "gfx/interface/icons/company_icons/usa/american_mcdonalds.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_retail_services
+	}
+	
+	extension_building_types = {
+		building_wheat_farm
+		building_livestock_ranch
+		building_food_industry
+	}
+	
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+
+	
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_CALIFORNIA
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_food_industry
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_food_industry_throughput_add = 0.10
+		country_influence_mult = 0.15
+		building_trade_center_throughput_add = 0.15
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# pepsico
+company_pepsi = {
+	icon = "gfx/interface/icons/company_icons/usa/american_pepsico.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_food_industry
+	}
+	
+	extension_building_types = {
+		building_sugar_plantation
+	}
+	
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_TEXAS
+			}
+		}
+	}	
+	
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+
+	possible_prestige_goods = {
+		prestige_good_generic_groceries
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_TEXAS
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_food_industry
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_food_industry_throughput_add = 0.10
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# microsoft
+company_microsoft = {
+	icon = "gfx/interface/icons/company_icons/usa/american_microsoft.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_computer_industry
+		building_software_industry
+	}
+	
+	extension_building_types = {
+		building_chip_industry
+		building_electrics_industry
+	}
+	
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_CALIFORNIA
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_chip_industry
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_computer_industry_throughput_add = 0.175
+		country_prestige_mult = 0.15
+		state_market_access_price_impact = 0.10
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# spacex
+company_spacex = {
+	icon = "gfx/interface/icons/company_icons/usa/american_spacex.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_spaceport
+	}
+	
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+
+	attainable = {
+		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
+			any_scope_state = {
+				state_region = s:STATE_WASHINGTON
+			}
+		}
+	}	
+	
+	possible_prestige_goods = {
+		prestige_good_spacex_spacecraft
+	}
+
+	possible = {
+		has_technology_researched = empiricism
+		any_scope_state = {
+			state_region = s:STATE_WASHINGTON
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_spaceport
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_spaceport_throughput_add = 0.25
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# tesla
+company_nvidia = {
+	icon = "gfx/interface/icons/company_icons/usa/nvidia.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+	
+	flavored_company = yes
+	
+	building_types = {
+		building_chip_industry
+		building_software_industry
+	}
+	
+	extension_building_types = {
+		building_electrics_industry
+	}
+	
+	potential = {
+		has_interest_marker_in_region = geographic_region_pacific_coast_old
+	}
+	
+	attainable = {
+		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
+			any_scope_state = {
+				state_region = s:STATE_CALIFORNIA
+			}
+		}
+	}
+	
+	possible = {
+		has_technology_researched = currency_standards
+		any_scope_state = {
+			state_region = s:STATE_CALIFORNIA
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_chip_industry
+				level >= 3
+			}
+		}
+	}
+	
+	prosperity_modifier = {
+		building_chip_industry_throughput_add = 0.15
+	}
+	
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+company_tesla = {
+	icon = "gfx/interface/icons/company_icons/usa/american_tesla.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+	
+	flavored_company = yes
+	
+	building_types = {  
+		building_motor_industry
+		building_automotive_industry
+	}
+	
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_MICHIGAN
+			}
+		}
+	}
+	
+	extension_building_types = {  
+		building_spaceport
+		building_tooling_workshop
+	}
+	
+	possible_prestige_goods = {
+		prestige_good_tesla_automobiles
+	}
+	
+	potential = {
+		has_interest_marker_in_region = geographic_region_the_midwest_old
+	}
+	
+	attainable = {
+		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
+			any_scope_state = {
+				state_region = s:STATE_MICHIGAN
+			}
+		}
+	}	
+	
+	possible = {
+		has_technology_researched = steel_railway_cars
+		any_scope_state = {
+			state_region = s:STATE_CALIFORNIA
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_motor_industry
+				level >= 3
+			}
+		}
+	}
+	
+	prosperity_modifier = {
+		building_motor_industry_throughput_add = 0.10
+	}	
+	
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# walmart
+company_walmart = {
+	icon = "gfx/interface/icons/company_icons/usa/american_walmart.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+	
+	flavored_company = yes
+	
+	building_types = {  
+		building_retail_services
+		building_food_service
+	}
+	
+	extension_building_types = {
+		building_food_industry
+		building_tooling_workshop
+		building_textile_mill
+		building_furniture_manufactory
+		building_warehouse
+		building_pharmaceutical_services
+	}
+	
+	potential = {
+		has_interest_marker_in_region = geographic_region_the_midwest_old
+	}
+	
+	attainable = {
+		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
+			any_scope_state = {
+				state_region = s:STATE_TEXAS
+			}
+		}
+	}	
+	
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_TEXAS
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_textile_mill
+				level >= 3
+			}
+		}
+	}
+	
+	prosperity_modifier = {
+		building_food_industry_throughput_add = 0.165
+		building_tooling_workshop_throughput_add = 0.165
+		building_textile_mill_throughput_add = 0.165
+		building_furniture_manufactory_throughput_add = 0.165
+	}	
+	
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# starbucks
+company_starbucks = {
+	icon = "gfx/interface/icons/company_icons/usa/american_starbucks.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	
+	building_types = {
+		building_food_service
+		building_coffee_plantation
+	}
+	
+	extension_building_types = {
+		building_food_industry
+	}
+	
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:yankee
+			country_has_primary_culture = cu:dixie
+		}
+	}
+
+	
+
+	possible = {
+		any_scope_state = {
+			any_scope_building = {
+				is_building_type = building_coffee_plantation
+				level >= 1
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_coffee_plantation_throughput_add = 0.175
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+
+######################################## CANADA ########################################
+
+# tim hortons
+company_timhortons = {
+	icon = "gfx/interface/icons/company_icons/canada/tim_hortons.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_food_service
+		building_coffee_plantation
+		building_food_industry
+	}
+	
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:anglo_canadian
+		}
+	}
+
+	possible_prestige_goods = {
+		prestige_good_generic_coffee
+	}
+
+	possible = {
+		any_scope_state = {
+			any_scope_building = {
+				is_building_type = building_food_service
+				level >= 1
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_food_industry_throughput_add = 0.05
+		building_coffee_plantation_throughput_add = 0.175
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# loblaws
+company_loblaws = {
+	icon = "gfx/interface/icons/company_icons/canada/loblaws.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_food_service
+	}
+	
+	extension_building_types = {
+		building_food_industry
+		building_livestock_ranch
+		building_wheat_farm
+	}
+	
+	possible_prestige_goods = {
+		prestige_good_generic_groceries
+	}
+	
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:anglo_canadian
+		}
+	}
+
+	
+
+	possible = {
+		any_scope_state = {
+			any_scope_building = {
+				is_building_type = building_food_industry
+				level >= 1
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_food_industry_throughput_add = 0.175
+		country_trade_route_cost_mult = -0.15
+		country_trade_route_competitiveness_mult = 0.15
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# toronto-dominion bank
+company_td = {
+	icon = "gfx/interface/icons/company_icons/canada/td.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_bank
+	}
+
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:anglo_canadian
+		}
+	}
+
+	
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_ONTARIO
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_professional_service
+				level >= 2
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_professional_service_throughput_add = 0.12
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# brookfield
+company_brookfield = {
+	icon = "gfx/interface/icons/company_icons/canada/brookfield.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_professional_service
+	}
+
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:anglo_canadian
+		}
+	}
+
+	
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_ONTARIO
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_professional_service
+				level >= 2
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		country_trade_route_cost_mult = -0.15
+		country_trade_route_competitiveness_mult = 0.15
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# imperial oil
+company_imperial_oil = {
+	icon = "gfx/interface/icons/company_icons/canada/imperial_oil.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_oil_drills.dds"
+	
+	flavored_company = yes
+	
+	building_types = {  
+		building_oil_rig
+	}
+	
+	potential = {
+		country_has_primary_culture = cu:anglo_canadian
+	}
+	
+			
+	
+	possible = { 
+		any_scope_state = {
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_oil_rig
+				level >= 5
+			}
+		}
+	}
+	
+	prosperity_modifier = {
+		building_railway_throughput_add = 0.1
+	}
+	
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+######################################## SOUTH KOREA ########################################
+
+# samsung
+company_samsung = {
+	icon = "gfx/interface/icons/company_icons/south_korea/samsung.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_electrics_industry
+	}
+
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:korean
+		}
+	}
+
+	extension_building_types = {
+		building_telecommunications
+		building_chip_industry
+	}
+	
+	possible_prestige_goods = {
+		prestige_good_samsung
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_SEOUL
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_electrics_industry
+				level >= 3
+		}
+	}
+
+	prosperity_modifier = {
+		building_electrics_industry_throughput_add = 0.12
+			}
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+######################################## RUSSIA ########################################
+
+# sberbank
+company_sberbank = {
+	icon = "gfx/interface/icons/company_icons/russia/sberbank.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_bank
+	}
+
+	potential = {
+		OR = {
+			has_interest_marker_in_region = geographic_region_caucasus_old
+		}
+	}
+
+	attainable = {
+		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
+			any_scope_state = {
+				state_region = s:STATE_MOSCOW
+			}
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_MOSCOW
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_professional_service
+				level >= 2
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_professional_service_throughput_add = 0.08
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+######################################## JAPAN ########################################
+
+# honda
+company_honda = {
+	icon = "gfx/interface/icons/company_icons/japan/honda.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+	
+	flavored_company = yes
+	
+	building_types = {
+		building_motor_industry
+		building_automotive_industry
+	}
+	
+	potential = {
+		country_has_primary_culture = cu:japanese
+	}
+	
+	possible = { 
+		any_scope_state = {
+			state_region = s:STATE_KANTO
+			is_incorporated = yes
+			any_scope_building = {
+				OR = {
+					is_building_type = building_motor_industry
+				}
+				level >= 3
+			}
+		}
+	}
+	
+	prosperity_modifier = {
+		building_motor_industry_throughput_add = 0.25
+	}	
+	
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# toyota
+company_toyota = {
+	icon = "gfx/interface/icons/company_icons/japan/toyota.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+	
+	flavored_company = yes
+	
+	building_types = {
+		building_motor_industry
+		building_automotive_industry
+	}
+	
+	potential = {
+		country_has_primary_culture = cu:japanese
+	}
+	
+	possible = { 
+		any_scope_state = {
+			state_region = s:STATE_KANTO
+			is_incorporated = yes
+			any_scope_building = {
+				OR = {
+					is_building_type = building_motor_industry
+				}
+				level >= 5
+			}
+		}
+	}
+	
+	prosperity_modifier = {
+		building_motor_industry_throughput_add = 0.25
+	}	
+	
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# sony
+company_sony = {
+	icon = "gfx/interface/icons/company_icons/japan/sony.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_electrics_industry
+		building_chip_industry
+	}
+	
+	extension_building_types = {
+		building_computer_industry
+		building_art_academy
+	}
+	
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:japanese
+		}
+	}
+
+	attainable = {
+		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
+			any_scope_state = {
+				state_region = s:STATE_KANTO
+			}
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_KANTO
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_electrics_industry
+				level >= 3
+		}
+	}
+
+	prosperity_modifier = {
+		building_electrics_industry_throughput_add = 0.15
+		building_chip_industry_throughput_add = 0.08
+			}
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# nintendo
+company_nintendo = {
+	icon = "gfx/interface/icons/company_icons/japan/nintendo.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_art_academy
+		building_chip_industry
+		building_software_industry
+	}
+
+	extension_building_types = {
+		building_computer_industry
+	}
+	
+	potential = {
+		OR = {
+			country_has_primary_culture = cu:japanese
+		}
+	}
+
+	attainable = {
+		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
+			any_scope_state = {
+				state_region = s:STATE_KANTO
+			}
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_KANTO
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_electrics_industry
+				level >= 3
+		}
+	}
+
+	prosperity_modifier = {
+		building_art_academy_throughput_add = 0.10
+		building_chip_industry_throughput_add = 0.05
+			}
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+############################# UNITED KINGDOM #############################
+
+company_hsbc = {
+	icon = "gfx/interface/icons/company_icons/britain/hsbc.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_bank
+	}
+	
+	attainable = {
+		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
+			any_scope_state = {
+				state_region = s:STATE_LOWLANDS
+			}
+		}
+	}
+	
+	possible = {
+		any_scope_state = {
+			any_scope_building = {
+				is_building_type = building_professional_service
+				level >= 1
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_professional_service_throughput_add = 0.12
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# tesco
+company_tesco = {
+	icon = "gfx/interface/icons/company_icons/britain/tesco.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufactering_light.dds"
+	flavored_company = yes
+	building_types = {
+		building_food_service
+		building_retail_services
+	}
+	
+	extension_building_types = {
+		building_livestock_ranch
+		building_wheat_farm
+		building_food_industry
+	}
+	
+	possible_prestige_goods = {
+		prestige_good_generic_groceries
+	}
+	
+	attainable = {
+		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
+			any_scope_state = {
+				state_region = s:STATE_LOWLANDS
+			}
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			any_scope_building = {
+				is_building_type = building_food_industry
+				level >= 1
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_food_industry_throughput_add = 0.175
+		country_trade_route_cost_mult = -0.15
+		country_trade_route_competitiveness_mult = 0.15
+	}
+
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+# Shell
+company_shell = {
+	icon = "gfx/interface/icons/company_icons/britain/shell.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_oil_drills.dds"
+
+	flavored_company = yes
+
+	building_types = {
+		building_oil_rig
+	}
+
+	extension_building_types = {
+		building_coal_mine
+	}
+
+	attainable = {
+		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
+			any_scope_state = {
+				state_region = s:STATE_LOWLANDS
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_group_bg_oil_extraction_throughput_add = 0.20
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			any_scope_building = {
+				is_building_type = building_oil_rig
+				level >= 3
+			}
+		}
+	}
+}
+
+################################### Saudi Arabia ############################
+
+# Saudi Aramco
+company_saudi_aramco = {
+	icon = "gfx/interface/icons/company_icons/saudi_arabia/saudi_aramco.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_oil_drills.dds"
+
+	flavored_company = yes
+
+	building_types = {
+		building_oil_rig
+		building_railway
+	}
+
+	extension_building_types = {
+		building_coal_mine
+	}
+
+	attainable = {
+		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
+			any_scope_state = {
+				state_region = s:STATE_HEDJAZ
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_group_bg_oil_extraction_throughput_add = 0.35
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			any_scope_building = {
+				is_building_type = building_oil_rig
+				level >= 3
+			}
+		}
+	}
+}

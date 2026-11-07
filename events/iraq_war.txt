@@ -1,0 +1,155 @@
+﻿namespace = iraq_war
+
+# 1. UN Response Event
+iraq_war.1 = {
+    type = country_event
+    placement = ROOT
+    title = iraq_war.1.t
+    desc = iraq_war.1.d
+    event_image = { video = "fighterjets" }
+    duration = 3
+
+    trigger = {
+        has_variable = iraq_wmds_accused
+    }
+
+    immediate = {
+        every_country = {
+            limit = { exists = yes }
+            trigger_event = { id = iraq_war.2 popup = yes days = 6 }
+        }
+    }
+
+    option = {
+        name = iraq_war.1.a
+		c:IRQ = {
+		trigger_event = { id = iraq_war.4 days = 50 }
+		}
+    }
+}
+
+# 2. UN Member Response (fires for each)
+iraq_war.2 = {
+    type = country_event
+    placement = ROOT
+    title = iraq_war.2.t
+    desc = iraq_war.2.d
+    event_image = { video = "parliament" }
+    duration = 2
+	trigger = { NOT = { c:USA ?= this } }
+    option = {
+        name = iraq_war.2.a
+        change_relations = { country = c:USA value = 15 }
+        change_relations = { country = c:IRQ value = -25 }
+    }
+
+    option = {
+        name = iraq_war.2.b
+        change_relations = { country = c:USA value = -15 }
+        change_relations = { country = c:IRQ value = 25 }
+    }
+
+    option = {
+        name = iraq_war.2.c
+    }
+}
+
+# 4. Iraq’s Response
+iraq_war.4 = {
+    type = country_event
+    placement = ROOT
+    title = iraq_war.4.t
+    desc = iraq_war.4.d
+    event_image = { video = "unspecific_military_parade" }
+    duration = 3
+
+    option = {
+        name = iraq_war.4.a
+        add_modifier = {
+            name = iraq_isolated
+            days = 365
+        }
+		c:USA = {
+			trigger_event = { id = iraq_war.5 days = 4 }
+		}
+    }
+
+    option = {
+        name = iraq_war.4.b
+        add_modifier = {
+            name = iraq_condemned
+            days = 365
+        }
+		c:USA = {
+			trigger_event = { id = iraq_war.5 days = 4 }
+		}
+    }
+}
+
+# 5. U.S. Pleads to the UN
+iraq_war.5 = {
+    type = country_event
+    placement = ROOT
+    title = iraq_war.5.t
+    desc = iraq_war.5.d
+    event_image = { video = "parliament" }
+    duration = 3
+
+    trigger = {
+        c:USA ?= this
+        has_variable = iraq_wmds_accused
+		NOT = { has_war_with = c:IRQ }
+		NOT = { has_subject_relation_with = c:IRQ }
+    }
+
+    option = {
+        name = iraq_war.5.b
+        custom_tooltip = iraq_war_unfail_tt
+		change_relations = { country = c:GBR value = 25 }
+        change_relations = { country = c:FRA value = 15 }
+        change_relations = { country = c:RUS value = -10 }
+        change_relations = { country = c:PRC value = -10 }
+        trigger_event = { id = iraq_war.6 popup = yes days = 5}
+    }
+}
+
+# 6. U.S. Declares War after UN Deadlock
+iraq_war.6 = {
+    type = country_event
+    placement = ROOT
+    title = iraq_war.6.t
+    desc = iraq_war.6.d
+    event_image = { video = "iraq_war" }
+    duration = 3
+
+    trigger = {
+        c:USA ?= this
+        has_variable = iraq_wmds_accused
+		NOT = { has_war_with = c:IRQ }
+		NOT = { has_subject_relation_with = c:IRQ }
+    }
+
+    option = {
+        name = iraq_war.6.a
+        create_diplomatic_play = {
+			name = 2003_invasion_of_iraq
+			type = dp_regime_change
+			target_country = c:IRQ
+			escalation = 60
+			
+			add_war_goal = {
+				holder = c:IRQ
+				type = humiliation
+				target_country = c:USA
+			}
+		}
+    }
+
+    option = {
+        name = iraq_war.6.b
+        custom_tooltip = iraq_war_backdown_tt
+        change_relations = { country = c:IRQ value = -50 }
+        add_loyalists = { value = 0.05 }
+		set_variable = iraq_disarmament_resolved
+    }
+}

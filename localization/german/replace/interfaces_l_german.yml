@@ -1,0 +1,16 @@
+﻿l_german:
+
+ GDP_TOOLTIP:1 "<x id==3/>x id==================================================================================================="
+ COUNTRY_GDP_OWNERSHIP_TOOLTIP: "#headerx id=1/> in [Country.GetName]x id=3/>x id=4/>x id=5/>x id=6/>x id=6/>x id=7/>x (>x id=8/>x id=9/>>x id=10/>x id=11/>x id=1==1"
+
+ COUNTRY_ALL_GDP: "@money!#v [Country.GetGDPWithOwnershipsInForeignCountries|D]#!"
+ DOMESTIC_COUNTRY_GDP: "@money!#v [Country.GetGDP|D]#!"
+ FOREIGN_COUNTRY_GDP: "@money!#u [Country.GetGDPOwnedInForeignCountries|Db]#!"
+ COUNTRY_ALL_OWNERSHIP: "#u [Country.GetDomesticallyOwnedGDPFraction|%1b]#![ConcatIfNeitherEmpty(' + ', AddLocalizationIf(NotZero_CFixedPoint(Country.GetGDPOwnedInForeignCountries), 'FOREIGN_COUNTRY_GDP'))]"
+ 
+ ERROR_DEER_TOOLTIP:0 "#header Dangnabit!#!x id=2/>x id=3/> Left-Click#! open Error Log<x id=>x id=>x id=6/> Recht-Klick#!, um es weg zu machen (bis Sie es wieder verärgert haben)"
+ ERROR_MANUL_TOOLTIP: "#header Beschämt mich einmal, beschämt euch. Sie täuschen mich—Sie können nicht wieder getäuscht werden!#!x id=2/>x id=3/> Left-Click#! zu öffnen Fehler Log\nx id=6/> Recht-Klick#!, um es weg zu machen (bis Sie es wieder verärgert haben)"
+ 
+ OH_DEER:0 "„#italic Scham auf Sie? #! #boldx id=3/>x id=4/> #italic error(s)!#!"
+ ERROR_MANUL: "#italic #! #bold [ErrorDeer.NumberOrErrors|v]x Missionen akkompliziert."
+ ERROR_DEER_SLOW_TICK_OPERATIONS:0 "#header Slow Tick Operations<x = 1/>"

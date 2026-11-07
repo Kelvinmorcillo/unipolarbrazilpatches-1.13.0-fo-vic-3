@@ -1,0 +1,54 @@
+agrarian_party:
+  leader core: ideology_green_leader, ideology_left_wing_populist_leader, ideology_right_wing_populist_leader
+  IG core: ideology_communitarian, ideology_regionalist
+  IG adjacent: ideology_left_economy, ideology_conservative, ideology_traditionalist, ideology_isolationist
+
+anarchist_party:
+  leader core: ideology_anarchist_leader
+  IG core: ideology_individualist, ideology_communitarian
+  IG adjacent: ideology_left_economy, ideology_progressive, ideology_communist
+
+communist_party:
+  leader core: ideology_marxist_leader, ideology_state_socialist_leader, ideology_anarchist_leader
+  IG core: ideology_far_left_economy, ideology_communist
+  IG adjacent: ideology_left_economy, ideology_communitarian, ideology_totalitarian
+
+conservative_party:
+  leader core: ideology_conservative_leader, ideology_moderate_leader, ideology_corporatist_leader
+  IG core: ideology_conservative, ideology_right_economy, ideology_authoritarian
+  IG adjacent: ideology_traditionalist, ideology_centre_economy, ideology_regionalist, ideology_monarchist, ideology_republican
+
+fascist_party:
+  leader core: ideology_fascist_leader, ideology_authoritarian_capitalist_leader, ideology_right_wing_populist_leader
+  IG core: ideology_totalitarian, ideology_nationalist, ideology_militarist
+  IG adjacent: ideology_authoritarian, ideology_traditionalist, ideology_far_right_economy
+
+free_trade_party:
+  leader core: ideology_classical_liberal_leader, ideology_right_wing_libertarian_leader, ideology_minarchist_leader
+  IG core: ideology_far_right_economy, ideology_right_economy, ideology_globalist, ideology_individualist
+  IG adjacent: ideology_centre_economy, ideology_republican
+
+liberal_party:
+  leader core: ideology_liberal_leader, ideology_social_liberal_leader, ideology_neoliberal_leader
+  IG core: ideology_centre_economy, ideology_individualist, ideology_republican, ideology_globalist
+  IG adjacent: ideology_right_economy, ideology_progressive, ideology_regionalist
+
+military_party:
+  leader core: ideology_neocon_leader, ideology_authoritarian_capitalist_leader, ideology_fascist_leader
+  IG core: ideology_militarist, ideology_authoritarian, ideology_totalitarian
+  IG adjacent: ideology_nationalist, ideology_conservative, ideology_right_economy, ideology_monarchist, ideology_theocrat
+
+radical_party:
+  leader core: ideology_left_wing_populist_leader, ideology_progressive_leader, ideology_social_liberal_leader
+  IG core: ideology_progressive, ideology_individualist, ideology_republican
+  IG adjacent: ideology_left_economy, ideology_centre_economy, ideology_regionalist, ideology_globalist
+
+religious_party:
+  leader core: ideology_theocrat_leader, ideology_jihadist_leader
+  IG core: ideology_theocrat, ideology_traditionalist
+  IG adjacent: ideology_conservative, ideology_isolationist, ideology_authoritarian, ideology_monarchist
+
+social_democrat_party:
+  leader core: ideology_democratic_socialist_leader, ideology_progressive_leader, ideology_social_liberal_leader
+  IG core: ideology_left_economy, ideology_progressive, ideology_communitarian
+  IG adjacent: ideology_far_left_economy, ideology_centre_economy, ideology_republican, ideology_regionalist

@@ -1,0 +1,75 @@
+# Great Polarization / 2ACW scripted triggers
+# Keep these broad, because the ideology system is custom and may vary by country.
+
+great_polarization_ruler_is_right_wing = {
+	ruler ?= {
+		OR = {
+			has_ideology = ideology:ideology_conservative_leader
+			has_ideology = ideology:ideology_neocon_leader
+			has_ideology = ideology:ideology_right_wing_populist_leader
+			has_ideology = ideology:ideology_right_wing_libertarian_leader
+			has_ideology = ideology:ideology_classical_liberal_leader
+			has_ideology = ideology:ideology_minarchist_leader
+			has_ideology = ideology:ideology_authoritarian_capitalist_leader
+			has_ideology = ideology:ideology_monarchist_leader
+			has_ideology = ideology:ideology_fascist_leader
+			has_ideology = ideology:ideology_theocrat_leader
+		}
+	}
+}
+
+great_polarization_ruler_is_left_wing = {
+	ruler ?= {
+		OR = {
+			has_ideology = ideology:ideology_marxist_leader
+			has_ideology = ideology:ideology_state_socialist_leader
+			has_ideology = ideology:ideology_left_wing_populist_leader
+			has_ideology = ideology:ideology_democratic_socialist_leader
+			has_ideology = ideology:ideology_green_leader
+			has_ideology = ideology:ideology_market_socialist_leader
+			has_ideology = ideology:ideology_progressive_leader
+			has_ideology = ideology:ideology_social_liberal_leader
+			has_ideology = ideology:ideology_anarchist_leader
+		}
+	}
+}
+
+great_polarization_ruler_is_liberal_or_moderate = {
+	ruler ?= {
+		OR = {
+			has_ideology = ideology:ideology_liberal_leader
+			has_ideology = ideology:ideology_moderate_leader
+			has_ideology = ideology:ideology_neoliberal_leader
+			has_ideology = ideology:ideology_technocrat_leader
+		}
+	}
+}
+
+great_polarization_can_start_for_usa = {
+	c:USA ?= this
+	game_date >= 2015.1.1
+	NOT = { has_global_variable = second_american_civil_war_started }
+}
+
+great_polarization_civil_war_should_start = {
+	OR = {
+		has_insurrectionary_interest_groups = yes
+		var:great_polarization_intensity >= 100
+		var:great_polarization_institutional_trust <= 0
+	}
+}
+
+great_polarization_is_blue_side = {
+	c:BAM ?= this
+}
+
+great_polarization_is_red_side = {
+	c:REA ?= this
+}
+
+great_polarization_is_2acw_major_side = {
+	OR = {
+		great_polarization_is_blue_side = yes
+		great_polarization_is_red_side = yes
+	}
+}

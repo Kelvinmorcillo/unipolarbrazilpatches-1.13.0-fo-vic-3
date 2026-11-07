@@ -1,0 +1,289 @@
+namespace = great_polarization
+
+great_polarization.1 = {
+	type = country_event
+	placement = ROOT
+	title = great_polarization.1.t
+	desc = great_polarization.1.d
+	flavor = great_polarization.1.f
+	event_image = { video = "votp_agitator_speaking" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+	duration = 3
+
+	trigger = {
+		c:USA ?= this
+		has_journal_entry = je_the_great_polarization
+	}
+
+	option = {
+		name = great_polarization.1.a
+		default_option = yes
+		great_polarization_raise_tension_small = yes
+		ai_chance = { base = 100 }
+	}
+}
+
+great_polarization.2 = {
+	type = country_event
+	placement = ROOT
+	title = great_polarization.2.t
+	desc = great_polarization.2.d
+	flavor = great_polarization.2.f
+	event_image = { video = "europenorthamerica_political_extremism" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	duration = 3
+	cooldown = { days = 730 }
+
+	trigger = {
+		c:USA ?= this
+		has_journal_entry = je_the_great_polarization
+		NOT = { has_global_variable = second_american_civil_war_started }
+	}
+
+	option = {
+		name = great_polarization.2.a
+		default_option = yes
+		add_modifier = {
+			name = great_polarization_event_violence
+			days = 365
+			is_decaying = yes
+		}
+		great_polarization_raise_tension_large = yes
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = great_polarization.2.b
+		add_modifier = {
+			name = great_polarization_reform_concessions
+			days = 365
+			is_decaying = yes
+		}
+		great_polarization_reduce_tension_small = yes
+		ai_chance = { base = 0 }
+	}
+}
+
+great_polarization.3 = {
+	type = country_event
+	placement = ROOT
+	title = great_polarization.3.t
+	desc = great_polarization.3.d
+	flavor = great_polarization.3.f
+	event_image = { video = "unspecific_ruler_speaking_to_people" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	duration = 3
+	cooldown = { days = 900 }
+
+	trigger = {
+		c:USA ?= this
+		has_journal_entry = je_the_great_polarization
+		NOT = { has_global_variable = second_american_civil_war_started }
+	}
+
+	option = {
+		name = great_polarization.3.a
+		default_option = yes
+		add_modifier = {
+			name = great_polarization_event_violence
+			days = 365
+			is_decaying = yes
+		}
+		great_polarization_raise_tension_large = yes
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = great_polarization.3.b
+		add_modifier = {
+			name = great_polarization_security_crackdown
+			days = 365
+			is_decaying = yes
+		}
+		great_polarization_raise_tension_medium = yes
+		ai_chance = { base = 0 }
+	}
+}
+
+great_polarization.4 = {
+	type = country_event
+	placement = ROOT
+	title = great_polarization.4.t
+	desc = great_polarization.4.d
+	flavor = great_polarization.4.f
+	event_image = { video = "unspecific_politicians_arguing" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	duration = 3
+	cooldown = { days = 365 }
+
+	trigger = {
+		c:USA ?= this
+		has_journal_entry = je_the_great_polarization
+		NOT = { has_global_variable = second_american_civil_war_started }
+	}
+
+	option = {
+		name = great_polarization.4.a
+		default_option = yes
+		add_modifier = {
+			name = great_polarization_online_radicalization
+			days = 365
+			is_decaying = yes
+		}
+		great_polarization_raise_tension_medium = yes
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = great_polarization.4.b
+		add_modifier = {
+			name = great_polarization_reform_concessions
+			days = 365
+			is_decaying = yes
+		}
+		great_polarization_reduce_tension_small = yes
+		ai_chance = { base = 0 }
+	}
+}
+
+great_polarization.5 = {
+	type = country_event
+	placement = ROOT
+	title = great_polarization.5.t
+	desc = great_polarization.5.d
+	flavor = great_polarization.5.f
+	event_image = { video = "middleeast_courtroom_upheaval" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	duration = 3
+	cooldown = { days = 540 }
+
+	trigger = {
+		c:USA ?= this
+		has_journal_entry = je_the_great_polarization
+		NOT = { has_global_variable = second_american_civil_war_started }
+	}
+
+	option = {
+		name = great_polarization.5.a
+		default_option = yes
+		add_modifier = {
+			name = great_polarization_metoo_mobilization
+			days = 365
+			is_decaying = yes
+		}
+		great_polarization_raise_tension_small = yes
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = great_polarization.5.b
+		add_modifier = {
+			name = great_polarization_reform_concessions
+			days = 365
+			is_decaying = yes
+		}
+		great_polarization_reduce_tension_small = yes
+		ai_chance = { base = 0 }
+	}
+}
+
+great_polarization.6 = {
+	type = country_event
+	placement = ROOT
+	title = great_polarization.6.t
+	desc = great_polarization.6.d
+	flavor = great_polarization.6.f
+	event_image = { video = "southamerica_war_civilians" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+	duration = 3
+	cooldown = { days = 540 }
+
+	trigger = {
+		c:USA ?= this
+		has_journal_entry = je_the_great_polarization
+		NOT = { has_global_variable = second_american_civil_war_started }
+	}
+
+	option = {
+		name = great_polarization.6.a
+		default_option = yes
+		add_modifier = {
+			name = great_polarization_minorities_targeted
+			days = 365
+			is_decaying = yes
+		}
+		great_polarization_raise_tension_medium = yes
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = great_polarization.6.b
+		add_modifier = {
+			name = great_polarization_reform_concessions
+			days = 365
+			is_decaying = yes
+		}
+		great_polarization_reduce_tension_small = yes
+		ai_chance = { base = 0 }
+	}
+}
+
+great_polarization.20 = {
+	type = country_event
+	placement = ROOT
+	title = great_polarization.20.t
+	desc = great_polarization.20.d
+	flavor = great_polarization.20.f
+	event_image = { video = "africa_diplomats_negotiating" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	duration = 3
+
+	trigger = {
+		c:USA ?= this
+		has_journal_entry = je_the_great_polarization
+		NOT = { has_global_variable = second_american_civil_war_started }
+	}
+
+	option = {
+		name = great_polarization.20.a
+		default_option = yes
+		remove_modifier = great_polarization_baseline
+		remove_modifier = great_polarization_right_wing_president
+		remove_modifier = great_polarization_left_wing_president
+		add_modifier = {
+			name = great_polarization_reform_concessions
+			days = 1825
+		}
+		ai_chance = { base = 100 }
+	}
+}
+
+great_polarization.21 = {
+	type = country_event
+	placement = ROOT
+	title = great_polarization.21.t
+	desc = great_polarization.21.d
+	flavor = great_polarization.21.f
+	event_image = { video = "votp_hostile_court" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+	duration = 3
+
+	trigger = {
+		c:USA ?= this
+		has_journal_entry = je_the_great_polarization
+		NOT = { has_global_variable = second_american_civil_war_started }
+	}
+
+	option = {
+		name = great_polarization.21.a
+		default_option = yes
+		add_modifier = {
+			name = great_polarization_online_radicalization
+			days = 1825
+		}
+		ai_chance = { base = 100 }
+	}
+}

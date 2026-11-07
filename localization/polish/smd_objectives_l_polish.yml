@@ -1,0 +1,160 @@
+﻿l_polish:
+# ==========================================
+ # OBJECTIVE
+ # ==========================================
+ 
+ objective_the_west: "Zachód"
+ objective_the_west_desc: "Należy utrzymać i rozszerzyć liberalny porządek międzynarodowy - demokrację, wolny handel, bezpieczeństwo zbiorowe i prawa człowieka. [ROOT.GetCountry.GetName] znajduje się w centrum systemu, który go zbudował. Zadaniem nie jest jedynie utrzymanie tego, co istnieje, ale zapewnienie, że kiedy stulecie się skończy, wielkie moce świata są wewnątrz porządku lub nie są w stanie go zakwestionować."
+ 
+ # ==========================================
+ # SUBGOAL NAMES AND DESCRIPTIONS
+ # ==========================================
+ 
+ sg_west_open_trade: "Rezerwa Stan waluty"
+ sg_west_open_trade_desc: "Zachodni system finansowy działa na [ROOT.GetCountry.GetAdjective] kredyt. Ustalić [ROOT.GetCountry.GetName] jako dominującego eksportera kredytu - ponad 1000 jednostek - cementując [ROOT.GetCountry.GetAdjective] system finansowy jako podstawę gospodarki światowej."
+ 
+ sg_west_alliances: "Sieć sojuszy"
+ sg_west_alliances_desc: "Zachodni porządek to zbiorowy projekt bezpieczeństwa. Ustanowienie umów o pomocy wojskowej z co najmniej czterema krajami, budowanie sieci sojuszy, która powstrzymuje agresję i projekty [ROOT.GetCountry.GetAdjective] poprzez partnerstwo, a nie okupację."
+ 
+ sg_west_human_rights: "Liberalne ramy demokratyczne"
+ sg_west_human_rights_desc: "Zachód jest zdefiniowany nie tylko przez swoje bogactwo, ale przez swoje wartości. Wdrożenie powszechnych wyborów, ochrona pracowników, zniesienie niewolnictwa i chroniona mowa - instytucjonalne fundamenty liberalnego społeczeństwa demokratycznego. Zamówienie [ROOT.GetCountry.GetName] musi być warte obrony."
+ 
+ sg_west_education: "Wykształcony obywatel"
+ sg_west_education_desc: "Zarówno demokratyczny udział, jak i dynamika gospodarcza zależą od wykształconej ludności. Zainwestować w system szkolnictwa do poziomu 5 i osiągnąć wskaźnik umiejętności czytania i pisania na poziomie co najmniej 75%. Informowane obywateli jest najbardziej trwałym fundamentem liberalnego porządku."
+ 
+ sg_west_gdp: "Przywództwo gospodarcze"
+ sg_west_gdp_desc: "Porządek zachodni opiera się na wadze ekonomicznej. [ROOT.GetCountry.GetName] musi stanowić co najmniej 25% światowego PKB, co oznacza, że [ROOT.GetCountry.GetAdjective] gospodarka zbyt duża i zbyt centralna dla systemu światowego, aby każdy rywal mógł stawić czoła wiarygodnym wyzwaniom."
+ 
+ sg_west_endgame: "Moment Unipolarny"
+ sg_west_endgame_desc: "Ostatnie wyzwanie. Zarówno [SCOPE.sCountry('c:RUS').GetName], jak i [SCOPE.sCountry('c:CHI').GetName] muszą zostać wprowadzone do zamówienia lub uczynić niezdolnymi do zagrożenia. Dla każdego: albo demokratyzują, przyjmują uniwersalne wybory i podpisują pakt obronny z [ROOT.GetCountry.GetName] - albo ich moc spada poniżej rangi głównej władzy. Nie ma trzeciej opcji, która zachowałaby zamówienie."
+ 
+ # ==========================================
+ # JOURNAL ENTRY NAMES AND DESCRIPTIONS
+ # ==========================================
+ 
+ je_west_open_trade: "Dominacja finansowa"
+ je_west_open_trade_reason: "[ROOT.GetCountry.GetAdjective] dolar - lub cokolwiek innego [ROOT.GetCountry.GetName] nazywa swoją walutą - jest walutą rezerwową świata. Inne narody go trzymają, osiedlają handel i budują wokół niego swoje systemy finansowe. Eksport ponad 1000 jednostek kredytu na rynki międzynarodowe potwierdza tę pozycję i daje [ROOT.GetCountry.GetName] strukturalną dźwignię nad światowym systemem finansowym, której żadna siła militarna nie może powielić."
+ 
+ je_west_alliances: "Bezpieczeństwo zbiorowe"
+ je_west_alliances_reason: "NATO. ANZUS. Partnerstwa na rzecz bezpieczeństwa, które określają blok zachodni, to nie tylko porozumienia wojskowe - to zobowiązania polityczne. Zbuduj umowy o pomocy wojskowej z co najmniej czterema krajami. Każde partnerstwo rozszerza [ROOT.GetCountry.GetAdjective] zasięg i zmniejsza koszty utrzymania porządku."
+ 
+ je_west_human_rights: "Fundacja Instytucjonalna"
+ je_west_human_rights_reason: "Uniwersalne wybory. Ochrona pracowników. Zniesienie niewolnictwa. Chroniona mowa. Nie są to opcjonalne dodatki do modelu zachodniego - są one modelem. Bez nich, to, co [ROOT.GetCountry.GetName] jest bronieniem tylko władzy, nie zasady. Zorganizuj wszystkie cztery, aby ustanowić fundamenty instytucjonalne, których wymaga liberalny porządek."
+ 
+ je_west_education: "Edukacja dla wszystkich"
+ je_west_education_reason: "Model zachodni zależy od obywateli, którzy mogą czytać, rozumować i uczestniczyć. Zainwestować w szkołach do poziomu 5 i osiągnąć wskaźnik umiejętności czytania i pisania w kraju 75%. Nie wystarczy mieć odpowiednie prawo - ludność musi być wystarczająco wykształcona, aby je wykorzystać."
+ 
+ je_west_gdp: "5% światowego PKB"
+ je_west_gdp_reason: "Rozmiar się liczy. [ROOT.GetCountry.GetName] musi stanowić co najmniej jedną czwartą światowej produkcji gospodarczej. W tej skali [ROOT.GetCountry.GetAdjective] Gospodarka nie jest tylko duża - jest niezbędna. Świat handluje z [ROOT.GetCountry.GetName], pożyczkami od [ROOT.GetCountry.GetName], i nie może sobie pozwolić, aby [ROOT.GetCountry.GetName] wróg."
+ 
+ je_west_endgame: "Koniec historii"
+ je_west_endgame_reason: "Pytanie o wiek: czy można zneutralizować zarówno [SCOPE.sCountry('c:RUS').GetName], jak i [SCOPE.sCountry('c:CHI').GetName] jako systemowych rywali z Zachodem? \n \n Dla każdego kraju musi być prawdą: \n • Przyjęli demokratyczną republikę, powszechny wybór i podpisali pakt obronny z [ROOT.GetCountry.GetName] \n • Ich stopień mocy spadł poniżej poziomu mocy głównej \n \n Gdy oba warunki są spełnione, moment jednobiegunowy jest kompletny."
+ 
+ # ==========================================
+ # PROGRESS TOOLTIPS
+ # ==========================================
+ 
+ je_west_open_trade_progressing_tt: "Eksport kredytów rośnie - system finansowy [ROOT.GetCountry.GetAdjective] rozwija się na arenie międzynarodowej"
+ je_west_alliances_progressing_tt: "Sieć sojuszu nabiera kształtu - potrzeba więcej partnerów"
+ je_west_human_rights_progressing_tt: "Istnieją pewne ramy prawne - cały zestaw nie został jeszcze przyjęty"
+ je_west_education_progressing_tt: "Rozwój systemu szkolnictwa - inwestycje poziomu 5 i 75% umiejętności czytania i pisania są celami"
+ je_west_gdp_progressing_tt: "[ROOT.GetCountry.GetName] stanowi ponad 15% światowego PKB - cel wynosi 25%"
+ je_west_endgame_progressing_tt: "Jeden rywal został osłabiony lub demokratyzowany - drugi pozostaje wyzwaniem systemowym"
+ 
+ # ==========================================
+ # OBJECTIVE
+ # ==========================================
+
+ objective_the_east: "Wschód"
+ objective_the_east_desc: "Zachodni liberalny porządek nie jest jedynym możliwym światem. [ROOT.GetCountry.GetName] ma inny model - jeden z kierunku państwa, siły zbiorowej i rozwoju suwerennego. Zadaniem jest wykazanie, że ten model może być dopasowany do Zachodu pod względem siły gospodarczej i zasięgu globalnego, oraz stworzenie świata, w którym [ROOT.GetCountry.GetName], nie Stany Zjednoczone, określa warunki porządku międzynarodowego."
+
+ # ==========================================
+ # SUBGOAL NAMES AND DESCRIPTIONS
+ # ==========================================
+
+ sg_east_state_industry: "Directed Industrial Base"
+ sg_east_state_industry_desc: "Model wschodni opiera się na zdolności państwa do bezpośredniego inwestowania w przemysł ciężki. Utrzymanie gospodarki interwencyjnej lub dowodzenia, budowanie zdolności budowlanych na poziomie co najmniej 10 i rozwój górnictwa żelaza na poziomie co najmniej 5 przy silnym obsadzie. To podstawa ekonomiczna, od której wszystko inne zależy."
+
+ sg_east_great_power: "Wielki stan mocy"
+ sg_east_great_power_desc: "Wschodnie wyzwanie dla zachodniej hegemonii może być montowane tylko przez prawdziwą wielką moc. Osiągnięcie rangi wielkiej mocy - nie ma negocjacji z [SCOPE.sCountry('c:USA').GetName] jako równe z pozycji słabości."
+
+ sg_east_sphere: "Blok Wschodni"
+ sg_east_sphere_desc: "Zbuduj sieć stanów alianckich, która stanowi [ROOT.GetCountry.GetName] sferę wpływów. Ustanowienie umów o pomocy wojskowej z co najmniej czterema krajami. Sojusze nie są dobroczynne - są infrastrukturą projekcji energii."
+
+ sg_east_currency: "Waluta rezerwy wschodniej"
+ sg_east_currency_desc: "Dominacja dolara jest najbardziej trwałą przewagą Zachodu - pozwala Stanom Zjednoczonym sfinansować swoją hegemonię kosztem światowej gospodarki. Zmierz się z tym. Eksport ponad 1000 jednostek kredytu na rynki międzynarodowe oraz utrzymanie konkurencyjnych cen papierów wartościowych w celu przyciągnięcia inwestorów zagranicznych. Wschodnia waluta rezerwowa nie jest tylko ekonomiczna - jest geopolityczna."
+
+ sg_east_endgame: "Świat wielobiegunowy"
+ sg_east_endgame_desc: "Ostatnie wyzwanie. Stany Zjednoczone, Wielka Brytania i Francja - trzy filary zachodniego porządku - muszą zostać zneutralizowane. Dla każdego: albo ich ranga mocy spada poniżej głównej mocy, albo podpisują pakt obronny z [ROOT.GetCountry.GetName]. Kiedy wszystkie trzy warunki są spełnione, porządek świata uległ zmianie."
+
+ je_east_state_industry: "Fundacja Przemysłowa"
+ je_east_state_industry_reason: "Państwo musi skierować inwestycje do przemysłu ciężkiego, a nie pozostawić je rynkom. Utrzymanie gospodarki interwencyjnej lub dowodzenia, budowa zdolności do budowy co najmniej 10 i rozwój znacznych zdolności wydobywczych żelaza 75% obsadzenia lub lepsze. Bez tej bazy przemysłowej, [ROOT.GetCountry.GetName] nie może utrzymać wagi militarnej i gospodarczej wymaga wyzwania wschodniego."
+
+ je_east_great_power: "Powstań do wielkiej mocy"
+ je_east_great_power_reason: "Osiągnij stopień wielkiej mocy. Obecnie [ROOT.GetCountry.GetName] może być jednym z najsilniejszych narodów na świecie - ale wielki status władzy jest formalnym uznaniem, że [ROOT.GetCountry.GetName] należy do pokoju, w którym podejmowane są decyzje dotyczące porządku światowego. Jest to warunek wstępny dla wszystkiego, co nastąpi później."
+
+ je_east_sphere: "Czterech partnerów wojskowych"
+ je_east_sphere_reason: "Zbuduj umowy o pomocy wojskowej z co najmniej czterema krajami. [ROOT.GetCountry.GetName] nie może sama zakwestionować systemu zachodniego sojuszu. Sfera Wschodnia musi być prawdziwym kolektywem - mówi, że zależy od [ROOT.GetCountry.GetName] i od którego [ROOT.GetCountry.GetName] może zależeć w zamian."
+
+ je_east_currency: "Wyzwanie Dolar Dominacja"
+ je_east_currency_reason: "Stan waluty rezerwowej [SCOPE.sCountry('c:USA').GetAdjective] dolar jest przewagą strukturalną, która pozwoliła Zachodowi na przekroczenie wagi przez dziesięciolecia. Dopasowanie wymaga wywozu ponad 1000 jednostek kredytu na rynki międzynarodowe - i utrzymania [ROOT.GetCountry.GetAdjective] papierów wartościowych wycenionych w 25% ich wartości bazowej, tak aby inwestorzy zagraniczni uznali je za atrakcyjne. \n \n Wschodni system finansowy, który inni chętnie stosują, nie jest jedynie osiągnięciem gospodarczym. Jest to oświadczenie, że dolar nie jest jedynym wyborem."
+
+ je_east_endgame: "Zachodnie moce zneutralizowane"
+ je_east_endgame_reason: "Porządek świata zmienia się, gdy jego opiekunowie nie mogą go dłużej chronić. Wszystkie trzy należy rozwiązać: \n \n • [SCOPE.sCountry('c:USA').GetName]: poniżej głównego rankingu mocy lub podpisać pakt obronny z [ROOT.GetCountry.GetName] \n • [SCOPE.sCountry('c:GBR').GetName]: poniżej głównego rankingu mocy lub podpisać pakt obronny z [ROOT.GetCountry.GetName] \n • [SCOPE.sCountry('c:FRA').GetName]: poniżej głównego rankingu mocy lub podpisać pakt obronny z [ROOT.GetCountry.GetName] \n \n Gdy wszystkie trzy warunki są spełnione, [ROOT.GetCountry.GetName] nie tylko przeżył zachodni porządek. Zastąpiła go."
+
+ je_east_state_industry_progressing_tt: "Rozwija się baza przemysłowa - zdolności produkcyjne i wydobycie żelaza nie są jeszcze na celu"
+ je_east_great_power_progressing_tt: "[ROOT.GetCountry.GetName] jest główną mocą - wielki stan mocy jest w zasięgu"
+ je_east_sphere_progressing_tt: "Sieć sojuszu rośnie - potrzebne są cztery umowy o pomocy wojskowej"
+ je_east_currency_progressing_tt: "Eksport kredytów rośnie - do ustalenia statusu waluty rezerwowej potrzebne jest 1000 jednostek"
+ je_east_endgame_progressing_tt: "Co najmniej jedna zachodnia moc została zneutralizowana - pozostałe pozostają"
+ 
+ # ==========================================
+ # OBJECTIVE
+ # ==========================================
+
+ objective_rising_powers: "Powstające moce"
+ objective_rising_powers_desc: "Świat nie musi być podzielony na dwa bloki. [ROOT.GetCountry.GetName] odmawia wyboru - pomiędzy Waszyngtonem a Moskwą, pomiędzy dolarem a tym, co nastąpi później, pomiędzy jednym imperium a innym. Trzeci sposób jest trudniejszy niż każda z alternatyw. Wymaga to prawdziwej wagi ekonomicznej, wiarygodnej siły wojskowej i umiejętności dyplomatycznych, aby zjednoczyć koalicję państw, które mają tylko jedną wspólną rzecz: odmawiają również wyboru."
+
+ # ==========================================
+ # SUBGOAL NAMES AND DESCRIPTIONS
+ # ==========================================
+
+ sg_rising_economy: "Fundacje gospodarcze"
+ sg_rising_economy_desc: "Zbuduj gospodarkę, która odpowiada za co najmniej 10% światowego PKB - na tyle znaczące, aby zakotwiczyć trzeci blok - przy jednoczesnym utrzymaniu ekspozycji handlowej wobec każdego pojedynczego partnera poniżej 40%. Władza zaczyna się od niezależności gospodarczej."
+
+ sg_rising_sovereignty: "Pełna Niezależność Władcy"
+ sg_rising_sovereignty_desc: "Rosnąca siła nie może być stanem klientów. Osiągnięcie głównej rangi mocy, osiągnięcie prestiżu co najmniej 50 i zapewnienie [ROOT.GetCountry.GetName] nie jest ani przedmiotem żadnej mocy, ani marionetką [SCOPE.sCountry('c:USA').GetName] lub [SCOPE.sCountry('c:RUS').GetName]. Trzecia droga zaczyna się od swobody wyboru."
+
+ sg_rising_military: "Kwalifikowalność wojskowa"
+ sg_rising_military_desc: "Trzeci sposób jest wiarygodny tylko wtedy, gdy może się bronić. Osiągnięcie rangi wielkiej władzy i pole armii co najmniej 100 jednostek. Państwo niezrównane, które nie może sam się chronić, nie pozostanie niezrównane na długo."
+
+ sg_rising_prestige: "Uznanie międzynarodowe"
+ sg_rising_prestige_desc: "Osiągnięcie światowego rankingu krajów 5 lub lepiej z prestiżem co najmniej 150. [ROOT.GetCountry.GetName] musi być niemożliwe do zignorowania - nie tylko siły regionalnej, ale też takiej, którą wielkie potęgi muszą uwzględniać w każdym obliczeniu, które dokonują."
+
+ sg_rising_endgame: "Trzeci Blok"
+ sg_rising_endgame_desc: "Prowadź blok mocy ośmiu lub więcej członków jako wielką moc. Jest to dowód koncepcji - trzeci słup w polityce światowej, wystarczająco duży i wiarygodny, że ani Zachód, ani Wschód nie mogą go wchłonąć ani odrzucić. Kiedy [ROOT.GetCountry.GetName] prowadzi osiem narodów, świat jest wielobiegunowy."
+
+ je_rising_economy: "5% światowego PKB"
+ je_rising_economy_reason: "Zbuduj gospodarkę [ROOT.GetCountry.GetName] do ponad 10% globalnej produkcji - i zrób to bez uzależnienia gospodarczego od pojedynczej mocy. Celem jest gospodarka, która jest zbyt duża, aby była sankcjonowana i zbyt zróżnicowana, aby mogła być duszona pojedynczym embargiem. \n \n @information! Uzależnienie od jednego partnera musi pozostać poniżej 40% całkowitej działalności rynkowej."
+
+ je_rising_sovereignty: "Władca i Niezależny"
+ je_rising_sovereignty_reason: "Osiągnąć główną rangę władzy i prestiż 50 lub lepszy, pozostając w pełni niezależnym - nie jest przedmiotem żadnego kraju, nie marionetką jakiejkolwiek obcej władzy. Pełna suwerenna niezależność nie jest końcem podróży. To początek."
+
+ je_rising_military: "A Credible Force"
+ je_rising_military_reason: "Osiągnąć wielką rangę władzy i ustawić armię co najmniej 100 jednostek. [ROOT.GetCountry.GetName] musi być w stanie bronić własnych wyborów. Państwo niezrównane, które nie może się bronić, znajdzie swoje dostosowanie, o którym decydują inni."
+
+ je_rising_prestige: "Top 5 - Niezaprzeczalne"
+ je_rising_prestige_reason: "Osiągnięcie światowego rankingu krajów na 5 lub lepiej i prestiżu na co najmniej 150. Na tym poziomie, [ROOT.GetCountry.GetName] nie jest regionalną ciekawością - jest to potęga światowa, której stanowiska nie mogą być ignorowane, której dostosowanie jest rzeczywiście kwestionowane i której poparcie warto mieć."
+
+ je_rising_endgame: "Prowadź trzeci blok"
+ je_rising_endgame_reason: "Prowadź blok mocy ośmiu lub więcej członków jako wielką moc. Osiem krajów, które zdecydują się zorganizować wokół [ROOT.GetCountry.GetName] zamiast [SCOPE.sCountry('c:USA').GetName] lub [SCOPE.sCountry('c:RUS').GetName], nie jest tylko osiągnięciem dyplomatycznym - jest to strukturalny fakt polityki międzynarodowej. Trzeci sposób istnieje. Ma członków. Ma przywódcę. Supermoce będą musiały się za to rozliczać."
+
+ # ==========================================
+ # PROGRESS TOOLTIPS
+ # ==========================================
+
+ je_rising_economy_progressing_tt: "[ROOT.GetCountry.GetName] stanowi ponad 2% światowego PKB - 5% jest celem"
+ je_rising_sovereignty_progressing_tt: "[ROOT.GetCountry.GetName] jest rozpoznawany i niezależny - potrzebna jest główna ranga mocy i prestiż 50"
+ je_rising_military_progressing_tt: "Zdolność wojskowa rośnie - duży stopień władzy i rozmiar armii 100 są celami"
+ je_rising_prestige_progressing_tt: "[ROOT.GetCountry.GetName] zbliża się do pierwszej 5 - prestiż 150 i globalny ranking 5 są potrzebne"
+ je_rising_endgame_progressing_tt: "Blok formuje się - do realizacji celu potrzebne jest 8 członków"

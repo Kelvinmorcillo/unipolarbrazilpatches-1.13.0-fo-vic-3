@@ -1,0 +1,69 @@
+# ==========================================
+# OLYMPIC GAMES — MODIFIERS
+# ==========================================
+
+# ── HOST MODIFIERS ────────────────────────
+
+# Applied to the host country for 24 months
+olympics_hosting = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_mult                       = 0.10
+	country_legitimacy_base_add                 = 10
+	state_migration_pull_mult                   = 0.05
+}
+
+# Separate prestige spike for hosting
+olympics_hosting_prestige = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_prestige_add                        = 25
+	country_influence_mult                      = 0.05
+}
+
+# Prevents immediate re-selection (8 years)
+olympics_recently_hosted = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_mult                       = 0.02
+}
+
+# ── PARTICIPATION / BOYCOTT ───────────────
+
+olympics_boycott_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_prestige_mult                       = -0.05
+	country_influence_mult                      = -0.05
+}
+
+# ── RESULT MODIFIERS ─────────────────────
+
+olympics_result_terrible = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_prestige_mult                       = -0.05
+}
+
+olympics_result_modest = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_mult                       = 0.02
+}
+
+olympics_result_well = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_mult                       = 0.05
+	country_legitimacy_base_add                 = 5
+}
+
+olympics_result_gold = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_mult                       = 0.10
+	country_prestige_add                        = 15
+	country_legitimacy_base_add                 = 10
+}
+
+# ── DOPING SCANDAL ────────────────────────
+
+olympics_doping_caught = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_prestige_mult                       = -0.10
+	country_prestige_add                        = -20
+	country_legitimacy_base_add                 = -10
+	country_infamy_decay_mult                   = -0.10
+}

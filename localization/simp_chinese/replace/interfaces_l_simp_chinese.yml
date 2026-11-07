@@ -1,0 +1,16 @@
+﻿l_simp_chinese:
+
+ GDP_TOOLTIP:1 "#header [Country.GetAdjective] [concept_gdp]#!\n@money![Country.MakeScope.ScriptValue('cwp_gdp')|Dv] (#u #tooltippable #tooltip:<x id=10),COUNTRY GDP OWINERSHIP TOOLTIP [Country.GetDomesticallyOwnedGDPFraction|%1b]#!#!#!) 国内拥有的 $concept_gdp_short$ ([Country.GetGDPRanking]) \n@money![Country.MakeScope.ScriptValue('cwp_gdp_per_capita')|2*v] ([Concept('concept_gdp_per_capita', '$concept_gdp_per_capita_short$')] ([Country.GetGDPPerCapitaRanking])"
+ COUNTRY_GDP_OWNERSHIP_TOOLTIP: "<x id=0; > [Country.GetName]<x=3/><x=4/><x id=5; > [Country.GetDomesticallyOwnedGDPFraction|%1b]<x id=7; > (@money!<x id=9; >) 国内拥有的 $concept_gdp_short$\n$TOOLTIP_DELIMITER$\n[SelectLocalization(IsZero_CFixedPoint(Country.GetForeignOwnedGDPFraction), 'NO_FOREIGNLY_OWNED_PERCENTAGE', 'COUNTRY_FOREIGNLY_OWNED_PERCENTAGE')]\n\n<x id=17/)."
+
+ COUNTRY_ALL_GDP: "@money!#v [Country.GetGDPWithOwnershipsInForeignCountries|D]#!"
+ DOMESTIC_COUNTRY_GDP: "@money!#v [Country.GetGDP|D]#!"
+ FOREIGN_COUNTRY_GDP: "@money!#u [Country.GetGDPOwnedInForeignCountries|Db]#!"
+ COUNTRY_ALL_OWNERSHIP: "#u [Country.GetDomesticallyOwnedGDPFraction|%1b]#![ConcatIfNeitherEmpty(' + ', AddLocalizationIf(NotZero_CFixedPoint(Country.GetGDPOwnedInForeignCountries), 'FOREIGN_COUNTRY_GDP'))]"
+ 
+ ERROR_DEER_TOOLTIP:0 "#header Dangnabit! #!\n#instruction 左- Click #! 打开错误日志 \n#instruction 右克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克"
+ ERROR_MANUL_TOOLTIP: "#header (中文(简体) ). 愚弄我一次,羞耻... 羞愧你 你愚弄我-你不能再被愚弄了! #!\n#instruction 左克 #! 打开错误日志 \n#instruction 右克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克克"
+ 
+ OH_DEER:0 ""#italic (中文(简体) ). 羞愧,羞愧?. #! #bold [ErrorDeer.NumberOrErrors|v]#! #italic出错! #!"
+ ERROR_MANUL: "#italic #! #bold [ErrorDeer.NumberOrErrors|v]#! #italic 任务完成。"
+ ERROR_DEER_SLOW_TICK_OPERATIONS:0 "#header 慢键操作 #!"

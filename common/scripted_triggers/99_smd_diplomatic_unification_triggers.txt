@@ -1,0 +1,105 @@
+# Diplomatic Unification scripted triggers
+# These are written for diplomatic action country scope, where:
+# ROOT / scope:actor = acting country
+# scope:target_country = target country
+
+smd_can_create_economic_union_with_target = {
+	NOT = { is_country_type = decentralized }
+	scope:target_country = { NOT = { is_country_type = decentralized } }
+
+	is_revolutionary = no
+	is_secessionist = no
+	scope:target_country = {
+		is_revolutionary = no
+		is_secessionist = no
+	}
+
+	is_sufficiently_independent = yes
+	scope:target_country = { is_sufficiently_independent = yes }
+
+	is_diplomatic_play_committed_participant = no
+	scope:target_country = { is_diplomatic_play_committed_participant = no }
+
+	NOT = { has_war_with = scope:target_country }
+	NOT = { has_subject_relation_with = scope:target_country }
+	NOT = { scope:target_country = { is_subject_of = scope:actor } }
+
+	NOR = {
+		has_law_or_variant = law_type:law_isolationism
+		scope:target_country = { has_law_or_variant = law_type:law_isolationism }
+	}
+
+	NOT = { smd_has_economic_union_with_target = yes }
+}
+
+smd_has_economic_union_with_target = {
+	OR = {
+		AND = {
+			has_variable = smd_economic_union_partner
+			scope:target_country = {
+				has_variable = smd_economic_union_partner
+			}
+		}
+
+		AND = {
+			any_scope_treaty = {
+				binds = scope:target_country
+				any_scope_article = {
+					has_type = trade_privilege
+				}
+			}
+			any_scope_treaty = {
+				binds = scope:target_country
+				any_scope_article = {
+					has_type = transit_rights
+				}
+			}
+		}
+	}
+}
+
+smd_primary_cultures_similar_to_target = {
+	any_primary_culture = {
+		OR = {
+			is_primary_culture_of = scope:target_country
+			AND = {
+				shares_heritage_trait_group_with_any_primary_culture = scope:target_country
+				shares_language_trait_group_with_any_primary_culture = scope:target_country
+			}
+			AND = {
+				shares_heritage_trait_with_any_primary_culture = scope:target_country
+				shares_language_trait_with_any_primary_culture = scope:target_country
+			}
+		}
+	}
+}
+
+smd_can_propose_diplomatic_unification_with_target = {
+	NOT = { is_country_type = decentralized }
+	scope:target_country = { NOT = { is_country_type = decentralized } }
+
+	is_revolutionary = no
+	is_secessionist = no
+	scope:target_country = {
+		is_revolutionary = no
+		is_secessionist = no
+	}
+
+	is_sufficiently_independent = yes
+	scope:target_country = { is_sufficiently_independent = yes }
+
+	is_diplomatic_play_committed_participant = no
+	scope:target_country = { is_diplomatic_play_committed_participant = no }
+
+	NOT = { has_war_with = scope:target_country }
+	NOT = { has_subject_relation_with = scope:target_country }
+	NOT = { scope:target_country = { is_subject_of = scope:actor } }
+
+	smd_has_economic_union_with_target = yes
+	smd_primary_cultures_similar_to_target = yes
+
+	custom_tooltip = {
+		text = smd_unification_requires_good_relations_tt
+		scope:target_country.relations:root >= relations_threshold:amicable
+	}
+}

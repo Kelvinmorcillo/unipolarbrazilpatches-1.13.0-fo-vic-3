@@ -1,0 +1,21 @@
+﻿l_japanese:
+#
+dp_leadership_china:0 "鉛中国"
+
+ je_one_china_prc:0 "1つの中国政策"
+ je_one_china_prc_reason:0 "中国の1つがあります。 [ROOT.GetCountry.GetName] は 1949 年以来、この地位を維持しています。 人々の共和国は、すべての中国の領土の唯一の正当な政府であり、Formosa の状態から支配する中国の台北の主張は、歴史が正しい一時的な収支です。\n\n フォルモサとメインランドとの再会は、単なる戦略的な目的ではありません。 未完成の民間戦争の決議です。[ROOT.GetCountry.GetAdjective]国民の回復の最終的な行為。 Formosa が [ROOT.GetCountry.GetAdjective] 制御下にあるとき、屈辱の世紀は本当に終わります。"
+ 
+ one_china_prc_owns_formosa_tt:0 "#bold Formosa は [ROOT.GetCountry.GetAdjective] 制御下にあります。#! 1つの中国政策は包括されています。 [ROOT.GetCountry.GetName] は全体です。"
+ one_china_prc_formosa_uncontrolled_tt:0 "[SCOPE.sState('STATE_FORMOSA').GetName] は [ROOT.GetCountry.GetAdjective] 制御外に残します。 [SCOPE.sCountry('c:ROC').GetName] は、その島の赤字から本土の上に sovereignty を主張し続けています。 中国の再会は未完成です。"
+ 
+ je_one_china_roc:0 "1つの中国政策"
+ je_one_china_roc_reason:0 "中国の1つがあります。 [ROOT.GetCountry.GetName] は 1949 年以来、この地位を維持しています。中国共和国は、すべての中国領土の正当な政府であり、本土の中国共産党の占領は、歴史が正しい一時的な放棄です。\n\n 人民共和国は、[ROOT.GetCountry.GetAdjective]の憲法の順序内で持って来なければなりません。 中華人民共和国が [ROOT.GetCountry.GetName] の対象になった場合、統合のタスクが始まり、本土の広大な人口と領土を [ROOT.GetCountry.GetAdjective] のリーダーシップの下で統一された中国国家に吸収します。"
+ 
+ one_china_roc_has_subject_tt:0 "#bold [SCOPE.sCountry('c:CHI').GetName] は [ROOT.GetCountry.GetName] の対象となります。#! メインランドは、[ROOT.GetCountry.GetAdjective] の構成順序内で持ってきました。 広大な [SCOPE.sCountry('c:CHI').GetAdjective] 領域の統合は現在進行中です。"
+ one_china_roc_no_subject_tt:0 "[SCOPE.sCountry('c:CHI').GetName] は、Communist Party ルールで独立しています。 [ROOT.GetCountry.GetName] は [SCOPE.sState('STATE_FORMOSA').GetName] のみを制御します。 [ROOT.GetCountry.GetAdjective] のリーダーシップの下の中国の再会は未完成です。"
+
+ one_china_reunification_bonus:0 "中国のReunified"
+ one_china_reunification_bonus_desc:0 "主国とフォルモサの再会は、未完成の民間戦争を解決し、[ROOT.GetCountry.GetAdjective]国民意識の世紀末の創傷を癒しました。 権限、正当性、および威信は劇的に改善されます。 セパラチストの動きを抑制します。 状態は全体です。"
+ 
+ one_china_roc_integration_bonus:0 "本土の統合"
+ one_china_roc_integration_bonus_desc:0 "[ROOT.GetCountry.GetName] は、旧中華人民共和国を憲法の秩序の中に持ち込んでいます。 メインランドの領土と人口を統合する巨大なタスクが始まりました。 組み込み速度は、[ROOT.GetCountry.GetAdjective] 状態が大陸横断の施設を拡張するにつれて飛躍的に加速されます。"

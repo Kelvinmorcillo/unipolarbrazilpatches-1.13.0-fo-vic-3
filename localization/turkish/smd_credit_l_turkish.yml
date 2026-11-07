@@ -1,0 +1,58 @@
+﻿l_turkish:
+
+ # ==========================================
+ # THE DOLLAR 
+ # ==========================================
+
+ je_the_dollar:0 "Dolar"
+ je_the_dollar_reason:0 "ABD doları dünyanın rezerv para birimidir. [ROOT.GetCountry.GetName] başka bir ulustan daha fazla kredi ihraç eder - ve bunu yaparken, olağanüstü bir finansal güç pozisyonu tutar.\n\n\n Diğer ülkelerin finansal bölgeleri, operasyonlarını sürdürmek için kredi gerektirdiğinde, [ROOT.GetCountry.GetAdjective] bankalarına bunu tedarik etmeleri gerekir. Doların aktığı sürece, bu ülkelerin kapitalistleri inşa edebilir, yatırım yapabilir ve kâr sağlayabilir. [ROOT.GetCountry.GetName] Bu akışı kısıtlamayı seçmeli - yaptırımlar, ambargo veya kasıtlı sözleşme yoluyla - yabancı finansal piyasaların sonuçları derhal ve ciddi olacaktır.\n\n@information! İhracat kredisi sadece ticaret değildir. Bu, [ROOT.GetCountry.GetAdjective] finansal altyapıya bağlı olarak gelen ülkeler üzerinde para egemenliğinin kullanılmasıdır. Finansal bölgeleri kredi gerektirir. Kredi fiyatı, menkul kıymet fiyatının üstünde yükselirse, yatırımcıları para kaybetmeye başlar. Eğer kredi tamamen akırsa, bankaları yeterince yerli olarak üretmek için yalvarmalıdır - zaman alacak bir süreç."
+
+ je_dollar_status_hegemonic_tt:0 "#bold Dolar hegemonik.#! [ROOT.GetCountry.GetName] #v 20.000#! kredi birimleri. Yabancı finans piyasaları [ROOT.GetCountry.GetAdjective] bankacılık altyapısıyla derinden entegre edilmiştir. Bu sağladığı kaldıraç önemli."
+ je_dollar_status_stronger_tt:0 "#bold Dolar güçlüdür.#! [ROOT.GetCountry.GetName] #v 10.000#! kredi birimleri. Yabancı finans piyasaları [ROOT.GetCountry.GetAdjective] bankacılık altyapısıyla derinden entegre edilmiştir. Bu sağladığı kaldıraç önemli."
+ je_dollar_status_strong_tt:0 "#bold Dolar etkilidir.#! [ROOT.GetCountry.GetName] #v 5.000#! kredi birimleri. Yabancı finans piyasaları [ROOT.GetCountry.GetAdjective] bankacılık altyapısıyla derinden entegre edilmiştir. Bu sağladığı kaldıraç önemli."
+ je_dollar_status_moderate_tt:0 "#bold Dolar iyi kuruldu.#! [ROOT.GetCountry.GetName] #v 2.500#! kredi birimleri. [ROOT.GetCountry.GetAdjective] krediye yabancı bağımlılık gerçek ve büyüyor."
+ je_dollar_status_marginal_tt:0 "#bold Dolar ortaya çıkıyor.#! [ROOT.GetCountry.GetName] Uluslararası kredi ihraç ediyor. Doların bir rezerv para birimi olarak rolü ilk aşamalarında - ama temel ortaya çıkıyor."
+
+ # ==========================================
+ # THE RESERVE CURRENCY
+ # ==========================================
+
+ je_reserve_currency:0 "Rezerv Paraları"
+ je_reserve_currency_reason:0 "[ROOT.GetCountry.GetName] uluslararası ihracat kredisi - [ROOT.GetCountry.GetAdjective] bankacılık sektörü küresel finansal sistemde önemli bir oyuncu yapar.\n\n\n Diğer ülkelerin finansal bölgeleri, operasyonlarını sürdürmek için kredi gerektirdiğinde, [ROOT.GetCountry.GetAdjective] bankalarından çıkarlar. Bu, yapısal bir kaldıraç biçimi yaratır: [ROOT.GetCountry.GetName] Kredi ithal eden ülkeler, bu kredinin finansal sektörlerinin sağlığı için sürekli akışına bağlı olarak bir derece haline gelir.\n\n@information!@information! ithalat ülkelerdeki finansal bölgeler, verimli bir şekilde işletmek için kredi gerektirir. Kredi fiyatı, menkul kıymet fiyatının üstünde yükselirken, yatırımcıları inşaat ve geliştirme konusunda para kaybederler. Ani bir kredi sözleşmesi - yaptırımlar veya ambargo aracılığıyla - bu ülkeleri yerel olarak kredi üretmek, daha yavaş ve daha pahalı bir süreçtir."
+
+ je_reserve_status_strong_tt:0 "#bold [ROOT.GetCountry.GetAdjective] kredi yaygın olarak ticarileştirilmiştir.#! İhracatlar #v 5.000#! birimleri aşıyor. Yabancı finans piyasaları [ROOT.GetCountry.GetAdjective] bankacılık tedarikine önemli bir güven geliştirdi."
+ je_reserve_status_moderate_tt:0 "#bold [ROOT.GetCountry.GetAdjective] kredi uluslararası olarak aktiftir.#! İhracatlar #v 2500#! birimleri aşıyor. Yabancı finansal aktivitenin anlamlı bir kısmı [ROOT.GetCountry.GetAdjective] tedarike bağlıdır."
+ je_reserve_status_marginal_tt:0 "#bold [ROOT.GetCountry.GetAdjective] kredi uluslararası pazarlara giriyor.#! İhracatlar #v 1.000#! birimleri aşıyor. Rol mütevazı ama büyüyor."
+
+ # ==========================================
+ # THE FINANCIAL SYSTEM — je_financial_system
+ # ==========================================
+
+ je_financial_system:0 "Finansal Sistem"
+ je_financial_system_reason:0 "Bu dergi girişi tamamen Seçmelidir - oyunu oynamak için kredi ve menkul kıymet sistemi ile ilgilenmeniz gerekmez. Bunu anlamak isteyenler için bir referans olarak buradadır.\n\n#bold#bold Sistem nasıl çalışır #!\n\n Banks Bankalar #bold kredi#! Financial Districts kredi satın alır ve halka açık ticaret yönteminde #bold hisse senetleri#! satar. Securities, yatırımcılara yeni inşaata yeniden giriş yaparken ekstra kâr verir - ancak sadece menkul kıymet fiyatı kredi fiyatından daha yüksek olduğunda. Bu, piyasanın aradığı doğal bir denge olduğu anlamına gelir:\n\n• #bold kredi ucuz olduğunda#! menkul kıymetlere göre, finansal bölgeler kâr ve yatırımcılar daha agresif hale gelir. İnşaat ekonomide hızlanır.\n\n #bold menkul kıymetler ucuz olduğunda#! krediye göre, finansal bölgeler para satın alma kredilerini kaybederler, böylece kâr edilemezler. Bankalar ürünlerini daha az değerli buluyorlar. İnşaat yavaşlar.\n\n@information! Kredi ve menkul kıymet arasındaki fiyat ilişkisi, bu nedenle izlemek için anahtar sinyaldir. Sağlıklı bir yayılma - kredinin üzerindeki menkul kıymetler - finansal sektörün amaçlandığı anlamına gelir ve kapitalistleriniz inşaat yatırımına geri dönerler.\n\n@warning! Kredi menkul kıymetlerin üstünde yükselirse, finansal bölgeleriniz her birimde işlem yaptıkları bir kayıpta çalışır. Bankalar kârlı hale gelir, ancak yatırımcılar aktivitelerini yavaşlatır ve ekonominiz daha az dinamik bir şekilde büyür.\n\n#bold Merkez Bankası#!\n\n #bold Merkez Bankası#! Kurumları doğrudan menkul kıymet üretimini etkilemek için kullanabilirsiniz. Merkez Bankası'na yatırım yapmak, piyasanızdaki menkul kıymetlerin tedarikini artırır - bu da fiyatlarını krediye göre artırır. Bu, #bold Ticari bankalarınızı keserek #!, kredilerini daha az kârlı bulan, ancak #bold genişletilmiş endüstriyel yatırım#!, kredi faizlerinizi tutarken, kapitalistlerinizi uygun hale getirir.\n\n Bu kasıtlı bir ticaret: Merkez Bankası yatırım bankacılık kârlılığı pahasına endüstriyel büyümeyi destekliyor. Bu ticaret yapma değeri ekonomik stratejinize bağlıdır."
+
+ je_financial_credit_expensive_tt:0 "#bold Kredi, temel fiyatının üzerinde işlemdir.#! Ticari bankalar kârlıdır. Finansal ilçeler kredi için bir prim ödüyorlar, bu da marjlarını menkul kıymet üretimine borçlu. Yatırımcılar, yayılamazsa inşaat faaliyetlerini yavaşlatabilirler."
+ je_financial_securities_expensive_tt:0 "#bold Securities temel fiyatının üzerinde işlem yapmaktadır.#! Finansal ilçeler kârlıdır - krediyi sağlıklı bir marjda paraya dönüştürüyorlar. Yatırımcılar inşaatta iyi dönerler. Bankalar, ürününün besledikleri malların altında fiyatlandırılmış baskıyla karşı karşıyadır."
+ je_financial_balanced_tt:0 "Kredi ve menkul kıymetler temel fiyatlarının yakınında ticaret yapıyor. Finansal sistem dengededir - bankalar marjinal olarak kârlıdır ve yatırımcılar orta geri dönerler."
+
+ ### Great Recession
+
+ je_subprime_mortgage_crisis:0 "Subprime Mortgage Crisis"
+ je_subprime_mortgage_crisis_reason:0 "[ROOT.GetCountry.GetAdjective] finansal kurumlar ölçekdeki ipotek iade edilen menkul kıymetleri yayınlıyor ve paketliyor - küresel finansal sistem genelinde satılan aletlere ev kredileri. Borçlar güvenli olarak değerlendirilir. Güvenli değiller. Altta yatan ipotekler varsayılan olarak başladığında, bu aletleri tutan her kurum aynı anda bilançolarının değersiz kağıt üzerinde inşa edildiğini keşfeder.\n\n@warning! Eğer menkul kıymet fiyatı krizden önce önemli ölçüde doğru değilse, [ROOT.GetCountry.GetAdjective] bankacılık sistemi donacaktır - ve şok [ROOT.GetCountry.GetName] ile her ekonomi tarafından hissedilecektir."
+
+ je_great_recession:0 "The Great Recession"
+ je_great_recession_reason:0 "Amerika Birleşik Devletleri finansal sistemi çöktü. Dünyanın dört bir yanındaki bankalar tarafından tutulan Mortgage geri iade edilmiş menkul kıymetler yakın zamanda ortaya çıktı. Kredi piyasaları donmuş. Bankalar birbirlerine ödünç vermeyecek, sadece işletmelere izin verecektir. Yatırım kurudu. İnşaat yavaşladı. Durgunluk küreseldir.\n\n Piyasa doğru olacak. Her zaman yapar. Soru, daha önce ne kadar hasar yapılır."
+
+ # Status descriptions
+ subprime_je_danger_tt:0 "Borçların fiyatı yeterince düşmüştü. [ROOT.GetCountry.GetAdjective] ipotek iade edilmiş menkul kıymetler hala değerlidir - piyasa henüz riskte fiyatlamamıştır. Daha uzun süre devam ediyor, olay düzeltmesi daha felaket."
+ subprime_je_safe_tt:0 "#bold Securities, temel fiyatın% 35'inden fazla düştü.#! Piyasa doğrulanıyor. Eğer bu tutarsa, kaza bir engel olabilir - ya da en azından yumuşatılabilir."
+
+ great_recession_je_usa_tt:0 "[ROOT.GetCountry.GetAdjective] bankacılık sistemi krizde. Kredi kriunch bankayı keskin bir şekilde, yatırımları ve inşaatı azaltır. Durgun piyasa doğrularına kadar sürecek - yaklaşık on ay."
+ great_recession_je_global_tt:0 "[ROOT.GetCountry.GetName] [SCOPE.sCountry('c:USA').GetName] ile önemli ticari bağlar finansal şoka yol açtı. [ROOT.GetCountry.GetAdjective] Bankalar [SCOPE.sCountry('c:USA').GetAdjective] finansal cihazlara maruz kalıyor. Kredi sıkı, yatırım yavaşladı ve durgunluk geldi."
+
+ # ==========================================
+ # MODIFIERS
+ # ==========================================
+
+ great_recession_credit_crunch:0 "Kredi Crunch"
+ great_recession_credit_crunch_desc:0 "bankacılık sistemi ele alındı. Bankalar ödünç almayı reddediyor - işletmelere, birbirlerine, herkese. Kredi buharlaştı. Yatırım çöktü. İnşaat yavaşladı. Ekonomi finansal sisteme geri dönene kadar geri kazanmayacaktır."

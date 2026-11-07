@@ -1,0 +1,288 @@
+﻿l_german:
+
+ je_national_development: "Nationaler Entwicklungspfad"
+ je_national_development_reason: "Jede Nation muss wählen, wo sie ihre Energien konzentrieren. Ein nationaler Entwicklungsplan konzentriert sich auf Ressourcen, Politik und politischen Willen für zehn Jahre. — die Wahl kann erst nach Abschluß des Programms rückgängig gemacht werden."
+
+ je_foreign_investment: "Auslandsinvestitionen"
+ je_foreign_investment_reason: "Kapital von großen Mächten zu gewinnen, kann die Entwicklung über das hinaus beschleunigen, was Haushaltsmittel erlauben. Ein ausländischer Investitionsvertrag würde das Land außerhalb des Unternehmens öffnen — mit allen Möglichkeiten und Abhängigkeiten, die mit sich bringen."
+ has_foreign_investment_or_trade_agreement_with_west_tt:0 "Unterzeichnung eines ausländischen Investitions- und Handelsabkommens mit den Vereinigten Staaten, Großbritannien oder Frankreich"
+ 
+ ndp_status_industrial_tt: "Industrielle Expansion ist im Gange. Das Land leitet Ressourcen für den Aufbau seiner Produktions- und Schwerindustriebasis."
+ ndp_status_military_tt: "Militärische Expansion ist im Gange. Das Land investiert in seine Streitkräfte, Lehre und Verteidigungsindustrie."
+ ndp_status_resource_tt: "Die Entwicklung der Ressourcenwirtschaft ist im Gange. Das Land konzentriert sich auf die Landwirtschaft und die Rohstoffgewinnung."
+ ndp_status_service_tt: "Die Entwicklung der Service Economy ist im Gange. Das Land baut seinen Finanzsektor, seine Bildung und seine Staatskapazität auf."
+ ndp_status_none_tt: "Derzeit ist kein Entwicklungspfad aktiv. Wählen Sie einen Weg, um ein zehnjähriges nationales Entwicklungsprogramm zu beginnen."
+
+ fi_status_seeking_tt: "Das Land sucht ein ausländisches Investitionsabkommen mit großer Macht. Unterzeichnen Sie einen Investitionsvertrag, um diesen Journaleintrag abzuschließen."
+ fi_status_secured_tt: "Ein ausländisches Investitionsabkommen wurde gesichert. Auslandskapital fließt ein."
+
+ ndp_button_industrial_name: "Industrielle Expansion"
+ ndp_button_industrial_desc: "Konzentrieren Sie sich auf nationale Ressourcen, um die Produktionsbasis aufzubauen. Steigert schwere Industrie, leichte Fertigung und Konstruktion. Sub-Auswahlen im Jahr 2: schwere Industrie vs leichte Herstellung."
+
+ ndp_button_military_name: "Militärische Expansion"
+ ndp_button_military_desc: "Priorisieren Sie die Streitkräfte. Erhöht Armee und Marine, Militärforschung und Waffenproduktion. Sub-Auswahlen im Jahr 2: Landlehre vs naval buildup."
+
+ ndp_button_resource_name: "Ressourcenwirtschaft"
+ ndp_button_resource_desc: "Bauen Sie die Wirtschaft um das Land. Steigert die Agrar- und Extraktivindustrie. Teilentscheidungen zum Jahr 2: Landwirtschaft vs Rohstoffgewinnung."
+
+ ndp_button_service_name: "Service Economy"
+ ndp_button_service_desc: "Entwicklung staatlicher Kapazitäten, Bildung und Finanzsektor. Steigert Bürokratie, Forschungsgeschwindigkeit und Investitionen. Teilentscheidungen zum Jahr 2: Finanzsektor gegen Bildung und Bürokratie."
+
+ ndp_button_abandon_name: "Abandon Path"
+ ndp_button_abandon_desc: "Verlassen Sie das aktuelle Entwicklungsprogramm. Alle aktiven Pfad-Modifier werden entfernt, und eine Prestige- und Legitimitätsstrafe wird für zwei Jahre gelten. Sie können dann einen neuen Pfad auswählen."
+
+ fi_button_reject_name: "Ausländische Investitionen"
+ fi_button_reject_desc: "Schließen Sie die Tür zu ausländischem Kapital. Dies wird den Journaleintrag beenden und eine langfristige Investitionsstrafe anwenden, wird jedoch die wirtschaftliche Unabhängigkeit und die Stärkung der Autorität erhalten."
+
+ # Tooltip keys
+ ndp_no_path_active_tt: "Kein Entwicklungspfad ist derzeit aktiv"
+ ndp_abandon_cost_tt: "Der Weg wird eine Legitimität und Prestigestrafe für 2 Jahre anwenden"
+
+ national_development_progress_bar: "Entwicklung"
+ national_development_progress_bar_desc: "Entwicklung"
+ ndp_bar_active_path_tt: "Aktiver Entwicklungspfad"
+ ndp_bar_industrial_mines_tt: "Schwere Industriebasis etabliert"
+ ndp_bar_industrial_factories_tt: "Produktionssektor wächst"
+ ndp_bar_military_army_tt: "Große stehende Armee"
+ ndp_bar_military_conscription_tt: "Massenkonscription in Kraft gesetzt"
+ ndp_bar_resource_farms_tt: "Landwirtschaftliche Produktion stark"
+ ndp_bar_resource_extraction_tt: "Verarbeitende Industrien"
+ ndp_bar_service_literacy_tt: "Hohe Alphabetisierung beschleunigt Serviceentwicklung"
+ ndp_bar_service_university_tt: "Infrastruktur der Universität"
+ ndp_bar_turmoil_tt: "Hohe Turbulenzen verlangsamen Entwicklung"
+ ndp_bar_at_war_tt: "Krieg stört das Entwicklungsprogramm"
+
+ # ==========================================
+ # OPENING EVENT — ndp_events.0
+ # ==========================================
+
+ ndp_events.0.t: "Ein nationales Entwicklungsprogramm beginnt"
+ ndp_events.0.d_industrial: "Die Regierung von [ROOT.GetCountry.GetName] hat sich zu einem Jahrzehnt der industriellen Expansion verpflichtet. Die Investitionen fließen in Fabriken, Minen und die Infrastruktur, die sie verbindet. Der Plan ist ehrgeizig - und die Hindernisse beträchtlich - aber die Vision ist klar: die Produktionskapazität zu bauen, die [ROOT.GetCountry.GetName]'s Platz in der Welt definiert."
+ ndp_events.0.d_military: "Die Regierung von [ROOT.GetCountry.GetName] hat sich zu einem Jahrzehnt der militärischen Expansion verpflichtet. Baracken werden gebaut, Offiziere trainiert und Lehren reformiert. Ob die Motivation Verteidigung, Abschreckung oder Ehrgeiz ist, die Botschaft an die Welt ist unverkennbar: [ROOT.GetCountry.GetName] will ernst genommen werden."
+ ndp_events.0.d_resource: "Die Regierung von [ROOT.GetCountry.GetName] hat sich zu einem Jahrzehnt der Ressourcenwirtschaftsentwicklung verpflichtet. Das Land selbst — seine Böden und Mineralien — wird der Wachstumsmotor sein. Es ist eine Wette auf das, was [ROOT.GetCountry.GetName] bereits hat, und einen Plan, um viel mehr davon zu machen."
+ ndp_events.0.d_service: "Die Regierung von [ROOT.GetCountry.GetName] hat sich zu einem Jahrzehnt der Entwicklung der Dienstleistungswirtschaft verpflichtet. Schulen, Banken und Regierungsministerien werden alle Investitionen sehen. Die Wette ist, dass ein intelligenteres, besser geführtes Land letztendlich stärker ist."
+ ndp_events.0.f: "Zehn Jahre. Eine Richtung."
+ ndp_events.0.a: "Beginn des Programms"
+
+ # ==========================================
+ # INDUSTRIAL PATH EVENTS
+ # ==========================================
+
+ ndp_events.1.t: "Die industrielle Frage"
+ ndp_events.1.d: "Zwei Jahre in das Entwicklungsprogramm, die Richtung der industriellen Investitionen muss geklärt werden. Das Land kann nicht alles auf einmal aufbauen. Planer und Industrielle sind geteilt: einige befürworten die Konzentration der Ressourcen auf die Schwerindustrie — Eisen, Stahl, Kohle — die Süden der modernen Macht. Andere argumentieren, dass leichte Fertigung schnellere Rückkehr und breitere Beschäftigung bietet."
+ ndp_events.1.f: "Stahl oder Stoff — die Nation muss wählen."
+ ndp_events.1.a: "Schwere Industrie — bauen die Grundlagen der modernen Macht"
+ ndp_events.1.b: "Leichtbau — Priorisierung von Beschäftigung und Konsumgütern"
+
+ ndp_events.2.t: "Der Investment Drive"
+ ndp_events.2.d: "Das industrielle Programm gewinnt an Dynamik, aber das Tempo des Baus hängt davon ab, woher die Hauptstadt kommt. Die Regierungsplaner drängen auf direkte staatliche Investitionen, indem sie Mittel auf vorrangige Sektoren ohne Marktunsicherheit lenken. Die privaten Industriellen behaupten, dass Wettbewerbs- und Gewinnanreize bessere Ergebnisse bringen werden als die bürokratische Zuweisung."
+ ndp_events.2.f: "Der Markt oder der Plan — die Aussprache ist so alt wie die Industrie selbst."
+ ndp_events.2.a: "Staatliche Investitionen — die Regierung wird bauen"
+ ndp_events.2.b: "Private Unternehmen – Investoren anziehen und zurücktreten"
+
+ ndp_events.3.t: "Die Arbeitsfrage"
+ ndp_events.3.d: "Die Fabriken laufen und die Minen produzieren - aber die Arbeiter, die es möglich machen, fordern mehr. Das Entwicklungsprogramm hat Arbeitsplätze geschaffen, hat aber auch Erwartungen geschaffen. Fabrikbesitzer wollen längere Stunden und weniger Einschränkungen. Arbeitsorganisatoren wollen das Gegenteil. Die Regierung muss entscheiden, auf welcher Seite dieses Arguments sie steht."
+ ndp_events.3.f: "Der Motor läuft auf Kohle — und auf die Menschen, die es graben."
+ ndp_events.3.a: "Push-Produktivität — max."
+ ndp_events.3.b: "Investitionen in Arbeitnehmer — bessere Bedingungen bedeuten stabiles, anhaltendes Wachstum"
+
+ ndp_events.4.t: "Ein Jahrzehnt der Industrie"
+ ndp_events.4.d: "Zehn Jahre industrielle Entwicklung sind abgeschlossen. Die Fabriken gebaut, die Eisenbahn verlegt, die Minen erweitert — die Ergebnisse sind real und sichtbar. <x id=========================================================================== Die Frage ist nun, was als nächstes kommt."
+ ndp_events.4.f: "Die Schmiede hat ihre Arbeit getan."
+ ndp_events.4.a: "Diagramm des nächsten Kurses"
+ ten_year_programme_concluded:0 "Das Zehnjahresprogramm ist abgeschlossen."
+ # ==========================================
+ # MILITARY PATH EVENTS
+ # ==========================================
+
+ ndp_events.11.t: "Die Frage der Lehre"
+ ndp_events.11.d: "Zwei Jahre Militärexpansion haben mehr Soldaten, mehr Waffen und mehr Optionen produziert – aber die grundlegende Frage der Lehre bleibt ungelöst. Das Generalstab ist geteilt. Eine Fraktion drückt für einen Fokus auf Landkraft: Massenarmeen, Verteidigungstiefe und kontinentale Dominanz. Eine andere argumentiert, dass die Schiffsausweitung eine größere strategische Flexibilität und die Fähigkeit bietet, Strom über die Grenzen [ROOT.GetCountry.GetName] hinaus zu projizieren."
+ ndp_events.11.f: "Das Schwert oder die Flotte — jede impliziert eine andere Vision der Macht."
+ ndp_events.11.a: "Landlehre — Bau der Armee, die kein Nachbar herausfordern kann"
+ ndp_events.11.b: "Navale Doktrin — Projektmacht über den Horizont hinaus"
+
+ ndp_events.12.t: "Die Beschaffungsschuld"
+ ndp_events.12.d: "Das Militär braucht moderne Ausrüstung — aber woher sollte es kommen? Inländische Rüstungsproduktion würde neben militärischer Stärke industrielle Kapazität aufbauen, wird aber Zeit und Investitionen brauchen, um zu reifen. Ausländische Beschaffung bietet schnellere Ergebnisse zu finanziellen Kosten und schafft eine Abhängigkeit von externen Lieferanten, die einige Generäle beunruhigen."
+ ndp_events.12.f: "Die beste Waffe ist die, die Sie tatsächlich felden können."
+ ndp_events.12.a: "Bauen inländische Rüstungsindustrien — Investitionen in Selbstversorgung"
+ ndp_events.12.b: "Ausland kaufen — die Kosten für sofortige Fähigkeit akzeptieren"
+
+ ndp_events.13.t: "Der Geist der Armee"
+ ndp_events.13.d: "Acht Jahre in das Militärprogramm, die Hardware ist vorhanden - aber Hardware allein gewinnt keine Kriege. Die Frage ist nun der Kampfgeist der Kraft. Einige Offiziere argumentieren für eine nationalistische Moralkampagne: Aufrufe an Patriotismus und nationale Ehre, die jeden Soldaten Kampf härter machen. Andere befürworten die Investition in die Professionalität des Offizierskorps — Führung, Taktik und institutionelle Kenntnisse."
+ ndp_events.13.f: "Eine Armee kämpft mit ihrer Ausrüstung – und ihrer Seele."
+ ndp_events.13.a: "Starten Sie eine nationalistische Moralkampagne — rühren Sie den Kampfgeist"
+ ndp_events.13.b: "Professionalisieren Sie die Offizierskorps – investieren Sie in Führung"
+
+ ndp_events.14.t: "Eine Dekade der militärischen Expansion"
+ ndp_events.14.d: "Zehn Jahre militärische Entwicklung sind abgeschlossen. Die Streitkräfte von [ROOT.GetCountry.GetName] sind größer, besser ausgerüstet und leistungsfähiger als bei Beginn des Programms. Was sie mit dieser Fähigkeit tun — und ob die Investition die Kosten wert war — wird durch die folgenden Entscheidungen bestimmt."
+ ndp_events.14.f: "Das Schwert wurde geschmiedet. Jetzt muss er seinen Zweck finden."
+ ndp_events.14.a: "Diagramm des nächsten Kurses"
+
+ # ==========================================
+ # RESOURCE ECONOMY PATH EVENTS
+ # ==========================================
+
+ ndp_events.21.t: "Das Land Bounty"
+ ndp_events.21.d: "Zwei Jahre in das Ressourcenprogramm, die grundlegende Wahl muss getroffen werden: Welche Art von Ressourcenwirtschaft wird [ROOT.GetCountry.GetName] bauen? Die Landwirtschaft — die Ernährung einer wachsenden Bevölkerung und die Erzeugung von Exportpflanzen — bietet Stabilität und breite Beschäftigung. Rohmaterialgewinnung — Bergbau, Protokollierung, Bohrungen — bietet schnellere Einnahmen, ist jedoch volatiler und lässt die Wirtschaft den Preisschwankungen ausgesetzt."
+ ndp_events.21.f: "Die Erde gibt, was sie gibt. Die Frage ist, was Sie darüber stellen."
+ ndp_events.21.a: "Landwirtschaft — Brotkorb bauen"
+ ndp_events.21.b: "Extraktion — den Reichtum untergraben"
+
+ ndp_events.22.t: "Die Landpolitik"
+ ndp_events.22.d: "Fünf Jahre lang steht das Ressourcenprogramm seiner zentralen Landfrage gegenüber. Es gibt noch nicht beanspruchtes oder untergenutztes Gebiet, das in Produktion gebracht werden könnte, aber dies erfordert Investitionen in Infrastruktur, Siedler und Rechtsrahmen. Die Alternative besteht darin, die Produktion auf bestehendem Land zu intensivieren und mehr Output aus dem, was bereits funktioniert."
+ ndp_events.22.f: "Neues Land oder tiefere Wurzeln — das ewige Dilemma des Bauern."
+ ndp_events.22.a: "Erweitern in neues Land — öffnen Sie die Grenze"
+ ndp_events.22.b: "Intensivierung der bestehenden Produktion — mehr von dem, was wir haben"
+
+ ndp_events.23.t: "Die Ausfuhrfrage"
+ ndp_events.23.d: "Acht Jahre in das Programm, der Ressourcensektor produziert - aber wer profitiert davon, wo er hingeht. Die Suche nach Exportverträgen mit ausländischen Märkten würde Umsatz ausbauen und [ROOT.GetCountry.GetName] in globale Handelsnetze integrieren, schafft aber Abhängigkeit von der Außennachfrage. Die Priorisierung der heimischen Versorgung würde das Land von Preisschocks isolieren und die Lebensmittelsicherheit stärken, aber die Gewinne des Exports verbieten."
+ ndp_events.23.f: "Füttern Sie die Welt oder füttern Sie die Nation zuerst."
+ ndp_events.23.a: "Seek-Exportmärkte — Verkauf des Überschusses im Ausland"
+ ndp_events.23.b: "Vorrangige Inlandsversorgung — Nahrungsmittelsicherheit über Gewinn"
+
+ ndp_events.24.t: "Ein Jahrzehnt der Ressourcenentwicklung"
+ ndp_events.24.d: "Zehn Jahre Ressourcenwirtschaftsentwicklung sind abgeschlossen. Betriebe, Minen und Entnahmestellen von [ROOT.GetCountry.GetName] mehr produzieren als sie es taten, als das Programm begann. Ob die Gewinne ziemlich geteilt wurden - und ob die Extraktion nachhaltig war - sind Fragen im nächsten Jahrzehnt."
+ ndp_events.24.f: "Was das Land nachgibt, erinnert sich das Land."
+ ndp_events.24.a: "Diagramm des nächsten Kurses"
+
+ # ==========================================
+ # SERVICE ECONOMY PATH EVENTS
+ # ==========================================
+
+ ndp_events.31.t: "Die Servicefrage"
+ ndp_events.31.d: "Zwei Jahre in das Dienstprogramm, die Richtung muss geklärt werden. Zwei Visionen einer Dienstleistungswirtschaft stehen im Vordergrund: der Finanzsektor — Banken, Versicherungen und Handel — der schnell Reichtum erzeugt und Investitionen anzieht oder Bildung und Bürokratie — Schulen, Universitäten und staatliche Institutionen —, die die Fähigkeit des Humankapitals und der Governance, die alles andere untermauert, baut."
+ ndp_events.31.f: "Der Leiter oder die Bibliothek — beide sind Grundlagen der Moderne."
+ ndp_events.31.a: "Finanzsektor — Aufbau der Banken und Handelshäuser"
+ ndp_events.31.b: "Bildung und Bürokratie — Aufbau der Humankapital"
+
+ ndp_events.32.t: "Die Talentfrage"
+ ndp_events.32.d: "Fünf Jahre in der Dienstleistungswirtschaft wächst - aber es braucht qualifizierte Menschen, um dieses Wachstum zu erhalten. Eine Option ist, ausländische Talente zu gewinnen: öffnen Sie die Türen für Ingenieure, Finanziers und Profis aus dem Ausland, akzeptieren, dass einige der Gewinne wieder zu Außenseitern fließen. Der andere ist, in die häusliche Bildung zu investieren — langsamer, aber Baufähigkeiten, die bleiben."
+ ndp_events.32.f: "Die besten Köpfe gehen, wo sie geschätzt werden."
+ ndp_events.32.a: "Attrakt ausländisches Talent — öffnen Sie die Türen"
+ ndp_events.32.b: "Investitionen in die häusliche Bildung — von innen"
+
+ ndp_events.33.t: "Institutionelle Reform"
+ ndp_events.33.d: "Acht Jahre lang braucht die Dienstleistungswirtschaft ihre Institutionen zu reifen. Zwei Wege stehen sich vor: Liberalisierung — Reduzierung von Vorschriften, Reduzierung von Bürokratie und freiere und institutionelle Stärkung der Märkte — Investitionen in Rechtsstaatlichkeit, Eigentumsrechte und die Zuverlässigkeit der Regierung selbst. Beide können Wachstum produzieren, aber sie produzieren verschiedene Arten von Ländern."
+ ndp_events.33.f: "Die Regeln des Spiels sind genauso wichtig wie die Spieler."
+ ndp_events.33.a: "Liberalisierung der Märkte — Deregulierung und Rückschritt"
+ ndp_events.33.b: "Stärkung der Institutionen — Investitionen in Rechtsstaatlichkeit"
+
+ ndp_events.34.t: "Ein Jahrzehnt der Serviceentwicklung"
+ ndp_events.34.d: "Zehn Jahre Entwicklung der Dienstleistungswirtschaft sind abgeschlossen. Die Banken sind anspruchsvoller, die Schulen besser besetzt, die Regierung fähiger als wenn das Programm begann. Ob dies in die Art des breiten Wohlstands übergeht, der die Investition rechtfertigt, ist eine langfristige Frage — eine, die im nächsten Jahrzehnt zu beantworten beginnt."
+ ndp_events.34.f: "Die Infrastruktur des Geistes überdauert alle anderen."
+ ndp_events.34.a: "Diagramm des nächsten Kurses"
+
+ # ==========================================
+ # MODIFIERS
+ # ==========================================
+
+ ndp_modifier_industrial: "Pfad der industriellen Entwicklung"
+ ndp_modifier_industrial_desc: "Die nationalen Ressourcen werden auf die industrielle Expansion ausgerichtet. Die Bauraten sind hoch und der Fertigungsdurchsatz verbessert sich über das gesamte Board."
+
+ ndp_modifier_military: "Militärischer Expansionsweg"
+ ndp_modifier_military_desc: "Das Land priorisiert die militärische Entwicklung. Die Forschung konzentriert sich auf die militärische Technologie und die Streitkräfte werden aufgebaut."
+
+ ndp_modifier_resource: "Ressourcenwirtschaftspfad"
+ ndp_modifier_resource_desc: "Die nationalen Ressourcen werden auf die landwirtschaftlichen und extraktiven Industrien ausgerichtet. Das Land wird zur Arbeit gebracht."
+
+ ndp_modifier_service: "Service Wirtschaft Pfad"
+ ndp_modifier_service_desc: "Die nationalen Ressourcen werden auf Bildung, Bürokratie und Finanzentwicklung ausgerichtet. Humankapital ist der Wachstumsmotor."
+
+ ndp_modifier_industrial_heavy: "Schwerpunkt der Industrie"
+ ndp_modifier_industrial_heavy_desc: "Die Investitionen konzentrieren sich auf Eisen, Stahl und Kohle — die Grundlagen der industriellen Macht."
+
+ ndp_modifier_industrial_light: "Leichtbau Fokus"
+ ndp_modifier_industrial_light_desc: "Die Investitionen konzentrieren sich auf die Textil- und Konsumgüterindustrie."
+
+ ndp_modifier_state_heavy_industry: "Schwere Industriezone"
+ ndp_modifier_state_heavy_industry_desc: "Dieser Zustand wurde als vorrangige Zone der Industrie bezeichnet."
+
+ ndp_modifier_state_light_industry: "Leichte Industriezone"
+ ndp_modifier_state_light_industry_desc: "Dieser Zustand wurde als eine lichttechnische Prioritätszone bezeichnet."
+
+ ndp_modifier_industrial_state_investment: "State Investment Drive"
+ ndp_modifier_industrial_state_investment_desc: "Die Regierung finanziert direkt den Industriebau."
+
+ ndp_modifier_industrial_state_investment_cost: "Industrielle Investitionskosten"
+ ndp_modifier_industrial_state_investment_desc: "Staatliche Investitionen in die Industrie belasten den Haushalt."
+
+ ndp_modifier_industrial_private_investment: "Private Investment Incentives"
+ ndp_modifier_industrial_private_investment_desc: "Incentives for Private Capital erhöhen die Effizienz des Investment Pools."
+
+ ndp_modifier_industrial_labour_push: "Intensive Arbeitspolitik"
+ ndp_modifier_industrial_labour_push_desc: "Die Arbeiter werden hart geschoben — die Produktivität ist hoch, aber so ist Unzufriedenheit."
+
+ ndp_modifier_industrial_labour_welfare: "Arbeitsschutz Investitionen"
+ ndp_modifier_industrial_labour_welfare_desc: "Die Investitionen in Arbeitsbedingungen zahlen sich in Stabilität und stetigem Produktionswachstum aus."
+
+ ndp_modifier_military_army: "Landlehre"
+ ndp_modifier_military_army_desc: "Das Militärprogramm konzentriert sich auf die Landmacht — Massenarmeen und kontinentale Dominanz."
+
+ ndp_modifier_military_navy: "Naval Doctrine"
+ ndp_modifier_military_navy_desc: "Das Militärprogramm konzentriert sich auf die Schiffskraft und die Machtprojektion."
+
+ ndp_modifier_military_domestic_arms: "Häusliche Rüstungsindustrie"
+ ndp_modifier_military_domestic_arms_desc: "Investitionen in die heimische Waffenproduktion zahlen Dividenden im Durchsatz."
+
+ ndp_modifier_military_foreign_arms: "Ausländische Beschaffung"
+ ndp_modifier_military_foreign_arms_desc: "Ausländische Ausrüstung erhöht die militärische Fähigkeit."
+
+ ndp_modifier_military_foreign_arms_cost: "Ausländische Beschaffungskosten"
+ ndp_modifier_military_foreign_arms_cost_desc: "Der Kauf ausländischer Arme ist teuer."
+
+ ndp_modifier_military_nationalist_morale: "Nationalist Morale Kampagne"
+ ndp_modifier_military_nationalist_morale_desc: "Die Appelle zur nationalen Ehre hebt den Kampfgeist der Streitkräfte."
+
+ ndp_modifier_military_professional_officers: "Professionalized Officer Corps"
+ ndp_modifier_military_professional_officers_desc: "Investitionen in die Ausbildung von Beamten verbessern die taktische Leistung."
+
+ ndp_modifier_resource_agriculture: "Landwirtschaftlicher Schwerpunkt"
+ ndp_modifier_resource_agriculture_desc: "Die nationalen Mittel konzentrieren sich auf die landwirtschaftliche Entwicklung."
+
+ ndp_modifier_resource_extraction: "Extraktionsschwerpunkt"
+ ndp_modifier_resource_extraction_desc: "Die nationalen Ressourcen konzentrieren sich auf die Gewinnung von Bergbau und Rohstoffen."
+
+ ndp_modifier_state_agriculture: "Landwirtschaftliche Prioritätszone"
+ ndp_modifier_state_agriculture_desc: "Dieser Zustand wurde als landwirtschaftliche Prioritätszone bezeichnet."
+
+ ndp_modifier_state_extraction: "Extraktion Prioritätszone"
+ ndp_modifier_state_extraction_desc: "Dieser Zustand wurde als Rohstoffextraktionsprioritätszone bezeichnet."
+
+ ndp_modifier_resource_land_expansion: "Erweiterungsprogramm"
+ ndp_modifier_resource_land_expansion_desc: "Neuland wird für Siedlung und Produktion eröffnet."
+
+ ndp_modifier_resource_intensification: "Produktionsintensität"
+ ndp_modifier_resource_intensification_desc: "Vorhandene Landwirtschafts- und Bergbaubetriebe werden auf eine höhere Leistung geschoben."
+
+ ndp_modifier_resource_export_markets: "Export Market Drive"
+ ndp_modifier_resource_export_markets_desc: "Das aktive Streben nach ausländischen Märkten verbessert die Effizienz der Handelsroute."
+
+ ndp_modifier_resource_domestic_supply: "Inlandsversorgung Priorität"
+ ndp_modifier_resource_domestic_supply_desc: "Priorisierung der heimischen Lebensmittelsicherheit gegenüber Exporterlöse."
+
+ ndp_modifier_service_finance: "Finanzsektor Entwicklung"
+ ndp_modifier_service_finance_desc: "Investitionen in Bank- und Finanzdienstleistungen fördern den Investitionspool."
+
+ ndp_modifier_service_education: "Bildung und Bürokratie Investitionen"
+ ndp_modifier_service_education_desc: "Schulen, Universitäten und Regierungseinrichtungen werden erweitert."
+
+ ndp_modifier_service_foreign_talent: "Ausländische Talentpolitik"
+ ndp_modifier_service_foreign_talent_desc: "Offene Türen für qualifizierte ausländische Arbeitnehmer beschleunigen das Wachstum des Dienstleistungssektors."
+
+ ndp_modifier_service_domestic_talent: "Öffentliche Bildung Investitionen"
+ ndp_modifier_service_domestic_talent_desc: "Investitionen in die häusliche Bildung bauen langfristige Humankapital."
+
+ ndp_modifier_service_liberalize: "Marktliberalisierung"
+ ndp_modifier_service_liberalize_desc: "Die reduzierte Regulierung verbessert die Investitionseffizienz und die Rechtsdurchsetzung."
+
+ ndp_modifier_service_institutions: "Institutionelle Stärkung"
+ ndp_modifier_service_institutions_desc: "Investitionen in Rechtsstaatlichkeit und staatliche Kapazitäten verbessern die Governance und Legitimität."
+
+ ndp_modifier_abandoned: "Abandoned Development Programme"
+ ndp_modifier_abandoned_desc: "Das nationale Entwicklungsprogramm wurde vor der Fertigstellung aufgegeben. Das Vertrauen in die Regierungsplanung hat gelitten."
+
+ ndp_foreign_investment_secured: "Auslandsinvestitionen gesichert"
+ ndp_foreign_investment_secured_desc: "Ein ausländisches Investitionsabkommen hat das Land für ausländisches Kapital eröffnet. Der Bau beschleunigt und der Investitionspool wächst."
+
+ ndp_foreign_investment_rejected: "Ausländische Investitionen"
+ ndp_foreign_investment_rejected_desc: "Das Land hat seine Türen zum Auslandskapital geschlossen. Die wirtschaftliche Unabhängigkeit bleibt erhalten — aber das Wachstum ist langsamer."

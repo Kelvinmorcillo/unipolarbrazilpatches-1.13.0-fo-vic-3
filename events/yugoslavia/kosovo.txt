@@ -1,0 +1,176 @@
+# Kosovo War and Independence
+
+namespace = kosovo_events
+
+# Kosovo crisis begins
+kosovo_events.1 = {
+	type = country_event
+	placement = ROOT
+	title = kosovo_events.1.t
+	desc = kosovo_events.1.d
+	event_image = { video = "yugoslav_war" }
+	icon = "gfx/interface/icons/event_icons/event_war.dds"
+	duration = 2
+
+	trigger = {
+		c:YUG ?= this
+		game_date >= 1998.2.1
+		NOT = { has_global_variable = kosovo_conflict_active }
+		NOT = { has_global_variable = kosovo_under_international_administration }
+		c:ALB = { is_player = no }
+	}
+
+	immediate = {
+		set_global_variable = { name = kosovo_conflict_active value = 1 }
+		set_global_variable = { name = kosovo_war_escalation value = 1 }
+	}
+
+	option = {
+		name = kosovo_events.1.a
+		default_option = yes
+		custom_tooltip = kosovo_crackdown_tt
+		c:ALB = { 
+			create_diplomatic_play = {
+				name = kosovo_war
+				type = dp_annex_war
+				target_country = c:YUG
+				add_war_goal = {
+					holder = c:ALB
+					type = conquer_state
+					target_state = scope:s:STATE_SOUTHERN_SERBIA
+					primary_demand = yes
+					target_country = c:YUG
+				}
+				add_war_goal = {
+					holder = c:YUG
+					type = annex_country
+					target_country = c:ALB
+				}
+			}
+		}
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = kosovo_events.1.b
+		custom_tooltip = kosovo_autonomy_offer_tt
+		remove_global_variable = kosovo_conflict_active
+		set_global_variable = kosovo_autonomy_agreement
+		add_modifier = { name = kosovo_autonomy_compromise days = 1825 }
+		ai_chance = { base = 0 }
+	}
+}
+
+# NATO intervention decision
+kosovo_events.2 = {
+	type = country_event
+	placement = ROOT
+	title = kosovo_events.2.t
+	desc = kosovo_events.2.d
+	event_image = { video = "fighterjets" }
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	duration = 2
+
+	trigger = {
+		NOT = { has_variable = nato_bombing_started }
+		has_global_variable = kosovo_conflict_active
+		game_date >= 1998.8.1
+		OR = {
+			c:USA ?= this
+			c:GBR ?= this
+			c:FRA ?= this
+		}
+	}
+
+	immediate = { set_variable = nato_bombing_started }
+
+	option = {
+		name = kosovo_events.2.a
+		default_option = yes
+		c:YUG = { trigger_event = { id = kosovo_events.3 popup = yes } }
+		every_country = {
+			limit = { has_global_variable = kosovo_conflict_active }
+			add_radicals = { value = 0.05 }
+		}
+		c:YUG = { set_variable = nato_bombing_started }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = kosovo_events.2.b
+		add_loyalists = { value = 0.02 }
+		ai_chance = { base = 0 }
+	}
+}
+
+# Yugoslavia receives NATO bombing / peace demand
+kosovo_events.3 = {
+	type = country_event
+	placement = ROOT
+	title = kosovo_events.3.t
+	desc = kosovo_events.3.d
+	event_image = { video = "fighterjets" }
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	duration = 2
+
+	trigger = {
+		c:YUG ?= this
+		has_variable = nato_bombing_started
+	}
+
+	immediate = {
+		yugo_nato_bombing_effect = yes
+	}
+
+	option = {
+		name = kosovo_events.3.a
+		default_option = yes
+		custom_tooltip = kosovo_withdrawal_tt
+		yugo_end_kosovo_war = yes
+		trigger_event = { id = kosovo_events.4 days = 60 }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = kosovo_events.3.b
+		custom_tooltip = kosovo_resist_nato_tt
+		add_radicals = { value = 0.08 }
+		trigger_event = { id = kosovo_events.4 days = 180 }
+		ai_chance = { base = 0 }
+	}
+}
+
+# Kosovo international administration / later independence
+kosovo_events.4 = {
+	type = country_event
+	placement = ROOT
+	title = kosovo_events.4.t
+	desc = kosovo_events.4.d
+	event_image = { video = "africa_diplomats_negotiating" }
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	duration = 2
+
+	trigger = {
+		c:YUG ?= this
+		has_global_variable = kosovo_under_international_administration
+		NOT = { has_global_variable = kosovo_independence_happened }
+	}
+
+	option = {
+		name = kosovo_events.4.a
+		default_option = yes
+		custom_tooltip = kosovo_independence_tt
+		yugo_create_kosovo = yes
+		yugo_create_armies_for_new_countries = yes
+		set_global_variable = kosovo_independence_happened
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = kosovo_events.4.b
+		custom_tooltip = kosovo_remains_autonomous_tt
+		add_radicals = { value = 0.05 culture = culture:south_slavic }
+		set_global_variable = kosovo_independence_delayed
+		ai_chance = { base = 0 }
+	}
+}

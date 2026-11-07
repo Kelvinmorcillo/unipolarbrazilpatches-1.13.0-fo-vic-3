@@ -1,0 +1,234 @@
+# ==========================================
+# DRUG TRAFFICKING — MODIFIERS
+# ==========================================
+
+# ── MAIN JE POLICY MODIFIERS ─────────────
+
+# Working with cartels
+cartel_cooperation_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	# Powerful governance bonuses — cartel money flows to the state
+	country_authority_mult                      = 0.20
+	country_legitimacy_base_add                 = 15
+	army_defense_mult                           = 0.10
+	# Investment flows from criminal networks
+	country_investment_pool_efficiency_mult     = 0.08
+	# But infamy decays slowly and prestige suffers
+	country_infamy_decay_mult                   = -0.20
+	country_prestige_mult                       = -0.08
+}
+
+# Cracking down on trafficking
+cartel_crackdown_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	# Costs authority constantly
+	country_authority_mult                      = -0.10
+	# But legitimacy and prestige improve internationally
+	country_legitimacy_base_add                 = 8
+	country_prestige_mult                       = 0.05
+	country_infamy_decay_mult                   = 0.10
+}
+
+# Stopped the crackdown — embarrassment
+cartel_crackdown_abandoned = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_legitimacy_base_add                 = -8
+	country_prestige_mult                       = -0.05
+}
+
+# ── COLOMBIA SPECIFIC ─────────────────────
+
+cartel_escobar_captured = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_mult                       = 0.10
+	country_legitimacy_base_add                 = 15
+	country_authority_mult                      = 0.10
+	country_infamy_decay_mult                   = 0.15
+}
+
+# ── MEXICO SPECIFIC ───────────────────────
+
+cartel_el_chapo_captured = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_mult                       = 0.08
+	country_legitimacy_base_add                 = 10
+	country_authority_mult                      = 0.08
+}
+
+cartel_el_chapo_escaped = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	country_prestige_mult                       = -0.10
+	country_legitimacy_base_add                 = -12
+	country_turmoil_effects_mult                = 0.15
+}
+
+# Timeout — narco state
+cartel_narco_state = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	country_legitimacy_base_add                 = -15
+	country_prestige_mult                       = -0.10
+	country_authority_mult                      = -0.15
+	country_turmoil_effects_mult                = 0.20
+}
+
+# ── CARTEL TERRITORY — STATE MODIFIERS ───
+
+cartel_cjng_controlled = {
+	icon = gfx/interface/icons/timed_modifier_icons/cjng.dds
+	state_turmoil_effects_mult                  = 0.25
+	state_mortality_turmoil_mult                = 0.15
+	building_throughput_add                     = -0.08
+	state_infrastructure_mult                   = -0.10
+}
+
+cartel_gulf_controlled = {
+	icon = gfx/interface/icons/timed_modifier_icons/gulf.dds
+	state_turmoil_effects_mult                  = 0.20
+	state_mortality_turmoil_mult                = 0.10
+	building_throughput_add                     = -0.06
+	state_migration_pull_mult                   = -0.15
+}
+
+cartel_sinaloa_controlled = {
+	icon = gfx/interface/icons/timed_modifier_icons/sinaloa.dds
+	state_turmoil_effects_mult                  = 0.20
+	state_mortality_turmoil_mult                = 0.10
+	building_throughput_add                     = -0.06
+}
+
+cartel_northeast_controlled = {
+	icon = gfx/interface/icons/timed_modifier_icons/northeast.dds
+	state_turmoil_effects_mult                  = 0.20
+	state_mortality_turmoil_mult                = 0.10
+	building_throughput_add                     = -0.05
+	state_infrastructure_mult                   = -0.08
+}
+
+# ── RANDOM EVENT MODIFIERS ────────────────
+
+cartel_crackdown_success = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_legitimacy_base_add                 = 10
+	country_prestige_mult                       = 0.05
+}
+
+cartel_assassination_aftermath = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	country_turmoil_effects_mult                = 0.10
+	country_legitimacy_base_add                 = -5
+}
+
+cartel_laundering_investigation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_prestige_mult                       = 0.03
+	country_infamy_decay_mult                   = 0.05
+}
+
+cartel_laundering_ignored = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_prestige_mult                       = -0.03
+	country_infamy_decay_mult                   = -0.05
+}
+
+cartel_us_cooperation_bonus = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_diplomacy_positive.dds
+	country_prestige_mult                       = 0.03
+	country_law_enactment_success_add           = 0.05
+}
+
+cartel_us_rejection = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_authority_mult                      = 0.05
+	country_infamy_decay_mult                   = -0.05
+}
+
+cartel_retaliation_escalate = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	country_turmoil_effects_mult                = 0.15
+	country_authority_mult                      = -0.08
+}
+
+cartel_retaliation_pullback = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_legitimacy_base_add                 = 3
+}
+
+# ── CARTEL FIGHT JE MODIFIERS ─────────────
+
+cartel_fight_ambush = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	army_offense_mult                           = -0.05
+	country_turmoil_effects_mult                = 0.05
+}
+
+cartel_fight_victory = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_mult                       = 0.05
+	country_legitimacy_base_add                 = 10
+	country_turmoil_effects_mult                = -0.10
+	country_authority_mult                      = 0.05
+}
+
+# mexican drug war
+
+cartel_cjng_controlled = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	state_turmoil_effects_mult                  = 0.25
+	state_mortality_turmoil_mult                = 0.15
+	building_throughput_add                     = -0.12
+	state_infrastructure_mult                   = -0.15
+	state_migration_pull_mult                   = -0.20
+}
+
+cartel_gulf_controlled = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	state_turmoil_effects_mult                  = 0.20
+	state_mortality_turmoil_mult                = 0.10
+	building_throughput_add                     = -0.10
+	state_migration_pull_mult                   = -0.15
+	state_infrastructure_mult                   = -0.10
+}
+
+cartel_sinaloa_controlled = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	state_turmoil_effects_mult                  = 0.20
+	state_mortality_turmoil_mult                = 0.10
+	building_throughput_add                     = -0.10
+	building_group_bg_agriculture_throughput_add = -0.08
+}
+
+cartel_northeast_controlled = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	state_turmoil_effects_mult                  = 0.20
+	state_mortality_turmoil_mult                = 0.10
+	building_throughput_add                     = -0.08
+	state_infrastructure_mult                   = -0.10
+}
+
+narco_economy_plantation_bonus = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	building_group_bg_plantations_throughput_add        = 0.15
+	building_opium_plantation_throughput_add            = 0.20
+}
+
+
+war_on_drugs_active_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	building_group_bg_manufacturing_throughput_add      = -0.05
+	building_group_bg_heavy_industry_throughput_add     = -0.05
+	building_group_bg_light_industry_throughput_add     = -0.05
+	building_group_bg_agriculture_throughput_add        = -0.05
+	building_group_bg_mining_throughput_add             = -0.05
+	building_group_bg_plantations_throughput_add        = -0.05
+}
+
+# ── WAR ON DRUGS — VICTORY ────────────────
+# Applied on JE completion.
+
+war_on_drugs_victory_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_mult                               = 0.10
+	country_legitimacy_base_add                         = 10
+	country_authority_mult                              = 0.05
+	country_turmoil_effects_mult                        = -0.10
+}

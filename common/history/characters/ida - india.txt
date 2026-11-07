@@ -1,0 +1,40 @@
+﻿CHARACTERS = {
+	c:BHT ?= {
+	create_character = {
+			template = IDA_manmohan_singh
+		}
+	create_character = {
+			template = IDA_lk_advani
+		}
+	create_character = {
+			template = IDA_jyoti_basu
+		}
+	create_character = {
+			template = IDA_m_s_swaminathan
+		}
+	create_character = {
+			template = IDA_jrd_tata
+		}
+	create_character = {
+			template = IDA_shankar_dayal_sharma
+		}
+	create_character = {
+			template = IDA_shankaracharya_jayendra_saraswathi
+		}
+	create_character = {
+			first_name = "narasimha"
+			last_name = "rao"
+			historical = yes
+			ruler = yes
+			culture = cu:avadhi
+			birth_date = 1921.3.31
+			dna = dna_pv_narasimha
+			ig_leader = yes
+			interest_group = ig_rural_folk
+			ideology = ideology_liberal_leader
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+}

@@ -1,0 +1,162 @@
+
+je_second_intifada = {
+	group = je_group_global_international_situations
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	is_shown_in_lobby = {
+		OR = {
+			c:ISR ?= this
+			c:PAL ?= this
+		}
+	}
+
+	modifiers_while_active = {
+		intifada_urban_uprising
+	}
+
+	scripted_progress_bar = je_intifada_score_bar
+	scripted_button = je_intifada_military_operation_button
+	scripted_button = je_intifada_mass_resistance_button
+
+	should_be_involved = {
+		OR = {
+			c:ISR ?= this
+			c:PAL ?= this
+		}
+	}
+
+	should_show_when_not_involved = {
+		always = no
+	}
+
+	immediate = {
+		if = {
+			limit = { NOT = { has_global_variable = isr_intifada_score } }
+			set_global_variable = { name = isr_intifada_score value = 0 }
+		}
+		if = {
+			limit = { NOT = { has_global_variable = pal_intifada_score } }
+			set_global_variable = { name = pal_intifada_score value = 0 }
+		}
+		if = {
+			limit = { NOT = { has_global_variable = intifada_uprising_phase } }
+			set_global_variable = intifada_uprising_phase
+		}
+	}
+
+	immediate_all_involved = {
+		set_variable = coup_immunity
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_intifada_status_uprising
+				trigger = {
+					has_global_variable = intifada_uprising_phase
+				}
+			}
+			triggered_desc = {
+				desc = je_intifada_status_offensive
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			# Random Palestinian resistance events
+			c:PAL ?= {
+				random_list = {
+					7 = {}
+					1 = { trigger_event = intifada_events.5 }
+					1 = { trigger_event = intifada_events.6 }
+					1 = { trigger_event = intifada_events.8 }
+				}
+			}
+		}
+	}
+
+	invalid = {
+		NOT = {
+			any_country = {
+				c:ISR ?= this
+				has_war_with = c:PAL
+			}
+		}
+	}
+
+	on_invalid = {
+		every_country = {
+			limit = {
+				OR = {
+					c:ISR ?= this
+					c:PAL ?= this
+				}
+			}
+			trigger_event = intifada_events.2
+		}
+		hidden_effect = {
+			every_country = {
+				remove_global_variable = isr_intifada_score
+				remove_global_variable = pal_intifada_score
+				remove_global_variable = intifada_started
+				remove_global_variable = intifada_uprising_phase
+				remove_global_variable = intifada_offensive_launched
+				remove_modifier = intifada_urban_uprising
+				remove_modifier = intifada_idf_crackdown
+				remove_modifier = intifada_popular_resistance
+				remove_modifier = intifada_stone_throwing
+				remove_modifier = intifada_isr_morale
+				remove_variable = coup_immunity
+				every_scope_state = {
+					limit = { has_modifier = intifada_devastation }
+					remove_modifier = intifada_devastation
+				}
+			}
+		}
+	}
+
+	complete = {
+		custom_tooltip = {
+			text = je_intifada_complete_tt
+			NAND = {
+				exists = c:PAL
+				exists = c:ISR
+			}
+		}
+	}
+
+	on_complete_all_involved = {
+		if = {
+			limit = { c:PAL ?= this }
+			add_modifier = { name = intifada_pal_reward years = 20 is_decaying = yes }
+		}
+		else_if = {
+			limit = { c:ISR ?= this }
+			add_modifier = { name = intifada_isr_reward years = 20 is_decaying = yes }
+		}
+		trigger_event = intifada_events.2
+		hidden_effect = {
+			remove_global_variable = isr_intifada_score
+			remove_global_variable = pal_intifada_score
+			remove_modifier = intifada_idf_crackdown
+			remove_modifier = intifada_popular_resistance
+			remove_modifier = intifada_stone_throwing
+			remove_modifier = intifada_isr_morale
+			set_immune_to_revolutions = no
+			remove_variable = coup_immunity
+			every_scope_state = {
+				limit = { has_modifier = intifada_devastation }
+				remove_modifier = intifada_devastation
+			}
+		}
+	}
+
+	weight = 10000
+	should_be_pinned_by_default_involved = yes
+	should_be_pinned_by_default_uninvolved_or_context = no
+	can_revolution_inherit = yes
+}

@@ -1,0 +1,800 @@
+﻿namespace = historical_events
+
+
+# ==========================================
+# HURRICANE ANDREW
+# August 24, 1992
+# ==========================================
+
+terrorism_a.2 = {
+	type = country_event
+	placement = s:STATE_FLORIDA
+	title = terrorism_a.2.t
+	desc = terrorism_a.2.d
+	flavor = terrorism_a.2.f
+
+	event_image = { video = "greatfloodof1993" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 5
+
+	trigger = {
+		c:USA ?= this
+		game_date >= 1992.8.24
+		NOT = { has_variable = hurricane_andrew_fired }
+	}
+
+	immediate = {
+		set_variable = hurricane_andrew_fired
+		random_scope_state = {
+			limit = { state_region = s:STATE_FLORIDA }
+			save_scope_as = andrew_state
+		}
+	}
+
+	option = {
+		name = terrorism_a.2.a
+		default_option = yes
+		add_modifier = { name = he_natural_disaster_emergency months = 18 }
+		scope:andrew_state = {
+			add_modifier = { name = he_disaster_zone months = 24 }
+		}
+	}
+}
+
+# ==========================================
+# NORTHRIDGE EARTHQUAKE
+# January 17, 1994
+# ==========================================
+
+terrorism_a.3 = {
+	type = country_event
+	placement = s:STATE_CALIFORNIA
+	title = terrorism_a.3.t
+	desc = terrorism_a.3.d
+	flavor = terrorism_a.3.f
+
+	event_image = { video = "burnt_building" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 5
+
+	trigger = {
+		c:USA ?= this
+		game_date >= 1994.1.17
+		NOT = { has_variable = northridge_earthquake_fired }
+	}
+
+	immediate = {
+		set_variable = northridge_earthquake_fired
+		random_scope_state = {
+			limit = { state_region = s:STATE_CALIFORNIA }
+			save_scope_as = earthquake_state
+		}
+	}
+
+	option = {
+		name = terrorism_a.3.a
+		default_option = yes
+		add_modifier = { name = he_natural_disaster_emergency months = 18 }
+		scope:earthquake_state = {
+			add_modifier = { name = he_disaster_zone months = 24 }
+		}
+	}
+}
+
+# ==========================================
+# OKLAHOMA CITY BOMBING
+# April 19, 1995. Domestic terrorism.
+# ==========================================
+
+terrorism_a.4 = {
+	type = country_event
+	placement = ROOT
+	title = terrorism_a.4.t
+	desc = terrorism_a.4.d
+	flavor = terrorism_a.4.f
+
+	event_image = { video = "bodycam" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	duration = 5
+
+	trigger = {
+		c:USA ?= this
+		game_date >= 1995.4.19
+		NOT = { has_variable = okc_bombing_fired }
+	}
+
+	immediate = {
+		set_variable = okc_bombing_fired
+		random_scope_state = {
+			limit = { state_region = s:STATE_OKLAHOMA }
+			save_scope_as = okc_state
+		}
+	}
+
+	option = {
+		name = terrorism_a.4.a
+		default_option = yes
+		add_modifier = { name = he_terror_attack_domestic months = 36 }
+		add_modifier = { name = he_domestic_extremism_response months = 48 }
+		scope:okc_state = {
+			add_radicals_in_state = { value = medium_radicals }
+		}
+	}
+}
+
+# ==========================================
+# EAST AFRICAN EMBASSY BOMBINGS
+# August 7, 1998.
+# Separate events for USA, Kenya, Tanzania.
+# Does not fire if AFG is a subject
+# or does not exist.
+# ==========================================
+
+# USA event
+terrorism_a.5 = {
+	type = country_event
+	placement = ROOT
+	title = terrorism_a.5.t
+	desc = terrorism_a.5.d
+	flavor = terrorism_a.5.f
+
+	event_image = { video = "asia_sepoy_mutiny" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	duration = 5
+
+	trigger = {
+		c:USA ?= this
+		game_date >= 1998.8.7
+		NOT = { has_variable = embassy_bombing_fired }
+		exists = c:AFG
+		NOT = { c:AFG = { is_subject_of = c:USA } }
+	}
+
+	immediate = {
+		set_variable = embassy_bombing_fired
+		# Also fire for Kenya and Tanzania
+		if = { limit = { exists = c:KYA } c:KYA = { trigger_event = { id = terrorism_a.6 } } }
+		if = { limit = { exists = c:TNZ } c:TNZ = { trigger_event = { id = terrorism_a.7 } } }
+	}
+
+	option = {
+		name = terrorism_a.5.a
+		default_option = yes
+		add_modifier = { name = he_terror_attack_foreign months = 24 }
+		add_modifier = { name = he_counterterrorism_push months = 48 }
+		add_infamy = 5
+	}
+}
+
+# Kenya event
+terrorism_a.6 = {
+	type = country_event
+	placement = ROOT
+	title = terrorism_a.6.t
+	desc = terrorism_a.6.d
+	flavor = terrorism_a.6.f
+
+	event_image = { video = "congress" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	duration = 5
+
+	trigger = {
+		# triggered by terrorism_a.5
+	}
+
+	option = {
+		name = terrorism_a.6.a
+		default_option = yes
+		add_modifier = { name = he_terror_attack_domestic months = 24 }
+		every_scope_state = {
+			limit = { is_incorporated = yes }
+			add_radicals_in_state = { value = small_radicals }
+		}
+	}
+}
+
+# Tanzania event
+terrorism_a.7 = {
+	type = country_event
+	placement = ROOT
+	title = terrorism_a.7.t
+	desc = terrorism_a.7.d
+	flavor = terrorism_a.7.f
+
+	event_image = { video = "congress" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	duration = 5
+
+	trigger = {
+		# triggered by terrorism_a.5
+	}
+
+	option = {
+		name = terrorism_a.7.a
+		default_option = yes
+		add_modifier = { name = he_terror_attack_domestic months = 24 }
+		every_scope_state = {
+			limit = { is_incorporated = yes }
+			add_radicals_in_state = { value = small_radicals }
+		}
+	}
+}
+
+# ==========================================
+# USS COLE BOMBING
+# October 12, 2000.
+# Does not fire if AFG is a subject
+# or does not exist.
+# ==========================================
+
+terrorism_a.8 = {
+	type = country_event
+	placement = ROOT
+	title = terrorism_a.8.t
+	desc = terrorism_a.8.d
+	flavor = terrorism_a.8.f
+
+	event_image = { video = "whitehouse" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	duration = 5
+
+	trigger = {
+		c:USA ?= this
+		game_date >= 2000.10.12
+		NOT = { has_variable = uss_cole_fired }
+		exists = c:AFG
+		NOT = { c:AFG = { is_subject_of = c:USA } }
+	}
+
+	immediate = {
+		set_variable = uss_cole_fired
+	}
+
+	option = {
+		name = terrorism_a.8.a
+		default_option = yes
+		add_modifier = { name = he_terror_attack_foreign months = 24 }
+		add_modifier = { name = he_military_shock months = 12 }
+		add_modifier = { name = he_counterterrorism_push months = 36 }
+	}
+}
+
+# ==========================================
+# BRIDGECREEK–MOORE TORNADO
+# May 3, 1999
+# ==========================================
+
+terrorism_a.9 = {
+	type = country_event
+	placement = s:OKLAHOMA
+	title = terrorism_a.9.t
+	desc = terrorism_a.9.d
+	flavor = terrorism_a.9.f
+
+	event_image = { video = "tornadoes" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 5
+
+	trigger = {
+		c:USA ?= this
+		game_date >= 1999.5.3
+		NOT = { has_variable = moore_tornado_fired }
+	}
+
+	immediate = {
+		set_variable = moore_tornado_fired
+		random_scope_state = {
+			limit = { state_region = s:STATE_OKLAHOMA }
+			save_scope_as = tornado_state
+		}
+	}
+
+	option = {
+		name = terrorism_a.9.a
+		default_option = yes
+		add_modifier = { name = he_natural_disaster_emergency months = 12 }
+		scope:tornado_state = {
+			add_modifier = { name = he_disaster_zone months = 18 }
+		}
+	}
+}
+
+# ==========================================
+# VIRGINIA TECH SHOOTING
+# April 16, 2007.
+# Does not fire if USA has
+# law_licensed_firearms or stricter.
+# ==========================================
+
+terrorism_a.10 = {
+	type = country_event
+	placement = ROOT
+	title = terrorism_a.10.t
+	desc = terrorism_a.10.d
+	flavor = terrorism_a.10.f
+
+	event_image = { video = "mass_shooting" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	duration = 5
+
+	trigger = {
+		c:USA ?= this
+		game_date >= 2007.4.16
+		NOT = { has_variable = virginia_tech_fired }
+		has_law = law:law_unrestricted_firearms
+	}
+
+	immediate = {
+		set_variable = virginia_tech_fired
+		random_scope_state = {
+			limit = { state_region = s:STATE_VIRGINIA }
+			save_scope_as = shooting_state
+		}
+	}
+
+	option = {
+		name = terrorism_a.10.a
+		default_option = yes
+		add_modifier = { name = he_mass_shooting months = 18 }
+		scope:shooting_state = {
+			add_radicals_in_state = { value = small_radicals }
+		}
+		add_modifier = {
+                name = national_mourning_school_shooting
+                months = 6
+        }
+		add_modifier = {
+            name = school_security_measures
+            months = 6
+            }
+		ig:ig_intelligentsia = {
+			add_modifier = {
+				name = recent_mass_shooting
+				months = 6
+			}
+		}
+		ig:ig_trade_unions = {
+			add_modifier = {
+				name = recent_mass_shooting
+				months = 6
+			}
+		}
+		ig:ig_rural_folk = {
+			add_modifier = {
+				name = thoughts_and_prayers
+				months = 6
+			}
+		}
+		ig:ig_devout = {
+			add_modifier = {
+				name = thoughts_and_prayers
+				months = 6
+			}
+		}
+		ig:ig_industrialists = {
+			add_modifier = {
+				name = thoughts_and_prayers
+				months = 6
+			}
+		}
+	}
+}
+
+# ==========================================
+# 2012 AURORA THEATRE SHOOTING
+# July 20, 2012
+# ==========================================
+
+terrorism_a.11 = {
+	type = country_event
+	placement = ROOT
+	title = terrorism_a.11.t
+	desc = terrorism_a.11.d
+	flavor = terrorism_a.11.f
+
+	event_image = { video = "bodycam" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	duration = 5
+
+	trigger = {
+		c:USA ?= this
+		game_date >= 2012.7.20
+		NOT = { has_variable = aurora_shooting_fired }
+		has_law = law:law_unrestricted_firearms
+	}
+
+	immediate = {
+		set_variable = aurora_shooting_fired
+		random_scope_state = {
+			limit = { state_region = s:STATE_COLORADO }
+			save_scope_as = shooting_state
+		}
+	}
+
+	option = {
+		name = terrorism_a.11.a
+		default_option = yes
+		add_modifier = { name = he_mass_shooting months = 18 }
+		scope:shooting_state = {
+			add_radicals_in_state = { value = small_radicals }
+		}
+		add_modifier = {
+                name = national_mourning_school_shooting
+                months = 6
+        }
+		ig:ig_intelligentsia = {
+			add_modifier = {
+				name = recent_mass_shooting
+				months = 6
+			}
+		}
+		ig:ig_trade_unions = {
+			add_modifier = {
+				name = recent_mass_shooting
+				months = 6
+			}
+		}
+		ig:ig_rural_folk = {
+			add_modifier = {
+				name = thoughts_and_prayers
+				months = 6
+			}
+		}
+		ig:ig_devout = {
+			add_modifier = {
+				name = thoughts_and_prayers
+				months = 6
+			}
+		}
+		ig:ig_industrialists = {
+			add_modifier = {
+				name = thoughts_and_prayers
+				months = 6
+			}
+		}
+	}
+}
+
+# ==========================================
+# WISCONSIN SIKH TEMPLE SHOOTING
+# August 5, 2012
+# ==========================================
+
+terrorism_a.12 = {
+	type = country_event
+	placement = ROOT
+	title = terrorism_a.12.t
+	desc = terrorism_a.12.d
+	flavor = terrorism_a.12.f
+
+	event_image = { video = "mass_shooting" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	duration = 5
+
+	trigger = {
+		c:USA ?= this
+		game_date >= 2012.8.5
+		NOT = { has_variable = sikh_temple_shooting_fired }
+		has_law = law:law_unrestricted_firearms
+	}
+
+	immediate = {
+		set_variable = sikh_temple_shooting_fired
+		random_scope_state = {
+			limit = { state_region = s:STATE_WISCONSIN }
+			save_scope_as = shooting_state
+		}
+	}
+
+	option = {
+		name = terrorism_a.12.a
+		default_option = yes
+		add_modifier = { name = he_mass_shooting months = 18 }
+		# Hate crime — additional radicalism from discrimination
+		add_modifier = { name = he_hate_crime_shock months = 24 }
+		scope:shooting_state = {
+			add_radicals_in_state = { value = small_radicals }
+		}
+		ig:ig_intelligentsia = {
+			add_modifier = {
+				name = recent_mass_shooting
+				months = 6
+			}
+		}
+		ig:ig_trade_unions = {
+			add_modifier = {
+				name = recent_mass_shooting
+				months = 6
+			}
+		}
+		ig:ig_rural_folk = {
+			add_modifier = {
+				name = thoughts_and_prayers
+				months = 6
+			}
+		}
+		ig:ig_devout = {
+			add_modifier = {
+				name = thoughts_and_prayers
+				months = 6
+			}
+		}
+		ig:ig_industrialists = {
+			add_modifier = {
+				name = thoughts_and_prayers
+				months = 6
+			}
+		}
+	}
+}
+
+# ==========================================
+# SANDY HOOK ELEMENTARY SCHOOL SHOOTING
+# December 14, 2012
+# ==========================================
+
+terrorism_a.13 = {
+	type = country_event
+	placement = ROOT
+	title = terrorism_a.13.t
+	desc = terrorism_a.13.d
+	flavor = terrorism_a.13.f
+
+	event_image = { video = "columbine" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	duration = 7
+
+	trigger = {
+		c:USA ?= this
+		game_date >= 2012.12.14
+		NOT = { has_variable = sandy_hook_fired }
+		has_law = law:law_unrestricted_firearms
+	}
+
+	immediate = {
+		set_variable = sandy_hook_fired
+		random_scope_state = {
+			limit = { state_region = s:STATE_NEW_YORK }
+			save_scope_as = shooting_state
+		}
+	}
+
+	option = {
+		name = terrorism_a.13.a
+		default_option = yes
+		# The scale of national grief — heavier than other shootings
+		add_modifier = { name = he_mass_shooting_severe months = 36 }
+		scope:shooting_state = {
+			add_radicals_in_state = { value = medium_radicals }
+		}
+		add_modifier = {
+                name = national_mourning_school_shooting
+                months = 6
+        }
+		add_modifier = {
+            name = school_security_measures
+            months = 6
+            }
+		ig:ig_intelligentsia = {
+			add_modifier = {
+				name = recent_mass_shooting
+				months = 6
+			}
+		}
+		ig:ig_trade_unions = {
+			add_modifier = {
+				name = recent_mass_shooting
+				months = 6
+			}
+		}
+		ig:ig_rural_folk = {
+			add_modifier = {
+				name = thoughts_and_prayers
+				months = 6
+			}
+		}
+		ig:ig_devout = {
+			add_modifier = {
+				name = thoughts_and_prayers
+				months = 6
+			}
+		}
+		ig:ig_industrialists = {
+			add_modifier = {
+				name = thoughts_and_prayers
+				months = 6
+			}
+		}
+	}
+}
+
+# ==========================================
+# DUNBLANE MASSACRE
+# March 13, 1996. United Kingdom.
+# ==========================================
+
+terrorism_a.14 = {
+	type = country_event
+	placement = ROOT
+	title = terrorism_a.14.t
+	desc = terrorism_a.14.d
+	flavor = terrorism_a.14.f
+
+	event_image = { video = "columbine" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	duration = 5
+
+	trigger = {
+		c:GBR ?= this
+		game_date >= 1996.3.13
+		NOT = { has_variable = dunblane_fired }
+	}
+
+	immediate = {
+		set_variable = dunblane_fired
+	}
+
+	option = {
+		name = terrorism_a.14.a
+		default_option = yes
+		add_modifier = { name = he_mass_shooting_severe months = 36 }
+		# Dunblane directly led to the Firearms Acts — strong law reform push
+		add_modifier = { name = he_gun_reform_mandate months = 48 }
+		add_modifier = {
+                name = national_mourning_school_shooting
+                months = 6
+        }
+		ig:ig_intelligentsia = {
+			add_modifier = {
+				name = recent_mass_shooting
+				months = 6
+			}
+		}
+		ig:ig_trade_unions = {
+			add_modifier = {
+				name = recent_mass_shooting
+				months = 6
+			}
+		}
+		ig:ig_rural_folk = {
+			add_modifier = {
+				name = thoughts_and_prayers
+				months = 6
+			}
+		}
+		ig:ig_devout = {
+			add_modifier = {
+				name = thoughts_and_prayers
+				months = 6
+			}
+		}
+		ig:ig_industrialists = {
+			add_modifier = {
+				name = thoughts_and_prayers
+				months = 6
+			}
+		}
+	}
+}
+
+# ==========================================
+# 1998 CHINA FLOODS
+# Summer 1998. Yangtze River floods.
+# ==========================================
+
+terrorism_a.15 = {
+	type = country_event
+	placement = ROOT
+	title = terrorism_a.15.t
+	desc = terrorism_a.15.d
+	flavor = terrorism_a.15.f
+
+	event_image = { video = "greatfloodof1993" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 5
+
+	trigger = {
+		OR = {
+			c:CHI ?= this
+			c:PRC ?= this
+		}
+		game_date >= 1998.6.1
+		NOT = { has_variable = china_floods_1998_fired }
+	}
+
+	immediate = {
+		set_variable = china_floods_1998_fired
+		random_scope_state = {
+			limit = {
+				is_incorporated = yes
+				OR = {
+					state_region = s:STATE_HUNAN
+					state_region = s:STATE_JIANGSU
+				}
+			}
+			save_scope_as = flood_state
+		}
+	}
+
+	option = {
+		name = terrorism_a.15.a
+		default_option = yes
+		add_modifier = { name = he_natural_disaster_emergency months = 18 }
+		scope:flood_state = {
+			add_modifier = { name = he_disaster_zone months = 24 }
+			add_radicals_in_state = { value = medium_radicals strata = lower }
+		}
+		# Massive government mobilization — legitimacy hit or boost depending on response
+		country_add_legitimacy = -5
+	}
+}
+
+# ==========================================
+# 1999 RUSSIAN APARTMENT BOMBINGS
+# September 1999. Russia.
+# ==========================================
+
+terrorism_a.16 = {
+	type = country_event
+	placement = ROOT
+	title = terrorism_a.16.t
+	desc = terrorism_a.16.d
+	flavor = terrorism_a.16.f
+
+	event_image = { video = "bombed_city" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	duration = 5
+
+	trigger = {
+		c:RUS ?= this
+		game_date >= 1999.9.4
+		NOT = { has_variable = russia_apartment_bombings_fired }
+	}
+
+	immediate = {
+		set_variable = russia_apartment_bombings_fired
+	}
+
+	option = {
+		name = terrorism_a.16.a
+		default_option = yes
+		add_modifier = { name = he_terror_attack_domestic months = 24 }
+		add_modifier = { name = he_counterterrorism_push months = 36 }
+		# Bombings were pretext for Second Chechen War — authority surge
+		add_modifier = { name = he_security_state_response months = 48 }
+		every_scope_state = {
+			limit = { is_incorporated = yes }
+			add_radicals_in_state = { value = small_radicals }
+		}
+	}
+}

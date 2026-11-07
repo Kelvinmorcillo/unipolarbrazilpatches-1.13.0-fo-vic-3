@@ -1,0 +1,160 @@
+﻿l_japanese:
+# ==========================================
+ # OBJECTIVE
+ # ==========================================
+ 
+ objective_the_west: "ザ・ウエスト"
+ objective_the_west_desc: "審美的な国際秩序 — 民主主義、無料取引、集団的セキュリティ、人権 — 持続的かつ拡大する必要があります。 [ROOT.GetCountry.GetName] はシステムの中心に置かれます。 タスクは、単に存在しているものを維持することではなく、世紀が終わると、世界の偉大な力は、注文中にあるか、それを挑戦することはできません。"
+ 
+ # ==========================================
+ # SUBGOAL NAMES AND DESCRIPTIONS
+ # ==========================================
+ 
+ sg_west_open_trade: "受取通貨ステータス"
+ sg_west_open_trade_desc: "ウェスタン・ファイナンシャル・システムは[ROOT.GetCountry.GetAdjective]クレジットで動作します。 [ROOT.GetCountry.GetName] は、クレジットのドミナント輸出業者として、1,000 台を超える単位で、グローバル経済のバックボーンとして [ROOT.GetCountry.GetAdjective] の金融システムをセメント化しました。"
+ 
+ sg_west_alliances: "アライアンスのネットワーク"
+ sg_west_alliances_desc: "西洋の注文は、集団的なセキュリティプロジェクトです。 少なくとも4つの国と軍事援助協定を確立し、攻撃とプロジェクトを悪化させるアライアンスネットワークを構築します [ROOT.GetCountry.GetAdjective] 職業ではなくパートナーシップを介して電力."
+ 
+ sg_west_human_rights: "リベラル民主主義フレームワーク"
+ sg_west_human_rights_desc: "ウェストは、その富ではなく、その価値によって定義されます。 普遍的なふるい、労働者の保護、スレーブの廃止、および保護されたスピーチ - 自由民主社会の機関的な基盤。 注文 [ROOT.GetCountry.GetName] は、守るべき価値である必要があります。"
+ 
+ sg_west_education: "教育された市民"
+ sg_west_education_desc: "民主的な参加と経済力主義は、教育された人口に依存しています。 レベル5に学校システムに投資し、少なくとも75%のリテラシー率を達成します。 知名度の高い市民権は、最も耐久性のある基礎の自由秩序を持っています。"
+ 
+ sg_west_gdp: "経済リーダーシップ"
+ sg_west_gdp_desc: "西洋の秩序は経済の重みによって下書きされます。 [ROOT.GetCountry.GetName] は、グローバル GDP の少なくとも 25% を占める必要があります。[ROOT.GetCountry.GetAdjective] 経済が大きすぎて、世界規模のシステムに集中して、あらゆるライバルが確実にチャレンジできます。"
+ 
+ sg_west_endgame: "ユニポーラ・モーメント"
+ sg_west_endgame_desc: "最後の挑戦。 [SCOPE.sCountry('c:RUS').GetName] と [SCOPE.sCountry('c:CHI').GetName] の両方を、その順序内で持って来るか、またはそれを脅迫することができないものをレンダリングする必要があります。 それぞれ: それらは民主化し、普遍的なsuffrageを採用し、 [ROOT.GetCountry.GetName] で防御的なpact に署名するか、またはその力は主要な力のランクの下に落ちます。 注文を保存するための3番目のオプションはありません。"
+ 
+ # ==========================================
+ # JOURNAL ENTRY NAMES AND DESCRIPTIONS
+ # ==========================================
+ 
+ je_west_open_trade: "金融優位性"
+ je_west_open_trade_reason: "[ROOT.GetCountry.GetAdjective] ドル — または [ROOT.GetCountry.GetName] が通貨を呼ぶのは、世界標準の通貨です。 その他の国は、その中に取引を決済し、その周りの金融システムを構築します。 国際市場への1,000単位以上のクレジットをエクスポートすると、このポジションをセメント化し、軍事力が再現できないグローバル金融システム上に[ROOT.GetCountry.GetName]構造的レバレッジを与えます。"
+ 
+ je_west_alliances: "集団セキュリティ"
+ je_west_alliances_reason: "佐藤 仁 ANZUS.(アメリカ) 西洋の空白を定義するセキュリティパートナーシップは単なる軍事的アレンジではなく、政治的な約束です。 少なくとも4つの国と軍事援助協定を築きます。 各パートナーシップは、[ROOT.GetCountry.GetAdjective] リーチを拡張し、注文を維持するコストを削減します。"
+ 
+ je_west_human_rights: "財団について"
+ je_west_human_rights_reason: "普遍的なsuffrage。 労働者の保護。 スレーブの廃止。 保護されたスピーチ。 これらは、Westernモデルのオプションの追加ではありません。それらはモデルです。 [ROOT.GetCountry.GetName] が守られているのは、単なる力ではなく、原則です。 機関的な基礎基礎基礎を確立するためにすべての4を有効にします 自由順が必要です."
+ 
+ je_west_education: "すべての教育"
+ je_west_education_reason: "欧米モデルは、読みやすく、理由、参加できる市民によって異なります。 全国のリテラシー率が75%に達するために学校に投資します。 適切な法律を持つことは十分ではありません。人口は十分に教育されなければなりません。"
+ 
+ je_west_gdp: "グローバルGDPの5%"
+ je_west_gdp_reason: "サイズの問題。 [ROOT.GetCountry.GetName] は、少なくとも 1 四半期のグローバル経済出力を占める必要があります。 そのスケールでは、[ROOT.GetCountry.GetAdjective] 経済は単なる大事ではありません。それは不可欠です。 [ROOT.GetCountry.GetName] で世界貿易をし、[ROOT.GetCountry.GetName] から借りて、敵を [ROOT.GetCountry.GetName] にする余裕がない。"
+ 
+ je_west_endgame: "歴史の終わり"
+ je_west_endgame_reason: "年齢の質問: [SCOPE.sCountry('c:RUS').GetName] と [SCOPE.sCountry('c:CHI').GetName] は、西部の注文に系統的なライバルとして中和することができますか?\n\n それぞれの国では、以下のいずれかが真でなければなりません。\n• 彼らは民主共和国、普遍的なsuffrageを採用し、[ROOT.GetCountry.GetName]\nで防御的なpactを署名しました• 彼らのパワーランクは、主要なパワー\n\nのその下で落ちています 両方の条件が満たされるとき、unipolar 瞬間は完了します。"
+ 
+ # ==========================================
+ # PROGRESS TOOLTIPS
+ # ==========================================
+ 
+ je_west_open_trade_progressing_tt: "[ROOT.GetCountry.GetAdjective] 金融システムが国際的に展開"
+ je_west_alliances_progressing_tt: "アライアンスネットワークは形状をとっています。パートナーが増えています。"
+ je_west_human_rights_progressing_tt: "いくつかの権利フレームワークが配置されている - フルセットはまだ制定されていない"
+ je_west_education_progressing_tt: "学校システムが開発中 — レベル5の投資と75%のリテラシーは目標です"
+ je_west_gdp_progressing_tt: "[ROOT.GetCountry.GetName] グローバルGDPの15%以上を占める - 対象は25%"
+ je_west_endgame_progressing_tt: "一方のライバルが弱まっているか、または民主化されている - 他の人は系統的な課題を残している"
+ 
+ # ==========================================
+ # OBJECTIVE
+ # ==========================================
+
+ objective_the_east: "ザ・イースト"
+ objective_the_east_desc: "西洋の自由秩序は、唯一の可能な世界ではありません。 [ROOT.GetCountry.GetName] は、状態の方向、集合的な強さ、および sovereign 開発の 1 つの異なるモデルを持っています。 タスクは、このモデルは、経済力とグローバルリーチの西にマッチし、米国ではなく、[ROOT.GetCountry.GetName]が国際秩序の用語を定義する世界を築くことができることを実証することです。"
+
+ # ==========================================
+ # SUBGOAL NAMES AND DESCRIPTIONS
+ # ==========================================
+
+ sg_east_state_industry: "直接産業基盤"
+ sg_east_state_industry_desc: "東モデルは、重工業への投資を直接するために、州の能力に残ります。 介入者またはコマンド経済を維持し、少なくとも10までの建設能力を構築し、強力な占有率で少なくとも5レベルの鉄鉱業を開発する。 これは、経済基盤の他に依存しています。"
+
+ sg_east_great_power: "大きい電力状態"
+ sg_east_great_power_desc: "西洋のヘゲモニーへの東の挑戦は、本物の偉大な力でのみ取り付けることができます。 大きい力のランクに達する — 弱点の位置と等しい [SCOPE.sCountry('c:USA').GetName] と交渉することができません。"
+
+ sg_east_sphere: "東ブロック"
+ sg_east_sphere_desc: "[ROOT.GetCountry.GetName] の影響の領域を構成する、同盟国ネットワークを構築します。 少なくとも4つの国と軍事援助協定を確立する。 同盟はチャリティーではなく、パワー投影のインフラです。"
+
+ sg_east_currency: "イーストリザーブ 通貨"
+ sg_east_currency_desc: "ドル優位は、ウェストの最も耐久性のある利点です。米国は、グローバル経済の費用でそのヘゲモニーに資金を供給することができます。 チャレンジする。 外国の投資家を惹きつけるために、1,000単位以上のクレジットを国際市場に輸出し、有価証券を競争力のある状態に保ちます。 東洋の予備通貨は単なる経済ではありません。それは地政的です。"
+
+ sg_east_endgame: "多極世界"
+ sg_east_endgame_desc: "最後の挑戦。 米国、イギリス、フランス — 西洋の三つの柱 — それぞれを中和する必要があります。 それぞれ: いずれかの電力のランクは、主要な電力のそれ以下に落ちます, または彼らは、[ROOT.GetCountry.GetName] で防御的な事実に署名します. 3つの条件が満たされた場合、世界秩序は変わりました。"
+
+ je_east_state_industry: "産業財団"
+ je_east_state_industry_reason: "州は重工業に投資を指示しなければなりません。それは市場にそれを残さない。 介入者またはコマンドエコノミーを維持し、少なくとも10までの建設能力を構築し、75%の稼働率で実質的な鉄の採掘能力を開発する。 この産業拠点がなければ、[ROOT.GetCountry.GetName]は、軍事的および経済的重量を東の課題に維持することはできません。"
+
+ je_east_great_power: "大きい力への上昇"
+ je_east_great_power_reason: "偉大なパワーのランクに達する。 現時点では、[ROOT.GetCountry.GetName] は世界で最も強い国であるかもしれませんが、大きな電力状態は、[ROOT.GetCountry.GetName] がグローバルオーダーの決定を下す部屋にある正式な認識です。 これは、次のすべてのもののための前提条件です。"
+
+ je_east_sphere: "4人の軍のパートナー"
+ je_east_sphere_reason: "少なくとも4つの国と軍事援助協定を築きます。 [ROOT.GetCountry.GetName] は、ウェスタン・アライアンス・システムだけではチャレンジできません。 東部の球は、純正の集合的でなければなりません。[ROOT.GetCountry.GetName] に依存し、[ROOT.GetCountry.GetName] が戻ってくる状態です。"
+
+ je_east_currency: "チャレンジドルの優位性"
+ je_east_currency_reason: "[SCOPE.sCountry('c:USA').GetAdjective] ドルの予備通貨のステータスは、ウェストが10年以上にわたって重量を上回るパンチを許した構造上の優位性です。 マッチングは、国際市場に1,000単位以上のクレジットをエクスポートする必要があります。また、外国の投資家がそれらに魅力的を見つけるように、ベース値の25%以内に価格設定された[ROOT.GetCountry.GetAdjective]証券を維持します。\n\n 他人が故意に使う東金融システムは、単なる経済の達成ではありません。 ドルが唯一の選択肢ではないという宣言です。"
+
+ je_east_endgame: "ウェスタン・パワーは中立しました"
+ je_east_endgame_reason: "ガーディアンが守られなくなったときに世界秩序が変化します。 3つはすべて解決しなければなりません:\n\n•[SCOPE.sCountry('c:USA').GetName]:主要な電力のランクの下、または [ROOT.GetCountry.GetName]\n•[SCOPE.sCountry('c:GBR').GetName] と防御的な pact を署名するか、 [ROOT.GetCountry.GetName]\n•\n•[SCOPE.sCountry('c:GBR').GetName] を [SCOPE.sCountry('c:GBR').GetName] に署名するか、または [SCOPE.sCountry('c:GBR').GetName] を [SCOPE.sCountry('c:GBR').GetName] すべての3つの条件が満たされると、[ROOT.GetCountry.GetName]は西洋の秩序を生き残っていない。 交換しました。"
+
+ je_east_state_industry_progressing_tt: "産業基盤は発展しています — 建設能力と鉄の採掘はまだターゲットではありません"
+ je_east_great_power_progressing_tt: "[ROOT.GetCountry.GetName] は主要な力です — 大きい力の状態は範囲内のあります"
+ je_east_sphere_progressing_tt: "アライアンスネットワークは成長しています。4つの軍事支援協定が必要です。"
+ je_east_currency_progressing_tt: "クレジット輸出が増加しています。予約通貨のステータスを確立するために1,000単位が必要です。"
+ je_east_endgame_progressing_tt: "少なくとも1つの西洋力は中和されています - 他の人は残ります"
+ 
+ # ==========================================
+ # OBJECTIVE
+ # ==========================================
+
+ objective_rising_powers: "ライジングパワー"
+ objective_rising_powers_desc: "世界では2つの空白の間に分ける必要はありません。 [ROOT.GetCountry.GetName] は、WashingtonとMoscowの間で、ドルと次のいずれかの間の選択を拒否します。 3番目の方法は、代替品のどちらかよりも難しくなっています。 これは、純正の経済的重量、信頼できる軍事力、および外交的なスキルを必要とし、共通点が1つだけある状態の連合を一緒に保持します。"
+
+ # ==========================================
+ # SUBGOAL NAMES AND DESCRIPTIONS
+ # ==========================================
+
+ sg_rising_economy: "経済基盤"
+ sg_rising_economy_desc: "グローバルGDPの少なくとも10%を占める経済を築く — 第三のブロックを固定するのに十分な実質的 — 40%未満の単一のパートナーへの取引の暴露を維持しながら。 経済の独立性から始まります。"
+
+ sg_rising_sovereignty: "完全なスーベリン独立性"
+ sg_rising_sovereignty_desc: "クライアントの状態は上昇する電力ではありません。 主要な電力のランクを達成し、少なくとも50の威信に達すると、[ROOT.GetCountry.GetName]は、[SCOPE.sCountry('c:USA').GetName]または[SCOPE.sCountry('c:RUS').GetName]の任意の電力や人形の対象ではないことを確認してください。 3番目の方法は、それを選択する自由から始まります。"
+
+ sg_rising_military: "軍の信頼性"
+ sg_rising_military_desc: "第三の方法は、それ自体を守ることができる場合にのみ信頼できるです。 パワーのランクを辿り、少なくとも100ユニットの軍隊を産む。 保護できない非整列状態は、長い間非整列を維持しません。"
+
+ sg_rising_prestige: "国際認証"
+ sg_rising_prestige_desc: "少なくとも150の威信と5以上のグローバル国ランキングに達する。 [ROOT.GetCountry.GetName] は無視できません。 — 単なる地域力ではなく、大きな電力は、そのすべての計算で考慮する必要があります。"
+
+ sg_rising_endgame: "第三支柱"
+ sg_rising_endgame_desc: "パワーは、8名以上の会員のパワーを大きなパワーとして導きます。 これは、コンセプトの証明です。世界政治の3分の1の柱、十分な大きさで、西と東の両方がそれを吸収したり、却下したりできる十分な確実です。 [ROOT.GetCountry.GetName] が 8 つの国をリードするとき、世界は多極です。"
+
+ je_rising_economy: "グローバルGDPの5%"
+ je_rising_economy_reason: "[ROOT.GetCountry.GetName] の経済をグローバル出力の10%以上に構築し、経済的に1つの電力に依存しない。 ターゲットは、投稿にサンクションされ、任意の単一のエンバーゴによって連鎖されるためにあまりにも多様である余りに大きい経済です。\n\n@information! 単一のパートナーに対する取引の信頼性は、総市場活動の40%以下を維持しなければなりません。"
+
+ je_rising_sovereignty: "ソベリンと独立"
+ je_rising_sovereignty_reason: "主要なパワーランクと50以上のプレステージに達すると、完全に独立したまま - 任意の国の対象ではなく、任意の外国の電力の人形ではありません。 完全な独立性は、旅の終わりではありません。 始まりです。"
+
+ je_rising_military: "恐ろしい力"
+ je_rising_military_reason: "パワーランクをクリアし、少なくとも100ユニットの軍隊を産む。 [ROOT.GetCountry.GetName] は、独自の選択肢を守ることができる必要があります。 それを守ることができない非整列国は、他の人が決定したその配置を見つけるでしょう。"
+
+ je_rising_prestige: "トップ5 — 否定できない"
+ je_rising_prestige_reason: "世界5以上の国ランキングと150以上の国勢ランキングを達成。 このレベルでは、[ROOT.GetCountry.GetName] は地域の好奇心ではありません。その位置が無視できない世界力であり、そのアライメントは本物的に競争され、その支持者は持っている価値があります。"
+
+ je_rising_endgame: "第三ブロックをリード"
+ je_rising_endgame_reason: "パワーは、8名以上の会員のパワーを大きなパワーとして導きます。 [SCOPE.sCountry('c:USA').GetName] または [SCOPE.sCountry('c:RUS').GetName] ではなく [ROOT.GetCountry.GetName] の周りを整理することを選択する8つの国は単なる外交的達成ではありません。国際政治の構造的事実です。 3番目の方法は存在します。 メンバーがいます。 それはリーダーを持っています。 スーパーパワーは、それを考慮する必要があります。"
+
+ # ==========================================
+ # PROGRESS TOOLTIPS
+ # ==========================================
+
+ je_rising_economy_progressing_tt: "[ROOT.GetCountry.GetName] グローバル GDP の 2% を超えるアカウント — 5% は、ターゲットです。"
+ je_rising_sovereignty_progressing_tt: "[ROOT.GetCountry.GetName] は認識され、独立した — 主要なパワーランクとプレステージ 50 が必要です"
+ je_rising_military_progressing_tt: "軍事能力は成長しています — 偉大なパワーランクと軍隊のサイズ 100 ターゲットです"
+ je_rising_prestige_progressing_tt: "[ROOT.GetCountry.GetName] は、トップ 5 に近づいています — プレステージ 150 とグローバル ランキング 5 が必要です"
+ je_rising_endgame_progressing_tt: "空白が形成される - 目的を達成するために8人のメンバーが必要です"

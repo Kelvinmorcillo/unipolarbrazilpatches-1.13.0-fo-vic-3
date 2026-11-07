@@ -1,0 +1,642 @@
+﻿namespace = disability_laws
+
+# ==========================================
+# DISABILITY RIGHTS ENACTMENT EVENTS
+#
+# disability_laws.1 — Employer resistance
+#                     (workplace accommodations)
+# disability_laws.2 — Construction industry
+#                     lobbying (architecture)
+# disability_laws.3 — Budget crisis debate
+#                     (architecture)
+# disability_laws.4 — Medical profession
+#                     endorsement (treatments)
+# disability_laws.5 — Fiscal conservatives
+#                     resist (treatments)
+# disability_laws.6 — Disability advocates
+#                     mobilize (any progressive)
+# disability_laws.7 — Conservative backlash
+#                     (any progressive)
+# ==========================================
+
+# ==========================================
+# disability_laws.1
+# "Employers Push Back"
+# Fires when enacting workplace accommodations.
+# Industrialists argue the compliance costs
+# are unworkable.
+# ==========================================
+
+disability_laws.1 = {
+	type = country_event
+	placement = ROOT
+
+	title = disability_laws.1.t
+	desc = disability_laws.1.d
+	flavor = disability_laws.1.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_workplace_accommodations
+		NOT = { has_modifier = disability_employer_pressure }
+		any_interest_group = {
+			OR = {
+				is_interest_group_type = ig_industrialists
+				is_interest_group_type = ig_petty_bourgeoisie
+			}
+			ig_counts_as_marginal = no
+			law_stance = {
+				law = law_type:law_workplace_accommodations
+				value < neutral
+			}
+		}
+	}
+	
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = disability_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				OR = {
+					is_interest_group_type = ig_industrialists
+					is_interest_group_type = ig_petty_bourgeoisie
+				}
+				ig_counts_as_marginal = no
+				law_stance = {
+					law = law_type:law_workplace_accommodations
+					value < neutral
+				}
+			}
+			save_scope_as = employer_ig
+			leader = {
+				save_scope_as = employer_leader
+			}
+		}
+	}
+
+	# Option A: Hold firm — compliance is non-negotiable
+	option = {
+		name = disability_laws.1.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = disability_employer_pressure
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				trigger = { has_law = law_type:law_elected_bureaucrats }
+				add = 20
+			}
+		}
+	}
+
+	# Option B: Offer a transition period — slower compliance
+	option = {
+		name = disability_laws.1.b
+		add_enactment_modifier = {
+			name = disability_employer_pressure
+			# = 2
+		}
+		add_enactment_modifier = {
+			name = disability_compliance_delay
+			# = -1
+		}
+		ai_chance = { base = 40 }
+	}
+}
+
+# ==========================================
+# disability_laws.2
+# "The Construction Lobby Objects"
+# Fires when enacting anti-ableist architecture.
+# Builders argue retrofitting is prohibitively
+# expensive and the timeline is unrealistic.
+# ==========================================
+
+disability_laws.2 = {
+	type = country_event
+	placement = ROOT
+
+	title = disability_laws.2.t
+	desc = disability_laws.2.d
+	flavor = disability_laws.2.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_factory_short"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_anti_ableist_architecture
+		NOT = { has_modifier = disability_construction_lobby }
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = disability_law_scope
+		}
+	}
+
+	# Option A: Enforce strict standards — full compliance on schedule
+	option = {
+		name = disability_laws.2.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = disability_construction_lobby
+		}
+		add_enactment_modifier = {
+			name = disability_strict_standards
+			# = 2
+		}
+		ai_chance = { base = 50 }
+	}
+
+	# Option B: Phase compliance — grandfathering existing structures
+	option = {
+		name = disability_laws.2.b
+		add_enactment_modifier = {
+			name = disability_construction_lobby
+			# = 2
+		}
+		add_enactment_modifier = {
+			name = disability_phased_compliance
+		}
+		ai_chance = { base = 50 }
+	}
+}
+
+# ==========================================
+# disability_laws.3
+# "Who Pays for the Ramps?"
+# Fires when enacting anti-ableist architecture.
+# A funding debate erupts over whether
+# the state or private owners bear the cost.
+# ==========================================
+
+disability_laws.3 = {
+	type = country_event
+	placement = ROOT
+
+	title = disability_laws.3.t
+	desc = disability_laws.3.d
+	flavor = disability_laws.3.f
+
+	category = enactment
+
+	event_image = {
+		video = "southamerica_election"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_anti_ableist_architecture
+		NOT = { has_modifier = disability_funding_debate }
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = disability_law_scope
+		}
+	}
+
+	# Option A: State subsidy — government absorbs retrofit costs
+	option = {
+		name = disability_laws.3.a
+		add_enactment_modifier = {
+			name = disability_funding_debate
+			# = 2
+		}
+		add_enactment_modifier = {
+			name = disability_state_subsidy
+			# = money_amount_#_small
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				trigger = {
+					OR = {
+						has_law = law_type:law_interventionism
+						has_law = law_type:law_command_economy
+					}
+				}
+				add = 25
+			}
+		}
+	}
+
+	# Option B: Private obligation — owners bear the cost
+	option = {
+		name = disability_laws.3.b
+		default_option = yes
+		add_enactment_modifier = {
+			name = disability_funding_debate
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				trigger = { has_law = law_type:law_laissez_faire }
+				add = 25
+			}
+		}
+	}
+}
+
+# ==========================================
+# disability_laws.4
+# "The Medical Establishment Endorses the Law"
+# Fires when enacting public treatments.
+# Doctors argue state-funded treatment is
+# both humane and economically rational.
+# ==========================================
+
+disability_laws.4 = {
+	type = country_event
+	placement = ROOT
+
+	title = disability_laws.4.t
+	desc = disability_laws.4.d
+	flavor = disability_laws.4.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_sick_in_hospital"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_public_treatments
+		NOT = { has_modifier = disability_medical_endorsement }
+		any_interest_group = {
+			is_interest_group_type = ig_intelligentsia
+			ig_counts_as_marginal = no
+			law_stance = {
+				law = law_type:law_public_treatments
+				value >= neutral
+			}
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = disability_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				is_interest_group_type = ig_intelligentsia
+				ig_counts_as_marginal = no
+			}
+			save_scope_as = medical_ig
+			leader = {
+				save_scope_as = medical_leader
+			}
+		}
+	}
+
+	# Option A: Formally commission a public health report
+	option = {
+		name = disability_laws.4.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = disability_medical_endorsement
+			# = 3
+		}
+		ai_chance = {
+			base = 65
+			modifier = {
+				trigger = {
+					institution_investment_level = {
+						institution = institution_health_system
+						value >= 3
+					}
+				}
+				add = 20
+			}
+		}
+	}
+
+	# Option B: Keep the framing political — not medical
+	option = {
+		name = disability_laws.4.b
+		add_enactment_modifier = {
+			name = disability_medical_endorsement
+		}
+		ai_chance = { base = 35 }
+	}
+}
+
+# ==========================================
+# disability_laws.5
+# "The Expense Is Unsustainable"
+# Fires when enacting public treatments.
+# Fiscal conservatives argue the state
+# cannot afford comprehensive disability
+# support.
+# ==========================================
+
+disability_laws.5 = {
+	type = country_event
+	placement = ROOT
+
+	title = disability_laws.5.t
+	desc = disability_laws.5.d
+	flavor = disability_laws.5.f
+
+	category = enactment
+
+	event_image = {
+		video = "africa_leader_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		is_enacting_law = law_type:law_public_treatments
+		NOT = { has_modifier = disability_fiscal_resistance }
+		any_interest_group = {
+			OR = {
+				is_interest_group_type = ig_landowners
+				is_interest_group_type = ig_industrialists
+			}
+			ig_counts_as_marginal = no
+			law_stance = {
+				law = law_type:law_public_treatments
+				value < neutral
+			}
+		}
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = disability_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				OR = {
+					is_interest_group_type = ig_landowners
+					is_interest_group_type = ig_industrialists
+				}
+				ig_counts_as_marginal = no
+				law_stance = {
+					law = law_type:law_public_treatments
+					value < neutral
+				}
+			}
+			save_scope_as = fiscal_ig
+			leader = {
+				save_scope_as = fiscal_leader
+			}
+		}
+	}
+
+	# Option A: Hold the line — the expense is justified
+	option = {
+		name = disability_laws.5.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = disability_fiscal_resistance
+		}
+		ai_chance = {
+			base = 55
+			modifier = {
+				trigger = { scaled_debt < 0.40 }
+				add = 20
+			}
+		}
+	}
+
+	# Option B: Phase in spending — staged implementation
+	option = {
+		name = disability_laws.5.b
+		add_enactment_modifier = {
+			name = disability_fiscal_resistance
+			# = 2
+		}
+		add_enactment_modifier = {
+			name = disability_phased_spending
+		}
+		ai_chance = {
+			base = 45
+			modifier = {
+				trigger = { scaled_debt >= 0.60 }
+				add = 25
+			}
+		}
+	}
+}
+
+# ==========================================
+# disability_laws.6
+# "Disability Advocates Rally"
+# Fires for any progressive disability law.
+# A coalition of disability rights groups
+# and their allies makes a public push.
+# ==========================================
+
+disability_laws.6 = {
+	type = country_event
+	placement = ROOT
+
+	title = disability_laws.6.t
+	desc = disability_laws.6.d
+	flavor = disability_laws.6.f
+
+	category = enactment
+
+	event_image = {
+		video = "southamerica_election"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		OR = {
+			is_enacting_law = law_type:law_workplace_accommodations
+			is_enacting_law = law_type:law_anti_ableist_architecture
+			is_enacting_law = law_type:law_public_treatments
+		}
+		NOT = { has_modifier = disability_advocate_push }
+	}
+
+	cooldown = { days = long_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = disability_law_scope
+		}
+	}
+
+	# Option A: Formally receive their delegation — amplify the campaign
+	option = {
+		name = disability_laws.6.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = disability_advocate_push
+			# = 3
+		}
+		ai_chance = {
+			base = 65
+			modifier = {
+				trigger = { has_law = law_type:law_universal_suffrage }
+				add = 15
+			}
+		}
+	}
+
+	# Option B: Acknowledge but do not amplify
+	option = {
+		name = disability_laws.6.b
+		add_enactment_modifier = {
+			name = disability_advocate_push
+		}
+		ai_chance = { base = 35 }
+	}
+}
+
+# ==========================================
+# disability_laws.7
+# "Conservative Opposition Mobilizes"
+# Fires for any progressive disability law.
+# Religious and conservative groups argue
+# disability support undermines self-reliance
+# and burdens the productive population.
+# ==========================================
+
+disability_laws.7 = {
+	type = country_event
+	placement = ROOT
+
+	title = disability_laws.7.t
+	desc = disability_laws.7.d
+	flavor = disability_laws.7.f
+
+	category = enactment
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	trigger = {
+		OR = {
+			is_enacting_law = law_type:law_workplace_accommodations
+			is_enacting_law = law_type:law_anti_ableist_architecture
+			is_enacting_law = law_type:law_public_treatments
+		}
+		NOT = { has_modifier = disability_conservative_opposition }
+		any_interest_group = {
+			OR = {
+				is_interest_group_type = ig_devout
+				is_interest_group_type = ig_landowners
+			}
+			ig_counts_as_marginal = no
+			law_stance = {
+				law = law_type:law_workplace_accommodations
+				value < neutral
+			}
+		}
+	}
+
+	cooldown = { days = long_modifier_time }
+
+	immediate = {
+		currently_enacting_law = {
+			save_scope_as = disability_law_scope
+		}
+		random_interest_group = {
+			limit = {
+				OR = {
+					is_interest_group_type = ig_devout
+					is_interest_group_type = ig_landowners
+				}
+				ig_counts_as_marginal = no
+				law_stance = {
+					law = law_type:law_workplace_accommodations
+					value < neutral
+				}
+			}
+			save_scope_as = conservative_ig
+			leader = {
+				save_scope_as = conservative_leader
+			}
+		}
+	}
+
+	# Option A: Rebut publicly — make the moral case for the law
+	option = {
+		name = disability_laws.7.a
+		default_option = yes
+		add_enactment_modifier = {
+			name = disability_conservative_opposition
+		}
+		add_enactment_modifier = {
+			name = disability_public_rebuttal
+			# = 2
+		}
+		ai_chance = { base = 60 }
+	}
+
+	# Option B: Ignore the opposition — don't dignify it
+	option = {
+		name = disability_laws.7.b
+		random_list = {
+			3 = {
+				add_enactment_modifier = {
+					name = disability_conservative_opposition
+					# = 2
+				}
+			}
+			7 = {
+				add_enactment_modifier = {
+					name = disability_conservative_opposition
+				}
+			}
+		}
+		ai_chance = { base = 40 }
+	}
+}

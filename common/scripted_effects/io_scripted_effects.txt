@@ -1,0 +1,849 @@
+﻿# International Organizations 
+
+io_initialize_organizations = {
+	# Called per-country from on_game_started
+	set_variable = { name = io_ngo_iaea_opinion value = 50 }
+	set_variable = { name = io_ngo_redcross_opinion value = 50 }
+	set_variable = { name = io_ngo_amnesty_opinion value = 50 }
+}
+ 
+### ══════════════════════════════════════════
+### UNITED NATIONS — all recognized countries
+### ══════════════════════════════════════════
+ 
+io_setup_un_members = {
+	every_country = {
+		limit = { is_country_type = recognized }
+		add_to_global_variable_list = { name = io_un_members target = this }
+	}
+}
+
+io_create_starting_nato_defensive_pacts = {
+	every_country = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_nato_members target = this }
+		}
+
+		save_scope_as = nato_country_1
+
+		every_country = {
+			limit = {
+				is_target_in_global_variable_list = { name = io_nato_members target = this }
+				NOT = { this = scope:nato_country_1 }
+
+				# Don't create duplicate defensive pacts
+				NOR = {
+					any_scope_treaty = {
+						binds = scope:nato_country_1
+						any_scope_article = {
+							has_type = defensive_pact
+						}
+					}
+				}
+			}
+
+			save_scope_as = nato_country_2
+
+			scope:nato_country_1 = {
+				create_treaty = {
+					name = io_nato_defensive_pact_name
+					first_country = scope:nato_country_1
+					second_country = scope:nato_country_2
+					is_draft = no
+					binding_period = { years = 999 }
+					articles_to_create = {
+						{
+							article = defensive_pact
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+io_setup_nato_members = {
+	every_country = { limit = { c:USA ?= this } add_to_global_variable_list = { name = io_nato_members target = this } }
+	every_country = { limit = { c:CAN ?= this } add_to_global_variable_list = { name = io_nato_members target = this } }
+	every_country = { limit = { c:GBR ?= this } add_to_global_variable_list = { name = io_nato_members target = this } }
+	every_country = { limit = { c:FRA ?= this } add_to_global_variable_list = { name = io_nato_members target = this } }
+	every_country = { limit = { c:GER ?= this } add_to_global_variable_list = { name = io_nato_members target = this } }
+	every_country = { limit = { c:ITA ?= this } add_to_global_variable_list = { name = io_nato_members target = this } }
+	every_country = { limit = { c:XBE ?= this } add_to_global_variable_list = { name = io_nato_members target = this } }
+	every_country = { limit = { c:NDL ?= this } add_to_global_variable_list = { name = io_nato_members target = this } }
+	every_country = { limit = { c:XLU ?= this } add_to_global_variable_list = { name = io_nato_members target = this } }
+	every_country = { limit = { c:NRW ?= this } add_to_global_variable_list = { name = io_nato_members target = this } }
+	every_country = { limit = { c:XDE ?= this } add_to_global_variable_list = { name = io_nato_members target = this } }
+	every_country = { limit = { c:XPO ?= this } add_to_global_variable_list = { name = io_nato_members target = this } }
+	every_country = { limit = { c:ICE ?= this } add_to_global_variable_list = { name = io_nato_members target = this } }
+	every_country = { limit = { c:GRK ?= this } add_to_global_variable_list = { name = io_nato_members target = this } }
+	every_country = { limit = { c:TRK ?= this } add_to_global_variable_list = { name = io_nato_members target = this } }
+	every_country = { limit = { c:SPA ?= this } add_to_global_variable_list = { name = io_nato_members target = this } }
+}
+ 
+io_setup_g7_members = {
+	every_country = { limit = { c:USA ?= this } add_to_global_variable_list = { name = io_g7_members target = this } }
+	every_country = { limit = { c:GBR ?= this } add_to_global_variable_list = { name = io_g7_members target = this } }
+	every_country = { limit = { c:FRA ?= this } add_to_global_variable_list = { name = io_g7_members target = this } }
+	every_country = { limit = { c:GER ?= this } add_to_global_variable_list = { name = io_g7_members target = this } }
+	every_country = { limit = { c:ITA ?= this } add_to_global_variable_list = { name = io_g7_members target = this } }
+	every_country = { limit = { c:CAN ?= this } add_to_global_variable_list = { name = io_g7_members target = this } }
+	every_country = { limit = { c:JPN ?= this } add_to_global_variable_list = { name = io_g7_members target = this } }
+}
+ 
+io_setup_opec_members = {
+	every_country = { limit = { c:SAU ?= this } add_to_global_variable_list = { name = io_opec_members target = this } }
+	every_country = { limit = { c:PEU ?= this } add_to_global_variable_list = { name = io_opec_members target = this } }
+	every_country = { limit = { c:IRQ ?= this } add_to_global_variable_list = { name = io_opec_members target = this } }
+	every_country = { limit = { c:KUW ?= this } add_to_global_variable_list = { name = io_opec_members target = this } }
+	every_country = { limit = { c:VNZ ?= this } add_to_global_variable_list = { name = io_opec_members target = this } }
+	every_country = { limit = { c:UAE ?= this } add_to_global_variable_list = { name = io_opec_members target = this } }
+	every_country = { limit = { c:LBY ?= this } add_to_global_variable_list = { name = io_opec_members target = this } }
+	every_country = { limit = { c:ALG ?= this } add_to_global_variable_list = { name = io_opec_members target = this } }
+	every_country = { limit = { c:NRI ?= this } add_to_global_variable_list = { name = io_opec_members target = this } }
+	every_country = { limit = { c:BHT ?= this } add_to_global_variable_list = { name = io_opec_members target = this } }
+	every_country = { limit = { c:QAT ?= this } add_to_global_variable_list = { name = io_opec_members target = this } }
+	every_country = { limit = { c:ECU ?= this } add_to_global_variable_list = { name = io_opec_members target = this } }
+	every_country = { limit = { c:GBN ?= this } add_to_global_variable_list = { name = io_opec_members target = this } }
+}
+ 
+io_setup_eec_members = {
+	every_country = { limit = { c:FRA ?= this } add_to_global_variable_list = { name = io_eec_members target = this } }
+	every_country = { limit = { c:GER ?= this } add_to_global_variable_list = { name = io_eec_members target = this } }
+	every_country = { limit = { c:ITA ?= this } add_to_global_variable_list = { name = io_eec_members target = this } }
+	every_country = { limit = { c:XBE ?= this } add_to_global_variable_list = { name = io_eec_members target = this } }
+	every_country = { limit = { c:NDL ?= this } add_to_global_variable_list = { name = io_eec_members target = this } }
+	every_country = { limit = { c:XLU ?= this } add_to_global_variable_list = { name = io_eec_members target = this } }
+	every_country = { limit = { c:GBR ?= this } add_to_global_variable_list = { name = io_eec_members target = this } }
+	every_country = { limit = { c:IRE ?= this } add_to_global_variable_list = { name = io_eec_members target = this } }
+	every_country = { limit = { c:XDE ?= this } add_to_global_variable_list = { name = io_eec_members target = this } }
+	every_country = { limit = { c:GRK ?= this } add_to_global_variable_list = { name = io_eec_members target = this } }
+	every_country = { limit = { c:SPA ?= this } add_to_global_variable_list = { name = io_eec_members target = this } }
+	every_country = { limit = { c:XPO ?= this } add_to_global_variable_list = { name = io_eec_members target = this } }
+}
+ 
+io_setup_arab_league_members = {
+	every_country = { limit = { c:EGY ?= this } add_to_global_variable_list = { name = io_arab_league_members target = this } }
+	every_country = { limit = { c:SAU ?= this } add_to_global_variable_list = { name = io_arab_league_members target = this } }
+	every_country = { limit = { c:IRQ ?= this } add_to_global_variable_list = { name = io_arab_league_members target = this } }
+	every_country = { limit = { c:JOR ?= this } add_to_global_variable_list = { name = io_arab_league_members target = this } }
+	every_country = { limit = { c:LBN ?= this } add_to_global_variable_list = { name = io_arab_league_members target = this } }
+	every_country = { limit = { c:SYR ?= this } add_to_global_variable_list = { name = io_arab_league_members target = this } }
+	every_country = { limit = { c:YMN ?= this } add_to_global_variable_list = { name = io_arab_league_members target = this } }
+	every_country = { limit = { c:LBY ?= this } add_to_global_variable_list = { name = io_arab_league_members target = this } }
+	every_country = { limit = { c:SDN ?= this } add_to_global_variable_list = { name = io_arab_league_members target = this } }
+	every_country = { limit = { c:MOR ?= this } add_to_global_variable_list = { name = io_arab_league_members target = this } }
+	every_country = { limit = { c:XTU ?= this } add_to_global_variable_list = { name = io_arab_league_members target = this } }
+	every_country = { limit = { c:KUW ?= this } add_to_global_variable_list = { name = io_arab_league_members target = this } }
+	every_country = { limit = { c:ALG ?= this } add_to_global_variable_list = { name = io_arab_league_members target = this } }
+	every_country = { limit = { c:UAE ?= this } add_to_global_variable_list = { name = io_arab_league_members target = this } }
+	every_country = { limit = { c:BHR ?= this } add_to_global_variable_list = { name = io_arab_league_members target = this } }
+	every_country = { limit = { c:QAT ?= this } add_to_global_variable_list = { name = io_arab_league_members target = this } }
+	every_country = { limit = { c:XOM ?= this } add_to_global_variable_list = { name = io_arab_league_members target = this } }
+	every_country = { limit = { c:MAU ?= this } add_to_global_variable_list = { name = io_arab_league_members target = this } }
+	every_country = { limit = { c:SML ?= this } add_to_global_variable_list = { name = io_arab_league_members target = this } }
+	every_country = { limit = { c:PAL ?= this } add_to_global_variable_list = { name = io_arab_league_members target = this } }
+	every_country = { limit = { c:DJI ?= this } add_to_global_variable_list = { name = io_arab_league_members target = this } }
+	every_country = { limit = { c:COM ?= this } add_to_global_variable_list = { name = io_arab_league_members target = this } }
+}
+ 
+io_setup_imf_members = {
+	every_country = {
+		limit = { is_country_type = recognized }
+		add_to_global_variable_list = { name = io_imf_members target = this }
+	}
+}
+ 
+io_setup_esa_members = {
+	every_country = { limit = { c:FRA ?= this } add_to_global_variable_list = { name = io_esa_members target = this } }
+	every_country = { limit = { c:GER ?= this } add_to_global_variable_list = { name = io_esa_members target = this } }
+	every_country = { limit = { c:ITA ?= this } add_to_global_variable_list = { name = io_esa_members target = this } }
+	every_country = { limit = { c:GBR ?= this } add_to_global_variable_list = { name = io_esa_members target = this } }
+	every_country = { limit = { c:XBE ?= this } add_to_global_variable_list = { name = io_esa_members target = this } }
+	every_country = { limit = { c:NDL ?= this } add_to_global_variable_list = { name = io_esa_members target = this } }
+	every_country = { limit = { c:XDE ?= this } add_to_global_variable_list = { name = io_esa_members target = this } }
+	every_country = { limit = { c:SPA ?= this } add_to_global_variable_list = { name = io_esa_members target = this } }
+	every_country = { limit = { c:SWE ?= this } add_to_global_variable_list = { name = io_esa_members target = this } }
+	every_country = { limit = { c:SWI ?= this } add_to_global_variable_list = { name = io_esa_members target = this } }
+	every_country = { limit = { c:IRE ?= this } add_to_global_variable_list = { name = io_esa_members target = this } }
+	every_country = { limit = { c:AUS ?= this } add_to_global_variable_list = { name = io_esa_members target = this } }
+	every_country = { limit = { c:NRW ?= this } add_to_global_variable_list = { name = io_esa_members target = this } }
+	every_country = { limit = { c:FIN ?= this } add_to_global_variable_list = { name = io_esa_members target = this } }
+}
+ 
+io_setup_asean_members = {
+	every_country = { limit = { c:IDS ?= this } add_to_global_variable_list = { name = io_asean_members target = this } }
+	every_country = { limit = { c:MYY ?= this } add_to_global_variable_list = { name = io_asean_members target = this } }
+	every_country = { limit = { c:PHP ?= this } add_to_global_variable_list = { name = io_asean_members target = this } }
+	every_country = { limit = { c:THA ?= this } add_to_global_variable_list = { name = io_asean_members target = this } }
+	every_country = { limit = { c:SGP ?= this } add_to_global_variable_list = { name = io_asean_members target = this } }
+	every_country = { limit = { c:BII ?= this } add_to_global_variable_list = { name = io_asean_members target = this } }
+}
+ 
+io_setup_saarc_members = {
+	every_country = { limit = { c:BHT ?= this } add_to_global_variable_list = { name = io_saarc_members target = this } }
+	every_country = { limit = { c:PAK ?= this } add_to_global_variable_list = { name = io_saarc_members target = this } }
+	every_country = { limit = { c:BNG ?= this } add_to_global_variable_list = { name = io_saarc_members target = this } }
+	every_country = { limit = { c:SRI ?= this } add_to_global_variable_list = { name = io_saarc_members target = this } }
+	every_country = { limit = { c:NPA ?= this } add_to_global_variable_list = { name = io_saarc_members target = this } }
+	every_country = { limit = { c:BUH ?= this } add_to_global_variable_list = { name = io_saarc_members target = this } }
+	every_country = { limit = { c:MLD ?= this } add_to_global_variable_list = { name = io_saarc_members target = this } }
+}
+ 
+io_setup_cis_members = {
+	every_country = { limit = { c:RUS ?= this } add_to_global_variable_list = { name = io_cis_members target = this } }
+	every_country = { limit = { c:BYL ?= this } add_to_global_variable_list = { name = io_cis_members target = this } }
+	every_country = { limit = { c:UKR ?= this } add_to_global_variable_list = { name = io_cis_members target = this } }
+	every_country = { limit = { c:KAZ ?= this } add_to_global_variable_list = { name = io_cis_members target = this } }
+	every_country = { limit = { c:UZB ?= this } add_to_global_variable_list = { name = io_cis_members target = this } }
+	every_country = { limit = { c:ARM ?= this } add_to_global_variable_list = { name = io_cis_members target = this } }
+	every_country = { limit = { c:AZR ?= this } add_to_global_variable_list = { name = io_cis_members target = this } }
+	every_country = { limit = { c:KYR ?= this } add_to_global_variable_list = { name = io_cis_members target = this } }
+	every_country = { limit = { c:MOL ?= this } add_to_global_variable_list = { name = io_cis_members target = this } }
+	every_country = { limit = { c:TAJ ?= this } add_to_global_variable_list = { name = io_cis_members target = this } }
+	every_country = { limit = { c:TKM ?= this } add_to_global_variable_list = { name = io_cis_members target = this } }
+}
+ 
+io_setup_who_members = {
+	every_country = {
+		limit = { is_country_type = recognized }
+		add_to_global_variable_list = { name = io_who_members target = this }
+	}
+}
+ 
+### ══════════════════════════════════════════
+### DEFAULT TREATIES (1992)
+### Most recognized countries are signatories
+### Notable non-signatories handled by exclusion
+### ══════════════════════════════════════════
+ 
+io_setup_default_treaties = {
+	# Geneva Conventions — virtually universal by 1992
+	every_country = {
+		limit = { is_country_type = recognized }
+		set_variable = io_treaty_geneva_signed
+		add_modifier = { name = io_treaty_geneva_signatory }
+	}
+ 
+	# NPT — near-universal, notable non-signatories: Israel, India, Pakistan
+	every_country = {
+		limit = {
+			is_country_type = recognized
+			NOT = { this = c:ISR }
+			NOT = { this = c:BHT }
+			NOT = { this = c:PAK }
+		}
+		set_variable = io_treaty_npt_signed
+		add_modifier = { name = io_treaty_npt_signatory }
+	}
+ 
+	# BWC — widely signed by 1992, but not universal
+	every_country = {
+		limit = {
+			is_country_type = recognized
+		}
+		set_variable = io_treaty_bwc_signed
+		add_modifier = { name = io_treaty_bwc_signatory }
+	}
+ 
+	# CWC — opened for signature in Jan 1993, so NOT signed at 1992 start
+	# Players can sign it during gameplay
+ 
+	# Convention Against Torture — widespread but not universal by 1992
+	# Major signatories: Western nations, some others
+	every_country = {
+		limit = {
+			is_country_type = recognized
+			OR = {
+				# Europe
+				any_scope_state = { is_in_geographic_region = geographic_region:geographic_region_europe }
+				# Americas
+				any_scope_state = { is_in_geographic_region = geographic_region:geographic_region_north_america }
+				any_scope_state = { is_in_geographic_region = geographic_region:geographic_region_south_america }
+				# Major Asian democracies
+				this = c:JPN
+				this = c:KOR
+				this = c:AUL
+				this = c:NZL
+			}
+		}
+		set_variable = io_treaty_cat_signed
+		add_modifier = { name = io_treaty_cat_signatory }
+	}
+}
+
+io_audit_organization_modifiers = {
+ 
+	### ══════════════════════════════════════════
+	### FINANCIAL AGREEMENT MEMBERS (G7, IMF)
+	### io_financial_agreement_member
+	### ══════════════════════════════════════════
+ 
+	# G7 members — must have io_financial_agreement_member
+	every_country = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_g7_members target = this }
+			NOT = { has_modifier = io_financial_agreement_member }
+		}
+		add_modifier = { name = io_financial_agreement_member }
+	}
+ 
+	# Countries no longer in G7 — remove modifier if still present
+	every_country = {
+		limit = {
+			NOT = { is_target_in_global_variable_list = { name = io_g7_members target = this } }
+			NOT = { is_target_in_global_variable_list = { name = io_imf_members target = this } }
+			has_modifier = io_financial_agreement_member
+		}
+		remove_modifier = io_financial_agreement_member
+	}
+ 
+	# IMF members — must have io_financial_agreement_member
+	every_country = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_imf_members target = this }
+			NOT = { has_modifier = io_financial_agreement_member }
+		}
+		add_modifier = { name = io_financial_agreement_member }
+	}
+ 
+	### ══════════════════════════════════════════
+	### OPEC MEMBERS
+	### io_opec_member
+	### ══════════════════════════════════════════
+ 
+	every_country = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_opec_members target = this }
+			NOT = { has_modifier = io_opec_member }
+		}
+		add_modifier = { name = io_opec_member }
+	}
+ 
+	every_country = {
+		limit = {
+			NOT = { is_target_in_global_variable_list = { name = io_opec_members target = this } }
+			has_modifier = io_opec_member
+		}
+		remove_modifier = io_opec_member
+	}
+ 
+	### ══════════════════════════════════════════
+	### EEC MEMBERS
+	### io_free_trade_agreement_member
+	### ══════════════════════════════════════════
+ 
+	every_country = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_eec_members target = this }
+			NOT = { has_modifier = io_free_trade_agreement_member }
+		}
+		add_modifier = { name = io_free_trade_agreement_member }
+	}
+ 
+	every_country = {
+		limit = {
+			NOT = { is_target_in_global_variable_list = { name = io_eec_members target = this } }
+			has_modifier = io_free_trade_agreement_member
+		}
+		remove_modifier = io_free_trade_agreement_member
+	}
+ 
+	### ══════════════════════════════════════════
+	### NATO MEMBERS
+	### io_military_defense_agreement_member
+	### ══════════════════════════════════════════
+ 
+	every_country = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_nato_members target = this }
+			NOT = { has_modifier = io_military_defense_agreement_member }
+		}
+		add_modifier = { name = io_military_defense_agreement_member }
+	}
+ 
+	every_country = {
+		limit = {
+			NOT = { is_target_in_global_variable_list = { name = io_nato_members target = this } }
+			has_modifier = io_military_defense_agreement_member
+		}
+		remove_modifier = io_military_defense_agreement_member
+	}
+ 
+	### ══════════════════════════════════════════
+	### ARAB LEAGUE MEMBERS
+	### io_cultural_pact_member
+	### ══════════════════════════════════════════
+ 
+	every_country = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_arab_league_members target = this }
+			NOT = { has_modifier = io_cultural_pact_member }
+		}
+		add_modifier = { name = io_cultural_pact_member }
+	}
+ 
+	every_country = {
+		limit = {
+			NOT = { is_target_in_global_variable_list = { name = io_arab_league_members target = this } }
+			has_modifier = io_cultural_pact_member
+		}
+		remove_modifier = io_cultural_pact_member
+	}
+ 
+	### ══════════════════════════════════════════
+	### TREATY SIGNATORIES
+	### ══════════════════════════════════════════
+ 
+	# Geneva Convention
+	every_country = {
+		limit = {
+			has_variable = io_treaty_geneva_signed
+			NOT = { has_modifier = io_treaty_geneva_signatory }
+		}
+		add_modifier = { name = io_treaty_geneva_signatory }
+	}
+	every_country = {
+		limit = {
+			NOT = { has_variable = io_treaty_geneva_signed }
+			has_modifier = io_treaty_geneva_signatory
+		}
+		remove_modifier = io_treaty_geneva_signatory
+	}
+ 
+	# Chemical Weapons Convention
+	every_country = {
+		limit = {
+			has_variable = io_treaty_cwc_signed
+			NOT = { has_modifier = io_treaty_cwc_signatory }
+		}
+		add_modifier = { name = io_treaty_cwc_signatory }
+	}
+	every_country = {
+		limit = {
+			NOT = { has_variable = io_treaty_cwc_signed }
+			has_modifier = io_treaty_cwc_signatory
+		}
+		remove_modifier = io_treaty_cwc_signatory
+	}
+ 
+	# Non-Proliferation Treaty
+	every_country = {
+		limit = {
+			has_variable = io_treaty_npt_signed
+			NOT = { has_modifier = io_treaty_npt_signatory }
+		}
+		add_modifier = { name = io_treaty_npt_signatory }
+	}
+	every_country = {
+		limit = {
+			NOT = { has_variable = io_treaty_npt_signed }
+			has_modifier = io_treaty_npt_signatory
+		}
+		remove_modifier = io_treaty_npt_signatory
+	}
+ 
+	# Biological Weapons Convention
+	every_country = {
+		limit = {
+			has_variable = io_treaty_bwc_signed
+			NOT = { has_modifier = io_treaty_bwc_signatory }
+		}
+		add_modifier = { name = io_treaty_bwc_signatory }
+	}
+	every_country = {
+		limit = {
+			NOT = { has_variable = io_treaty_bwc_signed }
+			has_modifier = io_treaty_bwc_signatory
+		}
+		remove_modifier = io_treaty_bwc_signatory
+	}
+ 
+	# Convention Against Torture
+	every_country = {
+		limit = {
+			has_variable = io_treaty_cat_signed
+			NOT = { has_modifier = io_treaty_cat_signatory }
+		}
+		add_modifier = { name = io_treaty_cat_signatory }
+	}
+	every_country = {
+		limit = {
+			NOT = { has_variable = io_treaty_cat_signed }
+			has_modifier = io_treaty_cat_signatory
+		}
+		remove_modifier = io_treaty_cat_signatory
+	}
+}
+
+### ══════════════════════════════════════════
+### EU POWER BLOC
+### ══════════════════════════════════════════
+ 
+io_setup_eu_power_bloc = {
+	c:EUR ?= {
+		create_power_bloc = {
+			name = io_eu_power_bloc_name
+			map_color = { 0 51 153 }
+			founding_date = 1957.3.25
+			identity = identity_european_community
+			member = c:FRA
+			member = c:GER
+			member = c:ITA
+			member = c:XBE
+			member = c:NDL
+			member = c:XLU
+			member = c:GBR
+			member = c:IRE
+			member = c:XDE
+			member = c:GRK
+			member = c:SPA
+			member = c:XPO
+		}
+	}
+}
+
+### ══════════════════════════════════════════
+### NGO HIGH SUPPORT CHECK
+### Grants/removes bonus modifiers based on opinion threshold (75+)
+### Called by the yearly audit
+### ══════════════════════════════════════════
+ 
+io_ngo_check_high_support = {
+	# IAEA — 75+ opinion grants tech spread bonus
+	if = {
+		limit = {
+			has_variable = io_ngo_iaea_opinion
+			var:io_ngo_iaea_opinion >= 75
+			NOT = { has_modifier = io_ngo_iaea_high_support }
+		}
+		add_modifier = { name = io_ngo_iaea_high_support }
+	}
+	if = {
+		limit = {
+			OR = {
+				NOT = { has_variable = io_ngo_iaea_opinion }
+				var:io_ngo_iaea_opinion < 75
+			}
+			has_modifier = io_ngo_iaea_high_support
+		}
+		remove_modifier = io_ngo_iaea_high_support
+	}
+ 
+	# RED CROSS — 75+ opinion grants prestige bonus
+	if = {
+		limit = {
+			has_variable = io_ngo_redcross_opinion
+			var:io_ngo_redcross_opinion >= 75
+			NOT = { has_modifier = io_ngo_redcross_high_support }
+		}
+		add_modifier = { name = io_ngo_redcross_high_support }
+	}
+	if = {
+		limit = {
+			OR = {
+				NOT = { has_variable = io_ngo_redcross_opinion }
+				var:io_ngo_redcross_opinion < 75
+			}
+			has_modifier = io_ngo_redcross_high_support
+		}
+		remove_modifier = io_ngo_redcross_high_support
+	}
+ 
+	# AMNESTY — 75+ opinion grants legitimacy bonus
+	if = {
+		limit = {
+			has_variable = io_ngo_amnesty_opinion
+			var:io_ngo_amnesty_opinion >= 75
+			NOT = { has_modifier = io_ngo_amnesty_high_support }
+		}
+		add_modifier = { name = io_ngo_amnesty_high_support }
+	}
+	if = {
+		limit = {
+			OR = {
+				NOT = { has_variable = io_ngo_amnesty_opinion }
+				var:io_ngo_amnesty_opinion < 75
+			}
+			has_modifier = io_ngo_amnesty_high_support
+		}
+		remove_modifier = io_ngo_amnesty_high_support
+	}
+}
+ 
+### ══════════════════════════════════════════
+### REJECTION CLEANUP
+### Called by the yearly audit — removes countries from
+### member lists if they were rejected during the voting window
+### ══════════════════════════════════════════
+ 
+io_rejection_cleanup = {
+	# If a country has io_application_rejected, remove them from
+	# whichever list they were optimistically added to
+	if = {
+		limit = { has_variable = io_application_rejected }
+ 
+		# Check each org list and remove if present
+		if = {
+			limit = { is_target_in_global_variable_list = { name = io_un_members target = this } }
+			remove_list_global_variable = { name = io_un_members target = this }
+		}
+		if = {
+			limit = { is_target_in_global_variable_list = { name = io_nato_members target = this } }
+			remove_list_global_variable = { name = io_nato_members target = this }
+			remove_modifier = io_military_defense_agreement_member
+			# Also withdraw from any defensive pacts just created
+			every_scope_treaty = {
+				limit = { any_scope_article = { has_type = defensive_pact } }
+				withdraw = { country = PREV }
+			}
+		}
+		if = {
+			limit = { is_target_in_global_variable_list = { name = io_g7_members target = this } }
+			remove_list_global_variable = { name = io_g7_members target = this }
+			remove_modifier = io_financial_agreement_member
+		}
+		if = {
+			limit = { is_target_in_global_variable_list = { name = io_opec_members target = this } }
+			remove_list_global_variable = { name = io_opec_members target = this }
+			remove_modifier = io_opec_member
+		}
+		if = {
+			limit = { is_target_in_global_variable_list = { name = io_eec_members target = this } }
+			remove_list_global_variable = { name = io_eec_members target = this }
+			remove_modifier = io_free_trade_agreement_member
+		}
+		if = {
+			limit = { is_target_in_global_variable_list = { name = io_eu_members target = this } }
+			remove_list_global_variable = { name = io_eu_members target = this }
+			remove_modifier = io_free_trade_agreement_member
+		}
+		if = {
+			limit = { is_target_in_global_variable_list = { name = io_arab_league_members target = this } }
+			remove_list_global_variable = { name = io_arab_league_members target = this }
+			remove_modifier = io_cultural_pact_member
+		}
+		if = {
+			limit = { is_target_in_global_variable_list = { name = io_imf_members target = this } }
+			remove_list_global_variable = { name = io_imf_members target = this }
+			remove_modifier = io_financial_agreement_member
+		}
+		if = {
+			limit = { is_target_in_global_variable_list = { name = io_esa_members target = this } }
+			remove_list_global_variable = { name = io_esa_members target = this }
+		}
+		if = {
+			limit = { is_target_in_global_variable_list = { name = io_asean_members target = this } }
+			remove_list_global_variable = { name = io_asean_members target = this }
+		}
+		if = {
+			limit = { is_target_in_global_variable_list = { name = io_saarc_members target = this } }
+			remove_list_global_variable = { name = io_saarc_members target = this }
+		}
+		if = {
+			limit = { is_target_in_global_variable_list = { name = io_cis_members target = this } }
+			remove_list_global_variable = { name = io_cis_members target = this }
+		}
+		if = {
+			limit = { is_target_in_global_variable_list = { name = io_who_members target = this } }
+			remove_list_global_variable = { name = io_who_members target = this }
+		}
+	}
+}
+
+io_finalize_eec_accession = {
+	remove_variable = io_eec_membership_process_started
+	add_to_global_variable_list = { name = io_eec_members target = ROOT }
+	add_modifier = { name = io_free_trade_agreement_member }
+	join_power_bloc = c:EUR
+	set_variable = { name = io_cooldown_eec years = 2 }
+	trigger_event = { id = io_accession_events.1 popup = yes }
+}
+
+io_finalize_eu_accession = {
+	remove_variable = eu_membership_process_started
+	set_variable = eu_member_state
+	add_modifier = {
+		name = modifier_eu_member_state
+		days = -1
+	}
+	add_to_global_variable_list = { name = io_eu_members target = ROOT }
+	if = {
+		limit = { NOT = { has_modifier = io_free_trade_agreement_member } }
+		add_modifier = { name = io_free_trade_agreement_member }
+	}
+	join_power_bloc = c:EUR
+	set_variable = { name = io_cooldown_eu years = 2 }
+	trigger_event = { id = io_accession_events.2 popup = yes }
+}
+
+io_cancel_eec_accession = {
+	remove_variable = io_eec_membership_process_started
+	set_variable = { name = io_cooldown_eec years = 2 }
+	trigger_event = { id = io_accession_events.3 popup = yes }
+}
+
+io_cancel_eu_accession = {
+	remove_variable = eu_membership_process_started
+	set_variable = { name = io_cooldown_eu years = 2 }
+	trigger_event = { id = io_accession_events.4 popup = yes }
+}
+
+io_expel_from_nato_for_authoritarianism = {
+	remove_list_global_variable = { name = io_nato_members target = ROOT }
+	remove_modifier = io_military_defense_agreement_member
+	set_variable = { name = io_cooldown_nato years = 5 }
+	set_variable = { name = io_expelled_from_nato years = 5 }
+
+	every_scope_treaty = {
+		limit = {
+			any_scope_article = { has_type = defensive_pact }
+		}
+		withdraw = { country = ROOT }
+	}
+
+	every_country = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_nato_members target = this }
+			NOT = { this = ROOT }
+		}
+		change_relations = { country = ROOT value = -35 }
+	}
+
+	trigger_event = { id = io_accession_events.10 popup = yes }
+}
+
+io_expel_from_eec_for_authoritarianism = {
+	remove_list_global_variable = { name = io_eec_members target = ROOT }
+	remove_modifier = io_free_trade_agreement_member
+	set_variable = { name = io_cooldown_eec years = 5 }
+	set_variable = { name = io_expelled_from_eec years = 5 }
+
+	every_country = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_eec_members target = this }
+			NOT = { this = ROOT }
+		}
+		change_relations = { country = ROOT value = -35 }
+	}
+
+	trigger_event = { id = io_accession_events.11 popup = yes }
+}
+
+io_expel_from_eu_for_authoritarianism = {
+	remove_list_global_variable = { name = io_eu_members target = ROOT }
+	remove_variable = eu_member_state
+	remove_modifier = modifier_eu_member_state
+	remove_modifier = io_free_trade_agreement_member
+	set_variable = { name = io_cooldown_eu years = 5 }
+	set_variable = { name = io_expelled_from_eu years = 5 }
+
+	every_country = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_eu_members target = this }
+			NOT = { this = ROOT }
+		}
+		change_relations = { country = ROOT value = -35 }
+	}
+
+	trigger_event = { id = io_accession_events.12 popup = yes }
+}
+
+io_expel_from_g7_for_authoritarianism = {
+	remove_list_global_variable = { name = io_g7_members target = ROOT }
+	remove_modifier = io_financial_agreement_member
+	set_variable = { name = io_cooldown_g7 years = 5 }
+	set_variable = { name = io_expelled_from_g7 years = 5 }
+
+	every_country = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_g7_members target = this }
+			NOT = { this = ROOT }
+		}
+		change_relations = { country = ROOT value = -35 }
+	}
+
+	trigger_event = { id = io_accession_events.13 popup = yes }
+}
+
+io_authoritarian_membership_audit = {
+	if = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_nato_members target = ROOT }
+			io_member_should_face_democratic_suspension = yes
+			NOT = { has_variable = io_authoritarian_warning_nato }
+			NOT = { has_variable = io_expelled_from_nato }
+		}
+		set_variable = { name = io_authoritarian_warning_nato years = 1 }
+		trigger_event = { id = io_accession_events.20 popup = yes }
+	}
+	else_if = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_nato_members target = ROOT }
+			io_member_should_face_democratic_suspension = yes
+			has_variable = io_authoritarian_warning_nato
+			NOT = { has_variable = io_expelled_from_nato }
+		}
+		io_expel_from_nato_for_authoritarianism = yes
+	}
+
+	if = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_eec_members target = ROOT }
+			io_member_should_face_democratic_suspension = yes
+			NOT = { has_variable = io_authoritarian_warning_eec }
+			NOT = { has_variable = io_expelled_from_eec }
+		}
+		set_variable = { name = io_authoritarian_warning_eec years = 1 }
+		trigger_event = { id = io_accession_events.21 popup = yes }
+	}
+	else_if = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_eec_members target = ROOT }
+			io_member_should_face_democratic_suspension = yes
+			has_variable = io_authoritarian_warning_eec
+			NOT = { has_variable = io_expelled_from_eec }
+		}
+		io_expel_from_eec_for_authoritarianism = yes
+	}
+
+	if = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_eu_members target = ROOT }
+			io_member_should_face_democratic_suspension = yes
+			NOT = { has_variable = io_authoritarian_warning_eu }
+			NOT = { has_variable = io_expelled_from_eu }
+		}
+		set_variable = { name = io_authoritarian_warning_eu years = 1 }
+		trigger_event = { id = io_accession_events.22 popup = yes }
+	}
+	else_if = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_eu_members target = ROOT }
+			io_member_should_face_democratic_suspension = yes
+			has_variable = io_authoritarian_warning_eu
+			NOT = { has_variable = io_expelled_from_eu }
+		}
+		io_expel_from_eu_for_authoritarianism = yes
+	}
+
+	if = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_g7_members target = ROOT }
+			io_member_should_face_democratic_suspension = yes
+			NOT = { has_variable = io_authoritarian_warning_g7 }
+			NOT = { has_variable = io_expelled_from_g7 }
+		}
+		set_variable = { name = io_authoritarian_warning_g7 years = 1 }
+		trigger_event = { id = io_accession_events.23 popup = yes }
+	}
+	else_if = {
+		limit = {
+			is_target_in_global_variable_list = { name = io_g7_members target = ROOT }
+			io_member_should_face_democratic_suspension = yes
+			has_variable = io_authoritarian_warning_g7
+			NOT = { has_variable = io_expelled_from_g7 }
+		}
+		io_expel_from_g7_for_authoritarianism = yes
+	}
+}

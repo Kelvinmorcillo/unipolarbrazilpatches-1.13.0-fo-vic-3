@@ -1,0 +1,28 @@
+﻿DIPLOMATIC_PLAYS = {
+	c:KDS ?= {
+		create_diplomatic_play = {
+			name = pkk_insurgency
+
+			target_state = c:TRK.capital
+
+			war = yes
+			annex_as_civil_war = yes
+
+			type = dp_revolution
+
+		}
+	}
+	c:ANA ?= {
+		create_diplomatic_play = {
+			name = afghan_civil_war
+
+			target_state = c:AFG.capital
+
+			war = yes
+			annex_as_civil_war = yes
+
+			type = dp_revolution
+
+		}
+	}
+}

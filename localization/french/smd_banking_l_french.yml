@@ -1,0 +1,49 @@
+﻿l_french:
+ # ── TAB RENAME ────────────────────────────
+ BUDGET_TAB_ASSETS: "Système financier"
+ BUDGET_TAB_FINANCE: "Actifs"
+ # ── CENTRAL BANKING PANEL ─────────────────
+ BUDGET_CENTRAL_BANKING_HEADER: "Banque centrale"
+ BUDGET_CENTRAL_BANK_LAW_LABEL: "Politique actuelle :"
+ BUDGET_FISCAL_POLICY_LABEL: "Politique monétaire"
+
+ # Scripted loc keys
+ cb_policy_loc_1: "#R La plupart des contractionnaires#!"
+ cb_policy_loc_2: "#r Contrataire#!"
+ cb_policy_loc_3: "#Y Neutre#!"
+ cb_policy_loc_4: "#g Expansionnaire#!"
+ cb_policy_loc_5: "#G La plupart des extensions#!"
+
+ # ── BUTTON TOOLTIPS — FRACTIONAL RESERVE ──
+ CB_POLICY_1_TOOLTIP: "#bold #bold \n#tooltip_separator!\n #header Réserve fractionnelle:#!\n@red_cross! Virement des banques commerciales: #green +10% #!\n@red_cross! Virement des districts financiers: #red -10% #! \n\n#header Réserve intégrale:#!@green_checkmark! Taux d'intérêt: #green -2% #!\n@green_checkmark!"
+ CB_POLICY_2_TOOLTIP: "#bold Contractionary#!\n#tooltip_separator!\n #header Fractional Reserve:#!\n@red_cross! Commercial Bank Throughput: #green +5% #!\n@red_cross! Financial District Throughput: #red -5% #! \n#header Full Reserve:#!@green_checkmark! -1% #!\n@green_checkmark! Réserves de trésorerie maximales de l'immeuble : #red -12,5% #!"
+ CB_POLICY_3_TOOLTIP: "#bold Stable #!\n#tooltip_separator!\n La banque centrale ne prend aucune position active. Pas de modification."
+ CB_POLICY_4_TOOLTIP: "#bold Expansionnaire #!\n#tooltip_separator!\n #header Réserve fractionnelle:#!\n@red_cross! Débit bancaire commercial: #red -5% #!\n@red_cross! Débit du district financier: #green 5% #! \n\n#header Réserve totale:#!@green_checkmark! Taux d'intérêt: #red +1% #!\n@green_checkmark!"
+ CB_POLICY_5_TOOLTIP: "#bold #bold \n#tooltip_separator!\n #header Réserve fractionnelle:#!\n@red_cross! Parcours bancaire commercial: #red -10% #!\n@red_cross! Parcours du district financier: #green 10% #! \n\n#header Réserve totale:#!@green_checkmark! Taux d'intérêt: #red +2% #!\n@green_checkmark!"
+
+ # Fractional Reserve variants
+ CB_POLICY_1_FRAC: "#bold La plupart des contrats — Fractional Reserve#!\n#tooltip_separator!\nLa banque centrale resserre considérablement les conditions de crédit.\n\n@red_cross! Virement bancaire #b+10%#!\n @red_cross! Virement du district financier #b-10%#!"
+ CB_POLICY_2_FRAC: "#bold Provisoire — Réserve fractionnelle#!\n#tooltip_separator!\n La banque centrale applique un léger resserrement aux conditions de crédit.\n\n@red_cross! Virement bancaire #b+5%#!\n@red_cross! Virement du district financier #b-5%#!"
+ CB_POLICY_3_FRAC: "#bold Neutre — Réserve fractionnelle#!\n#tooltip_separator!\n La banque centrale ne prend aucune position active. Pas de modification."
+ CB_POLICY_4_FRAC: "#bold Expansionnaire — Réserve fractionnelle#!\n#tooltip_separator!\n La banque centrale facilite les conditions de crédit pour stimuler les prêts.\n\n@green_checkmark! Virement bancaire #b-5%#!\n@green_checkmark! Virement du district financier #b+5%#!"
+ CB_POLICY_5_FRAC: "#bold La plus expansionnaire — Réserve fractionnelle#!\n#tooltip_separator!\nLa banque centrale stimule agressivement le secteur financier.\n\n@green_checkmark! Virement bancaire #b-25%#!\n@green_checkmark! Virement du district financier #b+25%#!"
+
+ # Full Reserve variants
+ CB_POLICY_1_FULL: "#bold La plupart des contractants — Réserve complète#!\n#tooltip_separator!\n Les réserves obligatoires sont maximales, ce qui réduit considérablement la disponibilité du crédit.\n\n@green_checkmark! Taux d'intérêt sur les prêts #b-1%#!\n@green_checkmark! Réserves de trésorerie #b+25%#!"
+ CB_POLICY_2_FULL: "#bold Contractionnaire — Réserve complète#!\n#tooltip_separator!\nLes exigences relatives aux réserves sont légèrement renforcées.\n\n@green_checkmark! Taux d'intérêt sur les prêts #b-0,5%#!\n@green_checkmark! Réserves en espèces #b+12,5 %#!"
+ CB_POLICY_3_FULL: "#bold Neutre — Réserve complète#!\n#tooltip_separator!\n Les besoins de réserve demeurent au minimum légal. Pas de modification supplémentaire."
+ CB_POLICY_4_FULL: "#bold Expansionnaire — Réserve complète#!\n#tooltip_separator!\n Les besoins de réserves sont assouplis pour permettre une augmentation des prêts.\n\n@red_cross! Taux d'intérêt sur les prêts #b+0,5%#!\n@red_cross! Réserves de liquidités #b-12,5 %#!"
+ CB_POLICY_5_FULL: "#bold La plupart des exigences de réserves sont minimisées pour maximiser la capacité de prêt.\n\n@red_cross! Taux d'intérêt sur les prêts #b+1%#!\n@red_cross! Réserves de liquidités #b-25%#!"
+
+ # ── MODIFIER NAMES ────────────────────────
+ cb_policy_fractional_1: "La plupart de la politique monétaire contractuelle"
+ cb_policy_fractional_2: "Politique monétaire contractuelle"
+ cb_policy_fractional_4: "Politique monétaire expansionniste"
+ cb_policy_fractional_5: "Politique monétaire expansionniste"
+ cb_policy_full_1: "La plupart des politiques de réserve contractuelle"
+ cb_policy_full_2: "Politique de réserve contractuelle"
+ cb_policy_full_4: "Politique de réserve expansionniste"
+ cb_policy_full_5: "Politique sur la plupart des réserves d'expansion"
+ 
+ building_group_bg_banking_throughput_add_desc:0 "Modificateur du débit des banques commerciales"
+ building_financial_district_throughput_add_desc:0 "Un modofier au débit des districts financiers"

@@ -1,0 +1,57 @@
+﻿# ==========================================
+# NUCLEAR SYSTEM — ON ACTIONS
+# 99_ prefix is required because paradox is doing meth
+# ==========================================
+
+on_monthly_pulse_country = {
+	effect = {
+		# Rebuild enemy state lists for nuclear targeting,
+		# conventional missiles, and strategic bombing.
+		# Runs for any country at war that has either
+		# nuclear capability OR conventional missiles.
+		every_country = {
+			limit = {
+				is_at_war = yes
+				OR = {
+					has_variable = nuclear_capable
+					has_variable = conventional_missiles
+					any_military_formation = {
+						is_army = yes
+						any_combat_unit = {
+							OR = {
+								has_unit_type = unit_type:combat_unit_type_fixed_wing_aircraft
+								has_unit_type = unit_type:combat_unit_type_multirole_aircraft
+								has_unit_type = unit_type:combat_unit_type_stealth_aircraft
+								has_unit_type = unit_type:combat_unit_type_uav
+								has_unit_type = unit_type:combat_unit_type_autonomous_aircraft
+							}
+							percent >= 0.25
+						}
+					}
+				}
+			}
+			nuclear_rebuild_enemy_list = yes
+		}
+	}
+}
+
+# ==========================================
+# NUCLEAR TOP 5 — TRACKING
+# Recomputes the global list of the 5 largest nuclear powers
+# monthly so the topbar tooltip can display them.
+# ==========================================
+
+on_monthly_pulse = {
+	effect = {
+		nuclear_recompute_top_5 = yes
+
+		# Process missile production queues for all countries
+		every_country = {
+			limit = {
+				has_variable = missile_production_queue
+				var:missile_production_queue > 0
+			}
+			missile_process_queue = yes
+		}
+	}
+}

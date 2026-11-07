@@ -1,0 +1,376 @@
+namespace = ngo_events
+
+### ══════════════════════════════════════════════════════════════
+### AMNESTY INTERNATIONAL EVENTS
+### ══════════════════════════════════════════════════════════════
+
+ngo_events.1 = {
+	type = country_event
+	placement = ROOT
+	title = ngo_events.1.t
+	desc = ngo_events.1.d
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+	event_image = { video = "opposition_speaker" }
+	duration = 3
+
+	trigger = {
+		NOT = { has_variable = io_ngo_amnesty_banned }
+		has_variable = io_ngo_amnesty_opinion
+		OR = {
+			has_law = law_type:law_outlawed_dissent
+			has_law = law_type:law_secret_police
+			has_law = law_type:law_active_oppression
+			has_law = law_type:law_ethnostate
+			has_law = law_type:law_slave_trade
+			has_law = law_type:law_debt_slavery
+			has_law = law_type:law_no_womens_rights
+			has_law = law_type:law_militarized_police
+			has_law = law_type:law_total_prohibition
+			has_law = law_type:law_autocracy
+		}
+		NOT = { has_variable = ngo_amnesty_law_cooldown }
+	}
+
+	option = {
+		name = ngo_events.1.a # Ignore the criticism
+		default_option = yes
+		custom_tooltip = {
+			text = ngo_amnesty_opinion_minus_15_tt
+			change_variable = { name = io_ngo_amnesty_opinion add = -15 }
+			clamp_variable = { name = io_ngo_amnesty_opinion min = 0 max = 100 }
+		}
+		set_variable = { name = ngo_amnesty_law_cooldown years = 2 }
+	}
+
+	option = {
+		name = ngo_events.1.b # Engage with Amnesty's concerns
+		custom_tooltip = {
+			text = ngo_amnesty_opinion_minus_5_tt
+			change_variable = { name = io_ngo_amnesty_opinion add = -5 }
+			clamp_variable = { name = io_ngo_amnesty_opinion min = 0 max = 100 }
+		}
+		add_modifier = { name = ngo_amnesty_scrutiny months = 12 }
+		set_variable = { name = ngo_amnesty_law_cooldown years = 2 }
+	}
+}
+
+ngo_events.2 = {
+	type = country_event
+	placement = ROOT
+	title = ngo_events.2.t
+	desc = ngo_events.2.d
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	event_image = { video = "europenorthamerica_native_american" }
+	duration = 3
+
+	trigger = {
+		NOT = { has_variable = io_ngo_amnesty_banned }
+		has_variable = io_ngo_amnesty_opinion
+		OR = {
+			has_law = law_type:law_protected_speech
+			has_law = law_type:law_universal_suffrage
+			has_law = law_type:law_womens_suffrage
+			has_law = law_type:law_structural_egalitarianism
+			has_law = law_type:law_gay_marriage
+			has_law = law_type:law_guaranteed_liberties
+			has_law = law_type:law_multicultural
+		}
+		NOT = { has_variable = ngo_amnesty_praise_cooldown }
+	}
+
+	option = {
+		name = ngo_events.2.a
+		default_option = yes
+		custom_tooltip = {
+			text = ngo_amnesty_opinion_plus_10_tt
+			change_variable = { name = io_ngo_amnesty_opinion add = 10 }
+			clamp_variable = { name = io_ngo_amnesty_opinion min = 0 max = 100 }
+		}
+		set_variable = { name = ngo_amnesty_praise_cooldown years = 2 }
+	}
+}
+
+ngo_events.3 = {
+	type = country_event
+	placement = ROOT
+	title = ngo_events.3.t
+	desc = ngo_events.3.d
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+	event_image = { video = "africa_diplomats_negotiating" }
+	duration = 3
+
+	trigger = {
+		NOT = { has_variable = io_ngo_amnesty_banned }
+		has_variable = io_ngo_amnesty_opinion
+		country_turmoil > 0.25
+		NOT = { has_variable = ngo_amnesty_turmoil_cooldown }
+	}
+
+	option = {
+		name = ngo_events.3.a # Promise reforms
+		default_option = yes
+		custom_tooltip = {
+			text = ngo_amnesty_opinion_plus_5_tt
+			change_variable = { name = io_ngo_amnesty_opinion add = 5 }
+			clamp_variable = { name = io_ngo_amnesty_opinion min = 0 max = 100 }
+		}
+		add_modifier = { name = ngo_amnesty_reform_pressure months = 12 }
+		set_variable = { name = ngo_amnesty_turmoil_cooldown years = 3 }
+	}
+
+	option = {
+		name = ngo_events.3.b # Dismiss the report
+		custom_tooltip = {
+			text = ngo_amnesty_opinion_minus_10_tt
+			change_variable = { name = io_ngo_amnesty_opinion add = -10 }
+			clamp_variable = { name = io_ngo_amnesty_opinion min = 0 max = 100 }
+		}
+		set_variable = { name = ngo_amnesty_turmoil_cooldown years = 3 }
+	}
+}
+
+### ══════════════════════════════════════════════════════════════
+### RED CROSS EVENTS
+### ══════════════════════════════════════════════════════════════
+
+ngo_events.10 = {
+	type = country_event
+	placement = ROOT
+	title = ngo_events.10.t
+	desc = ngo_events.10.d
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	event_image = { video = "southamerica_public_figure_assassination" }
+	duration = 3
+
+	trigger = {
+		NOT = { has_variable = io_ngo_redcross_banned }
+		has_variable = io_ngo_redcross_opinion
+		is_at_war = yes
+		any_scope_state = { devastation > 5 }
+		NOT = { has_variable = ngo_redcross_war_cooldown }
+	}
+
+	option = {
+		name = ngo_events.10.a # Accept Red Cross aid
+		default_option = yes
+		custom_tooltip = {
+			text = ngo_redcross_opinion_plus_10_tt
+			change_variable = { name = io_ngo_redcross_opinion add = 10 }
+			clamp_variable = { name = io_ngo_redcross_opinion min = 0 max = 100 }
+		}
+		add_modifier = { name = ngo_redcross_aid months = 12 }
+		set_variable = { name = ngo_redcross_war_cooldown years = 2 }
+	}
+
+	option = {
+		name = ngo_events.10.b # Refuse foreign aid workers
+		custom_tooltip = {
+			text = ngo_redcross_opinion_minus_15_tt
+			change_variable = { name = io_ngo_redcross_opinion add = -15 }
+			clamp_variable = { name = io_ngo_redcross_opinion min = 0 max = 100 }
+		}
+		set_variable = { name = ngo_redcross_war_cooldown years = 2 }
+	}
+}
+
+ngo_events.11 = {
+	type = country_event
+	placement = ROOT
+	title = ngo_events.11.t
+	desc = ngo_events.11.d
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+	event_image = { video = "asia_union_leader" }
+	duration = 3
+
+	trigger = {
+		NOT = { has_variable = io_ngo_redcross_banned }
+		has_variable = io_ngo_redcross_opinion
+		is_at_war = yes
+		any_scope_state = { devastation > 25 }
+		NOT = { has_variable = ngo_redcross_conduct_cooldown }
+	}
+
+	option = {
+		name = ngo_events.11.a # Acknowledge and cooperate
+		default_option = yes
+		custom_tooltip = {
+			text = ngo_redcross_opinion_plus_5_tt
+			change_variable = { name = io_ngo_redcross_opinion add = 5 }
+			clamp_variable = { name = io_ngo_redcross_opinion min = 0 max = 100 }
+		}
+		add_modifier = { name = ngo_redcross_cooperation months = 12 }
+		set_variable = { name = ngo_redcross_conduct_cooldown years = 3 }
+	}
+
+	option = {
+		name = ngo_events.11.b # Deny the accusations
+		custom_tooltip = {
+			text = ngo_redcross_opinion_minus_20_tt
+			change_variable = { name = io_ngo_redcross_opinion add = -20 }
+			clamp_variable = { name = io_ngo_redcross_opinion min = 0 max = 100 }
+		}
+		set_variable = { name = ngo_redcross_conduct_cooldown years = 3 }
+	}
+}
+
+ngo_events.12 = {
+	type = country_event
+	placement = ROOT
+	title = ngo_events.12.t
+	desc = ngo_events.12.d
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	event_image = { video = "africa_diplomats_negotiating" }
+	duration = 3
+
+	trigger = {
+		NOT = { has_variable = io_ngo_redcross_banned }
+		has_variable = io_ngo_redcross_opinion
+		is_at_war = no
+		country_turmoil > 0.20
+		NOT = { has_variable = ngo_redcross_relief_cooldown }
+	}
+
+	option = {
+		name = ngo_events.12.a # Accept assistance
+		default_option = yes
+		custom_tooltip = {
+			text = ngo_redcross_opinion_plus_10_tt
+			change_variable = { name = io_ngo_redcross_opinion add = 10 }
+			clamp_variable = { name = io_ngo_redcross_opinion min = 0 max = 100 }
+		}
+		add_modifier = { name = ngo_redcross_relief months = 12 }
+		set_variable = { name = ngo_redcross_relief_cooldown years = 3 }
+	}
+
+	option = {
+		name = ngo_events.12.b # Decline
+		custom_tooltip = {
+			text = ngo_redcross_opinion_minus_5_tt
+			change_variable = { name = io_ngo_redcross_opinion add = -5 }
+			clamp_variable = { name = io_ngo_redcross_opinion min = 0 max = 100 }
+		}
+		set_variable = { name = ngo_redcross_relief_cooldown years = 3 }
+	}
+}
+
+### ══════════════════════════════════════════════════════════════
+### IAEA EVENTS
+### ══════════════════════════════════════════════════════════════
+
+ngo_events.20 = {
+	type = country_event
+	placement = ROOT
+	title = ngo_events.20.t
+	desc = ngo_events.20.d
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	event_image = { video = "unspecific_politicians_arguing" }
+	duration = 3
+
+	trigger = {
+		NOT = { has_variable = io_ngo_iaea_banned }
+		has_variable = io_ngo_iaea_opinion
+		any_scope_state = { has_building = building_nuclear_reactor }
+		NOT = { has_variable = io_treaty_npt_signed }
+		NOT = { has_variable = ngo_iaea_inspection_cooldown }
+	}
+
+	option = {
+		name = ngo_events.20.a # Allow inspectors
+		default_option = yes
+		custom_tooltip = {
+			text = ngo_iaea_opinion_plus_15_tt
+			change_variable = { name = io_ngo_iaea_opinion add = 15 }
+			clamp_variable = { name = io_ngo_iaea_opinion min = 0 max = 100 }
+		}
+		add_modifier = { name = ngo_iaea_inspectors months = 12 }
+		set_variable = { name = ngo_iaea_inspection_cooldown years = 5 }
+	}
+
+	option = {
+		name = ngo_events.20.b # Deny access
+		custom_tooltip = {
+			text = ngo_iaea_opinion_minus_25_tt
+			change_variable = { name = io_ngo_iaea_opinion add = -25 }
+			clamp_variable = { name = io_ngo_iaea_opinion min = 0 max = 100 }
+		}
+		every_country = {
+			limit = {
+				is_target_in_global_variable_list = { name = io_un_members target = this }
+				NOT = { this = ROOT }
+				has_variable = io_treaty_npt_signed
+			}
+			change_relations = { country = ROOT value = -5 }
+		}
+		set_variable = { name = ngo_iaea_inspection_cooldown years = 5 }
+	}
+}
+
+ngo_events.21 = {
+	type = country_event
+	placement = ROOT
+	title = ngo_events.21.t
+	desc = ngo_events.21.d
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	event_image = { video = "unspecific_politicians_arguing" }
+	duration = 3
+
+	trigger = {
+		NOT = { has_variable = io_ngo_iaea_banned }
+		has_variable = io_ngo_iaea_opinion
+		any_scope_state = { has_building = building_nuclear_reactor }
+		has_variable = io_treaty_npt_signed
+		NOT = { has_variable = ngo_iaea_praise_cooldown }
+	}
+
+	option = {
+		name = ngo_events.21.a
+		default_option = yes
+		custom_tooltip = {
+			text = ngo_iaea_opinion_plus_10_tt
+			change_variable = { name = io_ngo_iaea_opinion add = 10 }
+			clamp_variable = { name = io_ngo_iaea_opinion min = 0 max = 100 }
+		}
+		set_variable = { name = ngo_iaea_praise_cooldown years = 5 }
+	}
+}
+
+ngo_events.22 = {
+	type = country_event
+	placement = ROOT
+	title = ngo_events.22.t
+	desc = ngo_events.22.d
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+	event_image = { video = "africa_diplomats_negotiating" }
+	duration = 3
+
+	trigger = {
+		NOT = { has_variable = io_ngo_iaea_banned }
+		has_variable = io_ngo_iaea_opinion
+		any_scope_state = { has_building = building_nuclear_reactor }
+		NOT = { has_variable = io_treaty_npt_signed }
+		var:io_ngo_iaea_opinion < 30
+		NOT = { has_variable = ngo_iaea_weapons_cooldown }
+	}
+
+	option = {
+		name = ngo_events.22.a # Open to dialogue
+		default_option = yes
+		custom_tooltip = {
+			text = ngo_iaea_opinion_plus_10_tt
+			change_variable = { name = io_ngo_iaea_opinion add = 10 }
+			clamp_variable = { name = io_ngo_iaea_opinion min = 0 max = 100 }
+		}
+		set_variable = { name = ngo_iaea_weapons_cooldown years = 5 }
+	}
+
+	option = {
+		name = ngo_events.22.b # Assert sovereign right
+		custom_tooltip = {
+			text = ngo_iaea_opinion_minus_20_tt
+			change_variable = { name = io_ngo_iaea_opinion add = -20 }
+			clamp_variable = { name = io_ngo_iaea_opinion min = 0 max = 100 }
+		}
+		change_infamy = 5
+		set_variable = { name = ngo_iaea_weapons_cooldown years = 5 }
+	}
+}
