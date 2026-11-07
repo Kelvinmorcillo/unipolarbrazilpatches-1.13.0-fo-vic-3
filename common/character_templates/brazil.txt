@@ -1,6 +1,6 @@
 BRZ_lula_da_silva = {
 	first_name = Luiz
-	last_name = Silva
+	last_name = Inacio Lula da Silva
 	historical = yes
 	culture = cu:brazilian
 	birth_date = 1945.10.27
@@ -10,7 +10,6 @@ BRZ_lula_da_silva = {
 	ideology = ideology_democratic_socialist_leader
 	traits = {
 		charismatic
-		demagogue
 		experienced_political_operator
 	}
 }
@@ -68,7 +67,7 @@ BRZ_jose_sarney = {
  
 BRZ_fernando_cardoso = {
 	first_name = Fernando
-	last_name = Cardoso
+	last_name = Henriue Cardoso
 	historical = yes
 	culture = cu:brazilian
 	birth_date = 1931.6.18
@@ -131,9 +130,26 @@ REPLACE_OR_CREATE:brz_dilma_rousseff_character_template = {
 	}
 }
 
+REPLACE_OR_CREATE:brz_jair_bolsonaro_character_template = {
+	first_name = Jair
+	last_name = Bolsonaro
+	historical = yes
+	culture = cu:brazilian
+	birth_date = 1955.3.21
+	dna = dna_jair_bolsonaro
+	ig_leader = yes
+	interest_group = ig_armed_forces
+	ideology = ideology_authoritarian_capitalist_leader
+	traits = {
+		experienced_political_operator
+		demagogue
+		bigoted
+	}
+}
+
 REPLACE_OR_CREATE:brz_lula_da_silva_2022_character_template = {
 	first_name = Luiz
-	last_name = Silva
+	last_name = Inacio Lula da Silva
 	historical = yes
 	female = no
 	culture = cu:brazilian

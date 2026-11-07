@@ -1,0 +1,153 @@
+namespace = brz_impeachment
+
+brz_impeachment.1 = {
+	type = country_event
+	placement = ROOT
+	title = brz_impeachment.1.t
+	desc = brz_impeachment.1.d
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	duration = 3
+
+	trigger = {
+		c:BRZ ?= this
+		game_date >= 1992.9.29
+		NOT = { has_variable = brz_collor_impeachment_started }
+	}
+
+	immediate = {
+		set_variable = brz_collor_impeachment_started
+	}
+
+	option = {
+		name = brz_impeachment.1.a
+		trigger_event = { id = brz_impeachment.2 days = 3 popup = yes }
+	}
+}
+
+brz_impeachment.2 = {
+	type = country_event
+	placement = ROOT
+	title = brz_impeachment.2.t
+	desc = brz_impeachment.2.d
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	duration = 3
+
+	trigger = {
+		c:BRZ ?= this
+		game_date >= 1992.10.2
+		has_variable = brz_collor_impeachment_started
+		NOT = { has_variable = brz_itamar_assumed_presidency }
+	}
+
+	immediate = {
+		set_variable = brz_itamar_assumed_presidency
+		character:BRZ_itamar_franco = {
+			set_character_as_ruler = yes
+		}
+	}
+
+	option = {
+		name = brz_impeachment.2.a
+	}
+}
+
+brz_impeachment.3 = {
+	type = country_event
+	placement = ROOT
+	title = brz_impeachment.3.t
+	desc = brz_impeachment.3.d
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	duration = 3
+
+	trigger = {
+		c:BRZ ?= this
+		game_date >= 1992.12.29
+		has_variable = brz_itamar_assumed_presidency
+		NOT = { has_variable = brz_collor_impeachment_concluded }
+	}
+
+	immediate = {
+		set_variable = brz_collor_impeachment_concluded
+	}
+
+	option = {
+		name = brz_impeachment.3.a
+	}
+}
+
+brz_impeachment.4 = {
+	type = country_event
+	placement = ROOT
+	title = brz_impeachment.4.t
+	desc = brz_impeachment.4.d
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	duration = 3
+
+	trigger = {
+		c:BRZ ?= this
+		game_date >= 2015.12.2
+		NOT = { has_variable = brz_dilma_impeachment_started }
+	}
+
+	immediate = {
+		set_variable = brz_dilma_impeachment_started
+	}
+
+	option = {
+		name = brz_impeachment.4.a
+	}
+}
+
+brz_impeachment.5 = {
+	type = country_event
+	placement = ROOT
+	title = brz_impeachment.5.t
+	desc = brz_impeachment.5.d
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	duration = 3
+
+	trigger = {
+		c:BRZ ?= this
+		game_date >= 2016.5.12
+		has_variable = brz_dilma_impeachment_started
+		NOT = { has_variable = brz_bolsonaro_armed_forces_leader }
+	}
+
+	immediate = {
+		set_variable = brz_bolsonaro_armed_forces_leader
+		create_character = {
+			template = brz_jair_bolsonaro_character_template
+			on_created = {
+				set_as_interest_group_leader = yes
+			}
+		}
+	}
+
+	option = {
+		name = brz_impeachment.5.a
+	}
+}
+
+brz_impeachment.6 = {
+	type = country_event
+	placement = ROOT
+	title = brz_impeachment.6.t
+	desc = brz_impeachment.6.d
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	duration = 3
+
+	trigger = {
+		c:BRZ ?= this
+		game_date >= 2016.8.31
+		has_variable = brz_bolsonaro_armed_forces_leader
+		NOT = { has_variable = brz_dilma_impeachment_concluded }
+	}
+
+	immediate = {
+		set_variable = brz_dilma_impeachment_concluded
+	}
+
+	option = {
+		name = brz_impeachment.6.a
+	}
+}
