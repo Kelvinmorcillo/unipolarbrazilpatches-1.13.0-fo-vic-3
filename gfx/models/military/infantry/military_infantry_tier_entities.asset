@@ -1,0 +1,242 @@
+entity = {
+	name = 			"military_infantry_european_t2_entity"
+	pdxmesh = 		"military_infantry_european_t2_mesh"
+
+	default_state = "bind_pose"
+	state = {
+		name = 		"bind_pose"
+		animation = "bind_pose_animation" }
+
+	# INFANTRY BLUNDERBUSS
+
+	state = {
+		name = 		"infantry_blunderbuss_idle_01"
+		animation = "infantry_blunderbuss_idle_01_animation"
+		start_event = { node = r_hand_attach					entity = "military_arms_blunderbuss_entity" } }
+
+	state = {
+		name = 		"infantry_blunderbuss_idle_02"
+		animation = "infantry_blunderbuss_idle_02_animation"
+		start_event = { node = r_hand_attach					entity = "military_arms_blunderbuss_entity" } }
+	
+	state = {
+		name = 		"infantry_blunderbuss_walk_01"
+		animation = "infantry_blunderbuss_walk_01_animation" 
+		start_event = { node = r_hand_attach					entity = "military_arms_blunderbuss_entity" } }
+
+	state = {
+		name = 		"infantry_blunderbuss_victory_01"
+		animation = "infantry_blunderbuss_victory_01_animation" 
+		start_event = { node = r_hand_attach					entity = "military_arms_blunderbuss_entity" } }
+
+	state = {
+		name = 		"infantry_blunderbuss_defeat_01"
+		animation = "infantry_blunderbuss_defeat_01_animation"
+		looping = 	no
+		start_event = { node = r_hand_attach					entity = "military_arms_blunderbuss_entity" } }
+
+	state = {
+		name = 		"infantry_blunderbuss_defeat_02"
+		animation = "infantry_blunderbuss_defeat_02_animation"
+		looping = 	no
+		start_event = { node = r_hand_attach					entity = "military_arms_blunderbuss_entity" } }
+
+	state = {
+		name = 		"infantry_blunderbuss_scout_01"
+		animation = "infantry_blunderbuss_scout_01_animation"
+		start_event = { node = r_hand_attach					entity = "military_arms_blunderbuss_entity" } }
+
+	state = {
+		name = 		"infantry_blunderbuss_scout_02"
+		animation = "infantry_blunderbuss_scout_02_animation"
+		start_event = { node = r_hand_attach					entity = "military_arms_blunderbuss_entity" } }
+
+	state = {
+		name = 		"infantry_blunderbuss_scout_02"
+		animation = "infantry_blunderbuss_scout_02_animation"
+		start_event = { node = r_hand_attach					entity = "military_arms_blunderbuss_entity" } }
+
+	state = {
+		name = 		"infantry_blunderbuss_fire_aggressive_01"
+		animation = "infantry_blunderbuss_fire_aggressive_01_animation"
+		start_event = { node = r_hand_attach					entity = "military_arms_blunderbuss_entity" } }
+
+	state = {
+		name = 		"infantry_blunderbuss_fire_aggressive_02"
+		animation = "infantry_blunderbuss_fire_aggressive_02_animation"
+		start_event = { node = r_hand_attach					entity = "military_arms_blunderbuss_entity" } }
+
+	state = {
+		name = 		"infantry_blunderbuss_fire_defensive_01"
+		animation = "infantry_blunderbuss_fire_defensive_01_animation"
+		start_event = { node = r_hand_attach					entity = "military_arms_blunderbuss_entity" } }
+
+
+	#INFANTRY SABER
+
+	state = {
+		name = 		"infantry_saber_idle_01"
+		animation = "infantry_saber_idle_01_animation"
+		start_event = { node = r_hand_attach					entity = "military_arms_saber_entity" } }
+
+	state = {
+		name = 		"infantry_saber_walk_01"
+		animation = "infantry_saber_walk_01_animation"
+		start_event = { node = r_hand_attach					entity = "military_arms_saber_entity" } }
+
+	state = {
+		name = 		"infantry_saber_advance_01"
+		animation = "infantry_saber_advance_01_animation"
+		start_event = { node = r_hand_attach					entity = "military_arms_saber_entity"	keep_sound = no sound = { soundeffect = "event:/SFX/Animation/weapons/infantry/saber/anm_advance_saber_01" }} }
+
+	state = {
+		name = 		"infantry_saber_defend_01"
+		animation = "infantry_saber_defend_01_animation"
+		start_event = { node = r_hand_attach					entity = "military_arms_saber_entity" 	keep_sound = no sound = { soundeffect = "event:/SFX/Animation/weapons/infantry/saber/anm_defend_saber_01" }} }
+
+
+	#CAVALRY BLUNDERBUSS
+
+	state = {
+		name = 		"cavalry_blunderbuss_idle_01"
+		animation = "cavalry_blunderbuss_idle_01_animation"
+		start_event = { node = r_hand_attach					entity = "military_arms_blunderbuss_entity" } }
+
+	state = {
+		name = 		"cavalry_blunderbuss_idle_02"
+		animation = "cavalry_blunderbuss_idle_02_animation"
+		start_event = { node = r_hand_attach					entity = "military_arms_blunderbuss_entity" } }
+	
+	state = {
+		name = 		"cavalry_blunderbuss_walk_01"
+		animation = "cavalry_blunderbuss_walk_01_animation" 
+		start_event = { node = r_hand_attach					entity = "military_arms_blunderbuss_entity" } }
+
+	state = {
+		name = 		"cavalry_blunderbuss_victory_01"
+		animation = "cavalry_blunderbuss_victory_01_animation" 
+		start_event = { node = r_hand_attach					entity = "military_arms_blunderbuss_entity" } }
+
+	state = {
+		name = 		"cavalry_blunderbuss_defeat_01"
+		animation = "cavalry_blunderbuss_defeat_01_animation"
+		looping = 	no
+		start_event = { node = r_hand_attach					entity = "military_arms_blunderbuss_entity" } }
+
+	state = {
+		name = 		"cavalry_blunderbuss_defeat_02"
+		animation = "cavalry_blunderbuss_defeat_02_animation"
+		looping = 	no
+		start_event = { node = r_hand_attach					entity = "military_arms_blunderbuss_entity" } }
+
+	state = {
+		name = 		"cavalry_blunderbuss_scout_01"
+		animation = "cavalry_blunderbuss_scout_01_animation"
+		start_event = { node = r_hand_attach					entity = "military_arms_blunderbuss_entity" } }
+
+	state = {
+		name = 		"cavalry_blunderbuss_scout_02"
+		animation = "cavalry_blunderbuss_scout_02_animation"
+		start_event = { node = r_hand_attach					entity = "military_arms_blunderbuss_entity" } }
+
+
+	#CAVALRY SABER
+	
+	state = {
+		name = 		"cavalry_saber_walk_01"
+		animation = "cavalry_saber_walk_01_animation"
+		start_event = { node = r_hand_attach					entity = "military_arms_saber_entity" } }
+}
+
+entity = {
+	clone = 		"military_infantry_european_t2_entity"
+	name = 			"military_infantry_european_t1_entity"
+	pdxmesh = 		"modern_infantry_mesh"
+}
+
+entity = {
+	clone = 		"military_infantry_european_t2_entity"
+	name = 			"military_infantry_european_t3_entity"
+	pdxmesh = 		"modern_infantry_mesh"
+}
+
+entity = {
+	clone = 		"military_infantry_european_t2_entity"
+	name = 			"military_infantry_african_t1_entity"
+	pdxmesh = 		"modern_infantry_mesh"
+}
+
+entity = {
+	clone = 		"military_infantry_european_t2_entity"
+	name = 			"military_infantry_african_t2_entity"
+	pdxmesh = 		"modern_infantry_mesh"
+}
+
+entity = {
+	clone = 		"military_infantry_european_t2_entity"
+	name = 			"military_infantry_african_t3_entity"
+	pdxmesh = 		"modern_infantry_mesh"
+}
+
+entity = {
+	clone = 		"military_infantry_european_t2_entity"
+	name = 			"military_infantry_arabic_t1_entity"
+	pdxmesh = 		"modern_infantry_mesh"
+}
+
+entity = {
+	clone = 		"military_infantry_european_t2_entity"
+	name = 			"military_infantry_arabic_t2_entity"
+	pdxmesh = 		"modern_infantry_mesh"
+}
+
+entity = {
+	clone = 		"military_infantry_european_t2_entity"
+	name = 			"military_infantry_arabic_t3_entity"
+	pdxmesh = 		"modern_infantry_mesh"
+}
+
+entity = {
+	clone = 		"military_infantry_european_t2_entity"
+	name = 			"military_infantry_eastasian_t1_entity"
+	pdxmesh = 		"modern_infantry_mesh"
+}
+
+entity = {
+	clone = 		"military_infantry_european_t2_entity"
+	name = 			"military_infantry_eastasian_t2_entity"
+	pdxmesh = 		"modern_infantry_mesh"
+}
+
+entity = {
+	clone = 		"military_infantry_european_t2_entity"
+	name = 			"military_infantry_eastasian_t3_entity"
+	pdxmesh = 		"modern_infantry_mesh"
+}
+
+entity = {
+	clone = 		"military_infantry_european_t2_entity"
+	name = 			"military_infantry_southasian_t1_entity"
+	pdxmesh = 		"modern_infantry_mesh"
+}
+
+entity = {
+	clone = 		"military_infantry_european_t2_entity"
+	name = 			"military_infantry_southasian_t2_entity"
+	pdxmesh = 		"modern_infantry_mesh"
+}
+
+entity = {
+	clone = 		"military_infantry_european_t2_entity"
+	name = 			"military_infantry_southasian_t3_entity"
+	pdxmesh = 		"modern_infantry_mesh"
+}
+
+entity = {
+	clone = 		"military_infantry_european_t2_entity"
+	name = 			"military_infantry_nativeamerican_t1_entity"
+	pdxmesh = 		"modern_infantry_mesh"
+}
+
+
+

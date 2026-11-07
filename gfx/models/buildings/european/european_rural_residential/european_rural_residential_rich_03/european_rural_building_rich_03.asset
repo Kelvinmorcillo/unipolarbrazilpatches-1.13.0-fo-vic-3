@@ -1,0 +1,118 @@
+pdxmesh = {
+	name = "european_rural_building_rich_03_mesh"
+	file = "european_rural_building_rich_03.mesh"
+
+	scale = 2
+
+lod_percentages = {
+		lod = { index = 1 percent = 12.0 }
+		lod = { index = 2 percent = 6.0 }
+	}
+
+	meshsettings = {
+		name = "european_rural_building_rich_03|LOD_0|mesh|meshShape"
+		index = 0
+		texture_diffuse = "decal_rural_farm_hub_diffuse.dds"
+		texture_normal = "decal_rural_farm_hub_normal.dds"
+		texture_specular = "decal_rural_farm_hub_properties.dds"
+		texture = { file = "decal_city_mask_01.dds" index = 3 }
+		shader = "decal_world"
+		shader_file = "gfx/FX/pdxmesh_decal.shader"
+		subpass = "Decals"
+	}
+
+	meshsettings = {
+		name = "european_rural_building_rich_03|LOD_0|mesh|meshShape"
+		index = 1
+		texture_diffuse = "european_rural_building_rich_01_diffuse.dds"
+		texture_normal = "european_rural_building_rich_01_normal.dds"
+		texture_specular = "european_rural_building_rich_01_properties.dds"
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "european_rural_building_rich_03|LOD_0|mesh|meshShape"
+		index = 2
+		texture_diffuse = "tree_oak_002_diffuse.dds"
+		texture_normal = "tree_oak_002_normal.dds"
+		texture_specular = "tree_oak_002_properties.dds"
+		texture = { file = "tree_oak_tint_01.dds" index = 3 srgb = yes }
+		shader = "tree_colormap"
+		shader_file = "gfx/FX/tree.shader"
+	}
+
+	meshsettings = {
+		name = "european_rural_building_rich_03|LOD_1|mesh|meshShape"
+		index = 0
+		texture_diffuse = "european_rural_building_rich_01_diffuse.dds"
+		texture_normal = "european_rural_building_rich_01_normal.dds"
+		texture_specular = "european_rural_building_rich_01_properties.dds"
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "european_rural_building_rich_03|LOD_1|mesh|meshShape"
+		index = 1
+		texture_diffuse = "decal_rural_farm_hub_diffuse.dds"
+		texture_normal = "decal_rural_farm_hub_normal.dds"
+		texture_specular = "decal_rural_farm_hub_properties.dds"
+		texture = { file = "decal_city_mask_01.dds" index = 3 }
+		shader = "decal_world"
+		shader_file = "gfx/FX/pdxmesh_decal.shader"
+		subpass = "Decals"
+	}
+
+	meshsettings = {
+		name = "european_rural_building_rich_03|LOD_1|mesh|meshShape"
+		index = 2
+		texture_diffuse = "tree_oak_002_diffuse.dds"
+		texture_normal = "tree_oak_002_normal.dds"
+		texture_specular = "tree_oak_002_properties.dds"
+		texture = { file = "tree_oak_tint_01.dds" index = 3 srgb = yes }
+		shader = "tree_colormap"
+		shader_file = "gfx/FX/tree.shader"
+	}
+
+	meshsettings = {
+		name = "mesh3|meshShape"
+		index = 0
+		texture_diffuse = "decal_rural_farm_hub_diffuse.dds"
+		texture_normal = "decal_rural_farm_hub_normal.dds"
+		texture_specular = "decal_rural_farm_hub_properties.dds"
+		texture = { file = "decal_city_mask_01.dds" index = 3 }
+		shader = "decal_world"
+		shader_file = "gfx/FX/pdxmesh_decal.shader"
+		subpass = "Decals"
+	}
+
+	meshsettings = {
+		name = "mesh3|meshShape"
+		index = 1
+		texture_diffuse = "european_rural_building_rich_01_diffuse.dds"
+		texture_normal = "european_rural_building_rich_01_normal.dds"
+		texture_specular = "european_rural_building_rich_01_properties.dds"
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "mesh3|meshShape"
+		index = 2
+		texture_diffuse = "tree_oak_002_diffuse.dds"
+		texture_normal = "tree_oak_002_normal.dds"
+		texture_specular = "tree_oak_002_properties.dds"
+		texture = { file = "tree_oak_tint_01.dds" index = 3 srgb = yes }
+		shader = "tree_colormap"
+		shader_file = "gfx/FX/tree.shader"
+	}
+}
+
+entity = {
+	name = "european_rural_building_rich_03_entity"
+	pdxmesh = "european_rural_building_rich_03_mesh"
+}

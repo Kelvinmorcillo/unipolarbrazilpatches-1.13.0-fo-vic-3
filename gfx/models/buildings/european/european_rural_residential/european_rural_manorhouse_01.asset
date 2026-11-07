@@ -1,0 +1,191 @@
+pdxmesh = {
+	name = "european_rural_manorhouse_01_mesh"
+	file = "european_rural_manorhouse_01.mesh"
+
+	lod_percentages = {
+		lod = { index = 1 percent = 16.0 }
+		lod = { index = 2 percent = 8.0 }
+		lod = { index = 3 percent = 4.0 }
+	}
+
+	meshsettings = {
+		name = "european_rural_manorhouse_decallocal_0Shape"
+		index = 0
+		texture_diffuse = "european_city_manorhouse_decallocal_diffuse.dds"
+		texture_normal = "european_city_manorhouse_decallocal_normal.dds"
+		texture_specular = "european_city_manorhouse_decallocal_properties.dds"
+		shader = "decal_local"
+		shader_file = "gfx/FX/pdxmesh_decal.shader"
+		subpass = "LocalDecals"
+	}
+
+	meshsettings = {
+		name = "european_rural_manorhouse_decalworld_0Shape"
+		index = 0
+		texture_diffuse = "decal_rural_farm_hub_diffuse.dds"
+		texture_normal = "decal_rural_farm_hub_normal.dds"
+		texture_specular = "decal_rural_farm_hub_properties.dds"
+		texture = { file = "decal_city_mask_01.dds" index = 3 }
+		shader = "decal_world"
+		shader_file = "gfx/FX/pdxmesh_decal.shader"
+		subpass = "Decals"
+	}
+
+	meshsettings = {
+		name = "european_rural_manorhouse_Shape0"
+		index = 0
+		texture_diffuse = "european_rural_manorhouse_diffuse.dds"
+		texture_normal = "european_rural_manorhouse_normal.dds"
+		texture_specular = "european_rural_manorhouse_properties.dds"
+		texture = { file = "european_rural_manorhouse_tint.dds" index = 5 }
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TINT_COLOR" "EMISSIVE_NIGHT" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "european_rural_manorhouse_foliage_Shape0"
+		index = 0
+		texture_diffuse = "tree_fir_diffuse.dds"
+		texture_normal = "tree_fir_normal.dds"
+		texture_specular = "tree_fir_properties.dds"
+		texture = { file = "tree_oak_tint_01.dds" index = 3 srgb = yes }
+		shader = "tree_colormap"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TREE_BUSH" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/tree.shader"
+	}
+
+	meshsettings = {
+		name = "european_rural_manorhouse_decallocal_1Shape"
+		index = 0
+		texture_diffuse = "european_city_manorhouse_decallocal_diffuse.dds"
+		texture_normal = "european_city_manorhouse_decallocal_normal.dds"
+		texture_specular = "european_city_manorhouse_decallocal_properties.dds"
+		shader = "decal_local"
+		shader_file = "gfx/FX/pdxmesh_decal.shader"
+		subpass = "LocalDecals"
+	}
+
+	meshsettings = {
+		name = "european_rural_manorhouse_decalworld_1Shape"
+		index = 0
+		texture_diffuse = "decal_rural_farm_hub_diffuse.dds"
+		texture_normal = "decal_rural_farm_hub_normal.dds"
+		texture_specular = "decal_rural_farm_hub_properties.dds"
+		texture = { file = "decal_city_mask_01.dds" index = 3 }
+		shader = "decal_world"
+		shader_file = "gfx/FX/pdxmesh_decal.shader"
+		subpass = "Decals"
+	}
+
+	meshsettings = {
+		name = "european_rural_manorhouse_Shape1"
+		index = 0
+		texture_diffuse = "european_rural_manorhouse_diffuse.dds"
+		texture_normal = "european_rural_manorhouse_normal.dds"
+		texture_specular = "european_rural_manorhouse_properties.dds"
+		texture = { file = "european_rural_manorhouse_tint.dds" index = 5 }
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TINT_COLOR" "EMISSIVE_NIGHT" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "european_rural_manorhouse_foliage_Shape1"
+		index = 0
+		texture_diffuse = "tree_fir_diffuse.dds"
+		texture_normal = "tree_fir_normal.dds"
+		texture_specular = "tree_fir_properties.dds"
+		texture = { file = "tree_oak_tint_01.dds" index = 3 srgb = yes }
+		shader = "tree_colormap"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TREE_BUSH" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/tree.shader"
+	}
+
+	meshsettings = {
+		name = "european_rural_manorhouse_decallocal_2Shape"
+		index = 0
+		texture_diffuse = "european_city_manorhouse_decallocal_diffuse.dds"
+		texture_normal = "european_city_manorhouse_decallocal_normal.dds"
+		texture_specular = "european_city_manorhouse_decallocal_properties.dds"
+		shader = "decal_local"
+		shader_file = "gfx/FX/pdxmesh_decal.shader"
+		subpass = "LocalDecals"
+	}
+
+	meshsettings = {
+		name = "european_rural_manorhouse_decalworld_2Shape"
+		index = 0
+		texture_diffuse = "decal_rural_farm_hub_diffuse.dds"
+		texture_normal = "decal_rural_farm_hub_normal.dds"
+		texture_specular = "decal_rural_farm_hub_properties.dds"
+		texture = { file = "decal_city_mask_01.dds" index = 3 }
+		shader = "decal_world"
+		shader_file = "gfx/FX/pdxmesh_decal.shader"
+		subpass = "Decals"
+	}
+
+	meshsettings = {
+		name = "european_rural_manorhouse_Shape2"
+		index = 0
+		texture_diffuse = "european_rural_manorhouse_diffuse.dds"
+		texture_normal = "european_rural_manorhouse_normal.dds"
+		texture_specular = "european_rural_manorhouse_properties.dds"
+		texture = { file = "european_rural_manorhouse_tint.dds" index = 5 }
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TINT_COLOR" "EMISSIVE_NIGHT" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "european_rural_manorhouse_foliage_Shape2"
+		index = 0
+		texture_diffuse = "tree_fir_diffuse.dds"
+		texture_normal = "tree_fir_normal.dds"
+		texture_specular = "tree_fir_properties.dds"
+		texture = { file = "tree_oak_tint_01.dds" index = 3 srgb = yes }
+		shader = "tree_colormap"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TREE_BUSH" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/tree.shader"
+	}
+
+	meshsettings = {
+		name = "european_rural_manorhouse_decallocal_3Shape"
+		index = 0
+		texture_diffuse = "european_city_manorhouse_decallocal_diffuse.dds"
+		texture_normal = "european_city_manorhouse_decallocal_normal.dds"
+		texture_specular = "european_city_manorhouse_decallocal_properties.dds"
+		shader = "decal_local"
+		shader_file = "gfx/FX/pdxmesh_decal.shader"
+		subpass = "LocalDecals"
+	}
+
+	meshsettings = {
+		name = "european_rural_manorhouse_decalworld_3Shape"
+		index = 0
+		texture_diffuse = "decal_rural_farm_hub_diffuse.dds"
+		texture_normal = "decal_rural_farm_hub_normal.dds"
+		texture_specular = "decal_rural_farm_hub_properties.dds"
+		texture = { file = "decal_city_mask_01.dds" index = 3 }
+		shader = "decal_world"
+		shader_file = "gfx/FX/pdxmesh_decal.shader"
+		subpass = "Decals"
+	}
+
+	meshsettings = {
+		name = "european_rural_manorhouse_Shape3"
+		index = 0
+		texture_diffuse = "european_rural_manorhouse_diffuse.dds"
+		texture_normal = "european_rural_manorhouse_normal.dds"
+		texture_specular = "european_rural_manorhouse_properties.dds"
+		texture = { file = "european_rural_manorhouse_tint.dds" index = 5 }
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TINT_COLOR" "EMISSIVE_NIGHT" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+}
+
+entity = {
+	name = "european_rural_manorhouse_01_entity"
+	pdxmesh = "european_rural_manorhouse_01_mesh"
+}

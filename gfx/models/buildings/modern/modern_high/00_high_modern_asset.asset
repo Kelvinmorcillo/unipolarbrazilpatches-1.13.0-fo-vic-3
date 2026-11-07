@@ -1,0 +1,271 @@
+pdxmesh = {
+	name = "high_modern_01_mesh"
+	file = "high_modern_01.mesh"
+
+	scale = 2
+
+lod_percentages = {
+		lod = { index = 1 percent = 12.0 }
+		lod = { index = 2 percent = 6.0 }
+	}
+
+	meshsettings = {
+		name = "metlife.004"
+		index = 0
+		texture_diffuse = "high_modern_01_diffuse.dds"
+		texture_normal = "normal.dds"
+		texture_specular = "properties.dds"
+		shader = "standard"
+		texture = { file = "modern_building_gradient.dds" index = 3 srgb = yes }
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TINT_COLOR" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+}
+
+entity = {
+	name = "high_modern_01_entity"
+	pdxmesh = "high_modern_01_mesh"
+}
+
+pdxmesh = {
+	name = "american_high_modern_01_mesh"
+	file = "american_high_modern_01.mesh"
+
+	scale = 2
+
+lod_percentages = {
+		lod = { index = 1 percent = 12.0 }
+		lod = { index = 2 percent = 6.0 }
+	}
+
+	meshsettings = {
+		name = "american_modern_high_01.001"
+		index = 0
+		texture_diffuse = "american_high_modern.dds"
+		texture_normal = "normal.dds"
+		texture = { file = "modern_building_gradient.dds" index = 3 srgb = yes }
+		texture_specular = "properties.dds"
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TINT_COLOR" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+}
+
+entity = {
+	name = "american_high_modern_01_mesh_entity"
+	pdxmesh = "american_high_modern_01_mesh"
+}
+
+pdxmesh = {
+	name = "high_modern_02_mesh"
+	file = "high_modern_02.mesh"
+
+	scale = 2
+
+	lod_percentages = {
+		lod = { index = 1 percent = 12.0 }
+		lod = { index = 2 percent = 6.0 }
+	}
+
+	meshsettings = {
+		name = "high_modern_2"
+		index = 0
+		texture_diffuse = "high_modern_02_diffuse.dds"
+		texture = { file = "modern_building_gradient.dds" index = 3 srgb = yes }
+		texture_normal = "normal_2.dds"
+		texture_specular = "properties.dds"
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TINT_COLOR" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+}
+
+entity = {
+	name = "high_modern_02_entity"
+	pdxmesh = "high_modern_02_mesh"
+}
+
+pdxmesh = {
+	name = "high_modern_03_mesh"
+	file = "high_modern_03.mesh"
+
+	scale = 2
+
+	lod_percentages = {
+		lod = { index = 1 percent = 12.0 }
+		lod = { index = 2 percent = 6.0 }
+	}
+
+	meshsettings = {
+		name = "high_modern_03.001"
+		index = 0
+		texture_diffuse = "high_modern_03_diffuse.dds"
+		texture = { file = "modern_building_gradient.dds" index = 3 srgb = yes }
+		texture_normal = "normal.dds"
+		texture_specular = "properties.dds"
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TINT_COLOR" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+}
+
+entity = {
+	name = "high_modern_03_entity"
+	pdxmesh = "high_modern_03_mesh"
+}
+
+pdxmesh = {
+	name = "high_modern_04_mesh"
+	file = "modern_high_04.mesh"
+
+	scale = 2
+
+	lod_percentages = {
+		lod = { index = 1 percent = 12.0 }
+		lod = { index = 2 percent = 6.0 }
+	}
+
+	meshsettings = {
+		name = "modern_high_04.001"
+		index = 0
+		texture_diffuse = "high_modern_04_diffuse.dds"
+		texture_normal = "normal_3.dds"
+		texture_specular = "properties.dds"
+		texture = { file = "modern_building_gradient.dds" index = 3 srgb = yes }
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TINT_COLOR" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+}
+
+entity = {
+	name = "high_modern_04_entity"
+	pdxmesh = "high_modern_04_mesh"
+}
+
+pdxmesh = {
+	name = "high_modern_asian_02_mesh"
+	file = "high_modern_asian_02.mesh"
+
+	scale = 2
+
+	lod_percentages = {
+		lod = { index = 1 percent = 12.0 }
+		lod = { index = 2 percent = 6.0 }
+	}
+
+	meshsettings = {
+		name = "modern_asian_high_02.001"
+		index = 0
+		texture_diffuse = "high_modern_asian_02.dds"
+		texture = { file = "modern_building_gradient.dds" index = 3 srgb = yes }
+		texture_normal = "normal_none.dds"
+		texture_specular = "properties.dds"
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TINT_COLOR" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+}
+
+entity = {
+	name = "high_modern_asian_02_entity"
+	pdxmesh = "high_modern_asian_02_mesh"
+}
+
+pdxmesh = {
+	name = "high_modern_asian_01_mesh"
+	file = "high_modern_asian_01.mesh"
+
+	scale = 2
+
+	lod_percentages = {
+		lod = { index = 1 percent = 12.0 }
+		lod = { index = 2 percent = 6.0 }
+	}
+
+	meshsettings = {
+		name = "high_asian_modern_01"
+		index = 0
+		texture_diffuse = "high_modern_asian_01.dds"
+		texture = { file = "modern_building_gradient.dds" index = 3 srgb = yes }
+		texture_normal = "normal_5.dds"
+		texture_specular = "properties.dds"
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TINT_COLOR" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+}
+
+entity = {
+	name = "high_modern_asian_01_entity"
+	pdxmesh = "high_modern_asian_01_mesh"
+}
+
+### superhigh
+
+pdxmesh = {
+	name = "superhigh_modern_01_mesh"
+	file = "superhigh_modern_01.mesh"
+
+	scale = 2
+
+	lod_percentages = {
+		lod = { index = 1 percent = 12.0 }
+		lod = { index = 2 percent = 6.0 }
+	}
+
+	meshsettings = {
+		name = "superhigh_modern_01"
+		index = 0
+		texture_diffuse = "superhigh_modern_01_diffuse.dds"
+		texture = { file = "modern_building_gradient.dds" index = 3 srgb = yes }
+		texture_normal = "normal.dds"
+		texture_specular = "properties.dds"
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TINT_COLOR" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+}
+
+entity = {
+	name = "superhigh_modern_01_entity"
+	pdxmesh = "superhigh_modern_01_mesh"
+}
+
+pdxmesh = {
+	name = "superhigh_modern_02_mesh"
+	file = "superhigh_modern_02.mesh"
+
+	scale = 2
+
+	lod_percentages = {
+		lod = { index = 1 percent = 12.0 }
+		lod = { index = 2 percent = 6.0 }
+	}
+
+	meshsettings = {
+		name = "modern_superhigh_02"
+		index = 0
+		texture_diffuse = "superhigh_modern_02_diffuse.dds"
+		texture = { file = "modern_building_gradient.dds" index = 3 srgb = yes }
+		texture_normal = "normal.dds"
+		texture_specular = "properties.dds"
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TINT_COLOR" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+}
+
+entity = {
+	name = "superhigh_modern_02_entity"
+	pdxmesh = "superhigh_modern_02_mesh"
+}

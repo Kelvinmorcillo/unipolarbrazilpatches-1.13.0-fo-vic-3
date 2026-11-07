@@ -1,0 +1,343 @@
+﻿
+#################################################
+###       			MOTORS 		 			  ###
+#################################################
+
+motor_dirt_road_route_graphics = {
+	valid_spline_styles = { "dirtroad" "pavedroad" }
+
+	speed = 1.5
+	min_caravan_distance = 5.0
+	max_count = 1200
+	max_path_length = 4
+
+	tags = {
+		car = {
+			trigger = {
+				gfx_car_condition_trigger = yes
+			}
+		}
+		truck = {
+			trigger = {
+				gfx_truck_condition_trigger = yes
+			}
+		}
+		tractor = {
+			trigger = {
+				gfx_tracktor_condition_trigger = yes
+			}
+		}
+	}
+
+	route_entities = {
+		car_01 = {
+			tags = { car }
+			entity = "european_car_01_entity"
+			position = 0
+			entity_length = 3.0
+		}
+		
+		empty_1 = {
+			tags = { car }
+			entity = ""
+			position = 1
+			entity_length = 3.0
+		}
+		
+		empty_2 = {
+			tags = { car }
+			entity = ""
+			position = 2
+			entity_length = 3.0
+		}
+		
+		car_02 = {
+			tags = { car }
+			entity = "european_car_01_entity"
+			position = 3
+			entity_length = 3.0
+		}
+		
+		empty_3 = {
+			tags = { car }
+			entity = ""
+			position = 4
+			entity_length = 3.0
+		}
+		
+		empty_4 = {
+			tags = { car }
+			entity = ""
+			position = 5
+			entity_length = 3.0
+		}
+		
+		empty_5 = {
+			tags = { car }
+			entity = ""
+			position = 6
+			entity_length = 3.0
+		}
+		
+		empty_6 = {
+			tags = { car }
+			entity = ""
+			position = 7
+			entity_length = 3.0
+		}
+		
+		car_03 = {
+			tags = { car }
+			entity = "european_car_01_entity"
+			position = 8
+			entity_length = 3.0
+		}
+		
+		empty_7 = {
+			tags = { car }
+			entity = ""
+			position = 9
+			entity_length = 3.0
+		}
+		
+		empty_8 = {
+			tags = { car }
+			entity = ""
+			position = 10
+			entity_length = 3.0
+		}
+		
+		empty_9 = {
+			tags = { car }
+			entity = ""
+			position = 11
+			entity_length = 3.0
+		}
+		
+		
+		truck_01 = {
+			tags = { truck }
+			entity = "flatbed_truck_01_entity"
+			position = 12
+			entity_length = 3.0
+		}
+		
+		empty_10 = {
+			tags = { car }
+			entity = ""
+			position = 13
+			entity_length = 3.0
+		}
+		
+		empty_11 = {
+			tags = { car }
+			entity = ""
+			position = 14
+			entity_length = 3.0
+		}
+		
+		empty_12 = {
+			tags = { car }
+			entity = ""
+			position = 15
+			entity_length = 3.0
+		}
+
+		tractor_01 = {
+			tags = { tractor }
+			entity = "tractor_01_entity"
+			position = 0
+			entity_length = 3.0
+		}
+		
+		empty_13 = {
+			tags = { car }
+			entity = ""
+			position = 16
+			entity_length = 3.0
+		}
+		
+		empty_14 = {
+			tags = { car }
+			entity = ""
+			position = 17
+			entity_length = 3.0
+		}
+		
+		car_04 = {
+			tags = { car }
+			entity = "european_car_01_entity"
+			position = 18
+			entity_length = 3.0
+		}
+		
+		empty_15 = {
+			tags = { car }
+			entity = ""
+			position = 19
+			entity_length = 3.0
+		}
+		
+		truck_02 = {
+			tags = { truck }
+			entity = "flatbed_truck_01_entity"
+			position = 20
+			entity_length = 3.0
+		}
+		
+		car_05 = {
+			tags = { car }
+			entity = "european_car_01_entity"
+			position = 21
+			entity_length = 3.0
+		}
+		
+		empty_16 = {
+			tags = { car }
+			entity = ""
+			position = 22
+			entity_length = 3.0
+		}
+		
+		empty_17 = {
+			tags = { car }
+			entity = ""
+			position = 23
+			entity_length = 3.0
+		}
+		
+		car_06 = {
+			tags = { car }
+			entity = "european_car_01_entity"
+			position = 24
+			entity_length = 3.0
+		}
+		
+		empty_18 = {
+			tags = { car }
+			entity = ""
+			position = 25
+			entity_length = 3.0
+		}
+		
+		empty_19 = {
+			tags = { car }
+			entity = ""
+			position = 26
+			entity_length = 3.0
+		}
+		
+		empty_20 = {
+			tags = { car }
+			entity = ""
+			position = 27
+			entity_length = 3.0
+		}
+		
+		empty_21 = {
+			tags = { car }
+			entity = ""
+			position = 28
+			entity_length = 3.0
+		}
+		
+		car_07 = {
+			tags = { car }
+			entity = "european_car_01_entity"
+			position = 29
+			entity_length = 3.0
+		}
+		
+		empty_22 = {
+			tags = { car }
+			entity = ""
+			position = 30
+			entity_length = 3.0
+		}
+		
+		empty_23 = {
+			tags = { car }
+			entity = ""
+			position = 31
+			entity_length = 3.0
+		}
+		
+		empty_24 = {
+			tags = { car }
+			entity = ""
+			position = 32
+			entity_length = 3.0
+		}
+		
+		
+		truck_03 = {
+			tags = { truck }
+			entity = "flatbed_truck_01_entity"
+			position = 33
+			entity_length = 3.0
+		}
+		
+		empty_25 = {
+			tags = { car }
+			entity = ""
+			position = 34
+			entity_length = 3.0
+		}
+		
+		empty_26 = {
+			tags = { car }
+			entity = ""
+			position = 35
+			entity_length = 3.0
+		}
+		
+		empty_27 = {
+			tags = { car }
+			entity = ""
+			position = 36
+			entity_length = 3.0
+		}
+
+		tractor_02 = {
+			tags = { tractor }
+			entity = "tractor_01_entity"
+			position = 37
+			entity_length = 3.0
+		}
+		
+		empty_28 = {
+			tags = { car }
+			entity = ""
+			position = 38
+			entity_length = 3.0
+		}
+		
+		empty_29 = {
+			tags = { car }
+			entity = ""
+			position = 39
+			entity_length = 3.0
+		}
+		
+		car_08 = {
+			tags = { car }
+			entity = "european_car_01_entity"
+			position = 40
+			entity_length = 3.0
+		}
+		
+		empty_30 = {
+			tags = { car }
+			entity = ""
+			position = 41
+			entity_length = 3.0
+		}
+		
+		truck_04 = {
+			tags = { truck }
+			entity = "flatbed_truck_01_entity"
+			position = 42
+			entity_length = 3.0
+		}
+	}
+}

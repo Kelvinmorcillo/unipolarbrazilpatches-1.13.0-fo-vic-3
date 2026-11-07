@@ -1,0 +1,11 @@
+entity = {
+	name = "env_nuke_explosion"
+
+	cull_radius = 200
+
+	default_state = "idle"
+	state = { name = "idle" state_time = 45 looping = no chance = 1
+		event = { time = 0 particle = "smd/nuke_explosion" trigger_once = yes keep_particle = yes }
+		start_event = { sound = { soundeffect = "event:/SFX/VFX/volcano" } keep_sound = yes }
+	}
+}

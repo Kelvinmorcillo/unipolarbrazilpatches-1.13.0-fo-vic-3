@@ -1,0 +1,50 @@
+pdxmesh = {
+	name = "cargo_ship_hull_mesh"
+	file = "cargo_ship.mesh"
+
+	lod_percentages = {
+		lod = { index = 1 percent = 8.0 }
+		lod = { index = 0 percent = 8.0 }
+		lod = { index = 2 percent = 8.0 }
+	}
+
+	meshsettings = {
+		name = "cargo_ship_hull.001"
+		index = 0
+		texture_diffuse = "steam_transport_ship_details_diffuse.dds"
+		texture_normal = "steam_transport_ship_details_diffuse.dds"
+		texture_specular = "steam_transport_ship_details_diffuse.dds"
+		shader = "standard"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+}
+
+#locators:
+# steam_transport_ship_01_locator_front_body_water
+# steam_transport_ship_01_locator_back_body_water
+# steam_transport_ship_01_locator_top_body_chimney_01
+# steam_transport_ship_01_locator_top_body_chimney_02
+# steam_transport_ship_01_locator_top_body_chimney_03
+# steam_transport_ship_01_locator_front_root_water
+# steam_transport_ship_01_locator_back_root_water
+# steam_transport_ship_01_locator_waterwheel_right
+# steam_transport_ship_01_locator_waterwheel_left
+
+entity = {
+	name = "cargo_ship_entity"
+	pdxmesh = "cargo_ship_hull_mesh"
+
+	cull_radius = 10
+
+	default_state = "moving"
+	state = {
+		name = "moving"
+
+		event = { time = 0 node = "steam_transport_ship_01_locator_top_body_chimney_01" particle = "infrastructure/ship_chimney" trigger_once = yes}
+		event = { time = 0 node = "steam_transport_ship_01_locator_top_body_chimney_02" particle = "infrastructure/ship_chimney" trigger_once = yes}
+		event = { time = 0 node = "steam_transport_ship_01_locator_top_body_chimney_03" particle = "infrastructure/ship_chimney" trigger_once = yes}
+		
+		start_event = { sound  = { soundeffect = "event:/SFX/Vehicles/ships/steamboat" } keep_sound = yes }
+	}
+	 scale = 0.65
+}

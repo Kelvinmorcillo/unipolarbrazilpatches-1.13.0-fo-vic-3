@@ -1,0 +1,57 @@
+pdxmesh = {
+	name = "airport_mesh"
+	file = "airport.mesh"
+
+	scale = 2
+
+	lod_percentages = {
+		lod = { index = 1 percent = 12.0 }
+		lod = { index = 2 percent = 6.0 }
+	}
+
+	meshsettings = {
+		name = "airport.001"
+		index = 0
+		texture_diffuse = "airport_diffuse.dds"
+		texture_normal = "normal_none.dds"
+		texture_specular = "properties.dds"
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TINT_COLOR" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+}
+
+entity = {
+	name = "airport_entity"
+	pdxmesh = "airport_mesh"
+}
+
+pdxmesh = {
+	name = "modern_professional_service_mesh"
+	file = "modern_professional_service.mesh"
+
+	scale = 2
+
+	lod_percentages = {
+		lod = { index = 1 percent = 12.0 }
+		lod = { index = 2 percent = 6.0 }
+	}
+
+	meshsettings = {
+		name = "modern_professional_service"
+		index = 0
+		texture_diffuse = "professional_service_diffuse.dds"
+		texture_normal = "normal_2.dds"
+		texture_specular = "properties.dds"
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TINT_COLOR" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+}
+
+entity = {
+	name = "modern_professional_service_entity"
+	pdxmesh = "modern_professional_service_mesh"
+}

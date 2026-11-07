@@ -1,0 +1,106 @@
+pdxmesh = {
+	name = "european_port_01_2s_1d_0f_mesh"
+	file = "european_port_01_2s_1d_0f.mesh"
+
+	scale = 2
+
+lod_percentages = {
+		lod = { index = 1 percent = 40.0 }
+		lod = { index = 2 percent = 20.0 }
+	}
+
+	meshsettings = {
+		name = "european_port_01_2s_1d_0f|LOD_0|mesh|meshShape"
+		index = 0
+		texture_diffuse = "european_port_01_diffuse.dds"
+		texture_normal = "european_port_01_normal.dds"
+		texture_specular = "european_port_01_properties.dds"
+		additional_shader_defines = { "EMISSIVE_NIGHT" "SOL_VISUALS" "HUB_BUILDING" }
+		shader = "standard"
+	}
+
+	meshsettings = {
+		name = "european_port_01_2s_1d_0f|LOD_0|mesh|meshShape"
+		index = 1
+		texture_diffuse = "european_port_base_01_diffuse.dds"
+		texture_normal = "european_port_base_01_normal.dds"
+		texture_specular = "european_port_base_01_properties.dds"
+		shader = "standard"
+	}
+
+	meshsettings = {
+		name = "european_port_01_2s_1d_0f|LOD_0|mesh|meshShape"
+		index = 2
+		texture_diffuse = "general_unit_ship_01_diffuse.dds"
+		texture_normal = "general_unit_ship_01_normal.dds"
+		texture_specular = "general_unit_ship_01_properties.dds"
+		shader = "standard"
+		additional_shader_defines = { "SNAP_TO_WATER" "EMISSIVE_NIGHT" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "european_port_01_2s_1d_0f|LOD_1|mesh|meshShape"
+		index = 0
+		texture_diffuse = "european_port_01_diffuse.dds"
+		texture_normal = "european_port_01_normal.dds"
+		texture_specular = "european_port_01_properties.dds"
+		additional_shader_defines = { "EMISSIVE_NIGHT" "SOL_VISUALS" "HUB_BUILDING" }
+		shader = "standard"
+	}
+
+	meshsettings = {
+		name = "european_port_01_2s_1d_0f|LOD_1|mesh|meshShape"
+		index = 1
+		texture_diffuse = "european_port_base_01_diffuse.dds"
+		texture_normal = "european_port_base_01_normal.dds"
+		texture_specular = "european_port_base_01_properties.dds"
+		shader = "standard"
+	}
+
+	meshsettings = {
+		name = "european_port_01_2s_1d_0f|LOD_1|mesh|meshShape"
+		index = 2
+		texture_diffuse = "general_unit_ship_01_diffuse.dds"
+		texture_normal = "general_unit_ship_01_normal.dds"
+		texture_specular = "general_unit_ship_01_properties.dds"
+		shader = "standard"
+		additional_shader_defines = { "SNAP_TO_WATER" "EMISSIVE_NIGHT" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "european_port_01_2s_1d_0f|LOD_2|mesh|meshShape"
+		index = 0
+		texture_diffuse = "european_port_01_diffuse.dds"
+		texture_normal = "european_port_01_normal.dds"
+		texture_specular = "european_port_01_properties.dds"
+		additional_shader_defines = { "EMISSIVE_NIGHT" "SOL_VISUALS" "HUB_BUILDING" }
+		shader = "standard"
+	}
+
+	meshsettings = {
+		name = "european_port_01_2s_1d_0f|LOD_2|mesh|meshShape"
+		index = 1
+		texture_diffuse = "european_port_base_01_diffuse.dds"
+		texture_normal = "european_port_base_01_normal.dds"
+		texture_specular = "european_port_base_01_properties.dds"
+		shader = "standard"
+	}
+
+	meshsettings = {
+		name = "european_port_01_2s_1d_0f|LOD_2|mesh|meshShape"
+		index = 2
+		texture_diffuse = "general_unit_ship_01_diffuse.dds"
+		texture_normal = "general_unit_ship_01_normal.dds"
+		texture_specular = "general_unit_ship_01_properties.dds"
+		shader = "standard"
+		additional_shader_defines = { "SNAP_TO_WATER" "EMISSIVE_NIGHT" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+}
+
+entity = {
+	name = "european_port_01_2s_1d_0f_entity"
+	pdxmesh = "european_port_01_2s_1d_0f_mesh"
+}

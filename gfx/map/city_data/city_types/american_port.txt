@@ -1,0 +1,83 @@
+﻿american_port = {
+	city_type = port
+	center_building_entity = "european_port_02_entity"
+	center_modifiers = {
+		building_shipyards = "s"
+		building_port = "d"
+		building_fishing_wharf = "f"
+	}
+	modifier_key_prefix = "european_port_01"
+	modifier_key_suffix = "entity"
+	center_building_size = { 1 1 }
+	
+	weight = 2 #default port is always down prioritized
+	
+	trigger = {
+	any_scope_state = {
+			owner = {
+				OR = {
+					country_has_primary_culture = cu:yankee
+					country_has_primary_culture = cu:anglo_canadian
+					country_has_primary_culture = cu:dixie
+					country_has_primary_culture = cu:afro_american
+					country_has_primary_culture = cu:cajun
+				}
+			}
+		}
+	}
+	
+	min_residential_buildings = 30
+	max_residential_buildings = 200
+	max_residence_points = 250
+
+	rich_building_meshes = {
+		"mid_modern_01_mesh"
+		"high_modern_01_mesh"
+		"american_high_modern_01_mesh"
+		"high_modern_02_mesh"
+		"high_modern_03_mesh"
+		"high_modern_04_mesh"
+		"modern_medium_02"
+		"mid_modern_03_mesh"
+		"mid_modern_03_mesh"
+		"mid_modern_02_mesh"
+	}
+	
+	rich_building_offsets = {
+		position = 0.0	#in grid-space units. 1.0 means the mesh can be placed anywhere inside its allotted cell
+		rotation = 0.0	#in degrees
+	}
+	mid_building_meshes = {
+		"european_rural_building_rich_01_mesh"
+		"european_rural_building_rich_02_mesh"
+		"european_rural_building_rich_03_mesh"
+		"european_rural_building_rich_04_mesh"
+		"european_urban_residential_mid_01_mesh"
+		"european_urban_residential_mid_03_mesh"
+	}
+	mid_building_offsets = {
+		position = 0.2
+		rotation = 6.25
+	}
+	poor_building_meshes = {
+		"european_rural_building_mid_01_mesh"
+		"european_rural_building_mid_02_mesh"
+		"european_rural_building_mid_03_mesh"
+		"european_urban_residential_poor_01_mesh"
+	}
+	poor_building_offsets = {
+		position = 0.2
+		rotation = 20.0
+	}
+	building_offsets = {	#offsets for regular buildings
+		position = 0.0
+		rotation = 0.0
+	}
+	
+	building_fishing_wharf = {"colonial_manufactory_02_mesh"}
+	building_whaling_station = {"colonial_manufactory_02_mesh"}
+	building_port = {"european_city_tradecenter_01_mesh"}
+	building_naval_base = {"european_port_naval_base_01_mesh"}
+	building_shipyard = {}
+	building_naval_logistics_center = {"generic_logisticscenter_01_mesh"}
+}

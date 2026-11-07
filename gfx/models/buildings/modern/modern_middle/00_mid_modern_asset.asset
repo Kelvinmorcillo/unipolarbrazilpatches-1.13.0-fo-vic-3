@@ -1,0 +1,89 @@
+pdxmesh = {
+	name = "mid_modern_01_mesh"
+	file = "mid_modern_01.mesh"
+
+	scale = 2
+
+	lod_percentages = {
+		lod = { index = 1 percent = 12.0 }
+		lod = { index = 2 percent = 6.0 }
+	}
+
+	meshsettings = {
+		name = "mid_modern_01.002"
+		index = 0
+		texture_diffuse = "mid_modern_01_diffuse.dds"
+		texture_normal = "normal_1.dds"
+		texture_specular = "properties.dds"
+		texture = { file = "modern_building_gradient.dds" index = 3 srgb = yes }
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TINT_COLOR" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+}
+
+entity = {
+	name = "mid_modern_01_entity"
+	pdxmesh = "mid_modern_01_mesh"
+}
+
+pdxmesh = {
+	name = "mid_modern_02_mesh"
+	file = "mid_modern_02.mesh"
+
+	scale = 2
+
+	lod_percentages = {
+		lod = { index = 1 percent = 12.0 }
+		lod = { index = 2 percent = 6.0 }
+	}
+
+	meshsettings = {
+		name = "modern_medium_02.001"
+		index = 0
+		texture_diffuse = "mid_modern_02_diffuse.dds"
+		texture_normal = "normal_1.dds"
+		texture_specular = "properties.dds"
+		texture = { file = "modern_building_gradient.dds" index = 3 srgb = yes }
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TINT_COLOR" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+}
+
+entity = {
+	name = "mid_modern_02_entity"
+	pdxmesh = "mid_modern_02_mesh"
+}
+
+pdxmesh = {
+	name = "mid_modern_03_mesh"
+	file = "mid_modern_03.mesh"
+
+	scale = 2
+
+	lod_percentages = {
+		lod = { index = 1 percent = 12.0 }
+		lod = { index = 2 percent = 6.0 }
+	}
+
+	meshsettings = {
+		name = "medium_modern_03.002"
+		index = 0
+		texture_diffuse = "mid_modern_03_diffuse.dds"
+		texture_normal = "normal_1.dds"
+		texture_specular = "properties.dds"
+		texture = { file = "modern_building_gradient.dds" index = 3 srgb = yes }
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TINT_COLOR" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+}
+
+entity = {
+	name = "mid_modern_03_entity"
+	pdxmesh = "mid_modern_03_mesh"
+}

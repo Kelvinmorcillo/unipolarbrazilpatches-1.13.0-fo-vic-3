@@ -1,0 +1,18 @@
+pdxmesh = {
+	name = "m16_mesh"
+	file = "m16.mesh"
+
+	lod_percentages = {
+		lod = { index = 1 percent = 3.0 }
+	}
+
+	meshsettings = {
+		name = "jorodox.001"
+		index = 0
+		texture_diffuse = "m16_diffuse.dds"
+		texture_normal = "military_arms_02_normal.dds"
+		texture_specular = "military_arms_01_properties.dds"
+		shader = "standard"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+}

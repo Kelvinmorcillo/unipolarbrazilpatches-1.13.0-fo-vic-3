@@ -1,0 +1,725 @@
+﻿clothes = {
+	usage = game
+	selection_behavior = weighted_random
+	fallback = default_clothes
+	default_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = outfits
+				template = peasant_outfits
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = legwear
+				template = peasants_legwear
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 1
+		}
+	}
+	service_workers_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = shirt
+				template = european_shirt
+				range = {
+					0
+					0.2
+				}
+				# For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = legwear
+				template = european_legwear
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = outfits
+				template = european_working_class_outfits
+				range = {
+					0
+					0.5
+				}
+				# For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 10000
+				farmers_clothes_pop_trigger = yes
+				}
+		}
+	}
+	european_ruler_republic_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = waistcoats
+				template = european_waistcoats
+				range = {
+					0
+					0.67
+				}
+				# For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = civilian_coats
+				template = european_civilian_coats
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = legwear
+				template = european_legwear
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				ruler_clothes_trigger = yes
+					AND = {
+						exists = scope:character
+						scope:character = {
+							is_female = no
+						}
+					}
+				}
+			}
+		}
+	european_ruler_republic_clothes_female = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = outfits
+				template = european_common_outfits
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+					ruler_clothes_trigger = yes
+					AND = {
+						exists = scope:character
+						scope:character = {
+							is_female = yes
+						}
+					}
+				}
+			}
+		}
+	european_politician_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = waistcoats
+				template = european_waistcoats
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = civilian_coats
+				template = european_civilian_coats
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = legwear
+				template = european_legwear
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = props
+				template = gene_lences
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+					politician_clothes_trigger = yes
+					securocrats_clothes_trigger = no
+				}
+			}
+		}
+	european_common_executive_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = executive_overcoat
+                range = { 0 1 } # For the randomness to work correctly
+            }
+
+            accessory = {
+                mode = add
+                gene = civilian_coats
+                template = european_executive_coats
+                range = { 0 1 } # For the randomness to work correctly
+            }
+
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+
+            accessory = {
+                mode = add
+                gene = props
+                template = gene_lences
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                has_dlc_feature = mp1_cosmetics
+                AND = {
+                    OR = {
+                        AND = {
+                            politician_clothes_trigger = yes
+                            scope:character ?= {
+                                is_interest_group_type = ig_industrialists
+                            }
+                        }
+                        executive_clothes_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+	arabic_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = outfits
+				template = arabic_outfits
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				arabic_clothes_trigger = yes
+				securocrats_clothes_trigger = no
+			}
+		}
+	}
+	arabic_coats = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = coats
+				template = arabic_coats
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 500
+				AND = {
+					arabic_clothes_trigger = yes
+					OR = {
+						military_clothes_trigger = yes
+						officers_clothes_pop_trigger = yes
+						AND = {
+							securocrats_clothes_trigger = yes
+							OR = {
+								politician_clothes_trigger = yes
+								ruler_clothes_trigger = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	ethiopian_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = outfits
+				template = ethiopian_outfits
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 500
+				ethiopian_clothes_trigger = yes
+				scope:character = {
+					is_female = no
+					monarchy_clothes_trigger = no
+				}
+			}
+		}
+	}
+	ethiopian_royal_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = outfits
+				template = ethiopian_outfits
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = top_layer
+				template = ethiopian_top_layer
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = legwear
+				template = european_legwear
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 500
+				ethiopian_clothes_trigger = yes
+				scope:character = {
+					is_female = no
+					monarchy_clothes_trigger = yes
+				}
+			}
+		}
+	}
+	indian_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = outfits
+				template = indian_common_outfits
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				indian_clothes_trigger = yes
+			}
+		}
+	}
+	indian_royal_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = outfits
+				template = indian_high_outfits
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+		}
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = top_layer
+				template = indian_top_layer
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+		}
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = necklaces
+				template = indian_necklaces
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				OR = {
+					AND = {
+						indian_clothes_trigger = yes
+						monarchy_clothes_trigger = yes
+					}
+					AND = {
+						hindu_clothes_pop_trigger = yes
+						clergy_clothes_pop_trigger = yes
+					}
+				}
+			}
+		}
+	}
+	christian_character_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = outfits
+				template = christian_outfits
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 5000
+				military_clothes_trigger = no
+				exists = scope:character
+				scope:character = {
+					AND = {
+						christian_clothes_trigger = yes
+						ruler_clothes_trigger = yes
+						owner = {
+							has_law = law_type:law_theocratic
+						}
+					}
+				}
+			}
+		}
+	}
+	papal_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = outfits
+				template = pope_outfits
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 10000
+				exists = scope:character
+				exists = c:PAP
+				scope:character = {
+					ruler_clothes_trigger = yes
+					christian_clothes_trigger = yes
+					owner = c:PAP
+					owner = {
+						has_law = law_type:law_theocratic
+					}
+					is_female = no
+				}
+			}
+		}
+	}
+	#Pop Clothes
+	circumpolar_pop_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = outfits
+				template = circumpolar_outfits
+				range = {
+					0.5
+					1
+				}
+				# For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = legwear
+				template = circumpolar_legwear
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 10000
+				AND = {
+					circumpolar_clothes_pop_trigger = yes
+					OR = {
+						poor_clothes_pop_trigger = yes
+						middle_clothes_pop_trigger = yes
+						upper_clothes_pop_trigger = yes
+						clergy_clothes_pop_trigger = yes
+						servicemembers_clothes_pop_trigger = yes
+						officers_clothes_pop_trigger = yes
+					}
+				}
+			}
+			modifier = {
+				add = 500
+				exists = scope:character
+				scope:character = {
+					OR = {
+						culture = cu:siberian
+						culture = cu:siberian
+					}
+				}
+			}
+		}
+	}
+	#Indigenous Oceanic Heritage
+	indigenous_oceanic_pop_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = outfits
+				template = polynesian_outfits
+				range = {
+					0
+					0.5
+				}
+				# For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = necklaces
+				template = polynesian_necklaces
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 500
+				indigenous_oceanic_clothes_trigger = yes
+				upper_clothes_pop_trigger = no
+			}
+		}
+	}
+	
+	european_late_military_clothes = {
+        dna_modifiers = {
+           accessory = {
+               mode = add
+               gene = coats
+               template = european_late_military_coats
+               range = { 0 1 }
+            }
+
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = late_military_epaulettes
+                accessory = male_epaulettes_military_01
+            }
+
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_late_military_legwear
+               range = { 0 1 }
+            }
+
+            accessory = {
+                mode = add
+                gene = belts
+                template = late_military_belts
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2000
+                OR = {
+					scope:character ?= {
+					AND = {
+                            has_role_of_type = agitator
+                            is_interest_group_type = ig_armed_forces
+                        }
+					}
+                    scope:character ?= {
+                        has_role_of_type = general
+                    }
+					scope:character ?= {
+                        has_role_of_type = admiral
+                    }
+                    AND = {
+                        armed_forces_clothes_trigger = yes
+                        politician_clothes_trigger = yes
+                        monarchy_clothes_trigger = no
+                    }
+                }
+            }
+            modifier = { 
+                add = 20000
+                        OR = {
+							scope:character ?= {
+								has_role_of_type = general
+							}
+							scope:character ?= {
+								has_role_of_type = admiral
+							}
+							officers_clothes_pop_trigger = yes
+                            soldier_clothes_pop_trigger = yes
+                        }
+                    }
+                }
+            }
+
+    european_military_late_female_clothes = { 
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = female_coat_european_military_01
+                range = { 0 1 } 
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_late_military_female_legwear
+                range = { 0 1 } 
+            }
+        } 
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+
+                scope:character ?= {
+                    is_female = yes
+
+                    exists = owner
+
+                    OR = {
+                        has_role_of_type = general
+                        has_role_of_type = admiral
+                        AND = {
+                            is_interest_group_type = ig_armed_forces
+                            has_role_of_type = politician
+                            OR = {  # A monarch shouldn't wear this, but a republican ruler can
+                                AND = {
+                                    is_ruler_of_own_country = no
+                                    home_country ?= {
+                                        has_law = law_type:law_monarchy
+                                    }
+                                }
+                                AND = {
+                                    is_ruler_of_own_country = yes
+                                    home_country ?= {
+                                        NOT = { has_law = law_type:law_monarchy }
+                                    }
+                                }
+                            }
+                        }
+                        AND = {
+                            has_role_of_type = agitator
+                            is_interest_group_type = ig_armed_forces
+                        }
+                    }
+                }
+            }
+        }
+    }
+	
+}

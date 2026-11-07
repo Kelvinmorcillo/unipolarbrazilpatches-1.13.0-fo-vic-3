@@ -1,0 +1,31 @@
+pdxmesh = {
+	name = "low_modern_02_mesh"
+	file = "low_modern_02.mesh"
+
+	scale = 2
+
+	lod_percentages = {
+		lod = { index = 1 percent = 12.0 }
+		lod = { index = 2 percent = 6.0 }
+	}
+
+	meshsettings = {
+		name = "low_modern_02.003"
+		index = 0
+		texture_diffuse = "modern_low_02_diffuse.dds"
+		texture = { file = "gradient_2.dds" index = 3 srgb = yes }
+		texture_normal = "normal_2.dds"
+		texture_specular = "properties.dds"
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TINT_COLOR" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+}
+
+entity = {
+	name = "low_modern_02_entity"
+	pdxmesh = "low_modern_02_mesh"
+}
+
+# 01 was corrupted. too exhausted to go fix that shit lowk

@@ -1,0 +1,220 @@
+﻿#diorama_entity_example = {
+#	# The asset to show
+#	entity = "military_barricade_irregular_01_entity"
+#
+#	# Group is used in diorama script to determine which entities to pick the entity from for each diorama locator
+#	group = "barricade"
+#
+#	# Trigger to check if the current entity is valid to show in the diorama
+#	# root - country of the unit
+#	# scope:country - country of the unit (same as root)
+#	# scope:culture - culture of the unit
+#	# scope:combat_unit_type - combat unit type
+#	trigger = {
+#		scope:country = {
+#			has_technology_researched = rifling
+#		}
+#		scope:culture = {
+#			has_culture_graphics = european
+#		}
+#		scope:combat_unit_type = unit_type:combat_unit_type_irregular_infantry
+#	}
+#}
+
+
+
+#################################################################
+#####						MISC ASSETS						#####
+#################################################################
+
+### Aerial Recon ###
+
+REPLACE_OR_CREATE:generic_aerial_bleriotxi_01_diorama_entity = {
+	entity = "generic_aerial_bleriotxi_01_entity"
+
+	group = "cavalry"
+
+	trigger = {
+		OR = {
+		scope:combat_unit_type = unit_type:combat_unit_type_fixed_wing_aircraft
+		scope:combat_unit_type = unit_type:combat_unit_type_multirole_aircraft
+		scope:combat_unit_type = unit_type:combat_unit_type_stealth_aircraft
+		scope:combat_unit_type = unit_type:combat_unit_type_uav
+		scope:combat_unit_type = unit_type:combat_unit_type_autonomous_aircraft
+		}
+	}
+}
+
+
+### Machinegunner ###
+
+REPLACE_OR_CREATE:military_support_european_machinegunner_diorama_entity = {
+	entity = "military_support_european_machinegunner_entity"
+
+	group = "machinegunner"
+
+	trigger = {
+
+		scope:culture = {
+			has_culture_graphics = european
+		}
+
+		scope:military_formation = {
+			has_mobilization_option = mobilization_option:mobilization_option_machinegunners
+		}
+	}
+}
+
+REPLACE_OR_CREATE:military_support_african_machinegunner_diorama_entity = {
+	entity = "military_support_african_machinegunner_entity"
+
+	group = "machinegunner"
+
+	trigger = {
+
+		scope:culture = {
+			has_culture_graphics = african
+		}
+
+		scope:military_formation = {
+			has_mobilization_option = mobilization_option:mobilization_option_machinegunners
+		}
+	}
+}
+
+REPLACE_OR_CREATE:military_support_arabic_machinegunner_diorama_entity = {
+	entity = "military_support_arabic_machinegunner_entity"
+
+	group = "machinegunner"
+
+	trigger = {
+
+		scope:culture = {
+			has_culture_graphics = arabic
+		}
+
+		scope:military_formation = {
+			has_mobilization_option = mobilization_option:mobilization_option_machinegunners
+		}
+	}
+}
+
+REPLACE_OR_CREATE:military_support_eastasian_machinegunner_diorama_entity = {
+	entity = "military_support_eastasian_machinegunner_entity"
+
+	group = "machinegunner"
+
+	trigger = {
+
+		scope:culture = {
+			has_culture_graphics = east_asian
+		}
+
+		scope:military_formation = {
+			has_mobilization_option = mobilization_option:mobilization_option_machinegunners
+		}
+	}
+}
+
+REPLACE_OR_CREATE:military_support_southasian_machinegunner_diorama_entity = {
+	entity = "military_support_southasian_machinegunner_entity"
+
+	group = "machinegunner"
+
+	trigger = {
+
+		scope:culture = {
+			has_culture_graphics = south_asian
+		}
+
+		scope:military_formation = {
+			has_mobilization_option = mobilization_option:mobilization_option_machinegunners
+		}
+	}
+}
+
+REPLACE_OR_CREATE:military_support_nativeamerican_machinegunner_diorama_entity = {
+	entity = "military_support_nativeamerican_machinegunner_entity"
+
+	group = "machinegunner"
+
+	trigger = {
+
+		scope:culture = {
+			has_culture_graphics = decentralised_americas
+		}
+
+		scope:military_formation = {
+			has_mobilization_option = mobilization_option:mobilization_option_machinegunners
+		}
+	}
+}
+
+
+
+### Chemical Warfare ###
+
+REPLACE_OR_CREATE:military_support_chemical_warfare_diorama_entity = {
+	entity = "military_support_chemical_warfare_entity"
+
+	group = "chemical_warfare"
+
+	trigger = {
+		scope:attacker = yes
+
+		scope:military_formation = {
+			has_mobilization_option = mobilization_option:mobilization_option_chemical_weapons
+		}
+	}
+}
+
+REPLACE_OR_CREATE:military_support_chemical_warfare_cloud_diorama_entity = {
+	entity = "military_support_chemical_warfare_cloud_entity"
+
+	group = "chemical_warfare_cloud"
+
+	trigger = {
+		scope:attacker = yes
+
+		scope:military_formation = {
+			has_mobilization_option = mobilization_option:mobilization_option_chemical_weapons
+		}
+	}
+}
+
+
+
+### Medic ###
+
+REPLACE_OR_CREATE:military_medical_fieldhospitals_diorama_entity = {
+	entity = "military_medical_fieldhospitals_entity"
+
+	group = "fieldhospital"
+
+	trigger = {
+
+		scope:military_formation = {
+			has_mobilization_option = mobilization_option:mobilization_option_field_hospitals
+		}
+	}
+}
+
+REPLACE_OR_CREATE:military_medical_firstaid_diorama_entity = {
+	entity = "military_medical_firstaid_entity"
+
+	group = "firstaid"
+
+	trigger = {
+		OR = {
+			scope:military_formation = {
+				has_mobilization_option = mobilization_option:mobilization_option_field_hospitals
+			}
+			scope:military_formation = {
+				has_mobilization_option = mobilization_option:mobilization_option_first_aid
+			}
+			scope:military_formation = {
+				has_mobilization_option = mobilization_option:mobilization_option_medevac
+			}
+		}
+	}
+}

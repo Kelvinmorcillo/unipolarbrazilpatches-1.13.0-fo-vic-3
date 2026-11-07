@@ -1,0 +1,849 @@
+﻿# A media alias is a way to refer to a media asset along with a fallback,
+# so that if the original asset is unavailable, the game uses the fallback asset.
+#
+# key = {
+#	texture = "texture path"
+#	video = "video path"
+#	audio = "audio event"
+#
+#	fallback = another_media_alias_key
+#}
+
+#SMD new vids
+
+nuclear_explosion = {
+	video = "gfx/event_pictures/nuclear_explosion.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+olympics = {
+	video = "gfx/event_pictures/olympics.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+mass_shooting = {
+	video = "gfx/event_pictures/shooting.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+bodycam = {
+	video = "gfx/event_pictures/bodycam.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+testifying = {
+	video = "gfx/event_pictures/testifying.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+obama = {
+	video = "gfx/event_pictures/meeting.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+sports_victory = {
+	video = "gfx/event_pictures/sports_victory.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+whitehouse = {
+	video = "gfx/event_pictures/whitehouse.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+congress = {
+	video = "gfx/event_pictures/congress.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+tornadoes = {
+	video = "gfx/event_pictures/tornadoes.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+flares = {
+	video = "gfx/event_pictures/flares.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+apc = {
+	video = "gfx/event_pictures/apc.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+bombed_city = {
+	video = "gfx/event_pictures/bombed_city.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+drone_attack = {
+	video = "gfx/event_pictures/drone_attack.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+gunner = {
+	video = "gfx/event_pictures/machine_gun.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+police_dog = {
+	video = "gfx/event_pictures/police_dog.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+helicopter_attack = {
+	video = "gfx/event_pictures/helicopter_attack.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+football = {
+	video = "gfx/event_pictures/football_2.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+sports_defeat = {
+	video = "gfx/event_pictures/sports_defeat.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+covid = {
+	video = "gfx/event_pictures/covid.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+windmills = {
+	video = "gfx/event_pictures/windmills.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+room_clearing = {
+	video = "gfx/event_pictures/room_clearing.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+arab_spring = {
+	video = "gfx/event_pictures/arab_spring.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+opposition_speaker = {
+	video = "gfx/event_pictures/opposition_speaker.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+libyan_society = {
+	video = "gfx/event_pictures/libyansociety.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+injured_agitator = {
+	video = "gfx/event_pictures/injured_agitator.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+
+burnt_building = {
+	video = "gfx/event_pictures/burnt_building-1.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+gaddafi = {
+	video = "gfx/event_pictures/gaddafi.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+9_11 = {
+	video = "gfx/event_pictures/911.bk2"
+	audio = "file:/sound/smd_audios/911.mp3"
+}
+
+columbine = {
+	video = "gfx/event_pictures/columbine.bk2"
+	audio = "file:/sound/smd_audios/newsflash.mp3"
+}
+
+helicopter = {
+	video = "gfx/event_pictures/helicopter.bk2"
+	audio = "file:/sound/smd_audios/city_center.mp3"
+}
+
+1993_russian_crisis = {
+	video = "gfx/event_pictures/1993_russian_crisis.bk2"
+	audio = "file:/sound/smd_audios/war1.mp3"
+}
+
+stormingofwhitehouse = {
+	video = "gfx/event_pictures/stormingofwhitehouse.bk2"
+	audio = "file:/sound/smd_audios/war1.mp3"
+}
+
+rodney_king = {
+	video = "gfx/event_pictures/rodneyking.bk2"
+	audio = "sound/smd_audios/newsflash.mp3"
+}
+
+north_hollywood_shootout = {
+	video = "gfx/event_pictures/shootout.bk2"
+	audio = "file:/sound/smd_audios/war1.mp3"
+}
+
+church = {
+	video = "gfx/event_pictures/church.bk2"
+	audio = "file:/sound/smd_audios/newsflash.mp3"
+}
+
+early_computer = {
+	video = "gfx/event_pictures/early_computer.bk2"
+	audio = "file:/sound/smd_audios/newsflash.mp3"
+}
+
+
+iraq_war = {
+	video = "gfx/event_pictures/iraq_war.bk2"
+	audio = "file:/sound/smd_audios/war1.mp3"
+}
+
+parliament = {
+	video = "gfx/event_pictures/parliament.bk2"
+	audio = "file:/sound/smd_audios/newsflash.mp3"
+}
+
+safari = {
+	video = "gfx/event_pictures/safari.bk2"
+	audio = "file:/sound/smd_audios/newsflash.mp3"
+}
+
+waronterror = {
+	video = "gfx/event_pictures/waronterror.bk2"
+	audio = "file:/sound/smd_audios/war1.mp3"
+}
+
+yugoslav_war = {
+	video = "gfx/event_pictures/yugoslav_war.bk2"
+	audio = "file:/sound/smd_audios/war1.mp3"
+}
+
+law = {
+	video = "gfx/event_pictures/law.bk2"
+	audio = "file:/sound/smd_audios/war1.mp3"
+}
+
+rain = {
+	video = "gfx/event_pictures/rain.bk2"
+	audio = "file:/sound/smd_audios/arctic.mp3"
+}
+
+1993stormofthecentury = {
+	video = "gfx/event_pictures/1993stormofthecentury.bk2"
+	audio = "file:/sound/smd_audios/arctic.mp3"
+}
+
+greatfloodof1993 = {
+	video = "gfx/event_pictures/greatfloodof1993.bk2"
+	audio = "file:/sound/smd_audios/arctic.mp3"
+}
+
+fighterjets = {
+	video = "gfx/event_pictures/fighterjets.bk2"
+	audio = "file:/sound/smd_audios/war1.mp3"
+}
+
+############## old
+
+africa_animism = {
+	video = "gfx/event_pictures/african_villagers.bk2"
+	audio = "event:/SFX/Events/africa/animism"
+}
+
+africa_city_center = {
+	video = "gfx/event_pictures/roadway2.bk2"
+	audio = "event:/SFX/Events/africa/city_center"
+}
+
+africa_construction_colony = {
+	video = "gfx/event_pictures/construction_2.bk2"
+	audio = "event:/SFX/Events/africa/construction_colony"
+}
+
+africa_desert_expedition = {
+	video = "gfx/event_pictures/animal.bk2"
+	audio = "event:/SFX/Events/africa/desert_expedition"
+}
+
+africa_diplomats_negotiating = {
+	video = "gfx/event_pictures/signing.bk2"
+	audio = "event:/SFX/Events/africa/diplomats_negotiating"
+}
+
+africa_leader_arguing = {
+	video = "gfx/event_pictures/protest1.bk2"
+	audio = "event:/SFX/Events/africa/leader_arguing"
+}
+
+africa_prosperous_farm = {
+	video = "gfx/event_pictures/agriculture.bk2"
+	audio = "event:/SFX/Events/africa/prosperous_farm"
+}
+
+africa_public_protest = {
+	video = "gfx/event_pictures/demonstration.bk2"
+	audio = "event:/SFX/Events/africa/public_protest"
+}
+
+africa_soldiers_breaking_protest = {
+	video = "gfx/event_pictures/rioting.bk2"
+	audio = "event:/SFX/Events/africa/soldiers_breaking_protest"
+}
+
+asia_buddhism = {
+	video = "gfx/event_pictures/windmills.bk2"
+	audio = "event:/SFX/Events/asia/buddhism"
+}
+
+asia_confucianism_shinto = {
+	video = "gfx/event_pictures/church.bk2"
+	audio = "event:/SFX/Events/asia/confucianism_shinto"
+}
+
+asia_dead_cattle_poor_harvest = {
+	video = "gfx/event_pictures/cows.bk2"
+	audio = "event:/SFX/Events/asia/dead_cattle_poor_harvest"
+}
+
+asia_factory_accident = {
+	video = "gfx/event_pictures/devastation2.bk2"
+	audio = "event:/SFX/Events/asia/factory_accident"
+}
+
+asia_farmers_market = {
+	video = "gfx/event_pictures/shipping.bk2"
+	audio = "event:/SFX/Events/asia/farmers_market"
+}
+
+asia_hinduism_sikhism = {
+	video = "gfx/event_pictures/sikh.bk2"
+	audio = "event:/SFX/Events/asia/hinduism_sikhism"
+}
+
+asia_politician_parliament_motion = {
+	video = "gfx/event_pictures/parliament.bk2"
+	audio = "event:/SFX/Events/asia/politician_parliament_motion"
+}
+
+asia_poor_people_moving = {
+	video = "gfx/event_pictures/african_villagers.bk2"
+	audio = "event:/SFX/Events/asia/poor_people_moving"
+}
+
+asia_sepoy_mutiny = {
+	video = "gfx/event_pictures/grunts.bk2"
+	audio = "event:/SFX/Events/asia/sepoy_mutiny"
+}
+
+asia_union_leader = {
+	video = "gfx/event_pictures/dudes.bk2"
+	audio = "event:/SFX/Events/asia/union_leader"
+}
+
+asia_westerners_arriving = {
+	video = "gfx/event_pictures/train.bk2"
+	audio = "event:/SFX/Events/asia/westeners_arriving_in_east_asia"
+}
+
+europenorthamerica_american_civil_war = {
+	video = "gfx/event_pictures/paratroopers.bk2"
+	audio = "event:/SFX/Events/europenorthamerica/american_civil_war"
+}
+
+europenorthamerica_antarctica = {
+	video = "gfx/event_pictures/glacier.bk2"
+	audio = "event:/SFX/Events/unspecific/arctic"
+}
+
+europenorthamerica_art_gallery = {
+	video = "gfx/event_pictures/art_gallery.bk2"
+	audio = "event:/SFX/Events/unspecific/art_gallery"
+}
+
+europenorthamerica_before_the_battle = {
+	video = "gfx/event_pictures/armymarch.bk2"
+	audio = "event:/SFX/Events/europenorthamerica/before_the_battle"
+}
+
+europenorthamerica_capitalists_meeting = {
+	video = "gfx/event_pictures/stock_exchange.bk2"
+	audio = "event:/SFX/Events/europenorthamerica/capitalists_meeting"
+}
+
+europenorthamerica_gold_prospectors = {
+	video = "gfx/event_pictures/train.bk2"
+	audio = "event:/SFX/Events/europenorthamerica/gold_prospectors"
+}
+
+europenorthamerica_judaism = {
+	video = "gfx/event_pictures/judaism.bk2"
+	audio = "event:/SFX/Events/europenorthamerica/judaism"
+}
+
+europenorthamerica_london_center = {
+	video = "gfx/event_pictures/streets.bk2"
+	audio = "event:/SFX/Events/europenorthamerica/london_center"
+}
+
+europenorthamerica_native_american = {
+	video = "gfx/event_pictures/indigenous_celebration.bk2"
+	audio = "event:/SFX/Events/europenorthamerica/native_american"
+}
+
+europenorthamerica_opium_smoker = {
+	video = "gfx/event_pictures/smoking.bk2"
+	audio = "event:/SFX/Events/europenorthamerica/opium_smoker"
+}
+
+europenorthamerica_political_extremism = {
+	video = "gfx/event_pictures/politician2.bk2"
+	audio = "event:/SFX/Events/europenorthamerica/political_extremism"
+}
+
+europenorthamerica_rich_and_poor = {
+	video = "gfx/event_pictures/riot.bk2"
+	audio = "event:/SFX/Events/europenorthamerica/rich_and_poor"
+}
+
+europenorthamerica_russian_serfs = {
+	video = "gfx/event_pictures/dudes.bk2"
+	audio = "event:/SFX/Events/europenorthamerica/russian_serfs"
+}
+
+europenorthamerica_springtime_of_nations = {
+	video = "gfx/event_pictures/protest_5.bk2"
+	audio = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+}
+
+europenorthamerica_sufferage = {
+	video = "gfx/event_pictures/roadway.bk2"
+	audio = "event:/SFX/Events/europenorthamerica/sufferage"
+}
+
+middleeast_battlefield_trenches = {
+	video = "gfx/event_pictures/trench.bk2"
+	audio = "event:/SFX/Events/middleeast/battlefield_trenches"
+}
+
+middleeast_courtroom_upheaval = {
+	video = "gfx/event_pictures/courtroom_upheaval.bk2"
+	audio = "event:/SFX/Events/middleeast/courtroom_upheaval"
+}
+
+middleeast_engineer_blueprint = {
+	video = "gfx/event_pictures/construction.bk2"
+	audio = "event:/SFX/Events/middleeast/engineer_blueprint"
+}
+
+middleeast_islam = {
+	video = "gfx/event_pictures/islam.bk2"
+	audio = "event:/SFX/Events/middleeast/islam"
+}
+
+middleeast_jungle_expedition = {
+	video = "gfx/event_pictures/agriculture.bk2"
+	audio = "event:/SFX/Events/middleeast/jungle_expedition"
+}
+
+middleeast_middleclass_cafe = {
+	video = "gfx/event_pictures/grocery_store.bk2"
+	audio = "event:/SFX/Events/middleeast/middleclass_cafe"
+}
+
+middleeast_oil_derricks = {
+	video = "gfx/event_pictures/industrial_park.bk2"
+	audio = "event:/SFX/Events/middleeast/oil_derricks"
+}
+
+middleeast_police_breaking_door = {
+	video = "gfx/event_pictures/room_clearing_2.bk2"
+	audio = "event:/SFX/Events/middleeast/police_breaking_door"
+}
+
+middleeast_upperclass_party = {
+	video = "gfx/event_pictures/celebrating_guy.bk2"
+	audio = "event:/SFX/Events/middleeast/upperclass_party"
+}
+
+southamerica_aristocrats = {
+	video = "gfx/event_pictures/us_dollar.bk2"
+	audio = "event:/SFX/Events/southamerica/aristocrats"
+}
+
+southamerica_child_labor = {
+	video = "gfx/event_pictures/hospital.bk2"
+	audio = "event:/SFX/Events/southamerica/child_labor"
+}
+
+southamerica_christianity = {
+	video = "gfx/event_pictures/church.bk2"
+	audio = "event:/SFX/Events/southamerica/christianity"
+}
+
+southamerica_election = {
+	video = "gfx/event_pictures/politician_speaking.bk2"
+	audio = "event:/SFX/Events/southamerica/election"
+}
+
+southamerica_factory_opening = {
+	video = "gfx/event_pictures/windmills.bk2"
+	audio = "event:/SFX/Events/southamerica/factory_opening"
+}
+
+southamerica_public_figure_assassination = {
+	video = "gfx/event_pictures/injured_agitator.bk2"
+	audio = "event:/SFX/Events/southamerica/public_figure_assassination"
+}
+
+southamerica_slave_chains = {
+	video = "gfx/event_pictures/fields.bk2"
+	audio = "event:/SFX/Events/europenorthamerica/slaves_breaking_their_chains"
+}
+
+southamerica_slaves_night = {
+	video = "gfx/event_pictures/dudes.bk2"
+	audio = "event:/SFX/Events/southamerica/slaves_night"
+}
+
+southamerica_war_civilians = {
+	video = "gfx/event_pictures/safari.bk2"
+	audio = "event:/SFX/Events/southamerica/war_civilians"
+}
+
+unspecific_airplane = {
+	video = "gfx/event_pictures/plane_landing.bk2"
+	audio = "event:/SFX/Events/unspecific/airplane"
+}
+
+unspecific_airship = {
+	video = "gfx/event_pictures/plane_landing.bk2"
+	audio = "event:/SFX/Events/unspecific/airship"
+}
+
+unspecific_armored_train = {
+	video = "gfx/event_pictures/train.bk2"
+	audio = "event:/SFX/Events/unspecific/armored_train"
+}
+
+unspecific_automobile = {
+	video = "gfx/event_pictures/roadway2.bk2"
+	audio = "event:/SFX/Events/unspecific/automobile"
+}
+
+unspecific_devastation = {
+	video = "gfx/event_pictures/devastation2.bk2"
+	audio = "event:/SFX/Events/unspecific/devastation"
+}
+
+unspecific_factory_closed = {
+	video = "gfx/event_pictures/oil_pipeline.bk2"
+	audio = "event:/SFX/Events/unspecific/factory_closed"
+}
+
+unspecific_fire = {
+	video = "gfx/event_pictures/wildfire.bk2"
+	audio = "event:/SFX/Events/unspecific/destruction"
+}
+
+unspecific_gears_pistons = {
+	video = "gfx/event_pictures/oil_pipeline.bk2"
+	audio = "event:/SFX/Events/unspecific/gears_pistons"
+}
+
+unspecific_iceberg = {
+	video = "gfx/event_pictures/ocean.bk2"
+	audio = "event:/SFX/Events/unspecific/iceberg_in_the_antartica"
+}
+
+unspecific_military_parade = {
+	video = "gfx/event_pictures/general_hugging_soldiers.bk2"
+	audio = "event:/SFX/Events/unspecific/military_parade"
+}
+
+middleeast_diplomats_negotiating = {
+	video = "gfx/event_pictures/parliament.bk2"
+	audio = "event:/SFX/Events/unspecific/politician_parliament_motion"
+}
+
+unspecific_naval_battle = {
+	video = "gfx/event_pictures/navalwar.bk2"
+	audio = "event:/SFX/Events/unspecific/naval_battle"
+}
+
+unspecific_politicians_arguing = {
+	video = "gfx/event_pictures/business_meeting.bk2"
+	audio = "event:/SFX/Events/asia/politician_parliament_motion"
+}
+
+unspecific_ruler_speaking_to_people = {
+	video = "gfx/event_pictures/police_speech.bk2"
+	audio = "event:/SFX/Events/unspecific/leader_speaking_to_a_group_of_people"
+}
+
+unspecific_sick_in_hospital = {
+	video = "gfx/event_pictures/hospital.bk2"
+	audio = "event:/SFX/Events/unspecific/sick_people_in_a_field_hospital"
+}
+
+unspecific_signed_contract = {
+	video = "gfx/event_pictures/signing2.bk2"
+	audio = "event:/SFX/Events/unspecific/signed_contract"
+}
+
+unspecific_steam_ship = {
+	video = "gfx/event_pictures/shipping.bk2"
+	audio = "event:/SFX/Events/unspecific/steam_ship"
+}
+
+unspecific_temperance_movement = {
+	video = "gfx/event_pictures/protest_4.bk2"
+	audio = "event:/SFX/Events/unspecific/temperance_movement"
+}
+
+unspecific_trains = {
+	video = "gfx/event_pictures/train.bk2"
+	audio = "event:/SFX/Events/unspecific/trains"
+}
+
+unspecific_vandalized_storefront = {
+	video = "gfx/event_pictures/looting.bk2"
+	audio = "event:/SFX/Events/unspecific/vandalized_storefront"
+}
+
+unspecific_whaling = {
+	video = "gfx/event_pictures/ocean.bk2"
+	audio = "event:/SFX/Events/unspecific/whaling"
+}
+
+unspecific_world_fair = {
+	video = "gfx/event_pictures/celebrations.bk2"
+	audio = "event:/SFX/Events/unspecific/world_fair"
+}
+
+votp_agitator_speaking = {
+	video = "gfx/event_pictures/rioting.bk2"
+	audio = "event:/SFX/DLC/1.3_ip1/Events/unspecific/agitator_speaking"
+
+	fallback = southamerica_election
+}
+
+votp_agitators_sneaking = {
+	video = "gfx/event_pictures/yns.bk2"
+	audio = "event:/SFX/DLC/1.3_ip1/Events/unspecific/people_sneaking"
+
+	fallback = asia_union_leader
+}
+
+votp_barricade = {
+	video = "gfx/event_pictures/protest_5.bk2"
+	audio = "event:/SFX/DLC/1.3_ip1/Events/unspecific/barricade"
+
+	fallback = europenorthamerica_springtime_of_nations
+}
+
+votp_conspiring = {
+	video = "gfx/event_pictures/police_dog.bk2"
+	audio = "event:/SFX/DLC/1.3_ip1/Events/unspecific/conspiring"
+
+	fallback = europenorthamerica_capitalists_meeting
+}
+
+votp_cops_march = {
+	video = "gfx/event_pictures/demonstration.bk2"
+	audio = "event:/SFX/DLC/1.3_ip1/Events/unspecific/cops_march"
+
+	fallback = africa_soldiers_breaking_protest
+}
+
+votp_french_algeria = {
+	video = "gfx/event_pictures/grunts.bk2"
+	audio = "event:/SFX/DLC/1.3_ip1/Events/unspecific/french_algeria"
+
+	fallback = africa_city_center
+}
+
+votp_garibaldi = {
+	video = "gfx/event_pictures/grunts.bk2"
+	audio = "event:/SFX/DLC/1.3_ip1/Events/unspecific/garibaldi"
+
+	fallback = africa_construction_colony
+}
+
+votp_gunboat_diplomacy = {
+	video = "gfx/event_pictures/ocean.bk2"
+	audio = "event:/SFX/DLC/1.3_ip1/Events/unspecific/gunboat_diplomacy"
+
+	fallback = unspecific_naval_battle
+}
+
+votp_hostile_court = {
+	video = "gfx/event_pictures/courtroom_upheaval.bk2"
+	audio = "event:/SFX/DLC/1.3_ip1/Events/unspecific/hostile_court"
+
+	fallback = middleeast_courtroom_upheaval
+}
+
+votp_monarch_holding_court = {
+	video = "gfx/event_pictures/testifying.bk2"
+	audio = "event:/SFX/DLC/1.3_ip1/Events/unspecific/monarch_holding_court"
+
+	fallback = unspecific_ruler_speaking_to_people
+}
+
+votp_prison = {
+	video = "gfx/event_pictures/bodycam.bk2"
+	audio = "event:/SFX/DLC/1.3_ip1/Events/unspecific/prison"
+
+	fallback = unspecific_factory_closed
+}
+
+votp_realist_household = {
+	video = "gfx/event_pictures/bodycam.bk2"
+	audio = "event:/SFX/DLC/1.3_ip1/Events/unspecific/realist_household"
+
+	fallback = europenorthamerica_russian_serfs
+}
+
+rp1_brazilian_city = {
+	video = "gfx/event_pictures/roadway2.bk2"	
+	audio = "event:/SFX/Events/southamerica/brazilian_city"
+	fallback = southamerica_election
+}
+
+rp1_social_banditry = {
+	video = "gfx/event_pictures/yns.bk2"	
+	audio = "event:/SFX/Events/unspecific/social_banditry"
+	fallback = europenorthamerica_russian_serfs
+}
+
+rp1_amazon_exploitation = {
+	video = "gfx/event_pictures/train.bk2"	
+	audio = "event:/SFX/Events/southamerica/amazon_exploitation"
+	fallback = southamerica_factory_opening
+}
+
+ep1_central_asian_city = {
+	video = "gfx/event_pictures/roadway2.bk2"
+	audio = "event:/SFX/Events/asia/central_asian_city"
+	fallback = africa_city_center
+}
+
+ep1_ca_mountain_pass_civilian = {
+	video = "gfx/event_pictures/roadway2.bk2"
+	audio = "event:/SFX/Events/middleeast/mountain_pass_civilian"
+	fallback = southamerica_war_civilians
+}
+
+
+ep1_ca_mountain_pass_military = {
+	video = "gfx/event_pictures/apc.bk2"
+	audio = "event:/SFX/Events/middleeast/mountain_pass_military"
+	fallback = middleeast_battlefield_trenches
+}
+
+ep1_persian_court = {
+	video = "gfx/event_pictures/testifying.bk2"
+	audio = "event:/SFX/Events/asia/persian_monarch_holding_court"
+	fallback = votp_monarch_holding_court
+}
+
+ep1_cossacks = {
+	video = "gfx/event_pictures/grunts.bk2"
+	audio = "event:/SFX/Events/europenorthamerica/russian_cossacks"
+	fallback = europenorthamerica_before_the_battle
+}
+
+ep1_octopus = {
+	video = "gfx/event_pictures/ocean.bk2"
+	audio = "event:/SFX/Events/unspecific/the_octopus"
+	fallback = europenorthamerica_rich_and_poor
+}
+
+ep1_clandestine_meeting = {
+	video = "gfx/event_pictures/ep1_clandestine_meeting.bk2"
+	audio = "event:/SFX/Events/unspecific/clandestine_meeting"
+	fallback = votp_conspiring
+}
+
+ep1_printing_press = {
+	video = "gfx/event_pictures/ep1_printing_press.bk2"
+	audio = "event:/SFX/Events/unspecific/printing_press"
+	fallback = unspecific_gears_pistons
+}
+
+ep1_power_blocs = {
+	video = "gfx/event_pictures/ep1_power_blocs.bk2"
+	audio = "event:/SFX/Events/unspecific/power_blocs"
+	fallback = asia_politician_parliament_motion
+}
+
+ep1_transfer_of_authority = {
+	video = "gfx/event_pictures/ep1_transfer_of_authority.bk2"
+	audio = "event:/SFX/Events/unspecific/transfer_of_authority"
+	fallback = africa_construction_colony
+}
+
+ep1_redcoats = {
+	video = "gfx/event_pictures/ep1_redcoats.bk2"
+	audio = "event:/SFX/Events/europenorthamerica/redcoats"
+	fallback = unspecific_military_parade
+}
+
+ep1_donghak_rebellion = {
+	video = "gfx/event_pictures/ep1_donghak_rebellion.bk2"
+	audio = "event:/SFX/Events/asia/donghak_rebellion"
+	fallback = votp_barricade
+}
+
+ip2_india_countryside = {
+	video = "gfx/event_pictures/ip2_india_countryside.bk2"
+	audio = "event:/SFX/Events/asia/india_countryside"
+	fallback = asia_poor_people_moving
+}
+
+ip2_india_protest = {
+	video = "gfx/event_pictures/ip2_india_protest.bk2"
+	audio = "event:/SFX/Events/asia/india_protest"
+	fallback = europenorthamerica_political_extremism
+}
+
+ip2_india_urban_scene = {
+	video = "gfx/event_pictures/ip2_india_urban.bk2"
+	audio = "event:/SFX/Events/asia/india_urban_scene"
+	fallback = asia_hinduism_sikhism
+}
+
+ip2_telegraph_dictate = {
+	video = "gfx/event_pictures/ip2_telegraph_dictate.bk2"
+	audio = "event:/SFX/Events/asia/telegraph_dictate"
+	fallback = middleeast_middleclass_cafe
+}
+
+ip2_unruly_soldiers = {
+	video = "gfx/event_pictures/ip2_unruly_soldiers.bk2"
+	audio = "event:/SFX/Events/asia/unruly_soldiers"
+	fallback = middleeast_courtroom_upheaval
+}
+
+ip2_cross_cultural_festival = {
+	video = "gfx/event_pictures/ip2_crosscultural_festival.bk2"
+	audio = "event:/SFX/Events/asia/cross_cultural_festival"
+	fallback = ep1_central_asian_city
+}
+
+ip2_intercommunal_tensions = {
+	video = "gfx/event_pictures/ip2_intercommunal_tension.bk2"
+	audio = "event:/SFX/Events/asia/intercommunal_tensions"
+	fallback = africa_public_protest
+}
+
+ip2_india_factory_floor = {
+	video = "gfx/event_pictures/ip2_india_factory.bk2"
+	audio = "event:/SFX/Events/asia/india_factory_floor"
+	fallback = unspecific_gears_pistons
+}

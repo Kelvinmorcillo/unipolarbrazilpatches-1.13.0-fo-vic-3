@@ -1,0 +1,63 @@
+﻿mediterranean_port = {
+	graphical_culture = "mediterranean"
+	city_type = port
+	center_building_entity = "european_port_02_entity"
+	center_building_size = { 2 2 }
+	modifier_key_prefix = "european_port_01"
+	modifier_key_suffix = "entity"
+	center_modifiers = {
+		building_shipyards = "s"
+		building_port = "d"
+		building_fishing_wharf = "f"
+	}
+	min_residential_buildings = 2
+	max_residential_buildings = 150
+	max_residence_points = 200
+	weight = 2
+	
+	trigger = {
+		any_scope_state = {
+				OR = {
+					is_in_geographic_region = geographic_region_iberia_old
+				}
+			}
+	}
+	
+	rich_building_meshes = {
+		"mediterranean_urban_city_residential_rich_01_mesh"
+		"mediterranean_urban_city_residential_rich_02_mesh"
+		"mediterranean_urban_city_residential_rich_03_mesh"	
+	}
+	rich_building_offsets = {
+		position = 0.0	#in grid-space units. 1.0 means the mesh can be placed anywhere inside its allotted cell
+		rotation = 0.0	#in degrees
+	}
+	mid_building_meshes = {
+		"mediterranean_urban_city_residential_mid_01_mesh"
+		"mediterranean_urban_city_residential_mid_02_mesh"
+		"mediterranean_urban_city_residential_mid_03_mesh"
+	}
+	mid_building_offsets = {
+		position = 0.2
+		rotation = 6.25
+	}
+	poor_building_meshes = {
+		"mediterranean_urban_city_residential_poor_01_mesh"
+		"mediterranean_urban_city_residential_poor_02_mesh"
+		"mediterranean_urban_city_residential_poor_03_mesh"
+	}
+	poor_building_offsets = {
+		position = 0.2
+		rotation = 20.0
+	}
+	building_offsets = {	#offsets for regular buildings
+		position = 0.0
+		rotation = 0.0
+	}
+	
+	building_fishing_wharf = {}
+	building_whaling_station = {}
+	building_port = {}
+	building_shipyard = {}
+	building_naval_logistics_center = {"generic_logisticscenter_01_mesh"}
+}

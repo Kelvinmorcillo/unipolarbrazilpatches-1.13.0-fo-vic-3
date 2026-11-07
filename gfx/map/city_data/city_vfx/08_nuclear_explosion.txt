@@ -1,0 +1,15 @@
+﻿nuclear_radiation = {
+	visible = {
+	   has_modifier = nuclear_strike_aftermath
+	}
+	
+	entity = "env_jungle_mist_l"
+}
+
+nuclear_strike = {
+	visible = {
+	   has_variable = nuclear_struck
+	}
+	
+	entity = "env_nuke_explosion"
+}

@@ -1,0 +1,33 @@
+pdxmesh = {
+	name = "t55_mesh"
+	file = "t55.mesh"
+
+	lod_percentages = {
+		lod = { index = 1 percent = 8.0 }
+	}
+
+	meshsettings = {
+		name = "bodyShape-001"
+		index = 0
+		texture_diffuse = "t55_diffuse.dds"
+		texture_normal = "t55_diffuse.dds"
+		texture_specular = "t55_diffuse.dds"
+		shader = "standard"
+		shader_file = "gfx/FX/pdxmesh.shader"
+		additional_shader_defines = { "UNIT_COLOR" }
+	}
+
+	animation = { id = "tank_idle_animation" 					type = "military_tank_light_generic_idle.anim" }
+	animation = { id = "tank_scout_animation" 					type = "military_tank_light_generic_scout.anim" }
+	animation = { id = "tank_fire_aggressive_animation" 			type = "military_tank_light_generic_fire_aggressive.anim" }
+	animation = { id = "tank_fire_defensive_animation" 			type = "military_tank_light_generic_fire_defensive.anim" }
+	animation = { id = "tank_defeat_animation" 					type = "military_tank_light_generic_defeat.anim" }
+
+}
+
+entity = {
+	name = "t55_entity"
+	pdxmesh = "t55_mesh"
+	 scale = 2
+	default_state = "moving"
+}

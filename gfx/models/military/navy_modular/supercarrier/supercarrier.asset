@@ -1,0 +1,90 @@
+﻿pdxmesh = {
+	name = "supercarrier_mesh"
+	file = "nimitz.mesh"
+
+	lod_percentages = {
+		lod = { index = 1 percent = 64.0 }
+	}
+
+	meshsettings = {
+		name = "DrawCall_0042Shape.001"
+		index = 0
+		texture_diffuse = "Nimitz.dds"
+		texture_normal = "military_navy_carrier_generic_normal.dds"
+		texture_specular = "military_navy_carrier_generic_normal.dds"
+		texture = { file = "military_navy_carrier_generic_normal.dds" index = 6 }
+		additional_shader_defines = { "UNIT_COLOR" "EMISSIVE_NIGHT" }
+		shader = "standard"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "flags1ShapeDeformed"
+		index = 0
+		texture_diffuse = "flag_wrinkles_diffuse.dds"
+		texture_normal = "flag_wrinkles_normal.dds"
+		texture_specular = "flag_wrinkles_properties.dds"
+		shader = "standard_flag_basic"
+		additional_shader_defines = { "COA_TEXTURE"  }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "flags2ShapeDeformed"
+		index = 0
+		texture_diffuse = "flag_wrinkles_diffuse.dds"
+		texture_normal = "flag_wrinkles_normal.dds"
+		texture_specular = "flag_wrinkles_properties.dds"
+		shader = "standard_flag_basic"
+		additional_shader_defines = { "COA_TEXTURE"  }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "flags3ShapeDeformed"
+		index = 0
+		texture_diffuse = "flag_wrinkles_diffuse.dds"
+		texture_normal = "flag_wrinkles_normal.dds"
+		texture_specular = "flag_wrinkles_properties.dds"
+		shader = "standard_flag_basic"
+		additional_shader_defines = { "COA_TEXTURE"  }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	animation = { id = "ship_idle_animation" 					type = "military_navy_dreadnought_generic_idle.anim" }
+	animation = { id = "ship_move_animation" 					type = "military_navy_dreadnought_generic_move.anim" }
+	animation = { id = "ship_defeat_animation" 					type = "military_navy_dreadnought_generic_defeat.anim" }
+}
+
+entity = {
+	name = "supercarrier_base_entity"
+	pdxmesh = "supercarrier_mesh"
+
+	default_state = "move"
+
+	state = { name = "idle"
+		event = { time = 0 keep_sound = yes sound  = { soundeffect = "event:/SFX/Animation/vehicles/naval/fleet/cruisers/aircraft_carrier/anm_ship_aircraftcarrier_idle" } }
+	}
+
+	state = { name = "move"
+		event = { time = 0 keep_sound = yes sound  = { soundeffect = "event:/SFX/Animation/vehicles/naval/fleet/cruisers/aircraft_carrier/anm_ship_aircraftcarrier_moving" } }
+		event = { time = 0 trigger_once = yes keep_sound = no sound = { soundeffect = "event:/SFX/Animation/vehicles/naval/fleet/cruisers/aircraft_carrier/anm_ship_aircraftcarrier_moving_start" } }
+	}
+
+	state = { name = "move_local"
+		event = { time = 0 keep_sound = yes sound = { soundeffect = "event:/SFX/Animation/vehicles/naval/fleet/cruisers/aircraft_carrier/anm_ship_aircraftcarrier_moving_local" } }
+		event = { time = 0 trigger_once = yes keep_sound = no sound  = { soundeffect = "event:/SFX/Animation/vehicles/naval/fleet/cruisers/aircraft_carrier/anm_ship_aircraftcarrier_moving_start" } }
+	}
+
+	state = { name = "move_ship_viewer"
+		event = { time = 0 keep_sound = yes sound = { soundeffect = "event:/SFX/Animation/vehicles/naval/fleet/cruisers/aircraft_carrier/anm_ship_aircraftcarrier_moving_ship_viewer" } }
+	}
+
+	state = { name = "combat"
+		event = { time = 0 keep_sound = yes sound  = { soundeffect = "event:/SFX/Animation/vehicles/naval/fleet/cruisers/aircraft_carrier/anm_ship_aircraftcarrier_combat" } }
+	}
+	
+	state = { name = "destroyed"
+		event = { time = 0 keep_sound = yes sound  = { soundeffect = "event:/SFX/Animation/vehicles/naval/fleet/cruisers/aircraft_carrier/anm_ship_aircraftcarrier_destroyed" } }
+	}	
+}
