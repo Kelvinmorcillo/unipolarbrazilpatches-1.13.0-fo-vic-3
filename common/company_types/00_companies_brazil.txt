@@ -37,7 +37,7 @@ company_gerdau = {
 	icon = "gfx/interface/icons/company_icons/basic_steel.dds"
 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
 	flavored_company = yes
-	preferred_headquarters = { STATE_RIO_GRANDE_DO_SUL }
+	preferred_headquarters = { STATE_MINAS_GERAIS }
 
 	building_types = {
 		building_steel_mill
@@ -66,7 +66,7 @@ company_gerdau = {
 
 	possible = {
 		any_scope_state = {
-			state_region = s:STATE_RIO_GRANDE_DO_SUL
+			state_region = s:STATE_MINAS_GERAIS
 			is_incorporated = yes
 			any_scope_building = {
 				OR = {

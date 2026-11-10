@@ -1,4 +1,4 @@
-#positions for sidepanel buttons
+﻿#positions for sidepanel buttons
 #(they cant be in flowcontainer because of the way the label buttons is set up to scale with the longest localized text)
 
 @politics_position = 0
@@ -46,6 +46,23 @@ types com_sidebar_overwrite {
             name = _hide
             using = default_hide_properties
             on_start = "[InformationPanelBar.ClosePanel]"
+        }
+
+        button = {
+            name = "unipolar_spreadsheets_button"
+            position = { 55 -45 }
+            size = { 130 35 }
+            text = "MS_BTN"
+            tooltip = "More Spreadsheets (N)"
+            shortcut = "spread_sheet"
+
+            onclick = "[InformationPanelBar.ClosePanel]"
+            onclick = "[MapListPanelManager.CloseCurrentPanel]"
+            onclick = "[GetScriptedGui('spreadsheet_OK_runtag').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            onclick = "[GetScriptedGui('toggle_spreadsheet_OK').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            onclick = "[GetVariableSystem.Set('more_spreadsheets_showselftrade', 'true')]"
+            onclick = "[GetVariableSystem.Set('more_spreadsheets_showgoods', 'true')]"
+            onclick = "[GetVariableSystem.SetOrToggle('more_spreadsheets', 'states')]"
         }
 
         ### BACKGROUND FOR LABEL BUTTONS
@@ -156,6 +173,7 @@ types com_sidebar_overwrite {
 
                 ### COMMUNITY SIDEBAR
                 custom_sidebar = {}
+
 				
                 ### POWER BLOC
 
