@@ -117,14 +117,14 @@ REPLACE_OR_CREATE:brz_dilma_rousseff_character_template = {
 		country_trigger = {
 			exists = c:BRZ
 			this = c:BRZ
-			game_date >= 2011.1.1
+			game_date >= 2010.10.3
 			game_date <= 2016.8.31
 		}
 		interest_group_trigger = {
 			is_marginal = no
 			is_interest_group_type = ig_trade_unions
 		}
-		earliest_usage_date = 2011.1.1
+		earliest_usage_date = 2010.10.3
 		latest_usage_date = 2016.8.31
 		chance = 100
 	}

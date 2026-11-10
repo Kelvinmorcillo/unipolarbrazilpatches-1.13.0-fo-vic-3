@@ -11,6 +11,7 @@ brz_impeachment.1 = {
 	trigger = {
 		c:BRZ ?= this
 		game_date >= 1992.9.29
+		game_date <= 1992.12.29
 		NOT = { has_variable = brz_collor_impeachment_started }
 	}
 
@@ -62,6 +63,7 @@ brz_impeachment.3 = {
 	trigger = {
 		c:BRZ ?= this
 		game_date >= 1992.12.29
+		game_date <= 1993.12.31
 		has_variable = brz_itamar_assumed_presidency
 		NOT = { has_variable = brz_collor_impeachment_concluded }
 	}
@@ -86,6 +88,7 @@ brz_impeachment.4 = {
 	trigger = {
 		c:BRZ ?= this
 		game_date >= 2015.12.2
+		game_date <= 2016.5.11
 		NOT = { has_variable = brz_dilma_impeachment_started }
 	}
 
@@ -109,6 +112,7 @@ brz_impeachment.5 = {
 	trigger = {
 		c:BRZ ?= this
 		game_date >= 2016.5.12
+		game_date <= 2016.8.30
 		has_variable = brz_dilma_impeachment_started
 		NOT = { has_variable = brz_bolsonaro_armed_forces_leader }
 	}
@@ -139,6 +143,7 @@ brz_impeachment.6 = {
 	trigger = {
 		c:BRZ ?= this
 		game_date >= 2016.8.31
+		game_date <= 2017.12.31
 		has_variable = brz_bolsonaro_armed_forces_leader
 		NOT = { has_variable = brz_dilma_impeachment_concluded }
 	}
