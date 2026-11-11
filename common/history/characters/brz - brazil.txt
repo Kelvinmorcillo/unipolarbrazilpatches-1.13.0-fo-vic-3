@@ -3,18 +3,60 @@
 	create_character = {
 			template = BRZ_lula_da_silva
 		}
+	# Keep the inline spawn chosen by the preceding patch. The original
+	# template contains incorruptible, absent from this mod's trait definitions;
+	# use the existing honorable trait here and leave the template untouched.
+	# Tag the created person, never an arbitrary Armed Forces leader.
 	create_character = {
-			template = BRZ_itamar_franco
-		}
+			first_name = "Itamar"
+			last_name = "Franco"
+			historical = yes
+			culture = cu:brazilian
+			birth_date = 1930.6.28
+			dna = dna_itamar_franco
+			ig_leader = yes
+			interest_group = ig_armed_forces
+			ideology = ideology_authoritarian_capitalist_leader
+			traits = {
+				experienced_political_operator
+				cautious
+					honorable
+				}
+				on_created = {
+					set_first_name = "Itamar"
+					set_last_name = "Franco"
+					set_variable = brz_is_itamar
+				}
+			}
 	create_character = {
 			template = BRZ_roberto_marinho
 		}
 	create_character = {
 			template = BRZ_jose_sarney
 		}
+	# Keep FHC inline and the original template untouched. Explicit post-create
+	# naming follows the successful console rename, avoiding the template's
+	# misspelled, unquoted compound surname.
 	create_character = {
-			template = BRZ_fernando_cardoso
-		}
+			first_name = "Fernando"
+			last_name = "Henrique Cardoso"
+			historical = yes
+			culture = cu:brazilian
+			birth_date = 1931.6.18
+			dna = dna_fernando_cardoso
+			ig_leader = yes
+			interest_group = ig_intelligentsia
+			ideology = ideology_liberal_leader
+			traits = {
+				erudite
+				experienced_political_operator
+					meticulous
+				}
+				on_created = {
+					set_first_name = "Fernando"
+					set_last_name = "Henrique Cardoso"
+				}
+			}
 	create_character = {
 			template = BRZ_paulo_arns
 		}

@@ -178,3 +178,19 @@ REPLACE_OR_CREATE:brz_lula_da_silva_2022_character_template = {
 		chance = 100
 	}
 }
+REPLACE_OR_CREATE:brz_michel_temer_character_template = {
+	first_name = Michel
+	last_name = Temer
+	historical = yes
+	culture = cu:brazilian
+	birth_date = 1940.9.15
+	dna = dna_michel_temer
+	ig_leader = yes
+	interest_group = ig_industrialists
+	ideology = ideology_liberal_leader
+	traits = {
+		experienced_political_operator
+		cautious
+		meticulous
+	}
+}

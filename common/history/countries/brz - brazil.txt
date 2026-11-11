@@ -51,5 +51,9 @@
 			institution = institution_police
 			level = 3
 		}
+		# Seed the calendar after starting laws/institutions are initialized.
+		# The existing four-year interval gives 1994, 1998, 2002, 2006, 2010,
+		# 2014, 2018, 2022, etc. Impeachment does not start a new term cycle.
+		set_next_election_date = 1994.10.3
 	}
 }

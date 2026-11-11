@@ -1,0 +1,57 @@
+﻿# Brazil presidential transition effects
+
+# Itamar Franco assumes the presidency after Collor's suspension (Oct 1992).
+# He is spawned inline in history as leader of ig_armed_forces. His own
+# on_created block sets brz_is_itamar. Use that persistent identity even if
+# he changes roles; do not promote a random replacement IG leader.
+brz_itamar_takes_office_effect = {
+	c:BRZ = {
+		if = {
+			limit = {
+				any_character = {
+					has_variable = brz_is_itamar
+				}
+			}
+			random_character = {
+				limit = {
+					has_variable = brz_is_itamar
+				}
+				set_character_as_ruler = yes
+			}
+			set_variable = brz_itamar_assumed_presidency
+		}
+		else = {
+			debug_log = "BRZ: Itamar handoff skipped; no character tagged brz_is_itamar. Start a new game with the corrected history."
+		}
+	}
+}
+
+# Michel Temer assumes the presidency during Dilma's suspension (May/Aug 2016).
+# His template is never consumed at game start, so he is either already spawned
+# by his usage window (lookup) or created here (on_created pattern, as used by
+# the France coup effects in 00_victoria_ip4_scripted_effects.txt).
+brz_temer_takes_office_effect = {
+	c:BRZ = {
+		if = {
+			limit = {
+				any_character = {
+					has_template = brz_michel_temer_character_template
+				}
+			}
+			random_character = {
+				limit = {
+					has_template = brz_michel_temer_character_template
+				}
+				set_character_as_ruler = yes
+			}
+		}
+		else = {
+			create_character = {
+				template = brz_michel_temer_character_template
+				on_created = {
+					set_character_as_ruler = yes
+				}
+			}
+		}
+	}
+}

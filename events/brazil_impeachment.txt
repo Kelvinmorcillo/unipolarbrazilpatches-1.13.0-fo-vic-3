@@ -1,4 +1,4 @@
-namespace = brz_impeachment
+﻿namespace = brz_impeachment
 
 brz_impeachment.1 = {
 	type = country_event
@@ -40,14 +40,12 @@ brz_impeachment.2 = {
 	}
 
 	immediate = {
-		set_variable = brz_itamar_assumed_presidency
-		character:BRZ_itamar_franco = {
-			set_character_as_ruler = yes
-		}
+		brz_itamar_takes_office_effect = yes
 	}
 
 	option = {
 		name = brz_impeachment.2.a
+		trigger_event = { id = brz_impeachment.3 days = 88 popup = yes } # conviction - 29 Dec 1992
 	}
 }
 
@@ -95,6 +93,7 @@ brz_impeachment.4 = {
 
 	option = {
 		name = brz_impeachment.4.a
+		trigger_event = { id = brz_impeachment.5 days = 162 popup = yes } # senate trial opens - 12 May 2016
 	}
 }
 
@@ -121,10 +120,13 @@ brz_impeachment.5 = {
 				set_as_interest_group_leader = yes
 			}
 		}
+		# Dilma is suspended: Temer takes over as acting president
+		brz_temer_takes_office_effect = yes
 	}
 
 	option = {
 		name = brz_impeachment.5.a
+		trigger_event = { id = brz_impeachment.6 days = 111 popup = yes } # conviction - 31 Aug 2016
 	}
 }
 
@@ -145,6 +147,8 @@ brz_impeachment.6 = {
 
 	immediate = {
 		set_variable = brz_dilma_impeachment_concluded
+		# Senate conviction is final: make sure Temer (not Dilma) holds the office
+		brz_temer_takes_office_effect = yes
 	}
 
 	option = {

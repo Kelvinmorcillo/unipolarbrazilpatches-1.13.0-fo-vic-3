@@ -1,0 +1,25 @@
+﻿# Brazil historical timeline - entry points
+# The events themselves carry date + variable guards, so firing them on the
+# monthly pulse is safe and one-shot. Everything in between (Collor -> Itamar,
+# Dilma -> Temer, Bolsonaro's rise) is chained by trigger_event inside
+# events/brazil_impeachment.txt.
+#
+# Ordinary successions (FHC 1995, Lula 2003, Dilma 2011, Bolsonaro 2019,
+# Lula 2023) are NOT hardcoded: the character templates carry
+# interest_group_leader_usage windows, so they surface through Brazil's
+# own electoral cycle, same as the USA presidents.
+
+on_monthly_pulse_country = {
+	on_actions = { brz_historical_on_actions }
+}
+
+# Itamar is tagged by his history spawn's on_created block. Do not tag whoever
+# happens to lead the Armed Forces after the lobby: a failed spawn would give
+# the marker to the random replacement and reproduce the original bug.
+
+brz_historical_on_actions = {
+	events = {
+		brz_impeachment.1	# Collor impeachment vote opens - 29 Sep 1992
+		brz_impeachment.4	# Dilma impeachment proceedings accepted - 2 Dec 2015
+	}
+}
