@@ -1,5 +1,18 @@
+<<<<<<< HEAD
 ﻿# Legacy hook intentionally disabled.
 # brz_on_actions.txt is the sole monthly entry point for Brazil's timeline.
 # It starts events .1 and .4; the remaining stages are chained by the events.
 # Keep this empty override when installing over an older copy of the mod so
 # the obsolete .3/.5/.6 monthly dispatches and nonexistent .7 stay disabled.
+=======
+on_monthly_pulse_country = {
+	events = {
+		brz_impeachment.1
+		brz_impeachment.3
+		brz_impeachment.7
+		brz_impeachment.4
+		brz_impeachment.5
+		brz_impeachment.6
+	}
+}
+>>>>>>> 483f88e74075c9d7b6632946e5c6716b66117ac9
