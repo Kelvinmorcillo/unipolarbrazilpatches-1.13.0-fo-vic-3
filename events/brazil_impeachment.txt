@@ -70,10 +70,45 @@ brz_impeachment.3 = {
 
 	immediate = {
 		set_variable = brz_collor_impeachment_concluded
+		set_variable = brz_collor_impeachment_enforced
+		character:BRZ_itamar_franco = {
+			set_character_as_ruler = yes
+		}
+		ig:ig_petty_bourgeoisie = {
+			leader = {
+				exile_character = yes
+			}
+		}
 	}
 
 	option = {
 		name = brz_impeachment.3.a
+	}
+}
+
+brz_impeachment.7 = {
+	type = country_event
+	placement = ROOT
+	hidden = yes
+
+	trigger = {
+		c:BRZ ?= this
+		game_date >= 1992.12.29
+		game_date <= 1993.12.31
+		has_variable = brz_collor_impeachment_concluded
+		NOT = { has_variable = brz_collor_impeachment_enforced }
+	}
+
+	immediate = {
+		set_variable = brz_collor_impeachment_enforced
+		character:BRZ_itamar_franco = {
+			set_character_as_ruler = yes
+		}
+		ig:ig_petty_bourgeoisie = {
+			leader = {
+				exile_character = yes
+			}
+		}
 	}
 }
 
